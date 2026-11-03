@@ -1,0 +1,405 @@
+{
+  "originalBundleSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+  "trackBundleSha256": "d838996df5ffaec89014614c6af891e3d1166fe562a7a9d691b1391a2c9064ff",
+  "source": [
+    {
+      "kind": "factory-74438",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 1852175,
+      "offsetBytes": 1852216,
+      "lengthBytes": 288,
+      "sha256": "61348158652e219addb57fd9837d3147b7d0f7de595897900e7dece58a836088"
+    },
+    {
+      "kind": "factory-92693",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 4162472,
+      "offsetBytes": 4162712,
+      "lengthBytes": 511,
+      "sha256": "d48b0dd13a19421b6cbfec2f3600ab80bfc8280389119dc6364156dfdeec67d1"
+    },
+    {
+      "kind": "factory-89281",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 4162348,
+      "offsetBytes": 4162588,
+      "lengthBytes": 123,
+      "sha256": "3fdd41fce0d9ba9b3a210eeb46bc835488db617b15e1c7701effc8c4baf73675"
+    },
+    {
+      "kind": "factory-41332",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 4114788,
+      "offsetBytes": 4115028,
+      "lengthBytes": 4953,
+      "sha256": "9daaca5dd00fa6605ddd0eeb379cb5fc5c08e51a161d22a94315c4aa40e4b005"
+    },
+    {
+      "kind": "factory-87337",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 4119742,
+      "offsetBytes": 4119982,
+      "lengthBytes": 1395,
+      "sha256": "e90ffc2f49b22726bf37dfc1560fc8fcc35315291a30dd20628a151b2bb198b5"
+    },
+    {
+      "kind": "factory-92464",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 4160816,
+      "offsetBytes": 4161056,
+      "lengthBytes": 1531,
+      "sha256": "ea26df91582f9fa4917addc583b3587174795a9214c591d368f6962222610292"
+    },
+    {
+      "kind": "factory-83873",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 4083882,
+      "offsetBytes": 4084122,
+      "lengthBytes": 1671,
+      "sha256": "1aeaa740a4a3f533e78b5c4268c6aa3203950362f5c7066bf0275640e82bee8d"
+    },
+    {
+      "kind": "factory-85418",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 4160640,
+      "offsetBytes": 4160880,
+      "lengthBytes": 175,
+      "sha256": "6c0bd05958a0723942a6e91b1cb681c9f40e719af9cbc023e30c08b5889f4165"
+    },
+    {
+      "kind": "factory-1940",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 4113254,
+      "offsetBytes": 4113494,
+      "lengthBytes": 624,
+      "sha256": "528ddb8b6adce775f64c3ee0371d007d51e65e564bf9b804229d9857a9985923"
+    },
+    {
+      "kind": "album-initial-producer",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 1852842,
+      "offsetBytes": 1852883,
+      "lengthBytes": 406,
+      "sha256": "4c1163ca7f7034088f4d1dc403a12896402aa41485231446e4594d046b816d9f"
+    },
+    {
+      "kind": "album-paging-producer",
+      "path": ".local/native-scripts/d838996df5ffaec89014614c6af891e3d1166fe562a7a9d691b1391a2c9064ff.js",
+      "offsetUtf16": 10935,
+      "offsetBytes": 10935,
+      "lengthBytes": 332,
+      "sha256": "1f399fc6028cf658d1232eb89284d7d25a09b6fea305fd0d2a3eb5b067813422"
+    },
+    {
+      "kind": "module-83085-disc-predicate",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 1858219,
+      "offsetBytes": 1858260,
+      "lengthBytes": 36,
+      "sha256": "afe93f4441f17bc3e8cee957dc1f533efddaf1aa64584c04c038232a6bc440bb"
+    },
+    {
+      "kind": "module-50278-header-collection",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 508588,
+      "offsetBytes": 508595,
+      "lengthBytes": 540,
+      "sha256": "37f46555905cc743ec510308840087875503aafc38d1d4fe3d82d04c34ea10b4"
+    },
+    {
+      "kind": "module-50278-fetch-adapter",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 503934,
+      "offsetBytes": 503941,
+      "lengthBytes": 2097,
+      "sha256": "ffc72cd0730018864d132897cd0f4a962f36571873afe77e81195497c3df3785"
+    },
+    {
+      "kind": "module-74960-global-owner",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 3846409,
+      "offsetBytes": 3846649,
+      "lengthBytes": 243,
+      "sha256": "aa9c135a625cfc5eda258f6e4722d26eadfddf5a7fc5363674f629bba109c93c"
+    }
+  ],
+  "existingEntityOracle": {
+    "path": "reverse-engineering/fixtures/entity-oracle.json",
+    "sha256": "a7932e456d970c64e7ddea50275ed8085e2b7e9eafb86efc14658acedc770338"
+  },
+  "commonBrowserFields": {
+    "path": "reverse-engineering/evidence/native-home-netlog.json",
+    "sha256": "41e4bbdd335339e1d837906b685dfb3e7c6628e22115b4309b488676ec035b7e"
+  },
+  "substitutions": [
+    "Original shared HeaderCollection J executes before original fetch; duplicate case-variant version uses last truthy input.",
+    "Request/RPC interfaces inert; original response projection not part of outgoing scope.",
+    "React hooks and stable disc memo provider are inert standard interfaces; original paging/offset decisions execute.",
+    "Browser automatic fields are independent actual original Pathfinder NetLog fields; operation-specific fields come from unchanged original routines."
+  ],
+  "limits": [
+    "No original account/profile/session or network accessed.",
+    "Decoded HTTP fields and body; no HTTP3/H2 ordering, framing or TLS fingerprint parity claimed."
+  ],
+  "cases": [
+    {
+      "name": "album opens with original version header and first fifty",
+      "entityKind": "open",
+      "uri": "spotify:album:0000000000000000000002",
+      "albumLocale": "",
+      "offset": 0,
+      "limit": 50,
+      "discs": null,
+      "locale": "en",
+      "operation": "getAlbum",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "spotify-app-version": "896000000",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphbGJ1bTowMDAwMDAwMDAwMDAwMDAwMDAwMDAyIiwibG9jYWxlIjoiIiwib2Zmc2V0IjowLCJsaW1pdCI6NTB9LCJvcGVyYXRpb25OYW1lIjoiZ2V0QWxidW0iLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiIxMWM5Y2FkOWNiMjRjNGY5ZTI1ZWY5NDU2ZjY4NjIxY2ZkNjAwNmE5MGY2NzllNzI5YzFkMmYyZmQ3MGRmZTE2In19fQ==",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "896000000",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "896000000",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"uri\":\"spotify:album:0000000000000000000002\",\"locale\":\"\",\"offset\":0,\"limit\":50},\"operationName\":\"getAlbum\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"11c9cad9cb24c4f9e25ef9456f68621cfd6006a90f679e729c1d2f2fd70dfe16\"}}}"
+      },
+      "bodySha256": "033cb0fed55a9ffbb37b43c5baad10b53b43590775b2ea1d20b5bf99865fa292",
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "896000000",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "247"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphbGJ1bTowMDAwMDAwMDAwMDAwMDAwMDAwMDAyIiwibG9jYWxlIjoiIiwib2Zmc2V0IjowLCJsaW1pdCI6NTB9LCJvcGVyYXRpb25OYW1lIjoiZ2V0QWxidW0iLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiIxMWM5Y2FkOWNiMjRjNGY5ZTI1ZWY5NDU2ZjY4NjIxY2ZkNjAwNmE5MGY2NzllNzI5YzFkMmYyZmQ3MGRmZTE2In19fQ=="
+      }
+    },
+    {
+      "name": "album locale remains explicitly supplied",
+      "entityKind": "open",
+      "uri": "spotify:album:0000000000000000000002",
+      "albumLocale": "intl-en",
+      "offset": 0,
+      "limit": 50,
+      "discs": null,
+      "locale": "en",
+      "operation": "getAlbum",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "spotify-app-version": "896000000",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphbGJ1bTowMDAwMDAwMDAwMDAwMDAwMDAwMDAyIiwibG9jYWxlIjoiaW50bC1lbiIsIm9mZnNldCI6MCwibGltaXQiOjUwfSwib3BlcmF0aW9uTmFtZSI6ImdldEFsYnVtIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiMTFjOWNhZDljYjI0YzRmOWUyNWVmOTQ1NmY2ODYyMWNmZDYwMDZhOTBmNjc5ZTcyOWMxZDJmMmZkNzBkZmUxNiJ9fX0=",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "896000000",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "896000000",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"uri\":\"spotify:album:0000000000000000000002\",\"locale\":\"intl-en\",\"offset\":0,\"limit\":50},\"operationName\":\"getAlbum\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"11c9cad9cb24c4f9e25ef9456f68621cfd6006a90f679e729c1d2f2fd70dfe16\"}}}"
+      },
+      "bodySha256": "f593ac54ad192aa53ecc5611a4be4101ee04e49d986ff7f7b7d23149c190508d",
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "896000000",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "254"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphbGJ1bTowMDAwMDAwMDAwMDAwMDAwMDAwMDAyIiwibG9jYWxlIjoiaW50bC1lbiIsIm9mZnNldCI6MCwibGltaXQiOjUwfSwib3BlcmF0aW9uTmFtZSI6ImdldEFsYnVtIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiMTFjOWNhZDljYjI0YzRmOWUyNWVmOTQ1NmY2ODYyMWNmZDYwMDZhOTBmNjc5ZTcyOWMxZDJmMmZkNzBkZmUxNiJ9fX0="
+      }
+    },
+    {
+      "name": "album paging converts display offset before query and restores separators",
+      "entityKind": "tracks",
+      "uri": "spotify:album:0000000000000000000002",
+      "albumLocale": "",
+      "offset": 3,
+      "limit": 300,
+      "discs": {
+        "totalCount": 2,
+        "items": [
+          {
+            "type": "AlbumDisc",
+            "discNumber": 1,
+            "nrTracks": 2
+          },
+          {
+            "type": "AlbumDisc",
+            "discNumber": 2,
+            "nrTracks": 2
+          }
+        ]
+      },
+      "locale": "en",
+      "operation": "queryAlbumTracks",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphbGJ1bTowMDAwMDAwMDAwMDAwMDAwMDAwMDAyIiwib2Zmc2V0IjoyLCJsaW1pdCI6MzAwfSwib3BlcmF0aW9uTmFtZSI6InF1ZXJ5QWxidW1UcmFja3MiLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiIxMWM5Y2FkOWNiMjRjNGY5ZTI1ZWY5NDU2ZjY4NjIxY2ZkNjAwNmE5MGY2NzllNzI5YzFkMmYyZmQ3MGRmZTE2In19fQ==",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"uri\":\"spotify:album:0000000000000000000002\",\"offset\":2,\"limit\":300},\"operationName\":\"queryAlbumTracks\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"11c9cad9cb24c4f9e25ef9456f68621cfd6006a90f679e729c1d2f2fd70dfe16\"}}}"
+      },
+      "bodySha256": "58b53843f91ba98d1f3af0c39a787b6c11f1d85467a9250f54c57db9eabb5289",
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "244"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphbGJ1bTowMDAwMDAwMDAwMDAwMDAwMDAwMDAyIiwib2Zmc2V0IjoyLCJsaW1pdCI6MzAwfSwib3BlcmF0aW9uTmFtZSI6InF1ZXJ5QWxidW1UcmFja3MiLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiIxMWM5Y2FkOWNiMjRjNGY5ZTI1ZWY5NDU2ZjY4NjIxY2ZkNjAwNmE5MGY2NzllNzI5YzFkMmYyZmQ3MGRmZTE2In19fQ=="
+      }
+    }
+  ]
+}

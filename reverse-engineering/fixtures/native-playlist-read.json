@@ -1,0 +1,288 @@
+{
+  "scope": "Offline original fresh-playlist and native metadata field extraction.\n\nCredential values and playlist/revision identifiers never leave private input.\nFresh route IDs are explicitly replaced with one synthetic canonical ID.\n",
+  "sources": [
+    {
+      "path": ".local/original-playback-netlog.json",
+      "sha256": "fd7239adbef628625faa665ed75199ef34429ed46944409378caeb01ba2c9655",
+      "playlistCounts": {
+        "allPrimaryGetRecords": 84,
+        "hasRevisionOrOtherQuery": 77,
+        "freshNoQueryRecords": 7
+      },
+      "freshOriginalSources": [
+        {
+          "path": ".local/original-playback-netlog.json",
+          "sourceId": 2836,
+          "eventIndex": 57790,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "caller": 1
+        },
+        {
+          "path": ".local/original-playback-netlog.json",
+          "sourceId": 3227,
+          "eventIndex": 69774,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "caller": 6
+        },
+        {
+          "path": ".local/original-playback-netlog.json",
+          "sourceId": 3275,
+          "eventIndex": 70926,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "caller": 1
+        },
+        {
+          "path": ".local/original-playback-netlog.json",
+          "sourceId": 3505,
+          "eventIndex": 88861,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "caller": 6
+        },
+        {
+          "path": ".local/original-playback-netlog.json",
+          "sourceId": 3540,
+          "eventIndex": 89633,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "caller": 1
+        },
+        {
+          "path": ".local/original-playback-netlog.json",
+          "sourceId": 3592,
+          "eventIndex": 90971,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "caller": 6
+        },
+        {
+          "path": ".local/original-playback-netlog.json",
+          "sourceId": 3613,
+          "eventIndex": 91264,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "caller": 1
+        }
+      ],
+      "metadataPostCount": 109
+    },
+    {
+      "path": ".local/original-playback-key-netlog.json",
+      "sha256": "9a58d8b2ce592e8614f795cb85712a2c598b09f0a427962648dc8f2475755467",
+      "playlistCounts": {
+        "allPrimaryGetRecords": 55,
+        "hasRevisionOrOtherQuery": 51,
+        "freshNoQueryRecords": 4
+      },
+      "freshOriginalSources": [
+        {
+          "path": ".local/original-playback-key-netlog.json",
+          "sourceId": 1688,
+          "eventIndex": 31939,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "caller": 6
+        },
+        {
+          "path": ".local/original-playback-key-netlog.json",
+          "sourceId": 1869,
+          "eventIndex": 37953,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "caller": 6
+        },
+        {
+          "path": ".local/original-playback-key-netlog.json",
+          "sourceId": 2767,
+          "eventIndex": 61679,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "caller": 6
+        },
+        {
+          "path": ".local/original-playback-key-netlog.json",
+          "sourceId": 3046,
+          "eventIndex": 68228,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "caller": 6
+        }
+      ],
+      "metadataPostCount": 61
+    }
+  ],
+  "substitutions": [
+    "Actual original authorization/client-token replaced with explicit fixture values.",
+    "Actual playlist IDs replaced with synthetic 22-character canonical ID; path has no query.",
+    "Fresh application policy decoded from actual original reason/header fields, not guessed from UI action."
+  ],
+  "originalConstructor": {
+    "entry": "0x101aaa0d8",
+    "existingOracle": "reverse-engineering/fixtures/playlist-service-sync-plan.json",
+    "scope": "Existing six plans prove primary header/route construction. These captures add explicit single auto lens and native app header context."
+  },
+  "limits": [
+    "Fresh GET only: no cached revision, diff/changes, pagination query, rootlist, mutation or decoration behavior.",
+    "DSA/list-player values are explicit captured inputs, not inferred universal account defaults.",
+    "No selected NFS playlist identity is claimed from these captures.",
+    "Decoded field presence/values and empty body; not HPACK/QPACK, packet/header ordering or TLS equivalence."
+  ],
+  "cases": [
+    {
+      "name": "Fresh ESPERANTO",
+      "policy": {
+        "caller": 1,
+        "prioritized": true,
+        "acceptListItems": true,
+        "dsaMode": false,
+        "listPlayerEnabled": true,
+        "applyAutoLens": true
+      },
+      "canonicalUri": "spotify:playlist:0000000000000000000001",
+      "baseUrl": "https://guc3-spclient.spotify.com",
+      "applicationHeaders": {
+        "locale": "en",
+        "timeZone": "Europe/Moscow",
+        "userAgent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+      },
+      "originalSources": [
+        {
+          "path": ".local/original-playback-netlog.json",
+          "sourceId": 2836,
+          "eventIndex": 57790,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS"
+        },
+        {
+          "path": ".local/original-playback-netlog.json",
+          "sourceId": 3275,
+          "eventIndex": 70926,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS"
+        },
+        {
+          "path": ".local/original-playback-netlog.json",
+          "sourceId": 3540,
+          "eventIndex": 89633,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS"
+        },
+        {
+          "path": ".local/original-playback-netlog.json",
+          "sourceId": 3613,
+          "eventIndex": 91264,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS"
+        }
+      ],
+      "expected": {
+        "headers": {
+          ":method": "GET",
+          ":authority": "guc3-spclient.spotify.com",
+          ":scheme": "https",
+          ":path": "/playlist/v2/playlist/0000000000000000000001",
+          "pragma": "no-cache",
+          "cache-control": "no-cache, no-store",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "authorization": "Bearer fixture-access-token",
+          "spotify-app-version": "130601921",
+          "time-zone": "Europe/Moscow",
+          "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+          "client-token": "fixture-client-token",
+          "spotify-accept-geoblock": "dummy",
+          "spotify-apply-lenses": "auto",
+          "spotify-dsa-mode-enabled": "false",
+          "spotify-list-player-enabled": "true",
+          "spotify-playlist-sync-reason": "CAEQAQ==",
+          "x-accept-list-items": "audio-track, audio-episode, video-episode, audiobook",
+          "sec-fetch-site": "same-origin",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-dest": "empty",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=4, i"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "Fresh RECENTLY_PLAYED",
+      "policy": {
+        "caller": 6,
+        "prioritized": true,
+        "acceptListItems": true,
+        "dsaMode": false,
+        "listPlayerEnabled": true,
+        "applyAutoLens": true
+      },
+      "canonicalUri": "spotify:playlist:0000000000000000000001",
+      "baseUrl": "https://guc3-spclient.spotify.com",
+      "applicationHeaders": {
+        "locale": "en",
+        "timeZone": "Europe/Moscow",
+        "userAgent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+      },
+      "originalSources": [
+        {
+          "path": ".local/original-playback-netlog.json",
+          "sourceId": 3227,
+          "eventIndex": 69774,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS"
+        },
+        {
+          "path": ".local/original-playback-netlog.json",
+          "sourceId": 3505,
+          "eventIndex": 88861,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS"
+        },
+        {
+          "path": ".local/original-playback-netlog.json",
+          "sourceId": 3592,
+          "eventIndex": 90971,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS"
+        },
+        {
+          "path": ".local/original-playback-key-netlog.json",
+          "sourceId": 1688,
+          "eventIndex": 31939,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS"
+        },
+        {
+          "path": ".local/original-playback-key-netlog.json",
+          "sourceId": 1869,
+          "eventIndex": 37953,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS"
+        },
+        {
+          "path": ".local/original-playback-key-netlog.json",
+          "sourceId": 2767,
+          "eventIndex": 61679,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS"
+        },
+        {
+          "path": ".local/original-playback-key-netlog.json",
+          "sourceId": 3046,
+          "eventIndex": 68228,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS"
+        }
+      ],
+      "expected": {
+        "headers": {
+          ":method": "GET",
+          ":authority": "guc3-spclient.spotify.com",
+          ":scheme": "https",
+          ":path": "/playlist/v2/playlist/0000000000000000000001",
+          "pragma": "no-cache",
+          "cache-control": "no-cache, no-store",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "authorization": "Bearer fixture-access-token",
+          "spotify-app-version": "130601921",
+          "time-zone": "Europe/Moscow",
+          "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+          "client-token": "fixture-client-token",
+          "spotify-accept-geoblock": "dummy",
+          "spotify-apply-lenses": "auto",
+          "spotify-dsa-mode-enabled": "false",
+          "spotify-list-player-enabled": "true",
+          "spotify-playlist-sync-reason": "CAYQAQ==",
+          "x-accept-list-items": "audio-track, audio-episode, video-episode, audiobook",
+          "sec-fetch-site": "same-origin",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-dest": "empty",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=4, i"
+        },
+        "bodyBase64": ""
+      }
+    }
+  ]
+}

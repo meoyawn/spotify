@@ -1,0 +1,1031 @@
+{
+  "scope": "Extract only original client HTTP/3 settings and numeric QUIC limits.\n\nPinned NetLogs provide named settings and transport-parameter diagnostics, not\nwire order. Opaque IDs, tokens, connection options and GREASE values are omitted.\n",
+  "toolSha256": "3e788f72fa3028607f6b2eeb8cf9da34a3b0d543a9a0c6ff01864e70903072d3",
+  "defaultSettingsEventCount": 97,
+  "defaultTransportParameterEventCount": 101,
+  "http3SettingsById": {
+    "51": 1,
+    "6": 262144,
+    "7": 100,
+    "1": 65536
+  },
+  "quicTransportParameters": {
+    "max_idle_timeout": 30000,
+    "max_udp_payload_size": 1472,
+    "initial_max_data": 15728640,
+    "initial_max_stream_data_bidi_local": 6291456,
+    "initial_max_stream_data_bidi_remote": 6291456,
+    "initial_max_stream_data_uni": 6291456,
+    "initial_max_streams_bidi": 100,
+    "initial_max_streams_uni": 103,
+    "max_datagram_frame_size": 65536
+  },
+  "standardNumericFieldsNotPrinted": [
+    "ack_delay_exponent",
+    "max_ack_delay",
+    "disable_active_migration",
+    "active_connection_id_limit"
+  ],
+  "captures": [
+    {
+      "path": ".local/original-reference-streaming-netlog.json",
+      "sha256": "644660b4da3948c6f0e0e21479b34de444f295ba3e94684257e2c53dc9587489",
+      "safeLaunchFlags": {
+        "commandLinePresent": true,
+        "disableQuic": false,
+        "enableQuic": false,
+        "disableHttp2": false,
+        "forceQuicOrigin": false,
+        "quicVersionOverride": false,
+        "hasUserDataDirOption": false,
+        "hasLogNetLogOption": true,
+        "hasNetLogCaptureModeOption": true
+      },
+      "settingsEventCount": 27,
+      "transportParameterEventCount": 27,
+      "settingsEvents": [
+        {
+          "eventIndex": 3696,
+          "sessionSourceId": 179,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 3925,
+          "sessionSourceId": 113,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 4000,
+          "sessionSourceId": 122,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 4108,
+          "sessionSourceId": 116,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 4320,
+          "sessionSourceId": 125,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 4417,
+          "sessionSourceId": 119,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 5552,
+          "sessionSourceId": 273,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 5601,
+          "sessionSourceId": 250,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 5813,
+          "sessionSourceId": 257,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 6744,
+          "sessionSourceId": 496,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 11796,
+          "sessionSourceId": 611,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 16138,
+          "sessionSourceId": 817,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 34675,
+          "sessionSourceId": 957,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 38222,
+          "sessionSourceId": 1591,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 61901,
+          "sessionSourceId": 2962,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 63969,
+          "sessionSourceId": 3056,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 64064,
+          "sessionSourceId": 3047,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 65222,
+          "sessionSourceId": 3131,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 67667,
+          "sessionSourceId": 3239,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 67916,
+          "sessionSourceId": 3256,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 68341,
+          "sessionSourceId": 3272,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 68738,
+          "sessionSourceId": 3283,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 68951,
+          "sessionSourceId": 3292,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 69359,
+          "sessionSourceId": 3317,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 69603,
+          "sessionSourceId": 3331,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 74083,
+          "sessionSourceId": 3357,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 74724,
+          "sessionSourceId": 3535,
+          "greaseSettingCount": 1
+        }
+      ],
+      "transportParameterEvents": [
+        {
+          "eventIndex": 526,
+          "sessionSourceId": 113
+        },
+        {
+          "eventIndex": 575,
+          "sessionSourceId": 116
+        },
+        {
+          "eventIndex": 617,
+          "sessionSourceId": 119
+        },
+        {
+          "eventIndex": 667,
+          "sessionSourceId": 122
+        },
+        {
+          "eventIndex": 716,
+          "sessionSourceId": 125
+        },
+        {
+          "eventIndex": 1092,
+          "sessionSourceId": 179
+        },
+        {
+          "eventIndex": 1689,
+          "sessionSourceId": 250
+        },
+        {
+          "eventIndex": 1739,
+          "sessionSourceId": 257
+        },
+        {
+          "eventIndex": 1844,
+          "sessionSourceId": 273
+        },
+        {
+          "eventIndex": 3798,
+          "sessionSourceId": 496
+        },
+        {
+          "eventIndex": 7502,
+          "sessionSourceId": 611
+        },
+        {
+          "eventIndex": 9880,
+          "sessionSourceId": 817
+        },
+        {
+          "eventIndex": 16638,
+          "sessionSourceId": 957
+        },
+        {
+          "eventIndex": 27961,
+          "sessionSourceId": 1591
+        },
+        {
+          "eventIndex": 61880,
+          "sessionSourceId": 2962
+        },
+        {
+          "eventIndex": 63579,
+          "sessionSourceId": 3047
+        },
+        {
+          "eventIndex": 63682,
+          "sessionSourceId": 3056
+        },
+        {
+          "eventIndex": 65143,
+          "sessionSourceId": 3131
+        },
+        {
+          "eventIndex": 67561,
+          "sessionSourceId": 3239
+        },
+        {
+          "eventIndex": 67866,
+          "sessionSourceId": 3256
+        },
+        {
+          "eventIndex": 68229,
+          "sessionSourceId": 3272
+        },
+        {
+          "eventIndex": 68566,
+          "sessionSourceId": 3283
+        },
+        {
+          "eventIndex": 68640,
+          "sessionSourceId": 3292
+        },
+        {
+          "eventIndex": 69280,
+          "sessionSourceId": 3317
+        },
+        {
+          "eventIndex": 69554,
+          "sessionSourceId": 3331
+        },
+        {
+          "eventIndex": 69884,
+          "sessionSourceId": 3357
+        },
+        {
+          "eventIndex": 72852,
+          "sessionSourceId": 3535
+        }
+      ]
+    },
+    {
+      "path": ".local/original-license-upload-http2-netlog.json",
+      "sha256": "7ad17ebaf96eda74ecd2c0cd822370287f4aed26310a49faa930cdda92fd64fa",
+      "safeLaunchFlags": {
+        "commandLinePresent": true,
+        "disableQuic": true,
+        "enableQuic": false,
+        "disableHttp2": false,
+        "forceQuicOrigin": false,
+        "quicVersionOverride": false,
+        "hasUserDataDirOption": false,
+        "hasLogNetLogOption": true,
+        "hasNetLogCaptureModeOption": true
+      },
+      "settingsEventCount": 0,
+      "transportParameterEventCount": 0,
+      "settingsEvents": [],
+      "transportParameterEvents": []
+    },
+    {
+      "path": ".local/original-license-rejection-reference-netlog.json",
+      "sha256": "6d8e8c9f4d71bd0e39ecff3282e86438540cf22987a33b2340d79658d4ec6d50",
+      "safeLaunchFlags": {
+        "commandLinePresent": true,
+        "disableQuic": false,
+        "enableQuic": false,
+        "disableHttp2": false,
+        "forceQuicOrigin": false,
+        "quicVersionOverride": false,
+        "hasUserDataDirOption": false,
+        "hasLogNetLogOption": true,
+        "hasNetLogCaptureModeOption": true
+      },
+      "settingsEventCount": 27,
+      "transportParameterEventCount": 28,
+      "settingsEvents": [
+        {
+          "eventIndex": 3795,
+          "sessionSourceId": 72,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 3898,
+          "sessionSourceId": 149,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 4284,
+          "sessionSourceId": 104,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 4331,
+          "sessionSourceId": 154,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 5808,
+          "sessionSourceId": 303,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 5840,
+          "sessionSourceId": 274,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 6024,
+          "sessionSourceId": 318,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 6146,
+          "sessionSourceId": 107,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 6912,
+          "sessionSourceId": 504,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 10635,
+          "sessionSourceId": 654,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 16719,
+          "sessionSourceId": 850,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 16823,
+          "sessionSourceId": 828,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 16938,
+          "sessionSourceId": 931,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 18845,
+          "sessionSourceId": 962,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 19108,
+          "sessionSourceId": 988,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 50343,
+          "sessionSourceId": 2102,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 72041,
+          "sessionSourceId": 3215,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 76213,
+          "sessionSourceId": 3446,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 77248,
+          "sessionSourceId": 3494,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 78238,
+          "sessionSourceId": 3533,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 84801,
+          "sessionSourceId": 3840,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 85119,
+          "sessionSourceId": 3851,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 89112,
+          "sessionSourceId": 3995,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 89147,
+          "sessionSourceId": 4003,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 93547,
+          "sessionSourceId": 4194,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 94227,
+          "sessionSourceId": 4244,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 95897,
+          "sessionSourceId": 4319,
+          "greaseSettingCount": 1
+        }
+      ],
+      "transportParameterEvents": [
+        {
+          "eventIndex": 310,
+          "sessionSourceId": 72
+        },
+        {
+          "eventIndex": 521,
+          "sessionSourceId": 104
+        },
+        {
+          "eventIndex": 578,
+          "sessionSourceId": 107
+        },
+        {
+          "eventIndex": 880,
+          "sessionSourceId": 149
+        },
+        {
+          "eventIndex": 957,
+          "sessionSourceId": 154
+        },
+        {
+          "eventIndex": 1974,
+          "sessionSourceId": 274
+        },
+        {
+          "eventIndex": 2178,
+          "sessionSourceId": 303
+        },
+        {
+          "eventIndex": 2268,
+          "sessionSourceId": 318
+        },
+        {
+          "eventIndex": 3551,
+          "sessionSourceId": 504
+        },
+        {
+          "eventIndex": 8042,
+          "sessionSourceId": 654
+        },
+        {
+          "eventIndex": 11842,
+          "sessionSourceId": 828
+        },
+        {
+          "eventIndex": 12240,
+          "sessionSourceId": 850
+        },
+        {
+          "eventIndex": 13969,
+          "sessionSourceId": 931
+        },
+        {
+          "eventIndex": 15120,
+          "sessionSourceId": 962
+        },
+        {
+          "eventIndex": 15796,
+          "sessionSourceId": 988
+        },
+        {
+          "eventIndex": 35296,
+          "sessionSourceId": 2102
+        },
+        {
+          "eventIndex": 69273,
+          "sessionSourceId": 3215
+        },
+        {
+          "eventIndex": 76177,
+          "sessionSourceId": 3446
+        },
+        {
+          "eventIndex": 77232,
+          "sessionSourceId": 3494
+        },
+        {
+          "eventIndex": 77642,
+          "sessionSourceId": 3533
+        },
+        {
+          "eventIndex": 84517,
+          "sessionSourceId": 3840
+        },
+        {
+          "eventIndex": 84629,
+          "sessionSourceId": 3851
+        },
+        {
+          "eventIndex": 87022,
+          "sessionSourceId": 3995
+        },
+        {
+          "eventIndex": 87084,
+          "sessionSourceId": 4003
+        },
+        {
+          "eventIndex": 93104,
+          "sessionSourceId": 4194
+        },
+        {
+          "eventIndex": 94030,
+          "sessionSourceId": 4244
+        },
+        {
+          "eventIndex": 95677,
+          "sessionSourceId": 4319
+        },
+        {
+          "eventIndex": 96099,
+          "sessionSourceId": 4350
+        }
+      ]
+    },
+    {
+      "path": ".local/original-playback-netlog.json",
+      "sha256": "fd7239adbef628625faa665ed75199ef34429ed46944409378caeb01ba2c9655",
+      "safeLaunchFlags": {
+        "commandLinePresent": true,
+        "disableQuic": false,
+        "enableQuic": false,
+        "disableHttp2": false,
+        "forceQuicOrigin": false,
+        "quicVersionOverride": false,
+        "hasUserDataDirOption": false,
+        "hasLogNetLogOption": true,
+        "hasNetLogCaptureModeOption": true
+      },
+      "settingsEventCount": 23,
+      "transportParameterEventCount": 25,
+      "settingsEvents": [
+        {
+          "eventIndex": 3401,
+          "sessionSourceId": 137,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 3513,
+          "sessionSourceId": 140,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 3697,
+          "sessionSourceId": 150,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 3763,
+          "sessionSourceId": 147,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 3969,
+          "sessionSourceId": 156,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 4033,
+          "sessionSourceId": 153,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 5798,
+          "sessionSourceId": 303,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 5936,
+          "sessionSourceId": 288,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 6044,
+          "sessionSourceId": 273,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 6929,
+          "sessionSourceId": 500,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 13670,
+          "sessionSourceId": 803,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 28856,
+          "sessionSourceId": 1002,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 28887,
+          "sessionSourceId": 963,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 34663,
+          "sessionSourceId": 1516,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 73765,
+          "sessionSourceId": 3345,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 74215,
+          "sessionSourceId": 3364,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 89104,
+          "sessionSourceId": 3530,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 89246,
+          "sessionSourceId": 3522,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 89986,
+          "sessionSourceId": 3557,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 90190,
+          "sessionSourceId": 3568,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 90500,
+          "sessionSourceId": 3583,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 90931,
+          "sessionSourceId": 3602,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 91574,
+          "sessionSourceId": 3637,
+          "greaseSettingCount": 1
+        }
+      ],
+      "transportParameterEvents": [
+        {
+          "eventIndex": 670,
+          "sessionSourceId": 137
+        },
+        {
+          "eventIndex": 712,
+          "sessionSourceId": 140
+        },
+        {
+          "eventIndex": 827,
+          "sessionSourceId": 147
+        },
+        {
+          "eventIndex": 884,
+          "sessionSourceId": 150
+        },
+        {
+          "eventIndex": 926,
+          "sessionSourceId": 153
+        },
+        {
+          "eventIndex": 968,
+          "sessionSourceId": 156
+        },
+        {
+          "eventIndex": 1877,
+          "sessionSourceId": 273
+        },
+        {
+          "eventIndex": 1970,
+          "sessionSourceId": 288
+        },
+        {
+          "eventIndex": 2112,
+          "sessionSourceId": 303
+        },
+        {
+          "eventIndex": 4246,
+          "sessionSourceId": 500
+        },
+        {
+          "eventIndex": 9614,
+          "sessionSourceId": 803
+        },
+        {
+          "eventIndex": 16599,
+          "sessionSourceId": 963
+        },
+        {
+          "eventIndex": 17104,
+          "sessionSourceId": 1002
+        },
+        {
+          "eventIndex": 29472,
+          "sessionSourceId": 1516
+        },
+        {
+          "eventIndex": 73618,
+          "sessionSourceId": 3345
+        },
+        {
+          "eventIndex": 74111,
+          "sessionSourceId": 3364
+        },
+        {
+          "eventIndex": 88983,
+          "sessionSourceId": 3522
+        },
+        {
+          "eventIndex": 89063,
+          "sessionSourceId": 3530
+        },
+        {
+          "eventIndex": 89776,
+          "sessionSourceId": 3557
+        },
+        {
+          "eventIndex": 89884,
+          "sessionSourceId": 3568
+        },
+        {
+          "eventIndex": 90418,
+          "sessionSourceId": 3583
+        },
+        {
+          "eventIndex": 90858,
+          "sessionSourceId": 3602
+        },
+        {
+          "eventIndex": 91530,
+          "sessionSourceId": 3637
+        },
+        {
+          "eventIndex": 92025,
+          "sessionSourceId": 3666
+        },
+        {
+          "eventIndex": 92100,
+          "sessionSourceId": 3675
+        }
+      ]
+    },
+    {
+      "path": ".local/original-playback-key-netlog.json",
+      "sha256": "9a58d8b2ce592e8614f795cb85712a2c598b09f0a427962648dc8f2475755467",
+      "safeLaunchFlags": {
+        "commandLinePresent": true,
+        "disableQuic": false,
+        "enableQuic": false,
+        "disableHttp2": false,
+        "forceQuicOrigin": false,
+        "quicVersionOverride": false,
+        "hasUserDataDirOption": false,
+        "hasLogNetLogOption": true,
+        "hasNetLogCaptureModeOption": true
+      },
+      "settingsEventCount": 20,
+      "transportParameterEventCount": 21,
+      "settingsEvents": [
+        {
+          "eventIndex": 3356,
+          "sessionSourceId": 139,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 3528,
+          "sessionSourceId": 151,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 3601,
+          "sessionSourceId": 136,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 4205,
+          "sessionSourceId": 148,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 4397,
+          "sessionSourceId": 142,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 4947,
+          "sessionSourceId": 275,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 5388,
+          "sessionSourceId": 290,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 5449,
+          "sessionSourceId": 305,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 6143,
+          "sessionSourceId": 145,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 6801,
+          "sessionSourceId": 497,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 11048,
+          "sessionSourceId": 612,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 14349,
+          "sessionSourceId": 804,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 24751,
+          "sessionSourceId": 1131,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 26318,
+          "sessionSourceId": 1272,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 53370,
+          "sessionSourceId": 2433,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 53640,
+          "sessionSourceId": 2449,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 54126,
+          "sessionSourceId": 2468,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 56131,
+          "sessionSourceId": 2530,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 61189,
+          "sessionSourceId": 2757,
+          "greaseSettingCount": 1
+        },
+        {
+          "eventIndex": 61291,
+          "sessionSourceId": 2749,
+          "greaseSettingCount": 1
+        }
+      ],
+      "transportParameterEvents": [
+        {
+          "eventIndex": 674,
+          "sessionSourceId": 136
+        },
+        {
+          "eventIndex": 716,
+          "sessionSourceId": 139
+        },
+        {
+          "eventIndex": 772,
+          "sessionSourceId": 142
+        },
+        {
+          "eventIndex": 835,
+          "sessionSourceId": 145
+        },
+        {
+          "eventIndex": 878,
+          "sessionSourceId": 148
+        },
+        {
+          "eventIndex": 921,
+          "sessionSourceId": 151
+        },
+        {
+          "eventIndex": 1875,
+          "sessionSourceId": 275
+        },
+        {
+          "eventIndex": 1975,
+          "sessionSourceId": 290
+        },
+        {
+          "eventIndex": 2117,
+          "sessionSourceId": 305
+        },
+        {
+          "eventIndex": 3929,
+          "sessionSourceId": 497
+        },
+        {
+          "eventIndex": 7563,
+          "sessionSourceId": 612
+        },
+        {
+          "eventIndex": 9814,
+          "sessionSourceId": 804
+        },
+        {
+          "eventIndex": 20539,
+          "sessionSourceId": 1131
+        },
+        {
+          "eventIndex": 24561,
+          "sessionSourceId": 1272
+        },
+        {
+          "eventIndex": 53254,
+          "sessionSourceId": 2433
+        },
+        {
+          "eventIndex": 53596,
+          "sessionSourceId": 2449
+        },
+        {
+          "eventIndex": 54020,
+          "sessionSourceId": 2468
+        },
+        {
+          "eventIndex": 55630,
+          "sessionSourceId": 2530
+        },
+        {
+          "eventIndex": 61073,
+          "sessionSourceId": 2749
+        },
+        {
+          "eventIndex": 61153,
+          "sessionSourceId": 2757
+        },
+        {
+          "eventIndex": 80172,
+          "sessionSourceId": 3464
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Only four default captures provide these H3 parameters; the explicit disable-quic capture is labelled separately.",
+    "HTTP3_SETTINGS_SENT is a named JSON map and QUIC parameters are a diagnostic string; neither establishes serialization order.",
+    "GREASE setting identities/values are deliberately not copied; counts establish their presence only.",
+    "Unprinted parameter defaults, connection-ID sizes, TLS/QUIC fingerprints, extension order and active network feature inputs are not inferred.",
+    "This source does not establish all possible protocols, server acceptance, QPACK encoded bytes or actual dynamic-table use.",
+    "No current Dart sender supplies expected values; no app/profile/account/network is executed."
+  ]
+}

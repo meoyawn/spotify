@@ -1,0 +1,1177 @@
+{
+  "method": "Capture native locale expansion and CEF language-list application fields.\n\nOriginal proprietary routines execute unchanged with synthetic explicit locale\ninputs. Expected fields never come from Dart. No host preference, app, CEF\nruntime, profile or network is used in this lane.\n",
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "entryPoints": {
+    "expansion": "0x100423abc",
+    "regionCombination": "0x1004238b4",
+    "languageList": "0x10042c210",
+    "preferredLanguages": "0x10042dbf8",
+    "defaultSelection": "0x10042c0e8",
+    "orderedCandidatePairs": "0x100424a4c"
+  },
+  "selectionSourceRanges": [
+    {
+      "start": "0x10042c0e8",
+      "endExclusive": "0x10042c1fc",
+      "sha256": "a01858490c8f475eb30450d57894fb167ab60ef1430814e58acdd7801b1f50df"
+    },
+    {
+      "start": "0x100424a4c",
+      "endExclusive": "0x100424de0",
+      "sha256": "e0a93b2ff2727a86616a8bfbf610aeb1a422edc0a6460e8d212ee381284062c9"
+    }
+  ],
+  "standardProviders": [
+    "OriginalCefOptions standard allocation/memory/string providers",
+    "signed-char sort, memcmp, errno and exact observed vsnprintf forms",
+    "inert NSUserDefaults/NSArray/NSString for synthetic AppleLanguages"
+  ],
+  "latinAmericaTable": {
+    "address": "0x102567340",
+    "entries": [
+      {
+        "code": "AR"
+      },
+      {
+        "code": "BO"
+      },
+      {
+        "code": "CL"
+      },
+      {
+        "code": "CO"
+      },
+      {
+        "code": "CR"
+      },
+      {
+        "code": "DO"
+      },
+      {
+        "code": "EC"
+      },
+      {
+        "code": "SV"
+      },
+      {
+        "code": "GT"
+      },
+      {
+        "code": "HN"
+      },
+      {
+        "code": "MX"
+      },
+      {
+        "code": "NI"
+      },
+      {
+        "code": "PA"
+      },
+      {
+        "code": "PY"
+      },
+      {
+        "code": "PE"
+      },
+      {
+        "code": "PR"
+      },
+      {
+        "code": "UY"
+      },
+      {
+        "code": "VE"
+      }
+    ]
+  },
+  "exports": [
+    {
+      "path": ".local/rea-session/dart-native-cef-global-settings-language-producers.json",
+      "sha256": "7cad6134f28252c429dfa4b96d4d4b68cb9c3f77aeb2141773061084071b2eaa"
+    },
+    {
+      "path": ".local/rea-session/dart-native-audio-extension-and-cef-locale-owners.json",
+      "sha256": "97c32446b01c48618c512c1c8c4dbe1c5f9ecc91f8adb8fee7a54f984eb53e31"
+    },
+    {
+      "path": ".local/rea-session/dart-native-cef-preferred-locale-expansion.json",
+      "sha256": "d60647578626350d83d1b4f5fe1d35cc69e3bb1635ecf43ea6ff1880da72ab4a"
+    },
+    {
+      "path": ".local/rea-session/dart-native-audio-files-source-and-locale-leaves.json",
+      "sha256": "3074b577809d31e17d38a1b9bacd9e40655c7eb4a24fdc931c7270f3e36ada2f"
+    }
+  ],
+  "expansions": [
+    {
+      "input": "en",
+      "expanded": [
+        "en"
+      ]
+    },
+    {
+      "input": "en-US",
+      "expanded": [
+        "en-US",
+        "en"
+      ]
+    },
+    {
+      "input": "ru-RU",
+      "expanded": [
+        "ru-RU",
+        "ru"
+      ]
+    },
+    {
+      "input": "zh-Hant-HK",
+      "expanded": [
+        "zh-Hant-HK",
+        "zh-HK",
+        "zh-Hant",
+        "zh"
+      ]
+    },
+    {
+      "input": "en_US.UTF-8",
+      "expanded": [
+        "en"
+      ]
+    },
+    {
+      "input": "sr-Latn-RS",
+      "expanded": [
+        "sr-Latn-RS",
+        "sr-RS",
+        "sr-Latn",
+        "sr"
+      ]
+    },
+    {
+      "input": "fr-CA",
+      "expanded": [
+        "fr-CA",
+        "fr"
+      ]
+    },
+    {
+      "input": "EN-us",
+      "expanded": [
+        "EN-us",
+        "EN"
+      ]
+    },
+    {
+      "input": "",
+      "expanded": [
+        ""
+      ]
+    },
+    {
+      "input": "pt_BR@foo",
+      "expanded": [
+        "pt"
+      ]
+    },
+    {
+      "input": "zh-TW",
+      "expanded": [
+        "zh-Hant-TW",
+        "zh-TW",
+        "zh-Hant",
+        "zh"
+      ]
+    },
+    {
+      "input": "zh-CN",
+      "expanded": [
+        "zh-Hans-CN",
+        "zh-CN",
+        "zh-Hans",
+        "zh"
+      ]
+    },
+    {
+      "input": "zh-MO",
+      "expanded": [
+        "zh-Hant-MO",
+        "zh-MO",
+        "zh-Hant",
+        "zh"
+      ]
+    },
+    {
+      "input": "zh-MY",
+      "expanded": [
+        "zh-Hans-MY",
+        "zh-MY",
+        "zh-Hans",
+        "zh"
+      ]
+    },
+    {
+      "input": "zh-SG",
+      "expanded": [
+        "zh-Hans-SG",
+        "zh-SG",
+        "zh-Hans",
+        "zh"
+      ]
+    },
+    {
+      "input": "zh-Hans-TW",
+      "expanded": [
+        "zh-Hans-TW",
+        "zh-Hant-TW",
+        "zh-TW",
+        "zh-Hans",
+        "zh-Hant",
+        "zh"
+      ]
+    },
+    {
+      "input": "zh-Hant-CN",
+      "expanded": [
+        "zh-Hant-CN",
+        "zh-Hans-CN",
+        "zh-CN",
+        "zh-Hant",
+        "zh-Hans",
+        "zh"
+      ]
+    },
+    {
+      "input": "zh-Hans",
+      "expanded": [
+        "zh-Hans",
+        "zh"
+      ]
+    },
+    {
+      "input": "es-MX",
+      "expanded": [
+        "es-MX",
+        "es-419",
+        "es-LA",
+        "es"
+      ]
+    },
+    {
+      "input": "es-AR",
+      "expanded": [
+        "es-AR",
+        "es-419",
+        "es-LA",
+        "es"
+      ]
+    },
+    {
+      "input": "en_US",
+      "expanded": [
+        "en-US",
+        "en"
+      ]
+    },
+    {
+      "input": "es-419",
+      "expanded": [
+        "es-419",
+        "es-LA",
+        "es"
+      ]
+    },
+    {
+      "input": "es-LA",
+      "expanded": [
+        "es-LA",
+        "es-419",
+        "es"
+      ]
+    },
+    {
+      "input": "es-USA",
+      "expanded": [
+        "es-USA",
+        "es"
+      ]
+    },
+    {
+      "input": "en--US",
+      "expanded": [
+        "en"
+      ]
+    },
+    {
+      "input": "-en",
+      "expanded": [
+        "-en",
+        ""
+      ]
+    },
+    {
+      "input": "en-",
+      "expanded": [
+        "en"
+      ]
+    },
+    {
+      "input": "en_US_POSIX",
+      "expanded": [
+        "en"
+      ]
+    },
+    {
+      "input": "en-US-x",
+      "expanded": [
+        "en"
+      ]
+    },
+    {
+      "input": "x-private",
+      "expanded": [
+        "x"
+      ]
+    },
+    {
+      "input": "sr_Latn_RS",
+      "expanded": [
+        "sr-Latn-RS",
+        "sr-RS",
+        "sr-Latn",
+        "sr"
+      ]
+    },
+    {
+      "input": "foo_AB",
+      "expanded": [
+        "foo-AB",
+        "foo"
+      ]
+    },
+    {
+      "input": "foo_123",
+      "expanded": [
+        "foo-123",
+        "foo"
+      ]
+    },
+    {
+      "input": "FOO",
+      "expanded": [
+        "FOO"
+      ]
+    },
+    {
+      "input": "a-b-c-d",
+      "expanded": [
+        "a"
+      ]
+    },
+    {
+      "input": "es-Latn-MX",
+      "expanded": [
+        "es-Latn-MX",
+        "es-MX",
+        "es-Latn-419",
+        "es-419",
+        "es-LA",
+        "es-Latn",
+        "es"
+      ]
+    },
+    {
+      "input": "es-Latn-419",
+      "expanded": [
+        "es-Latn-419",
+        "es-419",
+        "es-LA",
+        "es-Latn",
+        "es"
+      ]
+    },
+    {
+      "input": "es-Latn-LA",
+      "expanded": [
+        "es-Latn-LA",
+        "es-LA",
+        "es-Latn-419",
+        "es-419",
+        "es-Latn",
+        "es"
+      ]
+    },
+    {
+      "input": "en-us",
+      "expanded": [
+        "en-us",
+        "en"
+      ]
+    },
+    {
+      "input": "zh-cn",
+      "expanded": [
+        "zh-cn",
+        "zh"
+      ]
+    },
+    {
+      "input": "de-1901",
+      "expanded": [
+        "de-1901",
+        "de"
+      ]
+    },
+    {
+      "input": "a",
+      "expanded": [
+        "a"
+      ]
+    },
+    {
+      "input": "abcd",
+      "expanded": [
+        "abcd"
+      ]
+    },
+    {
+      "input": "en_001",
+      "expanded": [
+        "en-001",
+        "en"
+      ]
+    },
+    {
+      "input": "en-GB",
+      "expanded": [
+        "en-GB",
+        "en"
+      ]
+    },
+    {
+      "input": "pt-PT",
+      "expanded": [
+        "pt-PT",
+        "pt"
+      ]
+    }
+  ],
+  "languageLists": [
+    {
+      "selectedLocale": "en",
+      "appleLanguages": [],
+      "preferredLocales": [
+        "en"
+      ],
+      "acceptLanguageList": "en"
+    },
+    {
+      "selectedLocale": "en-US",
+      "appleLanguages": [],
+      "preferredLocales": [
+        "en"
+      ],
+      "acceptLanguageList": "en-US"
+    },
+    {
+      "selectedLocale": "ru",
+      "appleLanguages": [],
+      "preferredLocales": [
+        "en"
+      ],
+      "acceptLanguageList": "ru"
+    },
+    {
+      "selectedLocale": "zh-Hant",
+      "appleLanguages": [],
+      "preferredLocales": [
+        "en"
+      ],
+      "acceptLanguageList": "zh-Hant"
+    },
+    {
+      "selectedLocale": "zh",
+      "appleLanguages": [],
+      "preferredLocales": [
+        "en"
+      ],
+      "acceptLanguageList": "zh"
+    },
+    {
+      "selectedLocale": "es",
+      "appleLanguages": [],
+      "preferredLocales": [
+        "en"
+      ],
+      "acceptLanguageList": "es"
+    },
+    {
+      "selectedLocale": "es-419",
+      "appleLanguages": [],
+      "preferredLocales": [
+        "en"
+      ],
+      "acceptLanguageList": "es-419"
+    },
+    {
+      "selectedLocale": "es-LA",
+      "appleLanguages": [],
+      "preferredLocales": [
+        "en"
+      ],
+      "acceptLanguageList": "es-LA"
+    },
+    {
+      "selectedLocale": "en",
+      "appleLanguages": [
+        "en-US",
+        "ru-RU"
+      ],
+      "preferredLocales": [
+        "en-US",
+        "ru-RU"
+      ],
+      "acceptLanguageList": "en-US,en"
+    },
+    {
+      "selectedLocale": "en-US",
+      "appleLanguages": [
+        "en-US",
+        "ru-RU"
+      ],
+      "preferredLocales": [
+        "en-US",
+        "ru-RU"
+      ],
+      "acceptLanguageList": "en-US"
+    },
+    {
+      "selectedLocale": "ru",
+      "appleLanguages": [
+        "en-US",
+        "ru-RU"
+      ],
+      "preferredLocales": [
+        "en-US",
+        "ru-RU"
+      ],
+      "acceptLanguageList": "ru-RU,ru"
+    },
+    {
+      "selectedLocale": "zh-Hant",
+      "appleLanguages": [
+        "en-US",
+        "ru-RU"
+      ],
+      "preferredLocales": [
+        "en-US",
+        "ru-RU"
+      ],
+      "acceptLanguageList": "zh-Hant"
+    },
+    {
+      "selectedLocale": "zh",
+      "appleLanguages": [
+        "en-US",
+        "ru-RU"
+      ],
+      "preferredLocales": [
+        "en-US",
+        "ru-RU"
+      ],
+      "acceptLanguageList": "zh"
+    },
+    {
+      "selectedLocale": "es",
+      "appleLanguages": [
+        "en-US",
+        "ru-RU"
+      ],
+      "preferredLocales": [
+        "en-US",
+        "ru-RU"
+      ],
+      "acceptLanguageList": "es"
+    },
+    {
+      "selectedLocale": "es-419",
+      "appleLanguages": [
+        "en-US",
+        "ru-RU"
+      ],
+      "preferredLocales": [
+        "en-US",
+        "ru-RU"
+      ],
+      "acceptLanguageList": "es-419"
+    },
+    {
+      "selectedLocale": "es-LA",
+      "appleLanguages": [
+        "en-US",
+        "ru-RU"
+      ],
+      "preferredLocales": [
+        "en-US",
+        "ru-RU"
+      ],
+      "acceptLanguageList": "es-LA"
+    },
+    {
+      "selectedLocale": "en",
+      "appleLanguages": [
+        "zh-TW",
+        "zh-CN",
+        "zh-Hant-HK"
+      ],
+      "preferredLocales": [
+        "zh-TW",
+        "zh-CN",
+        "zh-Hant-HK"
+      ],
+      "acceptLanguageList": "en"
+    },
+    {
+      "selectedLocale": "en-US",
+      "appleLanguages": [
+        "zh-TW",
+        "zh-CN",
+        "zh-Hant-HK"
+      ],
+      "preferredLocales": [
+        "zh-TW",
+        "zh-CN",
+        "zh-Hant-HK"
+      ],
+      "acceptLanguageList": "en-US"
+    },
+    {
+      "selectedLocale": "ru",
+      "appleLanguages": [
+        "zh-TW",
+        "zh-CN",
+        "zh-Hant-HK"
+      ],
+      "preferredLocales": [
+        "zh-TW",
+        "zh-CN",
+        "zh-Hant-HK"
+      ],
+      "acceptLanguageList": "ru"
+    },
+    {
+      "selectedLocale": "zh-Hant",
+      "appleLanguages": [
+        "zh-TW",
+        "zh-CN",
+        "zh-Hant-HK"
+      ],
+      "preferredLocales": [
+        "zh-TW",
+        "zh-CN",
+        "zh-Hant-HK"
+      ],
+      "acceptLanguageList": "zh-TW,zh-Hant-HK,zh-Hant"
+    },
+    {
+      "selectedLocale": "zh",
+      "appleLanguages": [
+        "zh-TW",
+        "zh-CN",
+        "zh-Hant-HK"
+      ],
+      "preferredLocales": [
+        "zh-TW",
+        "zh-CN",
+        "zh-Hant-HK"
+      ],
+      "acceptLanguageList": "zh-TW,zh-CN,zh-Hant-HK,zh"
+    },
+    {
+      "selectedLocale": "es",
+      "appleLanguages": [
+        "zh-TW",
+        "zh-CN",
+        "zh-Hant-HK"
+      ],
+      "preferredLocales": [
+        "zh-TW",
+        "zh-CN",
+        "zh-Hant-HK"
+      ],
+      "acceptLanguageList": "es"
+    },
+    {
+      "selectedLocale": "es-419",
+      "appleLanguages": [
+        "zh-TW",
+        "zh-CN",
+        "zh-Hant-HK"
+      ],
+      "preferredLocales": [
+        "zh-TW",
+        "zh-CN",
+        "zh-Hant-HK"
+      ],
+      "acceptLanguageList": "es-419"
+    },
+    {
+      "selectedLocale": "es-LA",
+      "appleLanguages": [
+        "zh-TW",
+        "zh-CN",
+        "zh-Hant-HK"
+      ],
+      "preferredLocales": [
+        "zh-TW",
+        "zh-CN",
+        "zh-Hant-HK"
+      ],
+      "acceptLanguageList": "es-LA"
+    },
+    {
+      "selectedLocale": "en",
+      "appleLanguages": [
+        "es-MX",
+        "es-Latn-AR",
+        "es-419",
+        "es-LA"
+      ],
+      "preferredLocales": [
+        "es-MX",
+        "es-Latn-AR",
+        "es-419",
+        "es-LA"
+      ],
+      "acceptLanguageList": "en"
+    },
+    {
+      "selectedLocale": "en-US",
+      "appleLanguages": [
+        "es-MX",
+        "es-Latn-AR",
+        "es-419",
+        "es-LA"
+      ],
+      "preferredLocales": [
+        "es-MX",
+        "es-Latn-AR",
+        "es-419",
+        "es-LA"
+      ],
+      "acceptLanguageList": "en-US"
+    },
+    {
+      "selectedLocale": "ru",
+      "appleLanguages": [
+        "es-MX",
+        "es-Latn-AR",
+        "es-419",
+        "es-LA"
+      ],
+      "preferredLocales": [
+        "es-MX",
+        "es-Latn-AR",
+        "es-419",
+        "es-LA"
+      ],
+      "acceptLanguageList": "ru"
+    },
+    {
+      "selectedLocale": "zh-Hant",
+      "appleLanguages": [
+        "es-MX",
+        "es-Latn-AR",
+        "es-419",
+        "es-LA"
+      ],
+      "preferredLocales": [
+        "es-MX",
+        "es-Latn-AR",
+        "es-419",
+        "es-LA"
+      ],
+      "acceptLanguageList": "zh-Hant"
+    },
+    {
+      "selectedLocale": "zh",
+      "appleLanguages": [
+        "es-MX",
+        "es-Latn-AR",
+        "es-419",
+        "es-LA"
+      ],
+      "preferredLocales": [
+        "es-MX",
+        "es-Latn-AR",
+        "es-419",
+        "es-LA"
+      ],
+      "acceptLanguageList": "zh"
+    },
+    {
+      "selectedLocale": "es",
+      "appleLanguages": [
+        "es-MX",
+        "es-Latn-AR",
+        "es-419",
+        "es-LA"
+      ],
+      "preferredLocales": [
+        "es-MX",
+        "es-Latn-AR",
+        "es-419",
+        "es-LA"
+      ],
+      "acceptLanguageList": "es-MX,es-Latn-AR,es-419,es-LA,es"
+    },
+    {
+      "selectedLocale": "es-419",
+      "appleLanguages": [
+        "es-MX",
+        "es-Latn-AR",
+        "es-419",
+        "es-LA"
+      ],
+      "preferredLocales": [
+        "es-MX",
+        "es-Latn-AR",
+        "es-419",
+        "es-LA"
+      ],
+      "acceptLanguageList": "es-MX,es-Latn-AR,es-419,es-LA"
+    },
+    {
+      "selectedLocale": "es-LA",
+      "appleLanguages": [
+        "es-MX",
+        "es-Latn-AR",
+        "es-419",
+        "es-LA"
+      ],
+      "preferredLocales": [
+        "es-MX",
+        "es-Latn-AR",
+        "es-419",
+        "es-LA"
+      ],
+      "acceptLanguageList": "es-MX,es-Latn-AR,es-419,es-LA"
+    },
+    {
+      "selectedLocale": "en",
+      "appleLanguages": [
+        "en-US",
+        "en_US",
+        "en-US",
+        "en-GB"
+      ],
+      "preferredLocales": [
+        "en-US",
+        "en_US",
+        "en-US",
+        "en-GB"
+      ],
+      "acceptLanguageList": "en-US,en_US,en-US,en-GB,en"
+    },
+    {
+      "selectedLocale": "en-US",
+      "appleLanguages": [
+        "en-US",
+        "en_US",
+        "en-US",
+        "en-GB"
+      ],
+      "preferredLocales": [
+        "en-US",
+        "en_US",
+        "en-US",
+        "en-GB"
+      ],
+      "acceptLanguageList": "en-US,en_US,en-US"
+    },
+    {
+      "selectedLocale": "ru",
+      "appleLanguages": [
+        "en-US",
+        "en_US",
+        "en-US",
+        "en-GB"
+      ],
+      "preferredLocales": [
+        "en-US",
+        "en_US",
+        "en-US",
+        "en-GB"
+      ],
+      "acceptLanguageList": "ru"
+    },
+    {
+      "selectedLocale": "zh-Hant",
+      "appleLanguages": [
+        "en-US",
+        "en_US",
+        "en-US",
+        "en-GB"
+      ],
+      "preferredLocales": [
+        "en-US",
+        "en_US",
+        "en-US",
+        "en-GB"
+      ],
+      "acceptLanguageList": "zh-Hant"
+    },
+    {
+      "selectedLocale": "zh",
+      "appleLanguages": [
+        "en-US",
+        "en_US",
+        "en-US",
+        "en-GB"
+      ],
+      "preferredLocales": [
+        "en-US",
+        "en_US",
+        "en-US",
+        "en-GB"
+      ],
+      "acceptLanguageList": "zh"
+    },
+    {
+      "selectedLocale": "es",
+      "appleLanguages": [
+        "en-US",
+        "en_US",
+        "en-US",
+        "en-GB"
+      ],
+      "preferredLocales": [
+        "en-US",
+        "en_US",
+        "en-US",
+        "en-GB"
+      ],
+      "acceptLanguageList": "es"
+    },
+    {
+      "selectedLocale": "es-419",
+      "appleLanguages": [
+        "en-US",
+        "en_US",
+        "en-US",
+        "en-GB"
+      ],
+      "preferredLocales": [
+        "en-US",
+        "en_US",
+        "en-US",
+        "en-GB"
+      ],
+      "acceptLanguageList": "es-419"
+    },
+    {
+      "selectedLocale": "es-LA",
+      "appleLanguages": [
+        "en-US",
+        "en_US",
+        "en-US",
+        "en-GB"
+      ],
+      "preferredLocales": [
+        "en-US",
+        "en_US",
+        "en-US",
+        "en-GB"
+      ],
+      "acceptLanguageList": "es-LA"
+    }
+  ],
+  "defaultSelections": [
+    {
+      "appleLanguages": [],
+      "supportedLocales": [],
+      "excludedLocales": [],
+      "selectedLocale": "en",
+      "acceptLanguageList": "en"
+    },
+    {
+      "appleLanguages": [],
+      "supportedLocales": [
+        "en",
+        "ru"
+      ],
+      "excludedLocales": [],
+      "selectedLocale": "en",
+      "acceptLanguageList": "en"
+    },
+    {
+      "appleLanguages": [
+        "ru-RU",
+        "en-US"
+      ],
+      "supportedLocales": [
+        "en",
+        "ru"
+      ],
+      "excludedLocales": [],
+      "selectedLocale": "ru",
+      "acceptLanguageList": "ru-RU,ru"
+    },
+    {
+      "appleLanguages": [
+        "ru-RU",
+        "en-US"
+      ],
+      "supportedLocales": [
+        "en",
+        "ru"
+      ],
+      "excludedLocales": [
+        "ru"
+      ],
+      "selectedLocale": "en",
+      "acceptLanguageList": "en-US,en"
+    },
+    {
+      "appleLanguages": [
+        "fr-CA",
+        "en-US"
+      ],
+      "supportedLocales": [
+        "en",
+        "fr",
+        "fr-CA"
+      ],
+      "excludedLocales": [],
+      "selectedLocale": "fr-CA",
+      "acceptLanguageList": "fr-CA"
+    },
+    {
+      "appleLanguages": [
+        "fr-CA",
+        "en-US"
+      ],
+      "supportedLocales": [
+        "en",
+        "fr",
+        "fr-CA"
+      ],
+      "excludedLocales": [
+        "fr-CA"
+      ],
+      "selectedLocale": "fr",
+      "acceptLanguageList": "fr-CA,fr"
+    },
+    {
+      "appleLanguages": [
+        "zh-TW",
+        "en-US"
+      ],
+      "supportedLocales": [
+        "en",
+        "zh-Hans",
+        "zh-Hant"
+      ],
+      "excludedLocales": [],
+      "selectedLocale": "zh-Hant",
+      "acceptLanguageList": "zh-TW,zh-Hant"
+    },
+    {
+      "appleLanguages": [
+        "es-MX"
+      ],
+      "supportedLocales": [
+        "es",
+        "es-LA",
+        "es-419"
+      ],
+      "excludedLocales": [],
+      "selectedLocale": "es-419",
+      "acceptLanguageList": "es-MX,es-419"
+    },
+    {
+      "appleLanguages": [
+        "es-MX"
+      ],
+      "supportedLocales": [
+        "es",
+        "es-LA",
+        "es-419"
+      ],
+      "excludedLocales": [
+        "es-419"
+      ],
+      "selectedLocale": "es-LA",
+      "acceptLanguageList": "es-MX,es-LA"
+    },
+    {
+      "appleLanguages": [
+        "en-US",
+        "ru-RU"
+      ],
+      "supportedLocales": [
+        "ru"
+      ],
+      "excludedLocales": [],
+      "selectedLocale": "ru",
+      "acceptLanguageList": "ru-RU,ru"
+    },
+    {
+      "appleLanguages": [
+        "EN-us"
+      ],
+      "supportedLocales": [
+        "en",
+        "ru"
+      ],
+      "excludedLocales": [],
+      "selectedLocale": "en",
+      "acceptLanguageList": "en"
+    },
+    {
+      "appleLanguages": [
+        "sr_Latn_RS"
+      ],
+      "supportedLocales": [
+        "sr",
+        "sr-Latn",
+        "sr-Latn-RS"
+      ],
+      "excludedLocales": [],
+      "selectedLocale": "sr-Latn-RS",
+      "acceptLanguageList": "sr_Latn_RS,sr-Latn-RS"
+    },
+    {
+      "appleLanguages": [
+        "fr"
+      ],
+      "supportedLocales": [
+        "fr"
+      ],
+      "excludedLocales": [
+        "fr",
+        "en"
+      ],
+      "selectedLocale": "en",
+      "acceptLanguageList": "en"
+    },
+    {
+      "appleLanguages": [
+        "en-GB",
+        "en-US"
+      ],
+      "supportedLocales": [
+        "en-US",
+        "en-GB",
+        "en"
+      ],
+      "excludedLocales": [],
+      "selectedLocale": "en-GB",
+      "acceptLanguageList": "en-GB"
+    }
+  ],
+  "limits": [
+    "NUL-free ASCII locale inputs; UTF8/embedded-NUL locale forms not claimed.",
+    "CEF language-list configuration inputs only; peer capture owns final automatic HTTP headers."
+  ]
+}

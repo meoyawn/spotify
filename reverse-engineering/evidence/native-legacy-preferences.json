@@ -1,0 +1,98 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "scope": "Run original legacy preference-owner glue with synthetic preference spies.\n\nOriginal read/update/clear/registration branches execute unchanged. Existing\noffline legacy codec/JSON helpers execute with synthetic credentials. Only the\ntyped preference primitives and ordinary allocation/string imports are supplied;\nno original store, filesystem, account, process, service or network is used.",
+  "executedInstructionCount": 839,
+  "executedInstructionSha256": "58bdd9626137a31e2f20daf42f0f3412250563e5b2bca6338ec510e5b155dc15",
+  "exports": [
+    {
+      "label": "auth_legacy_preferences_constructor",
+      "evidenceId": "ev_7e8e5838f6e23c274dc74e3216b5489e3d6139e105c4df7bebcff4a1c5e81564",
+      "address": "0x1018edce4",
+      "decompilationSha256": "df34f7ea03a619d2e3876b2e9efd55b8dbe07fcd156cfc5b0c31e0cf56e15349"
+    },
+    {
+      "label": "auth_legacy_preferences_accessor_constructor",
+      "evidenceId": "ev_e2488eaed08eea64badc20e1768b55606745b979cd2f0dcd39cecc5bce8e950b",
+      "address": "0x1018eed1c",
+      "decompilationSha256": "3755ccedfe2a0357636f4005d4f26ec7e7e2e18899942c69e285c52c1c41489b"
+    },
+    {
+      "label": "auth_legacy_blob_read",
+      "evidenceId": "ev_0ac57e5f175bcce950159456fdcd7c28786d341aed22e4ef81b0a4fdf3dc51c7",
+      "address": "0x1018ee420",
+      "decompilationSha256": "48f4a2a3f692b3a01c2ae9a7e63c040ace877d70a076169b185d42502f0f4eb3"
+    },
+    {
+      "label": "auth_legacy_blob_update_a",
+      "evidenceId": "ev_b7839af42a314696de69a69f7d8f8aaa851e49e78fc3fc7d09c95afcb130ced6",
+      "address": "0x1018ee828",
+      "decompilationSha256": "ebe902bdd99973e18468f1d2be35b386767e34df2446a1dbaec6eca1324ee72a"
+    },
+    {
+      "label": "auth_legacy_blob_update_b",
+      "evidenceId": "ev_122dd5ac015453c686e3cbc4d165b392df672bb1fe5db850b410c911df7ab109",
+      "address": "0x1018ee844",
+      "decompilationSha256": "90f2ac051155e191f4ce4b84da413c78eeb6ce62ea08228f2eb3cf9b990be725"
+    },
+    {
+      "label": "auth_legacy_saved_map_remove",
+      "evidenceId": "ev_0c1cc6ea97a0fb269442a08956acf317e40eed298e64312fa9eecbff7d975220",
+      "address": "0x1018ee058",
+      "decompilationSha256": "1f67cd642c403d31faeafc42233d4d0bb4c2e22c3f478412382e690b062b16f4"
+    },
+    {
+      "label": "auth_legacy_saved_map_lookup",
+      "evidenceId": "ev_03336ad4877d7c9b00d45e93cc25096824f911cc6bb5e0fcadbedd97c0bd850a",
+      "address": "0x1018ee2a8",
+      "decompilationSha256": "4a0ee1f5bb26d9af14320115b032ed3c2edc800a653bea0a068e2a52c3c16efe"
+    },
+    {
+      "label": "auth_legacy_pref_method_slot20",
+      "evidenceId": "ev_05d422164664d07d08e47ed1b9d1e8d4e716ed036228aec0d16d7537785d4d29",
+      "address": "0x1018ee678",
+      "decompilationSha256": "12491ea8d83974d3974de326cdfb293ffd128d9f7382aed57620ca66bc393df9"
+    },
+    {
+      "label": "auth_legacy_pref_method_slot30",
+      "evidenceId": "ev_01b8d48b59de7917a0cc80605cfbd6c121c629ed522a794bbc005fa49c9766eb",
+      "address": "0x1018ee9d4",
+      "decompilationSha256": "8bd089a7a8d83fff6754f5d7bb90da99637f074f9c7bc292dc1435d1c669f47a"
+    },
+    {
+      "label": "auth_legacy_pref_method_slot38",
+      "evidenceId": "ev_b9014809aca1d0ee0127ea3dcd0752789ee4b9ef3c489c8d7bce67010d008ce8",
+      "address": "0x1018eea34",
+      "decompilationSha256": "fa8b43acb19ce3c4bb0166f3558d87baffd39f7508b8c643a5358ff6c0b1ea57"
+    },
+    {
+      "label": "auth_legacy_pref_method_slot40",
+      "evidenceId": "ev_f9dbf43d5e4297e6218f5e707f8536cd65b1c66e54b747d764500c5195955ee4",
+      "address": "0x1018eea44",
+      "decompilationSha256": "018d5486b63889f2fe96aec27c4774c3219e9917459e6e1956943060631f419c"
+    },
+    {
+      "label": "auth_legacy_pref_method_slot48",
+      "evidenceId": "ev_be78b514cb6a41bb1912eca459bb1b5156c19a4b305e3a867f4c58d7668b05b5",
+      "address": "0x1018eeae8",
+      "decompilationSha256": "6a721d3dbba58cbee16b776716b2759aa9106f5a87c200a6c48a5704ca2213a0"
+    },
+    {
+      "label": "native_prefs_reset_primitive",
+      "evidenceId": "ev_ba21702bc3c267edd90a23ad335474f6fc216a9e484ed97cdc9a52be6c52e0a9",
+      "address": "0x101f41718",
+      "decompilationSha256": "902fd74abb14a431dd1aeb89bcbc640a038c27966aeff48a1c47d6764b070911"
+    },
+    {
+      "label": "native_prefs_reset_owner_mutation",
+      "evidenceId": "ev_9d59e45c937ab478b6daae42064dc03538ff23a60449e3bfd4b858f258a91b7d",
+      "address": "0x101f408b8",
+      "decompilationSha256": "48e4867b731fe6f4af8ecc44b74d4f39bcbcb1ea39f0ff5804d1e165cc9bd243"
+    },
+    {
+      "label": "native_prefs_reset_mutation_callback",
+      "evidenceId": "ev_fd9b46e587ee69b96ee5f67d3f6baad228eae30df1906fac1626b1cff9fc8a01",
+      "address": "0x101f42598",
+      "decompilationSha256": "6ef38efc36ad58310ba4573a56edc0d9bdd123a8243134f52a62464cd56bcfaf"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: d2a426867707efa0643d1bd60066c8f63fca9fe430011cfded472a3bb1bde427
+
+syntax = "proto3";
+
+package spotify.playlist.cosmos.proto;
+
+import "policy/album_decoration_policy.proto";
+
+import "policy/artist_decoration_policy.proto";
+
+option java_multiple_files = true;
+
+option java_package = "com.spotify.playlist.policy.proto";
+
+option optimize_for = CODE_SIZE;
+
+message PlaylistAlbumDecorationPolicy {
+  .spotify.cosmos_util.proto.AlbumDecorationPolicy album = 1;
+
+  .spotify.cosmos_util.proto.ArtistDecorationPolicy artist = 2;
+}

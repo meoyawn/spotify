@@ -1,0 +1,687 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "entryPoints": {
+    "registryConstructor": "0x101d0c8f0",
+    "catalogueParser": "0x101d0cd40",
+    "restrictionView": "0x101d07e24",
+    "restrictionProjection": "0x101d04978",
+    "premiumAvailabilityView": "0x101d08ac4",
+    "status": "0x101d0c78c"
+  },
+  "codeDigests": {
+    "0x101d04978": "ada4c69e3cdb8d886777295e63a61fcfbef8604e4f0781f031e1d06fc21ce644",
+    "0x101d0c78c": "a485a5240d36e8848add6f6130515145b68ab1a9907ac631b7944641b03a336f",
+    "0x101d07e24": "2c5aa9b2a4e0ab1f7fa33e4bfe4a51ca1165dadd581e6bac6487e5dddbfb60aa",
+    "0x101d08ac4": "3c152111d0780c0c0fe7fdc366328fdd7b68c57740f98441baa5faaff5fbbcfe",
+    "0x101ce452c": "408caaf10ce2b6e6f83abeb0a907cafc1d1dc7b8a170e431368ef6c88cf2d3b7"
+  },
+  "substitutions": [
+    "Synthetic public protobuf RepeatedPtrField/ArenaStringPtr storage",
+    "Abstract country getter returning the supplied standard string",
+    "Standard libc strcmp, allocation, memory and libc++ strings"
+  ],
+  "limits": [
+    "No HTTP, account/profile access, cache reads or playback requests.",
+    "Track availability is explicitly empty in every case.",
+    "Raw nonzero type is a synthetic memory input, not proof that protobuf accepts unknown enum values.",
+    "Status is only the catalogue restriction leaf; full TrackData readiness, streaming and source guards remain outside this capture.",
+    "No alternative is admitted or requested by the link-setter capture. The separate original callback only calls this setter after candidate status0.",
+    "Later lookup-mode policy, notifications, link traversal and sparse-alternative metadata requests remain outside this capture."
+  ],
+  "linkReplacement": {
+    "constructor": "0x101ce41e0",
+    "vtable": "0x102675410",
+    "setter": "0x101ce452c",
+    "storedLinkOffset": "0x20",
+    "metadataOwner": null,
+    "calls": [
+      {
+        "submittedIndex": 0,
+        "storedIndex": 0,
+        "state34": 4
+      },
+      {
+        "submittedIndex": 1,
+        "storedIndex": 1,
+        "state34": 4
+      }
+    ],
+    "scope": "Synchronous link replacement only; detached metadata owner excludes notifications, asynchronous lookup and later link traversal."
+  },
+  "cases": [
+    {
+      "name": "no restrictions",
+      "country": "US",
+      "catalogue": "free",
+      "restrictions": [],
+      "original": {
+        "catalogueRegistry": [
+          "free",
+          "everywhere",
+          "premium"
+        ],
+        "accountMask": 1,
+        "trackMask": 2,
+        "trackCatalogues": [
+          "everywhere"
+        ],
+        "premiumAvailable": false,
+        "status": 0
+      }
+    },
+    {
+      "name": "explicit empty allowlist (Rush Hour response shape)",
+      "country": "US",
+      "catalogue": "free",
+      "restrictions": [
+        {
+          "countryRule": "allowed",
+          "countries": "",
+          "catalogues": []
+        }
+      ],
+      "original": {
+        "catalogueRegistry": [
+          "free",
+          "premium",
+          "everywhere"
+        ],
+        "accountMask": 1,
+        "trackMask": 0,
+        "trackCatalogues": [],
+        "premiumAvailable": false,
+        "status": 2
+      }
+    },
+    {
+      "name": "US allowed for free",
+      "country": "US",
+      "catalogue": "free",
+      "restrictions": [
+        {
+          "countryRule": "allowed",
+          "countries": "US",
+          "catalogues": [
+            "free"
+          ]
+        }
+      ],
+      "original": {
+        "catalogueRegistry": [
+          "free",
+          "all",
+          "premium"
+        ],
+        "accountMask": 1,
+        "trackMask": 3,
+        "trackCatalogues": [
+          "free",
+          "all"
+        ],
+        "premiumAvailable": false,
+        "status": 0
+      }
+    },
+    {
+      "name": "case-insensitive country pair",
+      "country": "US",
+      "catalogue": "free",
+      "restrictions": [
+        {
+          "countryRule": "allowed",
+          "countries": "GBusDE",
+          "catalogues": [
+            "free"
+          ]
+        }
+      ],
+      "original": {
+        "catalogueRegistry": [
+          "free",
+          "all",
+          "premium"
+        ],
+        "accountMask": 1,
+        "trackMask": 3,
+        "trackCatalogues": [
+          "free",
+          "all"
+        ],
+        "premiumAvailable": false,
+        "status": 0
+      }
+    },
+    {
+      "name": "US absent from allowlist",
+      "country": "US",
+      "catalogue": "free",
+      "restrictions": [
+        {
+          "countryRule": "allowed",
+          "countries": "GBDE",
+          "catalogues": [
+            "free"
+          ]
+        }
+      ],
+      "original": {
+        "catalogueRegistry": [
+          "free",
+          "all",
+          "premium",
+          "everywhere"
+        ],
+        "accountMask": 1,
+        "trackMask": 2,
+        "trackCatalogues": [
+          "all"
+        ],
+        "premiumAvailable": false,
+        "status": 1
+      }
+    },
+    {
+      "name": "US forbidden",
+      "country": "US",
+      "catalogue": "free",
+      "restrictions": [
+        {
+          "countryRule": "forbidden",
+          "countries": "GBUS",
+          "catalogues": [
+            "free"
+          ]
+        }
+      ],
+      "original": {
+        "catalogueRegistry": [
+          "free",
+          "all",
+          "premium",
+          "everywhere"
+        ],
+        "accountMask": 1,
+        "trackMask": 2,
+        "trackCatalogues": [
+          "all"
+        ],
+        "premiumAvailable": false,
+        "status": 1
+      }
+    },
+    {
+      "name": "US absent from forbidlist",
+      "country": "US",
+      "catalogue": "free",
+      "restrictions": [
+        {
+          "countryRule": "forbidden",
+          "countries": "GBDE",
+          "catalogues": [
+            "free"
+          ]
+        }
+      ],
+      "original": {
+        "catalogueRegistry": [
+          "free",
+          "all",
+          "premium"
+        ],
+        "accountMask": 1,
+        "trackMask": 3,
+        "trackCatalogues": [
+          "free",
+          "all"
+        ],
+        "premiumAvailable": false,
+        "status": 0
+      }
+    },
+    {
+      "name": "empty forbidlist",
+      "country": "US",
+      "catalogue": "free",
+      "restrictions": [
+        {
+          "countryRule": "forbidden",
+          "countries": "",
+          "catalogues": [
+            "free"
+          ]
+        }
+      ],
+      "original": {
+        "catalogueRegistry": [
+          "free",
+          "all",
+          "premium"
+        ],
+        "accountMask": 1,
+        "trackMask": 3,
+        "trackCatalogues": [
+          "free",
+          "all"
+        ],
+        "premiumAvailable": false,
+        "status": 0
+      }
+    },
+    {
+      "name": "country oneof absent",
+      "country": "US",
+      "catalogue": "free",
+      "restrictions": [
+        {
+          "countryRule": "none",
+          "countries": "",
+          "catalogues": [
+            "free"
+          ]
+        }
+      ],
+      "original": {
+        "catalogueRegistry": [
+          "free",
+          "all",
+          "premium"
+        ],
+        "accountMask": 1,
+        "trackMask": 3,
+        "trackCatalogues": [
+          "free",
+          "all"
+        ],
+        "premiumAvailable": false,
+        "status": 0
+      }
+    },
+    {
+      "name": "country oneof absent, catalogue list absent",
+      "country": "US",
+      "catalogue": "free",
+      "restrictions": [
+        {
+          "countryRule": "none",
+          "countries": "",
+          "catalogues": []
+        }
+      ],
+      "original": {
+        "catalogueRegistry": [
+          "free",
+          "all",
+          "premium",
+          "everywhere"
+        ],
+        "accountMask": 1,
+        "trackMask": 2,
+        "trackCatalogues": [
+          "all"
+        ],
+        "premiumAvailable": false,
+        "status": 1
+      }
+    },
+    {
+      "name": "premium restriction with free account",
+      "country": "US",
+      "catalogue": "free",
+      "restrictions": [
+        {
+          "countryRule": "allowed",
+          "countries": "US",
+          "catalogues": [
+            "premium"
+          ]
+        }
+      ],
+      "original": {
+        "catalogueRegistry": [
+          "free",
+          "premium",
+          "all",
+          "everywhere"
+        ],
+        "accountMask": 1,
+        "trackMask": 6,
+        "trackCatalogues": [
+          "premium",
+          "all"
+        ],
+        "premiumAvailable": true,
+        "status": 3
+      }
+    },
+    {
+      "name": "premium restriction with premium account",
+      "country": "US",
+      "catalogue": "premium",
+      "restrictions": [
+        {
+          "countryRule": "allowed",
+          "countries": "US",
+          "catalogues": [
+            "premium"
+          ]
+        }
+      ],
+      "original": {
+        "catalogueRegistry": [
+          "premium",
+          "all"
+        ],
+        "accountMask": 1,
+        "trackMask": 3,
+        "trackCatalogues": [
+          "premium",
+          "all"
+        ],
+        "premiumAvailable": true,
+        "status": 0
+      }
+    },
+    {
+      "name": "all catalogue does not infer free membership",
+      "country": "US",
+      "catalogue": "free",
+      "restrictions": [
+        {
+          "countryRule": "allowed",
+          "countries": "US",
+          "catalogues": [
+            "all"
+          ]
+        }
+      ],
+      "original": {
+        "catalogueRegistry": [
+          "free",
+          "all",
+          "premium",
+          "everywhere"
+        ],
+        "accountMask": 1,
+        "trackMask": 2,
+        "trackCatalogues": [
+          "all"
+        ],
+        "premiumAvailable": false,
+        "status": 1
+      }
+    },
+    {
+      "name": "explicit everywhere catalogue",
+      "country": "US",
+      "catalogue": "free",
+      "restrictions": [
+        {
+          "countryRule": "allowed",
+          "countries": "US",
+          "catalogues": [
+            "everywhere"
+          ]
+        }
+      ],
+      "original": {
+        "catalogueRegistry": [
+          "free",
+          "everywhere",
+          "all",
+          "premium"
+        ],
+        "accountMask": 1,
+        "trackMask": 6,
+        "trackCatalogues": [
+          "everywhere",
+          "all"
+        ],
+        "premiumAvailable": false,
+        "status": 0
+      }
+    },
+    {
+      "name": "matched streaming type",
+      "country": "US",
+      "catalogue": "free",
+      "restrictions": [
+        {
+          "countryRule": "allowed",
+          "countries": "US",
+          "catalogues": [
+            "free"
+          ],
+          "type": 0
+        }
+      ],
+      "original": {
+        "catalogueRegistry": [
+          "free",
+          "all",
+          "premium"
+        ],
+        "accountMask": 1,
+        "trackMask": 3,
+        "trackCatalogues": [
+          "free",
+          "all"
+        ],
+        "premiumAvailable": false,
+        "status": 0
+      }
+    },
+    {
+      "name": "nonzero raw type skipped",
+      "country": "US",
+      "catalogue": "free",
+      "restrictions": [
+        {
+          "countryRule": "allowed",
+          "countries": "US",
+          "catalogues": [
+            "free"
+          ],
+          "type": 1
+        }
+      ],
+      "original": {
+        "catalogueRegistry": [
+          "free",
+          "premium",
+          "everywhere"
+        ],
+        "accountMask": 1,
+        "trackMask": 0,
+        "trackCatalogues": [],
+        "premiumAvailable": false,
+        "status": 2
+      }
+    },
+    {
+      "name": "restricted first, allowed second",
+      "country": "US",
+      "catalogue": "free",
+      "restrictions": [
+        {
+          "countryRule": "allowed",
+          "countries": "",
+          "catalogues": []
+        },
+        {
+          "countryRule": "allowed",
+          "countries": "US",
+          "catalogues": [
+            "free"
+          ]
+        }
+      ],
+      "original": {
+        "catalogueRegistry": [
+          "free",
+          "all",
+          "premium"
+        ],
+        "accountMask": 1,
+        "trackMask": 3,
+        "trackCatalogues": [
+          "free",
+          "all"
+        ],
+        "premiumAvailable": false,
+        "status": 0
+      }
+    },
+    {
+      "name": "allowed first, restricted second",
+      "country": "US",
+      "catalogue": "free",
+      "restrictions": [
+        {
+          "countryRule": "allowed",
+          "countries": "US",
+          "catalogues": [
+            "free"
+          ]
+        },
+        {
+          "countryRule": "allowed",
+          "countries": "",
+          "catalogues": []
+        }
+      ],
+      "original": {
+        "catalogueRegistry": [
+          "free",
+          "all",
+          "premium"
+        ],
+        "accountMask": 1,
+        "trackMask": 3,
+        "trackCatalogues": [
+          "free",
+          "all"
+        ],
+        "premiumAvailable": false,
+        "status": 0
+      }
+    },
+    {
+      "name": "comma-separated current catalogue",
+      "country": "US",
+      "catalogue": "premium,free",
+      "restrictions": [
+        {
+          "countryRule": "allowed",
+          "countries": "US",
+          "catalogues": [
+            "free"
+          ]
+        }
+      ],
+      "original": {
+        "catalogueRegistry": [
+          "premium",
+          "free",
+          "all"
+        ],
+        "accountMask": 3,
+        "trackMask": 6,
+        "trackCatalogues": [
+          "free",
+          "all"
+        ],
+        "premiumAvailable": false,
+        "status": 0
+      }
+    },
+    {
+      "name": "catalogue spelling preserved",
+      "country": "US",
+      "catalogue": "free",
+      "restrictions": [
+        {
+          "countryRule": "allowed",
+          "countries": "US",
+          "catalogues": [
+            "FREE"
+          ]
+        }
+      ],
+      "original": {
+        "catalogueRegistry": [
+          "free",
+          "FREE",
+          "all",
+          "premium",
+          "everywhere"
+        ],
+        "accountMask": 1,
+        "trackMask": 6,
+        "trackCatalogues": [
+          "FREE",
+          "all"
+        ],
+        "premiumAvailable": false,
+        "status": 1
+      }
+    },
+    {
+      "name": "NUL terminates country pairs",
+      "country": "US",
+      "catalogue": "free",
+      "restrictions": [
+        {
+          "countryRule": "allowed",
+          "countries": "GB\u0000US",
+          "catalogues": [
+            "free"
+          ]
+        }
+      ],
+      "original": {
+        "catalogueRegistry": [
+          "free",
+          "all",
+          "premium",
+          "everywhere"
+        ],
+        "accountMask": 1,
+        "trackMask": 2,
+        "trackCatalogues": [
+          "all"
+        ],
+        "premiumAvailable": false,
+        "status": 1
+      }
+    },
+    {
+      "name": "odd trailing country byte",
+      "country": "US",
+      "catalogue": "free",
+      "restrictions": [
+        {
+          "countryRule": "allowed",
+          "countries": "GBU",
+          "catalogues": [
+            "free"
+          ]
+        }
+      ],
+      "original": {
+        "catalogueRegistry": [
+          "free",
+          "all",
+          "premium",
+          "everywhere"
+        ],
+        "accountMask": 1,
+        "trackMask": 2,
+        "trackCatalogues": [
+          "all"
+        ],
+        "premiumAvailable": false,
+        "status": 1
+      }
+    }
+  ]
+}

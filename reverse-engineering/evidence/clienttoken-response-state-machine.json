@@ -1,0 +1,88 @@
+{
+  "evidence_id": "ev_1c679eabdbc950be5a86ced40d6101d050aed4ab59a52aaf209750f804ebe1b0",
+  "subject": {
+    "name": "Spotify",
+    "digest": {
+      "sha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca"
+    },
+    "local_path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "format": "mach-o",
+    "architecture": "arm64"
+  },
+  "provider": {
+    "id": "ghidra",
+    "name": "Ghidra",
+    "version": "12.1.4"
+  },
+  "analysis_profile": {
+    "provider": {
+      "id": "ghidra",
+      "name": "Ghidra",
+      "version": "12.1.4"
+    },
+    "parameters": {
+      "target_kind": "executable",
+      "target_format": "mach-o",
+      "architecture": "arm64",
+      "available_architectures": [
+        "arm64"
+      ],
+      "import_mode": "ephemeral-source-immutable",
+      "annotation_policy": "atomic-function-entry-metadata-v1",
+      "load_image_observations": "source-mappings-entry-context-v2",
+      "function_body_evidence": "complete-inclusive-ranges-v1",
+      "function_references": "complete-body-and-entry-reference-manager-v2",
+      "call_relationship_coverage": "function-body-call-coverage-v5",
+      "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+      "string_inventory_evidence": "defined-data-coverage-v1",
+      "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+      "procedure_file_offset_resolution": "address-first-unique-target-source-mapping-v2",
+      "instruction_flow_evidence": "decoded-return-pcode-v1",
+      "instruction_references": "exact-address-incoming-without-synthetic-entry-v2",
+      "function_boundary_observations": "ghidra-function-boundary-limitations-v4",
+      "no_return_repair": "returning-imports-decoded-return-v2",
+      "process_launch": "inspected-jvm-launch-support-v1",
+      "jump_table_evidence": "typed-case-default-blocks-v1",
+      "decompiler_jump_loads": true,
+      "loader": "auto-from-header",
+      "language_id": "auto-from-header",
+      "compiler_spec_id": "auto-default",
+      "analyzer_preset": "ghidra-default+disabled:Objective-C Message Analyzer",
+      "analysis_options": {
+        "disabled_analyzers": [
+          "Objective-C Message Analyzer"
+        ]
+      },
+      "function_coordinate_context": {
+        "kind": "native-function-coordinate-context-v1",
+        "selected_image": null,
+        "mapping_sha256": "55a7964dc0bcdf067484a281c658e6ca8457a49405e0ea9dbd080366ee4c3198"
+      }
+    },
+    "digest": "ba096b816914b61d76ef9218a09adb50b36933c578e73986f5071ca4531196a1"
+  },
+  "predicate_type": "rea.analysis",
+  "operation": "procedure_pseudo_code",
+  "parameters": {
+    "procedure": "0x1017c4e5c"
+  },
+  "raw_result": null,
+  "normalized_result": "\n/* WARNING: Removing unreachable block (ram,0x0001017c5070) */\n\nvoid FUN_1017c4e5c(long param_1,long param_2)\n\n{\n  ulong *puVar1;\n  uint uVar2;\n  long lVar3;\n  undefined8 *puVar4;\n  undefined8 *puVar5;\n  ulong uVar6;\n  long lVar7;\n  long lVar8;\n  undefined8 uVar9;\n  undefined8 uVar10;\n  undefined1 local_b0 [16];\n  long local_a0;\n  ulong uStack_98;\n  long lStack_90;\n  ulong local_88;\n  uint5 local_80;\n  long lStack_78;\n  undefined8 *local_70;\n  undefined8 *local_68;\n  undefined8 *local_60;\n  \n  if (*(int *)(param_2 + 0x28) == 2) {\n    if (*(long **)(param_1 + 0x28) == (long *)0x0) {\n                    /* WARNING: Subroutine does not return */\n      FUN_100013608();\n    }\n    lVar7 = *(long *)(param_2 + 0x20);\n    lVar3 = (**(code **)(**(long **)(param_1 + 0x28) + 0x30))();\n    local_60 = (undefined8 *)0x0;\n    lStack_78 = 0;\n    _local_80 = 0;\n    local_68 = (undefined8 *)0x0;\n    local_70 = (undefined8 *)0x0;\n    uStack_98 = 0;\n    local_a0 = 0;\n    local_88 = 0;\n    lStack_90 = 0;\n    local_b0._8_8_ = 0;\n    local_b0._0_8_ = 0;\n    puVar5 = (undefined8 *)(*(ulong *)(lVar7 + 0x30) & 0xfffffffffffffffc);\n    if ((undefined8 *)local_b0 != puVar5) {\n      if (*(char *)((long)puVar5 + 0x17) < '\\0') {\n        FUN_10000b988(local_b0,*puVar5,puVar5[1]);\n      }\n      else {\n        local_b0._8_8_ = puVar5[1];\n        local_b0._0_8_ = *puVar5;\n        local_a0 = puVar5[2];\n      }\n    }\n    uStack_98 = lVar3 + (long)*(int *)(lVar7 + 0x38) * 1000000;\n    lStack_90 = lVar3 + (long)*(int *)(lVar7 + 0x3c) * 1000000;\n    if (0 < *(int *)(lVar7 + 0x20)) {\n      lVar3 = 0;\n      lVar8 = 8;\n      do {\n        puVar5 = local_68;\n        uVar6 = *(ulong *)(lVar7 + 0x18);\n        puVar1 = (ulong *)(lVar7 + 0x18);\n        if ((uVar6 & 1) != 0) {\n          puVar1 = (ulong *)(uVar6 + lVar8 + -1);\n        }\n        puVar4 = (undefined8 *)(*(ulong *)(*puVar1 + 0x18) & 0xfffffffffffffffc);\n        if (local_68 < local_60) {\n          if (*(char *)((long)puVar4 + 0x17) < '\\0') {\n            FUN_10000bd2c(local_68,*puVar4,puVar4[1]);\n          }\n          else {\n            uVar10 = puVar4[1];\n            uVar9 = *puVar4;\n            local_68[2] = puVar4[2];\n            local_68[1] = uVar10;\n            *local_68 = uVar9;\n          }\n          local_68 = puVar5 + 3;\n        }\n        else {\n          local_68 = (undefined8 *)FUN_1000601c0(&local_70);\n        }\n        lVar3 = lVar3 + 1;\n        lVar8 = lVar8 + 8;\n      } while (lVar3 < *(int *)(lVar7 + 0x20));\n    }\n    FUN_1017c6484(param_1 + 0x238,local_b0);\n    if (local_70 != (undefined8 *)0x0) {\n      for (; local_70 != local_68; local_68 = local_68 + -3) {\n      }\n      local_68 = local_70;\n      __ZdlPv(local_70);\n    }\n    if (lStack_78 < 0) {\n      __ZdlPv(local_88);\n    }\n    if (local_a0 < 0) {\n      __ZdlPv(local_b0._0_8_);\n    }\n  }\n  else {\n    if (*(int *)(param_2 + 0x28) == 3) {\n      FUN_1017c50e8(param_1,*(undefined8 *)(param_2 + 0x20));\n      return;\n    }\n    FUN_101f58a9c(4,\"\",0x15b,\"client-token: unexpected response from the backend\");\n    local_b0 = FUN_101a4fcdc(0x65);\n    local_a0 = CONCAT44(local_a0._4_4_,5);\n    uStack_98 = uStack_98 & 0xffffffffffffff00;\n    local_88 = local_88 & 0xffffffffffffff00;\n    uVar6 = (ulong)_local_80 >> 0x28;\n    uVar2 = (uint)_local_80;\n    local_80 = (uint5)(uVar2 & 0xffffff00);\n    _local_80 = CONCAT35((int3)uVar6,local_80);\n    FUN_1017c6520(param_1 + 0x238,local_b0);\n  }\n  return;\n}\n\n",
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+    "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+    "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+    "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+    "Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.",
+    "External functions and functions without an analyzable body return null; other decompiler failures remain explicit.",
+    "Ghidra Listing reports a terminal call at 0x1017c4eb0 to 0x1017c50e8 FUN_1017c50e8 (external=false, thunk=false, hasNoReturn=false); fallthrough is excluded by Ghidra's flow model. The reason for the terminal flow is not established by this observation.",
+    "Ghidra Listing reports a terminal call at 0x1017c50d0 to 0x100013608 FUN_100013608 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+    "macOS sessions require a matching executable Ghidra native decompiler; REA checks for it but does not build native components or change Gatekeeper quarantine state."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

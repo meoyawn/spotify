@@ -1,0 +1,1643 @@
+{
+  "schemaVersion": 1,
+  "sourceExecutable": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "descriptorSet": {
+    "path": "reverse-engineering/protobuf/original.pbdesc",
+    "sha256": "52f7ae6a316054c216c8a842740b5cdaaa32ec6d236b91ffaa16d4847549c7b0"
+  },
+  "roots": {
+    "protocol": [
+      "es_desktop_login.proto",
+      "es_auth_blob.proto",
+      "es_auth_storage_result.proto",
+      "es_stored_user_info.proto",
+      "pending_event_entity.proto",
+      "es_client_token.proto",
+      "client_token.proto",
+      "spotify/client_token/v0/client_token_http.proto",
+      "es_connectivity_policy.proto",
+      "es_desktop_platform_info.proto",
+      "es_desktop_version.proto",
+      "es_prefs.proto"
+    ],
+    "playback": [
+      "connect.proto",
+      "connect-service.proto",
+      "player.proto",
+      "storage-resolve.proto",
+      "extended_metadata.proto",
+      "audio_files_extension.proto",
+      "metadata.proto",
+      "es_play.proto",
+      "es_pause.proto",
+      "es_resume.proto",
+      "es_skip_next.proto",
+      "es_skip_prev.proto",
+      "es_seek_to.proto",
+      "es_set_options.proto",
+      "es_set_shuffling_context.proto",
+      "es_response_with_reasons.proto",
+      "es_get_state_request.proto",
+      "es_context_player_state.proto",
+      "es_get_error_request.proto",
+      "es_context_player_error.proto"
+    ],
+    "library": [
+      "your_library_request.proto",
+      "your_library_response.proto",
+      "collection_add_remove_items_request.proto",
+      "collection_contains_request.proto",
+      "collection2v2.proto",
+      "playlist_modification_request.proto"
+    ],
+    "entities": [
+      "recently_played_backend.proto",
+      "image_resolve.proto",
+      "playlist_get_request.proto",
+      "playlist_sync_reason.proto",
+      "playlist_api.proto",
+      "playlist_cache.proto"
+    ]
+  },
+  "files": [
+    {
+      "file": "audio_files_extension.proto",
+      "offset": 36805196,
+      "length": 744,
+      "sha256": "16ae20c292b6c8f8e5ce6d775e3d26c627b09ae3a05a25fec211df2b400a33e3",
+      "package": "spotify.extendedmetadata.audiofiles",
+      "dependencies": [
+        "metadata.proto"
+      ],
+      "descriptorSetOffset": 3,
+      "sourcePath": "proto/source/audio_files_extension.proto",
+      "sourceSha256": "6eaaf2c76fe12d0ae73ad99535ad20635805366666af043deff8e3299b4ebcd5",
+      "syntax": "proto3"
+    },
+    {
+      "file": "cache_hint.proto",
+      "offset": 36660116,
+      "length": 233,
+      "sha256": "729a055004e6a1b29091cc1daedac72d784ad9a9614d6ef29f88397a5770c143",
+      "package": "spotify.playlist.messages",
+      "dependencies": [
+        "google/protobuf/duration.proto"
+      ],
+      "descriptorSetOffset": 750,
+      "sourcePath": "proto/source/cache_hint.proto",
+      "sourceSha256": "b2e63cc3b806863b876d1c132d96075c1f0e6a92ca7f7c88468cc5c2713c9bb3",
+      "syntax": "proto3"
+    },
+    {
+      "file": "client_token.proto",
+      "offset": 36328040,
+      "length": 364,
+      "sha256": "ff6d8c366ca0e33d663a5d2153fa6ff831689dce54b19bed739631cf00ab9486",
+      "package": "spotify.clienttoken.serialization.v0",
+      "dependencies": [],
+      "descriptorSetOffset": 986,
+      "sourcePath": "proto/source/client_token.proto",
+      "sourceSha256": "29fe47009d673555ffa24b1faf7fe201f1d6293f66b584b03b49fdb6bc575b19",
+      "syntax": "proto3"
+    },
+    {
+      "file": "collection/episode_collection_state.proto",
+      "offset": 36639728,
+      "length": 262,
+      "sha256": "ad535b8792fac762250641ddfed7b9cf0429ee371f6444c880a94a7030e4a4d8",
+      "package": "spotify.cosmos_util.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 1353,
+      "sourcePath": "proto/source/collection/episode_collection_state.proto",
+      "sourceSha256": "92f0f310348e7a1bd8d175cb56cc84f8fffe1d42b68167bb825b76bc81a884d6",
+      "syntax": "proto2"
+    },
+    {
+      "file": "collection2v2.proto",
+      "offset": 36428568,
+      "length": 1207,
+      "sha256": "f5406cc7fa39b9f8a36e476af577c946e07d9fd706519288f36c57496a3c4a17",
+      "package": "spotify.collection.proto.v2",
+      "dependencies": [
+        "collection_itemdata.proto"
+      ],
+      "descriptorSetOffset": 1618,
+      "sourcePath": "proto/source/collection2v2.proto",
+      "sourceSha256": "a9b4a4f66ac37037c644af15d86ead5f69b33435c787503a3a40b6662ba0b940",
+      "syntax": "proto3"
+    },
+    {
+      "file": "collection_add_remove_items_request.proto",
+      "offset": 35361084,
+      "length": 541,
+      "sha256": "19a19f009f6b70c21c7f5e049c2e43ae9cf90e73db6db42a22bebac77b406953",
+      "package": "spotify.collection_cosmos.proto",
+      "dependencies": [
+        "status.proto",
+        "collection_itemdata.proto"
+      ],
+      "descriptorSetOffset": 2828,
+      "sourcePath": "proto/source/collection_add_remove_items_request.proto",
+      "sourceSha256": "c0be5734b1cdfde3199b5a024c5cf1b6c277fe70d3ecd303eed4af256fd8f8bf",
+      "syntax": "proto3"
+    },
+    {
+      "file": "collection_contains_request.proto",
+      "offset": 35362128,
+      "length": 410,
+      "sha256": "1444f54a0af78ae6f3213fccc893ad5188496357c551c0e7bcab43445ee391d8",
+      "package": "spotify.collection_cosmos.proto",
+      "dependencies": [
+        "status.proto"
+      ],
+      "descriptorSetOffset": 3372,
+      "sourcePath": "proto/source/collection_contains_request.proto",
+      "sourceSha256": "9d9fe069e4303551d96142e620ceefb5563a4d228844c7899ea514350d794105",
+      "syntax": "proto3"
+    },
+    {
+      "file": "collection_itemdata.proto",
+      "offset": 36664788,
+      "length": 2780,
+      "sha256": "0589aa277f9144e2c2ca05ae502585b2ddf1db17bd19e317fe726504cdb6b19f",
+      "package": "spotify.collection.itemdata",
+      "dependencies": [
+        "google/protobuf/timestamp.proto",
+        "google/protobuf/duration.proto",
+        "save_source.proto"
+      ],
+      "descriptorSetOffset": 3785,
+      "sourcePath": "proto/source/collection_itemdata.proto",
+      "sourceSha256": "f55cc873ff7f4a517e5b157a3dcca688a3788b958f06f3d1d485ab0d04c3009b",
+      "syntax": "proto3"
+    },
+    {
+      "file": "connect-service.proto",
+      "offset": 36381020,
+      "length": 793,
+      "sha256": "4b816c592148a6616ceb611643fa52514eed1da76c78064ad63ab8ec3738fa4a",
+      "package": "spotify.connectstate",
+      "dependencies": [
+        "connect.proto"
+      ],
+      "descriptorSetOffset": 6568,
+      "sourcePath": "proto/source/connect-service.proto",
+      "sourceSha256": "267aa5e84b608a41788bcb4eab6de287eafe6926f586b373acfd2bf144e627e0",
+      "syntax": "proto3"
+    },
+    {
+      "file": "connect.proto",
+      "offset": 36366920,
+      "length": 13685,
+      "sha256": "a1d89b84ddb2c6966fb2073ce9cab8267b8e808c96adb484cec886a1ac7fbe6e",
+      "package": "spotify.connectstate",
+      "dependencies": [
+        "player.proto",
+        "devices.proto",
+        "media.proto"
+      ],
+      "descriptorSetOffset": 7364,
+      "sourcePath": "proto/source/connect.proto",
+      "sourceSha256": "de2806d25d73e2363d26557ae721d9dd4bfa2ccccfc416de846885fabd44f897",
+      "syntax": "proto3"
+    },
+    {
+      "file": "connectivity.proto",
+      "offset": 36329136,
+      "length": 3983,
+      "sha256": "01b622601c7806424b988488a141babcb4cc32286e832348f2ea9d5d22e50a00",
+      "package": "spotify.clienttoken.data.v0",
+      "dependencies": [],
+      "descriptorSetOffset": 21052,
+      "sourcePath": "proto/source/connectivity.proto",
+      "sourceSha256": "551cfafcae8b2f414b8495a5357101dd90e7cdf8a143259dc7d3db80e2e4dfa2",
+      "syntax": "proto3"
+    },
+    {
+      "file": "creation_info.proto",
+      "offset": 36608820,
+      "length": 338,
+      "sha256": "249b9c0516d768ea9270b68bec05a8c9057bc4519a715cc4900371b7d80286fa",
+      "package": "spotify.playlist.cosmos.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 25038,
+      "sourcePath": "proto/source/creation_info.proto",
+      "sourceSha256": "261d5c8f203fbbb71bf022d33ddc9e4419432b8fe980d75bcd7156a47adbab9f",
+      "syntax": "proto2"
+    },
+    {
+      "file": "devices.proto",
+      "offset": 36381900,
+      "length": 540,
+      "sha256": "aaa4698b52ae0dd4c725f68c6267c344b78132235c51fcbeddf5e84fd5859d4c",
+      "package": "spotify.connectstate.devices",
+      "dependencies": [],
+      "descriptorSetOffset": 25379,
+      "sourcePath": "proto/source/devices.proto",
+      "sourceSha256": "4f6c37ae7713d0894a6efc7fe5f99e363fbf3a52c8b7f3bb76b726e623f75d0f",
+      "syntax": "proto3"
+    },
+    {
+      "file": "entity_extension_data.proto",
+      "offset": 36794140,
+      "length": 747,
+      "sha256": "bd3d0bf051e0d86aad68e289b4e04575bad2302574be5bc6c74375fa58666725",
+      "package": "spotify.extendedmetadata",
+      "dependencies": [
+        "google/protobuf/any.proto"
+      ],
+      "descriptorSetOffset": 25922,
+      "sourcePath": "proto/source/entity_extension_data.proto",
+      "sourceSha256": "c480cfc7f81926d1837d4c51ca495a5b160aa03443fe25fd09a6628e34f2765b",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_ad_break_context.proto",
+      "offset": 36571504,
+      "length": 310,
+      "sha256": "d616f66efc6c92667c2f39cb415e240cf8aca2ef347c603386309d1e83b04a7a",
+      "package": "spotify.player.esperanto.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 26672,
+      "sourcePath": "proto/source/es_ad_break_context.proto",
+      "sourceSha256": "cb48a9f937ed03c19163d5a61ed6e2c6700db4dc783f0deba2a80dabd3381f9d",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_auth_blob.proto",
+      "offset": 36343100,
+      "length": 531,
+      "sha256": "e95b4898fff2ebe972481d41e0f08a10f290125eda4982f40b2527a92a2d474c",
+      "package": "spotify.connectivity.auth.common.esperanto.proto",
+      "dependencies": [
+        "es_encrypted_stored_credentials.proto",
+        "es_unencrypted_stored_credentials.proto"
+      ],
+      "descriptorSetOffset": 26985,
+      "sourcePath": "proto/source/es_auth_blob.proto",
+      "sourceSha256": "9fe3e9f8cf32b920b630416ad6dd9e104e5b13de3b799230baf447045a813159",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_auth_storage_result.proto",
+      "offset": 36342120,
+      "length": 335,
+      "sha256": "f7bab1e8f1c68a190151d0c73c0196943bb97c65b9d0674dc11a2a28514a98a6",
+      "package": "spotify.connectivity.auth.storage.esperanto.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 27519,
+      "sourcePath": "proto/source/es_auth_storage_result.proto",
+      "sourceSha256": "acc117d3973ce72d5e5422ec6226efa9c87cdb4b40357090a66af42446e4f73d",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_client_token.proto",
+      "offset": 36344416,
+      "length": 705,
+      "sha256": "4e90af48efcb2a2b772dba6dc83a5955f59993c82e667ef104cbb36fd12f523a",
+      "package": "spotify.connectivity.auth.client_token.esperanto.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 27857,
+      "sourcePath": "proto/source/es_client_token.proto",
+      "sourceSha256": "3ce689271533fbd8565822bde7f1629624d5e34d28f80fdc50e40881712f9240",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_command_options.proto",
+      "offset": 36572356,
+      "length": 327,
+      "sha256": "849d4431017dd7d25e84f1a9431d65243aa223ab8b4343bb327a2cb23e59ee11",
+      "package": "spotify.player.esperanto.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 28565,
+      "sourcePath": "proto/source/es_command_options.proto",
+      "sourceSha256": "80b7ea1840bcf5ed4db56739e4c59f869a59dd97c2946f8946d7eca818044eeb",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_connectivity_policy.proto",
+      "offset": 36346152,
+      "length": 2760,
+      "sha256": "087da300da2bb0b2f534451480c7b6c6d01f1e96a01c90614ff46ac3a9edd516",
+      "package": "spotify.connectivity.esperanto.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 28895,
+      "sourcePath": "proto/source/es_connectivity_policy.proto",
+      "sourceSha256": "55439e75d6572e032dd02cf37f29b63861aa8377d21600800884bd6e56db80b5",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_context.proto",
+      "offset": 36572824,
+      "length": 522,
+      "sha256": "1c7c4ec797e30d5af7efa497a285c4bee721eb13e416ea64d5beb5d44b80e145",
+      "package": "spotify.player.esperanto.proto",
+      "dependencies": [
+        "es_context_page.proto",
+        "es_restrictions.proto"
+      ],
+      "descriptorSetOffset": 31658,
+      "sourcePath": "proto/source/es_context.proto",
+      "sourceSha256": "7e4684e81a6f0452fdc8d2b29017ac925b56c020744cea6b8834da228188ba80",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_context_page.proto",
+      "offset": 36573456,
+      "length": 461,
+      "sha256": "1b12e58d44026423f57e8dbb67f361a8f7256eb15892787e65ce1014d99cce28",
+      "package": "spotify.player.esperanto.proto",
+      "dependencies": [
+        "es_context_track.proto"
+      ],
+      "descriptorSetOffset": 32183,
+      "sourcePath": "proto/source/es_context_page.proto",
+      "sourceSha256": "da4722271faf538fb1e2b8e71e486e9fe30d0103c0bf5dc2d45814741a953ea1",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_context_player_error.proto",
+      "offset": 36574016,
+      "length": 1808,
+      "sha256": "64d18a8c6fc3a72d9a161b262f703654955da554073946067a0e2f9710fb8eb5",
+      "package": "spotify.player.esperanto.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 32647,
+      "sourcePath": "proto/source/es_context_player_error.proto",
+      "sourceSha256": "ea50c9d60b9912df2a4c1bdef4ae8abcabef87431fbc204c7aaa68b29dabbf0d",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_context_player_options.proto",
+      "offset": 36576032,
+      "length": 1029,
+      "sha256": "21fa5a278a8d03ca6511350a7d675f0d9260f627ee3bbd8ffc1f08e2afbed03a",
+      "package": "spotify.player.esperanto.proto",
+      "dependencies": [
+        "es_optional.proto"
+      ],
+      "descriptorSetOffset": 34458,
+      "sourcePath": "proto/source/es_context_player_options.proto",
+      "sourceSha256": "40992262807c1829e854778abfef786fedc14dcdd623d09137e373c9bc2c72ee",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_context_player_state.proto",
+      "offset": 36567244,
+      "length": 4180,
+      "sha256": "52658bd3637af1b4fa5c4119b5d4b98801552b4e2d03bebfea198f778eae236c",
+      "package": "spotify.player.esperanto.proto",
+      "dependencies": [
+        "es_restrictions.proto",
+        "es_play_origin.proto",
+        "es_optional.proto",
+        "es_provided_track.proto",
+        "es_context_player_options.proto",
+        "es_prepare_play_options.proto",
+        "es_ad_break_context.proto",
+        "es_sleep_timer.proto"
+      ],
+      "descriptorSetOffset": 35490,
+      "sourcePath": "proto/source/es_context_player_state.proto",
+      "sourceSha256": "95515090d3277113130a94f59a6b5ec70d297d1183fc7b1f697ec59e69f1265a",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_context_track.proto",
+      "offset": 36577216,
+      "length": 312,
+      "sha256": "9fa498e32984c3232b4d18bbf696a3fe00403d7227e77757f6066b58111d1724",
+      "package": "spotify.player.esperanto.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 39673,
+      "sourcePath": "proto/source/es_context_track.proto",
+      "sourceSha256": "3ca896cbe72fbbb65839923fae0953ec74705339c9152fe278306cda3649c7c1",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_desktop_login.proto",
+      "offset": 35113016,
+      "length": 5145,
+      "sha256": "bdde4d9c9d9f251f351e35c7f6ed4ed5b1a508792fb9c97fbc1724991a26b1d4",
+      "package": "spotify.desktop.login_esperanto.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 39988,
+      "sourcePath": "proto/source/es_desktop_login.proto",
+      "sourceSha256": "e8cbeae74e965cfba128389a15c41c1e82e87ac6145c0550133b202ee967382e",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_desktop_platform_info.proto",
+      "offset": 35103504,
+      "length": 1525,
+      "sha256": "28eb460456aa242bf0c0cda823ee40d0a653ea8661850d883217378e656ccffc",
+      "package": "spotify.desktop.platform_info_esperanto.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 45136,
+      "sourcePath": "proto/source/es_desktop_platform_info.proto",
+      "sourceSha256": "88b38411adcabcb47a459f34c888f065f7d9963c5b0387b1e66f348efb377988",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_desktop_version.proto",
+      "offset": 35163580,
+      "length": 1192,
+      "sha256": "a64ad986df9358343e66da22e6d827ddd983c3e6d0d29ed27473f45e2559cfc5",
+      "package": "spotify.desktop.version_esperanto.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 46664,
+      "sourcePath": "proto/source/es_desktop_version.proto",
+      "sourceSha256": "167d9a37d3bed5a468045bb0147055d676871cac7dce1f2364c6705c61d2cc40",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_encrypted_stored_credentials.proto",
+      "offset": 36343676,
+      "length": 290,
+      "sha256": "cec26f308b972d6ccac278af35f37cb02269c26ada0a61aaf139ac51f17a3fae",
+      "package": "spotify.connectivity.auth.common.esperanto.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 47859,
+      "sourcePath": "proto/source/es_encrypted_stored_credentials.proto",
+      "sourceSha256": "5650192daacea74995b500d8c3ebb868afa7c35fc17099833d3f8d927197baa9",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_get_error_request.proto",
+      "offset": 36577836,
+      "length": 133,
+      "sha256": "0931cf5f8eeaeb3b47f47224d88c0e7709c3e42796ba1e9f0f4626a1719babd4",
+      "package": "spotify.player.esperanto.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 48152,
+      "sourcePath": "proto/source/es_get_error_request.proto",
+      "sourceSha256": "152bffcdf2e610dc305241eaf2da4fe58377f6e5669f2b41f44133fcc7e92131",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_get_state_request.proto",
+      "offset": 36578896,
+      "length": 327,
+      "sha256": "96621f0d43ad301df667182ccb27b018da1d6a4ff4c6fe045d16ea18c506c0af",
+      "package": "spotify.player.esperanto.proto",
+      "dependencies": [
+        "es_optional.proto"
+      ],
+      "descriptorSetOffset": 48288,
+      "sourcePath": "proto/source/es_get_state_request.proto",
+      "sourceSha256": "7f9bc3f863e4afc273e9914889cf5b447522793c6f06d02e412d1daf80df2cc1",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_logging_params.proto",
+      "offset": 36579300,
+      "length": 704,
+      "sha256": "8dc8c8e26758796e9f7bfec53f66a1321bf3b4854dc22948bb157f91fbf7fc20",
+      "package": "spotify.player.esperanto.proto",
+      "dependencies": [
+        "es_optional.proto",
+        "stream_reporting_attribution.proto"
+      ],
+      "descriptorSetOffset": 48618,
+      "sourcePath": "proto/source/es_logging_params.proto",
+      "sourceSha256": "8442d94ece6f97259fc778cd01f722577c8b71fac21a80fd8c4d5e2369d9c670",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_optional.proto",
+      "offset": 36580076,
+      "length": 225,
+      "sha256": "1e0685ab6ddd6b2c5a335243a9df5ffa95651d42a70ffea27d2108e3fae5f738",
+      "package": "spotify.player.esperanto.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 49325,
+      "sourcePath": "proto/source/es_optional.proto",
+      "sourceSha256": "645773137a846bb6252603cefd25a32343284695ee57ed321b517c64909a936b",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_pause.proto",
+      "offset": 36580364,
+      "length": 445,
+      "sha256": "73d8c12543e2696881d51e960d893aa848e333eebceead3b41abe80e37340b2f",
+      "package": "spotify.player.esperanto.proto",
+      "dependencies": [
+        "es_command_options.proto",
+        "es_logging_params.proto",
+        "es_pauseresume_origin.proto"
+      ],
+      "descriptorSetOffset": 49553,
+      "sourcePath": "proto/source/es_pause.proto",
+      "sourceSha256": "806c31aecfdb0fa5be7ff9dc1232e9ec0cc32b8c26efb94c1e6d801b0d46237d",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_pauseresume_origin.proto",
+      "offset": 36580840,
+      "length": 183,
+      "sha256": "eb171bdcd89ff566cc132bd5dacccd785944f4dce174853a03a0c240a8115e85",
+      "package": "spotify.player.esperanto.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 50001,
+      "sourcePath": "proto/source/es_pauseresume_origin.proto",
+      "sourceSha256": "4b1338ad5d3c25cfc2e8c290a6f5795c3faed52aaffd9b316d221a2ba01a1310",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_play.proto",
+      "offset": 36581120,
+      "length": 851,
+      "sha256": "7a533880cc02310095fcb2843040f4f2f815d1f6455a8b9c4c3a9018a90bda93",
+      "package": "spotify.player.esperanto.proto",
+      "dependencies": [
+        "es_command_options.proto",
+        "es_logging_params.proto",
+        "es_play_options.proto",
+        "es_prepare_play.proto"
+      ],
+      "descriptorSetOffset": 50187,
+      "sourcePath": "proto/source/es_play.proto",
+      "sourceSha256": "008c68faec5fb2f0822e3ea5b6ccac3d2103be4f7ad59aaddef5b58beb5bd1da",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_play_options.proto",
+      "offset": 36582540,
+      "length": 625,
+      "sha256": "ba96b65f47a798522d9b64f75cc79a97342431774e10db0fc224773d4b716642",
+      "package": "spotify.player.esperanto.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 51041,
+      "sourcePath": "proto/source/es_play_options.proto",
+      "sourceSha256": "33e8ef0110228b592850186df4fdf1098096470d489cb8372ea627ea8568723b",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_play_origin.proto",
+      "offset": 36583252,
+      "length": 473,
+      "sha256": "3c1b6b99186c481bd1f31c593cce15e13f97783bff2ac80647311b29ee163fc6",
+      "package": "spotify.player.esperanto.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 51669,
+      "sourcePath": "proto/source/es_play_origin.proto",
+      "sourceSha256": "f6d7ef7e43933b805cf35db7435fdd13fb542524e82fb05a9c7919b153a2590c",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_prefs.proto",
+      "offset": 35451572,
+      "length": 1457,
+      "sha256": "cd11ffbe6adabe4187e51fbb1f64aef74c7784d03cc4dc868ea40f81ef576c79",
+      "package": "spotify.prefs.esperanto.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 52145,
+      "sourcePath": "proto/source/es_prefs.proto",
+      "sourceSha256": "6f7de6ea61ecbf1d1ef321f515f6750726f00fb73647ad94bc662efbd077e33a",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_prepare_play.proto",
+      "offset": 36583772,
+      "length": 425,
+      "sha256": "6ced60e6b389c2180fcf6cdf595087bf74b09a71b6c0be4812ee2ee2d3097467",
+      "package": "spotify.player.esperanto.proto",
+      "dependencies": [
+        "es_context.proto",
+        "es_play_origin.proto",
+        "es_prepare_play_options.proto"
+      ],
+      "descriptorSetOffset": 53605,
+      "sourcePath": "proto/source/es_prepare_play.proto",
+      "sourceSha256": "bf9ef8740b960c199622021477a010a5889dba8cdae9c728fb052a0e814d7f55",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_prepare_play_options.proto",
+      "offset": 36584408,
+      "length": 1324,
+      "sha256": "b7d06a20208104077159b95668394d54a51f43dd6fbbf708beee8a1b007aed01",
+      "package": "spotify.player.esperanto.proto",
+      "dependencies": [
+        "es_context_player_options.proto",
+        "es_optional.proto",
+        "es_skip_to_track.proto"
+      ],
+      "descriptorSetOffset": 54033,
+      "sourcePath": "proto/source/es_prepare_play_options.proto",
+      "sourceSha256": "a02f5cbb18740c33b0f406de01f8a753203a19079884b0aa74619415697dcaf2",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_provided_track.proto",
+      "offset": 36585796,
+      "length": 316,
+      "sha256": "9c8a02e3c10061ea554e0b8dc40eeb8ff18c024d78e28be49fad5a3317da5921",
+      "package": "spotify.player.esperanto.proto",
+      "dependencies": [
+        "es_context_track.proto"
+      ],
+      "descriptorSetOffset": 55360,
+      "sourcePath": "proto/source/es_provided_track.proto",
+      "sourceSha256": "5d296053bddc77b8516859097f632190ab156f1dd5a06c84e95ea9587f207106",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_response_with_reasons.proto",
+      "offset": 36586612,
+      "length": 310,
+      "sha256": "423e173545e1d70337e5879aa3e393d5455ab9f57ded8273b3a0fe365bdba57f",
+      "package": "spotify.player.esperanto.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 55679,
+      "sourcePath": "proto/source/es_response_with_reasons.proto",
+      "sourceSha256": "ed3e51efe76b94e864792e896613ce23e0ead97542a3a8c81b5efcbd1c57b722",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_restrictions.proto",
+      "offset": 36587204,
+      "length": 3937,
+      "sha256": "bf2d756c7f3adcd43eb301890d16bdc3107db90c0d11108f0a8076fb986825e0",
+      "package": "spotify.player.esperanto.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 55992,
+      "sourcePath": "proto/source/es_restrictions.proto",
+      "sourceSha256": "ee8a7a583d9ba7d7c48193a97ee3ccc7e56af0ae033e82be76412c10a850a8ff",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_resume.proto",
+      "offset": 36591268,
+      "length": 449,
+      "sha256": "c157f9afea203473b40f3edb84d9d8163e0bb4664ef517692b7865790951eacb",
+      "package": "spotify.player.esperanto.proto",
+      "dependencies": [
+        "es_command_options.proto",
+        "es_logging_params.proto",
+        "es_pauseresume_origin.proto"
+      ],
+      "descriptorSetOffset": 59932,
+      "sourcePath": "proto/source/es_resume.proto",
+      "sourceSha256": "d19c3e0d8ba3a0f1c5adc07cfe5f449945cbd21504f64e2c9489a963d2f6e5e8",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_seek_to.proto",
+      "offset": 36591780,
+      "length": 627,
+      "sha256": "3946e4053f798735fa88ba81b760190693bb7cd57f80d5c4979d853537ff99f0",
+      "package": "spotify.player.esperanto.proto",
+      "dependencies": [
+        "es_command_options.proto",
+        "es_logging_params.proto",
+        "es_optional.proto"
+      ],
+      "descriptorSetOffset": 60384,
+      "sourcePath": "proto/source/es_seek_to.proto",
+      "sourceSha256": "31dc10e21b07332bf02750bede0322a4dffc84dab97f25ed86df85e29759b41c",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_set_options.proto",
+      "offset": 36592736,
+      "length": 843,
+      "sha256": "948fd00dacedff389b81fb52260419f123c9d7c3d3d252592bd8a349be6570d2",
+      "package": "spotify.player.esperanto.proto",
+      "dependencies": [
+        "es_command_options.proto",
+        "es_logging_params.proto",
+        "es_optional.proto"
+      ],
+      "descriptorSetOffset": 61014,
+      "sourcePath": "proto/source/es_set_options.proto",
+      "sourceSha256": "3bacfb781064c90ceec41af8ad87c85aae6afb051a42fa431c6ececee772b9e5",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_set_shuffling_context.proto",
+      "offset": 36595164,
+      "length": 405,
+      "sha256": "e1b5ef4e27ff5e232da02172b9aac671d96ebc23a49e6caf1293602cb29fa903",
+      "package": "spotify.player.esperanto.proto",
+      "dependencies": [
+        "es_command_options.proto",
+        "es_logging_params.proto"
+      ],
+      "descriptorSetOffset": 61860,
+      "sourcePath": "proto/source/es_set_shuffling_context.proto",
+      "sourceSha256": "a83616a394266ca6bd1473b3635d8980ada59ddc5be6a1506d8e580c2e114a13",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_skip_next.proto",
+      "offset": 36596964,
+      "length": 429,
+      "sha256": "9c04571217ace3dbd2e7803f5154e93fdf9d3155f845d0aa427afb7a9c4286cc",
+      "package": "spotify.player.esperanto.proto",
+      "dependencies": [
+        "es_command_options.proto",
+        "es_logging_params.proto",
+        "es_context_track.proto"
+      ],
+      "descriptorSetOffset": 62268,
+      "sourcePath": "proto/source/es_skip_next.proto",
+      "sourceSha256": "bb8ea9124d83a49bf6ee35b90fca37115f9625c1ccd9d0ed7abcedef9c72311c",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_skip_prev.proto",
+      "offset": 36597448,
+      "length": 466,
+      "sha256": "8b41bf55eaf700c75fb1ffbf6ad9e96c876c532ab5eb6e16b3b6221aabc63aa8",
+      "package": "spotify.player.esperanto.proto",
+      "dependencies": [
+        "es_command_options.proto",
+        "es_logging_params.proto",
+        "es_context_track.proto"
+      ],
+      "descriptorSetOffset": 62700,
+      "sourcePath": "proto/source/es_skip_prev.proto",
+      "sourceSha256": "b932419a913b7342abbb558e927b868dca50e0ca51bbe5f55cea7397bf89efdc",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_skip_to_track.proto",
+      "offset": 36597976,
+      "length": 388,
+      "sha256": "81591c4cc7dd103902d24cec0077910247267dab3daf0199520d59b1d0ea941a",
+      "package": "spotify.player.esperanto.proto",
+      "dependencies": [
+        "es_optional.proto"
+      ],
+      "descriptorSetOffset": 63169,
+      "sourcePath": "proto/source/es_skip_to_track.proto",
+      "sourceSha256": "60737700e577f30688398f1fa16bd47b8ee7fe62595ae74bfe852ad5135872f0",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_sleep_timer.proto",
+      "offset": 36598428,
+      "length": 450,
+      "sha256": "204a9e9b2f73382453581047f2ed083b10b9b9eb0a3bba5701a1464c007f03b2",
+      "package": "spotify.player.esperanto.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 63560,
+      "sourcePath": "proto/source/es_sleep_timer.proto",
+      "sourceSha256": "e174932e33d5163d0f358e83589649b9d59d23f3dd9c75ee0602840da3b91d43",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_stored_user_info.proto",
+      "offset": 36342512,
+      "length": 532,
+      "sha256": "58c9e3a9e8c1ab95a053bd7512d78e5a5b8739d3072fe47431f0a4bf1bb7183d",
+      "package": "spotify.connectivity.auth.storage.esperanto.proto",
+      "dependencies": [
+        "google/protobuf/struct.proto",
+        "es_auth_blob.proto"
+      ],
+      "descriptorSetOffset": 64013,
+      "sourcePath": "proto/source/es_stored_user_info.proto",
+      "sourceSha256": "991713adce72e7a4adea9c29a2cdab176d02c1cf5de09685e9bfc08ce87da699",
+      "syntax": "proto3"
+    },
+    {
+      "file": "es_unencrypted_stored_credentials.proto",
+      "offset": 36344004,
+      "length": 282,
+      "sha256": "4a58ccbf63076ff6d7edac2649212003827ea343b649a935d0c1498a249cff41",
+      "package": "spotify.connectivity.auth.common.esperanto.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 64548,
+      "sourcePath": "proto/source/es_unencrypted_stored_credentials.proto",
+      "sourceSha256": "831e0a6a5b7016e9987a328deeb987c198ebdec4750356d83cbcc076d0bab10a",
+      "syntax": "proto3"
+    },
+    {
+      "file": "extended_metadata.proto",
+      "offset": 36795160,
+      "length": 1521,
+      "sha256": "735e2ff43f31f8bd90b52e8e7c28dd24c275cd262f0a2d9266a20ddee7ad410a",
+      "package": "spotify.extendedmetadata",
+      "dependencies": [
+        "extension_kind.proto",
+        "entity_extension_data.proto"
+      ],
+      "descriptorSetOffset": 64833,
+      "sourcePath": "proto/source/extended_metadata.proto",
+      "sourceSha256": "6253ac4d95c568dafc21807bb107e52813b1e2838c6bd4d5ff3f5dbfc2eaf0fa",
+      "syntax": "proto3"
+    },
+    {
+      "file": "extension_kind.proto",
+      "offset": 36798140,
+      "length": 6922,
+      "sha256": "a8865728ad08e3fa9958be256bb4b8d94d636a7e04b9a76446bf4df6e20a577a",
+      "package": "spotify.extendedmetadata",
+      "dependencies": [],
+      "descriptorSetOffset": 66357,
+      "sourcePath": "proto/source/extension_kind.proto",
+      "sourceSha256": "8cb6abcf97077b2bf8579aae3ba0c43c8bd16954082011e73b4742678d7c188b",
+      "syntax": "proto3"
+    },
+    {
+      "file": "google/protobuf/any.proto",
+      "offset": 37055468,
+      "length": 212,
+      "sha256": "e76d9462204f461502447210d1eb0cf97dd3636e273916ede19d8e12733df33b",
+      "package": "google.protobuf",
+      "dependencies": [],
+      "descriptorSetOffset": 73282,
+      "sourcePath": "proto/source/google/protobuf/any.proto",
+      "sourceSha256": "d97eb29f12622df392cffa27773cd8150ee45aef5ce141e51ccb07480a79e63e",
+      "syntax": "proto3"
+    },
+    {
+      "file": "google/protobuf/duration.proto",
+      "offset": 37052948,
+      "length": 235,
+      "sha256": "31e97da059b8d0bb4644601ebd0f617fce728faa0d9beba78a21e815d117705d",
+      "package": "google.protobuf",
+      "dependencies": [],
+      "descriptorSetOffset": 73497,
+      "sourcePath": "proto/source/google/protobuf/duration.proto",
+      "sourceSha256": "9173b5b680041a26cb470470413f9e274bc085b8d222bde3a7c0b7200243ef12",
+      "syntax": "proto3"
+    },
+    {
+      "file": "google/protobuf/struct.proto",
+      "offset": 37051024,
+      "length": 638,
+      "sha256": "fb5b28220303058d1bfffc4138d45c47790dd80d3030efcec70e792b245330aa",
+      "package": "google.protobuf",
+      "dependencies": [],
+      "descriptorSetOffset": 73735,
+      "sourcePath": "proto/source/google/protobuf/struct.proto",
+      "sourceSha256": "8e9e55fd6644d4e16e380aff449fee16417d6715663f0bb1da2532fd99742179",
+      "syntax": "proto3"
+    },
+    {
+      "file": "google/protobuf/timestamp.proto",
+      "offset": 37053220,
+      "length": 239,
+      "sha256": "ccf002fcb7aeea1997ab1be96a02c8c8aa27459a33788f95f399d710dc68fb7e",
+      "package": "google.protobuf",
+      "dependencies": [],
+      "descriptorSetOffset": 74376,
+      "sourcePath": "proto/source/google/protobuf/timestamp.proto",
+      "sourceSha256": "00684765db7e20734394620bbdd6b385fd0b00059441d6022092bb903fa8c1ab",
+      "syntax": "proto3"
+    },
+    {
+      "file": "image_resolve.proto",
+      "offset": 35390232,
+      "length": 836,
+      "sha256": "4b41add8b66883e8507fee19dfdde6c94c7235f1cb293cd114c867a08fba6e53",
+      "package": "spotify.imageresolve.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 74618,
+      "sourcePath": "proto/source/image_resolve.proto",
+      "sourceSha256": "5ca1eaa4361b726152a5c9fa620b9cce6bcccb76191b64e8ecfdcdd7307e1d5e",
+      "syntax": "proto3"
+    },
+    {
+      "file": "lens-model.proto",
+      "offset": 36660436,
+      "length": 308,
+      "sha256": "d0383c5d409da2fdf45d1dc24a270100320cdb56f8c9028789af0ee5cfa0422a",
+      "package": "spotify.lens.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 75457,
+      "sourcePath": "proto/source/lens-model.proto",
+      "sourceSha256": "de89e170acbe853ee22b614d085c1beb385121286d0cbf957b9b28592e2bb932",
+      "syntax": "proto3"
+    },
+    {
+      "file": "media.proto",
+      "offset": 36382456,
+      "length": 171,
+      "sha256": "59ff63e49a7fa489d19b40a6d54c55682861d358989ed3dee152211914482751",
+      "package": "spotify.common.media",
+      "dependencies": [],
+      "descriptorSetOffset": 75768,
+      "sourcePath": "proto/source/media.proto",
+      "sourceSha256": "6e1e73d838b6fea09fdc7916b604121e74eeb8c17e1d7fab3ad28878ae1a3aca",
+      "syntax": "proto3"
+    },
+    {
+      "file": "metadata.proto",
+      "offset": 36892756,
+      "length": 9268,
+      "sha256": "9cf8b85b4a637e95051bd1ecf074f5cd489b6a80a17d00d6f6421b8413f0e6d0",
+      "package": "spotify.metadata",
+      "dependencies": [
+        "spotify/metadata/contentratings/v1/content_ratings.proto"
+      ],
+      "descriptorSetOffset": 75942,
+      "sourcePath": "proto/source/metadata.proto",
+      "sourceSha256": "1533a567bf6d846b98a14ffc22825947fe764d2fde4f1cda464b2eae94b9b1be",
+      "syntax": "proto2"
+    },
+    {
+      "file": "metadata/episode_metadata.proto",
+      "offset": 36633804,
+      "length": 1505,
+      "sha256": "91569891fbb576ff9abb13f378d3d5ad8c18061926ca283c7000916b8ac4c506",
+      "package": "spotify.cosmos_util.proto",
+      "dependencies": [
+        "metadata/extension.proto",
+        "metadata/image_group.proto"
+      ],
+      "descriptorSetOffset": 85213,
+      "sourcePath": "proto/source/metadata/episode_metadata.proto",
+      "sourceSha256": "fe5b9308a151da99eea7785e02f42e1a67e33a2727440f3e2d4437522179008b",
+      "syntax": "proto2"
+    },
+    {
+      "file": "metadata/extension.proto",
+      "offset": 36635356,
+      "length": 225,
+      "sha256": "326c35091601f8cfca938fa2d9efd5331f2e970a465598d04534b1d63fe8053e",
+      "package": "spotify.cosmos_util.proto",
+      "dependencies": [
+        "extension_kind.proto"
+      ],
+      "descriptorSetOffset": 86721,
+      "sourcePath": "proto/source/metadata/extension.proto",
+      "sourceSha256": "884b4232a96fd37a9fb1ef5ac60f4de48b5b18cd6a4096085f031d66d5f1681f",
+      "syntax": "proto2"
+    },
+    {
+      "file": "metadata/image_group.proto",
+      "offset": 36635636,
+      "length": 239,
+      "sha256": "cfbb80f8e2ce63b4fb0328e38281e03447f574a85e48f293e99c43bc79986861",
+      "package": "spotify.cosmos_util.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 86949,
+      "sourcePath": "proto/source/metadata/image_group.proto",
+      "sourceSha256": "ede7b7f15157ea1eaf218fa76b503017fbd74c25a1da0a7781ce28fc2cc873d7",
+      "syntax": "proto2"
+    },
+    {
+      "file": "metadata/track_metadata.proto",
+      "offset": 36637360,
+      "length": 1561,
+      "sha256": "732bd13c6698377145a2ceb29845b35b4023c066a7eb7bcc20349f5d3f0c1414",
+      "package": "spotify.cosmos_util.proto",
+      "dependencies": [
+        "metadata/extension.proto",
+        "metadata/image_group.proto"
+      ],
+      "descriptorSetOffset": 87191,
+      "sourcePath": "proto/source/metadata/track_metadata.proto",
+      "sourceSha256": "04c020d241df5ae6635b3ad0d35fb35c9d0553ee8d1941af9db5a9b28880e19c",
+      "syntax": "proto2"
+    },
+    {
+      "file": "modification_request.proto",
+      "offset": 36610732,
+      "length": 1909,
+      "sha256": "5b055e891a31fe742c746cf186511e67b5aea5dfb0a1ae1e24e7b7e83451ba96",
+      "package": "spotify.playlist.cosmos.proto",
+      "dependencies": [
+        "creation_info.proto",
+        "save_source.proto"
+      ],
+      "descriptorSetOffset": 88755,
+      "sourcePath": "proto/source/modification_request.proto",
+      "sourceSha256": "83765b3f7f5a8906984ffabb01b03b6a6b2970e6bf3dc898e3a8e15ee781c257",
+      "syntax": "proto2"
+    },
+    {
+      "file": "on_demand_in_free_reason.proto",
+      "offset": 36628732,
+      "length": 196,
+      "sha256": "a8a77dc38a53ccb4cc8a54ed1590c8b52253aaec2b90a0ed34d7de7690d5c6e3",
+      "package": "spotify.on_demand_set.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 90667,
+      "sourcePath": "proto/source/on_demand_in_free_reason.proto",
+      "sourceSha256": "6337da0d9ede537e48aa4c721cc8fb29c6b30a6d337eae0f03aef2dd31660bb8",
+      "syntax": "proto2"
+    },
+    {
+      "file": "pending_event_entity.proto",
+      "offset": 36339768,
+      "length": 177,
+      "sha256": "73679737501af58963288e46e0390599ff5275280b53ddb87bab636c048057f8",
+      "package": "spotify.pending_events.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 90866,
+      "sourcePath": "proto/source/pending_event_entity.proto",
+      "sourceSha256": "3c0f1582a2fb25daac94895d2afc37954c3dbd146aec392c51817d568a8cfa25",
+      "syntax": "proto3"
+    },
+    {
+      "file": "played_state/episode_played_state.proto",
+      "offset": 36640584,
+      "length": 416,
+      "sha256": "45e8471225ed329ad1d1bec64424f9c87e0e02f94b267da7663c8ef935953a6e",
+      "package": "spotify.cosmos_util.proto",
+      "dependencies": [
+        "played_state/playability_restriction.proto"
+      ],
+      "descriptorSetOffset": 91046,
+      "sourcePath": "proto/source/played_state/episode_played_state.proto",
+      "sourceSha256": "722a918f457703b578f82f826876b7079a98b685931df24fb014bc6033619a0e",
+      "syntax": "proto2"
+    },
+    {
+      "file": "played_state/playability_restriction.proto",
+      "offset": 36641016,
+      "length": 277,
+      "sha256": "46435f3c6d6832c044a12b557e7e0b442cee741ca46f305e8c1429efc6f15719",
+      "package": "spotify.cosmos_util.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 91465,
+      "sourcePath": "proto/source/played_state/playability_restriction.proto",
+      "sourceSha256": "c7006b5171cb900c9cb2885c9348f577fc891b25aec9769821be13d497556f1e",
+      "syntax": "proto2"
+    },
+    {
+      "file": "played_state/track_played_state.proto",
+      "offset": 36642068,
+      "length": 316,
+      "sha256": "a4201acd699bdd222ec17efacd8ba86c15570ada41c9b2be48fe8a4e803de02e",
+      "package": "spotify.cosmos_util.proto",
+      "dependencies": [
+        "played_state/playability_restriction.proto"
+      ],
+      "descriptorSetOffset": 91745,
+      "sourcePath": "proto/source/played_state/track_played_state.proto",
+      "sourceSha256": "3681bf1d72fddc88e0c9a9614d3997e5c70cc1b5495e081144968021bd20c749",
+      "syntax": "proto2"
+    },
+    {
+      "file": "player.proto",
+      "offset": 36383692,
+      "length": 8619,
+      "sha256": "374dcce7e32e532567f63e3cfb307c1c57c8b65d13d12da5c11257947fa0f6f6",
+      "package": "spotify.connectstate",
+      "dependencies": [],
+      "descriptorSetOffset": 92064,
+      "sourcePath": "proto/source/player.proto",
+      "sourceSha256": "53cb01ba3a4c6adf5dd628631a6fa2e76f046cf2020fe951b043823306d22298",
+      "syntax": "proto3"
+    },
+    {
+      "file": "playlist_api.proto",
+      "offset": 36646840,
+      "length": 11301,
+      "sha256": "4203124978629c882fff40081706103f99722ffc36527982341b47040dd7080e",
+      "package": "spotify.playlist4.proto",
+      "dependencies": [
+        "lens-model.proto",
+        "save_source.proto",
+        "signal-model.proto",
+        "sorts.proto",
+        "tags.proto",
+        "playlist_permission.proto"
+      ],
+      "descriptorSetOffset": 100686,
+      "sourcePath": "proto/source/playlist_api.proto",
+      "sourceSha256": "6bd2e52b7889c6218850313dd4de8300c020c66a2973d9670d0c7d58d491ab7d",
+      "syntax": "proto2"
+    },
+    {
+      "file": "playlist_cache.proto",
+      "offset": 36469796,
+      "length": 2430,
+      "sha256": "7166dd6480465e0d7111f4994ab8c672835b1fd63a1e45122767793c411d51fc",
+      "package": "spotify.playlist_cache.proto",
+      "dependencies": [
+        "playlist_api.proto",
+        "playlist_permission.proto",
+        "cache_hint.proto",
+        "google/protobuf/timestamp.proto"
+      ],
+      "descriptorSetOffset": 111990,
+      "sourcePath": "proto/source/playlist_cache.proto",
+      "sourceSha256": "2fa201400f1e8aebc063d1e9ba8e41b03756110f845c6b8afd3f546485044e3d",
+      "syntax": "proto3"
+    },
+    {
+      "file": "playlist_get_request.proto",
+      "offset": 36121408,
+      "length": 1367,
+      "sha256": "402b4f6153acb3dee826c35f8916c9eb47c2b027072ada442769640cbff26bf7",
+      "package": "spotify.playlist_esperanto.proto",
+      "dependencies": [
+        "google/protobuf/duration.proto",
+        "policy/playlist_request_decoration_policy.proto",
+        "playlist_query.proto",
+        "playlist_request.proto",
+        "response_status.proto"
+      ],
+      "descriptorSetOffset": 114423,
+      "sourcePath": "proto/source/playlist_get_request.proto",
+      "sourceSha256": "1536d40e9f30ce65af7e3feb546e28e733b1f63ee95c94e90f0fb77d8575073c",
+      "syntax": "proto3"
+    },
+    {
+      "file": "playlist_modification_request.proto",
+      "offset": 36603732,
+      "length": 446,
+      "sha256": "80641db0d9d41c18b3377eca0800e27989f3b8ace935d7ab2af765b401acdde4",
+      "package": "spotify.playlist_esperanto.proto",
+      "dependencies": [
+        "modification_request.proto",
+        "response_status.proto"
+      ],
+      "descriptorSetOffset": 115793,
+      "sourcePath": "proto/source/playlist_modification_request.proto",
+      "sourceSha256": "aa599efec35900de5ffeb55707cc511fb10feda572e01970b4e9590c661930e7",
+      "syntax": "proto3"
+    },
+    {
+      "file": "playlist_permission.proto",
+      "offset": 36669508,
+      "length": 10393,
+      "sha256": "96e534771d7907abbbba85ffbf39b23d84b634011feae049eac739b1603696e5",
+      "package": "spotify.playlist_permission.proto",
+      "dependencies": [
+        "google/protobuf/timestamp.proto"
+      ],
+      "descriptorSetOffset": 116242,
+      "sourcePath": "proto/source/playlist_permission.proto",
+      "sourceSha256": "3e47e02b2bbc11ef95c99a1d3fb184de6e568e050b7ae2e51a1a42cc654f6604",
+      "syntax": "proto2"
+    },
+    {
+      "file": "playlist_playlist_state.proto",
+      "offset": 36629756,
+      "length": 2028,
+      "sha256": "5170352c1f226f1e3e21ef23df2bc7efa122992ce0142ace0e772f04baedc7a3",
+      "package": "spotify.playlist.cosmos.proto",
+      "dependencies": [
+        "metadata/extension.proto",
+        "metadata/image_group.proto",
+        "playlist_user_state.proto"
+      ],
+      "descriptorSetOffset": 126638,
+      "sourcePath": "proto/source/playlist_playlist_state.proto",
+      "sourceSha256": "be687732677815fe9211d2fc49ed23d19fa3d55e03640a492ab6b2bcbc6fa247",
+      "syntax": "proto2"
+    },
+    {
+      "file": "playlist_query.proto",
+      "offset": 36680476,
+      "length": 2527,
+      "sha256": "3f4390956131cf9bfdfd034c504b48f6baf433009f4c58a48140a2f907c6ae9b",
+      "package": "spotify.playlist_esperanto.proto",
+      "dependencies": [
+        "policy/supported_link_types_in_playlists.proto"
+      ],
+      "descriptorSetOffset": 128669,
+      "sourcePath": "proto/source/playlist_query.proto",
+      "sourceSha256": "c2532f0a94fdceb6bcf5e49fa1c82a537bb8b39f0ed0d6238ee94232c8f673ae",
+      "syntax": "proto3"
+    },
+    {
+      "file": "playlist_request.proto",
+      "offset": 36613584,
+      "length": 6881,
+      "sha256": "bfe6d6d2506f9060d286b6f27c8a68111dd887efcc8d77cd5f787c2279bbc032",
+      "package": "spotify.playlist.cosmos.playlist_request.proto",
+      "dependencies": [
+        "google/protobuf/timestamp.proto",
+        "collection/episode_collection_state.proto",
+        "metadata/episode_metadata.proto",
+        "played_state/track_played_state.proto",
+        "played_state/episode_played_state.proto",
+        "sync/episode_sync_state.proto",
+        "metadata/image_group.proto",
+        "on_demand_in_free_reason.proto",
+        "playlist_permission.proto",
+        "playlist_playlist_state.proto",
+        "playlist_track_state.proto",
+        "playlist_user_state.proto",
+        "policy/supported_link_types_in_playlists.proto",
+        "metadata/track_metadata.proto",
+        "metadata/extension.proto",
+        "save_source.proto"
+      ],
+      "descriptorSetOffset": 131199,
+      "sourcePath": "proto/source/playlist_request.proto",
+      "sourceSha256": "90e9e7884c96e9ef55db9fac0c17c2e415475aa9fae3fe78e11499541e3dcaf8",
+      "syntax": "proto2"
+    },
+    {
+      "file": "playlist_sync_reason.proto",
+      "offset": 36660800,
+      "length": 1629,
+      "sha256": "51bfb757898a644b343c834a88512d491df3aa47c23716334cf286d205a9e135",
+      "package": "spotify.playlist4.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 138083,
+      "sourcePath": "proto/source/playlist_sync_reason.proto",
+      "sourceSha256": "9dc1d57952fb281e205297fb6af8b7445df2c246c0dbc476ba5782c1bc4ec50a",
+      "syntax": "proto3"
+    },
+    {
+      "file": "playlist_track_state.proto",
+      "offset": 36631900,
+      "length": 326,
+      "sha256": "234763db8781a049407c3dcad10add00ed7fa45077c47189fe072e00a79c2f12",
+      "package": "spotify.playlist.cosmos.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 139715,
+      "sourcePath": "proto/source/playlist_track_state.proto",
+      "sourceSha256": "d17d799a9c008b3ca78efae08e2e88a9dd655e088642d37c6b6d91baa234db00",
+      "syntax": "proto2"
+    },
+    {
+      "file": "playlist_user_state.proto",
+      "offset": 36632304,
+      "length": 272,
+      "sha256": "7f2acda6d0d87964d2806d90b0a0e16f6db7594dbcff3d32c45a9a03f548ca35",
+      "package": "spotify.playlist.cosmos.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 140044,
+      "sourcePath": "proto/source/playlist_user_state.proto",
+      "sourceSha256": "b30dfb7d40c0bc84ae2e9979552a5daf6f49e3234a53e40b96362e86a4ffd184",
+      "syntax": "proto2"
+    },
+    {
+      "file": "policy/album_decoration_policy.proto",
+      "offset": 36694848,
+      "length": 597,
+      "sha256": "cfd182810be6260d24466a20f92b9b099cb1466d292eb264da4858f06620b2ab",
+      "package": "spotify.cosmos_util.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 140319,
+      "sourcePath": "proto/source/policy/album_decoration_policy.proto",
+      "sourceSha256": "4759c98e72921803656c412087233ea165d1935bda084a8c07d28432811c7ac0",
+      "syntax": "proto3"
+    },
+    {
+      "file": "policy/artist_decoration_policy.proto",
+      "offset": 36695620,
+      "length": 751,
+      "sha256": "59e7737fdd4602df29eeb6aaa382fa939a1b1288d467e164cb0e1dfd7793c8b4",
+      "package": "spotify.cosmos_util.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 140919,
+      "sourcePath": "proto/source/policy/artist_decoration_policy.proto",
+      "sourceSha256": "ac175d01555ae0f13b7208494b0a93cc5c095db26db13537d7f0a1eaf9e06b47",
+      "syntax": "proto3"
+    },
+    {
+      "file": "policy/episode_decoration_policy.proto",
+      "offset": 36696708,
+      "length": 1432,
+      "sha256": "af7a2a3297e81f11ece0935f8d843a395a194df63286732b00c4d8203841aa26",
+      "package": "spotify.cosmos_util.proto",
+      "dependencies": [
+        "extension_kind.proto"
+      ],
+      "descriptorSetOffset": 141673,
+      "sourcePath": "proto/source/policy/episode_decoration_policy.proto",
+      "sourceSha256": "c80d171edd46796bb5b3f4afe961aea16ad5bb6a3ba27dcc512d510429db9ca1",
+      "syntax": "proto3"
+    },
+    {
+      "file": "policy/playlist_album_decoration_policy.proto",
+      "offset": 36686540,
+      "length": 385,
+      "sha256": "d2a426867707efa0643d1bd60066c8f63fca9fe430011cfded472a3bb1bde427",
+      "package": "spotify.playlist.cosmos.proto",
+      "dependencies": [
+        "policy/album_decoration_policy.proto",
+        "policy/artist_decoration_policy.proto"
+      ],
+      "descriptorSetOffset": 143108,
+      "sourcePath": "proto/source/policy/playlist_album_decoration_policy.proto",
+      "sourceSha256": "f3f6a5e91c21dd6a061036e79cd2c2072adc3e10f710822dcdb0de68445e66b7",
+      "syntax": "proto3"
+    },
+    {
+      "file": "policy/playlist_decoration_policy.proto",
+      "offset": 36687504,
+      "length": 3319,
+      "sha256": "e7c5c398179a3368cdbea10de9dfedaf5908ecbfe55bf0c9fa7b42283dc1aa2e",
+      "package": "spotify.playlist.cosmos.proto",
+      "dependencies": [
+        "extension_kind.proto",
+        "policy/user_decoration_policy.proto"
+      ],
+      "descriptorSetOffset": 143496,
+      "sourcePath": "proto/source/policy/playlist_decoration_policy.proto",
+      "sourceSha256": "3a535cfa29da209bbb56acba19cc238d3308be067d8708b32b691a7a9d841084",
+      "syntax": "proto3"
+    },
+    {
+      "file": "policy/playlist_episode_decoration_policy.proto",
+      "offset": 36690956,
+      "length": 949,
+      "sha256": "74d74a51888fd111e14281b44ea0b6fff569fa82cba80e8f01c21f9b44115ab4",
+      "package": "spotify.playlist.cosmos.proto",
+      "dependencies": [
+        "policy/episode_decoration_policy.proto",
+        "policy/show_decoration_policy.proto",
+        "policy/user_decoration_policy.proto"
+      ],
+      "descriptorSetOffset": 146818,
+      "sourcePath": "proto/source/policy/playlist_episode_decoration_policy.proto",
+      "sourceSha256": "b940f0a60e92a9e01d89bf76289ea1995b8a00febb19d2c0f89306b440b03d33",
+      "syntax": "proto3"
+    },
+    {
+      "file": "policy/playlist_request_decoration_policy.proto",
+      "offset": 36683316,
+      "length": 2024,
+      "sha256": "a5ce81a3d03f7537dce15890799ff3395f4f675dc13c28d5d8f3d2d7c23974e4",
+      "package": "spotify.playlist.cosmos.proto",
+      "dependencies": [
+        "policy/playlist_decoration_policy.proto",
+        "policy/playlist_episode_decoration_policy.proto",
+        "policy/playlist_track_decoration_policy.proto",
+        "policy/supported_link_types_in_playlists.proto",
+        "policy/user_decoration_policy.proto",
+        "extension_kind.proto"
+      ],
+      "descriptorSetOffset": 147770,
+      "sourcePath": "proto/source/policy/playlist_request_decoration_policy.proto",
+      "sourceSha256": "ab7eabf1d8550ff322f2bd6689e23c6237ce6e91b607eac993ac01f95786038e",
+      "syntax": "proto3"
+    },
+    {
+      "file": "policy/playlist_track_decoration_policy.proto",
+      "offset": 36692056,
+      "length": 1046,
+      "sha256": "47e0ae0ea3c611be70badd5bde1f0ba2fb3d6adee49d161f5fcefb620e87cd07",
+      "package": "spotify.playlist.cosmos.proto",
+      "dependencies": [
+        "policy/artist_decoration_policy.proto",
+        "policy/track_decoration_policy.proto",
+        "policy/playlist_album_decoration_policy.proto",
+        "policy/user_decoration_policy.proto"
+      ],
+      "descriptorSetOffset": 149797,
+      "sourcePath": "proto/source/policy/playlist_track_decoration_policy.proto",
+      "sourceSha256": "a218716b32951c809c87aa195ff4fb2b82489591acbec71fb6233af523014767",
+      "syntax": "proto3"
+    },
+    {
+      "file": "policy/show_decoration_policy.proto",
+      "offset": 36698440,
+      "length": 1279,
+      "sha256": "cdaaafc7c9a11f2dc6b7b75624268cc98fa22d7ca39c7efc7dc062f0aecda639",
+      "package": "spotify.cosmos_util.proto",
+      "dependencies": [
+        "extension_kind.proto"
+      ],
+      "descriptorSetOffset": 150846,
+      "sourcePath": "proto/source/policy/show_decoration_policy.proto",
+      "sourceSha256": "c69075c3986ffb0dec0d3a32b567fcb3108a146610d0f536d0b00bae7a9c5f5d",
+      "syntax": "proto3"
+    },
+    {
+      "file": "policy/supported_link_types_in_playlists.proto",
+      "offset": 36701524,
+      "length": 310,
+      "sha256": "60ebd49f63af5d706db5845d83330eef350abf891512f6576def7148f2e700d7",
+      "package": "spotify.playlist.cosmos.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 152128,
+      "sourcePath": "proto/source/policy/supported_link_types_in_playlists.proto",
+      "sourceSha256": "fdd5b0e099f9cbdedaf90493a765d78555b4396a1a9f302498c3d3ca37eeb270",
+      "syntax": "proto3"
+    },
+    {
+      "file": "policy/track_decoration_policy.proto",
+      "offset": 36700040,
+      "length": 1446,
+      "sha256": "955cae102fa1c72c3bda6b07eda3a13fcea4b9d7a2b724414ffee806fa54db2a",
+      "package": "spotify.cosmos_util.proto",
+      "dependencies": [
+        "extension_kind.proto"
+      ],
+      "descriptorSetOffset": 152441,
+      "sourcePath": "proto/source/policy/track_decoration_policy.proto",
+      "sourceSha256": "137a28cecae59583c090e35df633170b56fc804c42da5906b8a7e76b81bfc366",
+      "syntax": "proto3"
+    },
+    {
+      "file": "policy/user_decoration_policy.proto",
+      "offset": 36694032,
+      "length": 705,
+      "sha256": "d845b7f6cb7ae419516af59df0a42b0a8fb6aa42ca863280893245c1472fa8a1",
+      "package": "spotify.playlist.cosmos.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 153890,
+      "sourcePath": "proto/source/policy/user_decoration_policy.proto",
+      "sourceSha256": "4284526d7e77c7612686b86ba9c4f7f2673e6cbb3e1cda2b14e7a0624f7ce1a7",
+      "syntax": "proto3"
+    },
+    {
+      "file": "recently_played_backend.proto",
+      "offset": 36434112,
+      "length": 284,
+      "sha256": "550b84447c11992b5227fd07fb4e81dbd7fdaa3efdb27f725a53f49b2aa45a36",
+      "package": "spotify.recently_played_backend.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 154598,
+      "sourcePath": "proto/source/recently_played_backend.proto",
+      "sourceSha256": "57fe64431ea76529b10a2db1923f61857eb18f0ba54becb7f030bd96ac9c7cda",
+      "syntax": "proto2"
+    },
+    {
+      "file": "response_status.proto",
+      "offset": 36701896,
+      "length": 229,
+      "sha256": "74f0494901a2b8cab4dbb04a4f38256482b6e1c3b562fb0cc165239fcdb0dd77",
+      "package": "spotify.playlist_esperanto.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 154885,
+      "sourcePath": "proto/source/response_status.proto",
+      "sourceSha256": "decde43e859973a761a28ea6084f68d5b1af693d243c15ea2f80019c6998cb17",
+      "syntax": "proto3"
+    },
+    {
+      "file": "save_source.proto",
+      "offset": 36667704,
+      "length": 464,
+      "sha256": "dbaee449b4fe513c61e4cf31edbccb5c8e8b12500fdcbb43df16d4318a718f86",
+      "package": "spotify.list_collection.save_source.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 155117,
+      "sourcePath": "proto/source/save_source.proto",
+      "sourceSha256": "2cc5bc28c9a425f6999079d80b86dbed652c4715cdbd535807a4e752f5710f1f",
+      "syntax": "proto3"
+    },
+    {
+      "file": "signal-model.proto",
+      "offset": 36662528,
+      "length": 397,
+      "sha256": "ed0ea84f3bfa67ec9ea0e5e5f4f352566436590c0716bb346f3a0c82e45f0dd7",
+      "package": "spotify.playlist.signal.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 155584,
+      "sourcePath": "proto/source/signal-model.proto",
+      "sourceSha256": "67d212945233799ce945a9d8ba9da67629fe93d6027e0434bfe1928754a8f5c2",
+      "syntax": "proto3"
+    },
+    {
+      "file": "sorts.proto",
+      "offset": 36663056,
+      "length": 690,
+      "sha256": "a50b17461b1e7d6c97f21904b3efc2569433e8d62a7b072c5cd0811e990c4a22",
+      "package": "spotify.list.v1.model.attributes",
+      "dependencies": [],
+      "descriptorSetOffset": 155984,
+      "sourcePath": "proto/source/sorts.proto",
+      "sourceSha256": "3303dcf8ad44640f3c012409c7ae03f40f205504ecc4d6bc154fe5f23d9af582",
+      "syntax": "proto3"
+    },
+    {
+      "file": "spotify/client_token/v0/client_token_http.proto",
+      "offset": 36333760,
+      "length": 3213,
+      "sha256": "5f8892ceeb08d8700b50a1dc90c91b9f5029a61c2a3c4e450929e9748fefe3eb",
+      "package": "spotify.clienttoken.http.v0",
+      "dependencies": [
+        "connectivity.proto"
+      ],
+      "descriptorSetOffset": 156677,
+      "sourcePath": "proto/source/spotify/client_token/v0/client_token_http.proto",
+      "sourceSha256": "17720931b9c5e25527611fa673a98739a9992991c1d5156d2b08737f4bdc2d0a",
+      "syntax": "proto3"
+    },
+    {
+      "file": "spotify/metadata/contentratings/v1/content_ratings.proto",
+      "offset": 36902320,
+      "length": 776,
+      "sha256": "9850de8e41c19cab24c3bfd132b2b42aeb474d0030da3a688bf2e482f0464698",
+      "package": "spotify.metadata.contentratings.v1",
+      "dependencies": [],
+      "descriptorSetOffset": 159893,
+      "sourcePath": "proto/source/spotify/metadata/contentratings/v1/content_ratings.proto",
+      "sourceSha256": "e877da123fca270f7cfaa3e398f674e765d14e1584a693c8d24be89600b9d363",
+      "syntax": "proto3"
+    },
+    {
+      "file": "status.proto",
+      "offset": 35373664,
+      "length": 113,
+      "sha256": "998e60543722be9fe87b1c1de1c1d00ccdc30c911d5b75e3108a7eb78d9cb371",
+      "package": "spotify.collection_cosmos.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 160671,
+      "sourcePath": "proto/source/status.proto",
+      "sourceSha256": "9b652149aa85b7f8cb6c241e9188f04997669fa8cc2e923d0f456835fa859f71",
+      "syntax": "proto3"
+    },
+    {
+      "file": "storage-resolve.proto",
+      "offset": 35431556,
+      "length": 261,
+      "sha256": "2c8dc874fc607a791b0350c4359461f941208fa8a783065f0c64882d16140edd",
+      "package": "spotify.download.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 160787,
+      "sourcePath": "proto/source/storage-resolve.proto",
+      "sourceSha256": "d6dccb768627b077ef5eade4b0cc6d17668826f4230a601cec5ac87fcbdf6860",
+      "syntax": "proto3"
+    },
+    {
+      "file": "stream_reporting_attribution.proto",
+      "offset": 36702476,
+      "length": 437,
+      "sha256": "9732fd82a689b1417db077a51aeac98b2e99fc7cc85ee4f5bab584ddb6132cdd",
+      "package": "spotify.stream_reporting_attribution.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 161051,
+      "sourcePath": "proto/source/stream_reporting_attribution.proto",
+      "sourceSha256": "c2c3a3469a36ec4a9f67d3239d38ca5c7eb7817509047b1a62db56412917dd46",
+      "syntax": "proto3"
+    },
+    {
+      "file": "sync/episode_sync_state.proto",
+      "offset": 36642952,
+      "length": 189,
+      "sha256": "df04c29515bb67285b8fd56b79b5d0a5bb1cace9d985f516b6650b77b590c1b3",
+      "package": "spotify.cosmos_util.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 161491,
+      "sourcePath": "proto/source/sync/episode_sync_state.proto",
+      "sourceSha256": "abb23e36f40523eaf406e9ace47258ddec998aec05ae4ced8ff3f921d4073a36",
+      "syntax": "proto2"
+    },
+    {
+      "file": "tags.proto",
+      "offset": 36663884,
+      "length": 519,
+      "sha256": "67db9609b33183b32ff843e79b3108124ea7a31c408aa7cccd8ba27badcbc9c0",
+      "package": "spotify.list.v1.model.attributes",
+      "dependencies": [],
+      "descriptorSetOffset": 161683,
+      "sourcePath": "proto/source/tags.proto",
+      "sourceSha256": "20e4a81e47cf5b954bf8b1662fb191b5044cd946acb9269db54dca7b82b4adf5",
+      "syntax": "proto3"
+    },
+    {
+      "file": "your_library_config.proto",
+      "offset": 35555188,
+      "length": 2637,
+      "sha256": "7b1e5e3944256a1dd4cc526fbe4ab6ce56f1d3b104fdd0669518eb0e68839958",
+      "package": "spotify.your_library.proto",
+      "dependencies": [],
+      "descriptorSetOffset": 162205,
+      "sourcePath": "proto/source/your_library_config.proto",
+      "sourceSha256": "67925faf841a054568426913c0f60b5f00d1c21930009bd28a5d7c55bf2bf6ac",
+      "syntax": "proto3"
+    },
+    {
+      "file": "your_library_decorated_entity.proto",
+      "offset": 35558740,
+      "length": 5429,
+      "sha256": "33bfb7150f0f23aa64757df7aef94b12a12b1a4bd97cfd7e6d444ff8b425fc6a",
+      "package": "spotify.your_library.proto",
+      "dependencies": [
+        "policy/supported_link_types_in_playlists.proto"
+      ],
+      "descriptorSetOffset": 164845,
+      "sourcePath": "proto/source/your_library_decorated_entity.proto",
+      "sourceSha256": "89950087640274472f933dd6522570ba59a9bdf338edc8d09250581e1286d5bb",
+      "syntax": "proto3"
+    },
+    {
+      "file": "your_library_request.proto",
+      "offset": 35539668,
+      "length": 1763,
+      "sha256": "9fb40611ad207f16d8dcbc6f5c0bf61cf16c39ef22fee39ca6676cc182937f85",
+      "package": "spotify.your_library.proto",
+      "dependencies": [
+        "your_library_config.proto"
+      ],
+      "descriptorSetOffset": 170277,
+      "sourcePath": "proto/source/your_library_request.proto",
+      "sourceSha256": "014e3a9c1cb8778d76104a00ef3a3fc98bbcacfae0e00ef95f5727f953192704",
+      "syntax": "proto3"
+    },
+    {
+      "file": "your_library_response.proto",
+      "offset": 35538244,
+      "length": 1115,
+      "sha256": "b235c3f4cb2a4a0f1d78dadf6803f3ffa337308082b253f4db1a714733a23ab6",
+      "package": "spotify.your_library.proto",
+      "dependencies": [
+        "your_library_decorated_entity.proto",
+        "your_library_config.proto"
+      ],
+      "descriptorSetOffset": 172043,
+      "sourcePath": "proto/source/your_library_response.proto",
+      "sourceSha256": "4399c1d87e3097443d95356597f9ac9a05979a5afbf60901dd0e96354a9f4162",
+      "syntax": "proto3"
+    }
+  ],
+  "printer": "github.com/jhump/protoreflect/desc/protoprint v1.18.0"
+}

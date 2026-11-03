@@ -1,0 +1,35 @@
+{
+  "path": "reverse-engineering/native-scripts/faaa00efb5b0e600660e8ad1980fdf7c6a171efae1468a48a89e93c0a9a041db.js",
+  "sha256": "faaa00efb5b0e600660e8ad1980fdf7c6a171efae1468a48a89e93c0a9a041db",
+  "records": [
+    {
+      "name": "route subscription and URI equality",
+      "offsetBytes": 40915,
+      "lengthBytes": 193,
+      "sha256": "4f24dfa97fcab73d1dba7c2369397e701961a551084ec90f1d83d866cae908e4",
+      "source": "w=(0,n.useCallback)(()=>{let r=(0,tl.o_h)(C.location.pathname,{parseUnknown:!0})?.toURI(),l=(0,tl.o_h)(t,{parseUnknown:!0})?.toURI();return!!r&&((0,tl.B2u)(e,r)||!!l&&(0,tl.B2u)(l,r))},[C,t,e])"
+    },
+    {
+      "name": "nearest-row reveal on click",
+      "offsetBytes": 41472,
+      "lengthBytes": 217,
+      "sha256": "127d507b3bd2112e45bdc6fb68a7061a32a2cba2884ff46922656aa88c0f950d",
+      "source": "t.preventDefault(),t.currentTarget.scrollIntoView({block:\"nearest\"}),b){if(O.current>Date.now())return;if(O.current=Date.now()+300,!h){let t=D({type:\"hitPlay\",itemToBePlayed:e});p?.({loggingParams:t})}return}let r=I()"
+    },
+    {
+      "name": "active or multiselected background",
+      "offsetBytes": 43431,
+      "lengthBytes": 42,
+      "sha256": "469bb4323aa76491b5f753eda0128261b31cca24e5876bd720460d0f93d9ea32",
+      "source": "isActiveOrSelected:m(e)||c&&!C}})({index:j"
+    },
+    {
+      "name": "typeahead cached prefix reveal",
+      "offsetBytes": 137104,
+      "lengthBytes": 354,
+      "sha256": "29b3bf32f5ba8e85f251cb06fd1a029b4b231b4a6b3652aa82652d6ac1ae9fe5",
+      "source": "let o=r(0,5e4,{cachedOnly:!0}),c=o.find(e=>e?.name&&(0,eF.u)(i,e.name)),u=c?o.indexOf(c):-1;return -1!==u&&t.current&&function(e,t,r,l){if(!e)return;let{scrollTop:a,offsetHeight:i}=e,n=t&&e?t.getBoundingClientRect().top+a-e.getBoundingClientRect().top:0;(n+r<a||n+r+l>a+i)&&(e.scrollTop=r-i/2+n+l/2)}(t.current,e.current,Math.floor(u/s)*n,n),c?.uri??null"
+    }
+  ],
+  "scope": "Static original route, active-row and click/typeahead reveal trace. Progressive loading to reveal an externally navigated URI is an application extension using the already verified paging contract; original automatic route-to-unloaded-row reveal is not established."
+}

@@ -1,0 +1,751 @@
+{
+  "method": "Capture original Collection PAGE and fixed Liked write fields on local H2.\n\nOriginal proprietary request producers and CEF adapter supply inputs. The\nshipped public CEF library sends only to the isolated loopback peer, with an\nouter sandbox denying remote networking and user Library access. Actual native\nCollection DELTA capture supplies the shared app-field profile; credentials are\nreplaced before any output. No Spotify request, profile or account is used.\n",
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "sourceLibrarySha256": "ea7338318fe19b147a03707fe598af0b6680e8760885db3b14f132a95d04e618",
+  "apiVersion": 999999,
+  "apiHash": "27759c0a4b5b85c632e775838eb599b65129b798",
+  "publicSourceRevision": "beff58dbc4d0fd12b3eafea8f5314ce22e649078",
+  "publicPostUploadSource": {
+    "path": ".local/cef-source/beff58d/libcef/browser/net_service/browser_urlrequest_impl.cc",
+    "sha256": "4ebcd2b1b2397c7df3f01dc995c872a31516fc3fd93fed633161fc8b772b9501",
+    "sourceLines": "349-357: absent/empty content type for a bytes element selects form-urlencoded"
+  },
+  "sourceInputs": [
+    {
+      "path": "reverse-engineering/tools/native_collection_page_oracle.py",
+      "sha256": "468deccb7acac485fed6e60cb6cf2af40fa953c6428bfe41b2494f8a52c4dfc2"
+    },
+    {
+      "path": "reverse-engineering/tools/native_playlist_write_http_oracle.py",
+      "sha256": "53795e0234c6856a42d957c5e9b01cc8ff4f9ef21bbd56babf2fe23f926fa135"
+    },
+    {
+      "path": "reverse-engineering/tools/native_cef_request_oracle.py",
+      "sha256": "6d58f2294ea5ad6fa85bb94738ea755988fc148b7fb8b3861fd0ec009fba53b7"
+    },
+    {
+      "path": "reverse-engineering/fixtures/native-cef-template-loopback.json",
+      "sha256": "319bc5076089b1ff3bbed77f73b4e8c5abfa2228275e3bcda80eddc5f56e113e"
+    },
+    {
+      "path": "reverse-engineering/fixtures/native-cef-h2-loopback.json",
+      "sha256": "d896a0fad537b0fb5da2b51f3ca283d2959eecd40a5e41e06ec360d27b2d65b2"
+    }
+  ],
+  "originalNativeContextCapture": {
+    "path": ".local/original-license-rejection-reference-netlog.json",
+    "sha256": "6d8e8c9f4d71bd0e39ecff3282e86438540cf22987a33b2340d79658d4ec6d50",
+    "sourceId": 814,
+    "eventIndex": 11370,
+    "streamId": 3,
+    "event": "HTTP2_SESSION_SEND_HEADERS",
+    "sanitizedPublicFields": {
+      ":method": "POST",
+      ":authority": "guc3-spclient.spotify.com",
+      ":scheme": "https",
+      ":path": "/collection/v2/delta",
+      "content-length": "45",
+      "accept": "application/vnd.collection-v2.spotify.proto",
+      "accept-language": "en",
+      "app-platform": "OSX_ARM64",
+      "content-type": "application/vnd.collection-v2.spotify.proto",
+      "spotify-app-version": "130601921",
+      "time-zone": "Europe/Moscow",
+      "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+      "origin": "https://guc3-spclient.spotify.com",
+      "sec-fetch-site": "same-origin",
+      "sec-fetch-mode": "no-cors",
+      "sec-fetch-dest": "empty",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "priority": "u=4, i"
+    }
+  },
+  "nativeOptions": {
+    "selectedLocale": "en",
+    "suppliedAppleLanguages": [
+      "ru",
+      "en-US",
+      "en",
+      "en-GB"
+    ],
+    "originalPreferredLocales": {
+      "defaultsKey": "AppleLanguages",
+      "preferredLocales": [
+        "ru",
+        "en-US",
+        "en",
+        "en-GB"
+      ]
+    },
+    "acceptLanguageList": "en-US,en,en-GB",
+    "requestContextSettingsHex": "600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000",
+    "requestContextHandler": 0
+  },
+  "sandbox": "(version 1)(allow default)(deny network*)(allow network-outbound (remote ip \"localhost:*\"))(allow network-inbound (local ip \"localhost:*\"))(allow network-bind (local unix-socket (subpath \"/private/var/folders/fixture/temporary/T\")))(deny file-read* (subpath \"<HOME>/Library\"))(deny file-write* (subpath \"<HOME>/Library\"))",
+  "originalProducerInputs": {
+    "collection": {
+      "username": "synthetic-user",
+      "set": "fixture-set",
+      "paginationToken": "",
+      "originalCalls": [
+        "0x101b7e060",
+        "0x101e8f9a4"
+      ],
+      "pageRequestMethods": {
+        "vtable": "0x10265c3e0",
+        "byteSizeLong": "0x101e47624",
+        "internalSerialize": "0x101e47620"
+      },
+      "original": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "Accept-Language": "en",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "130601921",
+          "time-zone": "Europe/Moscow",
+          "User-Agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+          "Authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "Accept": "application/vnd.collection-v2.spotify.proto",
+          "Content-Type": "application/vnd.collection-v2.spotify.proto"
+        },
+        "bodyHex": "0a0e73796e7468657469632d75736572120b666978747572652d73657420ac02",
+        "relativePath": "collection/v2/paging",
+        "properties": [
+          [
+            "regional_routing",
+            "true"
+          ]
+        ],
+        "headerMutations": [
+          [
+            "Accept",
+            "application/vnd.collection-v2.spotify.proto"
+          ],
+          [
+            "Content-Type",
+            "application/vnd.collection-v2.spotify.proto"
+          ]
+        ],
+        "options": {
+          "opaqueContext": "0x12345678"
+        },
+        "rawUrl": "https://spclient.example.test:443/collection/v2/paging",
+        "orderedHeaders": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "Accept",
+            "application/vnd.collection-v2.spotify.proto"
+          ],
+          [
+            "Content-Type",
+            "application/vnd.collection-v2.spotify.proto"
+          ]
+        ]
+      }
+    },
+    "likedWrite": {
+      "inputs": {
+        "permissionToken": null,
+        "requestedLenses": [
+          "auto"
+        ],
+        "dsaMode": false,
+        "listPlayerEnabled": true,
+        "force": false,
+        "caller": 13,
+        "prioritized": true,
+        "bodyFields": {
+          "baseRevisionHex": "73796e7468657469632d7265766973696f6e00ff",
+          "wantResultingRevisions": true,
+          "wantSyncResult": true,
+          "deltas": [],
+          "nonces": []
+        }
+      },
+      "originalBuilderInputs": {
+        "mode": 1,
+        "appliedRevisionHex": ""
+      },
+      "originalPlan": {
+        "path": "playlist/v2/playlist/37i9dQZF1F5p3rmiWPIYgZ/changes",
+        "method": "POST",
+        "headers": [
+          [
+            "Cache-Control",
+            "no-cache, no-store"
+          ],
+          [
+            "spotify-accept-geoblock",
+            "dummy"
+          ],
+          [
+            "spotify-playlist-sync-reason",
+            "CA0QAQ=="
+          ],
+          [
+            "spotify-apply-lenses",
+            "auto"
+          ],
+          [
+            "spotify-dsa-mode-enabled",
+            "false"
+          ],
+          [
+            "spotify-list-player-enabled",
+            "true"
+          ]
+        ]
+      },
+      "originalHttpEnvelope": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "Accept-Language": "en",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "130601921",
+          "time-zone": "Europe/Moscow",
+          "User-Agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+          "Authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "spotify-dsa-mode-enabled": "false",
+          "spotify-apply-lenses": "auto",
+          "spotify-list-player-enabled": "true",
+          "spotify-playlist-sync-reason": "CA0QAQ==",
+          "spotify-accept-geoblock": "dummy",
+          "Cache-Control": "no-cache, no-store"
+        },
+        "bodyHex": "0a1473796e7468657469632d7265766973696f6e00ff18012001",
+        "properties": [
+          [
+            "regional_routing",
+            "true"
+          ]
+        ],
+        "headerMapMutations": [
+          [
+            "spotify-dsa-mode-enabled",
+            "false"
+          ],
+          [
+            "spotify-apply-lenses",
+            "auto"
+          ],
+          [
+            "spotify-list-player-enabled",
+            "true"
+          ],
+          [
+            "spotify-playlist-sync-reason",
+            "CA0QAQ=="
+          ],
+          [
+            "spotify-accept-geoblock",
+            "dummy"
+          ],
+          [
+            "Cache-Control",
+            "no-cache, no-store"
+          ]
+        ],
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "relativePath": "playlist/v2/playlist/37i9dQZF1F5p3rmiWPIYgZ/changes",
+        "rawUrl": "https://spclient.example.test:443/playlist/v2/playlist/37i9dQZF1F5p3rmiWPIYgZ/changes"
+      },
+      "listChangesLayout": [
+        {
+          "field": 1,
+          "offset": 64,
+          "hasIndex": 128
+        },
+        {
+          "field": 2,
+          "offset": 24,
+          "hasIndex": -1
+        },
+        {
+          "field": 3,
+          "offset": 72,
+          "hasIndex": 129
+        },
+        {
+          "field": 4,
+          "offset": 73,
+          "hasIndex": 130
+        },
+        {
+          "field": 6,
+          "offset": 48,
+          "hasIndex": -1
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Actual Collection DELTA supplies only the shared native app-context fields; PAGE method/path/MIME/body come from original PAGE execution.",
+    "Fixed Liked path, write headers and body installation are executed original inputs; no live original playlist mutation is claimed.",
+    "Decoded H2 fields/order/target/body only; no TLS fingerprint, HPACK/framing or account/server-response proof.",
+    "Explicit loopback authority replaces the original authority and Origin; original profile/credentials are never used."
+  ],
+  "cases": [
+    {
+      "name": "Collection PAGE",
+      "input": {
+        "name": "Collection PAGE",
+        "method": "POST",
+        "url": "https://127.0.0.1:57282/collection/v2/paging",
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "Accept",
+            "application/vnd.collection-v2.spotify.proto"
+          ],
+          [
+            "Content-Type",
+            "application/vnd.collection-v2.spotify.proto"
+          ]
+        ],
+        "bodyBase64": "Cg5zeW50aGV0aWMtdXNlchILZml4dHVyZS1zZXQgrAI=",
+        "adapterOption80": 0,
+        "adapterUserAgent": "inert-adapter-UA"
+      },
+      "originalAdapter": {
+        "bodyElementsBase64": [
+          "Cg5zeW50aGV0aWMtdXNlchILZml4dHVyZS1zZXQgrAI="
+        ],
+        "flags": 208,
+        "method": "POST",
+        "urlInput": "https://127.0.0.1:57282/collection/v2/paging",
+        "headers": [
+          [
+            "Accept",
+            "application/vnd.collection-v2.spotify.proto"
+          ],
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "Content-Type",
+            "application/vnd.collection-v2.spotify.proto"
+          ],
+          [
+            "User-Agent",
+            "inert-adapter-UA"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ]
+        ]
+      },
+      "result": {
+        "alpn": "h2",
+        "headers": [
+          [
+            ":method",
+            "POST"
+          ],
+          [
+            ":authority",
+            "127.0.0.1:57282"
+          ],
+          [
+            ":scheme",
+            "https"
+          ],
+          [
+            ":path",
+            "/collection/v2/paging"
+          ],
+          [
+            "content-length",
+            "32"
+          ],
+          [
+            "accept",
+            "application/vnd.collection-v2.spotify.proto"
+          ],
+          [
+            "accept-language",
+            "en"
+          ],
+          [
+            "authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "content-type",
+            "application/vnd.collection-v2.spotify.proto"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "origin",
+            "https://127.0.0.1:57282"
+          ],
+          [
+            "sec-fetch-site",
+            "same-origin"
+          ],
+          [
+            "sec-fetch-mode",
+            "no-cors"
+          ],
+          [
+            "sec-fetch-dest",
+            "empty"
+          ],
+          [
+            "accept-encoding",
+            "gzip, deflate, br, zstd"
+          ],
+          [
+            "priority",
+            "u=4, i"
+          ]
+        ],
+        "bodyBase64": "Cg5zeW50aGV0aWMtdXNlchILZml4dHVyZS1zZXQgrAI=",
+        "rawClientFramesBase64": "UFJJICogSFRUUC8yLjANCg0KU00NCg0KAAAYBAAAAAAAAAEAAQAAAAIAAAAAAAQAYAAAAAYABAAAAAAECAAAAAAAAO8AAQABdQEkAAAAAYAAAABtg0GLCJ1cC4Fw3G3RPC+HBI9gh6KCkSY9THcTFY5jVTdcAjMyU54dddBiDSY9THeqRch6KCkSY9S3cS6KzpNL6XrsOk9RAmVuV5O6UdhbFJTeU22FWGQhUIWSfqWrX54dddBiDSY9THeqRch6KCkSY9S3cS6KzpNL6XrsOk96pd1Z0ml9MBZA4AL4gqat35FDt0ONMatyn4oJxdpcCn/sdlKgv/lAiR11rV0DTKeyn4jVu/Ioduhxr0CJJQYtSVkn6lq/jpTeU22FWJQYtSVkn6lqQI5FZ0ml9LDrrW7lsQY9X4YLIHABfEFAh0mpKt7PUX+KwW2HrKxoOgh/H0CFPYaY1X+RnSmtFxhgInVwLgXDcbdE8L9AikFItKVJJ1kGSX+IQOkqx7DTGq9AikFItKVJJ1qTyF+FqOsQ9iNAikFItKVJJ1pCoT+ELTWn11CSm9mr+lJCy0DSX6Ujs+lPaEyfQIauwx7DJ9eFtga+lDcAACAAAQAAAAEKDnN5bnRoZXRpYy11c2VyEgtmaXh0dXJlLXNldCCsAg=="
+      }
+    },
+    {
+      "name": "Fixed Liked changes",
+      "input": {
+        "name": "Fixed Liked changes",
+        "method": "POST",
+        "url": "https://127.0.0.1:57282/playlist/v2/playlist/37i9dQZF1F5p3rmiWPIYgZ/changes",
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-dsa-mode-enabled",
+            "false"
+          ],
+          [
+            "spotify-apply-lenses",
+            "auto"
+          ],
+          [
+            "spotify-list-player-enabled",
+            "true"
+          ],
+          [
+            "spotify-playlist-sync-reason",
+            "CA0QAQ=="
+          ],
+          [
+            "spotify-accept-geoblock",
+            "dummy"
+          ],
+          [
+            "Cache-Control",
+            "no-cache, no-store"
+          ]
+        ],
+        "bodyBase64": "ChRzeW50aGV0aWMtcmV2aXNpb24A/xgBIAE=",
+        "adapterOption80": 0,
+        "adapterUserAgent": "inert-adapter-UA"
+      },
+      "originalAdapter": {
+        "bodyElementsBase64": [
+          "ChRzeW50aGV0aWMtcmV2aXNpb24A/xgBIAE="
+        ],
+        "flags": 208,
+        "method": "POST",
+        "urlInput": "https://127.0.0.1:57282/playlist/v2/playlist/37i9dQZF1F5p3rmiWPIYgZ/changes",
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "Cache-Control",
+            "no-cache, no-store"
+          ],
+          [
+            "User-Agent",
+            "inert-adapter-UA"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-accept-geoblock",
+            "dummy"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "spotify-apply-lenses",
+            "auto"
+          ],
+          [
+            "spotify-dsa-mode-enabled",
+            "false"
+          ],
+          [
+            "spotify-list-player-enabled",
+            "true"
+          ],
+          [
+            "spotify-playlist-sync-reason",
+            "CA0QAQ=="
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ]
+        ]
+      },
+      "result": {
+        "alpn": "h2",
+        "headers": [
+          [
+            ":method",
+            "POST"
+          ],
+          [
+            ":authority",
+            "127.0.0.1:57282"
+          ],
+          [
+            ":scheme",
+            "https"
+          ],
+          [
+            ":path",
+            "/playlist/v2/playlist/37i9dQZF1F5p3rmiWPIYgZ/changes"
+          ],
+          [
+            "content-length",
+            "26"
+          ],
+          [
+            "pragma",
+            "no-cache"
+          ],
+          [
+            "cache-control",
+            "no-cache, no-store"
+          ],
+          [
+            "accept-language",
+            "en"
+          ],
+          [
+            "authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-accept-geoblock",
+            "dummy"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "spotify-apply-lenses",
+            "auto"
+          ],
+          [
+            "spotify-dsa-mode-enabled",
+            "false"
+          ],
+          [
+            "spotify-list-player-enabled",
+            "true"
+          ],
+          [
+            "spotify-playlist-sync-reason",
+            "CA0QAQ=="
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "content-type",
+            "application/x-www-form-urlencoded"
+          ],
+          [
+            "origin",
+            "https://127.0.0.1:57282"
+          ],
+          [
+            "sec-fetch-site",
+            "same-origin"
+          ],
+          [
+            "sec-fetch-mode",
+            "no-cors"
+          ],
+          [
+            "sec-fetch-dest",
+            "empty"
+          ],
+          [
+            "accept-encoding",
+            "gzip, deflate, br, zstd"
+          ],
+          [
+            "priority",
+            "u=4, i"
+          ]
+        ],
+        "bodyBase64": "ChRzeW50aGV0aWMtcmV2aXNpb24A/xgBIAE=",
+        "rawClientFramesBase64": "UFJJICogSFRUUC8yLjANCg0KU00NCg0KAAAYBAAAAAAAAAEAAQAAAAIAAAAAAAQAYAAAAAYABAAAAAAECAAAAAAAAO8AAQAB/wEkAAAAAYAAAABtg0GLCJ1cC4Fw3G3RPC+HBKdiugfqgyEsdxMV0D9UGQlhl0z8mz9whwt1s2Um5a8nOb9YJOOqYqNcAjI2QIWuwc1I/4ao6xBknL9YjajrEGScv0pUdZCT2F9RAmVuV5O6UdhbFJTeU22FWGQhUIWSfqWreqXdWdJpfTAWQOAC+IKmrd+RQ7dDjTGrcp+KCcXaXAp/7HZSoL/5QIkdda1dA0ynsp+I1bvyKHboca9AiSUGLUlZJ+pav46U3lNthViUGLUlZJ+pakCQRWdJpfSwyELWlaYp46Dk64SS2mn1QI5FZ0ml9LDrrW7lsQY9X4YLIHABfEFAj0VnSaX0sOuuj0tQWpBUf4MdqT9AkUVnSaX0tIga1J5CrFqHHQWThJR0IL9Ak0VnSaX0tQZCVq6B+i2LFqHHQWSDTZaXQJRFZ0ml9LV0D9UGQlZHqoi1hRoPV4e9CDZDsgg/QIdJqSrez1F/isFth6ysaDoIfx9fmB110GINJj1MeVvHjwtKeyla2ygtRDyFk0CFPYaY1X+RnSmtFxhgInVwLgXDcbdE8L9AikFItKVJJ1kGSX+IQOkqx7DTGq9AikFItKVJJ1qTyF+FqOsQ9iNAikFItKVJJ1pCoT+ELTWn11CSm9mr+lJCy0DSX6Ujs+lPaEyfQIauwx7DJ9eFtga+lDcAABoAAQAAAAEKFHN5bnRoZXRpYy1yZXZpc2lvbgD/GAEgAQ=="
+      }
+    }
+  ]
+}

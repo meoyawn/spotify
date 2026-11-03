@@ -1,0 +1,229 @@
+{
+  "method": "Extract original renderer H2 field order and connection reuse offline.\n\nThe default capture and deliberately QUIC-disabled diagnostic stay distinct.\nCredentials, content identifiers, signed queries and body bytes are withheld.\nService producer fixtures separately own the synthetic outgoing JSON bodies.\n",
+  "toolSha256": "d6f60c2063835bc40f09416cbf5545432340a1da63a6c027a34fb07e7b3175db",
+  "captures": [
+    {
+      "path": ".local/original-license-rejection-reference-netlog.json",
+      "sha256": "6d8e8c9f4d71bd0e39ecff3282e86438540cf22987a33b2340d79658d4ec6d50",
+      "disableQuic": false,
+      "postSends": 2,
+      "preflightSends": 0,
+      "sessions": [
+        {
+          "sessionSourceId": 4071,
+          "postSends": 2,
+          "streamIds": [
+            1,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "path": ".local/original-license-upload-http2-netlog.json",
+      "sha256": "7ad17ebaf96eda74ecd2c0cd822370287f4aed26310a49faa930cdda92fd64fa",
+      "disableQuic": true,
+      "postSends": 12,
+      "preflightSends": 6,
+      "sessions": [
+        {
+          "sessionSourceId": 1358,
+          "postSends": 8,
+          "streamIds": [
+            13,
+            15,
+            17,
+            19,
+            21,
+            23,
+            25,
+            27
+          ]
+        },
+        {
+          "sessionSourceId": 2002,
+          "postSends": 4,
+          "streamIds": [
+            1,
+            3,
+            5,
+            7
+          ]
+        }
+      ]
+    }
+  ],
+  "matchingSources": [
+    {
+      "path": ".local/original-license-rejection-reference-netlog.json",
+      "eventIndex": 88955,
+      "sessionSourceId": 4071,
+      "streamId": 1,
+      "event": "HTTP2_SESSION_SEND_HEADERS",
+      "disableQuic": false
+    },
+    {
+      "path": ".local/original-license-rejection-reference-netlog.json",
+      "eventIndex": 89062,
+      "sessionSourceId": 4071,
+      "streamId": 3,
+      "event": "HTTP2_SESSION_SEND_HEADERS",
+      "disableQuic": false
+    },
+    {
+      "path": ".local/original-license-upload-http2-netlog.json",
+      "eventIndex": 29709,
+      "sessionSourceId": 1358,
+      "streamId": 13,
+      "event": "HTTP2_SESSION_SEND_HEADERS",
+      "disableQuic": true
+    },
+    {
+      "path": ".local/original-license-upload-http2-netlog.json",
+      "eventIndex": 29751,
+      "sessionSourceId": 1358,
+      "streamId": 15,
+      "event": "HTTP2_SESSION_SEND_HEADERS",
+      "disableQuic": true
+    },
+    {
+      "path": ".local/original-license-upload-http2-netlog.json",
+      "eventIndex": 29793,
+      "sessionSourceId": 1358,
+      "streamId": 17,
+      "event": "HTTP2_SESSION_SEND_HEADERS",
+      "disableQuic": true
+    },
+    {
+      "path": ".local/original-license-upload-http2-netlog.json",
+      "eventIndex": 29835,
+      "sessionSourceId": 1358,
+      "streamId": 19,
+      "event": "HTTP2_SESSION_SEND_HEADERS",
+      "disableQuic": true
+    },
+    {
+      "path": ".local/original-license-upload-http2-netlog.json",
+      "eventIndex": 29877,
+      "sessionSourceId": 1358,
+      "streamId": 21,
+      "event": "HTTP2_SESSION_SEND_HEADERS",
+      "disableQuic": true
+    },
+    {
+      "path": ".local/original-license-upload-http2-netlog.json",
+      "eventIndex": 30557,
+      "sessionSourceId": 1358,
+      "streamId": 23,
+      "event": "HTTP2_SESSION_SEND_HEADERS",
+      "disableQuic": true
+    },
+    {
+      "path": ".local/original-license-upload-http2-netlog.json",
+      "eventIndex": 30808,
+      "sessionSourceId": 1358,
+      "streamId": 25,
+      "event": "HTTP2_SESSION_SEND_HEADERS",
+      "disableQuic": true
+    },
+    {
+      "path": ".local/original-license-upload-http2-netlog.json",
+      "eventIndex": 35831,
+      "sessionSourceId": 1358,
+      "streamId": 27,
+      "event": "HTTP2_SESSION_SEND_HEADERS",
+      "disableQuic": true
+    },
+    {
+      "path": ".local/original-license-upload-http2-netlog.json",
+      "eventIndex": 48968,
+      "sessionSourceId": 2002,
+      "streamId": 1,
+      "event": "HTTP2_SESSION_SEND_HEADERS",
+      "disableQuic": true
+    },
+    {
+      "path": ".local/original-license-upload-http2-netlog.json",
+      "eventIndex": 48976,
+      "sessionSourceId": 2002,
+      "streamId": 3,
+      "event": "HTTP2_SESSION_SEND_HEADERS",
+      "disableQuic": true
+    },
+    {
+      "path": ".local/original-license-upload-http2-netlog.json",
+      "eventIndex": 57123,
+      "sessionSourceId": 2002,
+      "streamId": 5,
+      "event": "HTTP2_SESSION_SEND_HEADERS",
+      "disableQuic": true
+    },
+    {
+      "path": ".local/original-license-upload-http2-netlog.json",
+      "eventIndex": 57167,
+      "sessionSourceId": 2002,
+      "streamId": 7,
+      "event": "HTTP2_SESSION_SEND_HEADERS",
+      "disableQuic": true
+    }
+  ],
+  "headerSequence": [
+    ":method",
+    ":authority",
+    ":scheme",
+    ":path",
+    "content-length",
+    "origin",
+    "user-agent",
+    "accept",
+    "accept-language",
+    "app-platform",
+    "authorization",
+    "client-token",
+    "content-type",
+    "sec-ch-ua",
+    "sec-ch-ua-mobile",
+    "sec-ch-ua-platform",
+    "spotify-app-version",
+    "sec-fetch-site",
+    "sec-fetch-mode",
+    "sec-fetch-dest",
+    "referer",
+    "accept-encoding",
+    "priority"
+  ],
+  "capturedPublicFields": {
+    ":method": "POST",
+    ":authority": "api-partner.spotify.com",
+    ":scheme": "https",
+    ":path": "/pathfinder/v2/query",
+    "origin": "https://xpui.app.spotify.com",
+    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+    "accept": "application/json",
+    "accept-language": "en",
+    "app-platform": "OSX_ARM64",
+    "content-type": "application/json;charset=UTF-8",
+    "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"macOS\"",
+    "spotify-app-version": "1.3.6.1921",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "https://xpui.app.spotify.com/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "priority": "u=1, i"
+  },
+  "substitutions": [
+    "Local wire checks replace authority with the TLS loopback peer; renderer Origin/Referer remain the original xpui origin.",
+    "Authorization and client-token use explicit synthetic values from independent original producer fixtures. No individual credential hash is retained.",
+    "Content-Length and body come from separately executed original Search/Home/album/artist producers; these captured H2 body bytes were not available.",
+    "Producer-supplied locale and operation-specific app-version remain those original producer outputs; these H2 captures show locale en and full app version only."
+  ],
+  "limits": [
+    "The default capture proves two actual renderer POSTs on one H2 session, streams1 and3. The forced-H2 diagnostic proves12 additional POST field sequences; its selection is not a default.",
+    "The14 POSTs share the same23-field decoded order. Six diagnostic OPTIONS preflights are counted separately, not implemented or silently equated to POST.",
+    "No exact renderer cold-connection SETTINGS timing, request-to-operation body join, retry policy, CORS cache, TLS/HPACK fingerprint or H2/H3 preference is proved.",
+    "No application, account, profile or network runs. Only pinned original captures are read."
+  ]
+}

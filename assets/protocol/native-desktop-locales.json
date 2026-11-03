@@ -1,0 +1,382 @@
+{
+  "source": "Spotify1.3.6.1921 arm64",
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "sourceDirectory": "Contents/Resources/locales",
+  "entries": [
+    {
+      "locale": "af",
+      "file": "af.mo",
+      "sha256": "f18151982b11edf6460b02b6cf7bd5d104fe5cfb7252dcac40247ced81326e40"
+    },
+    {
+      "locale": "am",
+      "file": "am.mo",
+      "sha256": "8fd30c72089b6afccd9b53a69fec02df84f01fbc112502534d483a288239056e"
+    },
+    {
+      "locale": "ar-EG",
+      "file": "ar-EG.mo",
+      "sha256": "6db052b3510c4d4c53f9262a17ec7dc9230fadb8e6b61fa13e02230680ee7988"
+    },
+    {
+      "locale": "ar-MA",
+      "file": "ar-MA.mo",
+      "sha256": "aa85d032dd43e35aac0a302efdafef240f8f16a197aa9d333dab62ad7630d122"
+    },
+    {
+      "locale": "ar-SA",
+      "file": "ar-SA.mo",
+      "sha256": "44c801b550b67c6b564066a2e1a943255ee207f8c49dc06427355e03a9aee4bc"
+    },
+    {
+      "locale": "ar",
+      "file": "ar.mo",
+      "sha256": "a7b998f51750f4b06489894af6af9141601a344c5fd73a79ce88a5e05bf4cd08"
+    },
+    {
+      "locale": "az",
+      "file": "az.mo",
+      "sha256": "f6fb69412508d19c32ce514be79334131264e4ce17fabe0409e0b8245a7cb678"
+    },
+    {
+      "locale": "bg",
+      "file": "bg.mo",
+      "sha256": "6fcf6c7033be5ef5afdc1dd499eafb6f850f727ccab6bc7ba9a3e03ede3150c7"
+    },
+    {
+      "locale": "bho",
+      "file": "bho.mo",
+      "sha256": "d215066d1da8189454b476a68ed4dd67cd956c68ecaf49a83ea865e9f272fac4"
+    },
+    {
+      "locale": "bn",
+      "file": "bn.mo",
+      "sha256": "1a5d5e200811988cc74ecc389c1fe24c33a48a543adc87a6f1c6fc8cb34e637e"
+    },
+    {
+      "locale": "bs",
+      "file": "bs.mo",
+      "sha256": "83e099dbc0022f6f2c723f701cff4feb688954ed5a0cca8e214c16b0346eda13"
+    },
+    {
+      "locale": "ca",
+      "file": "ca.mo",
+      "sha256": "0f35a77ae28ff5e148ea122780f1006aa5111da6235416a2fc7ed0c215175a66"
+    },
+    {
+      "locale": "cs",
+      "file": "cs.mo",
+      "sha256": "0ce5ca17a46a31ccd37aafb145133a6f4e6606087ec7c9357d357aa6903ba5de"
+    },
+    {
+      "locale": "da",
+      "file": "da.mo",
+      "sha256": "a5f88cc25a829a26de482cd4b4d28c44277c70981fbb0050a54cd4f437fb713e"
+    },
+    {
+      "locale": "de",
+      "file": "de.mo",
+      "sha256": "ab6b48450a35f81726e61bbbbcac152b1f029a2a524c7e4829042439e5d37f1e"
+    },
+    {
+      "locale": "el",
+      "file": "el.mo",
+      "sha256": "8bd6f8d94ab6b5a0c1dd19f247e381a85c887168f4b118c954203adbf5a08904"
+    },
+    {
+      "locale": "en-GB",
+      "file": "en-GB.mo",
+      "sha256": "dcd7b66a1c2bd622958a873c4b42ef925019a3f9b8d4710f9145db71409bf628"
+    },
+    {
+      "locale": "en",
+      "file": "en.mo",
+      "sha256": "ea9d1bcb4a56f14a2fe7e4b214e3826c4619e6abe55cc90f42b6af579c06d83b"
+    },
+    {
+      "locale": "es-419",
+      "file": "es-419.mo",
+      "sha256": "8ef4238202014096cf738dd3ee3113adca63944cdd191cd8464a0b2031625b2e"
+    },
+    {
+      "locale": "es-AR",
+      "file": "es-AR.mo",
+      "sha256": "c32c177a1aed5a15a4bcd07dd4dc3db74c45682ffaf6a1c8a45393142890a6c7"
+    },
+    {
+      "locale": "es-MX",
+      "file": "es-MX.mo",
+      "sha256": "404759a8fbb728729692747ac19f6b6953bc0632bbbca753b24771f1a653eb78"
+    },
+    {
+      "locale": "es",
+      "file": "es.mo",
+      "sha256": "c468a03f6e45046fc9fd8a5133091fb72ed66587627662cfac61632b11955365"
+    },
+    {
+      "locale": "et",
+      "file": "et.mo",
+      "sha256": "992981edc15070a0adf225e205ee7ccfb2ec0b8ee0c1a743a0c0c51cf152d133"
+    },
+    {
+      "locale": "eu",
+      "file": "eu.mo",
+      "sha256": "68ef4b89672fa1ff7b1ba29304af3792411c22968a43e09012358b45ce9d4048"
+    },
+    {
+      "locale": "fa",
+      "file": "fa.mo",
+      "sha256": "bd60dd37e15d89125e818f0b0abc31a721858cd9e458f449ffa6457cbe42ace6"
+    },
+    {
+      "locale": "fi",
+      "file": "fi.mo",
+      "sha256": "7682322d3bcb60af4c031f112408f40d183856cba9ef98a68e96ca600d0f8c6b"
+    },
+    {
+      "locale": "fil",
+      "file": "fil.mo",
+      "sha256": "5a0290abda7f56cfebc1404f72c56a2bf1075bd453a087b31597cd40c1b059bb"
+    },
+    {
+      "locale": "fr-CA",
+      "file": "fr-CA.mo",
+      "sha256": "faaffc93e48d90e466197879b3637782f926fe1a6948df0f648420bdd802dc81"
+    },
+    {
+      "locale": "fr",
+      "file": "fr.mo",
+      "sha256": "10d0030baefa37c09c8e73d7484c679179ff1ef71622130fb57c246ea088fa8d"
+    },
+    {
+      "locale": "gl",
+      "file": "gl.mo",
+      "sha256": "baefb0f5a3551b79b0325b6b424171bbad91af8faadf2bc50bc43b52aaa9f4b6"
+    },
+    {
+      "locale": "gu",
+      "file": "gu.mo",
+      "sha256": "ea34bf5f0f465fe070c08c7d6f056e12218314ba6931c944722a32aa45fd54c4"
+    },
+    {
+      "locale": "he",
+      "file": "he.mo",
+      "sha256": "93644d11e66b4ff522c962dee76b50b85ff52577420e32fc349975f00310d6e1"
+    },
+    {
+      "locale": "hi",
+      "file": "hi.mo",
+      "sha256": "852bfde3a31c889f7d8e178435fc62bfdd543fbb8b70b19f52895ce21ab84993"
+    },
+    {
+      "locale": "hr",
+      "file": "hr.mo",
+      "sha256": "66d38ac83c3ea2e6dd60e5c063975929a9d00210999e4eaddaec94bedeb7b1cc"
+    },
+    {
+      "locale": "hu",
+      "file": "hu.mo",
+      "sha256": "c3dddf2942f1855edb6bfa75885667a6eb62834666ca45f4d34f8bd95886f588"
+    },
+    {
+      "locale": "id",
+      "file": "id.mo",
+      "sha256": "6a2677f7d60e65724d83030a601926c2746bfc241653fa4eaa29ac6673099dae"
+    },
+    {
+      "locale": "is",
+      "file": "is.mo",
+      "sha256": "100467f3f0ef062dbd4f5f34c3c0a56d496d72e540752566071abc9601c20e84"
+    },
+    {
+      "locale": "it",
+      "file": "it.mo",
+      "sha256": "c0e5ca3aad3919b6978e011982fb4bee5283859e2b5acb7c5975b900c709cf40"
+    },
+    {
+      "locale": "ja",
+      "file": "ja.mo",
+      "sha256": "dfaa0336098aa906290abf6ed953557dd0448fccf0a74788fb01b2d5c3059b0c"
+    },
+    {
+      "locale": "kn",
+      "file": "kn.mo",
+      "sha256": "970af1faaa1262aae785eee576b0e09d6d2dc3fb392f7fb605f646318fc0e55a"
+    },
+    {
+      "locale": "ko",
+      "file": "ko.mo",
+      "sha256": "55e5dd04a8ae2b911d376fd2d72d580f7a9a2185e30915dba0685c12504c6db8"
+    },
+    {
+      "locale": "lt",
+      "file": "lt.mo",
+      "sha256": "1ef22194265acef812b0889c870cab49f92dab94d49ccc803f126e13dce96d6b"
+    },
+    {
+      "locale": "lv",
+      "file": "lv.mo",
+      "sha256": "ce7a90b21f9059e18329fcb1fa1cff500fae0cfa94756eb6f6e59b728681d546"
+    },
+    {
+      "locale": "mk",
+      "file": "mk.mo",
+      "sha256": "a9c24356d771d2c270d426bf36a7ff858c3eb6cd358419c5b38e3500b24e061f"
+    },
+    {
+      "locale": "ml",
+      "file": "ml.mo",
+      "sha256": "2a2bc7ab6241ce637716ed05f650788c509d93a34740963f03952f04d5a33a43"
+    },
+    {
+      "locale": "mr",
+      "file": "mr.mo",
+      "sha256": "e090f2e7a8124d1b7839edf6482f83a535793e89cdc1d6ec3f2eb55eb129e493"
+    },
+    {
+      "locale": "ms",
+      "file": "ms.mo",
+      "sha256": "055923e4e1c507d778fefc5c248e0f4593b4dff9d6b7c30ce2cd0f438fddbb53"
+    },
+    {
+      "locale": "nb",
+      "file": "nb.mo",
+      "sha256": "4a933878ea384fb136af8915bf8488c1b1754a461f9de6f3d7558519ea7e253b"
+    },
+    {
+      "locale": "ne",
+      "file": "ne.mo",
+      "sha256": "c5bd621fece94dfa802c133868f74d85fb5c95799ad949cc578569f755626161"
+    },
+    {
+      "locale": "nl",
+      "file": "nl.mo",
+      "sha256": "6a092b51e8ce0ba869481782ab4c548b55fc6d550fa1b4eda19b8afdb47ed9ae"
+    },
+    {
+      "locale": "or",
+      "file": "or.mo",
+      "sha256": "3e807bfc804aab725a9f88d2caa86d917360041ad5a993631fe6a570eaa22265"
+    },
+    {
+      "locale": "pa-IN",
+      "file": "pa-IN.mo",
+      "sha256": "bf690802a3757be141a674b34c8967a674ccd10f91b0299b8c7a3d8d6ecae534"
+    },
+    {
+      "locale": "pa-PK",
+      "file": "pa-PK.mo",
+      "sha256": "18d087b611c1883a02f0c5a8117c854302c7dfef292515ae28dd5142206112d1"
+    },
+    {
+      "locale": "pl",
+      "file": "pl.mo",
+      "sha256": "ff8900015a1983dd15c35d2cae6df6c8716012a557047b2943f2ed08f19d888e"
+    },
+    {
+      "locale": "pt-BR",
+      "file": "pt-BR.mo",
+      "sha256": "6310dfc349c2db20df4c93ed86439429def3bf01019526fd4682997d9a19f01d"
+    },
+    {
+      "locale": "pt-PT",
+      "file": "pt-PT.mo",
+      "sha256": "cc1b911b168a4ad38d419d26843872321aa44f096fe020348d1bf0dee41b8d40"
+    },
+    {
+      "locale": "ro",
+      "file": "ro.mo",
+      "sha256": "4fd3602488177d1d39be69120c6e7a5352349ca4a282dd8834aa6ac309e57245"
+    },
+    {
+      "locale": "ru",
+      "file": "ru.mo",
+      "sha256": "cec81ef9647f837743383ebbdac866e3f1d76ed7a77a818a7e1760ecaae7b8df"
+    },
+    {
+      "locale": "sk",
+      "file": "sk.mo",
+      "sha256": "35c40027d73a72ed32a026e8dcdf7ac8591a6eb71c8ebcb32e0264631a7a71e7"
+    },
+    {
+      "locale": "sl",
+      "file": "sl.mo",
+      "sha256": "c1c082b3a57466b9165232ca6bff7034079e42d745e18e28281ef0fa62c788a6"
+    },
+    {
+      "locale": "sr",
+      "file": "sr.mo",
+      "sha256": "b67e1aabc65f611e2c4767119e49c5183ef7d26e4b31cdf84b64ca3ccc3d1c86"
+    },
+    {
+      "locale": "sv",
+      "file": "sv.mo",
+      "sha256": "c8058e86431e6844e606199c0387191ecac3b9e4d53c1704f6a966c53153cff2"
+    },
+    {
+      "locale": "sw",
+      "file": "sw.mo",
+      "sha256": "b2a616914dd7fb9749046c8cd83ffdf0be18d81f852d1737f7a9d1a315e23eae"
+    },
+    {
+      "locale": "ta",
+      "file": "ta.mo",
+      "sha256": "ae2026281836070e26b3e6b52de8f0e1fc82d6b3c01ff59bc71ba4757ccf99bf"
+    },
+    {
+      "locale": "te",
+      "file": "te.mo",
+      "sha256": "6110e356b38956dc33116bc69b4e234aa39322b90aa3fa595bd00c758a9df535"
+    },
+    {
+      "locale": "th",
+      "file": "th.mo",
+      "sha256": "b1d021b7581d00c2edaa3c99e70ca9ae4fe3065a2a489ae864ebfb130f62e6cd"
+    },
+    {
+      "locale": "tr",
+      "file": "tr.mo",
+      "sha256": "2cdc4e310744e42a699619f8750ec04fc2ca29afc66dd3e02c57a031d8774a8e"
+    },
+    {
+      "locale": "uk",
+      "file": "uk.mo",
+      "sha256": "da1a7137983d24e09f53f440bd0d44456fd8fa44006f4b5461e98b6a7cfc3f36"
+    },
+    {
+      "locale": "ur",
+      "file": "ur.mo",
+      "sha256": "e5ef631c6b49b57af817617c5b9a4197fd12b2b74baea06e52cd2a54eae73fef"
+    },
+    {
+      "locale": "vi",
+      "file": "vi.mo",
+      "sha256": "9330d6f539b9d8f504796dc4f5ff79924046fe86cc2862d66eb9db7cbac47f00"
+    },
+    {
+      "locale": "zh-CN",
+      "file": "zh-CN.mo",
+      "sha256": "7b20bca865ebdfe12b8f712ff732090f753f1c42becfde41941cc06fde2fedf2"
+    },
+    {
+      "locale": "zh-Hant-HK",
+      "file": "zh-Hant-HK.mo",
+      "sha256": "1928e0496087f1fcc31cd27ef6783db3d16c5252852fe56db78476dae4ca87f4"
+    },
+    {
+      "locale": "zh-Hant",
+      "file": "zh-Hant.mo",
+      "sha256": "75cdeb4157d44565f56e900476bf34b7760a148a3bfdb826045adff24e96615a"
+    },
+    {
+      "locale": "zh-TW",
+      "file": "zh-TW.mo",
+      "sha256": "75cdeb4157d44565f56e900476bf34b7760a148a3bfdb826045adff24e96615a"
+    },
+    {
+      "locale": "zu",
+      "file": "zu.mo",
+      "sha256": "8842e30b944b3ce991c4f0c356a28d2783570225ee5fb007d602c4aef54765ea"
+    }
+  ]
+}

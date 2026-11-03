@@ -1,0 +1,10 @@
+$schema: 'https://moonrepo.dev/schemas/workspace.json'
+versionConstraint: '>=2.6.2 <3.0.0'
+projects:
+  spotify: '.'
+defaultProject: spotify
+telemetry: false
+pipeline:
+  installDependencies: false
+  syncProjects: false
+  syncWorkspace: false

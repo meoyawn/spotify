@@ -1,0 +1,131 @@
+{
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "entry": "0x101abf8dc",
+  "scope": "Observe original Playlist4 creation/update timestamp ownership offline.\n\nThe unchanged full-snapshot routine receives independently extracted original\nprotobuf layouts. Its transaction setters are inert observers; the standard\nallocation/ownership/protobuf primitives come from the existing native oracle.\nNo account, HTTP, real playlist mutation or native player runs.",
+  "layoutSource": {
+    "path": "reverse-engineering/evidence/playlist-service-snapshot-revision.json",
+    "sha256": "a8a7d6f828e0196ef71973e4f6609c444458769d1455dfa248198bffbb1c96fb"
+  },
+  "fields": [
+    {
+      "name": "timestamp",
+      "number": 15,
+      "label": 1,
+      "type": 3,
+      "type_name": "",
+      "json_name": "timestamp",
+      "offset": 160,
+      "hasIndex": 142
+    },
+    {
+      "name": "created_at",
+      "number": 21,
+      "label": 1,
+      "type": 3,
+      "type_name": "",
+      "json_name": "createdAt",
+      "offset": 168,
+      "hasIndex": 143
+    }
+  ],
+  "executedInstructionCount": 233,
+  "executedInstructionSha256": "5cc1452af7dc4c535c2b4a99b96cbff8b2e1c282db5a157f9416d7e384029431",
+  "originalRoutine": {
+    "start": "0x101abf8dc",
+    "endExclusive": "0x101abff8c",
+    "sha256": "efe75051040071ff6f95f9ecad57f241da6dc79970e3e454b558ba92737c15ef"
+  },
+  "transactionSetters": {
+    "createdAt": "0x101ad8e38",
+    "timestamp": "0x101ad8e40"
+  },
+  "cases": [
+    {
+      "name": "missing optional creation and update fields",
+      "inputMilliseconds": {},
+      "originalSetterCalls": [
+        {
+          "setter": "createdAt",
+          "valueMicroseconds": 0
+        },
+        {
+          "setter": "timestamp",
+          "valueMicroseconds": 0
+        }
+      ]
+    },
+    {
+      "name": "creation and update are distinct millisecond fields",
+      "inputMilliseconds": {
+        "createdAt": 1700000000123,
+        "timestamp": 1790000000456
+      },
+      "originalSetterCalls": [
+        {
+          "setter": "createdAt",
+          "valueMicroseconds": 1700000000123000
+        },
+        {
+          "setter": "timestamp",
+          "valueMicroseconds": 1790000000456000
+        }
+      ]
+    },
+    {
+      "name": "creation survives a newer update time",
+      "inputMilliseconds": {
+        "createdAt": 1700000000123,
+        "timestamp": 1790000123456
+      },
+      "originalSetterCalls": [
+        {
+          "setter": "createdAt",
+          "valueMicroseconds": 1700000000123000
+        },
+        {
+          "setter": "timestamp",
+          "valueMicroseconds": 1790000123456000
+        }
+      ]
+    },
+    {
+      "name": "zero creation is not substituted by update time",
+      "inputMilliseconds": {
+        "createdAt": 0,
+        "timestamp": 1790000000456
+      },
+      "originalSetterCalls": [
+        {
+          "setter": "createdAt",
+          "valueMicroseconds": 0
+        },
+        {
+          "setter": "timestamp",
+          "valueMicroseconds": 1790000000456000
+        }
+      ]
+    },
+    {
+      "name": "signed timestamp conversion follows original instructions",
+      "inputMilliseconds": {
+        "createdAt": -1234,
+        "timestamp": 1999
+      },
+      "originalSetterCalls": [
+        {
+          "setter": "createdAt",
+          "valueMicroseconds": -1234000
+        },
+        {
+          "setter": "timestamp",
+          "valueMicroseconds": 1999000
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Original millisecond-to-microsecond field ownership is proved; transaction observers do not mutate a real list.",
+    "The inverse original cache projection is separately executed in playlist-service-cache.json.",
+    "Renderer visibility and real server values are separate evidence; absent/zero dates are not inferred."
+  ]
+}

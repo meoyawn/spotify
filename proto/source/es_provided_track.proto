@@ -1,0 +1,24 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: 9c8a02e3c10061ea554e0b8dc40eeb8ff18c024d78e28be49fad5a3317da5921
+
+syntax = "proto3";
+
+package spotify.player.esperanto.proto;
+
+import "es_context_track.proto";
+
+option java_package = "com.spotify.player.esperanto.proto";
+
+option objc_class_prefix = "ESP";
+
+option optimize_for = CODE_SIZE;
+
+message ProvidedTrack {
+  .spotify.player.esperanto.proto.ContextTrack context_track = 1;
+
+  repeated string removed = 2;
+
+  repeated string blocked = 3;
+
+  string provider = 4;
+}

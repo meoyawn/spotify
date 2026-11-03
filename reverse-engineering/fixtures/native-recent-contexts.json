@@ -1,0 +1,78 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "schema": {
+    "file": "recently_played_backend.proto",
+    "offset": 36434112,
+    "length": 284,
+    "sha256": "550b84447c11992b5227fd07fb4e81dbd7fdaa3efdb27f725a53f49b2aa45a36",
+    "sourcePath": "proto/source/recently_played_backend.proto",
+    "sourceSha256": "57fe64431ea76529b10a2db1923f61857eb18f0ba54becb7f030bd96ac9c7cda"
+  },
+  "cases": [
+    {
+      "name": "original fresh Recent Contexts fixed fifty",
+      "originalSource": {
+        "path": ".local/original-reference-streaming-netlog.json",
+        "sha256": "644660b4da3948c6f0e0e21479b34de444f295ba3e94684257e2c53dc9587489",
+        "sourceId": 592,
+        "eventIndex": 11000,
+        "event": "HTTP_TRANSACTION_HTTP2_SEND_REQUEST_HEADERS"
+      },
+      "rawTarget": "/recently-played/v3/recently-played?limit=50&filter=default,collection-new-episodes",
+      "recentContexts": true,
+      "applicationHeaders": {
+        "locale": "en",
+        "timeZone": "Europe/Moscow",
+        "userAgent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+      },
+      "inheritedHeaders": {
+        "Accept-Language": "en",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "130601921",
+        "time-zone": "Europe/Moscow",
+        "User-Agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+      },
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":method": "GET",
+          ":authority": "guc3-spclient.spotify.com",
+          ":scheme": "https",
+          ":path": "/recently-played/v3/recently-played?limit=50&filter=default,collection-new-episodes",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "authorization": "Bearer fixture-access-token",
+          "spotify-app-version": "130601921",
+          "time-zone": "Europe/Moscow",
+          "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+          "client-token": "fixture-client-token",
+          "sec-fetch-site": "same-origin",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-dest": "empty",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=4, i"
+        },
+        "bodyBase64": ""
+      }
+    }
+  ],
+  "originalResponse": {
+    "contentType": "vnd.spotify/collection-favorites",
+    "cacheControl": "private, max-age=3600",
+    "decodedBodyBytes": 4298,
+    "decodedBodySha256": "9ccdc7e2638a3aded7698a3a8c8b407f7961e24e998d7630f3a80a8f6e0603bc",
+    "contextCount": 50,
+    "contextTypes": {
+      "album": 28,
+      "playlist": 12,
+      "artist": 10
+    },
+    "timestampUnit": "milliseconds, independently visible in the native schema/body and renderer timestampMs mapping"
+  },
+  "limits": [
+    "Original source592 is a fresh HTTP/2 GET. Source621 also receives the retained body without another HTTP send; no invented page cursor, conditional request or streaming HTTP endpoint.",
+    "Only synthetic credentials are exported. No account, URI, body, ETag or last-played values leave the ignored capture.",
+    "The original renderer streams decorated native contexts. Its metadata policies, local updates and refresh ownership are separate from this fixed server read.",
+    "No server acceptance or TLS/QUIC fingerprint claim follows from this offline extraction."
+  ]
+}

@@ -1,0 +1,1239 @@
+{
+  "source": [
+    {
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f"
+    },
+    {
+      "path": "build/rea/xpui/home-v2-section.js",
+      "sha256": "5556291fceaa295fc744f64a57e6f379a4d512fbcebe7a9a6cf4ea3bd7b00fc4"
+    },
+    {
+      "path": "build/rea/xpui/browse-v2.js",
+      "sha256": "408c70b92f761f4ff3eedf837b56531bbfa46cae31aa1cd12d8750ca0df357b3"
+    },
+    {
+      "path": "build/rea/xpui/browse-v2.css",
+      "sha256": "f44169b5c185fa049fda9e44783e0246c360308b9d771c8db52d91bfd80e3da4"
+    }
+  ],
+  "ranges": [
+    {
+      "kind": "factory-92464",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4161056,
+      "lengthBytes": 1531,
+      "sha256": "ea26df91582f9fa4917addc583b3587174795a9214c591d368f6962222610292"
+    },
+    {
+      "kind": "factory-83873",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4084122,
+      "lengthBytes": 1671,
+      "sha256": "1aeaa740a4a3f533e78b5c4268c6aa3203950362f5c7066bf0275640e82bee8d"
+    },
+    {
+      "kind": "factory-85418",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4160880,
+      "lengthBytes": 175,
+      "sha256": "6c0bd05958a0723942a6e91b1cb681c9f40e719af9cbc023e30c08b5889f4165"
+    },
+    {
+      "kind": "factory-1940",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4113494,
+      "lengthBytes": 624,
+      "sha256": "528ddb8b6adce775f64c3ee0371d007d51e65e564bf9b804229d9857a9985923"
+    },
+    {
+      "kind": "factory-41332",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4115028,
+      "lengthBytes": 4953,
+      "sha256": "9daaca5dd00fa6605ddd0eeb379cb5fc5c08e51a161d22a94315c4aa40e4b005"
+    },
+    {
+      "kind": "factory-87337",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4119982,
+      "lengthBytes": 1395,
+      "sha256": "e90ffc2f49b22726bf37dfc1560fc8fcc35315291a30dd20628a151b2bb198b5"
+    },
+    {
+      "kind": "factory-65250",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 2000078,
+      "lengthBytes": 438,
+      "sha256": "3955033120381e05127accae9cc7a9990a74292b7e263d15f139fcdc779524f8"
+    },
+    {
+      "kind": "factory-14385",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 2989945,
+      "lengthBytes": 146,
+      "sha256": "4ef7c69592c2e9584d6a3622c341f2d6ee89dd2c1c4d8f82710a587ac22403ed"
+    },
+    {
+      "kind": "factory-28451",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4759953,
+      "lengthBytes": 18056,
+      "sha256": "56feedb773a36b2d4260c8498c6fd33b5bd6eb5af8682e11ac98d084d2160f7e"
+    },
+    {
+      "kind": "factory-92693",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4162712,
+      "lengthBytes": 511,
+      "sha256": "d48b0dd13a19421b6cbfec2f3600ab80bfc8280389119dc6364156dfdeec67d1"
+    },
+    {
+      "kind": "factory-54461",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 3996851,
+      "lengthBytes": 1390,
+      "sha256": "d0f716ea1ed911c577617af08224abcb46f7b077adf34f165605324dad031881"
+    },
+    {
+      "kind": "module53311 Home section query function",
+      "path": "build/rea/xpui/home-v2-section.js",
+      "offsetBytes": 12805,
+      "lengthBytes": 262,
+      "sha256": "5b2fb7c03b3f034a4ff5e5cc692a5f6fb30d328c1a29fbe627f23a8678a9bbb2"
+    },
+    {
+      "kind": "module44729 Browse page query function",
+      "path": "build/rea/xpui/browse-v2.js",
+      "offsetBytes": 12256,
+      "lengthBytes": 240,
+      "sha256": "712ac8be37095170800d4d86d7bda1659b8b31237d4966d62c92043be607c079"
+    },
+    {
+      "kind": "module18722 Browse section query function",
+      "path": "build/rea/xpui/browse-v2.js",
+      "offsetBytes": 23545,
+      "lengthBytes": 198,
+      "sha256": "057839cfa3316cee04712fc13ba1521da581382ae5dc4623b89a5a492f587b39"
+    },
+    {
+      "kind": "Browse page descriptor",
+      "path": "build/rea/xpui/browse-v2.js",
+      "offsetBytes": 11773,
+      "lengthBytes": 101,
+      "sha256": "03123d4135a69c30f7d449e2d8de248fd2ae8e02fbb977ea5c4225701fed3c2e"
+    },
+    {
+      "kind": "Browse section descriptor",
+      "path": "build/rea/xpui/browse-v2.js",
+      "offsetBytes": 23177,
+      "lengthBytes": 104,
+      "sha256": "84afa06e67e69773c0422f70bd145d14363ff07a07fa3e1b2080cfaa07a71648"
+    },
+    {
+      "kind": "Home next offset",
+      "path": "build/rea/xpui/home-v2-section.js",
+      "offsetBytes": 13104,
+      "lengthBytes": 249,
+      "sha256": "414fb269d6262150b02a88092a35412b0dc858476f7c58842a9cd08f1a92de6f"
+    },
+    {
+      "kind": "Browse page next offset",
+      "path": "build/rea/xpui/browse-v2.js",
+      "offsetBytes": 12560,
+      "lengthBytes": 123,
+      "sha256": "63ef77369164e9d986a52860ea0e726efcfb2ae32cf539dfdc2e826ba27630f1"
+    },
+    {
+      "kind": "Browse section next offset",
+      "path": "build/rea/xpui/browse-v2.js",
+      "offsetBytes": 23807,
+      "lengthBytes": 245,
+      "sha256": "4356da4371d02db432c24391d84dd1e4650e3d14b0a71f0ad91bbb7e90faf392"
+    },
+    {
+      "kind": "genre route to request URI",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 2852421,
+      "lengthBytes": 303,
+      "sha256": "0fdd8fea5c75f15c969d1a512c3cf4cafabbdea4d6b02d2a3cd4a1becb34af44"
+    },
+    {
+      "kind": "module74960 global owner",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 3846649,
+      "lengthBytes": 243,
+      "sha256": "aa9c135a625cfc5eda258f6e4722d26eadfddf5a7fc5363674f629bba109c93c"
+    },
+    {
+      "kind": "module50278 header collection",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 508595,
+      "lengthBytes": 540,
+      "sha256": "37f46555905cc743ec510308840087875503aafc38d1d4fe3d82d04c34ea10b4"
+    },
+    {
+      "kind": "module50278 fetch adapter",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 503941,
+      "lengthBytes": 2097,
+      "sha256": "ffc72cd0730018864d132897cd0f4a962f36571873afe77e81195497c3df3785"
+    },
+    {
+      "kind": "Browse card factory-37764",
+      "path": "build/rea/xpui/browse-v2.js",
+      "offsetBytes": 18982,
+      "lengthBytes": 4090,
+      "sha256": "0eb9e1b99220638fec8f29772369a3123befb3122620cdb1ba8214d91a5beff2"
+    },
+    {
+      "kind": "Browse card factory-45908",
+      "path": "build/rea/xpui/browse-v2.js",
+      "offsetBytes": 17831,
+      "lengthBytes": 1150,
+      "sha256": "3931b3e7b523620a0d559ac9ccd9d740ac99e65f6b2feb9c85aaf2d2d12b7ece"
+    },
+    {
+      "kind": "Browse layout .MgGTxez6PaaFqSRst5Et",
+      "path": "build/rea/xpui/browse-v2.css",
+      "offsetBytes": 7991,
+      "lengthBytes": 119,
+      "sha256": "9a267b69406e1b8e92d50c8a74ffe17d69c997214bdc265307924c6939935a71"
+    },
+    {
+      "kind": "Browse layout .a6oBmKNbFF1bwRZ7V1Sw",
+      "path": "build/rea/xpui/browse-v2.css",
+      "offsetBytes": 8110,
+      "lengthBytes": 231,
+      "sha256": "62cff89534c37d4830351ed30f3af3c01b35f006019ee080728144d1322536a3"
+    },
+    {
+      "kind": "Browse layout .HOrkThqeACLv5cF0FFIt",
+      "path": "build/rea/xpui/browse-v2.css",
+      "offsetBytes": 8508,
+      "lengthBytes": 123,
+      "sha256": "de412df72ba30fbf085ba7a037a0280cad2b196c854aec879b2fd78adf615fdd"
+    }
+  ],
+  "sharedBrowserFields": {
+    "path": "reverse-engineering/evidence/native-home-netlog.json",
+    "sha256": "41e4bbdd335339e1d837906b685dfb3e7c6628e22115b4309b488676ec035b7e"
+  },
+  "cases": [
+    {
+      "destinationKind": "homeSection",
+      "uri": "spotify:section:0000000000000000000001",
+      "offset": 0,
+      "name": "original homeSection offset 0 limit default",
+      "chapter": false,
+      "ratings": true,
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsiaW5jbHVkZUhvbWVDaGFwdGVyVmlkZW9DYXJkcyI6ZmFsc2UsInVyaSI6InNwb3RpZnk6c2VjdGlvbjowMDAwMDAwMDAwMDAwMDAwMDAwMDAxIiwiaG9tZUVuZFVzZXJJbnRlZ3JhdGlvbiI6IklOVEVHUkFUSU9OX0RFU0tUT1AiLCJ0aW1lWm9uZSI6IkV1cm9wZS9Nb3Njb3ciLCJzcF90IjoiIiwic2VjdGlvbkl0ZW1zT2Zmc2V0IjowLCJzZWN0aW9uSXRlbXNMaW1pdCI6MjAsImluY2x1ZGVFcGlzb2RlQ29udGVudFJhdGluZ3NWMiI6dHJ1ZX0sIm9wZXJhdGlvbk5hbWUiOiJob21lU2VjdGlvbiIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6IjVmYjdkYTdhMDNlZTI3NzZjMDY3MDg1NjYwOWNiODVhMTg5YTNjZWNjMzZjYzE2MGI5MWNkZTc5MDYzYjljZjEifX19",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"includeHomeChapterVideoCards\":false,\"uri\":\"spotify:section:0000000000000000000001\",\"homeEndUserIntegration\":\"INTEGRATION_DESKTOP\",\"timeZone\":\"Europe/Moscow\",\"sp_t\":\"\",\"sectionItemsOffset\":0,\"sectionItemsLimit\":20,\"includeEpisodeContentRatingsV2\":true},\"operationName\":\"homeSection\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"5fb7da7a03ee2776c0670856609cb85a189a3cecc36cc160b91cde79063b9cf1\"}}}"
+      },
+      "operation": "homeSection",
+      "variables": {
+        "includeHomeChapterVideoCards": false,
+        "uri": "spotify:section:0000000000000000000001",
+        "homeEndUserIntegration": "INTEGRATION_DESKTOP",
+        "timeZone": "Europe/Moscow",
+        "sp_t": "",
+        "sectionItemsOffset": 0,
+        "sectionItemsLimit": 20,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "423"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsiaW5jbHVkZUhvbWVDaGFwdGVyVmlkZW9DYXJkcyI6ZmFsc2UsInVyaSI6InNwb3RpZnk6c2VjdGlvbjowMDAwMDAwMDAwMDAwMDAwMDAwMDAxIiwiaG9tZUVuZFVzZXJJbnRlZ3JhdGlvbiI6IklOVEVHUkFUSU9OX0RFU0tUT1AiLCJ0aW1lWm9uZSI6IkV1cm9wZS9Nb3Njb3ciLCJzcF90IjoiIiwic2VjdGlvbkl0ZW1zT2Zmc2V0IjowLCJzZWN0aW9uSXRlbXNMaW1pdCI6MjAsImluY2x1ZGVFcGlzb2RlQ29udGVudFJhdGluZ3NWMiI6dHJ1ZX0sIm9wZXJhdGlvbk5hbWUiOiJob21lU2VjdGlvbiIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6IjVmYjdkYTdhMDNlZTI3NzZjMDY3MDg1NjYwOWNiODVhMTg5YTNjZWNjMzZjYzE2MGI5MWNkZTc5MDYzYjljZjEifX19"
+      }
+    },
+    {
+      "destinationKind": "homeSection",
+      "uri": "spotify:section:0000000000000000000001",
+      "offset": 37,
+      "name": "original homeSection offset 37 limit default",
+      "chapter": false,
+      "ratings": true,
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsiaW5jbHVkZUhvbWVDaGFwdGVyVmlkZW9DYXJkcyI6ZmFsc2UsInVyaSI6InNwb3RpZnk6c2VjdGlvbjowMDAwMDAwMDAwMDAwMDAwMDAwMDAxIiwiaG9tZUVuZFVzZXJJbnRlZ3JhdGlvbiI6IklOVEVHUkFUSU9OX0RFU0tUT1AiLCJ0aW1lWm9uZSI6IkV1cm9wZS9Nb3Njb3ciLCJzcF90IjoiIiwic2VjdGlvbkl0ZW1zT2Zmc2V0IjozNywic2VjdGlvbkl0ZW1zTGltaXQiOjIwLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoiaG9tZVNlY3Rpb24iLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiI1ZmI3ZGE3YTAzZWUyNzc2YzA2NzA4NTY2MDljYjg1YTE4OWEzY2VjYzM2Y2MxNjBiOTFjZGU3OTA2M2I5Y2YxIn19fQ==",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"includeHomeChapterVideoCards\":false,\"uri\":\"spotify:section:0000000000000000000001\",\"homeEndUserIntegration\":\"INTEGRATION_DESKTOP\",\"timeZone\":\"Europe/Moscow\",\"sp_t\":\"\",\"sectionItemsOffset\":37,\"sectionItemsLimit\":20,\"includeEpisodeContentRatingsV2\":true},\"operationName\":\"homeSection\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"5fb7da7a03ee2776c0670856609cb85a189a3cecc36cc160b91cde79063b9cf1\"}}}"
+      },
+      "operation": "homeSection",
+      "variables": {
+        "includeHomeChapterVideoCards": false,
+        "uri": "spotify:section:0000000000000000000001",
+        "homeEndUserIntegration": "INTEGRATION_DESKTOP",
+        "timeZone": "Europe/Moscow",
+        "sp_t": "",
+        "sectionItemsOffset": 37,
+        "sectionItemsLimit": 20,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "424"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsiaW5jbHVkZUhvbWVDaGFwdGVyVmlkZW9DYXJkcyI6ZmFsc2UsInVyaSI6InNwb3RpZnk6c2VjdGlvbjowMDAwMDAwMDAwMDAwMDAwMDAwMDAxIiwiaG9tZUVuZFVzZXJJbnRlZ3JhdGlvbiI6IklOVEVHUkFUSU9OX0RFU0tUT1AiLCJ0aW1lWm9uZSI6IkV1cm9wZS9Nb3Njb3ciLCJzcF90IjoiIiwic2VjdGlvbkl0ZW1zT2Zmc2V0IjozNywic2VjdGlvbkl0ZW1zTGltaXQiOjIwLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoiaG9tZVNlY3Rpb24iLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiI1ZmI3ZGE3YTAzZWUyNzc2YzA2NzA4NTY2MDljYjg1YTE4OWEzY2VjYzM2Y2MxNjBiOTFjZGU3OTA2M2I5Y2YxIn19fQ=="
+      }
+    },
+    {
+      "destinationKind": "homeSection",
+      "uri": "spotify:section:0000000000000000000001",
+      "offset": 91,
+      "limit": 50,
+      "chapter": true,
+      "ratings": false,
+      "name": "original homeSection offset 91 limit 50",
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsiaW5jbHVkZUhvbWVDaGFwdGVyVmlkZW9DYXJkcyI6dHJ1ZSwidXJpIjoic3BvdGlmeTpzZWN0aW9uOjAwMDAwMDAwMDAwMDAwMDAwMDAwMDEiLCJob21lRW5kVXNlckludGVncmF0aW9uIjoiSU5URUdSQVRJT05fREVTS1RPUCIsInRpbWVab25lIjoiRXVyb3BlL01vc2NvdyIsInNwX3QiOiIiLCJzZWN0aW9uSXRlbXNPZmZzZXQiOjkxLCJzZWN0aW9uSXRlbXNMaW1pdCI6NTAsImluY2x1ZGVFcGlzb2RlQ29udGVudFJhdGluZ3NWMiI6ZmFsc2V9LCJvcGVyYXRpb25OYW1lIjoiaG9tZVNlY3Rpb24iLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiI1ZmI3ZGE3YTAzZWUyNzc2YzA2NzA4NTY2MDljYjg1YTE4OWEzY2VjYzM2Y2MxNjBiOTFjZGU3OTA2M2I5Y2YxIn19fQ==",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"includeHomeChapterVideoCards\":true,\"uri\":\"spotify:section:0000000000000000000001\",\"homeEndUserIntegration\":\"INTEGRATION_DESKTOP\",\"timeZone\":\"Europe/Moscow\",\"sp_t\":\"\",\"sectionItemsOffset\":91,\"sectionItemsLimit\":50,\"includeEpisodeContentRatingsV2\":false},\"operationName\":\"homeSection\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"5fb7da7a03ee2776c0670856609cb85a189a3cecc36cc160b91cde79063b9cf1\"}}}"
+      },
+      "operation": "homeSection",
+      "variables": {
+        "includeHomeChapterVideoCards": true,
+        "uri": "spotify:section:0000000000000000000001",
+        "homeEndUserIntegration": "INTEGRATION_DESKTOP",
+        "timeZone": "Europe/Moscow",
+        "sp_t": "",
+        "sectionItemsOffset": 91,
+        "sectionItemsLimit": 50,
+        "includeEpisodeContentRatingsV2": false
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "424"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsiaW5jbHVkZUhvbWVDaGFwdGVyVmlkZW9DYXJkcyI6dHJ1ZSwidXJpIjoic3BvdGlmeTpzZWN0aW9uOjAwMDAwMDAwMDAwMDAwMDAwMDAwMDEiLCJob21lRW5kVXNlckludGVncmF0aW9uIjoiSU5URUdSQVRJT05fREVTS1RPUCIsInRpbWVab25lIjoiRXVyb3BlL01vc2NvdyIsInNwX3QiOiIiLCJzZWN0aW9uSXRlbXNPZmZzZXQiOjkxLCJzZWN0aW9uSXRlbXNMaW1pdCI6NTAsImluY2x1ZGVFcGlzb2RlQ29udGVudFJhdGluZ3NWMiI6ZmFsc2V9LCJvcGVyYXRpb25OYW1lIjoiaG9tZVNlY3Rpb24iLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiI1ZmI3ZGE3YTAzZWUyNzc2YzA2NzA4NTY2MDljYjg1YTE4OWEzY2VjYzM2Y2MxNjBiOTFjZGU3OTA2M2I5Y2YxIn19fQ=="
+      }
+    },
+    {
+      "destinationKind": "browsePage",
+      "uri": "spotify:page:0000000000000000000001",
+      "offset": 0,
+      "name": "original browsePage offset 0 limit default",
+      "chapter": false,
+      "ratings": true,
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsicGFnZVBhZ2luYXRpb24iOnsib2Zmc2V0IjowLCJsaW1pdCI6MTB9LCJzZWN0aW9uUGFnaW5hdGlvbiI6eyJvZmZzZXQiOjAsImxpbWl0IjoxMH0sInVyaSI6InNwb3RpZnk6cGFnZTowMDAwMDAwMDAwMDAwMDAwMDAwMDAxIiwiYnJvd3NlRW5kVXNlckludGVncmF0aW9uIjoiSU5URUdSQVRJT05fREVTS1RPUCIsImluY2x1ZGVFcGlzb2RlQ29udGVudFJhdGluZ3NWMiI6dHJ1ZX0sIm9wZXJhdGlvbk5hbWUiOiJicm93c2VQYWdlIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiZjVjNGU2ZDY2OGY1NzE2NDY0YTIzMWMxY2M4YjIyYzFjYmY2YWQ2OGIwOTkyOWZkN2RlODEzYTMwNTgxMjk4YiJ9fX0=",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"pagePagination\":{\"offset\":0,\"limit\":10},\"sectionPagination\":{\"offset\":0,\"limit\":10},\"uri\":\"spotify:page:0000000000000000000001\",\"browseEndUserIntegration\":\"INTEGRATION_DESKTOP\",\"includeEpisodeContentRatingsV2\":true},\"operationName\":\"browsePage\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"f5c4e6d668f5716464a231c1cc8b22c1cbf6ad68b09929fd7de813a30581298b\"}}}"
+      },
+      "operation": "browsePage",
+      "variables": {
+        "pagePagination": {
+          "offset": 0,
+          "limit": 10
+        },
+        "sectionPagination": {
+          "offset": 0,
+          "limit": 10
+        },
+        "uri": "spotify:page:0000000000000000000001",
+        "browseEndUserIntegration": "INTEGRATION_DESKTOP",
+        "includeEpisodeContentRatingsV2": true
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "386"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsicGFnZVBhZ2luYXRpb24iOnsib2Zmc2V0IjowLCJsaW1pdCI6MTB9LCJzZWN0aW9uUGFnaW5hdGlvbiI6eyJvZmZzZXQiOjAsImxpbWl0IjoxMH0sInVyaSI6InNwb3RpZnk6cGFnZTowMDAwMDAwMDAwMDAwMDAwMDAwMDAxIiwiYnJvd3NlRW5kVXNlckludGVncmF0aW9uIjoiSU5URUdSQVRJT05fREVTS1RPUCIsImluY2x1ZGVFcGlzb2RlQ29udGVudFJhdGluZ3NWMiI6dHJ1ZX0sIm9wZXJhdGlvbk5hbWUiOiJicm93c2VQYWdlIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiZjVjNGU2ZDY2OGY1NzE2NDY0YTIzMWMxY2M4YjIyYzFjYmY2YWQ2OGIwOTkyOWZkN2RlODEzYTMwNTgxMjk4YiJ9fX0="
+      }
+    },
+    {
+      "destinationKind": "browsePage",
+      "uri": "spotify:page:0000000000000000000001",
+      "offset": 23,
+      "name": "original browsePage offset 23 limit default",
+      "chapter": false,
+      "ratings": true,
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsicGFnZVBhZ2luYXRpb24iOnsib2Zmc2V0IjoyMywibGltaXQiOjEwfSwic2VjdGlvblBhZ2luYXRpb24iOnsib2Zmc2V0IjowLCJsaW1pdCI6MTB9LCJ1cmkiOiJzcG90aWZ5OnBhZ2U6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMSIsImJyb3dzZUVuZFVzZXJJbnRlZ3JhdGlvbiI6IklOVEVHUkFUSU9OX0RFU0tUT1AiLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoiYnJvd3NlUGFnZSIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6ImY1YzRlNmQ2NjhmNTcxNjQ2NGEyMzFjMWNjOGIyMmMxY2JmNmFkNjhiMDk5MjlmZDdkZTgxM2EzMDU4MTI5OGIifX19",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"pagePagination\":{\"offset\":23,\"limit\":10},\"sectionPagination\":{\"offset\":0,\"limit\":10},\"uri\":\"spotify:page:0000000000000000000001\",\"browseEndUserIntegration\":\"INTEGRATION_DESKTOP\",\"includeEpisodeContentRatingsV2\":true},\"operationName\":\"browsePage\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"f5c4e6d668f5716464a231c1cc8b22c1cbf6ad68b09929fd7de813a30581298b\"}}}"
+      },
+      "operation": "browsePage",
+      "variables": {
+        "pagePagination": {
+          "offset": 23,
+          "limit": 10
+        },
+        "sectionPagination": {
+          "offset": 0,
+          "limit": 10
+        },
+        "uri": "spotify:page:0000000000000000000001",
+        "browseEndUserIntegration": "INTEGRATION_DESKTOP",
+        "includeEpisodeContentRatingsV2": true
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "387"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsicGFnZVBhZ2luYXRpb24iOnsib2Zmc2V0IjoyMywibGltaXQiOjEwfSwic2VjdGlvblBhZ2luYXRpb24iOnsib2Zmc2V0IjowLCJsaW1pdCI6MTB9LCJ1cmkiOiJzcG90aWZ5OnBhZ2U6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMSIsImJyb3dzZUVuZFVzZXJJbnRlZ3JhdGlvbiI6IklOVEVHUkFUSU9OX0RFU0tUT1AiLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoiYnJvd3NlUGFnZSIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6ImY1YzRlNmQ2NjhmNTcxNjQ2NGEyMzFjMWNjOGIyMmMxY2JmNmFkNjhiMDk5MjlmZDdkZTgxM2EzMDU4MTI5OGIifX19"
+      }
+    },
+    {
+      "destinationKind": "browsePage",
+      "uri": "spotify:genre:hub-browse-grid",
+      "offset": 0,
+      "ratings": false,
+      "name": "original browsePage offset 0 limit default",
+      "chapter": false,
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsicGFnZVBhZ2luYXRpb24iOnsib2Zmc2V0IjowLCJsaW1pdCI6MTB9LCJzZWN0aW9uUGFnaW5hdGlvbiI6eyJvZmZzZXQiOjAsImxpbWl0IjoxMH0sInVyaSI6InNwb3RpZnk6Z2VucmU6aHViLWJyb3dzZS1ncmlkIiwiYnJvd3NlRW5kVXNlckludGVncmF0aW9uIjoiSU5URUdSQVRJT05fREVTS1RPUCIsImluY2x1ZGVFcGlzb2RlQ29udGVudFJhdGluZ3NWMiI6ZmFsc2V9LCJvcGVyYXRpb25OYW1lIjoiYnJvd3NlUGFnZSIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6ImY1YzRlNmQ2NjhmNTcxNjQ2NGEyMzFjMWNjOGIyMmMxY2JmNmFkNjhiMDk5MjlmZDdkZTgxM2EzMDU4MTI5OGIifX19",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"pagePagination\":{\"offset\":0,\"limit\":10},\"sectionPagination\":{\"offset\":0,\"limit\":10},\"uri\":\"spotify:genre:hub-browse-grid\",\"browseEndUserIntegration\":\"INTEGRATION_DESKTOP\",\"includeEpisodeContentRatingsV2\":false},\"operationName\":\"browsePage\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"f5c4e6d668f5716464a231c1cc8b22c1cbf6ad68b09929fd7de813a30581298b\"}}}"
+      },
+      "operation": "browsePage",
+      "variables": {
+        "pagePagination": {
+          "offset": 0,
+          "limit": 10
+        },
+        "sectionPagination": {
+          "offset": 0,
+          "limit": 10
+        },
+        "uri": "spotify:genre:hub-browse-grid",
+        "browseEndUserIntegration": "INTEGRATION_DESKTOP",
+        "includeEpisodeContentRatingsV2": false
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "381"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsicGFnZVBhZ2luYXRpb24iOnsib2Zmc2V0IjowLCJsaW1pdCI6MTB9LCJzZWN0aW9uUGFnaW5hdGlvbiI6eyJvZmZzZXQiOjAsImxpbWl0IjoxMH0sInVyaSI6InNwb3RpZnk6Z2VucmU6aHViLWJyb3dzZS1ncmlkIiwiYnJvd3NlRW5kVXNlckludGVncmF0aW9uIjoiSU5URUdSQVRJT05fREVTS1RPUCIsImluY2x1ZGVFcGlzb2RlQ29udGVudFJhdGluZ3NWMiI6ZmFsc2V9LCJvcGVyYXRpb25OYW1lIjoiYnJvd3NlUGFnZSIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6ImY1YzRlNmQ2NjhmNTcxNjQ2NGEyMzFjMWNjOGIyMmMxY2JmNmFkNjhiMDk5MjlmZDdkZTgxM2EzMDU4MTI5OGIifX19"
+      }
+    },
+    {
+      "destinationKind": "browseSection",
+      "uri": "spotify:section:0000000000000000000002",
+      "offset": 0,
+      "name": "original browseSection offset 0 limit default",
+      "chapter": false,
+      "ratings": true,
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsicGFnaW5hdGlvbiI6eyJvZmZzZXQiOjAsImxpbWl0IjoyMH0sInVyaSI6InNwb3RpZnk6c2VjdGlvbjowMDAwMDAwMDAwMDAwMDAwMDAwMDAyIiwiYnJvd3NlRW5kVXNlckludGVncmF0aW9uIjoiSU5URUdSQVRJT05fREVTS1RPUCIsImluY2x1ZGVFcGlzb2RlQ29udGVudFJhdGluZ3NWMiI6dHJ1ZX0sIm9wZXJhdGlvbk5hbWUiOiJicm93c2VTZWN0aW9uIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiYjEzYzFjY2NiZmNiNjk0Nzc1M2MyNjEzNDExYjM1NjY0ODVjMjFmZDVmMzZkODBhODBiYjY0YmU2MWJhMmQ1MSJ9fX0=",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"pagination\":{\"offset\":0,\"limit\":20},\"uri\":\"spotify:section:0000000000000000000002\",\"browseEndUserIntegration\":\"INTEGRATION_DESKTOP\",\"includeEpisodeContentRatingsV2\":true},\"operationName\":\"browseSection\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"b13c1cccbfcb6947753c2613411b3566485c21fd5f36d80a80bb64be61ba2d51\"}}}"
+      },
+      "operation": "browseSection",
+      "variables": {
+        "pagination": {
+          "offset": 0,
+          "limit": 20
+        },
+        "uri": "spotify:section:0000000000000000000002",
+        "browseEndUserIntegration": "INTEGRATION_DESKTOP",
+        "includeEpisodeContentRatingsV2": true
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "344"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsicGFnaW5hdGlvbiI6eyJvZmZzZXQiOjAsImxpbWl0IjoyMH0sInVyaSI6InNwb3RpZnk6c2VjdGlvbjowMDAwMDAwMDAwMDAwMDAwMDAwMDAyIiwiYnJvd3NlRW5kVXNlckludGVncmF0aW9uIjoiSU5URUdSQVRJT05fREVTS1RPUCIsImluY2x1ZGVFcGlzb2RlQ29udGVudFJhdGluZ3NWMiI6dHJ1ZX0sIm9wZXJhdGlvbk5hbWUiOiJicm93c2VTZWN0aW9uIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiYjEzYzFjY2NiZmNiNjk0Nzc1M2MyNjEzNDExYjM1NjY0ODVjMjFmZDVmMzZkODBhODBiYjY0YmU2MWJhMmQ1MSJ9fX0="
+      }
+    },
+    {
+      "destinationKind": "browseSection",
+      "uri": "spotify:section:0000000000000000000002",
+      "offset": 43,
+      "ratings": false,
+      "name": "original browseSection offset 43 limit default",
+      "chapter": false,
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsicGFnaW5hdGlvbiI6eyJvZmZzZXQiOjQzLCJsaW1pdCI6MjB9LCJ1cmkiOiJzcG90aWZ5OnNlY3Rpb246MDAwMDAwMDAwMDAwMDAwMDAwMDAwMiIsImJyb3dzZUVuZFVzZXJJbnRlZ3JhdGlvbiI6IklOVEVHUkFUSU9OX0RFU0tUT1AiLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOmZhbHNlfSwib3BlcmF0aW9uTmFtZSI6ImJyb3dzZVNlY3Rpb24iLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiJiMTNjMWNjY2JmY2I2OTQ3NzUzYzI2MTM0MTFiMzU2NjQ4NWMyMWZkNWYzNmQ4MGE4MGJiNjRiZTYxYmEyZDUxIn19fQ==",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"pagination\":{\"offset\":43,\"limit\":20},\"uri\":\"spotify:section:0000000000000000000002\",\"browseEndUserIntegration\":\"INTEGRATION_DESKTOP\",\"includeEpisodeContentRatingsV2\":false},\"operationName\":\"browseSection\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"b13c1cccbfcb6947753c2613411b3566485c21fd5f36d80a80bb64be61ba2d51\"}}}"
+      },
+      "operation": "browseSection",
+      "variables": {
+        "pagination": {
+          "offset": 43,
+          "limit": 20
+        },
+        "uri": "spotify:section:0000000000000000000002",
+        "browseEndUserIntegration": "INTEGRATION_DESKTOP",
+        "includeEpisodeContentRatingsV2": false
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "346"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsicGFnaW5hdGlvbiI6eyJvZmZzZXQiOjQzLCJsaW1pdCI6MjB9LCJ1cmkiOiJzcG90aWZ5OnNlY3Rpb246MDAwMDAwMDAwMDAwMDAwMDAwMDAwMiIsImJyb3dzZUVuZFVzZXJJbnRlZ3JhdGlvbiI6IklOVEVHUkFUSU9OX0RFU0tUT1AiLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOmZhbHNlfSwib3BlcmF0aW9uTmFtZSI6ImJyb3dzZVNlY3Rpb24iLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiJiMTNjMWNjY2JmY2I2OTQ3NzUzYzI2MTM0MTFiMzU2NjQ4NWMyMWZkNWYzNmQ4MGE4MGJiNjRiZTYxYmEyZDUxIn19fQ=="
+      }
+    }
+  ],
+  "pagingCases": [
+    {
+      "kind": "homeSection",
+      "nextOffset": 37,
+      "original": 37
+    },
+    {
+      "kind": "browsePage",
+      "nextOffset": 37,
+      "original": 37
+    },
+    {
+      "kind": "browseSection",
+      "nextOffset": 37,
+      "original": 37
+    },
+    {
+      "kind": "homeSection",
+      "nextOffset": 23,
+      "original": 23
+    },
+    {
+      "kind": "browsePage",
+      "nextOffset": 23,
+      "original": 23
+    },
+    {
+      "kind": "browseSection",
+      "nextOffset": 23,
+      "original": 23
+    },
+    {
+      "kind": "homeSection",
+      "nextOffset": 43,
+      "original": 43
+    },
+    {
+      "kind": "browsePage",
+      "nextOffset": 43,
+      "original": 43
+    },
+    {
+      "kind": "browseSection",
+      "nextOffset": 43,
+      "original": 43
+    },
+    {
+      "kind": "homeSection",
+      "nextOffset": 91,
+      "original": 91
+    },
+    {
+      "kind": "browsePage",
+      "nextOffset": 91,
+      "original": 91
+    },
+    {
+      "kind": "browseSection",
+      "nextOffset": 91,
+      "original": 91
+    },
+    {
+      "kind": "homeSection",
+      "nextOffset": 0,
+      "original": null
+    },
+    {
+      "kind": "browsePage",
+      "nextOffset": 0,
+      "original": 0
+    },
+    {
+      "kind": "browseSection",
+      "nextOffset": 0,
+      "original": null
+    },
+    {
+      "kind": "homeSection",
+      "nextOffset": null,
+      "original": null
+    },
+    {
+      "kind": "browsePage",
+      "nextOffset": null,
+      "original": null
+    },
+    {
+      "kind": "browseSection",
+      "nextOffset": null,
+      "original": null
+    },
+    {
+      "kind": "homeSection",
+      "nextOffset": -1,
+      "original": null
+    },
+    {
+      "kind": "browsePage",
+      "nextOffset": -1,
+      "original": -1
+    },
+    {
+      "kind": "browseSection",
+      "nextOffset": -1,
+      "original": null
+    }
+  ],
+  "routeCases": [
+    {
+      "id": "0000000000000000000001",
+      "original": {
+        "type": "BrowsePage",
+        "props": {
+          "uri": "spotify:page:0000000000000000000001",
+          "useCompactEntityHeaderHeight": false
+        }
+      }
+    },
+    {
+      "id": "hub-browse-grid",
+      "original": {
+        "type": "BrowsePage",
+        "props": {
+          "uri": "spotify:genre:hub-browse-grid",
+          "useCompactEntityHeaderHeight": false
+        }
+      }
+    },
+    {
+      "id": "section0000000000000000000002",
+      "original": {
+        "type": "BrowseSection",
+        "props": {
+          "uri": "spotify:section:0000000000000000000002"
+        }
+      }
+    }
+  ],
+  "projectionCases": [
+    {
+      "input": {
+        "uri": "spotify:page:0000000000000000000001",
+        "content": {
+          "__typename": "BrowseSectionContainerWrapper",
+          "data": {
+            "__typename": "BrowseSectionContainer",
+            "data": {
+              "cardRepresentation": {
+                "title": {
+                  "transformedLabel": "Synthetic genre"
+                },
+                "backgroundColor": {
+                  "hex": "#123456"
+                },
+                "artwork": {
+                  "sources": [
+                    {
+                      "url": "https://synthetic.invalid/art",
+                      "width": 300,
+                      "height": 300
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "original": {
+        "type": "BrowseCard",
+        "props": {
+          "uri": "spotify:page:0000000000000000000001",
+          "title": "Synthetic genre",
+          "pageId": "search",
+          "href": "inert-container-navigation",
+          "color": "#123456",
+          "imageUrl": "https://synthetic.invalid/art",
+          "index": 0
+        }
+      }
+    },
+    {
+      "input": {
+        "uri": "spotify:browse-xlink:synthetic",
+        "content": {
+          "__typename": "BrowseXlinkResponseWrapper",
+          "data": {
+            "__typename": "BrowseClientFeature",
+            "title": {
+              "transformedLabel": "Synthetic feature"
+            },
+            "featureUri": "spotify:concerts",
+            "backgroundColor": {
+              "hex": "#654321"
+            },
+            "iconOverlay": {
+              "sources": [
+                {
+                  "url": "https://synthetic.invalid/art",
+                  "width": 300,
+                  "height": 300
+                }
+              ]
+            }
+          }
+        }
+      },
+      "original": {
+        "type": "BrowseCard",
+        "props": {
+          "uri": "spotify:browse-xlink:synthetic",
+          "title": "Synthetic feature",
+          "pageId": "search",
+          "href": "/inert-feature-navigation",
+          "color": "#654321",
+          "imageUrl": "https://synthetic.invalid/art",
+          "index": 1
+        }
+      }
+    },
+    {
+      "input": {
+        "uri": "spotify:user:synthetic",
+        "content": {
+          "__typename": "UserResponseWrapper",
+          "data": {
+            "__typename": "User",
+            "uri": "spotify:user:synthetic",
+            "name": "Synthetic user",
+            "avatar": {
+              "sources": [
+                {
+                  "url": "https://synthetic.invalid/art",
+                  "width": 300,
+                  "height": 300
+                }
+              ]
+            }
+          }
+        }
+      },
+      "original": {
+        "type": "UserCard",
+        "props": {
+          "uri": "spotify:user:synthetic",
+          "name": "Synthetic user",
+          "images": [
+            {
+              "url": "https://synthetic.invalid/art",
+              "width": 300,
+              "height": 300
+            }
+          ],
+          "index": 2
+        }
+      }
+    }
+  ],
+  "browseWidths": [
+    {
+      "gridWidth": 416,
+      "originalMinimumColumnWidth": 180
+    },
+    {
+      "gridWidth": 519,
+      "originalMinimumColumnWidth": 180
+    },
+    {
+      "gridWidth": 520,
+      "originalMinimumColumnWidth": 254
+    },
+    {
+      "gridWidth": 1040,
+      "originalMinimumColumnWidth": 254
+    },
+    {
+      "gridWidth": 1279,
+      "originalMinimumColumnWidth": 254
+    },
+    {
+      "gridWidth": 1280,
+      "originalMinimumColumnWidth": 300
+    }
+  ],
+  "substitutions": [
+    "Explicit synthetic URI, offset, locale, credentials, timezone, cookie and feature values; no account or original profile read.",
+    "Unchanged original query functions/descriptors, integration enum, error adapter, shared builder/loader/HeaderCollection/fetch execute. React scheduling is omitted.",
+    "Timezone and cookie readers supply declared standard primitive values. Transport/fetch capture the request and return empty data; no network capability.",
+    "The bounded Browse card/image factories37764/45908 execute unchanged for hub, client-feature and user cards. JSX records props; unused card adapters are inert. Card navigation parsers return inert destinations; their outputs are not URI evidence.",
+    "Original module54461 BROWSE widths execute unchanged; unrelated Home CSS inputs are empty so their original fallbacks initialize. Recorded original CSS excerpts own tile aspect ratio, text inset and artwork geometry."
+  ],
+  "limits": [
+    "Outgoing decoded application contract and original cursor/route functions only. Original automatic browser fields inherit separate original NetLog evidence.",
+    "No server acceptance, current account experiment selection, frame ordering or TLS/QUIC fingerprint parity is established."
+  ]
+}

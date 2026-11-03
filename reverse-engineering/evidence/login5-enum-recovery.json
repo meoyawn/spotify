@@ -1,0 +1,623 @@
+{
+  "schemaVersion": 1,
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "classification": "read-only-schema-evidence-not-generation-input",
+  "method": "Published protobuf type-card layout, saved relocated metadata and immutable executable bytes; no runtime decompilation",
+  "inventory": {
+    "path": "reverse-engineering/evidence/login5-lite-tables.json",
+    "sha256": "d58330abfd43717a402b8dc5904eef546d02d291ca36a1d2a3cadfe8133d8d74"
+  },
+  "inputMemory": [
+    {
+      "name": "rebased-dataconst",
+      "evidenceId": "ev_58296ff02c1c3a44074899018f132a2f0fd9c501460243ea10a7aef856b2d0c9",
+      "address": "0x102538000",
+      "length": 1409024,
+      "sha256": "c9d2f54c4a846da22c96ce185865f306c6aef603f40558e72d08de46670af75e"
+    },
+    {
+      "name": "rebased-data",
+      "evidenceId": "ev_8c506d77a8da88cbb4f83fb8e95a42860282477c1b4423500b1d429b94994bf5",
+      "address": "0x102690000",
+      "length": 1425408,
+      "sha256": "0a55780f366acdd1c9306c542ac7986b2af614e4a41ed94f8866334ba1a94e9e"
+    },
+    {
+      "name": "login5_lite_tables_memory",
+      "evidenceId": "ev_9c2866f8ff4fe4c43a87485a029e9dd0df5de9c0f104e00f4281090e1bb52718",
+      "address": "0x102724b80",
+      "length": 14592,
+      "sha256": "15db043e68e81983e3ce4a258b7a21f6f23fdeece3caaba2b6a7d3e3f5646924"
+    }
+  ],
+  "typeCardLayoutReference": "https://github.com/protocolbuffers/protobuf/blob/v33.0/src/google/protobuf/generated_message_tctable_impl.h",
+  "typeCardLayoutNote": "Published matching layout, not identification of the shipped protobuf runtime version",
+  "v4EnumFields": [
+    {
+      "message": "spotify.login5.v4.challenges.CodeChallenge",
+      "field": 1,
+      "retainedName": null,
+      "tableAddress": "0x102726240",
+      "entryAddress": "0x1027262bc",
+      "memoryOffset": 24,
+      "typeCard": "0x1891",
+      "cardinality": "optional",
+      "prototypeAddress": "0x102726208",
+      "prototypeNumericValue": 0,
+      "prototypeSelectedOneofCase": null,
+      "transformValidationBits": 0,
+      "parserEnumKind": "open",
+      "declaredValueRangeFromParseTable": null,
+      "nativeLabelCatalog": null
+    },
+    {
+      "message": "spotify.login5.v4.Interaction.Finish",
+      "field": 1,
+      "retainedName": null,
+      "tableAddress": "0x102727910",
+      "entryAddress": "0x10272798c",
+      "memoryOffset": 40,
+      "typeCard": "0x1891",
+      "cardinality": "optional",
+      "prototypeAddress": "0x102727508",
+      "prototypeNumericValue": 0,
+      "prototypeSelectedOneofCase": null,
+      "transformValidationBits": 0,
+      "parserEnumKind": "open",
+      "declaredValueRangeFromParseTable": null,
+      "nativeLabelCatalog": null
+    },
+    {
+      "message": "spotify.login5.v4.Interaction.Finish",
+      "field": 4,
+      "retainedName": null,
+      "tableAddress": "0x102727910",
+      "entryAddress": "0x1027279b0",
+      "memoryOffset": 44,
+      "typeCard": "0x1891",
+      "cardinality": "optional",
+      "prototypeAddress": "0x102727508",
+      "prototypeNumericValue": 0,
+      "prototypeSelectedOneofCase": null,
+      "transformValidationBits": 0,
+      "parserEnumKind": "open",
+      "declaredValueRangeFromParseTable": null,
+      "nativeLabelCatalog": null
+    },
+    {
+      "message": "spotify.login5.v4.Interaction",
+      "field": 1,
+      "retainedName": null,
+      "tableAddress": "0x102727a88",
+      "entryAddress": "0x102727b04",
+      "memoryOffset": 24,
+      "typeCard": "0x18a2",
+      "cardinality": "repeated",
+      "prototypeAddress": "0x102727560",
+      "prototypeNumericValue": null,
+      "prototypeSelectedOneofCase": null,
+      "transformValidationBits": 0,
+      "parserEnumKind": "open",
+      "declaredValueRangeFromParseTable": null,
+      "nativeLabelCatalog": null
+    },
+    {
+      "message": "spotify.login5.v4.LoginResponse",
+      "field": 2,
+      "retainedName": null,
+      "tableAddress": "0x102727ff8",
+      "entryAddress": "0x102728080",
+      "memoryOffset": 72,
+      "typeCard": "0x18b1",
+      "cardinality": "oneof",
+      "prototypeAddress": "0x102727640",
+      "prototypeNumericValue": null,
+      "prototypeSelectedOneofCase": 0,
+      "transformValidationBits": 0,
+      "parserEnumKind": "open",
+      "declaredValueRangeFromParseTable": null,
+      "nativeLabelCatalog": "bound LoginError name table"
+    },
+    {
+      "message": "spotify.login5.v4.LoginResponse",
+      "field": 4,
+      "retainedName": null,
+      "tableAddress": "0x102727ff8",
+      "entryAddress": "0x102728098",
+      "memoryOffset": 24,
+      "typeCard": "0x18a2",
+      "cardinality": "repeated",
+      "prototypeAddress": "0x102727640",
+      "prototypeNumericValue": null,
+      "prototypeSelectedOneofCase": null,
+      "transformValidationBits": 0,
+      "parserEnumKind": "open",
+      "declaredValueRangeFromParseTable": null,
+      "nativeLabelCatalog": null
+    },
+    {
+      "message": "spotify.login5.v4.UserInfo",
+      "field": 5,
+      "retainedName": null,
+      "tableAddress": "0x102728158",
+      "entryAddress": "0x102728244",
+      "memoryOffset": 56,
+      "typeCard": "0x1891",
+      "cardinality": "optional",
+      "prototypeAddress": "0x102728118",
+      "prototypeNumericValue": 0,
+      "prototypeSelectedOneofCase": null,
+      "transformValidationBits": 0,
+      "parserEnumKind": "open",
+      "declaredValueRangeFromParseTable": null,
+      "nativeLabelCatalog": null
+    }
+  ],
+  "candidateScan": {
+    "start": "0x102643000",
+    "endExclusive": "0x102647100",
+    "entryStride": 24,
+    "alignment": 8,
+    "identifierLengthBound": [
+      1,
+      128
+    ],
+    "scopeSha256": "a2556c53614474a21b85ec49ed7095077a8b0509bf296f136bc6a46d36a4e907",
+    "candidates": [
+      {
+        "address": "0x102645270",
+        "nameAddress": "0x1022a8177",
+        "nameFileOffset": 36340087,
+        "nameLength": 11,
+        "name": "BAD_REQUEST",
+        "number": 2
+      },
+      {
+        "address": "0x102645288",
+        "nameAddress": "0x1022a8182",
+        "nameFileOffset": 36340098,
+        "nameLength": 19,
+        "name": "INVALID_CREDENTIALS",
+        "number": 1
+      },
+      {
+        "address": "0x1026452a0",
+        "nameAddress": "0x1022a8195",
+        "nameFileOffset": 36340117,
+        "nameLength": 19,
+        "name": "INVALID_PHONENUMBER",
+        "number": 7
+      },
+      {
+        "address": "0x1026452b8",
+        "nameAddress": "0x1022a81a8",
+        "nameFileOffset": 36340136,
+        "nameLength": 11,
+        "name": "NOT_ALLOWED",
+        "number": 9
+      },
+      {
+        "address": "0x1026452d0",
+        "nameAddress": "0x1022a81b3",
+        "nameFileOffset": 36340147,
+        "nameLength": 7,
+        "name": "TIMEOUT",
+        "number": 4
+      },
+      {
+        "address": "0x1026452e8",
+        "nameAddress": "0x1022a81ba",
+        "nameFileOffset": 36340154,
+        "nameLength": 17,
+        "name": "TOO_MANY_ATTEMPTS",
+        "number": 6
+      },
+      {
+        "address": "0x102645300",
+        "nameAddress": "0x1022a81cb",
+        "nameFileOffset": 36340171,
+        "nameLength": 15,
+        "name": "TRY_AGAIN_LATER",
+        "number": 8
+      },
+      {
+        "address": "0x102645318",
+        "nameAddress": "0x1022a81da",
+        "nameFileOffset": 36340186,
+        "nameLength": 13,
+        "name": "UNKNOWN_ERROR",
+        "number": 0
+      },
+      {
+        "address": "0x102645330",
+        "nameAddress": "0x1022a81e7",
+        "nameFileOffset": 36340199,
+        "nameLength": 18,
+        "name": "UNKNOWN_IDENTIFIER",
+        "number": 5
+      },
+      {
+        "address": "0x102645348",
+        "nameAddress": "0x1022a81f9",
+        "nameFileOffset": 36340217,
+        "nameLength": 26,
+        "name": "UNSUPPORTED_LOGIN_PROTOCOL",
+        "number": 3
+      },
+      {
+        "address": "0x102646bb0",
+        "nameAddress": "0x1022a8259",
+        "nameFileOffset": 36340313,
+        "nameLength": 11,
+        "name": "BAD_REQUEST",
+        "number": 2
+      },
+      {
+        "address": "0x102646bc8",
+        "nameAddress": "0x1022a8264",
+        "nameFileOffset": 36340324,
+        "nameLength": 19,
+        "name": "INVALID_CREDENTIALS",
+        "number": 1
+      },
+      {
+        "address": "0x102646be0",
+        "nameAddress": "0x1022a8277",
+        "nameFileOffset": 36340343,
+        "nameLength": 19,
+        "name": "INVALID_PHONENUMBER",
+        "number": 7
+      },
+      {
+        "address": "0x102646bf8",
+        "nameAddress": "0x1022a828a",
+        "nameFileOffset": 36340362,
+        "nameLength": 11,
+        "name": "NOT_ALLOWED",
+        "number": 9
+      },
+      {
+        "address": "0x102646c10",
+        "nameAddress": "0x1022a8295",
+        "nameFileOffset": 36340373,
+        "nameLength": 7,
+        "name": "TIMEOUT",
+        "number": 4
+      },
+      {
+        "address": "0x102646c28",
+        "nameAddress": "0x1022a829c",
+        "nameFileOffset": 36340380,
+        "nameLength": 17,
+        "name": "TOO_MANY_ATTEMPTS",
+        "number": 6
+      },
+      {
+        "address": "0x102646c40",
+        "nameAddress": "0x1022a82ad",
+        "nameFileOffset": 36340397,
+        "nameLength": 15,
+        "name": "TRY_AGAIN_LATER",
+        "number": 8
+      },
+      {
+        "address": "0x102646c58",
+        "nameAddress": "0x1022a82bc",
+        "nameFileOffset": 36340412,
+        "nameLength": 13,
+        "name": "UNKNOWN_ERROR",
+        "number": 0
+      },
+      {
+        "address": "0x102646c70",
+        "nameAddress": "0x1022a82c9",
+        "nameFileOffset": 36340425,
+        "nameLength": 18,
+        "name": "UNKNOWN_IDENTIFIER",
+        "number": 5
+      },
+      {
+        "address": "0x102646c88",
+        "nameAddress": "0x1022a82db",
+        "nameFileOffset": 36340443,
+        "nameLength": 26,
+        "name": "UNSUPPORTED_LOGIN_PROTOCOL",
+        "number": 3
+      }
+    ],
+    "limitation": "Candidate scan is limited to the stated range and identifier layout; absence is not proof of absent declarations or tables elsewhere"
+  },
+  "knownLoginErrorTables": [
+    {
+      "address": "0x102645270",
+      "entryStride": 24,
+      "entryCount": 10,
+      "sha256": "e1fdd08774b8a2cedab77f247fbeab990918c2358c247f278f177b99f6e19725",
+      "entries": [
+        {
+          "address": "0x102645270",
+          "nameAddress": "0x1022a8177",
+          "nameFileOffset": 36340087,
+          "nameLength": 11,
+          "name": "BAD_REQUEST",
+          "number": 2
+        },
+        {
+          "address": "0x102645288",
+          "nameAddress": "0x1022a8182",
+          "nameFileOffset": 36340098,
+          "nameLength": 19,
+          "name": "INVALID_CREDENTIALS",
+          "number": 1
+        },
+        {
+          "address": "0x1026452a0",
+          "nameAddress": "0x1022a8195",
+          "nameFileOffset": 36340117,
+          "nameLength": 19,
+          "name": "INVALID_PHONENUMBER",
+          "number": 7
+        },
+        {
+          "address": "0x1026452b8",
+          "nameAddress": "0x1022a81a8",
+          "nameFileOffset": 36340136,
+          "nameLength": 11,
+          "name": "NOT_ALLOWED",
+          "number": 9
+        },
+        {
+          "address": "0x1026452d0",
+          "nameAddress": "0x1022a81b3",
+          "nameFileOffset": 36340147,
+          "nameLength": 7,
+          "name": "TIMEOUT",
+          "number": 4
+        },
+        {
+          "address": "0x1026452e8",
+          "nameAddress": "0x1022a81ba",
+          "nameFileOffset": 36340154,
+          "nameLength": 17,
+          "name": "TOO_MANY_ATTEMPTS",
+          "number": 6
+        },
+        {
+          "address": "0x102645300",
+          "nameAddress": "0x1022a81cb",
+          "nameFileOffset": 36340171,
+          "nameLength": 15,
+          "name": "TRY_AGAIN_LATER",
+          "number": 8
+        },
+        {
+          "address": "0x102645318",
+          "nameAddress": "0x1022a81da",
+          "nameFileOffset": 36340186,
+          "nameLength": 13,
+          "name": "UNKNOWN_ERROR",
+          "number": 0
+        },
+        {
+          "address": "0x102645330",
+          "nameAddress": "0x1022a81e7",
+          "nameFileOffset": 36340199,
+          "nameLength": 18,
+          "name": "UNKNOWN_IDENTIFIER",
+          "number": 5
+        },
+        {
+          "address": "0x102645348",
+          "nameAddress": "0x1022a81f9",
+          "nameFileOffset": 36340217,
+          "nameLength": 26,
+          "name": "UNSUPPORTED_LOGIN_PROTOCOL",
+          "number": 3
+        }
+      ]
+    },
+    {
+      "address": "0x102646bb0",
+      "entryStride": 24,
+      "entryCount": 10,
+      "sha256": "9de4bb95856673a576f018db28db784c798a14840c67f5b8153399d941034861",
+      "entries": [
+        {
+          "address": "0x102646bb0",
+          "nameAddress": "0x1022a8259",
+          "nameFileOffset": 36340313,
+          "nameLength": 11,
+          "name": "BAD_REQUEST",
+          "number": 2
+        },
+        {
+          "address": "0x102646bc8",
+          "nameAddress": "0x1022a8264",
+          "nameFileOffset": 36340324,
+          "nameLength": 19,
+          "name": "INVALID_CREDENTIALS",
+          "number": 1
+        },
+        {
+          "address": "0x102646be0",
+          "nameAddress": "0x1022a8277",
+          "nameFileOffset": 36340343,
+          "nameLength": 19,
+          "name": "INVALID_PHONENUMBER",
+          "number": 7
+        },
+        {
+          "address": "0x102646bf8",
+          "nameAddress": "0x1022a828a",
+          "nameFileOffset": 36340362,
+          "nameLength": 11,
+          "name": "NOT_ALLOWED",
+          "number": 9
+        },
+        {
+          "address": "0x102646c10",
+          "nameAddress": "0x1022a8295",
+          "nameFileOffset": 36340373,
+          "nameLength": 7,
+          "name": "TIMEOUT",
+          "number": 4
+        },
+        {
+          "address": "0x102646c28",
+          "nameAddress": "0x1022a829c",
+          "nameFileOffset": 36340380,
+          "nameLength": 17,
+          "name": "TOO_MANY_ATTEMPTS",
+          "number": 6
+        },
+        {
+          "address": "0x102646c40",
+          "nameAddress": "0x1022a82ad",
+          "nameFileOffset": 36340397,
+          "nameLength": 15,
+          "name": "TRY_AGAIN_LATER",
+          "number": 8
+        },
+        {
+          "address": "0x102646c58",
+          "nameAddress": "0x1022a82bc",
+          "nameFileOffset": 36340412,
+          "nameLength": 13,
+          "name": "UNKNOWN_ERROR",
+          "number": 0
+        },
+        {
+          "address": "0x102646c70",
+          "nameAddress": "0x1022a82c9",
+          "nameFileOffset": 36340425,
+          "nameLength": 18,
+          "name": "UNKNOWN_IDENTIFIER",
+          "number": 5
+        },
+        {
+          "address": "0x102646c88",
+          "nameAddress": "0x1022a82db",
+          "nameFileOffset": 36340443,
+          "nameLength": 26,
+          "name": "UNSUPPORTED_LOGIN_PROTOCOL",
+          "number": 3
+        }
+      ]
+    }
+  ],
+  "literalLabelSearch": [
+    {
+      "label": "FEMALE",
+      "executableOccurrenceCount": 0,
+      "fileOffsets": []
+    },
+    {
+      "label": "MALE",
+      "executableOccurrenceCount": 0,
+      "fileOffsets": []
+    },
+    {
+      "label": "EMAIL",
+      "executableOccurrenceCount": 0,
+      "fileOffsets": []
+    },
+    {
+      "label": "DEPRECATED_PROTOCOL_VERSION",
+      "executableOccurrenceCount": 0,
+      "fileOffsets": []
+    },
+    {
+      "label": "UNKNOWN_WARNING",
+      "executableOccurrenceCount": 0,
+      "fileOffsets": []
+    },
+    {
+      "label": "SMS",
+      "executableOccurrenceCount": 1,
+      "fileOffsets": [
+        37993956
+      ]
+    }
+  ],
+  "proprietaryBindings": [
+    {
+      "path": ".local/rea-session/login5_enum_index_helper_a.c",
+      "sha256": "73be3d49fc90f00e4c06dbd7743bfd0391e3c7c6cb2512459ed4f0991514b1c0"
+    },
+    {
+      "path": ".local/rea-session/login5_v4_http_response_handler.c",
+      "sha256": "7864fce681d78cc587c7c2858e284c9466e931d07decdeaccd9010e2d852bf1f"
+    },
+    {
+      "path": ".local/rea-session/login5-v4-request-dispatch.c",
+      "sha256": "8b2aaa05bab6271fbaf14caddadce708d9e648936805a37aee2062311ed19bf8"
+    },
+    {
+      "path": ".local/rea-session/login5_v4_actual_http_start.c",
+      "sha256": "2f3121912e5fd5762f859cc8c069941b3633e516f7ccce8b5583ff9a0258f2ef"
+    },
+    {
+      "path": ".local/rea-session/login5_v4_response_dispatch.c",
+      "sha256": "4e0178e55102f06f6f2007904f84ddfa5b4796288dfcbc0bc6ea483949af4070"
+    },
+    {
+      "path": ".local/rea-session/login5_v4_interaction_value_copy.c",
+      "sha256": "7d3937d90008f9e4d8d15ddd964da9d6f83a22bf0346b707affb5a31bd27930c"
+    },
+    {
+      "path": ".local/rea-session/login5_v4_actual_body_constructor.c",
+      "sha256": "fad1056578e6da90d1e076c3a96a8d2014f3482a035da9addf72e0faba3d5c86"
+    },
+    {
+      "path": ".local/rea-session/login5_v4_optional_pair_setter.c",
+      "sha256": "fee2abbbbdea5b4379b1770207b09ab9e21214f46ec6bf3fb83d637e84c2fc15"
+    },
+    {
+      "path": ".local/rea-session/login5_v4_interaction_value_copy.json",
+      "sha256": "dc69f25783bc3061763e19127263963ed9d6f547e5cd6598888cd1be5d5ccf8c",
+      "evidenceId": "ev_985194237e40e13f8f8af858b50bf8463e47249c16d16b8033b3dc9bf61782c3"
+    }
+  ],
+  "bindingFacts": [
+    {
+      "procedure": "0x1018c2a48",
+      "fact": "V4 response union tag 2 passes its numeric value to native name wrapper 0x1018df604; wrapper binds count-10 table 0x102646bb0"
+    },
+    {
+      "procedure": "0x1018c2a48",
+      "fact": "Challenge discriminator values 0,1,2,3,4 produce diagnostics ChallengeNotSet,HashCash,SMSCode,Interaction,AuthnPlatform; these are message-oneof cases, not CodeChallenge method enum labels"
+    },
+    {
+      "procedure": "0x1018c3364",
+      "fact": "Within Challenges, Challenge oneof case 2 and CodeChallenge field 1 equal to 1 suppress copying the optional two-string argument before request reconstruction; no enum member spelling is retained"
+    },
+    {
+      "procedure": "0x1018c3364",
+      "fact": "Signup-required projection copies UserInfo field 5 from memory offset 0x38 as an unvalidated numeric value; no declared catalog or label is exposed"
+    },
+    {
+      "procedure": "0x1018c3364",
+      "fact": "Challenge request reconstruction invokes proprietary request builder 0x1018c0b74 with the optional two-string argument"
+    },
+    {
+      "procedure": "0x1018c0b74",
+      "fact": "Supported credential construction appends Interaction field 1 value 1 and sets Interaction.Finish field 1 and field 4 to 1; these used constants do not establish member labels or complete declarations"
+    },
+    {
+      "procedure": "0x1018c0b74",
+      "fact": "Optional two-string argument is passed to 0x1018c23d0; original-code probe ties its presence to request field 5 and the retained native Recaptcha prototype"
+    },
+    {
+      "procedure": "0x1018c23d0",
+      "fact": "Sets request has-bit 0x20 and creates request field 5 at memory offset 0x40, then copies two string getter results into Recaptcha fields 1 and 2; contains no enum assignments"
+    }
+  ],
+  "limitations": [
+    "No schema, descriptor, generated Dart or generator input is changed",
+    "Open-enum parsing does not establish a declared enum member catalog",
+    "Only LoginResponse field 2 is tied to a recovered native label/value table",
+    "Other enum type/member spellings and complete declared ranges remain unestablished",
+    "Public v3 labels and diagnostic branch labels are not promoted to native v4 enum names",
+    "No original app, account, profile, network request or standard runtime decompilation"
+  ]
+}

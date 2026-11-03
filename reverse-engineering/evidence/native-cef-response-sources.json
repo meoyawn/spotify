@@ -1,0 +1,69 @@
+{
+  "scope": "Pinned public source for response coding policy; independent original request component fixtures for outgoing compressed-nonce retry verification. No standard code decompiled.",
+  "chromiumVersion": "151.0.7922.138",
+  "cefRevision": "beff58dbc4d0fd12b3eafea8f5314ce22e649078",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/chromium/chromium/151.0.7922.138/net/filter/filter_source_stream.cc",
+      "sha256": "1841665f4e0664a529d5af999df018f16174d5feb6d284c99864b8e17d59492b",
+      "localCache": ".local/cef-source/filter_source_stream-151.0.7922.138.cc"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chromium/chromium/151.0.7922.138/net/filter/gzip_source_stream.cc",
+      "sha256": "c43fc21ec382f047210a514032edba890c04249f0d0f5109af24871993e7264d",
+      "localCache": ".local/cef-source/gzip_source_stream-151.0.7922.138.cc"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chromium/chromium/151.0.7922.138/net/filter/brotli_source_stream.cc",
+      "sha256": "d19d5600e24e9857ba514b4937c226bda7b9270dfc34120b952e9af7fa8cd7d4",
+      "localCache": ".local/cef-source/brotli_source_stream-151.0.7922.138.cc"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chromium/chromium/151.0.7922.138/net/filter/zstd_source_stream.cc",
+      "sha256": "10e48a306a2d01abfee15d9d829d810d119b16381aed7408732abb02ded9fb11",
+      "localCache": ".local/cef-source/zstd_source_stream-151.0.7922.138.cc"
+    },
+    {
+      "url": "https://github.com/chromiumembedded/cef/blob/beff58dbc4d0fd12b3eafea8f5314ce22e649078/libcef/browser/net_service/browser_urlrequest_impl.cc",
+      "sha256": "4ebcd2b1b2397c7df3f01dc995c872a31516fc3fd93fed633161fc8b772b9501",
+      "localCache": ".local/cef-source/beff58d/libcef/browser/net_service/browser_urlrequest_impl.cc"
+    }
+  ],
+  "independentOutgoingInputs": [
+    {
+      "path": "reverse-engineering/fixtures/native-form.json",
+      "sha256": "415d38b33ba70f5f4bf5bc1a2382a8c84d517363b46252447f183191ae5b3582"
+    },
+    {
+      "path": "reverse-engineering/fixtures/native-dpop-proof.json",
+      "sha256": "fe7584e6fddb8165c65ad9c19c872fadab2cb3385b49f79e37f4d68712c6a0fb"
+    },
+    {
+      "path": "reverse-engineering/fixtures/native-oauth-refresh.json",
+      "sha256": "456c4830d6d743e5e7f7a10bbcd970bdf4b802377d92efb9db6495bfcabbe20f"
+    },
+    {
+      "path": "reverse-engineering/fixtures/native-cef-template-loopback.json",
+      "sha256": "319bc5076089b1ff3bbed77f73b4e8c5abfa2228275e3bcda80eddc5f56e113e"
+    },
+    {
+      "path": "reverse-engineering/fixtures/native-cef-h2-loopback.json",
+      "sha256": "d896a0fad537b0fb5da2b51f3ca283d2959eecd40a5e41e06ec360d27b2d65b2"
+    }
+  ],
+  "dartCodecs": {
+    "gzip/deflate": "dart:io",
+    "br": "brotli 0.6.0",
+    "zstd": "archive 4.5.2 (8MiB HTTP window limit)"
+  },
+  "peerCodecs": {
+    "gzip/deflate": "Python standard gzip/zlib",
+    "br": "Brotli 1.1.0",
+    "zstd": "zstandard 0.23.0"
+  },
+  "limits": [
+    "Codec edge/malformed-response equivalence is not claimed.",
+    "Compressed responses are buffered; unencoded streaming remains incremental.",
+    "Nonce proof provider supplies existing original opaque proof bytes; fresh signing and target binding are separate verified owners."
+  ]
+}

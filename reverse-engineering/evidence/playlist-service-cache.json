@@ -1,0 +1,58 @@
+{
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "descriptorSetSha256": "e05cf03aafc96fc69bcf9415def2648fd4ef88c98d131c9f475025ee735221e6",
+  "standardCppProtobufVersion": "36.2.0",
+  "codecSourceSha256": "3d1f49dc45b199260f85382748bfb125288a5846f99d4ab35e276bbdf0d9a7b7",
+  "functions": [
+    "0x101ac27f4",
+    "0x101ac2998",
+    "0x101acf7ec",
+    "0x101ad0b2c",
+    "0x101adc180"
+  ],
+  "executedInstructionCount": 537,
+  "executedInstructionSha256": "d0abc68342f1f14632e8b669a77e5885b94bba2e9e3fd7d54626f7245631fb32",
+  "scope": "Execute native cache-info/snapshot/row/lens projection offline.\n\nRead-only managed-list getters and enumeration supply synthetic source data.\nOriginal projection instructions choose fields, values, presence and order.\nStandard protobuf36.2 encodes the observed target with exact descriptors.\nNo original store, process, account or transport runs.",
+  "exports": [
+    {
+      "label": "playlist_cache_info_projection",
+      "evidenceId": "ev_f2a381603dc849ae8042d5d87df3da0301992d38ce32cbc9801c8cad74b2c0a8",
+      "address": "0x101ac27f4",
+      "decompilationSha256": "bf0aaa67a59f3605a99ec4084519da96baaf85ff0b4bff0c8df326d4c5978208"
+    },
+    {
+      "label": "playlist_cache_snapshot_projection",
+      "evidenceId": "ev_7a0552ef3dea730f94ec3bee88005e0767cb601682163e6cdcd6e80dec7d841e",
+      "address": "0x101ac2998",
+      "decompilationSha256": "a8e3459a96d65ddfe0916b1dae340c27ad526f69bdba9b574d3b96aed2a77a7d"
+    },
+    {
+      "label": "playlist_cache_revision_setter",
+      "evidenceId": "ev_f2489b6f1d606bf101a901f2bf5dd30a9554e1cbd35d91fe419270dd2361ebfa",
+      "address": "0x101adc180",
+      "decompilationSha256": "00a4521e798edf2e39b3c2d9fa44d6e7c5ac4d92a873836044096d423c879f0e"
+    },
+    {
+      "label": "playlist_cache_list_items_projection",
+      "evidenceId": "ev_96d5ac455479b353f4ab87b941738466889f1d197710f5299712546d5682ae99",
+      "address": "0x101acf7ec",
+      "decompilationSha256": "23cddb337ae60447bfd3454077f8c363bbe9013451e014f6043d19b1ec7ced4f"
+    },
+    {
+      "label": "playlist_cache_item_callback",
+      "evidenceId": "ev_5f8d021c7029b703d08005bb90be5689b53dc1cf572131aff92114fab8ada2a7",
+      "address": "0x101ad0b2c",
+      "decompilationSha256": "c9717a415315ed8bc41333dc538ac862ad2b10f7781ee2305bf108165f9f6d77"
+    }
+  ],
+  "standardLayoutSources": [
+    "https://github.com/protocolbuffers/protobuf/blob/v29.3/src/google/protobuf/message_lite.h",
+    "https://github.com/protocolbuffers/protobuf/blob/v29.3/src/google/protobuf/generated_message_reflection.h",
+    "https://github.com/protocolbuffers/protobuf/blob/v29.3/src/google/protobuf/generated_message_tctable_decl.h"
+  ],
+  "limits": [
+    "Canonical URI getter/row enumeration/read-only fields are inert synthetic sources",
+    "Standard allocation/protobuf/copy/container operations use inert memory and the standard C++ codec",
+    "No cache store lookup/write scheduling, HTTP or Playlist.Get registration is supplied"
+  ]
+}

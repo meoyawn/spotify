@@ -1,0 +1,2898 @@
+{
+  "provenance": "Original LibraryAPI.getContents, filter/sort/item helpers, sidebar options, YourLibraryService client and protobuf codec; synthetic responses and inert single-call transport only.",
+  "features": {
+    "courses": false,
+    "authors": false,
+    "venues": false,
+    "concertCampaigns": false,
+    "recentsSortOrder": false,
+    "artistRecentlyUpdatedSort": false,
+    "customFilterOrder": false
+  },
+  "featureDefinitions": {
+    "enableCoursesChipYlx": {
+      "name": "enableCoursesChipYlx",
+      "description": "Enable Podcasts & Courses chip in YLX",
+      "default": false
+    },
+    "enableAuthorPage": {
+      "name": "enableAuthorPage",
+      "description": "Enable author page",
+      "default": false
+    },
+    "enableVenuesInYourLibrary": {
+      "name": "enableVenuesInYourLibrary",
+      "description": "Enables venues in your library",
+      "default": false
+    },
+    "enableConcertCampaignsInYourLibrary": {
+      "name": "enableConcertCampaignsInYourLibrary",
+      "description": "Enables concert campaigns in your library",
+      "default": false
+    },
+    "enableYlxRecentsSortOrder": {
+      "name": "enableYlxRecentsSortOrder",
+      "description": "Send RECENTS instead of RECENTLY_PLAYED_OR_ADDED for the Recents sort order, blending play/add time with content update time",
+      "default": false
+    },
+    "enableArtistRecentlyUpdatedSort": {
+      "name": "enableArtistRecentlyUpdatedSort",
+      "description": "Enable the Recently Updated sort option when filtering on Artists in Your Library",
+      "default": false
+    },
+    "enableYlxCustomFilterOrder": {
+      "name": "enableYlxCustomFilterOrder",
+      "description": "Use available_filters_2 from the YourLibrary API for custom filter order and concept filters",
+      "default": false
+    }
+  },
+  "enums": {
+    "filters": {
+      "0": "ALBUM",
+      "1": "ARTIST",
+      "2": "PLAYLIST",
+      "3": "SHOW",
+      "4": "BOOK",
+      "5": "EVENT",
+      "7": "AUTHOR",
+      "100": "DOWNLOADED",
+      "101": "WRITABLE",
+      "102": "BY_YOU",
+      "103": "BY_SPOTIFY",
+      "104": "UNPLAYED",
+      "105": "IN_PROGRESS",
+      "106": "FINISHED",
+      "107": "IS_MIXED",
+      "108": "UPCOMING",
+      "109": "VENUE",
+      "110": "PAST",
+      "111": "FOLDER",
+      "112": "PUBLISHED",
+      "113": "PUBLISHABLE",
+      "114": "BY_OTHERS",
+      "115": "EXCLUDE_WORKOUT",
+      "ALBUM": 0,
+      "ARTIST": 1,
+      "PLAYLIST": 2,
+      "SHOW": 3,
+      "BOOK": 4,
+      "EVENT": 5,
+      "AUTHOR": 7,
+      "DOWNLOADED": 100,
+      "WRITABLE": 101,
+      "BY_YOU": 102,
+      "BY_SPOTIFY": 103,
+      "UNPLAYED": 104,
+      "IN_PROGRESS": 105,
+      "FINISHED": 106,
+      "IS_MIXED": 107,
+      "UPCOMING": 108,
+      "VENUE": 109,
+      "PAST": 110,
+      "FOLDER": 111,
+      "PUBLISHED": 112,
+      "PUBLISHABLE": 113,
+      "BY_OTHERS": 114,
+      "EXCLUDE_WORKOUT": 115,
+      "UNRECOGNIZED": -1,
+      "-1": "UNRECOGNIZED"
+    },
+    "sorts": {
+      "0": "NAME",
+      "1": "RECENTLY_ADDED",
+      "2": "CREATOR",
+      "4": "CUSTOM",
+      "5": "RECENTLY_UPDATED",
+      "6": "RECENTLY_PLAYED_OR_ADDED",
+      "7": "RELEVANCE",
+      "8": "EVENT_START_TIME",
+      "9": "RELEASE_DATE",
+      "10": "RECENTS",
+      "NAME": 0,
+      "RECENTLY_ADDED": 1,
+      "CREATOR": 2,
+      "CUSTOM": 4,
+      "RECENTLY_UPDATED": 5,
+      "RECENTLY_PLAYED_OR_ADDED": 6,
+      "RELEVANCE": 7,
+      "EVENT_START_TIME": 8,
+      "RELEASE_DATE": 9,
+      "RECENTS": 10,
+      "UNRECOGNIZED": -1,
+      "-1": "UNRECOGNIZED"
+    },
+    "inclusion": {
+      "0": "EXCLUDE",
+      "1": "INCLUDE_IF_NOT_EMPTY",
+      "2": "INCLUDE_ALWAYS",
+      "EXCLUDE": 0,
+      "INCLUDE_IF_NOT_EMPTY": 1,
+      "INCLUDE_ALWAYS": 2,
+      "UNRECOGNIZED": -1,
+      "-1": "UNRECOGNIZED"
+    },
+    "bookAccess": {
+      "0": "OPEN",
+      "1": "LOCKED",
+      "2": "CAPPED",
+      "OPEN": 0,
+      "LOCKED": 1,
+      "CAPPED": 2,
+      "UNRECOGNIZED": -1,
+      "-1": "UNRECOGNIZED"
+    },
+    "linkTypes": {
+      "0": "EMPTY",
+      "1": "ARTIST",
+      "2": "ALBUM",
+      "4": "TRACK",
+      "9": "LOCAL_TRACK",
+      "62": "SHOW",
+      "63": "EPISODE",
+      "92": "CLIP",
+      "96": "PODCAST_CHAPTER",
+      "100": "KALLAX",
+      "101": "USER_HIGHLIGHT",
+      "EMPTY": 0,
+      "ARTIST": 1,
+      "ALBUM": 2,
+      "TRACK": 4,
+      "LOCAL_TRACK": 9,
+      "SHOW": 62,
+      "EPISODE": 63,
+      "CLIP": 92,
+      "PODCAST_CHAPTER": 96,
+      "KALLAX": 100,
+      "USER_HIGHLIGHT": 101,
+      "UNRECOGNIZED": -1,
+      "-1": "UNRECOGNIZED"
+    }
+  },
+  "uriCases": [
+    {
+      "uri": "spotify:folder:000000000000001a",
+      "parsed": null
+    },
+    {
+      "uri": "spotify:user:fixture:folder:000000000000001a",
+      "parsed": {
+        "type": "folder",
+        "hasBase62Id": true,
+        "id": "000000000000001a",
+        "username": "fixture"
+      }
+    },
+    {
+      "uri": "spotify:folder:0123456789ABCDEFGHIJKL",
+      "parsed": null
+    }
+  ],
+  "sortTransitions": [
+    {
+      "filter": null,
+      "selected": "0",
+      "sortOrder": "0",
+      "direction": "forward"
+    },
+    {
+      "filter": null,
+      "selected": "0",
+      "sortOrder": "0",
+      "direction": "reverse"
+    },
+    {
+      "filter": null,
+      "selected": "4",
+      "sortOrder": "4",
+      "direction": null
+    },
+    {
+      "filter": null,
+      "selected": "4",
+      "sortOrder": "4",
+      "direction": null
+    },
+    {
+      "filter": null,
+      "selected": "6",
+      "sortOrder": "6",
+      "direction": "forward"
+    },
+    {
+      "filter": "0",
+      "selected": "2",
+      "sortOrder": "2",
+      "direction": "forward"
+    },
+    {
+      "filter": null,
+      "selected": null,
+      "sortOrder": "6",
+      "direction": "forward"
+    }
+  ],
+  "typeLabels": {
+    "album:ep": "EP",
+    "album:single": "Single",
+    "artist": "Artist",
+    "show": "Podcast",
+    "concert-campaign": "Tour"
+  },
+  "scenarios": [
+    {
+      "name": "default sidebar request and all recovered entity projections",
+      "response": {
+        "header": {
+          "totalCount": 13,
+          "availableFilters": {
+            "filter": [
+              1,
+              2,
+              0,
+              100,
+              999
+            ]
+          }
+        },
+        "entity": [
+          {
+            "entityInfo": {
+              "uri": "spotify:playlist:playlist",
+              "name": "Synthetic playlist playlist",
+              "imageUri": "https://fixture.invalid/never-fetched",
+              "addTime": "1700000000",
+              "lastPlayed": "1700000030"
+            },
+            "playlist": {
+              "creatorName": "Synthetic owner",
+              "creatorUri": "spotify:user:fixture",
+              "numberOfItemsPerLinkType": [
+                {
+                  "linkType": 4,
+                  "numItems": 3
+                }
+              ],
+              "canView": true,
+              "canAdd": true
+            }
+          },
+          {
+            "entityInfo": {
+              "uri": "spotify:album:album",
+              "name": "Synthetic album album",
+              "imageUri": "https://fixture.invalid/never-fetched",
+              "addTime": "1700000000",
+              "lastPlayed": "1700000030"
+            },
+            "album": {
+              "artistName": "Synthetic artist",
+              "artistUri": "spotify:artist:fixture",
+              "type": 3
+            }
+          },
+          {
+            "entityInfo": {
+              "uri": "spotify:artist:artist",
+              "name": "Synthetic artist artist",
+              "imageUri": "https://fixture.invalid/never-fetched",
+              "addTime": "1700000000",
+              "lastPlayed": "1700000030"
+            },
+            "artist": {}
+          },
+          {
+            "entityInfo": {
+              "uri": "spotify:show:show",
+              "name": "Synthetic show show",
+              "imageUri": "https://fixture.invalid/never-fetched",
+              "addTime": "1700000000",
+              "lastPlayed": "1700000030"
+            },
+            "show": {
+              "creatorName": "Synthetic publisher"
+            }
+          },
+          {
+            "entityInfo": {
+              "uri": "spotify:book:book",
+              "name": "Synthetic book book",
+              "imageUri": "https://fixture.invalid/never-fetched",
+              "addTime": "1700000000",
+              "lastPlayed": "1700000030"
+            },
+            "book": {
+              "authorName": "Synthetic author",
+              "access": 2
+            }
+          },
+          {
+            "entityInfo": {
+              "uri": "spotify:author:author",
+              "name": "Synthetic author author",
+              "imageUri": "https://fixture.invalid/never-fetched",
+              "addTime": "1700000000",
+              "lastPlayed": "1700000030"
+            },
+            "author": {}
+          },
+          {
+            "entityInfo": {
+              "uri": "spotify:user:fixture:folder:000000000000001a",
+              "name": "Synthetic folder 000000000000001a",
+              "imageUri": "https://fixture.invalid/never-fetched",
+              "addTime": "1700000000",
+              "lastPlayed": "1700000030"
+            },
+            "folder": {
+              "numberOfFolders": 1,
+              "numberOfPlaylists": 1,
+              "entity": [
+                {
+                  "entityInfo": {
+                    "uri": "spotify:playlist:playlist",
+                    "name": "Synthetic playlist playlist",
+                    "imageUri": "https://fixture.invalid/never-fetched",
+                    "addTime": "1700000000",
+                    "lastPlayed": "1700000030"
+                  },
+                  "playlist": {
+                    "creatorName": "Synthetic owner",
+                    "creatorUri": "spotify:user:fixture",
+                    "numberOfItemsPerLinkType": [
+                      {
+                        "linkType": 4,
+                        "numItems": 3
+                      }
+                    ],
+                    "canView": true,
+                    "canAdd": true
+                  }
+                },
+                {
+                  "entityInfo": {
+                    "uri": "spotify:user:fixture:folder:000000000000002b",
+                    "name": "Synthetic folder 000000000000002b",
+                    "imageUri": "https://fixture.invalid/never-fetched",
+                    "addTime": "1700000000",
+                    "lastPlayed": "1700000030"
+                  },
+                  "folder": {
+                    "numberOfPlaylists": 1,
+                    "entity": [
+                      {
+                        "entityInfo": {
+                          "uri": "spotify:album:album",
+                          "name": "Synthetic album album",
+                          "imageUri": "https://fixture.invalid/never-fetched",
+                          "addTime": "1700000000",
+                          "lastPlayed": "1700000030"
+                        },
+                        "album": {
+                          "artistName": "Synthetic artist",
+                          "artistUri": "spotify:artist:fixture",
+                          "type": 3
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "entityInfo": {
+                    "uri": "spotify:artist:artist",
+                    "name": "Synthetic artist artist",
+                    "imageUri": "https://fixture.invalid/never-fetched",
+                    "addTime": "1700000000",
+                    "lastPlayed": "1700000030"
+                  },
+                  "artist": {}
+                }
+              ]
+            }
+          },
+          {
+            "entityInfo": {
+              "uri": "spotify:prerelease:album",
+              "name": "Synthetic prerelease album",
+              "imageUri": "https://fixture.invalid/never-fetched",
+              "addTime": "1700000000",
+              "lastPlayed": "1700000030"
+            },
+            "prerelease": {
+              "type": 0,
+              "artistName": "Synthetic prerelease artist"
+            }
+          },
+          {
+            "entityInfo": {
+              "uri": "spotify:prerelease:book",
+              "name": "Synthetic prerelease book",
+              "imageUri": "https://fixture.invalid/never-fetched",
+              "addTime": "1700000000",
+              "lastPlayed": "1700000030"
+            },
+            "prerelease": {
+              "type": 1,
+              "artistName": "Synthetic prerelease author"
+            }
+          },
+          {
+            "entityInfo": {
+              "uri": "spotify:event:event",
+              "name": "Synthetic event event",
+              "imageUri": "https://fixture.invalid/never-fetched",
+              "addTime": "1700000000",
+              "lastPlayed": "1700000030"
+            },
+            "event": {
+              "cityName": "Synthetic city",
+              "locationName": "Synthetic venue",
+              "startTime": "1800000000"
+            }
+          },
+          {
+            "entityInfo": {
+              "uri": "spotify:venue:venue",
+              "name": "Synthetic venue venue",
+              "imageUri": "https://fixture.invalid/never-fetched",
+              "addTime": "1700000000",
+              "lastPlayed": "1700000030"
+            },
+            "venue": {
+              "cityName": "Synthetic city",
+              "addressName": "Synthetic address"
+            }
+          },
+          {
+            "entityInfo": {
+              "uri": "spotify:concertCampaign:campaign",
+              "name": "Synthetic concertCampaign campaign",
+              "imageUri": "https://fixture.invalid/never-fetched",
+              "addTime": "1700000000",
+              "lastPlayed": "1700000030"
+            },
+            "concertCampaign": {
+              "status": 3
+            }
+          },
+          {
+            "entityInfo": {
+              "uri": "spotify:unknown:fixture",
+              "name": "Synthetic future item"
+            }
+          }
+        ]
+      },
+      "query": {
+        "offset": 0,
+        "limit": 50,
+        "filters": [],
+        "sortDirection": null,
+        "textFilter": "",
+        "yourEpisodesInclusionMode": "include-if-not-empty",
+        "likedSongsInclusionMode": "include-if-not-empty",
+        "includeYourClips": true,
+        "includePreReleases": false,
+        "includeStsLocalFilesPlaylist": false,
+        "allAvailableConfigsProvided": true,
+        "expandedFolders": [],
+        "filtersPickedByUser": true
+      },
+      "responseHex": "0a0e88010d8201080a0601020064e70712a0010a6b121b53796e74686574696320706c61796c69737420706c61796c6973741a1973706f746966793a706c61796c6973743a706c61796c697374322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa0622310a0f53796e746865746963206f776e6572421473706f746966793a757365723a6669787475726530014801620408041003128f010a5f121553796e74686574696320616c62756d20616c62756d1a1373706f746966793a616c62756d3a616c62756d322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa06122c0a1053796e74686574696320617274697374121673706f746966793a6172746973743a66697874757265180312670a63121753796e74686574696320617274697374206172746973741a1573706f746966793a6172746973743a617274697374322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa061a0012740a5b121353796e7468657469632073686f772073686f771a1173706f746966793a73686f773a73686f77322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa062a150a1353796e746865746963207075626c697368657212730a5b121353796e74686574696320626f6f6b20626f6f6b1a1173706f746966793a626f6f6b3a626f6f6b322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa0662140a1053796e74686574696320617574686f72100212680a63121753796e74686574696320617574686f7220617574686f721a1573706f746966793a617574686f723a617574686f72322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa068a010012bb050a8401122153796e74686574696320666f6c64657220303030303030303030303030303031611a2c73706f746966793a757365723a666978747572653a666f6c6465723a30303030303030303030303030303161322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa0632b104100118012aa0010a6b121b53796e74686574696320706c61796c69737420706c61796c6973741a1973706f746966793a706c61796c6973743a706c61796c697374322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa0622310a0f53796e746865746963206f776e6572421473706f746966793a757365723a66697874757265300148016204080410032a9e020a8401122153796e74686574696320666f6c64657220303030303030303030303030303032621a2c73706f746966793a757365723a666978747572653a666f6c6465723a30303030303030303030303030303262322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa0632940110012a8f010a5f121553796e74686574696320616c62756d20616c62756d1a1373706f746966793a616c62756d3a616c62756d322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa06122c0a1053796e74686574696320617274697374121673706f746966793a6172746973743a6669787475726518032a670a63121753796e74686574696320617274697374206172746973741a1573706f746966793a6172746973743a617274697374322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa061a00128a010a69121a53796e7468657469632070726572656c6561736520616c62756d1a1873706f746966793a70726572656c656173653a616c62756d322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa067a1d0a1b53796e7468657469632070726572656c6561736520617274697374128a010a67121953796e7468657469632070726572656c6561736520626f6f6b1a1773706f746966793a70726572656c656173653a626f6f6b322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa067a1f0a1b53796e7468657469632070726572656c6561736520617574686f721801128b010a5f121553796e746865746963206576656e74206576656e741a1373706f746966793a6576656e743a6576656e74322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa068201270a0f53796e7468657469632076656e75651080a4a7da061a0e53796e74686574696320636974791287010a5f121553796e7468657469632076656e75652076656e75651a1373706f746966793a76656e75653a76656e7565322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa069a01230a1153796e7468657469632061646472657373120e53796e74686574696320636974791280010a79122253796e74686574696320636f6e6365727443616d706169676e2063616d706169676e1a2073706f746966793a636f6e6365727443616d706169676e3a63616d706169676e322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa06a20102080312320a30121553796e74686574696320667574757265206974656d1a1773706f746966793a756e6b6e6f776e3a66697874757265",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.your_library_esperanto.proto.YourLibraryService",
+            "method": "All",
+            "payloadHex": "0a19900101603272020a007a020806920200c80101f00101f8010122110a02080112020801320208013a00980601"
+          }
+        ],
+        "page": {
+          "passedFilterIds": [],
+          "availableFilters": [
+            {
+              "id": "2",
+              "name": "Playlists"
+            },
+            {
+              "id": "0",
+              "name": "Albums"
+            },
+            {
+              "id": "1",
+              "name": "Artists"
+            },
+            {
+              "id": "100",
+              "name": "Downloaded"
+            }
+          ],
+          "selectedFilters": [],
+          "availableSortOrders": [
+            {
+              "id": "6",
+              "name": "Recents"
+            },
+            {
+              "id": "1",
+              "name": "Recently added"
+            },
+            {
+              "id": "0",
+              "name": "Alphabetical"
+            },
+            {
+              "id": "2",
+              "name": "Creator"
+            }
+          ],
+          "selectedSortOrder": {
+            "id": "6",
+            "name": "Recents"
+          },
+          "limit": 50,
+          "offset": 0,
+          "items": [
+            {
+              "type": "playlist",
+              "uri": "spotify:playlist:playlist",
+              "name": "Synthetic playlist playlist",
+              "madeForName": "",
+              "pinned": false,
+              "canPin": 0,
+              "canView": true,
+              "images": [
+                {
+                  "url": "https://fixture.invalid/never-fetched",
+                  "width": 300,
+                  "height": 300
+                }
+              ],
+              "owner": {
+                "type": "user",
+                "name": "Synthetic owner",
+                "uri": "spotify:user:fixture",
+                "id": "",
+                "username": "",
+                "images": []
+              },
+              "isOwnedBySelf": false,
+              "isLoading": false,
+              "canAddTo": true,
+              "canReorder": false,
+              "addedAt": "2023-11-14T22:13:20.000Z",
+              "lastPlayedAt": "2023-11-14T22:13:50.000Z",
+              "isBooklist": false,
+              "isEmpty": false,
+              "rowId": "",
+              "namePrefix": "",
+              "groupLabel": "",
+              "isMixed": false,
+              "isPromptPlaylist": false,
+              "promptGenerationStatus": "unknown"
+            },
+            {
+              "type": "album",
+              "name": "Synthetic album album",
+              "artists": [
+                {
+                  "type": "artist",
+                  "name": "Synthetic artist",
+                  "uri": "spotify:artist:fixture"
+                }
+              ],
+              "images": [
+                {
+                  "url": "https://fixture.invalid/never-fetched",
+                  "width": 300,
+                  "height": 300
+                }
+              ],
+              "uri": "spotify:album:album",
+              "pinned": false,
+              "addedAt": "2023-11-14T22:13:20.000Z",
+              "lastPlayedAt": "2023-11-14T22:13:50.000Z",
+              "canPin": 0,
+              "isPremiumOnly": false,
+              "albumType": "ep",
+              "groupLabel": "",
+              "isNewRelease": false
+            },
+            {
+              "type": "artist",
+              "uri": "spotify:artist:artist",
+              "name": "Synthetic artist artist",
+              "images": [
+                {
+                  "url": "https://fixture.invalid/never-fetched",
+                  "width": 300,
+                  "height": 300
+                }
+              ],
+              "pinned": false,
+              "addedAt": "2023-11-14T22:13:20.000Z",
+              "lastPlayedAt": "2023-11-14T22:13:50.000Z",
+              "canPin": 0,
+              "groupLabel": ""
+            },
+            {
+              "type": "show",
+              "uri": "spotify:show:show",
+              "name": "Synthetic show show",
+              "pinned": false,
+              "publisher": "Synthetic publisher",
+              "images": [
+                {
+                  "url": "https://fixture.invalid/never-fetched",
+                  "width": 300,
+                  "height": 300
+                }
+              ],
+              "addedAt": "2023-11-14T22:13:20.000Z",
+              "lastPlayedAt": "2023-11-14T22:13:50.000Z",
+              "canPin": 0,
+              "groupLabel": ""
+            },
+            {
+              "type": "audiobook",
+              "uri": "spotify:book:book",
+              "name": "Synthetic book book",
+              "authorName": "Synthetic author",
+              "authors": [
+                {
+                  "uri": null,
+                  "name": "Synthetic author"
+                }
+              ],
+              "images": [
+                {
+                  "url": "https://fixture.invalid/never-fetched",
+                  "width": 300,
+                  "height": 300
+                }
+              ],
+              "isLocked": false,
+              "pinned": false,
+              "addedAt": "2023-11-14T22:13:20.000Z",
+              "lastPlayedAt": "2023-11-14T22:13:50.000Z",
+              "canPin": 0,
+              "isCappedWithoutExplanation": true,
+              "isPlayable": false,
+              "groupLabel": ""
+            },
+            {
+              "type": "author",
+              "uri": "spotify:author:author",
+              "name": "Synthetic author author",
+              "images": [
+                {
+                  "url": "https://fixture.invalid/never-fetched",
+                  "width": 300,
+                  "height": 300
+                }
+              ],
+              "pinned": false,
+              "addedAt": "2023-11-14T22:13:20.000Z",
+              "lastPlayedAt": "2023-11-14T22:13:50.000Z",
+              "canPin": 0,
+              "groupLabel": ""
+            },
+            {
+              "type": "folder",
+              "uri": "spotify:user:fixture:folder:000000000000001a",
+              "rowId": "",
+              "name": "Synthetic folder 000000000000001a",
+              "pinned": false,
+              "canPin": 0,
+              "numberOfFolders": 1,
+              "numberOfPlaylists": 1,
+              "canReorder": false,
+              "isFlattened": false,
+              "addedAt": "2023-11-14T22:13:20.000Z",
+              "lastPlayedAt": "2023-11-14T22:13:50.000Z",
+              "isEmpty": false,
+              "groupLabel": ""
+            },
+            {
+              "name": "Synthetic prerelease album",
+              "images": [
+                {
+                  "url": "https://fixture.invalid/never-fetched",
+                  "width": 300,
+                  "height": 300
+                }
+              ],
+              "uri": "spotify:prerelease:album",
+              "pinned": false,
+              "addedAt": "2023-11-14T22:13:20.000Z",
+              "lastPlayedAt": "2023-11-14T22:13:50.000Z",
+              "canPin": 0,
+              "groupLabel": "",
+              "type": "pre-release-album",
+              "artists": [
+                {
+                  "type": "artist",
+                  "name": "Synthetic prerelease artist",
+                  "uri": ""
+                }
+              ]
+            },
+            {
+              "name": "Synthetic prerelease book",
+              "images": [
+                {
+                  "url": "https://fixture.invalid/never-fetched",
+                  "width": 300,
+                  "height": 300
+                }
+              ],
+              "uri": "spotify:prerelease:book",
+              "pinned": false,
+              "addedAt": "2023-11-14T22:13:20.000Z",
+              "lastPlayedAt": "2023-11-14T22:13:50.000Z",
+              "canPin": 0,
+              "groupLabel": "",
+              "type": "pre-release-book",
+              "authorName": "Synthetic prerelease author"
+            },
+            {
+              "type": "concert",
+              "uri": "spotify:event:event",
+              "name": "Synthetic event event",
+              "images": [
+                {
+                  "url": "https://fixture.invalid/never-fetched",
+                  "width": 300,
+                  "height": 300
+                }
+              ],
+              "pinned": false,
+              "addedAt": "2023-11-14T22:13:20.000Z",
+              "lastPlayedAt": null,
+              "canPin": 0,
+              "cityName": "Synthetic city",
+              "locationName": "Synthetic venue",
+              "startTime": "2027-01-15T08:00:00.000Z"
+            },
+            {
+              "type": "venue",
+              "uri": "spotify:venue:venue",
+              "name": "Synthetic venue venue",
+              "images": [
+                {
+                  "url": "https://fixture.invalid/never-fetched",
+                  "width": 300,
+                  "height": 300
+                }
+              ],
+              "cityName": "Synthetic city",
+              "locationName": "Synthetic address",
+              "pinned": false,
+              "addedAt": "2023-11-14T22:13:20.000Z",
+              "lastPlayedAt": null,
+              "canPin": 0
+            },
+            {
+              "type": "concert-campaign",
+              "uri": "spotify:concertCampaign:campaign",
+              "name": "Synthetic concertCampaign campaign",
+              "images": [
+                {
+                  "url": "https://fixture.invalid/never-fetched",
+                  "width": 300,
+                  "height": 300
+                }
+              ],
+              "pinned": false,
+              "addedAt": "2023-11-14T22:13:20.000Z",
+              "lastPlayedAt": null,
+              "canPin": 0,
+              "status": "waitlisted"
+            },
+            null
+          ],
+          "unfilteredTotalLength": 13,
+          "totalLength": 13,
+          "hasUnfilteredItems": true,
+          "hasTextFilter": false,
+          "reorderAllowed": false,
+          "openedFolderName": "",
+          "parentFolderUri": "",
+          "openedFolderIsPlayable": false
+        }
+      }
+    },
+    {
+      "name": "album filter creator sort reverse and Unicode text",
+      "input": {
+        "filters": [
+          "0"
+        ],
+        "sortOrder": "2",
+        "sortDirection": "reverse",
+        "textFilter": "雪 library",
+        "offset": 50
+      },
+      "response": {
+        "header": {
+          "totalCount": 13,
+          "availableFilters": {
+            "filter": [
+              1,
+              2,
+              0,
+              100,
+              999
+            ]
+          }
+        },
+        "entity": [
+          {
+            "entityInfo": {
+              "uri": "spotify:album:album",
+              "name": "Synthetic album album",
+              "imageUri": "https://fixture.invalid/never-fetched",
+              "addTime": "1700000000",
+              "lastPlayed": "1700000030"
+            },
+            "album": {
+              "artistName": "Synthetic artist",
+              "artistUri": "spotify:artist:fixture",
+              "type": 3
+            }
+          }
+        ]
+      },
+      "query": {
+        "offset": 50,
+        "limit": 50,
+        "filters": [
+          "0"
+        ],
+        "sortOrder": "2",
+        "sortDirection": "reverse",
+        "textFilter": "雪 library",
+        "yourEpisodesInclusionMode": "include-if-not-empty",
+        "likedSongsInclusionMode": "include-if-not-empty",
+        "includeYourClips": true,
+        "includePreReleases": false,
+        "includeStsLocalFilesPlaylist": false,
+        "allAvailableConfigsProvided": true,
+        "expandedFolders": [],
+        "filtersPickedByUser": true
+      },
+      "responseHex": "0a0e88010d8201080a0601020064e707128f010a5f121553796e74686574696320616c62756d20616c62756d1a1373706f746966793a616c62756d3a616c62756d322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa06122c0a1053796e74686574696320617274697374121673706f746966793a6172746973743a666978747572651803",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.your_library_esperanto.proto.YourLibraryService",
+            "method": "All",
+            "payloadHex": "0a2e900101583260326a0be99baa206c69627261727972030a01007a0408021001880101920200c80101f00101f8010122110a02080112020801320208013a00980601"
+          }
+        ],
+        "page": {
+          "primaryFilter": "album",
+          "passedFilterIds": [
+            "0"
+          ],
+          "availableFilters": [
+            {
+              "id": "2",
+              "name": "Playlists"
+            },
+            {
+              "id": "0",
+              "name": "Albums"
+            },
+            {
+              "id": "1",
+              "name": "Artists"
+            },
+            {
+              "id": "100",
+              "name": "Downloaded"
+            }
+          ],
+          "selectedFilters": [
+            {
+              "id": "0",
+              "name": "Albums"
+            }
+          ],
+          "availableSortOrders": [
+            {
+              "id": "6",
+              "name": "Recents"
+            },
+            {
+              "id": "1",
+              "name": "Recently added"
+            },
+            {
+              "id": "0",
+              "name": "Alphabetical"
+            },
+            {
+              "id": "2",
+              "name": "Creator"
+            },
+            {
+              "id": "9",
+              "name": "Release date"
+            }
+          ],
+          "selectedSortOrder": {
+            "id": "2",
+            "name": "Creator"
+          },
+          "limit": 50,
+          "offset": 50,
+          "items": [
+            {
+              "type": "album",
+              "name": "Synthetic album album",
+              "artists": [
+                {
+                  "type": "artist",
+                  "name": "Synthetic artist",
+                  "uri": "spotify:artist:fixture"
+                }
+              ],
+              "images": [
+                {
+                  "url": "https://fixture.invalid/never-fetched",
+                  "width": 300,
+                  "height": 300
+                }
+              ],
+              "uri": "spotify:album:album",
+              "pinned": false,
+              "addedAt": "2023-11-14T22:13:20.000Z",
+              "lastPlayedAt": "2023-11-14T22:13:50.000Z",
+              "canPin": 0,
+              "isPremiumOnly": false,
+              "albumType": "ep",
+              "groupLabel": "",
+              "isNewRelease": false
+            }
+          ],
+          "unfilteredTotalLength": 13,
+          "totalLength": 13,
+          "hasUnfilteredItems": true,
+          "hasTextFilter": true,
+          "reorderAllowed": false,
+          "openedFolderName": "",
+          "parentFolderUri": "",
+          "openedFolderIsPlayable": false
+        }
+      }
+    },
+    {
+      "name": "filter priority does not reorder the wire filter list",
+      "input": {
+        "filters": [
+          "0",
+          "100",
+          "2"
+        ]
+      },
+      "response": {
+        "header": {
+          "totalCount": 13,
+          "availableFilters": {
+            "filter": [
+              1,
+              2,
+              0,
+              100,
+              999
+            ]
+          }
+        },
+        "entity": []
+      },
+      "query": {
+        "offset": 0,
+        "limit": 50,
+        "filters": [
+          "0",
+          "100",
+          "2"
+        ],
+        "sortDirection": null,
+        "textFilter": "",
+        "yourEpisodesInclusionMode": "include-if-not-empty",
+        "likedSongsInclusionMode": "include-if-not-empty",
+        "includeYourClips": true,
+        "includePreReleases": false,
+        "includeStsLocalFilesPlaylist": false,
+        "allAvailableConfigsProvided": true,
+        "expandedFolders": [],
+        "filtersPickedByUser": true
+      },
+      "responseHex": "0a0e88010d8201080a0601020064e707",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.your_library_esperanto.proto.YourLibraryService",
+            "method": "All",
+            "payloadHex": "0a1c900101603272050a030064027a020806920200c80101f00101f8010122110a02080112020801320208013a00980601"
+          }
+        ],
+        "page": {
+          "primaryFilter": "playlist",
+          "passedFilterIds": [
+            "0",
+            "100",
+            "2"
+          ],
+          "availableFilters": [
+            {
+              "id": "2",
+              "name": "Playlists"
+            },
+            {
+              "id": "0",
+              "name": "Albums"
+            },
+            {
+              "id": "1",
+              "name": "Artists"
+            },
+            {
+              "id": "100",
+              "name": "Downloaded"
+            }
+          ],
+          "selectedFilters": [
+            {
+              "id": "2",
+              "name": "Playlists"
+            },
+            {
+              "id": "0",
+              "name": "Albums"
+            },
+            {
+              "id": "100",
+              "name": "Downloaded"
+            }
+          ],
+          "availableSortOrders": [
+            {
+              "id": "6",
+              "name": "Recents"
+            },
+            {
+              "id": "1",
+              "name": "Recently added"
+            },
+            {
+              "id": "0",
+              "name": "Alphabetical"
+            },
+            {
+              "id": "2",
+              "name": "Creator"
+            },
+            {
+              "id": "4",
+              "name": "Custom order"
+            }
+          ],
+          "selectedSortOrder": {
+            "id": "6",
+            "name": "Recents"
+          },
+          "limit": 50,
+          "offset": 0,
+          "items": [],
+          "unfilteredTotalLength": 13,
+          "totalLength": 13,
+          "hasUnfilteredItems": true,
+          "hasTextFilter": false,
+          "reorderAllowed": false,
+          "openedFolderName": "",
+          "parentFolderUri": "",
+          "openedFolderIsPlayable": false
+        }
+      }
+    },
+    {
+      "name": "concept filter and backend custom ordering stay distinct",
+      "input": {
+        "filters": [
+          "spotify:concept:synthetic",
+          "0"
+        ]
+      },
+      "features": {
+        "courses": false,
+        "authors": false,
+        "venues": false,
+        "concertCampaigns": false,
+        "recentsSortOrder": false,
+        "artistRecentlyUpdatedSort": false,
+        "customFilterOrder": true
+      },
+      "response": {
+        "header": {
+          "totalCount": 1,
+          "tagInfo": {
+            "tagName": "Synthetic concept"
+          },
+          "availableFilters2": {
+            "availableFilter": [
+              {
+                "uri": "spotify:concept:other",
+                "conceptName": "Other concept"
+              },
+              {
+                "filter": 5
+              },
+              {
+                "filter": 999
+              }
+            ]
+          }
+        },
+        "entity": [
+          {
+            "entityInfo": {
+              "uri": "spotify:album:album",
+              "name": "Synthetic album album",
+              "imageUri": "https://fixture.invalid/never-fetched",
+              "addTime": "1700000000",
+              "lastPlayed": "1700000030"
+            },
+            "album": {
+              "artistName": "Synthetic artist",
+              "artistUri": "spotify:artist:fixture",
+              "type": 3
+            }
+          }
+        ]
+      },
+      "query": {
+        "offset": 0,
+        "limit": 50,
+        "filters": [
+          "spotify:concept:synthetic",
+          "0"
+        ],
+        "sortDirection": null,
+        "textFilter": "",
+        "yourEpisodesInclusionMode": "include-if-not-empty",
+        "likedSongsInclusionMode": "include-if-not-empty",
+        "includeYourClips": true,
+        "includePreReleases": false,
+        "includeStsLocalFilesPlaylist": false,
+        "allAvailableConfigsProvided": true,
+        "expandedFolders": [],
+        "filtersPickedByUser": true
+      },
+      "responseHex": "0a4d880101b201310a260a1573706f746966793a636f6e636570743a6f746865721a0d4f7468657220636f6e636570740a0210050a0310e707aa01130a1153796e74686574696320636f6e63657074128f010a5f121553796e74686574696320616c62756d20616c62756d1a1373706f746966793a616c62756d3a616c62756d322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa06122c0a1053796e74686574696320617274697374121673706f746966793a6172746973743a666978747572651803",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.your_library_esperanto.proto.YourLibraryService",
+            "method": "All",
+            "payloadHex": "0a3b900101603272030a01007a020806880101920200c2011b0a1973706f746966793a636f6e636570743a73796e746865746963c80101f00101f8010122110a02080112020801320208013a00980601"
+          }
+        ],
+        "page": {
+          "primaryFilter": "album",
+          "passedFilterIds": [
+            "spotify:concept:synthetic",
+            "0"
+          ],
+          "availableFilters": [
+            {
+              "id": "spotify:concept:other",
+              "name": "Other concept"
+            },
+            {
+              "id": "1",
+              "name": "Artists"
+            }
+          ],
+          "selectedFilters": [
+            {
+              "id": "spotify:concept:synthetic",
+              "name": "Synthetic concept"
+            },
+            {
+              "id": "0",
+              "name": "Albums"
+            }
+          ],
+          "availableSortOrders": [
+            {
+              "id": "6",
+              "name": "Recents"
+            },
+            {
+              "id": "1",
+              "name": "Recently added"
+            },
+            {
+              "id": "0",
+              "name": "Alphabetical"
+            },
+            {
+              "id": "2",
+              "name": "Creator"
+            },
+            {
+              "id": "9",
+              "name": "Release date"
+            }
+          ],
+          "selectedSortOrder": {
+            "id": "6",
+            "name": "Recents"
+          },
+          "limit": 50,
+          "offset": 0,
+          "items": [
+            {
+              "type": "album",
+              "name": "Synthetic album album",
+              "artists": [
+                {
+                  "type": "artist",
+                  "name": "Synthetic artist",
+                  "uri": "spotify:artist:fixture"
+                }
+              ],
+              "images": [
+                {
+                  "url": "https://fixture.invalid/never-fetched",
+                  "width": 300,
+                  "height": 300
+                }
+              ],
+              "uri": "spotify:album:album",
+              "pinned": false,
+              "addedAt": "2023-11-14T22:13:20.000Z",
+              "lastPlayedAt": "2023-11-14T22:13:50.000Z",
+              "canPin": 0,
+              "isPremiumOnly": false,
+              "albumType": "ep",
+              "groupLabel": "",
+              "isNewRelease": false
+            }
+          ],
+          "unfilteredTotalLength": 1,
+          "totalLength": 1,
+          "hasUnfilteredItems": true,
+          "hasTextFilter": false,
+          "reorderAllowed": false,
+          "openedFolderName": "",
+          "parentFolderUri": "",
+          "openedFolderIsPlayable": false
+        }
+      }
+    },
+    {
+      "name": "expanded folders fetch a prefix and flatten before slicing",
+      "input": {
+        "expandedFolders": [
+          "spotify:user:fixture:folder:000000000000001a",
+          "spotify:user:fixture:folder:000000000000002b"
+        ],
+        "offset": 2,
+        "limit": 3
+      },
+      "response": {
+        "header": {
+          "totalCount": 2
+        },
+        "entity": [
+          {
+            "entityInfo": {
+              "uri": "spotify:user:fixture:folder:000000000000001a",
+              "name": "Synthetic folder 000000000000001a",
+              "imageUri": "https://fixture.invalid/never-fetched",
+              "addTime": "1700000000",
+              "lastPlayed": "1700000030"
+            },
+            "folder": {
+              "numberOfFolders": 1,
+              "numberOfPlaylists": 1,
+              "entity": [
+                {
+                  "entityInfo": {
+                    "uri": "spotify:playlist:playlist",
+                    "name": "Synthetic playlist playlist",
+                    "imageUri": "https://fixture.invalid/never-fetched",
+                    "addTime": "1700000000",
+                    "lastPlayed": "1700000030"
+                  },
+                  "playlist": {
+                    "creatorName": "Synthetic owner",
+                    "creatorUri": "spotify:user:fixture",
+                    "numberOfItemsPerLinkType": [
+                      {
+                        "linkType": 4,
+                        "numItems": 3
+                      }
+                    ],
+                    "canView": true,
+                    "canAdd": true
+                  }
+                },
+                {
+                  "entityInfo": {
+                    "uri": "spotify:user:fixture:folder:000000000000002b",
+                    "name": "Synthetic folder 000000000000002b",
+                    "imageUri": "https://fixture.invalid/never-fetched",
+                    "addTime": "1700000000",
+                    "lastPlayed": "1700000030"
+                  },
+                  "folder": {
+                    "numberOfPlaylists": 1,
+                    "entity": [
+                      {
+                        "entityInfo": {
+                          "uri": "spotify:album:album",
+                          "name": "Synthetic album album",
+                          "imageUri": "https://fixture.invalid/never-fetched",
+                          "addTime": "1700000000",
+                          "lastPlayed": "1700000030"
+                        },
+                        "album": {
+                          "artistName": "Synthetic artist",
+                          "artistUri": "spotify:artist:fixture",
+                          "type": 3
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "entityInfo": {
+                    "uri": "spotify:artist:artist",
+                    "name": "Synthetic artist artist",
+                    "imageUri": "https://fixture.invalid/never-fetched",
+                    "addTime": "1700000000",
+                    "lastPlayed": "1700000030"
+                  },
+                  "artist": {}
+                }
+              ]
+            }
+          },
+          {
+            "entityInfo": {
+              "uri": "spotify:artist:artist",
+              "name": "Synthetic artist artist",
+              "imageUri": "https://fixture.invalid/never-fetched",
+              "addTime": "1700000000",
+              "lastPlayed": "1700000030"
+            },
+            "artist": {}
+          }
+        ]
+      },
+      "query": {
+        "offset": 2,
+        "limit": 3,
+        "filters": [],
+        "sortDirection": null,
+        "textFilter": "",
+        "yourEpisodesInclusionMode": "include-if-not-empty",
+        "likedSongsInclusionMode": "include-if-not-empty",
+        "includeYourClips": true,
+        "includePreReleases": false,
+        "includeStsLocalFilesPlaylist": false,
+        "allAvailableConfigsProvided": true,
+        "expandedFolders": [
+          "spotify:user:fixture:folder:000000000000001a",
+          "spotify:user:fixture:folder:000000000000002b"
+        ],
+        "filtersPickedByUser": true
+      },
+      "responseHex": "0a0388010212bb050a8401122153796e74686574696320666f6c64657220303030303030303030303030303031611a2c73706f746966793a757365723a666978747572653a666f6c6465723a30303030303030303030303030303161322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa0632b104100118012aa0010a6b121b53796e74686574696320706c61796c69737420706c61796c6973741a1973706f746966793a706c61796c6973743a706c61796c697374322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa0622310a0f53796e746865746963206f776e6572421473706f746966793a757365723a66697874757265300148016204080410032a9e020a8401122153796e74686574696320666f6c64657220303030303030303030303030303032621a2c73706f746966793a757365723a666978747572653a666f6c6465723a30303030303030303030303030303262322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa0632940110012a8f010a5f121553796e74686574696320616c62756d20616c62756d1a1373706f746966793a616c62756d3a616c62756d322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa06122c0a1053796e74686574696320617274697374121673706f746966793a6172746973743a6669787475726518032a670a63121753796e74686574696320617274697374206172746973741a1573706f746966793a6172746973743a617274697374322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa061a0012670a63121753796e74686574696320617274697374206172746973741a1573706f746966793a6172746973743a617274697374322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa061a00",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.your_library_esperanto.proto.YourLibraryService",
+            "method": "All",
+            "payloadHex": "0a1b900101600572020a007a0208069202021a2bc80101f00101f8010122110a02080112020801320208013a00980601"
+          }
+        ],
+        "page": {
+          "passedFilterIds": [],
+          "availableFilters": [],
+          "selectedFilters": [],
+          "availableSortOrders": [
+            {
+              "id": "6",
+              "name": "Recents"
+            },
+            {
+              "id": "1",
+              "name": "Recently added"
+            },
+            {
+              "id": "0",
+              "name": "Alphabetical"
+            },
+            {
+              "id": "2",
+              "name": "Creator"
+            }
+          ],
+          "selectedSortOrder": {
+            "id": "6",
+            "name": "Recents"
+          },
+          "limit": 3,
+          "offset": 2,
+          "items": [
+            {
+              "type": "folder",
+              "uri": "spotify:user:fixture:folder:000000000000002b",
+              "rowId": "",
+              "name": "Synthetic folder 000000000000002b",
+              "pinned": false,
+              "canPin": 0,
+              "numberOfFolders": 0,
+              "numberOfPlaylists": 1,
+              "folderDepth": 1,
+              "canReorder": false,
+              "isFlattened": false,
+              "addedAt": "2023-11-14T22:13:20.000Z",
+              "lastPlayedAt": "2023-11-14T22:13:50.000Z",
+              "isEmpty": true,
+              "groupLabel": ""
+            },
+            {
+              "type": "album",
+              "name": "Synthetic album album",
+              "artists": [
+                {
+                  "type": "artist",
+                  "name": "Synthetic artist",
+                  "uri": "spotify:artist:fixture"
+                }
+              ],
+              "images": [
+                {
+                  "url": "https://fixture.invalid/never-fetched",
+                  "width": 300,
+                  "height": 300
+                }
+              ],
+              "uri": "spotify:album:album",
+              "pinned": false,
+              "addedAt": "2023-11-14T22:13:20.000Z",
+              "lastPlayedAt": "2023-11-14T22:13:50.000Z",
+              "canPin": 0,
+              "isPremiumOnly": false,
+              "albumType": "ep",
+              "groupLabel": "",
+              "isNewRelease": false
+            },
+            {
+              "type": "artist",
+              "uri": "spotify:artist:artist",
+              "name": "Synthetic artist artist",
+              "images": [
+                {
+                  "url": "https://fixture.invalid/never-fetched",
+                  "width": 300,
+                  "height": 300
+                }
+              ],
+              "pinned": false,
+              "addedAt": "2023-11-14T22:13:20.000Z",
+              "lastPlayedAt": "2023-11-14T22:13:50.000Z",
+              "canPin": 0,
+              "groupLabel": ""
+            }
+          ],
+          "unfilteredTotalLength": 2,
+          "totalLength": 6,
+          "hasUnfilteredItems": true,
+          "hasTextFilter": false,
+          "reorderAllowed": false,
+          "openedFolderName": "",
+          "parentFolderUri": "",
+          "openedFolderIsPlayable": false
+        }
+      }
+    },
+    {
+      "name": "text filtering disables expanded prefix pagination",
+      "input": {
+        "expandedFolders": [
+          "spotify:user:fixture:folder:000000000000001a"
+        ],
+        "textFilter": "Synthetic",
+        "offset": 2,
+        "limit": 3
+      },
+      "response": {
+        "header": {
+          "totalCount": 1
+        },
+        "entity": [
+          {
+            "entityInfo": {
+              "uri": "spotify:user:fixture:folder:000000000000001a",
+              "name": "Synthetic folder 000000000000001a",
+              "imageUri": "https://fixture.invalid/never-fetched",
+              "addTime": "1700000000",
+              "lastPlayed": "1700000030"
+            },
+            "folder": {
+              "numberOfFolders": 1,
+              "numberOfPlaylists": 1,
+              "entity": [
+                {
+                  "entityInfo": {
+                    "uri": "spotify:playlist:playlist",
+                    "name": "Synthetic playlist playlist",
+                    "imageUri": "https://fixture.invalid/never-fetched",
+                    "addTime": "1700000000",
+                    "lastPlayed": "1700000030"
+                  },
+                  "playlist": {
+                    "creatorName": "Synthetic owner",
+                    "creatorUri": "spotify:user:fixture",
+                    "numberOfItemsPerLinkType": [
+                      {
+                        "linkType": 4,
+                        "numItems": 3
+                      }
+                    ],
+                    "canView": true,
+                    "canAdd": true
+                  }
+                },
+                {
+                  "entityInfo": {
+                    "uri": "spotify:user:fixture:folder:000000000000002b",
+                    "name": "Synthetic folder 000000000000002b",
+                    "imageUri": "https://fixture.invalid/never-fetched",
+                    "addTime": "1700000000",
+                    "lastPlayed": "1700000030"
+                  },
+                  "folder": {
+                    "numberOfPlaylists": 1,
+                    "entity": [
+                      {
+                        "entityInfo": {
+                          "uri": "spotify:album:album",
+                          "name": "Synthetic album album",
+                          "imageUri": "https://fixture.invalid/never-fetched",
+                          "addTime": "1700000000",
+                          "lastPlayed": "1700000030"
+                        },
+                        "album": {
+                          "artistName": "Synthetic artist",
+                          "artistUri": "spotify:artist:fixture",
+                          "type": 3
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "entityInfo": {
+                    "uri": "spotify:artist:artist",
+                    "name": "Synthetic artist artist",
+                    "imageUri": "https://fixture.invalid/never-fetched",
+                    "addTime": "1700000000",
+                    "lastPlayed": "1700000030"
+                  },
+                  "artist": {}
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "query": {
+        "offset": 2,
+        "limit": 3,
+        "filters": [],
+        "sortDirection": null,
+        "textFilter": "Synthetic",
+        "yourEpisodesInclusionMode": "include-if-not-empty",
+        "likedSongsInclusionMode": "include-if-not-empty",
+        "includeYourClips": true,
+        "includePreReleases": false,
+        "includeStsLocalFilesPlaylist": false,
+        "allAvailableConfigsProvided": true,
+        "expandedFolders": [
+          "spotify:user:fixture:folder:000000000000001a"
+        ],
+        "filtersPickedByUser": true
+      },
+      "responseHex": "0a0388010112bb050a8401122153796e74686574696320666f6c64657220303030303030303030303030303031611a2c73706f746966793a757365723a666978747572653a666f6c6465723a30303030303030303030303030303161322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa0632b104100118012aa0010a6b121b53796e74686574696320706c61796c69737420706c61796c6973741a1973706f746966793a706c61796c6973743a706c61796c697374322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa0622310a0f53796e746865746963206f776e6572421473706f746966793a757365723a66697874757265300148016204080410032a9e020a8401122153796e74686574696320666f6c64657220303030303030303030303030303032621a2c73706f746966793a757365723a666978747572653a666f6c6465723a30303030303030303030303030303262322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa0632940110012a8f010a5f121553796e74686574696320616c62756d20616c62756d1a1373706f746966793a616c62756d3a616c62756d322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa06122c0a1053796e74686574696320617274697374121673706f746966793a6172746973743a6669787475726518032a670a63121753796e74686574696320617274697374206172746973741a1573706f746966793a6172746973743a617274697374322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa061a00",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.your_library_esperanto.proto.YourLibraryService",
+            "method": "All",
+            "payloadHex": "0a2a900101580260036a0953796e74686574696372020a007a0208068801019202011ac80101f00101f8010122110a02080112020801320208013a00980601"
+          }
+        ],
+        "page": {
+          "passedFilterIds": [],
+          "availableFilters": [],
+          "selectedFilters": [],
+          "availableSortOrders": [
+            {
+              "id": "6",
+              "name": "Recents"
+            },
+            {
+              "id": "1",
+              "name": "Recently added"
+            },
+            {
+              "id": "0",
+              "name": "Alphabetical"
+            },
+            {
+              "id": "2",
+              "name": "Creator"
+            }
+          ],
+          "selectedSortOrder": {
+            "id": "6",
+            "name": "Recents"
+          },
+          "limit": 3,
+          "offset": 2,
+          "items": [
+            {
+              "type": "folder",
+              "uri": "spotify:user:fixture:folder:000000000000001a",
+              "rowId": "",
+              "name": "Synthetic folder 000000000000001a",
+              "pinned": false,
+              "canPin": 0,
+              "numberOfFolders": 1,
+              "numberOfPlaylists": 1,
+              "canReorder": false,
+              "isFlattened": true,
+              "addedAt": "2023-11-14T22:13:20.000Z",
+              "lastPlayedAt": "2023-11-14T22:13:50.000Z",
+              "isEmpty": false,
+              "groupLabel": ""
+            }
+          ],
+          "unfilteredTotalLength": 1,
+          "totalLength": 1,
+          "hasUnfilteredItems": true,
+          "hasTextFilter": true,
+          "reorderAllowed": false,
+          "openedFolderName": "",
+          "parentFolderUri": "",
+          "openedFolderIsPlayable": false
+        }
+      }
+    },
+    {
+      "name": "zero-valued album filter retains the original expanded-prefix truthiness quirk",
+      "input": {
+        "filters": [
+          "0"
+        ],
+        "expandedFolders": [
+          "spotify:user:fixture:folder:000000000000001a"
+        ],
+        "offset": 2,
+        "limit": 3
+      },
+      "response": {
+        "header": {
+          "totalCount": 1
+        },
+        "entity": [
+          {
+            "entityInfo": {
+              "uri": "spotify:album:album",
+              "name": "Synthetic album album",
+              "imageUri": "https://fixture.invalid/never-fetched",
+              "addTime": "1700000000",
+              "lastPlayed": "1700000030"
+            },
+            "album": {
+              "artistName": "Synthetic artist",
+              "artistUri": "spotify:artist:fixture",
+              "type": 3
+            }
+          }
+        ]
+      },
+      "query": {
+        "offset": 2,
+        "limit": 3,
+        "filters": [
+          "0"
+        ],
+        "sortDirection": null,
+        "textFilter": "",
+        "yourEpisodesInclusionMode": "include-if-not-empty",
+        "likedSongsInclusionMode": "include-if-not-empty",
+        "includeYourClips": true,
+        "includePreReleases": false,
+        "includeStsLocalFilesPlaylist": false,
+        "allAvailableConfigsProvided": true,
+        "expandedFolders": [
+          "spotify:user:fixture:folder:000000000000001a"
+        ],
+        "filtersPickedByUser": true
+      },
+      "responseHex": "0a03880101128f010a5f121553796e74686574696320616c62756d20616c62756d1a1373706f746966793a616c62756d3a616c62756d322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa06122c0a1053796e74686574696320617274697374121673706f746966793a6172746973743a666978747572651803",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.your_library_esperanto.proto.YourLibraryService",
+            "method": "All",
+            "payloadHex": "0a1b900101600572030a01007a0208069202011ac80101f00101f8010122110a02080112020801320208013a00980601"
+          }
+        ],
+        "page": {
+          "primaryFilter": "album",
+          "passedFilterIds": [
+            "0"
+          ],
+          "availableFilters": [],
+          "selectedFilters": [
+            {
+              "id": "0",
+              "name": "Albums"
+            }
+          ],
+          "availableSortOrders": [
+            {
+              "id": "6",
+              "name": "Recents"
+            },
+            {
+              "id": "1",
+              "name": "Recently added"
+            },
+            {
+              "id": "0",
+              "name": "Alphabetical"
+            },
+            {
+              "id": "2",
+              "name": "Creator"
+            },
+            {
+              "id": "9",
+              "name": "Release date"
+            }
+          ],
+          "selectedSortOrder": {
+            "id": "6",
+            "name": "Recents"
+          },
+          "limit": 3,
+          "offset": 2,
+          "items": [],
+          "unfilteredTotalLength": 1,
+          "totalLength": 1,
+          "hasUnfilteredItems": true,
+          "hasTextFilter": false,
+          "reorderAllowed": false,
+          "openedFolderName": "",
+          "parentFolderUri": "",
+          "openedFolderIsPlayable": false
+        }
+      }
+    },
+    {
+      "name": "opened folder converts its hex identifier and hides playlist selected chip",
+      "input": {
+        "folderUri": "spotify:user:fixture:folder:000000000000001a",
+        "filters": [
+          "2"
+        ],
+        "sortOrder": "4"
+      },
+      "response": {
+        "header": {
+          "totalCount": 1,
+          "folderName": "Synthetic folder",
+          "parentFolderUri": "spotify:user:fixture:folder:000000000000002b"
+        },
+        "entity": [
+          {
+            "entityInfo": {
+              "uri": "spotify:playlist:playlist",
+              "name": "Synthetic playlist playlist",
+              "imageUri": "https://fixture.invalid/never-fetched",
+              "addTime": "1700000000",
+              "lastPlayed": "1700000030"
+            },
+            "playlist": {
+              "creatorName": "Synthetic owner",
+              "creatorUri": "spotify:user:fixture",
+              "numberOfItemsPerLinkType": [
+                {
+                  "linkType": 4,
+                  "numItems": 3
+                }
+              ],
+              "canView": true,
+              "canAdd": true
+            }
+          }
+        ]
+      },
+      "query": {
+        "offset": 0,
+        "limit": 50,
+        "filters": [
+          "2"
+        ],
+        "sortOrder": "4",
+        "sortDirection": null,
+        "textFilter": "",
+        "yourEpisodesInclusionMode": "include-if-not-empty",
+        "likedSongsInclusionMode": "include-if-not-empty",
+        "includeYourClips": true,
+        "includePreReleases": false,
+        "includeStsLocalFilesPlaylist": false,
+        "allAvailableConfigsProvided": true,
+        "expandedFolders": [],
+        "filtersPickedByUser": true,
+        "folderUri": "spotify:user:fixture:folder:000000000000001a"
+      },
+      "responseHex": "0a448801017a1053796e74686574696320666f6c646572a2012c73706f746966793a757365723a666978747572653a666f6c6465723a3030303030303030303030303030326212a0010a6b121b53796e74686574696320706c61796c69737420706c61796c6973741a1973706f746966793a706c61796c6973743a706c61796c697374322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa0622310a0f53796e746865746963206f776e6572421473706f746966793a757365723a6669787475726530014801620408041003",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.your_library_esperanto.proto.YourLibraryService",
+            "method": "All",
+            "payloadHex": "0a1d900101603272030a01027a02080480011a920200c80101f00101f8010122110a02080112020801320208013a00980601"
+          }
+        ],
+        "page": {
+          "primaryFilter": "playlist",
+          "passedFilterIds": [
+            "2"
+          ],
+          "availableFilters": [],
+          "selectedFilters": [],
+          "availableSortOrders": [
+            {
+              "id": "6",
+              "name": "Recents"
+            },
+            {
+              "id": "1",
+              "name": "Recently added"
+            },
+            {
+              "id": "0",
+              "name": "Alphabetical"
+            },
+            {
+              "id": "2",
+              "name": "Creator"
+            },
+            {
+              "id": "4",
+              "name": "Custom order"
+            }
+          ],
+          "selectedSortOrder": {
+            "id": "4",
+            "name": "Custom order"
+          },
+          "limit": 50,
+          "offset": 0,
+          "items": [
+            {
+              "type": "playlist",
+              "uri": "spotify:playlist:playlist",
+              "name": "Synthetic playlist playlist",
+              "madeForName": "",
+              "pinned": false,
+              "canPin": 0,
+              "canView": true,
+              "images": [
+                {
+                  "url": "https://fixture.invalid/never-fetched",
+                  "width": 300,
+                  "height": 300
+                }
+              ],
+              "owner": {
+                "type": "user",
+                "name": "Synthetic owner",
+                "uri": "spotify:user:fixture",
+                "id": "",
+                "username": "",
+                "images": []
+              },
+              "isOwnedBySelf": false,
+              "isLoading": false,
+              "canAddTo": true,
+              "canReorder": true,
+              "addedAt": "2023-11-14T22:13:20.000Z",
+              "lastPlayedAt": "2023-11-14T22:13:50.000Z",
+              "isBooklist": false,
+              "isEmpty": false,
+              "rowId": "",
+              "namePrefix": "",
+              "groupLabel": "",
+              "isMixed": false,
+              "isPromptPlaylist": false,
+              "promptGenerationStatus": "unknown"
+            }
+          ],
+          "unfilteredTotalLength": 1,
+          "totalLength": 1,
+          "hasUnfilteredItems": true,
+          "hasTextFilter": false,
+          "reorderAllowed": true,
+          "passedFolderUri": "spotify:user:fixture:folder:000000000000001a",
+          "openedFolderName": "Synthetic folder",
+          "parentFolderUri": "spotify:user:fixture:folder:000000000000002b",
+          "openedFolderIsPlayable": true
+        }
+      }
+    },
+    {
+      "name": "URI text filter becomes an only-curated request",
+      "input": {
+        "textFilter": "spotify:track:0123456789ABCDEFGHIJKL"
+      },
+      "response": {
+        "header": {
+          "totalCount": 1
+        },
+        "entity": [
+          {
+            "entityInfo": {
+              "uri": "spotify:playlist:playlist",
+              "name": "Synthetic playlist playlist",
+              "imageUri": "https://fixture.invalid/never-fetched",
+              "addTime": "1700000000",
+              "lastPlayed": "1700000030"
+            },
+            "playlist": {
+              "creatorName": "Synthetic owner",
+              "creatorUri": "spotify:user:fixture",
+              "numberOfItemsPerLinkType": [
+                {
+                  "linkType": 4,
+                  "numItems": 3
+                }
+              ],
+              "canView": true,
+              "canAdd": true
+            }
+          }
+        ]
+      },
+      "query": {
+        "offset": 0,
+        "limit": 50,
+        "filters": [],
+        "sortDirection": null,
+        "textFilter": "spotify:track:0123456789ABCDEFGHIJKL",
+        "yourEpisodesInclusionMode": "include-if-not-empty",
+        "likedSongsInclusionMode": "include-if-not-empty",
+        "includeYourClips": true,
+        "includePreReleases": false,
+        "includeStsLocalFilesPlaylist": false,
+        "allAvailableConfigsProvided": true,
+        "expandedFolders": [],
+        "filtersPickedByUser": true
+      },
+      "responseHex": "0a0388010112a0010a6b121b53796e74686574696320706c61796c69737420706c61796c6973741a1973706f746966793a706c61796c6973743a706c61796c697374322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa0622310a0f53796e746865746963206f776e6572421473706f746966793a757365723a6669787475726530014801620408041003",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.your_library_esperanto.proto.YourLibraryService",
+            "method": "All",
+            "payloadHex": "0a47900101603272020a007a020806880101920200c80101ea01280a2473706f746966793a747261636b3a303132333435363738394142434445464748494a4b4c1002f00101f8010122110a02080112020801320208013a00980601"
+          }
+        ],
+        "page": {
+          "passedFilterIds": [],
+          "availableFilters": [],
+          "selectedFilters": [],
+          "availableSortOrders": [
+            {
+              "id": "6",
+              "name": "Recents"
+            },
+            {
+              "id": "1",
+              "name": "Recently added"
+            },
+            {
+              "id": "0",
+              "name": "Alphabetical"
+            },
+            {
+              "id": "2",
+              "name": "Creator"
+            }
+          ],
+          "selectedSortOrder": {
+            "id": "6",
+            "name": "Recents"
+          },
+          "limit": 50,
+          "offset": 0,
+          "items": [
+            {
+              "type": "playlist",
+              "uri": "spotify:playlist:playlist",
+              "name": "Synthetic playlist playlist",
+              "madeForName": "",
+              "pinned": false,
+              "canPin": 0,
+              "canView": true,
+              "images": [
+                {
+                  "url": "https://fixture.invalid/never-fetched",
+                  "width": 300,
+                  "height": 300
+                }
+              ],
+              "owner": {
+                "type": "user",
+                "name": "Synthetic owner",
+                "uri": "spotify:user:fixture",
+                "id": "",
+                "username": "",
+                "images": []
+              },
+              "isOwnedBySelf": false,
+              "isLoading": false,
+              "canAddTo": true,
+              "canReorder": false,
+              "addedAt": "2023-11-14T22:13:20.000Z",
+              "lastPlayedAt": "2023-11-14T22:13:50.000Z",
+              "isBooklist": false,
+              "isEmpty": false,
+              "rowId": "",
+              "namePrefix": "",
+              "groupLabel": "",
+              "isMixed": false,
+              "isPromptPlaylist": false,
+              "promptGenerationStatus": "unknown"
+            }
+          ],
+          "unfilteredTotalLength": 1,
+          "totalLength": 1,
+          "hasUnfilteredItems": true,
+          "hasTextFilter": true,
+          "reorderAllowed": false,
+          "openedFolderName": "",
+          "parentFolderUri": "",
+          "openedFolderIsPlayable": false
+        }
+      }
+    },
+    {
+      "name": "web URL text filtering follows original URI parsing",
+      "input": {
+        "textFilter": "https://open.spotify.com/track/0123456789ABCDEFGHIJKL?si=synthetic"
+      },
+      "response": {},
+      "query": {
+        "offset": 0,
+        "limit": 50,
+        "filters": [],
+        "sortDirection": null,
+        "textFilter": "https://open.spotify.com/track/0123456789ABCDEFGHIJKL?si=synthetic",
+        "yourEpisodesInclusionMode": "include-if-not-empty",
+        "likedSongsInclusionMode": "include-if-not-empty",
+        "includeYourClips": true,
+        "includePreReleases": false,
+        "includeStsLocalFilesPlaylist": false,
+        "allAvailableConfigsProvided": true,
+        "expandedFolders": [],
+        "filtersPickedByUser": true
+      },
+      "responseHex": "",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.your_library_esperanto.proto.YourLibraryService",
+            "method": "All",
+            "payloadHex": "0a47900101603272020a007a020806880101920200c80101ea01280a2473706f746966793a747261636b3a303132333435363738394142434445464748494a4b4c1002f00101f8010122110a02080112020801320208013a00980601"
+          }
+        ],
+        "page": {
+          "passedFilterIds": [],
+          "availableFilters": [],
+          "selectedFilters": [],
+          "availableSortOrders": [
+            {
+              "id": "6",
+              "name": "Recents"
+            },
+            {
+              "id": "1",
+              "name": "Recently added"
+            },
+            {
+              "id": "0",
+              "name": "Alphabetical"
+            },
+            {
+              "id": "2",
+              "name": "Creator"
+            }
+          ],
+          "selectedSortOrder": {
+            "id": "6",
+            "name": "Recents"
+          },
+          "limit": 50,
+          "offset": 0,
+          "items": [],
+          "unfilteredTotalLength": 0,
+          "totalLength": 0,
+          "hasUnfilteredItems": true,
+          "hasTextFilter": true,
+          "reorderAllowed": false,
+          "openedFolderIsPlayable": false
+        }
+      }
+    },
+    {
+      "name": "local URI text filtering preserves canonical escaping",
+      "input": {
+        "textFilter": "spotify:local:An%20Artist:An+Album:Snow%20%E9%9B%AA:123"
+      },
+      "response": {},
+      "query": {
+        "offset": 0,
+        "limit": 50,
+        "filters": [],
+        "sortDirection": null,
+        "textFilter": "spotify:local:An%20Artist:An+Album:Snow%20%E9%9B%AA:123",
+        "yourEpisodesInclusionMode": "include-if-not-empty",
+        "likedSongsInclusionMode": "include-if-not-empty",
+        "includeYourClips": true,
+        "includePreReleases": false,
+        "includeStsLocalFilesPlaylist": false,
+        "allAvailableConfigsProvided": true,
+        "expandedFolders": [],
+        "filtersPickedByUser": true
+      },
+      "responseHex": "",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.your_library_esperanto.proto.YourLibraryService",
+            "method": "All",
+            "payloadHex": "0a56900101603272020a007a020806880101920200c80101ea01370a3373706f746966793a6c6f63616c3a416e2b4172746973743a416e2b416c62756d3a536e6f772b2545392539422541413a3132331002f00101f8010122110a02080112020801320208013a00980601"
+          }
+        ],
+        "page": {
+          "passedFilterIds": [],
+          "availableFilters": [],
+          "selectedFilters": [],
+          "availableSortOrders": [
+            {
+              "id": "6",
+              "name": "Recents"
+            },
+            {
+              "id": "1",
+              "name": "Recently added"
+            },
+            {
+              "id": "0",
+              "name": "Alphabetical"
+            },
+            {
+              "id": "2",
+              "name": "Creator"
+            }
+          ],
+          "selectedSortOrder": {
+            "id": "6",
+            "name": "Recents"
+          },
+          "limit": 50,
+          "offset": 0,
+          "items": [],
+          "unfilteredTotalLength": 0,
+          "totalLength": 0,
+          "hasUnfilteredItems": true,
+          "hasTextFilter": true,
+          "reorderAllowed": false,
+          "openedFolderIsPlayable": false
+        }
+      }
+    },
+    {
+      "name": "explicit curated items retain group-by semantics and include URI text",
+      "input": {
+        "textFilter": "spotify:show:0123456789ABCDEFGHIJKL",
+        "itemToCheckCurationFor": [
+          "spotify:track:fixture"
+        ]
+      },
+      "response": {},
+      "query": {
+        "offset": 0,
+        "limit": 50,
+        "filters": [],
+        "sortDirection": null,
+        "textFilter": "spotify:show:0123456789ABCDEFGHIJKL",
+        "yourEpisodesInclusionMode": "include-if-not-empty",
+        "likedSongsInclusionMode": "include-if-not-empty",
+        "includeYourClips": true,
+        "includePreReleases": false,
+        "includeStsLocalFilesPlaylist": false,
+        "allAvailableConfigsProvided": true,
+        "expandedFolders": [],
+        "filtersPickedByUser": true,
+        "itemToCheckCurationFor": [
+          "spotify:track:fixture"
+        ]
+      },
+      "responseHex": "",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.your_library_esperanto.proto.YourLibraryService",
+            "method": "All",
+            "payloadHex": "0a5d900101603272020a007a020806880101920200c80101ea013e0a1573706f746966793a747261636b3a666978747572650a2373706f746966793a73686f773a303132333435363738394142434445464748494a4b4c1001f00101f8010122110a02080112020801320208013a00980601"
+          }
+        ],
+        "page": {
+          "passedFilterIds": [],
+          "availableFilters": [],
+          "selectedFilters": [],
+          "availableSortOrders": [
+            {
+              "id": "6",
+              "name": "Recents"
+            },
+            {
+              "id": "1",
+              "name": "Recently added"
+            },
+            {
+              "id": "0",
+              "name": "Alphabetical"
+            },
+            {
+              "id": "2",
+              "name": "Creator"
+            }
+          ],
+          "selectedSortOrder": {
+            "id": "6",
+            "name": "Recents"
+          },
+          "limit": 50,
+          "offset": 0,
+          "items": [],
+          "unfilteredTotalLength": 0,
+          "totalLength": 0,
+          "hasUnfilteredItems": true,
+          "hasTextFilter": true,
+          "reorderAllowed": false,
+          "openedFolderIsPlayable": false
+        }
+      }
+    },
+    {
+      "name": "local files and feature flags affect only their recovered fields",
+      "input": {
+        "includeLocalFiles": true
+      },
+      "features": {
+        "courses": true,
+        "authors": true,
+        "venues": true,
+        "concertCampaigns": true,
+        "recentsSortOrder": true,
+        "artistRecentlyUpdatedSort": true,
+        "customFilterOrder": false
+      },
+      "response": {
+        "header": {
+          "totalCount": 13,
+          "availableFilters": {
+            "filter": [
+              1,
+              2,
+              0,
+              100,
+              999
+            ]
+          }
+        },
+        "entity": [
+          {
+            "entityInfo": {
+              "uri": "spotify:book:book",
+              "name": "Synthetic book book",
+              "imageUri": "https://fixture.invalid/never-fetched",
+              "addTime": "1700000000",
+              "lastPlayed": "1700000030"
+            },
+            "book": {
+              "authorName": "Synthetic author",
+              "access": 2
+            }
+          }
+        ]
+      },
+      "query": {
+        "offset": 0,
+        "limit": 50,
+        "filters": [],
+        "sortDirection": null,
+        "textFilter": "",
+        "yourEpisodesInclusionMode": "include-if-not-empty",
+        "likedSongsInclusionMode": "include-if-not-empty",
+        "includeYourClips": true,
+        "includePreReleases": false,
+        "includeStsLocalFilesPlaylist": true,
+        "allAvailableConfigsProvided": true,
+        "expandedFolders": [],
+        "filtersPickedByUser": true
+      },
+      "responseHex": "0a0e88010d8201080a0601020064e70712730a5b121353796e74686574696320626f6f6b20626f6f6b1a1173706f746966793a626f6f6b3a626f6f6b322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa0662140a1053796e74686574696320617574686f721002",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.your_library_esperanto.proto.YourLibraryService",
+            "method": "All",
+            "payloadHex": "0a22900101603272020a007a020806920200c80101f00101980201f80101880201a0020122170a02080112020801320208013a00420408011001980601"
+          }
+        ],
+        "page": {
+          "passedFilterIds": [],
+          "availableFilters": [
+            {
+              "id": "2",
+              "name": "Playlists"
+            },
+            {
+              "id": "0",
+              "name": "Albums"
+            },
+            {
+              "id": "1",
+              "name": "Artists"
+            },
+            {
+              "id": "100",
+              "name": "Downloaded"
+            }
+          ],
+          "selectedFilters": [],
+          "availableSortOrders": [
+            {
+              "id": "10",
+              "name": "Recents"
+            },
+            {
+              "id": "1",
+              "name": "Recently added"
+            },
+            {
+              "id": "0",
+              "name": "Alphabetical"
+            },
+            {
+              "id": "2",
+              "name": "Creator"
+            }
+          ],
+          "selectedSortOrder": {
+            "id": "6",
+            "name": "Recents"
+          },
+          "limit": 50,
+          "offset": 0,
+          "items": [
+            {
+              "type": "audiobook",
+              "uri": "spotify:book:book",
+              "name": "Synthetic book book",
+              "authorName": "Synthetic author",
+              "authors": [
+                {
+                  "uri": null,
+                  "name": "Synthetic author"
+                }
+              ],
+              "images": [
+                {
+                  "url": "https://fixture.invalid/never-fetched",
+                  "width": 300,
+                  "height": 300
+                }
+              ],
+              "isLocked": false,
+              "pinned": false,
+              "addedAt": "2023-11-14T22:13:20.000Z",
+              "lastPlayedAt": "2023-11-14T22:13:50.000Z",
+              "canPin": 0,
+              "isCappedWithoutExplanation": true,
+              "isPlayable": false,
+              "groupLabel": ""
+            }
+          ],
+          "unfilteredTotalLength": 13,
+          "totalLength": 13,
+          "hasUnfilteredItems": true,
+          "hasTextFilter": false,
+          "reorderAllowed": false,
+          "openedFolderName": "",
+          "parentFolderUri": "",
+          "openedFolderIsPlayable": false
+        }
+      }
+    },
+    {
+      "name": "unknown numeric sort falls back to original default",
+      "input": {
+        "sortOrder": "999"
+      },
+      "response": {},
+      "query": {
+        "offset": 0,
+        "limit": 50,
+        "filters": [],
+        "sortOrder": "999",
+        "sortDirection": null,
+        "textFilter": "",
+        "yourEpisodesInclusionMode": "include-if-not-empty",
+        "likedSongsInclusionMode": "include-if-not-empty",
+        "includeYourClips": true,
+        "includePreReleases": false,
+        "includeStsLocalFilesPlaylist": false,
+        "allAvailableConfigsProvided": true,
+        "expandedFolders": [],
+        "filtersPickedByUser": true
+      },
+      "responseHex": "",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.your_library_esperanto.proto.YourLibraryService",
+            "method": "All",
+            "payloadHex": "0a19900101603272020a007a020806920200c80101f00101f8010122110a02080112020801320208013a00980601"
+          }
+        ],
+        "page": {
+          "passedFilterIds": [],
+          "availableFilters": [],
+          "selectedFilters": [],
+          "availableSortOrders": [
+            {
+              "id": "6",
+              "name": "Recents"
+            },
+            {
+              "id": "1",
+              "name": "Recently added"
+            },
+            {
+              "id": "0",
+              "name": "Alphabetical"
+            },
+            {
+              "id": "2",
+              "name": "Creator"
+            }
+          ],
+          "selectedSortOrder": {
+            "id": "6",
+            "name": "Recents"
+          },
+          "limit": 50,
+          "offset": 0,
+          "items": [],
+          "unfilteredTotalLength": 0,
+          "totalLength": 0,
+          "hasUnfilteredItems": false,
+          "hasTextFilter": false,
+          "reorderAllowed": false,
+          "openedFolderIsPlayable": false
+        }
+      }
+    },
+    {
+      "name": "predefined playlist variants retain specialized source metadata",
+      "response": {
+        "header": {
+          "totalCount": 3
+        },
+        "entity": [
+          {
+            "entityInfo": {
+              "uri": "spotify:playlist:37i9dQZF1FgnTBfUlzkeKt",
+              "name": "Synthetic playlist episodes",
+              "imageUri": "https://fixture.invalid/never-fetched",
+              "addTime": "1700000000",
+              "lastPlayed": "1700000030",
+              "pinned": true
+            },
+            "playlist": {}
+          },
+          {
+            "entityInfo": {
+              "uri": "spotify:local-files",
+              "name": "Synthetic playlist local",
+              "imageUri": "https://fixture.invalid/never-fetched",
+              "addTime": "1700000000",
+              "lastPlayed": "1700000030"
+            },
+            "playlist": {
+              "numberOfItemsPerLinkType": [
+                {
+                  "linkType": 9,
+                  "numItems": 7
+                }
+              ]
+            }
+          },
+          {
+            "entityInfo": {
+              "uri": "",
+              "name": "Synthetic playlist empty-sentinel",
+              "imageUri": "https://fixture.invalid/never-fetched",
+              "addTime": "0",
+              "lastPlayed": "0"
+            },
+            "playlist": {}
+          }
+        ]
+      },
+      "query": {
+        "offset": 0,
+        "limit": 50,
+        "filters": [],
+        "sortDirection": null,
+        "textFilter": "",
+        "yourEpisodesInclusionMode": "include-if-not-empty",
+        "likedSongsInclusionMode": "include-if-not-empty",
+        "includeYourClips": true,
+        "includePreReleases": false,
+        "includeStsLocalFilesPlaylist": false,
+        "allAvailableConfigsProvided": true,
+        "expandedFolders": [],
+        "filtersPickedByUser": true
+      },
+      "responseHex": "0a03880103127f0a7b121b53796e74686574696320706c61796c69737420657069736f6465731a2773706f746966793a706c61796c6973743a3337693964515a463146676e544266556c7a6b654b74322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d6665746368656438015880e2cfaa06609ee2cfaa062200126c0a62121853796e74686574696320706c61796c697374206c6f63616c1a1373706f746966793a6c6f63616c2d66696c6573322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865645880e2cfaa06609ee2cfaa062206620408091007124e0a4a122153796e74686574696320706c61796c69737420656d7074792d73656e74696e656c322568747470733a2f2f666978747572652e696e76616c69642f6e657665722d666574636865642200",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.your_library_esperanto.proto.YourLibraryService",
+            "method": "All",
+            "payloadHex": "0a19900101603272020a007a020806920200c80101f00101f8010122110a02080112020801320208013a00980601"
+          }
+        ],
+        "page": {
+          "passedFilterIds": [],
+          "availableFilters": [],
+          "selectedFilters": [],
+          "availableSortOrders": [
+            {
+              "id": "6",
+              "name": "Recents"
+            },
+            {
+              "id": "1",
+              "name": "Recently added"
+            },
+            {
+              "id": "0",
+              "name": "Alphabetical"
+            },
+            {
+              "id": "2",
+              "name": "Creator"
+            }
+          ],
+          "selectedSortOrder": {
+            "id": "6",
+            "name": "Recents"
+          },
+          "limit": 50,
+          "offset": 0,
+          "items": [
+            {
+              "type": "your-episodes",
+              "uri": "spotify:playlist:37i9dQZF1FgnTBfUlzkeKt",
+              "name": "Synthetic playlist episodes",
+              "pinned": true,
+              "canPin": 0,
+              "images": [
+                {
+                  "url": "https://fixture.invalid/never-fetched",
+                  "width": 300,
+                  "height": 300
+                }
+              ],
+              "numberOfDownloadedEpisodes": 0,
+              "addedAt": "2023-11-14T22:13:20.000Z",
+              "lastPlayedAt": "2023-11-14T22:13:50.000Z",
+              "groupLabel": ""
+            },
+            {
+              "type": "local-files",
+              "uri": "spotify:local-files",
+              "name": "Synthetic playlist local",
+              "pinned": false,
+              "canPin": 0,
+              "images": [
+                {
+                  "url": "https://fixture.invalid/never-fetched",
+                  "width": 300,
+                  "height": 300
+                }
+              ],
+              "numberOfFiles": 7,
+              "addedAt": "2023-11-14T22:13:20.000Z",
+              "lastPlayedAt": "2023-11-14T22:13:50.000Z",
+              "groupLabel": ""
+            },
+            {
+              "type": "playlist",
+              "uri": "",
+              "name": "Synthetic playlist empty-sentinel",
+              "madeForName": "",
+              "pinned": false,
+              "canPin": 0,
+              "canView": false,
+              "images": [
+                {
+                  "url": "https://fixture.invalid/never-fetched",
+                  "width": 300,
+                  "height": 300
+                }
+              ],
+              "owner": {
+                "type": "user",
+                "name": "",
+                "uri": "",
+                "id": "",
+                "username": "",
+                "images": []
+              },
+              "isOwnedBySelf": false,
+              "isLoading": false,
+              "canAddTo": false,
+              "canReorder": false,
+              "addedAt": null,
+              "lastPlayedAt": null,
+              "isBooklist": false,
+              "isEmpty": true,
+              "rowId": "",
+              "namePrefix": "",
+              "groupLabel": "",
+              "isMixed": false,
+              "isPromptPlaylist": false,
+              "promptGenerationStatus": "unknown"
+            }
+          ],
+          "unfilteredTotalLength": 3,
+          "totalLength": 3,
+          "hasUnfilteredItems": true,
+          "hasTextFilter": false,
+          "reorderAllowed": false,
+          "openedFolderName": "",
+          "parentFolderUri": "",
+          "openedFolderIsPlayable": false
+        }
+      }
+    },
+    {
+      "name": "backend invalid filter is a typed error",
+      "response": {
+        "error": "album filter only available for synthetic fixture",
+        "statusCode": 400
+      },
+      "query": {
+        "offset": 0,
+        "limit": 50,
+        "filters": [],
+        "sortDirection": null,
+        "textFilter": "",
+        "yourEpisodesInclusionMode": "include-if-not-empty",
+        "likedSongsInclusionMode": "include-if-not-empty",
+        "includeYourClips": true,
+        "includePreReleases": false,
+        "includeStsLocalFilesPlaylist": false,
+        "allAvailableConfigsProvided": true,
+        "expandedFolders": [],
+        "filtersPickedByUser": true
+      },
+      "responseHex": "900690039a0631616c62756d2066696c746572206f6e6c7920617661696c61626c6520666f722073796e7468657469632066697874757265",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.your_library_esperanto.proto.YourLibraryService",
+            "method": "All",
+            "payloadHex": "0a19900101603272020a007a020806920200c80101f00101f8010122110a02080112020801320208013a00980601"
+          }
+        ],
+        "error": {
+          "kind": "filter",
+          "message": "\"album\" is not a valid YLX filter."
+        }
+      }
+    },
+    {
+      "name": "backend invalid sort is a typed error",
+      "response": {
+        "error": "name order only available for synthetic fixture",
+        "statusCode": 400
+      },
+      "query": {
+        "offset": 0,
+        "limit": 50,
+        "filters": [],
+        "sortDirection": null,
+        "textFilter": "",
+        "yourEpisodesInclusionMode": "include-if-not-empty",
+        "likedSongsInclusionMode": "include-if-not-empty",
+        "includeYourClips": true,
+        "includePreReleases": false,
+        "includeStsLocalFilesPlaylist": false,
+        "allAvailableConfigsProvided": true,
+        "expandedFolders": [],
+        "filtersPickedByUser": true
+      },
+      "responseHex": "900690039a062f6e616d65206f72646572206f6e6c7920617661696c61626c6520666f722073796e7468657469632066697874757265",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.your_library_esperanto.proto.YourLibraryService",
+            "method": "All",
+            "payloadHex": "0a19900101603272020a007a020806920200c80101f00101f8010122110a02080112020801320208013a00980601"
+          }
+        ],
+        "error": {
+          "kind": "sort",
+          "message": "\"name\" is not a valid YLX sort order."
+        }
+      }
+    },
+    {
+      "name": "missing folder is a typed error",
+      "input": {
+        "folderUri": "spotify:user:fixture:folder:000000000000001a"
+      },
+      "response": {
+        "error": "Synthetic folder missing",
+        "statusCode": 404
+      },
+      "query": {
+        "offset": 0,
+        "limit": 50,
+        "filters": [],
+        "sortDirection": null,
+        "textFilter": "",
+        "yourEpisodesInclusionMode": "include-if-not-empty",
+        "likedSongsInclusionMode": "include-if-not-empty",
+        "includeYourClips": true,
+        "includePreReleases": false,
+        "includeStsLocalFilesPlaylist": false,
+        "allAvailableConfigsProvided": true,
+        "expandedFolders": [],
+        "filtersPickedByUser": true,
+        "folderUri": "spotify:user:fixture:folder:000000000000001a"
+      },
+      "responseHex": "900694039a061853796e74686574696320666f6c646572206d697373696e67",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.your_library_esperanto.proto.YourLibraryService",
+            "method": "All",
+            "payloadHex": "0a1c900101603272020a007a02080680011a920200c80101f00101f8010122110a02080112020801320208013a00980601"
+          }
+        ],
+        "error": {
+          "kind": "folder",
+          "message": "Synthetic folder missing"
+        }
+      }
+    },
+    {
+      "name": "empty backend library has real empty metadata",
+      "response": {},
+      "query": {
+        "offset": 0,
+        "limit": 50,
+        "filters": [],
+        "sortDirection": null,
+        "textFilter": "",
+        "yourEpisodesInclusionMode": "include-if-not-empty",
+        "likedSongsInclusionMode": "include-if-not-empty",
+        "includeYourClips": true,
+        "includePreReleases": false,
+        "includeStsLocalFilesPlaylist": false,
+        "allAvailableConfigsProvided": true,
+        "expandedFolders": [],
+        "filtersPickedByUser": true
+      },
+      "responseHex": "",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.your_library_esperanto.proto.YourLibraryService",
+            "method": "All",
+            "payloadHex": "0a19900101603272020a007a020806920200c80101f00101f8010122110a02080112020801320208013a00980601"
+          }
+        ],
+        "page": {
+          "passedFilterIds": [],
+          "availableFilters": [],
+          "selectedFilters": [],
+          "availableSortOrders": [
+            {
+              "id": "6",
+              "name": "Recents"
+            },
+            {
+              "id": "1",
+              "name": "Recently added"
+            },
+            {
+              "id": "0",
+              "name": "Alphabetical"
+            },
+            {
+              "id": "2",
+              "name": "Creator"
+            }
+          ],
+          "selectedSortOrder": {
+            "id": "6",
+            "name": "Recents"
+          },
+          "limit": 50,
+          "offset": 0,
+          "items": [],
+          "unfilteredTotalLength": 0,
+          "totalLength": 0,
+          "hasUnfilteredItems": false,
+          "hasTextFilter": false,
+          "reorderAllowed": false,
+          "openedFolderIsPlayable": false
+        }
+      }
+    }
+  ]
+}

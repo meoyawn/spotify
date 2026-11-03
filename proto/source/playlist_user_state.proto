@@ -1,0 +1,26 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: 7f2acda6d0d87964d2806d90b0a0e16f6db7594dbcff3d32c45a9a03f548ca35
+
+syntax = "proto2";
+
+package spotify.playlist.cosmos.proto;
+
+option java_multiple_files = true;
+
+option java_package = "com.spotify.playlist.proto";
+
+option optimize_for = CODE_SIZE;
+
+message User {
+  optional string link = 1;
+
+  optional string username = 2;
+
+  optional string display_name = 3;
+
+  optional string image_uri = 4;
+
+  optional string thumbnail_uri = 5;
+
+  optional int32 color = 6;
+}

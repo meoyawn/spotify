@@ -1,0 +1,773 @@
+{
+  "originalUrlAuthority": {
+    "sourceBundle": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+    "sha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+    "modules": [
+      {
+        "module": 27744,
+        "offsetBytes": 4187757,
+        "lengthBytes": 3833,
+        "sha256": "b8b0c0191efb4ff29db22f1d5a12e4a72386de677b1b77af2488e0e81a765342"
+      },
+      {
+        "module": 44628,
+        "offsetBytes": 4790448,
+        "lengthBytes": 96,
+        "sha256": "d2ef1e7781f1438eb082195ced11ad812bd44bf4df5d95dc72690877e9a72f7d"
+      },
+      {
+        "module": 43575,
+        "offsetBytes": 4191591,
+        "lengthBytes": 2417,
+        "sha256": "747c4bd98c34794e383e70afc1ebeac23208f6789d4d062750790e0f90ab2680"
+      },
+      {
+        "module": 50242,
+        "offsetBytes": 4799535,
+        "lengthBytes": 478,
+        "sha256": "3fef46ea782aa7ee342fdb622f19be7407ee297b9d272cc830ac60b830a551e3"
+      },
+      {
+        "module": 42870,
+        "offsetBytes": 7680030,
+        "lengthBytes": 1085,
+        "sha256": "52cdf570afc3c1b0b85bee4ff516f3c936f961d637a4cad98866267c14ce8b83"
+      }
+    ]
+  },
+  "originalFieldAuthority": {
+    "path": "reverse-engineering/fixtures/native-image-extra-cdns.json",
+    "sha256": "366236b535d5a4df647b628286bd21a0c0130dabbb50a81df419ead4beb4fa93",
+    "case": "pickasso topic/ambient i"
+  },
+  "method": "Unchanged original43575 preserves supplied generated-cover URLs. Exact Pickasso authority/protocol/fields/empty body inherit the independent original capture; only :path is the original producer output.",
+  "limits": [
+    "Synthetic identifiers and explicit browser/configuration inputs; URL shapes also occur in live Home metadata.",
+    "This composes original URL execution with the original same-authority image field context, not a capture of the original client requesting these synthetic identities.",
+    "No new host, credential, redirect, cookie, projection alias or TLS-fingerprint claim."
+  ],
+  "cases": [
+    {
+      "name": "Pickasso generated cover discover weekly cover",
+      "rawUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/dw/cover/en",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "originalInput": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/dw/cover/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":authority": "pickasso.spotifycdn.com",
+          ":method": "GET",
+          ":path": "/image/ab67c0de0000deef/dt/v1/img/dw/cover/en",
+          ":scheme": "https",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "image",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-storage-access": "active",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "Pickasso generated cover discover weekly desktop header",
+      "rawUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/dw/desktop/en",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "originalInput": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/dw/desktop/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":authority": "pickasso.spotifycdn.com",
+          ":method": "GET",
+          ":path": "/image/ab67c0de0000deef/dt/v1/img/dw/desktop/en",
+          ":scheme": "https",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "image",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-storage-access": "active",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "Pickasso generated cover discover weekly mobile header",
+      "rawUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/dw/mobile/en",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "originalInput": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/dw/mobile/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":authority": "pickasso.spotifycdn.com",
+          ":method": "GET",
+          ":path": "/image/ab67c0de0000deef/dt/v1/img/dw/mobile/en",
+          ":scheme": "https",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "image",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-storage-access": "active",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "Pickasso generated cover release radar desktop header",
+      "rawUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/release-radar-header/desktop",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "originalInput": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/release-radar-header/desktop",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":authority": "pickasso.spotifycdn.com",
+          ":method": "GET",
+          ":path": "/image/ab67c0de0000deef/dt/v1/img/release-radar-header/desktop",
+          ":scheme": "https",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "image",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-storage-access": "active",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "Pickasso generated cover release radar mobile header",
+      "rawUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/release-radar-header/mobile",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "originalInput": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/release-radar-header/mobile",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":authority": "pickasso.spotifycdn.com",
+          ":method": "GET",
+          ":path": "/image/ab67c0de0000deef/dt/v1/img/release-radar-header/mobile",
+          ":scheme": "https",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "image",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-storage-access": "active",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "Pickasso generated cover release radar",
+      "rawUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000bada/dt/v1/img/release-radar-v4/0000000000000000000001/en",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "originalInput": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000bada/dt/v1/img/release-radar-v4/0000000000000000000001/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":authority": "pickasso.spotifycdn.com",
+          ":method": "GET",
+          ":path": "/image/ab67c0de0000bada/dt/v1/img/release-radar-v4/0000000000000000000001/en",
+          ":scheme": "https",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "image",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-storage-access": "active",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "Pickasso generated cover daily album image",
+      "rawUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/daily/2/ab67616d0000b27300112233445566778899aabb/en",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "originalInput": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/daily/2/ab67616d0000b27300112233445566778899aabb/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":authority": "pickasso.spotifycdn.com",
+          ":method": "GET",
+          ":path": "/image/ab67c0de0000deef/dt/v1/img/daily/2/ab67616d0000b27300112233445566778899aabb/en",
+          ":scheme": "https",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "image",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-storage-access": "active",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "Pickasso generated cover daily artist image",
+      "rawUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/daily/3/ab6761610000e5eb00112233445566778899aabb/en",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "originalInput": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/daily/3/ab6761610000e5eb00112233445566778899aabb/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":authority": "pickasso.spotifycdn.com",
+          ":method": "GET",
+          ":path": "/image/ab67c0de0000deef/dt/v1/img/daily/3/ab6761610000e5eb00112233445566778899aabb/en",
+          ":scheme": "https",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "image",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-storage-access": "active",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "Pickasso generated cover daily context id",
+      "rawUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/daily/1/0000000000000000000002/en",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "originalInput": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/daily/1/0000000000000000000002/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":authority": "pickasso.spotifycdn.com",
+          ":method": "GET",
+          ":path": "/image/ab67c0de0000deef/dt/v1/img/daily/1/0000000000000000000002/en",
+          ":scheme": "https",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "image",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-storage-access": "active",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "Pickasso generated cover artist radio",
+      "rawUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/0000000000000000000001/en",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "originalInput": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/0000000000000000000001/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":authority": "pickasso.spotifycdn.com",
+          ":method": "GET",
+          ":path": "/image/ab67c0de0000deef/dt/v1/img/radio/artist/0000000000000000000001/en",
+          ":scheme": "https",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "image",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-storage-access": "active",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "Pickasso generated cover topic metal",
+      "rawUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/metal/0000000000000000000001/en",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "originalInput": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/metal/0000000000000000000001/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":authority": "pickasso.spotifycdn.com",
+          ":method": "GET",
+          ":path": "/image/ab67c0de0000deef/dt/v1/img/topic/metal/0000000000000000000001/en",
+          ":scheme": "https",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "image",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-storage-access": "active",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "Pickasso generated cover topic techno",
+      "rawUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/techno/0000000000000000000001/en",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "originalInput": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/techno/0000000000000000000001/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":authority": "pickasso.spotifycdn.com",
+          ":method": "GET",
+          ":path": "/image/ab67c0de0000deef/dt/v1/img/topic/techno/0000000000000000000001/en",
+          ":scheme": "https",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "image",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-storage-access": "active",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "Pickasso generated cover topic rock",
+      "rawUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/rock/0000000000000000000001/en",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "originalInput": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/rock/0000000000000000000001/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":authority": "pickasso.spotifycdn.com",
+          ":method": "GET",
+          ":path": "/image/ab67c0de0000deef/dt/v1/img/topic/rock/0000000000000000000001/en",
+          ":scheme": "https",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "image",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-storage-access": "active",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "Pickasso generated cover topic chill",
+      "rawUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/chill/0000000000000000000001/en",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "originalInput": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/chill/0000000000000000000001/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":authority": "pickasso.spotifycdn.com",
+          ":method": "GET",
+          ":path": "/image/ab67c0de0000deef/dt/v1/img/topic/chill/0000000000000000000001/en",
+          ":scheme": "https",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "image",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-storage-access": "active",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "Pickasso generated cover topic twenty_twenties",
+      "rawUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/twenty_twenties/0000000000000000000001/en",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "originalInput": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/twenty_twenties/0000000000000000000001/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":authority": "pickasso.spotifycdn.com",
+          ":method": "GET",
+          ":path": "/image/ab67c0de0000deef/dt/v1/img/topic/twenty_twenties/0000000000000000000001/en",
+          ":scheme": "https",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "image",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-storage-access": "active",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "Pickasso generated cover topic twenty_tens",
+      "rawUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/twenty_tens/0000000000000000000001/en",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "originalInput": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/twenty_tens/0000000000000000000001/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":authority": "pickasso.spotifycdn.com",
+          ":method": "GET",
+          ":path": "/image/ab67c0de0000deef/dt/v1/img/topic/twenty_tens/0000000000000000000001/en",
+          ":scheme": "https",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "image",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-storage-access": "active",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "Pickasso generated cover topic focus",
+      "rawUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/focus/0000000000000000000001/en",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "originalInput": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/focus/0000000000000000000001/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":authority": "pickasso.spotifycdn.com",
+          ":method": "GET",
+          ":path": "/image/ab67c0de0000deef/dt/v1/img/topic/focus/0000000000000000000001/en",
+          ":scheme": "https",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "image",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-storage-access": "active",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "Pickasso generated cover topic seventies",
+      "rawUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/seventies/0000000000000000000001/en",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "originalInput": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/seventies/0000000000000000000001/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":authority": "pickasso.spotifycdn.com",
+          ":method": "GET",
+          ":path": "/image/ab67c0de0000deef/dt/v1/img/topic/seventies/0000000000000000000001/en",
+          ":scheme": "https",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "image",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-storage-access": "active",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "Pickasso generated cover topic eighties",
+      "rawUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/eighties/0000000000000000000001/en",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "originalInput": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/eighties/0000000000000000000001/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":authority": "pickasso.spotifycdn.com",
+          ":method": "GET",
+          ":path": "/image/ab67c0de0000deef/dt/v1/img/topic/eighties/0000000000000000000001/en",
+          ":scheme": "https",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "image",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-storage-access": "active",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": ""
+      }
+    }
+  ]
+}

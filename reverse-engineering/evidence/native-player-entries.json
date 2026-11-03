@@ -1,0 +1,172 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "scope": "Offline proprietary player-entry discovery; no Dart, tests, pipeline, original-process, profile, UI or network operations",
+  "proprietaryExports": [
+    {
+      "address": "0x100fb02d4",
+      "evidenceId": "ev_591f91528b9691a9bb938c39f856bf48f7d1444d561e7cc6055f77ce40abfc51",
+      "exportPath": ".local/rea-session/context_player_service_registration.json",
+      "exportSha256": "c1b0052ced1d8d3984f4243f0600690704d562312f688e13e43c0b32ac237f25",
+      "cPath": ".local/rea-session/context_player_service_registration.c",
+      "cSha256": "e10ff7dae4138d0232a8022b82b81b4f2ce554c32b8d097606ada03c8a7878f9"
+    },
+    {
+      "address": "0x100fb0300",
+      "evidenceId": "ev_7891e1d447a0f0cb5663dd982ebcb0ec23806e71ef32288179a363e260438876",
+      "exportPath": ".local/rea-session/context_player_generated_dispatch.json",
+      "exportSha256": "61132d7ce2f10b39d298eb634739ddac26ad137977fdb92f25e88ad1f7f51023",
+      "cPath": ".local/rea-session/context_player_generated_dispatch.c",
+      "cSha256": "cd8e98b5b93bb20fec2e0dd3ab79510ea7a4e925f5dc2a924b19e0f6717a4609"
+    },
+    {
+      "address": "0x1007b8604",
+      "evidenceId": "ev_bebbc69d0535ed4bdfa836ad4a1548710513c22f65971cb162587c7dae361a83",
+      "exportPath": ".local/rea-session/context_player_concrete_constructor_a.json",
+      "exportSha256": "cac9c6f48729c15468a4f9cbab359f16bebe8319a279a9862649deccf3e5a199",
+      "cPath": ".local/rea-session/context_player_concrete_constructor_a.c",
+      "cSha256": "0f586fa9fc281f8eeaa9c1f2277afcc86a4a09b4c034bf83bdd71190f8e88bbb"
+    },
+    {
+      "address": "0x1007baf80",
+      "evidenceId": "ev_22fb09f303d96e90b0b2243646ca7998d635ec8b47891311602f9234a5277c0d",
+      "exportPath": ".local/rea-session/context_player_concrete_constructor_b.json",
+      "exportSha256": "4847ee922575edf93d518f308eb0b8aa355131bfe719b773a4a36dbc5f760099",
+      "cPath": ".local/rea-session/context_player_concrete_constructor_b.c",
+      "cSha256": "744e01e621ddcc175591a8bf20b6274a12cefb62826bc6479a45f8908f97cb3d"
+    },
+    {
+      "address": "0x100ec9d24",
+      "evidenceId": "ev_79b36f165cf118d1f5bbf6ecb00af950357e41d88aefbf9e6cac0fead1b6b9dc",
+      "exportPath": ".local/rea-session/context_player_concrete_constructor_c.json",
+      "exportSha256": "30549e0e00365d26ce47d941616689ebadbdb7be58814db307c91f3e3cfe710b",
+      "cPath": ".local/rea-session/context_player_concrete_constructor_c.c",
+      "cSha256": "bf983b9437aa00c7709364190a4d88fbb9b0566cc7b5d15981cbc6a7b23605aa"
+    },
+    {
+      "address": "0x100eccd40",
+      "evidenceId": "ev_43ea22687b1b2c01e781ee1b65f56034ddd5ef02a1b5248ef904118248e90d2d",
+      "exportPath": ".local/rea-session/context_player_concrete_c_get_state.json",
+      "exportSha256": "59bbe0b04ecde6fd4ea5d882ba61abbe436c9a18a531ed476312c363f429d6fc",
+      "cPath": ".local/rea-session/context_player_concrete_c_get_state.c",
+      "cSha256": "96d6124e37f416441e6b757b3146ef438b55b9f6acd040610c2a1150466a4124"
+    },
+    {
+      "address": "0x100eca114",
+      "evidenceId": "ev_8254a1cd5bd1dc3f2a589cf2f0c14e93adc1a4b8e0a0977b3712680a24d9d955",
+      "exportPath": ".local/rea-session/context_player_concrete_c_play.json",
+      "exportSha256": "4dc56d4d27e1feab7fab1d9ac891292b2a3757abce4467115681c67565d93b20",
+      "cPath": ".local/rea-session/context_player_concrete_c_play.c",
+      "cSha256": "1b05fbedb4e6f1dcfc2951562213c7c90a2c2f5d09aacbe3ddbe8231ae94a4e5"
+    },
+    {
+      "address": "0x100b30154",
+      "evidenceId": "ev_889066a44560f67eae31540a0f09169576d83dd4fccc009ffcf70c7fc6e33948",
+      "exportPath": ".local/rea-session/context_player_impl_play_behavior.json",
+      "exportSha256": "03af876f3fd0b7c1407c479f1c1b58288faf164275add3778e5e9b8b9cde1c10",
+      "cPath": ".local/rea-session/context_player_impl_play_behavior.c",
+      "cSha256": "1985a389f47b24482d0d7ab50210c83fc9db5c0ab7b897127d4fa4bec5430bf4"
+    },
+    {
+      "address": "0x100b30ad4",
+      "evidenceId": "ev_6f90b880cda313bcc9478fd1bd40f8b09a076f521db511a58479422154aa6e7c",
+      "exportPath": ".local/rea-session/context_player_play_validation.json",
+      "exportSha256": "adfcf36e734c28c8b5725ce7b7916eb8bc74623618e7346737265af98cad279b",
+      "cPath": ".local/rea-session/context_player_play_validation.c",
+      "cSha256": "d6a45ba3568ba946f40666923ac3911947fc0db96f255eb1c28c7a03dcf83278"
+    },
+    {
+      "address": "0x100b37ecc",
+      "evidenceId": "ev_8a396c955e9f2242d9f0ddc030c0a81571cf154c1abe7a6356f5440f16bc53a5",
+      "exportPath": ".local/rea-session/context_player_core_play_gate.json",
+      "exportSha256": "9b761a01aba1688433bfb156256f8f4e42ee58960b8b61e72563e43be055c07d",
+      "cPath": ".local/rea-session/context_player_core_play_gate.c",
+      "cSha256": "040d458854d3752ae473e4cb38a3282ced5fbeeaa45d0910e9404dcef0d7cd40"
+    },
+    {
+      "address": "0x10086bb9c",
+      "evidenceId": "ev_b2e78cce3c1d3412d3be9dd172081e87569281bcda9bb8547271205bef0c28d7",
+      "exportPath": ".local/rea-session/player_ad_disallow_behavior.json",
+      "exportSha256": "8de924f3119718a51b0d9e99726a3438c04a81331c5a466fa0bd1c9bf6eea7c4",
+      "cPath": ".local/rea-session/player_ad_disallow_behavior.c",
+      "cSha256": "639c7e57112054492ddb9031ed25a2677e1eb405fb4e02f0d7cbaf5fc1ad57d7"
+    },
+    {
+      "address": "0x10086cbc0",
+      "evidenceId": "ev_c37df74bb1551f64b666a07faed17894e01eac0878955d2f8bdae7f0a400bf45",
+      "exportPath": ".local/rea-session/player_restrictions_publisher.json",
+      "exportSha256": "d944661ec7bdb6da175407a41df47f501339a47b4f27b077e702782d55852571",
+      "cPath": ".local/rea-session/player_restrictions_publisher.c",
+      "cSha256": "d6de8c760db5f3bda97011e29fa64423ebe52ff319b603daac26f110f25ddf21"
+    }
+  ],
+  "retainedPointerMemory": {
+    "path": ".local/rea-session/rebased-dataconst.json",
+    "evidenceId": "ev_58296ff02c1c3a44074899018f132a2f0fd9c501460243ea10a7aef856b2d0c9",
+    "exportSha256": "a975d3c391daefa9728a873705441a11c078895461682db575be26b22eae29eb",
+    "address": "0x102538000",
+    "length": 1409024,
+    "bytesSha256": "c9d2f54c4a846da22c96ce185865f306c6aef603f40558e72d08de46670af75e"
+  },
+  "methodHashProbe": {
+    "entry": "0x101c982d8",
+    "execution": "Original instructions under existing NativeLogin5Oracle with synthetic libc++ strings",
+    "helperPath": "reverse-engineering/tools/native_login5_oracle.py",
+    "helperSha256": "99d483968e38ae3abf2d7bda0fe835ba5e5ed1c3707b17e9ef3e5aa6c0a2e2b0",
+    "observations": [
+      {
+        "method": "GetState",
+        "hash": "0xab3732ea",
+        "dispatch": "0x100fb0300",
+        "virtualSlot": "0x38",
+        "concreteHandler": "0x100eccd40"
+      },
+      {
+        "method": "Play",
+        "hash": "0xfebb7184",
+        "dispatch": "0x100fb0300",
+        "virtualSlot": "0x80",
+        "concreteHandler": "0x100eca114"
+      }
+    ]
+  },
+  "entryMap": {
+    "serviceId": "spotify.player.esperanto.proto.ContextPlayer",
+    "serviceCString": "0x1023c790b",
+    "baseConstructor": "0x100fb02d4",
+    "abstractVtable": "0x1025c8bc8",
+    "concreteConstructor": "0x100ec9d24",
+    "concreteVtable": "0x1025c2298",
+    "injectedOwnerOffset": "0x20",
+    "compatibleOwnerVtable": "0x1025a64f0",
+    "compatibleOwnerSlots": {
+      "0x30": "0x100b30154",
+      "0xd8": "0x100b37580",
+      "0x108": "0x100b37738"
+    }
+  },
+  "assessment": {
+    "standaloneFreeAdAdmissionReady": false,
+    "inspectedFunction": "0x100b37ecc",
+    "observedRole": "Conditional same-context shuffle-session queue reuse; may return an owned optional result or continue ordinary play",
+    "ordinaryCallback": {
+      "vtable": "0x1025a7058",
+      "slot": "0x28",
+      "address": "0x100b3ed5c"
+    },
+    "unresolvedLeafInputs": [
+      "0x101c0bc04: internal request predicate",
+      "0x101bcaf88: internal ProvidedTrack predicate"
+    ],
+    "restrictionBuilder": "0x10086bb9c",
+    "restrictionSetupInstructionReference": "0x100868038",
+    "nextBridge": "0x100ecbfd8",
+    "limits": [
+      "Runtime choice among three concrete adapters and injected owner instance not established",
+      "Shuffle fast-path booleans and snapshot fields have offsets but not independently established names",
+      "No direct Free/account entitlement source or general Premium admission gate established",
+      "Ad reason vector-to-action mapping and adapter snapshot linkage remain unresolved",
+      "0x10086cbc0 is a local_list reason helper, not a player-state publisher",
+      "No admission or queue path original-execution vectors were produced in this read-only slice"
+    ]
+  }
+}

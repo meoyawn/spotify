@@ -1,0 +1,40 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: cfd182810be6260d24466a20f92b9b099cb1466d292eb264da4858f06620b2ab
+
+syntax = "proto3";
+
+package spotify.cosmos_util.proto;
+
+option java_multiple_files = true;
+
+option java_package = "com.spotify.cosmos.util.policy.proto";
+
+option optimize_for = CODE_SIZE;
+
+message AlbumDecorationPolicy {
+  reserved 3, 6, 7, 8, 9, 10;
+
+  reserved "copyrights", "num_discs", "num_tracks", "playability", "is_premium_only", "content_access";
+
+  bool link = 1;
+
+  bool name = 2;
+
+  bool covers = 4;
+
+  bool year = 5;
+}
+
+message AlbumCollectionDecorationPolicy {
+  reserved 1, 2, 3;
+
+  reserved "collection_link", "num_tracks_in_collection", "complete";
+}
+
+message AlbumSyncDecorationPolicy {
+  bool inferred_offline = 1;
+
+  bool offline_state = 2;
+
+  bool sync_progress = 3;
+}

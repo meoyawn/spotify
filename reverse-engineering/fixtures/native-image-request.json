@@ -1,0 +1,204 @@
+{
+  "originalCapture": {
+    "path": ".local/original-http.json",
+    "sha256": "74cc460f251e87000ed5becc18fba7d2a12034d0dc01a0fef5d3f0f4ec27b1ff",
+    "completeMatchingRecords": 55
+  },
+  "originalComponent": {
+    "bundlePath": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+    "bundleSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+    "module": 99526,
+    "offsetUtf16": 8133462,
+    "offsetBytes": 8135002,
+    "lengthBytes": 1141,
+    "sha256": "14f01a745b5a3616a07a583b29124dbf46f140aff09c7077335d39e6f1aff38f"
+  },
+  "substitutions": [
+    "React hooks/createElement are inert standard interfaces; img props captured without DOM/network.",
+    "Class-name helpers and component CSS-variable styler are inert; they do not control src/crossOrigin/referrerPolicy.",
+    "Expected HTTP fields come directly from actual original CDP ExtraInfo H2 records, never the Dart implementation."
+  ],
+  "limits": [
+    "Decoded HTTP field values/presence/raw target/empty body only; ordering/HPACK/frames/TLS are not established by CDP.",
+    "Two observed priority states are explicit inputs, not a recreation of browser viewport scheduling.",
+    "Explicit browser Accept-Language input; selected UI locale alone is insufficient to reconstruct it.",
+    "mosaic.scdn.co was not observed; neither it nor other artwork routes are admitted."
+  ],
+  "cases": [
+    {
+      "name": "i.scdn.co u=1, i",
+      "rawUrl": "https://i.scdn.co/image/ab67706f00000002ead6df6eb8b5002d9c8ae4b1",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "promoted",
+      "originalImg": {
+        "src": "https://i.scdn.co/image/ab67706f00000002ead6df6eb8b5002d9c8ae4b1",
+        "crossOrigin": null,
+        "referrerPolicy": null
+      },
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":authority": "i.scdn.co",
+          ":method": "GET",
+          ":path": "/image/ab67706f00000002ead6df6eb8b5002d9c8ae4b1",
+          ":scheme": "https",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "u=1, i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "image",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-storage-access": "active",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": ""
+      },
+      "mimeType": "image/jpeg"
+    },
+    {
+      "name": "image-cdn-fa.spotifycdn.com i",
+      "rawUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000d72c78e0127aff3ab0a1d9ceb4a2",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "originalImg": {
+        "src": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000d72c78e0127aff3ab0a1d9ceb4a2",
+        "crossOrigin": null,
+        "referrerPolicy": null
+      },
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":authority": "image-cdn-fa.spotifycdn.com",
+          ":method": "GET",
+          ":path": "/image/ab67706c0000d72c78e0127aff3ab0a1d9ceb4a2",
+          ":scheme": "https",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "image",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-storage-access": "active",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": ""
+      },
+      "mimeType": "image/webp"
+    },
+    {
+      "name": "image-cdn-fa.spotifycdn.com u=1, i",
+      "rawUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000d72c8822581da14ec251821e1cd5",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "promoted",
+      "originalImg": {
+        "src": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000d72c8822581da14ec251821e1cd5",
+        "crossOrigin": null,
+        "referrerPolicy": null
+      },
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":authority": "image-cdn-fa.spotifycdn.com",
+          ":method": "GET",
+          ":path": "/image/ab67706c0000d72c8822581da14ec251821e1cd5",
+          ":scheme": "https",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "u=1, i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "image",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-storage-access": "active",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": ""
+      },
+      "mimeType": "image/webp"
+    },
+    {
+      "name": "i.scdn.co i",
+      "rawUrl": "https://i.scdn.co/image/ab67616d0000e1a338906032688bb13b135ce19a",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "originalImg": {
+        "src": "https://i.scdn.co/image/ab67616d0000e1a338906032688bb13b135ce19a",
+        "crossOrigin": null,
+        "referrerPolicy": null
+      },
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":authority": "i.scdn.co",
+          ":method": "GET",
+          ":path": "/image/ab67616d0000e1a338906032688bb13b135ce19a",
+          ":scheme": "https",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "image",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-storage-access": "active",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": ""
+      },
+      "mimeType": "image/webp"
+    },
+    {
+      "name": "image-cdn-ak.spotifycdn.com i",
+      "rawUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72c79cd7cfa5beaaa1b202c6fd4",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "originalImg": {
+        "src": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72c79cd7cfa5beaaa1b202c6fd4",
+        "crossOrigin": null,
+        "referrerPolicy": null
+      },
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":authority": "image-cdn-ak.spotifycdn.com",
+          ":method": "GET",
+          ":path": "/image/ab67706c0000d72c79cd7cfa5beaaa1b202c6fd4",
+          ":scheme": "https",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "image",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-storage-access": "active",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": ""
+      },
+      "mimeType": "image/webp"
+    }
+  ]
+}

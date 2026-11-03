@@ -1,0 +1,238 @@
+{
+  "scope": "Retain original Pathfinder H3 encoder-input field order offline.\n\nJoin each transaction send to its bound QUIC session/stream and the original\nHTTP3_HEADERS_SENT event. Only public fields, names, aggregate counts and\nsource anchors leave this tool. No credential values/hashes, request bodies,\napplication, account, Dart implementation or network operation is used.\n",
+  "toolSha256": "aaf0cd72ad62611c914200691b69a49a729ef76a432e95262932298cbb65c063",
+  "publicLogger": {
+    "path": ".local/cef-source/quic_http3_logger-151.0.7922.138.cc",
+    "sha256": "fc41ee11125c595e76dd86d4ac28d8a1338d3a16c380d754e79a10fef8bb5572",
+    "url": "https://github.com/chromium/chromium/blob/151.0.7922.138/net/quic/quic_http3_logger.cc",
+    "entry": "QuicHttp3Logger::OnHeadersFrameSent lines296-311",
+    "projection": "Logs the supplied HttpHeaderBlock and stream ID using ElideHttpHeaderBlockForNetLog.",
+    "projectionSource": {
+      "path": ".local/cef-source/spdy_log_util-151.0.7922.138.cc",
+      "sha256": "25bb8e47d60d5b034ed4f438550d5c9efaca97d1a997614c530fd8b262d778c9",
+      "url": "https://github.com/chromium/chromium/blob/151.0.7922.138/net/spdy/spdy_log_util.cc",
+      "entry": "ElideHttpHeaderBlockForNetLog",
+      "proof": "Iterates the supplied block and appends to a list in that order; it does not sort or map its fields."
+    }
+  },
+  "captures": [
+    {
+      "path": ".local/original-reference-streaming-netlog.json",
+      "sha256": "644660b4da3948c6f0e0e21479b34de444f295ba3e94684257e2c53dc9587489",
+      "disableQuic": false,
+      "postSends": 11,
+      "preflightSends": 5,
+      "exactTransactionToHeaderBlockJoins": 16,
+      "sampleSourcesByMethod": {
+        "OPTIONS": {
+          "requestSourceId": 1482,
+          "transactionEventIndex": 27642,
+          "bindingEventIndex": 27637,
+          "quicSessionSourceId": 250,
+          "quicStreamId": 16,
+          "headerBlockEventIndex": 27645
+        },
+        "POST": {
+          "requestSourceId": 1481,
+          "transactionEventIndex": 29868,
+          "bindingEventIndex": 29859,
+          "quicSessionSourceId": 250,
+          "quicStreamId": 36,
+          "headerBlockEventIndex": 29871
+        }
+      }
+    },
+    {
+      "path": ".local/original-license-upload-http2-netlog.json",
+      "sha256": "7ad17ebaf96eda74ecd2c0cd822370287f4aed26310a49faa930cdda92fd64fa",
+      "disableQuic": true,
+      "postSends": 0,
+      "preflightSends": 0,
+      "exactTransactionToHeaderBlockJoins": 0,
+      "sampleSourcesByMethod": {}
+    },
+    {
+      "path": ".local/original-license-rejection-reference-netlog.json",
+      "sha256": "6d8e8c9f4d71bd0e39ecff3282e86438540cf22987a33b2340d79658d4ec6d50",
+      "disableQuic": false,
+      "postSends": 15,
+      "preflightSends": 8,
+      "exactTransactionToHeaderBlockJoins": 23,
+      "sampleSourcesByMethod": {
+        "OPTIONS": {
+          "requestSourceId": 2091,
+          "transactionEventIndex": 36966,
+          "bindingEventIndex": 36961,
+          "quicSessionSourceId": 931,
+          "quicStreamId": 8,
+          "headerBlockEventIndex": 36969
+        },
+        "POST": {
+          "requestSourceId": 2090,
+          "transactionEventIndex": 42566,
+          "bindingEventIndex": 42557,
+          "quicSessionSourceId": 931,
+          "quicStreamId": 40,
+          "headerBlockEventIndex": 42569
+        }
+      }
+    },
+    {
+      "path": ".local/original-playback-netlog.json",
+      "sha256": "fd7239adbef628625faa665ed75199ef34429ed46944409378caeb01ba2c9655",
+      "disableQuic": false,
+      "postSends": 12,
+      "preflightSends": 6,
+      "exactTransactionToHeaderBlockJoins": 18,
+      "sampleSourcesByMethod": {
+        "OPTIONS": {
+          "requestSourceId": 1501,
+          "transactionEventIndex": 29829,
+          "bindingEventIndex": 29824,
+          "quicSessionSourceId": 288,
+          "quicStreamId": 16,
+          "headerBlockEventIndex": 29832
+        },
+        "POST": {
+          "requestSourceId": 1525,
+          "transactionEventIndex": 31496,
+          "bindingEventIndex": 31487,
+          "quicSessionSourceId": 288,
+          "quicStreamId": 40,
+          "headerBlockEventIndex": 31499
+        }
+      }
+    },
+    {
+      "path": ".local/original-playback-key-netlog.json",
+      "sha256": "9a58d8b2ce592e8614f795cb85712a2c598b09f0a427962648dc8f2475755467",
+      "disableQuic": false,
+      "postSends": 42,
+      "preflightSends": 4,
+      "exactTransactionToHeaderBlockJoins": 46,
+      "sampleSourcesByMethod": {
+        "OPTIONS": {
+          "requestSourceId": 1010,
+          "transactionEventIndex": 20057,
+          "bindingEventIndex": 20052,
+          "quicSessionSourceId": 275,
+          "quicStreamId": 16,
+          "headerBlockEventIndex": 20060
+        },
+        "POST": {
+          "requestSourceId": 1015,
+          "transactionEventIndex": 22339,
+          "bindingEventIndex": 22332,
+          "quicSessionSourceId": 275,
+          "quicStreamId": 32,
+          "headerBlockEventIndex": 22342
+        }
+      }
+    }
+  ],
+  "postSends": 80,
+  "preflightSends": 23,
+  "exactTransactionToHeaderBlockJoins": 103,
+  "profiles": {
+    "OPTIONS": {
+      "headerSequence": [
+        ":method",
+        ":authority",
+        ":scheme",
+        ":path",
+        "accept",
+        "access-control-request-method",
+        "access-control-request-headers",
+        "origin",
+        "user-agent",
+        "sec-fetch-mode",
+        "sec-fetch-site",
+        "sec-fetch-dest",
+        "referer",
+        "accept-encoding",
+        "accept-language",
+        "priority"
+      ],
+      "capturedPublicFields": {
+        ":method": "OPTIONS",
+        ":authority": "api-partner.spotify.com",
+        ":scheme": "https",
+        ":path": "/pathfinder/v2/query",
+        "accept": "*/*",
+        "access-control-request-method": "POST",
+        "access-control-request-headers": "app-platform,authorization,client-token,content-type,spotify-app-version",
+        "origin": "https://xpui.app.spotify.com",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "same-site",
+        "sec-fetch-dest": "empty",
+        "referer": "https://xpui.app.spotify.com/",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "accept-language": "en-US,en;q=0.9",
+        "priority": "u=1, i"
+      }
+    },
+    "POST": {
+      "headerSequence": [
+        ":method",
+        ":authority",
+        ":scheme",
+        ":path",
+        "content-length",
+        "origin",
+        "user-agent",
+        "accept",
+        "accept-language",
+        "app-platform",
+        "authorization",
+        "client-token",
+        "content-type",
+        "sec-ch-ua",
+        "sec-ch-ua-mobile",
+        "sec-ch-ua-platform",
+        "spotify-app-version",
+        "sec-fetch-site",
+        "sec-fetch-mode",
+        "sec-fetch-dest",
+        "referer",
+        "accept-encoding",
+        "priority"
+      ],
+      "capturedPublicFields": {
+        ":method": "POST",
+        ":authority": "api-partner.spotify.com",
+        ":scheme": "https",
+        ":path": "/pathfinder/v2/query",
+        "origin": "https://xpui.app.spotify.com",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+        "accept": "application/json",
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "content-type": "application/json;charset=UTF-8",
+        "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "spotify-app-version": "1.3.6.1921",
+        "sec-fetch-site": "same-site",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-dest": "empty",
+        "referer": "https://xpui.app.spotify.com/",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=1, i"
+      }
+    }
+  },
+  "substitutions": [
+    "A local peer substitutes only authority with its TLS loopback authority. Origin/Referer remain the original xpui origin.",
+    "Authorization/client-token and all body bytes come from separately executed original synthetic Search/Home/album/artist producer fixtures. No captured credential values or individual hashes are exported.",
+    "Content-Length is the independently produced body length. These captures do not supply its plaintext body.",
+    "Producer fixtures own operation-specific locale/version values. The captured wire profile here uses locale en and version1.3.6.1921; applying its shared browser ordering to those producer outputs is explicit composition."
+  ],
+  "limits": [
+    "All80 POST and23 OPTIONS transaction arrays match their exact bound HTTP3_HEADERS_SENT blocks. Four default captures agree on23-field POST and16-field OPTIONS ordering; the forced-H2 diagnostic supplies no H3 observation.",
+    "This is the original logged encoder-input field sequence, not a capture of compressed QPACK bytes, packet layout or HPACK/QPACK dynamic state.",
+    "This tool does not establish request-to-operation body joins, every possible renderer header shape, TLS/QUIC fingerprint, session/connection-selection policy or Spotify admission.",
+    "Public POST whitelist values share a source helper with H2 evidence, but every H3 value/order and its frame join are checked independently against the pinned original H3 captures, never Dart.",
+    "No app, account, profile, debugger, request dispatch or network operation occurs."
+  ]
+}

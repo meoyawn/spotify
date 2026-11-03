@@ -1,0 +1,158 @@
+[
+  {
+    "path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "pattern": "User-Agent",
+    "file_offset": 36711288,
+    "string": "User-Agent"
+  },
+  {
+    "path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "pattern": "User-Agent",
+    "file_offset": 37484951,
+    "string": "User-Agent"
+  },
+  {
+    "path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "pattern": "User-Agent",
+    "file_offset": 37485143,
+    "string": "X-Device-User-Agent"
+  },
+  {
+    "path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "pattern": "user-agent",
+    "file_offset": 37432548,
+    "string": "user-agent-product"
+  },
+  {
+    "path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "pattern": "client-token",
+    "file_offset": 35097493,
+    "string": "client-token"
+  },
+  {
+    "path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "pattern": "client-token",
+    "file_offset": 35097506,
+    "string": "client-token-error"
+  },
+  {
+    "path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "pattern": "client-token",
+    "file_offset": 36395957,
+    "string": "1\ufffd_%>\ufffd\ufffdppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp\ufffd\ufffd O- \ufffd\ufffd\ufffd\ufffdclient-token"
+  },
+  {
+    "path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "pattern": "client-token",
+    "file_offset": 37975434,
+    "string": "client-token: Forbidden"
+  },
+  {
+    "path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "pattern": "client-token",
+    "file_offset": 37975458,
+    "string": "client-token: non-succesful HTTP status code returned: %d"
+  },
+  {
+    "path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "pattern": "cosmos",
+    "file_offset": 35360920,
+    "string": "  collection_unplayed.proto \"spotify.collection_esperanto.proto  status.proto\"-  CollectionUnplayedRequest    uri    ( R uri\"]  CollectionUnplayedResponse ?  status    ( 2'.spotify.collection_cosmos.proto.StatusR statusB2 &com.spotify.collection_esperanto.protoH P \ufffd  ESPb proto3"
+  },
+  {
+    "path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "pattern": "cosmos",
+    "file_offset": 35361148,
+    "string": " )collection_add_remove_items_request.proto  spotify.collection_cosmos.proto  status.proto  collection_itemdata.proto\"\ufffd   CollectionAddRemoveItem    uri    ( R uri G  item_data    ( 2%.spotify.collection.itemdata.ItemDataH"
+  },
+  {
+    "path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "pattern": "cosmos",
+    "file_offset": 35361425,
+    "string": "R itemData\ufffd  B   _item_data\"\ufffd   CollectionAddRemoveItemsRequest    uri    ( R uri N  items    ( 28.spotify.collection_cosmos.proto.CollectionAddRemoveItemR items\"c  CollectionAddRemoveItemsResponse ?  status    ( 2'.spotify.collection_cosmos.proto.StatusR statusB. \"spotify.collection.esperanto.protoH P \ufffd  ESPb proto3"
+  },
+  {
+    "path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "pattern": "cosmos",
+    "file_offset": 35361542,
+    "string": "R itemData\ufffd  B   _item_data\"\ufffd   CollectionAddRemoveItemsRequest    uri    ( R uri N  items    ( 28.spotify.collection_cosmos.proto.CollectionAddRemoveItemR items\"c  CollectionAddRemoveItemsResponse ?  status    ( 2'.spotify.collection_cosmos.proto.StatusR statusB. \"spotify.collection.esperanto.protoH P \ufffd  ESPb proto3"
+  },
+  {
+    "path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "pattern": "cosmos",
+    "file_offset": 35361759,
+    "string": "\ufffd\ufffd\ufffd\ufffd  collection_ban_request.proto  spotify.collection_cosmos.proto  status.proto\"O  CollectionBanRequest %  context_source    ( R contextSource    uri    ( R uri\"r  CollectionBanResponse ?  status    ( 2'.spotify.collection_cosmos.proto.StatusR status    success    ( R successB. \"spotify.collection.esperanto.protoH P \ufffd  ESPb proto3"
+  },
+  {
+    "path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "pattern": "Cosmos",
+    "file_offset": 35412809,
+    "string": "R episodeB   item\"R  MultiResponse A  items    ( 2+.spotify.metadata_cosmos.proto.MetadataItemR items\"\"  MultiRequest    uris    ( R urisB5 !com.spotify.metadata.cosmos.protoB MetadataCosmosH "
+  },
+  {
+    "path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "pattern": "Cosmos",
+    "file_offset": 35499856,
+    "string": "\ufffd\ufffd\ufffd\ufffd            6       \ufffd\ufffd\ufffd         H   __PAGEZERO                                                          \ufffd   __TEXT                   \ufffdS              \ufffdS                     __text          __TEXT          \ufffd\ufffd      \ufffd\\\ufffd     \ufffd\ufffd                 \ufffd            __stubs         __TEXT          @ \ufffd     \ufffd'      @ \ufffd                \ufffd            __objc_stubs    __TEXT           1\ufffd     \ufffd\ufffd       1\ufffd                \ufffd            __init_offsets  __TEXT          \ufffd\ufffd\ufffd     \ufffd       \ufffd\ufffd\ufffd                             __objc_methlist __TEXT          \ufffd\ufffd\ufffd     $B      \ufffd\ufffd\ufffd                             __gcc_except_tab__TEXT  "
+  },
+  {
+    "path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "pattern": "Cosmos",
+    "file_offset": 35504144,
+    "string": "    TRAILER      CONTINUE_LISTENING      LATEST_PUBLISHED      UP_NEXT      FIRST_PUBLISHED  \"\ufffd   SavedEpisodesSection 0  saved_episodes_count    ( R savedEpisodesCount :  downloaded_episodes_count    ( R downloadedEpisodesCountB H \ufffd  SPTShowCosmos"
+  },
+  {
+    "path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "pattern": "Cosmos",
+    "file_offset": 35504373,
+    "string": "  show_show_state.proto  spotify.show_cosmos.proto\"?  ShowCollectionState (  is_in_collection    ( R isInCollectionB H \ufffd  SPTShowCosmos"
+  },
+  {
+    "path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "pattern": "Cosmos",
+    "file_offset": 35505179,
+    "string": "\ufffd\ufffd\ufffd\ufffd            6       \ufffd\ufffd\ufffd         H   __PAGEZERO                                                          \ufffd   __TEXT                   \ufffdS              \ufffdS                     __text          __TEXT          \ufffd\ufffd      \ufffd\\\ufffd     \ufffd\ufffd                 \ufffd            __stubs         __TEXT          @ \ufffd     \ufffd'      @ \ufffd                \ufffd            __objc_stubs    __TEXT           1\ufffd     \ufffd\ufffd       1\ufffd                \ufffd            __init_offsets  __TEXT          \ufffd\ufffd\ufffd     \ufffd       \ufffd\ufffd\ufffd                             __objc_methlist __TEXT          \ufffd\ufffd\ufffd     $B      \ufffd\ufffd\ufffd                             __gcc_except_tab__TEXT  "
+  },
+  {
+    "path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "pattern": "Chrome/",
+    "file_offset": 37435842,
+    "string": "Chrome/%d.%d.%d.%d Spotify/%s"
+  },
+  {
+    "path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "pattern": "Chrome/",
+    "file_offset": 37574172,
+    "string": "Mozilla/5.0 (Macintosh; Intel Mac OS X %d_%d_%d) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1944.0 Safari/537.36 %s"
+  },
+  {
+    "path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "pattern": "Spotify/",
+    "file_offset": 37435861,
+    "string": "Chrome/%d.%d.%d.%d Spotify/%s"
+  },
+  {
+    "path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "pattern": "Spotify/",
+    "file_offset": 37574208,
+    "string": "Spotify/%d (%d; %d; %d)"
+  },
+  {
+    "path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "pattern": "Spotify/",
+    "file_offset": 37975389,
+    "string": "Spotify/%d %s/%d (%s)"
+  },
+  {
+    "path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "pattern": "Spotify/",
+    "file_offset": 38021769,
+    "string": "Spotify/%s %s/%s"
+  },
+  {
+    "path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "pattern": "Spotify/",
+    "file_offset": 38028327,
+    "string": "Spotify/"
+  }
+]

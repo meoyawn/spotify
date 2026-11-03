@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "classification": "reconstructed-not-extracted",
+  "protocVersion": "libprotoc 36.2",
+  "validatedMessages": 49,
+  "validatedFields": 122,
+  "validatedRetainedNames": 64,
+  "packingChecks": 1,
+  "oneofGroups": 5,
+  "validatedEnums": 4,
+  "validatedEnumValues": 18,
+  "issues": [],
+  "nativeUnresolvedLinks": []
+}

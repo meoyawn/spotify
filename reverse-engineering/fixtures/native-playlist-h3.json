@@ -1,0 +1,620 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "scope": "Extract actual original fresh-playlist H3 header order, offline only.\n\nURL/body/policy inputs come from the retained original-backed playlist fixtures.\nOnly playlist identity and credentials are replaced. No Dart, live application,\nprofile, account or network is used.\n",
+  "toolSha256": "7a293616b442e52b9fe2e1b714c704b1ef9b1fdab9e4e6c358ed9be296a89b2c",
+  "inputs": [
+    {
+      "path": ".local/original-reference-streaming-netlog.json",
+      "sha256": "644660b4da3948c6f0e0e21479b34de444f295ba3e94684257e2c53dc9587489"
+    },
+    {
+      "path": ".local/original-license-rejection-reference-netlog.json",
+      "sha256": "6d8e8c9f4d71bd0e39ecff3282e86438540cf22987a33b2340d79658d4ec6d50"
+    },
+    {
+      "path": ".local/original-playback-netlog.json",
+      "sha256": "fd7239adbef628625faa665ed75199ef34429ed46944409378caeb01ba2c9655"
+    },
+    {
+      "path": ".local/original-playback-key-netlog.json",
+      "sha256": "9a58d8b2ce592e8614f795cb85712a2c598b09f0a427962648dc8f2475755467"
+    },
+    {
+      "path": "reverse-engineering/fixtures/native-playlist-read.json",
+      "sha256": "e7c20f0df730da888b0e7deac1c3e433e211cf528f9409a381404592e9024296"
+    },
+    {
+      "path": "reverse-engineering/fixtures/playlist-service-sync-plan.json",
+      "sha256": "8f79ee1b1ac65c190718a9d53b90e91a5e164f530e77bffc2236f36b4b7613ff"
+    }
+  ],
+  "captures": [
+    {
+      "path": ".local/original-reference-streaming-netlog.json",
+      "sha256": "644660b4da3948c6f0e0e21479b34de444f295ba3e94684257e2c53dc9587489",
+      "hasExplicitQuicForceOrDisableFlag": false,
+      "freshH3CallerCounts": {
+        "1": 3,
+        "6": 3
+      }
+    },
+    {
+      "path": ".local/original-license-rejection-reference-netlog.json",
+      "sha256": "6d8e8c9f4d71bd0e39ecff3282e86438540cf22987a33b2340d79658d4ec6d50",
+      "hasExplicitQuicForceOrDisableFlag": false,
+      "freshH3CallerCounts": {
+        "6": 3,
+        "1": 3
+      }
+    },
+    {
+      "path": ".local/original-playback-netlog.json",
+      "sha256": "fd7239adbef628625faa665ed75199ef34429ed46944409378caeb01ba2c9655",
+      "hasExplicitQuicForceOrDisableFlag": false,
+      "freshH3CallerCounts": {
+        "1": 4,
+        "6": 3
+      }
+    },
+    {
+      "path": ".local/original-playback-key-netlog.json",
+      "sha256": "9a58d8b2ce592e8614f795cb85712a2c598b09f0a427962648dc8f2475755467",
+      "hasExplicitQuicForceOrDisableFlag": false,
+      "freshH3CallerCounts": {
+        "6": 4
+      }
+    }
+  ],
+  "cases": [
+    {
+      "name": "Fresh ESPERANTO",
+      "expectedProtocol": "h3",
+      "canonicalUri": "spotify:playlist:0000000000000000000001",
+      "baseUrl": "https://guc3-spclient.spotify.com",
+      "policy": {
+        "caller": 1,
+        "prioritized": true,
+        "acceptListItems": true,
+        "dsaMode": false,
+        "listPlayerEnabled": true,
+        "applyAutoLens": true
+      },
+      "applicationHeaders": {
+        "locale": "en",
+        "timeZone": "Europe/Moscow",
+        "userAgent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+      },
+      "expectedHeaders": {
+        ":method": "GET",
+        ":authority": "guc3-spclient.spotify.com",
+        ":scheme": "https",
+        ":path": "/playlist/v2/playlist/0000000000000000000001",
+        "pragma": "no-cache",
+        "cache-control": "no-cache, no-store",
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer fixture-access-token",
+        "spotify-app-version": "130601921",
+        "time-zone": "Europe/Moscow",
+        "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+        "client-token": "fixture-client-token",
+        "spotify-accept-geoblock": "dummy",
+        "spotify-apply-lenses": "auto",
+        "spotify-dsa-mode-enabled": "false",
+        "spotify-list-player-enabled": "true",
+        "spotify-playlist-sync-reason": "CAEQAQ==",
+        "x-accept-list-items": "audio-track, audio-episode, video-episode, audiobook",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "empty",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=4, i"
+      },
+      "expectedHeaderSequence": [
+        [
+          ":method",
+          "GET"
+        ],
+        [
+          ":authority",
+          "guc3-spclient.spotify.com"
+        ],
+        [
+          ":scheme",
+          "https"
+        ],
+        [
+          ":path",
+          "/playlist/v2/playlist/0000000000000000000001"
+        ],
+        [
+          "pragma",
+          "no-cache"
+        ],
+        [
+          "cache-control",
+          "no-cache, no-store"
+        ],
+        [
+          "accept-language",
+          "en"
+        ],
+        [
+          "app-platform",
+          "OSX_ARM64"
+        ],
+        [
+          "authorization",
+          "Bearer fixture-access-token"
+        ],
+        [
+          "spotify-app-version",
+          "130601921"
+        ],
+        [
+          "time-zone",
+          "Europe/Moscow"
+        ],
+        [
+          "user-agent",
+          "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+        ],
+        [
+          "client-token",
+          "fixture-client-token"
+        ],
+        [
+          "spotify-accept-geoblock",
+          "dummy"
+        ],
+        [
+          "spotify-apply-lenses",
+          "auto"
+        ],
+        [
+          "spotify-dsa-mode-enabled",
+          "false"
+        ],
+        [
+          "spotify-list-player-enabled",
+          "true"
+        ],
+        [
+          "spotify-playlist-sync-reason",
+          "CAEQAQ=="
+        ],
+        [
+          "x-accept-list-items",
+          "audio-track, audio-episode, video-episode, audiobook"
+        ],
+        [
+          "sec-fetch-site",
+          "same-origin"
+        ],
+        [
+          "sec-fetch-mode",
+          "no-cors"
+        ],
+        [
+          "sec-fetch-dest",
+          "empty"
+        ],
+        [
+          "accept-encoding",
+          "gzip, deflate, br, zstd"
+        ],
+        [
+          "priority",
+          "u=4, i"
+        ]
+      ],
+      "bodyHex": "",
+      "headerAuthority": {
+        "path": ".local/original-playback-netlog.json",
+        "sourceId": 2836,
+        "eventIndex": 57790,
+        "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+        "quicStreamId": 580,
+        "quicSessionSourceId": 963,
+        "bindingEventIndex": 57785
+      },
+      "matchingOriginalHeaderSources": [
+        {
+          "path": ".local/original-reference-streaming-netlog.json",
+          "sourceId": 2308,
+          "eventIndex": 47814,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 228,
+          "quicSessionSourceId": 957,
+          "bindingEventIndex": 47807
+        },
+        {
+          "path": ".local/original-reference-streaming-netlog.json",
+          "sourceId": 2963,
+          "eventIndex": 62088,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 568,
+          "quicSessionSourceId": 957,
+          "bindingEventIndex": 62083
+        },
+        {
+          "path": ".local/original-reference-streaming-netlog.json",
+          "sourceId": 3108,
+          "eventIndex": 64901,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 600,
+          "quicSessionSourceId": 957,
+          "bindingEventIndex": 64896
+        },
+        {
+          "path": ".local/original-license-rejection-reference-netlog.json",
+          "sourceId": 3036,
+          "eventIndex": 62831,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 900,
+          "quicSessionSourceId": 850,
+          "bindingEventIndex": 62824
+        },
+        {
+          "path": ".local/original-license-rejection-reference-netlog.json",
+          "sourceId": 3453,
+          "eventIndex": 76640,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 956,
+          "quicSessionSourceId": 850,
+          "bindingEventIndex": 76635
+        },
+        {
+          "path": ".local/original-license-rejection-reference-netlog.json",
+          "sourceId": 4066,
+          "eventIndex": 88861,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 1120,
+          "quicSessionSourceId": 850,
+          "bindingEventIndex": 88855
+        },
+        {
+          "path": ".local/original-playback-netlog.json",
+          "sourceId": 2836,
+          "eventIndex": 57790,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 580,
+          "quicSessionSourceId": 963,
+          "bindingEventIndex": 57785
+        },
+        {
+          "path": ".local/original-playback-netlog.json",
+          "sourceId": 3275,
+          "eventIndex": 70926,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 760,
+          "quicSessionSourceId": 963,
+          "bindingEventIndex": 70919
+        },
+        {
+          "path": ".local/original-playback-netlog.json",
+          "sourceId": 3540,
+          "eventIndex": 89633,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 44,
+          "quicSessionSourceId": 3345,
+          "bindingEventIndex": 89628
+        },
+        {
+          "path": ".local/original-playback-netlog.json",
+          "sourceId": 3613,
+          "eventIndex": 91264,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 4,
+          "quicSessionSourceId": 3602,
+          "bindingEventIndex": 91259
+        }
+      ],
+      "bodyAndPolicyAuthority": {
+        "path": "reverse-engineering/fixtures/native-playlist-read.json",
+        "caseIndex": 0,
+        "bodyField": "expected.bodyBase64"
+      },
+      "urlPolicyAuthority": {
+        "path": "reverse-engineering/fixtures/playlist-service-sync-plan.json",
+        "scenarioIndex": 0,
+        "originalEntry": "0x101aaa0d8"
+      }
+    },
+    {
+      "name": "Fresh RECENTLY_PLAYED",
+      "expectedProtocol": "h3",
+      "canonicalUri": "spotify:playlist:0000000000000000000001",
+      "baseUrl": "https://guc3-spclient.spotify.com",
+      "policy": {
+        "caller": 6,
+        "prioritized": true,
+        "acceptListItems": true,
+        "dsaMode": false,
+        "listPlayerEnabled": true,
+        "applyAutoLens": true
+      },
+      "applicationHeaders": {
+        "locale": "en",
+        "timeZone": "Europe/Moscow",
+        "userAgent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+      },
+      "expectedHeaders": {
+        ":method": "GET",
+        ":authority": "guc3-spclient.spotify.com",
+        ":scheme": "https",
+        ":path": "/playlist/v2/playlist/0000000000000000000001",
+        "pragma": "no-cache",
+        "cache-control": "no-cache, no-store",
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer fixture-access-token",
+        "spotify-app-version": "130601921",
+        "time-zone": "Europe/Moscow",
+        "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+        "client-token": "fixture-client-token",
+        "spotify-accept-geoblock": "dummy",
+        "spotify-apply-lenses": "auto",
+        "spotify-dsa-mode-enabled": "false",
+        "spotify-list-player-enabled": "true",
+        "spotify-playlist-sync-reason": "CAYQAQ==",
+        "x-accept-list-items": "audio-track, audio-episode, video-episode, audiobook",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "empty",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=4, i"
+      },
+      "expectedHeaderSequence": [
+        [
+          ":method",
+          "GET"
+        ],
+        [
+          ":authority",
+          "guc3-spclient.spotify.com"
+        ],
+        [
+          ":scheme",
+          "https"
+        ],
+        [
+          ":path",
+          "/playlist/v2/playlist/0000000000000000000001"
+        ],
+        [
+          "pragma",
+          "no-cache"
+        ],
+        [
+          "cache-control",
+          "no-cache, no-store"
+        ],
+        [
+          "accept-language",
+          "en"
+        ],
+        [
+          "app-platform",
+          "OSX_ARM64"
+        ],
+        [
+          "authorization",
+          "Bearer fixture-access-token"
+        ],
+        [
+          "spotify-app-version",
+          "130601921"
+        ],
+        [
+          "time-zone",
+          "Europe/Moscow"
+        ],
+        [
+          "user-agent",
+          "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+        ],
+        [
+          "client-token",
+          "fixture-client-token"
+        ],
+        [
+          "spotify-accept-geoblock",
+          "dummy"
+        ],
+        [
+          "spotify-apply-lenses",
+          "auto"
+        ],
+        [
+          "spotify-dsa-mode-enabled",
+          "false"
+        ],
+        [
+          "spotify-list-player-enabled",
+          "true"
+        ],
+        [
+          "spotify-playlist-sync-reason",
+          "CAYQAQ=="
+        ],
+        [
+          "x-accept-list-items",
+          "audio-track, audio-episode, video-episode, audiobook"
+        ],
+        [
+          "sec-fetch-site",
+          "same-origin"
+        ],
+        [
+          "sec-fetch-mode",
+          "no-cors"
+        ],
+        [
+          "sec-fetch-dest",
+          "empty"
+        ],
+        [
+          "accept-encoding",
+          "gzip, deflate, br, zstd"
+        ],
+        [
+          "priority",
+          "u=4, i"
+        ]
+      ],
+      "bodyHex": "",
+      "headerAuthority": {
+        "path": ".local/original-playback-netlog.json",
+        "sourceId": 3227,
+        "eventIndex": 69774,
+        "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+        "quicStreamId": 752,
+        "quicSessionSourceId": 963,
+        "bindingEventIndex": 69767
+      },
+      "matchingOriginalHeaderSources": [
+        {
+          "path": ".local/original-reference-streaming-netlog.json",
+          "sourceId": 2970,
+          "eventIndex": 62198,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 572,
+          "quicSessionSourceId": 957,
+          "bindingEventIndex": 62193
+        },
+        {
+          "path": ".local/original-reference-streaming-netlog.json",
+          "sourceId": 3115,
+          "eventIndex": 65019,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 604,
+          "quicSessionSourceId": 957,
+          "bindingEventIndex": 65014
+        },
+        {
+          "path": ".local/original-reference-streaming-netlog.json",
+          "sourceId": 3284,
+          "eventIndex": 68987,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 0,
+          "quicSessionSourceId": 3292,
+          "bindingEventIndex": 68981
+        },
+        {
+          "path": ".local/original-license-rejection-reference-netlog.json",
+          "sourceId": 1169,
+          "eventIndex": 20465,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 28,
+          "quicSessionSourceId": 850,
+          "bindingEventIndex": 20461
+        },
+        {
+          "path": ".local/original-license-rejection-reference-netlog.json",
+          "sourceId": 3465,
+          "eventIndex": 76824,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 964,
+          "quicSessionSourceId": 850,
+          "bindingEventIndex": 76819
+        },
+        {
+          "path": ".local/original-license-rejection-reference-netlog.json",
+          "sourceId": 3885,
+          "eventIndex": 85737,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 1036,
+          "quicSessionSourceId": 850,
+          "bindingEventIndex": 85732
+        },
+        {
+          "path": ".local/original-playback-netlog.json",
+          "sourceId": 3227,
+          "eventIndex": 69774,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 752,
+          "quicSessionSourceId": 963,
+          "bindingEventIndex": 69767
+        },
+        {
+          "path": ".local/original-playback-netlog.json",
+          "sourceId": 3505,
+          "eventIndex": 88861,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 40,
+          "quicSessionSourceId": 3345,
+          "bindingEventIndex": 88856
+        },
+        {
+          "path": ".local/original-playback-netlog.json",
+          "sourceId": 3592,
+          "eventIndex": 90971,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 0,
+          "quicSessionSourceId": 3602,
+          "bindingEventIndex": 90966
+        },
+        {
+          "path": ".local/original-playback-key-netlog.json",
+          "sourceId": 1688,
+          "eventIndex": 31939,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 248,
+          "quicSessionSourceId": 1272,
+          "bindingEventIndex": 31935
+        },
+        {
+          "path": ".local/original-playback-key-netlog.json",
+          "sourceId": 1869,
+          "eventIndex": 37953,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 348,
+          "quicSessionSourceId": 1272,
+          "bindingEventIndex": 37949
+        },
+        {
+          "path": ".local/original-playback-key-netlog.json",
+          "sourceId": 2767,
+          "eventIndex": 61679,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 24,
+          "quicSessionSourceId": 2433,
+          "bindingEventIndex": 61674
+        },
+        {
+          "path": ".local/original-playback-key-netlog.json",
+          "sourceId": 3046,
+          "eventIndex": 68228,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 28,
+          "quicSessionSourceId": 2433,
+          "bindingEventIndex": 68223
+        }
+      ],
+      "bodyAndPolicyAuthority": {
+        "path": "reverse-engineering/fixtures/native-playlist-read.json",
+        "caseIndex": 1,
+        "bodyField": "expected.bodyBase64"
+      },
+      "urlPolicyAuthority": {
+        "path": "reverse-engineering/fixtures/playlist-service-sync-plan.json",
+        "scenarioIndex": 0,
+        "originalEntry": "0x101aaa0d8"
+      }
+    }
+  ],
+  "substitutions": [
+    "Original playlist identities replaced with the existing synthetic22-character ID from native-playlist-read.json.",
+    "Original authorization/client-token values replaced with that fixture's explicit placeholders; no credential values or hashes retained.",
+    "Public original authority retained; a local outgoing peer may substitute authority while preserving the remaining captured sequence."
+  ],
+  "limits": [
+    "Expected complete24-field sequences come directly from actual original H3 sends, never Dart or a reordered generic H2 profile.",
+    "URL/method/body and explicit caller1/6 policy inputs reuse retained original-backed fixtures. The independently executed101aaa0d8 primary-read plan proves the synthetic no-query route; this extraction executes no new original routine.",
+    "Fresh no-query GET only: prioritized caller1/6, captured DSA=false/list-player=true/auto-lens state; no universal account defaults.",
+    "No revision/diff/changes/pagination/rootlist/mutation/decoration behavior, original selected-playlist identity or response-content claim.",
+    "Decoded HTTP/3 field order and empty-body expectation only; QPACK/TLS/QUIC fingerprints and dynamic protocol selection remain separate.",
+    "No Dart edits, tests, application/process/profile/account/network action or live admission."
+  ]
+}

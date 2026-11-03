@@ -1,0 +1,952 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "method": "Execute original Track query -> true cache miss -> HTTP body entirely offline.\n\nOnly abstract source/context/database and HTTP-builder interfaces are supplied.\nThe proprietary query producer, collection iterator, missing-cache branch,\nprotobuf construction and final HTTP-envelope routine execute unchanged. The\noriginal compiled standard protobuf serializer runs without a replacement\nwire encoder. The explicit synthetic cache is open with no matching info row;\nan unavailable database is never changed into a cache miss. No host database,\nSpotify process/profile, HTTP sender or network is used.\n",
+  "owner": "0x1008446e8",
+  "iterator": "0x100601d64",
+  "cacheLookup": "0x100607ae0",
+  "batchBuilder": "0x1005f3e90",
+  "httpTemplate": "0x100611ecc",
+  "httpEnvelope": "0x10061230c",
+  "standardProtobufSerializer": "0x101e8f980",
+  "ranges": [
+    {
+      "start": "0x1008446e8",
+      "endExclusive": "0x1008458b0",
+      "sha256": "8971092de374928a0b839f30fd18fd75bc9588875e62cb31cee7764072e71bec"
+    },
+    {
+      "start": "0x100601d64",
+      "endExclusive": "0x100601f34",
+      "sha256": "a3ee768b3ed8bf4bcd32c06b80867c22b018a053351d31ff080f29df6bc58fb3"
+    },
+    {
+      "start": "0x100607ae0",
+      "endExclusive": "0x100607da8",
+      "sha256": "39e30a537acb0df2f947a1fca387232cd85a91f6e7763269794926569a50c6da"
+    },
+    {
+      "start": "0x1005f3c4c",
+      "endExclusive": "0x1005f3d70",
+      "sha256": "77e7eab2176c416e7b99413b9193546ed8a2d82e3c967a783f56a27c36457896"
+    },
+    {
+      "start": "0x1005f3e90",
+      "endExclusive": "0x1005f4304",
+      "sha256": "c4010770d19bdbfc300ce6a858e303d286753e19fd8103e25e919fe0f3bc8c4d"
+    },
+    {
+      "start": "0x100611ecc",
+      "endExclusive": "0x100612308",
+      "sha256": "db90081a7ffc30f7aaa6b014e14ba0b11afafaa18362e524cddd23d7275b9f59"
+    },
+    {
+      "start": "0x10061230c",
+      "endExclusive": "0x100612664",
+      "sha256": "6fc93a7227bf87602f0831a09975f69bd4f8cdaa6f37fa53cda22fad673db1fe"
+    }
+  ],
+  "substitutedInterfaces": [
+    "Same explicit one-element ready Track source/context getters as the query oracle.",
+    "Context country/catalogue getters return each case inputs; clock and raw context flags are zero.",
+    "Abstract database open=true; cache-info read returns status1/no record, leaving original empty protobuf result storage unchanged.",
+    "Abstract cache refresh policy returns false; native cache miss branches and callbacks execute unchanged.",
+    "Metadata service virtual+0x38 supplies explicit raw absent cached VIDEO_ASSOCIATIONS result; original producer decides which further queries to add.",
+    "Opaque HTTP builders capture method/path/header/body mutations and template clones; finish stops before send.",
+    "Base template is explicit GET with synthetic User-Agent and empty body; synthetic origin is joined outside the original relative-path owner."
+  ],
+  "injectedTemplate": {
+    "method": "GET",
+    "headers": {
+      "User-Agent": "Spotify/independent-offline-fixture"
+    },
+    "bodyHex": ""
+  },
+  "standardProviders": [
+    "Inherited libc memory/allocation/string and libc++ primitives from the native query oracle.",
+    "Darwin single-thread TLV bootstrap with original initial thread_data.",
+    "Standard C++ array allocation/deallocation and system_clock::from_time_t.",
+    "Diagnostic logger is a no-op; no request fields are supplied by it.",
+    "Original compiled Google protobuf descriptors/construction/serialization execute unchanged; no substitute wire encoder."
+  ],
+  "limits": [
+    "Single ordinary Track source, empty matching cache/no associated cached video metadata, prefetch mode1, empty pending-query state and explicit raw source/config inputs only.",
+    "No live account, country/catalogue entitlement mapping, status admission, route, transport or auth/default header production is proved.",
+    "Only v0 template and one entity per request are exercised. Native gzip branch for five or more entities is not implemented by this bounded plan.",
+    "Unknown extension values, cache hit/etag policy and multi-entity batching are outside this capture."
+  ],
+  "cases": [
+    {
+      "name": "Track owner flags51/52/53=0/0/0, empty pending dedup=False",
+      "uri": "spotify:track:0000000000000000000000",
+      "sourceReady": true,
+      "sourceSuppressed": false,
+      "sourceWindowIndex": 0,
+      "sourceCount": 1,
+      "pendingRequestDedupEnabled": false,
+      "nativeOwnerFlag51": false,
+      "nativeOwnerFlag52": false,
+      "nativeOwnerFlag53": false,
+      "country": "ZZ",
+      "catalogue": "fixture",
+      "maxBatchEntities": 50,
+      "maxBatchQueries": 100,
+      "cacheInfoReads": [
+        {
+          "kind": 5,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        }
+      ],
+      "queryInsertions": [
+        {
+          "kind": 5,
+          "uri": "spotify:track:0000000000000000000000"
+        }
+      ],
+      "submissionOperation": "prefetch",
+      "rawSubmissionMode": 1,
+      "request": {
+        "method": "POST",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Content-Type": "application/protobuf",
+          "Accept": "application/protobuf",
+          "client-feature-id": "prefetch"
+        },
+        "bodyHex": "0a0d0a025a5a120766697874757265122a0a2473706f746966793a747261636b3a3030303030303030303030303030303030303030303012020805",
+        "requestName": "cpp-extended_metadata-extended_metadata_impl.prefetch",
+        "rawUrl": "https://spclient.example.test:443/extended-metadata/v0/extended-metadata",
+        "orderedHeaders": [
+          [
+            "User-Agent",
+            "Spotify/independent-offline-fixture"
+          ],
+          [
+            "Content-Type",
+            "application/protobuf"
+          ],
+          [
+            "Accept",
+            "application/protobuf"
+          ],
+          [
+            "client-feature-id",
+            "prefetch"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "Track owner flags51/52/53=1/0/0, empty pending dedup=False",
+      "uri": "spotify:track:0000000000000000000000",
+      "sourceReady": true,
+      "sourceSuppressed": false,
+      "sourceWindowIndex": 0,
+      "sourceCount": 1,
+      "pendingRequestDedupEnabled": false,
+      "nativeOwnerFlag51": true,
+      "nativeOwnerFlag52": false,
+      "nativeOwnerFlag53": false,
+      "country": "",
+      "catalogue": "",
+      "maxBatchEntities": 50,
+      "maxBatchQueries": 100,
+      "cacheInfoReads": [
+        {
+          "kind": 5,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 178,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 179,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 182,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 212,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 220,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 239,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 249,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        }
+      ],
+      "queryInsertions": [
+        {
+          "kind": 178,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 179,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 182,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 212,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 220,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 239,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 249,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 5,
+          "uri": "spotify:track:0000000000000000000000"
+        }
+      ],
+      "submissionOperation": "prefetch",
+      "rawSubmissionMode": 1,
+      "request": {
+        "method": "POST",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Content-Type": "application/protobuf",
+          "Accept": "application/protobuf",
+          "client-feature-id": "prefetch"
+        },
+        "bodyHex": "0a00124d0a2473706f746966793a747261636b3a3030303030303030303030303030303030303030303012020805120308b201120308b301120308b601120308d401120308dc01120308ef01120308f901",
+        "requestName": "cpp-extended_metadata-extended_metadata_impl.prefetch",
+        "rawUrl": "https://spclient.example.test:443/extended-metadata/v0/extended-metadata",
+        "orderedHeaders": [
+          [
+            "User-Agent",
+            "Spotify/independent-offline-fixture"
+          ],
+          [
+            "Content-Type",
+            "application/protobuf"
+          ],
+          [
+            "Accept",
+            "application/protobuf"
+          ],
+          [
+            "client-feature-id",
+            "prefetch"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "Track owner flags51/52/53=0/1/0, empty pending dedup=False",
+      "uri": "spotify:track:0000000000000000000000",
+      "sourceReady": true,
+      "sourceSuppressed": false,
+      "sourceWindowIndex": 0,
+      "sourceCount": 1,
+      "pendingRequestDedupEnabled": false,
+      "nativeOwnerFlag51": false,
+      "nativeOwnerFlag52": true,
+      "nativeOwnerFlag53": false,
+      "country": "ZZ",
+      "catalogue": "fixture",
+      "maxBatchEntities": 50,
+      "maxBatchQueries": 100,
+      "cacheInfoReads": [
+        {
+          "kind": 5,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 99,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        }
+      ],
+      "queryInsertions": [
+        {
+          "kind": 5,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 99,
+          "uri": "spotify:track:0000000000000000000000"
+        }
+      ],
+      "submissionOperation": "prefetch",
+      "rawSubmissionMode": 1,
+      "request": {
+        "method": "POST",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Content-Type": "application/protobuf",
+          "Accept": "application/protobuf",
+          "client-feature-id": "prefetch"
+        },
+        "bodyHex": "0a0d0a025a5a120766697874757265122e0a2473706f746966793a747261636b3a303030303030303030303030303030303030303030301202080512020863",
+        "requestName": "cpp-extended_metadata-extended_metadata_impl.prefetch",
+        "rawUrl": "https://spclient.example.test:443/extended-metadata/v0/extended-metadata",
+        "orderedHeaders": [
+          [
+            "User-Agent",
+            "Spotify/independent-offline-fixture"
+          ],
+          [
+            "Content-Type",
+            "application/protobuf"
+          ],
+          [
+            "Accept",
+            "application/protobuf"
+          ],
+          [
+            "client-feature-id",
+            "prefetch"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "Track owner flags51/52/53=1/1/0, empty pending dedup=False",
+      "uri": "spotify:track:0000000000000000000000",
+      "sourceReady": true,
+      "sourceSuppressed": false,
+      "sourceWindowIndex": 0,
+      "sourceCount": 1,
+      "pendingRequestDedupEnabled": false,
+      "nativeOwnerFlag51": true,
+      "nativeOwnerFlag52": true,
+      "nativeOwnerFlag53": false,
+      "country": "",
+      "catalogue": "",
+      "maxBatchEntities": 50,
+      "maxBatchQueries": 100,
+      "cacheInfoReads": [
+        {
+          "kind": 5,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 99,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 178,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 179,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 182,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 212,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 220,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 239,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 249,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        }
+      ],
+      "queryInsertions": [
+        {
+          "kind": 178,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 179,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 182,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 212,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 220,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 239,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 249,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 5,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 99,
+          "uri": "spotify:track:0000000000000000000000"
+        }
+      ],
+      "submissionOperation": "prefetch",
+      "rawSubmissionMode": 1,
+      "request": {
+        "method": "POST",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Content-Type": "application/protobuf",
+          "Accept": "application/protobuf",
+          "client-feature-id": "prefetch"
+        },
+        "bodyHex": "0a0012510a2473706f746966793a747261636b3a303030303030303030303030303030303030303030301202080512020863120308b201120308b301120308b601120308d401120308dc01120308ef01120308f901",
+        "requestName": "cpp-extended_metadata-extended_metadata_impl.prefetch",
+        "rawUrl": "https://spclient.example.test:443/extended-metadata/v0/extended-metadata",
+        "orderedHeaders": [
+          [
+            "User-Agent",
+            "Spotify/independent-offline-fixture"
+          ],
+          [
+            "Content-Type",
+            "application/protobuf"
+          ],
+          [
+            "Accept",
+            "application/protobuf"
+          ],
+          [
+            "client-feature-id",
+            "prefetch"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "Track owner flags51/52/53=0/0/1, empty pending dedup=False",
+      "uri": "spotify:track:0000000000000000000000",
+      "sourceReady": true,
+      "sourceSuppressed": false,
+      "sourceWindowIndex": 0,
+      "sourceCount": 1,
+      "pendingRequestDedupEnabled": false,
+      "nativeOwnerFlag51": false,
+      "nativeOwnerFlag52": false,
+      "nativeOwnerFlag53": true,
+      "country": "ZZ",
+      "catalogue": "fixture",
+      "maxBatchEntities": 50,
+      "maxBatchQueries": 100,
+      "cacheInfoReads": [
+        {
+          "kind": 5,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 275,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        }
+      ],
+      "queryInsertions": [
+        {
+          "kind": 275,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 5,
+          "uri": "spotify:track:0000000000000000000000"
+        }
+      ],
+      "submissionOperation": "prefetch",
+      "rawSubmissionMode": 1,
+      "request": {
+        "method": "POST",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Content-Type": "application/protobuf",
+          "Accept": "application/protobuf",
+          "client-feature-id": "prefetch"
+        },
+        "bodyHex": "0a0d0a025a5a120766697874757265122f0a2473706f746966793a747261636b3a30303030303030303030303030303030303030303030120208051203089302",
+        "requestName": "cpp-extended_metadata-extended_metadata_impl.prefetch",
+        "rawUrl": "https://spclient.example.test:443/extended-metadata/v0/extended-metadata",
+        "orderedHeaders": [
+          [
+            "User-Agent",
+            "Spotify/independent-offline-fixture"
+          ],
+          [
+            "Content-Type",
+            "application/protobuf"
+          ],
+          [
+            "Accept",
+            "application/protobuf"
+          ],
+          [
+            "client-feature-id",
+            "prefetch"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "Track owner flags51/52/53=1/0/1, empty pending dedup=False",
+      "uri": "spotify:track:0000000000000000000000",
+      "sourceReady": true,
+      "sourceSuppressed": false,
+      "sourceWindowIndex": 0,
+      "sourceCount": 1,
+      "pendingRequestDedupEnabled": false,
+      "nativeOwnerFlag51": true,
+      "nativeOwnerFlag52": false,
+      "nativeOwnerFlag53": true,
+      "country": "",
+      "catalogue": "",
+      "maxBatchEntities": 50,
+      "maxBatchQueries": 100,
+      "cacheInfoReads": [
+        {
+          "kind": 5,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 178,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 179,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 182,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 212,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 220,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 239,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 249,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 275,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        }
+      ],
+      "queryInsertions": [
+        {
+          "kind": 178,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 179,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 182,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 212,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 220,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 239,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 249,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 275,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 5,
+          "uri": "spotify:track:0000000000000000000000"
+        }
+      ],
+      "submissionOperation": "prefetch",
+      "rawSubmissionMode": 1,
+      "request": {
+        "method": "POST",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Content-Type": "application/protobuf",
+          "Accept": "application/protobuf",
+          "client-feature-id": "prefetch"
+        },
+        "bodyHex": "0a0012520a2473706f746966793a747261636b3a3030303030303030303030303030303030303030303012020805120308b201120308b301120308b601120308d401120308dc01120308ef01120308f9011203089302",
+        "requestName": "cpp-extended_metadata-extended_metadata_impl.prefetch",
+        "rawUrl": "https://spclient.example.test:443/extended-metadata/v0/extended-metadata",
+        "orderedHeaders": [
+          [
+            "User-Agent",
+            "Spotify/independent-offline-fixture"
+          ],
+          [
+            "Content-Type",
+            "application/protobuf"
+          ],
+          [
+            "Accept",
+            "application/protobuf"
+          ],
+          [
+            "client-feature-id",
+            "prefetch"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "Track owner flags51/52/53=0/1/1, empty pending dedup=False",
+      "uri": "spotify:track:0000000000000000000000",
+      "sourceReady": true,
+      "sourceSuppressed": false,
+      "sourceWindowIndex": 0,
+      "sourceCount": 1,
+      "pendingRequestDedupEnabled": false,
+      "nativeOwnerFlag51": false,
+      "nativeOwnerFlag52": true,
+      "nativeOwnerFlag53": true,
+      "country": "ZZ",
+      "catalogue": "fixture",
+      "maxBatchEntities": 50,
+      "maxBatchQueries": 100,
+      "cacheInfoReads": [
+        {
+          "kind": 5,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 99,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 275,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        }
+      ],
+      "queryInsertions": [
+        {
+          "kind": 275,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 5,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 99,
+          "uri": "spotify:track:0000000000000000000000"
+        }
+      ],
+      "submissionOperation": "prefetch",
+      "rawSubmissionMode": 1,
+      "request": {
+        "method": "POST",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Content-Type": "application/protobuf",
+          "Accept": "application/protobuf",
+          "client-feature-id": "prefetch"
+        },
+        "bodyHex": "0a0d0a025a5a12076669787475726512330a2473706f746966793a747261636b3a3030303030303030303030303030303030303030303012020805120208631203089302",
+        "requestName": "cpp-extended_metadata-extended_metadata_impl.prefetch",
+        "rawUrl": "https://spclient.example.test:443/extended-metadata/v0/extended-metadata",
+        "orderedHeaders": [
+          [
+            "User-Agent",
+            "Spotify/independent-offline-fixture"
+          ],
+          [
+            "Content-Type",
+            "application/protobuf"
+          ],
+          [
+            "Accept",
+            "application/protobuf"
+          ],
+          [
+            "client-feature-id",
+            "prefetch"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "Track owner flags51/52/53=1/1/1, empty pending dedup=False",
+      "uri": "spotify:track:0000000000000000000000",
+      "sourceReady": true,
+      "sourceSuppressed": false,
+      "sourceWindowIndex": 0,
+      "sourceCount": 1,
+      "pendingRequestDedupEnabled": false,
+      "nativeOwnerFlag51": true,
+      "nativeOwnerFlag52": true,
+      "nativeOwnerFlag53": true,
+      "country": "",
+      "catalogue": "",
+      "maxBatchEntities": 50,
+      "maxBatchQueries": 100,
+      "cacheInfoReads": [
+        {
+          "kind": 5,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 99,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 178,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 179,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 182,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 212,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 220,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 239,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 249,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 275,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        }
+      ],
+      "queryInsertions": [
+        {
+          "kind": 178,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 179,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 182,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 212,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 220,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 239,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 249,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 275,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 5,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 99,
+          "uri": "spotify:track:0000000000000000000000"
+        }
+      ],
+      "submissionOperation": "prefetch",
+      "rawSubmissionMode": 1,
+      "request": {
+        "method": "POST",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Content-Type": "application/protobuf",
+          "Accept": "application/protobuf",
+          "client-feature-id": "prefetch"
+        },
+        "bodyHex": "0a0012560a2473706f746966793a747261636b3a303030303030303030303030303030303030303030301202080512020863120308b201120308b301120308b601120308d401120308dc01120308ef01120308f9011203089302",
+        "requestName": "cpp-extended_metadata-extended_metadata_impl.prefetch",
+        "rawUrl": "https://spclient.example.test:443/extended-metadata/v0/extended-metadata",
+        "orderedHeaders": [
+          [
+            "User-Agent",
+            "Spotify/independent-offline-fixture"
+          ],
+          [
+            "Content-Type",
+            "application/protobuf"
+          ],
+          [
+            "Accept",
+            "application/protobuf"
+          ],
+          [
+            "client-feature-id",
+            "prefetch"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "Track owner flags51/52/53=0/0/0, empty pending dedup=True",
+      "uri": "spotify:track:0000000000000000000000",
+      "sourceReady": true,
+      "sourceSuppressed": false,
+      "sourceWindowIndex": 0,
+      "sourceCount": 1,
+      "pendingRequestDedupEnabled": true,
+      "nativeOwnerFlag51": false,
+      "nativeOwnerFlag52": false,
+      "nativeOwnerFlag53": false,
+      "country": "ZZ",
+      "catalogue": "fixture",
+      "maxBatchEntities": 50,
+      "maxBatchQueries": 100,
+      "cacheInfoReads": [
+        {
+          "kind": 5,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        }
+      ],
+      "queryInsertions": [
+        {
+          "kind": 5,
+          "uri": "spotify:track:0000000000000000000000"
+        }
+      ],
+      "submissionOperation": "prefetch",
+      "rawSubmissionMode": 1,
+      "request": {
+        "method": "POST",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Content-Type": "application/protobuf",
+          "Accept": "application/protobuf",
+          "client-feature-id": "prefetch"
+        },
+        "bodyHex": "0a0d0a025a5a120766697874757265122a0a2473706f746966793a747261636b3a3030303030303030303030303030303030303030303012020805",
+        "requestName": "cpp-extended_metadata-extended_metadata_impl.prefetch",
+        "rawUrl": "https://spclient.example.test:443/extended-metadata/v0/extended-metadata",
+        "orderedHeaders": [
+          [
+            "User-Agent",
+            "Spotify/independent-offline-fixture"
+          ],
+          [
+            "Content-Type",
+            "application/protobuf"
+          ],
+          [
+            "Accept",
+            "application/protobuf"
+          ],
+          [
+            "client-feature-id",
+            "prefetch"
+          ]
+        ]
+      }
+    }
+  ]
+}

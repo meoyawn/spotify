@@ -1,0 +1,336 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "method": "Execute original CDN body callback through the BufferedStorage write boundary.\n\nSynthetic HTTP200/empty-header/HTTPS-response views, selected callback ownership,\nknown resource length and incoming body chunks are supplied. The original callback\nmove thunk, response validation, body accumulation, block dispatch, accounting\nand BufferedStorage range tracking execute unchanged. No decryptor, file operation,\nreal account, media key, transport or Spotify process is used.\n",
+  "entryPoints": {
+    "bodyCallbackMoveThunk": "0x100760320",
+    "bodyCallback": "0x10075e47c",
+    "blockDispatch": "0x10075ed88",
+    "bufferedWrite": "0x10075a238"
+  },
+  "abi": {
+    "callback": "X0={owner,request ID}; X1=unused; X2=HTTP view; X3=movable std::string body.",
+    "diskWriteBoundary": "Injected BufferedStorage handle vtable+0x58; X1=offset,X2=bytes,X3=length."
+  },
+  "originalCodeRanges": [
+    {
+      "start": "0x100760320",
+      "endExclusive": "0x100760388",
+      "sha256": "d4e698322eb4aefebd74f6fca0087a91eea5237d997e5e22f32f3c86f8988154",
+      "boundarySource": "LC_FUNCTION_STARTS"
+    },
+    {
+      "start": "0x10075e47c",
+      "endExclusive": "0x10075e9a0",
+      "sha256": "180b8893c644599892179ad24b7dd12edec7162ec7f46ae175f4c26d332d4c0e",
+      "boundarySource": "LC_FUNCTION_STARTS"
+    },
+    {
+      "start": "0x10075e9ac",
+      "endExclusive": "0x10075eaa8",
+      "sha256": "21900f97e0db16b08bb7353e0ee58f169e6dc6b9bbf2fef1ee12350128e923eb",
+      "boundarySource": "LC_FUNCTION_STARTS"
+    },
+    {
+      "start": "0x10075f730",
+      "endExclusive": "0x10075f7d4",
+      "sha256": "aefaf99f08a1bfcd2affc409b1b25e773eb7e7bed329a1e7332cf0246bc8e985",
+      "boundarySource": "LC_FUNCTION_STARTS"
+    },
+    {
+      "start": "0x10075f20c",
+      "endExclusive": "0x10075f448",
+      "sha256": "ce66707ee58f8c08f52513771f6cf453ff4afc9e16f30c0057c9cfae1256e7fa",
+      "boundarySource": "LC_FUNCTION_STARTS"
+    },
+    {
+      "start": "0x10075f448",
+      "endExclusive": "0x10075f730",
+      "sha256": "93ecd8bc1d6cae3287951035baa2c813799b0f17bcb5f61bbe3fde04174bf5d8",
+      "boundarySource": "LC_FUNCTION_STARTS"
+    },
+    {
+      "start": "0x101c517f8",
+      "endExclusive": "0x101c51bd4",
+      "sha256": "bc41d2619201d226ba1ab2a296fa8e4647112a721eb37fb5b766dcca01f7054b",
+      "boundarySource": "LC_FUNCTION_STARTS"
+    },
+    {
+      "start": "0x10075ed88",
+      "endExclusive": "0x10075ee68",
+      "sha256": "8fa9c8c4cd87a1728b854a39e9448b78c4ff7a9afc9cb53f208e36dec94dcfb0",
+      "boundarySource": "LC_FUNCTION_STARTS"
+    },
+    {
+      "start": "0x10075fc78",
+      "endExclusive": "0x10075ff58",
+      "sha256": "6be490c5db5ca0077605ae062a678a31016c7c3eba7fede80dc9293bb9e4742c",
+      "boundarySource": "LC_FUNCTION_STARTS"
+    },
+    {
+      "start": "0x10075a238",
+      "endExclusive": "0x10075a570",
+      "sha256": "47c2b2bedcecefae911a2959e05120e8f3022737431d01cee76e63f1a4e3a89f",
+      "boundarySource": "LC_FUNCTION_STARTS"
+    },
+    {
+      "start": "0x100775f10",
+      "endExclusive": "0x10077603c",
+      "sha256": "9edfd925928c0b29cd7dc6d6c7c5c6e5d79a9cfafb4be8a290796dd5fa6e0914",
+      "boundarySource": "LC_FUNCTION_STARTS"
+    },
+    {
+      "start": "0x10077603c",
+      "endExclusive": "0x10077623c",
+      "sha256": "eb1b1d1551b42496235806d797d7a1013a510b565b296a32f756a4598941fa42",
+      "boundarySource": "LC_FUNCTION_STARTS"
+    }
+  ],
+  "retainedREAExports": [
+    {
+      "path": ".local/rea-session/cache-body-receive-chain.json",
+      "sha256": "2690b4486fb8a6ab5ac608ee6044482200a1e5a15a943fab774c34d4a571ca40",
+      "evidenceId": "ev_811051b3680d7ce4b7ae6fb53c18c3ccdbdb4610b5698c9740ce2c2f49ad18e8"
+    },
+    {
+      "path": ".local/rea-session/cache-buffered-write-chain.json",
+      "sha256": "5d4e1fbc91623e41df0b9f0edec8d88da72947989b9c3c357d39ad1c29f5518b",
+      "evidenceId": "ev_374e3102ae8c9d0f7aad0ac7111883e06348aec707add211ba664df113aa68a3"
+    },
+    {
+      "path": ".local/rea-session/cache-response-length-policy.json",
+      "sha256": "8b21c56fd661e87b9e9d11b609f7f995c3c41317cd15d4f7348928ec077366b3",
+      "evidenceId": "ev_9c013678427c2bd9e9803b096679dda4afc698476db86538370da0914a097e82"
+    },
+    {
+      "path": ".local/rea-session/cache-cdn-response-validation.json",
+      "sha256": "7fe7e6e1923616e39036d654d66bb903b3a439fd24c0f4ad73a343c307350f94",
+      "evidenceId": "ev_13298930d17a1ade7cf695d91ef267c5fb39574927e1e70777daac46e4ddab3e"
+    },
+    {
+      "path": ".local/rea-session/cache-cdn-body-registration.json",
+      "sha256": "e857b8e0c82ac43cf850eefb04e73f24f5180815a0a07fcb355f3ca23d924acc",
+      "evidenceId": "ev_c47e70d818f5699595ad203f1896e5e7987d69b5b8f3ca46431bd0cbc7c868a9"
+    },
+    {
+      "path": ".local/rea-session/cache-cdn-body-thunk.json",
+      "sha256": "94f04c188bb6132699aa614fb1fb86819e832fb1c9b724a05891800ca55da263",
+      "evidenceId": "ev_3ae50a198acb8f2d012dd5d134c59cdfe0db2f1a6baa7d893bf03535bdf8de54"
+    },
+    {
+      "path": ".local/rea-session/cache-body-progress.json",
+      "sha256": "b958ccbd586f21820ecdfb4c7a161cc464ee6bc01ea0a41a03c8668bced1082e",
+      "evidenceId": "ev_3e6320539b466e2d7c6451520b5b3d5396d8fe4078329c0317bb6aecc84e2544"
+    }
+  ],
+  "substitutions": [
+    "Explicit HTTP200 status, HTTPS effective URL, empty request/response header views and absent ETag accessors.",
+    "Empty-header lookup returns absent only for the injected empty view; no real header-parser compatibility is claimed.",
+    "Standard allocation, memory/string, thread identity, monotonic stopwatch and clock providers.",
+    "Injected source-category input1 for bandwidth accounting; actual original accounting and range/block choices execute.",
+    "Disk handle virtual+0x58 captures offset/body bytes and stops before IO or the write result."
+  ],
+  "cases": [
+    {
+      "originalDiskWriteBoundary": {
+        "offset": 0,
+        "length": 16384,
+        "sha256": "a1f259d4365ed4320c377ce26f5c8c56dcdc9a89e7b641bfd8eabfbbeac86654",
+        "unchanged": true
+      },
+      "bufferedBytesAtStop": 16384,
+      "stop": "first disk write, before its result",
+      "input": {
+        "chunkBytes": 16384,
+        "priorBytes": 0,
+        "requestedOffset": 0,
+        "knownResourceLength": 65536,
+        "callbackActive": 1,
+        "requestMatches": true,
+        "chunkSha256": "a1f259d4365ed4320c377ce26f5c8c56dcdc9a89e7b641bfd8eabfbbeac86654",
+        "priorSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "name": "one full block"
+    },
+    {
+      "originalDiskWriteBoundary": {
+        "offset": 0,
+        "length": 32768,
+        "sha256": "e11360251d1173650cdcd20f111d8f1ca2e412f572e8b36a4dc067121c1799b8",
+        "unchanged": true
+      },
+      "bufferedBytesAtStop": 32785,
+      "stop": "first disk write, before its result",
+      "input": {
+        "chunkBytes": 32785,
+        "priorBytes": 0,
+        "requestedOffset": 0,
+        "knownResourceLength": 65536,
+        "callbackActive": 1,
+        "requestMatches": true,
+        "chunkSha256": "f135a48540c97e3912daac6d45ee9042cfa18dd7377bc3a7b156d1beec3dec45",
+        "priorSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "name": "two blocks plus nonfinal tail"
+    },
+    {
+      "originalDiskWriteBoundary": {
+        "offset": 0,
+        "length": 17,
+        "sha256": "3e5718fea51a8f3f5baca61c77afab473c1810f8b9db330273b4011ce92c787e",
+        "unchanged": true
+      },
+      "bufferedBytesAtStop": 17,
+      "stop": "first disk write, before its result",
+      "input": {
+        "chunkBytes": 17,
+        "priorBytes": 0,
+        "requestedOffset": 0,
+        "knownResourceLength": 17,
+        "callbackActive": 1,
+        "requestMatches": true,
+        "chunkSha256": "3e5718fea51a8f3f5baca61c77afab473c1810f8b9db330273b4011ce92c787e",
+        "priorSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "name": "short final block"
+    },
+    {
+      "originalDiskWriteBoundary": {
+        "offset": 0,
+        "length": 32785,
+        "sha256": "f135a48540c97e3912daac6d45ee9042cfa18dd7377bc3a7b156d1beec3dec45",
+        "unchanged": true
+      },
+      "bufferedBytesAtStop": 32785,
+      "stop": "first disk write, before its result",
+      "input": {
+        "chunkBytes": 32785,
+        "priorBytes": 0,
+        "requestedOffset": 0,
+        "knownResourceLength": 32785,
+        "callbackActive": 1,
+        "requestMatches": true,
+        "chunkSha256": "f135a48540c97e3912daac6d45ee9042cfa18dd7377bc3a7b156d1beec3dec45",
+        "priorSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "name": "two blocks plus final tail"
+    },
+    {
+      "originalDiskWriteBoundary": {
+        "offset": 0,
+        "length": 16384,
+        "sha256": "aa8b2388999ca59aeb2416e56e063d656f8e74cc0a9bca611dc33ebfc899e297",
+        "unchanged": true
+      },
+      "bufferedBytesAtStop": 20018,
+      "stop": "first disk write, before its result",
+      "input": {
+        "chunkBytes": 20000,
+        "priorBytes": 18,
+        "requestedOffset": 0,
+        "knownResourceLength": 65536,
+        "callbackActive": 1,
+        "requestMatches": true,
+        "chunkSha256": "290c84b9b148f3bc4dc2c6cbc847910f611e446e722eae6969438db9f4aecd57",
+        "priorSha256": "88dfbfbc7e378cd14b1beba206770a140d3c4c17cb77563845cd664dd8402242"
+      },
+      "name": "existing remainder then new body"
+    },
+    {
+      "originalDiskWriteBoundary": {
+        "offset": 0,
+        "length": 16384,
+        "sha256": "cbcca36933f95c82c8f40a9e037ccd8bd9dbb2515fb0409c1d8ad948f3f2481b",
+        "unchanged": true
+      },
+      "bufferedBytesAtStop": 16384,
+      "stop": "first disk write, before its result",
+      "input": {
+        "chunkBytes": 4,
+        "priorBytes": 16380,
+        "requestedOffset": 0,
+        "knownResourceLength": 16384,
+        "callbackActive": 1,
+        "requestMatches": true,
+        "chunkSha256": "054edec1d0211f624fed0cbca9d4f9400b0e491c43742af2c5b0abebf0c990d8",
+        "priorSha256": "fd8101fca0d971d2cbdefe90c2755b2cfbf6dc0d7111a9183eb61adf8b651be1"
+      },
+      "name": "remainder completes final block"
+    },
+    {
+      "originalDiskWriteBoundary": {
+        "offset": 0,
+        "length": 16384,
+        "sha256": "a1f259d4365ed4320c377ce26f5c8c56dcdc9a89e7b641bfd8eabfbbeac86654",
+        "unchanged": true
+      },
+      "bufferedBytesAtStop": 16384,
+      "stop": "first disk write, before its result",
+      "input": {
+        "chunkBytes": 16384,
+        "priorBytes": 0,
+        "requestedOffset": 8192,
+        "knownResourceLength": 65536,
+        "callbackActive": 1,
+        "requestMatches": true,
+        "chunkSha256": "a1f259d4365ed4320c377ce26f5c8c56dcdc9a89e7b641bfd8eabfbbeac86654",
+        "priorSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "name": "nonzero requested offset"
+    },
+    {
+      "originalDiskWriteBoundary": null,
+      "bufferedBytesAtStop": 17,
+      "stop": "callback returned",
+      "input": {
+        "chunkBytes": 17,
+        "priorBytes": 0,
+        "requestedOffset": 0,
+        "knownResourceLength": 65536,
+        "callbackActive": 1,
+        "requestMatches": true,
+        "chunkSha256": "3e5718fea51a8f3f5baca61c77afab473c1810f8b9db330273b4011ce92c787e",
+        "priorSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "name": "short nonfinal body stays buffered"
+    },
+    {
+      "originalDiskWriteBoundary": null,
+      "bufferedBytesAtStop": 0,
+      "stop": "callback returned",
+      "input": {
+        "chunkBytes": 16384,
+        "priorBytes": 0,
+        "requestedOffset": 0,
+        "knownResourceLength": 65536,
+        "callbackActive": 0,
+        "requestMatches": true,
+        "chunkSha256": "a1f259d4365ed4320c377ce26f5c8c56dcdc9a89e7b641bfd8eabfbbeac86654",
+        "priorSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "name": "inactive callback ignores body"
+    },
+    {
+      "originalDiskWriteBoundary": null,
+      "bufferedBytesAtStop": 0,
+      "stop": "callback returned",
+      "input": {
+        "chunkBytes": 16384,
+        "priorBytes": 0,
+        "requestedOffset": 0,
+        "knownResourceLength": 65536,
+        "callbackActive": 1,
+        "requestMatches": false,
+        "chunkSha256": "a1f259d4365ed4320c377ce26f5c8c56dcdc9a89e7b641bfd8eabfbbeac86654",
+        "priorSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "name": "superseded request ignores body"
+    }
+  ],
+  "limits": [
+    "Proves unchanged admitted HTTP body bytes at the cache-owner write boundary; physical file framing, CRC/index layout and lower disk-write transformations remain separate.",
+    "No key unwrapping, audio decryption or decoding is invoked in this executed callback chain.",
+    "Only explicitly supplied HTTP200, empty-header, known-length and admitted callback cases; HTTP206/header parsing, malformed responses and completion/error callback execution are outside this proof.",
+    "Cases reaching disk write stop before its return; bufferedBytesAtStop is not a post-write consumption assertion.",
+    "No original account/profile, real media, physical cache IO, HTTP transport or process launch."
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "authority": "Unchanged original constructors/parser/writers over synthetic inputs; no enum declaration/range inference",
+  "parser": "0x101cfe978",
+  "serializer": "0x101cfee5c",
+  "baseFixture": {
+    "path": "reverse-engineering/fixtures/native-ap-schemas.json",
+    "sha256": "97e2c8d6209830366ca52e3a80f7c318b7891e8f406265d366fdf6ed3295a775"
+  },
+  "proprietaryExport": {
+    "path": ".local/rea-session/dart-native-ap-inbound-enum-parser-writers.json",
+    "evidenceId": "ev_739ba16cbc857239ebf9b1ef3e51743014c9019a5e8b00860457369d7ae56f8e",
+    "sha256": "1076769753936201bd4390000fb52eb97dc214d87123165ed375714812670d7e",
+    "procedures": [
+      "0x1019157bc",
+      "0x101915bac",
+      "0x10190b588",
+      "0x101916380"
+    ]
+  },
+  "cases": [
+    {
+      "name": "welcome_numeric_5",
+      "message": "APWelcome",
+      "inputHex": "520e73796e7468657469632d75736572a00105c80105f00105c2020c00ff63726564656e7469616c",
+      "nativeAccepted": true,
+      "nativeSerializedHex": "520e73796e7468657469632d75736572a00105c80105f00105c2020c00ff63726564656e7469616c",
+      "numericFields": {
+        "20": 5,
+        "25": 5,
+        "30": 5
+      }
+    },
+    {
+      "name": "failure_numeric_5",
+      "message": "APLoginFailed",
+      "inputHex": "5005a00105f00109c2021073796e7468657469632064656e69616c",
+      "nativeAccepted": true,
+      "nativeSerializedHex": "5005a00105f00109c2021073796e7468657469632064656e69616c",
+      "numericFields": {
+        "10": 5
+      }
+    },
+    {
+      "name": "handshake_failure_numeric_5",
+      "message": "APResponseMessage",
+      "inputHex": "f2011c5005a00105f00109c2021173796e746865746963206661696c757265",
+      "nativeAccepted": true,
+      "nativeSerializedHex": "f2011c5005a00105f00109c2021173796e746865746963206661696c757265",
+      "numericFields": {
+        "10": 5
+      }
+    },
+    {
+      "name": "welcome_numeric_10",
+      "message": "APWelcome",
+      "inputHex": "520e73796e7468657469632d75736572a0010ac8010af0010ac2020c00ff63726564656e7469616c",
+      "nativeAccepted": true,
+      "nativeSerializedHex": "520e73796e7468657469632d75736572a0010ac8010af0010ac2020c00ff63726564656e7469616c",
+      "numericFields": {
+        "20": 10,
+        "25": 10,
+        "30": 10
+      }
+    },
+    {
+      "name": "failure_numeric_10",
+      "message": "APLoginFailed",
+      "inputHex": "500aa00105f00109c2021073796e7468657469632064656e69616c",
+      "nativeAccepted": true,
+      "nativeSerializedHex": "500aa00105f00109c2021073796e7468657469632064656e69616c",
+      "numericFields": {
+        "10": 10
+      }
+    },
+    {
+      "name": "handshake_failure_numeric_10",
+      "message": "APResponseMessage",
+      "inputHex": "f2011c500aa00105f00109c2021173796e746865746963206661696c757265",
+      "nativeAccepted": true,
+      "nativeSerializedHex": "f2011c500aa00105f00109c2021173796e746865746963206661696c757265",
+      "numericFields": {
+        "10": 10
+      }
+    },
+    {
+      "name": "welcome_numeric_255",
+      "message": "APWelcome",
+      "inputHex": "520e73796e7468657469632d75736572a001ff01c801ff01f001ff01c2020c00ff63726564656e7469616c",
+      "nativeAccepted": true,
+      "nativeSerializedHex": "520e73796e7468657469632d75736572a001ff01c801ff01f001ff01c2020c00ff63726564656e7469616c",
+      "numericFields": {
+        "20": 255,
+        "25": 255,
+        "30": 255
+      }
+    },
+    {
+      "name": "failure_numeric_255",
+      "message": "APLoginFailed",
+      "inputHex": "50ff01a00105f00109c2021073796e7468657469632064656e69616c",
+      "nativeAccepted": true,
+      "nativeSerializedHex": "50ff01a00105f00109c2021073796e7468657469632064656e69616c",
+      "numericFields": {
+        "10": 255
+      }
+    },
+    {
+      "name": "handshake_failure_numeric_255",
+      "message": "APResponseMessage",
+      "inputHex": "f2011d50ff01a00105f00109c2021173796e746865746963206661696c757265",
+      "nativeAccepted": true,
+      "nativeSerializedHex": "f2011d50ff01a00105f00109c2021173796e746865746963206661696c757265",
+      "numericFields": {
+        "10": 255
+      }
+    },
+    {
+      "name": "welcome_numeric_4294967295",
+      "message": "APWelcome",
+      "inputHex": "520e73796e7468657469632d75736572a001ffffffffffffffffff01c801ffffffffffffffffff01f001ffffffffffffffffff01c2020c00ff63726564656e7469616c",
+      "nativeAccepted": true,
+      "nativeSerializedHex": "520e73796e7468657469632d75736572a001ffffffffffffffffff01c801ffffffffffffffffff01f001ffffffffffffffffff01c2020c00ff63726564656e7469616c",
+      "numericFields": {
+        "20": 4294967295,
+        "25": 4294967295,
+        "30": 4294967295
+      }
+    },
+    {
+      "name": "failure_numeric_4294967295",
+      "message": "APLoginFailed",
+      "inputHex": "50ffffffffffffffffff01a00105f00109c2021073796e7468657469632064656e69616c",
+      "nativeAccepted": true,
+      "nativeSerializedHex": "50ffffffffffffffffff01a00105f00109c2021073796e7468657469632064656e69616c",
+      "numericFields": {
+        "10": 4294967295
+      }
+    },
+    {
+      "name": "handshake_failure_numeric_4294967295",
+      "message": "APResponseMessage",
+      "inputHex": "f2012550ffffffffffffffffff01a00105f00109c2021173796e746865746963206661696c757265",
+      "nativeAccepted": true,
+      "nativeSerializedHex": "f2012550ffffffffffffffffff01a00105f00109c2021173796e746865746963206661696c757265",
+      "numericFields": {
+        "10": 4294967295
+      }
+    },
+    {
+      "name": "welcome_known_then_foreign",
+      "message": "APWelcome",
+      "inputHex": "520e73796e7468657469632d75736572a00100c80100f00101c2020c00ff63726564656e7469616ca001ff01",
+      "nativeAccepted": true,
+      "nativeSerializedHex": "520e73796e7468657469632d75736572a001ff01c80100f00101c2020c00ff63726564656e7469616c",
+      "numericFields": {
+        "20": 255,
+        "25": 0,
+        "30": 1
+      }
+    },
+    {
+      "name": "welcome_foreign_then_known",
+      "message": "APWelcome",
+      "inputHex": "520e73796e7468657469632d75736572a00100c80100f00101c2020c00ff63726564656e7469616ca001ff01a00100",
+      "nativeAccepted": true,
+      "nativeSerializedHex": "520e73796e7468657469632d75736572a00100c80100f00101c2020c00ff63726564656e7469616c",
+      "numericFields": {
+        "20": 0,
+        "25": 0,
+        "30": 1
+      }
+    },
+    {
+      "name": "welcome_wrong_wire_enum",
+      "message": "APWelcome",
+      "inputHex": "520e73796e7468657469632d75736572a00100c80100f00101c2020c00ff63726564656e7469616ca20101ff",
+      "nativeAccepted": true,
+      "nativeSerializedHex": "520e73796e7468657469632d75736572a00100c80100f00101c2020c00ff63726564656e7469616ca20101ff",
+      "numericFields": {
+        "20": 0,
+        "25": 0,
+        "30": 1
+      }
+    },
+    {
+      "name": "welcome_opaque_field",
+      "message": "APWelcome",
+      "inputHex": "520e73796e7468657469632d75736572a00100c80100f00101c2020c00ff63726564656e7469616caa0603616263",
+      "nativeAccepted": true,
+      "nativeSerializedHex": "520e73796e7468657469632d75736572a00100c80100f00101c2020c00ff63726564656e7469616caa0603616263",
+      "numericFields": {
+        "20": 0,
+        "25": 0,
+        "30": 1
+      }
+    }
+  ],
+  "oracle": {
+    "path": "reverse-engineering/tools/native_ap_inbound_oracle.py",
+    "sha256": "dcb83fe62e40ec518e91cddedc3d3450b98c6a16530241e9a3ff6a20721703be"
+  },
+  "limits": [
+    "Only sampled native inbound fields and cases; not recovered enum names or domains",
+    "Required labels are reference-derived; no account/entitlement behavior is inferred"
+  ]
+}

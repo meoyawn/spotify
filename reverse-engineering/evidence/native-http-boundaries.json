@@ -1,0 +1,101 @@
+{
+  "referenceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "authority": "shipped-artifact and controlled offline execution",
+  "routing": {
+    "dispatch": "0x101c2f7a0",
+    "externalFactory": "0x1017d23d8",
+    "runtimeFlag": "0x1027f5674",
+    "cefFactory": "0x1017d2288",
+    "foundationFactory": "0x1017dc100",
+    "runtimeSelectionVerified": false
+  },
+  "foundation": {
+    "sharedRequestConstructor": "0x101c20ccc",
+    "requestConstructor": "0x1017dd278",
+    "execute": "0x1017dd528",
+    "adapter": "0x1017e03c4",
+    "cachePredicate": "0x101c4dbf4",
+    "cacheTokenPredicate": "0x101c4daec",
+    "cacheTokenizer": "0x101c50260",
+    "cacheOverrideTable": "0x1022a7618",
+    "cacheOverrideValues": [
+      1,
+      5,
+      2,
+      3
+    ],
+    "selectors": {
+      "0x101fdcac0": "stringWithUTF8String:",
+      "0x101fd3460": "URLWithString:",
+      "0x101fd94e0": "requestWithURL:cachePolicy:timeoutInterval:",
+      "0x101fd6940": "initWithBytes:length:encoding:",
+      "0x101fdab00": "setHTTPMethod:",
+      "0x101fd5460": "dataWithBytes:length:",
+      "0x101fdaae0": "setHTTPBody:",
+      "0x101fdb320": "setNetworkServiceType:",
+      "0x101fdc060": "setValue:forHTTPHeaderField:"
+    },
+    "fixture": {
+      "path": "reverse-engineering/fixtures/native-foundation-request.json",
+      "sha256": "07f8111f468b089de453eaaba6a3c522be13a1de2f0d1f8e01483a7d03fe43ad",
+      "caseCount": 18
+    },
+    "limits": [
+      "Standard Foundation calls are inert observers; URL/header normalization and wire output are not exercised.",
+      "Synthetic linked-list order and standard header find are supplied; real unordered-map order is not established.",
+      "Native header insertion is a separate original-instruction oracle.",
+      "Invalid UTF-8, native factory runtime selection, session and account behavior remain unverified."
+    ]
+  },
+  "cef": {
+    "adapter": "0x1017d876c",
+    "defaultFlags": 80,
+    "flagsWhenAdapterOption80IsZero": 208,
+    "sources": [
+      {
+        "url": "https://raw.githubusercontent.com/chromiumembedded/cef/beff58d/CHROMIUM_BUILD_COMPATIBILITY.txt",
+        "sha256": "68e7e6465840061549429eb5eb0593bbfd4ffede27d147cad68048c0312fe6b1"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/chromiumembedded/cef/beff58d/include/cef_request.h",
+        "sha256": "7e9d6558ce8a920bd61db2a39cdeaefbfe6c8c487e17ec3f4ea07f944e29101e"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/chromiumembedded/cef/beff58d/include/cef_urlrequest.h",
+        "sha256": "84d965b90fb225846e27230780bfe4705d23a4747cfdfa6e2a1b1e0bfd831e7f"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/chromiumembedded/cef/beff58d/include/internal/cef_types.h",
+        "sha256": "aebd4493bb3b3400608e3643d5089f538abf27338fcc5e556457b2031b4e75db"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/chromiumembedded/cef/beff58d/libcef/browser/net_service/browser_urlrequest_impl.cc",
+        "sha256": "4ebcd2b1b2397c7df3f01dc995c872a31516fc3fd93fed633161fc8b772b9501"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/chromiumembedded/cef/beff58d/libcef/common/net/http_header_utils.cc",
+        "sha256": "1365dd0a99b4af4401edc114c563bc4cbb530b0ed8a38a8bdd6bb435ed04eff3"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/chromiumembedded/cef/beff58d/libcef/common/request_impl.cc",
+        "sha256": "36088c29d0c4b0c3307d93e553bb11ac18b7897e30d2bf4c5acee8046dfd176e"
+      }
+    ],
+    "ported": false
+  },
+  "httpError": {
+    "constructor": "0x101c52838",
+    "categoryObject": "0x10278f260",
+    "categoryNameMethod": "0x101c5285c",
+    "categoryName": "http",
+    "messageMethod": "0x101c52868",
+    "code10Message": "http_error_aborted"
+  },
+  "nativeHeaderUpdates": {
+    "setter": "0x101c24924",
+    "bulkInsertion": "0x101c249b0",
+    "fixture": "reverse-engineering/fixtures/native-header-overrides.json",
+    "fixtureSha256": "4df2b825d1ca83c4a08bbbcb7c862e9a4f04d5937a603725ff010718defa5e06",
+    "caseCount": 9
+  }
+}

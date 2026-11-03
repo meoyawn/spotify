@@ -1,0 +1,48 @@
+{
+  "provenance": "Original unchanged arm64 AP HashCash wrapper replayed in Unicorn; only standard SHA1/HMAC primitives hooked. No network.",
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "entry": "0x101904a3c",
+  "hmacKeyHex": "a3adb131ab584507cb7a68aee1a5f90b4d7f0711",
+  "cases": [
+    {
+      "name": "empty transcript, zero difficulty",
+      "helloHex": "",
+      "responseHex": "",
+      "prefixHex": "",
+      "difficulty": 0,
+      "target": 0,
+      "suffixHex": "161145e0861ad3070000000000000000",
+      "trials": 1
+    },
+    {
+      "name": "transcript and nonzero target",
+      "helloHex": "000400000009010203",
+      "responseHex": "00000007040506",
+      "prefixHex": "00112233445566778899aabbccddeeff",
+      "difficulty": 8,
+      "target": 270544986,
+      "suffixHex": "6a5d95ce66be2c5f000000000000003c",
+      "trials": 61
+    },
+    {
+      "name": "different transcript and prefix",
+      "helloHex": "0004000000080102",
+      "responseHex": "000000060304",
+      "prefixHex": "f0e0d0c0",
+      "difficulty": 11,
+      "target": 2271560481,
+      "suffixHex": "a3484b7df6047fed00000000000002c8",
+      "trials": 713
+    },
+    {
+      "name": "native masked shift",
+      "helloHex": "ff",
+      "responseHex": "00",
+      "prefixHex": "0102",
+      "difficulty": 32,
+      "target": 4294967295,
+      "suffixHex": "50fd4d0cb585e9630000000000000000",
+      "trials": 1
+    }
+  ]
+}

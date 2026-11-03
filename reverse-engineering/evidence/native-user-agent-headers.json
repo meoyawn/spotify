@@ -1,0 +1,10 @@
+{
+  "provenance": "Original native header insertion helper and request constructor fragment execute under Unicorn. Standard libc/libc++ operations are hooked. Synthetic header maps are constructed by the original insertion helper. No transport or network is exercised; map iteration order is retained as evidence, not yet a wire-order claim.",
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "headerInsertEntry": "0x101a4342c",
+  "requestFragment": [
+    "0x101c20fa0",
+    "0x101c20fd8"
+  ],
+  "caseCount": 7
+}

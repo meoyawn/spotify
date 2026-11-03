@@ -1,0 +1,28 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: 249b9c0516d768ea9270b68bec05a8c9057bc4519a715cc4900371b7d80286fa
+
+syntax = "proto2";
+
+package spotify.playlist.cosmos.proto;
+
+option java_multiple_files = true;
+
+option java_package = "com.spotify.playlist.proto";
+
+option optimize_for = CODE_SIZE;
+
+message CreationInfo {
+  optional .spotify.playlist.cosmos.proto.CreationInfo.OriginType origin_type = 1;
+
+  optional string origin_uri = 2;
+
+  enum OriginType {
+    ORIGIN_TYPE_UNSPECIFIED = 0;
+
+    ORIGIN_TYPE_FRESH = 1;
+
+    ORIGIN_TYPE_CLONED = 2;
+
+    ORIGIN_TYPE_AGENTIC = 3;
+  }
+}

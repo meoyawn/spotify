@@ -1,0 +1,594 @@
+{
+  "sourceBundles": {
+    "main": [
+      ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f"
+    ],
+    "controls": [
+      ".local/native-scripts/fe057e3299a5af8615deb3c3bb5dc2a84f2f28e8b994ff53883ed0e3790bcd63.js",
+      "fe057e3299a5af8615deb3c3bb5dc2a84f2f28e8b994ff53883ed0e3790bcd63"
+    ],
+    "slider": [
+      ".local/native-scripts/f1a1384a974bab0c65f736a3bebd5b3fcb7260e4d40f7a4e88f38218c3872f7e.js",
+      "f1a1384a974bab0c65f736a3bebd5b3fcb7260e4d40f7a4e88f38218c3872f7e"
+    ]
+  },
+  "originalRanges": [
+    {
+      "name": "volume glyph decision",
+      "source": "controls",
+      "offsetBytes": 11053,
+      "bytes": 436,
+      "sha256": "aae814be56cc5fd7d4734cf67459f309ab347d7cfa15e23db8ac49db1a15b216"
+    },
+    {
+      "name": "repeat restriction cycle",
+      "source": "controls",
+      "offsetBytes": 1464,
+      "bytes": 82,
+      "sha256": "7111c1731390e130a01c882c43f27ec1d1400f280308b41ff5f1e64d42e31e36"
+    },
+    {
+      "name": "previous control admission and dispatch",
+      "source": "controls",
+      "offsetBytes": 4524,
+      "bytes": 606,
+      "sha256": "8f50103221d015d0017f7fa473cc89dc690d781af90b54dceb2b59944fea7808"
+    },
+    {
+      "name": "seek keyboard step",
+      "source": "main",
+      "offsetBytes": 4409389,
+      "bytes": 271,
+      "sha256": "1e57d3c956a5657393a03238f705870751f791bc65377f58396220aa1575f309"
+    },
+    {
+      "name": "slider numeric seek and keyboard debounce request",
+      "source": "slider",
+      "offsetBytes": 3193,
+      "bytes": 423,
+      "sha256": "f98991a8effd337329a743a6c6e8ce3ceb2014958de1e15a3f8e626d0630d9a4"
+    },
+    {
+      "name": "original MuteHelper",
+      "source": "main",
+      "offsetBytes": 3681945,
+      "bytes": 689,
+      "sha256": "26d94fddea350652c7cbbe6b21912457d4729087560b4a950741824d2cd379df"
+    },
+    {
+      "name": "track title destination",
+      "source": "main",
+      "offsetBytes": 1430171,
+      "bytes": 245,
+      "sha256": "2cbcf10f0e6e2a3534069911fb8f94c43ebb9e448b6d72074371d00030324eb0"
+    }
+  ],
+  "method": "Unchanged proprietary renderer repeat/volume decisions, MuteHelper and title-destination branch execute under V8; exact CSS rules are retained separately.",
+  "substitutions": [
+    "Inert JSX, icon identities and localization keys; no React renderer or browser runs.",
+    "MuteHelper receives an explicit volume API/event boundary which records selected outgoing volume scalars.",
+    "Title type predicates and URI converter are explicit adapters: the URI sentinel records which metadata URI the original selects, not URI parser behavior.",
+    "Original REPEAT_NONE enum input0 is explicit; existing playback oracle owns complete enum/command protobuf behavior."
+  ],
+  "limits": [
+    "No account, HTTP, telemetry, asset request, ad operation, original profile or live playback is accessed.",
+    "The MuteHelper class is original unmodified target code, not an authored replacement.",
+    "These observations prove the stated scalar/URI decisions; they do not claim full React layout, every experiment, Connect capability or account entitlement."
+  ],
+  "previousCases": [
+    {
+      "hasContext": false,
+      "restrictions": {
+        "canSkipPrevious": false,
+        "canSeek": false
+      },
+      "enabled": false,
+      "commands": 0,
+      "debounces": [
+        {
+          "delay": 100,
+          "options": {
+            "leading": true,
+            "trailing": false
+          }
+        }
+      ]
+    },
+    {
+      "hasContext": false,
+      "restrictions": {
+        "canSkipPrevious": false,
+        "canSeek": true
+      },
+      "enabled": false,
+      "commands": 0,
+      "debounces": [
+        {
+          "delay": 100,
+          "options": {
+            "leading": true,
+            "trailing": false
+          }
+        }
+      ]
+    },
+    {
+      "hasContext": false,
+      "restrictions": {
+        "canSkipPrevious": true,
+        "canSeek": false
+      },
+      "enabled": false,
+      "commands": 0,
+      "debounces": [
+        {
+          "delay": 100,
+          "options": {
+            "leading": true,
+            "trailing": false
+          }
+        }
+      ]
+    },
+    {
+      "hasContext": false,
+      "restrictions": {
+        "canSkipPrevious": true,
+        "canSeek": true
+      },
+      "enabled": false,
+      "commands": 0,
+      "debounces": [
+        {
+          "delay": 100,
+          "options": {
+            "leading": true,
+            "trailing": false
+          }
+        }
+      ]
+    },
+    {
+      "hasContext": true,
+      "restrictions": {
+        "canSkipPrevious": false,
+        "canSeek": false
+      },
+      "enabled": false,
+      "commands": 0,
+      "debounces": [
+        {
+          "delay": 100,
+          "options": {
+            "leading": true,
+            "trailing": false
+          }
+        }
+      ]
+    },
+    {
+      "hasContext": true,
+      "restrictions": {
+        "canSkipPrevious": false,
+        "canSeek": true
+      },
+      "enabled": true,
+      "commands": 1,
+      "debounces": [
+        {
+          "delay": 100,
+          "options": {
+            "leading": true,
+            "trailing": false
+          }
+        }
+      ]
+    },
+    {
+      "hasContext": true,
+      "restrictions": {
+        "canSkipPrevious": true,
+        "canSeek": false
+      },
+      "enabled": true,
+      "commands": 1,
+      "debounces": [
+        {
+          "delay": 100,
+          "options": {
+            "leading": true,
+            "trailing": false
+          }
+        }
+      ]
+    },
+    {
+      "hasContext": true,
+      "restrictions": {
+        "canSkipPrevious": true,
+        "canSeek": true
+      },
+      "enabled": true,
+      "commands": 1,
+      "debounces": [
+        {
+          "delay": 100,
+          "options": {
+            "leading": true,
+            "trailing": false
+          }
+        }
+      ]
+    }
+  ],
+  "volumeCases": [
+    {
+      "value": 0,
+      "icon": "mute"
+    },
+    {
+      "value": 0.0001,
+      "icon": "low"
+    },
+    {
+      "value": 0.2,
+      "icon": "low"
+    },
+    {
+      "value": 0.3333333333333331,
+      "icon": "low"
+    },
+    {
+      "value": 0.3333333333333333,
+      "icon": "medium"
+    },
+    {
+      "value": 0.5,
+      "icon": "medium"
+    },
+    {
+      "value": 0.6666666666666664,
+      "icon": "medium"
+    },
+    {
+      "value": 0.6666666666666666,
+      "icon": "high"
+    },
+    {
+      "value": 1,
+      "icon": "high"
+    }
+  ],
+  "repeatCases": [
+    {
+      "current": 0,
+      "canContext": false,
+      "canTrack": false,
+      "next": 0
+    },
+    {
+      "current": 0,
+      "canContext": false,
+      "canTrack": true,
+      "next": 2
+    },
+    {
+      "current": 0,
+      "canContext": true,
+      "canTrack": false,
+      "next": 1
+    },
+    {
+      "current": 0,
+      "canContext": true,
+      "canTrack": true,
+      "next": 1
+    },
+    {
+      "current": 1,
+      "canContext": false,
+      "canTrack": false,
+      "next": 0
+    },
+    {
+      "current": 1,
+      "canContext": false,
+      "canTrack": true,
+      "next": 2
+    },
+    {
+      "current": 1,
+      "canContext": true,
+      "canTrack": false,
+      "next": 0
+    },
+    {
+      "current": 1,
+      "canContext": true,
+      "canTrack": true,
+      "next": 2
+    },
+    {
+      "current": 2,
+      "canContext": false,
+      "canTrack": false,
+      "next": 0
+    },
+    {
+      "current": 2,
+      "canContext": false,
+      "canTrack": true,
+      "next": 0
+    },
+    {
+      "current": 2,
+      "canContext": true,
+      "canTrack": false,
+      "next": 1
+    },
+    {
+      "current": 2,
+      "canContext": true,
+      "canTrack": true,
+      "next": 0
+    }
+  ],
+  "seekStepCases": [
+    {
+      "type": "track",
+      "stepMs": 5000,
+      "calls": [
+        [
+          "backward",
+          5000,
+          "explicit-origin"
+        ],
+        [
+          "forward",
+          5000,
+          "explicit-origin"
+        ]
+      ]
+    },
+    {
+      "type": "episode",
+      "stepMs": 15000,
+      "calls": [
+        [
+          "backward",
+          15000,
+          "explicit-origin"
+        ],
+        [
+          "forward",
+          15000,
+          "explicit-origin"
+        ]
+      ]
+    },
+    {
+      "type": "unknown",
+      "stepMs": 0,
+      "calls": []
+    }
+  ],
+  "keyboardDebounces": [
+    {
+      "delay": 500,
+      "options": {
+        "leading": false,
+        "trailing": true,
+        "maxWait": 500
+      }
+    }
+  ],
+  "numericSeeks": [
+    {
+      "fraction": 0,
+      "options": {
+        "wasDraggedBeforeReleased": false
+      }
+    },
+    {
+      "fraction": 0.5,
+      "options": {
+        "wasDraggedBeforeReleased": false
+      }
+    },
+    {
+      "fraction": 0.9,
+      "options": {
+        "wasDraggedBeforeReleased": false
+      }
+    }
+  ],
+  "muteCases": [
+    {
+      "name": "mute/unmute restores prior volume",
+      "initial": 0.42,
+      "operations": [
+        "toggleMute",
+        "toggleMute"
+      ],
+      "outgoingVolumes": [
+        0,
+        0.42
+      ],
+      "finalVolume": 0.42,
+      "muted": false,
+      "events": [
+        {
+          "type": "muted-changed",
+          "muted": true
+        },
+        {
+          "type": "muted-changed",
+          "muted": false
+        }
+      ]
+    },
+    {
+      "name": "initial zero unmutes to original default0.35",
+      "initial": 0,
+      "operations": [
+        "unmute"
+      ],
+      "outgoingVolumes": [
+        0.35
+      ],
+      "finalVolume": 0.35,
+      "muted": false,
+      "events": [
+        {
+          "type": "muted-changed",
+          "muted": true
+        },
+        {
+          "type": "muted-changed",
+          "muted": false
+        }
+      ]
+    },
+    {
+      "name": "slider zero retains last nonzero value",
+      "initial": 0.64,
+      "operations": [
+        0,
+        "unmute"
+      ],
+      "outgoingVolumes": [
+        0.64
+      ],
+      "finalVolume": 0.64,
+      "muted": false,
+      "events": [
+        {
+          "type": "muted-changed",
+          "muted": true
+        },
+        {
+          "type": "muted-changed",
+          "muted": false
+        }
+      ]
+    },
+    {
+      "name": "already muted is inert",
+      "initial": 0.64,
+      "operations": [
+        "mute",
+        "mute",
+        "unmute"
+      ],
+      "outgoingVolumes": [
+        0,
+        0.64
+      ],
+      "finalVolume": 0.64,
+      "muted": false,
+      "events": [
+        {
+          "type": "muted-changed",
+          "muted": true
+        },
+        {
+          "type": "muted-changed",
+          "muted": false
+        }
+      ]
+    }
+  ],
+  "titleCases": [
+    {
+      "item": {
+        "type": "track",
+        "uri": "spotify:track:0000000000000000000001",
+        "album": {
+          "uri": "spotify:album:0000000000000000000002"
+        },
+        "artists": [
+          {
+            "uri": "spotify:artist:0000000000000000000003"
+          }
+        ]
+      },
+      "video": false,
+      "selectedUri": "spotify:album:0000000000000000000002"
+    },
+    {
+      "item": {
+        "type": "track",
+        "uri": "spotify:track:0000000000000000000001",
+        "album": {
+          "uri": "spotify:album:0000000000000000000002"
+        },
+        "artists": [
+          {
+            "uri": "spotify:artist:0000000000000000000003"
+          }
+        ]
+      },
+      "video": true,
+      "selectedUri": "spotify:artist:0000000000000000000003"
+    },
+    {
+      "item": {
+        "type": "episode",
+        "uri": "spotify:episode:0000000000000000000001"
+      },
+      "video": false,
+      "selectedUri": "spotify:episode:0000000000000000000001"
+    },
+    {
+      "item": {
+        "type": "podcast-chapter",
+        "uri": "spotify:podcast-chapter:0000000000000000000001"
+      },
+      "video": false,
+      "selectedUri": "spotify:podcast-chapter:0000000000000000000001"
+    },
+    {
+      "item": {
+        "type": "chapter",
+        "uri": "spotify:chapter:0000000000000000000001"
+      },
+      "video": false,
+      "selectedUri": "spotify:chapter:0000000000000000000001"
+    },
+    {
+      "item": {
+        "type": "kallax",
+        "uri": "spotify:kallax:0000000000000000000001"
+      },
+      "video": false,
+      "selectedUri": "spotify:kallax:0000000000000000000001"
+    }
+  ],
+  "css": [
+    {
+      "path": "build/rea/xpui/dwp-now-playing-bar.css",
+      "sha256": "560593f733ffe40bf6cd2a60bda60a44713bba6e3dc8a89a1e66ac090b3caa21",
+      "rules": [
+        ".vuoiRt9fgNnPtLEiyZog{flex-flow:row;gap:16px;width:100%;margin-bottom:8px;display:flex}",
+        ".DrJIZZWbvA4pKvYVywLD,.Bvi4Chl0c9nYta36tPJg{flex:1;gap:8px;display:flex}",
+        ".DrJIZZWbvA4pKvYVywLD{justify-content:flex-end}",
+        ".KIr7xb8M8kwrXLA0Myzy:before,.GRt7501sdglGEjReOsjn:before{width:4px;inline-size:4px;content:\"\";background-color:currentColor;border-radius:50%;height:4px;display:block;position:absolute;bottom:0;left:50%;transform:translate(-50%)}",
+        ".dhrE1Mg11rVzWEJ5Xy84{flex-direction:row;justify-content:space-between;align-items:center;height:72px;display:flex}",
+        ".GT3btISbKLXrhHILRLON{width:30%;min-width:180px;padding-inline-start:8px;container:now-playing-bar-left-container/inline-size}",
+        ".Fv_NJY1uLWlqyJ8IKpAP{width:40%;max-width:722px}",
+        "._rXd41iaM5t1x5IDLxCJ{flex-direction:row;justify-content:flex-end;width:30%;min-width:180px;display:flex}"
+      ]
+    },
+    {
+      "path": ".local/bottom-css-8117.css",
+      "sha256": "f23bea20d0deda9fd3d71a8309e08e991b45c9470751768119a3a6c87243082d",
+      "rules": [
+        ".uI8JyD_faatLr66nS5Cb{touch-action:none;--bg-color:#ffffff4d;--mg-color:#ffffffb3;--fg-color:#fff;--is-active-fg-color:#1db954;--progress-bar-transform:0%;--hover-bar-transform:0%;--progress-bar-height:4px;--progress-bar-radius:calc(var(--progress-bar-height) / 2);direction:ltr;width:100%;height:100%;overflow:hidden}",
+        ".qinWev06d0dPqPkQfCov{background-color:var(--fg-color,#fff);z-index:100;width:12px;height:12px;top:50%;left:var(--progress-bar-transform);will-change:left;border:0;border-radius:50%;justify-content:center;align-items:center;margin-left:-6px;display:none;position:absolute;transform:translateY(-50%);box-shadow:0 2px 4px #00000080}",
+        ".CTG2kuUAISyh9_NteS8D:focus-within .qinWev06d0dPqPkQfCov,.CTG2kuUAISyh9_NteS8D .WyycTWtu04F8uhU5gkI4 .qinWev06d0dPqPkQfCov,.CTG2kuUAISyh9_NteS8D .uI8JyD_faatLr66nS5Cb:hover .qinWev06d0dPqPkQfCov{display:flex}",
+        ".CTG2kuUAISyh9_NteS8D:focus-within .C_oPDLKHmOSABQwEKgMs,.CTG2kuUAISyh9_NteS8D .WyycTWtu04F8uhU5gkI4 .C_oPDLKHmOSABQwEKgMs,.CTG2kuUAISyh9_NteS8D .uI8JyD_faatLr66nS5Cb:hover .C_oPDLKHmOSABQwEKgMs{background-color:var(--is-active-fg-color)}"
+      ]
+    }
+  ]
+}

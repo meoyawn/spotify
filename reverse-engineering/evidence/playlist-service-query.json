@@ -1,0 +1,719 @@
+{
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "authority": "original instruction execution with inert standard dependencies",
+  "sources": [
+    {
+      "export": "playlist_native_query_compiler",
+      "procedure": "0x1014ea100",
+      "evidenceId": "ev_6f0c2e76ce451364830f88553b587f148b928f286f04e04eb8b917484703832e",
+      "decompilationSha256": "64a4f053d18c6c79ab6071db9e30d3d2eed79da09212952f3b578ff0e8f6cd55"
+    },
+    {
+      "export": "playlist_native_filter_compile",
+      "procedure": "0x10158205c",
+      "evidenceId": "ev_3f12a183222e08ade5cba112eaf6b3dccb5659e6572d4b8b97ba72ffdd7de185",
+      "decompilationSha256": "daac44224f42772c97e355d60399a53a8c31651c3844161199596c3d3987ee02"
+    },
+    {
+      "export": "playlist_filter_sort_table_init",
+      "procedure": "0x101583fe0",
+      "evidenceId": "ev_40daef888a88b2c20435e246aa084b9196fb701a25e721edfd200ccdc8c5027f",
+      "decompilationSha256": "ff9ad7e14646a830af5c15d4d0760e4b4cc84b6fb69f5b3ccba34bd0f0e75288"
+    },
+    {
+      "export": "playlist_query_metadata_needed_a",
+      "procedure": "0x101583f24",
+      "evidenceId": "ev_551cf3642cbd6d4b4c7fea72c26b6564d1b1458a73ad9e11743b542865116509",
+      "decompilationSha256": "6d142d0735852dd30de0a7f18216d5fac4fb473aa6568cc7705aef87f06c5800"
+    },
+    {
+      "export": "playlist_query_metadata_needed_b",
+      "procedure": "0x101583f44",
+      "evidenceId": "ev_c1c168f3e78a1adb064b3eca0bd82e2d6b3c19cc946846f52f1c149b13e613ae",
+      "decompilationSha256": "4870431dd286c3ac3ce588edee983761cd087283f882a598d33650ac2e777fcf"
+    }
+  ],
+  "queryCompiler": "0x1014ea100",
+  "filterCompiler": "0x10158205c",
+  "tableInitializer": "0x101583fe0",
+  "initializerCaptureStop": "0x1015866f8",
+  "sortLookup": "0x10158373c",
+  "filterMetadataRequired": "0x101583f44",
+  "sortMetadataRequired": "0x101583f24",
+  "predicateTable": {
+    "1": {
+      "field": "available",
+      "value": "true",
+      "operator": 0
+    },
+    "2": {
+      "field": "availableOffline",
+      "value": "true",
+      "operator": 0
+    },
+    "3": {
+      "field": "artist.isBanned",
+      "value": "false",
+      "operator": 0
+    },
+    "4": {
+      "field": "isBanned",
+      "value": "false",
+      "operator": 0
+    },
+    "5": {
+      "field": "isExplicit",
+      "value": "false",
+      "operator": 0
+    },
+    "6": {
+      "field": "isEpisode",
+      "value": "false",
+      "operator": 0
+    },
+    "7": {
+      "field": "isRecommendation",
+      "value": "false",
+      "operator": 0
+    },
+    "8": {
+      "field": "isUnplayed",
+      "value": "true",
+      "operator": 0
+    },
+    "9": {
+      "field": "isInProgress",
+      "value": "true",
+      "operator": 0
+    },
+    "10": {
+      "field": "isFullyPlayed",
+      "value": "false",
+      "operator": 0
+    },
+    "18": {
+      "field": "isNotFullyPlayedOrInProgress",
+      "value": "true",
+      "operator": 0
+    },
+    "11": {
+      "field": "isEpisodeTrailer",
+      "value": "false",
+      "operator": 0
+    },
+    "12": {
+      "field": "isRecommendation",
+      "value": "true",
+      "operator": 0
+    },
+    "13": {
+      "field": "isVideoContent",
+      "value": "true",
+      "operator": 0
+    },
+    "14": {
+      "field": "isVideoContent",
+      "value": "false",
+      "operator": 0
+    },
+    "15": {
+      "field": "isFullyPlayed",
+      "value": "true",
+      "operator": 0
+    },
+    "16": {
+      "field": "local",
+      "value": "false",
+      "operator": 0
+    },
+    "17": {
+      "field": "isPaywalled",
+      "value": "false",
+      "operator": 0
+    },
+    "19": {
+      "field": "artist.isFollowed",
+      "value": "false",
+      "operator": 0
+    }
+  },
+  "sortTable": {
+    "1": [
+      {
+        "field": "album.artist.name",
+        "ascending": true
+      },
+      {
+        "field": "originalIndex",
+        "ascending": true
+      }
+    ],
+    "2": [
+      {
+        "field": "album.artist.name",
+        "ascending": false
+      },
+      {
+        "field": "originalIndex",
+        "ascending": true
+      }
+    ],
+    "3": [
+      {
+        "field": "trackNumber",
+        "ascending": true
+      },
+      {
+        "field": "originalIndex",
+        "ascending": true
+      }
+    ],
+    "4": [
+      {
+        "field": "trackNumber",
+        "ascending": false
+      },
+      {
+        "field": "originalIndex",
+        "ascending": true
+      }
+    ],
+    "5": [
+      {
+        "field": "discNumber",
+        "ascending": true
+      },
+      {
+        "field": "trackNumber",
+        "ascending": true
+      },
+      {
+        "field": "originalIndex",
+        "ascending": true
+      }
+    ],
+    "6": [
+      {
+        "field": "discNumber",
+        "ascending": false
+      },
+      {
+        "field": "trackNumber",
+        "ascending": true
+      },
+      {
+        "field": "originalIndex",
+        "ascending": true
+      }
+    ],
+    "7": [
+      {
+        "field": "album.name",
+        "ascending": true
+      },
+      {
+        "field": "artist.name",
+        "ascending": true
+      },
+      {
+        "field": "discNumber",
+        "ascending": true
+      },
+      {
+        "field": "trackNumber",
+        "ascending": true
+      },
+      {
+        "field": "originalIndex",
+        "ascending": true
+      }
+    ],
+    "8": [
+      {
+        "field": "album.name",
+        "ascending": false
+      },
+      {
+        "field": "artist.name",
+        "ascending": true
+      },
+      {
+        "field": "discNumber",
+        "ascending": true
+      },
+      {
+        "field": "trackNumber",
+        "ascending": true
+      },
+      {
+        "field": "originalIndex",
+        "ascending": true
+      }
+    ],
+    "9": [
+      {
+        "field": "artist.name",
+        "ascending": true
+      },
+      {
+        "field": "album.name",
+        "ascending": true
+      },
+      {
+        "field": "discNumber",
+        "ascending": true
+      },
+      {
+        "field": "trackNumber",
+        "ascending": true
+      },
+      {
+        "field": "originalIndex",
+        "ascending": true
+      }
+    ],
+    "10": [
+      {
+        "field": "artist.name",
+        "ascending": false
+      },
+      {
+        "field": "album.name",
+        "ascending": true
+      },
+      {
+        "field": "discNumber",
+        "ascending": true
+      },
+      {
+        "field": "trackNumber",
+        "ascending": true
+      },
+      {
+        "field": "originalIndex",
+        "ascending": true
+      }
+    ],
+    "11": [
+      {
+        "field": "name",
+        "ascending": true
+      },
+      {
+        "field": "originalIndex",
+        "ascending": true
+      }
+    ],
+    "12": [
+      {
+        "field": "name",
+        "ascending": false
+      },
+      {
+        "field": "originalIndex",
+        "ascending": true
+      }
+    ],
+    "13": [
+      {
+        "field": "addTime",
+        "ascending": true
+      },
+      {
+        "field": "album.name",
+        "ascending": true
+      },
+      {
+        "field": "discNumber",
+        "ascending": true
+      },
+      {
+        "field": "trackNumber",
+        "ascending": true
+      },
+      {
+        "field": "originalIndex",
+        "ascending": true
+      }
+    ],
+    "14": [
+      {
+        "field": "addTime",
+        "ascending": false
+      },
+      {
+        "field": "album.name",
+        "ascending": true
+      },
+      {
+        "field": "discNumber",
+        "ascending": true
+      },
+      {
+        "field": "trackNumber",
+        "ascending": true
+      },
+      {
+        "field": "originalIndex",
+        "ascending": true
+      }
+    ],
+    "15": [
+      {
+        "field": "addedByDisplayName",
+        "ascending": true
+      },
+      {
+        "field": "addedBy",
+        "ascending": true
+      },
+      {
+        "field": "originalIndex",
+        "ascending": true
+      }
+    ],
+    "16": [
+      {
+        "field": "addedByDisplayName",
+        "ascending": false
+      },
+      {
+        "field": "addedBy",
+        "ascending": false
+      },
+      {
+        "field": "originalIndex",
+        "ascending": true
+      }
+    ],
+    "17": [
+      {
+        "field": "length",
+        "ascending": true
+      },
+      {
+        "field": "originalIndex",
+        "ascending": true
+      }
+    ],
+    "18": [
+      {
+        "field": "length",
+        "ascending": false
+      },
+      {
+        "field": "originalIndex",
+        "ascending": true
+      }
+    ],
+    "19": [
+      {
+        "field": "show.name",
+        "ascending": true
+      },
+      {
+        "field": "originalIndex",
+        "ascending": true
+      }
+    ],
+    "20": [
+      {
+        "field": "show.name",
+        "ascending": false
+      },
+      {
+        "field": "originalIndex",
+        "ascending": true
+      }
+    ],
+    "21": [
+      {
+        "field": "publishDate",
+        "ascending": true
+      },
+      {
+        "field": "originalIndex",
+        "ascending": true
+      }
+    ],
+    "22": [
+      {
+        "field": "publishDate",
+        "ascending": false
+      },
+      {
+        "field": "originalIndex",
+        "ascending": true
+      }
+    ],
+    "23": [
+      {
+        "field": "providedSort",
+        "ascending": true
+      },
+      {
+        "field": "originalIndex",
+        "ascending": true
+      }
+    ],
+    "24": [
+      {
+        "field": "providedSort",
+        "ascending": false
+      },
+      {
+        "field": "originalIndex",
+        "ascending": true
+      }
+    ]
+  },
+  "caseCount": 53,
+  "executedInstructionRanges": [
+    {
+      "start": "0x1014ea100",
+      "endExclusive": "0x1014ea1b4",
+      "fileOffset": 21930240,
+      "sha256": "303703e88477fe6dd3160597366bb7ed069a888ff81a031a15c82b2ae3f11e63"
+    },
+    {
+      "start": "0x1014ea1f4",
+      "endExclusive": "0x1014ea238",
+      "fileOffset": 21930484,
+      "sha256": "333ca7b7c6ccabc7d584b5c830af84e3671e157573e9c42a63acd35c83a37473"
+    },
+    {
+      "start": "0x1014ea264",
+      "endExclusive": "0x1014ea278",
+      "fileOffset": 21930596,
+      "sha256": "57d484466eb0dd2c77f34f67973795279899cbb91be79b36260df82d116f9a1f"
+    },
+    {
+      "start": "0x1014ea2dc",
+      "endExclusive": "0x1014ea344",
+      "fileOffset": 21930716,
+      "sha256": "f0300fa6340c13a568e1df79bc44647bc42d08ac32443b16c677bbba1ead558a"
+    },
+    {
+      "start": "0x1014ea35c",
+      "endExclusive": "0x1014ea3ac",
+      "fileOffset": 21930844,
+      "sha256": "4d46f7712679245f85e0da0c6add6480f84615d1433bfd9b6c9597fe8eb34561"
+    },
+    {
+      "start": "0x1014ea410",
+      "endExclusive": "0x1014ea47c",
+      "fileOffset": 21931024,
+      "sha256": "00fc9d3165773f193a5d3adc8e9b4b6888eb4f8d78eb99d29932d49592fd1cdb"
+    },
+    {
+      "start": "0x10158205c",
+      "endExclusive": "0x10158211c",
+      "fileOffset": 22552668,
+      "sha256": "9ef79842ab59e8071b61deaf064f7282165e1b50eb6ece8a065cb89b8b99baf6"
+    },
+    {
+      "start": "0x101582140",
+      "endExclusive": "0x101582164",
+      "fileOffset": 22552896,
+      "sha256": "3983ebcfa24ec64f602039705a7d207446fd3535c299df00092c76c86ce4bf5d"
+    },
+    {
+      "start": "0x1015821a0",
+      "endExclusive": "0x1015821cc",
+      "fileOffset": 22552992,
+      "sha256": "62653b48bd119764530b7e13be084dfc361988a656d14df9275a2a84309b25f3"
+    },
+    {
+      "start": "0x1015821d0",
+      "endExclusive": "0x10158226c",
+      "fileOffset": 22553040,
+      "sha256": "8264c03440dfcf5d4655a7034f8caa3c26f4e75be2e146e69c22597c9ded690b"
+    },
+    {
+      "start": "0x10158227c",
+      "endExclusive": "0x10158230c",
+      "fileOffset": 22553212,
+      "sha256": "9c3aff0c22df7a1d5baa08908bff02dc08923016720306c0a26a06b9a461d071"
+    },
+    {
+      "start": "0x101582318",
+      "endExclusive": "0x101582344",
+      "fileOffset": 22553368,
+      "sha256": "8c65e9e68ea4851a36bc0d09ff94023d79da4c7caa33e13bfece94d8fa6f1ae9"
+    },
+    {
+      "start": "0x10158236c",
+      "endExclusive": "0x10158240c",
+      "fileOffset": 22553452,
+      "sha256": "b50babb6be921fd8fdaa4949167b06d281c6ed8befe0c9f9d702981df94f8a5b"
+    },
+    {
+      "start": "0x101582418",
+      "endExclusive": "0x101582468",
+      "fileOffset": 22553624,
+      "sha256": "43bb56280c1f6ad17d6b4bd3db5dd8463f4a67949209ad44052fcdbff131bca6"
+    },
+    {
+      "start": "0x101582478",
+      "endExclusive": "0x1015824b0",
+      "fileOffset": 22553720,
+      "sha256": "09682e5657269eb663993db66e17e0c9492c82c4e80cffa800d1847b200d5812"
+    },
+    {
+      "start": "0x1015824bc",
+      "endExclusive": "0x10158250c",
+      "fileOffset": 22553788,
+      "sha256": "33c22db0d2db8c8dc6ae3957ca50309071348483c986ef7b5f46c43e4f638706"
+    },
+    {
+      "start": "0x101582518",
+      "endExclusive": "0x10158252c",
+      "fileOffset": 22553880,
+      "sha256": "6a33282a8e953c43ec1e510b79971ef77033d74d041d43436b1e5f93104b752b"
+    },
+    {
+      "start": "0x101582568",
+      "endExclusive": "0x1015825a8",
+      "fileOffset": 22553960,
+      "sha256": "4b8915c832a1282e1f07f3c55e4a118f77257082e556df216ac7c24a11ae07fd"
+    },
+    {
+      "start": "0x1015825b8",
+      "endExclusive": "0x1015825f0",
+      "fileOffset": 22554040,
+      "sha256": "5fc4dc6de58d82adef40ba83654e9f169211d8659a7a4c54dc70ff36dc2499da"
+    },
+    {
+      "start": "0x1015825fc",
+      "endExclusive": "0x10158264c",
+      "fileOffset": 22554108,
+      "sha256": "20764d6db396574d23987c238c8fbf548c8571ee6de7ee5f89438728bdc04631"
+    },
+    {
+      "start": "0x101582658",
+      "endExclusive": "0x10158266c",
+      "fileOffset": 22554200,
+      "sha256": "6a33282a8e953c43ec1e510b79971ef77033d74d041d43436b1e5f93104b752b"
+    },
+    {
+      "start": "0x101582680",
+      "endExclusive": "0x101582800",
+      "fileOffset": 22554240,
+      "sha256": "dab0ff6d08ed16e9efee82e71d43c9d31699ce0d28626a851386b21c0b1b1165"
+    },
+    {
+      "start": "0x101582830",
+      "endExclusive": "0x10158285c",
+      "fileOffset": 22554672,
+      "sha256": "dc11826c8c2dfc6fcb231554b75113b23459d9b902cc4bff9436803704071fc7"
+    },
+    {
+      "start": "0x1015828a0",
+      "endExclusive": "0x1015828f0",
+      "fileOffset": 22554784,
+      "sha256": "9419d1c5853c12115a4e3cd67e31aa77e358ebc0676dba3a9786cbe8b61df49e"
+    },
+    {
+      "start": "0x1015828fc",
+      "endExclusive": "0x101582950",
+      "fileOffset": 22554876,
+      "sha256": "81885e00cc16a733374f18caad072781fa788af4cc816b813d9f6dd97ae5d19b"
+    },
+    {
+      "start": "0x10158295c",
+      "endExclusive": "0x101582994",
+      "fileOffset": 22554972,
+      "sha256": "d002284582ff5a512ad67ce985010d037c81a2d9fb050c7e6f55f9f350f5cbba"
+    },
+    {
+      "start": "0x1015829c8",
+      "endExclusive": "0x101582a9c",
+      "fileOffset": 22555080,
+      "sha256": "0c28407b60c4ac5eafa2350a0199ae0c000e3b7b76f87c2ee9ba042a1ecc8399"
+    },
+    {
+      "start": "0x101582ad4",
+      "endExclusive": "0x101582ae8",
+      "fileOffset": 22555348,
+      "sha256": "418b180eccf142adbdca0665eb41c5086fe4ef18bce7b9423b34ff212d7cf709"
+    },
+    {
+      "start": "0x101582b1c",
+      "endExclusive": "0x101582b64",
+      "fileOffset": 22555420,
+      "sha256": "d0b3531f28e702e68df3f39d15a1fcc6a896520c5d5164d9c494c2090973124d"
+    },
+    {
+      "start": "0x101582b70",
+      "endExclusive": "0x101582bc4",
+      "fileOffset": 22555504,
+      "sha256": "81885e00cc16a733374f18caad072781fa788af4cc816b813d9f6dd97ae5d19b"
+    },
+    {
+      "start": "0x101582bd0",
+      "endExclusive": "0x101582c18",
+      "fileOffset": 22555600,
+      "sha256": "82cf99ca335705fa21a42d917747d5fb07f07fa63b3e0b740fc594a2231de60e"
+    },
+    {
+      "start": "0x101582c20",
+      "endExclusive": "0x101582c98",
+      "fileOffset": 22555680,
+      "sha256": "8b216815704701f5c8e07aa83d5cc90435bbbdd5c8db2129507bab28ad4ece27"
+    },
+    {
+      "start": "0x101582cd0",
+      "endExclusive": "0x101582d20",
+      "fileOffset": 22555856,
+      "sha256": "3d574961d41ef811f2ced42a0ef29ea78b34aadae946fa090cd8c3fc75a8af97"
+    },
+    {
+      "start": "0x101582d2c",
+      "endExclusive": "0x101582d60",
+      "fileOffset": 22555948,
+      "sha256": "4edca83b32f98fa422f75b58743d07f979734da039e64f776fd125d76e81d3f0"
+    },
+    {
+      "start": "0x101582da4",
+      "endExclusive": "0x101582dc0",
+      "fileOffset": 22556068,
+      "sha256": "b10a2431675ed291231e1c8013d8484023666730e91fe7d1c3ab66ecb5cee8e0"
+    },
+    {
+      "start": "0x10158373c",
+      "endExclusive": "0x101583768",
+      "fileOffset": 22558524,
+      "sha256": "688a1988fb793f7b94ad43f5d040ff6f7d1cbfd2605afd9010d09447ca8794db"
+    },
+    {
+      "start": "0x101583790",
+      "endExclusive": "0x1015837b8",
+      "fileOffset": 22558608,
+      "sha256": "6d6aa2ac970b87f13f0596662012721f24f451646b913584c638fd94dd171066"
+    },
+    {
+      "start": "0x1015837f4",
+      "endExclusive": "0x10158383c",
+      "fileOffset": 22558708,
+      "sha256": "b5410f99b402c3e1904eeb96add2cc560edb5203788fcac9534e51cf44abe21a"
+    },
+    {
+      "start": "0x101583f24",
+      "endExclusive": "0x101584ae8",
+      "fileOffset": 22560548,
+      "sha256": "2970048c905f3cac49b5107fffd16e75c7e4dfd44508461c2a15999447e5a186"
+    },
+    {
+      "start": "0x101584af0",
+      "endExclusive": "0x1015866f8",
+      "fileOffset": 22563568,
+      "sha256": "6096b5bbac43aaaf553aef922ae0e5ee9d7036fa0ef3411961d09dd10c8cba0d"
+    }
+  ],
+  "limits": [
+    "Synthetic generated-protobuf memory models; no original account or cache is opened",
+    "Standard allocator, libc++ string/vector/hash insertion and stringstream operations use inert observers",
+    "Initializer record construction and full native query/filter/lookup/optimization instructions execute",
+    "This does not claim a successful PlaylistDataService Get, backend request, metadata decoder or playback"
+  ]
+}

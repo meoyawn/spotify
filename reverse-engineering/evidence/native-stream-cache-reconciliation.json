@@ -1,0 +1,488 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "method": "Execute original index/disk reconciliation with synthetic entries, without IO.\n\nOriginal root-vector traversal, SHA-1 identity frames, map insertion/lookup and\npresence decisions execute unchanged. Standard primitives and explicit deletion/\nsize-update boundaries are substituted; no installed cache or profile is read.\n",
+  "reconciliationEntry": "0x10189fe70",
+  "orphanPathEntry": "0x1018a0434",
+  "mapInsert": "0x1018a7518",
+  "mapLookup": "0x1018a73c8",
+  "standardSha1SubstitutionIdentity": {
+    "path": "reverse-engineering/evidence/native-playplay-canary-identity.json",
+    "sha256": "313fdc373582680f9f3e50c783fa162cfe4c9574dc0a9d2f4670b235d9d6c0c4",
+    "originalWrapper": "0x101c89d60",
+    "originalFirst256BytesSha256": "608d48cafe439bad97d794f6d38806d94873156bb7050eeb2afeb3502c6a373f"
+  },
+  "codeRanges": [
+    {
+      "start": "0x10189fe70",
+      "endExclusive": "0x1018a0058",
+      "boundary": "original LC_FUNCTION_STARTS",
+      "sha256": "ecc1ccd25c3f12dd8d5643a4aecedcaccd1f7be7697e4009830b5b973ea80f78"
+    },
+    {
+      "start": "0x1018a0434",
+      "endExclusive": "0x1018a06c8",
+      "boundary": "original LC_FUNCTION_STARTS",
+      "sha256": "329209e099fcd2feaca9a8f98bb3ddf866069d3d7e1119d1189758eb30e81d37"
+    },
+    {
+      "start": "0x1018a7518",
+      "endExclusive": "0x1018a784c",
+      "boundary": "original LC_FUNCTION_STARTS",
+      "sha256": "72ae65ccb2f0bfb584d6943292dbf1f64eef3b77360a8b387d185230eae97f29"
+    },
+    {
+      "start": "0x1018a73c8",
+      "endExclusive": "0x1018a7518",
+      "boundary": "original LC_FUNCTION_STARTS",
+      "sha256": "cffd491aa8880a5e360cbe9ba8e79b966e4399fa3ec43e5d1344ce9c6b9cfd20"
+    }
+  ],
+  "retainedREAExports": [
+    {
+      "file": ".local/rea-session/stream-cache-file-retention-decision.json",
+      "sha256": "40349486dc92d3baafc090ef7e4483a24fda56c06dcd998ecccbc04031854947",
+      "evidenceId": "ev_c1a8c056547576b76ae06a624f7e1234cae9ce39764a5d09dc8160669019f7ed",
+      "procedures": [
+        "0x10189fe70"
+      ]
+    },
+    {
+      "file": ".local/rea-session/stream-cache-live-eviction-policy.json",
+      "sha256": "749b55ca30914e4b257148cde21f30699f8fc42770500ac1b635aae6bf8d0966",
+      "evidenceId": "ev_25c1d25973b1d2c63ed441dae4bf49c221a1c3cc8f4edd2c4041c9d5788eafe7",
+      "procedures": [
+        "0x1018a0e18",
+        "0x1018a0434"
+      ]
+    },
+    {
+      "file": ".local/rea-session/stream-cache-pruning-and-reschedule.json",
+      "sha256": "bee77f9b6cd4266e0a4eaa749b92e5f6d9ea1fef4f027f5ef984358a45cba1e3",
+      "evidenceId": "ev_96718675110b6419399cf5f9473030f6c032eb6e4ad9133733066694aa1c8dbc",
+      "procedures": [
+        "0x1018a06c8",
+        "0x10189e60c"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "name": "indexed primary file",
+      "input": {
+        "observedFlags": 1,
+        "retainedHandle": false,
+        "descriptorFlags": 0,
+        "recordedPresent": true,
+        "includeEntry": true,
+        "includeDisk": true
+      },
+      "original": {
+        "hashFrames": [
+          "000102030405060708090a0b0c0d0e0f10111213404142434445464748494a4b4c4d4e4f5051525300003412"
+        ],
+        "observedAfterReconciliation": [
+          {
+            "digestHex": "27a4ce2d79b1fc81a4ea18294b8ae3e185cf60cf",
+            "size": 456,
+            "flags": 0
+          }
+        ],
+        "missing": [],
+        "actions": [
+          {
+            "kind": "update-entry-size",
+            "entry": "supplied-entry",
+            "size": 456
+          }
+        ],
+        "deletionPaths": [],
+        "formatterArguments": [],
+        "descriptorFlags": 0,
+        "flag53": 1
+      }
+    },
+    {
+      "name": "unindexed primary file",
+      "input": {
+        "observedFlags": 1,
+        "retainedHandle": false,
+        "descriptorFlags": 0,
+        "recordedPresent": true,
+        "includeEntry": false,
+        "includeDisk": true
+      },
+      "original": {
+        "hashFrames": [],
+        "observedAfterReconciliation": [
+          {
+            "digestHex": "27a4ce2d79b1fc81a4ea18294b8ae3e185cf60cf",
+            "size": 456,
+            "flags": 1
+          }
+        ],
+        "missing": [],
+        "actions": [],
+        "deletionPaths": [
+          "/primary/27/27a4ce2d79b1fc81a4ea18294b8ae3e185cf60cf.file"
+        ],
+        "formatterArguments": [
+          {
+            "format": "%s%.2x/%s.file",
+            "root": "/primary/",
+            "shard": 39,
+            "identityHex": "27a4ce2d79b1fc81a4ea18294b8ae3e185cf60cf"
+          }
+        ],
+        "descriptorFlags": 0,
+        "flag53": 1
+      }
+    },
+    {
+      "name": "unindexed primary and volatile files",
+      "input": {
+        "observedFlags": 3,
+        "retainedHandle": false,
+        "descriptorFlags": 0,
+        "recordedPresent": true,
+        "includeEntry": false,
+        "includeDisk": true
+      },
+      "original": {
+        "hashFrames": [],
+        "observedAfterReconciliation": [
+          {
+            "digestHex": "27a4ce2d79b1fc81a4ea18294b8ae3e185cf60cf",
+            "size": 456,
+            "flags": 3
+          }
+        ],
+        "missing": [],
+        "actions": [],
+        "deletionPaths": [
+          "/primary/27/27a4ce2d79b1fc81a4ea18294b8ae3e185cf60cf.file",
+          "/volatile/27/27a4ce2d79b1fc81a4ea18294b8ae3e185cf60cf.file"
+        ],
+        "formatterArguments": [
+          {
+            "format": "%s%.2x/%s.file",
+            "root": "/primary/",
+            "shard": 39,
+            "identityHex": "27a4ce2d79b1fc81a4ea18294b8ae3e185cf60cf"
+          },
+          {
+            "format": "%s%.2x/%s.file",
+            "root": "/volatile/",
+            "shard": 39,
+            "identityHex": "27a4ce2d79b1fc81a4ea18294b8ae3e185cf60cf"
+          }
+        ],
+        "descriptorFlags": 0,
+        "flag53": 1
+      }
+    },
+    {
+      "name": "empty disk and index",
+      "input": {
+        "observedFlags": 1,
+        "retainedHandle": false,
+        "descriptorFlags": 0,
+        "recordedPresent": true,
+        "includeEntry": false,
+        "includeDisk": false
+      },
+      "original": {
+        "hashFrames": [],
+        "observedAfterReconciliation": [],
+        "missing": [],
+        "actions": [],
+        "deletionPaths": [],
+        "formatterArguments": [],
+        "descriptorFlags": 0,
+        "flag53": 1
+      }
+    },
+    {
+      "name": "indexed primary with duplicate volatile file",
+      "input": {
+        "observedFlags": 3,
+        "retainedHandle": false,
+        "descriptorFlags": 0,
+        "recordedPresent": true,
+        "includeEntry": true,
+        "includeDisk": true
+      },
+      "original": {
+        "hashFrames": [
+          "000102030405060708090a0b0c0d0e0f10111213404142434445464748494a4b4c4d4e4f5051525300003412"
+        ],
+        "observedAfterReconciliation": [
+          {
+            "digestHex": "27a4ce2d79b1fc81a4ea18294b8ae3e185cf60cf",
+            "size": 456,
+            "flags": 2
+          }
+        ],
+        "missing": [],
+        "actions": [
+          {
+            "kind": "update-entry-size",
+            "entry": "supplied-entry",
+            "size": 456
+          }
+        ],
+        "deletionPaths": [
+          "/volatile/27/27a4ce2d79b1fc81a4ea18294b8ae3e185cf60cf.file"
+        ],
+        "formatterArguments": [
+          {
+            "format": "%s%.2x/%s.file",
+            "root": "/volatile/",
+            "shard": 39,
+            "identityHex": "27a4ce2d79b1fc81a4ea18294b8ae3e185cf60cf"
+          }
+        ],
+        "descriptorFlags": 0,
+        "flag53": 1
+      }
+    },
+    {
+      "name": "indexed volatile with duplicate primary file",
+      "input": {
+        "observedFlags": 3,
+        "retainedHandle": false,
+        "descriptorFlags": 4,
+        "recordedPresent": true,
+        "includeEntry": true,
+        "includeDisk": true
+      },
+      "original": {
+        "hashFrames": [
+          "000102030405060708090a0b0c0d0e0f10111213404142434445464748494a4b4c4d4e4f5051525300003412"
+        ],
+        "observedAfterReconciliation": [
+          {
+            "digestHex": "27a4ce2d79b1fc81a4ea18294b8ae3e185cf60cf",
+            "size": 456,
+            "flags": 1
+          }
+        ],
+        "missing": [],
+        "actions": [],
+        "deletionPaths": [
+          "/primary/27/27a4ce2d79b1fc81a4ea18294b8ae3e185cf60cf.file"
+        ],
+        "formatterArguments": [
+          {
+            "format": "%s%.2x/%s.file",
+            "root": "/primary/",
+            "shard": 39,
+            "identityHex": "27a4ce2d79b1fc81a4ea18294b8ae3e185cf60cf"
+          }
+        ],
+        "descriptorFlags": 4,
+        "flag53": 1
+      }
+    },
+    {
+      "name": "indexed primary moved to volatile",
+      "input": {
+        "observedFlags": 2,
+        "retainedHandle": false,
+        "descriptorFlags": 0,
+        "recordedPresent": true,
+        "includeEntry": true,
+        "includeDisk": true
+      },
+      "original": {
+        "hashFrames": [
+          "000102030405060708090a0b0c0d0e0f10111213404142434445464748494a4b4c4d4e4f5051525300003412"
+        ],
+        "observedAfterReconciliation": [
+          {
+            "digestHex": "27a4ce2d79b1fc81a4ea18294b8ae3e185cf60cf",
+            "size": 456,
+            "flags": 0
+          }
+        ],
+        "missing": [],
+        "actions": [
+          {
+            "kind": "update-entry-size",
+            "entry": "supplied-entry",
+            "size": 456
+          }
+        ],
+        "deletionPaths": [],
+        "formatterArguments": [],
+        "descriptorFlags": 4,
+        "flag53": 1
+      }
+    },
+    {
+      "name": "indexed volatile moved to primary",
+      "input": {
+        "observedFlags": 1,
+        "retainedHandle": false,
+        "descriptorFlags": 4,
+        "recordedPresent": true,
+        "includeEntry": true,
+        "includeDisk": true
+      },
+      "original": {
+        "hashFrames": [
+          "000102030405060708090a0b0c0d0e0f10111213404142434445464748494a4b4c4d4e4f5051525300003412"
+        ],
+        "observedAfterReconciliation": [
+          {
+            "digestHex": "27a4ce2d79b1fc81a4ea18294b8ae3e185cf60cf",
+            "size": 456,
+            "flags": 0
+          }
+        ],
+        "missing": [],
+        "actions": [
+          {
+            "kind": "update-entry-size",
+            "entry": "supplied-entry",
+            "size": 456
+          }
+        ],
+        "deletionPaths": [],
+        "formatterArguments": [],
+        "descriptorFlags": 0,
+        "flag53": 1
+      }
+    },
+    {
+      "name": "not-recorded-present entry protects observed variants",
+      "input": {
+        "observedFlags": 3,
+        "retainedHandle": false,
+        "descriptorFlags": 0,
+        "recordedPresent": false,
+        "includeEntry": true,
+        "includeDisk": true
+      },
+      "original": {
+        "hashFrames": [
+          "000102030405060708090a0b0c0d0e0f10111213404142434445464748494a4b4c4d4e4f5051525300003412"
+        ],
+        "observedAfterReconciliation": [
+          {
+            "digestHex": "27a4ce2d79b1fc81a4ea18294b8ae3e185cf60cf",
+            "size": 456,
+            "flags": 0
+          }
+        ],
+        "missing": [],
+        "actions": [],
+        "deletionPaths": [],
+        "formatterArguments": [],
+        "descriptorFlags": 0,
+        "flag53": 1
+      }
+    },
+    {
+      "name": "missing unretained recorded entry",
+      "input": {
+        "observedFlags": 1,
+        "retainedHandle": false,
+        "descriptorFlags": 0,
+        "recordedPresent": true,
+        "includeEntry": true,
+        "includeDisk": false
+      },
+      "original": {
+        "hashFrames": [
+          "000102030405060708090a0b0c0d0e0f10111213404142434445464748494a4b4c4d4e4f5051525300003412"
+        ],
+        "observedAfterReconciliation": [],
+        "missing": [
+          {
+            "digestHex": "27a4ce2d79b1fc81a4ea18294b8ae3e185cf60cf",
+            "size": 123,
+            "flags": 0
+          }
+        ],
+        "actions": [
+          {
+            "kind": "remove-index-entry",
+            "entry": "supplied-entry"
+          }
+        ],
+        "deletionPaths": [],
+        "formatterArguments": [],
+        "descriptorFlags": 0,
+        "flag53": 0
+      }
+    },
+    {
+      "name": "missing retained recorded entry",
+      "input": {
+        "observedFlags": 1,
+        "retainedHandle": true,
+        "descriptorFlags": 0,
+        "recordedPresent": true,
+        "includeEntry": true,
+        "includeDisk": false
+      },
+      "original": {
+        "hashFrames": [
+          "000102030405060708090a0b0c0d0e0f10111213404142434445464748494a4b4c4d4e4f5051525300003412"
+        ],
+        "observedAfterReconciliation": [],
+        "missing": [
+          {
+            "digestHex": "27a4ce2d79b1fc81a4ea18294b8ae3e185cf60cf",
+            "size": 123,
+            "flags": 0
+          }
+        ],
+        "actions": [],
+        "deletionPaths": [],
+        "formatterArguments": [],
+        "descriptorFlags": 0,
+        "flag53": 1
+      }
+    },
+    {
+      "name": "missing not-recorded-present entry",
+      "input": {
+        "observedFlags": 1,
+        "retainedHandle": false,
+        "descriptorFlags": 0,
+        "recordedPresent": false,
+        "includeEntry": true,
+        "includeDisk": false
+      },
+      "original": {
+        "hashFrames": [
+          "000102030405060708090a0b0c0d0e0f10111213404142434445464748494a4b4c4d4e4f5051525300003412"
+        ],
+        "observedAfterReconciliation": [],
+        "missing": [
+          {
+            "digestHex": "27a4ce2d79b1fc81a4ea18294b8ae3e185cf60cf",
+            "size": 123,
+            "flags": 0
+          }
+        ],
+        "actions": [],
+        "deletionPaths": [],
+        "formatterArguments": [],
+        "descriptorFlags": 0,
+        "flag53": 1
+      }
+    }
+  ],
+  "substitutions": [
+    "Synthetic root/vector/entry/disk-observation inputs",
+    "Standard SHA-1, memory, allocation, libc++ next_prime, memcmp and formatting",
+    "Explicit synthetic primary/volatile root providers",
+    "Index-removal and size-update calls captured as inert side-effect boundaries"
+  ],
+  "limits": [
+    "No directory enumeration, original index persistence, actual deletion or IO is executed.",
+    "Does not yet establish full capacity/expiry pruning or live runtime size defaults."
+  ]
+}

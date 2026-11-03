@@ -1,0 +1,162 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "owner": "0x1003031ac",
+  "browserOpenBoundary": "0x100303ad4",
+  "querySerializer": "0x101f52f44",
+  "codeSha256": {
+    "0x1003031ac": "8c6b67ccedd5ee7019ab1672caad80411a942591a245a957388277a84ff89845",
+    "0x101f52f44": "676fd8b95cc6be31ae6994dac8cb9b8496b0ce28762d4d135d89176c62132b56"
+  },
+  "method": "Execute the original interactive Accounts consent-URL owner offline.\n\nWhole original owner0x1003031ac runs with a synthetic live weak owner,\nmode2, profile strings and successful id-token-provider result. It executes\nnative query-pair construction, branch selection and URI serialization.\nThe final original browser-open operation captures its URL instead of opening\nanything. Public allocation, memory/string/stream/C-locale primitives and an\nuncontended weak-lock provider are substituted; the diagnostic-state accessor\nreturns its explicit input. No URL, query, encoding or authentication decision\nis supplied by the oracle. No browser, profile, account or network is used.\n",
+  "limits": [
+    "Interactive mode2 and successful supplied id-token-provider result only.",
+    "Actual client/scope/PKCE/redirect and mode producers remain owning-context inputs.",
+    "Native browser-open operation is an observer boundary; no browser HTTP headers, redirect handling, account acceptance or remote transport is exercised."
+  ],
+  "cases": [
+    {
+      "clientId": "synthetic-client",
+      "scope": "user-read-email streaming",
+      "codeChallenge": "synthetic-PKCE_challenge",
+      "redirectUri": "spotify://callback",
+      "idTokenHint": "synthetic.id-token+/=",
+      "name": "ordinary consent",
+      "url": "https://accounts.spotify.com/oauth2/v2/auth?client_id=synthetic-client&response_type=code&scope=user-read-email%20streaming&code_challenge=synthetic-PKCE_challenge&code_challenge_method=S256&redirect_uri=spotify%3A%2F%2Fcallback&id_token_hint=synthetic.id-token%2B%2F%3D&nolinks=true&nosignout=true&prompt=consent"
+    },
+    {
+      "clientId": "",
+      "scope": "",
+      "codeChallenge": "",
+      "redirectUri": "",
+      "idTokenHint": "",
+      "name": "explicit empty fields",
+      "url": "https://accounts.spotify.com/oauth2/v2/auth?client_id=&response_type=code&scope=&code_challenge=&code_challenge_method=S256&redirect_uri=&id_token_hint=&nolinks=true&nosignout=true&prompt=consent"
+    },
+    {
+      "clientId": "synthetic-client",
+      "scope": "user-read-email streaming",
+      "codeChallenge": "synthetic-PKCE_challenge",
+      "redirectUri": "spotify://callback/path?raw=%2f%2F&x=%7E#fragment",
+      "idTokenHint": "synthetic.id-token+/=",
+      "name": "query and escape text in redirect",
+      "url": "https://accounts.spotify.com/oauth2/v2/auth?client_id=synthetic-client&response_type=code&scope=user-read-email%20streaming&code_challenge=synthetic-PKCE_challenge&code_challenge_method=S256&redirect_uri=spotify%3A%2F%2Fcallback%2Fpath%3Fraw%3D%252f%252F%26x%3D%257E%23fragment&id_token_hint=synthetic.id-token%2B%2F%3D&nolinks=true&nosignout=true&prompt=consent"
+    },
+    {
+      "clientId": "synthetic-client",
+      "scope": "user-read-email streaming",
+      "codeChallenge": "synthetic-PKCE_challenge",
+      "redirectUri": "spotify://callback",
+      "idTokenHint": "+/=%&?# !*'()~",
+      "name": "opaque token punctuation",
+      "url": "https://accounts.spotify.com/oauth2/v2/auth?client_id=synthetic-client&response_type=code&scope=user-read-email%20streaming&code_challenge=synthetic-PKCE_challenge&code_challenge_method=S256&redirect_uri=spotify%3A%2F%2Fcallback&id_token_hint=%2B%2F%3D%25%26%3F%23%20%21%2A%27%28%29~&nolinks=true&nosignout=true&prompt=consent"
+    },
+    {
+      "clientId": "synthetic-\u96ea",
+      "scope": "r\u00e9ad \u00e9coute",
+      "codeChallenge": "synthetic-PKCE_challenge",
+      "redirectUri": "spotify://callback",
+      "idTokenHint": "synthetic.id-token+/=",
+      "name": "UTF-8 text",
+      "url": "https://accounts.spotify.com/oauth2/v2/auth?client_id=synthetic-%E9%9B%AA&response_type=code&scope=r%C3%A9ad%20%C3%A9coute&code_challenge=synthetic-PKCE_challenge&code_challenge_method=S256&redirect_uri=spotify%3A%2F%2Fcallback&id_token_hint=synthetic.id-token%2B%2F%3D&nolinks=true&nosignout=true&prompt=consent"
+    },
+    {
+      "clientId": "synthetic-client",
+      "scope": "user-read-email streaming",
+      "codeChallenge": "synthetic-PKCE_challenge",
+      "redirectUri": "spotify://callback",
+      "idTokenHint": "synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.",
+      "name": "long values",
+      "url": "https://accounts.spotify.com/oauth2/v2/auth?client_id=synthetic-client&response_type=code&scope=user-read-email%20streaming&code_challenge=synthetic-PKCE_challenge&code_challenge_method=S256&redirect_uri=spotify%3A%2F%2Fcallback&id_token_hint=synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.synthetic-token.&nolinks=true&nosignout=true&prompt=consent"
+    },
+    {
+      "clientId": "before\u0000after\r\n\t value",
+      "scope": "user-read-email streaming",
+      "codeChallenge": "synthetic-PKCE_challenge",
+      "redirectUri": "spotify://callback",
+      "idTokenHint": "synthetic.id-token+/=",
+      "name": "clientId control and embedded NUL",
+      "url": "https://accounts.spotify.com/oauth2/v2/auth?client_id=before%00after%0D%0A%09%20value&response_type=code&scope=user-read-email%20streaming&code_challenge=synthetic-PKCE_challenge&code_challenge_method=S256&redirect_uri=spotify%3A%2F%2Fcallback&id_token_hint=synthetic.id-token%2B%2F%3D&nolinks=true&nosignout=true&prompt=consent"
+    },
+    {
+      "clientId": ":/?#[]@!$&'()*+,;=%~_-. ",
+      "scope": "user-read-email streaming",
+      "codeChallenge": "synthetic-PKCE_challenge",
+      "redirectUri": "spotify://callback",
+      "idTokenHint": "synthetic.id-token+/=",
+      "name": "clientId reserved characters",
+      "url": "https://accounts.spotify.com/oauth2/v2/auth?client_id=%3A%2F%3F%23%5B%5D%40%21%24%26%27%28%29%2A%2B%2C%3B%3D%25~_-.%20&response_type=code&scope=user-read-email%20streaming&code_challenge=synthetic-PKCE_challenge&code_challenge_method=S256&redirect_uri=spotify%3A%2F%2Fcallback&id_token_hint=synthetic.id-token%2B%2F%3D&nolinks=true&nosignout=true&prompt=consent"
+    },
+    {
+      "clientId": "synthetic-client",
+      "scope": "before\u0000after\r\n\t value",
+      "codeChallenge": "synthetic-PKCE_challenge",
+      "redirectUri": "spotify://callback",
+      "idTokenHint": "synthetic.id-token+/=",
+      "name": "scope control and embedded NUL",
+      "url": "https://accounts.spotify.com/oauth2/v2/auth?client_id=synthetic-client&response_type=code&scope=before%00after%0D%0A%09%20value&code_challenge=synthetic-PKCE_challenge&code_challenge_method=S256&redirect_uri=spotify%3A%2F%2Fcallback&id_token_hint=synthetic.id-token%2B%2F%3D&nolinks=true&nosignout=true&prompt=consent"
+    },
+    {
+      "clientId": "synthetic-client",
+      "scope": ":/?#[]@!$&'()*+,;=%~_-. ",
+      "codeChallenge": "synthetic-PKCE_challenge",
+      "redirectUri": "spotify://callback",
+      "idTokenHint": "synthetic.id-token+/=",
+      "name": "scope reserved characters",
+      "url": "https://accounts.spotify.com/oauth2/v2/auth?client_id=synthetic-client&response_type=code&scope=%3A%2F%3F%23%5B%5D%40%21%24%26%27%28%29%2A%2B%2C%3B%3D%25~_-.%20&code_challenge=synthetic-PKCE_challenge&code_challenge_method=S256&redirect_uri=spotify%3A%2F%2Fcallback&id_token_hint=synthetic.id-token%2B%2F%3D&nolinks=true&nosignout=true&prompt=consent"
+    },
+    {
+      "clientId": "synthetic-client",
+      "scope": "user-read-email streaming",
+      "codeChallenge": "before\u0000after\r\n\t value",
+      "redirectUri": "spotify://callback",
+      "idTokenHint": "synthetic.id-token+/=",
+      "name": "codeChallenge control and embedded NUL",
+      "url": "https://accounts.spotify.com/oauth2/v2/auth?client_id=synthetic-client&response_type=code&scope=user-read-email%20streaming&code_challenge=before%00after%0D%0A%09%20value&code_challenge_method=S256&redirect_uri=spotify%3A%2F%2Fcallback&id_token_hint=synthetic.id-token%2B%2F%3D&nolinks=true&nosignout=true&prompt=consent"
+    },
+    {
+      "clientId": "synthetic-client",
+      "scope": "user-read-email streaming",
+      "codeChallenge": ":/?#[]@!$&'()*+,;=%~_-. ",
+      "redirectUri": "spotify://callback",
+      "idTokenHint": "synthetic.id-token+/=",
+      "name": "codeChallenge reserved characters",
+      "url": "https://accounts.spotify.com/oauth2/v2/auth?client_id=synthetic-client&response_type=code&scope=user-read-email%20streaming&code_challenge=%3A%2F%3F%23%5B%5D%40%21%24%26%27%28%29%2A%2B%2C%3B%3D%25~_-.%20&code_challenge_method=S256&redirect_uri=spotify%3A%2F%2Fcallback&id_token_hint=synthetic.id-token%2B%2F%3D&nolinks=true&nosignout=true&prompt=consent"
+    },
+    {
+      "clientId": "synthetic-client",
+      "scope": "user-read-email streaming",
+      "codeChallenge": "synthetic-PKCE_challenge",
+      "redirectUri": "before\u0000after\r\n\t value",
+      "idTokenHint": "synthetic.id-token+/=",
+      "name": "redirectUri control and embedded NUL",
+      "url": "https://accounts.spotify.com/oauth2/v2/auth?client_id=synthetic-client&response_type=code&scope=user-read-email%20streaming&code_challenge=synthetic-PKCE_challenge&code_challenge_method=S256&redirect_uri=before%00after%0D%0A%09%20value&id_token_hint=synthetic.id-token%2B%2F%3D&nolinks=true&nosignout=true&prompt=consent"
+    },
+    {
+      "clientId": "synthetic-client",
+      "scope": "user-read-email streaming",
+      "codeChallenge": "synthetic-PKCE_challenge",
+      "redirectUri": ":/?#[]@!$&'()*+,;=%~_-. ",
+      "idTokenHint": "synthetic.id-token+/=",
+      "name": "redirectUri reserved characters",
+      "url": "https://accounts.spotify.com/oauth2/v2/auth?client_id=synthetic-client&response_type=code&scope=user-read-email%20streaming&code_challenge=synthetic-PKCE_challenge&code_challenge_method=S256&redirect_uri=%3A%2F%3F%23%5B%5D%40%21%24%26%27%28%29%2A%2B%2C%3B%3D%25~_-.%20&id_token_hint=synthetic.id-token%2B%2F%3D&nolinks=true&nosignout=true&prompt=consent"
+    },
+    {
+      "clientId": "synthetic-client",
+      "scope": "user-read-email streaming",
+      "codeChallenge": "synthetic-PKCE_challenge",
+      "redirectUri": "spotify://callback",
+      "idTokenHint": "before\u0000after\r\n\t value",
+      "name": "idTokenHint control and embedded NUL",
+      "url": "https://accounts.spotify.com/oauth2/v2/auth?client_id=synthetic-client&response_type=code&scope=user-read-email%20streaming&code_challenge=synthetic-PKCE_challenge&code_challenge_method=S256&redirect_uri=spotify%3A%2F%2Fcallback&id_token_hint=before%00after%0D%0A%09%20value&nolinks=true&nosignout=true&prompt=consent"
+    },
+    {
+      "clientId": "synthetic-client",
+      "scope": "user-read-email streaming",
+      "codeChallenge": "synthetic-PKCE_challenge",
+      "redirectUri": "spotify://callback",
+      "idTokenHint": ":/?#[]@!$&'()*+,;=%~_-. ",
+      "name": "idTokenHint reserved characters",
+      "url": "https://accounts.spotify.com/oauth2/v2/auth?client_id=synthetic-client&response_type=code&scope=user-read-email%20streaming&code_challenge=synthetic-PKCE_challenge&code_challenge_method=S256&redirect_uri=spotify%3A%2F%2Fcallback&id_token_hint=%3A%2F%3F%23%5B%5D%40%21%24%26%27%28%29%2A%2B%2C%3B%3D%25~_-.%20&nolinks=true&nosignout=true&prompt=consent"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "repository": "https://github.com/ngtcp2/nghttp3.git",
+  "release": "v1.18.0",
+  "releaseURL": "https://github.com/ngtcp2/nghttp3/releases/tag/v1.18.0",
+  "publishedAt": "2026-07-26T07:32:15Z",
+  "commit": "dbfc24286138cb0b6490160e7ca87fe1ce6722a0",
+  "sourceArchiveSha256": "5e0c2de58014f949291cf70cba926c6435658652d681eee085226274b26e5062",
+  "headerPath": "lib/includes/nghttp3/nghttp3.h",
+  "headerSha256": "4cf23df44bb91cda59eb72bd7e13a24eb9388cab8acc0b8e74cd85f2a2a5c72a",
+  "licensePath": "COPYING",
+  "licenseSha256": "58cc3fc8c6d6cb2485ab35eb5918e849b5bf1e56522974e106d7a39a88d61dcd",
+  "submodules": [
+    {
+      "path": "lib/sfparse",
+      "repository": "https://github.com/ngtcp2/sfparse",
+      "commit": "4b313cfd2e1b389ae632b36dcd50402307289af2",
+      "sourceArchiveSha256": "453f60ce638384871bc1bc6a73e899a39df30dd478a872c822cf290bd2b9875d",
+      "licensePath": "COPYING",
+      "licenseSha256": "cd6d5feeacf9406fe915d3c23b85a6bf86deecfa1661396b63d2d2188b90beda"
+    }
+  ],
+  "abi": "macos_arm64",
+  "deploymentTarget": "11.0",
+  "patches": [
+    {
+      "path": "native/nghttp3/additional-settings.patch",
+      "sha256": "04d3c7ec67e796e940d74c77f3a075529e718ce2d16474546cfda155cf2257c8",
+      "files": [
+        {
+          "path": "lib/nghttp3_conn.h",
+          "originalSha256": "9834a7ea77cfe4f2df51ce88c06c23ab71717bf96b5e75277afc7b608367732b",
+          "patchedSha256": "09d385a28abbda867fbe3f012b6cd3e6ba756895521b2b2c50fad9c325e7b72d"
+        },
+        {
+          "path": "lib/nghttp3_conn.c",
+          "originalSha256": "332de5870a6bc8862a261b45add6ccf756c95597114ab78711251014006b01a1",
+          "patchedSha256": "c6836b296e60aebc41b9f0c4bc797ae0ce6e4e263de20c4c664c531a6f9b6c3b"
+        },
+        {
+          "path": "lib/nghttp3_stream.c",
+          "originalSha256": "eb53a6ef1414a1e22b052e0e09c7f5132a3b0a180b7f9fbceb0e52a4601277f7",
+          "patchedSha256": "b25f793f701e5953986b164e22b642af7cbc5257e55734f74275a6648f55be1f"
+        }
+      ]
+    }
+  ],
+  "additionalHeaders": [
+    {
+      "path": "native/nghttp3/additional_settings.h",
+      "sha256": "f89e3f7a488cf4157160f304c56724ec2e99f8657419e5afee5f3a83277eb76d"
+    }
+  ]
+}

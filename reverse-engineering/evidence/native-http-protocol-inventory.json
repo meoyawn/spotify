@@ -1,0 +1,3751 @@
+{
+  "scope": "Count pinned original NetLog sends without exporting URLs or credentials.\n\nCounts are observed outgoing transaction-header emissions, not policy, cache hits,\nsuccessful responses or unique logical requests. Diagnostic --disable-quic runs\nare separated from captures without that flag.\n",
+  "toolSha256": "4994330422f5cd2cfb46fb98a99e30321f18dc0bbd88c1629036eac7abbb952c",
+  "protocolAuthority": {
+    "HTTP_TRANSACTION_HTTP2_SEND_REQUEST_HEADERS": "h2",
+    "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS": "h3",
+    "HTTP_TRANSACTION_SEND_REQUEST_HEADERS": "h1"
+  },
+  "captureProvenance": "Five existing pinned original Spotify NetLogs. The upload-http2 capture is independently documented as a deliberate --disable-quic run; raw command-line flags are reduced to booleans here.",
+  "captures": [
+    {
+      "path": ".local/original-reference-streaming-netlog.json",
+      "sha256": "644660b4da3948c6f0e0e21479b34de444f295ba3e94684257e2c53dc9587489",
+      "eventCount": 82703,
+      "safeLaunchFlags": {
+        "commandLinePresent": true,
+        "disableQuic": false,
+        "enableQuic": false,
+        "disableHttp2": false,
+        "forceQuicOrigin": false,
+        "quicVersionOverride": false,
+        "hasUserDataDirOption": false,
+        "hasLogNetLogOption": true,
+        "hasNetLogCaptureModeOption": true
+      },
+      "selectionEvidenceGroup": "no-explicit-quic-force-or-disable-flag",
+      "publicOriginCounts": [
+        {
+          "origin": "https://accounts.spotify.com",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://api-partner.spotify.com",
+          "h2": 0,
+          "h3": 16,
+          "h1": 0
+        },
+        {
+          "origin": "https://audio4-fa.scdn.co",
+          "h2": 0,
+          "h3": 0,
+          "h1": 3
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "h2": 142,
+          "h3": 231,
+          "h1": 0
+        },
+        {
+          "origin": "https://image-cdn-ak.spotifycdn.com",
+          "h2": 2,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://image-cdn-fa.spotifycdn.com",
+          "h2": 2,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "h2": 6,
+          "h3": 50,
+          "h1": 0
+        }
+      ],
+      "requestedFamilyCounts": [
+        {
+          "family": "accounts-oauth",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "client-token",
+          "h2": 0,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "login5",
+          "h2": 0,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "renderer-pathfinder",
+          "h2": 0,
+          "h3": 16,
+          "h1": 0
+        },
+        {
+          "family": "extended-metadata",
+          "h2": 66,
+          "h3": 119,
+          "h1": 0
+        },
+        {
+          "family": "playlist",
+          "h2": 8,
+          "h3": 45,
+          "h1": 0
+        },
+        {
+          "family": "rootlist",
+          "h2": 2,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "collection",
+          "h2": 22,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "family": "connect",
+          "h2": 2,
+          "h3": 8,
+          "h1": 0
+        },
+        {
+          "family": "image-map",
+          "h2": 0,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "public-images",
+          "h2": 4,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "audio-cdn",
+          "h2": 0,
+          "h3": 0,
+          "h1": 3
+        },
+        {
+          "family": "music-key",
+          "h2": 0,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "family": "storage-resolve",
+          "h2": 0,
+          "h3": 1,
+          "h1": 0
+        }
+      ],
+      "originRouteCounts": [
+        {
+          "origin": "https://accounts.spotify.com",
+          "family": "accounts-oauth",
+          "route": "/api/token",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://api-partner.spotify.com",
+          "family": "renderer-pathfinder",
+          "route": "/pathfinder/v2/query",
+          "h2": 0,
+          "h3": 16,
+          "h1": 0
+        },
+        {
+          "origin": "https://audio4-fa.scdn.co",
+          "family": "audio-cdn",
+          "route": "/audio/<file-id>",
+          "h2": 0,
+          "h3": 0,
+          "h1": 3
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "collection",
+          "route": "/collection/v2/*",
+          "h2": 22,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "connect",
+          "route": "/connect-state/v1/*",
+          "h2": 2,
+          "h3": 8,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "extended-metadata",
+          "route": "/extended-metadata/v0/*",
+          "h2": 66,
+          "h3": 119,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "music-key",
+          "route": "/playplay/v1/key/<file-id>",
+          "h2": 0,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/ads/v2/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/ads/v3/*",
+          "h2": 0,
+          "h3": 4,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/device-capabilities/v1/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/gabo-receiver-service/v3/*",
+          "h2": 0,
+          "h3": 13,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/manifests/v9/*",
+          "h2": 0,
+          "h3": 3,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/melody/v1/*",
+          "h2": 0,
+          "h3": 3,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/net-fortune/v2/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/offline/v1/*",
+          "h2": 0,
+          "h3": 1,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/playlist-permission/v1/*",
+          "h2": 24,
+          "h3": 10,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/playlist-publish/v1/*",
+          "h2": 1,
+          "h3": 1,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/popcount/v2/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/recently-played/v3/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/remote-config-resolver/v3/*",
+          "h2": 0,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/social-connect/v2/*",
+          "h2": 2,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "playlist",
+          "route": "/playlist/v2/*",
+          "h2": 8,
+          "h3": 45,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "rootlist",
+          "route": "/playlist/v2/user/<user>/rootlist",
+          "h2": 2,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "storage-resolve",
+          "route": "/storage-resolve/v2/files/audio/*",
+          "h2": 0,
+          "h3": 1,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "unclassified-spclient",
+          "route": "<unclassified-spclient-route>",
+          "h2": 10,
+          "h3": 15,
+          "h1": 0
+        },
+        {
+          "origin": "https://image-cdn-ak.spotifycdn.com",
+          "family": "public-images",
+          "route": "/image/<image-id>",
+          "h2": 2,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://image-cdn-fa.spotifycdn.com",
+          "family": "public-images",
+          "route": "/image/<image-id>",
+          "h2": 2,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/ads/v2/*",
+          "h2": 0,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/color-lyrics/v2/*",
+          "h2": 0,
+          "h3": 4,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/desktop-update/v2/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/gabo-receiver-service/v3/*",
+          "h2": 4,
+          "h3": 3,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/gander/v2/*",
+          "h2": 0,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/library-import/v1/*",
+          "h2": 0,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/metadata/4/*",
+          "h2": 0,
+          "h3": 3,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/sponsoredplaylist/v1/*",
+          "h2": 0,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/timesynced-text-distribution/v0/*",
+          "h2": 0,
+          "h3": 26,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/user-customization-service/v1/*",
+          "h2": 0,
+          "h3": 1,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/widevine-license/v1/*",
+          "h2": 0,
+          "h3": 4,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "unclassified-spclient",
+          "route": "<unclassified-spclient-route>",
+          "h2": 1,
+          "h3": 1,
+          "h1": 0
+        }
+      ],
+      "musicStorageQuicSessions": [
+        {
+          "quicSessionId": 3292,
+          "anchorRequests": [
+            {
+              "sourceId": 3404,
+              "eventIndex": 70952,
+              "bindingEventIndex": 70944,
+              "family": "music-key",
+              "quicStreamId": 32
+            },
+            {
+              "sourceId": 3422,
+              "eventIndex": 71094,
+              "bindingEventIndex": 71089,
+              "family": "storage-resolve",
+              "quicStreamId": 36
+            },
+            {
+              "sourceId": 3715,
+              "eventIndex": 78779,
+              "bindingEventIndex": 78772,
+              "family": "music-key",
+              "quicStreamId": 160
+            }
+          ],
+          "h3RouteFamiliesOnSameSession": [
+            {
+              "origin": "https://guc3-spclient.spotify.com",
+              "family": "connect",
+              "route": "/connect-state/v1/*",
+              "h3Sends": 6
+            },
+            {
+              "origin": "https://guc3-spclient.spotify.com",
+              "family": "extended-metadata",
+              "route": "/extended-metadata/v0/*",
+              "h3Sends": 26
+            },
+            {
+              "origin": "https://guc3-spclient.spotify.com",
+              "family": "music-key",
+              "route": "/playplay/v1/key/<file-id>",
+              "h3Sends": 2
+            },
+            {
+              "origin": "https://guc3-spclient.spotify.com",
+              "family": "other-spclient",
+              "route": "/ads/v3/*",
+              "h3Sends": 3
+            },
+            {
+              "origin": "https://guc3-spclient.spotify.com",
+              "family": "other-spclient",
+              "route": "/playlist-publish/v1/*",
+              "h3Sends": 1
+            },
+            {
+              "origin": "https://guc3-spclient.spotify.com",
+              "family": "playlist",
+              "route": "/playlist/v2/*",
+              "h3Sends": 2
+            },
+            {
+              "origin": "https://guc3-spclient.spotify.com",
+              "family": "storage-resolve",
+              "route": "/storage-resolve/v2/files/audio/*",
+              "h3Sends": 1
+            },
+            {
+              "origin": "https://guc3-spclient.spotify.com",
+              "family": "unclassified-spclient",
+              "route": "<unclassified-spclient-route>",
+              "h3Sends": 6
+            }
+          ],
+          "exactSessionSourceBinding": true
+        }
+      ],
+      "altSvcChronology": {
+        "publicOrigins": [
+          {
+            "origin": "https://accounts.spotify.com",
+            "firstObservedFinalResponseH3Advertisement": null,
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://api-partner.spotify.com",
+            "firstObservedFinalResponseH3Advertisement": {
+              "responseEventIndex": 29259,
+              "requestSourceId": 1482,
+              "requestProtocol": "h3",
+              "safeValue": "h3=\":443\"; ma=2592000",
+              "afterCaptureStartMs": 4295
+            },
+            "firstH3Request": {
+              "sourceId": 1482,
+              "eventIndex": 27642,
+              "family": "renderer-pathfinder",
+              "afterCaptureStartMs": 4122,
+              "afterFirstObservedAdvertisementMs": -173
+            },
+            "altSvcFoundBeforeFirstH3Count": 2,
+            "firstH3RequestControllerSourceIds": [
+              1553
+            ],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [
+              {
+                "eventIndex": 27615,
+                "controllerSourceId": 1553,
+                "beforeFirstH3Ms": 0,
+                "isBroken": false
+              }
+            ],
+            "firstAltSvcFoundBeforeH3": {
+              "eventIndex": 27615,
+              "controllerSourceId": 1553,
+              "afterCaptureStartMs": 4122,
+              "beforeFirstH3Ms": 0,
+              "isBroken": false
+            },
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://audio4-fa.scdn.co",
+            "firstObservedFinalResponseH3Advertisement": null,
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://guc3-spclient.spotify.com",
+            "firstObservedFinalResponseH3Advertisement": {
+              "responseEventIndex": 12926,
+              "requestSourceId": 666,
+              "requestProtocol": "h2",
+              "safeValue": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+              "afterCaptureStartMs": 3476
+            },
+            "firstH3Request": {
+              "sourceId": 1912,
+              "eventIndex": 35622,
+              "family": "extended-metadata",
+              "afterCaptureStartMs": 4523,
+              "afterFirstObservedAdvertisementMs": 1047
+            },
+            "altSvcFoundBeforeFirstH3Count": 223,
+            "firstH3RequestControllerSourceIds": [
+              1913
+            ],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [
+              {
+                "eventIndex": 35593,
+                "controllerSourceId": 1913,
+                "beforeFirstH3Ms": 1,
+                "isBroken": false
+              }
+            ],
+            "firstAltSvcFoundBeforeH3": {
+              "eventIndex": 16606,
+              "controllerSourceId": 950,
+              "afterCaptureStartMs": 3805,
+              "beforeFirstH3Ms": 718,
+              "isBroken": false
+            },
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://image-cdn-ak.spotifycdn.com",
+            "firstObservedFinalResponseH3Advertisement": null,
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://image-cdn-fa.spotifycdn.com",
+            "firstObservedFinalResponseH3Advertisement": null,
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://spclient.wg.spotify.com",
+            "firstObservedFinalResponseH3Advertisement": {
+              "responseEventIndex": 7185,
+              "requestSourceId": 511,
+              "requestProtocol": "h2",
+              "safeValue": "h3=\":443\"; ma=2592000",
+              "afterCaptureStartMs": 2423
+            },
+            "firstH3Request": {
+              "sourceId": 821,
+              "eventIndex": 10144,
+              "family": "other-spclient",
+              "afterCaptureStartMs": 3184,
+              "afterFirstObservedAdvertisementMs": 761
+            },
+            "altSvcFoundBeforeFirstH3Count": 7,
+            "firstH3RequestControllerSourceIds": [
+              822
+            ],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [
+              {
+                "eventIndex": 10117,
+                "controllerSourceId": 822,
+                "beforeFirstH3Ms": 0,
+                "isBroken": false
+              }
+            ],
+            "firstAltSvcFoundBeforeH3": {
+              "eventIndex": 7470,
+              "controllerSourceId": 604,
+              "afterCaptureStartMs": 2652,
+              "beforeFirstH3Ms": 532,
+              "isBroken": false
+            },
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          }
+        ],
+        "globalDnsAlpnEventCounts": {},
+        "binding": "ALT_SVC_FOUND events are attributed through URL request source -> HTTP_STREAM_JOB_CONTROLLER_BOUND source_dependency. No arbitrary graph or hostname coalescing inference.",
+        "limits": "First observed advertisement is a final logged response, not proof of first learning. Cached/persisted alternatives may predate capture. DNS_ALPN absence is log coverage, not proof that DNS never influences protocol selection."
+      },
+      "selectedH3SendsWithoutExplicitSessionBinding": 0,
+      "selectedHeaderSends": 453
+    },
+    {
+      "path": ".local/original-license-upload-http2-netlog.json",
+      "sha256": "7ad17ebaf96eda74ecd2c0cd822370287f4aed26310a49faa930cdda92fd64fa",
+      "eventCount": 67442,
+      "safeLaunchFlags": {
+        "commandLinePresent": true,
+        "disableQuic": true,
+        "enableQuic": false,
+        "disableHttp2": false,
+        "forceQuicOrigin": false,
+        "quicVersionOverride": false,
+        "hasUserDataDirOption": false,
+        "hasLogNetLogOption": true,
+        "hasNetLogCaptureModeOption": true
+      },
+      "selectionEvidenceGroup": "diagnostic-disable-quic",
+      "publicOriginCounts": [
+        {
+          "origin": "https://accounts.spotify.com",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://api-partner.spotify.com",
+          "h2": 18,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://audio4-fa.scdn.co",
+          "h2": 0,
+          "h3": 0,
+          "h1": 2
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "h2": 294,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://i.scdn.co",
+          "h2": 39,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://image-cdn-fa.spotifycdn.com",
+          "h2": 2,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://mosaic.scdn.co",
+          "h2": 0,
+          "h3": 0,
+          "h1": 2
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "h2": 57,
+          "h3": 0,
+          "h1": 0
+        }
+      ],
+      "requestedFamilyCounts": [
+        {
+          "family": "accounts-oauth",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "client-token",
+          "h2": 0,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "login5",
+          "h2": 0,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "renderer-pathfinder",
+          "h2": 18,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "extended-metadata",
+          "h2": 113,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "playlist",
+          "h2": 52,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "rootlist",
+          "h2": 2,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "collection",
+          "h2": 24,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "connect",
+          "h2": 9,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "image-map",
+          "h2": 0,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "public-images",
+          "h2": 41,
+          "h3": 0,
+          "h1": 2
+        },
+        {
+          "family": "audio-cdn",
+          "h2": 0,
+          "h3": 0,
+          "h1": 2
+        },
+        {
+          "family": "music-key",
+          "h2": 2,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "storage-resolve",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        }
+      ],
+      "originRouteCounts": [
+        {
+          "origin": "https://accounts.spotify.com",
+          "family": "accounts-oauth",
+          "route": "/api/token",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://api-partner.spotify.com",
+          "family": "renderer-pathfinder",
+          "route": "/pathfinder/v2/query",
+          "h2": 18,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://audio4-fa.scdn.co",
+          "family": "audio-cdn",
+          "route": "/audio/<file-id>",
+          "h2": 0,
+          "h3": 0,
+          "h1": 2
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "collection",
+          "route": "/collection/v2/*",
+          "h2": 24,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "connect",
+          "route": "/connect-state/v1/*",
+          "h2": 9,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "extended-metadata",
+          "route": "/extended-metadata/v0/*",
+          "h2": 113,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "music-key",
+          "route": "/playplay/v1/key/<file-id>",
+          "h2": 2,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/ads/v2/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/ads/v3/*",
+          "h2": 3,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/device-capabilities/v1/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/gabo-receiver-service/v3/*",
+          "h2": 16,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/manifests/v9/*",
+          "h2": 3,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/melody/v1/*",
+          "h2": 3,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/net-fortune/v2/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/offline/v1/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/playlist-permission/v1/*",
+          "h2": 34,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/playlist-publish/v1/*",
+          "h2": 2,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/popcount/v2/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/recently-played/v3/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/remote-config-resolver/v3/*",
+          "h2": 2,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/social-connect/v2/*",
+          "h2": 4,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "playlist",
+          "route": "/playlist/v2/*",
+          "h2": 52,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "rootlist",
+          "route": "/playlist/v2/user/<user>/rootlist",
+          "h2": 2,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "storage-resolve",
+          "route": "/storage-resolve/v2/files/audio/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "unclassified-spclient",
+          "route": "<unclassified-spclient-route>",
+          "h2": 18,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://i.scdn.co",
+          "family": "public-images",
+          "route": "/image/<image-id>",
+          "h2": 39,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://image-cdn-fa.spotifycdn.com",
+          "family": "public-images",
+          "route": "/image/<image-id>",
+          "h2": 2,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://mosaic.scdn.co",
+          "family": "public-images",
+          "route": "/<size>/<mosaic-image-ids>",
+          "h2": 0,
+          "h3": 0,
+          "h1": 2
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/ads/v2/*",
+          "h2": 2,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/color-lyrics/v2/*",
+          "h2": 2,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/desktop-update/v2/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/gabo-receiver-service/v3/*",
+          "h2": 7,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/gander/v2/*",
+          "h2": 2,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/library-import/v1/*",
+          "h2": 2,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/metadata/4/*",
+          "h2": 3,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/sponsoredplaylist/v1/*",
+          "h2": 2,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/timesynced-text-distribution/v0/*",
+          "h2": 26,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/user-customization-service/v1/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/widevine-license/v1/*",
+          "h2": 7,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "unclassified-spclient",
+          "route": "<unclassified-spclient-route>",
+          "h2": 2,
+          "h3": 0,
+          "h1": 0
+        }
+      ],
+      "musicStorageQuicSessions": [],
+      "altSvcChronology": {
+        "publicOrigins": [
+          {
+            "origin": "https://accounts.spotify.com",
+            "firstObservedFinalResponseH3Advertisement": null,
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://api-partner.spotify.com",
+            "firstObservedFinalResponseH3Advertisement": {
+              "responseEventIndex": 29478,
+              "requestSourceId": 1329,
+              "requestProtocol": "h2",
+              "safeValue": "h3=\":443\"; ma=2592000",
+              "afterCaptureStartMs": 3847
+            },
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://audio4-fa.scdn.co",
+            "firstObservedFinalResponseH3Advertisement": null,
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://guc3-spclient.spotify.com",
+            "firstObservedFinalResponseH3Advertisement": {
+              "responseEventIndex": 10730,
+              "requestSourceId": 546,
+              "requestProtocol": "h2",
+              "safeValue": "h3=\":443\"; ma=2592000",
+              "afterCaptureStartMs": 3083
+            },
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://i.scdn.co",
+            "firstObservedFinalResponseH3Advertisement": null,
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://image-cdn-fa.spotifycdn.com",
+            "firstObservedFinalResponseH3Advertisement": null,
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://mosaic.scdn.co",
+            "firstObservedFinalResponseH3Advertisement": null,
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://spclient.wg.spotify.com",
+            "firstObservedFinalResponseH3Advertisement": {
+              "responseEventIndex": 5882,
+              "requestSourceId": 465,
+              "requestProtocol": "h2",
+              "safeValue": "h3=\":443\"; ma=2592000",
+              "afterCaptureStartMs": 2192
+            },
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          }
+        ],
+        "globalDnsAlpnEventCounts": {},
+        "binding": "ALT_SVC_FOUND events are attributed through URL request source -> HTTP_STREAM_JOB_CONTROLLER_BOUND source_dependency. No arbitrary graph or hostname coalescing inference.",
+        "limits": "First observed advertisement is a final logged response, not proof of first learning. Cached/persisted alternatives may predate capture. DNS_ALPN absence is log coverage, not proof that DNS never influences protocol selection."
+      },
+      "selectedH3SendsWithoutExplicitSessionBinding": 0,
+      "selectedHeaderSends": 415
+    },
+    {
+      "path": ".local/original-license-rejection-reference-netlog.json",
+      "sha256": "6d8e8c9f4d71bd0e39ecff3282e86438540cf22987a33b2340d79658d4ec6d50",
+      "eventCount": 96525,
+      "safeLaunchFlags": {
+        "commandLinePresent": true,
+        "disableQuic": false,
+        "enableQuic": false,
+        "disableHttp2": false,
+        "forceQuicOrigin": false,
+        "quicVersionOverride": false,
+        "hasUserDataDirOption": false,
+        "hasLogNetLogOption": true,
+        "hasNetLogCaptureModeOption": true
+      },
+      "selectionEvidenceGroup": "no-explicit-quic-force-or-disable-flag",
+      "publicOriginCounts": [
+        {
+          "origin": "https://accounts.spotify.com",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://api-partner.spotify.com",
+          "h2": 2,
+          "h3": 23,
+          "h1": 0
+        },
+        {
+          "origin": "https://audio4-fa.scdn.co",
+          "h2": 0,
+          "h3": 0,
+          "h1": 1
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "h2": 51,
+          "h3": 317,
+          "h1": 0
+        },
+        {
+          "origin": "https://i.scdn.co",
+          "h2": 59,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://image-cdn-fa.spotifycdn.com",
+          "h2": 3,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://mosaic.scdn.co",
+          "h2": 0,
+          "h3": 0,
+          "h1": 2
+        },
+        {
+          "origin": "https://pickasso.spotifycdn.com",
+          "h2": 3,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://seed-mix-image.spotifycdn.com",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "h2": 6,
+          "h3": 62,
+          "h1": 0
+        }
+      ],
+      "requestedFamilyCounts": [
+        {
+          "family": "accounts-oauth",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "client-token",
+          "h2": 0,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "login5",
+          "h2": 0,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "renderer-pathfinder",
+          "h2": 2,
+          "h3": 23,
+          "h1": 0
+        },
+        {
+          "family": "extended-metadata",
+          "h2": 10,
+          "h3": 191,
+          "h1": 0
+        },
+        {
+          "family": "playlist",
+          "h2": 4,
+          "h3": 43,
+          "h1": 0
+        },
+        {
+          "family": "rootlist",
+          "h2": 2,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "collection",
+          "h2": 16,
+          "h3": 3,
+          "h1": 0
+        },
+        {
+          "family": "connect",
+          "h2": 2,
+          "h3": 7,
+          "h1": 0
+        },
+        {
+          "family": "image-map",
+          "h2": 0,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "public-images",
+          "h2": 66,
+          "h3": 0,
+          "h1": 2
+        },
+        {
+          "family": "audio-cdn",
+          "h2": 0,
+          "h3": 0,
+          "h1": 1
+        },
+        {
+          "family": "music-key",
+          "h2": 0,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "family": "storage-resolve",
+          "h2": 0,
+          "h3": 1,
+          "h1": 0
+        }
+      ],
+      "originRouteCounts": [
+        {
+          "origin": "https://accounts.spotify.com",
+          "family": "accounts-oauth",
+          "route": "/api/token",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://api-partner.spotify.com",
+          "family": "renderer-pathfinder",
+          "route": "/pathfinder/v2/query",
+          "h2": 2,
+          "h3": 23,
+          "h1": 0
+        },
+        {
+          "origin": "https://audio4-fa.scdn.co",
+          "family": "audio-cdn",
+          "route": "/audio/<file-id>",
+          "h2": 0,
+          "h3": 0,
+          "h1": 1
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "collection",
+          "route": "/collection/v2/*",
+          "h2": 16,
+          "h3": 3,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "connect",
+          "route": "/connect-state/v1/*",
+          "h2": 2,
+          "h3": 7,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "extended-metadata",
+          "route": "/extended-metadata/v0/*",
+          "h2": 10,
+          "h3": 191,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "music-key",
+          "route": "/playplay/v1/key/<file-id>",
+          "h2": 0,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/ads/v2/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/ads/v3/*",
+          "h2": 0,
+          "h3": 4,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/device-capabilities/v1/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/gabo-receiver-service/v3/*",
+          "h2": 0,
+          "h3": 17,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/net-fortune/v2/*",
+          "h2": 1,
+          "h3": 1,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/offline/v1/*",
+          "h2": 0,
+          "h3": 1,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/playlist-permission/v1/*",
+          "h2": 0,
+          "h3": 31,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/playlist-publish/v1/*",
+          "h2": 1,
+          "h3": 1,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/popcount/v2/*",
+          "h2": 0,
+          "h3": 1,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/recently-played/v3/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/remote-config-resolver/v3/*",
+          "h2": 0,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/social-connect/v2/*",
+          "h2": 2,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "playlist",
+          "route": "/playlist/v2/*",
+          "h2": 4,
+          "h3": 43,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "rootlist",
+          "route": "/playlist/v2/user/<user>/rootlist",
+          "h2": 2,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "storage-resolve",
+          "route": "/storage-resolve/v2/files/audio/*",
+          "h2": 0,
+          "h3": 1,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "unclassified-spclient",
+          "route": "<unclassified-spclient-route>",
+          "h2": 10,
+          "h3": 10,
+          "h1": 0
+        },
+        {
+          "origin": "https://i.scdn.co",
+          "family": "public-images",
+          "route": "/image/<image-id>",
+          "h2": 59,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://image-cdn-fa.spotifycdn.com",
+          "family": "public-images",
+          "route": "/image/<image-id>",
+          "h2": 3,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://mosaic.scdn.co",
+          "family": "public-images",
+          "route": "/<size>/<mosaic-image-ids>",
+          "h2": 0,
+          "h3": 0,
+          "h1": 2
+        },
+        {
+          "origin": "https://pickasso.spotifycdn.com",
+          "family": "public-images",
+          "route": "/image/<image-id>",
+          "h2": 3,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://seed-mix-image.spotifycdn.com",
+          "family": "public-images",
+          "route": "/v6/img/desc/<image-route>",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/ads/v2/*",
+          "h2": 0,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/color-lyrics/v2/*",
+          "h2": 0,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/desktop-update/v2/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/gabo-receiver-service/v3/*",
+          "h2": 4,
+          "h3": 4,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/gander/v2/*",
+          "h2": 0,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/library-import/v1/*",
+          "h2": 0,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/manifests/v6/*",
+          "h2": 0,
+          "h3": 3,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/metadata/4/*",
+          "h2": 0,
+          "h3": 4,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/sponsoredplaylist/v1/*",
+          "h2": 0,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/timesynced-text-distribution/v0/*",
+          "h2": 0,
+          "h3": 35,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/user-customization-service/v1/*",
+          "h2": 0,
+          "h3": 1,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/widevine-license/v1/*",
+          "h2": 0,
+          "h3": 4,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "unclassified-spclient",
+          "route": "<unclassified-spclient-route>",
+          "h2": 1,
+          "h3": 1,
+          "h1": 0
+        }
+      ],
+      "musicStorageQuicSessions": [
+        {
+          "quicSessionId": 850,
+          "anchorRequests": [
+            {
+              "sourceId": 3897,
+              "eventIndex": 85915,
+              "bindingEventIndex": 85908,
+              "family": "music-key",
+              "quicStreamId": 1040
+            },
+            {
+              "sourceId": 3917,
+              "eventIndex": 86065,
+              "bindingEventIndex": 86060,
+              "family": "storage-resolve",
+              "quicStreamId": 1044
+            },
+            {
+              "sourceId": 4109,
+              "eventIndex": 90758,
+              "bindingEventIndex": 90750,
+              "family": "music-key",
+              "quicStreamId": 1144
+            }
+          ],
+          "h3RouteFamiliesOnSameSession": [
+            {
+              "origin": "https://guc3-spclient.spotify.com",
+              "family": "collection",
+              "route": "/collection/v2/*",
+              "h3Sends": 3
+            },
+            {
+              "origin": "https://guc3-spclient.spotify.com",
+              "family": "connect",
+              "route": "/connect-state/v1/*",
+              "h3Sends": 5
+            },
+            {
+              "origin": "https://guc3-spclient.spotify.com",
+              "family": "extended-metadata",
+              "route": "/extended-metadata/v0/*",
+              "h3Sends": 191
+            },
+            {
+              "origin": "https://guc3-spclient.spotify.com",
+              "family": "music-key",
+              "route": "/playplay/v1/key/<file-id>",
+              "h3Sends": 2
+            },
+            {
+              "origin": "https://guc3-spclient.spotify.com",
+              "family": "other-spclient",
+              "route": "/ads/v3/*",
+              "h3Sends": 4
+            },
+            {
+              "origin": "https://guc3-spclient.spotify.com",
+              "family": "other-spclient",
+              "route": "/net-fortune/v2/*",
+              "h3Sends": 1
+            },
+            {
+              "origin": "https://guc3-spclient.spotify.com",
+              "family": "other-spclient",
+              "route": "/offline/v1/*",
+              "h3Sends": 1
+            },
+            {
+              "origin": "https://guc3-spclient.spotify.com",
+              "family": "other-spclient",
+              "route": "/playlist-permission/v1/*",
+              "h3Sends": 31
+            },
+            {
+              "origin": "https://guc3-spclient.spotify.com",
+              "family": "other-spclient",
+              "route": "/playlist-publish/v1/*",
+              "h3Sends": 1
+            },
+            {
+              "origin": "https://guc3-spclient.spotify.com",
+              "family": "other-spclient",
+              "route": "/popcount/v2/*",
+              "h3Sends": 1
+            },
+            {
+              "origin": "https://guc3-spclient.spotify.com",
+              "family": "playlist",
+              "route": "/playlist/v2/*",
+              "h3Sends": 43
+            },
+            {
+              "origin": "https://guc3-spclient.spotify.com",
+              "family": "storage-resolve",
+              "route": "/storage-resolve/v2/files/audio/*",
+              "h3Sends": 1
+            },
+            {
+              "origin": "https://guc3-spclient.spotify.com",
+              "family": "unclassified-spclient",
+              "route": "<unclassified-spclient-route>",
+              "h3Sends": 5
+            }
+          ],
+          "exactSessionSourceBinding": true
+        }
+      ],
+      "altSvcChronology": {
+        "publicOrigins": [
+          {
+            "origin": "https://accounts.spotify.com",
+            "firstObservedFinalResponseH3Advertisement": null,
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://api-partner.spotify.com",
+            "firstObservedFinalResponseH3Advertisement": {
+              "responseEventIndex": 42108,
+              "requestSourceId": 2091,
+              "requestProtocol": "h3",
+              "safeValue": "h3=\":443\"; ma=2592000",
+              "afterCaptureStartMs": 5166
+            },
+            "firstH3Request": {
+              "sourceId": 2091,
+              "eventIndex": 36966,
+              "family": "renderer-pathfinder",
+              "afterCaptureStartMs": 4996,
+              "afterFirstObservedAdvertisementMs": -170
+            },
+            "altSvcFoundBeforeFirstH3Count": 3,
+            "firstH3RequestControllerSourceIds": [
+              2149
+            ],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [
+              {
+                "eventIndex": 36929,
+                "controllerSourceId": 2149,
+                "beforeFirstH3Ms": 0,
+                "isBroken": false
+              },
+              {
+                "eventIndex": 36930,
+                "controllerSourceId": 2149,
+                "beforeFirstH3Ms": 0,
+                "isBroken": false
+              }
+            ],
+            "firstAltSvcFoundBeforeH3": {
+              "eventIndex": 36929,
+              "controllerSourceId": 2149,
+              "afterCaptureStartMs": 4996,
+              "beforeFirstH3Ms": 0,
+              "isBroken": false
+            },
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://audio4-fa.scdn.co",
+            "firstObservedFinalResponseH3Advertisement": null,
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://guc3-spclient.spotify.com",
+            "firstObservedFinalResponseH3Advertisement": {
+              "responseEventIndex": 12068,
+              "requestSourceId": 660,
+              "requestProtocol": "h2",
+              "safeValue": "h3=\":443\"; ma=2592000",
+              "afterCaptureStartMs": 3181
+            },
+            "firstH3Request": {
+              "sourceId": 1112,
+              "eventIndex": 19799,
+              "family": "collection",
+              "afterCaptureStartMs": 4401,
+              "afterFirstObservedAdvertisementMs": 1220
+            },
+            "altSvcFoundBeforeFirstH3Count": 34,
+            "firstH3RequestControllerSourceIds": [
+              1113
+            ],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [
+              {
+                "eventIndex": 19770,
+                "controllerSourceId": 1113,
+                "beforeFirstH3Ms": 0,
+                "isBroken": false
+              }
+            ],
+            "firstAltSvcFoundBeforeH3": {
+              "eventIndex": 12208,
+              "controllerSourceId": 843,
+              "afterCaptureStartMs": 3182,
+              "beforeFirstH3Ms": 1219,
+              "isBroken": false
+            },
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://i.scdn.co",
+            "firstObservedFinalResponseH3Advertisement": null,
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://image-cdn-fa.spotifycdn.com",
+            "firstObservedFinalResponseH3Advertisement": null,
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://mosaic.scdn.co",
+            "firstObservedFinalResponseH3Advertisement": null,
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://pickasso.spotifycdn.com",
+            "firstObservedFinalResponseH3Advertisement": null,
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://seed-mix-image.spotifycdn.com",
+            "firstObservedFinalResponseH3Advertisement": null,
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://spclient.wg.spotify.com",
+            "firstObservedFinalResponseH3Advertisement": {
+              "responseEventIndex": 7465,
+              "requestSourceId": 517,
+              "requestProtocol": "h2",
+              "safeValue": "h3=\":443\"; ma=2592000",
+              "afterCaptureStartMs": 1894
+            },
+            "firstH3Request": {
+              "sourceId": 820,
+              "eventIndex": 16861,
+              "family": "unclassified-spclient",
+              "afterCaptureStartMs": 3921,
+              "afterFirstObservedAdvertisementMs": 2027
+            },
+            "altSvcFoundBeforeFirstH3Count": 16,
+            "firstH3RequestControllerSourceIds": [
+              821
+            ],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [
+              {
+                "eventIndex": 11810,
+                "controllerSourceId": 821,
+                "beforeFirstH3Ms": 924,
+                "isBroken": false
+              },
+              {
+                "eventIndex": 11811,
+                "controllerSourceId": 821,
+                "beforeFirstH3Ms": 924,
+                "isBroken": false
+              }
+            ],
+            "firstAltSvcFoundBeforeH3": {
+              "eventIndex": 8010,
+              "controllerSourceId": 647,
+              "afterCaptureStartMs": 2189,
+              "beforeFirstH3Ms": 1732,
+              "isBroken": false
+            },
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          }
+        ],
+        "globalDnsAlpnEventCounts": {},
+        "binding": "ALT_SVC_FOUND events are attributed through URL request source -> HTTP_STREAM_JOB_CONTROLLER_BOUND source_dependency. No arbitrary graph or hostname coalescing inference.",
+        "limits": "First observed advertisement is a final logged response, not proof of first learning. Cached/persisted alternatives may predate capture. DNS_ALPN absence is log coverage, not proof that DNS never influences protocol selection."
+      },
+      "selectedH3SendsWithoutExplicitSessionBinding": 0,
+      "selectedHeaderSends": 531
+    },
+    {
+      "path": ".local/original-playback-netlog.json",
+      "sha256": "fd7239adbef628625faa665ed75199ef34429ed46944409378caeb01ba2c9655",
+      "eventCount": 92420,
+      "safeLaunchFlags": {
+        "commandLinePresent": true,
+        "disableQuic": false,
+        "enableQuic": false,
+        "disableHttp2": false,
+        "forceQuicOrigin": false,
+        "quicVersionOverride": false,
+        "hasUserDataDirOption": false,
+        "hasLogNetLogOption": true,
+        "hasNetLogCaptureModeOption": true
+      },
+      "selectionEvidenceGroup": "no-explicit-quic-force-or-disable-flag",
+      "publicOriginCounts": [
+        {
+          "origin": "https://accounts.spotify.com",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://api-partner.spotify.com",
+          "h2": 0,
+          "h3": 18,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "h2": 106,
+          "h3": 242,
+          "h1": 0
+        },
+        {
+          "origin": "https://i.scdn.co",
+          "h2": 24,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://image-cdn-ak.spotifycdn.com",
+          "h2": 4,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://image-cdn-fa.spotifycdn.com",
+          "h2": 6,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://pickasso.spotifycdn.com",
+          "h2": 2,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://seed-mix-image.spotifycdn.com",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "h2": 4,
+          "h3": 46,
+          "h1": 0
+        }
+      ],
+      "requestedFamilyCounts": [
+        {
+          "family": "accounts-oauth",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "client-token",
+          "h2": 0,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "login5",
+          "h2": 0,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "renderer-pathfinder",
+          "h2": 0,
+          "h3": 18,
+          "h1": 0
+        },
+        {
+          "family": "extended-metadata",
+          "h2": 57,
+          "h3": 52,
+          "h1": 0
+        },
+        {
+          "family": "playlist",
+          "h2": 7,
+          "h3": 79,
+          "h1": 0
+        },
+        {
+          "family": "rootlist",
+          "h2": 2,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "collection",
+          "h2": 20,
+          "h3": 4,
+          "h1": 0
+        },
+        {
+          "family": "connect",
+          "h2": 2,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "family": "image-map",
+          "h2": 0,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "public-images",
+          "h2": 37,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "audio-cdn",
+          "h2": 0,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "music-key",
+          "h2": 0,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "storage-resolve",
+          "h2": 0,
+          "h3": 0,
+          "h1": 0
+        }
+      ],
+      "originRouteCounts": [
+        {
+          "origin": "https://accounts.spotify.com",
+          "family": "accounts-oauth",
+          "route": "/api/token",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://api-partner.spotify.com",
+          "family": "renderer-pathfinder",
+          "route": "/pathfinder/v2/query",
+          "h2": 0,
+          "h3": 18,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "collection",
+          "route": "/collection/v2/*",
+          "h2": 20,
+          "h3": 4,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "connect",
+          "route": "/connect-state/v1/*",
+          "h2": 2,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "extended-metadata",
+          "route": "/extended-metadata/v0/*",
+          "h2": 57,
+          "h3": 52,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/ads/v2/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/ads/v3/*",
+          "h2": 0,
+          "h3": 1,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/device-capabilities/v1/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/gabo-receiver-service/v3/*",
+          "h2": 0,
+          "h3": 19,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/manifests/v9/*",
+          "h2": 0,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/melody/v1/*",
+          "h2": 0,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/net-fortune/v2/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/offline/v1/*",
+          "h2": 0,
+          "h3": 1,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/playlist-permission/v1/*",
+          "h2": 1,
+          "h3": 69,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/playlist-publish/v1/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/popcount/v2/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/recently-played/v3/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/remote-config-resolver/v3/*",
+          "h2": 0,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/social-connect/v2/*",
+          "h2": 2,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "playlist",
+          "route": "/playlist/v2/*",
+          "h2": 7,
+          "h3": 79,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "rootlist",
+          "route": "/playlist/v2/user/<user>/rootlist",
+          "h2": 2,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "unclassified-spclient",
+          "route": "<unclassified-spclient-route>",
+          "h2": 9,
+          "h3": 7,
+          "h1": 0
+        },
+        {
+          "origin": "https://i.scdn.co",
+          "family": "public-images",
+          "route": "/image/<image-id>",
+          "h2": 24,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://image-cdn-ak.spotifycdn.com",
+          "family": "public-images",
+          "route": "/image/<image-id>",
+          "h2": 4,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://image-cdn-fa.spotifycdn.com",
+          "family": "public-images",
+          "route": "/image/<image-id>",
+          "h2": 6,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://pickasso.spotifycdn.com",
+          "family": "public-images",
+          "route": "/image/<image-id>",
+          "h2": 2,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://seed-mix-image.spotifycdn.com",
+          "family": "public-images",
+          "route": "/v6/img/desc/<image-route>",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/ads/v2/*",
+          "h2": 0,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/color-lyrics/v2/*",
+          "h2": 0,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/desktop-update/v2/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/gabo-receiver-service/v3/*",
+          "h2": 2,
+          "h3": 5,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/gander/v2/*",
+          "h2": 0,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/library-import/v1/*",
+          "h2": 0,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/metadata/4/*",
+          "h2": 0,
+          "h3": 1,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/sponsoredplaylist/v1/*",
+          "h2": 0,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/timesynced-text-distribution/v0/*",
+          "h2": 0,
+          "h3": 24,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/user-customization-service/v1/*",
+          "h2": 0,
+          "h3": 1,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/widevine-license/v1/*",
+          "h2": 0,
+          "h3": 4,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "unclassified-spclient",
+          "route": "<unclassified-spclient-route>",
+          "h2": 1,
+          "h3": 1,
+          "h1": 0
+        }
+      ],
+      "musicStorageQuicSessions": [],
+      "altSvcChronology": {
+        "publicOrigins": [
+          {
+            "origin": "https://accounts.spotify.com",
+            "firstObservedFinalResponseH3Advertisement": null,
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://api-partner.spotify.com",
+            "firstObservedFinalResponseH3Advertisement": {
+              "responseEventIndex": 31321,
+              "requestSourceId": 1526,
+              "requestProtocol": "h3",
+              "safeValue": "h3=\":443\"; ma=2592000",
+              "afterCaptureStartMs": 3977
+            },
+            "firstH3Request": {
+              "sourceId": 1501,
+              "eventIndex": 29829,
+              "family": "renderer-pathfinder",
+              "afterCaptureStartMs": 3803,
+              "afterFirstObservedAdvertisementMs": -174
+            },
+            "altSvcFoundBeforeFirstH3Count": 1,
+            "firstH3RequestControllerSourceIds": [
+              1557
+            ],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [
+              {
+                "eventIndex": 29802,
+                "controllerSourceId": 1557,
+                "beforeFirstH3Ms": 0,
+                "isBroken": false
+              }
+            ],
+            "firstAltSvcFoundBeforeH3": {
+              "eventIndex": 29802,
+              "controllerSourceId": 1557,
+              "afterCaptureStartMs": 3803,
+              "beforeFirstH3Ms": 0,
+              "isBroken": false
+            },
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://guc3-spclient.spotify.com",
+            "firstObservedFinalResponseH3Advertisement": {
+              "responseEventIndex": 12475,
+              "requestSourceId": 598,
+              "requestProtocol": "h2",
+              "safeValue": "h3=\":443\"; ma=2592000",
+              "afterCaptureStartMs": 2695
+            },
+            "firstH3Request": {
+              "sourceId": 1479,
+              "eventIndex": 34706,
+              "family": "other-spclient",
+              "afterCaptureStartMs": 4457,
+              "afterFirstObservedAdvertisementMs": 1762
+            },
+            "altSvcFoundBeforeFirstH3Count": 160,
+            "firstH3RequestControllerSourceIds": [
+              1504
+            ],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [
+              {
+                "eventIndex": 29392,
+                "controllerSourceId": 1504,
+                "beforeFirstH3Ms": 659,
+                "isBroken": false
+              },
+              {
+                "eventIndex": 29393,
+                "controllerSourceId": 1504,
+                "beforeFirstH3Ms": 659,
+                "isBroken": false
+              }
+            ],
+            "firstAltSvcFoundBeforeH3": {
+              "eventIndex": 16567,
+              "controllerSourceId": 956,
+              "afterCaptureStartMs": 3191,
+              "beforeFirstH3Ms": 1266,
+              "isBroken": false
+            },
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://i.scdn.co",
+            "firstObservedFinalResponseH3Advertisement": null,
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://image-cdn-ak.spotifycdn.com",
+            "firstObservedFinalResponseH3Advertisement": null,
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://image-cdn-fa.spotifycdn.com",
+            "firstObservedFinalResponseH3Advertisement": null,
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://pickasso.spotifycdn.com",
+            "firstObservedFinalResponseH3Advertisement": null,
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://seed-mix-image.spotifycdn.com",
+            "firstObservedFinalResponseH3Advertisement": null,
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://spclient.wg.spotify.com",
+            "firstObservedFinalResponseH3Advertisement": {
+              "responseEventIndex": 8851,
+              "requestSourceId": 501,
+              "requestProtocol": "h2",
+              "safeValue": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+              "afterCaptureStartMs": 2012
+            },
+            "firstH3Request": {
+              "sourceId": 807,
+              "eventIndex": 9883,
+              "family": "other-spclient",
+              "afterCaptureStartMs": 2441,
+              "afterFirstObservedAdvertisementMs": 429
+            },
+            "altSvcFoundBeforeFirstH3Count": 1,
+            "firstH3RequestControllerSourceIds": [
+              808
+            ],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [
+              {
+                "eventIndex": 9856,
+                "controllerSourceId": 808,
+                "beforeFirstH3Ms": 1,
+                "isBroken": false
+              }
+            ],
+            "firstAltSvcFoundBeforeH3": {
+              "eventIndex": 9856,
+              "controllerSourceId": 808,
+              "afterCaptureStartMs": 2440,
+              "beforeFirstH3Ms": 1,
+              "isBroken": false
+            },
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          }
+        ],
+        "globalDnsAlpnEventCounts": {},
+        "binding": "ALT_SVC_FOUND events are attributed through URL request source -> HTTP_STREAM_JOB_CONTROLLER_BOUND source_dependency. No arbitrary graph or hostname coalescing inference.",
+        "limits": "First observed advertisement is a final logged response, not proof of first learning. Cached/persisted alternatives may predate capture. DNS_ALPN absence is log coverage, not proof that DNS never influences protocol selection."
+      },
+      "selectedH3SendsWithoutExplicitSessionBinding": 0,
+      "selectedHeaderSends": 454
+    },
+    {
+      "path": ".local/original-playback-key-netlog.json",
+      "sha256": "9a58d8b2ce592e8614f795cb85712a2c598b09f0a427962648dc8f2475755467",
+      "eventCount": 80489,
+      "safeLaunchFlags": {
+        "commandLinePresent": true,
+        "disableQuic": false,
+        "enableQuic": false,
+        "disableHttp2": false,
+        "forceQuicOrigin": false,
+        "quicVersionOverride": false,
+        "hasUserDataDirOption": false,
+        "hasLogNetLogOption": true,
+        "hasNetLogCaptureModeOption": true
+      },
+      "selectionEvidenceGroup": "no-explicit-quic-force-or-disable-flag",
+      "publicOriginCounts": [
+        {
+          "origin": "https://accounts.spotify.com",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://api-partner.spotify.com",
+          "h2": 0,
+          "h3": 46,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "h2": 37,
+          "h3": 200,
+          "h1": 0
+        },
+        {
+          "origin": "https://i.scdn.co",
+          "h2": 50,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://image-cdn-ak.spotifycdn.com",
+          "h2": 2,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://image-cdn-fa.spotifycdn.com",
+          "h2": 10,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://mosaic.scdn.co",
+          "h2": 0,
+          "h3": 0,
+          "h1": 3
+        },
+        {
+          "origin": "https://pickasso.spotifycdn.com",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://seed-mix-image.spotifycdn.com",
+          "h2": 3,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "h2": 3,
+          "h3": 31,
+          "h1": 0
+        }
+      ],
+      "requestedFamilyCounts": [
+        {
+          "family": "accounts-oauth",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "client-token",
+          "h2": 0,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "login5",
+          "h2": 0,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "renderer-pathfinder",
+          "h2": 0,
+          "h3": 46,
+          "h1": 0
+        },
+        {
+          "family": "extended-metadata",
+          "h2": 5,
+          "h3": 56,
+          "h1": 0
+        },
+        {
+          "family": "playlist",
+          "h2": 3,
+          "h3": 54,
+          "h1": 0
+        },
+        {
+          "family": "rootlist",
+          "h2": 2,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "collection",
+          "h2": 12,
+          "h3": 12,
+          "h1": 0
+        },
+        {
+          "family": "connect",
+          "h2": 1,
+          "h3": 1,
+          "h1": 0
+        },
+        {
+          "family": "image-map",
+          "h2": 0,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "public-images",
+          "h2": 66,
+          "h3": 0,
+          "h1": 3
+        },
+        {
+          "family": "audio-cdn",
+          "h2": 0,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "music-key",
+          "h2": 0,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "family": "storage-resolve",
+          "h2": 0,
+          "h3": 0,
+          "h1": 0
+        }
+      ],
+      "originRouteCounts": [
+        {
+          "origin": "https://accounts.spotify.com",
+          "family": "accounts-oauth",
+          "route": "/api/token",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://api-partner.spotify.com",
+          "family": "renderer-pathfinder",
+          "route": "/pathfinder/v2/query",
+          "h2": 0,
+          "h3": 46,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "collection",
+          "route": "/collection/v2/*",
+          "h2": 12,
+          "h3": 12,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "connect",
+          "route": "/connect-state/v1/*",
+          "h2": 1,
+          "h3": 1,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "extended-metadata",
+          "route": "/extended-metadata/v0/*",
+          "h2": 5,
+          "h3": 56,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/ads/v2/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/ads/v3/*",
+          "h2": 0,
+          "h3": 1,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/device-capabilities/v1/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/gabo-receiver-service/v3/*",
+          "h2": 0,
+          "h3": 21,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/manifests/v9/*",
+          "h2": 0,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/melody/v1/*",
+          "h2": 0,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/net-fortune/v2/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/offline/v1/*",
+          "h2": 0,
+          "h3": 1,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/playlist-permission/v1/*",
+          "h2": 0,
+          "h3": 38,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/playlist-publish/v1/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/popcount/v2/*",
+          "h2": 0,
+          "h3": 1,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/recently-played/v3/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/remote-config-resolver/v3/*",
+          "h2": 0,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "other-spclient",
+          "route": "/social-connect/v2/*",
+          "h2": 1,
+          "h3": 3,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "playlist",
+          "route": "/playlist/v2/*",
+          "h2": 3,
+          "h3": 54,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "rootlist",
+          "route": "/playlist/v2/user/<user>/rootlist",
+          "h2": 2,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://guc3-spclient.spotify.com",
+          "family": "unclassified-spclient",
+          "route": "<unclassified-spclient-route>",
+          "h2": 8,
+          "h3": 6,
+          "h1": 0
+        },
+        {
+          "origin": "https://i.scdn.co",
+          "family": "public-images",
+          "route": "/image/<image-id>",
+          "h2": 50,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://image-cdn-ak.spotifycdn.com",
+          "family": "public-images",
+          "route": "/image/<image-id>",
+          "h2": 2,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://image-cdn-fa.spotifycdn.com",
+          "family": "public-images",
+          "route": "/image/<image-id>",
+          "h2": 10,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://mosaic.scdn.co",
+          "family": "public-images",
+          "route": "/<size>/<mosaic-image-ids>",
+          "h2": 0,
+          "h3": 0,
+          "h1": 3
+        },
+        {
+          "origin": "https://pickasso.spotifycdn.com",
+          "family": "public-images",
+          "route": "/image/<image-id>",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://seed-mix-image.spotifycdn.com",
+          "family": "public-images",
+          "route": "/v6/img/desc/<image-route>",
+          "h2": 3,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/ads/v2/*",
+          "h2": 0,
+          "h3": 1,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/color-lyrics/v2/*",
+          "h2": 0,
+          "h3": 1,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/desktop-update/v2/*",
+          "h2": 1,
+          "h3": 0,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/gabo-receiver-service/v3/*",
+          "h2": 1,
+          "h3": 4,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/gander/v2/*",
+          "h2": 0,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/library-import/v1/*",
+          "h2": 0,
+          "h3": 2,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/metadata/4/*",
+          "h2": 0,
+          "h3": 1,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/sponsoredplaylist/v1/*",
+          "h2": 0,
+          "h3": 1,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/timesynced-text-distribution/v0/*",
+          "h2": 0,
+          "h3": 14,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/user-customization-service/v1/*",
+          "h2": 0,
+          "h3": 1,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "other-spclient",
+          "route": "/widevine-license/v1/*",
+          "h2": 0,
+          "h3": 3,
+          "h1": 0
+        },
+        {
+          "origin": "https://spclient.wg.spotify.com",
+          "family": "unclassified-spclient",
+          "route": "<unclassified-spclient-route>",
+          "h2": 1,
+          "h3": 1,
+          "h1": 0
+        }
+      ],
+      "musicStorageQuicSessions": [],
+      "altSvcChronology": {
+        "publicOrigins": [
+          {
+            "origin": "https://accounts.spotify.com",
+            "firstObservedFinalResponseH3Advertisement": null,
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://api-partner.spotify.com",
+            "firstObservedFinalResponseH3Advertisement": {
+              "responseEventIndex": 22204,
+              "requestSourceId": 1016,
+              "requestProtocol": "h3",
+              "safeValue": "h3=\":443\"; ma=2592000",
+              "afterCaptureStartMs": 3446
+            },
+            "firstH3Request": {
+              "sourceId": 1010,
+              "eventIndex": 20057,
+              "family": "renderer-pathfinder",
+              "afterCaptureStartMs": 3272,
+              "afterFirstObservedAdvertisementMs": -174
+            },
+            "altSvcFoundBeforeFirstH3Count": 2,
+            "firstH3RequestControllerSourceIds": [
+              1081
+            ],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [
+              {
+                "eventIndex": 20030,
+                "controllerSourceId": 1081,
+                "beforeFirstH3Ms": 0,
+                "isBroken": false
+              }
+            ],
+            "firstAltSvcFoundBeforeH3": {
+              "eventIndex": 20030,
+              "controllerSourceId": 1081,
+              "afterCaptureStartMs": 3272,
+              "beforeFirstH3Ms": 0,
+              "isBroken": false
+            },
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://guc3-spclient.spotify.com",
+            "firstObservedFinalResponseH3Advertisement": {
+              "responseEventIndex": 11900,
+              "requestSourceId": 598,
+              "requestProtocol": "h2",
+              "safeValue": "h3=\":443\"; ma=2592000",
+              "afterCaptureStartMs": 2558
+            },
+            "firstH3Request": {
+              "sourceId": 1020,
+              "eventIndex": 24794,
+              "family": "other-spclient",
+              "afterCaptureStartMs": 3762,
+              "afterFirstObservedAdvertisementMs": 1204
+            },
+            "altSvcFoundBeforeFirstH3Count": 16,
+            "firstH3RequestControllerSourceIds": [
+              1101
+            ],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [
+              {
+                "eventIndex": 20262,
+                "controllerSourceId": 1101,
+                "beforeFirstH3Ms": 489,
+                "isBroken": false
+              },
+              {
+                "eventIndex": 20263,
+                "controllerSourceId": 1101,
+                "beforeFirstH3Ms": 489,
+                "isBroken": false
+              }
+            ],
+            "firstAltSvcFoundBeforeH3": {
+              "eventIndex": 19632,
+              "controllerSourceId": 1029,
+              "afterCaptureStartMs": 3270,
+              "beforeFirstH3Ms": 492,
+              "isBroken": false
+            },
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://i.scdn.co",
+            "firstObservedFinalResponseH3Advertisement": null,
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://image-cdn-ak.spotifycdn.com",
+            "firstObservedFinalResponseH3Advertisement": null,
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://image-cdn-fa.spotifycdn.com",
+            "firstObservedFinalResponseH3Advertisement": null,
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://mosaic.scdn.co",
+            "firstObservedFinalResponseH3Advertisement": null,
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://pickasso.spotifycdn.com",
+            "firstObservedFinalResponseH3Advertisement": null,
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://seed-mix-image.spotifycdn.com",
+            "firstObservedFinalResponseH3Advertisement": null,
+            "firstH3Request": null,
+            "altSvcFoundBeforeFirstH3Count": 0,
+            "firstH3RequestControllerSourceIds": [],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [],
+            "firstAltSvcFoundBeforeH3": null,
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          },
+          {
+            "origin": "https://spclient.wg.spotify.com",
+            "firstObservedFinalResponseH3Advertisement": {
+              "responseEventIndex": 7305,
+              "requestSourceId": 505,
+              "requestProtocol": "h2",
+              "safeValue": "h3=\":443\"; ma=2592000",
+              "afterCaptureStartMs": 1876
+            },
+            "firstH3Request": {
+              "sourceId": 819,
+              "eventIndex": 11180,
+              "family": "other-spclient",
+              "afterCaptureStartMs": 2509,
+              "afterFirstObservedAdvertisementMs": 633
+            },
+            "altSvcFoundBeforeFirstH3Count": 5,
+            "firstH3RequestControllerSourceIds": [
+              820
+            ],
+            "firstH3RequestOwnControllerAltSvcFoundBeforeSend": [
+              {
+                "eventIndex": 11153,
+                "controllerSourceId": 820,
+                "beforeFirstH3Ms": 0,
+                "isBroken": false
+              }
+            ],
+            "firstAltSvcFoundBeforeH3": {
+              "eventIndex": 7531,
+              "controllerSourceId": 605,
+              "afterCaptureStartMs": 1882,
+              "beforeFirstH3Ms": 627,
+              "isBroken": false
+            },
+            "dnsAlpnEventsBeforeFirstH3Count": 0
+          }
+        ],
+        "globalDnsAlpnEventCounts": {},
+        "binding": "ALT_SVC_FOUND events are attributed through URL request source -> HTTP_STREAM_JOB_CONTROLLER_BOUND source_dependency. No arbitrary graph or hostname coalescing inference.",
+        "limits": "First observed advertisement is a final logged response, not proof of first learning. Cached/persisted alternatives may predate capture. DNS_ALPN absence is log coverage, not proof that DNS never influences protocol selection."
+      },
+      "selectedH3SendsWithoutExplicitSessionBinding": 0,
+      "selectedHeaderSends": 387
+    }
+  ],
+  "requestedFamiliesByLaunchFlagGroup": {
+    "diagnostic-disable-quic": [
+      {
+        "family": "accounts-oauth",
+        "h2": 1,
+        "h3": 0,
+        "h1": 0
+      },
+      {
+        "family": "client-token",
+        "h2": 0,
+        "h3": 0,
+        "h1": 0
+      },
+      {
+        "family": "login5",
+        "h2": 0,
+        "h3": 0,
+        "h1": 0
+      },
+      {
+        "family": "renderer-pathfinder",
+        "h2": 18,
+        "h3": 0,
+        "h1": 0
+      },
+      {
+        "family": "extended-metadata",
+        "h2": 113,
+        "h3": 0,
+        "h1": 0
+      },
+      {
+        "family": "playlist",
+        "h2": 52,
+        "h3": 0,
+        "h1": 0
+      },
+      {
+        "family": "rootlist",
+        "h2": 2,
+        "h3": 0,
+        "h1": 0
+      },
+      {
+        "family": "collection",
+        "h2": 24,
+        "h3": 0,
+        "h1": 0
+      },
+      {
+        "family": "connect",
+        "h2": 9,
+        "h3": 0,
+        "h1": 0
+      },
+      {
+        "family": "image-map",
+        "h2": 0,
+        "h3": 0,
+        "h1": 0
+      },
+      {
+        "family": "public-images",
+        "h2": 41,
+        "h3": 0,
+        "h1": 2
+      },
+      {
+        "family": "audio-cdn",
+        "h2": 0,
+        "h3": 0,
+        "h1": 2
+      },
+      {
+        "family": "music-key",
+        "h2": 2,
+        "h3": 0,
+        "h1": 0
+      },
+      {
+        "family": "storage-resolve",
+        "h2": 1,
+        "h3": 0,
+        "h1": 0
+      }
+    ],
+    "no-explicit-quic-force-or-disable-flag": [
+      {
+        "family": "accounts-oauth",
+        "h2": 4,
+        "h3": 0,
+        "h1": 0
+      },
+      {
+        "family": "client-token",
+        "h2": 0,
+        "h3": 0,
+        "h1": 0
+      },
+      {
+        "family": "login5",
+        "h2": 0,
+        "h3": 0,
+        "h1": 0
+      },
+      {
+        "family": "renderer-pathfinder",
+        "h2": 2,
+        "h3": 103,
+        "h1": 0
+      },
+      {
+        "family": "extended-metadata",
+        "h2": 138,
+        "h3": 418,
+        "h1": 0
+      },
+      {
+        "family": "playlist",
+        "h2": 22,
+        "h3": 221,
+        "h1": 0
+      },
+      {
+        "family": "rootlist",
+        "h2": 8,
+        "h3": 0,
+        "h1": 0
+      },
+      {
+        "family": "collection",
+        "h2": 70,
+        "h3": 21,
+        "h1": 0
+      },
+      {
+        "family": "connect",
+        "h2": 7,
+        "h3": 18,
+        "h1": 0
+      },
+      {
+        "family": "image-map",
+        "h2": 0,
+        "h3": 0,
+        "h1": 0
+      },
+      {
+        "family": "public-images",
+        "h2": 173,
+        "h3": 0,
+        "h1": 5
+      },
+      {
+        "family": "audio-cdn",
+        "h2": 0,
+        "h3": 0,
+        "h1": 4
+      },
+      {
+        "family": "music-key",
+        "h2": 0,
+        "h3": 4,
+        "h1": 0
+      },
+      {
+        "family": "storage-resolve",
+        "h2": 0,
+        "h3": 2,
+        "h1": 0
+      }
+    ]
+  },
+  "publicOriginsByLaunchFlagGroup": {
+    "diagnostic-disable-quic": [
+      {
+        "origin": "https://accounts.spotify.com",
+        "h2": 1,
+        "h3": 0,
+        "h1": 0
+      },
+      {
+        "origin": "https://api-partner.spotify.com",
+        "h2": 18,
+        "h3": 0,
+        "h1": 0
+      },
+      {
+        "origin": "https://audio4-fa.scdn.co",
+        "h2": 0,
+        "h3": 0,
+        "h1": 2
+      },
+      {
+        "origin": "https://guc3-spclient.spotify.com",
+        "h2": 294,
+        "h3": 0,
+        "h1": 0
+      },
+      {
+        "origin": "https://i.scdn.co",
+        "h2": 39,
+        "h3": 0,
+        "h1": 0
+      },
+      {
+        "origin": "https://image-cdn-fa.spotifycdn.com",
+        "h2": 2,
+        "h3": 0,
+        "h1": 0
+      },
+      {
+        "origin": "https://mosaic.scdn.co",
+        "h2": 0,
+        "h3": 0,
+        "h1": 2
+      },
+      {
+        "origin": "https://spclient.wg.spotify.com",
+        "h2": 57,
+        "h3": 0,
+        "h1": 0
+      }
+    ],
+    "no-explicit-quic-force-or-disable-flag": [
+      {
+        "origin": "https://accounts.spotify.com",
+        "h2": 4,
+        "h3": 0,
+        "h1": 0
+      },
+      {
+        "origin": "https://api-partner.spotify.com",
+        "h2": 2,
+        "h3": 103,
+        "h1": 0
+      },
+      {
+        "origin": "https://audio4-fa.scdn.co",
+        "h2": 0,
+        "h3": 0,
+        "h1": 4
+      },
+      {
+        "origin": "https://guc3-spclient.spotify.com",
+        "h2": 336,
+        "h3": 990,
+        "h1": 0
+      },
+      {
+        "origin": "https://i.scdn.co",
+        "h2": 133,
+        "h3": 0,
+        "h1": 0
+      },
+      {
+        "origin": "https://image-cdn-ak.spotifycdn.com",
+        "h2": 8,
+        "h3": 0,
+        "h1": 0
+      },
+      {
+        "origin": "https://image-cdn-fa.spotifycdn.com",
+        "h2": 21,
+        "h3": 0,
+        "h1": 0
+      },
+      {
+        "origin": "https://mosaic.scdn.co",
+        "h2": 0,
+        "h3": 0,
+        "h1": 5
+      },
+      {
+        "origin": "https://pickasso.spotifycdn.com",
+        "h2": 6,
+        "h3": 0,
+        "h1": 0
+      },
+      {
+        "origin": "https://seed-mix-image.spotifycdn.com",
+        "h2": 5,
+        "h3": 0,
+        "h1": 0
+      },
+      {
+        "origin": "https://spclient.wg.spotify.com",
+        "h2": 19,
+        "h3": 189,
+        "h1": 0
+      }
+    ]
+  },
+  "limits": [
+    "No raw URL, query, credential, identity, header value, body, private command line/profile path or credential hash is exported.",
+    "Counts are actual HTTP_TRANSACTION_*_SEND_REQUEST_HEADERS emissions. Retries/redirects can yield multiple sends; cache hits and requests with no outgoing header event are excluded.",
+    "H2/H3 event names establish observed HTTP protocol; H1 rows come from HTTP_TRANSACTION_SEND_REQUEST_HEADERS. Counts are not a unique-request or success census.",
+    "No Login5/client-token/image-map send in these retained runs means missing coverage, not unsupported HTTP or a selection policy. Account OAuth token refresh does not prove fresh sign-in flow.",
+    "No explicit QUIC force/disable flag is a limited launch fact, not proof of factory-default state: persisted Alt-Svc/server properties, DNS, network reachability and Chromium experiments are not reconstructed.",
+    "Forced-H2 diagnostic counts must not be merged into claims about default protocol selection.",
+    "A shared QUIC session is proved only by matching original source_dependency session IDs at the send. It does not prove requests share a body, track, consumer or admission purpose.",
+    "Route families intentionally remove identities and queries. Their counts do not verify exact methods/headers/body/query bytes, connection selection policy or transport fingerprint equivalence.",
+    "Unclassified spclient routes remain explicit counts and are not assigned a guessed family.",
+    "No network, original app/profile/process, live Flutter action, transport/runtime edit, general test or formatter action."
+  ]
+}

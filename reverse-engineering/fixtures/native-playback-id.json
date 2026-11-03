@@ -1,0 +1,161 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "method": "Original native playback ID selection/generation -> CDN outgoing header.\n\nOnly standard entropy bytes are supplied. The unchanged proprietary 16-byte\ngenerator, given-ID selection basic block and complete CDN HTTP owner execute.\nNo profile/account, actual playback identifier, key or network is exported.\n",
+  "givenOrGeneratedOwner": "0x100e6ab9c",
+  "selectionBlock": "0x100e6ad14",
+  "generator": "0x1019f74c8",
+  "entropyBoundary": "0x101d021f8",
+  "cdnOwner": "0x10075cff8",
+  "hexFormatter": "0x101f63618 with count 16",
+  "ranges": [
+    {
+      "start": "0x1019f74c8",
+      "endExclusive": "0x1019f751c",
+      "sha256": "0b239b53fa0d689859e295f70b63ca49d04603ecce17270fbfa723bca7b5e989"
+    },
+    {
+      "start": "0x100e6ad14",
+      "endExclusive": "0x100e6ad30",
+      "sha256": "4dc2b07c9ff631d4ae9152aed5b1af3449f4d54b42298d6590c825d9363f720a"
+    }
+  ],
+  "executedIdInstructionCount": 28,
+  "executedIdInstructionSha256": "153d2b5892b277a5d5ee961751774fdf4fa6d4be6083a2476c9141d5881007c8",
+  "substitutions": [
+    "Entropy boundary 101d021f8 writes exactly the supplied 16 bytes; its internals are not decompiled.",
+    "Selection starts at the real constructor basic block with explicit optional-ID storage/registers; stops before unrelated track-source service calls.",
+    "Inherited original CDN owner uses standard memory/string/allocation plus opaque HTTP-builder interfaces; stops before sender."
+  ],
+  "captureStatistics": {
+    "captureSha256": "644660b4da3948c6f0e0e21479b34de444f295ba3e94684257e2c53dc9587489",
+    "records": 3,
+    "distinctIds": 1,
+    "byteLength": 16,
+    "observedByte6HighNibbles": [
+      15
+    ],
+    "observedByte8TopTwoBits": [
+      0
+    ],
+    "limit": "One distinct original ID across 3 ranges; no generator inference from this sample alone. No ID or ID hash exported."
+  },
+  "cases": [
+    {
+      "name": "fresh sequential entropy",
+      "givenIdHex": null,
+      "entropyHex": "000102030405060708090a0b0c0d0e0f",
+      "entropyRequests": [
+        16
+      ],
+      "selectedIdHex": "000102030405060708090a0b0c0d0e0f",
+      "signedUrl": "https://audio-cf.example.test/audio/synthetic?verify=fixture-%2f%2F",
+      "firstByte": 0,
+      "lastByte": 16383,
+      "request": {
+        "bodyHex": "",
+        "method": "GET",
+        "url": "https://audio-cf.example.test/audio/synthetic?verify=fixture-%2f%2F",
+        "headers": {
+          "Cache-Control": "no-cache, no-store",
+          "Accept-Encoding": "",
+          "x-playback-id": "000102030405060708090a0b0c0d0e0f",
+          "Range": "bytes=0-16383"
+        }
+      }
+    },
+    {
+      "name": "fresh zero entropy has no UUID masks",
+      "givenIdHex": null,
+      "entropyHex": "00000000000000000000000000000000",
+      "entropyRequests": [
+        16
+      ],
+      "selectedIdHex": "00000000000000000000000000000000",
+      "signedUrl": "https://audio-cf.example.test/audio/synthetic?verify=fixture-%2f%2F",
+      "firstByte": 0,
+      "lastByte": 16383,
+      "request": {
+        "bodyHex": "",
+        "method": "GET",
+        "url": "https://audio-cf.example.test/audio/synthetic?verify=fixture-%2f%2F",
+        "headers": {
+          "Cache-Control": "no-cache, no-store",
+          "Accept-Encoding": "",
+          "x-playback-id": "00000000000000000000000000000000",
+          "Range": "bytes=0-16383"
+        }
+      }
+    },
+    {
+      "name": "fresh high entropy has no UUID masks",
+      "givenIdHex": null,
+      "entropyHex": "ffffffffffffffffffffffffffffffff",
+      "entropyRequests": [
+        16
+      ],
+      "selectedIdHex": "ffffffffffffffffffffffffffffffff",
+      "signedUrl": "https://audio-cf.example.test/audio/synthetic?verify=fixture-%2f%2F",
+      "firstByte": 0,
+      "lastByte": 16383,
+      "request": {
+        "bodyHex": "",
+        "method": "GET",
+        "url": "https://audio-cf.example.test/audio/synthetic?verify=fixture-%2f%2F",
+        "headers": {
+          "Cache-Control": "no-cache, no-store",
+          "Accept-Encoding": "",
+          "x-playback-id": "ffffffffffffffffffffffffffffffff",
+          "Range": "bytes=0-16383"
+        }
+      }
+    },
+    {
+      "name": "given ID overrides distinct entropy",
+      "givenIdHex": "000102030405060708090a0b0c0d0e0f",
+      "entropyHex": "fffefdfcfbfaf9f8f7f6f5f4f3f2f1f0",
+      "entropyRequests": [],
+      "selectedIdHex": "000102030405060708090a0b0c0d0e0f",
+      "signedUrl": "https://audio-cf.example.test/audio/synthetic?verify=fixture-%2f%2F",
+      "firstByte": 0,
+      "lastByte": 16383,
+      "request": {
+        "bodyHex": "",
+        "method": "GET",
+        "url": "https://audio-cf.example.test/audio/synthetic?verify=fixture-%2f%2F",
+        "headers": {
+          "Cache-Control": "no-cache, no-store",
+          "Accept-Encoding": "",
+          "x-playback-id": "000102030405060708090a0b0c0d0e0f",
+          "Range": "bytes=0-16383"
+        }
+      }
+    },
+    {
+      "name": "given zero ID remains present",
+      "givenIdHex": "00000000000000000000000000000000",
+      "entropyHex": "ffffffffffffffffffffffffffffffff",
+      "entropyRequests": [],
+      "selectedIdHex": "00000000000000000000000000000000",
+      "signedUrl": "https://audio-cf.example.test/audio/synthetic?verify=fixture-%2f%2F",
+      "firstByte": 0,
+      "lastByte": 16383,
+      "request": {
+        "bodyHex": "",
+        "method": "GET",
+        "url": "https://audio-cf.example.test/audio/synthetic?verify=fixture-%2f%2F",
+        "headers": {
+          "Cache-Control": "no-cache, no-store",
+          "Accept-Encoding": "",
+          "x-playback-id": "00000000000000000000000000000000",
+          "Range": "bytes=0-16383"
+        }
+      }
+    }
+  ],
+  "limits": [
+    "Only successful standard entropy-fill path is supplied; RNG internals/failure policy are not reimplemented.",
+    "Native generator is a 16-byte x0/x1 return despite Ghidra leaf export void signature; original ARM64 load/return instructions execute.",
+    "Queue/load lifetime is caller-owned. New ID chosen at native track constructor, supplied IDs preserved; no new-ID-per-event policy inferred.",
+    "No original account/playback ID, entropy from a real session, profile or network is used."
+  ]
+}

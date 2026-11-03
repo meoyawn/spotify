@@ -1,0 +1,508 @@
+{
+  "provenance": {
+    "referenceRepository": "https://github.com/timniederhausen/shannon",
+    "referenceCommit": "a41ccbd2da856846806f36a1f6ee2a8d4f92f591",
+    "referenceSource": "ShannonRef.c",
+    "referenceSourceSha256": "d8ad336f9b503dd9161930963b6710d80cf6d21c60b8c90d154ae942578822f1",
+    "referenceCompiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+    "referenceBuild": "clang -std=gnu99 -O2 -I .local/shannon-reference .local/shannon-oracle/main.c .local/shannon-reference/ShannonRef.c -o .local/shannon-oracle/shannon-c-oracle",
+    "referenceDriverSha256": "9cb07b033bd59916794fa711455eb4e43c6150a6498a4855b80f0baf64aa0c6f",
+    "rustCrate": "shannon",
+    "rustVersion": "0.2.0",
+    "rustRegistryChecksum": "7ea5b41c9427b56caa7b808cb548a04fb50bb5b9e98590b53f28064ff4174561",
+    "rustSourceSha256": "f80d3e850b112bb8e14fe27c3bba4f07934bc7282af6f67f26351ecc8c262d07",
+    "rustBuild": "cargo build --manifest-path .local/shannon-oracle/Cargo.toml --release --offline --locked (project Kache inherited)",
+    "rustWholeOrApHeaderSplitChecks": 57,
+    "canonicalEncryptionAndDecryptionChecks": 234,
+    "canonicalChunkPlans": [
+      "whole message",
+      "three-byte AP header then body",
+      "one byte per call",
+      "alternating 1..5-byte calls with empty calls"
+    ],
+    "data": "All inputs and keys synthetic. No network, profile, credentials or account service used.",
+    "limitation": "Pinned Rust0.2.0 authenticates a previously buffered word after each continuation byte. Canonical C/Dart authenticate it only after a complete word; whole-message and AP-header split agree."
+  },
+  "rustTinyFragmentDiscrepancy": {
+    "keyHex": "000102030405060708090a0b0c0d0e0f10111213",
+    "nonce": 0,
+    "plaintextHex": "000102030405060708090a0b0c0d0e0f",
+    "chunks": [
+      1,
+      1,
+      14
+    ],
+    "canonicalCiphertextHex": "73d26e7946a33e75418ae2ccf23932c0",
+    "canonicalMacHex": "3a02b949",
+    "rustCiphertextHex": "73d26e7944b97cd5494864bce035ff1b",
+    "rustMacHex": "8a2bae60"
+  },
+  "cases": [
+    {
+      "name": "length_0",
+      "keyHex": "00112233445566778899aabbccddeeff10213243",
+      "nonce": 0,
+      "plaintextHex": "",
+      "ciphertextHex": "",
+      "macLength": 4,
+      "macHex": "03ef13a5",
+      "reuse": {
+        "nonce": 4294967295,
+        "plaintextHex": "0102030405",
+        "ciphertextHex": "58760ca6fd",
+        "macHex": "50e3abde"
+      }
+    },
+    {
+      "name": "length_1",
+      "keyHex": "25364758697a8b9cadbecfe0f102132435465768",
+      "nonce": 1,
+      "plaintextHex": "13",
+      "ciphertextHex": "9f",
+      "macLength": 1,
+      "macHex": "a3",
+      "reuse": {
+        "nonce": 0,
+        "plaintextHex": "0102030405",
+        "ciphertextHex": "df7c52bde2",
+        "macHex": "2f26b84e"
+      }
+    },
+    {
+      "name": "length_2",
+      "keyHex": "4a5b6c7d8e9fb0c1d2e3f405162738495a6b7c8d",
+      "nonce": 16909060,
+      "plaintextHex": "2645",
+      "ciphertextHex": "ca03",
+      "macLength": 3,
+      "macHex": "64b9b3",
+      "reuse": {
+        "nonce": 0,
+        "plaintextHex": "0102030405",
+        "ciphertextHex": "4038adf6a2",
+        "macHex": "707bc641"
+      }
+    },
+    {
+      "name": "length_3",
+      "keyHex": "6f8091a2b3c4d5e6f708192a3b4c5d6e7f90a1b2",
+      "nonce": 2147483648,
+      "plaintextHex": "395877",
+      "ciphertextHex": "496a0f",
+      "macLength": 4,
+      "macHex": "53dbf058",
+      "reuse": {
+        "nonce": 0,
+        "plaintextHex": "0102030405",
+        "ciphertextHex": "1f6078b55c",
+        "macHex": "3af028b9"
+      }
+    },
+    {
+      "name": "length_4",
+      "keyHex": "94a5b6c7d8e9fa0b1c2d3e4f60718293a4b5c6d7",
+      "nonce": 4294967295,
+      "plaintextHex": "4c6b8aa9",
+      "ciphertextHex": "c04fa556",
+      "macLength": 5,
+      "macHex": "e46b13f9c1",
+      "reuse": {
+        "nonce": 0,
+        "plaintextHex": "0102030405",
+        "ciphertextHex": "cf945aa684",
+        "macHex": "d0053303"
+      }
+    },
+    {
+      "name": "length_5",
+      "keyHex": "b9cadbecfd0e1f30415263748596a7b8c9daebfc",
+      "nonce": 0,
+      "plaintextHex": "5f7e9dbcdb",
+      "ciphertextHex": "0d061242bc",
+      "macLength": 16,
+      "macHex": "d141b94ba745c24e91b97a5365a1a07b",
+      "reuse": {
+        "nonce": 4294967295,
+        "plaintextHex": "0102030405",
+        "ciphertextHex": "fac17e2b53",
+        "macHex": "9a16aa69"
+      }
+    },
+    {
+      "name": "length_7",
+      "keyHex": "deef00112233445566778899aabbccddeeff1021",
+      "nonce": 1,
+      "plaintextHex": "7291b0cfee0d2c",
+      "ciphertextHex": "b644fceb3800bc",
+      "macLength": 17,
+      "macHex": "af5a6698fa5b144f8d8701edafab4f2737",
+      "reuse": {
+        "nonce": 0,
+        "plaintextHex": "0102030405",
+        "ciphertextHex": "929e17e9f1",
+        "macHex": "4c874d59"
+      }
+    },
+    {
+      "name": "length_8",
+      "keyHex": "031425364758697a8b9cadbecfe0f10213243546",
+      "nonce": 16909060,
+      "plaintextHex": "85a4c3e201203f5e",
+      "ciphertextHex": "c42fcc6d2caa07d3",
+      "macLength": 0,
+      "macHex": "",
+      "reuse": {
+        "nonce": 0,
+        "plaintextHex": "0102030405",
+        "ciphertextHex": "c2a7aec8b1",
+        "macHex": "8d13bbe8"
+      }
+    },
+    {
+      "name": "length_15",
+      "keyHex": "28394a5b6c7d8e9fb0c1d2e3f405162738495a6b",
+      "nonce": 2147483648,
+      "plaintextHex": "98b7d6f51433527190afceed0c2b4a",
+      "ciphertextHex": "ba5856968b3d5afb46d00c84008d46",
+      "macLength": 4,
+      "macHex": "3e55866a",
+      "reuse": {
+        "nonce": 0,
+        "plaintextHex": "0102030405",
+        "ciphertextHex": "6c4b56e0d9",
+        "macHex": "062c0f4a"
+      }
+    },
+    {
+      "name": "length_16",
+      "keyHex": "4d5e6f8091a2b3c4d5e6f708192a3b4c5d6e7f90",
+      "nonce": 4294967295,
+      "plaintextHex": "abcae90827466584a3c2e1001f3e5d7c",
+      "ciphertextHex": "a8efb8bbbc46348050ccb76b03664fd1",
+      "macLength": 1,
+      "macHex": "76",
+      "reuse": {
+        "nonce": 0,
+        "plaintextHex": "0102030405",
+        "ciphertextHex": "4f13df68da",
+        "macHex": "4a9210b1"
+      }
+    },
+    {
+      "name": "length_17",
+      "keyHex": "728394a5b6c7d8e9fa0b1c2d3e4f60718293a4b5",
+      "nonce": 0,
+      "plaintextHex": "beddfc1b3a597897b6d5f4133251708fae",
+      "ciphertextHex": "99b5314a8a93d83916ced337bd321ca5be",
+      "macLength": 3,
+      "macHex": "00c896",
+      "reuse": {
+        "nonce": 4294967295,
+        "plaintextHex": "0102030405",
+        "ciphertextHex": "be6dd1443b",
+        "macHex": "85a4b5fa"
+      }
+    },
+    {
+      "name": "length_31",
+      "keyHex": "97a8b9cadbecfd0e1f30415263748596a7b8c9da",
+      "nonce": 1,
+      "plaintextHex": "d1f00f2e4d6c8baac9e80726456483a2c1e0ff1e3d5c7b9ab9d8f716355473",
+      "ciphertextHex": "04f5a29771b56f92705359c29cf724f4ef6926676103ea5e20d8919c30c93c",
+      "macLength": 4,
+      "macHex": "a87a0541",
+      "reuse": {
+        "nonce": 0,
+        "plaintextHex": "0102030405",
+        "ciphertextHex": "a49b9d7742",
+        "macHex": "d5ff80ab"
+      }
+    },
+    {
+      "name": "length_32",
+      "keyHex": "bccddeef00112233445566778899aabbccddeeff",
+      "nonce": 16909060,
+      "plaintextHex": "e4032241607f9ebddcfb1a39587796b5d4f31231506f8eadcceb0a29486786a5",
+      "ciphertextHex": "e49f5728af905b7fe4d24e4cf3183dafd005b8b2505d98c876c22bab95e976d2",
+      "macLength": 5,
+      "macHex": "425e9fe5cd",
+      "reuse": {
+        "nonce": 0,
+        "plaintextHex": "0102030405",
+        "ciphertextHex": "2feb3fe959",
+        "macHex": "659101e6"
+      }
+    },
+    {
+      "name": "length_33",
+      "keyHex": "e1f2031425364758697a8b9cadbecfe0f1021324",
+      "nonce": 2147483648,
+      "plaintextHex": "f71635547392b1d0ef0e2d4c6b8aa9c8e70625446382a1c0dffe1d3c5b7a99b8d7",
+      "ciphertextHex": "b1eaa245c8cac1c6503b465233f8ae969a5c8fd1bc3f263acf8f6dd7cd9b9db735",
+      "macLength": 16,
+      "macHex": "045222758f77ac4caa780c5b22004923",
+      "reuse": {
+        "nonce": 0,
+        "plaintextHex": "0102030405",
+        "ciphertextHex": "3852bb79b5",
+        "macHex": "47675b0c"
+      }
+    },
+    {
+      "name": "length_63",
+      "keyHex": "061728394a5b6c7d8e9fb0c1d2e3f40516273849",
+      "nonce": 4294967295,
+      "plaintextHex": "0a29486786a5c4e30221405f7e9dbcdbfa1938577695b4d3f211304f6e8daccbea0928476685a4c3e201203f5e7d9cbbdaf91837567594b3d2f1102f4e6d8c",
+      "ciphertextHex": "cd36ebfa03ef99fa6a7ce843624141202eadd49a84c45426246b13a9f2ddb919348bba46cdfcc7c5f9a48bb16cda80dabde40b018ed31692136ba4876b8e91",
+      "macLength": 17,
+      "macHex": "baaad2efa890fa75fba2a6e27e38e65da0",
+      "reuse": {
+        "nonce": 0,
+        "plaintextHex": "0102030405",
+        "ciphertextHex": "0c25f2f1c0",
+        "macHex": "0b4a9ada"
+      }
+    },
+    {
+      "name": "length_64",
+      "keyHex": "2b3c4d5e6f8091a2b3c4d5e6f708192a3b4c5d6e",
+      "nonce": 0,
+      "plaintextHex": "1d3c5b7a99b8d7f61534537291b0cfee0d2c4b6a89a8c7e60524436281a0bfdefd1c3b5a7998b7d6f51433527190afceed0c2b4a6988a7c6e504234261809fbe",
+      "ciphertextHex": "cbce6582ddb99a5a86596e1584cce2c5d379582ab8417fee903841e6d5bedfb5d00b15c4c66a8d0f132a54dca7653f43070457a5053552ec47ded7e182d3907b",
+      "macLength": 0,
+      "macHex": "",
+      "reuse": {
+        "nonce": 4294967295,
+        "plaintextHex": "0102030405",
+        "ciphertextHex": "83d8fa9cbc",
+        "macHex": "df13b24e"
+      }
+    },
+    {
+      "name": "length_65",
+      "keyHex": "5061728394a5b6c7d8e9fa0b1c2d3e4f60718293",
+      "nonce": 1,
+      "plaintextHex": "304f6e8daccbea0928476685a4c3e201203f5e7d9cbbdaf91837567594b3d2f1102f4e6d8cabcae90827466584a3c2e1001f3e5d7c9bbad9f81736557493b2d1f0",
+      "ciphertextHex": "fa0ea244b5b1c224103d21fa1797fe99fb58b3d31c91daa7bb4bc73b20680c9561112ecf7a5a0da910d8542cf6060a23c6c8084a95089d9a364a306c9dce707673",
+      "macLength": 4,
+      "macHex": "803fdbf7",
+      "reuse": {
+        "nonce": 0,
+        "plaintextHex": "0102030405",
+        "ciphertextHex": "83e2dac40d",
+        "macHex": "26065e86"
+      }
+    },
+    {
+      "name": "length_255",
+      "keyHex": "758697a8b9cadbecfd0e1f30415263748596a7b8",
+      "nonce": 16909060,
+      "plaintextHex": "436281a0bfdefd1c3b5a7998b7d6f51433527190afceed0c2b4a6988a7c6e504234261809fbeddfc1b3a597897b6d5f4133251708faecdec0b2a496887a6c5e4032241607f9ebddcfb1a39587796b5d4f31231506f8eadcceb0a29486786a5c4e30221405f7e9dbcdbfa1938577695b4d3f211304f6e8daccbea0928476685a4c3e201203f5e7d9cbbdaf91837567594b3d2f1102f4e6d8cabcae90827466584a3c2e1001f3e5d7c9bbad9f81736557493b2d1f00f2e4d6c8baac9e80726456483a2c1e0ff1e3d5c7b9ab9d8f71635547392b1d0ef0e2d4c6b8aa9c8e70625446382a1c0dffe1d3c5b7a99b8d7f61534537291b0cfee0d2c4b6a89a8c7e605",
+      "ciphertextHex": "923f7c2d6cd844591c2dd1eb58f6e080959cf7326c88195a244edc9ba764efccba91afebb243fb00c1fdc1a58a78ed43ad1bd14b9e28a7570cc30c8f93891d316920eccbd43b0818d2debce3f6e067ec172b65350856e6aaa7d7cb85342169b064493945946cce3427c048698c152d307b355fcaf8820cf9a382ee02334bd010df9ed3aef119ebadbcd089e20263592fa524d4c127decd8be700dbad77a7d5f92f2cb8d775d9d9774dd0c6bd79a39bffd0eb755bf6f9c6f821b2b40f1818d7c95dc0154064e2f77847b959022ac9e8ffc92b1cb87ae4f8ce89ff75dbaf00c10a82b069af9c005b74dc89614f48c145c48575ccd565a4d289d57c9dfc7a56a2",
+      "macLength": 1,
+      "macHex": "04",
+      "reuse": {
+        "nonce": 0,
+        "plaintextHex": "0102030405",
+        "ciphertextHex": "f822812178",
+        "macHex": "2a9d01a4"
+      }
+    },
+    {
+      "name": "length_256",
+      "keyHex": "9aabbccddeef00112233445566778899aabbccdd",
+      "nonce": 2147483648,
+      "plaintextHex": "567594b3d2f1102f4e6d8cabcae90827466584a3c2e1001f3e5d7c9bbad9f81736557493b2d1f00f2e4d6c8baac9e80726456483a2c1e0ff1e3d5c7b9ab9d8f71635547392b1d0ef0e2d4c6b8aa9c8e70625446382a1c0dffe1d3c5b7a99b8d7f61534537291b0cfee0d2c4b6a89a8c7e60524436281a0bfdefd1c3b5a7998b7d6f51433527190afceed0c2b4a6988a7c6e504234261809fbeddfc1b3a597897b6d5f4133251708faecdec0b2a496887a6c5e4032241607f9ebddcfb1a39587796b5d4f31231506f8eadcceb0a29486786a5c4e30221405f7e9dbcdbfa1938577695b4d3f211304f6e8daccbea0928476685a4c3e201203f5e7d9cbbdaf91837",
+      "ciphertextHex": "55c3ae1c332c21da23264fb8ff23278987a762ffefe7d219ef29ed55d8c6b47ae18f53abf05eaa05e966a0f13c0014d612d81417ec5628b3c4d592b9a00b27e1d0b99205494029de3021a7ea669d26aaf6141e917d797d9b3722e4d31933ebf8aaa4cbf94bd0681142166bd972b9251946efd5d28db6b89a2189eb9aed54a493b3f48f36ad680c3d20aa70d4131e40b73d3bc4019fe767bfad13f2d9ea0b95d23a6added2534f40e453d8f44234271965d43585a6fbd4ec045ba58b66ac331faaaf9c85e76bc497e1bfc1853d02acf19c1a93a9c5ec1af722fb21682918dee50f9bb96818835b0511e44d31296e22900f9d91345cc3dfaa13bd4f44628d99102",
+      "macLength": 3,
+      "macHex": "41a3f5",
+      "reuse": {
+        "nonce": 0,
+        "plaintextHex": "0102030405",
+        "ciphertextHex": "a16deb2cfa",
+        "macHex": "d1df1b60"
+      }
+    },
+    {
+      "name": "length_257",
+      "keyHex": "bfd0e1f2031425364758697a8b9cadbecfe0f102",
+      "nonce": 4294967295,
+      "plaintextHex": "6988a7c6e504234261809fbeddfc1b3a597897b6d5f4133251708faecdec0b2a496887a6c5e4032241607f9ebddcfb1a39587796b5d4f31231506f8eadcceb0a29486786a5c4e30221405f7e9dbcdbfa1938577695b4d3f211304f6e8daccbea0928476685a4c3e201203f5e7d9cbbdaf91837567594b3d2f1102f4e6d8cabcae90827466584a3c2e1001f3e5d7c9bbad9f81736557493b2d1f00f2e4d6c8baac9e80726456483a2c1e0ff1e3d5c7b9ab9d8f71635547392b1d0ef0e2d4c6b8aa9c8e70625446382a1c0dffe1d3c5b7a99b8d7f61534537291b0cfee0d2c4b6a89a8c7e60524436281a0bfdefd1c3b5a7998b7d6f51433527190afceed0c2b4a69",
+      "ciphertextHex": "5ffa8d63d6340ab50e943e5e0cb36079b26a9b859fd68d43e60c947424006f65391be8a1edac26c237ecb6792b1e52fc049211fdb0faa1989afa6b1bbb8640f38b2ea9974bd01fb1d35b46e62f8cb81964e7c4fde3519f9fe79f7b2bc4fb6f12aac3ffc142d9b51971fd0f1b52689a5b0d531324c5876df51f6e7c5cc25f0fa8d65312cd2fde36d7587af02e6296134da586a002310ed82cbf52580df473d53956883b295e96c09cef194d9e2ae32ce9d95fef4a1275cd034d5fa9756b907b9ea44d5f06604e60e0f051762828ab40eb7495ddaa035855af28199e61ffdf8d9d71373669eaa8c364836ecbae39c2251d6aebccc157cfc7ac5544b6db1cda184692",
+      "macLength": 4,
+      "macHex": "4947d869",
+      "reuse": {
+        "nonce": 0,
+        "plaintextHex": "0102030405",
+        "ciphertextHex": "16219dc5d4",
+        "macHex": "85d207f8"
+      }
+    },
+    {
+      "name": "key_length_0",
+      "keyHex": "",
+      "nonce": 16909060,
+      "plaintextHex": "000102030405060708090a0b0c0d0e0f10",
+      "ciphertextHex": "948e4c9134f25ab5654154eced46c5b144",
+      "macLength": 16,
+      "macHex": "fa030a6199962b08bf987ac4468152e5",
+      "reuse": {
+        "nonce": 0,
+        "plaintextHex": "0102030405",
+        "ciphertextHex": "a63f479a7c",
+        "macHex": "70fe06f5"
+      }
+    },
+    {
+      "name": "key_length_1",
+      "keyHex": "80",
+      "nonce": 16909060,
+      "plaintextHex": "000102030405060708090a0b0c0d0e0f10",
+      "ciphertextHex": "7724eb08333273820bc8279890a2cfe6eb",
+      "macLength": 16,
+      "macHex": "71197c7bef57447b6b744f55decb94fe",
+      "reuse": {
+        "nonce": 0,
+        "plaintextHex": "0102030405",
+        "ciphertextHex": "0d31def69b",
+        "macHex": "9890b69b"
+      }
+    },
+    {
+      "name": "key_length_3",
+      "keyHex": "809dba",
+      "nonce": 16909060,
+      "plaintextHex": "000102030405060708090a0b0c0d0e0f10",
+      "ciphertextHex": "93a9c989d7b5c7458870966afa508ef1bb",
+      "macLength": 16,
+      "macHex": "05e42e6a96f721abb811c354ea8845b7",
+      "reuse": {
+        "nonce": 0,
+        "plaintextHex": "0102030405",
+        "ciphertextHex": "12de0b42eb",
+        "macHex": "7217b7f8"
+      }
+    },
+    {
+      "name": "key_length_4",
+      "keyHex": "809dbad7",
+      "nonce": 16909060,
+      "plaintextHex": "000102030405060708090a0b0c0d0e0f10",
+      "ciphertextHex": "6a9f47d27745b560b6d4ee5f0955f0488e",
+      "macLength": 16,
+      "macHex": "9200b8b4a551141fd3d2339b7b10a0f5",
+      "reuse": {
+        "nonce": 0,
+        "plaintextHex": "0102030405",
+        "ciphertextHex": "c8b6af9f71",
+        "macHex": "3f76fcf1"
+      }
+    },
+    {
+      "name": "key_length_17",
+      "keyHex": "809dbad7f4112e4b6885a2bfdcf9163350",
+      "nonce": 16909060,
+      "plaintextHex": "000102030405060708090a0b0c0d0e0f10",
+      "ciphertextHex": "8864a23d0c7a2fbdb972fc7c8ffbe91111",
+      "macLength": 16,
+      "macHex": "18dc443515ad3361f721e884062ecb8b",
+      "reuse": {
+        "nonce": 0,
+        "plaintextHex": "0102030405",
+        "ciphertextHex": "9c2f59fd94",
+        "macHex": "0f0b2760"
+      }
+    },
+    {
+      "name": "key_length_32",
+      "keyHex": "809dbad7f4112e4b6885a2bfdcf91633506d8aa7c4e1fe1b3855728facc9e603",
+      "nonce": 16909060,
+      "plaintextHex": "000102030405060708090a0b0c0d0e0f10",
+      "ciphertextHex": "19afc20fc121acf0ef434b344d99004776",
+      "macLength": 16,
+      "macHex": "986cf0094f8aeb39edce81a5c0d870ad",
+      "reuse": {
+        "nonce": 0,
+        "plaintextHex": "0102030405",
+        "ciphertextHex": "699de0b2d5",
+        "macHex": "fa8ee189"
+      }
+    },
+    {
+      "name": "ap_packet_0",
+      "keyHex": "000102030405060708090a0b0c0d0e0f10111213",
+      "nonce": 0,
+      "plaintextHex": "0c001000112233445566778899aabbccddeeff",
+      "ciphertextHex": "7fd37c7ab54c004c3ef8d50bf630f2207c2905",
+      "macLength": 4,
+      "macHex": "1a610f7a",
+      "reuse": {
+        "nonce": 4294967295,
+        "plaintextHex": "0102030405",
+        "ciphertextHex": "31a7a0df6d",
+        "macHex": "60d88ed8"
+      },
+      "packet": {
+        "command": 12,
+        "payloadHex": "00112233445566778899aabbccddeeff"
+      }
+    },
+    {
+      "name": "ap_packet_1",
+      "keyHex": "000102030405060708090a0b0c0d0e0f10111213",
+      "nonce": 1,
+      "plaintextHex": "04000768656c6c6f00ff",
+      "ciphertextHex": "d971328424dc0e0e8f4b",
+      "macLength": 4,
+      "macHex": "ecc80436",
+      "reuse": {
+        "nonce": 0,
+        "plaintextHex": "0102030405",
+        "ciphertextHex": "72d16f7ec5",
+        "macHex": "c6da24e7"
+      },
+      "packet": {
+        "command": 4,
+        "payloadHex": "68656c6c6f00ff"
+      }
+    },
+    {
+      "name": "ap_packet_receive",
+      "keyHex": "131211100f0e0d0c0b0a09080706050403020100",
+      "nonce": 0,
+      "plaintextHex": "0d001400000005000102030405060708090a0b0c0d0e0f",
+      "ciphertextHex": "d8f52e909349092e5be935e8d42bc5c13e1b432029dae8",
+      "macLength": 4,
+      "macHex": "0da921d4",
+      "reuse": {
+        "nonce": 4294967295,
+        "plaintextHex": "0102030405",
+        "ciphertextHex": "6888119b8c",
+        "macHex": "3c389fc7"
+      },
+      "packet": {
+        "command": 13,
+        "payloadHex": "00000005000102030405060708090a0b0c0d0e0f"
+      }
+    },
+    {
+      "name": "ap_audio_key_request_5",
+      "keyHex": "000102030405060708090a0b0c0d0e0f10111213",
+      "nonce": 5,
+      "plaintextHex": "0c002a000102030405060708090a0b0c0d0e0f10111213202122232425262728292a2b2c2d2e2f000000050000",
+      "ciphertextHex": "7159edebd6a684b72f7e8c463b03693fdebe4cd53311791ded32c87cabbe0f8b1d09667ca292b9d5b8b724f2ea",
+      "macLength": 4,
+      "macHex": "f3a0f325",
+      "reuse": {
+        "nonce": 0,
+        "plaintextHex": "0102030405",
+        "ciphertextHex": "72d16f7ec5",
+        "macHex": "c6da24e7"
+      },
+      "packet": {
+        "command": 12,
+        "payloadHex": "000102030405060708090a0b0c0d0e0f10111213202122232425262728292a2b2c2d2e2f000000050000"
+      }
+    }
+  ]
+}

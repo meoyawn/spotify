@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "sha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+    "format": "Mach-O64",
+    "architecture": "arm64",
+    "size": 42396912,
+    "inventory": "reverse-engineering/evidence/protocol-descriptors.json"
+  },
+  "method": "Read-only immutable source-byte search; validate whole executable SHA256; exact public-key byte comparison and exact NUL-terminated string-pattern searches; source VA derived from LC_SEGMENT_64 mappings. No process launch, account/store read, network, Ghidra import/session call, or standard-library decompilation.",
+  "rsaServerKey": {
+    "fileOffset": 36341300,
+    "fileOffsetHex": "0x22a8634",
+    "virtualAddress": "0x1022a8634",
+    "segment": "__TEXT",
+    "length": 256,
+    "sha256": "5151f3640345dbf987ee09659980c2d80593b9ea8e47c496dcdea2182fe41c70",
+    "prefixHex": "ace0460bffc230aff46bfec3bfbf863da191c6cc336c93a14fb3b01612acac6a",
+    "suffixHex": "eb0006a25aeea11b13873cd719e655bd",
+    "exactByteOccurrenceCount": 1,
+    "referenceConstant": "SERVER_KEY",
+    "referencePath": "native/librespot/upstream/core/src/connection/handshake.rs",
+    "referenceSourceSha256": "646195e6aed04c851e37edcd3b611c6435e2846f6b38f70b86e08216de3fbca1",
+    "referenceRepository": "https://github.com/meoyawn/librespot.git",
+    "referenceCommit": "4c0b431ce26a957eb5214eb0311a151432b603f0",
+    "referenceUpstreamBaseCommit": "99b6088bf3ea028f90192676ac1a337fa4b2ed12",
+    "referenceLicense": "MIT"
+  },
+  "strings": [
+    {
+      "label": "apConnectedLog",
+      "value": "Connected to AP: %s",
+      "encoding": "ASCII, NUL-terminated",
+      "lengthWithoutTerminator": 19,
+      "sha256WithoutTerminator": "279caed782a1b5a55651a9829fb48261f485bb43938b05735bd8645fabb6ced6",
+      "exactPatternOccurrenceCount": 1,
+      "locations": [
+        {
+          "fileOffset": 37998969,
+          "fileOffsetHex": "0x243d179",
+          "virtualAddress": "0x10243d179",
+          "segment": "__TEXT"
+        }
+      ]
+    },
+    {
+      "label": "apWelcomeLog",
+      "value": "AP login welcome, len %zu",
+      "encoding": "ASCII, NUL-terminated",
+      "lengthWithoutTerminator": 25,
+      "sha256WithoutTerminator": "359b7bdceaa4169dc24de65fc4d22c0ca6ec6b28134a3209e9ae9f0030f7199c",
+      "exactPatternOccurrenceCount": 1,
+      "locations": [
+        {
+          "fileOffset": 37998989,
+          "fileOffsetHex": "0x243d18d",
+          "virtualAddress": "0x10243d18d",
+          "segment": "__TEXT"
+        }
+      ]
+    },
+    {
+      "label": "apWelcomeParseFailure",
+      "value": "Couldn't parse AP welcome!",
+      "encoding": "ASCII, NUL-terminated",
+      "lengthWithoutTerminator": 26,
+      "sha256WithoutTerminator": "fb1e31b270ab78556126fc19978599d3334d44aebfb2a9ca9824a4e803fa225c",
+      "exactPatternOccurrenceCount": 1,
+      "locations": [
+        {
+          "fileOffset": 37999015,
+          "fileOffsetHex": "0x243d1a7",
+          "virtualAddress": "0x10243d1a7",
+          "segment": "__TEXT"
+        }
+      ]
+    },
+    {
+      "label": "apLoginFailedLog",
+      "value": "AP login failed, len %zu",
+      "encoding": "ASCII, NUL-terminated",
+      "lengthWithoutTerminator": 24,
+      "sha256WithoutTerminator": "945d3ad6045cd0a51f1146e1c63e017466c337af0bb1ef09e959fadcab746d4d",
+      "exactPatternOccurrenceCount": 1,
+      "locations": [
+        {
+          "fileOffset": 37999042,
+          "fileOffsetHex": "0x243d1c2",
+          "virtualAddress": "0x10243d1c2",
+          "segment": "__TEXT"
+        }
+      ]
+    },
+    {
+      "label": "apLoginCompleteLog",
+      "value": "AP login complete, len %zu",
+      "encoding": "ASCII, NUL-terminated",
+      "lengthWithoutTerminator": 26,
+      "sha256WithoutTerminator": "2647192561cec1c6ff0f6139f4cd670f54fbe1a4adbe4a9de290b0d5fc90c128",
+      "exactPatternOccurrenceCount": 1,
+      "locations": [
+        {
+          "fileOffset": 37999067,
+          "fileOffsetHex": "0x243d1db",
+          "virtualAddress": "0x10243d1db",
+          "segment": "__TEXT"
+        }
+      ]
+    },
+    {
+      "label": "apSocketErrorLog",
+      "value": "AP Socket Error: %s (%d)",
+      "encoding": "ASCII, NUL-terminated",
+      "lengthWithoutTerminator": 24,
+      "sha256WithoutTerminator": "63be28574a23cc71a3259b4efe0f0e33933b1e5a70a9fe3751585028b129afee",
+      "exactPatternOccurrenceCount": 1,
+      "locations": [
+        {
+          "fileOffset": 37999094,
+          "fileOffsetHex": "0x243d1f6",
+          "virtualAddress": "0x10243d1f6",
+          "segment": "__TEXT"
+        }
+      ]
+    },
+    {
+      "label": "apConnectLog",
+      "value": "Connecting to AP %s:%d",
+      "encoding": "ASCII, NUL-terminated",
+      "lengthWithoutTerminator": 22,
+      "sha256WithoutTerminator": "228f3df09cf7ba9f3868a49475411b80e7f993e1d6d1122a9f9c52ca31978804",
+      "exactPatternOccurrenceCount": 1,
+      "locations": [
+        {
+          "fileOffset": 37999176,
+          "fileOffsetHex": "0x243d248",
+          "virtualAddress": "0x10243d248",
+          "segment": "__TEXT"
+        }
+      ]
+    },
+    {
+      "label": "apConnectViaProxyLog",
+      "value": "Connecting to AP %s:%d via proxy %s",
+      "encoding": "ASCII, NUL-terminated",
+      "lengthWithoutTerminator": 35,
+      "sha256WithoutTerminator": "509820ba48608f4b0b3db8f7e30e210d21a9302171276e8867ea9582b66d175a",
+      "exactPatternOccurrenceCount": 1,
+      "locations": [
+        {
+          "fileOffset": 37999140,
+          "fileOffsetHex": "0x243d224",
+          "virtualAddress": "0x10243d224",
+          "segment": "__TEXT"
+        }
+      ]
+    },
+    {
+      "label": "apResolverUrl",
+      "value": "https://apresolve.spotify.com/v2",
+      "encoding": "ASCII, NUL-terminated",
+      "lengthWithoutTerminator": 32,
+      "sha256WithoutTerminator": "ec401e716cb5fe9a8ca6995684c166357673a62d04ea3dad23b7da4c197edcf1",
+      "exactPatternOccurrenceCount": 1,
+      "locations": [
+        {
+          "fileOffset": 38028272,
+          "fileOffsetHex": "0x24443f0",
+          "virtualAddress": "0x1024443f0",
+          "segment": "__TEXT"
+        }
+      ]
+    },
+    {
+      "label": "nativeEncryptionKeyCategory",
+      "value": "encryption_key",
+      "encoding": "ASCII, NUL-terminated",
+      "lengthWithoutTerminator": 14,
+      "sha256WithoutTerminator": "029d0f594ee6fd77288e1d5467aac76c9e928cda19973561b352f7709fc9bab5",
+      "exactPatternOccurrenceCount": 1,
+      "locations": [
+        {
+          "fileOffset": 38027349,
+          "fileOffsetHex": "0x2444055",
+          "virtualAddress": "0x102444055",
+          "segment": "__TEXT"
+        }
+      ]
+    },
+    {
+      "label": "nativeKeyDenied",
+      "value": "encryption_key_denied",
+      "encoding": "ASCII, NUL-terminated",
+      "lengthWithoutTerminator": 21,
+      "sha256WithoutTerminator": "586aaabf6615fe4bafe5e0eddd1e84250b4c703578b5c64cfa0302bd0d42bb98",
+      "exactPatternOccurrenceCount": 1,
+      "locations": [
+        {
+          "fileOffset": 38027282,
+          "fileOffsetHex": "0x2444012",
+          "virtualAddress": "0x102444012",
+          "segment": "__TEXT"
+        }
+      ]
+    },
+    {
+      "label": "nativeInvalidKeyToken",
+      "value": "invalid_encryption_key_token",
+      "encoding": "ASCII, NUL-terminated",
+      "lengthWithoutTerminator": 28,
+      "sha256WithoutTerminator": "df728cbd5f6f20038b55b8148eaae645f1e3582d837cdb6d8270fa5e9e378316",
+      "exactPatternOccurrenceCount": 1,
+      "locations": [
+        {
+          "fileOffset": 38027320,
+          "fileOffsetHex": "0x2444038",
+          "virtualAddress": "0x102444038",
+          "segment": "__TEXT"
+        }
+      ]
+    },
+    {
+      "label": "nativeApErrorCategory",
+      "value": "accesspoint",
+      "encoding": "ASCII, NUL-terminated",
+      "lengthWithoutTerminator": 11,
+      "sha256WithoutTerminator": "e7bc6d57f0f9ff80f923e280986051041bd89937ae026a582cf47b3c34e41145",
+      "exactPatternOccurrenceCount": 2,
+      "locations": [
+        {
+          "fileOffset": 38027270,
+          "fileOffsetHex": "0x2444006",
+          "virtualAddress": "0x102444006",
+          "segment": "__TEXT"
+        },
+        {
+          "fileOffset": 38028305,
+          "fileOffsetHex": "0x2444411",
+          "virtualAddress": "0x102444411",
+          "segment": "__TEXT"
+        }
+      ]
+    },
+    {
+      "label": "nativeApSignatureError",
+      "value": "ap_signature",
+      "encoding": "ASCII, NUL-terminated",
+      "lengthWithoutTerminator": 12,
+      "sha256WithoutTerminator": "69b2dfbaf208ce410ccb01ff259157c9a4480c8d7b89f02285d12d7ab76dce64",
+      "exactPatternOccurrenceCount": 1,
+      "locations": [
+        {
+          "fileOffset": 38027903,
+          "fileOffsetHex": "0x244427f",
+          "virtualAddress": "0x10244427f",
+          "segment": "__TEXT"
+        }
+      ]
+    },
+    {
+      "label": "nativeApDisabled",
+      "value": "ap_network_disabled",
+      "encoding": "ASCII, NUL-terminated",
+      "lengthWithoutTerminator": 19,
+      "sha256WithoutTerminator": "5fc6858e32c54696d82c24bbc97cd4d5dcee4190ae9099997df92574b7efadd7",
+      "exactPatternOccurrenceCount": 1,
+      "locations": [
+        {
+          "fileOffset": 38027942,
+          "fileOffsetHex": "0x24442a6",
+          "virtualAddress": "0x1024442a6",
+          "segment": "__TEXT"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    "The exact full 256-byte public AP server RSA key used by the pinned librespot reference occurs once in this original executable.",
+    "Original bytes include AP connection/login/welcome/socket log strings, a /v2 AP resolver URL, and encryption-key error/category strings."
+  ],
+  "inference": {
+    "claim": "These independent static anchors support the presence of an AP connectivity/authentication implementation in this original binary.",
+    "status": "inference pending proprietary caller/code-reference inspection",
+    "doesNotEstablish": [
+      "Original ClientHello/BuildInfo/SystemInfo fields, credential authentication type, or serialized bytes.",
+      "That the current music/audio key owner uses AP rather than HTTP/WSS or another route.",
+      "The actual callers, active runtime selection, request ordering, or transport fingerprint.",
+      "That reference AP resolve query, media key packet format, fixed audio IV, account eligibility, or fallback policy matches this client."
+    ]
+  },
+  "limitations": [
+    "A constant/string match does not establish a code reference or executed call path.",
+    "String adjacency does not prove shared ownership.",
+    "The full-descriptor inventory lacks keyexchange.proto/authentication.proto; that absence does not prove the native protocol lacks these messages."
+  ]
+}

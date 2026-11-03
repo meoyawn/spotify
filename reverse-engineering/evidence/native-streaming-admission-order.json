@@ -1,0 +1,305 @@
+{
+  "scope": "Original request/reply timestamps and equal media identities only.",
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "captures": [
+    {
+      "path": ".local/original-reference-streaming-netlog.json",
+      "sha256": "644660b4da3948c6f0e0e21479b34de444f295ba3e94684257e2c53dc9587489",
+      "eventCount": 82703,
+      "requests": [
+        {
+          "sourceId": 3404,
+          "kind": "key",
+          "start": 0,
+          "canaryClockIdentityMatches": [],
+          "send": 0,
+          "headers": 195,
+          "status": 200,
+          "firstBody": 195,
+          "identityGroup": 0
+        },
+        {
+          "sourceId": 3422,
+          "kind": "storage",
+          "start": 1,
+          "send": 1,
+          "headers": 227,
+          "status": 200,
+          "firstBody": 227,
+          "identityGroup": 0
+        },
+        {
+          "sourceId": 3550,
+          "kind": "cdn",
+          "start": 228,
+          "send": 776,
+          "headers": 930,
+          "status": 206,
+          "firstBody": 930,
+          "identityGroup": 0
+        },
+        {
+          "sourceId": 3715,
+          "kind": "key",
+          "start": 1579,
+          "canaryClockIdentityMatches": [
+            {
+              "prefix": "ok",
+              "secondsOffset": 0
+            }
+          ],
+          "send": 1579,
+          "headers": 1770,
+          "status": 200,
+          "firstBody": 1770,
+          "identityGroup": 1
+        },
+        {
+          "sourceId": 3728,
+          "kind": "cdn",
+          "start": 1996,
+          "send": 1997,
+          "headers": 2141,
+          "status": 206,
+          "firstBody": 2143,
+          "identityGroup": 0
+        },
+        {
+          "sourceId": 3752,
+          "kind": "cdn",
+          "start": 2292,
+          "send": 2293,
+          "headers": 2436,
+          "status": 206,
+          "firstBody": 2442,
+          "identityGroup": 0
+        }
+      ],
+      "firstMediaFlowIdentityMatched": true,
+      "cdnStartAfterKeyReplyMs": 33,
+      "cdnStartAfterStorageReplyMs": 1,
+      "http2NativeRequestsBeforeServerSettings": [
+        {
+          "sourceId": 844,
+          "firstNativeHeadersAfterInitializedMs": 3,
+          "firstNativeHeadersBeforeServerSettingsMs": 153,
+          "firstNativeRequestIsMetadata": false,
+          "carriesMetadata": true
+        }
+      ]
+    },
+    {
+      "path": ".local/original-license-upload-http2-netlog.json",
+      "sha256": "7ad17ebaf96eda74ecd2c0cd822370287f4aed26310a49faa930cdda92fd64fa",
+      "eventCount": 67442,
+      "requests": [
+        {
+          "sourceId": 2204,
+          "kind": "key",
+          "start": 0,
+          "canaryClockIdentityMatches": [],
+          "send": 0,
+          "headers": 182,
+          "status": 200,
+          "firstBody": 183,
+          "identityGroup": 0
+        },
+        {
+          "sourceId": 2221,
+          "kind": "storage",
+          "start": 1,
+          "send": 1,
+          "headers": 185,
+          "status": 200,
+          "firstBody": 185,
+          "identityGroup": 0
+        },
+        {
+          "sourceId": 2271,
+          "kind": "cdn",
+          "start": 186,
+          "send": 814,
+          "headers": 1044,
+          "status": 206,
+          "firstBody": 1046,
+          "identityGroup": 0
+        },
+        {
+          "sourceId": 2388,
+          "kind": "cdn",
+          "start": 2102,
+          "send": 2102,
+          "headers": 2346,
+          "status": 206,
+          "firstBody": 2346,
+          "identityGroup": 0
+        },
+        {
+          "sourceId": 2442,
+          "kind": "key",
+          "start": 2735,
+          "canaryClockIdentityMatches": [
+            {
+              "prefix": "ok",
+              "secondsOffset": 0
+            }
+          ],
+          "send": 2735,
+          "headers": 2921,
+          "status": 200,
+          "firstBody": 2921,
+          "identityGroup": 1
+        }
+      ],
+      "firstMediaFlowIdentityMatched": true,
+      "cdnStartAfterKeyReplyMs": 3,
+      "cdnStartAfterStorageReplyMs": 1,
+      "http2NativeRequestsBeforeServerSettings": [
+        {
+          "sourceId": 697,
+          "firstNativeHeadersAfterInitializedMs": 4,
+          "firstNativeHeadersBeforeServerSettingsMs": 144,
+          "firstNativeRequestIsMetadata": false,
+          "carriesMetadata": true
+        },
+        {
+          "sourceId": 1495,
+          "firstNativeHeadersAfterInitializedMs": 1,
+          "firstNativeHeadersBeforeServerSettingsMs": 150,
+          "firstNativeRequestIsMetadata": false,
+          "carriesMetadata": false
+        },
+        {
+          "sourceId": 1907,
+          "firstNativeHeadersAfterInitializedMs": 0,
+          "firstNativeHeadersBeforeServerSettingsMs": 148,
+          "firstNativeRequestIsMetadata": false,
+          "carriesMetadata": true
+        },
+        {
+          "sourceId": 1961,
+          "firstNativeHeadersAfterInitializedMs": 1,
+          "firstNativeHeadersBeforeServerSettingsMs": 153,
+          "firstNativeRequestIsMetadata": false,
+          "carriesMetadata": false
+        },
+        {
+          "sourceId": 2002,
+          "firstNativeHeadersAfterInitializedMs": 0,
+          "firstNativeHeadersBeforeServerSettingsMs": 150,
+          "firstNativeRequestIsMetadata": false,
+          "carriesMetadata": false
+        },
+        {
+          "sourceId": 2344,
+          "firstNativeHeadersAfterInitializedMs": 0,
+          "firstNativeHeadersBeforeServerSettingsMs": 243,
+          "firstNativeRequestIsMetadata": false,
+          "carriesMetadata": false
+        },
+        {
+          "sourceId": 2370,
+          "firstNativeHeadersAfterInitializedMs": 0,
+          "firstNativeHeadersBeforeServerSettingsMs": 147,
+          "firstNativeRequestIsMetadata": false,
+          "carriesMetadata": false
+        }
+      ]
+    },
+    {
+      "path": ".local/original-license-rejection-reference-netlog.json",
+      "sha256": "6d8e8c9f4d71bd0e39ecff3282e86438540cf22987a33b2340d79658d4ec6d50",
+      "eventCount": 96525,
+      "requests": [
+        {
+          "sourceId": 3897,
+          "kind": "key",
+          "start": 0,
+          "canaryClockIdentityMatches": [],
+          "send": 0,
+          "headers": 195,
+          "status": 200,
+          "firstBody": 195,
+          "identityGroup": 0
+        },
+        {
+          "sourceId": 3917,
+          "kind": "storage",
+          "start": 1,
+          "send": 1,
+          "headers": 202,
+          "status": 200,
+          "firstBody": 202,
+          "identityGroup": 0
+        },
+        {
+          "sourceId": 4030,
+          "kind": "cdn",
+          "start": 217,
+          "send": 924,
+          "headers": 1159,
+          "status": 206,
+          "firstBody": 1159,
+          "identityGroup": 0
+        },
+        {
+          "sourceId": 4109,
+          "kind": "key",
+          "start": 1521,
+          "canaryClockIdentityMatches": [
+            {
+              "prefix": "ok",
+              "secondsOffset": 0
+            }
+          ],
+          "send": 1521,
+          "headers": 1711,
+          "status": 200,
+          "firstBody": 1711,
+          "identityGroup": 1
+        }
+      ],
+      "firstMediaFlowIdentityMatched": true,
+      "cdnStartAfterKeyReplyMs": 22,
+      "cdnStartAfterStorageReplyMs": 15,
+      "http2NativeRequestsBeforeServerSettings": [
+        {
+          "sourceId": 616,
+          "firstNativeHeadersAfterInitializedMs": 0,
+          "firstNativeHeadersBeforeServerSettingsMs": 242,
+          "firstNativeRequestIsMetadata": false,
+          "carriesMetadata": false
+        },
+        {
+          "sourceId": 814,
+          "firstNativeHeadersAfterInitializedMs": 2,
+          "firstNativeHeadersBeforeServerSettingsMs": 146,
+          "firstNativeRequestIsMetadata": false,
+          "carriesMetadata": true
+        },
+        {
+          "sourceId": 1018,
+          "firstNativeHeadersAfterInitializedMs": 2,
+          "firstNativeHeadersBeforeServerSettingsMs": 145,
+          "firstNativeRequestIsMetadata": false,
+          "carriesMetadata": true
+        },
+        {
+          "sourceId": 2503,
+          "firstNativeHeadersAfterInitializedMs": 1,
+          "firstNativeHeadersBeforeServerSettingsMs": 244,
+          "firstNativeRequestIsMetadata": false,
+          "carriesMetadata": false
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Only retained capture event metadata is inspected; no app/profile access, network or response-body decoding is performed.",
+    "URLs, signed queries, file/playback identities and headers are not exported.",
+    "This establishes successful reply-before-CDN request order, not original local key-computation scheduling or complete TLS/QUIC compatibility.",
+    "H2 rows retain only session IDs, request-family booleans and event time differences: original native requests can precede initial server SETTINGS, including on sessions carrying metadata. The first request need not itself be metadata. No TLS/HPACK/frame equivalence follows.",
+    "Canary clock matches use the independently recovered SHA1(prefix+Unix-seconds) path producer and the original NetLog timeTickOffset, within2seconds. This classifies URL identity; it does not recover an uncaptured upload body or prove the original event scheduler.",
+    "Original first-body events are timestamp boundaries, not an audible-start measurement."
+  ]
+}

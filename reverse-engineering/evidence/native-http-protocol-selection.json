@@ -1,0 +1,632 @@
+{
+  "scope": "Observe shipped CEF H2/H3 selection on a fresh isolated loopback origin.\n\nThe original native-context settings are supplied from retained executions.\nStandard local certificate policy, DNS and bootstrap are explicit substitutes.\nNo protocol force/disable flag, Spotify account, profile or remote request is used.\n",
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "sourceLibrarySha256": "ea7338318fe19b147a03707fe598af0b6680e8760885db3b14f132a95d04e618",
+  "apiVersion": 999999,
+  "apiHash": "27759c0a4b5b85c632e775838eb599b65129b798",
+  "inputs": [
+    {
+      "path": "reverse-engineering/fixtures/native-cef-template-loopback.json",
+      "sha256": "560dd072f3247ba72c1be91bda7ed8c8f96c92ced2991ebe3d042b05fc757a2e"
+    },
+    {
+      "path": "reverse-engineering/fixtures/native-cef-h2-loopback.json",
+      "sha256": "1f536c4b6ce5c8e1bfcf827125cf7eb5592df00c4dd15a38c6ce256840d724e4"
+    },
+    {
+      "path": "reverse-engineering/fixtures/native-audio-files-requests.json",
+      "sha256": "7bcd2a46a363919b83061bf73c467f038723eabe5d10f6290c92f716a44922fa"
+    }
+  ],
+  "cases": [
+    {
+      "advertisedH3": false,
+      "protocols": [
+        "h2",
+        "h2",
+        "h2"
+      ],
+      "workerReturnCode": 0,
+      "completed": [
+        true,
+        true,
+        true
+      ],
+      "requestErrors": [
+        0,
+        0,
+        0
+      ],
+      "capturedRequests": [
+        {
+          "protocol": "h2",
+          "alpn": "h2",
+          "headersBeforeServerSettings": false,
+          "headers": [
+            [
+              ":method",
+              "POST"
+            ],
+            [
+              ":authority",
+              "<loopback-authority>"
+            ],
+            [
+              ":scheme",
+              "https"
+            ],
+            [
+              ":path",
+              "/extended-metadata/v0/extended-metadata"
+            ],
+            [
+              "content-length",
+              "59"
+            ],
+            [
+              "accept",
+              "application/protobuf"
+            ],
+            [
+              "accept-language",
+              "en"
+            ],
+            [
+              "authorization",
+              "Bearer fixture-access-token"
+            ],
+            [
+              "content-type",
+              "application/protobuf"
+            ],
+            [
+              "user-agent",
+              "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+            ],
+            [
+              "app-platform",
+              "OSX_ARM64"
+            ],
+            [
+              "client-feature-id",
+              "prefetch"
+            ],
+            [
+              "client-token",
+              "fixture-client-token"
+            ],
+            [
+              "spotify-app-version",
+              "130601921"
+            ],
+            [
+              "time-zone",
+              "Europe/Moscow"
+            ],
+            [
+              "origin",
+              "https://<loopback-authority>"
+            ],
+            [
+              "sec-fetch-site",
+              "same-origin"
+            ],
+            [
+              "sec-fetch-mode",
+              "no-cors"
+            ],
+            [
+              "sec-fetch-dest",
+              "empty"
+            ],
+            [
+              "accept-encoding",
+              "gzip, deflate, br, zstd"
+            ],
+            [
+              "priority",
+              "u=4, i"
+            ]
+          ],
+          "bodyBase64": "Cg0KAlpaEgdmaXh0dXJlEioKJHNwb3RpZnk6dHJhY2s6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMBICCAU=",
+          "rawClientFramesBase64": "UFJJICogSFRUUC8yLjANCg0KU00NCg0KAAAYBAAAAAAAAAEAAQAAAAIAAAAAAAQAYAAAAAYABAAAAAAECAAAAAAAAO8AAQABdgEkAAAAAYAAAABtg0GLoOQdE50JuNgbA9+HBJtgvlJapCyLUlSOQaRsdwMF8pLVIWRakqRyDSNcAjU5U44dddBiDSY9TFdh0njtl1ECZW5Xk7pR2FsUlN5TbYVYZCFQhZJ+patfjh110GINJj1MV2HSeO2XeqXdWdJpfTAWQOAC+IKmrd+RQ7dDjTGrcp+KCcXaXAp/7HZSoL/5QIkdda1dA0ynsp+I1bvyKHboca9AjCUGLUlaUo022FWNJ4auwspUkn9AiSUGLUlZJ+pav46U3lNthViUGLUlZJ+pakCORWdJpfSw661u5bEGPV+GCyBwAXxBQIdJqSrez1F/isFth6ysaDoIfx9AhT2GmNV/kZ0prRcYYoOQdE50JuNgbA9/QIpBSLSlSSdZBkl/iEDpKsew0xqvQIpBSLSlSSdak8hfhajrEPYjQIpBSLSlSSdaQqE/hC01p9dQkpvZq/pSQstA0l+lI7PpT2hMn0CGrsMewyfXhbYGvpQ3AAA7AAEAAAABCg0KAlpaEgdmaXh0dXJlEioKJHNwb3RpZnk6dHJhY2s6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMBICCAU="
+        },
+        {
+          "protocol": "h2",
+          "alpn": "h2",
+          "headersBeforeServerSettings": false,
+          "headers": [
+            [
+              ":method",
+              "POST"
+            ],
+            [
+              ":authority",
+              "<loopback-authority>"
+            ],
+            [
+              ":scheme",
+              "https"
+            ],
+            [
+              ":path",
+              "/extended-metadata/v0/extended-metadata"
+            ],
+            [
+              "content-length",
+              "59"
+            ],
+            [
+              "accept",
+              "application/protobuf"
+            ],
+            [
+              "accept-language",
+              "en"
+            ],
+            [
+              "authorization",
+              "Bearer fixture-access-token"
+            ],
+            [
+              "content-type",
+              "application/protobuf"
+            ],
+            [
+              "user-agent",
+              "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+            ],
+            [
+              "app-platform",
+              "OSX_ARM64"
+            ],
+            [
+              "client-feature-id",
+              "prefetch"
+            ],
+            [
+              "client-token",
+              "fixture-client-token"
+            ],
+            [
+              "spotify-app-version",
+              "130601921"
+            ],
+            [
+              "time-zone",
+              "Europe/Moscow"
+            ],
+            [
+              "origin",
+              "https://<loopback-authority>"
+            ],
+            [
+              "sec-fetch-site",
+              "same-origin"
+            ],
+            [
+              "sec-fetch-mode",
+              "no-cors"
+            ],
+            [
+              "sec-fetch-dest",
+              "empty"
+            ],
+            [
+              "accept-encoding",
+              "gzip, deflate, br, zstd"
+            ],
+            [
+              "priority",
+              "u=4, i"
+            ]
+          ],
+          "bodyBase64": "Cg0KAlpaEgdmaXh0dXJlEioKJHNwb3RpZnk6dHJhY2s6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMBICCAU=",
+          "rawClientFramesBase64": "UFJJICogSFRUUC8yLjANCg0KU00NCg0KAAAYBAAAAAAAAAEAAQAAAAIAAAAAAAQAYAAAAAYABAAAAAAECAAAAAAAAO8AAQABdgEkAAAAAYAAAABtg0GLoOQdE50JuNgbA9+HBJtgvlJapCyLUlSOQaRsdwMF8pLVIWRakqRyDSNcAjU5U44dddBiDSY9TFdh0njtl1ECZW5Xk7pR2FsUlN5TbYVYZCFQhZJ+patfjh110GINJj1MV2HSeO2XeqXdWdJpfTAWQOAC+IKmrd+RQ7dDjTGrcp+KCcXaXAp/7HZSoL/5QIkdda1dA0ynsp+I1bvyKHboca9AjCUGLUlaUo022FWNJ4auwspUkn9AiSUGLUlZJ+pav46U3lNthViUGLUlZJ+pakCORWdJpfSw661u5bEGPV+GCyBwAXxBQIdJqSrez1F/isFth6ysaDoIfx9AhT2GmNV/kZ0prRcYYoOQdE50JuNgbA9/QIpBSLSlSSdZBkl/iEDpKsew0xqvQIpBSLSlSSdak8hfhajrEPYjQIpBSLSlSSdaQqE/hC01p9dQkpvZq/pSQstA0l+lI7PpT2hMn0CGrsMewyfXhbYGvpQ3AAA7AAEAAAABCg0KAlpaEgdmaXh0dXJlEioKJHNwb3RpZnk6dHJhY2s6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMBICCAUAAAAEAQAAAAAAADYBJAAAAAOAAAAAbYPPhwSbYL5SWqQsi1JUjkGkbHcDBfKS1SFkWpKkcg0jzs3My8rJyMfGxcTDwsHAv74AADsAAQAAAAMKDQoCWloSB2ZpeHR1cmUSKgokc3BvdGlmeTp0cmFjazowMDAwMDAwMDAwMDAwMDAwMDAwMDAwEgIIBQ=="
+        },
+        {
+          "protocol": "h2",
+          "alpn": "h2",
+          "headersBeforeServerSettings": false,
+          "headers": [
+            [
+              ":method",
+              "POST"
+            ],
+            [
+              ":authority",
+              "<loopback-authority>"
+            ],
+            [
+              ":scheme",
+              "https"
+            ],
+            [
+              ":path",
+              "/extended-metadata/v0/extended-metadata"
+            ],
+            [
+              "content-length",
+              "59"
+            ],
+            [
+              "accept",
+              "application/protobuf"
+            ],
+            [
+              "accept-language",
+              "en"
+            ],
+            [
+              "authorization",
+              "Bearer fixture-access-token"
+            ],
+            [
+              "content-type",
+              "application/protobuf"
+            ],
+            [
+              "user-agent",
+              "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+            ],
+            [
+              "app-platform",
+              "OSX_ARM64"
+            ],
+            [
+              "client-feature-id",
+              "prefetch"
+            ],
+            [
+              "client-token",
+              "fixture-client-token"
+            ],
+            [
+              "spotify-app-version",
+              "130601921"
+            ],
+            [
+              "time-zone",
+              "Europe/Moscow"
+            ],
+            [
+              "origin",
+              "https://<loopback-authority>"
+            ],
+            [
+              "sec-fetch-site",
+              "same-origin"
+            ],
+            [
+              "sec-fetch-mode",
+              "no-cors"
+            ],
+            [
+              "sec-fetch-dest",
+              "empty"
+            ],
+            [
+              "accept-encoding",
+              "gzip, deflate, br, zstd"
+            ],
+            [
+              "priority",
+              "u=4, i"
+            ]
+          ],
+          "bodyBase64": "Cg0KAlpaEgdmaXh0dXJlEioKJHNwb3RpZnk6dHJhY2s6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMBICCAU=",
+          "rawClientFramesBase64": "UFJJICogSFRUUC8yLjANCg0KU00NCg0KAAAYBAAAAAAAAAEAAQAAAAIAAAAAAAQAYAAAAAYABAAAAAAECAAAAAAAAO8AAQABdgEkAAAAAYAAAABtg0GLoOQdE50JuNgbA9+HBJtgvlJapCyLUlSOQaRsdwMF8pLVIWRakqRyDSNcAjU5U44dddBiDSY9TFdh0njtl1ECZW5Xk7pR2FsUlN5TbYVYZCFQhZJ+patfjh110GINJj1MV2HSeO2XeqXdWdJpfTAWQOAC+IKmrd+RQ7dDjTGrcp+KCcXaXAp/7HZSoL/5QIkdda1dA0ynsp+I1bvyKHboca9AjCUGLUlaUo022FWNJ4auwspUkn9AiSUGLUlZJ+pav46U3lNthViUGLUlZJ+pakCORWdJpfSw661u5bEGPV+GCyBwAXxBQIdJqSrez1F/isFth6ysaDoIfx9AhT2GmNV/kZ0prRcYYoOQdE50JuNgbA9/QIpBSLSlSSdZBkl/iEDpKsew0xqvQIpBSLSlSSdak8hfhajrEPYjQIpBSLSlSSdaQqE/hC01p9dQkpvZq/pSQstA0l+lI7PpT2hMn0CGrsMewyfXhbYGvpQ3AAA7AAEAAAABCg0KAlpaEgdmaXh0dXJlEioKJHNwb3RpZnk6dHJhY2s6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMBICCAUAAAAEAQAAAAAAADYBJAAAAAOAAAAAbYPPhwSbYL5SWqQsi1JUjkGkbHcDBfKS1SFkWpKkcg0jzs3My8rJyMfGxcTDwsHAv74AADsAAQAAAAMKDQoCWloSB2ZpeHR1cmUSKgokc3BvdGlmeTp0cmFjazowMDAwMDAwMDAwMDAwMDAwMDAwMDAwEgIIBQAANgEkAAAABYAAAABtg8+HBJtgvlJapCyLUlSOQaRsdwMF8pLVIWRakqRyDSPOzczLysnIx8bFxMPCwcC/vgAAOwABAAAABQoNCgJaWhIHZml4dHVyZRIqCiRzcG90aWZ5OnRyYWNrOjAwMDAwMDAwMDAwMDAwMDAwMDAwMDASAggF"
+        }
+      ]
+    },
+    {
+      "advertisedH3": true,
+      "protocols": [
+        "h2",
+        "h2",
+        "h2"
+      ],
+      "workerReturnCode": 0,
+      "completed": [
+        true,
+        true,
+        true
+      ],
+      "requestErrors": [
+        0,
+        0,
+        0
+      ],
+      "capturedRequests": [
+        {
+          "protocol": "h2",
+          "alpn": "h2",
+          "headersBeforeServerSettings": false,
+          "headers": [
+            [
+              ":method",
+              "POST"
+            ],
+            [
+              ":authority",
+              "<loopback-authority>"
+            ],
+            [
+              ":scheme",
+              "https"
+            ],
+            [
+              ":path",
+              "/extended-metadata/v0/extended-metadata"
+            ],
+            [
+              "content-length",
+              "59"
+            ],
+            [
+              "accept",
+              "application/protobuf"
+            ],
+            [
+              "accept-language",
+              "en"
+            ],
+            [
+              "authorization",
+              "Bearer fixture-access-token"
+            ],
+            [
+              "content-type",
+              "application/protobuf"
+            ],
+            [
+              "user-agent",
+              "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+            ],
+            [
+              "app-platform",
+              "OSX_ARM64"
+            ],
+            [
+              "client-feature-id",
+              "prefetch"
+            ],
+            [
+              "client-token",
+              "fixture-client-token"
+            ],
+            [
+              "spotify-app-version",
+              "130601921"
+            ],
+            [
+              "time-zone",
+              "Europe/Moscow"
+            ],
+            [
+              "origin",
+              "https://<loopback-authority>"
+            ],
+            [
+              "sec-fetch-site",
+              "same-origin"
+            ],
+            [
+              "sec-fetch-mode",
+              "no-cors"
+            ],
+            [
+              "sec-fetch-dest",
+              "empty"
+            ],
+            [
+              "accept-encoding",
+              "gzip, deflate, br, zstd"
+            ],
+            [
+              "priority",
+              "u=4, i"
+            ]
+          ],
+          "bodyBase64": "Cg0KAlpaEgdmaXh0dXJlEioKJHNwb3RpZnk6dHJhY2s6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMBICCAU=",
+          "rawClientFramesBase64": "UFJJICogSFRUUC8yLjANCg0KU00NCg0KAAAYBAAAAAAAAAEAAQAAAAIAAAAAAAQAYAAAAAYABAAAAAAECAAAAAAAAO8AAQABdQEkAAAAAYAAAABtg0GLoOQdE50JuNgbCH+HBJtgvlJapCyLUlSOQaRsdwMF8pLVIWRakqRyDSNcAjU5U44dddBiDSY9TFdh0njtl1ECZW5Xk7pR2FsUlN5TbYVYZCFQhZJ+patfjh110GINJj1MV2HSeO2XeqXdWdJpfTAWQOAC+IKmrd+RQ7dDjTGrcp+KCcXaXAp/7HZSoL/5QIkdda1dA0ynsp+I1bvyKHboca9AjCUGLUlaUo022FWNJ4auwspUkn9AiSUGLUlZJ+pav46U3lNthViUGLUlZJ+pakCORWdJpfSw661u5bEGPV+GCyBwAXxBQIdJqSrez1F/isFth6ysaDoIfx9AhT2GmNV/kJ0prRcYYoOQdE50JuNgbCFAikFItKVJJ1kGSX+IQOkqx7DTGq9AikFItKVJJ1qTyF+FqOsQ9iNAikFItKVJJ1pCoT+ELTWn11CSm9mr+lJCy0DSX6Ujs+lPaEyfQIauwx7DJ9eFtga+lDcAADsAAQAAAAEKDQoCWloSB2ZpeHR1cmUSKgokc3BvdGlmeTp0cmFjazowMDAwMDAwMDAwMDAwMDAwMDAwMDAwEgIIBQ=="
+        },
+        {
+          "protocol": "h2",
+          "alpn": "h2",
+          "headersBeforeServerSettings": false,
+          "headers": [
+            [
+              ":method",
+              "POST"
+            ],
+            [
+              ":authority",
+              "<loopback-authority>"
+            ],
+            [
+              ":scheme",
+              "https"
+            ],
+            [
+              ":path",
+              "/extended-metadata/v0/extended-metadata"
+            ],
+            [
+              "content-length",
+              "59"
+            ],
+            [
+              "accept",
+              "application/protobuf"
+            ],
+            [
+              "accept-language",
+              "en"
+            ],
+            [
+              "authorization",
+              "Bearer fixture-access-token"
+            ],
+            [
+              "content-type",
+              "application/protobuf"
+            ],
+            [
+              "user-agent",
+              "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+            ],
+            [
+              "app-platform",
+              "OSX_ARM64"
+            ],
+            [
+              "client-feature-id",
+              "prefetch"
+            ],
+            [
+              "client-token",
+              "fixture-client-token"
+            ],
+            [
+              "spotify-app-version",
+              "130601921"
+            ],
+            [
+              "time-zone",
+              "Europe/Moscow"
+            ],
+            [
+              "origin",
+              "https://<loopback-authority>"
+            ],
+            [
+              "sec-fetch-site",
+              "same-origin"
+            ],
+            [
+              "sec-fetch-mode",
+              "no-cors"
+            ],
+            [
+              "sec-fetch-dest",
+              "empty"
+            ],
+            [
+              "accept-encoding",
+              "gzip, deflate, br, zstd"
+            ],
+            [
+              "priority",
+              "u=4, i"
+            ]
+          ],
+          "bodyBase64": "Cg0KAlpaEgdmaXh0dXJlEioKJHNwb3RpZnk6dHJhY2s6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMBICCAU=",
+          "rawClientFramesBase64": "UFJJICogSFRUUC8yLjANCg0KU00NCg0KAAAYBAAAAAAAAAEAAQAAAAIAAAAAAAQAYAAAAAYABAAAAAAECAAAAAAAAO8AAQABdQEkAAAAAYAAAABtg0GLoOQdE50JuNgbCH+HBJtgvlJapCyLUlSOQaRsdwMF8pLVIWRakqRyDSNcAjU5U44dddBiDSY9TFdh0njtl1ECZW5Xk7pR2FsUlN5TbYVYZCFQhZJ+patfjh110GINJj1MV2HSeO2XeqXdWdJpfTAWQOAC+IKmrd+RQ7dDjTGrcp+KCcXaXAp/7HZSoL/5QIkdda1dA0ynsp+I1bvyKHboca9AjCUGLUlaUo022FWNJ4auwspUkn9AiSUGLUlZJ+pav46U3lNthViUGLUlZJ+pakCORWdJpfSw661u5bEGPV+GCyBwAXxBQIdJqSrez1F/isFth6ysaDoIfx9AhT2GmNV/kJ0prRcYYoOQdE50JuNgbCFAikFItKVJJ1kGSX+IQOkqx7DTGq9AikFItKVJJ1qTyF+FqOsQ9iNAikFItKVJJ1pCoT+ELTWn11CSm9mr+lJCy0DSX6Ujs+lPaEyfQIauwx7DJ9eFtga+lDcAADsAAQAAAAEKDQoCWloSB2ZpeHR1cmUSKgokc3BvdGlmeTp0cmFjazowMDAwMDAwMDAwMDAwMDAwMDAwMDAwEgIIBQAAAAQBAAAAAAAANgEkAAAAA4AAAABtg8+HBJtgvlJapCyLUlSOQaRsdwMF8pLVIWRakqRyDSPOzczLysnIx8bFxMPCwcC/vgAAOwABAAAAAwoNCgJaWhIHZml4dHVyZRIqCiRzcG90aWZ5OnRyYWNrOjAwMDAwMDAwMDAwMDAwMDAwMDAwMDASAggF"
+        },
+        {
+          "protocol": "h2",
+          "alpn": "h2",
+          "headersBeforeServerSettings": false,
+          "headers": [
+            [
+              ":method",
+              "POST"
+            ],
+            [
+              ":authority",
+              "<loopback-authority>"
+            ],
+            [
+              ":scheme",
+              "https"
+            ],
+            [
+              ":path",
+              "/extended-metadata/v0/extended-metadata"
+            ],
+            [
+              "content-length",
+              "59"
+            ],
+            [
+              "accept",
+              "application/protobuf"
+            ],
+            [
+              "accept-language",
+              "en"
+            ],
+            [
+              "authorization",
+              "Bearer fixture-access-token"
+            ],
+            [
+              "content-type",
+              "application/protobuf"
+            ],
+            [
+              "user-agent",
+              "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+            ],
+            [
+              "app-platform",
+              "OSX_ARM64"
+            ],
+            [
+              "client-feature-id",
+              "prefetch"
+            ],
+            [
+              "client-token",
+              "fixture-client-token"
+            ],
+            [
+              "spotify-app-version",
+              "130601921"
+            ],
+            [
+              "time-zone",
+              "Europe/Moscow"
+            ],
+            [
+              "origin",
+              "https://<loopback-authority>"
+            ],
+            [
+              "sec-fetch-site",
+              "same-origin"
+            ],
+            [
+              "sec-fetch-mode",
+              "no-cors"
+            ],
+            [
+              "sec-fetch-dest",
+              "empty"
+            ],
+            [
+              "accept-encoding",
+              "gzip, deflate, br, zstd"
+            ],
+            [
+              "priority",
+              "u=4, i"
+            ]
+          ],
+          "bodyBase64": "Cg0KAlpaEgdmaXh0dXJlEioKJHNwb3RpZnk6dHJhY2s6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMBICCAU=",
+          "rawClientFramesBase64": "UFJJICogSFRUUC8yLjANCg0KU00NCg0KAAAYBAAAAAAAAAEAAQAAAAIAAAAAAAQAYAAAAAYABAAAAAAECAAAAAAAAO8AAQABdQEkAAAAAYAAAABtg0GLoOQdE50JuNgbCH+HBJtgvlJapCyLUlSOQaRsdwMF8pLVIWRakqRyDSNcAjU5U44dddBiDSY9TFdh0njtl1ECZW5Xk7pR2FsUlN5TbYVYZCFQhZJ+patfjh110GINJj1MV2HSeO2XeqXdWdJpfTAWQOAC+IKmrd+RQ7dDjTGrcp+KCcXaXAp/7HZSoL/5QIkdda1dA0ynsp+I1bvyKHboca9AjCUGLUlaUo022FWNJ4auwspUkn9AiSUGLUlZJ+pav46U3lNthViUGLUlZJ+pakCORWdJpfSw661u5bEGPV+GCyBwAXxBQIdJqSrez1F/isFth6ysaDoIfx9AhT2GmNV/kJ0prRcYYoOQdE50JuNgbCFAikFItKVJJ1kGSX+IQOkqx7DTGq9AikFItKVJJ1qTyF+FqOsQ9iNAikFItKVJJ1pCoT+ELTWn11CSm9mr+lJCy0DSX6Ujs+lPaEyfQIauwx7DJ9eFtga+lDcAADsAAQAAAAEKDQoCWloSB2ZpeHR1cmUSKgokc3BvdGlmeTp0cmFjazowMDAwMDAwMDAwMDAwMDAwMDAwMDAwEgIIBQAAAAQBAAAAAAAANgEkAAAAA4AAAABtg8+HBJtgvlJapCyLUlSOQaRsdwMF8pLVIWRakqRyDSPOzczLysnIx8bFxMPCwcC/vgAAOwABAAAAAwoNCgJaWhIHZml4dHVyZRIqCiRzcG90aWZ5OnRyYWNrOjAwMDAwMDAwMDAwMDAwMDAwMDAwMDASAggFAAA2ASQAAAAFgAAAAG2Dz4cEm2C+UlqkLItSVI5BpGx3AwXyktUhZFqSpHINI87NzMvKycjHxsXEw8LBwL++AAA7AAEAAAAFCg0KAlpaEgdmaXh0dXJlEioKJHNwb3RpZnk6dHJhY2s6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMBICCAU="
+        }
+      ]
+    }
+  ],
+  "http3TransitionObserved": false,
+  "publicReferenceOwnershipSource": "https://github.com/chromiumembedded/cef/blob/beff58dbc4d0fd12b3eafea8f5314ce22e649078/libcef_dll/cpptoc/cpptoc_ref_counted.h",
+  "limits": [
+    "Fresh isolated native request context; no original application/profile or live Spotify requests.",
+    "Local TLS trust is explicitly substituted by the retained CEF bootstrap ignore-certificate-errors flag; no H2/H3 force/disable switch is supplied.",
+    "Three sequential metadata POSTs, public hyper-h2/aioquic peers and one same-origin h3 advertisement only.",
+    "The isolated original probe stayed H2 with and without the advertisement. It does not establish a positive H3 selection transition under this substituted bootstrap/trust policy.",
+    "This does not prove Chromium DNS HTTPS records, racing/backoff, cross-origin pooling, network changes, persisted alternative services or every server failure."
+  ]
+}

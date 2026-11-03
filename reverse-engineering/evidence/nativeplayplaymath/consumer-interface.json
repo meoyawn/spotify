@@ -1,0 +1,111 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "scope": "Offline original assembly and callback entry execution. No account, process injection or network.",
+  "observedPrefetchChain": [
+    {
+      "entry": "0x1005b6524",
+      "callsite": "0x1005b6a48",
+      "observation": "Explicit Prefetch log in original decompiler export. Core client virtual+0x10 receives music file identity and interactivity argument2; this does not prove ordinary user-click interactivity."
+    },
+    {
+      "entry": "0x1005b7e3c",
+      "observation": "Success functor installed at1005b69ac. Confirms matching20-byte file identity before tailing1005b6ebc, forwarding response result pointer."
+    },
+    {
+      "entry": "0x1005b6ebc",
+      "observation": "Checks all28bytes for nonzero; forwards same28-byte object asX3 to injected save stdfunction atowner+0x60, save reason2 and original caller flag. Executed offline with full output from10048de68."
+    },
+    {
+      "entry": "0x1005b61fc",
+      "observation": "Moves callerX5 stdfunction into save callback storageowner+0x48 andowner+0x60 pointer."
+    },
+    {
+      "entry": "0x1005cbc0c",
+      "observation": "Constructs Prefetch owner using writer stdfunction vtable102576fc0; invoke+0x30 resolves1005ce480."
+    },
+    {
+      "entry": "0x1005ce480",
+      "observation": "Forwards result28 unchanged to captured audio-context vtable+0xd8. Captured context is creator1005b1cdc ownthis."
+    },
+    {
+      "vtable": "0x1025764b0",
+      "methodOffset": "0xd8",
+      "entry": "0x1005b20c0",
+      "observation": "Audio context invokes another injected save stdfunction atowner+0x98, preserving result pointer."
+    },
+    {
+      "entry": "0x1005b06b0",
+      "observation": "Context constructor copies input bundle stdfunction+0x48 (pointer+0x60) to save storage+0x80 (pointer+0x98)."
+    },
+    {
+      "entry": "0x1005a771c",
+      "callsite": "0x1005a844c",
+      "observation": "Composer installs stdfunction vtable102575cc8 in bundle+0x48. Invoke+0x30 is1005abdec. Capture comes from inputX4 virtual+0x28 getter."
+    },
+    {
+      "entry": "0x1005abdec",
+      "observation": "Forwards result28 unchanged to captured metadata-store vtable+0x140; maps reason==2 tobool. Concrete compatible target10072247c resides in vtable102582578; registry binding itself is not yet executed."
+    },
+    {
+      "entry": "0x10053fb90",
+      "observation": "Source of composerX4: service lookup searches component byte0x61 then returns registry object field+0x308; its virtual+0x28 getter supplies metadata store. Concrete component binding remains unresolved."
+    },
+    {
+      "entry": "0x10072247c",
+      "vtable": "0x102582578",
+      "methodOffset": "0x140",
+      "observation": "Proprietary store method has the exact expected ABI. It forwards protected28 unchanged to per-file virtual+0x70, optionally cache owner+0x328 virtual+0x10, and optionally copies fileID20 plus result28 into store+0x340. No plaintext conversion occurs in this method."
+    }
+  ],
+  "limits": [
+    "The content-key arithmetic and byte order are independently established for synthetic original inputs; this does not verify a real license envelope or account entitlement.",
+    "Concrete service-registry and per-file constructor binding have not been executed; compatible static interfaces are identified separately from the independently executed crypto boundary.",
+    "Ordinary user-triggered request behavior is owned by the main agent and not proved by this Prefetch chain.",
+    "All native and Dart comparisons were offline; no account, real license, or network was used."
+  ],
+  "resolvedContentKeyBoundary": {
+    "protected28Producer": "0x1004bcc64",
+    "ctrProtectedInputPrefix": {
+      "entry": "0x101c70d10",
+      "observation": "0x101c70e40",
+      "stopBeforeStandardCtrLoop": "0x101c70e94"
+    },
+    "aesProtectedInputSetter": {
+      "vtable": "0x10266f7e0",
+      "methodOffset": "0x38",
+      "entry": "0x101c87d24",
+      "protectedFlagW3": 1,
+      "protectedArithmeticEntry": "0x101c85fe8",
+      "plaintextStore": "0x101c8693c",
+      "observationStop": "0x101c86940"
+    },
+    "proof": "Both original proprietary unprotect paths yield identical16 octets for42 synthetic complete response transformations. The static Dart complete pipeline matches38 of those inputs, with independent secure entropy. See content-key-observation.json.",
+    "byteOrder": "The16 raw memory bytes precede standard AES key-schedule big-endian word assembly. Do not reverse them.",
+    "intermediateWarning": "The earlier pre-protection16 words differ from the actual content key."
+  },
+  "boundedCacheContinuation": [
+    {
+      "entry": "0x1006dea40",
+      "vtable": "0x102580a08",
+      "methodOffset": "0x70",
+      "observation": "Kind0 per-file method compares exact fileID20 then forwards protected28 to cache virtual+0x10. Owner+0x98 is constructor1006db430 inputX3; its concrete binding is not independently executed."
+    },
+    {
+      "entry": "0x100725864",
+      "vtable": "0x102582a48",
+      "methodOffset": "0xd8",
+      "observation": "Metadata secondary interface at main object+0x28 returns one of main+0x310/+0x318/+0x320 injected caches based on file kind. Constructor100707638 installs this interface; composer100727100 constructs cache objects through100789884."
+    },
+    {
+      "entry": "0x10078957c",
+      "vtable": "0x102585490",
+      "methodOffset": "0x10",
+      "observation": "Appends36 bytes: fileID20 plus16 encrypted plaintext bytes. Protected28 input is forwarded to cipher virtual+0x28, original proprietary prefix101c70d10 before standard CTR processing."
+    },
+    {
+      "entry": "0x100789164",
+      "methodOffset": "0x18",
+      "observation": "Reverse cache operation decrypts16 bytes with standard CTR then returns protected28 through proprietary cipher virtual+0x30 (101c71088)."
+    }
+  ]
+}

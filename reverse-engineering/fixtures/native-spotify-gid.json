@@ -1,0 +1,36 @@
+{
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "entries": [
+    "0x101f4476c",
+    "0x101f44454"
+  ],
+  "parserCodeSha256": "dda0f4d26d42631855c0d8f9c67726d88e88c28943d04a7e6fd853c507d5feb1",
+  "scope": "Unchanged original parser, standard memory/string providers;16-byte link field+0x40, not audio_id selection policy",
+  "cases": [
+    {
+      "uri": "spotify:track:0000000000000000000000",
+      "originalKind": 4,
+      "originalGidHex": "00000000000000000000000000000000"
+    },
+    {
+      "uri": "spotify:track:0000000000000000000001",
+      "originalKind": 4,
+      "originalGidHex": "00000000000000000000000000000001"
+    },
+    {
+      "uri": "spotify:track:0RcYEWXtbu4ehdv1tiBOi0",
+      "originalKind": 4,
+      "originalGidHex": "1c32c03ce76547ebb4257b97c0eb063c"
+    },
+    {
+      "uri": "spotify:track:4uLU6hMCjMI75M1A2tKUQC",
+      "originalKind": 4,
+      "originalGidHex": "93bc414a606747b2b612491ef83d5a3e"
+    },
+    {
+      "uri": "spotify:track:7zzzzzzzzzzzzzzzzzzzzz",
+      "originalKind": 4,
+      "originalGidHex": "f8d9ac329b356f84ab390f6416875821"
+    }
+  ]
+}

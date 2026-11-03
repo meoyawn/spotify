@@ -1,0 +1,189 @@
+{
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "authority": "Unchanged proprietary method hash and URI parser execution; original rebased concrete vtable; exact-range proprietary instruction inspection for the named source chain.",
+  "method": "Modify",
+  "originalMethodHash": "f05acdcf",
+  "dispatchEntry": "0x10156498c",
+  "virtualOffset": "0x48",
+  "concreteVtable": "0x1025e6720",
+  "concreteMethod": "0x1014de5cc",
+  "vtableSnapshot": ".local/rea-session/rebased-dataconst.json",
+  "vtableSnapshotSha256": "a975d3c391daefa9728a873705441a11c078895461682db575be26b22eae29eb",
+  "uriParser": [
+    "0x101f4476c",
+    "0x101f44454"
+  ],
+  "uriCases": [
+    {
+      "uri": "spotify:playlist:37i9dQZF1F5p3rmiWPIYgZ",
+      "originalNativeType": 70
+    },
+    {
+      "uri": "spotify:playlist:0123456789ABCDEFGHIJKL",
+      "originalNativeType": 70
+    },
+    {
+      "uri": "spotify:user:synthetic:collection",
+      "originalNativeType": 47
+    }
+  ],
+  "originalUriEquality": [
+    {
+      "originalLiteralAddress": "0x102440b21",
+      "uri": "spotify:playlist:37i9dQZF1F5p3rmiWPIYgZ",
+      "originalEqualsFixedLiked": true
+    },
+    {
+      "originalLiteralAddress": "0x10245e2f2",
+      "uri": "spotify:playlist:37i9dQZF1FgnTBfUlzkeKt",
+      "originalEqualsFixedLiked": false
+    }
+  ],
+  "originalDefaultAddPositions": [
+    {
+      "uri": "spotify:playlist:37i9dQZF1F5p3rmiWPIYgZ",
+      "currentLength": 0,
+      "originalDefaultInsertionIndex": 0
+    },
+    {
+      "uri": "spotify:playlist:37i9dQZF1F5p3rmiWPIYgZ",
+      "currentLength": 1,
+      "originalDefaultInsertionIndex": 0
+    },
+    {
+      "uri": "spotify:playlist:37i9dQZF1F5p3rmiWPIYgZ",
+      "currentLength": 10396,
+      "originalDefaultInsertionIndex": 0
+    },
+    {
+      "uri": "spotify:playlist:0123456789ABCDEFGHIJKL",
+      "currentLength": 5,
+      "originalDefaultInsertionIndex": 5
+    }
+  ],
+  "sourceCode": [
+    {
+      "entry": "0x101564960",
+      "endExclusive": "0x10156498c",
+      "sha256": "1e7dc9f08a9b3ae864e840028fa0e0ce09f93e95a53679c57d58ef6c10746226"
+    },
+    {
+      "entry": "0x10156498c",
+      "endExclusive": "0x101565570",
+      "sha256": "78d13bd5defd097cabcb345375fa663e595c16b253065e901b1a9fec7d3cf193"
+    },
+    {
+      "entry": "0x1014de424",
+      "endExclusive": "0x1014de4b8",
+      "sha256": "d4f5b33b4679c805a9e49fc63668c0bb4240e0a1fe23f59ea471baead4fa8919"
+    },
+    {
+      "entry": "0x1014de5cc",
+      "endExclusive": "0x1014de6ec",
+      "sha256": "7a46a58158ec559d0bd009fceaa9a9a952ae2af00ae2287050848c292265440f"
+    },
+    {
+      "entry": "0x1014d2c44",
+      "endExclusive": "0x1014d2f84",
+      "sha256": "a9793a6e6f98d1cf4085182ce269c15c1bc411811c50e4608d93e8bcfea98846"
+    },
+    {
+      "entry": "0x1014d50c4",
+      "endExclusive": "0x1014d5228",
+      "sha256": "21298f5c69c4e5f782d21cae6e265d5055f1b41f09d7c6f2f11ebf0f8da6dcb7"
+    },
+    {
+      "entry": "0x101517e18",
+      "endExclusive": "0x101518bc8",
+      "sha256": "df9941a493708736f8c58391c7069b808aa56ca23a70ba39e784abb1e6905ac3"
+    },
+    {
+      "entry": "0x10150d98c",
+      "endExclusive": "0x10150dba8",
+      "sha256": "66e58283888b2fde701373e6f9e471e3f40224ef0627e04de04c5a4a49fb38bc"
+    },
+    {
+      "entry": "0x10150dba8",
+      "endExclusive": "0x10150f19c",
+      "sha256": "4cfc514a8c1938e543ee6cd6e57fd41741a5bc59707451864b6f045741502e7d"
+    },
+    {
+      "entry": "0x101516614",
+      "endExclusive": "0x1015167e8",
+      "sha256": "8b299fc9950c08140fbf6eaa516a162b7c811e064a2b765d5bed0b30d7a6d4df"
+    },
+    {
+      "entry": "0x101aabc74",
+      "endExclusive": "0x101aabefc",
+      "sha256": "e4bb9308f3fc9d00b8509e18f0ba670f1864a5873c901f8ff01190da59fa4c5f"
+    },
+    {
+      "entry": "0x101aae060",
+      "endExclusive": "0x101aae640",
+      "sha256": "4d5733bfeb96518cb4bfad0c4a50352dd2eb1efa4f336e9806bc9c8f845cbc3b"
+    },
+    {
+      "entry": "0x1014d4dd0",
+      "endExclusive": "0x1014d4f24",
+      "sha256": "eb6f0d40da26c614baaf16e34b95caceede3a15bf751e103729c8f6bf4a0ec77"
+    },
+    {
+      "entry": "0x1014d4f24",
+      "endExclusive": "0x1014d5028",
+      "sha256": "105cf8c468caf8fb18a2bf2979afb100a81a3d8fd4038b2b71f9156337c9b890"
+    },
+    {
+      "entry": "0x101512d70",
+      "endExclusive": "0x1015133cc",
+      "sha256": "f69becf01ddd03b7f4ea8a42c358d1a98cdf90ec4a8681357d373874338b4d43"
+    }
+  ],
+  "sourceExports": [
+    {
+      "path": ".local/rea-session/native-liked-songs-playlist-modify-producer.json",
+      "sha256": "478f867286cc7b3d6ace9da83af9849fd3eb84ac793b393ead7d36e9165d9fd3"
+    },
+    {
+      "path": ".local/rea-session/native-liked-songs-playlist-modify-command.json",
+      "sha256": "3bdbbb1c63a5ed5e162c600beef91836643af28763f5c3ad876aab622d95e244"
+    },
+    {
+      "path": ".local/rea-session/native-liked-songs-write-http-and-contains-command.json",
+      "sha256": "261b1165a8063f2e3aa7737e306f6c3bbb62351b2a2d707a0ab8d03e9f957cde"
+    },
+    {
+      "path": ".local/rea-session/native-liked-songs-playlist-apply-and-ack.json",
+      "sha256": "6acafc4a37e0c7d7da793ae28de73dcbd26cf8ff122c48d8d20e2245ae59f163"
+    },
+    {
+      "path": ".local/rea-session/native-liked-songs-add-remove-operators.json",
+      "sha256": "006a01d3aed930a18df868c8ed3e80a7cfff1483fead178057a9d00b9efb0f46"
+    },
+    {
+      "path": ".local/rea-session/native-liked-songs-managed-list-mutations.json",
+      "sha256": "d41845b5f5a39a105a9f68d507621ab75d4936b29cc471b38725cfa2caa61e55"
+    },
+    {
+      "path": ".local/rea-session/native-liked-songs-local-operation-notifications.json",
+      "sha256": "d79c165ddfa638c9c509da95c705855a22bfbf293d7e7f7c52318ea24dc4b220"
+    },
+    {
+      "path": ".local/rea-session/native-liked-songs-factory-observer-op-bridge.json",
+      "sha256": "e5f1370d40216f23185a911a1ef22bc3a690d022ccc8d1e71278c2ce5f610dee"
+    },
+    {
+      "path": ".local/rea-session/native-liked-songs-delta-ops-and-collection-pages.json",
+      "sha256": "8c6cda2fd02091f536a2dbd631a9d392951e3a78e79fd434add9ab8ece22f2dd"
+    },
+    {
+      "path": ".local/rea-session/native-liked-songs-add-rem-delta-and-sync-enqueue.json",
+      "sha256": "2a40510957046365a8ad65673b896458d6cecab739df04300461f52092c8bf5a"
+    }
+  ],
+  "standardSubstitutions": [
+    "Existing original-parser oracle standard memory/string/allocator providers",
+    "Existing query oracle standard memory/string providers for method hash",
+    "Managed-list abstract getters provide explicitly supplied URI and current length; Add executes unchanged until its chosen insertion index"
+  ],
+  "scope": "Service method binding, native link kinds/equality and original default Add insertion index only. Does not prove ModificationRequest-to-ListChanges conversion, final HTTP fields/body, account feature assignments or remote acknowledgement."
+}

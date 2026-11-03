@@ -1,0 +1,199 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "scope": "Offline CPU-only optimization of handwritten Dart arithmetic storage. No native proprietary implementation, app/process/account/profile/network action or live timing was used.",
+  "originalAuthority": {
+    "path": ".local/rea-session/native-playplay-independent-content-key.json",
+    "sha256": "e9d3fa27d51b7646be2745f5f784a0f8ee06baee00109854103cd9713737b82a",
+    "provenance": "Unchanged retained independently executed original synthetic response/unprotect observations, pinned by content-key-observation.json nativeObservationSha256. Expected16-byte values are original outputs, not derived from Dart.",
+    "responseEntry": "0x10048de68",
+    "protectedKeyScheduleEntry": "0x101c85fc4",
+    "unprotectObservationStop": "0x101c86940",
+    "uniqueCases": 38,
+    "defaultTableCases": 36,
+    "explicitOriginal3072ByteTableCases": 2,
+    "standardAdapters": "Unchanged from content-key-observation.json; this task replays retained original observations and executes no new original routine."
+  },
+  "implementation": {
+    "file": "lib/playback/native_playplay_unwrap.dart",
+    "beforeSha256": "3228412d2b6e0809419d7123f0c9b557b40acc4d6c79c268020db7e735100add",
+    "afterSha256": "b6186a014e17f43eef206aa9b49c3614b2ab684f0a51c066c564c43a6e8ded4f",
+    "changes": [
+      "Represent mapped but untouched pages with null; allocate zero-filled ByteData4096 on first access.",
+      "Retain the two most recently missed page mappings to avoid repeated Map lookups on the hot stack/data pages. A hit does not change page contents or mapping."
+    ],
+    "ownership": "Storage is freshly owned by each _PlayPlayMath/key transform. No page, key result, persistent worker or cross-key arithmetic state is cached.",
+    "generatorOwnership": "Storage helpers are handwritten. native_playplay_math_lift.py only replaces the generated part list in this file; no generator change is required.",
+    "unchanged": {
+      "worker": "lib/playback/native_playplay_key_worker.dart",
+      "generator": "reverse-engineering/tools/native_playplay_math_lift.py",
+      "generatedDartFiles": 76,
+      "outsideStorageClassByteIdentical": true,
+      "baselineHashes": {
+        "path": ".local/rea-session/native-playplay-scalar-before-hashes.json",
+        "sha256": "da0fcbc937eaed450152e02b036dff7e762733162baa4f14c8c5eea2c5c55c45"
+      }
+    }
+  },
+  "profile": {
+    "fixtureIndex": 4,
+    "observation": {
+      "mappedPages": 550,
+      "allocatedPages": 42,
+      "pageCalls": 332476,
+      "topPages": [
+        {
+          "address": "7000d000",
+          "calls": 180255
+        },
+        {
+          "address": "10218d000",
+          "calls": 19988
+        },
+        {
+          "address": "10218f000",
+          "calls": 17473
+        },
+        {
+          "address": "10218c000",
+          "calls": 8147
+        },
+        {
+          "address": "102193000",
+          "calls": 5629
+        },
+        {
+          "address": "102196000",
+          "calls": 5532
+        },
+        {
+          "address": "10256c000",
+          "calls": 5191
+        },
+        {
+          "address": "10218e000",
+          "calls": 5082
+        },
+        {
+          "address": "3001f000",
+          "calls": 4366
+        },
+        {
+          "address": "30010000",
+          "calls": 4220
+        },
+        {
+          "address": "30019000",
+          "calls": 4096
+        },
+        {
+          "address": "30012000",
+          "calls": 4096
+        }
+      ],
+      "matchesOriginal": true
+    },
+    "mappedBackingBytesBefore": 2252800,
+    "allocatedBackingBytesAfter": 172032,
+    "measurement": "One instrumented private library copy, lazy-allocation variant before cache addition. Counts page() calls and allocated pages through the complete response/protected/unprotect path; exact16 output bytes compared to original vector4. The cache keeps that mapping/allocation behavior. Counts are not timings or whole-process memory.",
+    "runner": {
+      "path": ".local/rea-session/native-playplay-storage-scalar-probe.py",
+      "sha256": "ecd4c839f2550a6de26cf60e869f07cb1de26ab3002e0cccbb8326537ba63846"
+    },
+    "result": {
+      "path": ".local/rea-session/native-playplay-storage-scalar-profile.json",
+      "sha256": "b977ed4f062bb6a39ad991e614019ac74c4d6984c8fee82485582458582e3d9a"
+    }
+  },
+  "byteReplay": {
+    "finalScalarComparisons": 76,
+    "finalWorkerComparisons": 38,
+    "mismatches": [],
+    "comparison": "All16 output bytes compared as32 hexadecimal characters against each retained independent original value; both runners throw immediately on mismatch.",
+    "coverageLimit": "Synthetic retained cases are not exhaustive over128-bit inputs or every proprietary arithmetic branch. Worker replay uses default constants; scalar replay also includes both explicit original3072-byte tables."
+  },
+  "timing": {
+    "measurement": "Separate fresh standalone Dart VMs, same host and sequential commands. Stopwatch excludes CLI/build hooks. Scalar includes construction+arithmetic; worker includes Isolate.run startup+arithmetic and uses the unchanged four-sample CPU warm-up.",
+    "scalarBefore": {
+      "firstCallUs": 1244023,
+      "secondPass38MedianUs": 27942.0,
+      "last20MedianUs": 22325.0,
+      "secondPass38TotalUs": 1636890,
+      "exactComparisons": 76
+    },
+    "scalarLazyOnly": {
+      "firstCallUs": 1147309,
+      "secondPass38MedianUs": 26694.0,
+      "last20MedianUs": 25424.0,
+      "secondPass38TotalUs": 1098547,
+      "exactComparisons": 76
+    },
+    "scalarFinal": {
+      "firstCallUs": 1143225,
+      "secondPass38MedianUs": 22865.0,
+      "last20MedianUs": 20180.0,
+      "secondPass38TotalUs": 883376,
+      "exactComparisons": 76
+    },
+    "workerBefore": {
+      "fourSyntheticWarmUpUs": 2691760,
+      "firstUnseenVector4Us": 150246,
+      "last12KeyMedianUs": 28224.5,
+      "all36KeyMedianUs": 33339.0,
+      "exactComparisonsIncludingCancellationBoundaries": 38
+    },
+    "workerFinal": {
+      "fourSyntheticWarmUpUs": 2483692,
+      "firstUnseenVector4Us": 145225,
+      "last12KeyMedianUs": 25599.5,
+      "all36KeyMedianUs": 31648.5,
+      "exactComparisonsIncludingCancellationBoundaries": 38
+    },
+    "interpretation": "Final scalar second-pass median27.942ms ->22.865ms (~18% lower); fresh-isolate last12 median28.2245ms ->25.5995ms (~9% lower). Warm-up2.692s ->2.484s and first unseen150.246ms ->145.225ms include JIT/process noise. Lazy-only timing did not establish a stable median win by itself.",
+    "limits": [
+      "The live Flutter653\u20131593ms per-key delay was not reproduced or explained by this standalone comparison.",
+      "No claim of a stable cold JIT or live startup speedup; background scheduling, JIT branch coverage and GC remain uncontrolled.",
+      "No persistent-worker experiment or repeated bulk-copy optimization; existing worker and copy helpers remain unchanged."
+    ]
+  },
+  "preservedSemantics": [
+    "map adds page mappings and never replaces existing page contents. A first read of a mapped page still sees zero bytes.",
+    "An unmapped page still throws the same StateError using the original requested address; it is never silently mapped.",
+    "Cached ByteData mappings stay valid because mappings only accumulate and pages are not deleted or replaced after allocation.",
+    "Scalar load/store code, little-endian widths, signed64 behavior, cross-page handling, bulk copying and return-byte ownership are unchanged."
+  ],
+  "retainedRunnersAndResults": [
+    {
+      "path": ".local/rea-session/native-playplay-perf-runner.dart",
+      "sha256": "1708c352248efc75d1646577013605e8bfe81200310b502747936360667f9d80"
+    },
+    {
+      "path": ".local/rea-session/native-playplay-key-warm-up-perf.dart",
+      "sha256": "32bdfd7a6afbac2ce9953e499f190a3301de36707fb20d9e88bb3e16cd538343"
+    },
+    {
+      "path": ".local/rea-session/native-playplay-storage-scalar-worker-before.dart",
+      "sha256": "2fa1a5e1c7a249790af2b5333a9cae769e5130c18912365b71d347447034004a"
+    },
+    {
+      "path": ".local/rea-session/native-playplay-storage-scalar-before.json",
+      "sha256": "8205bcc2e5af302ffdd345ae02143632d855a5e7885ea326c8b401346d727e2d"
+    },
+    {
+      "path": ".local/rea-session/native-playplay-storage-scalar-lazy.json",
+      "sha256": "d127eed215f5754f84df987f4d4a06d193201b3820002a554ade55e6a6750add"
+    },
+    {
+      "path": ".local/rea-session/native-playplay-storage-scalar-cache.json",
+      "sha256": "adfdc2a5d8f238a1ac7441bac6bee22abf0f773ab882effd6cc819d7f0064c27"
+    },
+    {
+      "path": ".local/rea-session/native-playplay-storage-scalar-worker-before.json",
+      "sha256": "d7328ecb992dc4737696ac6964047c500479bf188e29c782139cff1d72327c79"
+    },
+    {
+      "path": ".local/rea-session/native-playplay-storage-scalar-worker-after.json",
+      "sha256": "d79beffb8ffbfcf6162501587439710970692c5eb74625ce724db215a6851890"
+    }
+  ],
+  "verificationBoundary": "Original arithmetic/protocol replay only; no general UI/component/lifecycle/full-suite tests, analyzer, formatter or AGENTS changes."
+}

@@ -1,0 +1,364 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: 374dcce7e32e532567f63e3cfb307c1c57c8b65d13d12da5c11257947fa0f6f6
+
+syntax = "proto3";
+
+package spotify.connectstate;
+
+option java_package = "com.spotify.connectstate.model";
+
+option optimize_for = CODE_SIZE;
+
+message PlayerState {
+  reserved 26, 27, 28, 29, 30, 31, 34, 36;
+
+  int64 timestamp = 1;
+
+  string context_uri = 2 [json_name = "context_uri"];
+
+  string context_url = 3 [json_name = "context_url"];
+
+  .spotify.connectstate.Restrictions context_restrictions = 4 [json_name = "context_restrictions"];
+
+  .spotify.connectstate.PlayOrigin play_origin = 5 [json_name = "play_origin"];
+
+  .spotify.connectstate.ContextIndex index = 6;
+
+  .spotify.connectstate.ProvidedTrack track = 7;
+
+  string playback_id = 8 [json_name = "playback_id"];
+
+  double playback_speed = 9 [json_name = "playback_speed"];
+
+  int64 position_as_of_timestamp = 10 [json_name = "position_as_of_timestamp"];
+
+  int64 duration = 11;
+
+  bool is_playing = 12 [json_name = "is_playing"];
+
+  bool is_paused = 13 [json_name = "is_paused"];
+
+  bool is_buffering = 14 [json_name = "is_buffering"];
+
+  bool is_system_initiated = 15 [json_name = "is_system_initiated"];
+
+  .spotify.connectstate.ContextPlayerOptions options = 16;
+
+  .spotify.connectstate.Restrictions restrictions = 17;
+
+  .spotify.connectstate.Suppressions suppressions = 18;
+
+  repeated .spotify.connectstate.ProvidedTrack prev_tracks = 19 [json_name = "prev_tracks"];
+
+  repeated .spotify.connectstate.ProvidedTrack next_tracks = 20 [json_name = "next_tracks"];
+
+  map<string, string> context_metadata = 21 [json_name = "context_metadata"];
+
+  map<string, string> page_metadata = 22 [json_name = "page_metadata"];
+
+  string session_id = 23 [json_name = "session_id"];
+
+  string queue_revision = 24 [json_name = "queue_revision"];
+
+  int64 position = 25;
+
+  .spotify.connectstate.PlaybackQuality playback_quality = 32 [json_name = "playback_quality"];
+
+  repeated string signals = 33;
+
+  string session_command_id = 35 [json_name = "session_command_id"];
+
+  optional .spotify.connectstate.AdBreakContext ad_break_context = 37 [json_name = "ad_break_context"];
+
+  optional .spotify.connectstate.SleepTimer sleep_timer = 38 [json_name = "sleep_timer"];
+}
+
+message ProvidedTrack {
+  reserved 11;
+
+  string uri = 1;
+
+  string uid = 2;
+
+  map<string, string> metadata = 3;
+
+  repeated string removed = 4;
+
+  repeated string blocked = 5;
+
+  string provider = 6;
+
+  .spotify.connectstate.Restrictions restrictions = 7;
+
+  string album_uri = 8 [json_name = "album_uri"];
+
+  repeated string disallow_reasons = 9 [json_name = "disallow_reasons"];
+
+  string artist_uri = 10 [json_name = "artist_uri"];
+}
+
+message ContextIndex {
+  uint32 page = 1;
+
+  uint32 track = 2;
+}
+
+message ModeRestrictions {
+  map<string, .spotify.connectstate.RestrictionReasons> values = 1;
+}
+
+message RestrictionReasons {
+  repeated string reasons = 1;
+}
+
+message Restrictions {
+  reserved 26, 27;
+
+  repeated string disallow_pausing_reasons = 1 [json_name = "disallow_pausing_reasons"];
+
+  repeated string disallow_resuming_reasons = 2 [json_name = "disallow_resuming_reasons"];
+
+  repeated string disallow_seeking_reasons = 3 [json_name = "disallow_seeking_reasons"];
+
+  repeated string disallow_peeking_prev_reasons = 4 [json_name = "disallow_peeking_prev_reasons"];
+
+  repeated string disallow_peeking_next_reasons = 5 [json_name = "disallow_peeking_next_reasons"];
+
+  repeated string disallow_skipping_prev_reasons = 6 [json_name = "disallow_skipping_prev_reasons"];
+
+  repeated string disallow_skipping_next_reasons = 7 [json_name = "disallow_skipping_next_reasons"];
+
+  repeated string disallow_toggling_repeat_context_reasons = 8 [
+    json_name = "disallow_toggling_repeat_context_reasons"
+  ];
+
+  repeated string disallow_toggling_repeat_track_reasons = 9 [
+    json_name = "disallow_toggling_repeat_track_reasons"
+  ];
+
+  repeated string disallow_toggling_shuffle_reasons = 10 [json_name = "disallow_toggling_shuffle_reasons"];
+
+  repeated string disallow_set_queue_reasons = 11 [json_name = "disallow_set_queue_reasons"];
+
+  repeated string disallow_interrupting_playback_reasons = 12 [
+    json_name = "disallow_interrupting_playback_reasons"
+  ];
+
+  repeated string disallow_transferring_playback_reasons = 13 [
+    json_name = "disallow_transferring_playback_reasons"
+  ];
+
+  repeated string disallow_remote_control_reasons = 14 [json_name = "disallow_remote_control_reasons"];
+
+  repeated string disallow_inserting_into_next_tracks_reasons = 15 [
+    json_name = "disallow_inserting_into_next_tracks_reasons"
+  ];
+
+  repeated string disallow_inserting_into_context_tracks_reasons = 16 [
+    json_name = "disallow_inserting_into_context_tracks_reasons"
+  ];
+
+  repeated string disallow_reordering_in_next_tracks_reasons = 17 [
+    json_name = "disallow_reordering_in_next_tracks_reasons"
+  ];
+
+  repeated string disallow_reordering_in_context_tracks_reasons = 18 [
+    json_name = "disallow_reordering_in_context_tracks_reasons"
+  ];
+
+  repeated string disallow_removing_from_next_tracks_reasons = 19 [
+    json_name = "disallow_removing_from_next_tracks_reasons"
+  ];
+
+  repeated string disallow_removing_from_context_tracks_reasons = 20 [
+    json_name = "disallow_removing_from_context_tracks_reasons"
+  ];
+
+  repeated string disallow_updating_context_reasons = 21 [json_name = "disallow_updating_context_reasons"];
+
+  repeated string disallow_playing_reasons = 22 [json_name = "disallow_playing_reasons"];
+
+  repeated string disallow_stopping_reasons = 23 [json_name = "disallow_stopping_reasons"];
+
+  repeated string disallow_add_to_queue_reasons = 24 [json_name = "disallow_add_to_queue_reasons"];
+
+  repeated string disallow_setting_playback_speed_reasons = 25 [
+    json_name = "disallow_setting_playback_speed_reasons"
+  ];
+
+  map<string, .spotify.connectstate.ModeRestrictions> disallow_setting_modes = 28 [json_name = "disallow_setting_modes"];
+
+  map<string, .spotify.connectstate.RestrictionReasons> disallow_signals = 29 [json_name = "disallow_signals"];
+
+  repeated string disallow_play_as_next_in_queue_reasons = 30 [
+    json_name = "disallow_play_as_next_in_queue_reasons"
+  ];
+
+  repeated string disallow_sleep_timer_clear_reasons = 31 [json_name = "disallow_sleep_timer_clear_reasons"];
+
+  repeated string disallow_sleep_timer_duration_reasons = 32 [
+    json_name = "disallow_sleep_timer_duration_reasons"
+  ];
+
+  repeated string disallow_sleep_timer_end_of_track_reasons = 33 [
+    json_name = "disallow_sleep_timer_end_of_track_reasons"
+  ];
+
+  repeated string disallow_add_to_queue_track_reasons = 34 [json_name = "disallow_add_to_queue_track_reasons"];
+
+  repeated string disallow_tap_to_play_track_in_next_tracks_reasons = 35 [
+    json_name = "disallow_tap_to_play_track_in_next_tracks_reasons"
+  ];
+
+  repeated string disallow_reordering_track_in_next_tracks_reasons = 36 [
+    json_name = "disallow_reordering_track_in_next_tracks_reasons"
+  ];
+
+  repeated string disallow_reordering_episode_in_next_tracks_reasons = 37 [
+    json_name = "disallow_reordering_episode_in_next_tracks_reasons"
+  ];
+
+  repeated string disallow_reordering_enqueued_track_in_next_tracks_reasons = 38 [
+    json_name = "disallow_reordering_enqueued_track_in_next_tracks_reasons"
+  ];
+
+  repeated string disallow_reordering_enqueued_episode_in_next_tracks_reasons = 39 [
+    json_name = "disallow_reordering_enqueued_episode_in_next_tracks_reasons"
+  ];
+
+  repeated string disallow_viewing_queue_reasons = 40 [json_name = "disallow_viewing_queue_reasons"];
+
+  repeated string disallow_viewing_ordered_tracks_in_next_tracks_reasons = 41 [
+    json_name = "disallow_viewing_ordered_tracks_in_next_tracks_reasons"
+  ];
+}
+
+message PlayOrigin {
+  string feature_identifier = 1 [json_name = "feature_identifier"];
+
+  string feature_version = 2 [json_name = "feature_version"];
+
+  string view_uri = 3 [json_name = "view_uri"];
+
+  string external_referrer = 4 [json_name = "external_referrer"];
+
+  string referrer_identifier = 5 [json_name = "referrer_identifier"];
+
+  string device_identifier = 6 [json_name = "device_identifier"];
+
+  repeated string feature_classes = 7 [json_name = "feature_classes"];
+
+  string restriction_identifier = 8 [json_name = "restriction_identifier"];
+}
+
+message ContextPlayerOptions {
+  bool shuffling_context = 1 [json_name = "shuffling_context"];
+
+  bool repeating_context = 2 [json_name = "repeating_context"];
+
+  bool repeating_track = 3 [json_name = "repeating_track"];
+
+  optional float playback_speed = 4 [json_name = "playback_speed"];
+
+  map<string, string> modes = 5;
+}
+
+message Suppressions {
+  repeated string providers = 1;
+}
+
+message PlaybackQuality {
+  .spotify.connectstate.BitrateLevel bitrate_level = 1 [json_name = "bitrate_level"];
+
+  .spotify.connectstate.BitrateStrategy strategy = 2;
+
+  .spotify.connectstate.BitrateLevel target_bitrate_level = 3 [json_name = "target_bitrate_level"];
+
+  bool target_bitrate_available = 4 [json_name = "target_bitrate_available"];
+
+  .spotify.connectstate.HiFiStatus hifi_status = 5 [json_name = "hifi_status"];
+
+  .spotify.connectstate.BitrateLevel highest_available_quality = 6 [json_name = "highest_available_quality"];
+
+  .spotify.connectstate.FileOrigin file_origin = 7 [json_name = "file_origin"];
+}
+
+message AdBreakContext {
+  uint64 max_seconds_remaining = 1;
+
+  uint64 position_in_current_ad_break = 2;
+
+  uint64 total_ads_in_break_estimate = 3;
+}
+
+message SleepTimer {
+  oneof timer_type {
+    .spotify.connectstate.SleepTimer.None none = 1;
+
+    .spotify.connectstate.SleepTimer.Timestamp timestamp = 2;
+
+    .spotify.connectstate.SleepTimer.EndOfTrack end_of_track = 3 [json_name = "end_of_track"];
+  }
+
+  message None {
+  }
+
+  message Timestamp {
+    int64 timestamp = 1;
+  }
+
+  message EndOfTrack {
+  }
+}
+
+enum FileOrigin {
+  unknown_file_origin = 0;
+
+  internal = 1;
+
+  external = 2;
+
+  local = 3;
+
+  generated = 4;
+}
+
+enum BitrateLevel {
+  unknown_bitrate_level = 0;
+
+  low = 1;
+
+  normal = 2;
+
+  high = 3;
+
+  very_high = 4;
+
+  hifi = 5;
+
+  hifi24 = 6;
+
+  petrel = 7;
+}
+
+enum BitrateStrategy {
+  unknown_strategy = 0;
+
+  best_matching = 1;
+
+  backend_advised = 2;
+
+  offlined_file = 3;
+
+  cached_file = 4;
+
+  local_file = 5;
+}
+
+enum HiFiStatus {
+  none = 0;
+
+  off = 1;
+
+  on = 2;
+}

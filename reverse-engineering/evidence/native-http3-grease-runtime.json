@@ -1,0 +1,101 @@
+{
+  "observedAtUtc": "2026-10-29T04:48:06.614986+00:00",
+  "scope": "Natural startup of the single rebuilt debug app after the declared HTTP3 startup extension. No synthetic HTTP, playback or license probe invoked.",
+  "pid": 23389,
+  "supervisorPid": 22960,
+  "appStatusObservation": {
+    "ready": true,
+    "withheldResponses": 0,
+    "runtimeErrors": 0,
+    "hotReloadSucceeded": true,
+    "source": "Global Dart MCP read-only VM state/runtime errors and hot reload."
+  },
+  "counts": [
+    {
+      "event": "logger_started",
+      "transport": null,
+      "status": null,
+      "count": 1
+    },
+    {
+      "event": "request",
+      "transport": "h2",
+      "status": null,
+      "count": 52
+    },
+    {
+      "event": "request",
+      "transport": "h3",
+      "status": null,
+      "count": 27
+    },
+    {
+      "event": "response",
+      "transport": "h2",
+      "status": 200,
+      "count": 52
+    },
+    {
+      "event": "response",
+      "transport": "h3",
+      "status": 200,
+      "count": 27
+    }
+  ],
+  "logSources": [
+    {
+      "file": "http.jsonl",
+      "sha256AtObservation": "d3f4f933cf0cf5654bded6f706cfcfd12d29e81a513f79d51c7f1ca1aca1a0eb"
+    }
+  ],
+  "bundledLibraries": [
+    {
+      "name": "libquiche.dylib",
+      "sha256": "a40d929cfee51c260e1fb7f17cb4e985e654c3675189a2e52e154be660c706d6"
+    },
+    {
+      "name": "libnghttp3.dylib",
+      "sha256": "d9fb3a28c7d61e46b4e6ac3e5f371b7dc2b8f574f5e85956aa2691210044239e"
+    }
+  ],
+  "sourceFiles": [
+    {
+      "path": "lib/transport/nghttp3/session.dart",
+      "sha256": "6362aa3107f2098610acfb943636161162504def9cf1064143893c7da66147ef"
+    },
+    {
+      "path": "lib/transport/nghttp3/bindings.dart",
+      "sha256": "532ab407b23adeeb58c29f2d1403d9f3b91ad236bfd4d3675f56135ba3da5989"
+    },
+    {
+      "path": "native/nghttp3/upstream.json",
+      "sha256": "5d629541aa5da60f0db299c25f05421f87d400dbed1514b24668d91d63b6ff28"
+    },
+    {
+      "path": "native/nghttp3/additional_settings.h",
+      "sha256": "f89e3f7a488cf4157160f304c56724ec2e99f8657419e5afee5f3a83277eb76d"
+    },
+    {
+      "path": "native/nghttp3/additional-settings.patch",
+      "sha256": "04d3c7ec67e796e940d74c77f3a075529e718ce2d16474546cfda155cf2257c8"
+    },
+    {
+      "path": "reverse-engineering/evidence/native-http3-grease.json",
+      "sha256": "c2ab7861453869344801ee4914b385a46f9e5d7aca6e58ce17bb0f9bd56a513b"
+    }
+  ],
+  "verification": {
+    "originalBackedOutgoingOwnerChecksPassed": 8,
+    "missingGreaseControlFrameBaseline": "Independent peer observed exactly one control frame; failed expected SETTINGS followed by GREASE.",
+    "deepStrictBundleSignatureVerified": true,
+    "additionalSettingsSymbolPresent": true,
+    "additionalControlFrameSymbolPresent": true
+  },
+  "limits": [
+    "App logs and status are observations, not an independent packet capture or proof of licensing admission.",
+    "No music request was forced; the cause and resolution of license429 remain unproved.",
+    "GREASE setting ranges/lifetime have original capture corroboration; numeric order and subsequent frame recipe use pinned public source. Outgoing original GREASE-frame plaintext was not captured.",
+    "Complete QPACK/TLS/QUIC bytes, packetization and server acceptance are not established.",
+    "Live logs rotate; their hashes identify the bytes read at this observation."
+  ]
+}

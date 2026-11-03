@@ -1,0 +1,189 @@
+{
+  "provenance": "Original0x101aaa0d8 builder executes through final result, with synthetic canonical URI getter and standard alloc/string/pair/vector observers. Original reason field assignments and Base64 helper execute; standard protoc36.2 encodes PlaylistSyncReason from the exact portable descriptor. No HTTP or original account services run.",
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "standardProtobufCompiler": "libprotoc 36.2",
+  "reasonSchema": "playlist_sync_reason.proto",
+  "scenarios": [
+    {
+      "name": "primary read",
+      "input": {
+        "uri": "spotify:playlist:0000000000000000000001",
+        "caller": 1,
+        "prioritized": false
+      },
+      "expected": {
+        "path": "playlist/v2/playlist/0000000000000000000001",
+        "method": "GET",
+        "headers": [
+          [
+            "Cache-Control",
+            "no-cache, no-store"
+          ],
+          [
+            "spotify-accept-geoblock",
+            "dummy"
+          ],
+          [
+            "spotify-playlist-sync-reason",
+            "CAE="
+          ]
+        ]
+      }
+    },
+    {
+      "name": "zero proto3 reason retains empty header",
+      "input": {
+        "uri": "spotify:playlist:0000000000000000000001",
+        "caller": 0,
+        "prioritized": false
+      },
+      "expected": {
+        "path": "playlist/v2/playlist/0000000000000000000001",
+        "method": "GET",
+        "headers": [
+          [
+            "Cache-Control",
+            "no-cache, no-store"
+          ],
+          [
+            "spotify-accept-geoblock",
+            "dummy"
+          ],
+          [
+            "spotify-playlist-sync-reason",
+            ""
+          ]
+        ]
+      }
+    },
+    {
+      "name": "all optional simple flags retain header query order and UTF8 bytes",
+      "input": {
+        "uri": "spotify:playlist:0000000000000000000001",
+        "caller": 35,
+        "prioritized": true,
+        "dsa": true,
+        "listPlayerEnabled": true,
+        "acceptListItems": true,
+        "handlesContent": true,
+        "force": true,
+        "hintRevision": "Rev 雪/+="
+      },
+      "expected": {
+        "path": "playlist/v2/playlist/0000000000000000000001?handlesContent=&hint_revision=Rev%20%E9%9B%AA%2F%2B%3D&force=true",
+        "method": "GET",
+        "headers": [
+          [
+            "Cache-Control",
+            "no-cache, no-store"
+          ],
+          [
+            "x-accept-list-items",
+            "audio-track, audio-episode, video-episode, audiobook"
+          ],
+          [
+            "spotify-accept-geoblock",
+            "dummy"
+          ],
+          [
+            "spotify-playlist-sync-reason",
+            "CCMQAQ=="
+          ],
+          [
+            "spotify-dsa-mode-enabled",
+            "true"
+          ],
+          [
+            "spotify-list-player-enabled",
+            "true"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "diff mode and explicit false DSA header",
+      "input": {
+        "uri": "spotify:playlist:0000000000000000000001",
+        "caller": 49,
+        "prioritized": false,
+        "dsa": false,
+        "mode": 2
+      },
+      "expected": {
+        "path": "playlist/v2/playlist/0000000000000000000001/diff",
+        "method": "GET",
+        "headers": [
+          [
+            "Cache-Control",
+            "no-cache, no-store"
+          ],
+          [
+            "spotify-accept-geoblock",
+            "dummy"
+          ],
+          [
+            "spotify-playlist-sync-reason",
+            "CDE="
+          ],
+          [
+            "spotify-dsa-mode-enabled",
+            "false"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "legacy playlist changes mode",
+      "input": {
+        "uri": "spotify:user:synthetic:playlist:0000000000000000000002",
+        "caller": 13,
+        "prioritized": true,
+        "mode": 1
+      },
+      "expected": {
+        "path": "playlist/v2/user/synthetic/playlist/0000000000000000000002/changes",
+        "method": "POST",
+        "headers": [
+          [
+            "Cache-Control",
+            "no-cache, no-store"
+          ],
+          [
+            "spotify-accept-geoblock",
+            "dummy"
+          ],
+          [
+            "spotify-playlist-sync-reason",
+            "CA0QAQ=="
+          ]
+        ]
+      }
+    },
+    {
+      "name": "canonical percent encoded username remains unchanged",
+      "input": {
+        "uri": "spotify:user:Snow%20%E9%9B%AA:playlist:0000000000000000000003",
+        "caller": 1,
+        "prioritized": false
+      },
+      "expected": {
+        "path": "playlist/v2/user/Snow%20%E9%9B%AA/playlist/0000000000000000000003",
+        "method": "GET",
+        "headers": [
+          [
+            "Cache-Control",
+            "no-cache, no-store"
+          ],
+          [
+            "spotify-accept-geoblock",
+            "dummy"
+          ],
+          [
+            "spotify-playlist-sync-reason",
+            "CAE="
+          ]
+        ]
+      }
+    }
+  ]
+}

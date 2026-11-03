@@ -1,0 +1,146 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "method": "Original proprietary static constructor/callback/default branches and original constant ClassData execution; no live process, profile, AP session or network. Only bounded source facts are recorded, not an independently captured mapping from AP events into the property service.",
+  "ranges": [
+    {
+      "start": "0x1005f53e8",
+      "endExclusive": "0x1005f5884",
+      "sha256": "338acef5679da36963635ab519046d26632cbbcac619551c3c0c80adf184e978"
+    },
+    {
+      "start": "0x1005f5884",
+      "endExclusive": "0x1005f5904",
+      "sha256": "03ca785fa065ac70e7f986405f5e28c6ce149596920f2de178d40ec14021b5bd"
+    },
+    {
+      "start": "0x1005f59d0",
+      "endExclusive": "0x1005f59e8",
+      "sha256": "5a1f5503c00480a9be816043d09804bd2580c8c947a1630a95fd3ff9046112d5"
+    },
+    {
+      "start": "0x1005f2da8",
+      "endExclusive": "0x1005f302c",
+      "sha256": "b19da93e8dee2aa2d91043f4736fcda63ae251152ea99494181942cfe85d98be"
+    },
+    {
+      "start": "0x1014244a8",
+      "endExclusive": "0x101425dc8",
+      "sha256": "d71577191e491315ba91e1544d43e2e1d49181cee1f46f7b4f29222a2e815ad6"
+    },
+    {
+      "start": "0x10082bda8",
+      "endExclusive": "0x10082bf34",
+      "sha256": "bd5fa21b12d1c27e7da6e1d9b4bdd81d3d351d98cc1929810ee76569ab0a956f"
+    },
+    {
+      "start": "0x10082c63c",
+      "endExclusive": "0x10082c778",
+      "sha256": "f63459ce1c4842af19e9ed84fde4fe172e7ea005427aa75bee50fa757e64943f"
+    },
+    {
+      "start": "0x101d63270",
+      "endExclusive": "0x101d63324",
+      "sha256": "9705dcc90274b59878501c285022fe5d718e6eea027086c86b72220410c460e0"
+    }
+  ],
+  "countryCatalogue": {
+    "constructor": "0x1005f53e8",
+    "propertyService": "constructor param4",
+    "stringGetter": "0x101d63354",
+    "country": {
+      "key": "country_code",
+      "fallback": "",
+      "headerField": 1,
+      "concreteGetter": "0x1005f59d0",
+      "nativeWordConversion": "High byte then low byte, truncated at first NUL; no case normalization."
+    },
+    "catalogue": {
+      "key": "catalogue",
+      "fallback": "",
+      "headerField": 2,
+      "concreteGetter": "0x1005f59dc"
+    },
+    "storage": {
+      "memberOffset": "0xa50",
+      "message": "spotify.extendedmetadata.BatchedEntityRequestHeader",
+      "constructor": "0x101d41a48",
+      "vtable": "0x102678790",
+      "classData": "0x10279bc38",
+      "descriptor": "extended_metadata.proto",
+      "nativeMessageIndex": 2
+    },
+    "subscription": "0x1005f2d20 / 0x101d63334",
+    "callback": "0x1005f2da8",
+    "setter": "0x1005f5884",
+    "refresh": "Reread both property strings with empty fallbacks, overwrite both header strings unchanged.",
+    "publisher": {
+      "entry": "0x101d6377c",
+      "productStateParser": "0x101d636d0",
+      "countryConverter": "0x101d63270",
+      "output": "Merge parsed server ProductState map and explicitly add country_code converted from raw AP country word; publish via101d633fc.",
+      "loggedInOwner": "0x10191bd04",
+      "apProductStateGetter": "session virtual+0x78",
+      "apCountryGetter": "session virtual+0x80",
+      "countryWordCases": [
+        {
+          "rawCountryWord": 0,
+          "originalOutputHex": ""
+        },
+        {
+          "rawCountryWord": 21317,
+          "originalOutputHex": "5345"
+        },
+        {
+          "rawCountryWord": 83,
+          "originalOutputHex": ""
+        },
+        {
+          "rawCountryWord": 21248,
+          "originalOutputHex": "53"
+        },
+        {
+          "rawCountryWord": 30067,
+          "originalOutputHex": "7573"
+        }
+      ]
+    }
+  },
+  "flags": {
+    "nativeOwnerFlag51": {
+      "configurationConstructor": "0x1014244a8",
+      "readCallSite": "0x1014253d4",
+      "getter": "0x101ca44d0",
+      "group": "core-list-player",
+      "key": "prewarm_traits",
+      "fallback": false,
+      "configurationObjectOffset": "0xb8",
+      "accessor": "0x101425dcc returns object+0x10",
+      "sourceSetupOffset": "0xa8"
+    },
+    "nativeOwnerFlag53": {
+      "owner": "0x10082bda8",
+      "getter": "0x101ca44d0",
+      "group": "core-prefetch",
+      "key": "prefetch_byom_eligibility",
+      "fallback": false
+    },
+    "nativeOwnerFlag52": {
+      "source": "prefetch setup player virtual+0xa0",
+      "playerServiceGetter": "0x100479a04",
+      "setupId": 146,
+      "rootSlot": "0x490",
+      "serviceAccessor": "virtual+0x28",
+      "fallback": null
+    },
+    "nativeOwnerFlag50": {
+      "source": "0x10082c0b8 local_b1=1, forwarded through10082c63c and10084387c",
+      "value": true,
+      "scope": "Fresh ContextPlayerPrefetcher owner; the original outgoing fixture also captures empty pending dedup=true."
+    }
+  },
+  "limits": [
+    "Fallback feature values apply only if the actual native configuration has no supplied value; they are not account entitlements or a recovered live feature assignment.",
+    "Flag52 concrete player and default are unresolved; do not infer false.",
+    "Single-ready-Track request plan now covers all eight raw51/52/53 combinations with absent cached video associations and explicit country/catalogue; it does not infer their active runtime values."
+  ]
+}

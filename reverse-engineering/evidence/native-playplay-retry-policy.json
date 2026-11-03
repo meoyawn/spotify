@@ -1,0 +1,1187 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "method": "Original HTTP response classification, retry timer and repeated key request.\n\nSynthetic original jobs/responses use an explicit live standard weak reference.\nThe original status branch and retry scheduler execute, timer arguments are\nrecorded, then the actual original timer callback rebuilds the same request.\nExecution stops before either HTTP dispatch. No account/profile/network.\n",
+  "responseHandler": "0x1004be88c",
+  "retryScheduler": "0x10048f4f8",
+  "transportErrorHandler": "0x1004bebac",
+  "nativeAbortIdentity": {
+    "errorCode": 10,
+    "categoryAddress": "0x10278f260",
+    "constructor": "0x101c52838"
+  },
+  "terminalRemovalBoundary": "0x10048f214",
+  "timerCallback": "0x1004bf2b4 ->0x1004bf2bc ->0x10048cbcc",
+  "jobInteractivityStore": "0x1004bd730/734; input from original10048c604 mapping",
+  "attemptIncrement": "0x10048cc08/0c/10",
+  "ranges": [
+    {
+      "start": "0x1004be88c",
+      "endExclusive": "0x1004bebac",
+      "sha256": "2f0bf51628db89a58fb1a8a11bcb0c300e44cc098d695e484076ca218b3e9845"
+    },
+    {
+      "start": "0x10048f4f8",
+      "endExclusive": "0x10048f654",
+      "sha256": "47050fc2f0f59fc7e09d345419dd09454e0a5665c9ec531d88980e2c5d97333b"
+    },
+    {
+      "start": "0x1004bf2b4",
+      "endExclusive": "0x1004bf33c",
+      "sha256": "508e4050a311f8cb89feab25caaca939f62b7a448517330913fc57df63e4bfab"
+    },
+    {
+      "start": "0x1004bd730",
+      "endExclusive": "0x1004bd738",
+      "sha256": "07df35cd397661d96e5d02b2a36902ecf6693096a60177975ea4982eea08b646"
+    },
+    {
+      "start": "0x10048cc08",
+      "endExclusive": "0x10048cc14",
+      "sha256": "35b02ef68608a83342e9c40ced78e4c158b4971f671c39899cbdbcdcf179993f"
+    }
+  ],
+  "substitutions": [
+    "Explicit successful standard weak-reference lock for a synthetic live job.",
+    "Opaque HTTP response reports the supplied status; any body read on these retry statuses fails capture.",
+    "Metrics callback records arguments; timer records delay and actual callback. Callback is manually dispatched offline without wall-clock waiting.",
+    "Original injected HTTP template/builders capture application fields before sender; standard memory/string/allocation providers are reused.",
+    "Original body producer/writer supplies job body and wire-interactivity value for explicit raw0/raw2, synthetic clock and empty cache identity.",
+    "Transport inputs are explicit standard error-code/category pairs; the original native identity constructor and comparison execute.",
+    "Process-static diagnostic registration is initialized; error callback arguments and terminal owner-removal boundary are captured without executing cleanup containers."
+  ],
+  "limits": [
+    "Retry state supplied explicitly; no real failures, timers, account, profile or network.",
+    "No generic HTTP/TLS transport retries, source retries, cancellation policy or failed-key cache policy inferred outside this original core job.",
+    "This does not establish429cause or authorize a remote retry; main owns applying original policy with current account/session state."
+  ],
+  "cases": [
+    {
+      "rawNativeInteractivity": 0,
+      "jobWireInteractivity": 1,
+      "httpStatus": 429,
+      "attemptCountAtFailure": 1,
+      "metrics": [
+        {
+          "key": "http-status-code",
+          "value": 429,
+          "terminal": false
+        }
+      ],
+      "errorBodyReadCount": 0,
+      "timer": {
+        "delayMilliseconds": 3000,
+        "slotIsJobTimer": true,
+        "invoke": "0x1004bf2b4"
+      },
+      "retryAttemptCount": 2,
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "retryRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      }
+    },
+    {
+      "rawNativeInteractivity": 0,
+      "jobWireInteractivity": 1,
+      "httpStatus": 429,
+      "attemptCountAtFailure": 2,
+      "metrics": [
+        {
+          "key": "http-status-code",
+          "value": 429,
+          "terminal": false
+        }
+      ],
+      "errorBodyReadCount": 0,
+      "timer": {
+        "delayMilliseconds": 4000,
+        "slotIsJobTimer": true,
+        "invoke": "0x1004bf2b4"
+      },
+      "retryAttemptCount": 3,
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "retryRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      }
+    },
+    {
+      "rawNativeInteractivity": 0,
+      "jobWireInteractivity": 1,
+      "httpStatus": 429,
+      "attemptCountAtFailure": 3,
+      "metrics": [
+        {
+          "key": "http-status-code",
+          "value": 429,
+          "terminal": false
+        }
+      ],
+      "errorBodyReadCount": 0,
+      "timer": {
+        "delayMilliseconds": 5000,
+        "slotIsJobTimer": true,
+        "invoke": "0x1004bf2b4"
+      },
+      "retryAttemptCount": 4,
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "retryRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      }
+    },
+    {
+      "rawNativeInteractivity": 0,
+      "jobWireInteractivity": 1,
+      "httpStatus": 429,
+      "attemptCountAtFailure": 10,
+      "metrics": [
+        {
+          "key": "http-status-code",
+          "value": 429,
+          "terminal": false
+        }
+      ],
+      "errorBodyReadCount": 0,
+      "timer": {
+        "delayMilliseconds": 259000,
+        "slotIsJobTimer": true,
+        "invoke": "0x1004bf2b4"
+      },
+      "retryAttemptCount": 11,
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "retryRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      }
+    },
+    {
+      "rawNativeInteractivity": 0,
+      "jobWireInteractivity": 1,
+      "httpStatus": 429,
+      "attemptCountAtFailure": 11,
+      "metrics": [
+        {
+          "key": "http-status-code",
+          "value": 429,
+          "terminal": false
+        }
+      ],
+      "errorBodyReadCount": 0,
+      "timer": {
+        "delayMilliseconds": 515000,
+        "slotIsJobTimer": true,
+        "invoke": "0x1004bf2b4"
+      },
+      "retryAttemptCount": 12,
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "retryRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      }
+    },
+    {
+      "rawNativeInteractivity": 0,
+      "jobWireInteractivity": 1,
+      "httpStatus": 429,
+      "attemptCountAtFailure": 12,
+      "metrics": [
+        {
+          "key": "http-status-code",
+          "value": 429,
+          "terminal": false
+        }
+      ],
+      "errorBodyReadCount": 0,
+      "timer": {
+        "delayMilliseconds": 515000,
+        "slotIsJobTimer": true,
+        "invoke": "0x1004bf2b4"
+      },
+      "retryAttemptCount": 13,
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "retryRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      }
+    },
+    {
+      "rawNativeInteractivity": 0,
+      "jobWireInteractivity": 1,
+      "httpStatus": 500,
+      "attemptCountAtFailure": 1,
+      "metrics": [
+        {
+          "key": "http-status-code",
+          "value": 500,
+          "terminal": false
+        }
+      ],
+      "errorBodyReadCount": 0,
+      "timer": {
+        "delayMilliseconds": 0,
+        "slotIsJobTimer": true,
+        "invoke": "0x1004bf2b4"
+      },
+      "retryAttemptCount": 2,
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "retryRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      }
+    },
+    {
+      "rawNativeInteractivity": 0,
+      "jobWireInteractivity": 1,
+      "httpStatus": 500,
+      "attemptCountAtFailure": 2,
+      "metrics": [
+        {
+          "key": "http-status-code",
+          "value": 500,
+          "terminal": false
+        }
+      ],
+      "errorBodyReadCount": 0,
+      "timer": {
+        "delayMilliseconds": 1000,
+        "slotIsJobTimer": true,
+        "invoke": "0x1004bf2b4"
+      },
+      "retryAttemptCount": 3,
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "retryRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      }
+    },
+    {
+      "rawNativeInteractivity": 2,
+      "jobWireInteractivity": 3,
+      "httpStatus": 429,
+      "attemptCountAtFailure": 1,
+      "metrics": [
+        {
+          "key": "http-status-code",
+          "value": 429,
+          "terminal": false
+        }
+      ],
+      "errorBodyReadCount": 0,
+      "timer": {
+        "delayMilliseconds": 30000,
+        "slotIsJobTimer": true,
+        "invoke": "0x1004bf2b4"
+      },
+      "retryAttemptCount": 2,
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200328013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "retryRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200328013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      }
+    },
+    {
+      "rawNativeInteractivity": 2,
+      "jobWireInteractivity": 3,
+      "httpStatus": 429,
+      "attemptCountAtFailure": 2,
+      "metrics": [
+        {
+          "key": "http-status-code",
+          "value": 429,
+          "terminal": false
+        }
+      ],
+      "errorBodyReadCount": 0,
+      "timer": {
+        "delayMilliseconds": 31000,
+        "slotIsJobTimer": true,
+        "invoke": "0x1004bf2b4"
+      },
+      "retryAttemptCount": 3,
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200328013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "retryRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200328013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      }
+    },
+    {
+      "rawNativeInteractivity": 2,
+      "jobWireInteractivity": 3,
+      "httpStatus": 429,
+      "attemptCountAtFailure": 3,
+      "metrics": [
+        {
+          "key": "http-status-code",
+          "value": 429,
+          "terminal": false
+        }
+      ],
+      "errorBodyReadCount": 0,
+      "timer": {
+        "delayMilliseconds": 32000,
+        "slotIsJobTimer": true,
+        "invoke": "0x1004bf2b4"
+      },
+      "retryAttemptCount": 4,
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200328013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "retryRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200328013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      }
+    },
+    {
+      "rawNativeInteractivity": 2,
+      "jobWireInteractivity": 3,
+      "httpStatus": 429,
+      "attemptCountAtFailure": 10,
+      "metrics": [
+        {
+          "key": "http-status-code",
+          "value": 429,
+          "terminal": false
+        }
+      ],
+      "errorBodyReadCount": 0,
+      "timer": {
+        "delayMilliseconds": 286000,
+        "slotIsJobTimer": true,
+        "invoke": "0x1004bf2b4"
+      },
+      "retryAttemptCount": 11,
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200328013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "retryRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200328013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      }
+    },
+    {
+      "rawNativeInteractivity": 2,
+      "jobWireInteractivity": 3,
+      "httpStatus": 429,
+      "attemptCountAtFailure": 11,
+      "metrics": [
+        {
+          "key": "http-status-code",
+          "value": 429,
+          "terminal": false
+        }
+      ],
+      "errorBodyReadCount": 0,
+      "timer": {
+        "delayMilliseconds": 542000,
+        "slotIsJobTimer": true,
+        "invoke": "0x1004bf2b4"
+      },
+      "retryAttemptCount": 12,
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200328013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "retryRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200328013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      }
+    },
+    {
+      "rawNativeInteractivity": 2,
+      "jobWireInteractivity": 3,
+      "httpStatus": 429,
+      "attemptCountAtFailure": 12,
+      "metrics": [
+        {
+          "key": "http-status-code",
+          "value": 429,
+          "terminal": false
+        }
+      ],
+      "errorBodyReadCount": 0,
+      "timer": {
+        "delayMilliseconds": 542000,
+        "slotIsJobTimer": true,
+        "invoke": "0x1004bf2b4"
+      },
+      "retryAttemptCount": 13,
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200328013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "retryRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200328013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      }
+    }
+  ],
+  "transportCases": [
+    {
+      "rawNativeInteractivity": 0,
+      "jobWireInteractivity": 1,
+      "errorCode": 7,
+      "errorCategory": "http",
+      "attemptCountAtFailure": 1,
+      "metrics": [
+        {
+          "key": "http-transport",
+          "value": 7,
+          "terminal": false
+        }
+      ],
+      "errorBodyReadCount": 0,
+      "timer": {
+        "delayMilliseconds": 0,
+        "slotIsJobTimer": true,
+        "invoke": "0x1004bf2b4"
+      },
+      "keyErrors": [],
+      "removal": null,
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "retryRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      }
+    },
+    {
+      "rawNativeInteractivity": 0,
+      "jobWireInteractivity": 1,
+      "errorCode": 7,
+      "errorCategory": "http",
+      "attemptCountAtFailure": 2,
+      "metrics": [
+        {
+          "key": "http-transport",
+          "value": 7,
+          "terminal": false
+        }
+      ],
+      "errorBodyReadCount": 0,
+      "timer": {
+        "delayMilliseconds": 1000,
+        "slotIsJobTimer": true,
+        "invoke": "0x1004bf2b4"
+      },
+      "keyErrors": [],
+      "removal": null,
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "retryRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      }
+    },
+    {
+      "rawNativeInteractivity": 0,
+      "jobWireInteractivity": 1,
+      "errorCode": 10,
+      "errorCategory": "http",
+      "attemptCountAtFailure": 1,
+      "metrics": [],
+      "errorBodyReadCount": 0,
+      "timer": null,
+      "keyErrors": [
+        {
+          "code": 4,
+          "jobCallback": true
+        }
+      ],
+      "removal": {
+        "sameOwner": true,
+        "sameJob": true
+      },
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "retryRequest": null
+    },
+    {
+      "rawNativeInteractivity": 0,
+      "jobWireInteractivity": 1,
+      "errorCode": 10,
+      "errorCategory": "other",
+      "attemptCountAtFailure": 1,
+      "metrics": [
+        {
+          "key": "http-transport",
+          "value": 10,
+          "terminal": false
+        }
+      ],
+      "errorBodyReadCount": 0,
+      "timer": {
+        "delayMilliseconds": 0,
+        "slotIsJobTimer": true,
+        "invoke": "0x1004bf2b4"
+      },
+      "keyErrors": [],
+      "removal": null,
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "retryRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      }
+    },
+    {
+      "rawNativeInteractivity": 2,
+      "jobWireInteractivity": 3,
+      "errorCode": 7,
+      "errorCategory": "http",
+      "attemptCountAtFailure": 1,
+      "metrics": [
+        {
+          "key": "http-transport",
+          "value": 7,
+          "terminal": false
+        }
+      ],
+      "errorBodyReadCount": 0,
+      "timer": {
+        "delayMilliseconds": 0,
+        "slotIsJobTimer": true,
+        "invoke": "0x1004bf2b4"
+      },
+      "keyErrors": [],
+      "removal": null,
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200328013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "retryRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200328013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      }
+    },
+    {
+      "rawNativeInteractivity": 2,
+      "jobWireInteractivity": 3,
+      "errorCode": 7,
+      "errorCategory": "http",
+      "attemptCountAtFailure": 2,
+      "metrics": [
+        {
+          "key": "http-transport",
+          "value": 7,
+          "terminal": false
+        }
+      ],
+      "errorBodyReadCount": 0,
+      "timer": {
+        "delayMilliseconds": 1000,
+        "slotIsJobTimer": true,
+        "invoke": "0x1004bf2b4"
+      },
+      "keyErrors": [],
+      "removal": null,
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200328013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "retryRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200328013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      }
+    },
+    {
+      "rawNativeInteractivity": 2,
+      "jobWireInteractivity": 3,
+      "errorCode": 10,
+      "errorCategory": "http",
+      "attemptCountAtFailure": 1,
+      "metrics": [],
+      "errorBodyReadCount": 0,
+      "timer": null,
+      "keyErrors": [
+        {
+          "code": 4,
+          "jobCallback": true
+        }
+      ],
+      "removal": {
+        "sameOwner": true,
+        "sameJob": true
+      },
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200328013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "retryRequest": null
+    },
+    {
+      "rawNativeInteractivity": 2,
+      "jobWireInteractivity": 3,
+      "errorCode": 10,
+      "errorCategory": "other",
+      "attemptCountAtFailure": 1,
+      "metrics": [
+        {
+          "key": "http-transport",
+          "value": 10,
+          "terminal": false
+        }
+      ],
+      "errorBodyReadCount": 0,
+      "timer": {
+        "delayMilliseconds": 0,
+        "slotIsJobTimer": true,
+        "invoke": "0x1004bf2b4"
+      },
+      "keyErrors": [],
+      "removal": null,
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200328013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "retryRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200328013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      }
+    }
+  ]
+}

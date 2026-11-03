@@ -1,0 +1,210 @@
+{
+  "provenance": "Execute original MacOS client-data mapping with synthetic standard providers.\n\nUnicorn executes 0x101a806e4, 0x1017c4288 and initial request builder\n0x1017c35a4. Foundation, sysctl, Mach,\nallocation, libc memory and protobuf allocation/string operations are inert\nhooks. No original application, host device ID, account or network is read.",
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "factory": "0x101a806e4",
+  "converter": "0x1017c4288",
+  "initialBuilder": "0x1017c35a4",
+  "inertSendBoundary": "0x1017c3930",
+  "serialization": "Standard Google protoc serializes observed native field values using original proto3 descriptors; original native serializer is not executed",
+  "cases": [
+    {
+      "name": "native MacOS version descriptions remain distinct",
+      "providers": {
+        "name": "native MacOS version descriptions remain distinct",
+        "systemVersionString": "Version 26.4 (Build fixture-build)",
+        "majorVersion": 26,
+        "minorVersion": 4,
+        "patchVersion": 0,
+        "hardwareModel": "MacBookPro18,3",
+        "cpuType": 16777228,
+        "cpuSubtype": 2,
+        "identity": {
+          "clientId": "synthetic-client-id",
+          "clientVersion": "synthetic-version",
+          "deviceId": "synthetic-device-id"
+        }
+      },
+      "factoryVariantIndex": 4,
+      "platformProtobufField": 3,
+      "hasBits": 255,
+      "providerCalls": [
+        "NSProcessInfo.processInfo",
+        "operatingSystemVersionString",
+        "NSProcessInfo.processInfo",
+        "operatingSystemVersion",
+        "NSProcessInfo.processInfo",
+        "operatingSystemVersion",
+        "NSProcessInfo.processInfo",
+        "operatingSystemVersion",
+        "sysctlbyname(hw.model)",
+        "sysctlbyname(hw.model)",
+        "host_info(HOST_BASIC_INFO)"
+      ],
+      "fields": {
+        "systemVersion": "Version 26.4 (Build fixture-build)",
+        "systemVersionMajor": "26",
+        "systemVersionMinor": "4",
+        "systemVersionPatch": "0",
+        "hwModel": "MacBookPro18,3",
+        "cpuType": 16777228,
+        "cpuSubtype": 2,
+        "compiledCpuType": "arm64"
+      },
+      "requestFields": {
+        "connectivitySdkData": {
+          "platformSpecificData": {
+            "mac": {
+              "systemVersion": "Version 26.4 (Build fixture-build)",
+              "systemVersionMajor": "26",
+              "systemVersionMinor": "4",
+              "systemVersionPatch": "0",
+              "hwModel": "MacBookPro18,3",
+              "cpuType": 16777228,
+              "cpuSubtype": 2,
+              "compiledCpuType": "arm64"
+            }
+          },
+          "deviceId": "synthetic-device-id"
+        },
+        "clientVersion": "synthetic-version",
+        "clientId": "synthetic-client-id"
+      },
+      "canonicalWireHex": "0a1173796e7468657469632d76657273696f6e121373796e7468657469632d636c69656e742d69641a5f0a481a460a2256657273696f6e2032362e3420284275696c6420666978747572652d6275696c6429101a18042a0e4d6163426f6f6b50726f31382c33308c8080083802420561726d3634121373796e7468657469632d6465766963652d6964"
+    },
+    {
+      "name": "long Unicode version and model strings",
+      "providers": {
+        "name": "long Unicode version and model strings",
+        "systemVersionString": "Synthetic UTF-8 version café 雪 Synthetic UTF-8 version café 雪 Synthetic UTF-8 version café 雪 ",
+        "majorVersion": 300,
+        "minorVersion": 17,
+        "patchVersion": 42,
+        "hardwareModel": "SyntheticHardwareModelLongerThanSSO",
+        "cpuType": 16777223,
+        "cpuSubtype": -2147483645,
+        "identity": {
+          "clientId": "café-client",
+          "clientVersion": "full-version-with-UTF-8-雪",
+          "deviceId": "separate-device",
+          "developerApiKey": " ",
+          "currentToken": "synthetic-token-longer-than-SSO"
+        }
+      },
+      "factoryVariantIndex": 4,
+      "platformProtobufField": 3,
+      "hasBits": 255,
+      "providerCalls": [
+        "NSProcessInfo.processInfo",
+        "operatingSystemVersionString",
+        "NSProcessInfo.processInfo",
+        "operatingSystemVersion",
+        "NSProcessInfo.processInfo",
+        "operatingSystemVersion",
+        "NSProcessInfo.processInfo",
+        "operatingSystemVersion",
+        "sysctlbyname(hw.model)",
+        "sysctlbyname(hw.model)",
+        "host_info(HOST_BASIC_INFO)"
+      ],
+      "fields": {
+        "systemVersion": "Synthetic UTF-8 version café 雪 Synthetic UTF-8 version café 雪 Synthetic UTF-8 version café 雪 ",
+        "systemVersionMajor": "300",
+        "systemVersionMinor": "17",
+        "systemVersionPatch": "42",
+        "hwModel": "SyntheticHardwareModelLongerThanSSO",
+        "cpuType": 16777223,
+        "cpuSubtype": -2147483645,
+        "compiledCpuType": "arm64"
+      },
+      "requestFields": {
+        "connectivitySdkData": {
+          "platformSpecificData": {
+            "mac": {
+              "systemVersion": "Synthetic UTF-8 version café 雪 Synthetic UTF-8 version café 雪 Synthetic UTF-8 version café 雪 ",
+              "systemVersionMajor": "300",
+              "systemVersionMinor": "17",
+              "systemVersionPatch": "42",
+              "hwModel": "SyntheticHardwareModelLongerThanSSO",
+              "cpuType": 16777223,
+              "cpuSubtype": -2147483645,
+              "compiledCpuType": "arm64"
+            }
+          },
+          "deviceId": "separate-device",
+          "developerApiKey": " "
+        },
+        "clientVersion": "full-version-with-UTF-8-雪",
+        "clientId": "café-client",
+        "currentToken": "synthetic-token-longer-than-SSO"
+      },
+      "canonicalWireHex": "0a1b66756c6c2d76657273696f6e2d776974682d5554462d382de99baa120c636166c3a92d636c69656e741ac5010aae011aab010a6653796e746865746963205554462d382076657273696f6e20636166c3a920e99baa2053796e746865746963205554462d382076657273696f6e20636166c3a920e99baa2053796e746865746963205554462d382076657273696f6e20636166c3a920e99baa2010ac021811202a2a2353796e74686574696348617264776172654d6f64656c4c6f6e6765725468616e53534f30878080083883808080f8ffffffff01420561726d3634120f73657061726174652d6465766963652201202a1f73796e7468657469632d746f6b656e2d6c6f6e6765722d7468616e2d53534f"
+    },
+    {
+      "name": "zero values preserve original protobuf assignment",
+      "providers": {
+        "name": "zero values preserve original protobuf assignment",
+        "systemVersionString": "",
+        "majorVersion": 0,
+        "minorVersion": 0,
+        "patchVersion": 0,
+        "hardwareModel": "",
+        "cpuType": 0,
+        "cpuSubtype": 0,
+        "identity": {
+          "clientId": "",
+          "clientVersion": "",
+          "deviceId": "",
+          "developerApiKey": "",
+          "currentToken": ""
+        }
+      },
+      "factoryVariantIndex": 4,
+      "platformProtobufField": 3,
+      "hasBits": 255,
+      "providerCalls": [
+        "NSProcessInfo.processInfo",
+        "operatingSystemVersionString",
+        "NSProcessInfo.processInfo",
+        "operatingSystemVersion",
+        "NSProcessInfo.processInfo",
+        "operatingSystemVersion",
+        "NSProcessInfo.processInfo",
+        "operatingSystemVersion",
+        "sysctlbyname(hw.model)",
+        "sysctlbyname(hw.model)",
+        "host_info(HOST_BASIC_INFO)"
+      ],
+      "fields": {
+        "systemVersion": "",
+        "systemVersionMajor": "0",
+        "systemVersionMinor": "0",
+        "systemVersionPatch": "0",
+        "hwModel": "",
+        "cpuType": 0,
+        "cpuSubtype": 0,
+        "compiledCpuType": "arm64"
+      },
+      "requestFields": {
+        "connectivitySdkData": {
+          "platformSpecificData": {
+            "mac": {
+              "systemVersion": "",
+              "systemVersionMajor": "0",
+              "systemVersionMinor": "0",
+              "systemVersionPatch": "0",
+              "hwModel": "",
+              "cpuType": 0,
+              "cpuSubtype": 0,
+              "compiledCpuType": "arm64"
+            }
+          },
+          "deviceId": ""
+        },
+        "clientVersion": "",
+        "clientId": "",
+        "currentToken": ""
+      },
+      "canonicalWireHex": "1a0b0a091a07420561726d3634"
+    }
+  ]
+}

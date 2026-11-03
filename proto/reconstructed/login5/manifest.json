@@ -1,0 +1,1864 @@
+{
+  "classification": "reconstructed-not-extracted",
+  "descriptorSet": {
+    "path": "proto/reconstructed/login5/reconstructed.pbdesc",
+    "sha256": "10fc9ef5a4b16fcb9549053681372accb8a47f3532c55d4d73cfb9d77b8d74d8"
+  },
+  "enumProvenance": [
+    {
+      "name": "spotify.login5.v3.LoginError",
+      "origin": "pinned public v3 enum identity plus current native sorted-name/index mapping including NOT_ALLOWED=9",
+      "values": {
+        "BAD_REQUEST": 2,
+        "INVALID_CREDENTIALS": 1,
+        "INVALID_PHONENUMBER": 7,
+        "NOT_ALLOWED": 9,
+        "TIMEOUT": 4,
+        "TOO_MANY_ATTEMPTS": 6,
+        "TRY_AGAIN_LATER": 8,
+        "UNKNOWN_ERROR": 0,
+        "UNKNOWN_IDENTIFIER": 5,
+        "UNSUPPORTED_LOGIN_PROTOCOL": 3
+      }
+    },
+    {
+      "name": "spotify.login5.v3.LoginResponse.Warnings",
+      "origin": "pinned public v3 schema; current native labels not retained",
+      "values": {
+        "DEPRECATED_PROTOCOL_VERSION": 1,
+        "UNKNOWN_WARNING": 0
+      }
+    },
+    {
+      "name": "spotify.login5.v3.UserInfo.Gender",
+      "origin": "pinned public v3 schema; current native labels not retained",
+      "values": {
+        "FEMALE": 2,
+        "MALE": 1,
+        "NEUTRAL": 3,
+        "UNKNOWN": 0
+      }
+    },
+    {
+      "name": "spotify.login5.v3.challenges.CodeChallenge.Method",
+      "origin": "pinned public v3 schema; current native labels not retained",
+      "values": {
+        "SMS": 1,
+        "UNKNOWN": 0
+      }
+    }
+  ],
+  "excludedMessages": [
+    {
+      "message": "spotify.login5.v4.challenges.CodeChallenge",
+      "reason": "native enum field identity/labels/range not established by an authoritative v4 reference"
+    },
+    {
+      "message": "spotify.login5.v4.Challenges",
+      "reason": "depends on unresolved native message spotify.login5.v4.Challenge"
+    },
+    {
+      "message": "spotify.login5.v4.Challenge",
+      "reason": "depends on unresolved native message spotify.login5.v4.challenges.CodeChallenge"
+    },
+    {
+      "message": "spotify.login5.v4.Interaction.Finish",
+      "reason": "native enum field identity/labels/range not established by an authoritative v4 reference"
+    },
+    {
+      "message": "spotify.login5.v4.Interaction.Hint",
+      "reason": "nested parent Interaction is unresolved; no incomplete namespace-carrier message is emitted"
+    },
+    {
+      "message": "spotify.login5.v4.Interaction",
+      "reason": "native enum field identity/labels/range not established by an authoritative v4 reference"
+    },
+    {
+      "message": "spotify.login5.v4.LoginRequest",
+      "reason": "depends on unresolved native message spotify.login5.v4.Interaction"
+    },
+    {
+      "message": "spotify.login5.v4.LoginResponse",
+      "reason": "native enum field identity/labels/range not established by an authoritative v4 reference"
+    },
+    {
+      "message": "spotify.login5.v4.UserInfo",
+      "reason": "native enum field identity/labels/range not established by an authoritative v4 reference"
+    }
+  ],
+  "ignoredReference": "hazycora flat login5.proto is not a schema authority; it omits Duration and mis-types v4 fields",
+  "limitations": [
+    "These are reconstructed schemas, not original embedded descriptors",
+    "Original source filenames, source options and proto3 optional declarations are not recovered",
+    "All older Windows reference source options are discarded",
+    "Unretained field/oneof names use pinned v3 analogue or explicitly synthetic names",
+    "V4 enum-dependent closures remain excluded rather than inventing enum types or replacing them with int32",
+    "Other v3 enum labels follow the pinned public reference, not retained current native label tables",
+    "Standard google.protobuf.Duration is tied through native Full ClassData and its exact descriptor hash",
+    "No account-tier gates, live Spotify requests or profile data"
+  ],
+  "messages": [
+    {
+      "name": "spotify.login5.v3.challenges.CodeChallenge",
+      "file": "spotify/login5/v3/challenges/code.proto",
+      "tableAddress": "0x102724bd0",
+      "metadataSha256": "b6b394abbfe73c7d0dc0641f9e658becebe7369ae33196b6e2bcef0bab9d4f4c",
+      "fields": [
+        {
+          "number": 1,
+          "name": "method",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "spotify.login5.v3.challenges.CodeChallenge.Method",
+          "nativeType": "0x1891",
+          "cardinality": "optional"
+        },
+        {
+          "number": 2,
+          "name": "code_length",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "TYPE_INT32",
+          "nativeType": "0x1091",
+          "cardinality": "optional"
+        },
+        {
+          "number": 3,
+          "name": "expires_in",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "TYPE_INT32",
+          "nativeType": "0x1091",
+          "cardinality": "optional"
+        },
+        {
+          "number": 4,
+          "name": "canonical_phone_number",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v3.challenges.CodeSolution",
+      "file": "spotify/login5/v3/challenges/code.proto",
+      "tableAddress": "0x102724cc8",
+      "metadataSha256": "433e8c4c51a0cb8b39762fc5ec01ed16177aa47636ed371c1ec50acf6ed6a481",
+      "fields": [
+        {
+          "number": 1,
+          "name": "code",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v3.challenges.HashcashChallenge",
+      "file": "spotify/login5/v3/challenges/hashcash.proto",
+      "tableAddress": "0x102724da8",
+      "metadataSha256": "aee001d90ad5c3594beb7474f08e6d9c2cddd8bdeeefcc8676dcbd20730e98e2",
+      "fields": [
+        {
+          "number": 1,
+          "name": "prefix",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "TYPE_BYTES",
+          "nativeType": "0x815",
+          "cardinality": "optional"
+        },
+        {
+          "number": 2,
+          "name": "length",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "TYPE_INT32",
+          "nativeType": "0x1091",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v3.challenges.HashcashSolution",
+      "file": "spotify/login5/v3/challenges/hashcash.proto",
+      "tableAddress": "0x102724e20",
+      "metadataSha256": "4e7691cfa2284854582ae9d5ece0834f47e8bcf5923a16cd6f10cd58cb904c47",
+      "fields": [
+        {
+          "number": 1,
+          "name": "suffix",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "TYPE_BYTES",
+          "nativeType": "0x815",
+          "cardinality": "optional",
+          "nativeAux": "a8377e0201000000"
+        },
+        {
+          "number": 2,
+          "name": "duration",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "google.protobuf.Duration",
+          "nativeType": "0x416",
+          "cardinality": "optional",
+          "nativeAux": "a8377e0201000000",
+          "linkNote": "native Full ClassData/DescriptorTable and exact original descriptor hash resolve google.protobuf.Duration"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v3.ClientInfo",
+      "file": "spotify/login5/v3/client_info.proto",
+      "tableAddress": "0x102724ed0",
+      "metadataSha256": "cee1d6945de5734d84931fa876164bd410d4ab7d99c3db7b93badff287232110",
+      "fields": [
+        {
+          "number": 1,
+          "name": "client_id",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 2,
+          "name": "device_id",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v3.credentials.StoredCredential",
+      "file": "spotify/login5/v3/credentials/credentials.proto",
+      "tableAddress": "0x1027250d0",
+      "metadataSha256": "66e7c81a1edda6d0d9089d89124d1d2bf621ecec9414d09188ae9feaac6809fd",
+      "fields": [
+        {
+          "number": 1,
+          "name": "username",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 2,
+          "name": "data",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "TYPE_BYTES",
+          "nativeType": "0x815",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v3.credentials.Password",
+      "file": "spotify/login5/v3/credentials/credentials.proto",
+      "tableAddress": "0x102725188",
+      "metadataSha256": "3c90f14da7f72e0e746326f1b13b61cb72fa0053ccf57fb824452d00533be775",
+      "fields": [
+        {
+          "number": 1,
+          "name": "id",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 2,
+          "name": "password",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 3,
+          "name": "padding",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "TYPE_BYTES",
+          "nativeType": "0x815",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v3.credentials.FacebookAccessToken",
+      "file": "spotify/login5/v3/credentials/credentials.proto",
+      "tableAddress": "0x102725268",
+      "metadataSha256": "685ca2c064c262065dbc5b1ddb2db5aff7bd5f798d177ae73ca0457ea0c1c855",
+      "fields": [
+        {
+          "number": 1,
+          "name": "fb_uid",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 2,
+          "name": "access_token",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v3.credentials.OneTimeToken",
+      "file": "spotify/login5/v3/credentials/credentials.proto",
+      "tableAddress": "0x102725328",
+      "metadataSha256": "46e4bced9c6144f30cec143863eed26358d45beb359385a98baf1fdc2b00c527",
+      "fields": [
+        {
+          "number": 1,
+          "name": "token",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v3.credentials.ParentChildCredential",
+      "file": "spotify/login5/v3/credentials/credentials.proto",
+      "tableAddress": "0x1027253b8",
+      "metadataSha256": "ad6b0e0abbf3cab6044c78fc474ed373722078d82b5b64d89aec1fabc046651f",
+      "fields": [
+        {
+          "number": 1,
+          "name": "child_id",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional",
+          "nativeAux": "d050720201000000"
+        },
+        {
+          "number": 2,
+          "name": "parent_stored_credential",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "spotify.login5.v3.credentials.StoredCredential",
+          "nativeType": "0x416",
+          "cardinality": "optional",
+          "nativeSubmessage": "spotify.login5.v3.credentials.StoredCredential",
+          "nativeAux": "d050720201000000"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v3.credentials.AppleSignInCredential",
+      "file": "spotify/login5/v3/credentials/credentials.proto",
+      "tableAddress": "0x102725480",
+      "metadataSha256": "b876595f7e4aa1488283ada5c10ba2deed8f91c93e84828674ed11bd0d1fe91d",
+      "fields": [
+        {
+          "number": 1,
+          "name": "auth_code",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 2,
+          "name": "redirect_uri",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 3,
+          "name": "bundle_id",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v3.credentials.SamsungSignInCredential",
+      "file": "spotify/login5/v3/credentials/credentials.proto",
+      "tableAddress": "0x102725580",
+      "metadataSha256": "7d36bc5983054a24f2922b03b442c0f5f6516c006734f19098000e6ca2f07447",
+      "fields": [
+        {
+          "number": 1,
+          "name": "auth_code",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 2,
+          "name": "redirect_uri",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 4,
+          "name": "token_endpoint_url",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v3.credentials.GoogleSignInCredential",
+      "file": "spotify/login5/v3/credentials/credentials.proto",
+      "tableAddress": "0x102725688",
+      "metadataSha256": "d9426f6daba6d8a0963b407af09451c7c7e4ae7c612c4fc91b35a7858060d1b2",
+      "fields": [
+        {
+          "number": 1,
+          "name": "auth_code",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 2,
+          "name": "redirect_uri",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v3.identifiers.PhoneNumber",
+      "file": "spotify/login5/v3/identifiers/identifiers.proto",
+      "tableAddress": "0x102725780",
+      "metadataSha256": "531c58f5094eccd12810557670efdd6d4a65569c0844d1264dd6eda764177341",
+      "fields": [
+        {
+          "number": 1,
+          "name": "number",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 2,
+          "name": "iso_country_code",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 3,
+          "name": "country_calling_code",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v3.Challenges",
+      "file": "spotify/login5/v3/login5.proto",
+      "tableAddress": "0x1027259f0",
+      "metadataSha256": "f8bca4f5a4b302099e252fcdafe1a0a57102777958fec40a24204d99fa380ab5",
+      "fields": [
+        {
+          "number": 1,
+          "name": "challenges",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "spotify.login5.v3.Challenge",
+          "nativeType": "0x426",
+          "cardinality": "repeated",
+          "nativeSubmessage": "spotify.login5.v3.Challenge",
+          "nativeAux": "585a720201000000"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v3.Challenge",
+      "file": "spotify/login5/v3/login5.proto",
+      "tableAddress": "0x102725a58",
+      "metadataSha256": "071cb2efc609fdff940af6d16c95317b9522eff40f825235b6121c8689dfe973",
+      "fields": [
+        {
+          "number": 1,
+          "name": "hashcash",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "spotify.login5.v3.challenges.HashcashChallenge",
+          "nativeType": "0x436",
+          "cardinality": "oneof",
+          "nativeSubmessage": "spotify.login5.v3.challenges.HashcashChallenge",
+          "nativeAux": "a84d720201000000"
+        },
+        {
+          "number": 2,
+          "name": "code",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "spotify.login5.v3.challenges.CodeChallenge",
+          "nativeType": "0x436",
+          "cardinality": "oneof",
+          "nativeSubmessage": "spotify.login5.v3.challenges.CodeChallenge",
+          "nativeAux": "d04b720201000000"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v3.ChallengeSolutions",
+      "file": "spotify/login5/v3/login5.proto",
+      "tableAddress": "0x102725ad8",
+      "metadataSha256": "e1614242aaca253a08d891ce198334ad7f95412b1fe31e8b941dfbcb3473adbb",
+      "fields": [
+        {
+          "number": 1,
+          "name": "solutions",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "spotify.login5.v3.ChallengeSolution",
+          "nativeType": "0x426",
+          "cardinality": "repeated",
+          "nativeSubmessage": "spotify.login5.v3.ChallengeSolution",
+          "nativeAux": "405b720201000000"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v3.ChallengeSolution",
+      "file": "spotify/login5/v3/login5.proto",
+      "tableAddress": "0x102725b40",
+      "metadataSha256": "2d7d8b08bc50e39d604660ea98a127041005d617330a8c3a8f438ac9bc626904",
+      "fields": [
+        {
+          "number": 1,
+          "name": "hashcash",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "spotify.login5.v3.challenges.HashcashSolution",
+          "nativeType": "0x436",
+          "cardinality": "oneof",
+          "nativeSubmessage": "spotify.login5.v3.challenges.HashcashSolution",
+          "nativeAux": "204e720201000000"
+        },
+        {
+          "number": 2,
+          "name": "code",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "spotify.login5.v3.challenges.CodeSolution",
+          "nativeType": "0x436",
+          "cardinality": "oneof",
+          "nativeSubmessage": "spotify.login5.v3.challenges.CodeSolution",
+          "nativeAux": "c84c720201000000"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v3.LoginRequest",
+      "file": "spotify/login5/v3/login5.proto",
+      "tableAddress": "0x102725bc0",
+      "metadataSha256": "b8df907cde391c34f3261f6b8dc51d1945c20f3a0cbac46cf1a769af2c90d2ef",
+      "fields": [
+        {
+          "number": 1,
+          "name": "client_info",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "spotify.login5.v3.ClientInfo",
+          "nativeType": "0x416",
+          "cardinality": "optional",
+          "nativeSubmessage": "spotify.login5.v3.ClientInfo",
+          "nativeAux": "d04e720201000000"
+        },
+        {
+          "number": 2,
+          "name": "login_context",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "TYPE_BYTES",
+          "nativeType": "0x815",
+          "cardinality": "optional",
+          "nativeAux": "d04e720201000000"
+        },
+        {
+          "number": 3,
+          "name": "challenge_solutions",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "spotify.login5.v3.ChallengeSolutions",
+          "nativeType": "0x416",
+          "cardinality": "optional",
+          "nativeSubmessage": "spotify.login5.v3.ChallengeSolutions",
+          "nativeAux": "d85a720201000000"
+        },
+        {
+          "number": 100,
+          "name": "stored_credential",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "spotify.login5.v3.credentials.StoredCredential",
+          "nativeType": "0x436",
+          "cardinality": "oneof",
+          "nativeSubmessage": "spotify.login5.v3.credentials.StoredCredential",
+          "nativeAux": "d050720201000000"
+        },
+        {
+          "number": 101,
+          "name": "password",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "spotify.login5.v3.credentials.Password",
+          "nativeType": "0x436",
+          "cardinality": "oneof",
+          "nativeSubmessage": "spotify.login5.v3.credentials.Password",
+          "nativeAux": "8851720201000000"
+        },
+        {
+          "number": 102,
+          "name": "facebook_access_token",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "spotify.login5.v3.credentials.FacebookAccessToken",
+          "nativeType": "0x436",
+          "cardinality": "oneof",
+          "nativeSubmessage": "spotify.login5.v3.credentials.FacebookAccessToken",
+          "nativeAux": "6852720201000000"
+        },
+        {
+          "number": 103,
+          "name": "phone_number",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "spotify.login5.v3.identifiers.PhoneNumber",
+          "nativeType": "0x436",
+          "cardinality": "oneof",
+          "nativeSubmessage": "spotify.login5.v3.identifiers.PhoneNumber",
+          "nativeAux": "8057720201000000"
+        },
+        {
+          "number": 104,
+          "name": "one_time_token",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "spotify.login5.v3.credentials.OneTimeToken",
+          "nativeType": "0x436",
+          "cardinality": "oneof",
+          "nativeSubmessage": "spotify.login5.v3.credentials.OneTimeToken",
+          "nativeAux": "2853720201000000"
+        },
+        {
+          "number": 105,
+          "name": "parent_child_credential",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "spotify.login5.v3.credentials.ParentChildCredential",
+          "nativeType": "0x436",
+          "cardinality": "oneof",
+          "nativeSubmessage": "spotify.login5.v3.credentials.ParentChildCredential",
+          "nativeAux": "b853720201000000"
+        },
+        {
+          "number": 106,
+          "name": "apple_sign_in_credential",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "spotify.login5.v3.credentials.AppleSignInCredential",
+          "nativeType": "0x436",
+          "cardinality": "oneof",
+          "nativeSubmessage": "spotify.login5.v3.credentials.AppleSignInCredential",
+          "nativeAux": "8054720201000000"
+        },
+        {
+          "number": 107,
+          "name": "samsung_sign_in_credential",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "spotify.login5.v3.credentials.SamsungSignInCredential",
+          "nativeType": "0x436",
+          "cardinality": "oneof",
+          "nativeSubmessage": "spotify.login5.v3.credentials.SamsungSignInCredential",
+          "nativeAux": "8055720201000000"
+        },
+        {
+          "number": 108,
+          "name": "google_sign_in_credential",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "spotify.login5.v3.credentials.GoogleSignInCredential",
+          "nativeType": "0x436",
+          "cardinality": "oneof",
+          "nativeSubmessage": "spotify.login5.v3.credentials.GoogleSignInCredential",
+          "nativeAux": "8856720201000000"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v3.LoginOk",
+      "file": "spotify/login5/v3/login5.proto",
+      "tableAddress": "0x102725d38",
+      "metadataSha256": "e5811c4dbf92eec9a31bb15dcfadc072d27b4cf963a98f380f18cbf6ec4d9623",
+      "fields": [
+        {
+          "number": 1,
+          "name": "username",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 2,
+          "name": "access_token",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 3,
+          "name": "stored_credential",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "TYPE_BYTES",
+          "nativeType": "0x815",
+          "cardinality": "optional"
+        },
+        {
+          "number": 4,
+          "name": "access_token_expires_in",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "TYPE_INT32",
+          "nativeType": "0x1091",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v3.LoginResponse",
+      "file": "spotify/login5/v3/login5.proto",
+      "tableAddress": "0x102725e20",
+      "metadataSha256": "b9406b23977b77cd1f730b7caec6a102da2386cc800552463c275d3937945460",
+      "fields": [
+        {
+          "number": 1,
+          "name": "ok",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "spotify.login5.v3.LoginOk",
+          "nativeType": "0x436",
+          "cardinality": "oneof",
+          "nativeSubmessage": "spotify.login5.v3.LoginOk",
+          "nativeAux": "385d720201000000"
+        },
+        {
+          "number": 2,
+          "name": "error",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "spotify.login5.v3.LoginError",
+          "nativeType": "0x18b1",
+          "cardinality": "oneof",
+          "nativeAux": "385d720201000000"
+        },
+        {
+          "number": 3,
+          "name": "challenges",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "spotify.login5.v3.Challenges",
+          "nativeType": "0x436",
+          "cardinality": "oneof",
+          "nativeSubmessage": "spotify.login5.v3.Challenges",
+          "nativeAux": "f059720201000000"
+        },
+        {
+          "number": 4,
+          "name": "warnings",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "spotify.login5.v3.LoginResponse.Warnings",
+          "nativeType": "0x18a2",
+          "cardinality": "repeated",
+          "nativeAux": "385d720201000000"
+        },
+        {
+          "number": 5,
+          "name": "login_context",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "TYPE_BYTES",
+          "nativeType": "0x815",
+          "cardinality": "optional",
+          "nativeAux": "385d720201000000"
+        },
+        {
+          "number": 6,
+          "name": "identifier_token",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional",
+          "nativeAux": "385d720201000000"
+        },
+        {
+          "number": 7,
+          "name": "user_info",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "spotify.login5.v3.UserInfo",
+          "nativeType": "0x416",
+          "cardinality": "optional",
+          "nativeSubmessage": "spotify.login5.v3.UserInfo",
+          "nativeAux": "805f720201000000"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v3.UserInfo",
+      "file": "spotify/login5/v3/user_info.proto",
+      "tableAddress": "0x102725f80",
+      "metadataSha256": "b648757f9960e59e05f84d57013d2549ec7c3fa5742ea5afb6a41c41a89d9a44",
+      "fields": [
+        {
+          "number": 1,
+          "name": "name",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 2,
+          "name": "email",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 3,
+          "name": "email_verified",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "TYPE_BOOL",
+          "nativeType": "0x11",
+          "cardinality": "optional"
+        },
+        {
+          "number": 4,
+          "name": "birthdate",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 5,
+          "name": "gender",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "spotify.login5.v3.UserInfo.Gender",
+          "nativeType": "0x1891",
+          "cardinality": "optional"
+        },
+        {
+          "number": 6,
+          "name": "phone_number",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 7,
+          "name": "phone_number_verified",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "TYPE_BOOL",
+          "nativeType": "0x11",
+          "cardinality": "optional"
+        },
+        {
+          "number": 8,
+          "name": "email_already_registered",
+          "nameOrigin": "pinned-public-v3-reference",
+          "type": "TYPE_BOOL",
+          "nativeType": "0x11",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v4.challenges.AuthnPlatformChallenge",
+      "file": "spotify/login5/v4/challenges/reconstructed.proto",
+      "tableAddress": "0x102726128",
+      "metadataSha256": "61fb4eacee6dce43483668624ad9e00085ae63c9ac507a3812b7a00f8fad40ca",
+      "fields": [
+        {
+          "number": 1,
+          "name": "field_1",
+          "nameOrigin": "synthetic-number-based-name",
+          "type": "TYPE_BYTES",
+          "nativeType": "0x815",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v4.challenges.AuthnPlatformSolution",
+      "file": "spotify/login5/v4/challenges/reconstructed.proto",
+      "tableAddress": "0x102726188",
+      "metadataSha256": "0bafbaad4d4258a31d9a711a7847087bedbb8a2a880a99f14f01fed7b92a3f37",
+      "fields": [
+        {
+          "number": 1,
+          "name": "field_1",
+          "nameOrigin": "synthetic-number-based-name",
+          "type": "TYPE_BYTES",
+          "nativeType": "0x815",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v4.challenges.CodeSolution",
+      "file": "spotify/login5/v4/challenges/reconstructed.proto",
+      "tableAddress": "0x102726350",
+      "metadataSha256": "1c238c7f0d0d95a671be813159d2629a5eae2f7a8606a07c304fb89cf9d7bbe3",
+      "fields": [
+        {
+          "number": 1,
+          "name": "code",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v4.challenges.HashcashChallenge",
+      "file": "spotify/login5/v4/challenges/reconstructed.proto",
+      "tableAddress": "0x102726430",
+      "metadataSha256": "533db6fca8e0dc99d200293a477fe324479d31f77a63ee93aa737d0ad9dc7b83",
+      "fields": [
+        {
+          "number": 1,
+          "name": "prefix",
+          "nameOrigin": "pinned-public-v3-analogue-name",
+          "type": "TYPE_BYTES",
+          "nativeType": "0x815",
+          "cardinality": "optional"
+        },
+        {
+          "number": 2,
+          "name": "length",
+          "nameOrigin": "pinned-public-v3-analogue-name",
+          "type": "TYPE_INT32",
+          "nativeType": "0x1091",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v4.challenges.HashcashSolution",
+      "file": "spotify/login5/v4/challenges/reconstructed.proto",
+      "tableAddress": "0x1027264a8",
+      "metadataSha256": "887538e6d2efa93d73c917f4a63f92852b0bef8bcf6775a046f4527ff53776c4",
+      "fields": [
+        {
+          "number": 1,
+          "name": "suffix",
+          "nameOrigin": "pinned-public-v3-analogue-name",
+          "type": "TYPE_BYTES",
+          "nativeType": "0x815",
+          "cardinality": "optional",
+          "nativeAux": "a8377e0201000000"
+        },
+        {
+          "number": 2,
+          "name": "duration",
+          "nameOrigin": "pinned-public-v3-analogue-name",
+          "type": "google.protobuf.Duration",
+          "nativeType": "0x416",
+          "cardinality": "optional",
+          "nativeAux": "a8377e0201000000",
+          "linkNote": "native Full ClassData/DescriptorTable and exact original descriptor hash resolve google.protobuf.Duration"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v4.challenges.InteractionChallenge",
+      "file": "spotify/login5/v4/challenges/reconstructed.proto",
+      "tableAddress": "0x1027265b8",
+      "metadataSha256": "7b99c7266d67a4e18f47b94dcfabf6a13790b7ea4a642048c40be31690ef4076",
+      "fields": [
+        {
+          "number": 1,
+          "name": "field_1",
+          "nameOrigin": "synthetic-number-based-name",
+          "type": "spotify.login5.v4.challenges.Redirect",
+          "nativeType": "0x416",
+          "cardinality": "optional",
+          "nativeSubmessage": "spotify.login5.v4.challenges.Redirect",
+          "nativeAux": "4866720201000000"
+        },
+        {
+          "number": 10,
+          "name": "field_10",
+          "nameOrigin": "synthetic-number-based-name",
+          "type": "spotify.login5.v4.challenges.Finish",
+          "nativeType": "0x416",
+          "cardinality": "optional",
+          "nativeSubmessage": "spotify.login5.v4.challenges.Finish",
+          "nativeAux": "e066720201000000"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v4.challenges.Redirect",
+      "file": "spotify/login5/v4/challenges/reconstructed.proto",
+      "tableAddress": "0x102726648",
+      "metadataSha256": "927ceea5bbbe5e8b649d825ea398fc05a7b07b813004218ffd71202633c0c63c",
+      "fields": [
+        {
+          "number": 1,
+          "name": "interaction_url",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v4.challenges.Finish",
+      "file": "spotify/login5/v4/challenges/reconstructed.proto",
+      "tableAddress": "0x1027266e0",
+      "metadataSha256": "f3ebfcf50ba1d710f816dd382fb3f21d6e4e9b17c7a4caa446ed4f5572e6db93",
+      "fields": [
+        {
+          "number": 1,
+          "name": "nonce",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v4.challenges.InteractionSolution",
+      "file": "spotify/login5/v4/challenges/reconstructed.proto",
+      "tableAddress": "0x102726770",
+      "metadataSha256": "10d309740f3c18056dd4b079232e22d312b94e4fcfab76d8c992c8a8882e2391",
+      "fields": [
+        {
+          "number": 1,
+          "name": "interact_ref",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v4.credentials.StoredCredential",
+      "file": "spotify/login5/v4/credentials/reconstructed.proto",
+      "tableAddress": "0x1027269d8",
+      "metadataSha256": "d055d28f409b5372a7014daa5257b32a55db1647c5b0937ddcedd948d87e44fa",
+      "fields": [
+        {
+          "number": 1,
+          "name": "username",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 2,
+          "name": "data",
+          "nameOrigin": "pinned-public-v3-analogue-name",
+          "type": "TYPE_BYTES",
+          "nativeType": "0x815",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v4.credentials.Password",
+      "file": "spotify/login5/v4/credentials/reconstructed.proto",
+      "tableAddress": "0x102726a90",
+      "metadataSha256": "35b313e2e9661b26f9340d6b704860051de9ac7ae40449acb8bc536a2f7677c4",
+      "fields": [
+        {
+          "number": 1,
+          "name": "login_hint",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v4.credentials.FacebookAccessToken",
+      "file": "spotify/login5/v4/credentials/reconstructed.proto",
+      "tableAddress": "0x102726b28",
+      "metadataSha256": "02892a553f6a08f0240923445b6a7f036fc6c95a96c2aea38b2455be94e8726f",
+      "fields": [
+        {
+          "number": 1,
+          "name": "fb_uid",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 2,
+          "name": "access_token",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 3,
+          "name": "id_token",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v4.credentials.OneTimeToken",
+      "file": "spotify/login5/v4/credentials/reconstructed.proto",
+      "tableAddress": "0x102726c20",
+      "metadataSha256": "c5a4d003396a46a157a6584714a03dd19e7a7168fc818356e007a154bf7d8956",
+      "fields": [
+        {
+          "number": 1,
+          "name": "token",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v4.credentials.ParentChildCredential",
+      "file": "spotify/login5/v4/credentials/reconstructed.proto",
+      "tableAddress": "0x102726cb0",
+      "metadataSha256": "fdc850636473a14d5cbc6ecc6e80f4e7f3f09bde01050e55abeb6b5f2e563c3e",
+      "fields": [
+        {
+          "number": 1,
+          "name": "child_id",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional",
+          "nativeAux": "d869720201000000"
+        },
+        {
+          "number": 2,
+          "name": "parent_stored_credential",
+          "nameOrigin": "pinned-public-v3-analogue-name",
+          "type": "spotify.login5.v4.credentials.StoredCredential",
+          "nativeType": "0x416",
+          "cardinality": "optional",
+          "nativeSubmessage": "spotify.login5.v4.credentials.StoredCredential",
+          "nativeAux": "d869720201000000"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v4.credentials.AppleSignInCredential",
+      "file": "spotify/login5/v4/credentials/reconstructed.proto",
+      "tableAddress": "0x102726d78",
+      "metadataSha256": "471d2eca86101c4dc2c4269fe99ca163b021dd9fc8d5712f7f7646768b685038",
+      "fields": [
+        {
+          "number": 1,
+          "name": "auth_code",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 2,
+          "name": "redirect_uri",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 3,
+          "name": "bundle_id",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v4.credentials.SamsungSignInCredential",
+      "file": "spotify/login5/v4/credentials/reconstructed.proto",
+      "tableAddress": "0x102726e78",
+      "metadataSha256": "c75ad58c94c395d6e0c368f9ebc7ab88a3519555fce0c7ba41cbcb0d1b15b474",
+      "fields": [
+        {
+          "number": 1,
+          "name": "auth_code",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 2,
+          "name": "redirect_uri",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 3,
+          "name": "id_token",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 4,
+          "name": "token_endpoint_url",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v4.credentials.GoogleSignInCredential",
+      "file": "spotify/login5/v4/credentials/reconstructed.proto",
+      "tableAddress": "0x102726f98",
+      "metadataSha256": "11ef1d15f6ff48056d1191d3cf4426214492a0ee26d4f68198215dcc75f9bffa",
+      "fields": [
+        {
+          "number": 1,
+          "name": "auth_code",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 2,
+          "name": "redirect_uri",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 3,
+          "name": "id_token",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v4.credentials.NaverSignInCredential",
+      "file": "spotify/login5/v4/credentials/reconstructed.proto",
+      "tableAddress": "0x102727098",
+      "metadataSha256": "b1f1f507b626bee462cb7ed662fbb02af272a3d8e4818dd547f768e7f4034b44",
+      "fields": [
+        {
+          "number": 1,
+          "name": "auth_code",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 2,
+          "name": "redirect_uri",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v4.credentials.NativePassword",
+      "file": "spotify/login5/v4/credentials/reconstructed.proto",
+      "tableAddress": "0x102727160",
+      "metadataSha256": "ef901905714255b52bfeb50a1cfc7e14498a0a2cc08635ab0ba748633277729d",
+      "fields": [
+        {
+          "number": 1,
+          "name": "id",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 2,
+          "name": "password",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 3,
+          "name": "padding",
+          "nameOrigin": "pinned-public-v3-analogue-name",
+          "type": "TYPE_BYTES",
+          "nativeType": "0x815",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v4.credentials.AuthnPlatformCredential",
+      "file": "spotify/login5/v4/credentials/reconstructed.proto",
+      "tableAddress": "0x102727240",
+      "metadataSha256": "77bcf822db0f9520369e72abe3a454c77ed39560689da749b9f42f2bcf4443ab",
+      "fields": []
+    },
+    {
+      "name": "spotify.login5.v4.identifiers.EmailAddress",
+      "file": "spotify/login5/v4/identifiers/reconstructed.proto",
+      "tableAddress": "0x1027272e0",
+      "metadataSha256": "433444f80120c366288add1643f48f29184eca39ebce7e13f5c2bddfc0dc9de9",
+      "fields": [
+        {
+          "number": 1,
+          "name": "email_address",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v4.identifiers.PhoneNumber",
+      "file": "spotify/login5/v4/identifiers/reconstructed.proto",
+      "tableAddress": "0x102727378",
+      "metadataSha256": "763bd2de3acb1bf538f7586097f7c61b76642843291659e42790282cddc9b748",
+      "fields": [
+        {
+          "number": 1,
+          "name": "number",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 2,
+          "name": "iso_country_code",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 3,
+          "name": "country_calling_code",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v4.ChallengeSolutions",
+      "file": "spotify/login5/v4/reconstructed.proto",
+      "tableAddress": "0x102727800",
+      "metadataSha256": "a184145663de36ad56726da82ebb0d36928edfa09b559623906bf49db566b028",
+      "fields": [
+        {
+          "number": 1,
+          "name": "solutions",
+          "nameOrigin": "pinned-public-v3-analogue-name",
+          "type": "spotify.login5.v4.ChallengeSolution",
+          "nativeType": "0x426",
+          "cardinality": "repeated",
+          "nativeSubmessage": "spotify.login5.v4.ChallengeSolution",
+          "nativeAux": "6878720201000000"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v4.ChallengeSolution",
+      "file": "spotify/login5/v4/reconstructed.proto",
+      "tableAddress": "0x102727868",
+      "metadataSha256": "13b6c7ac52b8f55da1651f4f5a3b88c52e03d6cf19159c2d082e35150ceefc05",
+      "fields": [
+        {
+          "number": 1,
+          "name": "hashcash",
+          "nameOrigin": "pinned-public-v3-analogue-name",
+          "type": "spotify.login5.v4.challenges.HashcashSolution",
+          "nativeType": "0x436",
+          "cardinality": "oneof",
+          "nativeSubmessage": "spotify.login5.v4.challenges.HashcashSolution",
+          "nativeAux": "a864720201000000"
+        },
+        {
+          "number": 2,
+          "name": "code",
+          "nameOrigin": "pinned-public-v3-analogue-name",
+          "type": "spotify.login5.v4.challenges.CodeSolution",
+          "nativeType": "0x436",
+          "cardinality": "oneof",
+          "nativeSubmessage": "spotify.login5.v4.challenges.CodeSolution",
+          "nativeAux": "5063720201000000"
+        },
+        {
+          "number": 3,
+          "name": "field_3",
+          "nameOrigin": "synthetic-number-based-name",
+          "type": "spotify.login5.v4.challenges.InteractionSolution",
+          "nativeType": "0x436",
+          "cardinality": "oneof",
+          "nativeSubmessage": "spotify.login5.v4.challenges.InteractionSolution",
+          "nativeAux": "7067720201000000"
+        },
+        {
+          "number": 4,
+          "name": "field_4",
+          "nameOrigin": "synthetic-number-based-name",
+          "type": "spotify.login5.v4.challenges.AuthnPlatformSolution",
+          "nativeType": "0x436",
+          "cardinality": "oneof",
+          "nativeSubmessage": "spotify.login5.v4.challenges.AuthnPlatformSolution",
+          "nativeAux": "8861720201000000"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v4.ClientInfo",
+      "file": "spotify/login5/v4/reconstructed.proto",
+      "tableAddress": "0x102727b40",
+      "metadataSha256": "7272852f941338c3cf82461af52a30cc7b16a8cd5324892fc886e5359cb3bed6",
+      "fields": [
+        {
+          "number": 1,
+          "name": "client_id",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 2,
+          "name": "device_id",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v4.Recaptcha",
+      "file": "spotify/login5/v4/reconstructed.proto",
+      "tableAddress": "0x102727bf0",
+      "metadataSha256": "c2391073107328284141434a49222aaaaee5fc694c3f6acb5775a82c6d54581d",
+      "fields": [
+        {
+          "number": 1,
+          "name": "site_key",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 2,
+          "name": "token",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        }
+      ]
+    },
+    {
+      "name": "spotify.login5.v4.LoginOk",
+      "file": "spotify/login5/v4/reconstructed.proto",
+      "tableAddress": "0x102727f10",
+      "metadataSha256": "0cfc1ff479418b2dc09a36ad341f6f6d3e3c5b92e352474e50428c3697a80afe",
+      "fields": [
+        {
+          "number": 1,
+          "name": "username",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 2,
+          "name": "access_token",
+          "nameOrigin": "native-retained-diagnostic-name",
+          "type": "TYPE_STRING",
+          "nativeType": "0xc15",
+          "cardinality": "optional"
+        },
+        {
+          "number": 3,
+          "name": "stored_credential",
+          "nameOrigin": "pinned-public-v3-analogue-name",
+          "type": "TYPE_BYTES",
+          "nativeType": "0x815",
+          "cardinality": "optional"
+        },
+        {
+          "number": 4,
+          "name": "access_token_expires_in",
+          "nameOrigin": "pinned-public-v3-analogue-name",
+          "type": "TYPE_INT32",
+          "nativeType": "0x1091",
+          "cardinality": "optional"
+        }
+      ]
+    }
+  ],
+  "nativeInventory": {
+    "path": "reverse-engineering/evidence/login5-lite-tables.json",
+    "sha256": "d58330abfd43717a402b8dc5904eef546d02d291ca36a1d2a3cadfe8133d8d74"
+  },
+  "nativeLoginError": {
+    "generatedNameWrapper": "0x1018df604",
+    "nativeEntryTables": [
+      {
+        "address": "0x102645270",
+        "entries": [
+          {
+            "length": 11,
+            "name": "BAD_REQUEST",
+            "nameAddress": "0x1022a8177",
+            "number": 2
+          },
+          {
+            "length": 19,
+            "name": "INVALID_CREDENTIALS",
+            "nameAddress": "0x1022a8182",
+            "number": 1
+          },
+          {
+            "length": 19,
+            "name": "INVALID_PHONENUMBER",
+            "nameAddress": "0x1022a8195",
+            "number": 7
+          },
+          {
+            "length": 11,
+            "name": "NOT_ALLOWED",
+            "nameAddress": "0x1022a81a8",
+            "number": 9
+          },
+          {
+            "length": 7,
+            "name": "TIMEOUT",
+            "nameAddress": "0x1022a81b3",
+            "number": 4
+          },
+          {
+            "length": 17,
+            "name": "TOO_MANY_ATTEMPTS",
+            "nameAddress": "0x1022a81ba",
+            "number": 6
+          },
+          {
+            "length": 15,
+            "name": "TRY_AGAIN_LATER",
+            "nameAddress": "0x1022a81cb",
+            "number": 8
+          },
+          {
+            "length": 13,
+            "name": "UNKNOWN_ERROR",
+            "nameAddress": "0x1022a81da",
+            "number": 0
+          },
+          {
+            "length": 18,
+            "name": "UNKNOWN_IDENTIFIER",
+            "nameAddress": "0x1022a81e7",
+            "number": 5
+          },
+          {
+            "length": 26,
+            "name": "UNSUPPORTED_LOGIN_PROTOCOL",
+            "nameAddress": "0x1022a81f9",
+            "number": 3
+          }
+        ],
+        "entryStride": 24,
+        "relocatedSha256": "e1fdd08774b8a2cedab77f247fbeab990918c2358c247f278f177b99f6e19725"
+      },
+      {
+        "address": "0x102646bb0",
+        "entries": [
+          {
+            "length": 11,
+            "name": "BAD_REQUEST",
+            "nameAddress": "0x1022a8259",
+            "number": 2
+          },
+          {
+            "length": 19,
+            "name": "INVALID_CREDENTIALS",
+            "nameAddress": "0x1022a8264",
+            "number": 1
+          },
+          {
+            "length": 19,
+            "name": "INVALID_PHONENUMBER",
+            "nameAddress": "0x1022a8277",
+            "number": 7
+          },
+          {
+            "length": 11,
+            "name": "NOT_ALLOWED",
+            "nameAddress": "0x1022a828a",
+            "number": 9
+          },
+          {
+            "length": 7,
+            "name": "TIMEOUT",
+            "nameAddress": "0x1022a8295",
+            "number": 4
+          },
+          {
+            "length": 17,
+            "name": "TOO_MANY_ATTEMPTS",
+            "nameAddress": "0x1022a829c",
+            "number": 6
+          },
+          {
+            "length": 15,
+            "name": "TRY_AGAIN_LATER",
+            "nameAddress": "0x1022a82ad",
+            "number": 8
+          },
+          {
+            "length": 13,
+            "name": "UNKNOWN_ERROR",
+            "nameAddress": "0x1022a82bc",
+            "number": 0
+          },
+          {
+            "length": 18,
+            "name": "UNKNOWN_IDENTIFIER",
+            "nameAddress": "0x1022a82c9",
+            "number": 5
+          },
+          {
+            "length": 26,
+            "name": "UNSUPPORTED_LOGIN_PROTOCOL",
+            "nameAddress": "0x1022a82db",
+            "number": 3
+          }
+        ],
+        "entryStride": 24,
+        "relocatedSha256": "9de4bb95856673a576f018db28db784c798a14840c67f5b8153399d941034861"
+      }
+    ],
+    "note": "Current native v3/v4 entry tables and shared count-10 ordinal index; no protobuf runtime decompilation",
+    "ordinalToSortedIndex": [
+      7,
+      1,
+      0,
+      9,
+      4,
+      8,
+      5,
+      2,
+      6,
+      3
+    ],
+    "ordinalToSortedIndexFileOffset": 36340272,
+    "sortedNameBlobFileOffset": 36340087,
+    "sortedNames": [
+      "BAD_REQUEST",
+      "INVALID_CREDENTIALS",
+      "INVALID_PHONENUMBER",
+      "NOT_ALLOWED",
+      "TIMEOUT",
+      "TOO_MANY_ATTEMPTS",
+      "TRY_AGAIN_LATER",
+      "UNKNOWN_ERROR",
+      "UNKNOWN_IDENTIFIER",
+      "UNSUPPORTED_LOGIN_PROTOCOL"
+    ],
+    "v3TableReferences": [
+      "0x1018d2b20",
+      "0x1018d2bb0"
+    ],
+    "v4TableReferences": [
+      "0x1018df628",
+      "0x1018df6b8"
+    ],
+    "values": {
+      "BAD_REQUEST": 2,
+      "INVALID_CREDENTIALS": 1,
+      "INVALID_PHONENUMBER": 7,
+      "NOT_ALLOWED": 9,
+      "TIMEOUT": 4,
+      "TOO_MANY_ATTEMPTS": 6,
+      "TRY_AGAIN_LATER": 8,
+      "UNKNOWN_ERROR": 0,
+      "UNKNOWN_IDENTIFIER": 5,
+      "UNSUPPORTED_LOGIN_PROTOCOL": 3
+    }
+  },
+  "nativeSubmessageProof": {
+    "classData": "0x1027e3740",
+    "classDataIsLite": false,
+    "descriptorTable": "0x1027e36e8",
+    "filename": "google/protobuf/duration.proto",
+    "filenameAddress": "0x1024519ce",
+    "messageCount": 1,
+    "parseTable": "0x1027e37a8",
+    "prototype": "0x1027e36c0",
+    "rawDescriptorAddress": "0x102356214",
+    "rawDescriptorLength": 235,
+    "rawDescriptorSha256": "31e97da059b8d0bb4644601ebd0f617fce728faa0d9beba78a21e815d117705d",
+    "type": "google.protobuf.Duration"
+  },
+  "referenceDeltas": [
+    {
+      "message": "spotify.login5.v3.credentials.SamsungSignInCredential",
+      "field": 3,
+      "check": "reference-field-absent-native",
+      "detail": "removed pinned reference field id_token"
+    }
+  ],
+  "referencePins": [
+    {
+      "repo": "librespot-org/librespot",
+      "commit": "99b6088bf3ea028f90192676ac1a337fa4b2ed12",
+      "path": "protocol/proto/spotify/login5/v3/challenges/code.proto",
+      "sha256": "e4907e446fe8d5c42c13b2cf9a1bbf0a60f8c697f387948b2886fd522b1be7fd",
+      "url": "https://github.com/librespot-org/librespot/blob/99b6088bf3ea028f90192676ac1a337fa4b2ed12/protocol/proto/spotify/login5/v3/challenges/code.proto"
+    },
+    {
+      "repo": "librespot-org/librespot",
+      "commit": "99b6088bf3ea028f90192676ac1a337fa4b2ed12",
+      "path": "protocol/proto/spotify/login5/v3/challenges/hashcash.proto",
+      "sha256": "50f528d2c624a86c32f868eff158f55d7659c109ee86573ae0085bb377229751",
+      "url": "https://github.com/librespot-org/librespot/blob/99b6088bf3ea028f90192676ac1a337fa4b2ed12/protocol/proto/spotify/login5/v3/challenges/hashcash.proto"
+    },
+    {
+      "repo": "librespot-org/librespot",
+      "commit": "99b6088bf3ea028f90192676ac1a337fa4b2ed12",
+      "path": "protocol/proto/spotify/login5/v3/client_info.proto",
+      "sha256": "a13a2813bc2e35241f9239db5884959394622eba2a545859143f234fc5ed26bd",
+      "url": "https://github.com/librespot-org/librespot/blob/99b6088bf3ea028f90192676ac1a337fa4b2ed12/protocol/proto/spotify/login5/v3/client_info.proto"
+    },
+    {
+      "repo": "librespot-org/librespot",
+      "commit": "99b6088bf3ea028f90192676ac1a337fa4b2ed12",
+      "path": "protocol/proto/spotify/login5/v3/credentials/credentials.proto",
+      "sha256": "7cdb2d531bbdb7aef7ec8727e0a88d9e8dc39aebbf4bd04cc7ec3a663bb3fea6",
+      "url": "https://github.com/librespot-org/librespot/blob/99b6088bf3ea028f90192676ac1a337fa4b2ed12/protocol/proto/spotify/login5/v3/credentials/credentials.proto"
+    },
+    {
+      "repo": "librespot-org/librespot",
+      "commit": "99b6088bf3ea028f90192676ac1a337fa4b2ed12",
+      "path": "protocol/proto/spotify/login5/v3/identifiers/identifiers.proto",
+      "sha256": "5ae15fb6f7f152660b492ae42f2f5f68c1b6d7e28f23a38745b4b7fdb68b3161",
+      "url": "https://github.com/librespot-org/librespot/blob/99b6088bf3ea028f90192676ac1a337fa4b2ed12/protocol/proto/spotify/login5/v3/identifiers/identifiers.proto"
+    },
+    {
+      "repo": "librespot-org/librespot",
+      "commit": "99b6088bf3ea028f90192676ac1a337fa4b2ed12",
+      "path": "protocol/proto/spotify/login5/v3/login5.proto",
+      "sha256": "3b43c02fdf5631794defcb27064c0630eac6f45ea01ae89dac6288e0f0487daf",
+      "url": "https://github.com/librespot-org/librespot/blob/99b6088bf3ea028f90192676ac1a337fa4b2ed12/protocol/proto/spotify/login5/v3/login5.proto"
+    },
+    {
+      "repo": "librespot-org/librespot",
+      "commit": "99b6088bf3ea028f90192676ac1a337fa4b2ed12",
+      "path": "protocol/proto/spotify/login5/v3/user_info.proto",
+      "sha256": "a65da3c4a23c6a9cc9ae00757c5cad01c0117e534324d9a0d7742aef3b5049e9",
+      "url": "https://github.com/librespot-org/librespot/blob/99b6088bf3ea028f90192676ac1a337fa4b2ed12/protocol/proto/spotify/login5/v3/user_info.proto"
+    }
+  ],
+  "roots": [
+    "spotify/login5/v3/challenges/code.proto",
+    "spotify/login5/v3/challenges/hashcash.proto",
+    "spotify/login5/v3/client_info.proto",
+    "spotify/login5/v3/credentials/credentials.proto",
+    "spotify/login5/v3/identifiers/identifiers.proto",
+    "spotify/login5/v3/login5.proto",
+    "spotify/login5/v3/user_info.proto",
+    "spotify/login5/v4/challenges/reconstructed.proto",
+    "spotify/login5/v4/credentials/reconstructed.proto",
+    "spotify/login5/v4/identifiers/reconstructed.proto",
+    "spotify/login5/v4/reconstructed.proto"
+  ],
+  "schemaVersion": 1,
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "sourceFiles": [
+    {
+      "path": "proto/reconstructed/login5/source/spotify/login5/v3/challenges/code.proto",
+      "sha256": "64ee69c827a41383655baf0428a4dff8022dd92a5df5e477e00e5098a20943da"
+    },
+    {
+      "path": "proto/reconstructed/login5/source/spotify/login5/v3/challenges/hashcash.proto",
+      "sha256": "25db16537060c41f97a45a76c5263d4d32edd4577acadd323af9b9775f04ee8e"
+    },
+    {
+      "path": "proto/reconstructed/login5/source/spotify/login5/v3/client_info.proto",
+      "sha256": "43fc15e78600832b1cb1673887a8d951e5f288ce71dadcadd0b55c3a1a13f327"
+    },
+    {
+      "path": "proto/reconstructed/login5/source/spotify/login5/v3/credentials/credentials.proto",
+      "sha256": "6f0b3c1f1cd67d9e4c74b2e36fd2049ff1ee4673a722b6b244f9b2c357fbca1b"
+    },
+    {
+      "path": "proto/reconstructed/login5/source/spotify/login5/v3/identifiers/identifiers.proto",
+      "sha256": "024ec9c381caaac2f62f18cdf88cd40b00e9399c84207166079fa073a4c36833"
+    },
+    {
+      "path": "proto/reconstructed/login5/source/spotify/login5/v3/user_info.proto",
+      "sha256": "6d01c818ee8c5665769af7a5007a89da86b1d37d59ecdf7a5046beec69d3a8f0"
+    },
+    {
+      "path": "proto/reconstructed/login5/source/spotify/login5/v3/login5.proto",
+      "sha256": "2bc4c8a3e1fc2d70cd7a7bac90de15a449a0dfd0d3ef18c330436d5929f05329"
+    },
+    {
+      "path": "proto/reconstructed/login5/source/spotify/login5/v4/challenges/reconstructed.proto",
+      "sha256": "1ce372d4ebb452955876b4c8b73571e751592aae67663b009c9ef838fee31f7f"
+    },
+    {
+      "path": "proto/reconstructed/login5/source/spotify/login5/v4/credentials/reconstructed.proto",
+      "sha256": "611f2c360f70810c6f5bbbaf63d3b3c047ec8ff5921692690ab4297c9dee0e27"
+    },
+    {
+      "path": "proto/reconstructed/login5/source/spotify/login5/v4/identifiers/reconstructed.proto",
+      "sha256": "108ad5ef88c08d233f54ef7910ac52f88f42048075475b0e958ae63286b69b47"
+    },
+    {
+      "path": "proto/reconstructed/login5/source/spotify/login5/v4/reconstructed.proto",
+      "sha256": "d3e9eb738e37c9417c5917f5fa369cf847afd59c2bdf952f1539f62add1564b9"
+    }
+  ]
+}

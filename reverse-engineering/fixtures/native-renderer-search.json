@@ -1,0 +1,511 @@
+{
+  "originalBundleSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+  "originalCapture": "reverse-engineering/fixtures/wire-header-profile.json",
+  "originalCaptureSha256": "b0e868b9bdfeaabf45290a84a7feda9465b48726e617cfd33328aa6c2df846c8",
+  "protocolObserved": "h3",
+  "source": [
+    {
+      "kind": "factory-41332",
+      "offsetUtf16": 4114788,
+      "offsetBytes": 4115028,
+      "lengthBytes": 4953,
+      "sha256": "9daaca5dd00fa6605ddd0eeb379cb5fc5c08e51a161d22a94315c4aa40e4b005"
+    },
+    {
+      "kind": "factory-87337",
+      "offsetUtf16": 4119742,
+      "offsetBytes": 4119982,
+      "lengthBytes": 1395,
+      "sha256": "e90ffc2f49b22726bf37dfc1560fc8fcc35315291a30dd20628a151b2bb198b5"
+    },
+    {
+      "kind": "factory-92464",
+      "offsetUtf16": 4160816,
+      "offsetBytes": 4161056,
+      "lengthBytes": 1531,
+      "sha256": "ea26df91582f9fa4917addc583b3587174795a9214c591d368f6962222610292"
+    },
+    {
+      "kind": "factory-83873",
+      "offsetUtf16": 4083882,
+      "offsetBytes": 4084122,
+      "lengthBytes": 1671,
+      "sha256": "1aeaa740a4a3f533e78b5c4268c6aa3203950362f5c7066bf0275640e82bee8d"
+    },
+    {
+      "kind": "factory-85418",
+      "offsetUtf16": 4160640,
+      "offsetBytes": 4160880,
+      "lengthBytes": 175,
+      "sha256": "6c0bd05958a0723942a6e91b1cb681c9f40e719af9cbc023e30c08b5889f4165"
+    },
+    {
+      "kind": "factory-1940",
+      "offsetUtf16": 4113254,
+      "offsetBytes": 4113494,
+      "lengthBytes": 624,
+      "sha256": "528ddb8b6adce775f64c3ee0371d007d51e65e564bf9b804229d9857a9985923"
+    },
+    {
+      "kind": "module-74960-access-token-client",
+      "offsetUtf16": 3011924,
+      "offsetBytes": 3012162,
+      "lengthBytes": 1683,
+      "sha256": "0f24d315536b9c44b6cc4d62b1d11b1b4508ab8ff41765238f320aa79a0761a8"
+    },
+    {
+      "kind": "module-74960-desktop-token-provider",
+      "offsetUtf16": 3534561,
+      "offsetBytes": 3534801,
+      "lengthBytes": 2226,
+      "sha256": "fc9c47fd14a0cfcb70289635c869c6883b6c77226bb408ec9c960119a488fb87"
+    },
+    {
+      "kind": "module-74960-token-provider-registration",
+      "offsetUtf16": 3844862,
+      "offsetBytes": 3845102,
+      "lengthBytes": 121,
+      "sha256": "8946c0993330bfb21d43ac83bab63152260e28f6fe77f6cbc29e9a72af5e0c36"
+    },
+    {
+      "kind": "module-74960-get-token-request",
+      "offsetUtf16": 3011021,
+      "offsetBytes": 3011259,
+      "lengthBytes": 572,
+      "sha256": "430db969889f315873853d88d6c812e191b6c4b40868741664b5956cbd237a81"
+    },
+    {
+      "kind": "module-74960-empty-token-subscription",
+      "offsetUtf16": 3011623,
+      "offsetBytes": 3011861,
+      "lengthBytes": 301,
+      "sha256": "5dcc8ffa3505535f65a254cd5ebe38860471c55f98a8145b95fd35a2c4caff66"
+    },
+    {
+      "kind": "module-74960-global-owner",
+      "offsetUtf16": 3846409,
+      "offsetBytes": 3846649,
+      "lengthBytes": 243,
+      "sha256": "aa9c135a625cfc5eda258f6e4722d26eadfddf5a7fc5363674f629bba109c93c"
+    },
+    {
+      "kind": "module-50278-fetch-adapter",
+      "offsetUtf16": 503934,
+      "offsetBytes": 503941,
+      "lengthBytes": 2097,
+      "sha256": "ffc72cd0730018864d132897cd0f4a962f36571873afe77e81195497c3df3785"
+    },
+    {
+      "kind": "search-descriptor",
+      "offsetUtf16": 2758837,
+      "offsetBytes": 2759073,
+      "lengthBytes": 109,
+      "sha256": "28dbc69ad035ef0fc3efe0ebe31d9a1936ab7d07c61f87ca6ade12e3622e3c3c"
+    },
+    {
+      "kind": "module-65505-recent-descriptor",
+      "offsetUtf16": 2252498,
+      "offsetBytes": 2252603,
+      "lengthBytes": 105,
+      "sha256": "2154219045db77bd5391b0541aa65b1828eabac89f10a2b029e49fe6f295805c"
+    }
+  ],
+  "retainedOriginalCapture": {
+    "path": ".local/original-http.json",
+    "sha256": "74cc460f251e87000ed5becc18fba7d2a12034d0dc01a0fef5d3f0f4ec27b1ff",
+    "verification": "All original Search header names and noncredential values plus body checked against retained original CDP events. No credential values exported."
+  },
+  "substitutions": [
+    "Inert standard fetch provider captures options and never resolves; no network.",
+    "Module 74960 setter interfaces assign original builder values; platform/version inputs are original actual capture values.",
+    "Original Desktop TokenProvider registration, provider and AccessTokenClient methods execute unchanged. Inert Esperanto supplies a synthetic decoded native token response; response protobuf decoding is a boundary substitution. Original request codecs emit empty getToken/onTokenCleared payloads; a standard empty protobuf writer has no field-writing capability.",
+    "Credential sentinels replace redacted authorization/client-token. Dynamic body/locale/length come from executed original factories."
+  ],
+  "limits": [
+    "Original CDP provides decoded fields, not HTTP header order, HPACK/QPACK, frames, TLS or QUIC.",
+    "Browser-generated profile is the retained Spotify 1.3.6.1921 macOS Search profile; other browser/build profiles are not inferred.",
+    "Native client-token insertion is observed in original ExtraInfo; this oracle consumes an explicit token and does not execute its acquisition/interception owner."
+  ],
+  "cases": [
+    {
+      "name": "captured ambient",
+      "operation": "searchSuggestions",
+      "locale": "en",
+      "variables": {
+        "query": "ambient",
+        "limit": 30,
+        "numberOfTopResults": 30,
+        "offset": 0,
+        "includeAuthors": true,
+        "includeAlbumPreReleases": false,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsicXVlcnkiOiJhbWJpZW50IiwibGltaXQiOjMwLCJudW1iZXJPZlRvcFJlc3VsdHMiOjMwLCJvZmZzZXQiOjAsImluY2x1ZGVBdXRob3JzIjp0cnVlLCJpbmNsdWRlQWxidW1QcmVSZWxlYXNlcyI6ZmFsc2UsImluY2x1ZGVFcGlzb2RlQ29udGVudFJhdGluZ3NWMiI6dHJ1ZX0sIm9wZXJhdGlvbk5hbWUiOiJzZWFyY2hTdWdnZXN0aW9ucyIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6ImYyNDQyNTRiOTRjMGU4MjRkNDU4YWMyMTZlMGY4NDA2YTczZjJmNjlhOWZmNTI4MzFhMmY3OGZhNzc0ZmY2Y2UifX19",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"query\":\"ambient\",\"limit\":30,\"numberOfTopResults\":30,\"offset\":0,\"includeAuthors\":true,\"includeAlbumPreReleases\":false,\"includeEpisodeContentRatingsV2\":true},\"operationName\":\"searchSuggestions\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"f244254b94c0e824d458ac216e0f8406a73f2f69a9ff52831a2f78fa774ff6ce\"}}}"
+      },
+      "authorizationBinding": {
+        "token": {
+          "accessToken": "fixture-access-token",
+          "accessTokenExpirationTimestampMs": 1900000000000,
+          "tokenType": "Bearer",
+          "isAnonymous": false
+        },
+        "traffic": [
+          {
+            "service": "spotify.authentication.login5.impl.proto.AccessTokenClient",
+            "method": "onTokenCleared",
+            "payloadBase64": ""
+          },
+          {
+            "service": "spotify.authentication.login5.impl.proto.AccessTokenClient",
+            "method": "getToken",
+            "payloadBase64": ""
+          }
+        ],
+        "nativeTokenType": "Bearer"
+      },
+      "expected": {
+        "headers": {
+          ":authority": "api-partner.spotify.com",
+          ":method": "POST",
+          ":path": "/pathfinder/v2/query",
+          ":scheme": "https",
+          "accept": "application/json",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "333",
+          "content-type": "application/json;charset=UTF-8",
+          "origin": "https://xpui.app.spotify.com",
+          "priority": "u=1, i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "empty",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-site": "same-site",
+          "spotify-app-version": "1.3.6.1921",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsicXVlcnkiOiJhbWJpZW50IiwibGltaXQiOjMwLCJudW1iZXJPZlRvcFJlc3VsdHMiOjMwLCJvZmZzZXQiOjAsImluY2x1ZGVBdXRob3JzIjp0cnVlLCJpbmNsdWRlQWxidW1QcmVSZWxlYXNlcyI6ZmFsc2UsImluY2x1ZGVFcGlzb2RlQ29udGVudFJhdGluZ3NWMiI6dHJ1ZX0sIm9wZXJhdGlvbk5hbWUiOiJzZWFyY2hTdWdnZXN0aW9ucyIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6ImYyNDQyNTRiOTRjMGU4MjRkNDU4YWMyMTZlMGY4NDA2YTczZjJmNjlhOWZmNTI4MzFhMmY3OGZhNzc0ZmY2Y2UifX19"
+      }
+    },
+    {
+      "name": "Unicode and JSON escaping",
+      "operation": "searchSuggestions",
+      "locale": "en",
+      "variables": {
+        "query": "a b+~*雪/?!\"\\\n",
+        "limit": 30,
+        "numberOfTopResults": 30,
+        "offset": 0,
+        "includeAuthors": true,
+        "includeAlbumPreReleases": false,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsicXVlcnkiOiJhIGIrfirpm6ovPyFcIlxcXG4iLCJsaW1pdCI6MzAsIm51bWJlck9mVG9wUmVzdWx0cyI6MzAsIm9mZnNldCI6MCwiaW5jbHVkZUF1dGhvcnMiOnRydWUsImluY2x1ZGVBbGJ1bVByZVJlbGVhc2VzIjpmYWxzZSwiaW5jbHVkZUVwaXNvZGVDb250ZW50UmF0aW5nc1YyIjp0cnVlfSwib3BlcmF0aW9uTmFtZSI6InNlYXJjaFN1Z2dlc3Rpb25zIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiZjI0NDI1NGI5NGMwZTgyNGQ0NThhYzIxNmUwZjg0MDZhNzNmMmY2OWE5ZmY1MjgzMWEyZjc4ZmE3NzRmZjZjZSJ9fX0=",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"query\":\"a b+~*雪/?!\\\"\\\\\\n\",\"limit\":30,\"numberOfTopResults\":30,\"offset\":0,\"includeAuthors\":true,\"includeAlbumPreReleases\":false,\"includeEpisodeContentRatingsV2\":true},\"operationName\":\"searchSuggestions\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"f244254b94c0e824d458ac216e0f8406a73f2f69a9ff52831a2f78fa774ff6ce\"}}}"
+      },
+      "authorizationBinding": {
+        "token": {
+          "accessToken": "fixture-access-token",
+          "accessTokenExpirationTimestampMs": 1900000000000,
+          "tokenType": "DPoP",
+          "isAnonymous": false
+        },
+        "traffic": [
+          {
+            "service": "spotify.authentication.login5.impl.proto.AccessTokenClient",
+            "method": "onTokenCleared",
+            "payloadBase64": ""
+          },
+          {
+            "service": "spotify.authentication.login5.impl.proto.AccessTokenClient",
+            "method": "getToken",
+            "payloadBase64": ""
+          }
+        ],
+        "nativeTokenType": "DPoP"
+      },
+      "expected": {
+        "headers": {
+          ":authority": "api-partner.spotify.com",
+          ":method": "POST",
+          ":path": "/pathfinder/v2/query",
+          ":scheme": "https",
+          "accept": "application/json",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "344",
+          "content-type": "application/json;charset=UTF-8",
+          "origin": "https://xpui.app.spotify.com",
+          "priority": "u=1, i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "empty",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-site": "same-site",
+          "spotify-app-version": "1.3.6.1921",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsicXVlcnkiOiJhIGIrfirpm6ovPyFcIlxcXG4iLCJsaW1pdCI6MzAsIm51bWJlck9mVG9wUmVzdWx0cyI6MzAsIm9mZnNldCI6MCwiaW5jbHVkZUF1dGhvcnMiOnRydWUsImluY2x1ZGVBbGJ1bVByZVJlbGVhc2VzIjpmYWxzZSwiaW5jbHVkZUVwaXNvZGVDb250ZW50UmF0aW5nc1YyIjp0cnVlfSwib3BlcmF0aW9uTmFtZSI6InNlYXJjaFN1Z2dlc3Rpb25zIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiZjI0NDI1NGI5NGMwZTgyNGQ0NThhYzIxNmUwZjg0MDZhNzNmMmY2OWE5ZmY1MjgzMWEyZjc4ZmE3NzRmZjZjZSJ9fX0="
+      }
+    },
+    {
+      "name": "explicit application locale",
+      "operation": "searchSuggestions",
+      "locale": "en-US",
+      "variables": {
+        "query": "ambient",
+        "limit": 30,
+        "numberOfTopResults": 30,
+        "offset": 0,
+        "includeAuthors": true,
+        "includeAlbumPreReleases": false,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en-US",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsicXVlcnkiOiJhbWJpZW50IiwibGltaXQiOjMwLCJudW1iZXJPZlRvcFJlc3VsdHMiOjMwLCJvZmZzZXQiOjAsImluY2x1ZGVBdXRob3JzIjp0cnVlLCJpbmNsdWRlQWxidW1QcmVSZWxlYXNlcyI6ZmFsc2UsImluY2x1ZGVFcGlzb2RlQ29udGVudFJhdGluZ3NWMiI6dHJ1ZX0sIm9wZXJhdGlvbk5hbWUiOiJzZWFyY2hTdWdnZXN0aW9ucyIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6ImYyNDQyNTRiOTRjMGU4MjRkNDU4YWMyMTZlMGY4NDA2YTczZjJmNjlhOWZmNTI4MzFhMmY3OGZhNzc0ZmY2Y2UifX19",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "Accept-Language": "en-US",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"query\":\"ambient\",\"limit\":30,\"numberOfTopResults\":30,\"offset\":0,\"includeAuthors\":true,\"includeAlbumPreReleases\":false,\"includeEpisodeContentRatingsV2\":true},\"operationName\":\"searchSuggestions\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"f244254b94c0e824d458ac216e0f8406a73f2f69a9ff52831a2f78fa774ff6ce\"}}}"
+      },
+      "authorizationBinding": {
+        "token": {
+          "accessToken": "fixture-access-token",
+          "accessTokenExpirationTimestampMs": 1900000000000,
+          "tokenType": "Bearer",
+          "isAnonymous": false
+        },
+        "traffic": [
+          {
+            "service": "spotify.authentication.login5.impl.proto.AccessTokenClient",
+            "method": "onTokenCleared",
+            "payloadBase64": ""
+          },
+          {
+            "service": "spotify.authentication.login5.impl.proto.AccessTokenClient",
+            "method": "getToken",
+            "payloadBase64": ""
+          }
+        ],
+        "nativeTokenType": "Bearer"
+      },
+      "expected": {
+        "headers": {
+          ":authority": "api-partner.spotify.com",
+          ":method": "POST",
+          ":path": "/pathfinder/v2/query",
+          ":scheme": "https",
+          "accept": "application/json",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US",
+          "app-platform": "OSX_ARM64",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "333",
+          "content-type": "application/json;charset=UTF-8",
+          "origin": "https://xpui.app.spotify.com",
+          "priority": "u=1, i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "empty",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-site": "same-site",
+          "spotify-app-version": "1.3.6.1921",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsicXVlcnkiOiJhbWJpZW50IiwibGltaXQiOjMwLCJudW1iZXJPZlRvcFJlc3VsdHMiOjMwLCJvZmZzZXQiOjAsImluY2x1ZGVBdXRob3JzIjp0cnVlLCJpbmNsdWRlQWxidW1QcmVSZWxlYXNlcyI6ZmFsc2UsImluY2x1ZGVFcGlzb2RlQ29udGVudFJhdGluZ3NWMiI6dHJ1ZX0sIm9wZXJhdGlvbk5hbWUiOiJzZWFyY2hTdWdnZXN0aW9ucyIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6ImYyNDQyNTRiOTRjMGU4MjRkNDU4YWMyMTZlMGY4NDA2YTczZjJmNjlhOWZmNTI4MzFhMmY3OGZhNzc0ZmY2Y2UifX19"
+      }
+    },
+    {
+      "name": "captured recent searches",
+      "operation": "recentSearches",
+      "locale": "en",
+      "variables": {
+        "limit": 50,
+        "includeAuthors": true,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsibGltaXQiOjUwLCJpbmNsdWRlQXV0aG9ycyI6dHJ1ZSwiaW5jbHVkZUVwaXNvZGVDb250ZW50UmF0aW5nc1YyIjp0cnVlfSwib3BlcmF0aW9uTmFtZSI6InJlY2VudFNlYXJjaGVzIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiZWNlOTZkN2I4MmM4MjBmYjk5MzhkZDFkZjUwZGVlM2U1MzczN2Q4MDhjMzg4M2UzZDAxYzQ2N2M0MjM2MDFiMCJ9fX0=",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"limit\":50,\"includeAuthors\":true,\"includeEpisodeContentRatingsV2\":true},\"operationName\":\"recentSearches\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"ece96d7b82c820fb9938dd1df50dee3e53737d808c3883e3d01c467c423601b0\"}}}"
+      },
+      "authorizationBinding": {
+        "token": {
+          "accessToken": "fixture-access-token",
+          "accessTokenExpirationTimestampMs": 1900000000000,
+          "tokenType": "Bearer",
+          "isAnonymous": false
+        },
+        "traffic": [
+          {
+            "service": "spotify.authentication.login5.impl.proto.AccessTokenClient",
+            "method": "onTokenCleared",
+            "payloadBase64": ""
+          },
+          {
+            "service": "spotify.authentication.login5.impl.proto.AccessTokenClient",
+            "method": "getToken",
+            "payloadBase64": ""
+          }
+        ],
+        "nativeTokenType": "Bearer"
+      },
+      "expected": {
+        "headers": {
+          ":authority": "api-partner.spotify.com",
+          ":method": "POST",
+          ":path": "/pathfinder/v2/query",
+          ":scheme": "https",
+          "accept": "application/json",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "245",
+          "content-type": "application/json;charset=UTF-8",
+          "origin": "https://xpui.app.spotify.com",
+          "priority": "u=1, i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "empty",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-site": "same-site",
+          "spotify-app-version": "1.3.6.1921",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsibGltaXQiOjUwLCJpbmNsdWRlQXV0aG9ycyI6dHJ1ZSwiaW5jbHVkZUVwaXNvZGVDb250ZW50UmF0aW5nc1YyIjp0cnVlfSwib3BlcmF0aW9uTmFtZSI6InJlY2VudFNlYXJjaGVzIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiZWNlOTZkN2I4MmM4MjBmYjk5MzhkZDFkZjUwZGVlM2U1MzczN2Q4MDhjMzg4M2UzZDAxYzQ2N2M0MjM2MDFiMCJ9fX0="
+      }
+    }
+  ]
+}

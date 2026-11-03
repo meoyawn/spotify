@@ -1,0 +1,89 @@
+{
+  "observedAtUtc": "2026-10-29T04:17:51.226024+00:00",
+  "scope": "Natural startup traffic of the rebuilt single debug process; no synthetic HTTP, playback or license probe was invoked.",
+  "pid": 9859,
+  "supervisorPid": 9397,
+  "appStatusObservation": {
+    "ready": true,
+    "runtimeErrors": 0,
+    "hotReloadSucceeded": true,
+    "source": "Read-only global Dart MCP VM evaluation/runtime errors plus hot reload; no request method invoked."
+  },
+  "counts": [
+    {
+      "event": "logger_started",
+      "transport": null,
+      "status": null,
+      "count": 1
+    },
+    {
+      "event": "request",
+      "transport": "h2",
+      "status": null,
+      "count": 52
+    },
+    {
+      "event": "request",
+      "transport": "h3",
+      "status": null,
+      "count": 27
+    },
+    {
+      "event": "response",
+      "transport": "h2",
+      "status": 200,
+      "count": 52
+    },
+    {
+      "event": "response",
+      "transport": "h3",
+      "status": 200,
+      "count": 27
+    }
+  ],
+  "logSources": [
+    {
+      "file": "http.jsonl",
+      "sha256AtObservation": "f843a8c4dbb74ecf7a951fcebae12275cb172c9ac8575139984b74b905317c0b"
+    }
+  ],
+  "bundledLibraries": [
+    {
+      "name": "libquiche.dylib",
+      "sha256": "a40d929cfee51c260e1fb7f17cb4e985e654c3675189a2e52e154be660c706d6"
+    },
+    {
+      "name": "libnghttp3.dylib",
+      "sha256": "27ddba70e0b1ba9811d46c5b628b95cf667b24d051528afb40cf0f894990fe51"
+    }
+  ],
+  "sourceFiles": [
+    {
+      "path": "lib/transport/quiche/client.dart",
+      "sha256": "3dedc528a4ddd0fd1d1495238e27f3067aa7be7d68114170970037ddaaf56f9e"
+    },
+    {
+      "path": "lib/transport/nghttp3/session.dart",
+      "sha256": "923cf1a21f02a2e96c970e15fa7d34cc5347c16ed156d6351298670cd76228f9"
+    },
+    {
+      "path": "native/quiche/upstream.json",
+      "sha256": "fd1239388a6b991010b09423556070f34d8c98798686550ec5d22e5843fac91d"
+    },
+    {
+      "path": "native/nghttp3/upstream.json",
+      "sha256": "2fe83332e013915eab6b2cd29dee984cbb7eaffa3f2a019158b8b7fc71794a9e"
+    }
+  ],
+  "packaging": {
+    "deepStrictSignatureVerified": true,
+    "nghttp3Dependency": "/usr/lib/libSystem.B.dylib",
+    "quicheAckGetterSymbolPresent": true
+  },
+  "limits": [
+    "HTTP status success during startup is not music licensing/playback admission or a guarantee against future429s.",
+    "No original QPACK byte sequence, complete TLS/QUIC fingerprint, GREASE setting or settings serialization order is proved.",
+    "Log files are rotating append-only live inputs; hashes identify bytes read at this observation, not immutable retained snapshots.",
+    "Response counts are observations from the app-owned redacted logger, not independent packet captures."
+  ]
+}

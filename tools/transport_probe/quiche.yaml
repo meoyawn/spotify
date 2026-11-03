@@ -1,0 +1,39 @@
+name: QuicheBindings
+description: Direct C API bindings for pinned Cloudflare quiche, macOS arm64.
+output: ../../lib/transport/quiche/bindings.dart
+headers:
+  entry-points:
+    - ../../.local/vendor/quiche/quiche/include/quiche.h
+    - ../../native/quiche/stream_ack.h
+  include-directives:
+    - '**/quiche.h'
+    - '**/stream_ack.h'
+functions:
+  rename:
+    quiche_h3_event_type: quiche_h3_event_get_type
+  include:
+    - quiche_version
+    - quiche_connect
+    - quiche_conn_send_on_path
+    - quiche_config_verify_peer
+    - 'quiche_config_(new|free|set_application_protos|load_verify_locations_from_file|set_max_idle_timeout|set_max_recv_udp_payload_size|set_max_send_udp_payload_size|set_initial_max_data|set_initial_max_stream_data_bidi_local|set_initial_max_stream_data_bidi_remote|set_initial_max_stream_data_uni|set_initial_max_streams_bidi|set_initial_max_streams_uni|enable_pacing|enable_dgram)'
+    - 'quiche_conn_(recv|send|send_on_path|is_established|is_closed|timeout_as_millis|on_timeout|close|free|application_proto|stream_shutdown|path_stats|stream_send|stream_recv|stream_readable|stream_writable|readable|writable|stream_capacity|stream_finished|stream_acked_offset)'
+    - 'quiche_stream_iter_(next|free)'
+    - 'quiche_h3_config_(new|free|set_max_field_section_size)'
+    - 'quiche_h3_conn_(new_with_transport|poll|free)'
+    - 'quiche_h3_event_(type|for_each_header|reset_error_code|free)'
+    - 'quiche_h3_(send_request|send_body|recv_body)'
+structs:
+  include:
+    - 'quiche_(config|conn|recv_info|send_info|h3_config|h3_conn|h3_event|h3_header|path_stats|stream_iter)'
+enums:
+  include:
+    - 'quiche_(h3_event_type|shutdown)'
+macros:
+  include:
+    - QUICHE_PROTOCOL_VERSION
+    - QUICHE_MAX_CONN_ID_LEN
+preamble: |
+  // Generated from the upstream C header; do not edit by hand.
+  // Native ABI: macOS arm64. See native/quiche/upstream.json.
+  // ignore_for_file: unused_field

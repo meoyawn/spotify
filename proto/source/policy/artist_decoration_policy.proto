@@ -1,0 +1,46 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: 59e7737fdd4602df29eeb6aaa382fa939a1b1288d467e164cb0e1dfd7793c8b4
+
+syntax = "proto3";
+
+package spotify.cosmos_util.proto;
+
+option java_multiple_files = true;
+
+option java_package = "com.spotify.cosmos.util.policy.proto";
+
+option optimize_for = CODE_SIZE;
+
+message ArtistDecorationPolicy {
+  bool link = 1;
+
+  bool name = 2;
+
+  bool is_various_artists = 3;
+
+  bool portraits = 4;
+}
+
+message ArtistCollectionDecorationPolicy {
+  bool collection_link = 1;
+
+  bool is_followed = 2;
+
+  bool num_tracks_in_collection = 3;
+
+  bool num_albums_in_collection = 4;
+
+  bool is_banned = 5;
+
+  bool can_ban = 6;
+
+  bool num_explicitly_liked_tracks = 8;
+}
+
+message ArtistSyncDecorationPolicy {
+  bool inferred_offline = 1;
+
+  bool offline_state = 2;
+
+  bool sync_progress = 3;
+}

@@ -1,0 +1,916 @@
+{
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "scope": "Execute original full-snapshot revision/cache-owner bookkeeping offline.\n\nThe list-data transaction facade, empty attribute-difference mask, read-only\nempty current attributes, managed-list begin/end mutation hooks, notifications\nand log formatting are inert supplied dependencies. No row tree,\nattribute mutation, URI interning, controller/lens reconciliation or store I/O\nis claimed. Original actor memory decides revision/lens ownership, queue clears,\nheadless/drop flags, optional content version and return status.",
+  "exports": [
+    {
+      "label": "playlist_selected_reply_application",
+      "evidenceId": "ev_1dbfd5d70b5cf776a821c5192036bf53d63aa41f7a58fd29bdbd923ceef73d26",
+      "address": "0x101abc060",
+      "decompilationSha256": "361d72f3c267ce80bc5bbde603a5706974d8c9226820fd0b819feeeca0fb5275"
+    },
+    {
+      "label": "playlist_selected_full_snapshot_apply",
+      "evidenceId": "ev_a10a1283deb74a7dc2a743bb40ba1c98c5fe4b29b186f02d5c7234e59177e20f",
+      "address": "0x101abf8dc",
+      "decompilationSha256": "36dbd4eacf9dffc2149273cb21a36997aa4065d1b6791b56da0752e17523d8fd"
+    },
+    {
+      "label": "playlist_selected_delta_reply_apply",
+      "evidenceId": "ev_05ad61db0b0691e66aedc237be9188cba8b369d39464934c5fb54b1bf6f74668",
+      "address": "0x101abf150",
+      "decompilationSha256": "76aedf4091e365297702772b3d94174fa627a69e314f9184fc2d488c3c49341d"
+    },
+    {
+      "label": "playlist_snapshot_revision_and_lenses",
+      "evidenceId": "ev_5c859c835fab483b842cd135b6aedd24f8a2bf39cf3923af7054733fc4fe52d6",
+      "address": "0x101adc28c",
+      "decompilationSha256": "5b02f8fa9e3fa2a3353368167a36104ed1254e0a151ea6ab540b3d25c8c12c49"
+    },
+    {
+      "label": "playlist_selected_post_apply",
+      "evidenceId": "ev_b21ff753281e2cd94a96619e9ba6859ffddb8fe516a6d972c7e64cf9c0366ec2",
+      "address": "0x101ac3c28",
+      "decompilationSha256": "4adab59fdb06ca5f6830451521908319d4ecac1b76b74601997e456fd77924c0"
+    },
+    {
+      "label": "playlist_selected_apply_facade_constructor",
+      "evidenceId": "ev_c73f84ad050b5f5cb41186bdb8dc0c027dd6a0191eaff2e7bb877182e36265ef",
+      "address": "0x101ad8614",
+      "decompilationSha256": "5929fe4b0c4e1e7a229fe7ba3907ee76bcd85f53cc89e2f9c34fd98394264db2"
+    },
+    {
+      "label": "playlist_apply_reset",
+      "evidenceId": "ev_b2020e6afcbe43f18c256dc9ac16ac4051d9d335f442927bfc2fc710c249c4b2",
+      "address": "0x101ad9fa0",
+      "decompilationSha256": "4761be73cf4e81d496db8f7b8a5141f32c08d7c4ff559ec33ef2829c03a0d4ab"
+    },
+    {
+      "label": "playlist_apply_attributes",
+      "evidenceId": "ev_02cb0f799cd14aeb3e7cc65ab5317c89e49ed97686d0ca9d5e9b4a2e609496ac",
+      "address": "0x101ad9e40",
+      "decompilationSha256": "a3b3086eb57f88538a7e49c133c94db0ff8612c7658e6b0a78e258ab5b378cb4"
+    },
+    {
+      "label": "playlist_apply_rows",
+      "evidenceId": "ev_938e758d133ac4e2bc61ed3a9058e3fc3e0250424798b1b4db62c08223cc8bd6",
+      "address": "0x101ad93c4",
+      "decompilationSha256": "565e45e3d79da5d5c7bc7aa1cb558a0a198a2917866709d74460aac966563a8f"
+    },
+    {
+      "label": "playlist_apply_signals",
+      "evidenceId": "ev_18172c132bea655f477e3fed8a3b1a288e6e8030f154d0aaae900cd6519e6975",
+      "address": "0x101ad8e50",
+      "decompilationSha256": "efa9d5ac5359a967f2a21a3ded25b3520110eb92f1765001e562e692c54f1b83"
+    },
+    {
+      "label": "playlist_apply_lenses",
+      "evidenceId": "ev_71de63bf9df176549d8fbd28908b20239ff205b165dcd0a515534d158fa863f6",
+      "address": "0x101ad8fd8",
+      "decompilationSha256": "4a3b740b7f51c248a0d8eeec329138e8a0df73e30f6a6b0cae0dbbb60297d17c"
+    },
+    {
+      "label": "playlist_state_reset",
+      "evidenceId": "ev_c0f6731ce006ef54217425cfda44a42bff725d029d413c64a9bc47ec91842bd4",
+      "address": "0x101b0f9a4",
+      "decompilationSha256": "4af07971668f4bb01bcd659efa89ffd731803ba726f4d61c841373453384a049"
+    },
+    {
+      "label": "playlist_state_attributes_merge",
+      "evidenceId": "ev_f4b6c7ed3291c1dc65cb6539fe6d909aaf92ec05cc89230481baa5697d88b2f6",
+      "address": "0x101b0e420",
+      "decompilationSha256": "0a5eca7ec075f91cdeb5b1b34c6e376b593a378209234a56a7d8faf4634e2a71"
+    },
+    {
+      "label": "playlist_state_clear_attribute",
+      "evidenceId": "ev_03681dba750e7672ec2e2db606f22dd16b082174c4a62c7e9a5b9069f26591af",
+      "address": "0x101b0fc3c",
+      "decompilationSha256": "ecea2e34ec2b6dff5d66db6d34c3d72f71447840da428b0d37e4be80d14d3122"
+    },
+    {
+      "label": "playlist_state_replace_lenses",
+      "evidenceId": "ev_c4cc0ffb3c10c8fb060037b32ec2ebef0905fb82e21687c6d2bb465e3b4f1cac",
+      "address": "0x101b0da3c",
+      "decompilationSha256": "45313c62d7807a0ad2f6b7a34da98e1dc08a556589518e2a068e007eda5f1975"
+    },
+    {
+      "label": "playlist_state_remove_lens",
+      "evidenceId": "ev_6176ad917be7fba2e34b4391383809962057cd4c51de941c4a2d90e491904276",
+      "address": "0x101b0d830",
+      "decompilationSha256": "2ee39612454bcb68ffc50dee9206b2ae4c41ef006733674870905de9e76a7c88"
+    }
+  ],
+  "descriptorSetSha256": "8d6910583ad931941fdf0b6abb98703a6ca5b517e15c64593b3ddfddff306225",
+  "codecSourceSha256": "3d1f49dc45b199260f85382748bfb125288a5846f99d4ab35e276bbdf0d9a7b7",
+  "executedInstructionCount": 459,
+  "executedInstructionSha256": "ffa1d831615300c0d782b6b927da409cb776358d44ee4a3af769b573befdcd22",
+  "rootRevisionHex": "00000000726f6f74",
+  "suppliedDependencies": [
+    "list-data transaction facade (no tree mutation supplied)",
+    "empty attribute-difference mask and read-only empty current attributes",
+    "managed-list begin/end and notification sinks",
+    "log formatting",
+    "standard allocation/string/repeated protobuf container/weak ownership storage"
+  ],
+  "limits": [
+    "Outer HTTP/pending-change admission and delta/sync-result application remain separate",
+    "No row/attribute mutation, URI interning, effective-lens/controller mutation or cache store I/O is claimed"
+  ],
+  "nativeActorLayout": {
+    "revision": "0x88",
+    "revisionLenses": "0xa0",
+    "pendingDeltas": "0xe0",
+    "stagedOperations": "0x100",
+    "flags": "uint16@0x81",
+    "headlessBit": 4,
+    "dropPendingChangesBit": 2,
+    "contentGenerationVersion": "uint32@0xdc"
+  },
+  "inputMessageLayouts": [
+    {
+      "constructor": "0x101bf07d4",
+      "vtable": "0x102669048",
+      "classDataGetter": "0x101bf09b8",
+      "classData": "0x1027805e8",
+      "descriptorTable": "0x10277d8e8",
+      "defaultInstanceIndex": 31,
+      "file": "playlist_api.proto",
+      "message": "spotify.playlist4.proto.SelectedListContent",
+      "descriptorSha256": "4203124978629c882fff40081706103f99722ffc36527982341b47040dd7080e",
+      "layout": [
+        {
+          "number": 1,
+          "name": "revision",
+          "offset": 80,
+          "hasIndex": 128
+        },
+        {
+          "number": 2,
+          "name": "length",
+          "offset": 152,
+          "hasIndex": 137
+        },
+        {
+          "number": 3,
+          "name": "attributes",
+          "offset": 96,
+          "hasIndex": 130
+        },
+        {
+          "number": 5,
+          "name": "contents",
+          "offset": 104,
+          "hasIndex": 131
+        },
+        {
+          "number": 6,
+          "name": "diff",
+          "offset": 112,
+          "hasIndex": 132
+        },
+        {
+          "number": 7,
+          "name": "sync_result",
+          "offset": 120,
+          "hasIndex": 133
+        },
+        {
+          "number": 8,
+          "name": "resulting_revisions",
+          "offset": 24,
+          "hasIndex": -1
+        },
+        {
+          "number": 9,
+          "name": "multiple_heads",
+          "offset": 156,
+          "hasIndex": 138
+        },
+        {
+          "number": 10,
+          "name": "up_to_date",
+          "offset": 157,
+          "hasIndex": 139
+        },
+        {
+          "number": 14,
+          "name": "nonces",
+          "offset": 48,
+          "hasIndex": -1
+        },
+        {
+          "number": 15,
+          "name": "timestamp",
+          "offset": 160,
+          "hasIndex": 142
+        },
+        {
+          "number": 16,
+          "name": "owner_username",
+          "offset": 88,
+          "hasIndex": 129
+        },
+        {
+          "number": 17,
+          "name": "abuse_reporting_enabled",
+          "offset": 158,
+          "hasIndex": 140
+        },
+        {
+          "number": 18,
+          "name": "capabilities",
+          "offset": 128,
+          "hasIndex": 134
+        },
+        {
+          "number": 19,
+          "name": "geoblock",
+          "offset": 64,
+          "hasIndex": -1
+        },
+        {
+          "number": 20,
+          "name": "changes_require_resync",
+          "offset": 159,
+          "hasIndex": 141
+        },
+        {
+          "number": 21,
+          "name": "created_at",
+          "offset": 168,
+          "hasIndex": 143
+        },
+        {
+          "number": 22,
+          "name": "applied_lenses",
+          "offset": 136,
+          "hasIndex": 135
+        },
+        {
+          "number": 23,
+          "name": "is_user_created",
+          "offset": 176,
+          "hasIndex": 144
+        },
+        {
+          "number": 24,
+          "name": "signal_results",
+          "offset": 144,
+          "hasIndex": 136
+        }
+      ],
+      "fields": [
+        {
+          "name": "revision",
+          "number": 1,
+          "label": 1,
+          "type": 12,
+          "type_name": "",
+          "json_name": "revision",
+          "offset": 80,
+          "hasIndex": 128
+        },
+        {
+          "name": "length",
+          "number": 2,
+          "label": 1,
+          "type": 5,
+          "type_name": "",
+          "json_name": "length",
+          "offset": 152,
+          "hasIndex": 137
+        },
+        {
+          "name": "attributes",
+          "number": 3,
+          "label": 1,
+          "type": 11,
+          "type_name": ".spotify.playlist4.proto.ListAttributes",
+          "json_name": "attributes",
+          "offset": 96,
+          "hasIndex": 130
+        },
+        {
+          "name": "contents",
+          "number": 5,
+          "label": 1,
+          "type": 11,
+          "type_name": ".spotify.playlist4.proto.ListItems",
+          "json_name": "contents",
+          "offset": 104,
+          "hasIndex": 131
+        },
+        {
+          "name": "diff",
+          "number": 6,
+          "label": 1,
+          "type": 11,
+          "type_name": ".spotify.playlist4.proto.Diff",
+          "json_name": "diff",
+          "offset": 112,
+          "hasIndex": 132
+        },
+        {
+          "name": "sync_result",
+          "number": 7,
+          "label": 1,
+          "type": 11,
+          "type_name": ".spotify.playlist4.proto.Diff",
+          "json_name": "syncResult",
+          "offset": 120,
+          "hasIndex": 133
+        },
+        {
+          "name": "resulting_revisions",
+          "number": 8,
+          "label": 3,
+          "type": 12,
+          "type_name": "",
+          "json_name": "resultingRevisions",
+          "offset": 24,
+          "hasIndex": -1
+        },
+        {
+          "name": "multiple_heads",
+          "number": 9,
+          "label": 1,
+          "type": 8,
+          "type_name": "",
+          "json_name": "multipleHeads",
+          "offset": 156,
+          "hasIndex": 138
+        },
+        {
+          "name": "up_to_date",
+          "number": 10,
+          "label": 1,
+          "type": 8,
+          "type_name": "",
+          "json_name": "upToDate",
+          "offset": 157,
+          "hasIndex": 139
+        },
+        {
+          "name": "nonces",
+          "number": 14,
+          "label": 3,
+          "type": 3,
+          "type_name": "",
+          "json_name": "nonces",
+          "offset": 48,
+          "hasIndex": -1
+        },
+        {
+          "name": "timestamp",
+          "number": 15,
+          "label": 1,
+          "type": 3,
+          "type_name": "",
+          "json_name": "timestamp",
+          "offset": 160,
+          "hasIndex": 142
+        },
+        {
+          "name": "owner_username",
+          "number": 16,
+          "label": 1,
+          "type": 9,
+          "type_name": "",
+          "json_name": "ownerUsername",
+          "offset": 88,
+          "hasIndex": 129
+        },
+        {
+          "name": "abuse_reporting_enabled",
+          "number": 17,
+          "label": 1,
+          "type": 8,
+          "type_name": "",
+          "json_name": "abuseReportingEnabled",
+          "offset": 158,
+          "hasIndex": 140
+        },
+        {
+          "name": "capabilities",
+          "number": 18,
+          "label": 1,
+          "type": 11,
+          "type_name": ".spotify.playlist_permission.proto.Capabilities",
+          "json_name": "capabilities",
+          "offset": 128,
+          "hasIndex": 134
+        },
+        {
+          "name": "geoblock",
+          "number": 19,
+          "label": 3,
+          "type": 14,
+          "type_name": ".spotify.playlist4.proto.GeoblockBlockingType",
+          "json_name": "geoblock",
+          "offset": 64,
+          "hasIndex": -1
+        },
+        {
+          "name": "changes_require_resync",
+          "number": 20,
+          "label": 1,
+          "type": 8,
+          "type_name": "",
+          "json_name": "changesRequireResync",
+          "offset": 159,
+          "hasIndex": 141
+        },
+        {
+          "name": "created_at",
+          "number": 21,
+          "label": 1,
+          "type": 3,
+          "type_name": "",
+          "json_name": "createdAt",
+          "offset": 168,
+          "hasIndex": 143
+        },
+        {
+          "name": "applied_lenses",
+          "number": 22,
+          "label": 1,
+          "type": 11,
+          "type_name": ".spotify.playlist4.proto.AppliedLenses",
+          "json_name": "appliedLenses",
+          "offset": 136,
+          "hasIndex": 135
+        },
+        {
+          "name": "is_user_created",
+          "number": 23,
+          "label": 1,
+          "type": 8,
+          "type_name": "",
+          "json_name": "isUserCreated",
+          "offset": 176,
+          "hasIndex": 144
+        },
+        {
+          "name": "signal_results",
+          "number": 24,
+          "label": 1,
+          "type": 11,
+          "type_name": ".spotify.playlist4.proto.SignalResult",
+          "json_name": "signalResults",
+          "offset": 144,
+          "hasIndex": 136
+        }
+      ]
+    },
+    {
+      "constructor": "0x101bf07d4",
+      "vtable": "0x102668b88",
+      "classDataGetter": "0x101bee1b0",
+      "classData": "0x10277e4a8",
+      "descriptorTable": "0x10277d8e8",
+      "defaultInstanceIndex": 8,
+      "file": "playlist_api.proto",
+      "message": "spotify.playlist4.proto.ListAttributes",
+      "descriptorSha256": "4203124978629c882fff40081706103f99722ffc36527982341b47040dd7080e",
+      "layout": [
+        {
+          "number": 1,
+          "name": "name",
+          "offset": 72,
+          "hasIndex": 128
+        },
+        {
+          "number": 2,
+          "name": "description",
+          "offset": 80,
+          "hasIndex": 129
+        },
+        {
+          "number": 3,
+          "name": "picture",
+          "offset": 88,
+          "hasIndex": 130
+        },
+        {
+          "number": 4,
+          "name": "collaborative",
+          "offset": 152,
+          "hasIndex": 138
+        },
+        {
+          "number": 5,
+          "name": "pl3_version",
+          "offset": 96,
+          "hasIndex": 131
+        },
+        {
+          "number": 6,
+          "name": "deleted_by_owner",
+          "offset": 153,
+          "hasIndex": 139
+        },
+        {
+          "number": 10,
+          "name": "client_id",
+          "offset": 104,
+          "hasIndex": 132
+        },
+        {
+          "number": 11,
+          "name": "format",
+          "offset": 112,
+          "hasIndex": 133
+        },
+        {
+          "number": 12,
+          "name": "format_attributes",
+          "offset": 24,
+          "hasIndex": -1
+        },
+        {
+          "number": 13,
+          "name": "picture_size",
+          "offset": 48,
+          "hasIndex": -1
+        },
+        {
+          "number": 14,
+          "name": "sequence_context_template",
+          "offset": 120,
+          "hasIndex": 134
+        },
+        {
+          "number": 15,
+          "name": "ai_curation_reference_id",
+          "offset": 128,
+          "hasIndex": 135
+        },
+        {
+          "number": 16,
+          "name": "item_id_algorithm",
+          "offset": 156,
+          "hasIndex": 142
+        },
+        {
+          "number": 17,
+          "name": "recoverable",
+          "offset": 154,
+          "hasIndex": 140
+        },
+        {
+          "number": 18,
+          "name": "is_user_created",
+          "offset": 155,
+          "hasIndex": 141
+        },
+        {
+          "number": 19,
+          "name": "tag_manifest",
+          "offset": 136,
+          "hasIndex": 136
+        },
+        {
+          "number": 20,
+          "name": "sort_manifest",
+          "offset": 144,
+          "hasIndex": 137
+        }
+      ],
+      "fields": [
+        {
+          "name": "name",
+          "number": 1,
+          "label": 1,
+          "type": 9,
+          "type_name": "",
+          "json_name": "name",
+          "offset": 72,
+          "hasIndex": 128
+        },
+        {
+          "name": "description",
+          "number": 2,
+          "label": 1,
+          "type": 9,
+          "type_name": "",
+          "json_name": "description",
+          "offset": 80,
+          "hasIndex": 129
+        },
+        {
+          "name": "picture",
+          "number": 3,
+          "label": 1,
+          "type": 12,
+          "type_name": "",
+          "json_name": "picture",
+          "offset": 88,
+          "hasIndex": 130
+        },
+        {
+          "name": "collaborative",
+          "number": 4,
+          "label": 1,
+          "type": 8,
+          "type_name": "",
+          "json_name": "collaborative",
+          "offset": 152,
+          "hasIndex": 138
+        },
+        {
+          "name": "pl3_version",
+          "number": 5,
+          "label": 1,
+          "type": 9,
+          "type_name": "",
+          "json_name": "pl3Version",
+          "offset": 96,
+          "hasIndex": 131
+        },
+        {
+          "name": "deleted_by_owner",
+          "number": 6,
+          "label": 1,
+          "type": 8,
+          "type_name": "",
+          "json_name": "deletedByOwner",
+          "offset": 153,
+          "hasIndex": 139
+        },
+        {
+          "name": "client_id",
+          "number": 10,
+          "label": 1,
+          "type": 9,
+          "type_name": "",
+          "json_name": "clientId",
+          "offset": 104,
+          "hasIndex": 132
+        },
+        {
+          "name": "format",
+          "number": 11,
+          "label": 1,
+          "type": 9,
+          "type_name": "",
+          "json_name": "format",
+          "offset": 112,
+          "hasIndex": 133
+        },
+        {
+          "name": "format_attributes",
+          "number": 12,
+          "label": 3,
+          "type": 11,
+          "type_name": ".spotify.playlist4.proto.FormatListAttribute",
+          "json_name": "formatAttributes",
+          "offset": 24,
+          "hasIndex": -1
+        },
+        {
+          "name": "picture_size",
+          "number": 13,
+          "label": 3,
+          "type": 11,
+          "type_name": ".spotify.playlist4.proto.PictureSize",
+          "json_name": "pictureSize",
+          "offset": 48,
+          "hasIndex": -1
+        },
+        {
+          "name": "sequence_context_template",
+          "number": 14,
+          "label": 1,
+          "type": 12,
+          "type_name": "",
+          "json_name": "sequenceContextTemplate",
+          "offset": 120,
+          "hasIndex": 134
+        },
+        {
+          "name": "ai_curation_reference_id",
+          "number": 15,
+          "label": 1,
+          "type": 12,
+          "type_name": "",
+          "json_name": "aiCurationReferenceId",
+          "offset": 128,
+          "hasIndex": 135
+        },
+        {
+          "name": "item_id_algorithm",
+          "number": 16,
+          "label": 1,
+          "type": 14,
+          "type_name": ".spotify.playlist4.proto.ItemIdAlgorithm",
+          "json_name": "itemIdAlgorithm",
+          "offset": 156,
+          "hasIndex": 142
+        },
+        {
+          "name": "recoverable",
+          "number": 17,
+          "label": 1,
+          "type": 8,
+          "type_name": "",
+          "json_name": "recoverable",
+          "offset": 154,
+          "hasIndex": 140
+        },
+        {
+          "name": "is_user_created",
+          "number": 18,
+          "label": 1,
+          "type": 8,
+          "type_name": "",
+          "json_name": "isUserCreated",
+          "offset": 155,
+          "hasIndex": 141
+        },
+        {
+          "name": "tag_manifest",
+          "number": 19,
+          "label": 1,
+          "type": 11,
+          "type_name": ".spotify.list.v1.model.attributes.TagManifest",
+          "json_name": "tagManifest",
+          "offset": 136,
+          "hasIndex": 136
+        },
+        {
+          "name": "sort_manifest",
+          "number": 20,
+          "label": 1,
+          "type": 11,
+          "type_name": ".spotify.list.v1.model.attributes.SortManifest",
+          "json_name": "sortManifest",
+          "offset": 144,
+          "hasIndex": 137
+        }
+      ]
+    },
+    {
+      "constructor": "0x101bf07d4",
+      "vtable": "0x102668f08",
+      "classDataGetter": "0x101bed964",
+      "classData": "0x10277dcb8",
+      "descriptorTable": "0x10277d8e8",
+      "defaultInstanceIndex": 2,
+      "file": "playlist_api.proto",
+      "message": "spotify.playlist4.proto.ListItems",
+      "descriptorSha256": "4203124978629c882fff40081706103f99722ffc36527982341b47040dd7080e",
+      "layout": [
+        {
+          "number": 1,
+          "name": "pos",
+          "offset": 128,
+          "hasIndex": 129
+        },
+        {
+          "number": 2,
+          "name": "truncated",
+          "offset": 132,
+          "hasIndex": 130
+        },
+        {
+          "number": 3,
+          "name": "items",
+          "offset": 24,
+          "hasIndex": -1
+        },
+        {
+          "number": 4,
+          "name": "meta_items",
+          "offset": 48,
+          "hasIndex": -1
+        },
+        {
+          "number": 5,
+          "name": "available_signals",
+          "offset": 72,
+          "hasIndex": -1
+        },
+        {
+          "number": 6,
+          "name": "continuation_token",
+          "offset": 120,
+          "hasIndex": 128
+        },
+        {
+          "number": 7,
+          "name": "lens_removed_items",
+          "offset": 96,
+          "hasIndex": -1
+        }
+      ],
+      "fields": [
+        {
+          "name": "pos",
+          "number": 1,
+          "label": 2,
+          "type": 5,
+          "type_name": "",
+          "json_name": "pos",
+          "offset": 128,
+          "hasIndex": 129
+        },
+        {
+          "name": "truncated",
+          "number": 2,
+          "label": 2,
+          "type": 8,
+          "type_name": "",
+          "json_name": "truncated",
+          "offset": 132,
+          "hasIndex": 130
+        },
+        {
+          "name": "items",
+          "number": 3,
+          "label": 3,
+          "type": 11,
+          "type_name": ".spotify.playlist4.proto.Item",
+          "json_name": "items",
+          "offset": 24,
+          "hasIndex": -1
+        },
+        {
+          "name": "meta_items",
+          "number": 4,
+          "label": 3,
+          "type": 11,
+          "type_name": ".spotify.playlist4.proto.MetaItem",
+          "json_name": "metaItems",
+          "offset": 48,
+          "hasIndex": -1
+        },
+        {
+          "name": "available_signals",
+          "number": 5,
+          "label": 3,
+          "type": 11,
+          "type_name": ".spotify.playlist.signal.proto.Signal",
+          "json_name": "availableSignals",
+          "offset": 72,
+          "hasIndex": -1
+        },
+        {
+          "name": "continuation_token",
+          "number": 6,
+          "label": 1,
+          "type": 9,
+          "type_name": "",
+          "json_name": "continuationToken",
+          "offset": 120,
+          "hasIndex": 128
+        },
+        {
+          "name": "lens_removed_items",
+          "number": 7,
+          "label": 3,
+          "type": 11,
+          "type_name": ".spotify.playlist4.proto.Item",
+          "json_name": "lensRemovedItems",
+          "offset": 96,
+          "hasIndex": -1
+        }
+      ]
+    },
+    {
+      "constructor": "0x101bf07d4",
+      "vtable": "0x102668b48",
+      "classDataGetter": "0x101bf0c28",
+      "classData": "0x102780da0",
+      "descriptorTable": "0x10277d8e8",
+      "defaultInstanceIndex": 35,
+      "file": "playlist_api.proto",
+      "message": "spotify.playlist4.proto.AppliedLenses",
+      "descriptorSha256": "4203124978629c882fff40081706103f99722ffc36527982341b47040dd7080e",
+      "layout": [
+        {
+          "number": 1,
+          "name": "states",
+          "offset": 16,
+          "hasIndex": 0
+        }
+      ],
+      "fields": [
+        {
+          "name": "states",
+          "number": 1,
+          "label": 3,
+          "type": 11,
+          "type_name": ".spotify.lens.proto.LensState",
+          "json_name": "states",
+          "offset": 16,
+          "hasIndex": 0
+        }
+      ]
+    }
+  ],
+  "outerApplicationEntry": "0x101abba04",
+  "nextOwnershipGap": [
+    "List-data transaction: attributes/removed attributes, row URI interning and tree/index updates",
+    "Effective/requested/applied lens controllers are distinct from actor revision-attached lens states",
+    "Outer HTTP status, pending-change admission, diff/sync-result processing and real cache store lifecycle"
+  ]
+}

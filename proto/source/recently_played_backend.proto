@@ -1,0 +1,22 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: 550b84447c11992b5227fd07fb4e81dbd7fdaa3efdb27f725a53f49b2aa45a36
+
+syntax = "proto2";
+
+package spotify.recently_played_backend.proto;
+
+option optimize_for = CODE_SIZE;
+
+message Context {
+  optional string uri = 1;
+
+  optional int64 lastPlayedTime = 2;
+}
+
+message RecentlyPlayed {
+  repeated .spotify.recently_played_backend.proto.Context contexts = 1;
+
+  optional int32 offset = 2;
+
+  optional int32 total = 3;
+}

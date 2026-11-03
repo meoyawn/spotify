@@ -1,0 +1,32 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: 8dc8c8e26758796e9f7bfec53f66a1321bf3b4854dc22948bb157f91fbf7fc20
+
+syntax = "proto3";
+
+package spotify.player.esperanto.proto;
+
+import "es_optional.proto";
+
+import "stream_reporting_attribution.proto";
+
+option java_package = "com.spotify.player.esperanto.proto";
+
+option objc_class_prefix = "ESP";
+
+option optimize_for = CODE_SIZE;
+
+message LoggingParams {
+  .spotify.player.esperanto.proto.OptionalInt64 command_initiated_time = 1;
+
+  .spotify.player.esperanto.proto.OptionalInt64 command_received_time = 2;
+
+  repeated string page_instance_ids = 3;
+
+  repeated string interaction_ids = 4;
+
+  string device_identifier = 5;
+
+  optional string command_id = 6;
+
+  .spotify.stream_reporting_attribution.proto.StreamReportingAttribution stream_reporting_attribution = 7;
+}

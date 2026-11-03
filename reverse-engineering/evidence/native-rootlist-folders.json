@@ -1,0 +1,166 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "scope": "Execute original rootlist marker production, classification and accessors.\n\nSynthetic strings, IDs and one retained rootlist entry supply storage. Original\ninstructions own marker bytes, kind discrimination, ID selection and name\ndecoding. Standard libc/libc++ primitives are substituted; execution stops at\nthe item-construction boundary, before any list mutation, account or HTTP.",
+  "ranges": [
+    {
+      "start": "0x101b20fbc",
+      "endExclusive": "0x101b2108c",
+      "sha256": "6013f96f9a48d6a05dbbbe0dabeb2b268db57f547af2685e036876cc3f80e66c"
+    },
+    {
+      "start": "0x101b21510",
+      "endExclusive": "0x101b21610",
+      "sha256": "0cf061088ce10b2a6a5c887354dfa7e57c9903bc9598292fce01050993c1d1e2"
+    },
+    {
+      "start": "0x101b216e8",
+      "endExclusive": "0x101b21728",
+      "sha256": "b94d74a1b661fbf7973e56ba0d8c6a1df5eee5f9591ea7dfa9cdc4cb17655fb8"
+    },
+    {
+      "start": "0x101b23a48",
+      "endExclusive": "0x101b23b74",
+      "sha256": "4ead4d40fb4f1d301c817dda280da892f05b9e0694e01cbaf260dc45beff448c"
+    },
+    {
+      "start": "0x101b23ce4",
+      "endExclusive": "0x101b23df4",
+      "sha256": "5f02fce3e7968c29d0cfb1961a44423ba33beb88c99cfc699c6b1a3da4a32f7a"
+    },
+    {
+      "start": "0x101f553dc",
+      "endExclusive": "0x101f55cc0",
+      "sha256": "d4fd7b264d36bd4c08b491441096087e33cb3fae3d836c41b7e7fa53f5c4f3f3"
+    },
+    {
+      "start": "0x101f55cc0",
+      "endExclusive": "0x101f56000",
+      "sha256": "e30ec28c61c0b0073cb89999e88b0de22dab37325ed12732b38384af941d1e98"
+    },
+    {
+      "start": "0x101f5ecf0",
+      "endExclusive": "0x101f5ed64",
+      "sha256": "f9125468d314c2c0ed00c0c2d7635aebb54192c1254808e8a6cbb36f8cdd1344"
+    }
+  ],
+  "cases": [
+    {
+      "name": "Music",
+      "idHex": "000000000000001a",
+      "originalMarker": {
+        "kind": 1,
+        "uri": "spotify:start-group:0000001a:Music"
+      },
+      "originalAccess": {
+        "kind": 1,
+        "idHex": "000000000000001a",
+        "name": "Music"
+      }
+    },
+    {
+      "name": "Snow \u96ea: +/%",
+      "idHex": "123456789abcdef0",
+      "originalMarker": {
+        "kind": 1,
+        "uri": "spotify:start-group:123456789abcdef0:Snow+%E9%9B%AA%3A+%2B%2F%25"
+      },
+      "originalAccess": {
+        "kind": 1,
+        "idHex": "123456789abcdef0",
+        "name": "Snow \u96ea: +/%"
+      }
+    },
+    {
+      "name": "",
+      "idHex": "0000000000000000",
+      "originalMarker": {
+        "kind": 1,
+        "uri": "spotify:start-group:00000000:"
+      },
+      "originalAccess": {
+        "kind": 1,
+        "idHex": "0000000000000000",
+        "name": ""
+      }
+    },
+    {
+      "name": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "idHex": "ffffffffffffffff",
+      "originalMarker": {
+        "kind": 1,
+        "uri": "spotify:start-group:ffffffffffffffff:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      },
+      "originalAccess": {
+        "kind": 1,
+        "idHex": "ffffffffffffffff",
+        "name": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      }
+    },
+    {
+      "name": null,
+      "idHex": "000000000000001a",
+      "originalMarker": {
+        "kind": 2,
+        "uri": "spotify:end-group:0000001a"
+      },
+      "originalAccess": {
+        "kind": 2,
+        "idHex": "000000000000001a",
+        "name": ""
+      }
+    }
+  ],
+  "parserCases": [
+    {
+      "uri": "spotify:start-group:0000001a:Snow%20%E9%9B%AA+literal",
+      "original": {
+        "kind": 1,
+        "idHex": "000000000000001a",
+        "name": "Snow \u96ea literal"
+      }
+    },
+    {
+      "uri": "spotify:end-group:0000001a",
+      "original": {
+        "kind": 2,
+        "idHex": "000000000000001a",
+        "name": ""
+      }
+    },
+    {
+      "uri": "spotify:start-group:0000001a:",
+      "original": {
+        "kind": 1,
+        "idHex": "000000000000001a",
+        "name": ""
+      }
+    },
+    {
+      "uri": "spotify:start-group:0000001a:colon%3Aname",
+      "original": {
+        "kind": 1,
+        "idHex": "000000000000001a",
+        "name": "colon:name"
+      }
+    },
+    {
+      "uri": "spotify:start-group:0000001a:no-colon:tail",
+      "original": {
+        "kind": 1,
+        "idHex": "000000000000001a",
+        "name": "no-colon:tail"
+      }
+    }
+  ],
+  "substitutedInterfaces": [
+    "Item constructor is an inert capture/stop; no list or account is mutated.",
+    "One retained rootlist entry with the original kind and raw marker supplies the accessor input.",
+    "Inherited public memory/string/weak/protobuf initialization primitives, libc++ reserve/push_back, host libc printf/strtoull and strchr.",
+    "Actual host libc++ ctype<char>::classic_table bytes supply the standard classic facet; original safe-character decisions remain unchanged.",
+    "Proprietary percent encoding/decoding, marker formatting owner, prefix classification and ID/name accessors execute unchanged."
+  ],
+  "limits": [
+    "No outgoing HTTP or real folder mutation; tree reconciliation and malformed marker recovery remain separate.",
+    "The rootlist marker string is not an ordinary SpotifyLink entity URI. Canonical folder navigation URI formatting is separate."
+  ]
+}

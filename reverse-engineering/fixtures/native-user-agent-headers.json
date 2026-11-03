@@ -1,0 +1,134 @@
+{
+  "provenance": "Original native header insertion helper and request constructor fragment execute under Unicorn. Standard libc/libc++ operations are hooked. Synthetic header maps are constructed by the original insertion helper. No transport or network is exercised; map iteration order is retained as evidence, not yet a wire-order claim.",
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "headerInsertEntry": "0x101a4342c",
+  "requestFragment": [
+    "0x101c20fa0",
+    "0x101c20fd8"
+  ],
+  "cases": [
+    {
+      "name": "default inserted",
+      "headers": [],
+      "userAgent": "Spotify/130601921 OSX_ARM64/0 (MacBookPro18,3)",
+      "result": [
+        [
+          "User-Agent",
+          "Spotify/130601921 OSX_ARM64/0 (MacBookPro18,3)"
+        ]
+      ]
+    },
+    {
+      "name": "exact request identity retained",
+      "headers": [
+        [
+          "User-Agent",
+          "caller/1"
+        ]
+      ],
+      "userAgent": "native-fixture/1",
+      "result": [
+        [
+          "User-Agent",
+          "caller/1"
+        ]
+      ]
+    },
+    {
+      "name": "lowercase request identity",
+      "headers": [
+        [
+          "user-agent",
+          "caller/1"
+        ]
+      ],
+      "userAgent": "native-fixture/1",
+      "result": [
+        [
+          "user-agent",
+          "caller/1"
+        ]
+      ]
+    },
+    {
+      "name": "uppercase request identity",
+      "headers": [
+        [
+          "USER-AGENT",
+          "caller/1"
+        ]
+      ],
+      "userAgent": "native-fixture/1",
+      "result": [
+        [
+          "USER-AGENT",
+          "caller/1"
+        ]
+      ]
+    },
+    {
+      "name": "empty existing identity",
+      "headers": [
+        [
+          "User-Agent",
+          ""
+        ]
+      ],
+      "userAgent": "native-fixture/1",
+      "result": [
+        [
+          "User-Agent",
+          ""
+        ]
+      ]
+    },
+    {
+      "name": "empty factory identity",
+      "headers": [
+        [
+          "Accept",
+          "application/x-protobuf"
+        ]
+      ],
+      "userAgent": "",
+      "result": [
+        [
+          "Accept",
+          "application/x-protobuf"
+        ]
+      ]
+    },
+    {
+      "name": "other header casing and values",
+      "headers": [
+        [
+          "Content-Type",
+          "first"
+        ],
+        [
+          "content-type",
+          "second"
+        ],
+        [
+          "dpop",
+          "proof+ /=="
+        ]
+      ],
+      "userAgent": "NativeFixtureIdentityLongerThanSSO/1",
+      "result": [
+        [
+          "User-Agent",
+          "NativeFixtureIdentityLongerThanSSO/1"
+        ],
+        [
+          "dpop",
+          "proof+ /=="
+        ],
+        [
+          "Content-Type",
+          "first"
+        ]
+      ]
+    }
+  ]
+}

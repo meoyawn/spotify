@@ -1,0 +1,943 @@
+{
+  "provenance": "Execute proprietary preference Value projection and writes with inert storage.\n\nOnly synthetic registry entries are supplied. The original type selection,\nsigned int32 to int64 conversion, Set coercion and missing-key guard execute.\nRegistry default/override decisions, the desktop default catalog, and listener\nfilter predicates execute as separate scenarios. Filesystem semantics remain\noutside this oracle.",
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "read": "0x100847af0",
+  "write": "0x100847f08",
+  "cases": [
+    {
+      "name": "unset registered type",
+      "input": {
+        "name": "unset registered type",
+        "operation": "read",
+        "typeFlags": 0,
+        "storedValue": null
+      },
+      "value": {}
+    },
+    {
+      "name": "boolean false",
+      "input": {
+        "name": "boolean false",
+        "operation": "read",
+        "typeFlags": 1,
+        "storedValue": false
+      },
+      "value": {
+        "bool": false
+      }
+    },
+    {
+      "name": "boolean true",
+      "input": {
+        "name": "boolean true",
+        "operation": "read",
+        "typeFlags": 1,
+        "storedValue": true
+      },
+      "value": {
+        "bool": true
+      }
+    },
+    {
+      "name": "minimum native number",
+      "input": {
+        "name": "minimum native number",
+        "operation": "read",
+        "typeFlags": 2,
+        "storedValue": -2147483648
+      },
+      "value": {
+        "number": "-2147483648"
+      }
+    },
+    {
+      "name": "maximum native number with metadata flags",
+      "input": {
+        "name": "maximum native number with metadata flags",
+        "operation": "read",
+        "typeFlags": 258,
+        "storedValue": 2147483647
+      },
+      "value": {
+        "number": "2147483647"
+      }
+    },
+    {
+      "name": "empty native string",
+      "input": {
+        "name": "empty native string",
+        "operation": "read",
+        "typeFlags": 3,
+        "storedValue": ""
+      },
+      "value": {
+        "string": ""
+      }
+    },
+    {
+      "name": "long Unicode native string",
+      "input": {
+        "name": "long Unicode native string",
+        "operation": "read",
+        "typeFlags": 3,
+        "storedValue": "synthetic-long-string-value-雪"
+      },
+      "value": {
+        "string": "synthetic-long-string-value-雪"
+      }
+    },
+    {
+      "name": "Set ignores unknown key",
+      "input": {
+        "name": "Set ignores unknown key",
+        "operation": "write",
+        "typeFlags": 0,
+        "registered": false,
+        "inputValue": {
+          "bool": true
+        }
+      },
+      "writes": []
+    },
+    {
+      "name": "Set ignores untyped registered key",
+      "input": {
+        "name": "Set ignores untyped registered key",
+        "operation": "write",
+        "typeFlags": 0,
+        "registered": true,
+        "inputValue": {
+          "bool": true
+        }
+      },
+      "writes": []
+    },
+    {
+      "name": "Set bool keeps false",
+      "input": {
+        "name": "Set bool keeps false",
+        "operation": "write",
+        "typeFlags": 1,
+        "registered": true,
+        "inputValue": {
+          "bool": false
+        }
+      },
+      "writes": [
+        {
+          "bool": false
+        }
+      ]
+    },
+    {
+      "name": "Set bool keeps true",
+      "input": {
+        "name": "Set bool keeps true",
+        "operation": "write",
+        "typeFlags": 1,
+        "registered": true,
+        "inputValue": {
+          "bool": true
+        }
+      },
+      "writes": [
+        {
+          "bool": true
+        }
+      ]
+    },
+    {
+      "name": "Set bool coerces wrong type to false",
+      "input": {
+        "name": "Set bool coerces wrong type to false",
+        "operation": "write",
+        "typeFlags": 1,
+        "registered": true,
+        "inputValue": {
+          "number": "1"
+        }
+      },
+      "writes": [
+        {
+          "bool": false
+        }
+      ]
+    },
+    {
+      "name": "Set number truncates positive int64",
+      "input": {
+        "name": "Set number truncates positive int64",
+        "operation": "write",
+        "typeFlags": 2,
+        "registered": true,
+        "inputValue": {
+          "number": "9223372036854775807"
+        }
+      },
+      "writes": [
+        {
+          "number": "-1"
+        }
+      ]
+    },
+    {
+      "name": "Set number truncates negative int64",
+      "input": {
+        "name": "Set number truncates negative int64",
+        "operation": "write",
+        "typeFlags": 2,
+        "registered": true,
+        "inputValue": {
+          "number": "-9223372036854775808"
+        }
+      },
+      "writes": [
+        {
+          "number": "0"
+        }
+      ]
+    },
+    {
+      "name": "Set number coerces wrong type to zero",
+      "input": {
+        "name": "Set number coerces wrong type to zero",
+        "operation": "write",
+        "typeFlags": 2,
+        "registered": true,
+        "inputValue": {
+          "string": "42"
+        }
+      },
+      "writes": [
+        {
+          "number": "0"
+        }
+      ]
+    },
+    {
+      "name": "Set string keeps long Unicode",
+      "input": {
+        "name": "Set string keeps long Unicode",
+        "operation": "write",
+        "typeFlags": 3,
+        "registered": true,
+        "inputValue": {
+          "string": "synthetic-long-string-value-雪"
+        }
+      },
+      "writes": [
+        {
+          "string": "synthetic-long-string-value-雪"
+        }
+      ]
+    },
+    {
+      "name": "Set string coerces unset value to empty",
+      "input": {
+        "name": "Set string coerces unset value to empty",
+        "operation": "write",
+        "typeFlags": 3,
+        "registered": true,
+        "inputValue": {}
+      },
+      "writes": [
+        {
+          "string": ""
+        }
+      ]
+    },
+    {
+      "name": "unchanged bool default is silent",
+      "input": {
+        "name": "unchanged bool default is silent",
+        "operation": "engine",
+        "typeFlags": 513,
+        "defaultValue": {
+          "bool": false
+        },
+        "overrideValue": null,
+        "inputValue": {
+          "bool": false
+        }
+      },
+      "notifications": [],
+      "flags": 513,
+      "value": {
+        "bool": false
+      },
+      "hasOverride": false
+    },
+    {
+      "name": "changed bool adds override and emits",
+      "input": {
+        "name": "changed bool adds override and emits",
+        "operation": "engine",
+        "typeFlags": 513,
+        "defaultValue": {
+          "bool": false
+        },
+        "overrideValue": null,
+        "inputValue": {
+          "bool": true
+        }
+      },
+      "notifications": [
+        "changed"
+      ],
+      "flags": 769,
+      "value": {
+        "bool": true
+      },
+      "hasOverride": true
+    },
+    {
+      "name": "unchanged bool override is silent",
+      "input": {
+        "name": "unchanged bool override is silent",
+        "operation": "engine",
+        "typeFlags": 769,
+        "defaultValue": {
+          "bool": false
+        },
+        "overrideValue": {
+          "bool": true
+        },
+        "inputValue": {
+          "bool": true
+        }
+      },
+      "notifications": [],
+      "flags": 769,
+      "value": {
+        "bool": true
+      },
+      "hasOverride": true
+    },
+    {
+      "name": "setting bool default removes override and emits",
+      "input": {
+        "name": "setting bool default removes override and emits",
+        "operation": "engine",
+        "typeFlags": 769,
+        "defaultValue": {
+          "bool": false
+        },
+        "overrideValue": {
+          "bool": true
+        },
+        "inputValue": {
+          "bool": false
+        }
+      },
+      "notifications": [
+        "changed"
+      ],
+      "flags": 513,
+      "value": {
+        "bool": false
+      },
+      "hasOverride": false
+    },
+    {
+      "name": "force-persist flag retains a default-valued override",
+      "input": {
+        "name": "force-persist flag retains a default-valued override",
+        "operation": "engine",
+        "typeFlags": 641,
+        "defaultValue": {
+          "bool": false
+        },
+        "overrideValue": null,
+        "inputValue": {
+          "bool": false
+        }
+      },
+      "notifications": [
+        "changed"
+      ],
+      "flags": 897,
+      "value": {
+        "bool": false
+      },
+      "hasOverride": true
+    },
+    {
+      "name": "default-locked value stores override without emitting",
+      "input": {
+        "name": "default-locked value stores override without emitting",
+        "operation": "engine",
+        "typeFlags": 545,
+        "defaultValue": {
+          "bool": false
+        },
+        "overrideValue": null,
+        "inputValue": {
+          "bool": true
+        }
+      },
+      "notifications": [],
+      "flags": 801,
+      "value": {
+        "bool": false
+      },
+      "hasOverride": true
+    },
+    {
+      "name": "setting number default removes override and preserves type",
+      "input": {
+        "name": "setting number default removes override and preserves type",
+        "operation": "engine",
+        "typeFlags": 770,
+        "defaultValue": {
+          "number": "42"
+        },
+        "overrideValue": {
+          "number": "9"
+        },
+        "inputValue": {
+          "number": "42"
+        }
+      },
+      "notifications": [
+        "changed"
+      ],
+      "flags": 514,
+      "value": {
+        "number": "42"
+      },
+      "hasOverride": false
+    },
+    {
+      "name": "changed native number adds override",
+      "input": {
+        "name": "changed native number adds override",
+        "operation": "engine",
+        "typeFlags": 514,
+        "defaultValue": {
+          "number": "42"
+        },
+        "overrideValue": null,
+        "inputValue": {
+          "number": "9"
+        }
+      },
+      "notifications": [
+        "changed"
+      ],
+      "flags": 770,
+      "value": {
+        "number": "9"
+      },
+      "hasOverride": true
+    },
+    {
+      "name": "base desktop defaults",
+      "input": {
+        "name": "base desktop defaults",
+        "operation": "catalog"
+      },
+      "registrations": [
+        {
+          "key": "app.autostart-configured",
+          "value": {
+            "bool": false
+          },
+          "flags": 4
+        },
+        {
+          "key": "app.autostart-mode",
+          "value": {
+            "string": "minimized"
+          },
+          "flags": 4
+        },
+        {
+          "key": "app.last-launched-version",
+          "value": {
+            "string": ""
+          },
+          "flags": 4
+        },
+        {
+          "key": "app.force-offline-mode",
+          "value": {
+            "bool": false
+          },
+          "flags": 4
+        },
+        {
+          "key": "app.enable-developer-mode",
+          "value": {
+            "bool": false
+          },
+          "flags": 4
+        },
+        {
+          "key": "app.window.position.saved",
+          "value": {
+            "bool": false
+          },
+          "flags": 4
+        },
+        {
+          "key": "app.window.position.x",
+          "value": {
+            "number": "0"
+          },
+          "flags": 4
+        },
+        {
+          "key": "app.window.position.y",
+          "value": {
+            "number": "0"
+          },
+          "flags": 4
+        },
+        {
+          "key": "app.window.position.width",
+          "value": {
+            "number": "1600"
+          },
+          "flags": 4
+        },
+        {
+          "key": "app.window.position.height",
+          "value": {
+            "number": "900"
+          },
+          "flags": 4
+        },
+        {
+          "key": "app.window.state.saved",
+          "value": {
+            "bool": false
+          },
+          "flags": 4
+        },
+        {
+          "key": "app.window.state",
+          "value": {
+            "number": "1"
+          },
+          "flags": 4
+        },
+        {
+          "key": "app.show-chrome-toolbar",
+          "value": {
+            "bool": false
+          },
+          "flags": 4
+        },
+        {
+          "key": "app.enable-desktop-watchdog",
+          "value": {
+            "bool": false
+          },
+          "flags": 4
+        },
+        {
+          "key": "app.decorator-zero-hop",
+          "value": {
+            "bool": false
+          },
+          "flags": 4
+        },
+        {
+          "key": "app.enable-launcher",
+          "value": {
+            "bool": true
+          },
+          "flags": 4
+        },
+        {
+          "key": "app.studio.prevent-system-sleep",
+          "value": {
+            "bool": false
+          },
+          "flags": 4
+        },
+        {
+          "key": "app.player.autoplay",
+          "value": {
+            "bool": true
+          },
+          "flags": 8
+        },
+        {
+          "key": "app.player.volume",
+          "value": {
+            "number": "65535"
+          },
+          "flags": 8
+        },
+        {
+          "key": "app.player.state",
+          "value": {
+            "string": ""
+          },
+          "flags": 8
+        },
+        {
+          "key": "app.browser.zoom-level",
+          "value": {
+            "number": "0"
+          },
+          "flags": 8
+        },
+        {
+          "key": "storage.last-location",
+          "value": {
+            "string": ""
+          },
+          "flags": 4
+        },
+        {
+          "key": "ui.shuffle",
+          "value": {
+            "bool": false
+          },
+          "flags": 8
+        },
+        {
+          "key": "ui.repeat",
+          "value": {
+            "number": "0"
+          },
+          "flags": 8
+        },
+        {
+          "key": "ui.hide_hpto",
+          "value": {
+            "bool": false
+          },
+          "flags": 8
+        },
+        {
+          "key": "ui.hide_promoted_songs",
+          "value": {
+            "bool": false
+          },
+          "flags": 8
+        },
+        {
+          "key": "ui.hardware_acceleration",
+          "value": {
+            "bool": true
+          },
+          "flags": 4
+        },
+        {
+          "key": "ui.show_unplayable_tracks",
+          "value": {
+            "bool": false
+          },
+          "flags": 8
+        },
+        {
+          "key": "ui.track_os_notifications_enabled",
+          "value": {
+            "bool": false
+          },
+          "flags": 8
+        },
+        {
+          "key": "ui.system_media_controls_enabled",
+          "value": {
+            "bool": true
+          },
+          "flags": 8
+        },
+        {
+          "key": "ui.minimize_to_tray",
+          "value": {
+            "bool": false
+          },
+          "flags": 8
+        },
+        {
+          "key": "ui.miniplayer_auto_open_enabled",
+          "value": {
+            "bool": false
+          },
+          "flags": 8
+        },
+        {
+          "key": "network.proxy.addr",
+          "value": {
+            "string": ""
+          },
+          "flags": 4
+        },
+        {
+          "key": "network.proxy.mode",
+          "value": {
+            "number": "0"
+          },
+          "flags": 4
+        },
+        {
+          "key": "network.proxy.user",
+          "value": {
+            "string": ""
+          },
+          "flags": 4
+        },
+        {
+          "key": "network.proxy.pass",
+          "value": {
+            "string": ""
+          },
+          "flags": 4
+        },
+        {
+          "key": "campaign-id",
+          "value": {
+            "string": ""
+          },
+          "flags": 4
+        },
+        {
+          "key": "es.send-on-startup",
+          "value": {
+            "bool": false
+          },
+          "flags": 4
+        },
+        {
+          "key": "es.use-lmdb",
+          "value": {
+            "bool": false
+          },
+          "flags": 4
+        },
+        {
+          "key": "es.repair-greenbase",
+          "value": {
+            "bool": false
+          },
+          "flags": 4
+        },
+        {
+          "key": "language",
+          "value": {
+            "string": ""
+          },
+          "flags": 132
+        },
+        {
+          "key": "app.rollback-to-sc",
+          "value": {
+            "bool": false
+          },
+          "flags": 4
+        },
+        {
+          "key": "app.client-id-hash",
+          "value": {
+            "string": ""
+          },
+          "flags": 4
+        }
+      ]
+    },
+    {
+      "name": "Create updates existing default without notification",
+      "input": {
+        "name": "Create updates existing default without notification",
+        "operation": "registration",
+        "typeFlags": 513,
+        "defaultValue": {
+          "bool": false
+        },
+        "overrideValue": null,
+        "inputValue": {
+          "bool": true
+        },
+        "registrationFlags": 1
+      },
+      "registered": true,
+      "notifications": [],
+      "flags": 513,
+      "value": {
+        "bool": true
+      },
+      "hasOverride": false
+    },
+    {
+      "name": "Create preserves independent override",
+      "input": {
+        "name": "Create preserves independent override",
+        "operation": "registration",
+        "typeFlags": 769,
+        "defaultValue": {
+          "bool": false
+        },
+        "overrideValue": {
+          "bool": false
+        },
+        "inputValue": {
+          "bool": true
+        },
+        "registrationFlags": 1
+      },
+      "registered": true,
+      "notifications": [],
+      "flags": 769,
+      "value": {
+        "bool": false
+      },
+      "hasOverride": true
+    },
+    {
+      "name": "Create cannot change defined type",
+      "input": {
+        "name": "Create cannot change defined type",
+        "operation": "registration",
+        "typeFlags": 513,
+        "defaultValue": {
+          "bool": false
+        },
+        "overrideValue": null,
+        "inputValue": {
+          "number": "9"
+        },
+        "registrationFlags": 2
+      },
+      "registered": false,
+      "notifications": [],
+      "flags": 513,
+      "value": {
+        "bool": false
+      },
+      "hasOverride": false
+    },
+    {
+      "name": "Create refuses protected definition",
+      "input": {
+        "name": "Create refuses protected definition",
+        "operation": "registration",
+        "typeFlags": 545,
+        "defaultValue": {
+          "bool": false
+        },
+        "overrideValue": null,
+        "inputValue": {
+          "bool": true
+        },
+        "registrationFlags": 1
+      },
+      "registered": false,
+      "notifications": [],
+      "flags": 545,
+      "value": {
+        "bool": false
+      },
+      "hasOverride": false
+    },
+    {
+      "name": "startup default retains loaded number override",
+      "input": {
+        "name": "startup default retains loaded number override",
+        "operation": "registration",
+        "typeFlags": 258,
+        "defaultValue": {
+          "number": "0"
+        },
+        "overrideValue": {
+          "number": "9"
+        },
+        "inputValue": {
+          "number": "42"
+        },
+        "registrationFlags": 2
+      },
+      "registered": true,
+      "notifications": [],
+      "flags": 770,
+      "value": {
+        "number": "9"
+      },
+      "hasOverride": true
+    },
+    {
+      "name": "listener 'app' against 'app'",
+      "input": {
+        "name": "listener 'app' against 'app'",
+        "operation": "filter",
+        "prefix": "app",
+        "changedKey": "app"
+      },
+      "matches": true
+    },
+    {
+      "name": "listener 'app' against 'app.child'",
+      "input": {
+        "name": "listener 'app' against 'app.child'",
+        "operation": "filter",
+        "prefix": "app",
+        "changedKey": "app.child"
+      },
+      "matches": false
+    },
+    {
+      "name": "listener 'app.' against 'app.child'",
+      "input": {
+        "name": "listener 'app.' against 'app.child'",
+        "operation": "filter",
+        "prefix": "app.",
+        "changedKey": "app.child"
+      },
+      "matches": true
+    },
+    {
+      "name": "listener 'app.' against 'app'",
+      "input": {
+        "name": "listener 'app.' against 'app'",
+        "operation": "filter",
+        "prefix": "app.",
+        "changedKey": "app"
+      },
+      "matches": false
+    },
+    {
+      "name": "listener 'app.' against 'application.child'",
+      "input": {
+        "name": "listener 'app.' against 'application.child'",
+        "operation": "filter",
+        "prefix": "app.",
+        "changedKey": "application.child"
+      },
+      "matches": false
+    },
+    {
+      "name": "listener '' against 'any.key'",
+      "input": {
+        "name": "listener '' against 'any.key'",
+        "operation": "filter",
+        "prefix": "",
+        "changedKey": "any.key"
+      },
+      "matches": true
+    },
+    {
+      "name": "listener 'language' against 'language'",
+      "input": {
+        "name": "listener 'language' against 'language'",
+        "operation": "filter",
+        "prefix": "language",
+        "changedKey": "language"
+      },
+      "matches": true
+    },
+    {
+      "name": "listener 'language' against 'language2'",
+      "input": {
+        "name": "listener 'language' against 'language2'",
+        "operation": "filter",
+        "prefix": "language",
+        "changedKey": "language2"
+      },
+      "matches": false
+    }
+  ]
+}

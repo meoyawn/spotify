@@ -1,0 +1,4039 @@
+{
+  "method": "Execute original native app-context requests on unrelated local H2 paths.\n\nSynthetic request methods, paths, MIME fields and byte bodies pass through the\nunchanged native header/default fragment and proprietary CEF adapter. Public\ngetters from the shipped CEF library supply the next stage, followed by its\nURLRequest implementation and an independent hyper-h2 loopback peer. No Dart,\nservice-specific request producer, account or original application runs.\n",
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "sourceLibrarySha256": "ea7338318fe19b147a03707fe598af0b6680e8760885db3b14f132a95d04e618",
+  "apiVersion": 999999,
+  "apiHash": "27759c0a4b5b85c632e775838eb599b65129b798",
+  "publicSourceRevision": "beff58dbc4d0fd12b3eafea8f5314ce22e649078",
+  "publicPostUploadSource": {
+    "path": ".local/cef-source/beff58d/libcef/browser/net_service/browser_urlrequest_impl.cc",
+    "sha256": "4ebcd2b1b2397c7df3f01dc995c872a31516fc3fd93fed633161fc8b772b9501",
+    "sourceLines": "349-357: one byte element with missing/empty MIME selects form-urlencoded"
+  },
+  "publicCapiSources": [
+    {
+      "path": ".local/cef-source/full-beff58d/include/capi/cef_request_capi.h",
+      "sha256": "f500189c6a6833bd17c0988e996e087e0c61524352a15d75bab99413dc7388a7"
+    },
+    {
+      "path": ".local/cef-source/full-beff58d/include/capi/cef_urlrequest_capi.h",
+      "sha256": "a48fcb4d680a9cc5d1c0762303b535fee41f7419201fe7def0f06d83c7e0c2f1"
+    }
+  ],
+  "sourceInputs": [
+    {
+      "path": "reverse-engineering/tools/native_cef_native_app_context_oracle.py",
+      "sha256": "2845389732bf3234c7644a72af668d7c043484a38a8cbe33ddb56dcb8b181754"
+    },
+    {
+      "path": "reverse-engineering/tools/native_user_agent_oracle.py",
+      "sha256": "8743df45b79dc36025e932d24d73e4be618c5544a8eb82984667627a2b24a82b"
+    },
+    {
+      "path": "reverse-engineering/tools/native_cef_request_oracle.py",
+      "sha256": "6d58f2294ea5ad6fa85bb94738ea755988fc148b7fb8b3861fd0ec009fba53b7"
+    },
+    {
+      "path": "reverse-engineering/tools/native_cef_request_object_oracle.py",
+      "sha256": "f057451ae4df97e803e79c40d814e0704ae7738a752b17a7531e8431b695b200"
+    },
+    {
+      "path": "reverse-engineering/tools/native_cef_loopback_oracle.py",
+      "sha256": "ac30fe6f01135543d523285868f5ed2fdffb12915a2f1cb9cd579be2178a4a12"
+    },
+    {
+      "path": "reverse-engineering/tools/native_cef_options_oracle.py",
+      "sha256": "0410edb1f36f9039ac27ab5cc498cc10e4cd3ba42fc818baa2ebb7444be757d4"
+    },
+    {
+      "path": "reverse-engineering/tools/native_cef_library_write_h2_oracle.py",
+      "sha256": "84038ee4c7364522079babd336600869d3b3c532f63f30c684beac5e78bdcdd1"
+    },
+    {
+      "path": "reverse-engineering/tools/native_cef_h2_peer.py",
+      "sha256": "002b4f970d94c288119248fcfac6b228de0e432affcbc24081393231f88164eb"
+    },
+    {
+      "path": "reverse-engineering/fixtures/native-cef-template-loopback.json",
+      "sha256": "560dd072f3247ba72c1be91bda7ed8c8f96c92ced2991ebe3d042b05fc757a2e"
+    }
+  ],
+  "producerEntryPoints": {
+    "headerInsertion": "0x101a4342c",
+    "constructorUaFragment": [
+      "0x101c20fa0",
+      "0x101c20fd8"
+    ],
+    "requestAdapter": "0x1017d876c",
+    "requestContext": "0x100044180",
+    "preferredLocales": "0x10042dbf8",
+    "acceptLanguageList": "0x10042c210"
+  },
+  "instructionRanges": [
+    {
+      "start": "0x101a4342c",
+      "endExclusive": "0x101a43470",
+      "sha256": "b552e564ed58b5a07ff12269f5bdc371fc1ef3b531f59a34bef6395ca39602cc"
+    },
+    {
+      "start": "0x101c20fa0",
+      "endExclusive": "0x101c20fd8",
+      "sha256": "3e965cbb3705861374f5a7640be6b2a2be01a8f267a3d34e15b44c399f98b061"
+    },
+    {
+      "start": "0x1017d876c",
+      "endExclusive": "0x1017d88d0",
+      "sha256": "4a190922187501b5f86ddf9c8f2ced850b3ee0b1a8c93d4ffaa41308f48a34fe"
+    },
+    {
+      "start": "0x100044180",
+      "endExclusive": "0x1000441c0",
+      "sha256": "8e6f3d7cc8ac2487908220f94bf61eb8aaa64ddd05c1e3f7c3b06bd76036c959"
+    },
+    {
+      "start": "0x10042c210",
+      "endExclusive": "0x10042c708",
+      "sha256": "2f8a6e4e8797a4644aa2b885294e61390cd6f37243e62f1b2b2cf0652c73fe3e"
+    },
+    {
+      "start": "0x10042dbf8",
+      "endExclusive": "0x10042de9c",
+      "sha256": "6f27fe05bd6d61fb6288e436805d81a3cbbf0d9e94cc85361e6375a838e993c6"
+    }
+  ],
+  "originalNativeContextCapture": {
+    "path": ".local/original-license-rejection-reference-netlog.json",
+    "sha256": "6d8e8c9f4d71bd0e39ecff3282e86438540cf22987a33b2340d79658d4ec6d50",
+    "sourceId": 814,
+    "eventIndex": 11370,
+    "streamId": 3,
+    "event": "HTTP2_SESSION_SEND_HEADERS",
+    "sanitizedPublicFields": {
+      ":method": "POST",
+      ":authority": "guc3-spclient.spotify.com",
+      ":scheme": "https",
+      ":path": "/collection/v2/delta",
+      "content-length": "45",
+      "accept": "application/vnd.collection-v2.spotify.proto",
+      "accept-language": "en",
+      "app-platform": "OSX_ARM64",
+      "content-type": "application/vnd.collection-v2.spotify.proto",
+      "spotify-app-version": "130601921",
+      "time-zone": "Europe/Moscow",
+      "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+      "origin": "https://guc3-spclient.spotify.com",
+      "sec-fetch-site": "same-origin",
+      "sec-fetch-mode": "no-cors",
+      "sec-fetch-dest": "empty",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "priority": "u=4, i"
+    }
+  },
+  "nativeOptions": {
+    "selectedLocale": "en",
+    "suppliedAppleLanguages": [
+      "ru",
+      "en-US",
+      "en",
+      "en-GB"
+    ],
+    "originalPreferredLocales": {
+      "defaultsKey": "AppleLanguages",
+      "preferredLocales": [
+        "ru",
+        "en-US",
+        "en",
+        "en-GB"
+      ]
+    },
+    "acceptLanguageList": "en-US,en,en-GB",
+    "requestContextSettingsHex": "600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000",
+    "requestContextHandler": 0
+  },
+  "publicSettingsLayout": [
+    {
+      "size": 448,
+      "no_sandbox": 8,
+      "browser_subprocess_path": 16,
+      "framework_dir_path": 40,
+      "main_bundle_path": 64,
+      "multi_threaded_message_loop": 88,
+      "external_message_pump": 92,
+      "windowless_rendering_enabled": 96,
+      "command_line_args_disabled": 100,
+      "cache_path": 104,
+      "root_cache_path": 128,
+      "user_agent": 160,
+      "locale": 208,
+      "log_file": 232,
+      "log_severity": 256,
+      "resources_dir_path": 288,
+      "locales_dir_path": 312,
+      "disable_signal_handlers": 436
+    },
+    {
+      "global": {
+        "size": 448,
+        "cache_path": 104,
+        "user_agent": 160,
+        "user_agent_product": 184,
+        "locale": 208,
+        "accept_language_list": 352
+      },
+      "requestContext": {
+        "size": 96,
+        "cache_path": 8,
+        "persist_session_cookies": 32,
+        "accept_language_list": 40,
+        "cookieable_schemes_list": 64,
+        "cookieable_schemes_exclude_defaults": 88
+      }
+    }
+  ],
+  "sandbox": "(version 1)(allow default)(deny network*)(allow network-outbound (remote ip \"localhost:*\"))(allow network-inbound (local ip \"localhost:*\"))(allow network-bind (local unix-socket (subpath \"/private/var/folders/fixture/temporary/T\")))(deny file-read* (subpath \"/Users/fixture/Library\"))(deny file-write* (subpath \"/Users/fixture/Library\"))",
+  "requestObjectSandbox": "(version 1)(allow default)(deny network*)(deny file-read* (subpath \"/Users/fixture/Library\"))(deny file-write* (subpath \"/Users/fixture/Library\"))",
+  "peer": {
+    "implementation": "hyper-h2",
+    "version": "4.3.0",
+    "alpn": "h2",
+    "normalization": "normalize_inbound_headers=False; decoded sequence retained"
+  },
+  "substitutions": [
+    "Explicit synthetic methods, unrelated capture paths and opaque bytes replace service-specific producers; no service body semantics are claimed.",
+    "Actual native Collection DELTA supplies only noncredential app-context values; access/client token values are inert sentinels.",
+    "Original native header insertion/default-UA fragment, CEF adapter and locale/context producers execute unchanged under Unicorn; standard allocation/libc/libc++/UTF conversion and inert CEF interfaces are providers.",
+    "Original adapter fields are installed in shipped public CefRequest objects; their getters supply the later shipped-CEF URLRequest inputs.",
+    "Fresh roots, headless single-process bootstrap, inert helper, loopback authority and certificate bypass replace original startup; outer sandbox blocks remote traffic and user Library reads/writes."
+  ],
+  "limits": [
+    "Explicit synthetic requests show the complete native app group survives unrelated GET/POST/PUT paths and the captured spelling variants; this does not establish app-side selection or entitlement for an arbitrary service route.",
+    "Binary body bytes are synthetic transport inputs; no protobuf/service producer or response behavior is proved.",
+    "Decoded H2 fields/sequence/raw target/body are captured; TLS fingerprint, HPACK frames, H3 and connection-reuse selection remain separate.",
+    "Explicit app Accept-Language overrides the independently produced CEF locale list for this bounded profile; this does not prove every managed-header override.",
+    "Case-variant duplicate replacement and decoded ordering are observed only for H2 here; no transfer of this sequence to H3 is established.",
+    "POST missing and empty Content-Type behavior comes from shipped public CEF execution, not a Spotify route-specific producer."
+  ],
+  "cases": [
+    {
+      "name": "native GET without MIME",
+      "input": {
+        "name": "native GET without MIME",
+        "method": "GET",
+        "url": "https://127.0.0.1:58237/capture/native-one?raw=%2f%2F&value=%7E+%2B&empty=",
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ]
+        ],
+        "headerSpelling": "runtime-mixed",
+        "bodyBase64": "",
+        "nativeDefaultUserAgent": "inert-native-default-UA",
+        "adapterOption80": 0,
+        "adapterUserAgent": "inert-adapter-UA"
+      },
+      "originalNativeDefaults": {
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ]
+        ],
+        "userAgent": "inert-native-default-UA",
+        "result": [
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "Accept-Language",
+            "en"
+          ]
+        ]
+      },
+      "originalAdapter": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "GET",
+        "urlInput": "https://127.0.0.1:58237/capture/native-one?raw=%2f%2F&value=%7E+%2B&empty=",
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "User-Agent",
+            "inert-adapter-UA"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ]
+        ]
+      },
+      "originalPublicRequestObject": {
+        "method": "GET",
+        "url": "https://127.0.0.1:58237/capture/native-one?raw=%2f%2F&value=%7E+%2B&empty=",
+        "flags": 208,
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "User-Agent",
+            "inert-adapter-UA"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ]
+        ],
+        "bodyElementsBase64": []
+      },
+      "result": {
+        "alpn": "h2",
+        "connectionId": 1,
+        "streamId": 1,
+        "headersEndStream": true,
+        "headersBeforeServerSettings": false,
+        "clientInitialSettings": [
+          [
+            1,
+            65536
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            6291456
+          ],
+          [
+            6,
+            262144
+          ]
+        ],
+        "clientInitialConnectionWindowDelta": 15663105,
+        "clientStartupOrder": [
+          "settings",
+          "connection-window-update",
+          "headers"
+        ],
+        "headersPriority": {
+          "parentStreamId": 0,
+          "weight": 110,
+          "exclusive": true
+        },
+        "headers": [
+          [
+            ":method",
+            "GET"
+          ],
+          [
+            ":authority",
+            "127.0.0.1:58237"
+          ],
+          [
+            ":scheme",
+            "https"
+          ],
+          [
+            ":path",
+            "/capture/native-one?raw=%2f%2F&value=%7E+%2B&empty="
+          ],
+          [
+            "accept-language",
+            "en"
+          ],
+          [
+            "authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "sec-fetch-site",
+            "same-origin"
+          ],
+          [
+            "sec-fetch-mode",
+            "no-cors"
+          ],
+          [
+            "sec-fetch-dest",
+            "empty"
+          ],
+          [
+            "accept-encoding",
+            "gzip, deflate, br, zstd"
+          ],
+          [
+            "priority",
+            "u=4, i"
+          ]
+        ],
+        "bodyBase64": "",
+        "rawClientFramesBase64": "UFJJICogSFRUUC8yLjANCg0KU00NCg0KAAAYBAAAAAAAAAEAAQAAAAIAAAAAAAQAYAAAAAYABAAAAAAECAAAAAAAAO8AAQABMAElAAAAAYAAAABtgkGLCJ1cC4Fw3G3hMu+HBKdgg6022FYqGk3cqx6i/5YPxAqKVUWH47jotLAq7g/2qK78FprT6g9RAmVuV5O6UdhbFJTeU22FWGQhUIWSfqWreqXdWdJpfTAWQOAC+IKmrd+RQ7dDjTGrcp+KCcXaXAp/7HZSoL/5QIkdda1dA0ynsp+I1bvyKHboca9AiSUGLUlZJ+pav46U3lNthViUGLUlZJ+pakCORWdJpfSw661u5bEGPV+GCyBwAXxBQIdJqSrez1F/isFth6ysaDoIfx9AikFItKVJJ1kGSX+IQOkqx7DTGq9AikFItKVJJ1qTyF+FqOsQ9iNAikFItKVJJ1pCoT+ELTWn11CSm9mr+lJCy0DSX6Ujs+lPaEyfQIauwx7DJ9eFtga+lDc="
+      },
+      "arguments": [
+        "/Users/fixture/Developer/spotify/tools/oracles/.venv/bin/python",
+        "--headless",
+        "--single-process",
+        "--no-sandbox",
+        "--disable-gpu",
+        "--in-process-gpu",
+        "--disable-software-rasterizer",
+        "--enable-features=NetworkServiceInProcess",
+        "--disable-background-networking",
+        "--disable-component-update",
+        "--disable-domain-reliability",
+        "--disable-sync",
+        "--disable-extensions",
+        "--no-first-run",
+        "--no-default-browser-check",
+        "--password-store=basic",
+        "--use-mock-keychain",
+        "--metrics-recording-only",
+        "--safebrowsing-disable-auto-update",
+        "--proxy-server=direct://",
+        "--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1",
+        "--user-data-dir=/Users/fixture/Developer/spotify/.local/cef-native-app-context-1gyy9ibe/request-0/root",
+        "--ignore-certificate-errors"
+      ]
+    },
+    {
+      "name": "native GET with cache fields",
+      "input": {
+        "name": "native GET with cache fields",
+        "method": "GET",
+        "url": "https://127.0.0.1:58237/capture/native-two",
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "Cache-Control",
+            "no-cache, no-store"
+          ],
+          [
+            "X-Fixture",
+            "independent-native-context"
+          ]
+        ],
+        "headerSpelling": "runtime-mixed",
+        "bodyBase64": "",
+        "nativeDefaultUserAgent": "inert-native-default-UA",
+        "adapterOption80": 0,
+        "adapterUserAgent": "inert-adapter-UA"
+      },
+      "originalNativeDefaults": {
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "Cache-Control",
+            "no-cache, no-store"
+          ],
+          [
+            "X-Fixture",
+            "independent-native-context"
+          ]
+        ],
+        "userAgent": "inert-native-default-UA",
+        "result": [
+          [
+            "X-Fixture",
+            "independent-native-context"
+          ],
+          [
+            "Cache-Control",
+            "no-cache, no-store"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "Accept-Language",
+            "en"
+          ]
+        ]
+      },
+      "originalAdapter": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "GET",
+        "urlInput": "https://127.0.0.1:58237/capture/native-two",
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "Cache-Control",
+            "no-cache, no-store"
+          ],
+          [
+            "User-Agent",
+            "inert-adapter-UA"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "X-Fixture",
+            "independent-native-context"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ]
+        ]
+      },
+      "originalPublicRequestObject": {
+        "method": "GET",
+        "url": "https://127.0.0.1:58237/capture/native-two",
+        "flags": 208,
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "Cache-Control",
+            "no-cache, no-store"
+          ],
+          [
+            "User-Agent",
+            "inert-adapter-UA"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "X-Fixture",
+            "independent-native-context"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ]
+        ],
+        "bodyElementsBase64": []
+      },
+      "result": {
+        "alpn": "h2",
+        "connectionId": 2,
+        "streamId": 1,
+        "headersEndStream": true,
+        "headersBeforeServerSettings": false,
+        "clientInitialSettings": [
+          [
+            1,
+            65536
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            6291456
+          ],
+          [
+            6,
+            262144
+          ]
+        ],
+        "clientInitialConnectionWindowDelta": 15663105,
+        "clientStartupOrder": [
+          "settings",
+          "connection-window-update",
+          "headers"
+        ],
+        "headersPriority": {
+          "parentStreamId": 0,
+          "weight": 110,
+          "exclusive": true
+        },
+        "headers": [
+          [
+            ":method",
+            "GET"
+          ],
+          [
+            ":authority",
+            "127.0.0.1:58237"
+          ],
+          [
+            ":scheme",
+            "https"
+          ],
+          [
+            ":path",
+            "/capture/native-two"
+          ],
+          [
+            "pragma",
+            "no-cache"
+          ],
+          [
+            "cache-control",
+            "no-cache, no-store"
+          ],
+          [
+            "accept-language",
+            "en"
+          ],
+          [
+            "authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "x-fixture",
+            "independent-native-context"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "sec-fetch-site",
+            "same-origin"
+          ],
+          [
+            "sec-fetch-mode",
+            "no-cors"
+          ],
+          [
+            "sec-fetch-dest",
+            "empty"
+          ],
+          [
+            "accept-encoding",
+            "gzip, deflate, br, zstd"
+          ],
+          [
+            "priority",
+            "u=4, i"
+          ]
+        ],
+        "bodyBase64": "",
+        "rawClientFramesBase64": "UFJJICogSFRUUC8yLjANCg0KU00NCg0KAAAYBAAAAAAAAAEAAQAAAAIAAAAAAAQAYAAAAAYABAAAAAAECAAAAAAAAO8AAQABUAElAAAAAYAAAABtgkGLCJ1cC4Fw3G3hMu+HBI5gg6022FYqGk3cqyfB/0CFrsHNSP+GqOsQZJy/WI2o6xBknL9KVHWQk9hfUQJlbleTulHYWxSU3lNthVhkIVCFkn6lq3ql3VnSaX0wFkDgAviCpq3fkUO3Q40xq3KfignF2lwKf+x2UqC/+UCH8rSm8ptsL5I1Uhay1SFqStUNJu5ViHqSXylAiR11rV0DTKeyn4jVu/Ioduhxr0CJJQYtSVkn6lq/jpTeU22FWJQYtSVkn6lqQI5FZ0ml9LDrrW7lsQY9X4YLIHABfEFAh0mpKt7PUX+KwW2HrKxoOgh/H0CKQUi0pUknWQZJf4hA6SrHsNMar0CKQUi0pUknWpPIX4Wo6xD2I0CKQUi0pUknWkKhP4QtNafXUJKb2av6UkLLQNJfpSOz6U9oTJ9Ahq7DHsMn14W2Br6UNw=="
+      },
+      "arguments": [
+        "/Users/fixture/Developer/spotify/tools/oracles/.venv/bin/python",
+        "--headless",
+        "--single-process",
+        "--no-sandbox",
+        "--disable-gpu",
+        "--in-process-gpu",
+        "--disable-software-rasterizer",
+        "--enable-features=NetworkServiceInProcess",
+        "--disable-background-networking",
+        "--disable-component-update",
+        "--disable-domain-reliability",
+        "--disable-sync",
+        "--disable-extensions",
+        "--no-first-run",
+        "--no-default-browser-check",
+        "--password-store=basic",
+        "--use-mock-keychain",
+        "--metrics-recording-only",
+        "--safebrowsing-disable-auto-update",
+        "--proxy-server=direct://",
+        "--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1",
+        "--user-data-dir=/Users/fixture/Developer/spotify/.local/cef-native-app-context-1gyy9ibe/request-1/root",
+        "--ignore-certificate-errors"
+      ]
+    },
+    {
+      "name": "native POST binary MIME",
+      "input": {
+        "name": "native POST binary MIME",
+        "method": "POST",
+        "url": "https://127.0.0.1:58237/capture/native-binary",
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "Accept",
+            "application/vnd.fixture.spotify.proto"
+          ],
+          [
+            "Content-Type",
+            "application/protobuf"
+          ]
+        ],
+        "headerSpelling": "runtime-mixed",
+        "bodyBase64": "AID/DQoAAX8=",
+        "nativeDefaultUserAgent": "inert-native-default-UA",
+        "adapterOption80": 0,
+        "adapterUserAgent": "inert-adapter-UA"
+      },
+      "originalNativeDefaults": {
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "Accept",
+            "application/vnd.fixture.spotify.proto"
+          ],
+          [
+            "Content-Type",
+            "application/protobuf"
+          ]
+        ],
+        "userAgent": "inert-native-default-UA",
+        "result": [
+          [
+            "Content-Type",
+            "application/protobuf"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "Accept",
+            "application/vnd.fixture.spotify.proto"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "Accept-Language",
+            "en"
+          ]
+        ]
+      },
+      "originalAdapter": {
+        "bodyElementsBase64": [
+          "AID/DQoAAX8="
+        ],
+        "flags": 208,
+        "method": "POST",
+        "urlInput": "https://127.0.0.1:58237/capture/native-binary",
+        "headers": [
+          [
+            "Accept",
+            "application/vnd.fixture.spotify.proto"
+          ],
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "Content-Type",
+            "application/protobuf"
+          ],
+          [
+            "User-Agent",
+            "inert-adapter-UA"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ]
+        ]
+      },
+      "originalPublicRequestObject": {
+        "method": "POST",
+        "url": "https://127.0.0.1:58237/capture/native-binary",
+        "flags": 208,
+        "headers": [
+          [
+            "Accept",
+            "application/vnd.fixture.spotify.proto"
+          ],
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "Content-Type",
+            "application/protobuf"
+          ],
+          [
+            "User-Agent",
+            "inert-adapter-UA"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ]
+        ],
+        "bodyElementsBase64": [
+          "AID/DQoAAX8="
+        ]
+      },
+      "result": {
+        "alpn": "h2",
+        "connectionId": 3,
+        "streamId": 1,
+        "headersEndStream": false,
+        "headersBeforeServerSettings": false,
+        "clientInitialSettings": [
+          [
+            1,
+            65536
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            6291456
+          ],
+          [
+            6,
+            262144
+          ]
+        ],
+        "clientInitialConnectionWindowDelta": 15663105,
+        "clientStartupOrder": [
+          "settings",
+          "connection-window-update",
+          "headers"
+        ],
+        "headersPriority": {
+          "parentStreamId": 0,
+          "weight": 110,
+          "exclusive": true
+        },
+        "headers": [
+          [
+            ":method",
+            "POST"
+          ],
+          [
+            ":authority",
+            "127.0.0.1:58237"
+          ],
+          [
+            ":scheme",
+            "https"
+          ],
+          [
+            ":path",
+            "/capture/native-binary"
+          ],
+          [
+            "content-length",
+            "8"
+          ],
+          [
+            "accept",
+            "application/vnd.fixture.spotify.proto"
+          ],
+          [
+            "accept-language",
+            "en"
+          ],
+          [
+            "authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "content-type",
+            "application/protobuf"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "origin",
+            "https://127.0.0.1:58237"
+          ],
+          [
+            "sec-fetch-site",
+            "same-origin"
+          ],
+          [
+            "sec-fetch-mode",
+            "no-cors"
+          ],
+          [
+            "sec-fetch-dest",
+            "empty"
+          ],
+          [
+            "accept-encoding",
+            "gzip, deflate, br, zstd"
+          ],
+          [
+            "priority",
+            "u=4, i"
+          ]
+        ],
+        "bodyBase64": "AID/DQoAAX8=",
+        "rawClientFramesBase64": "UFJJICogSFRUUC8yLjANCg0KU00NCg0KAAAYBAAAAAAAAAEAAQAAAAIAAAAAAAQAYAAAAAYABAAAAAAECAAAAAAAAO8AAQABYQEkAAAAAYAAAABtg0GLCJ1cC4Fw3G3hMu+HBJBgg6022FYqGk3cq0Zqh2evXAE4U5odddBiDSY9THeqReU3lNthV0VnSaX0vXYdJ1ECZW5Xk7pR2FsUlN5TbYVYZCFQhZJ+patfjh110GINJj1MV2HSeO2XeqXdWdJpfTAWQOAC+IKmrd+RQ7dDjTGrcp+KCcXaXAp/7HZSoL/5QIkdda1dA0ynsp+I1bvyKHboca9AiSUGLUlZJ+pav46U3lNthViUGLUlZJ+pakCORWdJpfSw661u5bEGPV+GCyBwAXxBQIdJqSrez1F/isFth6ysaDoIfx9AhT2GmNV/kZ0prRcYYCJ1cC4Fw3G3hMu/QIpBSLSlSSdZBkl/iEDpKsew0xqvQIpBSLSlSSdak8hfhajrEPYjQIpBSLSlSSdaQqE/hC01p9dQkpvZq/pSQstA0l+lI7PpT2hMn0CGrsMewyfXhbYGvpQ3AAAIAAEAAAABAID/DQoAAX8="
+      },
+      "arguments": [
+        "/Users/fixture/Developer/spotify/tools/oracles/.venv/bin/python",
+        "--headless",
+        "--single-process",
+        "--no-sandbox",
+        "--disable-gpu",
+        "--in-process-gpu",
+        "--disable-software-rasterizer",
+        "--enable-features=NetworkServiceInProcess",
+        "--disable-background-networking",
+        "--disable-component-update",
+        "--disable-domain-reliability",
+        "--disable-sync",
+        "--disable-extensions",
+        "--no-first-run",
+        "--no-default-browser-check",
+        "--password-store=basic",
+        "--use-mock-keychain",
+        "--metrics-recording-only",
+        "--safebrowsing-disable-auto-update",
+        "--proxy-server=direct://",
+        "--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1",
+        "--user-data-dir=/Users/fixture/Developer/spotify/.local/cef-native-app-context-1gyy9ibe/request-2/root",
+        "--ignore-certificate-errors"
+      ]
+    },
+    {
+      "name": "native POST absent MIME",
+      "input": {
+        "name": "native POST absent MIME",
+        "method": "POST",
+        "url": "https://127.0.0.1:58237/capture/native-implicit",
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ]
+        ],
+        "headerSpelling": "runtime-mixed",
+        "bodyBase64": "AID/DQoAAX8=",
+        "nativeDefaultUserAgent": "inert-native-default-UA",
+        "adapterOption80": 0,
+        "adapterUserAgent": "inert-adapter-UA"
+      },
+      "originalNativeDefaults": {
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ]
+        ],
+        "userAgent": "inert-native-default-UA",
+        "result": [
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "Accept-Language",
+            "en"
+          ]
+        ]
+      },
+      "originalAdapter": {
+        "bodyElementsBase64": [
+          "AID/DQoAAX8="
+        ],
+        "flags": 208,
+        "method": "POST",
+        "urlInput": "https://127.0.0.1:58237/capture/native-implicit",
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "User-Agent",
+            "inert-adapter-UA"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ]
+        ]
+      },
+      "originalPublicRequestObject": {
+        "method": "POST",
+        "url": "https://127.0.0.1:58237/capture/native-implicit",
+        "flags": 208,
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "User-Agent",
+            "inert-adapter-UA"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ]
+        ],
+        "bodyElementsBase64": [
+          "AID/DQoAAX8="
+        ]
+      },
+      "result": {
+        "alpn": "h2",
+        "connectionId": 4,
+        "streamId": 1,
+        "headersEndStream": false,
+        "headersBeforeServerSettings": false,
+        "clientInitialSettings": [
+          [
+            1,
+            65536
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            6291456
+          ],
+          [
+            6,
+            262144
+          ]
+        ],
+        "clientInitialConnectionWindowDelta": 15663105,
+        "clientStartupOrder": [
+          "settings",
+          "connection-window-update",
+          "headers"
+        ],
+        "headersPriority": {
+          "parentStreamId": 0,
+          "weight": 110,
+          "exclusive": true
+        },
+        "headers": [
+          [
+            ":method",
+            "POST"
+          ],
+          [
+            ":authority",
+            "127.0.0.1:58237"
+          ],
+          [
+            ":scheme",
+            "https"
+          ],
+          [
+            ":path",
+            "/capture/native-implicit"
+          ],
+          [
+            "content-length",
+            "8"
+          ],
+          [
+            "accept-language",
+            "en"
+          ],
+          [
+            "authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "content-type",
+            "application/x-www-form-urlencoded"
+          ],
+          [
+            "origin",
+            "https://127.0.0.1:58237"
+          ],
+          [
+            "sec-fetch-site",
+            "same-origin"
+          ],
+          [
+            "sec-fetch-mode",
+            "no-cors"
+          ],
+          [
+            "sec-fetch-dest",
+            "empty"
+          ],
+          [
+            "accept-encoding",
+            "gzip, deflate, br, zstd"
+          ],
+          [
+            "priority",
+            "u=4, i"
+          ]
+        ],
+        "bodyBase64": "AID/DQoAAX8=",
+        "rawClientFramesBase64": "UFJJICogSFRUUC8yLjANCg0KU00NCg0KAAAYBAAAAAAAAAEAAQAAAAIAAAAAAAQAYAAAAAYABAAAAAAECAAAAAAAAO8AAQABUAEkAAAAAYAAAABtg0GLCJ1cC4Fw3G3hMu+HBJFgg6022FYqGk3cqxqa6DEMn1wBOFECZW5Xk7pR2FsUlN5TbYVYZCFQhZJ+pat6pd1Z0ml9MBZA4AL4gqat35FDt0ONMatyn4oJxdpcCn/sdlKgv/lAiR11rV0DTKeyn4jVu/Ioduhxr0CJJQYtSVkn6lq/jpTeU22FWJQYtSVkn6lqQI5FZ0ml9LDrrW7lsQY9X4YLIHABfEFAh0mpKt7PUX+KwW2HrKxoOgh/H1+YHXXQYg0mPUx5W8ePC0p7KVrbKC1EPIWTQIU9hpjVf5GdKa0XGGAidXAuBcNxt4TLv0CKQUi0pUknWQZJf4hA6SrHsNMar0CKQUi0pUknWpPIX4Wo6xD2I0CKQUi0pUknWkKhP4QtNafXUJKb2av6UkLLQNJfpSOz6U9oTJ9Ahq7DHsMn14W2Br6UNwAACAABAAAAAQCA/w0KAAF/"
+      },
+      "arguments": [
+        "/Users/fixture/Developer/spotify/tools/oracles/.venv/bin/python",
+        "--headless",
+        "--single-process",
+        "--no-sandbox",
+        "--disable-gpu",
+        "--in-process-gpu",
+        "--disable-software-rasterizer",
+        "--enable-features=NetworkServiceInProcess",
+        "--disable-background-networking",
+        "--disable-component-update",
+        "--disable-domain-reliability",
+        "--disable-sync",
+        "--disable-extensions",
+        "--no-first-run",
+        "--no-default-browser-check",
+        "--password-store=basic",
+        "--use-mock-keychain",
+        "--metrics-recording-only",
+        "--safebrowsing-disable-auto-update",
+        "--proxy-server=direct://",
+        "--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1",
+        "--user-data-dir=/Users/fixture/Developer/spotify/.local/cef-native-app-context-1gyy9ibe/request-3/root",
+        "--ignore-certificate-errors"
+      ]
+    },
+    {
+      "name": "native POST empty MIME",
+      "input": {
+        "name": "native POST empty MIME",
+        "method": "POST",
+        "url": "https://127.0.0.1:58237/capture/native-empty",
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "Content-Type",
+            ""
+          ]
+        ],
+        "headerSpelling": "runtime-mixed",
+        "bodyBase64": "AID/DQoAAX8=",
+        "nativeDefaultUserAgent": "inert-native-default-UA",
+        "adapterOption80": 0,
+        "adapterUserAgent": "inert-adapter-UA"
+      },
+      "originalNativeDefaults": {
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "Content-Type",
+            ""
+          ]
+        ],
+        "userAgent": "inert-native-default-UA",
+        "result": [
+          [
+            "Content-Type",
+            ""
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "Accept-Language",
+            "en"
+          ]
+        ]
+      },
+      "originalAdapter": {
+        "bodyElementsBase64": [
+          "AID/DQoAAX8="
+        ],
+        "flags": 208,
+        "method": "POST",
+        "urlInput": "https://127.0.0.1:58237/capture/native-empty",
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "Content-Type",
+            ""
+          ],
+          [
+            "User-Agent",
+            "inert-adapter-UA"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ]
+        ]
+      },
+      "originalPublicRequestObject": {
+        "method": "POST",
+        "url": "https://127.0.0.1:58237/capture/native-empty",
+        "flags": 208,
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "Content-Type",
+            ""
+          ],
+          [
+            "User-Agent",
+            "inert-adapter-UA"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ]
+        ],
+        "bodyElementsBase64": [
+          "AID/DQoAAX8="
+        ]
+      },
+      "result": {
+        "alpn": "h2",
+        "connectionId": 5,
+        "streamId": 1,
+        "headersEndStream": false,
+        "headersBeforeServerSettings": false,
+        "clientInitialSettings": [
+          [
+            1,
+            65536
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            6291456
+          ],
+          [
+            6,
+            262144
+          ]
+        ],
+        "clientInitialConnectionWindowDelta": 15663105,
+        "clientStartupOrder": [
+          "settings",
+          "connection-window-update",
+          "headers"
+        ],
+        "headersPriority": {
+          "parentStreamId": 0,
+          "weight": 110,
+          "exclusive": true
+        },
+        "headers": [
+          [
+            ":method",
+            "POST"
+          ],
+          [
+            ":authority",
+            "127.0.0.1:58237"
+          ],
+          [
+            ":scheme",
+            "https"
+          ],
+          [
+            ":path",
+            "/capture/native-empty"
+          ],
+          [
+            "content-length",
+            "8"
+          ],
+          [
+            "accept-language",
+            "en"
+          ],
+          [
+            "authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "content-type",
+            "application/x-www-form-urlencoded"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "origin",
+            "https://127.0.0.1:58237"
+          ],
+          [
+            "sec-fetch-site",
+            "same-origin"
+          ],
+          [
+            "sec-fetch-mode",
+            "no-cors"
+          ],
+          [
+            "sec-fetch-dest",
+            "empty"
+          ],
+          [
+            "accept-encoding",
+            "gzip, deflate, br, zstd"
+          ],
+          [
+            "priority",
+            "u=4, i"
+          ]
+        ],
+        "bodyBase64": "AID/DQoAAX8=",
+        "rawClientFramesBase64": "UFJJICogSFRUUC8yLjANCg0KU00NCg0KAAAYBAAAAAAAAAEAAQAAAAIAAAAAAAQAYAAAAAYABAAAAAAECAAAAAAAAO8AAQABTgEkAAAAAYAAAABtg0GLCJ1cC4Fw3G3hMu+HBI9gg6022FYqGk3cqxaa0+tcAThRAmVuV5O6UdhbFJTeU22FWGQhUIWSfqWrX5gdddBiDSY9THlbx48LSnspWtsoLUQ8hZN6pd1Z0ml9MBZA4AL4gqat35FDt0ONMatyn4oJxdpcCn/sdlKgv/lAiR11rV0DTKeyn4jVu/Ioduhxr0CJJQYtSVkn6lq/jpTeU22FWJQYtSVkn6lqQI5FZ0ml9LDrrW7lsQY9X4YLIHABfEFAh0mpKt7PUX+KwW2HrKxoOgh/H0CFPYaY1X+RnSmtFxhgInVwLgXDcbeEy79AikFItKVJJ1kGSX+IQOkqx7DTGq9AikFItKVJJ1qTyF+FqOsQ9iNAikFItKVJJ1pCoT+ELTWn11CSm9mr+lJCy0DSX6Ujs+lPaEyfQIauwx7DJ9eFtga+lDcAAAgAAQAAAAEAgP8NCgABfw=="
+      },
+      "arguments": [
+        "/Users/fixture/Developer/spotify/tools/oracles/.venv/bin/python",
+        "--headless",
+        "--single-process",
+        "--no-sandbox",
+        "--disable-gpu",
+        "--in-process-gpu",
+        "--disable-software-rasterizer",
+        "--enable-features=NetworkServiceInProcess",
+        "--disable-background-networking",
+        "--disable-component-update",
+        "--disable-domain-reliability",
+        "--disable-sync",
+        "--disable-extensions",
+        "--no-first-run",
+        "--no-default-browser-check",
+        "--password-store=basic",
+        "--use-mock-keychain",
+        "--metrics-recording-only",
+        "--safebrowsing-disable-auto-update",
+        "--proxy-server=direct://",
+        "--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1",
+        "--user-data-dir=/Users/fixture/Developer/spotify/.local/cef-native-app-context-1gyy9ibe/request-4/root",
+        "--ignore-certificate-errors"
+      ]
+    },
+    {
+      "name": "native POST arbitrary explicit MIME",
+      "input": {
+        "name": "native POST arbitrary explicit MIME",
+        "method": "POST",
+        "url": "https://127.0.0.1:58237/capture/native-custom",
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "Content-Type",
+            "application/x-fixture-binary"
+          ]
+        ],
+        "headerSpelling": "runtime-mixed",
+        "bodyBase64": "AID/DQoAAX8=",
+        "nativeDefaultUserAgent": "inert-native-default-UA",
+        "adapterOption80": 0,
+        "adapterUserAgent": "inert-adapter-UA"
+      },
+      "originalNativeDefaults": {
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "Content-Type",
+            "application/x-fixture-binary"
+          ]
+        ],
+        "userAgent": "inert-native-default-UA",
+        "result": [
+          [
+            "Content-Type",
+            "application/x-fixture-binary"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "Accept-Language",
+            "en"
+          ]
+        ]
+      },
+      "originalAdapter": {
+        "bodyElementsBase64": [
+          "AID/DQoAAX8="
+        ],
+        "flags": 208,
+        "method": "POST",
+        "urlInput": "https://127.0.0.1:58237/capture/native-custom",
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "Content-Type",
+            "application/x-fixture-binary"
+          ],
+          [
+            "User-Agent",
+            "inert-adapter-UA"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ]
+        ]
+      },
+      "originalPublicRequestObject": {
+        "method": "POST",
+        "url": "https://127.0.0.1:58237/capture/native-custom",
+        "flags": 208,
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "Content-Type",
+            "application/x-fixture-binary"
+          ],
+          [
+            "User-Agent",
+            "inert-adapter-UA"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ]
+        ],
+        "bodyElementsBase64": [
+          "AID/DQoAAX8="
+        ]
+      },
+      "result": {
+        "alpn": "h2",
+        "connectionId": 6,
+        "streamId": 1,
+        "headersEndStream": false,
+        "headersBeforeServerSettings": false,
+        "clientInitialSettings": [
+          [
+            1,
+            65536
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            6291456
+          ],
+          [
+            6,
+            262144
+          ]
+        ],
+        "clientInitialConnectionWindowDelta": 15663105,
+        "clientStartupOrder": [
+          "settings",
+          "connection-window-update",
+          "headers"
+        ],
+        "headersPriority": {
+          "parentStreamId": 0,
+          "weight": 110,
+          "exclusive": true
+        },
+        "headers": [
+          [
+            ":method",
+            "POST"
+          ],
+          [
+            ":authority",
+            "127.0.0.1:58237"
+          ],
+          [
+            ":scheme",
+            "https"
+          ],
+          [
+            ":path",
+            "/capture/native-custom"
+          ],
+          [
+            "content-length",
+            "8"
+          ],
+          [
+            "accept-language",
+            "en"
+          ],
+          [
+            "authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "content-type",
+            "application/x-fixture-binary"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "origin",
+            "https://127.0.0.1:58237"
+          ],
+          [
+            "sec-fetch-site",
+            "same-origin"
+          ],
+          [
+            "sec-fetch-mode",
+            "no-cors"
+          ],
+          [
+            "sec-fetch-dest",
+            "empty"
+          ],
+          [
+            "accept-encoding",
+            "gzip, deflate, br, zstd"
+          ],
+          [
+            "priority",
+            "u=4, i"
+          ]
+        ],
+        "bodyBase64": "AID/DQoAAX8=",
+        "rawClientFramesBase64": "UFJJICogSFRUUC8yLjANCg0KU00NCg0KAAAYBAAAAAAAAAEAAQAAAAIAAAAAAAQAYAAAAAYABAAAAAAECAAAAAAAAO8AAQABSwEkAAAAAYAAAABtg0GLCJ1cC4Fw3G3hMu+HBJBgg6022FYqGk3cqxLUJPT/XAE4UQJlbleTulHYWxSU3lNthVhkIVCFkn6lq1+UHXXQYg0mPUx5WlN5TbYVaM1Q7PV6pd1Z0ml9MBZA4AL4gqat35FDt0ONMatyn4oJxdpcCn/sdlKgv/lAiR11rV0DTKeyn4jVu/Ioduhxr0CJJQYtSVkn6lq/jpTeU22FWJQYtSVkn6lqQI5FZ0ml9LDrrW7lsQY9X4YLIHABfEFAh0mpKt7PUX+KwW2HrKxoOgh/H0CFPYaY1X+RnSmtFxhgInVwLgXDcbeEy79AikFItKVJJ1kGSX+IQOkqx7DTGq9AikFItKVJJ1qTyF+FqOsQ9iNAikFItKVJJ1pCoT+ELTWn11CSm9mr+lJCy0DSX6Ujs+lPaEyfQIauwx7DJ9eFtga+lDcAAAgAAQAAAAEAgP8NCgABfw=="
+      },
+      "arguments": [
+        "/Users/fixture/Developer/spotify/tools/oracles/.venv/bin/python",
+        "--headless",
+        "--single-process",
+        "--no-sandbox",
+        "--disable-gpu",
+        "--in-process-gpu",
+        "--disable-software-rasterizer",
+        "--enable-features=NetworkServiceInProcess",
+        "--disable-background-networking",
+        "--disable-component-update",
+        "--disable-domain-reliability",
+        "--disable-sync",
+        "--disable-extensions",
+        "--no-first-run",
+        "--no-default-browser-check",
+        "--password-store=basic",
+        "--use-mock-keychain",
+        "--metrics-recording-only",
+        "--safebrowsing-disable-auto-update",
+        "--proxy-server=direct://",
+        "--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1",
+        "--user-data-dir=/Users/fixture/Developer/spotify/.local/cef-native-app-context-1gyy9ibe/request-5/root",
+        "--ignore-certificate-errors"
+      ]
+    },
+    {
+      "name": "native PUT binary MIME",
+      "input": {
+        "name": "native PUT binary MIME",
+        "method": "PUT",
+        "url": "https://127.0.0.1:58237/capture/native-put",
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "Content-Type",
+            "application/octet-stream"
+          ]
+        ],
+        "headerSpelling": "runtime-mixed",
+        "bodyBase64": "AID/DQoAAX8=",
+        "nativeDefaultUserAgent": "inert-native-default-UA",
+        "adapterOption80": 0,
+        "adapterUserAgent": "inert-adapter-UA"
+      },
+      "originalNativeDefaults": {
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "Content-Type",
+            "application/octet-stream"
+          ]
+        ],
+        "userAgent": "inert-native-default-UA",
+        "result": [
+          [
+            "Content-Type",
+            "application/octet-stream"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "Accept-Language",
+            "en"
+          ]
+        ]
+      },
+      "originalAdapter": {
+        "bodyElementsBase64": [
+          "AID/DQoAAX8="
+        ],
+        "flags": 208,
+        "method": "PUT",
+        "urlInput": "https://127.0.0.1:58237/capture/native-put",
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "Content-Type",
+            "application/octet-stream"
+          ],
+          [
+            "User-Agent",
+            "inert-adapter-UA"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ]
+        ]
+      },
+      "originalPublicRequestObject": {
+        "method": "PUT",
+        "url": "https://127.0.0.1:58237/capture/native-put",
+        "flags": 208,
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "Content-Type",
+            "application/octet-stream"
+          ],
+          [
+            "User-Agent",
+            "inert-adapter-UA"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ]
+        ],
+        "bodyElementsBase64": [
+          "AID/DQoAAX8="
+        ]
+      },
+      "result": {
+        "alpn": "h2",
+        "connectionId": 7,
+        "streamId": 1,
+        "headersEndStream": false,
+        "headersBeforeServerSettings": false,
+        "clientInitialSettings": [
+          [
+            1,
+            65536
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            6291456
+          ],
+          [
+            6,
+            262144
+          ]
+        ],
+        "clientInitialConnectionWindowDelta": 15663105,
+        "clientStartupOrder": [
+          "settings",
+          "connection-window-update",
+          "headers"
+        ],
+        "headersPriority": {
+          "parentStreamId": 0,
+          "weight": 110,
+          "exclusive": true
+        },
+        "headers": [
+          [
+            ":method",
+            "PUT"
+          ],
+          [
+            ":authority",
+            "127.0.0.1:58237"
+          ],
+          [
+            ":scheme",
+            "https"
+          ],
+          [
+            ":path",
+            "/capture/native-put"
+          ],
+          [
+            "content-length",
+            "8"
+          ],
+          [
+            "accept-language",
+            "en"
+          ],
+          [
+            "authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "content-type",
+            "application/octet-stream"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "origin",
+            "https://127.0.0.1:58237"
+          ],
+          [
+            "sec-fetch-site",
+            "same-origin"
+          ],
+          [
+            "sec-fetch-mode",
+            "no-cors"
+          ],
+          [
+            "sec-fetch-dest",
+            "empty"
+          ],
+          [
+            "accept-encoding",
+            "gzip, deflate, br, zstd"
+          ],
+          [
+            "priority",
+            "u=4, i"
+          ]
+        ],
+        "bodyBase64": "AID/DQoAAX8=",
+        "rawClientFramesBase64": "UFJJICogSFRUUC8yLjANCg0KU00NCg0KAAAYBAAAAAAAAAEAAQAAAAIAAAAAAAQAYAAAAAYABAAAAAAECAAAAAAAAO8AAQABSQEkAAAAAYAAAABtAgNQVVRBiwidXAuBcNxt4TLvhwSOYIOtNthWKhpN3KtXan9cAThRAmVuV5O6UdhbFJTeU22FWGQhUIWSfqWrX5AdddBiDSY9TByJKlZCbCjpeqXdWdJpfTAWQOAC+IKmrd+RQ7dDjTGrcp+KCcXaXAp/7HZSoL/5QIkdda1dA0ynsp+I1bvyKHboca9AiSUGLUlZJ+pav46U3lNthViUGLUlZJ+pakCORWdJpfSw661u5bEGPV+GCyBwAXxBQIdJqSrez1F/isFth6ysaDoIfx9AhT2GmNV/kZ0prRcYYCJ1cC4Fw3G3hMu/QIpBSLSlSSdZBkl/iEDpKsew0xqvQIpBSLSlSSdak8hfhajrEPYjQIpBSLSlSSdaQqE/hC01p9dQkpvZq/pSQstA0l+lI7PpT2hMn0CGrsMewyfXhbYGvpQ3AAAIAAEAAAABAID/DQoAAX8="
+      },
+      "arguments": [
+        "/Users/fixture/Developer/spotify/tools/oracles/.venv/bin/python",
+        "--headless",
+        "--single-process",
+        "--no-sandbox",
+        "--disable-gpu",
+        "--in-process-gpu",
+        "--disable-software-rasterizer",
+        "--enable-features=NetworkServiceInProcess",
+        "--disable-background-networking",
+        "--disable-component-update",
+        "--disable-domain-reliability",
+        "--disable-sync",
+        "--disable-extensions",
+        "--no-first-run",
+        "--no-default-browser-check",
+        "--password-store=basic",
+        "--use-mock-keychain",
+        "--metrics-recording-only",
+        "--safebrowsing-disable-auto-update",
+        "--proxy-server=direct://",
+        "--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1",
+        "--user-data-dir=/Users/fixture/Developer/spotify/.local/cef-native-app-context-1gyy9ibe/request-6/root",
+        "--ignore-certificate-errors"
+      ]
+    },
+    {
+      "name": "native GET all-lowercase",
+      "input": {
+        "name": "native GET all-lowercase",
+        "method": "GET",
+        "url": "https://127.0.0.1:58237/capture/native-get-all-lowercase",
+        "headers": [
+          [
+            "accept-language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ]
+        ],
+        "headerSpelling": "all-lowercase",
+        "bodyBase64": "",
+        "nativeDefaultUserAgent": "inert-native-default-UA",
+        "adapterOption80": 0,
+        "adapterUserAgent": "inert-adapter-UA"
+      },
+      "originalNativeDefaults": {
+        "headers": [
+          [
+            "accept-language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ]
+        ],
+        "userAgent": "inert-native-default-UA",
+        "result": [
+          [
+            "authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "accept-language",
+            "en"
+          ]
+        ]
+      },
+      "originalAdapter": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "GET",
+        "urlInput": "https://127.0.0.1:58237/capture/native-get-all-lowercase",
+        "headers": [
+          [
+            "User-Agent",
+            "inert-adapter-UA"
+          ],
+          [
+            "accept-language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ]
+        ]
+      },
+      "originalPublicRequestObject": {
+        "method": "GET",
+        "url": "https://127.0.0.1:58237/capture/native-get-all-lowercase",
+        "flags": 208,
+        "headers": [
+          [
+            "User-Agent",
+            "inert-adapter-UA"
+          ],
+          [
+            "accept-language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ]
+        ],
+        "bodyElementsBase64": []
+      },
+      "result": {
+        "alpn": "h2",
+        "connectionId": 8,
+        "streamId": 1,
+        "headersEndStream": true,
+        "headersBeforeServerSettings": false,
+        "clientInitialSettings": [
+          [
+            1,
+            65536
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            6291456
+          ],
+          [
+            6,
+            262144
+          ]
+        ],
+        "clientInitialConnectionWindowDelta": 15663105,
+        "clientStartupOrder": [
+          "settings",
+          "connection-window-update",
+          "headers"
+        ],
+        "headersPriority": {
+          "parentStreamId": 0,
+          "weight": 110,
+          "exclusive": true
+        },
+        "headers": [
+          [
+            ":method",
+            "GET"
+          ],
+          [
+            ":authority",
+            "127.0.0.1:58237"
+          ],
+          [
+            ":scheme",
+            "https"
+          ],
+          [
+            ":path",
+            "/capture/native-get-all-lowercase"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "accept-language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "sec-fetch-site",
+            "same-origin"
+          ],
+          [
+            "sec-fetch-mode",
+            "no-cors"
+          ],
+          [
+            "sec-fetch-dest",
+            "empty"
+          ],
+          [
+            "accept-encoding",
+            "gzip, deflate, br, zstd"
+          ],
+          [
+            "priority",
+            "u=4, i"
+          ]
+        ],
+        "bodyBase64": "",
+        "rawClientFramesBase64": "UFJJICogSFRUUC8yLjANCg0KU00NCg0KAAAYBAAAAAAAAAEAAQAAAAIAAAAAAAQAYAAAAAYABAAAAAAECAAAAAAAAO8AAQABIAElAAAAAYAAAABtgkGLCJ1cC4Fw3G3hMu+HBJdgg6022FYqGk3cq0xUrDooWoP4LYQaC3ql3VnSaX0wFkDgAviCpq3fkUO3Q40xq3KfignF2lwKf+x2UqC/+VECZW5AiR11rV0DTKeyn4jVu/Ioduhxr1eTulHYWxSU3lNthVhkIVCFkn6lq0CJJQYtSVkn6lq/jpTeU22FWJQYtSVkn6lqQI5FZ0ml9LDrrW7lsQY9X4YLIHABfEFAh0mpKt7PUX+KwW2HrKxoOgh/H0CKQUi0pUknWQZJf4hA6SrHsNMar0CKQUi0pUknWpPIX4Wo6xD2I0CKQUi0pUknWkKhP4QtNafXUJKb2av6UkLLQNJfpSOz6U9oTJ9Ahq7DHsMn14W2Br6UNw=="
+      },
+      "arguments": [
+        "/Users/fixture/Developer/spotify/tools/oracles/.venv/bin/python",
+        "--headless",
+        "--single-process",
+        "--no-sandbox",
+        "--disable-gpu",
+        "--in-process-gpu",
+        "--disable-software-rasterizer",
+        "--enable-features=NetworkServiceInProcess",
+        "--disable-background-networking",
+        "--disable-component-update",
+        "--disable-domain-reliability",
+        "--disable-sync",
+        "--disable-extensions",
+        "--no-first-run",
+        "--no-default-browser-check",
+        "--password-store=basic",
+        "--use-mock-keychain",
+        "--metrics-recording-only",
+        "--safebrowsing-disable-auto-update",
+        "--proxy-server=direct://",
+        "--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1",
+        "--user-data-dir=/Users/fixture/Developer/spotify/.local/cef-native-app-context-1gyy9ibe/request-7/root",
+        "--ignore-certificate-errors"
+      ]
+    },
+    {
+      "name": "native POST all-lowercase",
+      "input": {
+        "name": "native POST all-lowercase",
+        "method": "POST",
+        "url": "https://127.0.0.1:58237/capture/native-post-all-lowercase",
+        "headers": [
+          [
+            "accept-language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "accept",
+            "application/protobuf"
+          ],
+          [
+            "content-type",
+            "application/protobuf"
+          ]
+        ],
+        "headerSpelling": "all-lowercase",
+        "bodyBase64": "AID/DQoAAX8=",
+        "nativeDefaultUserAgent": "inert-native-default-UA",
+        "adapterOption80": 0,
+        "adapterUserAgent": "inert-adapter-UA"
+      },
+      "originalNativeDefaults": {
+        "headers": [
+          [
+            "accept-language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "accept",
+            "application/protobuf"
+          ],
+          [
+            "content-type",
+            "application/protobuf"
+          ]
+        ],
+        "userAgent": "inert-native-default-UA",
+        "result": [
+          [
+            "content-type",
+            "application/protobuf"
+          ],
+          [
+            "authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "accept",
+            "application/protobuf"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "accept-language",
+            "en"
+          ]
+        ]
+      },
+      "originalAdapter": {
+        "bodyElementsBase64": [
+          "AID/DQoAAX8="
+        ],
+        "flags": 208,
+        "method": "POST",
+        "urlInput": "https://127.0.0.1:58237/capture/native-post-all-lowercase",
+        "headers": [
+          [
+            "User-Agent",
+            "inert-adapter-UA"
+          ],
+          [
+            "accept",
+            "application/protobuf"
+          ],
+          [
+            "accept-language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "content-type",
+            "application/protobuf"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ]
+        ]
+      },
+      "originalPublicRequestObject": {
+        "method": "POST",
+        "url": "https://127.0.0.1:58237/capture/native-post-all-lowercase",
+        "flags": 208,
+        "headers": [
+          [
+            "User-Agent",
+            "inert-adapter-UA"
+          ],
+          [
+            "accept",
+            "application/protobuf"
+          ],
+          [
+            "accept-language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "content-type",
+            "application/protobuf"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ]
+        ],
+        "bodyElementsBase64": [
+          "AID/DQoAAX8="
+        ]
+      },
+      "result": {
+        "alpn": "h2",
+        "connectionId": 9,
+        "streamId": 1,
+        "headersEndStream": false,
+        "headersBeforeServerSettings": false,
+        "clientInitialSettings": [
+          [
+            1,
+            65536
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            6291456
+          ],
+          [
+            6,
+            262144
+          ]
+        ],
+        "clientInitialConnectionWindowDelta": 15663105,
+        "clientStartupOrder": [
+          "settings",
+          "connection-window-update",
+          "headers"
+        ],
+        "headersPriority": {
+          "parentStreamId": 0,
+          "weight": 110,
+          "exclusive": true
+        },
+        "headers": [
+          [
+            ":method",
+            "POST"
+          ],
+          [
+            ":authority",
+            "127.0.0.1:58237"
+          ],
+          [
+            ":scheme",
+            "https"
+          ],
+          [
+            ":path",
+            "/capture/native-post-all-lowercase"
+          ],
+          [
+            "content-length",
+            "8"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "accept",
+            "application/protobuf"
+          ],
+          [
+            "accept-language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "content-type",
+            "application/protobuf"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "origin",
+            "https://127.0.0.1:58237"
+          ],
+          [
+            "sec-fetch-site",
+            "same-origin"
+          ],
+          [
+            "sec-fetch-mode",
+            "no-cors"
+          ],
+          [
+            "sec-fetch-dest",
+            "empty"
+          ],
+          [
+            "accept-encoding",
+            "gzip, deflate, br, zstd"
+          ],
+          [
+            "priority",
+            "u=4, i"
+          ]
+        ],
+        "bodyBase64": "AID/DQoAAX8=",
+        "rawClientFramesBase64": "UFJJICogSFRUUC8yLjANCg0KU00NCg0KAAAYBAAAAAAAAAEAAQAAAAIAAAAAAAQAYAAAAAYABAAAAAAECAAAAAAAAO8AAQABXQEkAAAAAYAAAABtg0GLCJ1cC4Fw3G3hMu+HBJhgg6022FYqGk3cq1Z0JWHRQtQfwWwg0F9cATh6pd1Z0ml9MBZA4AL4gqat35FDt0ONMatyn4oJxdpcCn/sdlKgv/lTjh110GINJj1MV2HSeO2XUQJlbkCJHXWtXQNMp7KfiNW78ih26HGvV5O6UdhbFJTeU22FWGQhUIWSfqWrQIklBi1JWSfqWr+OlN5TbYVYlBi1JWSfqWpfjh110GINJj1MV2HSeO2XQI5FZ0ml9LDrrW7lsQY9X4YLIHABfEFAh0mpKt7PUX+KwW2HrKxoOgh/H0CFPYaY1X+RnSmtFxhgInVwLgXDcbeEy79AikFItKVJJ1kGSX+IQOkqx7DTGq9AikFItKVJJ1qTyF+FqOsQ9iNAikFItKVJJ1pCoT+ELTWn11CSm9mr+lJCy0DSX6Ujs+lPaEyfQIauwx7DJ9eFtga+lDcAAAgAAQAAAAEAgP8NCgABfw=="
+      },
+      "arguments": [
+        "/Users/fixture/Developer/spotify/tools/oracles/.venv/bin/python",
+        "--headless",
+        "--single-process",
+        "--no-sandbox",
+        "--disable-gpu",
+        "--in-process-gpu",
+        "--disable-software-rasterizer",
+        "--enable-features=NetworkServiceInProcess",
+        "--disable-background-networking",
+        "--disable-component-update",
+        "--disable-domain-reliability",
+        "--disable-sync",
+        "--disable-extensions",
+        "--no-first-run",
+        "--no-default-browser-check",
+        "--password-store=basic",
+        "--use-mock-keychain",
+        "--metrics-recording-only",
+        "--safebrowsing-disable-auto-update",
+        "--proxy-server=direct://",
+        "--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1",
+        "--user-data-dir=/Users/fixture/Developer/spotify/.local/cef-native-app-context-1gyy9ibe/request-8/root",
+        "--ignore-certificate-errors"
+      ]
+    },
+    {
+      "name": "native GET lowercase-user-agent",
+      "input": {
+        "name": "native GET lowercase-user-agent",
+        "method": "GET",
+        "url": "https://127.0.0.1:58237/capture/native-get-lowercase-user-agent",
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ]
+        ],
+        "headerSpelling": "lowercase-user-agent",
+        "bodyBase64": "",
+        "nativeDefaultUserAgent": "inert-native-default-UA",
+        "adapterOption80": 0,
+        "adapterUserAgent": "inert-adapter-UA"
+      },
+      "originalNativeDefaults": {
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ]
+        ],
+        "userAgent": "inert-native-default-UA",
+        "result": [
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "Accept-Language",
+            "en"
+          ]
+        ]
+      },
+      "originalAdapter": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "GET",
+        "urlInput": "https://127.0.0.1:58237/capture/native-get-lowercase-user-agent",
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "User-Agent",
+            "inert-adapter-UA"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ]
+        ]
+      },
+      "originalPublicRequestObject": {
+        "method": "GET",
+        "url": "https://127.0.0.1:58237/capture/native-get-lowercase-user-agent",
+        "flags": 208,
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "User-Agent",
+            "inert-adapter-UA"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ]
+        ],
+        "bodyElementsBase64": []
+      },
+      "result": {
+        "alpn": "h2",
+        "connectionId": 10,
+        "streamId": 1,
+        "headersEndStream": true,
+        "headersBeforeServerSettings": false,
+        "clientInitialSettings": [
+          [
+            1,
+            65536
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            6291456
+          ],
+          [
+            6,
+            262144
+          ]
+        ],
+        "clientInitialConnectionWindowDelta": 15663105,
+        "clientStartupOrder": [
+          "settings",
+          "connection-window-update",
+          "headers"
+        ],
+        "headersPriority": {
+          "parentStreamId": 0,
+          "weight": 110,
+          "exclusive": true
+        },
+        "headers": [
+          [
+            ":method",
+            "GET"
+          ],
+          [
+            ":authority",
+            "127.0.0.1:58237"
+          ],
+          [
+            ":scheme",
+            "https"
+          ],
+          [
+            ":path",
+            "/capture/native-get-lowercase-user-agent"
+          ],
+          [
+            "accept-language",
+            "en"
+          ],
+          [
+            "authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "sec-fetch-site",
+            "same-origin"
+          ],
+          [
+            "sec-fetch-mode",
+            "no-cors"
+          ],
+          [
+            "sec-fetch-dest",
+            "empty"
+          ],
+          [
+            "accept-encoding",
+            "gzip, deflate, br, zstd"
+          ],
+          [
+            "priority",
+            "u=4, i"
+          ]
+        ],
+        "bodyBase64": "",
+        "rawClientFramesBase64": "UFJJICogSFRUUC8yLjANCg0KU00NCg0KAAAYBAAAAAAAAAEAAQAAAAIAAAAAAAQAYAAAAAYABAAAAAAECAAAAAAAAO8AAQABJQElAAAAAYAAAABtgkGLCJ1cC4Fw3G3hMu+HBJxgg6022FYqGk3cq0xUrUH8FsINBVrUFsWHMWpPUQJlbleTulHYWxSU3lNthVhkIVCFkn6lq3ql3VnSaX0wFkDgAviCpq3fkUO3Q40xq3KfignF2lwKf+x2UqC/+UCJHXWtXQNMp7KfiNW78ih26HGvQIklBi1JWSfqWr+OlN5TbYVYlBi1JWSfqWpAjkVnSaX0sOutbuWxBj1fhgsgcAF8QUCHSakq3s9Rf4rBbYesrGg6CH8fQIpBSLSlSSdZBkl/iEDpKsew0xqvQIpBSLSlSSdak8hfhajrEPYjQIpBSLSlSSdaQqE/hC01p9dQkpvZq/pSQstA0l+lI7PpT2hMn0CGrsMewyfXhbYGvpQ3"
+      },
+      "arguments": [
+        "/Users/fixture/Developer/spotify/tools/oracles/.venv/bin/python",
+        "--headless",
+        "--single-process",
+        "--no-sandbox",
+        "--disable-gpu",
+        "--in-process-gpu",
+        "--disable-software-rasterizer",
+        "--enable-features=NetworkServiceInProcess",
+        "--disable-background-networking",
+        "--disable-component-update",
+        "--disable-domain-reliability",
+        "--disable-sync",
+        "--disable-extensions",
+        "--no-first-run",
+        "--no-default-browser-check",
+        "--password-store=basic",
+        "--use-mock-keychain",
+        "--metrics-recording-only",
+        "--safebrowsing-disable-auto-update",
+        "--proxy-server=direct://",
+        "--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1",
+        "--user-data-dir=/Users/fixture/Developer/spotify/.local/cef-native-app-context-1gyy9ibe/request-9/root",
+        "--ignore-certificate-errors"
+      ]
+    },
+    {
+      "name": "native POST lowercase-user-agent",
+      "input": {
+        "name": "native POST lowercase-user-agent",
+        "method": "POST",
+        "url": "https://127.0.0.1:58237/capture/native-post-lowercase-user-agent",
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "Accept",
+            "application/protobuf"
+          ],
+          [
+            "Content-Type",
+            "application/protobuf"
+          ]
+        ],
+        "headerSpelling": "lowercase-user-agent",
+        "bodyBase64": "AID/DQoAAX8=",
+        "nativeDefaultUserAgent": "inert-native-default-UA",
+        "adapterOption80": 0,
+        "adapterUserAgent": "inert-adapter-UA"
+      },
+      "originalNativeDefaults": {
+        "headers": [
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "Accept",
+            "application/protobuf"
+          ],
+          [
+            "Content-Type",
+            "application/protobuf"
+          ]
+        ],
+        "userAgent": "inert-native-default-UA",
+        "result": [
+          [
+            "Content-Type",
+            "application/protobuf"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "Accept",
+            "application/protobuf"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "Accept-Language",
+            "en"
+          ]
+        ]
+      },
+      "originalAdapter": {
+        "bodyElementsBase64": [
+          "AID/DQoAAX8="
+        ],
+        "flags": 208,
+        "method": "POST",
+        "urlInput": "https://127.0.0.1:58237/capture/native-post-lowercase-user-agent",
+        "headers": [
+          [
+            "Accept",
+            "application/protobuf"
+          ],
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "Content-Type",
+            "application/protobuf"
+          ],
+          [
+            "User-Agent",
+            "inert-adapter-UA"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ]
+        ]
+      },
+      "originalPublicRequestObject": {
+        "method": "POST",
+        "url": "https://127.0.0.1:58237/capture/native-post-lowercase-user-agent",
+        "flags": 208,
+        "headers": [
+          [
+            "Accept",
+            "application/protobuf"
+          ],
+          [
+            "Accept-Language",
+            "en"
+          ],
+          [
+            "Authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "Content-Type",
+            "application/protobuf"
+          ],
+          [
+            "User-Agent",
+            "inert-adapter-UA"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ]
+        ],
+        "bodyElementsBase64": [
+          "AID/DQoAAX8="
+        ]
+      },
+      "result": {
+        "alpn": "h2",
+        "connectionId": 11,
+        "streamId": 1,
+        "headersEndStream": false,
+        "headersBeforeServerSettings": false,
+        "clientInitialSettings": [
+          [
+            1,
+            65536
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            6291456
+          ],
+          [
+            6,
+            262144
+          ]
+        ],
+        "clientInitialConnectionWindowDelta": 15663105,
+        "clientStartupOrder": [
+          "settings",
+          "connection-window-update",
+          "headers"
+        ],
+        "headersPriority": {
+          "parentStreamId": 0,
+          "weight": 110,
+          "exclusive": true
+        },
+        "headers": [
+          [
+            ":method",
+            "POST"
+          ],
+          [
+            ":authority",
+            "127.0.0.1:58237"
+          ],
+          [
+            ":scheme",
+            "https"
+          ],
+          [
+            ":path",
+            "/capture/native-post-lowercase-user-agent"
+          ],
+          [
+            "content-length",
+            "8"
+          ],
+          [
+            "accept",
+            "application/protobuf"
+          ],
+          [
+            "accept-language",
+            "en"
+          ],
+          [
+            "authorization",
+            "Bearer fixture-access-token"
+          ],
+          [
+            "content-type",
+            "application/protobuf"
+          ],
+          [
+            "user-agent",
+            "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+          ],
+          [
+            "app-platform",
+            "OSX_ARM64"
+          ],
+          [
+            "client-token",
+            "fixture-client-token"
+          ],
+          [
+            "spotify-app-version",
+            "130601921"
+          ],
+          [
+            "time-zone",
+            "Europe/Moscow"
+          ],
+          [
+            "origin",
+            "https://127.0.0.1:58237"
+          ],
+          [
+            "sec-fetch-site",
+            "same-origin"
+          ],
+          [
+            "sec-fetch-mode",
+            "no-cors"
+          ],
+          [
+            "sec-fetch-dest",
+            "empty"
+          ],
+          [
+            "accept-encoding",
+            "gzip, deflate, br, zstd"
+          ],
+          [
+            "priority",
+            "u=4, i"
+          ]
+        ],
+        "bodyBase64": "AID/DQoAAX8=",
+        "rawClientFramesBase64": "UFJJICogSFRUUC8yLjANCg0KU00NCg0KAAAYBAAAAAAAAAEAAQAAAAIAAAAAAAQAYAAAAAYABAAAAAAECAAAAAAAAO8AAQABYgEkAAAAAYAAAABtg0GLCJ1cC4Fw3G3hMu+HBJ1gg6022FYqGk3cq1Z0JWoP4LYQaCrWoLYsOYtSf1wBOFOOHXXQYg0mPUxXYdJ47ZdRAmVuV5O6UdhbFJTeU22FWGQhUIWSfqWrX44dddBiDSY9TFdh0njtl3ql3VnSaX0wFkDgAviCpq3fkUO3Q40xq3KfignF2lwKf+x2UqC/+UCJHXWtXQNMp7KfiNW78ih26HGvQIklBi1JWSfqWr+OlN5TbYVYlBi1JWSfqWpAjkVnSaX0sOutbuWxBj1fhgsgcAF8QUCHSakq3s9Rf4rBbYesrGg6CH8fQIU9hpjVf5GdKa0XGGAidXAuBcNxt4TLv0CKQUi0pUknWQZJf4hA6SrHsNMar0CKQUi0pUknWpPIX4Wo6xD2I0CKQUi0pUknWkKhP4QtNafXUJKb2av6UkLLQNJfpSOz6U9oTJ9Ahq7DHsMn14W2Br6UNwAACAABAAAAAQCA/w0KAAF/"
+      },
+      "arguments": [
+        "/Users/fixture/Developer/spotify/tools/oracles/.venv/bin/python",
+        "--headless",
+        "--single-process",
+        "--no-sandbox",
+        "--disable-gpu",
+        "--in-process-gpu",
+        "--disable-software-rasterizer",
+        "--enable-features=NetworkServiceInProcess",
+        "--disable-background-networking",
+        "--disable-component-update",
+        "--disable-domain-reliability",
+        "--disable-sync",
+        "--disable-extensions",
+        "--no-first-run",
+        "--no-default-browser-check",
+        "--password-store=basic",
+        "--use-mock-keychain",
+        "--metrics-recording-only",
+        "--safebrowsing-disable-auto-update",
+        "--proxy-server=direct://",
+        "--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1",
+        "--user-data-dir=/Users/fixture/Developer/spotify/.local/cef-native-app-context-1gyy9ibe/request-10/root",
+        "--ignore-certificate-errors"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: 59ff63e49a7fa489d19b40a6d54c55682861d358989ed3dee152211914482751
+
+syntax = "proto3";
+
+package spotify.common.media;
+
+option java_package = "com.spotify.common.proto";
+
+option optimize_for = CODE_SIZE;
+
+enum AudioQuality {
+  DEFAULT = 0;
+
+  LOW = 1;
+
+  NORMAL = 2;
+
+  HIGH = 3;
+
+  VERY_HIGH = 4;
+
+  HIFI = 5;
+
+  HIFI_24 = 6;
+}

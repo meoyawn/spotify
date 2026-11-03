@@ -1,0 +1,388 @@
+{
+  "bundles": [
+    {
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f"
+    },
+    {
+      "path": ".local/native-scripts/af07f2b9e6a8363b783da7171f3948effb9b9234f701fb3b1bc2099212106896.js",
+      "sha256": "af07f2b9e6a8363b783da7171f3948effb9b9234f701fb3b1bc2099212106896"
+    },
+    {
+      "path": ".local/native-scripts/ea21005b1a530318af6d9961c1c0737a1c0eda8362f6e0d55463826fc615b04b.js",
+      "sha256": "ea21005b1a530318af6d9961c1c0737a1c0eda8362f6e0d55463826fc615b04b"
+    },
+    {
+      "path": ".local/native-scripts/948f1e17d2ca69183cb919589f374f5358b1bcc69e213e20b9b438043d7947dc.js",
+      "sha256": "948f1e17d2ca69183cb919589f374f5358b1bcc69e213e20b9b438043d7947dc"
+    },
+    {
+      "path": ".local/native-scripts/bd7a92bd0311777aba01e60540108ecae47261be4063df176e10210f68d5c0d5.js",
+      "sha256": "bd7a92bd0311777aba01e60540108ecae47261be4063df176e10210f68d5c0d5"
+    }
+  ],
+  "modules": [
+    {
+      "module": 36922,
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 2000822,
+      "lengthBytes": 905,
+      "sha256": "faba24db1fb6748407c51d97dd1558d59fbc58795f3fc38e90756783d8457bc4"
+    },
+    {
+      "module": 93887,
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 1846298,
+      "lengthBytes": 60,
+      "sha256": "ea6dc4e89d5e55d8f11f5a367e7e3601ed6d08b0c5dc7c8ac5c09d18d3d397d0"
+    },
+    {
+      "module": 45800,
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 1842823,
+      "lengthBytes": 122,
+      "sha256": "0d38b00dd552091590ca45f4b82673caff0f3458e7a2d43f6a414a5c287a1980"
+    },
+    {
+      "module": 65250,
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 2000078,
+      "lengthBytes": 438,
+      "sha256": "3955033120381e05127accae9cc7a9990a74292b7e263d15f139fcdc779524f8"
+    },
+    {
+      "module": 85418,
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 4160880,
+      "lengthBytes": 175,
+      "sha256": "6c0bd05958a0723942a6e91b1cb681c9f40e719af9cbc023e30c08b5889f4165"
+    },
+    {
+      "module": 11906,
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 2000517,
+      "lengthBytes": 129,
+      "sha256": "8203b5cc5d2384fe1b9ead73785217693b61621fa957d790e982662dadedc81c"
+    },
+    {
+      "module": 83487,
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 2000706,
+      "lengthBytes": 115,
+      "sha256": "ca7a67cc30471db3119820b4b7883f40cd4b23fd4746c45196beed0fa54c57ce"
+    },
+    {
+      "module": 14385,
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 2989945,
+      "lengthBytes": 146,
+      "sha256": "4ef7c69592c2e9584d6a3622c341f2d6ee89dd2c1c4d8f82710a587ac22403ed"
+    },
+    {
+      "module": 28451,
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 4759953,
+      "lengthBytes": 18056,
+      "sha256": "56feedb773a36b2d4260c8498c6fd33b5bd6eb5af8682e11ac98d084d2160f7e"
+    },
+    {
+      "module": 87166,
+      "source": ".local/native-scripts/ea21005b1a530318af6d9961c1c0737a1c0eda8362f6e0d55463826fc615b04b.js",
+      "sourceOffsetBytes": 1590,
+      "lengthBytes": 2047,
+      "sha256": "f18039e6e722512734c4d011048942a5cea689b700675da5f0a01461358eaf95"
+    },
+    {
+      "module": 64847,
+      "source": ".local/native-scripts/af07f2b9e6a8363b783da7171f3948effb9b9234f701fb3b1bc2099212106896.js",
+      "sourceOffsetBytes": 8442,
+      "lengthBytes": 1082,
+      "sha256": "39f24e6baee2388663b4c5ca47f71e985d127a7508e97afc8850473c7e716691"
+    },
+    {
+      "module": 41332,
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 4115028,
+      "lengthBytes": 4953,
+      "sha256": "9daaca5dd00fa6605ddd0eeb379cb5fc5c08e51a161d22a94315c4aa40e4b005"
+    },
+    {
+      "module": 87337,
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 4119982,
+      "lengthBytes": 1395,
+      "sha256": "e90ffc2f49b22726bf37dfc1560fc8fcc35315291a30dd20628a151b2bb198b5"
+    },
+    {
+      "module": 92693,
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 4162712,
+      "lengthBytes": 511,
+      "sha256": "d48b0dd13a19421b6cbfec2f3600ab80bfc8280389119dc6364156dfdeec67d1"
+    },
+    {
+      "module": 92464,
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 4161056,
+      "lengthBytes": 1531,
+      "sha256": "ea26df91582f9fa4917addc583b3587174795a9214c591d368f6962222610292"
+    },
+    {
+      "module": 83873,
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 4084122,
+      "lengthBytes": 1671,
+      "sha256": "1aeaa740a4a3f533e78b5c4268c6aa3203950362f5c7066bf0275640e82bee8d"
+    },
+    {
+      "module": 1940,
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 4113494,
+      "lengthBytes": 624,
+      "sha256": "528ddb8b6adce775f64c3ee0371d007d51e65e564bf9b804229d9857a9985923"
+    },
+    {
+      "module": 97118,
+      "source": ".local/native-scripts/af07f2b9e6a8363b783da7171f3948effb9b9234f701fb3b1bc2099212106896.js",
+      "sourceOffsetBytes": 15729,
+      "lengthBytes": 66,
+      "sha256": "1b11c822c26090ed374ce269445361d307cdeea39175b8fd5b13b143acd47db1"
+    },
+    {
+      "module": 19901,
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 4790545,
+      "lengthBytes": 233,
+      "sha256": "e3589bace8fa1ff9b5801d4047c785b6454fc616e3066b4be1b0a9db17ed5396"
+    },
+    {
+      "module": 34976,
+      "source": ".local/native-scripts/af07f2b9e6a8363b783da7171f3948effb9b9234f701fb3b1bc2099212106896.js",
+      "sourceOffsetBytes": 9525,
+      "lengthBytes": 6203,
+      "sha256": "f3bb5ab43c9432f93c2d259dae23eb63da5b099ca1372e8385bb9a3bde184163"
+    },
+    {
+      "module": 47136,
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 724697,
+      "lengthBytes": 30601,
+      "sha256": "69d9c484a0f66974f784f9b31a70e1260d8cc3cdb1aa0299e5f8aabae1470266"
+    },
+    {
+      "module": 69449,
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 7889734,
+      "lengthBytes": 11029,
+      "sha256": "512123b971df696e5269b0cebcaf671482bd607acd58f800425c57c484e2d333"
+    },
+    {
+      "module": 56209,
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 3901950,
+      "lengthBytes": 566,
+      "sha256": "e046995b12971098d5364934b4726b5d1365ed4c47553bb7e6bfb1317219ee0a"
+    },
+    {
+      "module": 68846,
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 4197674,
+      "lengthBytes": 733,
+      "sha256": "1385764af983a1b3755c77285792c586395def2f79ab53b2d4f30f9027e0c676"
+    },
+    {
+      "module": 78277,
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 4788431,
+      "lengthBytes": 929,
+      "sha256": "70681093cdf3c2000ff22bda711517dee801347742a128ba4f8a4bbcd6e72fd3"
+    },
+    {
+      "module": 98235,
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 4132986,
+      "lengthBytes": 109,
+      "sha256": "a0ca7a97587f2eb30ff20fd844e2e867b8b112e6d18a720aa82e38b82f2c2810"
+    },
+    {
+      "module": 48153,
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 4778129,
+      "lengthBytes": 330,
+      "sha256": "338e3923ba008d63d69c87937ea181c1711c3c5d75ba1e2d8352e4a6b8fec334"
+    },
+    {
+      "module": 50242,
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 4799535,
+      "lengthBytes": 478,
+      "sha256": "3fef46ea782aa7ee342fdb622f19be7407ee297b9d272cc830ac60b830a551e3"
+    },
+    {
+      "module": 47355,
+      "source": ".local/native-scripts/af07f2b9e6a8363b783da7171f3948effb9b9234f701fb3b1bc2099212106896.js",
+      "sourceOffsetBytes": 15796,
+      "lengthBytes": 3479,
+      "sha256": "e4ba706d84f1e7ecda67f4b1cda1901af028895ee301c1ba391e44d2dc73926b"
+    },
+    {
+      "module": 60672,
+      "source": ".local/native-scripts/bd7a92bd0311777aba01e60540108ecae47261be4063df176e10210f68d5c0d5.js",
+      "sourceOffsetBytes": 5980,
+      "lengthBytes": 171,
+      "sha256": "11bd8422aa4f4b7a8e317b8eeb998fa9aa0963b988a9944f253eb0f3b8850861"
+    },
+    {
+      "module": 25977,
+      "source": ".local/native-scripts/af07f2b9e6a8363b783da7171f3948effb9b9234f701fb3b1bc2099212106896.js",
+      "sourceOffsetBytes": 30453,
+      "lengthBytes": 140,
+      "sha256": "2eae016e609d0111393d52cbfdd9719aae6cee7f918deeae070bd90adafeba31"
+    },
+    {
+      "module": 28651,
+      "source": ".local/native-scripts/af07f2b9e6a8363b783da7171f3948effb9b9234f701fb3b1bc2099212106896.js",
+      "sourceOffsetBytes": 30594,
+      "lengthBytes": 681,
+      "sha256": "829e6b4836c4e312c8f143891cc795f858d4450cf1f72a9897baf8e41379746f"
+    },
+    {
+      "module": 64767,
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 4778460,
+      "lengthBytes": 426,
+      "sha256": "c6db1419e30f80c15ebffbd3a9fe628427ad62e22f9ac9dee885d817686ff75a"
+    },
+    {
+      "module": 88795,
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 4779905,
+      "lengthBytes": 266,
+      "sha256": "a8c8f7247fbb35ec368dfc36cec17ccdcaaf3cb9aea9134419a338000600a9f7"
+    },
+    {
+      "module": 53211,
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 4789675,
+      "lengthBytes": 149,
+      "sha256": "84275e24a61dff086b273924d72988a74bd12f526ff85542695c83a29f18a2dc"
+    },
+    {
+      "module": 28041,
+      "source": ".local/native-scripts/af07f2b9e6a8363b783da7171f3948effb9b9234f701fb3b1bc2099212106896.js",
+      "sourceOffsetBytes": 31276,
+      "lengthBytes": 140,
+      "sha256": "e3a6f2a33b03c74ba95388527fddd20ded7e49c0e600a6ec937fb3a83b7d157e"
+    }
+  ],
+  "snippets": [
+    {
+      "name": "section grouping",
+      "source": ".local/native-scripts/ea21005b1a530318af6d9961c1c0737a1c0eda8362f6e0d55463826fc615b04b.js",
+      "sourceOffsetBytes": 106003,
+      "lengthBytes": 698,
+      "sha256": "5e3c26d076540f7b01ede2ff782b5efb79af30bc2d806e9907a82a00e885c026"
+    },
+    {
+      "name": "section dispatch",
+      "source": ".local/native-scripts/ea21005b1a530318af6d9961c1c0737a1c0eda8362f6e0d55463826fc615b04b.js",
+      "sourceOffsetBytes": 49214,
+      "lengthBytes": 2056,
+      "sha256": "5d40669158a5eacb05e56c81d8c4818af31617065666090a6dbc32c0b9e8329e"
+    },
+    {
+      "name": "shortcut preparation",
+      "source": ".local/native-scripts/948f1e17d2ca69183cb919589f374f5358b1bcc69e213e20b9b438043d7947dc.js",
+      "sourceOffsetBytes": 13904,
+      "lengthBytes": 623,
+      "sha256": "f23963b73ac83a5e2303bd3fb20eb9f04c31cbbf7d7f2e00d2fa8c62fd9718ba"
+    },
+    {
+      "name": "shortcut filtering",
+      "source": ".local/native-scripts/948f1e17d2ca69183cb919589f374f5358b1bcc69e213e20b9b438043d7947dc.js",
+      "sourceOffsetBytes": 12420,
+      "lengthBytes": 76,
+      "sha256": "3b93201e684c02ceee663e2251740fac47bdde1b5abfd0211bf9a284dfee2981"
+    },
+    {
+      "name": "shortcut greeting fallback",
+      "source": ".local/native-scripts/948f1e17d2ca69183cb919589f374f5358b1bcc69e213e20b9b438043d7947dc.js",
+      "sourceOffsetBytes": 11959,
+      "lengthBytes": 135,
+      "sha256": "e5e3f917e424a9b5492554720338adc5161c9da5a7d793cd413054b909b47bb5"
+    },
+    {
+      "name": "baseline card projection",
+      "source": ".local/native-scripts/ea21005b1a530318af6d9961c1c0737a1c0eda8362f6e0d55463826fc615b04b.js",
+      "sourceOffsetBytes": 92036,
+      "lengthBytes": 5428,
+      "sha256": "20c0c3dc51566db20107e921ac8519017eb9ac1f6621228b4346eb8b31401732"
+    },
+    {
+      "name": "baseline eligibility",
+      "source": ".local/native-scripts/ea21005b1a530318af6d9961c1c0737a1c0eda8362f6e0d55463826fc615b04b.js",
+      "sourceOffsetBytes": 98471,
+      "lengthBytes": 117,
+      "sha256": "f087aa1fe4b36c2fe5170d65968b93e117e9bd0531c566c9a8436e4f7d2430e7"
+    },
+    {
+      "name": "feature default enableHomeChapterVideoCards",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 3955832,
+      "lengthBytes": 113,
+      "sha256": "18b3f558e6691dfc496c7a663a621c98cf8e674c7588f2ced2f13c7bc5e7ba79"
+    },
+    {
+      "name": "feature default enableAgeAssurance18PlusPodcastEpisodeVideos",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 3967281,
+      "lengthBytes": 179,
+      "sha256": "4dd5850987d45503daf80c7dbf101d4fa6d541654e74f46be429aa337451fce1"
+    },
+    {
+      "name": "feature default homeSectionsLimits",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 3958483,
+      "lengthBytes": 124,
+      "sha256": "55d9753edee02d13e68570029c4fb0be62d97f95ae02568e655ebe9885e16460"
+    },
+    {
+      "name": "feature default enableHybridHomeLowDensity",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 3951510,
+      "lengthBytes": 110,
+      "sha256": "ea5f3b79398a873cc695487f15ffc151f2fef2ff469620049c04dbf6f752dc3e"
+    },
+    {
+      "name": "feature default enableWatchFeed",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 3951089,
+      "lengthBytes": 74,
+      "sha256": "fba1e386ae9db62290ba1b8cb79dc2880cd32ad5be7e2281357a341fc0b95488"
+    },
+    {
+      "name": "feature default enableHomePodcastVideosCarousel",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 3970316,
+      "lengthBytes": 107,
+      "sha256": "88f4485198a45b09b4c447dfa6843e0d2b814a05b3cfb38ae52f49f1b50841b7"
+    },
+    {
+      "name": "feature default enableYourDJ",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 3945633,
+      "lengthBytes": 75,
+      "sha256": "502ee77f4725012b54a93ba68af563fca0fd46f27c96939fc95524c459e1a600"
+    }
+  ],
+  "inertDependencies": [
+    "React hooks/element creation",
+    "query hook records inputs and returns synthetic state",
+    "injected feature flags, IANA time zone and sp_t value",
+    "navigation/provider/menu/card component identities",
+    "native sponsored/layout providers return inactive state",
+    "English liked-songs label and structured localization receipts",
+    "logging, metadata and placeholder adapters"
+  ],
+  "scope": "Chunk/module registration is inert; only recorded modules and snippets are invoked. No bootstrap, original UI, cookie access or HTTP capability is supplied."
+}

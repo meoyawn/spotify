@@ -1,0 +1,33 @@
+// Partial wire schema reconstructed from Spotify1.3.6.1921 arm64 producer
+// 0x10048c604, constructor1004d69fc and serializer1004d6d40.
+// These message/field names are descriptive, not extracted reflection names.
+// tools/native_playplay_body_oracle.py executes the original producer/writer.
+// Hand-written NativePlayPlayLicenseBody uses the public protobuf writer.
+syntax = "proto3";
+package spotify.reconstructed.playplay;
+
+message NativePlayPlayLicenseBody {
+  int32 version = 1;
+  bytes token = 2;
+  bytes cache_id = 3;
+  int32 native_interactivity = 4;
+  int32 content_type = 5;
+  int64 timestamp_seconds = 6;
+  // The ordinary original producer never sets field7. Its semantics remain
+  // unrecovered and it is outside this bounded request-body projection.
+}
+
+// Partial response layout proved by original constructor1004d758c,
+// size1004d7a4c and writer1004d7880. Actual parsing/key interpretation is
+// separate; the first bytes field is obfuscated and is not a plaintext key.
+message NativePlayPlayLicenseReply {
+  bytes obfuscated_bytes = 1;
+  bytes auxiliary_bytes = 2;
+}
+
+// Partial error wire layout from original constructor1004d732c, parser,
+// size1004d7520 and writer1004d7404. Names are descriptive; no semantic enum
+// is inferred. The HTTP403 owner tests the successfully parsed scalar for3.
+message NativePlayPlayLicenseFailure {
+  int32 wire_value = 1;
+}

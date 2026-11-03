@@ -1,0 +1,415 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "method": "Capture original CollectionV2 PageRequest production entirely offline.\n\nThe complete proprietary request owner runs unchanged from 0x101b3cf5c to\n0x101b3d230, after its native-context setter returns. Its PageRequest\nconstructor, string assignments and protobuf serializer execute unchanged.\nOnly opaque HTTP builder interfaces and standard libc/libc++/Darwin imports\nare supplied. No encoder, HTTP backend, process, profile or network is used.\n",
+  "ownerEntryPoint": "0x101b3cf5c",
+  "pageRequestConstructor": "0x101b7e060",
+  "originalProtobufSerializer": "0x101e8f9a4",
+  "schema": {
+    "file": "collection2v2.proto",
+    "offset": 36428568,
+    "length": 1207,
+    "sha256": "f5406cc7fa39b9f8a36e476af577c946e07d9fd706519288f36c57496a3c4a17",
+    "sourcePath": "proto/source/collection2v2.proto",
+    "sourceSha256": "a9b4a4f66ac37037c644af15d86ead5f69b33435c787503a3a40b6662ba0b940"
+  },
+  "nativeInputBindings": {
+    "owner+0x38": "PageRequest.username (field1)",
+    "owner+0x8": "PageRequest.set (field2)",
+    "owner+0xd0": "PageRequest.pagination_token (field3), only if nonempty",
+    "literal300": "PageRequest.limit (field4)"
+  },
+  "stopAfterNativeContextSetter": "0x101b3d230",
+  "injectedTemplate": {
+    "method": "GET",
+    "url": "https://spclient.example.test:443/",
+    "headers": {
+      "User-Agent": "Spotify/independent-offline-fixture",
+      "x-template-field": "preserved"
+    },
+    "bodyHex": "74656d706c6174652d626f6479"
+  },
+  "ranges": [
+    {
+      "start": "0x101b3cf5c",
+      "endExclusive": "0x101b3d694",
+      "sha256": "9508fcf4782451ab63475067365b7748dfa7ddec0378c5501492c21a3096d2f2"
+    },
+    {
+      "start": "0x101b7e060",
+      "endExclusive": "0x101b7e084",
+      "sha256": "e45e980ec36e1254811d8c4043548acb66ab72557c479ffe82622399cdbaf6ca"
+    },
+    {
+      "start": "0x101c1fc50",
+      "endExclusive": "0x101c1fd00",
+      "sha256": "7d7542be7d72cb93d9eb98de37214fcb5e27e3df0b10abafe137e832f39776fc"
+    },
+    {
+      "start": "0x101c20210",
+      "endExclusive": "0x101c20240",
+      "sha256": "047e5ddfdcce85cbcb3826a3a6474f31cae151565a1ad3cdca9f386d0fc1c878"
+    },
+    {
+      "start": "0x101e8f9a4",
+      "endExclusive": "0x101e8fa18",
+      "sha256": "94be80e5318692b6e8289032609b2f184461dc460f1a26800683fc95e6fef92c"
+    }
+  ],
+  "sourceExports": [
+    {
+      "path": ".local/rea-session/native-collection-server-page-delta-write-builders.json",
+      "sha256": "b29eff9c56440322c1a72f1942cc047356ee1557b27f55effa00799f4f2374e5"
+    },
+    {
+      "path": ".local/rea-session/native-liked-songs-delta-ops-and-collection-pages.json",
+      "sha256": "8c6cda2fd02091f536a2dbd631a9d392951e3a78e79fd434add9ab8ece22f2dd"
+    }
+  ],
+  "substitutedInterfaces": [
+    "HTTP template clone captures explicit synthetic inherited fields.",
+    "Relative path, method, opaque body and header setters capture original arguments.",
+    "Request-inner virtual+0x58 captures original regional_routing property strings; the original 0x101c1fc50 wrapper executes unchanged.",
+    "Request-inner virtual+0xc8 captures explicit native-context input; original 0x101c20210 executes unchanged.",
+    "The capture stops at original 0x101b3d230 after context return, before callbacks or dispatch."
+  ],
+  "standardProviders": [
+    "Inherited OriginalAudioFilesRequest pinned allocation, libc/libc++ string and memory imports.",
+    "One-thread libc++ shared-pointer mutex imports retain the real null-shared-pointer branch.",
+    "Darwin TLV bootstrap uses a synthetic thread; original protobuf constructor, runtime and wire serializer execute unchanged."
+  ],
+  "limits": [
+    "Only the PAGE producer is executed; Delta, Write, page-response handling and runtime set selection are excluded.",
+    "Username, set and token are explicit synthetic inputs; no account identity, entitlement, set semantics or production default is inferred.",
+    "Common headers and URL origin are inherited synthetic template inputs. This lane does not recover final app headers, credentials, origin routing, CEF order or transport framing.",
+    "regional_routing=true is a request-inner property, not an outgoing HTTP header.",
+    "0x101c20210 supplies native context. No timeout setter executes before the stop.",
+    "No callbacks, HTTP backend, retries, response, host process/profile or live requests are exercised."
+  ],
+  "cases": [
+    {
+      "name": "initial page, absent empty token",
+      "username": "synthetic-user",
+      "set": "fixture-set",
+      "paginationToken": "",
+      "originalCalls": [
+        "0x101b7e060",
+        "0x101e8f9a4"
+      ],
+      "pageRequestMethods": {
+        "vtable": "0x10265c3e0",
+        "byteSizeLong": "0x101e47624",
+        "internalSerialize": "0x101e47620"
+      },
+      "original": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "x-template-field": "preserved",
+          "Accept": "application/vnd.collection-v2.spotify.proto",
+          "Content-Type": "application/vnd.collection-v2.spotify.proto"
+        },
+        "bodyHex": "0a0e73796e7468657469632d75736572120b666978747572652d73657420ac02",
+        "relativePath": "collection/v2/paging",
+        "properties": [
+          [
+            "regional_routing",
+            "true"
+          ]
+        ],
+        "headerMutations": [
+          [
+            "Accept",
+            "application/vnd.collection-v2.spotify.proto"
+          ],
+          [
+            "Content-Type",
+            "application/vnd.collection-v2.spotify.proto"
+          ]
+        ],
+        "options": {
+          "opaqueContext": "0x12345678"
+        },
+        "rawUrl": "https://spclient.example.test:443/collection/v2/paging",
+        "orderedHeaders": [
+          [
+            "User-Agent",
+            "Spotify/independent-offline-fixture"
+          ],
+          [
+            "x-template-field",
+            "preserved"
+          ],
+          [
+            "Accept",
+            "application/vnd.collection-v2.spotify.proto"
+          ],
+          [
+            "Content-Type",
+            "application/vnd.collection-v2.spotify.proto"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "next page, short token",
+      "username": "synthetic-user",
+      "set": "fixture-set",
+      "paginationToken": "page-2",
+      "originalCalls": [
+        "0x101b7e060",
+        "0x101e8f9a4"
+      ],
+      "pageRequestMethods": {
+        "vtable": "0x10265c3e0",
+        "byteSizeLong": "0x101e47624",
+        "internalSerialize": "0x101e47620"
+      },
+      "original": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "x-template-field": "preserved",
+          "Accept": "application/vnd.collection-v2.spotify.proto",
+          "Content-Type": "application/vnd.collection-v2.spotify.proto"
+        },
+        "bodyHex": "0a0e73796e7468657469632d75736572120b666978747572652d7365741a06706167652d3220ac02",
+        "relativePath": "collection/v2/paging",
+        "properties": [
+          [
+            "regional_routing",
+            "true"
+          ]
+        ],
+        "headerMutations": [
+          [
+            "Accept",
+            "application/vnd.collection-v2.spotify.proto"
+          ],
+          [
+            "Content-Type",
+            "application/vnd.collection-v2.spotify.proto"
+          ]
+        ],
+        "options": {
+          "opaqueContext": "0x12345678"
+        },
+        "rawUrl": "https://spclient.example.test:443/collection/v2/paging",
+        "orderedHeaders": [
+          [
+            "User-Agent",
+            "Spotify/independent-offline-fixture"
+          ],
+          [
+            "x-template-field",
+            "preserved"
+          ],
+          [
+            "Accept",
+            "application/vnd.collection-v2.spotify.proto"
+          ],
+          [
+            "Content-Type",
+            "application/vnd.collection-v2.spotify.proto"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "next page, heap strings and embedded NUL token",
+      "username": "synthetic-user-with-long-name",
+      "set": "synthetic-set-with-long-name",
+      "paginationToken": "synthetic-long-pagination-token\u0000tail",
+      "originalCalls": [
+        "0x101b7e060",
+        "0x101e8f9a4"
+      ],
+      "pageRequestMethods": {
+        "vtable": "0x10265c3e0",
+        "byteSizeLong": "0x101e47624",
+        "internalSerialize": "0x101e47620"
+      },
+      "original": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "x-template-field": "preserved",
+          "Accept": "application/vnd.collection-v2.spotify.proto",
+          "Content-Type": "application/vnd.collection-v2.spotify.proto"
+        },
+        "bodyHex": "0a1d73796e7468657469632d757365722d776974682d6c6f6e672d6e616d65121c73796e7468657469632d7365742d776974682d6c6f6e672d6e616d651a2473796e7468657469632d6c6f6e672d706167696e6174696f6e2d746f6b656e007461696c20ac02",
+        "relativePath": "collection/v2/paging",
+        "properties": [
+          [
+            "regional_routing",
+            "true"
+          ]
+        ],
+        "headerMutations": [
+          [
+            "Accept",
+            "application/vnd.collection-v2.spotify.proto"
+          ],
+          [
+            "Content-Type",
+            "application/vnd.collection-v2.spotify.proto"
+          ]
+        ],
+        "options": {
+          "opaqueContext": "0x12345678"
+        },
+        "rawUrl": "https://spclient.example.test:443/collection/v2/paging",
+        "orderedHeaders": [
+          [
+            "User-Agent",
+            "Spotify/independent-offline-fixture"
+          ],
+          [
+            "x-template-field",
+            "preserved"
+          ],
+          [
+            "Accept",
+            "application/vnd.collection-v2.spotify.proto"
+          ],
+          [
+            "Content-Type",
+            "application/vnd.collection-v2.spotify.proto"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "UTF-8 username and set with explicit empty token",
+      "username": "fixture-雪",
+      "set": "set-☃",
+      "paginationToken": "",
+      "originalCalls": [
+        "0x101b7e060",
+        "0x101e8f9a4"
+      ],
+      "pageRequestMethods": {
+        "vtable": "0x10265c3e0",
+        "byteSizeLong": "0x101e47624",
+        "internalSerialize": "0x101e47620"
+      },
+      "original": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "x-template-field": "preserved",
+          "Accept": "application/vnd.collection-v2.spotify.proto",
+          "Content-Type": "application/vnd.collection-v2.spotify.proto"
+        },
+        "bodyHex": "0a0b666978747572652de99baa12077365742de2988320ac02",
+        "relativePath": "collection/v2/paging",
+        "properties": [
+          [
+            "regional_routing",
+            "true"
+          ]
+        ],
+        "headerMutations": [
+          [
+            "Accept",
+            "application/vnd.collection-v2.spotify.proto"
+          ],
+          [
+            "Content-Type",
+            "application/vnd.collection-v2.spotify.proto"
+          ]
+        ],
+        "options": {
+          "opaqueContext": "0x12345678"
+        },
+        "rawUrl": "https://spclient.example.test:443/collection/v2/paging",
+        "orderedHeaders": [
+          [
+            "User-Agent",
+            "Spotify/independent-offline-fixture"
+          ],
+          [
+            "x-template-field",
+            "preserved"
+          ],
+          [
+            "Accept",
+            "application/vnd.collection-v2.spotify.proto"
+          ],
+          [
+            "Content-Type",
+            "application/vnd.collection-v2.spotify.proto"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "empty username and set, absence is not admission policy",
+      "username": "",
+      "set": "",
+      "paginationToken": "",
+      "originalCalls": [
+        "0x101b7e060",
+        "0x101e8f9a4"
+      ],
+      "pageRequestMethods": {
+        "vtable": "0x10265c3e0",
+        "byteSizeLong": "0x101e47624",
+        "internalSerialize": "0x101e47620"
+      },
+      "original": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "x-template-field": "preserved",
+          "Accept": "application/vnd.collection-v2.spotify.proto",
+          "Content-Type": "application/vnd.collection-v2.spotify.proto"
+        },
+        "bodyHex": "20ac02",
+        "relativePath": "collection/v2/paging",
+        "properties": [
+          [
+            "regional_routing",
+            "true"
+          ]
+        ],
+        "headerMutations": [
+          [
+            "Accept",
+            "application/vnd.collection-v2.spotify.proto"
+          ],
+          [
+            "Content-Type",
+            "application/vnd.collection-v2.spotify.proto"
+          ]
+        ],
+        "options": {
+          "opaqueContext": "0x12345678"
+        },
+        "rawUrl": "https://spclient.example.test:443/collection/v2/paging",
+        "orderedHeaders": [
+          [
+            "User-Agent",
+            "Spotify/independent-offline-fixture"
+          ],
+          [
+            "x-template-field",
+            "preserved"
+          ],
+          [
+            "Accept",
+            "application/vnd.collection-v2.spotify.proto"
+          ],
+          [
+            "Content-Type",
+            "application/vnd.collection-v2.spotify.proto"
+          ]
+        ]
+      }
+    }
+  ]
+}

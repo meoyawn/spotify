@@ -1,0 +1,178 @@
+$schema: 'https://moonrepo.dev/schemas/project.json'
+language: dart
+toolchains:
+  default: system
+fileGroups:
+  native-build:
+    - tools/oracles/.python-version
+    - tools/oracles/pyproject.toml
+    - tools/oracles/uv.lock
+    - '$DEVELOPER_DIR'
+    - '$SDKROOT'
+    - '$MACOSX_DEPLOYMENT_TARGET'
+tasks:
+  dev:
+    description: Run one macOS Flutter debug instance from the project directory with hot reload.
+    command: dart run tools/dev.dart
+    preset: utility
+    inputs: []
+    options:
+      cache: false
+      interactive: true
+      shell: false
+      outputStyle: stream
+
+  native-quiche:
+    description: Build optimized quiche with Cargo release and repository-local Kache.
+    command: uv run --project tools/oracles --locked python tools/build_quiche.py
+    preset: utility
+    inputs:
+      - '@group(native-build)'
+      - tools/build_quiche.py
+      - native/quiche/upstream.json
+      - native/quiche/Cargo.lock
+      - native/quiche/stream-ack.patch
+      - native/quiche/stream_ack.h
+      - native/quiche/LICENSE.quiche
+      - .cargo/config.toml
+      - .cargo/kache.toml
+      - '$RUSTFLAGS'
+      - '$CARGO_ENCODED_RUSTFLAGS'
+      - '$CARGO_BUILD_*'
+      - '$CARGO_TARGET_*'
+      - '$CARGO_PROFILE_RELEASE_*'
+      - '$RUSTUP_TOOLCHAIN'
+      - '$RUSTC'
+      - '$RUSTC_WRAPPER'
+      - '$CC'
+      - '$CXX'
+      - '$CFLAGS'
+      - '$CXXFLAGS'
+      - '$LDFLAGS'
+    outputs:
+      - .local/native/libquiche.dylib
+      - .local/native/quiche-build.json
+      - .local/native/LICENSE.quiche
+    options:
+      cache: true
+      interactive: false
+      shell: false
+      outputStyle: stream
+
+  native-nghttp3:
+    description: Build the pinned standard HTTP3 and QPACK codec.
+    command: uv run --project tools/oracles --locked python tools/build_nghttp3.py
+    preset: utility
+    inputs:
+      - '@group(native-build)'
+      - tools/build_nghttp3.py
+      - native/nghttp3/upstream.json
+      - native/nghttp3/additional-settings.patch
+      - native/nghttp3/additional_settings.h
+      - '$CC'
+      - '$CFLAGS'
+      - '$LDFLAGS'
+      - '$CMAKE_*'
+    outputs:
+      - .local/native/libnghttp3.dylib
+      - .local/native/nghttp3-build.json
+      - .local/native/LICENSE.nghttp3
+      - .local/native/LICENSE.nghttp3-sfparse
+    options:
+      cache: true
+      interactive: false
+      shell: false
+      outputStyle: stream
+
+  native-ffmpeg:
+    description: Build pinned FFmpeg static archives and the optimized file decoder.
+    command: uv run --project tools/oracles --locked python tools/build_ffmpeg.py
+    preset: utility
+    inputs:
+      - '@group(native-build)'
+      - tools/build_ffmpeg.py
+      - native/ffmpeg/upstream.json
+      - native/ffmpeg/decoder.c
+      - '$CFLAGS'
+      - '$CPPFLAGS'
+      - '$LDFLAGS'
+    outputs:
+      - .local/native/libspotify_ffmpeg.dylib
+      - .local/native/ffmpeg-build.json
+      - .local/native/LICENSE.ffmpeg
+      # Streaming links only against this SDK, including after cache hydration.
+      - .local/native/ffmpeg-static/
+    options:
+      cache: true
+      interactive: false
+      shell: false
+      outputStyle: stream
+
+  native-streaming:
+    description: Link the optimized streaming decoder and Core Audio output.
+    command: uv run --project tools/oracles --locked python tools/build_streaming_audio.py
+    deps:
+      - '~:native-ffmpeg'
+    preset: utility
+    inputs:
+      - '@group(native-build)'
+      - tools/build_streaming_audio.py
+      - native/ffmpeg/upstream.json
+      - native/ffmpeg/streaming.c
+      - native/ffmpeg/streaming.h
+    outputs:
+      - .local/native/libspotify_streaming.dylib
+      - .local/native/streaming-build.json
+    options:
+      cache: true
+      interactive: false
+      shell: false
+      outputStyle: stream
+
+  native:
+    description: Prepare all optimized native libraries without building or launching Flutter.
+    deps:
+      - '~:native-quiche'
+      - '~:native-nghttp3'
+      - '~:native-streaming'
+    preset: utility
+    inputs: []
+    options:
+      cache: false
+      interactive: false
+
+  release:
+    description: Prepare optimized native dependencies and build the macOS Flutter release.
+    command: uv run --project tools/oracles --locked python tools/release_macos.py build
+    deps:
+      - '~:native'
+    preset: utility
+    inputs: []
+    options:
+      cache: false
+      interactive: false
+      shell: false
+      outputStyle: stream
+
+  release-reinstall:
+    description: Build/install the release, stopping the installed release before replacement without launching it.
+    command: uv run --project tools/oracles --locked python tools/release_macos.py install
+    deps:
+      - '~:release'
+    preset: utility
+    inputs: []
+    options:
+      cache: false
+      interactive: false
+      shell: false
+      outputStyle: stream
+
+  reinstall-release:
+    description: Alias for release-reinstall.
+    command: noop
+    deps:
+      - '~:release-reinstall'
+    preset: utility
+    inputs: []
+    options:
+      cache: false

@@ -1,0 +1,1881 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "filterFunction": "0x10129a00c",
+  "filterEntry": "0x10129a0b8",
+  "rejectTarget": "0x10129a1ac",
+  "keepTarget": "0x10129a274",
+  "formatGetter": "0x101c15218",
+  "storageOwner": "0x100780440",
+  "filterCodeSha256": "f5d520e87aa524f3ed0f08c92d1df960154174794dc7b297bbca985c5dd35dd4",
+  "method": "Capture native file-format admission and its outgoing storage path offline.\n\nThe exact proprietary candidate-filter instruction slice and original format\ngetter execute over a synthetic native file variant. Decoder capability is an\nexplicit injected interface result; raw owner flags are inputs. If admitted,\nthe unchanged proprietary storage owner constructs the request path/headers.\nOpaque builder/lifecycle/callback interfaces stop before dispatch. Standard\nallocation, strings, decimal/hex conversion and memory primitives are provided.\nNo Spotify process, account, profile or network is used.\n",
+  "injectedTemplate": {
+    "method": "GET",
+    "headers": {},
+    "bodyHex": ""
+  },
+  "limitations": [
+    "File variant2 only; other native candidate kinds excluded.",
+    "Single candidate admission and outgoing storage fields, not bitrate ranking or account flag production.",
+    "No HTTP backend, final transport serialization, Free-account entitlement or live playback claim."
+  ],
+  "cases": [
+    {
+      "name": "format 0, flags 0, decoder True",
+      "format": 0,
+      "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/0/000102030405060708090a0b0c0d0e0f10111213?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 1, flags 0, decoder True",
+      "format": 1,
+      "fileIdHex": "0102030405060708090a0b0c0d0e0f1011121314",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/1/0102030405060708090a0b0c0d0e0f1011121314?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 16, flags 0, decoder True",
+      "format": 16,
+      "fileIdHex": "02030405060708090a0b0c0d0e0f101112131415",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/16/02030405060708090a0b0c0d0e0f101112131415?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 18, flags 0, decoder True",
+      "format": 18,
+      "fileIdHex": "030405060708090a0b0c0d0e0f10111213141516",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 19, flags 0, decoder True",
+      "format": 19,
+      "fileIdHex": "0405060708090a0b0c0d0e0f1011121314151617",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 20, flags 0, decoder True",
+      "format": 20,
+      "fileIdHex": "05060708090a0b0c0d0e0f101112131415161718",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 22, flags 0, decoder True",
+      "format": 22,
+      "fileIdHex": "060708090a0b0c0d0e0f10111213141516171819",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 27, flags 0, decoder True",
+      "format": 27,
+      "fileIdHex": "0708090a0b0c0d0e0f101112131415161718191a",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/27/0708090a0b0c0d0e0f101112131415161718191a?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 54, flags 0, decoder True",
+      "format": 54,
+      "fileIdHex": "08090a0b0c0d0e0f101112131415161718191a1b",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/54/08090a0b0c0d0e0f101112131415161718191a1b?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 55, flags 0, decoder True",
+      "format": 55,
+      "fileIdHex": "090a0b0c0d0e0f101112131415161718191a1b1c",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/55/090a0b0c0d0e0f101112131415161718191a1b1c?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 56, flags 0, decoder True",
+      "format": 56,
+      "fileIdHex": "0a0b0c0d0e0f101112131415161718191a1b1c1d",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/56/0a0b0c0d0e0f101112131415161718191a1b1c1d?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 57, flags 0, decoder True",
+      "format": 57,
+      "fileIdHex": "0b0c0d0e0f101112131415161718191a1b1c1d1e",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format -1, flags 0, decoder True",
+      "format": -1,
+      "fileIdHex": "0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/-1/0c0d0e0f101112131415161718191a1b1c1d1e1f?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 2147483647, flags 0, decoder True",
+      "format": 2147483647,
+      "fileIdHex": "0d0e0f101112131415161718191a1b1c1d1e1f20",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/2147483647/0d0e0f101112131415161718191a1b1c1d1e1f20?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 0, flags 0, decoder False",
+      "format": 0,
+      "fileIdHex": "0e0f101112131415161718191a1b1c1d1e1f2021",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": false,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 57, flags 0, decoder False",
+      "format": 57,
+      "fileIdHex": "0f101112131415161718191a1b1c1d1e1f202122",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": false,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 0, flags 1, decoder True",
+      "format": 0,
+      "fileIdHex": "101112131415161718191a1b1c1d1e1f20212223",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/0/101112131415161718191a1b1c1d1e1f20212223?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 1, flags 1, decoder True",
+      "format": 1,
+      "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/1/1112131415161718191a1b1c1d1e1f2021222324?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 16, flags 1, decoder True",
+      "format": 16,
+      "fileIdHex": "12131415161718191a1b1c1d1e1f202122232425",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/16/12131415161718191a1b1c1d1e1f202122232425?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 18, flags 1, decoder True",
+      "format": 18,
+      "fileIdHex": "131415161718191a1b1c1d1e1f20212223242526",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 19, flags 1, decoder True",
+      "format": 19,
+      "fileIdHex": "1415161718191a1b1c1d1e1f2021222324252627",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 20, flags 1, decoder True",
+      "format": 20,
+      "fileIdHex": "15161718191a1b1c1d1e1f202122232425262728",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 22, flags 1, decoder True",
+      "format": 22,
+      "fileIdHex": "161718191a1b1c1d1e1f20212223242526272829",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/22/161718191a1b1c1d1e1f20212223242526272829?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 27, flags 1, decoder True",
+      "format": 27,
+      "fileIdHex": "1718191a1b1c1d1e1f202122232425262728292a",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/27/1718191a1b1c1d1e1f202122232425262728292a?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 54, flags 1, decoder True",
+      "format": 54,
+      "fileIdHex": "18191a1b1c1d1e1f202122232425262728292a2b",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/54/18191a1b1c1d1e1f202122232425262728292a2b?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 55, flags 1, decoder True",
+      "format": 55,
+      "fileIdHex": "191a1b1c1d1e1f202122232425262728292a2b2c",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/55/191a1b1c1d1e1f202122232425262728292a2b2c?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 56, flags 1, decoder True",
+      "format": 56,
+      "fileIdHex": "1a1b1c1d1e1f202122232425262728292a2b2c2d",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/56/1a1b1c1d1e1f202122232425262728292a2b2c2d?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 57, flags 1, decoder True",
+      "format": 57,
+      "fileIdHex": "1b1c1d1e1f202122232425262728292a2b2c2d2e",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format -1, flags 1, decoder True",
+      "format": -1,
+      "fileIdHex": "1c1d1e1f202122232425262728292a2b2c2d2e2f",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/-1/1c1d1e1f202122232425262728292a2b2c2d2e2f?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 2147483647, flags 1, decoder True",
+      "format": 2147483647,
+      "fileIdHex": "1d1e1f202122232425262728292a2b2c2d2e2f30",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/2147483647/1d1e1f202122232425262728292a2b2c2d2e2f30?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 0, flags 1, decoder False",
+      "format": 0,
+      "fileIdHex": "1e1f202122232425262728292a2b2c2d2e2f3031",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": false,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 57, flags 1, decoder False",
+      "format": 57,
+      "fileIdHex": "1f202122232425262728292a2b2c2d2e2f303132",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": false,
+      "supportedByDecoder": false,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 0, flags 2, decoder True",
+      "format": 0,
+      "fileIdHex": "202122232425262728292a2b2c2d2e2f30313233",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/0/202122232425262728292a2b2c2d2e2f30313233?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 1, flags 2, decoder True",
+      "format": 1,
+      "fileIdHex": "2122232425262728292a2b2c2d2e2f3031323334",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/1/2122232425262728292a2b2c2d2e2f3031323334?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 16, flags 2, decoder True",
+      "format": 16,
+      "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/16/22232425262728292a2b2c2d2e2f303132333435?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 18, flags 2, decoder True",
+      "format": 18,
+      "fileIdHex": "232425262728292a2b2c2d2e2f30313233343536",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/18/232425262728292a2b2c2d2e2f30313233343536?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 19, flags 2, decoder True",
+      "format": 19,
+      "fileIdHex": "2425262728292a2b2c2d2e2f3031323334353637",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/19/2425262728292a2b2c2d2e2f3031323334353637?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 20, flags 2, decoder True",
+      "format": 20,
+      "fileIdHex": "25262728292a2b2c2d2e2f303132333435363738",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/20/25262728292a2b2c2d2e2f303132333435363738?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 22, flags 2, decoder True",
+      "format": 22,
+      "fileIdHex": "262728292a2b2c2d2e2f30313233343536373839",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 27, flags 2, decoder True",
+      "format": 27,
+      "fileIdHex": "2728292a2b2c2d2e2f303132333435363738393a",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/27/2728292a2b2c2d2e2f303132333435363738393a?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 54, flags 2, decoder True",
+      "format": 54,
+      "fileIdHex": "28292a2b2c2d2e2f303132333435363738393a3b",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/54/28292a2b2c2d2e2f303132333435363738393a3b?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 55, flags 2, decoder True",
+      "format": 55,
+      "fileIdHex": "292a2b2c2d2e2f303132333435363738393a3b3c",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/55/292a2b2c2d2e2f303132333435363738393a3b3c?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 56, flags 2, decoder True",
+      "format": 56,
+      "fileIdHex": "2a2b2c2d2e2f303132333435363738393a3b3c3d",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/56/2a2b2c2d2e2f303132333435363738393a3b3c3d?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 57, flags 2, decoder True",
+      "format": 57,
+      "fileIdHex": "2b2c2d2e2f303132333435363738393a3b3c3d3e",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format -1, flags 2, decoder True",
+      "format": -1,
+      "fileIdHex": "2c2d2e2f303132333435363738393a3b3c3d3e3f",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/-1/2c2d2e2f303132333435363738393a3b3c3d3e3f?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 2147483647, flags 2, decoder True",
+      "format": 2147483647,
+      "fileIdHex": "2d2e2f303132333435363738393a3b3c3d3e3f40",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/2147483647/2d2e2f303132333435363738393a3b3c3d3e3f40?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 0, flags 2, decoder False",
+      "format": 0,
+      "fileIdHex": "2e2f303132333435363738393a3b3c3d3e3f4041",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": false,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 57, flags 2, decoder False",
+      "format": 57,
+      "fileIdHex": "2f303132333435363738393a3b3c3d3e3f404142",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": false,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 0, flags 3, decoder True",
+      "format": 0,
+      "fileIdHex": "303132333435363738393a3b3c3d3e3f40414243",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/0/303132333435363738393a3b3c3d3e3f40414243?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 1, flags 3, decoder True",
+      "format": 1,
+      "fileIdHex": "3132333435363738393a3b3c3d3e3f4041424344",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/1/3132333435363738393a3b3c3d3e3f4041424344?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 16, flags 3, decoder True",
+      "format": 16,
+      "fileIdHex": "32333435363738393a3b3c3d3e3f404142434445",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/16/32333435363738393a3b3c3d3e3f404142434445?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 18, flags 3, decoder True",
+      "format": 18,
+      "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/18/333435363738393a3b3c3d3e3f40414243444546?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 19, flags 3, decoder True",
+      "format": 19,
+      "fileIdHex": "3435363738393a3b3c3d3e3f4041424344454647",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/19/3435363738393a3b3c3d3e3f4041424344454647?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 20, flags 3, decoder True",
+      "format": 20,
+      "fileIdHex": "35363738393a3b3c3d3e3f404142434445464748",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/20/35363738393a3b3c3d3e3f404142434445464748?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 22, flags 3, decoder True",
+      "format": 22,
+      "fileIdHex": "363738393a3b3c3d3e3f40414243444546474849",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/22/363738393a3b3c3d3e3f40414243444546474849?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 27, flags 3, decoder True",
+      "format": 27,
+      "fileIdHex": "3738393a3b3c3d3e3f404142434445464748494a",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/27/3738393a3b3c3d3e3f404142434445464748494a?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 54, flags 3, decoder True",
+      "format": 54,
+      "fileIdHex": "38393a3b3c3d3e3f404142434445464748494a4b",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/54/38393a3b3c3d3e3f404142434445464748494a4b?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 55, flags 3, decoder True",
+      "format": 55,
+      "fileIdHex": "393a3b3c3d3e3f404142434445464748494a4b4c",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/55/393a3b3c3d3e3f404142434445464748494a4b4c?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 56, flags 3, decoder True",
+      "format": 56,
+      "fileIdHex": "3a3b3c3d3e3f404142434445464748494a4b4c4d",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/56/3a3b3c3d3e3f404142434445464748494a4b4c4d?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 57, flags 3, decoder True",
+      "format": 57,
+      "fileIdHex": "3b3c3d3e3f404142434445464748494a4b4c4d4e",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format -1, flags 3, decoder True",
+      "format": -1,
+      "fileIdHex": "3c3d3e3f404142434445464748494a4b4c4d4e4f",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/-1/3c3d3e3f404142434445464748494a4b4c4d4e4f?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 2147483647, flags 3, decoder True",
+      "format": 2147483647,
+      "fileIdHex": "3d3e3f404142434445464748494a4b4c4d4e4f50",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/2147483647/3d3e3f404142434445464748494a4b4c4d4e4f50?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 0, flags 3, decoder False",
+      "format": 0,
+      "fileIdHex": "3e3f404142434445464748494a4b4c4d4e4f5051",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": false,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 57, flags 3, decoder False",
+      "format": 57,
+      "fileIdHex": "3f404142434445464748494a4b4c4d4e4f505152",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": false,
+      "supportedByDecoder": false,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 0, flags 4, decoder True",
+      "format": 0,
+      "fileIdHex": "404142434445464748494a4b4c4d4e4f50515253",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/0/404142434445464748494a4b4c4d4e4f50515253?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 1, flags 4, decoder True",
+      "format": 1,
+      "fileIdHex": "4142434445464748494a4b4c4d4e4f5051525354",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/1/4142434445464748494a4b4c4d4e4f5051525354?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 16, flags 4, decoder True",
+      "format": 16,
+      "fileIdHex": "42434445464748494a4b4c4d4e4f505152535455",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/16/42434445464748494a4b4c4d4e4f505152535455?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 18, flags 4, decoder True",
+      "format": 18,
+      "fileIdHex": "434445464748494a4b4c4d4e4f50515253545556",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 19, flags 4, decoder True",
+      "format": 19,
+      "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 20, flags 4, decoder True",
+      "format": 20,
+      "fileIdHex": "45464748494a4b4c4d4e4f505152535455565758",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 22, flags 4, decoder True",
+      "format": 22,
+      "fileIdHex": "464748494a4b4c4d4e4f50515253545556575859",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 27, flags 4, decoder True",
+      "format": 27,
+      "fileIdHex": "4748494a4b4c4d4e4f505152535455565758595a",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/27/4748494a4b4c4d4e4f505152535455565758595a?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 54, flags 4, decoder True",
+      "format": 54,
+      "fileIdHex": "48494a4b4c4d4e4f505152535455565758595a5b",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/54/48494a4b4c4d4e4f505152535455565758595a5b?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 55, flags 4, decoder True",
+      "format": 55,
+      "fileIdHex": "494a4b4c4d4e4f505152535455565758595a5b5c",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/55/494a4b4c4d4e4f505152535455565758595a5b5c?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 56, flags 4, decoder True",
+      "format": 56,
+      "fileIdHex": "4a4b4c4d4e4f505152535455565758595a5b5c5d",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/56/4a4b4c4d4e4f505152535455565758595a5b5c5d?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 57, flags 4, decoder True",
+      "format": 57,
+      "fileIdHex": "4b4c4d4e4f505152535455565758595a5b5c5d5e",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format -1, flags 4, decoder True",
+      "format": -1,
+      "fileIdHex": "4c4d4e4f505152535455565758595a5b5c5d5e5f",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/-1/4c4d4e4f505152535455565758595a5b5c5d5e5f?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 2147483647, flags 4, decoder True",
+      "format": 2147483647,
+      "fileIdHex": "4d4e4f505152535455565758595a5b5c5d5e5f60",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/2147483647/4d4e4f505152535455565758595a5b5c5d5e5f60?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 0, flags 4, decoder False",
+      "format": 0,
+      "fileIdHex": "4e4f505152535455565758595a5b5c5d5e5f6061",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": false,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 57, flags 4, decoder False",
+      "format": 57,
+      "fileIdHex": "4f505152535455565758595a5b5c5d5e5f606162",
+      "nativeFlag50": false,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": false,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 0, flags 5, decoder True",
+      "format": 0,
+      "fileIdHex": "505152535455565758595a5b5c5d5e5f60616263",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/0/505152535455565758595a5b5c5d5e5f60616263?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 1, flags 5, decoder True",
+      "format": 1,
+      "fileIdHex": "5152535455565758595a5b5c5d5e5f6061626364",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/1/5152535455565758595a5b5c5d5e5f6061626364?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 16, flags 5, decoder True",
+      "format": 16,
+      "fileIdHex": "52535455565758595a5b5c5d5e5f606162636465",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/16/52535455565758595a5b5c5d5e5f606162636465?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 18, flags 5, decoder True",
+      "format": 18,
+      "fileIdHex": "535455565758595a5b5c5d5e5f60616263646566",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 19, flags 5, decoder True",
+      "format": 19,
+      "fileIdHex": "5455565758595a5b5c5d5e5f6061626364656667",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 20, flags 5, decoder True",
+      "format": 20,
+      "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 22, flags 5, decoder True",
+      "format": 22,
+      "fileIdHex": "565758595a5b5c5d5e5f60616263646566676869",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/22/565758595a5b5c5d5e5f60616263646566676869?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 27, flags 5, decoder True",
+      "format": 27,
+      "fileIdHex": "5758595a5b5c5d5e5f606162636465666768696a",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/27/5758595a5b5c5d5e5f606162636465666768696a?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 54, flags 5, decoder True",
+      "format": 54,
+      "fileIdHex": "58595a5b5c5d5e5f606162636465666768696a6b",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/54/58595a5b5c5d5e5f606162636465666768696a6b?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 55, flags 5, decoder True",
+      "format": 55,
+      "fileIdHex": "595a5b5c5d5e5f606162636465666768696a6b6c",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/55/595a5b5c5d5e5f606162636465666768696a6b6c?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 56, flags 5, decoder True",
+      "format": 56,
+      "fileIdHex": "5a5b5c5d5e5f606162636465666768696a6b6c6d",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/56/5a5b5c5d5e5f606162636465666768696a6b6c6d?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 57, flags 5, decoder True",
+      "format": 57,
+      "fileIdHex": "5b5c5d5e5f606162636465666768696a6b6c6d6e",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/57/5b5c5d5e5f606162636465666768696a6b6c6d6e?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format -1, flags 5, decoder True",
+      "format": -1,
+      "fileIdHex": "5c5d5e5f606162636465666768696a6b6c6d6e6f",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/-1/5c5d5e5f606162636465666768696a6b6c6d6e6f?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 2147483647, flags 5, decoder True",
+      "format": 2147483647,
+      "fileIdHex": "5d5e5f606162636465666768696a6b6c6d6e6f70",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/2147483647/5d5e5f606162636465666768696a6b6c6d6e6f70?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 0, flags 5, decoder False",
+      "format": 0,
+      "fileIdHex": "5e5f606162636465666768696a6b6c6d6e6f7071",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": false,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 57, flags 5, decoder False",
+      "format": 57,
+      "fileIdHex": "5f606162636465666768696a6b6c6d6e6f707172",
+      "nativeFlag50": true,
+      "nativeFlag51": false,
+      "nativeFlag52": true,
+      "supportedByDecoder": false,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 0, flags 6, decoder True",
+      "format": 0,
+      "fileIdHex": "606162636465666768696a6b6c6d6e6f70717273",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/0/606162636465666768696a6b6c6d6e6f70717273?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 1, flags 6, decoder True",
+      "format": 1,
+      "fileIdHex": "6162636465666768696a6b6c6d6e6f7071727374",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/1/6162636465666768696a6b6c6d6e6f7071727374?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 16, flags 6, decoder True",
+      "format": 16,
+      "fileIdHex": "62636465666768696a6b6c6d6e6f707172737475",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/16/62636465666768696a6b6c6d6e6f707172737475?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 18, flags 6, decoder True",
+      "format": 18,
+      "fileIdHex": "636465666768696a6b6c6d6e6f70717273747576",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/18/636465666768696a6b6c6d6e6f70717273747576?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 19, flags 6, decoder True",
+      "format": 19,
+      "fileIdHex": "6465666768696a6b6c6d6e6f7071727374757677",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/19/6465666768696a6b6c6d6e6f7071727374757677?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 20, flags 6, decoder True",
+      "format": 20,
+      "fileIdHex": "65666768696a6b6c6d6e6f707172737475767778",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/20/65666768696a6b6c6d6e6f707172737475767778?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 22, flags 6, decoder True",
+      "format": 22,
+      "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 27, flags 6, decoder True",
+      "format": 27,
+      "fileIdHex": "6768696a6b6c6d6e6f707172737475767778797a",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/27/6768696a6b6c6d6e6f707172737475767778797a?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 54, flags 6, decoder True",
+      "format": 54,
+      "fileIdHex": "68696a6b6c6d6e6f707172737475767778797a7b",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/54/68696a6b6c6d6e6f707172737475767778797a7b?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 55, flags 6, decoder True",
+      "format": 55,
+      "fileIdHex": "696a6b6c6d6e6f707172737475767778797a7b7c",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/55/696a6b6c6d6e6f707172737475767778797a7b7c?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 56, flags 6, decoder True",
+      "format": 56,
+      "fileIdHex": "6a6b6c6d6e6f707172737475767778797a7b7c7d",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/56/6a6b6c6d6e6f707172737475767778797a7b7c7d?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 57, flags 6, decoder True",
+      "format": 57,
+      "fileIdHex": "6b6c6d6e6f707172737475767778797a7b7c7d7e",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format -1, flags 6, decoder True",
+      "format": -1,
+      "fileIdHex": "6c6d6e6f707172737475767778797a7b7c7d7e7f",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/-1/6c6d6e6f707172737475767778797a7b7c7d7e7f?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 2147483647, flags 6, decoder True",
+      "format": 2147483647,
+      "fileIdHex": "6d6e6f707172737475767778797a7b7c7d7e7f80",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/2147483647/6d6e6f707172737475767778797a7b7c7d7e7f80?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 0, flags 6, decoder False",
+      "format": 0,
+      "fileIdHex": "6e6f707172737475767778797a7b7c7d7e7f8081",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": false,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 57, flags 6, decoder False",
+      "format": 57,
+      "fileIdHex": "6f707172737475767778797a7b7c7d7e7f808182",
+      "nativeFlag50": false,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": false,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 0, flags 7, decoder True",
+      "format": 0,
+      "fileIdHex": "707172737475767778797a7b7c7d7e7f80818283",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/0/707172737475767778797a7b7c7d7e7f80818283?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 1, flags 7, decoder True",
+      "format": 1,
+      "fileIdHex": "7172737475767778797a7b7c7d7e7f8081828384",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/1/7172737475767778797a7b7c7d7e7f8081828384?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 16, flags 7, decoder True",
+      "format": 16,
+      "fileIdHex": "72737475767778797a7b7c7d7e7f808182838485",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/16/72737475767778797a7b7c7d7e7f808182838485?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 18, flags 7, decoder True",
+      "format": 18,
+      "fileIdHex": "737475767778797a7b7c7d7e7f80818283848586",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/18/737475767778797a7b7c7d7e7f80818283848586?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 19, flags 7, decoder True",
+      "format": 19,
+      "fileIdHex": "7475767778797a7b7c7d7e7f8081828384858687",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/19/7475767778797a7b7c7d7e7f8081828384858687?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 20, flags 7, decoder True",
+      "format": 20,
+      "fileIdHex": "75767778797a7b7c7d7e7f808182838485868788",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/20/75767778797a7b7c7d7e7f808182838485868788?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 22, flags 7, decoder True",
+      "format": 22,
+      "fileIdHex": "767778797a7b7c7d7e7f80818283848586878889",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/22/767778797a7b7c7d7e7f80818283848586878889?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 27, flags 7, decoder True",
+      "format": 27,
+      "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/27/7778797a7b7c7d7e7f808182838485868788898a?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 54, flags 7, decoder True",
+      "format": 54,
+      "fileIdHex": "78797a7b7c7d7e7f808182838485868788898a8b",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/54/78797a7b7c7d7e7f808182838485868788898a8b?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 55, flags 7, decoder True",
+      "format": 55,
+      "fileIdHex": "797a7b7c7d7e7f808182838485868788898a8b8c",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/55/797a7b7c7d7e7f808182838485868788898a8b8c?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 56, flags 7, decoder True",
+      "format": 56,
+      "fileIdHex": "7a7b7c7d7e7f808182838485868788898a8b8c8d",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/56/7a7b7c7d7e7f808182838485868788898a8b8c8d?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 57, flags 7, decoder True",
+      "format": 57,
+      "fileIdHex": "7b7c7d7e7f808182838485868788898a8b8c8d8e",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/57/7b7c7d7e7f808182838485868788898a8b8c8d8e?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format -1, flags 7, decoder True",
+      "format": -1,
+      "fileIdHex": "7c7d7e7f808182838485868788898a8b8c8d8e8f",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/-1/7c7d7e7f808182838485868788898a8b8c8d8e8f?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 2147483647, flags 7, decoder True",
+      "format": 2147483647,
+      "fileIdHex": "7d7e7f808182838485868788898a8b8c8d8e8f90",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": true,
+      "admitted": true,
+      "storageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/2147483647/7d7e7f808182838485868788898a8b8c8d8e8f90?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "name": "format 0, flags 7, decoder False",
+      "format": 0,
+      "fileIdHex": "7e7f808182838485868788898a8b8c8d8e8f9091",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": false,
+      "admitted": false,
+      "storageRequest": null
+    },
+    {
+      "name": "format 57, flags 7, decoder False",
+      "format": 57,
+      "fileIdHex": "7f808182838485868788898a8b8c8d8e8f909192",
+      "nativeFlag50": true,
+      "nativeFlag51": true,
+      "nativeFlag52": true,
+      "supportedByDecoder": false,
+      "admitted": false,
+      "storageRequest": null
+    }
+  ]
+}

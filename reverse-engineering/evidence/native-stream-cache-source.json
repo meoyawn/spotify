@@ -1,0 +1,326 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "method": "Execute selected AudioFile -> source descriptor -> cache/storage identity.\n\nThe original URI parser, selected-file accessor, source descriptor\nproducer, BufferedStorage constructor, storage-owner constructor and outgoing\nstorage producer execute. Synthetic selected protobuf/native context inputs\nand standard memory/string/allocation/clock providers replace their boundaries.\nExecution stops before cache file IO and before HTTP dispatch.\n",
+  "entryPoints": {
+    "selectedToDescriptor": "0x101c15544",
+    "normalDescriptor": "0x101c1893c",
+    "selectedFileId": "0x101d0711c",
+    "bufferedStorage": "0x1007593a0",
+    "cacheIdentityGetter": "0x1005b4de0",
+    "storageOwnerConstructor": "0x10078021c",
+    "outgoingStorage": "0x100780440"
+  },
+  "originalCodeRanges": [
+    {
+      "start": "0x101c15544",
+      "endExclusive": "0x101c1581c",
+      "sha256": "e0a42069d596488ee1ca959da815854a8739ebb05e94b4a1d87dc18ee427f477",
+      "boundarySource": "LC_FUNCTION_STARTS"
+    },
+    {
+      "start": "0x101c1893c",
+      "endExclusive": "0x101c189b8",
+      "sha256": "7022ef81f13391472136d8e26bd913552f8b9d9dd5ee44d0cbf89933841ddef5",
+      "boundarySource": "LC_FUNCTION_STARTS"
+    },
+    {
+      "start": "0x101d0711c",
+      "endExclusive": "0x101d0715c",
+      "sha256": "d5102638afeaed091b9a009009c8dbd087d7d6c0b6a1b0fe2d2922a8d88f207c",
+      "boundarySource": "LC_FUNCTION_STARTS"
+    },
+    {
+      "start": "0x1005b4de0",
+      "endExclusive": "0x1005b4df4",
+      "sha256": "db9e779379f94e12deb54e6cd7af7fdee69d0b61431db670dd9d4eda27fb0177",
+      "boundarySource": "LC_FUNCTION_STARTS"
+    },
+    {
+      "start": "0x10078021c",
+      "endExclusive": "0x10078043c",
+      "sha256": "42b0599bc35fe3d7941ee71147c9ab7a06b8752acaf22547c292fba031e0b77e",
+      "boundarySource": "LC_FUNCTION_STARTS"
+    },
+    {
+      "start": "0x100780440",
+      "endExclusive": "0x1007812ac",
+      "sha256": "873a2df941bc11778d7fbf1b475bd9d6f4aa6c446dcc0f07360bf74f1e465b34",
+      "boundarySource": "LC_FUNCTION_STARTS"
+    },
+    {
+      "start": "0x1007593a0",
+      "endExclusive": "0x100759690",
+      "sha256": "3cfe365eaeaf5154cac4d53cbedde4208cd359e48aec83999ea369fa822a9fab",
+      "boundarySource": "LC_FUNCTION_STARTS"
+    }
+  ],
+  "abi": {
+    "selectedToDescriptor": "X8=output descriptor; X0=parsed original URI; X1=selected candidate.",
+    "normalSourceDescriptor": "resource kind at+0, format at+8, file ID at+0xc, identity variant at+0x70.",
+    "storageOwner": "Copies format/file-ID pair from descriptor+8; interactive mode0 is explicitly supplied."
+  },
+  "retainedREAExports": [
+    {
+      "path": ".local/rea-session/cache-normal-descriptor-parent.json",
+      "sha256": "87a6bacfb193787f82d04b2b5e4531c037a923c074e04ea84ea3887fb23618fe",
+      "evidenceId": "ev_6bd90850033a479519712f87ecde937b779555d09ee8957e129a6e4d687fa2d8"
+    },
+    {
+      "path": ".local/rea-session/cache-source-normal-descriptors.json",
+      "sha256": "79a7d5177f347e53f141a67e9612ee60391baf2c70027dd324dc640e2678585d",
+      "evidenceId": "ev_92dc90292264e68c0a4d76a53403575b6e780c0c349d63a93630926126dd5b7c"
+    },
+    {
+      "path": ".local/rea-session/cache-candidate-file-identity.json",
+      "sha256": "3ab6cef68d3c195b3bca10a706c89f10fe52b2bf9cd110f5fd83886f8e5d8bdd",
+      "evidenceId": "ev_487055666ef54597e20bb27d15a64eaa91647d7a0941e925e48c24ca5d6d967e"
+    },
+    {
+      "path": ".local/rea-session/cache-descriptor-producers.json",
+      "sha256": "09e7deca0f3466dd653cf8cdef17027e1ee3b9e1fdbe50b14acc0c34c140be31",
+      "evidenceId": "ev_00c705c70004187130e588300a3446c0ebf5da25cf58db7c2ddd7f12b9da5e79"
+    },
+    {
+      "path": ".local/rea-session/cache-upstream-binding.json",
+      "sha256": "ff62766723a184eb22b4221ad1ce2c94483a8a8abcac688fb20a8242efed4f0f",
+      "evidenceId": "ev_f5e31076f08f2b6546231f5c053fe789b159596862193850d8655c663a181754"
+    },
+    {
+      "path": ".local/rea-session/cache-source-construction-callers.json",
+      "sha256": "cf8d2211413fc066444cc698a37e457bf8db21d8e9110cd62a47b756d667b370",
+      "evidenceId": "ev_4e04629163323f2a7a6bd7f05a57f7fff3c31414bfa3042e18f2985f3d2b62f8"
+    }
+  ],
+  "cases": [
+    {
+      "input": {
+        "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213",
+        "format": 0,
+        "requestedUriKind": "track",
+        "nativeStringStorage": "SSO"
+      },
+      "originalDescriptor": {
+        "requestedLinkKind": 4,
+        "resourceKind": 1,
+        "identityVariant": 0,
+        "format": 0,
+        "identityHex": "000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "originalCacheOpen": {
+        "realm": 0,
+        "keyHex": "000102030405060708090a0b0c0d0e0f10111213",
+        "mode": 1
+      },
+      "storageProducerExecuted": true,
+      "originalStorageOwner": {
+        "format": 0,
+        "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "originalStorageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/0/000102030405060708090a0b0c0d0e0f10111213?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "input": {
+        "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213",
+        "format": 17,
+        "requestedUriKind": "track",
+        "nativeStringStorage": "SSO"
+      },
+      "originalDescriptor": {
+        "requestedLinkKind": 4,
+        "resourceKind": 1,
+        "identityVariant": 0,
+        "format": 17,
+        "identityHex": "000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "originalCacheOpen": {
+        "realm": 0,
+        "keyHex": "000102030405060708090a0b0c0d0e0f10111213",
+        "mode": 1
+      },
+      "storageProducerExecuted": true,
+      "originalStorageOwner": {
+        "format": 17,
+        "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "originalStorageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/17/000102030405060708090a0b0c0d0e0f10111213?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "input": {
+        "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213",
+        "format": 0,
+        "requestedUriKind": "track",
+        "nativeStringStorage": "heap"
+      },
+      "originalDescriptor": {
+        "requestedLinkKind": 4,
+        "resourceKind": 1,
+        "identityVariant": 0,
+        "format": 0,
+        "identityHex": "000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "originalCacheOpen": {
+        "realm": 0,
+        "keyHex": "000102030405060708090a0b0c0d0e0f10111213",
+        "mode": 1
+      },
+      "storageProducerExecuted": true,
+      "originalStorageOwner": {
+        "format": 0,
+        "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "originalStorageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/0/000102030405060708090a0b0c0d0e0f10111213?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "input": {
+        "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213",
+        "format": 0,
+        "requestedUriKind": "episode",
+        "nativeStringStorage": "SSO"
+      },
+      "originalDescriptor": {
+        "requestedLinkKind": 63,
+        "resourceKind": 3,
+        "identityVariant": 0,
+        "format": 0,
+        "identityHex": "000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "originalCacheOpen": {
+        "realm": 5,
+        "keyHex": "000102030405060708090a0b0c0d0e0f10111213",
+        "mode": 1
+      },
+      "storageProducerExecuted": true,
+      "originalStorageOwner": {
+        "format": 0,
+        "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "originalStorageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/0/000102030405060708090a0b0c0d0e0f10111213?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "input": {
+        "fileIdHex": "0000000000000000000000000000000000000000",
+        "format": 0,
+        "requestedUriKind": "track",
+        "nativeStringStorage": "SSO"
+      },
+      "originalDescriptor": {
+        "requestedLinkKind": 4,
+        "resourceKind": 1,
+        "identityVariant": 0,
+        "format": 0,
+        "identityHex": "0000000000000000000000000000000000000000"
+      },
+      "originalCacheOpen": null,
+      "storageProducerExecuted": true,
+      "originalStorageOwner": {
+        "format": 0,
+        "fileIdHex": "0000000000000000000000000000000000000000"
+      },
+      "originalStorageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/0/0000000000000000000000000000000000000000?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "input": {
+        "fileIdHex": "0000000000000000000000000000000000000001",
+        "format": 0,
+        "requestedUriKind": "track",
+        "nativeStringStorage": "SSO"
+      },
+      "originalDescriptor": {
+        "requestedLinkKind": 4,
+        "resourceKind": 1,
+        "identityVariant": 0,
+        "format": 0,
+        "identityHex": "0000000000000000000000000000000000000001"
+      },
+      "originalCacheOpen": {
+        "realm": 0,
+        "keyHex": "0000000000000000000000000000000000000001",
+        "mode": 1
+      },
+      "storageProducerExecuted": true,
+      "originalStorageOwner": {
+        "format": 0,
+        "fileIdHex": "0000000000000000000000000000000000000001"
+      },
+      "originalStorageRequest": {
+        "relativePath": "storage-resolve/v2/files/audio/interactive/0/0000000000000000000000000000000000000001?product=0",
+        "headers": {
+          "cache-control": "no-cache"
+        }
+      }
+    },
+    {
+      "input": {
+        "fileIdHex": "000102030405060708090a0b0c0d0e0f101112",
+        "format": 0,
+        "requestedUriKind": "track",
+        "nativeStringStorage": "SSO"
+      },
+      "originalDescriptor": {
+        "requestedLinkKind": 4,
+        "resourceKind": 1,
+        "identityVariant": 0,
+        "format": 0,
+        "identityHex": "0000000000000000000000000000000000000000"
+      },
+      "originalCacheOpen": null,
+      "storageProducerExecuted": false
+    },
+    {
+      "input": {
+        "fileIdHex": "000102030405060708090a0b0c0d0e0f1011121314",
+        "format": 0,
+        "requestedUriKind": "track",
+        "nativeStringStorage": "SSO"
+      },
+      "originalDescriptor": {
+        "requestedLinkKind": 4,
+        "resourceKind": 1,
+        "identityVariant": 0,
+        "format": 0,
+        "identityHex": "0000000000000000000000000000000000000000"
+      },
+      "originalCacheOpen": null,
+      "storageProducerExecuted": false
+    }
+  ],
+  "substitutions": [
+    "Synthetic selected AudioFile protobuf object/string storage and selected candidate variant2.",
+    "Standard memory/allocation/string/URI-parser support inherited from the retained original oracles.",
+    "Opaque request-template clone, standard clock/clock-functor cloning and request-field capture interfaces.",
+    "Original storage open is a captured boundary; HTTP execution stops at the builder submit boundary."
+  ],
+  "limits": [
+    "Does not execute the full AUDIO_FILES response parser, file selection/ranking or account restrictions.",
+    "Protobuf field storage is supplied explicitly; this is not a protobuf wire/parser compatibility claim.",
+    "Invalid-length file IDs execute descriptor/cache admission only; their outgoing storage producer is not executed.",
+    "The injected GET template has no credentials/body; captured path and cache-control header do not establish complete HTTP compatibility.",
+    "Does not yet prove disk representation, existing index persistence or decryption order.",
+    "No cache/profile IO, real key, HTTP transport or Spotify process is used."
+  ]
+}

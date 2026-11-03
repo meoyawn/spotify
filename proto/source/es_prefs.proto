@@ -1,0 +1,62 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: cd11ffbe6adabe4187e51fbb1f64aef74c7784d03cc4dc868ea40f81ef576c79
+
+syntax = "proto3";
+
+package spotify.prefs.esperanto.proto;
+
+option java_package = "com.spotify.prefs.esperanto.proto";
+
+option objc_class_prefix = "ESP";
+
+option optimize_for = CODE_SIZE;
+
+message GetParams {
+  string key = 1;
+}
+
+message SubParams {
+  string key = 1;
+}
+
+message GetAllParams {
+}
+
+message SubAllParams {
+}
+
+message Value {
+  oneof value {
+    int64 number = 1;
+
+    bool bool = 2;
+
+    string string = 3;
+  }
+}
+
+message SetParams {
+  map<string, .spotify.prefs.esperanto.proto.Value> entries = 1;
+}
+
+message CreateParams {
+  map<string, .spotify.prefs.esperanto.proto.Value> entries = 1;
+}
+
+message PrefValues {
+  map<string, .spotify.prefs.esperanto.proto.Value> entries = 1;
+}
+
+service Prefs {
+  rpc Get ( .spotify.prefs.esperanto.proto.GetParams ) returns ( .spotify.prefs.esperanto.proto.PrefValues );
+
+  rpc Sub ( .spotify.prefs.esperanto.proto.SubParams ) returns ( stream .spotify.prefs.esperanto.proto.PrefValues );
+
+  rpc GetAll ( .spotify.prefs.esperanto.proto.GetAllParams ) returns ( .spotify.prefs.esperanto.proto.PrefValues );
+
+  rpc SubAll ( .spotify.prefs.esperanto.proto.SubAllParams ) returns ( stream .spotify.prefs.esperanto.proto.PrefValues );
+
+  rpc Set ( .spotify.prefs.esperanto.proto.SetParams ) returns ( .spotify.prefs.esperanto.proto.PrefValues );
+
+  rpc Create ( .spotify.prefs.esperanto.proto.CreateParams ) returns ( .spotify.prefs.esperanto.proto.PrefValues );
+}

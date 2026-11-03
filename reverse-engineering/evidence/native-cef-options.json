@@ -1,0 +1,188 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "requestContextProducer": "0x100044180",
+  "publicContextBoundary": "0x101832b98",
+  "requestContext": {
+    "settingsHex": "600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000",
+    "handlerPointer": 0
+  },
+  "languageProducer": "0x10042c210",
+  "preferredLocalesProducer": "0x10042dbf8",
+  "preferredLocalesCases": [
+    {
+      "suppliedAppleLanguages": [],
+      "result": {
+        "defaultsKey": "AppleLanguages",
+        "preferredLocales": [
+          "en"
+        ]
+      }
+    },
+    {
+      "suppliedAppleLanguages": [
+        "en-US",
+        "ru-RU"
+      ],
+      "result": {
+        "defaultsKey": "AppleLanguages",
+        "preferredLocales": [
+          "en-US",
+          "ru-RU"
+        ]
+      }
+    },
+    {
+      "suppliedAppleLanguages": [
+        "ru-RU",
+        "en-US",
+        "ru-RU"
+      ],
+      "result": {
+        "defaultsKey": "AppleLanguages",
+        "preferredLocales": [
+          "ru-RU",
+          "en-US",
+          "ru-RU"
+        ]
+      }
+    }
+  ],
+  "selectedLocaleGlobal": "0x1027eba38",
+  "fallbackLocalesGlobal": "0x1027eba50",
+  "standardProviders": [
+    "allocation",
+    "libc memory",
+    "libc++ string append",
+    "memcmp",
+    "libc++ signed-char sort",
+    "errno",
+    "vsnprintf %s-%s / %s-%s-%s",
+    "inert Cocoa retain/autorelease and fixture NSUserDefaults/NSArray/NSString"
+  ],
+  "publicDeclarations": {
+    "sourceCommit": "beff58dbc4d0fd12b3eafea8f5314ce22e649078",
+    "cefTypesSha256": "aebd4493bb3b3400608e3643d5089f538abf27338fcc5e556457b2031b4e75db",
+    "layoutHelper": "reverse-engineering/tools/native_cef_options_layout.cc"
+  },
+  "instructionRanges": [
+    {
+      "start": "0x100044180",
+      "endExclusive": "0x1000441c0",
+      "sha256": "8e6f3d7cc8ac2487908220f94bf61eb8aaa64ddd05c1e3f7c3b06bd76036c959"
+    },
+    {
+      "start": "0x100083984",
+      "endExclusive": "0x100083be0",
+      "sha256": "cc9ae94161e332155b1f03ddac220aa3e2b911a61ca512ec656b7dcd9ffe7998"
+    },
+    {
+      "start": "0x10042c210",
+      "endExclusive": "0x10042c708",
+      "sha256": "2f8a6e4e8797a4644aa2b885294e61390cd6f37243e62f1b2b2cf0652c73fe3e"
+    },
+    {
+      "start": "0x10042cbc8",
+      "endExclusive": "0x10042cbd4",
+      "sha256": "2da2763c523c63163d38656a4dfba8d9d9669bd3bb2c855beee8d8ea67e9d45c"
+    },
+    {
+      "start": "0x10042dbf8",
+      "endExclusive": "0x10042de9c",
+      "sha256": "6f27fe05bd6d61fb6288e436805d81a3cbbf0d9e94cc85361e6375a838e993c6"
+    }
+  ],
+  "limitations": [
+    "Synthetic language globals; no account/profile/system locale selection observed.",
+    "AppleLanguages returned by an inert fixture provider; actual host preference values are not read.",
+    "Stops before public CreateContext; no CEF runtime, original app, filesystem provider or network executes."
+  ],
+  "cases": [
+    {
+      "selectedLocale": "en",
+      "fallbackLocales": [],
+      "acceptLanguageList": "en"
+    },
+    {
+      "selectedLocale": "en-US",
+      "fallbackLocales": [],
+      "acceptLanguageList": "en-US"
+    },
+    {
+      "selectedLocale": "ru",
+      "fallbackLocales": [],
+      "acceptLanguageList": "ru"
+    },
+    {
+      "selectedLocale": "zh-Hant-HK",
+      "fallbackLocales": [],
+      "acceptLanguageList": "zh-Hant-HK"
+    },
+    {
+      "selectedLocale": "",
+      "fallbackLocales": [],
+      "acceptLanguageList": ""
+    },
+    {
+      "selectedLocale": "en",
+      "fallbackLocales": [
+        "en",
+        "en-US",
+        "ru"
+      ],
+      "acceptLanguageList": "en,en-US"
+    },
+    {
+      "selectedLocale": "ru",
+      "fallbackLocales": [
+        "en",
+        "en-US",
+        "ru"
+      ],
+      "acceptLanguageList": "ru"
+    },
+    {
+      "selectedLocale": "en-US",
+      "fallbackLocales": [
+        "en",
+        "en-US",
+        "ru"
+      ],
+      "acceptLanguageList": "en-US"
+    },
+    {
+      "selectedLocale": "en",
+      "fallbackLocales": [
+        "en-US"
+      ],
+      "acceptLanguageList": "en-US,en"
+    },
+    {
+      "selectedLocale": "en",
+      "fallbackLocales": [
+        "ru",
+        "en-US",
+        "en",
+        "en-GB"
+      ],
+      "acceptLanguageList": "en-US,en,en-GB"
+    },
+    {
+      "selectedLocale": "fr-CA",
+      "fallbackLocales": [
+        "en",
+        "fr",
+        "fr-CA"
+      ],
+      "acceptLanguageList": "fr-CA"
+    },
+    {
+      "selectedLocale": "zh-Hant-HK",
+      "fallbackLocales": [
+        "en",
+        "zh-Hant",
+        "zh-Hant-HK"
+      ],
+      "acceptLanguageList": "zh-Hant-HK"
+    }
+  ]
+}

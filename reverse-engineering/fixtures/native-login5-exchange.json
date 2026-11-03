@@ -1,0 +1,515 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "start": "0x1018bb258",
+  "cancel": "0x1018bb3e8",
+  "consumer": "0x1018cbf98",
+  "handleDispose": "0x101ceb658",
+  "reconstructedDescriptorSetSha256": "10fc9ef5a4b16fcb9549053681372accb8a47f3532c55d4d73cfb9d77b8d74d8",
+  "wireCorpusSha256": "a00d9926845779ec1e1e2d45e61fae0e4deaa7b78abdfb6cc5116135a1c0db38",
+  "method": "Original task start/cancel/signal/cache/queued-consumer, control-block disposal, HTTP callbacks and unchanged protobuf parser. Synthetic HTTP input getters and clocks; diagnostic-only enum names/log destinations/error formatting hooked. Standard libc/libc++ memory/string/mutex/weak-release imports hooked. HTTP cancellation delegation is not an abort acknowledgement. Native cancel-state wait probe stops without fabricating a wake-up. Captured-owner zero-shared hook does not claim full Task/UI destruction.",
+  "initialRequest": {
+    "size": 61,
+    "hex": "0a240a1073796e7468657469632d636c69656e74121073796e7468657469632d646576696365a206140a0e73796e7468657469632d75736572120200ff",
+    "sizeProcedure": "0x1018d4480",
+    "serializeProcedure": "0x1018d42b4"
+  },
+  "sequences": [
+    {
+      "name": "cancel delivered",
+      "actions": [
+        "cancel"
+      ],
+      "cachedBefore": {
+        "variant": 5,
+        "present": true
+      },
+      "delivered": {
+        "variant": 5,
+        "code": 1
+      },
+      "cachedAfter": {
+        "variant": 4294967295,
+        "present": false
+      },
+      "delegationReceipts": [
+        "owned HTTP cancellation delegated"
+      ],
+      "httpActiveAfter": false
+    },
+    {
+      "name": "success then cancel before queued delivery",
+      "actions": [
+        "success",
+        "cancel"
+      ],
+      "cachedBefore": {
+        "variant": 5,
+        "present": true
+      },
+      "delivered": {
+        "variant": 5,
+        "code": 1
+      },
+      "cachedAfter": {
+        "variant": 4294967295,
+        "present": false
+      },
+      "delegationReceipts": [
+        "owned HTTP cancellation delegated"
+      ],
+      "httpActiveAfter": false
+    },
+    {
+      "name": "retained signal cancel then success before delivery",
+      "actions": [
+        "cancel",
+        "success"
+      ],
+      "cachedBefore": {
+        "variant": 0,
+        "present": true
+      },
+      "delivered": {
+        "variant": 0
+      },
+      "cachedAfter": {
+        "variant": 4294967295,
+        "present": false
+      },
+      "delegationReceipts": [
+        "owned HTTP cancellation delegated"
+      ],
+      "httpActiveAfter": false
+    },
+    {
+      "name": "success delivered",
+      "actions": [
+        "success"
+      ],
+      "cachedBefore": {
+        "variant": 0,
+        "present": true
+      },
+      "delivered": {
+        "variant": 0
+      },
+      "cachedAfter": {
+        "variant": 4294967295,
+        "present": false
+      },
+      "delegationReceipts": [],
+      "httpActiveAfter": true
+    }
+  ],
+  "scopedHandleDisposal": {
+    "receipts": [
+      "owned HTTP cancellation delegated",
+      "captured owner reached zero shared references"
+    ],
+    "cachedAfter": {
+      "variant": 5,
+      "present": true
+    }
+  },
+  "httpCallbacks": [
+    {
+      "name": "unknown error alone",
+      "status": 200,
+      "bodyHex": "10d209",
+      "native": {
+        "outcome": {
+          "kind": "failure",
+          "code": 101
+        },
+        "retryCountAfter": 0,
+        "modelClockReads": [
+          100
+        ],
+        "retryClockReads": 1
+      }
+    },
+    {
+      "name": "unknown error clears prior ok",
+      "status": 200,
+      "bodyHex": "0a030a017810d209",
+      "native": {
+        "outcome": {
+          "kind": "failure",
+          "code": 101
+        },
+        "retryCountAfter": 0,
+        "modelClockReads": [
+          100
+        ],
+        "retryClockReads": 1
+      }
+    },
+    {
+      "name": "later ok starts fresh after unknown error",
+      "status": 200,
+      "bodyHex": "0a030a017810d2090a03120179",
+      "native": {
+        "outcome": {
+          "kind": "ok",
+          "username": "",
+          "accessToken": "y",
+          "storedCredentialHex": "",
+          "expiresAtMicroseconds": 200,
+          "tokenType": "Bearer"
+        },
+        "retryCountAfter": 0,
+        "modelClockReads": [
+          100,
+          200
+        ],
+        "retryClockReads": 1
+      }
+    },
+    {
+      "name": "same message oneof merges",
+      "status": 200,
+      "bodyHex": "0a030a01780a03120179",
+      "native": {
+        "outcome": {
+          "kind": "ok",
+          "username": "x",
+          "accessToken": "y",
+          "storedCredentialHex": "",
+          "expiresAtMicroseconds": 200,
+          "tokenType": "Bearer"
+        },
+        "retryCountAfter": 0,
+        "modelClockReads": [
+          100,
+          200
+        ],
+        "retryClockReads": 1
+      }
+    },
+    {
+      "name": "later challenges clears error",
+      "status": 200,
+      "bodyHex": "10d2091a00",
+      "native": {
+        "outcome": {
+          "kind": "challenges",
+          "responseAtMicroseconds": 100,
+          "savedResponseAttempts": 0
+        },
+        "retryCountAfter": 0,
+        "modelClockReads": [
+          100
+        ],
+        "retryClockReads": 1
+      }
+    },
+    {
+      "name": "known error clears prior ok",
+      "status": 200,
+      "bodyHex": "0a030a01781001",
+      "native": {
+        "outcome": {
+          "kind": "failure",
+          "code": 102
+        },
+        "retryCountAfter": 0,
+        "modelClockReads": [
+          100
+        ],
+        "retryClockReads": 1
+      }
+    },
+    {
+      "name": "error zero keeps oneof presence",
+      "status": 200,
+      "bodyHex": "1000",
+      "native": {
+        "outcome": {
+          "kind": "failure",
+          "code": 101
+        },
+        "retryCountAfter": 0,
+        "modelClockReads": [
+          100
+        ],
+        "retryClockReads": 1
+      }
+    },
+    {
+      "name": "wrong wire enum remains unknown",
+      "status": 200,
+      "bodyHex": "120178",
+      "native": {
+        "outcome": {
+          "kind": "failure",
+          "code": 101
+        },
+        "retryCountAfter": 0,
+        "modelClockReads": [
+          100
+        ],
+        "retryClockReads": 1
+      }
+    },
+    {
+      "name": "truncated message",
+      "status": 200,
+      "bodyHex": "0a040a0178",
+      "native": {
+        "outcome": {
+          "kind": "failure",
+          "code": 2
+        },
+        "retryCountAfter": 1,
+        "modelClockReads": [],
+        "retryClockReads": 1
+      }
+    },
+    {
+      "name": "unmatched group",
+      "status": 200,
+      "bodyHex": "4c",
+      "native": {
+        "outcome": {
+          "kind": "failure",
+          "code": 2
+        },
+        "retryCountAfter": 1,
+        "modelClockReads": [],
+        "retryClockReads": 1
+      }
+    },
+    {
+      "name": "unknown group opaque UTF8",
+      "status": 200,
+      "bodyHex": "4b0a01ff4c0a00",
+      "native": {
+        "outcome": {
+          "kind": "ok",
+          "username": "",
+          "accessToken": "",
+          "storedCredentialHex": "",
+          "expiresAtMicroseconds": 200,
+          "tokenType": "Bearer"
+        },
+        "retryCountAfter": 0,
+        "modelClockReads": [
+          100,
+          200
+        ],
+        "retryClockReads": 1
+      }
+    },
+    {
+      "name": "empty protobuf",
+      "status": 200,
+      "bodyHex": "",
+      "native": {
+        "outcome": {
+          "kind": "failure",
+          "code": 2
+        },
+        "retryCountAfter": 1,
+        "modelClockReads": [],
+        "retryClockReads": 1
+      }
+    },
+    {
+      "name": "unknown user info gender overwrites known",
+      "status": 200,
+      "bodyHex": "10053a05280128d209",
+      "native": {
+        "outcome": {
+          "kind": "signup"
+        },
+        "retryCountAfter": 0,
+        "modelClockReads": [
+          100
+        ],
+        "retryClockReads": 1
+      }
+    },
+    {
+      "name": "wrong wire user info gender remains unknown",
+      "status": 200,
+      "bodyHex": "10053a032a0178",
+      "native": {
+        "outcome": {
+          "kind": "signup"
+        },
+        "retryCountAfter": 0,
+        "modelClockReads": [
+          100
+        ],
+        "retryClockReads": 1
+      }
+    },
+    {
+      "name": "wrong wire code method remains unknown",
+      "status": 200,
+      "bodyHex": "1a070a0512030a0178",
+      "native": {
+        "outcome": {
+          "kind": "challenges",
+          "responseAtMicroseconds": 100,
+          "savedResponseAttempts": 0
+        },
+        "retryCountAfter": 0,
+        "modelClockReads": [
+          100
+        ],
+        "retryClockReads": 1
+      }
+    },
+    {
+      "name": "signed unknown backend enum -1",
+      "status": 200,
+      "bodyHex": "10ffffffffffffffffff01",
+      "native": {
+        "outcome": {
+          "kind": "failure",
+          "code": 101
+        },
+        "retryCountAfter": 0,
+        "modelClockReads": [
+          100
+        ],
+        "retryClockReads": 1
+      }
+    },
+    {
+      "name": "signed unknown backend enum -2147483648",
+      "status": 200,
+      "bodyHex": "1080808080f8ffffffff01",
+      "native": {
+        "outcome": {
+          "kind": "failure",
+          "code": 101
+        },
+        "retryCountAfter": 0,
+        "modelClockReads": [
+          100
+        ],
+        "retryClockReads": 1
+      }
+    },
+    {
+      "name": "HTTP non200",
+      "status": 403,
+      "bodyHex": "6e6f742d70726f746f627566",
+      "native": {
+        "outcome": {
+          "kind": "failure",
+          "code": 3
+        },
+        "retryCountAfter": 1,
+        "modelClockReads": [],
+        "retryClockReads": 1
+      }
+    },
+    {
+      "name": "success reads model clock twice",
+      "status": 200,
+      "bodyHex": "0a0b0a01751201611a01002001",
+      "native": {
+        "outcome": {
+          "kind": "ok",
+          "username": "u",
+          "accessToken": "a",
+          "storedCredentialHex": "00",
+          "expiresAtMicroseconds": 1000200,
+          "tokenType": "Bearer"
+        },
+        "retryCountAfter": 0,
+        "modelClockReads": [
+          100,
+          200
+        ],
+        "retryClockReads": 1
+      }
+    }
+  ],
+  "unexecutedNativeCases": [
+    {
+      "name": "invalid UTF8 in discarded ok",
+      "bodyHex": "0a030a01ff1001",
+      "reason": "Native diagnostic path reaches unprovided standard libc++ iostream initialization101fd1b70; no native callback outcome asserted. Existing public C++ corpus independently rejects this input."
+    }
+  ],
+  "transportCallbacks": [
+    {
+      "code": 10,
+      "httpCategory": true,
+      "native": {
+        "outcome": {
+          "kind": "ignored"
+        },
+        "retryCountAfter": 0,
+        "modelClockReads": [],
+        "retryClockReads": 0
+      }
+    },
+    {
+      "code": 7,
+      "httpCategory": true,
+      "native": {
+        "outcome": {
+          "kind": "failure",
+          "code": 4
+        },
+        "retryCountAfter": 1,
+        "modelClockReads": [],
+        "retryClockReads": 1
+      }
+    },
+    {
+      "code": 10,
+      "httpCategory": false,
+      "native": {
+        "outcome": {
+          "kind": "failure",
+          "code": 4
+        },
+        "retryCountAfter": 1,
+        "modelClockReads": [],
+        "retryClockReads": 1
+      }
+    }
+  ],
+  "httpCancelState": [
+    {
+      "inFlight": 0,
+      "selfCallback": false,
+      "callbackStopFlag": true,
+      "waitReached": false,
+      "completedWithoutWaiting": true
+    },
+    {
+      "inFlight": 1,
+      "selfCallback": false,
+      "callbackStopFlag": true,
+      "waitReached": true,
+      "completedWithoutWaiting": false
+    },
+    {
+      "inFlight": 1,
+      "selfCallback": true,
+      "callbackStopFlag": true,
+      "waitReached": false,
+      "completedWithoutWaiting": true
+    }
+  ],
+  "phoneFallbackContext": {
+    "kind": "challenges",
+    "responseAtMicroseconds": 100,
+    "savedResponseAttempts": 1
+  },
+  "continuationBodies": {
+    "source": "Pinned public C++ protoc36.2; saved native final context/answer field mapping",
+    "loginContextHex": "00ff637478",
+    "hashcashSuffixHex": "000102030405060708090a0b0c0d0e0f",
+    "elapsedNanoseconds": 1234567891,
+    "hashcash": "0a240a1073796e7468657469632d636c69656e74121073796e7468657469632d646576696365120500ff6374781a1f0a1d0a1b0a10000102030405060708090a0b0c0d0e0f1207080110d3f1ec6fa206140a0e73796e7468657469632d75736572120200ff",
+    "skippedSms": "0a240a1073796e7468657469632d636c69656e74121073796e7468657469632d646576696365120500ff637478a206140a0e73796e7468657469632d75736572120200ff"
+  }
+}

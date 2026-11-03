@@ -1,0 +1,6030 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "backendVtable": "0x1025d83a0",
+  "compositionOwner": "0x1012943a8",
+  "petrelEnumReader": "0x100fd0c70",
+  "codeSha256": {
+    "0x101295394": "e3f1da8393512137245a146f33c8e7f106e6e7d8c5bca1013e4e4fef8745e79c",
+    "0x100fd0c70": "6a6e718b76bb0ea4800b191e0d10acbf2406c2de5e0ae15f30d50bb3972d8f1e"
+  },
+  "method": "Original concrete core-bitrate backend -> quality/filter -> storage fields.\n\nThe real backend vtable and its property readers execute unchanged, followed by\noriginal quality, rank, format gate and storage owners. Synthetic typed feature\nprovider results are injected at the configuration interface, not at backend\nmethods. Product/preferences and standard primitives retain the existing oracle\nbindings. No proprietary backend setting, format flag or request choice is\nsubstituted. Execution stops before dispatch; no profile, account or network.\n",
+  "limitations": [
+    "Typed feature-service values are synthetic provider results; feature acquisition/parsing is separate.",
+    "No Free/Premium name-to-entitlement inference, native transport or live account acceptance.",
+    "WiFi secondary setting is captured but backend-advised selection remains separate."
+  ],
+  "cases": [
+    {
+      "configuration": {},
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {},
+      "name": "native configuration defaults",
+      "result": {
+        "nativeSetting": 3,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/1/4445464748494a4b4c4d4e4f5051525354555657?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "integers": {
+          "default_play_bitrate": 0
+        }
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {},
+      "name": "default_play_bitrate 0",
+      "result": {
+        "nativeSetting": 3,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/1/4445464748494a4b4c4d4e4f5051525354555657?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "integers": {
+          "default_play_bitrate": -1
+        }
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {},
+      "name": "default_play_bitrate -1",
+      "result": {
+        "nativeSetting": 0,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": null
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "integers": {
+          "default_play_bitrate": 1
+        }
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {},
+      "name": "default_play_bitrate 1",
+      "result": {
+        "nativeSetting": 1,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/8/7778797a7b7c7d7e7f808182838485868788898a?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "integers": {
+          "default_play_bitrate": 60000
+        }
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {},
+      "name": "default_play_bitrate 60000",
+      "result": {
+        "nativeSetting": 2,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/0/55565758595a5b5c5d5e5f606162636465666768?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "integers": {
+          "default_play_bitrate": 160000
+        }
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {},
+      "name": "default_play_bitrate 160000",
+      "result": {
+        "nativeSetting": 3,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/1/4445464748494a4b4c4d4e4f5051525354555657?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "integers": {
+          "default_play_bitrate": 320000
+        }
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {},
+      "name": "default_play_bitrate 320000",
+      "result": {
+        "nativeSetting": 4,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/2/333435363738393a3b3c3d3e3f40414243444546?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "integers": {
+          "default_play_bitrate": 510000
+        }
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {},
+      "name": "default_play_bitrate 510000",
+      "result": {
+        "nativeSetting": 5,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/22/1112131415161718191a1b1c1d1e1f2021222324?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "integers": {
+          "default_play_bitrate": 4294967296
+        }
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {},
+      "name": "default_play_bitrate 4294967296",
+      "result": {
+        "nativeSetting": 3,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/1/4445464748494a4b4c4d4e4f5051525354555657?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "integers": {
+          "default_play_bitrate": 4295287296
+        }
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {},
+      "name": "default_play_bitrate 4295287296",
+      "result": {
+        "nativeSetting": 4,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/2/333435363738393a3b3c3d3e3f40414243444546?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "integers": {
+          "default_play_bitrate_metered": 0
+        }
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": true,
+      "useNetworkSelection": true,
+      "preferences": {},
+      "name": "default_play_bitrate_metered 0",
+      "result": {
+        "nativeSetting": 3,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/1/4445464748494a4b4c4d4e4f5051525354555657?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate_metered",
+          "kind": "integers",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "integers": {
+          "default_play_bitrate_metered": -1
+        }
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": true,
+      "useNetworkSelection": true,
+      "preferences": {},
+      "name": "default_play_bitrate_metered -1",
+      "result": {
+        "nativeSetting": 0,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": null
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate_metered",
+          "kind": "integers",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "integers": {
+          "default_play_bitrate_metered": 1
+        }
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": true,
+      "useNetworkSelection": true,
+      "preferences": {},
+      "name": "default_play_bitrate_metered 1",
+      "result": {
+        "nativeSetting": 1,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/8/7778797a7b7c7d7e7f808182838485868788898a?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate_metered",
+          "kind": "integers",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "integers": {
+          "default_play_bitrate_metered": 60000
+        }
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": true,
+      "useNetworkSelection": true,
+      "preferences": {},
+      "name": "default_play_bitrate_metered 60000",
+      "result": {
+        "nativeSetting": 2,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/0/55565758595a5b5c5d5e5f606162636465666768?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate_metered",
+          "kind": "integers",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "integers": {
+          "default_play_bitrate_metered": 160000
+        }
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": true,
+      "useNetworkSelection": true,
+      "preferences": {},
+      "name": "default_play_bitrate_metered 160000",
+      "result": {
+        "nativeSetting": 3,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/1/4445464748494a4b4c4d4e4f5051525354555657?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate_metered",
+          "kind": "integers",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "integers": {
+          "default_play_bitrate_metered": 320000
+        }
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": true,
+      "useNetworkSelection": true,
+      "preferences": {},
+      "name": "default_play_bitrate_metered 320000",
+      "result": {
+        "nativeSetting": 4,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/2/333435363738393a3b3c3d3e3f40414243444546?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate_metered",
+          "kind": "integers",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "integers": {
+          "default_play_bitrate_metered": 510000
+        }
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": true,
+      "useNetworkSelection": true,
+      "preferences": {},
+      "name": "default_play_bitrate_metered 510000",
+      "result": {
+        "nativeSetting": 5,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/22/1112131415161718191a1b1c1d1e1f2021222324?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate_metered",
+          "kind": "integers",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "integers": {
+          "default_play_bitrate_metered": 4294967296
+        }
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": true,
+      "useNetworkSelection": true,
+      "preferences": {},
+      "name": "default_play_bitrate_metered 4294967296",
+      "result": {
+        "nativeSetting": 3,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/1/4445464748494a4b4c4d4e4f5051525354555657?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate_metered",
+          "kind": "integers",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "integers": {
+          "default_play_bitrate_metered": 4295287296
+        }
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": true,
+      "useNetworkSelection": true,
+      "preferences": {},
+      "name": "default_play_bitrate_metered 4295287296",
+      "result": {
+        "nativeSetting": 4,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/2/333435363738393a3b3c3d3e3f40414243444546?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate_metered",
+          "kind": "integers",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "petrelMaxRate": null
+      },
+      "productState": {
+        "audio-quality": "0"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {
+        "audio.play_bitrate_non_metered_enumeration": {
+          "value": 6,
+          "overridden": true
+        }
+      },
+      "name": "quality 0, petrel None",
+      "result": {
+        "nativeSetting": 3,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 0,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/1/4445464748494a4b4c4d4e4f5051525354555657?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "petrelMaxRate": "Level0"
+      },
+      "productState": {
+        "audio-quality": "0"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {
+        "audio.play_bitrate_non_metered_enumeration": {
+          "value": 6,
+          "overridden": true
+        }
+      },
+      "name": "quality 0, petrel 'Level0'",
+      "result": {
+        "nativeSetting": 3,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 0,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/1/4445464748494a4b4c4d4e4f5051525354555657?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "petrelMaxRate": "Level1"
+      },
+      "productState": {
+        "audio-quality": "0"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {
+        "audio.play_bitrate_non_metered_enumeration": {
+          "value": 6,
+          "overridden": true
+        }
+      },
+      "name": "quality 0, petrel 'Level1'",
+      "result": {
+        "nativeSetting": 3,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 0,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/1/4445464748494a4b4c4d4e4f5051525354555657?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "petrelMaxRate": "Level2"
+      },
+      "productState": {
+        "audio-quality": "0"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {
+        "audio.play_bitrate_non_metered_enumeration": {
+          "value": 6,
+          "overridden": true
+        }
+      },
+      "name": "quality 0, petrel 'Level2'",
+      "result": {
+        "nativeSetting": 3,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 0,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/1/4445464748494a4b4c4d4e4f5051525354555657?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "petrelMaxRate": "Level3"
+      },
+      "productState": {
+        "audio-quality": "0"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {
+        "audio.play_bitrate_non_metered_enumeration": {
+          "value": 6,
+          "overridden": true
+        }
+      },
+      "name": "quality 0, petrel 'Level3'",
+      "result": {
+        "nativeSetting": 3,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 0,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/1/4445464748494a4b4c4d4e4f5051525354555657?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "petrelMaxRate": "level3"
+      },
+      "productState": {
+        "audio-quality": "0"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {
+        "audio.play_bitrate_non_metered_enumeration": {
+          "value": 6,
+          "overridden": true
+        }
+      },
+      "name": "quality 0, petrel 'level3'",
+      "result": {
+        "nativeSetting": 3,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 0,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/1/4445464748494a4b4c4d4e4f5051525354555657?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "petrelMaxRate": "Level4"
+      },
+      "productState": {
+        "audio-quality": "0"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {
+        "audio.play_bitrate_non_metered_enumeration": {
+          "value": 6,
+          "overridden": true
+        }
+      },
+      "name": "quality 0, petrel 'Level4'",
+      "result": {
+        "nativeSetting": 3,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 0,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/1/4445464748494a4b4c4d4e4f5051525354555657?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "petrelMaxRate": "Level1\u0000tail"
+      },
+      "productState": {
+        "audio-quality": "0"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {
+        "audio.play_bitrate_non_metered_enumeration": {
+          "value": 6,
+          "overridden": true
+        }
+      },
+      "name": "quality 0, petrel 'Level1\\x00tail'",
+      "result": {
+        "nativeSetting": 3,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 0,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/1/4445464748494a4b4c4d4e4f5051525354555657?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "petrelMaxRate": null
+      },
+      "productState": {
+        "audio-quality": "1"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {
+        "audio.play_bitrate_non_metered_enumeration": {
+          "value": 6,
+          "overridden": true
+        }
+      },
+      "name": "quality 1, petrel None",
+      "result": {
+        "nativeSetting": 4,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 1,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/2/333435363738393a3b3c3d3e3f40414243444546?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "petrelMaxRate": "Level0"
+      },
+      "productState": {
+        "audio-quality": "1"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {
+        "audio.play_bitrate_non_metered_enumeration": {
+          "value": 6,
+          "overridden": true
+        }
+      },
+      "name": "quality 1, petrel 'Level0'",
+      "result": {
+        "nativeSetting": 4,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 1,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/2/333435363738393a3b3c3d3e3f40414243444546?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "petrelMaxRate": "Level1"
+      },
+      "productState": {
+        "audio-quality": "1"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {
+        "audio.play_bitrate_non_metered_enumeration": {
+          "value": 6,
+          "overridden": true
+        }
+      },
+      "name": "quality 1, petrel 'Level1'",
+      "result": {
+        "nativeSetting": 4,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 1,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/2/333435363738393a3b3c3d3e3f40414243444546?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "petrelMaxRate": "Level2"
+      },
+      "productState": {
+        "audio-quality": "1"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {
+        "audio.play_bitrate_non_metered_enumeration": {
+          "value": 6,
+          "overridden": true
+        }
+      },
+      "name": "quality 1, petrel 'Level2'",
+      "result": {
+        "nativeSetting": 4,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 1,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/2/333435363738393a3b3c3d3e3f40414243444546?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "petrelMaxRate": "Level3"
+      },
+      "productState": {
+        "audio-quality": "1"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {
+        "audio.play_bitrate_non_metered_enumeration": {
+          "value": 6,
+          "overridden": true
+        }
+      },
+      "name": "quality 1, petrel 'Level3'",
+      "result": {
+        "nativeSetting": 4,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 1,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/2/333435363738393a3b3c3d3e3f40414243444546?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "petrelMaxRate": "level3"
+      },
+      "productState": {
+        "audio-quality": "1"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {
+        "audio.play_bitrate_non_metered_enumeration": {
+          "value": 6,
+          "overridden": true
+        }
+      },
+      "name": "quality 1, petrel 'level3'",
+      "result": {
+        "nativeSetting": 4,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 1,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/2/333435363738393a3b3c3d3e3f40414243444546?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "petrelMaxRate": "Level4"
+      },
+      "productState": {
+        "audio-quality": "1"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {
+        "audio.play_bitrate_non_metered_enumeration": {
+          "value": 6,
+          "overridden": true
+        }
+      },
+      "name": "quality 1, petrel 'Level4'",
+      "result": {
+        "nativeSetting": 4,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 1,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/2/333435363738393a3b3c3d3e3f40414243444546?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "petrelMaxRate": "Level1\u0000tail"
+      },
+      "productState": {
+        "audio-quality": "1"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {
+        "audio.play_bitrate_non_metered_enumeration": {
+          "value": 6,
+          "overridden": true
+        }
+      },
+      "name": "quality 1, petrel 'Level1\\x00tail'",
+      "result": {
+        "nativeSetting": 4,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 1,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/2/333435363738393a3b3c3d3e3f40414243444546?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "petrelMaxRate": null
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {
+        "audio.play_bitrate_non_metered_enumeration": {
+          "value": 6,
+          "overridden": true
+        }
+      },
+      "name": "quality 2, petrel None",
+      "result": {
+        "nativeSetting": 6,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/22/1112131415161718191a1b1c1d1e1f2021222324?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "petrelMaxRate": "Level0"
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {
+        "audio.play_bitrate_non_metered_enumeration": {
+          "value": 6,
+          "overridden": true
+        }
+      },
+      "name": "quality 2, petrel 'Level0'",
+      "result": {
+        "nativeSetting": 6,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/22/1112131415161718191a1b1c1d1e1f2021222324?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "petrelMaxRate": "Level1"
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {
+        "audio.play_bitrate_non_metered_enumeration": {
+          "value": 6,
+          "overridden": true
+        }
+      },
+      "name": "quality 2, petrel 'Level1'",
+      "result": {
+        "nativeSetting": 6,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/57/000102030405060708090a0b0c0d0e0f10111213?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "petrelMaxRate": "Level2"
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {
+        "audio.play_bitrate_non_metered_enumeration": {
+          "value": 6,
+          "overridden": true
+        }
+      },
+      "name": "quality 2, petrel 'Level2'",
+      "result": {
+        "nativeSetting": 6,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/57/000102030405060708090a0b0c0d0e0f10111213?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "petrelMaxRate": "Level3"
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {
+        "audio.play_bitrate_non_metered_enumeration": {
+          "value": 6,
+          "overridden": true
+        }
+      },
+      "name": "quality 2, petrel 'Level3'",
+      "result": {
+        "nativeSetting": 6,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/57/000102030405060708090a0b0c0d0e0f10111213?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "petrelMaxRate": "level3"
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {
+        "audio.play_bitrate_non_metered_enumeration": {
+          "value": 6,
+          "overridden": true
+        }
+      },
+      "name": "quality 2, petrel 'level3'",
+      "result": {
+        "nativeSetting": 6,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/22/1112131415161718191a1b1c1d1e1f2021222324?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "petrelMaxRate": "Level4"
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {
+        "audio.play_bitrate_non_metered_enumeration": {
+          "value": 6,
+          "overridden": true
+        }
+      },
+      "name": "quality 2, petrel 'Level4'",
+      "result": {
+        "nativeSetting": 6,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/22/1112131415161718191a1b1c1d1e1f2021222324?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "petrelMaxRate": "Level1\u0000tail"
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {
+        "audio.play_bitrate_non_metered_enumeration": {
+          "value": 6,
+          "overridden": true
+        }
+      },
+      "name": "quality 2, petrel 'Level1\\x00tail'",
+      "result": {
+        "nativeSetting": 6,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/22/1112131415161718191a1b1c1d1e1f2021222324?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "booleans": {
+          "allow_24bit_flac_support": false
+        },
+        "petrelMaxRate": "Level3"
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {
+        "audio.play_bitrate_non_metered_enumeration": {
+          "value": 6,
+          "overridden": true
+        }
+      },
+      "name": "24bit FLAC support False",
+      "result": {
+        "nativeSetting": 6,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/16/22232425262728292a2b2c2d2e2f303132333435?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "booleans": {
+          "allow_24bit_flac_support": true
+        },
+        "petrelMaxRate": "Level3"
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {
+        "audio.play_bitrate_non_metered_enumeration": {
+          "value": 6,
+          "overridden": true
+        }
+      },
+      "name": "24bit FLAC support True",
+      "result": {
+        "nativeSetting": 6,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/57/000102030405060708090a0b0c0d0e0f10111213?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "booleans": {
+          "allow_xhe_aac_support": false
+        }
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {},
+      "name": "xHE AAC support False",
+      "result": {
+        "nativeSetting": 3,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": null
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "booleans": {
+          "allow_xhe_aac_support": true
+        }
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {},
+      "name": "xHE AAC support True",
+      "result": {
+        "nativeSetting": 3,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/18/88898a8b8c8d8e8f909192939495969798999a9b?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "booleans": {
+          "car_mode_support_enabled": false,
+          "car_mode_force_allow_downgrade": true
+        },
+        "petrelMaxRate": "Level3"
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {
+        "audio.play_bitrate_non_metered_enumeration": {
+          "value": 6,
+          "overridden": true
+        },
+        "audio.car_mode": {
+          "value": true,
+          "overridden": true
+        },
+        "audio.allow_downgrade": {
+          "value": false,
+          "overridden": true
+        }
+      },
+      "name": "car support False, forced True, preference False",
+      "result": {
+        "nativeSetting": 6,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/57/000102030405060708090a0b0c0d0e0f10111213?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "booleans": {
+          "car_mode_support_enabled": true,
+          "car_mode_force_allow_downgrade": false
+        },
+        "petrelMaxRate": "Level3"
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {
+        "audio.play_bitrate_non_metered_enumeration": {
+          "value": 6,
+          "overridden": true
+        },
+        "audio.car_mode": {
+          "value": true,
+          "overridden": true
+        },
+        "audio.allow_downgrade": {
+          "value": false,
+          "overridden": true
+        }
+      },
+      "name": "car support True, forced False, preference False",
+      "result": {
+        "nativeSetting": 6,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/57/000102030405060708090a0b0c0d0e0f10111213?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_force_allow_downgrade",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "booleans": {
+          "car_mode_support_enabled": true,
+          "car_mode_force_allow_downgrade": true
+        },
+        "petrelMaxRate": "Level3"
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {
+        "audio.play_bitrate_non_metered_enumeration": {
+          "value": 6,
+          "overridden": true
+        },
+        "audio.car_mode": {
+          "value": true,
+          "overridden": true
+        },
+        "audio.allow_downgrade": {
+          "value": false,
+          "overridden": true
+        }
+      },
+      "name": "car support True, forced True, preference False",
+      "result": {
+        "nativeSetting": 4,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/2/333435363738393a3b3c3d3e3f40414243444546?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_force_allow_downgrade",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "booleans": {
+          "car_mode_support_enabled": true,
+          "car_mode_force_allow_downgrade": false
+        },
+        "petrelMaxRate": "Level3"
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {
+        "audio.play_bitrate_non_metered_enumeration": {
+          "value": 6,
+          "overridden": true
+        },
+        "audio.car_mode": {
+          "value": true,
+          "overridden": true
+        },
+        "audio.allow_downgrade": {
+          "value": true,
+          "overridden": true
+        }
+      },
+      "name": "car support True, forced False, preference True",
+      "result": {
+        "nativeSetting": 4,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/2/333435363738393a3b3c3d3e3f40414243444546?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_force_allow_downgrade",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "booleans": {
+          "hifi_target_bitrate_as_minimum_on_wifi": true
+        }
+      },
+      "productState": {
+        "audio-quality": "0"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {},
+      "name": "WiFi minimum, quality 0",
+      "result": {
+        "nativeSetting": 3,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 0,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/1/4445464748494a4b4c4d4e4f5051525354555657?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "booleans": {
+          "hifi_target_bitrate_as_minimum_on_wifi": true
+        }
+      },
+      "productState": {
+        "audio-quality": "1"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {},
+      "name": "WiFi minimum, quality 1",
+      "result": {
+        "nativeSetting": 3,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 1,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/1/4445464748494a4b4c4d4e4f5051525354555657?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "booleans": {
+          "hifi_target_bitrate_as_minimum_on_wifi": true
+        }
+      },
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {},
+      "name": "WiFi minimum, quality 2",
+      "result": {
+        "nativeSetting": 3,
+        "nativeSecondarySetting": 5,
+        "nativeClassLimit": 2,
+        "storageRequest": {
+          "relativePath": "storage-resolve/v2/files/audio/interactive/1/4445464748494a4b4c4d4e4f5051525354555657?product=0",
+          "headers": {
+            "cache-control": "no-cache"
+          }
+        }
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "configuration": {},
+      "productState": {
+        "audio-quality": "2"
+      },
+      "files": [
+        {
+          "format": 57,
+          "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+        },
+        {
+          "format": 22,
+          "fileIdHex": "1112131415161718191a1b1c1d1e1f2021222324"
+        },
+        {
+          "format": 16,
+          "fileIdHex": "22232425262728292a2b2c2d2e2f303132333435"
+        },
+        {
+          "format": 2,
+          "fileIdHex": "333435363738393a3b3c3d3e3f40414243444546"
+        },
+        {
+          "format": 1,
+          "fileIdHex": "4445464748494a4b4c4d4e4f5051525354555657"
+        },
+        {
+          "format": 0,
+          "fileIdHex": "55565758595a5b5c5d5e5f606162636465666768"
+        },
+        {
+          "format": 9,
+          "fileIdHex": "666768696a6b6c6d6e6f70717273747576777879"
+        },
+        {
+          "format": 8,
+          "fileIdHex": "7778797a7b7c7d7e7f808182838485868788898a"
+        },
+        {
+          "format": 18,
+          "fileIdHex": "88898a8b8c8d8e8f909192939495969798999a9b"
+        },
+        {
+          "format": 19,
+          "fileIdHex": "999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabac"
+        },
+        {
+          "format": 20,
+          "fileIdHex": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+        }
+      ],
+      "isMetered": false,
+      "useNetworkSelection": true,
+      "preferences": {},
+      "name": "decoder rejects all candidates",
+      "supportedByDecoder": false,
+      "result": {
+        "nativeSetting": 3,
+        "nativeSecondarySetting": 0,
+        "nativeClassLimit": 2,
+        "storageRequest": null
+      },
+      "featureQueries": [
+        {
+          "group": "core-bitrate",
+          "key": "allow_24bit_flac_support",
+          "kind": "booleans",
+          "fallback": 1
+        },
+        {
+          "group": "core-bitrate",
+          "key": "allow_xhe_aac_support",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "petrel_max_rate",
+          "kind": "optional-enum-string",
+          "fallback": null
+        },
+        {
+          "group": "core-bitrate",
+          "key": "car_mode_support_enabled",
+          "kind": "booleans",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "default_play_bitrate",
+          "kind": "integers",
+          "fallback": 0
+        },
+        {
+          "group": "core-bitrate",
+          "key": "hifi_target_bitrate_as_minimum_on_wifi",
+          "kind": "booleans",
+          "fallback": 0
+        }
+      ]
+    }
+  ]
+}

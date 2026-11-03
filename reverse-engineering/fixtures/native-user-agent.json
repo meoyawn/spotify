@@ -1,0 +1,64 @@
+{
+  "provenance": "Execute the original native user-agent formatting fragment offline.\n\nThe application root's configuration values are established by static tracing;\nthis bounded oracle executes the original argument selection and formatting\nwrapper with synthetic hardware models. Standard libc/libc++ calls are hooked,\nand formatting delegates to the host's libc snprintf. No process or network.",
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "fragment": [
+    "0x1017bfb58",
+    "0x1017bfc58"
+  ],
+  "wrapper": "0x101f5c748",
+  "configurationRoot": "0x100061f64",
+  "hardwareModelGetter": "0x100406824",
+  "cases": [
+    {
+      "hardwareModel": "MacBookPro18,3",
+      "userAgentOverride": "",
+      "format": "Spotify/%d %s/%d (%s)",
+      "version": 130601921,
+      "platform": "OSX_ARM64",
+      "component": 0,
+      "userAgent": "Spotify/130601921 OSX_ARM64/0 (MacBookPro18,3)"
+    },
+    {
+      "hardwareModel": "Mac14,2",
+      "userAgentOverride": "",
+      "format": "Spotify/%d %s/%d (%s)",
+      "version": 130601921,
+      "platform": "OSX_ARM64",
+      "component": 0,
+      "userAgent": "Spotify/130601921 OSX_ARM64/0 (Mac14,2)"
+    },
+    {
+      "hardwareModel": "SyntheticHardwareModelLongerThanSSO",
+      "userAgentOverride": "",
+      "format": "Spotify/%d %s/%d (%s)",
+      "version": 130601921,
+      "platform": "OSX_ARM64",
+      "component": 0,
+      "userAgent": "Spotify/130601921 OSX_ARM64/0 (SyntheticHardwareModelLongerThanSSO)"
+    },
+    {
+      "hardwareModel": "model\u0000suffix",
+      "userAgentOverride": "",
+      "format": "Spotify/%d %s/%d (%s)",
+      "version": 130601921,
+      "platform": "OSX_ARM64",
+      "component": 0,
+      "userAgent": "Spotify/130601921 OSX_ARM64/0 (model)"
+    },
+    {
+      "hardwareModel": "ignored-model",
+      "userAgentOverride": "Custom/1 ",
+      "userAgent": "Custom/1 "
+    },
+    {
+      "hardwareModel": "ignored-model",
+      "userAgentOverride": "SyntheticOverride/1 (UTF-8 caf\u00e9)  ",
+      "userAgent": "SyntheticOverride/1 (UTF-8 caf\u00e9)  "
+    },
+    {
+      "hardwareModel": "ignored-model",
+      "userAgentOverride": "\u0000",
+      "userAgent": "\u0000"
+    }
+  ]
+}

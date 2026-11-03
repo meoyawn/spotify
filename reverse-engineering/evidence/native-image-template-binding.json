@@ -1,0 +1,217 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "exports": [
+    {
+      "path": ".local/rea-session/image-setup-registration-real-factory-writer.json",
+      "sha256": "11e5bcc4fd102f5ae1fa8a9db460149dd55b1288d59b1f8114efc1451db083f6"
+    },
+    {
+      "path": ".local/rea-session/native-core-component-manager-dependency-frame.json",
+      "sha256": "c0108ca54815650c479d9ee0351cd6b9079770fa1d19f8ae8304b72db5dae3d8"
+    },
+    {
+      "path": ".local/rea-session/native-component-registry-shared-setup-frame.json",
+      "sha256": "f26c2f6af1a9c57126f1d285e66f9c9a860905a1893bee9e1ad51c96422c4499"
+    },
+    {
+      "path": ".local/rea-session/native-shared-auth-scope-image-http-template.json",
+      "sha256": "3f97d4c302eddcf0a071c24a3d999415e029eecfc0eb509d40c53be9aee3eb7b"
+    },
+    {
+      "path": ".local/rea-session/native-playplay-upstream-template-factory-and-secondary-license-context.json",
+      "sha256": "6d3a1221a17f4e765301c0f29a32e9a08951802cfa769fc37b379321b54fa2a2"
+    },
+    {
+      "path": ".local/rea-session/native-authenticated-template-and-rootlist-uri-producers.json",
+      "sha256": "4eae98101d9207ff66be5511731be74bcd0809a771ec953c96aec40930f2da04"
+    }
+  ],
+  "binding": {
+    "registry": "0x100af609c",
+    "frameBaseOffset": "0xa8",
+    "frameHttpFactoryOffset": "0x68",
+    "registryHttpFactoryOffset": "0x110",
+    "registryArgument": 14,
+    "outerFactory": "0x100af2e20 owner+0xf0",
+    "factoryConstructor": "0x100af4838",
+    "factoryVtable": "0x1025a31d0",
+    "templateGetter": "0x100af4978",
+    "templateStateOffset": "0x38",
+    "callerWrapper": "0x101c20474",
+    "callerSetter": "0x101c248d4",
+    "callerRecordOffset": "0x2d8",
+    "headerSetterSlots": [
+      "0x40",
+      "0x48"
+    ]
+  },
+  "ranges": [
+    {
+      "start": "0x100af3924",
+      "endExclusive": "0x100af3b10",
+      "sha256": "ca2e2d80d374f4a847ca70662b00362471874dbf26db92ca5ddefa8bae275ad8"
+    },
+    {
+      "start": "0x100af7478",
+      "endExclusive": "0x100af7528",
+      "sha256": "121632f4da466290b8ee2b545ae6124dd71ec0fbb794fdad9613438ea6cf2abc"
+    },
+    {
+      "start": "0x100af758c",
+      "endExclusive": "0x100af776c",
+      "sha256": "640f744f131afa278e6ab70858ed02fef92b7f22bb26ace677b4712f6ddf561c"
+    },
+    {
+      "start": "0x10058fed0",
+      "endExclusive": "0x10058fffc",
+      "sha256": "b48f547277306266433a3bdb8dae7a2027fad9b42b35be942b39efadc78c89da"
+    },
+    {
+      "start": "0x100af4978",
+      "endExclusive": "0x100af49fc",
+      "sha256": "1700c9b9e14f69cf785827b1fba16cb889591b5ea21bef70ec3c642897011563"
+    },
+    {
+      "start": "0x101c20474",
+      "endExclusive": "0x101c204d4",
+      "sha256": "71691e6e4af611774e051732f9fd89ad2a17a025f7b742922c407c66d7be925e"
+    },
+    {
+      "start": "0x101c248d4",
+      "endExclusive": "0x101c24924",
+      "sha256": "ec92a7ffd6fd1c844fd8624e54d0b5ee43de009c2f3ecd4a16c9fd159857990e"
+    },
+    {
+      "start": "0x100af609c",
+      "endExclusive": "0x100af63d0",
+      "sha256": "35587394272d9c062e2b9c5d979cbef5a26a1b751c0c56c11d6914ccfb4c7083"
+    },
+    {
+      "start": "0x1012a42e4",
+      "endExclusive": "0x1012a4440",
+      "sha256": "f3e7d5e627712a61796cbacb2e7f7adec5366751039eba714a1ef14170104dbc"
+    },
+    {
+      "start": "0x1012a4688",
+      "endExclusive": "0x1012a4780",
+      "sha256": "d957c77c5519a5320ce9198c195ffd05943e04500ce64007f97ca974318fb0db"
+    }
+  ],
+  "outgoingImageMap": {
+    "suppliedCommonTemplate": {
+      "method": "GET",
+      "url": "https://spclient.example.test:443/",
+      "headers": {
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer fixture-access-token",
+        "spotify-app-version": "130601921",
+        "time-zone": "Europe/Moscow",
+        "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+        "client-token": "fixture-client-token"
+      },
+      "bodyHex": ""
+    },
+    "originalMapProducer": "0x10059dcc0",
+    "originalMapRequest": {
+      "method": "GET",
+      "url": "https://spclient.example.test:443/",
+      "headers": {
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer fixture-access-token",
+        "spotify-app-version": "130601921",
+        "time-zone": "Europe/Moscow",
+        "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+        "client-token": "fixture-client-token"
+      },
+      "bodyHex": "",
+      "relativePath": "image-resolve/v1/resolve/map",
+      "options": {
+        "opaqueContext": "0x12345678"
+      },
+      "headerMutations": [],
+      "rawUrl": "https://spclient.example.test:443/image-resolve/v1/resolve/map"
+    },
+    "originalSharedCapture": {
+      "path": ".local/original-reference-streaming-netlog.json",
+      "sha256": "644660b4da3948c6f0e0e21479b34de444f295ba3e94684257e2c53dc9587489",
+      "eventCount": 82703,
+      "provenance": "Supervisor reports unmodified original Spotify played Riders On The Storm - Fredwreck Remix for 8 seconds, paused, then owned original process terminated; finalized NetLog captured Everything.",
+      "trackLabelLimit": "UI-observed track label is supervisor context; HTTP records expose file flow, not an independently recovered track title."
+    },
+    "applicationHeaderNames": [
+      "accept-language",
+      "app-platform",
+      "authorization",
+      "spotify-app-version",
+      "time-zone",
+      "user-agent",
+      "client-token"
+    ],
+    "expectedHttp3Headers": {
+      ":method": "GET",
+      ":authority": "spclient.example.test:443",
+      ":scheme": "https",
+      ":path": "/image-resolve/v1/resolve/map",
+      "accept-language": "en",
+      "app-platform": "OSX_ARM64",
+      "authorization": "Bearer fixture-access-token",
+      "spotify-app-version": "130601921",
+      "time-zone": "Europe/Moscow",
+      "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+      "client-token": "fixture-client-token",
+      "sec-fetch-site": "same-origin",
+      "sec-fetch-mode": "no-cors",
+      "sec-fetch-dest": "empty",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "priority": "u=4, i"
+    },
+    "expectedBodyHex": "",
+    "derivation": [
+      "Common factory binding and concrete caller setter establish the same inherited app group as actual original music/source3404 and storage/source3422.",
+      "Original map GET producer runs with that explicit sanitized template and adds no header mutations or body.",
+      "Automatic empty-GET fields come from actual original storage/source3422; its explicit Pragma/Cache-Control additions are excluded because neither shared key template nor image-map producer adds them.",
+      "Only synthetic authority, credentials and the image-map path are substituted; no fresh original map network capture is claimed."
+    ]
+  },
+  "substitutions": [
+    "Synthetic frame, factory state, native builder record and opaque dependency sentinels.",
+    "Injected opaque native-template clone provider copies the supplied record; native clone implementation is not executed.",
+    "Original image constructor is observed at100590530 and stopped before creating services or HTTP.",
+    "Inherited standard allocation/libc memory and string providers."
+  ],
+  "limits": [
+    "Whole image setup, actual shared getter and concrete caller setter execute unchanged.",
+    "Audio caller case executes the shared getter with the caller independently visible in10048a5a4; the entire audio setup is source-traced, not executed.",
+    "Constructor/registry argument binding is source and exact instruction-range evidence, not whole-registry execution.",
+    "Does not recover live template credentials, origin, remote configuration, headers or HTTP output by itself."
+  ],
+  "cases": [
+    {
+      "entry": "0x10058fed0",
+      "sameCommonTemplateSelected": true,
+      "caller": "cpp-content_delivery-image_resolve_setup_impl",
+      "outsideCallerRecordUnchanged": true,
+      "outsideCallerRecordSha256": "4642dd7abb2e095b46bde57e3d785d6740d1aef556e60b16d928b49282ec699c",
+      "imageContextArguments": {
+        "context": 65664,
+        "configuration": 65584,
+        "dependency98": 65688,
+        "dependency108": 65800
+      },
+      "executedInstructionCount": 103,
+      "executedInstructionSha256": "74f6b740e4a9dd91129b41cc5404a7a70449e3b87b713f0797345c12cb451be0"
+    },
+    {
+      "entry": "0x100af4978",
+      "sameCommonTemplateSelected": true,
+      "caller": "cpp-audio-drm_setup_impl",
+      "outsideCallerRecordUnchanged": true,
+      "outsideCallerRecordSha256": "4642dd7abb2e095b46bde57e3d785d6740d1aef556e60b16d928b49282ec699c",
+      "imageContextArguments": null,
+      "executedInstructionCount": 62,
+      "executedInstructionSha256": "f0401ea51f682d0b0853e8ae418a82d92a4cb4bc8db73b221a6ef09598859db3"
+    }
+  ]
+}

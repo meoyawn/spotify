@@ -1,0 +1,99 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "kind": "static original desktop Accounts flow trace",
+  "ports": {
+    "address": "0x102188280",
+    "bytesHex": "1d1100001e1100001f11000020110000211100002211000023110000241100002511000026110000901f0000911f0000921f0000fb200000",
+    "values": [
+      4381,
+      4382,
+      4383,
+      4384,
+      4385,
+      4386,
+      4387,
+      4388,
+      4389,
+      4390,
+      8080,
+      8081,
+      8082,
+      8443
+    ]
+  },
+  "entries": {
+    "desktopService": "0x1001012f0",
+    "desktopOwner": "0x1003fce2c",
+    "metadataContinuation": "0x100403530",
+    "flowFactory": "0x100407ec0",
+    "loopbackStart": "0x10040a970",
+    "serverCreated": "0x10040abec",
+    "incomingHttp": "0x10040ae9c",
+    "nativeRedirectAuth": "0x101642918",
+    "descriptorInitializer": "0x101d845a0",
+    "clientDescriptor": "0x102808838",
+    "scopeDescriptors": "0x102808848",
+    "decoder": "0x101d84a58",
+    "scopeProducer": "0x101d84484",
+    "pkceProducer": "0x1017a6224",
+    "urlOwner": "0x101673dd8",
+    "authorizationPairs": "0x101674600",
+    "creationPoint": "0x10167564c",
+    "campaign": "0x10167b894",
+    "flowContext": "0x101674284",
+    "querySerializer": "0x101f52f44",
+    "callbackOwner": "0x101670c9c",
+    "callbackQuery": "0x101f54d20",
+    "tokenFields": "0x1016721e0",
+    "formSerializer": "0x10167d228"
+  },
+  "sourceRanges": [
+    {
+      "start": "0x100026f44",
+      "endExclusive": "0x100026fd0",
+      "sha256": "049bee823b2f873d314606b2de95b4a4db3d884b79f7832f67428c3f91569547"
+    },
+    {
+      "start": "0x100063cd0",
+      "endExclusive": "0x100063d60",
+      "sha256": "9335b38b5ab19a247c30a21f3e5f3b1640968326206a0d2f8931bcec448a188e"
+    },
+    {
+      "start": "0x100407e84",
+      "endExclusive": "0x100407eb8",
+      "sha256": "46153929de359d9c44fd3fbc917d99c106b002b60c0e5a7609fbfa62aef1a93f"
+    },
+    {
+      "start": "0x10040a970",
+      "endExclusive": "0x10040aabc",
+      "sha256": "956d8be52122659b1590737270692c7fdde27d0dfce4d426e350be7bcad1a9fb"
+    },
+    {
+      "start": "0x10040abec",
+      "endExclusive": "0x10040ad68",
+      "sha256": "b9365e4f38cbca2b8d3221a7d3c4e48ff3f3852809b7f8915d81cc49640319ac"
+    },
+    {
+      "start": "0x10040891c",
+      "endExclusive": "0x100408c80",
+      "sha256": "01b4bab81e340bb4488cc02ca974ab3eb43cef747dc2d3f6a00b55db252e61ae"
+    },
+    {
+      "start": "0x101642918",
+      "endExclusive": "0x101642be0",
+      "sha256": "d33fdd4ad76164d2f2d9d6decef889e00abca66644d4f0ef2d96fa5a21af9c51"
+    }
+  ],
+  "limits": [
+    "Static proprietary call/field linkage and immutable port table; separate original-execution primary URL and callback/form proof is linked.",
+    "No app, account, profile, browser, socket or remote endpoint is executed by this evidence.",
+    "The primary URL now has original desktop client ID, ordered scopes and PKCE execution evidence; browser/callback-server delivery and complete session integration remain unfinished.",
+    "The consent-mode helper is a separate bounded owner and is not installed as primary desktop sign-in."
+  ],
+  "primaryOutgoingEvidence": {
+    "fixture": "reverse-engineering/fixtures/native-desktop-accounts.json",
+    "sha256": "6a96813ac3078348436abdb19d1e060cdd035c06d90d28806e124b2e6f27628c",
+    "authorizationCases": 16,
+    "callbackFormCases": 13
+  }
+}

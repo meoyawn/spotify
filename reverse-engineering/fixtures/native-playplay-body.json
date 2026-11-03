@@ -1,0 +1,70 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "producer": "0x10048c604",
+  "versionGetter": "0x1004d69e0",
+  "tokenGetter": "0x1004d69f0",
+  "tokenLengthGetter": "0x1004d69e8",
+  "producerCodeSha256": "5a2bcab58bad4e2e5b1475679f610d1e3248134b783d4d6e3cac72a02aaaceb3",
+  "standardSubstitutions": [
+    "Supplied clock callback",
+    "Public protobuf ArenaStringPtr storage",
+    "Inherited standard libc/libc++ allocation, memory and strings"
+  ],
+  "limits": [
+    "The cache-ID and native-interactivity inputs are explicit synthetic values, not evidence of their actual caller policy.",
+    "Execution stops at the standard serialization wrapper before job creation or HTTP.",
+    "The installed original schema-specific size/writer routines produce the expected body bytes."
+  ],
+  "cases": [
+    {
+      "name": "fresh interactive",
+      "cacheId": "",
+      "timestampSeconds": 1700000000,
+      "nativeInteractivity": 0,
+      "sourceKind": 0,
+      "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+      "sizeProcedure": "0x1004d7164",
+      "serializeProcedure": "0x1004d6d40"
+    },
+    {
+      "name": "explicit cache ID",
+      "cacheId": "synthetic-cache-01",
+      "timestampSeconds": 1700000001,
+      "nativeInteractivity": 0,
+      "sourceKind": 0,
+      "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f78241a1273796e7468657469632d63616368652d3031200128013081e2cfaa06",
+      "sizeProcedure": "0x1004d7164",
+      "serializeProcedure": "0x1004d6d40"
+    },
+    {
+      "name": "source mode1",
+      "cacheId": "synthetic-cache-01",
+      "timestampSeconds": 1700000002,
+      "nativeInteractivity": 1,
+      "sourceKind": 0,
+      "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f78241a1273796e7468657469632d63616368652d3031200228013082e2cfaa06",
+      "sizeProcedure": "0x1004d7164",
+      "serializeProcedure": "0x1004d6d40"
+    },
+    {
+      "name": "source mode2",
+      "cacheId": "",
+      "timestampSeconds": 1700000003,
+      "nativeInteractivity": 2,
+      "sourceKind": 0,
+      "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200328013083e2cfaa06",
+      "sizeProcedure": "0x1004d7164",
+      "serializeProcedure": "0x1004d6d40"
+    },
+    {
+      "name": "zero timestamp",
+      "cacheId": "",
+      "timestampSeconds": 0,
+      "nativeInteractivity": 0,
+      "sourceKind": 0,
+      "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f782420012801",
+      "sizeProcedure": "0x1004d7164",
+      "serializeProcedure": "0x1004d6d40"
+    }
+  ]
+}

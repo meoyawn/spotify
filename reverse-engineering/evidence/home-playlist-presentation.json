@@ -1,0 +1,495 @@
+{
+  "rea": {
+    "evidenceId": "ev_7cd6b3a291b35f174ad0f35e2cee63b73ada101c7d7bea798a41264ef6362601",
+    "rootSha256": "cb9b373c9151b8d6a4911e13272a6927cd5dd238ffb1a5c500e34c7be2458e3a",
+    "provider": {
+      "id": "rea-javascript-application",
+      "name": "REA JavaScript application analyzer",
+      "version": "1"
+    }
+  },
+  "sources": [
+    {
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f"
+    },
+    {
+      "member": "180.js",
+      "sha256": "218fa9b3f59b423be87abf260b729c7acc26bca252d1da158a099d9999b07033"
+    },
+    {
+      "member": "8810.js",
+      "sha256": "af07f2b9e6a8363b783da7171f3948effb9b9234f701fb3b1bc2099212106896"
+    },
+    {
+      "member": "xpui-routes-playlist.js",
+      "sha256": "52a02cac0223ae2606bf69fb3953d4105adc6e9f71f9212ddb24ca0fe4a26826"
+    },
+    {
+      "member": "dwp-home-chips-row.js",
+      "sha256": "3fc118b8b7b1c65fc9132552ca23beb26c9687a8c20b8b0e13f0a1afa5383e5d"
+    },
+    {
+      "member": "dwp-home-chips-row.css",
+      "sha256": "79d350b801030c53240e25841592f78e5eb83f802407dc921da2315aa38561ba"
+    },
+    {
+      "member": "824.css",
+      "sha256": "bbe16990bfa8c4497e970635d77b52c4ff66b567a530b2761f2e4bd0b72eb467"
+    }
+  ],
+  "ranges": [
+    {
+      "name": "module 50427",
+      "owner": "main",
+      "offsetBytes": 1403912,
+      "lengthBytes": 3318,
+      "sha256": "257ff6c4aa0ec911ab1e5b85d2e3ef7569f5bc947388cb51e76d3b15392db113"
+    },
+    {
+      "name": "module 85424",
+      "owner": "180.js",
+      "offsetBytes": 27203,
+      "lengthBytes": 454,
+      "sha256": "87b953278f6138abd38d751bf9141833deb1940c538383101f9d6c883ee5011d"
+    },
+    {
+      "name": "playlist header URL precedence",
+      "owner": "xpui-routes-playlist.js",
+      "offsetBytes": 61987,
+      "lengthBytes": 54,
+      "sha256": "c67c57952d1c466cce79932cdd866749db18dfa08d60d3ed4fb8147f11587ab1"
+    },
+    {
+      "name": "module 54461",
+      "owner": "main",
+      "offsetBytes": 3996851,
+      "lengthBytes": 1390,
+      "sha256": "d0f716ea1ed911c577617af08224abcb46f7b077adf34f165605324dad031881"
+    },
+    {
+      "name": "module 94783",
+      "owner": "main",
+      "offsetBytes": 3996305,
+      "lengthBytes": 327,
+      "sha256": "7b0ffb2d36a3e723578f6fdcf712d411f92379e3d433f2b7d19d0a0421eba0e6"
+    },
+    {
+      "name": "server-provided chip IDs and labels",
+      "owner": "dwp-home-chips-row.js",
+      "offsetBytes": 12110,
+      "lengthBytes": 224,
+      "sha256": "7eaa7814015a696be7b6dfd88d72c7a51ba3e975503969ecef3e15f20c1a6d94"
+    },
+    {
+      "name": "chip ID to Home facet URL",
+      "owner": "dwp-home-chips-row.js",
+      "offsetBytes": 11263,
+      "lengthBytes": 116,
+      "sha256": "78967306113042e9df3178d94132b6377961e2d88ed4b2ad8411c2dbc8ed8c95"
+    },
+    {
+      "name": "full-bleed responsive height CSS",
+      "owner": "dwp-home-chips-row.css",
+      "offsetBytes": 4557,
+      "lengthBytes": 553,
+      "sha256": "0f29e0567174833e3a56de26083d1da0966547704843e09a436a763e75f80cc5"
+    },
+    {
+      "name": "background cover and 15 percent vertical position CSS",
+      "owner": "824.css",
+      "offsetBytes": 4141,
+      "lengthBytes": 339,
+      "sha256": "1b7d64c0ec209bdfcb23842e6ab7082077d1d8e14bdc82c930b395f4e20484fe"
+    }
+  ],
+  "headerCases": [
+    {
+      "name": "desktop preferred",
+      "attributes": {
+        "header_image_url_desktop": "https://fixture.invalid/desktop",
+        "image_url": "https://fixture.invalid/mobile"
+      },
+      "sponsored": false,
+      "originalUrl": "https://fixture.invalid/desktop"
+    },
+    {
+      "name": "mobile fallback",
+      "attributes": {
+        "header_image_url_desktop": "",
+        "image_url": "https://fixture.invalid/mobile"
+      },
+      "sponsored": false,
+      "originalUrl": "https://fixture.invalid/mobile"
+    },
+    {
+      "name": "ordinary playlist",
+      "attributes": {},
+      "sponsored": false,
+      "originalUrl": null
+    },
+    {
+      "name": "sponsored header suppressed",
+      "attributes": {
+        "header_image_url_desktop": "https://fixture.invalid/desktop"
+      },
+      "sponsored": true,
+      "originalUrl": null
+    }
+  ],
+  "creatorCases": [
+    {
+      "name": "made for replaces owner",
+      "madeFor": {
+        "username": "fixture",
+        "uri": "spotify:user:fixture",
+        "displayName": "Listener",
+        "images": []
+      },
+      "owner": {
+        "username": "spotify",
+        "uri": "spotify:user:spotify",
+        "displayName": "Spotify",
+        "images": []
+      },
+      "original": [
+        {
+          "id": "fixture",
+          "uri": "spotify:user:fixture",
+          "name": "fixture",
+          "displayName": "Listener",
+          "images": [],
+          "isMadeFor": true
+        }
+      ]
+    },
+    {
+      "name": "ordinary owner",
+      "madeFor": null,
+      "owner": {
+        "username": "spotify",
+        "uri": "spotify:user:spotify",
+        "displayName": "Spotify",
+        "images": []
+      },
+      "original": [
+        {
+          "id": "spotify",
+          "uri": "spotify:user:spotify",
+          "name": "spotify",
+          "displayName": "Spotify",
+          "images": [],
+          "isMadeFor": false
+        }
+      ]
+    }
+  ],
+  "cardCases": [
+    {
+      "name": "Spotify-owned personalized playlist",
+      "input": {
+        "name": "Synthetic playlist",
+        "uri": "spotify:playlist:0000000000000000000001",
+        "images": [],
+        "authorName": "Creator",
+        "authorUri": "spotify:user:spotify",
+        "description": "Artists and more",
+        "leaveTitleVisible": false,
+        "isPlayable": true
+      },
+      "showTitle": false,
+      "byline": {
+        "type": "div",
+        "props": {
+          "className": "xIwQzIybPogGEaNJ9FR3",
+          "children": [
+            {
+              "props": {
+                "lineClamp": 2,
+                "children": [
+                  {
+                    "props": {
+                      "source": "Artists and more"
+                    }
+                  },
+                  null
+                ]
+              }
+            },
+            false
+          ]
+        }
+      }
+    },
+    {
+      "name": "Spotify-owned playlist without a description",
+      "input": {
+        "name": "Synthetic playlist",
+        "uri": "spotify:playlist:0000000000000000000001",
+        "images": [],
+        "authorName": "Creator",
+        "authorUri": "spotify:user:spotify",
+        "description": "",
+        "leaveTitleVisible": false,
+        "isPlayable": true
+      },
+      "showTitle": false,
+      "byline": {
+        "type": "div",
+        "props": {
+          "className": "xIwQzIybPogGEaNJ9FR3",
+          "children": [
+            {
+              "props": {
+                "lineClamp": 2,
+                "children": [
+                  {
+                    "type": "span",
+                    "props": {
+                      "children": {
+                        "key": "search.playlist-by",
+                        "value": "Creator"
+                      }
+                    }
+                  },
+                  null
+                ]
+              }
+            },
+            false
+          ]
+        }
+      }
+    },
+    {
+      "name": "User-owned playlist",
+      "input": {
+        "name": "Synthetic playlist",
+        "uri": "spotify:playlist:0000000000000000000001",
+        "images": [],
+        "authorName": "Creator",
+        "authorUri": "spotify:user:fixture",
+        "description": "A description",
+        "leaveTitleVisible": false,
+        "isPlayable": true
+      },
+      "showTitle": true,
+      "byline": {
+        "type": "div",
+        "props": {
+          "className": "xIwQzIybPogGEaNJ9FR3",
+          "children": [
+            {
+              "props": {
+                "lineClamp": 2,
+                "children": [
+                  {
+                    "props": {
+                      "source": "A description"
+                    }
+                  },
+                  null
+                ]
+              }
+            },
+            false
+          ]
+        }
+      }
+    },
+    {
+      "name": "Explicit title override",
+      "input": {
+        "name": "Synthetic playlist",
+        "uri": "spotify:playlist:0000000000000000000001",
+        "images": [],
+        "authorName": "Creator",
+        "authorUri": "spotify:user:spotify",
+        "description": "A description",
+        "leaveTitleVisible": true,
+        "isPlayable": true
+      },
+      "showTitle": true,
+      "byline": {
+        "type": "div",
+        "props": {
+          "className": "xIwQzIybPogGEaNJ9FR3",
+          "children": [
+            {
+              "props": {
+                "lineClamp": 2,
+                "children": [
+                  {
+                    "props": {
+                      "source": "A description"
+                    }
+                  },
+                  null
+                ]
+              }
+            },
+            false
+          ]
+        }
+      }
+    }
+  ],
+  "gridCases": [
+    {
+      "gridWidth": 320,
+      "originalMinimum": 160
+    },
+    {
+      "gridWidth": 640,
+      "originalMinimum": 160
+    },
+    {
+      "gridWidth": 950,
+      "originalMinimum": 160
+    },
+    {
+      "gridWidth": 1199,
+      "originalMinimum": 160
+    },
+    {
+      "gridWidth": 1200,
+      "originalMinimum": 210
+    },
+    {
+      "gridWidth": 1440,
+      "originalMinimum": 210
+    }
+  ],
+  "chipCases": [
+    {
+      "input": [
+        {
+          "id": "music-chip",
+          "label": {
+            "transformedLabel": "Music"
+          },
+          "subChips": [
+            {
+              "id": "music-following-chip",
+              "label": {
+                "transformedLabel": "Following"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opaque-server-id",
+          "label": {
+            "transformedLabel": "Another label"
+          },
+          "subChips": []
+        },
+        {
+          "id": "wrapped-chip",
+          "label": {
+            "transformedLabel": "Hidden"
+          },
+          "subChips": []
+        }
+      ],
+      "showChildren": false,
+      "original": [
+        {
+          "id": "music-chip",
+          "label": "Music"
+        },
+        {
+          "id": "opaque-server-id",
+          "label": "Another label"
+        }
+      ]
+    },
+    {
+      "input": [
+        {
+          "id": "music-chip",
+          "label": {
+            "transformedLabel": "Music"
+          },
+          "subChips": [
+            {
+              "id": "music-following-chip",
+              "label": {
+                "transformedLabel": "Following"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opaque-server-id",
+          "label": {
+            "transformedLabel": "Another label"
+          },
+          "subChips": []
+        },
+        {
+          "id": "wrapped-chip",
+          "label": {
+            "transformedLabel": "Hidden"
+          },
+          "subChips": []
+        }
+      ],
+      "showChildren": true,
+      "original": [
+        {
+          "id": "music-chip",
+          "label": "Music"
+        },
+        {
+          "id": "music-following-chip",
+          "label": "Following"
+        },
+        {
+          "id": "opaque-server-id",
+          "label": "Another label"
+        }
+      ]
+    }
+  ],
+  "chipRouteCases": [
+    {
+      "facet": "",
+      "originalLocation": "/"
+    },
+    {
+      "facet": "music-chip",
+      "originalLocation": "/home?facet=music-chip"
+    },
+    {
+      "facet": "opaque-server-id",
+      "originalLocation": "/home?facet=opaque-server-id"
+    }
+  ],
+  "imageContract": "reverse-engineering/fixtures/native-image-generated-covers.json",
+  "substitutions": [
+    "JSX records trees; React memo/callback run synchronously.",
+    "Mixed-playlist and sponsorship feature inputs are disabled. Service hooks return no data; no network, playback, advertising lifecycle or application bootstrap executes.",
+    "Unused UI component imports are inert. Explicit synthetic playlist/owner inputs, not Dart-produced expected values."
+  ],
+  "scope": "Original banner precedence, creator selection, Spotify-owned card title visibility/byline, minimum card widths, server-chip ID/label projection and chip-to-Home URL callback. CSS identities retain full-bleed height and background positioning.",
+  "serverObservation": {
+    "source": "Existing authenticated Home operation, 2 November 2026, separate from the offline original execution",
+    "musicChipId": "music-chip",
+    "musicLabel": "Music",
+    "followingChipId": "music-following-chip",
+    "verifiedMusicFacet": "music-chip",
+    "responseType": "HomeResponsePayload",
+    "personalizedShelf": {
+      "pretitle": "Made For",
+      "name": "current listener",
+      "discoverWeekly": 1,
+      "dailyMixes": 6
+    },
+    "releaseRadar": "Present in Fresh new music, not inserted into the first shelf"
+  },
+  "limits": [
+    "No claim about every remote experiment, native user-profile hydration, dynamic color extraction or exact whole-window pixel parity.",
+    "Image fields compose independently executed original URL projection with the prior same-authority image capture; they are not new original-client captures of each banner."
+  ]
+}

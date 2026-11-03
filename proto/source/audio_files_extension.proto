@@ -1,0 +1,36 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: 16ae20c292b6c8f8e5ce6d775e3d26c627b09ae3a05a25fec211df2b400a33e3
+
+syntax = "proto3";
+
+package spotify.extendedmetadata.audiofiles;
+
+import "metadata.proto";
+
+option java_package = "com.spotify.audiophile.proto";
+
+option optimize_for = CODE_SIZE;
+
+message NormalizationParams {
+  float loudness_db = 1;
+
+  float true_peak_db = 2;
+}
+
+message ExtendedAudioFile {
+  reserved 2, 3;
+
+  .spotify.metadata.AudioFile file = 1;
+
+  int32 average_bitrate = 4;
+}
+
+message AudioFilesExtensionResponse {
+  repeated .spotify.extendedmetadata.audiofiles.ExtendedAudioFile files = 1;
+
+  .spotify.extendedmetadata.audiofiles.NormalizationParams default_file_normalization_params = 2;
+
+  .spotify.extendedmetadata.audiofiles.NormalizationParams default_album_normalization_params = 3;
+
+  bytes audio_id = 4;
+}

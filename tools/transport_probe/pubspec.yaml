@@ -1,0 +1,11 @@
+name: spotify_transport_probe
+description: Isolated local transport experiments; never uses Spotify endpoints.
+publish_to: none
+environment:
+  sdk: ^3.13.7
+dependencies:
+  flutter:
+    sdk: flutter
+  quic_lib: 1.13.0
+dev_dependencies:
+  ffigen: 23.0.0

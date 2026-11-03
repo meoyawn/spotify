@@ -1,0 +1,14 @@
+// RECONSTRUCTED Login5 schema; not an extracted original descriptor.
+// Native wire facts: docs/evidence/login5-lite-tables.json.
+// Per-field provenance: proto/reconstructed/login5/manifest.json.
+// Original filenames/source options/optional declarations remain unestablished.
+
+syntax = "proto3";
+
+package spotify.login5.v3;
+
+message ClientInfo {
+  string client_id = 1;
+
+  string device_id = 2;
+}

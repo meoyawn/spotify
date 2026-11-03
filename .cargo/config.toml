@@ -1,0 +1,18 @@
+# Cargo reads this for every crate invoked from this directory or a descendant.
+[build]
+rustc-wrapper = "kache"
+
+[env]
+# Keep this project's retention policy and daemon separate from unrelated builds.
+KACHE_CONFIG = { value = ".cargo/kache.toml", relative = true, force = true }
+KACHE_CACHE_DIR = { value = ".local/rust-cache/kache", relative = true, force = true }
+KACHE_LOCAL_ONLY = { value = "true", force = true }
+
+# These match Kache's Cargo setup without replacing target-specific compilers.
+HOST_CC = "kache cc"
+HOST_CXX = "kache c++"
+CC_KNOWN_WRAPPER_CUSTOM = "kache"
+
+# CMake-based build scripts (including boring-sys) select explicit compilers.
+CMAKE_C_COMPILER_LAUNCHER = "kache"
+CMAKE_CXX_COMPILER_LAUNCHER = "kache"

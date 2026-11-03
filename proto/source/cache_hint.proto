@@ -1,0 +1,18 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: 729a055004e6a1b29091cc1daedac72d784ad9a9614d6ef29f88397a5770c143
+
+syntax = "proto3";
+
+package spotify.playlist.messages;
+
+import "google/protobuf/duration.proto";
+
+option java_multiple_files = true;
+
+option java_package = "com.spotify.playlist.messages.proto";
+
+option optimize_for = CODE_SIZE;
+
+message CacheHint {
+  .google.protobuf.Duration next_expected_content_update = 1;
+}

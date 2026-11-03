@@ -1,0 +1,1558 @@
+{
+  "provenance": "Execute original Playlist query and synchronization request construction offline.\n\nOriginal proprietary initializer/compiler/request decisions run. Standard memory,\nstring and container operations are observed or supplied. Protobuf model memory\ncontains synthetic inputs; no original account, storage, network or app is used.",
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "scope": "Original Get query compiler only; standard containers/strings are inert. No data handler success, storage, account or transport is simulated.",
+  "scenarios": [
+    {
+      "name": "empty native query",
+      "query": {},
+      "expected": {
+        "sorts": [],
+        "filters": [],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "primary entity path",
+      "query": {
+        "boolPredicates": [
+          7
+        ],
+        "showUnavailable": true,
+        "supportedPlaceholderTypes": [
+          62,
+          100,
+          96,
+          92
+        ]
+      },
+      "expected": {
+        "sorts": [],
+        "filters": [
+          {
+            "field": "isRecommendation",
+            "value": "false",
+            "operator": 0
+          }
+        ],
+        "supportedPlaceholderTypes": [
+          62,
+          100,
+          96,
+          92
+        ],
+        "availabilityMode": 2,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "ordered combined filters preserve UTF8 values and raw commas",
+      "query": {
+        "boolPredicates": [
+          4,
+          1,
+          7,
+          4,
+          999
+        ],
+        "sortBy": 8,
+        "sourceRestriction": 1,
+        "textFilter": "  Snow 雪  ",
+        "descriptorFilter": [
+          "calm",
+          "rock,pop"
+        ],
+        "languageFilter": [
+          "en",
+          "ja"
+        ],
+        "attributeFilter": [
+          [],
+          [
+            "one"
+          ],
+          [
+            "two",
+            "three,comma"
+          ]
+        ],
+        "tagIdFilter": [
+          7,
+          -2,
+          2147483647
+        ],
+        "itemIdFilter": "row-雪",
+        "providedSortInternalId": "custom-order",
+        "showUnavailable": true,
+        "includePremiumContent": true,
+        "includeAllPlaceholders": true,
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [
+          {
+            "field": "album.name",
+            "ascending": false
+          },
+          {
+            "field": "artist.name",
+            "ascending": true
+          },
+          {
+            "field": "discNumber",
+            "ascending": true
+          },
+          {
+            "field": "trackNumber",
+            "ascending": true
+          },
+          {
+            "field": "originalIndex",
+            "ascending": true
+          }
+        ],
+        "filters": [
+          {
+            "field": "isBanned",
+            "value": "false",
+            "operator": 0
+          },
+          {
+            "field": "available",
+            "value": "true",
+            "operator": 0
+          },
+          {
+            "field": "isRecommendation",
+            "value": "false",
+            "operator": 0
+          },
+          {
+            "field": "isBanned",
+            "value": "false",
+            "operator": 0
+          },
+          {
+            "field": "originalIndex",
+            "value": "50",
+            "operator": 3
+          },
+          {
+            "field": "text",
+            "value": "  Snow 雪  ",
+            "operator": 6
+          },
+          {
+            "field": "tags",
+            "value": "calm",
+            "operator": 6
+          },
+          {
+            "field": "tags",
+            "value": "rock,pop",
+            "operator": 6
+          },
+          {
+            "field": "languages",
+            "value": "en",
+            "operator": 6
+          },
+          {
+            "field": "languages",
+            "value": "ja",
+            "operator": 6
+          },
+          {
+            "field": "attributes",
+            "value": "one",
+            "operator": 6
+          },
+          {
+            "field": "attributes",
+            "value": "two,three,comma",
+            "operator": 6
+          },
+          {
+            "field": "tagIds",
+            "value": "7,-2,2147483647",
+            "operator": 6
+          },
+          {
+            "field": "rowId",
+            "value": "row-雪",
+            "operator": 0
+          }
+        ],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 2,
+        "premiumContentMode": 2,
+        "includeAllPlaceholders": true,
+        "providedSortInternalId": "custom-order",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "source restriction five hundred and long text",
+      "query": {
+        "sourceRestriction": 2,
+        "textFilter": "Synthetic long filter string 雪Synthetic long filter string 雪Synthetic long filter string 雪",
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [],
+        "filters": [
+          {
+            "field": "originalIndex",
+            "value": "500",
+            "operator": 3
+          },
+          {
+            "field": "text",
+            "value": "Synthetic long filter string 雪Synthetic long filter string 雪Synthetic long filter string 雪",
+            "operator": 6
+          }
+        ],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "unknown source and sort preserve default mapping",
+      "query": {
+        "sourceRestriction": 999,
+        "sortBy": 999,
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [],
+        "filters": [],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "nonmetadata filters retain the original metadata opt out",
+      "query": {
+        "languageFilter": [
+          "en"
+        ],
+        "attributeFilter": [
+          [
+            "one"
+          ]
+        ],
+        "tagIdFilter": [
+          1
+        ],
+        "itemIdFilter": "row-id",
+        "providedSortInternalId": "order",
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [],
+        "filters": [
+          {
+            "field": "languages",
+            "value": "en",
+            "operator": 6
+          },
+          {
+            "field": "attributes",
+            "value": "one",
+            "operator": 6
+          },
+          {
+            "field": "tagIds",
+            "value": "1",
+            "operator": 6
+          },
+          {
+            "field": "rowId",
+            "value": "row-id",
+            "operator": 0
+          }
+        ],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "order",
+        "dontLoadItemMetadata": true
+      }
+    },
+    {
+      "name": "premium content and unavailable content are independent modes",
+      "query": {
+        "includePremiumContent": true
+      },
+      "expected": {
+        "sorts": [],
+        "filters": [],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 2,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "unknown boolean predicate still disables metadata opt out",
+      "query": {
+        "boolPredicates": [
+          999
+        ],
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [],
+        "filters": [],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "native sort 0 metadata optimization",
+      "query": {
+        "sortBy": 0,
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [],
+        "filters": [],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": true
+      }
+    },
+    {
+      "name": "native sort 1 metadata optimization",
+      "query": {
+        "sortBy": 1,
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [
+          {
+            "field": "album.artist.name",
+            "ascending": true
+          },
+          {
+            "field": "originalIndex",
+            "ascending": true
+          }
+        ],
+        "filters": [],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "native sort 2 metadata optimization",
+      "query": {
+        "sortBy": 2,
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [
+          {
+            "field": "album.artist.name",
+            "ascending": false
+          },
+          {
+            "field": "originalIndex",
+            "ascending": true
+          }
+        ],
+        "filters": [],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "native sort 3 metadata optimization",
+      "query": {
+        "sortBy": 3,
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [
+          {
+            "field": "trackNumber",
+            "ascending": true
+          },
+          {
+            "field": "originalIndex",
+            "ascending": true
+          }
+        ],
+        "filters": [],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "native sort 4 metadata optimization",
+      "query": {
+        "sortBy": 4,
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [
+          {
+            "field": "trackNumber",
+            "ascending": false
+          },
+          {
+            "field": "originalIndex",
+            "ascending": true
+          }
+        ],
+        "filters": [],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "native sort 5 metadata optimization",
+      "query": {
+        "sortBy": 5,
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [
+          {
+            "field": "discNumber",
+            "ascending": true
+          },
+          {
+            "field": "trackNumber",
+            "ascending": true
+          },
+          {
+            "field": "originalIndex",
+            "ascending": true
+          }
+        ],
+        "filters": [],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "native sort 6 metadata optimization",
+      "query": {
+        "sortBy": 6,
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [
+          {
+            "field": "discNumber",
+            "ascending": false
+          },
+          {
+            "field": "trackNumber",
+            "ascending": true
+          },
+          {
+            "field": "originalIndex",
+            "ascending": true
+          }
+        ],
+        "filters": [],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "native sort 7 metadata optimization",
+      "query": {
+        "sortBy": 7,
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [
+          {
+            "field": "album.name",
+            "ascending": true
+          },
+          {
+            "field": "artist.name",
+            "ascending": true
+          },
+          {
+            "field": "discNumber",
+            "ascending": true
+          },
+          {
+            "field": "trackNumber",
+            "ascending": true
+          },
+          {
+            "field": "originalIndex",
+            "ascending": true
+          }
+        ],
+        "filters": [],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "native sort 8 metadata optimization",
+      "query": {
+        "sortBy": 8,
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [
+          {
+            "field": "album.name",
+            "ascending": false
+          },
+          {
+            "field": "artist.name",
+            "ascending": true
+          },
+          {
+            "field": "discNumber",
+            "ascending": true
+          },
+          {
+            "field": "trackNumber",
+            "ascending": true
+          },
+          {
+            "field": "originalIndex",
+            "ascending": true
+          }
+        ],
+        "filters": [],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "native sort 9 metadata optimization",
+      "query": {
+        "sortBy": 9,
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [
+          {
+            "field": "artist.name",
+            "ascending": true
+          },
+          {
+            "field": "album.name",
+            "ascending": true
+          },
+          {
+            "field": "discNumber",
+            "ascending": true
+          },
+          {
+            "field": "trackNumber",
+            "ascending": true
+          },
+          {
+            "field": "originalIndex",
+            "ascending": true
+          }
+        ],
+        "filters": [],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "native sort 10 metadata optimization",
+      "query": {
+        "sortBy": 10,
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [
+          {
+            "field": "artist.name",
+            "ascending": false
+          },
+          {
+            "field": "album.name",
+            "ascending": true
+          },
+          {
+            "field": "discNumber",
+            "ascending": true
+          },
+          {
+            "field": "trackNumber",
+            "ascending": true
+          },
+          {
+            "field": "originalIndex",
+            "ascending": true
+          }
+        ],
+        "filters": [],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "native sort 11 metadata optimization",
+      "query": {
+        "sortBy": 11,
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [
+          {
+            "field": "name",
+            "ascending": true
+          },
+          {
+            "field": "originalIndex",
+            "ascending": true
+          }
+        ],
+        "filters": [],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "native sort 12 metadata optimization",
+      "query": {
+        "sortBy": 12,
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [
+          {
+            "field": "name",
+            "ascending": false
+          },
+          {
+            "field": "originalIndex",
+            "ascending": true
+          }
+        ],
+        "filters": [],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "native sort 13 metadata optimization",
+      "query": {
+        "sortBy": 13,
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [
+          {
+            "field": "addTime",
+            "ascending": true
+          },
+          {
+            "field": "album.name",
+            "ascending": true
+          },
+          {
+            "field": "discNumber",
+            "ascending": true
+          },
+          {
+            "field": "trackNumber",
+            "ascending": true
+          },
+          {
+            "field": "originalIndex",
+            "ascending": true
+          }
+        ],
+        "filters": [],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "native sort 14 metadata optimization",
+      "query": {
+        "sortBy": 14,
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [
+          {
+            "field": "addTime",
+            "ascending": false
+          },
+          {
+            "field": "album.name",
+            "ascending": true
+          },
+          {
+            "field": "discNumber",
+            "ascending": true
+          },
+          {
+            "field": "trackNumber",
+            "ascending": true
+          },
+          {
+            "field": "originalIndex",
+            "ascending": true
+          }
+        ],
+        "filters": [],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "native sort 15 metadata optimization",
+      "query": {
+        "sortBy": 15,
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [
+          {
+            "field": "addedByDisplayName",
+            "ascending": true
+          },
+          {
+            "field": "addedBy",
+            "ascending": true
+          },
+          {
+            "field": "originalIndex",
+            "ascending": true
+          }
+        ],
+        "filters": [],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": true
+      }
+    },
+    {
+      "name": "native sort 16 metadata optimization",
+      "query": {
+        "sortBy": 16,
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [
+          {
+            "field": "addedByDisplayName",
+            "ascending": false
+          },
+          {
+            "field": "addedBy",
+            "ascending": false
+          },
+          {
+            "field": "originalIndex",
+            "ascending": true
+          }
+        ],
+        "filters": [],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": true
+      }
+    },
+    {
+      "name": "native sort 17 metadata optimization",
+      "query": {
+        "sortBy": 17,
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [
+          {
+            "field": "length",
+            "ascending": true
+          },
+          {
+            "field": "originalIndex",
+            "ascending": true
+          }
+        ],
+        "filters": [],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "native sort 18 metadata optimization",
+      "query": {
+        "sortBy": 18,
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [
+          {
+            "field": "length",
+            "ascending": false
+          },
+          {
+            "field": "originalIndex",
+            "ascending": true
+          }
+        ],
+        "filters": [],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "native sort 19 metadata optimization",
+      "query": {
+        "sortBy": 19,
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [
+          {
+            "field": "show.name",
+            "ascending": true
+          },
+          {
+            "field": "originalIndex",
+            "ascending": true
+          }
+        ],
+        "filters": [],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "native sort 20 metadata optimization",
+      "query": {
+        "sortBy": 20,
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [
+          {
+            "field": "show.name",
+            "ascending": false
+          },
+          {
+            "field": "originalIndex",
+            "ascending": true
+          }
+        ],
+        "filters": [],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "native sort 21 metadata optimization",
+      "query": {
+        "sortBy": 21,
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [
+          {
+            "field": "publishDate",
+            "ascending": true
+          },
+          {
+            "field": "originalIndex",
+            "ascending": true
+          }
+        ],
+        "filters": [],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "native sort 22 metadata optimization",
+      "query": {
+        "sortBy": 22,
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [
+          {
+            "field": "publishDate",
+            "ascending": false
+          },
+          {
+            "field": "originalIndex",
+            "ascending": true
+          }
+        ],
+        "filters": [],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "native sort 23 metadata optimization",
+      "query": {
+        "sortBy": 23,
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [
+          {
+            "field": "providedSort",
+            "ascending": true
+          },
+          {
+            "field": "originalIndex",
+            "ascending": true
+          }
+        ],
+        "filters": [],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": true
+      }
+    },
+    {
+      "name": "native sort 24 metadata optimization",
+      "query": {
+        "sortBy": 24,
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [
+          {
+            "field": "providedSort",
+            "ascending": false
+          },
+          {
+            "field": "originalIndex",
+            "ascending": true
+          }
+        ],
+        "filters": [],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": true
+      }
+    },
+    {
+      "name": "native predicate 0 metadata optimization",
+      "query": {
+        "boolPredicates": [
+          0
+        ],
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [],
+        "filters": [],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": true
+      }
+    },
+    {
+      "name": "native predicate 1 metadata optimization",
+      "query": {
+        "boolPredicates": [
+          1
+        ],
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [],
+        "filters": [
+          {
+            "field": "available",
+            "value": "true",
+            "operator": 0
+          }
+        ],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "native predicate 2 metadata optimization",
+      "query": {
+        "boolPredicates": [
+          2
+        ],
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [],
+        "filters": [
+          {
+            "field": "availableOffline",
+            "value": "true",
+            "operator": 0
+          }
+        ],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": true
+      }
+    },
+    {
+      "name": "native predicate 3 metadata optimization",
+      "query": {
+        "boolPredicates": [
+          3
+        ],
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [],
+        "filters": [
+          {
+            "field": "artist.isBanned",
+            "value": "false",
+            "operator": 0
+          }
+        ],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "native predicate 4 metadata optimization",
+      "query": {
+        "boolPredicates": [
+          4
+        ],
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [],
+        "filters": [
+          {
+            "field": "isBanned",
+            "value": "false",
+            "operator": 0
+          }
+        ],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "native predicate 5 metadata optimization",
+      "query": {
+        "boolPredicates": [
+          5
+        ],
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [],
+        "filters": [
+          {
+            "field": "isExplicit",
+            "value": "false",
+            "operator": 0
+          }
+        ],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "native predicate 6 metadata optimization",
+      "query": {
+        "boolPredicates": [
+          6
+        ],
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [],
+        "filters": [
+          {
+            "field": "isEpisode",
+            "value": "false",
+            "operator": 0
+          }
+        ],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": true
+      }
+    },
+    {
+      "name": "native predicate 7 metadata optimization",
+      "query": {
+        "boolPredicates": [
+          7
+        ],
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [],
+        "filters": [
+          {
+            "field": "isRecommendation",
+            "value": "false",
+            "operator": 0
+          }
+        ],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": true
+      }
+    },
+    {
+      "name": "native predicate 8 metadata optimization",
+      "query": {
+        "boolPredicates": [
+          8
+        ],
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [],
+        "filters": [
+          {
+            "field": "isUnplayed",
+            "value": "true",
+            "operator": 0
+          }
+        ],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": true
+      }
+    },
+    {
+      "name": "native predicate 9 metadata optimization",
+      "query": {
+        "boolPredicates": [
+          9
+        ],
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [],
+        "filters": [
+          {
+            "field": "isInProgress",
+            "value": "true",
+            "operator": 0
+          }
+        ],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": true
+      }
+    },
+    {
+      "name": "native predicate 10 metadata optimization",
+      "query": {
+        "boolPredicates": [
+          10
+        ],
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [],
+        "filters": [
+          {
+            "field": "isFullyPlayed",
+            "value": "false",
+            "operator": 0
+          }
+        ],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": true
+      }
+    },
+    {
+      "name": "native predicate 11 metadata optimization",
+      "query": {
+        "boolPredicates": [
+          11
+        ],
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [],
+        "filters": [
+          {
+            "field": "isEpisodeTrailer",
+            "value": "false",
+            "operator": 0
+          }
+        ],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "native predicate 12 metadata optimization",
+      "query": {
+        "boolPredicates": [
+          12
+        ],
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [],
+        "filters": [
+          {
+            "field": "isRecommendation",
+            "value": "true",
+            "operator": 0
+          }
+        ],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": true
+      }
+    },
+    {
+      "name": "native predicate 13 metadata optimization",
+      "query": {
+        "boolPredicates": [
+          13
+        ],
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [],
+        "filters": [
+          {
+            "field": "isVideoContent",
+            "value": "true",
+            "operator": 0
+          }
+        ],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "native predicate 14 metadata optimization",
+      "query": {
+        "boolPredicates": [
+          14
+        ],
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [],
+        "filters": [
+          {
+            "field": "isVideoContent",
+            "value": "false",
+            "operator": 0
+          }
+        ],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "native predicate 15 metadata optimization",
+      "query": {
+        "boolPredicates": [
+          15
+        ],
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [],
+        "filters": [
+          {
+            "field": "isFullyPlayed",
+            "value": "true",
+            "operator": 0
+          }
+        ],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": true
+      }
+    },
+    {
+      "name": "native predicate 16 metadata optimization",
+      "query": {
+        "boolPredicates": [
+          16
+        ],
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [],
+        "filters": [
+          {
+            "field": "local",
+            "value": "false",
+            "operator": 0
+          }
+        ],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": true
+      }
+    },
+    {
+      "name": "native predicate 17 metadata optimization",
+      "query": {
+        "boolPredicates": [
+          17
+        ],
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [],
+        "filters": [
+          {
+            "field": "isPaywalled",
+            "value": "false",
+            "operator": 0
+          }
+        ],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": false
+      }
+    },
+    {
+      "name": "native predicate 18 metadata optimization",
+      "query": {
+        "boolPredicates": [
+          18
+        ],
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [],
+        "filters": [
+          {
+            "field": "isNotFullyPlayedOrInProgress",
+            "value": "true",
+            "operator": 0
+          }
+        ],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": true
+      }
+    },
+    {
+      "name": "native predicate 19 metadata optimization",
+      "query": {
+        "boolPredicates": [
+          19
+        ],
+        "dontLoadItemMetadata": true
+      },
+      "expected": {
+        "sorts": [],
+        "filters": [
+          {
+            "field": "artist.isFollowed",
+            "value": "false",
+            "operator": 0
+          }
+        ],
+        "supportedPlaceholderTypes": [],
+        "availabilityMode": 1,
+        "premiumContentMode": 1,
+        "includeAllPlaceholders": false,
+        "providedSortInternalId": "",
+        "dontLoadItemMetadata": true
+      }
+    }
+  ]
+}

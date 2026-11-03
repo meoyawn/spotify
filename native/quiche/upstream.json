@@ -1,0 +1,29 @@
+{
+  "repository": "https://github.com/cloudflare/quiche.git",
+  "commit": "ae612cf03e8ac708751efa759d3c780bbd6251e1",
+  "version": "0.30.0",
+  "headerSha256": "2b873c84b2afce46eebd1e4420c90037cba8b4263a35db62fa85b63ca7b1cbb3",
+  "features": [
+    "ffi"
+  ],
+  "abi": "macos_arm64",
+  "patches": [
+    {
+      "path": "native/quiche/stream-ack.patch",
+      "sha256": "db02b90b26a46a8b12a723abf8e85a80cf07247f412af11dbb4bc9a8643d5f0f",
+      "files": [
+        {
+          "path": "quiche/src/ffi.rs",
+          "originalSha256": "eb8dff5907acbe0db9888d362994c80dbaccbd80255e17c62405705faae57adb",
+          "patchedSha256": "3710b829c1c7c2d01127f9287b658e86aef6bcd7166ff29bfd16c66454b5793b"
+        }
+      ]
+    }
+  ],
+  "additionalHeaders": [
+    {
+      "path": "native/quiche/stream_ack.h",
+      "sha256": "78b8e640e46eb9bfb751005595f355570d4ad98b7d30600390a1342afd845884"
+    }
+  ]
+}

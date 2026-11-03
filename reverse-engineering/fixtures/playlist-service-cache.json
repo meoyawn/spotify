@@ -1,0 +1,757 @@
+{
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "descriptorSetSha256": "e05cf03aafc96fc69bcf9415def2648fd4ef88c98d131c9f475025ee735221e6",
+  "provenance": "Execute native cache-info/snapshot/row/lens projection offline.\n\nRead-only managed-list getters and enumeration supply synthetic source data.\nOriginal projection instructions choose fields, values, presence and order.\nStandard protobuf36.2 encodes the observed target with exact descriptors.\nNo original store, process, account or transport runs.",
+  "scenarios": [
+    {
+      "name": "empty state retains explicit optional defaults",
+      "state": {
+        "revision": "",
+        "attributes": {},
+        "items": [],
+        "ownerUsername": "",
+        "timestampMicroseconds": 0,
+        "createdAtMicroseconds": 0,
+        "abuseReportingEnabled": false,
+        "members": {},
+        "permissions": {},
+        "contentGenerationVersion": 0,
+        "cacheRefreshNeeded": false,
+        "headlessState": false,
+        "appliedLenses": [],
+        "availableSignals": [],
+        "pendingChanges": [],
+        "requestedLenses": [],
+        "geoblock": []
+      },
+      "expected": {
+        "cacheInfo": {
+          "cacheProducerVersion": 1,
+          "cacheRefreshNeeded": false,
+          "headlessState": false,
+          "contentGenerationVersion": 0
+        },
+        "selectedListContent": {
+          "revision": "",
+          "attributes": {},
+          "contents": {
+            "pos": 0,
+            "truncated": false
+          },
+          "timestamp": "0",
+          "ownerUsername": "",
+          "abuseReportingEnabled": false,
+          "createdAt": "0"
+        },
+        "playlistMembers": {},
+        "pendingChanges": {},
+        "additionalData": {},
+        "permissions": {}
+      },
+      "wireHex": "0a08080110001800300012150a001a002a04080010007800820100880100a801001a00220032003a00"
+    },
+    {
+      "name": "full native cache projection",
+      "state": {
+        "revision": "cmV2AP8=",
+        "attributes": {
+          "name": "Snow 雪",
+          "description": "Synthetic cache"
+        },
+        "items": [
+          {
+            "canonicalUri": "spotify:track:0000000000000000000001",
+            "attributes": {
+              "addedBy": "synthetic",
+              "itemId": "AAH/"
+            }
+          },
+          {
+            "canonicalUri": "spotify:episode:0000000000000000000002",
+            "attributes": {}
+          }
+        ],
+        "ownerUsername": "synthetic-owner",
+        "timestampMicroseconds": 1234567890123,
+        "createdAtMicroseconds": -1999,
+        "abuseReportingEnabled": true,
+        "members": {
+          "memberPermissions": {
+            "synthetic": {
+              "revision": "AAE=",
+              "permissionLevel": 1
+            }
+          }
+        },
+        "permissions": {
+          "basePermission": {
+            "revision": "AQ==",
+            "permissionLevel": 2
+          }
+        },
+        "contentGenerationVersion": 4294967295,
+        "cacheRefreshNeeded": true,
+        "headlessState": true,
+        "appliedLenses": [
+          {
+            "identifier": "lens",
+            "revision": "AQI="
+          }
+        ],
+        "availableSignals": [
+          {
+            "identifier": "signal",
+            "data": "AA==",
+            "instanceId": ""
+          }
+        ],
+        "pendingChanges": [
+          {
+            "baseVersion": "AAE="
+          }
+        ],
+        "requestedLenses": [
+          "lens",
+          "lens",
+          "雪"
+        ],
+        "geoblock": [
+          0,
+          3,
+          2,
+          1,
+          0
+        ],
+        "capabilities": {
+          "canView": false,
+          "canEditItems": true
+        },
+        "cacheHintInfo": {
+          "cacheHint": {
+            "nextExpectedContentUpdate": "1.500s"
+          },
+          "lastUpdatedTimestamp": "1970-01-01T00:00:01Z"
+        }
+      },
+      "expected": {
+        "cacheInfo": {
+          "cacheProducerVersion": 1,
+          "cacheRefreshNeeded": true,
+          "headlessState": true,
+          "cacheHintInfo": {
+            "cacheHint": {
+              "nextExpectedContentUpdate": "1.500s"
+            },
+            "lastUpdatedTimestamp": "1970-01-01T00:00:01Z"
+          },
+          "contentGenerationVersion": 4294967295
+        },
+        "selectedListContent": {
+          "revision": "cmV2AP8=",
+          "attributes": {
+            "name": "Snow 雪",
+            "description": "Synthetic cache"
+          },
+          "contents": {
+            "pos": 0,
+            "truncated": false,
+            "items": [
+              {
+                "uri": "spotify:track:0000000000000000000001",
+                "attributes": {
+                  "addedBy": "synthetic",
+                  "itemId": "AAH/"
+                }
+              },
+              {
+                "uri": "spotify:episode:0000000000000000000002",
+                "attributes": {}
+              }
+            ],
+            "availableSignals": [
+              {
+                "identifier": "signal",
+                "data": "AA==",
+                "instanceId": ""
+              }
+            ]
+          },
+          "timestamp": "1234567890",
+          "ownerUsername": "synthetic-owner",
+          "abuseReportingEnabled": true,
+          "capabilities": {
+            "canView": false,
+            "canEditItems": true
+          },
+          "geoblock": [
+            0,
+            3,
+            2,
+            1,
+            0
+          ],
+          "createdAt": "-1",
+          "appliedLenses": {
+            "states": [
+              {
+                "identifier": "lens",
+                "revision": "AQI="
+              }
+            ]
+          }
+        },
+        "playlistMembers": {
+          "memberPermissions": {
+            "synthetic": {
+              "revision": "AAE=",
+              "permissionLevel": 1
+            }
+          }
+        },
+        "pendingChanges": {
+          "changes": [
+            {
+              "baseVersion": "AAE="
+            }
+          ]
+        },
+        "additionalData": {
+          "requestedLenses": [
+            "lens",
+            "lens",
+            "雪"
+          ]
+        },
+        "permissions": {
+          "basePermission": {
+            "revision": "AQ==",
+            "permissionLevel": 2
+          }
+        }
+      },
+      "wireHex": "0a1e0801100118012a100a0a0a0808011080cab5ee011202080130ffffffff0f12e9010a0572657600ff1a1b0a08536e6f7720e99baa120f53796e7468657469632063616368652a77080010001a380a2473706f746966793a747261636b3a3030303030303030303030303030303030303030303112100a0973796e74686574696362030001ff1a2a0a2673706f746966793a657069736f64653a3030303030303030303030303030303030303030303212002a0b0a067369676e616c12010078d285d8cc0482010f73796e7468657469632d6f776e657288010192010408002801980100980103980102980101980100a801ffffffffffffffffff01b2010c0a0a0a046c656e73120201021a150a130a0973796e74686574696312060a020001100122060a040a02000132110a046c656e730a046c656e730a03e99baa3a070a050a01011002"
+    },
+    {
+      "name": "refresh flag is independent of headless flag",
+      "state": {
+        "revision": "",
+        "attributes": {},
+        "items": [],
+        "ownerUsername": "",
+        "timestampMicroseconds": 0,
+        "createdAtMicroseconds": 0,
+        "abuseReportingEnabled": false,
+        "members": {},
+        "permissions": {},
+        "contentGenerationVersion": 0,
+        "cacheRefreshNeeded": true,
+        "headlessState": false,
+        "appliedLenses": [],
+        "availableSignals": [],
+        "pendingChanges": [],
+        "requestedLenses": [],
+        "geoblock": []
+      },
+      "expected": {
+        "cacheInfo": {
+          "cacheProducerVersion": 1,
+          "cacheRefreshNeeded": true,
+          "headlessState": false,
+          "contentGenerationVersion": 0
+        },
+        "selectedListContent": {
+          "revision": "",
+          "attributes": {},
+          "contents": {
+            "pos": 0,
+            "truncated": false
+          },
+          "timestamp": "0",
+          "ownerUsername": "",
+          "abuseReportingEnabled": false,
+          "createdAt": "0"
+        },
+        "playlistMembers": {},
+        "pendingChanges": {},
+        "additionalData": {},
+        "permissions": {}
+      },
+      "wireHex": "0a08080110011800300012150a001a002a04080010007800820100880100a801001a00220032003a00"
+    },
+    {
+      "name": "headless flag is independent of refresh flag",
+      "state": {
+        "revision": "",
+        "attributes": {},
+        "items": [],
+        "ownerUsername": "",
+        "timestampMicroseconds": 0,
+        "createdAtMicroseconds": 0,
+        "abuseReportingEnabled": false,
+        "members": {},
+        "permissions": {},
+        "contentGenerationVersion": 0,
+        "cacheRefreshNeeded": false,
+        "headlessState": true,
+        "appliedLenses": [],
+        "availableSignals": [],
+        "pendingChanges": [],
+        "requestedLenses": [],
+        "geoblock": []
+      },
+      "expected": {
+        "cacheInfo": {
+          "cacheProducerVersion": 1,
+          "cacheRefreshNeeded": false,
+          "headlessState": true,
+          "contentGenerationVersion": 0
+        },
+        "selectedListContent": {
+          "revision": "",
+          "attributes": {},
+          "contents": {
+            "pos": 0,
+            "truncated": false
+          },
+          "timestamp": "0",
+          "ownerUsername": "",
+          "abuseReportingEnabled": false,
+          "createdAt": "0"
+        },
+        "playlistMembers": {},
+        "pendingChanges": {},
+        "additionalData": {},
+        "permissions": {}
+      },
+      "wireHex": "0a08080110001801300012150a001a002a04080010007800820100880100a801001a00220032003a00"
+    },
+    {
+      "name": "explicit zero error overrides stored error",
+      "state": {
+        "revision": "",
+        "attributes": {},
+        "items": [],
+        "ownerUsername": "",
+        "timestampMicroseconds": 0,
+        "createdAtMicroseconds": 0,
+        "abuseReportingEnabled": false,
+        "members": {},
+        "permissions": {},
+        "contentGenerationVersion": 0,
+        "cacheRefreshNeeded": false,
+        "headlessState": false,
+        "appliedLenses": [],
+        "availableSignals": [],
+        "pendingChanges": [],
+        "requestedLenses": [],
+        "geoblock": [],
+        "errorMode": 1,
+        "errorCode": 0,
+        "storedInfo": {
+          "errorCode": {
+            "code": 9
+          }
+        }
+      },
+      "expected": {
+        "cacheInfo": {
+          "cacheProducerVersion": 1,
+          "cacheRefreshNeeded": false,
+          "headlessState": false,
+          "errorCode": {
+            "code": 0
+          },
+          "contentGenerationVersion": 0
+        },
+        "selectedListContent": {
+          "revision": "",
+          "attributes": {},
+          "contents": {
+            "pos": 0,
+            "truncated": false
+          },
+          "timestamp": "0",
+          "ownerUsername": "",
+          "abuseReportingEnabled": false,
+          "createdAt": "0"
+        },
+        "playlistMembers": {},
+        "pendingChanges": {},
+        "additionalData": {},
+        "permissions": {}
+      },
+      "wireHex": "0a0c08011000180022020800300012150a001a002a04080010007800820100880100a801001a00220032003a00"
+    },
+    {
+      "name": "mode1 absent error uses stored error",
+      "state": {
+        "revision": "",
+        "attributes": {},
+        "items": [],
+        "ownerUsername": "",
+        "timestampMicroseconds": 0,
+        "createdAtMicroseconds": 0,
+        "abuseReportingEnabled": false,
+        "members": {},
+        "permissions": {},
+        "contentGenerationVersion": 0,
+        "cacheRefreshNeeded": false,
+        "headlessState": false,
+        "appliedLenses": [],
+        "availableSignals": [],
+        "pendingChanges": [],
+        "requestedLenses": [],
+        "geoblock": [],
+        "errorMode": 1,
+        "storedInfo": {
+          "errorCode": {
+            "code": -7
+          }
+        }
+      },
+      "expected": {
+        "cacheInfo": {
+          "cacheProducerVersion": 1,
+          "cacheRefreshNeeded": false,
+          "headlessState": false,
+          "errorCode": {
+            "code": -7
+          },
+          "contentGenerationVersion": 0
+        },
+        "selectedListContent": {
+          "revision": "",
+          "attributes": {},
+          "contents": {
+            "pos": 0,
+            "truncated": false
+          },
+          "timestamp": "0",
+          "ownerUsername": "",
+          "abuseReportingEnabled": false,
+          "createdAt": "0"
+        },
+        "playlistMembers": {},
+        "pendingChanges": {},
+        "additionalData": {},
+        "permissions": {}
+      },
+      "wireHex": "0a15080110001800220b08f9ffffffffffffffff01300012150a001a002a04080010007800820100880100a801001a00220032003a00"
+    },
+    {
+      "name": "mode2 ignores explicit error and uses stored",
+      "state": {
+        "revision": "",
+        "attributes": {},
+        "items": [],
+        "ownerUsername": "",
+        "timestampMicroseconds": 0,
+        "createdAtMicroseconds": 0,
+        "abuseReportingEnabled": false,
+        "members": {},
+        "permissions": {},
+        "contentGenerationVersion": 0,
+        "cacheRefreshNeeded": false,
+        "headlessState": false,
+        "appliedLenses": [],
+        "availableSignals": [],
+        "pendingChanges": [],
+        "requestedLenses": [],
+        "geoblock": [],
+        "errorMode": 2,
+        "errorCode": 8,
+        "storedInfo": {
+          "errorCode": {
+            "code": 9
+          }
+        }
+      },
+      "expected": {
+        "cacheInfo": {
+          "cacheProducerVersion": 1,
+          "cacheRefreshNeeded": false,
+          "headlessState": false,
+          "errorCode": {
+            "code": 9
+          },
+          "contentGenerationVersion": 0
+        },
+        "selectedListContent": {
+          "revision": "",
+          "attributes": {},
+          "contents": {
+            "pos": 0,
+            "truncated": false
+          },
+          "timestamp": "0",
+          "ownerUsername": "",
+          "abuseReportingEnabled": false,
+          "createdAt": "0"
+        },
+        "playlistMembers": {},
+        "pendingChanges": {},
+        "additionalData": {},
+        "permissions": {}
+      },
+      "wireHex": "0a0c08011000180022020809300012150a001a002a04080010007800820100880100a801001a00220032003a00"
+    },
+    {
+      "name": "mode0 clears even supplied and stored errors",
+      "state": {
+        "revision": "",
+        "attributes": {},
+        "items": [],
+        "ownerUsername": "",
+        "timestampMicroseconds": 0,
+        "createdAtMicroseconds": 0,
+        "abuseReportingEnabled": false,
+        "members": {},
+        "permissions": {},
+        "contentGenerationVersion": 0,
+        "cacheRefreshNeeded": false,
+        "headlessState": false,
+        "appliedLenses": [],
+        "availableSignals": [],
+        "pendingChanges": [],
+        "requestedLenses": [],
+        "geoblock": [],
+        "errorMode": 0,
+        "errorCode": 8,
+        "storedInfo": {
+          "errorCode": {
+            "code": 9
+          }
+        }
+      },
+      "expected": {
+        "cacheInfo": {
+          "cacheProducerVersion": 1,
+          "cacheRefreshNeeded": false,
+          "headlessState": false,
+          "contentGenerationVersion": 0
+        },
+        "selectedListContent": {
+          "revision": "",
+          "attributes": {},
+          "contents": {
+            "pos": 0,
+            "truncated": false
+          },
+          "timestamp": "0",
+          "ownerUsername": "",
+          "abuseReportingEnabled": false,
+          "createdAt": "0"
+        },
+        "playlistMembers": {},
+        "pendingChanges": {},
+        "additionalData": {},
+        "permissions": {}
+      },
+      "wireHex": "0a08080110001800300012150a001a002a04080010007800820100880100a801001a00220032003a00"
+    },
+    {
+      "name": "stored empty error submessage becomes explicit code zero",
+      "state": {
+        "revision": "",
+        "attributes": {},
+        "items": [],
+        "ownerUsername": "",
+        "timestampMicroseconds": 0,
+        "createdAtMicroseconds": 0,
+        "abuseReportingEnabled": false,
+        "members": {},
+        "permissions": {},
+        "contentGenerationVersion": 0,
+        "cacheRefreshNeeded": false,
+        "headlessState": false,
+        "appliedLenses": [],
+        "availableSignals": [],
+        "pendingChanges": [],
+        "requestedLenses": [],
+        "geoblock": [],
+        "errorMode": 2,
+        "storedInfo": {
+          "errorCode": {}
+        }
+      },
+      "expected": {
+        "cacheInfo": {
+          "cacheProducerVersion": 1,
+          "cacheRefreshNeeded": false,
+          "headlessState": false,
+          "errorCode": {
+            "code": 0
+          },
+          "contentGenerationVersion": 0
+        },
+        "selectedListContent": {
+          "revision": "",
+          "attributes": {},
+          "contents": {
+            "pos": 0,
+            "truncated": false
+          },
+          "timestamp": "0",
+          "ownerUsername": "",
+          "abuseReportingEnabled": false,
+          "createdAt": "0"
+        },
+        "playlistMembers": {},
+        "pendingChanges": {},
+        "additionalData": {},
+        "permissions": {}
+      },
+      "wireHex": "0a0c08011000180022020800300012150a001a002a04080010007800820100880100a801001a00220032003a00"
+    },
+    {
+      "name": "failed stored read leaves error absent",
+      "state": {
+        "revision": "",
+        "attributes": {},
+        "items": [],
+        "ownerUsername": "",
+        "timestampMicroseconds": 0,
+        "createdAtMicroseconds": 0,
+        "abuseReportingEnabled": false,
+        "members": {},
+        "permissions": {},
+        "contentGenerationVersion": 0,
+        "cacheRefreshNeeded": false,
+        "headlessState": false,
+        "appliedLenses": [],
+        "availableSignals": [],
+        "pendingChanges": [],
+        "requestedLenses": [],
+        "geoblock": [],
+        "errorMode": 2,
+        "storedInfo": {
+          "errorCode": {
+            "code": 9
+          }
+        },
+        "storedReadSucceeded": false
+      },
+      "expected": {
+        "cacheInfo": {
+          "cacheProducerVersion": 1,
+          "cacheRefreshNeeded": false,
+          "headlessState": false,
+          "contentGenerationVersion": 0
+        },
+        "selectedListContent": {
+          "revision": "",
+          "attributes": {},
+          "contents": {
+            "pos": 0,
+            "truncated": false
+          },
+          "timestamp": "0",
+          "ownerUsername": "",
+          "abuseReportingEnabled": false,
+          "createdAt": "0"
+        },
+        "playlistMembers": {},
+        "pendingChanges": {},
+        "additionalData": {},
+        "permissions": {}
+      },
+      "wireHex": "0a08080110001800300012150a001a002a04080010007800820100880100a801001a00220032003a00"
+    },
+    {
+      "name": "unknown error mode leaves error absent",
+      "state": {
+        "revision": "",
+        "attributes": {},
+        "items": [],
+        "ownerUsername": "",
+        "timestampMicroseconds": 0,
+        "createdAtMicroseconds": 0,
+        "abuseReportingEnabled": false,
+        "members": {},
+        "permissions": {},
+        "contentGenerationVersion": 0,
+        "cacheRefreshNeeded": false,
+        "headlessState": false,
+        "appliedLenses": [],
+        "availableSignals": [],
+        "pendingChanges": [],
+        "requestedLenses": [],
+        "geoblock": [],
+        "errorMode": 99,
+        "errorCode": 8
+      },
+      "expected": {
+        "cacheInfo": {
+          "cacheProducerVersion": 1,
+          "cacheRefreshNeeded": false,
+          "headlessState": false,
+          "contentGenerationVersion": 0
+        },
+        "selectedListContent": {
+          "revision": "",
+          "attributes": {},
+          "contents": {
+            "pos": 0,
+            "truncated": false
+          },
+          "timestamp": "0",
+          "ownerUsername": "",
+          "abuseReportingEnabled": false,
+          "createdAt": "0"
+        },
+        "playlistMembers": {},
+        "pendingChanges": {},
+        "additionalData": {},
+        "permissions": {}
+      },
+      "wireHex": "0a08080110001800300012150a001a002a04080010007800820100880100a801001a00220032003a00"
+    },
+    {
+      "name": "signed timestamps truncate toward zero",
+      "state": {
+        "revision": "",
+        "attributes": {},
+        "items": [],
+        "ownerUsername": "",
+        "timestampMicroseconds": -999,
+        "createdAtMicroseconds": 1999,
+        "abuseReportingEnabled": false,
+        "members": {},
+        "permissions": {},
+        "contentGenerationVersion": 0,
+        "cacheRefreshNeeded": false,
+        "headlessState": false,
+        "appliedLenses": [],
+        "availableSignals": [],
+        "pendingChanges": [],
+        "requestedLenses": [],
+        "geoblock": []
+      },
+      "expected": {
+        "cacheInfo": {
+          "cacheProducerVersion": 1,
+          "cacheRefreshNeeded": false,
+          "headlessState": false,
+          "contentGenerationVersion": 0
+        },
+        "selectedListContent": {
+          "revision": "",
+          "attributes": {},
+          "contents": {
+            "pos": 0,
+            "truncated": false
+          },
+          "timestamp": "0",
+          "ownerUsername": "",
+          "abuseReportingEnabled": false,
+          "createdAt": "1"
+        },
+        "playlistMembers": {},
+        "pendingChanges": {},
+        "additionalData": {},
+        "permissions": {}
+      },
+      "wireHex": "0a08080110001800300012150a001a002a04080010007800820100880100a801011a00220032003a00"
+    }
+  ]
+}

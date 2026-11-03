@@ -1,0 +1,30 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: 1c7c4ec797e30d5af7efa497a285c4bee721eb13e416ea64d5beb5d44b80e145
+
+syntax = "proto3";
+
+package spotify.player.esperanto.proto;
+
+import "es_context_page.proto";
+
+import "es_restrictions.proto";
+
+option java_package = "com.spotify.player.esperanto.proto";
+
+option objc_class_prefix = "ESP";
+
+option optimize_for = CODE_SIZE;
+
+message Context {
+  repeated .spotify.player.esperanto.proto.ContextPage pages = 1;
+
+  map<string, string> metadata = 2;
+
+  string uri = 3;
+
+  string url = 4;
+
+  bool is_loading = 5;
+
+  .spotify.player.esperanto.proto.Restrictions restrictions = 6;
+}

@@ -1,0 +1,192 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: 7b1e5e3944256a1dd4cc526fbe4ab6ce56f1d3b104fdd0669518eb0e68839958
+
+syntax = "proto3";
+
+package spotify.your_library.proto;
+
+option optimize_for = CODE_SIZE;
+
+message YourLibraryLabelAndImage {
+  string label = 1;
+
+  string image = 2;
+
+  bool include_empty = 3;
+}
+
+message YourLibraryPredefinedPlaylistConfig {
+  .spotify.your_library.proto.YourLibraryPredefinedPlaylistConfig.InclusionMode inclusion_mode = 1;
+
+  bool decorate_num_link_types = 2;
+
+  enum InclusionMode {
+    EXCLUDE = 0;
+
+    INCLUDE_IF_NOT_EMPTY = 1;
+
+    INCLUDE_ALWAYS = 2;
+  }
+}
+
+message YourLibraryPredefinedPlaylistConfigs {
+  .spotify.your_library.proto.YourLibraryPredefinedPlaylistConfig liked_songs = 1;
+
+  .spotify.your_library.proto.YourLibraryPredefinedPlaylistConfig your_episodes = 2;
+
+  .spotify.your_library.proto.YourLibraryLabelAndImage new_episodes = 3;
+
+  .spotify.your_library.proto.YourLibraryPredefinedPlaylistConfig cached_files = 5;
+
+  .spotify.your_library.proto.YourLibraryPredefinedPlaylistConfig highlights = 6;
+
+  .spotify.your_library.proto.YourLibraryPredefinedPlaylistConfig kallax = 7;
+
+  .spotify.your_library.proto.YourLibraryPredefinedPlaylistConfig local_files = 8;
+
+  bool all_available_configs_provided = 99;
+}
+
+message YourLibraryFilters {
+  repeated .spotify.your_library.proto.YourLibraryFilters.Filter filter = 1;
+
+  enum Filter {
+    ALBUM = 0;
+
+    ARTIST = 1;
+
+    PLAYLIST = 2;
+
+    SHOW = 3;
+
+    BOOK = 4;
+
+    EVENT = 5;
+
+    AUTHOR = 7;
+
+    DOWNLOADED = 100;
+
+    WRITABLE = 101;
+
+    BY_YOU = 102;
+
+    BY_SPOTIFY = 103;
+
+    UNPLAYED = 104;
+
+    IN_PROGRESS = 105;
+
+    FINISHED = 106;
+
+    IS_MIXED = 107;
+
+    UPCOMING = 108;
+
+    VENUE = 109;
+
+    PAST = 110;
+
+    FOLDER = 111;
+
+    PUBLISHED = 112;
+
+    PUBLISHABLE = 113;
+
+    BY_OTHERS = 114;
+
+    EXCLUDE_WORKOUT = 115;
+  }
+}
+
+message YourLibraryFilters2 {
+  repeated .spotify.your_library.proto.YourLibraryFilters2.AvailableFilter available_filter = 1;
+
+  message AvailableFilter {
+    string uri = 1;
+
+    oneof kind {
+      .spotify.your_library.proto.YourLibraryFilters2.Filter filter = 2;
+
+      string concept_name = 3;
+    }
+  }
+
+  enum Filter {
+    UNKNOWN = 0;
+
+    PLAYLIST = 1;
+
+    SHOW = 2;
+
+    BOOK = 3;
+
+    ALBUM = 4;
+
+    ARTIST = 5;
+
+    AUTHOR = 6;
+
+    EVENT = 7;
+
+    WRITABLE = 20;
+
+    BY_YOU = 21;
+
+    BY_SPOTIFY = 22;
+
+    BY_OTHERS = 23;
+
+    IS_MIXED = 24;
+
+    FOLDER = 25;
+
+    PUBLISHED = 26;
+
+    PUBLISHABLE = 27;
+
+    EXCLUDE_WORKOUT = 28;
+
+    IN_PROGRESS = 40;
+
+    UNPLAYED = 41;
+
+    FINISHED = 42;
+
+    UPCOMING = 60;
+
+    VENUE = 61;
+
+    PAST = 62;
+
+    DOWNLOADED = 100;
+  }
+}
+
+message YourLibrarySortOrder {
+  .spotify.your_library.proto.YourLibrarySortOrder.SortOrder sort_order = 1;
+
+  bool reverse = 2;
+
+  enum SortOrder {
+    NAME = 0;
+
+    RECENTLY_ADDED = 1;
+
+    CREATOR = 2;
+
+    CUSTOM = 4;
+
+    RECENTLY_UPDATED = 5;
+
+    RECENTLY_PLAYED_OR_ADDED = 6;
+
+    RELEVANCE = 7;
+
+    EVENT_START_TIME = 8;
+
+    RELEASE_DATE = 9;
+
+    RECENTS = 10;
+  }
+}

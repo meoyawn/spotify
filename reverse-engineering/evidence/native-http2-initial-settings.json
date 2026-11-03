@@ -1,0 +1,2478 @@
+{
+  "scope": "Extract original H2 connection SETTINGS and the initial connection window.\n\nOnly connection-level numeric protocol parameters and source/event anchors are\nexported. No headers, bodies, URLs, credentials or original profile are used.\n",
+  "toolSha256": "6da985576b459d0ce4868f7626a50a7bbace0a0143ef593bc6fc7fc3f8de9f99",
+  "settingsSequence": [
+    [
+      1,
+      65536
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      4,
+      6291456
+    ],
+    [
+      6,
+      262144
+    ]
+  ],
+  "initialConnectionWindowDelta": 15663105,
+  "initialConnectionReceiveWindow": 15728640,
+  "startupOrder": [
+    "settings",
+    "connection-window-update",
+    "headers"
+  ],
+  "captures": [
+    {
+      "path": ".local/original-reference-streaming-netlog.json",
+      "sha256": "644660b4da3948c6f0e0e21479b34de444f295ba3e94684257e2c53dc9587489",
+      "safeLaunchFlags": {
+        "commandLinePresent": true,
+        "disableQuic": false,
+        "enableQuic": false,
+        "disableHttp2": false,
+        "forceQuicOrigin": false,
+        "quicVersionOverride": false,
+        "hasUserDataDirOption": false,
+        "hasLogNetLogOption": true,
+        "hasNetLogCaptureModeOption": true
+      },
+      "sessionCount": 13,
+      "sessions": [
+        {
+          "sessionSourceId": 487,
+          "settingsEventIndex": 3495,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 3497,
+          "firstHeadersEventIndex": 3512
+        },
+        {
+          "sessionSourceId": 488,
+          "settingsEventIndex": 3581,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 3583,
+          "firstHeadersEventIndex": 3613
+        },
+        {
+          "sessionSourceId": 497,
+          "settingsEventIndex": 3858,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 3860,
+          "firstHeadersEventIndex": 3892
+        },
+        {
+          "sessionSourceId": 539,
+          "settingsEventIndex": 5458,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 5460,
+          "firstHeadersEventIndex": 5478
+        },
+        {
+          "sessionSourceId": 543,
+          "settingsEventIndex": 5719,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 5721,
+          "firstHeadersEventIndex": 5736
+        },
+        {
+          "sessionSourceId": 570,
+          "settingsEventIndex": 7057,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 7059,
+          "firstHeadersEventIndex": 7076
+        },
+        {
+          "sessionSourceId": 572,
+          "settingsEventIndex": 7132,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 7134,
+          "firstHeadersEventIndex": 7151
+        },
+        {
+          "sessionSourceId": 844,
+          "settingsEventIndex": 10644,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 10646,
+          "firstHeadersEventIndex": 11214
+        },
+        {
+          "sessionSourceId": 2247,
+          "settingsEventIndex": 45822,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 45824,
+          "firstHeadersEventIndex": 45839
+        },
+        {
+          "sessionSourceId": 3206,
+          "settingsEventIndex": 66687,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 66689,
+          "firstHeadersEventIndex": 66704
+        },
+        {
+          "sessionSourceId": 3226,
+          "settingsEventIndex": 67418,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 67420,
+          "firstHeadersEventIndex": 67436
+        },
+        {
+          "sessionSourceId": 3589,
+          "settingsEventIndex": 74601,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 74603,
+          "firstHeadersEventIndex": 74618
+        },
+        {
+          "sessionSourceId": 3736,
+          "settingsEventIndex": 80285,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 80287,
+          "firstHeadersEventIndex": 80302
+        }
+      ]
+    },
+    {
+      "path": ".local/original-license-upload-http2-netlog.json",
+      "sha256": "7ad17ebaf96eda74ecd2c0cd822370287f4aed26310a49faa930cdda92fd64fa",
+      "safeLaunchFlags": {
+        "commandLinePresent": true,
+        "disableQuic": true,
+        "enableQuic": false,
+        "disableHttp2": false,
+        "forceQuicOrigin": false,
+        "quicVersionOverride": false,
+        "hasUserDataDirOption": false,
+        "hasLogNetLogOption": true,
+        "hasNetLogCaptureModeOption": true
+      },
+      "sessionCount": 31,
+      "sessions": [
+        {
+          "sessionSourceId": 443,
+          "settingsEventIndex": 3312,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 3314,
+          "firstHeadersEventIndex": 3330
+        },
+        {
+          "sessionSourceId": 445,
+          "settingsEventIndex": 3363,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 3365,
+          "firstHeadersEventIndex": 3381
+        },
+        {
+          "sessionSourceId": 446,
+          "settingsEventIndex": 3423,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 3425,
+          "firstHeadersEventIndex": 3441
+        },
+        {
+          "sessionSourceId": 447,
+          "settingsEventIndex": 3475,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 3477,
+          "firstHeadersEventIndex": 3493
+        },
+        {
+          "sessionSourceId": 448,
+          "settingsEventIndex": 3530,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 3532,
+          "firstHeadersEventIndex": 3564
+        },
+        {
+          "sessionSourceId": 450,
+          "settingsEventIndex": 3617,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 3619,
+          "firstHeadersEventIndex": 3634
+        },
+        {
+          "sessionSourceId": 456,
+          "settingsEventIndex": 3829,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 3831,
+          "firstHeadersEventIndex": 3847
+        },
+        {
+          "sessionSourceId": 462,
+          "settingsEventIndex": 4468,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 4470,
+          "firstHeadersEventIndex": 4485
+        },
+        {
+          "sessionSourceId": 464,
+          "settingsEventIndex": 4580,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 4582,
+          "firstHeadersEventIndex": 4600
+        },
+        {
+          "sessionSourceId": 478,
+          "settingsEventIndex": 4742,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 4744,
+          "firstHeadersEventIndex": 4762
+        },
+        {
+          "sessionSourceId": 480,
+          "settingsEventIndex": 4824,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 4826,
+          "firstHeadersEventIndex": 4844
+        },
+        {
+          "sessionSourceId": 506,
+          "settingsEventIndex": 5358,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 5360,
+          "firstHeadersEventIndex": 5377
+        },
+        {
+          "sessionSourceId": 513,
+          "settingsEventIndex": 5759,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 5761,
+          "firstHeadersEventIndex": 5778
+        },
+        {
+          "sessionSourceId": 515,
+          "settingsEventIndex": 5832,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 5834,
+          "firstHeadersEventIndex": 5851
+        },
+        {
+          "sessionSourceId": 697,
+          "settingsEventIndex": 8128,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 8130,
+          "firstHeadersEventIndex": 8752
+        },
+        {
+          "sessionSourceId": 707,
+          "settingsEventIndex": 9129,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 9131,
+          "firstHeadersEventIndex": 9157
+        },
+        {
+          "sessionSourceId": 823,
+          "settingsEventIndex": 13653,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 13655,
+          "firstHeadersEventIndex": 13683
+        },
+        {
+          "sessionSourceId": 1358,
+          "settingsEventIndex": 25041,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 25043,
+          "firstHeadersEventIndex": 25069
+        },
+        {
+          "sessionSourceId": 1495,
+          "settingsEventIndex": 32375,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 32377,
+          "firstHeadersEventIndex": 32426
+        },
+        {
+          "sessionSourceId": 1869,
+          "settingsEventIndex": 42384,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 42386,
+          "firstHeadersEventIndex": 42584
+        },
+        {
+          "sessionSourceId": 1907,
+          "settingsEventIndex": 46944,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 46946,
+          "firstHeadersEventIndex": 46963
+        },
+        {
+          "sessionSourceId": 1921,
+          "settingsEventIndex": 47232,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 47234,
+          "firstHeadersEventIndex": 47251
+        },
+        {
+          "sessionSourceId": 1961,
+          "settingsEventIndex": 48067,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 48069,
+          "firstHeadersEventIndex": 48100
+        },
+        {
+          "sessionSourceId": 2000,
+          "settingsEventIndex": 48865,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 48867,
+          "firstHeadersEventIndex": 48883
+        },
+        {
+          "sessionSourceId": 2002,
+          "settingsEventIndex": 48930,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 48932,
+          "firstHeadersEventIndex": 48968
+        },
+        {
+          "sessionSourceId": 2137,
+          "settingsEventIndex": 50892,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 50894,
+          "firstHeadersEventIndex": 50926
+        },
+        {
+          "sessionSourceId": 2141,
+          "settingsEventIndex": 51202,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 51204,
+          "firstHeadersEventIndex": 51486
+        },
+        {
+          "sessionSourceId": 2172,
+          "settingsEventIndex": 53885,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 53887,
+          "firstHeadersEventIndex": 53905
+        },
+        {
+          "sessionSourceId": 2302,
+          "settingsEventIndex": 56582,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 56584,
+          "firstHeadersEventIndex": 56599
+        },
+        {
+          "sessionSourceId": 2344,
+          "settingsEventIndex": 57765,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 57767,
+          "firstHeadersEventIndex": 57782
+        },
+        {
+          "sessionSourceId": 2370,
+          "settingsEventIndex": 59996,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 59998,
+          "firstHeadersEventIndex": 60013
+        }
+      ]
+    },
+    {
+      "path": ".local/original-license-rejection-reference-netlog.json",
+      "sha256": "6d8e8c9f4d71bd0e39ecff3282e86438540cf22987a33b2340d79658d4ec6d50",
+      "safeLaunchFlags": {
+        "commandLinePresent": true,
+        "disableQuic": false,
+        "enableQuic": false,
+        "disableHttp2": false,
+        "forceQuicOrigin": false,
+        "quicVersionOverride": false,
+        "hasUserDataDirOption": false,
+        "hasLogNetLogOption": true,
+        "hasNetLogCaptureModeOption": true
+      },
+      "sessionCount": 22,
+      "sessions": [
+        {
+          "sessionSourceId": 506,
+          "settingsEventIndex": 3699,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 3701,
+          "firstHeadersEventIndex": 3717
+        },
+        {
+          "sessionSourceId": 513,
+          "settingsEventIndex": 4098,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 4100,
+          "firstHeadersEventIndex": 4142
+        },
+        {
+          "sessionSourceId": 514,
+          "settingsEventIndex": 4184,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 4186,
+          "firstHeadersEventIndex": 4201
+        },
+        {
+          "sessionSourceId": 548,
+          "settingsEventIndex": 4894,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 4896,
+          "firstHeadersEventIndex": 4911
+        },
+        {
+          "sessionSourceId": 571,
+          "settingsEventIndex": 5506,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 5508,
+          "firstHeadersEventIndex": 5526
+        },
+        {
+          "sessionSourceId": 572,
+          "settingsEventIndex": 5569,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 5571,
+          "firstHeadersEventIndex": 5589
+        },
+        {
+          "sessionSourceId": 606,
+          "settingsEventIndex": 7033,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 7035,
+          "firstHeadersEventIndex": 7052
+        },
+        {
+          "sessionSourceId": 613,
+          "settingsEventIndex": 7548,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 7550,
+          "firstHeadersEventIndex": 7567
+        },
+        {
+          "sessionSourceId": 616,
+          "settingsEventIndex": 7649,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 7651,
+          "firstHeadersEventIndex": 7687
+        },
+        {
+          "sessionSourceId": 814,
+          "settingsEventIndex": 10770,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 10772,
+          "firstHeadersEventIndex": 11362
+        },
+        {
+          "sessionSourceId": 1018,
+          "settingsEventIndex": 16101,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 16103,
+          "firstHeadersEventIndex": 16389
+        },
+        {
+          "sessionSourceId": 1642,
+          "settingsEventIndex": 25948,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 25950,
+          "firstHeadersEventIndex": 25994
+        },
+        {
+          "sessionSourceId": 2503,
+          "settingsEventIndex": 45510,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 45512,
+          "firstHeadersEventIndex": 45597
+        },
+        {
+          "sessionSourceId": 2944,
+          "settingsEventIndex": 61277,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 61279,
+          "firstHeadersEventIndex": 61294
+        },
+        {
+          "sessionSourceId": 3080,
+          "settingsEventIndex": 63854,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 63856,
+          "firstHeadersEventIndex": 63871
+        },
+        {
+          "sessionSourceId": 3556,
+          "settingsEventIndex": 78502,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 78504,
+          "firstHeadersEventIndex": 78519
+        },
+        {
+          "sessionSourceId": 3747,
+          "settingsEventIndex": 82209,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 82211,
+          "firstHeadersEventIndex": 82226
+        },
+        {
+          "sessionSourceId": 3749,
+          "settingsEventIndex": 82273,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 82275,
+          "firstHeadersEventIndex": 82290
+        },
+        {
+          "sessionSourceId": 4071,
+          "settingsEventIndex": 88925,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 88927,
+          "firstHeadersEventIndex": 88955
+        },
+        {
+          "sessionSourceId": 4078,
+          "settingsEventIndex": 89246,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 89248,
+          "firstHeadersEventIndex": 89263
+        },
+        {
+          "sessionSourceId": 4218,
+          "settingsEventIndex": 93613,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 93615,
+          "firstHeadersEventIndex": 93630
+        },
+        {
+          "sessionSourceId": 4246,
+          "settingsEventIndex": 94090,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 94092,
+          "firstHeadersEventIndex": 94107
+        }
+      ]
+    },
+    {
+      "path": ".local/original-playback-netlog.json",
+      "sha256": "fd7239adbef628625faa665ed75199ef34429ed46944409378caeb01ba2c9655",
+      "safeLaunchFlags": {
+        "commandLinePresent": true,
+        "disableQuic": false,
+        "enableQuic": false,
+        "disableHttp2": false,
+        "forceQuicOrigin": false,
+        "quicVersionOverride": false,
+        "hasUserDataDirOption": false,
+        "hasLogNetLogOption": true,
+        "hasNetLogCaptureModeOption": true
+      },
+      "sessionCount": 13,
+      "sessions": [
+        {
+          "sessionSourceId": 517,
+          "settingsEventIndex": 4511,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 4513,
+          "firstHeadersEventIndex": 4528
+        },
+        {
+          "sessionSourceId": 533,
+          "settingsEventIndex": 4727,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 4729,
+          "firstHeadersEventIndex": 4744
+        },
+        {
+          "sessionSourceId": 536,
+          "settingsEventIndex": 4855,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 4857,
+          "firstHeadersEventIndex": 4890
+        },
+        {
+          "sessionSourceId": 545,
+          "settingsEventIndex": 5627,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 5629,
+          "firstHeadersEventIndex": 5647
+        },
+        {
+          "sessionSourceId": 571,
+          "settingsEventIndex": 6814,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 6816,
+          "firstHeadersEventIndex": 6833
+        },
+        {
+          "sessionSourceId": 574,
+          "settingsEventIndex": 7017,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 7019,
+          "firstHeadersEventIndex": 7036
+        },
+        {
+          "sessionSourceId": 820,
+          "settingsEventIndex": 9986,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 9988,
+          "firstHeadersEventIndex": 10492
+        },
+        {
+          "sessionSourceId": 2169,
+          "settingsEventIndex": 42567,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 42569,
+          "firstHeadersEventIndex": 42584
+        },
+        {
+          "sessionSourceId": 2375,
+          "settingsEventIndex": 45848,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 45850,
+          "firstHeadersEventIndex": 45865
+        },
+        {
+          "sessionSourceId": 2828,
+          "settingsEventIndex": 57327,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 57329,
+          "firstHeadersEventIndex": 57344
+        },
+        {
+          "sessionSourceId": 2920,
+          "settingsEventIndex": 59289,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 59291,
+          "firstHeadersEventIndex": 59381
+        },
+        {
+          "sessionSourceId": 3334,
+          "settingsEventIndex": 73391,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 73393,
+          "firstHeadersEventIndex": 73408
+        },
+        {
+          "sessionSourceId": 3655,
+          "settingsEventIndex": 91870,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 91872,
+          "firstHeadersEventIndex": 91888
+        }
+      ]
+    },
+    {
+      "path": ".local/original-playback-key-netlog.json",
+      "sha256": "9a58d8b2ce592e8614f795cb85712a2c598b09f0a427962648dc8f2475755467",
+      "safeLaunchFlags": {
+        "commandLinePresent": true,
+        "disableQuic": false,
+        "enableQuic": false,
+        "disableHttp2": false,
+        "forceQuicOrigin": false,
+        "quicVersionOverride": false,
+        "hasUserDataDirOption": false,
+        "hasLogNetLogOption": true,
+        "hasNetLogCaptureModeOption": true
+      },
+      "sessionCount": 15,
+      "sessions": [
+        {
+          "sessionSourceId": 478,
+          "settingsEventIndex": 3733,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 3735,
+          "firstHeadersEventIndex": 3750
+        },
+        {
+          "sessionSourceId": 500,
+          "settingsEventIndex": 4041,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 4043,
+          "firstHeadersEventIndex": 4075
+        },
+        {
+          "sessionSourceId": 502,
+          "settingsEventIndex": 4141,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 4143,
+          "firstHeadersEventIndex": 4158
+        },
+        {
+          "sessionSourceId": 549,
+          "settingsEventIndex": 5794,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 5796,
+          "firstHeadersEventIndex": 5814
+        },
+        {
+          "sessionSourceId": 571,
+          "settingsEventIndex": 6986,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 6988,
+          "firstHeadersEventIndex": 7005
+        },
+        {
+          "sessionSourceId": 573,
+          "settingsEventIndex": 7060,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 7062,
+          "firstHeadersEventIndex": 7079
+        },
+        {
+          "sessionSourceId": 809,
+          "settingsEventIndex": 10118,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 10120,
+          "firstHeadersEventIndex": 10670
+        },
+        {
+          "sessionSourceId": 2001,
+          "settingsEventIndex": 40721,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 40723,
+          "firstHeadersEventIndex": 40738
+        },
+        {
+          "sessionSourceId": 2003,
+          "settingsEventIndex": 40794,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 40796,
+          "firstHeadersEventIndex": 40835
+        },
+        {
+          "sessionSourceId": 2200,
+          "settingsEventIndex": 45476,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 45478,
+          "firstHeadersEventIndex": 45498
+        },
+        {
+          "sessionSourceId": 2271,
+          "settingsEventIndex": 47862,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 47864,
+          "firstHeadersEventIndex": 47879
+        },
+        {
+          "sessionSourceId": 2642,
+          "settingsEventIndex": 57529,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 57531,
+          "firstHeadersEventIndex": 57546
+        },
+        {
+          "sessionSourceId": 2654,
+          "settingsEventIndex": 57901,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 57903,
+          "firstHeadersEventIndex": 57918
+        },
+        {
+          "sessionSourceId": 2656,
+          "settingsEventIndex": 57965,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 57967,
+          "firstHeadersEventIndex": 58081
+        },
+        {
+          "sessionSourceId": 3233,
+          "settingsEventIndex": 71675,
+          "settingsSequence": [
+            [
+              1,
+              65536
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6291456
+            ],
+            [
+              6,
+              262144
+            ]
+          ],
+          "initialConnectionWindowDelta": 15663105,
+          "windowUpdateEventIndex": 71677,
+          "firstHeadersEventIndex": 71709
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "All logged client SETTINGS in these five pinned captures agree, including the separately labelled forced-H2 diagnostic.",
+    "These numeric fields/order and initial connection WINDOW_UPDATE are observed, not all H2 frame bytes or HPACK/TLS fingerprints.",
+    "Connection window starts at the standard HTTP/2 value65535; the retained original delta establishes its new size.",
+    "Response flow-control update thresholds, later frames, priority scheduling and other installed builds remain separate.",
+    "No Dart implementation supplies expected values; no process/profile/account/network execution."
+  ]
+}

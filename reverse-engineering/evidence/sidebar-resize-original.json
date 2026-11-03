@@ -1,0 +1,67 @@
+{
+  "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+  "sha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+  "modules": [
+    {
+      "module": 35792,
+      "byte_offset": 2014277,
+      "bytes": 281,
+      "sha256": "99018b16dabd6101a9e4647f44ff688c244c0c442a57c9ef5d9d0945fdf770e2"
+    },
+    {
+      "module": 67786,
+      "byte_offset": 2011757,
+      "bytes": 1915,
+      "sha256": "53c80c0cc65d2212bfd925a3539f0c2d0f90475956f7ec33ff3aca0de2224983"
+    },
+    {
+      "module": 99235,
+      "byte_offset": 2155407,
+      "bytes": 1723,
+      "sha256": "4adae0eae3c32868c06a9ba881061cf7d8bb545bcd1dd4b3dcd16e846a0a24dc"
+    },
+    {
+      "module": 23162,
+      "byte_offset": 2013673,
+      "bytes": 603,
+      "sha256": "df70369babb29df9154549664e8a29c0e1ea93983c61be728bd23599ed5f7d02"
+    },
+    {
+      "module": 6603,
+      "byte_offset": 4206731,
+      "bytes": 883,
+      "sha256": "b8a7974be6fe6b5d718e96c6542fd6a16d38515d4d020ee61f6a4a186ad223bf"
+    },
+    {
+      "module": 14563,
+      "byte_offset": 4207615,
+      "bytes": 401,
+      "sha256": "18928f02434b0e0d1bcff3c0618b7f4c48086ef9b9705affe3185a426049f921"
+    },
+    {
+      "module": 84527,
+      "byte_offset": 2530961,
+      "bytes": 253,
+      "sha256": "40321f8a5599e824f0699cf895bb768624634b15d7d5bf6ced4f5cefafc1dcc4"
+    }
+  ],
+  "layout_resizer": {
+    "start_found": true,
+    "end_found": true,
+    "byte_offset": 2621676,
+    "bytes": 2706,
+    "sha256": "861dec8de3b95a6d2a084a33d2ea5d37fe39b9f370a70eb4a9748a214cfaf0ed"
+  },
+  "css": {
+    "source": "xpui.spa/xpui-snapshot.css",
+    "sha256": "9cb4fc41d72edb4dac483ea34c94199673b63b7de51fa3a7aac9fcc933faa521",
+    "installed_archive_match": true
+  },
+  "scope": "Static proprietary renderer layout, not HTTP or native transport; constants are not a dynamic original-client performance trace.",
+  "implementation": [
+    "lib/app/sidebar_resize_handle.dart",
+    "lib/app/shell.dart",
+    "lib/library/view.dart",
+    "lib/entities/view.dart"
+  ]
+}

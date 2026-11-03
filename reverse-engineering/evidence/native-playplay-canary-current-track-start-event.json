@@ -1,0 +1,244 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "authority": "Static original proprietary instructions and original rebased vtable data. No original application, scheduler, audio renderer or outgoing request was executed for this slice.",
+  "method": "llvm-objdump arm64 disassembly; ResolverOracle reads immutable image and retained rebased data only. No proprietary routine or standard primitive is replaced in this static analysis.",
+  "rawAssembly": {
+    "path": ".local/rea-session/native-canary-current-track-start-event.asm",
+    "sha256": "fc21057708bb04928be058bbd35b9f1b8bfb538c5fedbee6befdc681ccbc72f8"
+  },
+  "codeRanges": [
+    {
+      "start": "0x1010b8b0c",
+      "endExclusive": "0x1010b8b40",
+      "sha256": "d349a71e96f288750c56cf7c0f7a7114958474d8eeb4fbdd891b1be3db038bd8"
+    },
+    {
+      "start": "0x1010b8e28",
+      "endExclusive": "0x1010b8e5c",
+      "sha256": "1e5f294e91ea433c7f95fd77b80220081eeeca62b56ea6b4fd6ec3132e6251fd"
+    },
+    {
+      "start": "0x1010b9424",
+      "endExclusive": "0x1010b9440",
+      "sha256": "25070ca2eb00dcd380b5d11372b6290ea19ee7a67dc5c975a8e3e03c9987c8e3"
+    },
+    {
+      "start": "0x1010b95ac",
+      "endExclusive": "0x1010b95d4",
+      "sha256": "2a1e15cfa2def3d1b3ce63bae5691ed8474656d269e290adb2f5d66a95750c6a"
+    },
+    {
+      "start": "0x1010be650",
+      "endExclusive": "0x1010be69c",
+      "sha256": "6460588f5f34b1f944f2121c8705d781f015c2a9440d42d0d9836531f497a0e1"
+    },
+    {
+      "start": "0x1010c6b98",
+      "endExclusive": "0x1010c6bd8",
+      "sha256": "188056a51ab205cebf83f419fe571d6feabcb7698b4137ede033b6809a4701b7"
+    },
+    {
+      "start": "0x1010c9010",
+      "endExclusive": "0x1010c9054",
+      "sha256": "269ebe98865184597c1932144d3076bf07f69e268f168f7645a33c454e0aeee8"
+    },
+    {
+      "start": "0x1010c9404",
+      "endExclusive": "0x1010c9428",
+      "sha256": "1c3c0973874147b6fdeeaf4e29854326a8ea46fd9e70dbf0d33c584d40103cb1"
+    },
+    {
+      "start": "0x1010c9978",
+      "endExclusive": "0x1010c99c0",
+      "sha256": "b7117f9eb226fa5fda550a2310be2616b8355c4bb7a6fca8d257d6d96562f82a"
+    },
+    {
+      "start": "0x1010e1238",
+      "endExclusive": "0x1010e1284",
+      "sha256": "73e54cb407fdd6286f3399108f52f7973660e61f714c27903381ee38f5345df0"
+    },
+    {
+      "start": "0x1010e1314",
+      "endExclusive": "0x1010e13a8",
+      "sha256": "5f702db6b789a28adf6e40ebcb82d41f5a824d8d83645b6703cc046c748f862c"
+    },
+    {
+      "start": "0x1010e166c",
+      "endExclusive": "0x1010e16b0",
+      "sha256": "20d44d9ba9c6909786714de5c299539398fd1b79bd193167cd336a8c16fb973b"
+    },
+    {
+      "start": "0x1010e2fac",
+      "endExclusive": "0x1010e3000",
+      "sha256": "dc4451427c6112783ee6f015fa6fc931e202e9875d7260c732f8bf010cafbb1c"
+    },
+    {
+      "start": "0x1010e3620",
+      "endExclusive": "0x1010e3788",
+      "sha256": "bfd467ad673ccfe31908c9066262155cee4211ccec259ea4b51dfc90c17cb8a0"
+    },
+    {
+      "start": "0x1010e3b40",
+      "endExclusive": "0x1010e3b80",
+      "sha256": "b6d854bc646180a6cf704e1a6ff13452d8ecd003bbee59e6302326c25f2e0fc9"
+    },
+    {
+      "start": "0x1010e3e34",
+      "endExclusive": "0x1010e3e38",
+      "sha256": "29b75689752d443a7c4f0057d2139c3cda648e1cd7ed8ebbab81496f08bcab22"
+    },
+    {
+      "start": "0x1010e421c",
+      "endExclusive": "0x1010e42fc",
+      "sha256": "04e7d0027a25d2f0f829d6c840d4b5ae7d593714cb5c8ba3455c3c4b3919b722"
+    },
+    {
+      "start": "0x1010e4c48",
+      "endExclusive": "0x1010e4e4c",
+      "sha256": "347eafa44cc5eedfbd74068bdc75873f7ce665e9b350702a6e7f6a91d6c41aaa"
+    },
+    {
+      "start": "0x1010e5458",
+      "endExclusive": "0x1010e5498",
+      "sha256": "5cb9c87d42e00fc1889f5f9b09675fffadb71871a41856cab5daf8e01a73ce3c"
+    },
+    {
+      "start": "0x1010e55cc",
+      "endExclusive": "0x1010e5604",
+      "sha256": "218c6cac2fb955821e3f8912407e590f82fd8b800c8459369c9e7bb097de01c7"
+    },
+    {
+      "start": "0x1010d2dac",
+      "endExclusive": "0x1010d2e8c",
+      "sha256": "5fb23edffbc0d05b4e9b12a5835611b254eb0b8aa76aa799b937746521780533"
+    },
+    {
+      "start": "0x1010d5c7c",
+      "endExclusive": "0x1010d5c98",
+      "sha256": "5963c4a02465a9d3dccd6378f4c4d8e5c6798a65d488ffce2af7bc3013c5e457"
+    },
+    {
+      "start": "0x1010e594c",
+      "endExclusive": "0x1010e59c8",
+      "sha256": "238196461ebb62cff6de6ab28405593c565fde7407badb453c49c209d3632850"
+    },
+    {
+      "start": "0x1010e6fb4",
+      "endExclusive": "0x1010e7034",
+      "sha256": "e70f8281d0dee814bfbf98910e93d9a840b9e98870912c535ef6a0ef2a1cdfdc"
+    },
+    {
+      "start": "0x1010eacc8",
+      "endExclusive": "0x1010eace0",
+      "sha256": "7aa2724d114b15ffdb652605c23113566f179c59d1fd2b3c79acbddf40bedb79"
+    },
+    {
+      "start": "0x1010edf98",
+      "endExclusive": "0x1010edfe4",
+      "sha256": "3bc94d2d8674f37e4fe3ae35ce57bdec964c3624198e66c583c5d2bf508bc48b"
+    },
+    {
+      "start": "0x1010f1534",
+      "endExclusive": "0x1010f1604",
+      "sha256": "88c82801c054d988e99d3d6823a3e04e91a6e689bcbca73635d9cc9c0607ba26"
+    }
+  ],
+  "vtables": {
+    "trackFactory": {
+      "address": "0x1025d0668",
+      "bytesHex": "f4480e0101000000f8480e010100000024360e0101000000",
+      "entries": [
+        "0x1010e48f4",
+        "0x1010e48f8",
+        "0x1010e3624"
+      ]
+    },
+    "trackPrimary": {
+      "address": "0x1025d0a68",
+      "bytesHex": "04de0e010100000010de0e01010000003cde0e01010000004cdf0e010100000098df0e0101000000",
+      "entries": [
+        "0x1010ede04",
+        "0x1010ede10",
+        "0x1010ede3c",
+        "0x1010edf4c",
+        "0x1010edf98"
+      ]
+    },
+    "trackSecondaryObserver": {
+      "address": "0x1025d0c70",
+      "bytesHex": "08de0e010100000024de0e0101000000fc150f010100000000170f0101000000",
+      "entries": [
+        "0x1010ede08",
+        "0x1010ede24",
+        "0x1010f15fc",
+        "0x1010f1700"
+      ]
+    },
+    "sourceFactory": {
+      "address": "0x1025d0690",
+      "bytesHex": "0c490e0101000000dc490e0101000000ac4a0e0101000000b44a0e0101000000484c0e0101000000",
+      "entries": [
+        "0x1010e490c",
+        "0x1010e49dc",
+        "0x1010e4aac",
+        "0x1010e4ab4",
+        "0x1010e4c48"
+      ]
+    },
+    "forwardingObserver": {
+      "address": "0x1025d0788",
+      "bytesHex": "b4580e010100000000590e01010000004c590e0101000000c8590e0101000000",
+      "entries": [
+        "0x1010e58b4",
+        "0x1010e5900",
+        "0x1010e594c",
+        "0x1010e59c8"
+      ]
+    },
+    "audioStartedBookkeeping": {
+      "address": "0x1025d0628",
+      "bytesHex": "84120e0101000000cc120e010100000014130e0101000000b0160e0101000000",
+      "entries": [
+        "0x1010e1284",
+        "0x1010e12cc",
+        "0x1010e1314",
+        "0x1010e16b0"
+      ]
+    }
+  },
+  "construction": [
+    "Service constructor1010b6440 allocates track factory at1010b8b0c..1010b8b3c;1010b8e58 calls1010e3620 ->1010e2fac, which installs vptr1025d0668.",
+    "1010b95c4 passes that factory as physical x1 to event-owner ctor1010c6858 through thunk1010c6fc0;1010c6994 stores it at event owner+7f0.",
+    "Event-owner1010c8a7c invokes factory+10. Concrete1010e3624 allocates23f0 bytes at1010e3750..3758 and calls1010eacc8 ->1010e6fb4 at1010e3b74.",
+    "1010e6fb4 installs primaryvptr1025d0a68 at1010e7028 and secondaryvptr1025d0c70 at track+40 at1010e7030.",
+    "1010e3e34 stores the same allocated track pointer to the factory hidden result.1010c929c transfers the unique pointer to current event owner+778 at1010c9418."
+  ],
+  "event": {
+    "subscription": "1010c9978..1010c99bc binds1010cfd5c with event owner and captured current track. Current-track primary virtual+20 resolves to1010edf98; it registers the callback on track signal+f30 via101f6745c.",
+    "emitter": "1010f1534 marks byte track+2358=1, conditionally sets atomic track+2a6=1 when flag2a7 bit0 is clear, creates a track snapshot through1010ebd2c with argument-1, then1010f158c emits track signal+f30 via1010c7b1c. The observer interface adjustment thunk1010f15fc subtracts40 from this and branches to1010f1534.",
+    "secondaryVirtualSlot": {
+      "slot": "0x10",
+      "pointerAddress": "0x1025d0c80",
+      "entry": "0x1010f15fc"
+    },
+    "forwardingProducer": "1010e594c is forwarding observer vptr1025d0788 slot+10. It loads wrapper+8 and calls its virtual+10 at1010e5974, reaching the concrete track+40 observer above. It then forwards the same event to wrapper+18 virtual+10 at1010e59b0.",
+    "sourceObserverOwnership": "1010e421c creates source factory vptr1025d0690. Its create+20 method1010e4c48 captures track+40 in forwarding wrapper+8 at1010e4d6c, installs wrappervptr1025d0788, and passes the wrapper to1010e5458 ->1010d5c7c ->1010d2dac.1010d2e74 stores the wrapper in source+840, and1010d2e88 stores it at the start of source snapshot+860.",
+    "bookkeepingBinding": "1010b9424..1010b943c supplies factory callback1010be650 to event-owner construction.1010be650 creates bookkeeping through1010e1238 (vptr1025d0628) and returns it as second word at1010be698. Event-owner1010c6bb4 stores that second word at+7d0.1010c901c passes owner+7d0 as physical x6 to track factory create1010e3624.1010e3694 forwards x6 as x1 to1010e421c, which stores it at source factory+10;1010e4d70 copies it into forwarding wrapper+18. Thus wrapper+18 virtual+10 resolves to1010e1314.",
+    "originalEventName": "onAudioStarted",
+    "nameProof": "Concrete bookkeeping1010e1314 records this track/audio in its active-audio map and logs the original plaintext at1023f916a from1010e166c..1010e168c. The same forwarding observer slot invokes the track signal first, then this named bookkeeping callback.",
+    "nameLiteral": {
+      "address": "0x1023f916a",
+      "utf8": "onAudioStarted: stp %p, active audio count %zu",
+      "sha256": "da49b10de650aa21856140e57b36aae4a27479d4f477f061c20ba547606a7d6b"
+    },
+    "canaryContinuation": "Existing1010cfd5c ->1010c79b8 forwards only if captured track still equals event owner+778, then emits event owner+2a8 at1010c7a54. The service14 canary subscription receives that signal and posts100487f78 cadence through100487ee4/1004862c4/100487f70; original cadence gates still apply."
+  },
+  "provedSemanticScope": "The registered current-track event is the concrete onAudioStarted observer notification. It is distinct from a bare license200, key-unwrapping completion or unnamed current-track assignment. This source slice does not prove the producer behind the source snapshot or a particular renderer, first decoded frame, first mixed/rendered frame or DAC-output boundary.",
+  "limits": [
+    "No dynamic ordering/frequency, wall-clock delay or first-frame timing was measured.",
+    "The upstream renderer producer that calls the forwarding observer remains unresolved; do not infer audible output from the event name alone.",
+    "No equality between a Dart audio-library playing notification and this original boundary is established here.",
+    "No property-provider lineage work, live canary sender/admission, protocol/runtime edit, account/profile/network access or app launch.",
+    "Selector13 TimelineConductor route remains separate and unresolved."
+  ]
+}

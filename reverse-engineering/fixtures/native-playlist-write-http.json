@@ -1,0 +1,922 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "method": "Execute the original playlist write owner and HTTP task entirely offline.\n\nSynthetic request context, permission-cache result, property inputs, native\ntemplate and ListChanges fields are explicit. Original mode1 request decisions,\nURI/query/header construction, protobuf serialization and task body installation\nexecute unchanged. Opaque HTTP interfaces stop before dispatch; no app, profile,\naccount state, HTTP transport or remote write is accessed.\n",
+  "owner": "0x101aabc74",
+  "requestBuilder": "0x101aaa0d8",
+  "permissionGetter": "0x101af7720",
+  "httpTask": "0x101aae060",
+  "originalProtobufSerializer": "0x101e8f9a4",
+  "stopBeforeSend": "0x101c20464",
+  "ranges": [
+    {
+      "start": "0x101aabc74",
+      "endExclusive": "0x101aabefc",
+      "sha256": "e4bb9308f3fc9d00b8509e18f0ba670f1864a5873c901f8ff01190da59fa4c5f"
+    },
+    {
+      "start": "0x101aaa0d8",
+      "endExclusive": "0x101aab9a0",
+      "sha256": "7d9b0e97475ff7292667a4ba3a40dd2224ef30a2c874613411f3fab303122e1e"
+    },
+    {
+      "start": "0x101af7720",
+      "endExclusive": "0x101af7768",
+      "sha256": "0ebdfdbfc810599cee8d6099ae2dd9aef69fae2645d6e78fe1e0639a176f5847"
+    },
+    {
+      "start": "0x101aae060",
+      "endExclusive": "0x101aae640",
+      "sha256": "4d5733bfeb96518cb4bfad0c4a50352dd2eb1efa4f336e9806bc9c8f845cbc3b"
+    },
+    {
+      "start": "0x101aaf5ac",
+      "endExclusive": "0x101aaf670",
+      "sha256": "bbdcc62f981036daa8bbd69993e01b442d2aa99b5286941a20f6e8061aba9143"
+    },
+    {
+      "start": "0x101abe6d0",
+      "endExclusive": "0x101abeb0c",
+      "sha256": "33ffc57f3875113cf3dfff85a8f853f0f9de4978db13e65ae3b391a3b26eebb4"
+    }
+  ],
+  "sourceExports": [
+    {
+      "path": ".local/rea-session/native-liked-songs-write-http-and-contains-command.json",
+      "sha256": "261b1165a8063f2e3aa7737e306f6c3bbb62351b2a2d707a0ab8d03e9f957cde"
+    },
+    {
+      "path": ".local/rea-session/native-playlist-write-permission-and-lens-headers.json",
+      "sha256": "8de482123f786c4fd28bd4ed11ef142a65127d9d113c942ef6c8dff70dd81993"
+    },
+    {
+      "path": ".local/rea-session/playlist_primary_sync_request.c",
+      "sha256": "4eee636f72c21cbf2d29f1933e4dd0cb893730cc6cae6553ebd9679efb566b56"
+    },
+    {
+      "path": ".local/rea-session/playlist_sync_task_construct.json",
+      "sha256": "f5725e1eb674e9ea9c07ee50c35d2baeadcfe5a9b62fd80b4170e01247cd85a9"
+    },
+    {
+      "path": ".local/rea-session/native-liked-write-requested-lens-context.json",
+      "sha256": "310dfcc50cdcad3636b9595380b96130199914480fc9b8817a979d08539d56b3"
+    }
+  ],
+  "substitutions": [
+    "Explicit optional permission-cache lookup result at101ae4108; original101af7720 chooses its inline/heap/absent view.",
+    "Explicit DSA property presence/boolean and list-player input; no runtime default or account permission is inferred.",
+    "Standard containers, strings, streams and locale reuse existing OriginalQuery primitives; original protobuf serializer is not replaced.",
+    "Standard libc vsnprintf for the executed spotify:playlist:%s form uses host snprintf; original URI parser/formatter decisions remain unchanged.",
+    "Opaque HTTP template/setter/property/context/callback interfaces record supplied arguments and stop before send."
+  ],
+  "limits": [
+    "Requested lenses are explicit request-context inputs; this does not infer actual liked-write context defaults.",
+    "Synthetic ListChanges fields test body installation/serialization, not the separate original Add/Rem producer semantics.",
+    "Inherited headers/origin are synthetic; final native app headers, origin selection and transport framing need independent authority.",
+    "No live write, remote acknowledgement, retry or cache mutation is exercised."
+  ],
+  "cases": [
+    {
+      "name": "absent permission, no requested lenses",
+      "inputs": {
+        "permissionToken": null,
+        "requestedLenses": [],
+        "dsaMode": null,
+        "listPlayerEnabled": false,
+        "force": false,
+        "caller": 13,
+        "prioritized": true,
+        "bodyFields": {
+          "baseRevisionHex": "73796e7468657469632d7265766973696f6e00ff",
+          "wantResultingRevisions": true,
+          "wantSyncResult": true,
+          "deltas": [],
+          "nonces": []
+        }
+      },
+      "originalBuilderInputs": {
+        "mode": 1,
+        "appliedRevisionHex": ""
+      },
+      "originalPlan": {
+        "path": "playlist/v2/playlist/0000000000000000000001/changes",
+        "method": "POST",
+        "headers": [
+          [
+            "Cache-Control",
+            "no-cache, no-store"
+          ],
+          [
+            "spotify-accept-geoblock",
+            "dummy"
+          ],
+          [
+            "spotify-playlist-sync-reason",
+            "CA0QAQ=="
+          ]
+        ]
+      },
+      "originalHttpEnvelope": {
+        "url": "https://spclient.example.test:443/",
+        "method": "POST",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "x-template-field": "preserved",
+          "spotify-playlist-sync-reason": "CA0QAQ==",
+          "spotify-accept-geoblock": "dummy",
+          "Cache-Control": "no-cache, no-store"
+        },
+        "bodyHex": "0a1473796e7468657469632d7265766973696f6e00ff18012001",
+        "properties": [
+          [
+            "regional_routing",
+            "true"
+          ]
+        ],
+        "headerMapMutations": [
+          [
+            "spotify-playlist-sync-reason",
+            "CA0QAQ=="
+          ],
+          [
+            "spotify-accept-geoblock",
+            "dummy"
+          ],
+          [
+            "Cache-Control",
+            "no-cache, no-store"
+          ]
+        ],
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "relativePath": "playlist/v2/playlist/0000000000000000000001/changes",
+        "rawUrl": "https://spclient.example.test:443/playlist/v2/playlist/0000000000000000000001/changes"
+      },
+      "listChangesLayout": [
+        {
+          "field": 1,
+          "offset": 64,
+          "hasIndex": 128
+        },
+        {
+          "field": 2,
+          "offset": 24,
+          "hasIndex": -1
+        },
+        {
+          "field": 3,
+          "offset": 72,
+          "hasIndex": 129
+        },
+        {
+          "field": 4,
+          "offset": 73,
+          "hasIndex": 130
+        },
+        {
+          "field": 6,
+          "offset": 48,
+          "hasIndex": -1
+        }
+      ]
+    },
+    {
+      "name": "explicit empty permission token",
+      "inputs": {
+        "permissionToken": "",
+        "requestedLenses": [],
+        "dsaMode": false,
+        "listPlayerEnabled": true,
+        "force": false,
+        "caller": 13,
+        "prioritized": true,
+        "bodyFields": {
+          "baseRevisionHex": "73796e7468657469632d7265766973696f6e00ff",
+          "wantResultingRevisions": true,
+          "wantSyncResult": true,
+          "deltas": [],
+          "nonces": []
+        }
+      },
+      "originalBuilderInputs": {
+        "mode": 1,
+        "appliedRevisionHex": ""
+      },
+      "originalPlan": {
+        "path": "playlist/v2/playlist/0000000000000000000001/changes",
+        "method": "POST",
+        "headers": [
+          [
+            "Cache-Control",
+            "no-cache, no-store"
+          ],
+          [
+            "spotify-accept-geoblock",
+            "dummy"
+          ],
+          [
+            "spotify-playlist-sync-reason",
+            "CA0QAQ=="
+          ],
+          [
+            "spotify-dsa-mode-enabled",
+            "false"
+          ],
+          [
+            "spotify-list-player-enabled",
+            "true"
+          ]
+        ]
+      },
+      "originalHttpEnvelope": {
+        "url": "https://spclient.example.test:443/",
+        "method": "POST",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "x-template-field": "preserved",
+          "spotify-dsa-mode-enabled": "false",
+          "spotify-list-player-enabled": "true",
+          "spotify-playlist-sync-reason": "CA0QAQ==",
+          "spotify-accept-geoblock": "dummy",
+          "Cache-Control": "no-cache, no-store"
+        },
+        "bodyHex": "0a1473796e7468657469632d7265766973696f6e00ff18012001",
+        "properties": [
+          [
+            "regional_routing",
+            "true"
+          ]
+        ],
+        "headerMapMutations": [
+          [
+            "spotify-dsa-mode-enabled",
+            "false"
+          ],
+          [
+            "spotify-list-player-enabled",
+            "true"
+          ],
+          [
+            "spotify-playlist-sync-reason",
+            "CA0QAQ=="
+          ],
+          [
+            "spotify-accept-geoblock",
+            "dummy"
+          ],
+          [
+            "Cache-Control",
+            "no-cache, no-store"
+          ]
+        ],
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "relativePath": "playlist/v2/playlist/0000000000000000000001/changes",
+        "rawUrl": "https://spclient.example.test:443/playlist/v2/playlist/0000000000000000000001/changes"
+      },
+      "listChangesLayout": [
+        {
+          "field": 1,
+          "offset": 64,
+          "hasIndex": 128
+        },
+        {
+          "field": 2,
+          "offset": 24,
+          "hasIndex": -1
+        },
+        {
+          "field": 3,
+          "offset": 72,
+          "hasIndex": 129
+        },
+        {
+          "field": 4,
+          "offset": 73,
+          "hasIndex": 130
+        },
+        {
+          "field": 6,
+          "offset": 48,
+          "hasIndex": -1
+        }
+      ]
+    },
+    {
+      "name": "short permission grant and auto requested lens",
+      "inputs": {
+        "permissionToken": "grant+/?= 雪",
+        "requestedLenses": [
+          "auto"
+        ],
+        "dsaMode": true,
+        "listPlayerEnabled": true,
+        "force": false,
+        "caller": 13,
+        "prioritized": true,
+        "bodyFields": {
+          "baseRevisionHex": "73796e7468657469632d7265766973696f6e00ff",
+          "wantResultingRevisions": true,
+          "wantSyncResult": true,
+          "deltas": [],
+          "nonces": []
+        }
+      },
+      "originalBuilderInputs": {
+        "mode": 1,
+        "appliedRevisionHex": ""
+      },
+      "originalPlan": {
+        "path": "playlist/v2/playlist/0000000000000000000001/changes?permission-grant-token=grant%2B%2F%3F%3D%20%E9%9B%AA",
+        "method": "POST",
+        "headers": [
+          [
+            "Cache-Control",
+            "no-cache, no-store"
+          ],
+          [
+            "spotify-accept-geoblock",
+            "dummy"
+          ],
+          [
+            "spotify-playlist-sync-reason",
+            "CA0QAQ=="
+          ],
+          [
+            "spotify-apply-lenses",
+            "auto"
+          ],
+          [
+            "spotify-dsa-mode-enabled",
+            "true"
+          ],
+          [
+            "spotify-list-player-enabled",
+            "true"
+          ]
+        ]
+      },
+      "originalHttpEnvelope": {
+        "url": "https://spclient.example.test:443/",
+        "method": "POST",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "x-template-field": "preserved",
+          "spotify-dsa-mode-enabled": "true",
+          "spotify-apply-lenses": "auto",
+          "spotify-list-player-enabled": "true",
+          "spotify-playlist-sync-reason": "CA0QAQ==",
+          "spotify-accept-geoblock": "dummy",
+          "Cache-Control": "no-cache, no-store"
+        },
+        "bodyHex": "0a1473796e7468657469632d7265766973696f6e00ff18012001",
+        "properties": [
+          [
+            "regional_routing",
+            "true"
+          ]
+        ],
+        "headerMapMutations": [
+          [
+            "spotify-dsa-mode-enabled",
+            "true"
+          ],
+          [
+            "spotify-apply-lenses",
+            "auto"
+          ],
+          [
+            "spotify-list-player-enabled",
+            "true"
+          ],
+          [
+            "spotify-playlist-sync-reason",
+            "CA0QAQ=="
+          ],
+          [
+            "spotify-accept-geoblock",
+            "dummy"
+          ],
+          [
+            "Cache-Control",
+            "no-cache, no-store"
+          ]
+        ],
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "relativePath": "playlist/v2/playlist/0000000000000000000001/changes?permission-grant-token=grant%2B%2F%3F%3D%20%E9%9B%AA",
+        "rawUrl": "https://spclient.example.test:443/playlist/v2/playlist/0000000000000000000001/changes?permission-grant-token=grant%2B%2F%3F%3D%20%E9%9B%AA"
+      },
+      "listChangesLayout": [
+        {
+          "field": 1,
+          "offset": 64,
+          "hasIndex": 128
+        },
+        {
+          "field": 2,
+          "offset": 24,
+          "hasIndex": -1
+        },
+        {
+          "field": 3,
+          "offset": 72,
+          "hasIndex": 129
+        },
+        {
+          "field": 4,
+          "offset": 73,
+          "hasIndex": 130
+        },
+        {
+          "field": 6,
+          "offset": 48,
+          "hasIndex": -1
+        }
+      ]
+    },
+    {
+      "name": "heap permission token and ordered requested lenses",
+      "inputs": {
+        "permissionToken": "synthetic-long-permission-token+/?= 雪",
+        "requestedLenses": [
+          "auto",
+          "fixture-lens"
+        ],
+        "dsaMode": false,
+        "listPlayerEnabled": false,
+        "force": false,
+        "caller": 13,
+        "prioritized": true,
+        "bodyFields": {
+          "baseRevisionHex": "73796e7468657469632d7265766973696f6e00ff",
+          "wantResultingRevisions": true,
+          "wantSyncResult": true,
+          "deltas": [],
+          "nonces": []
+        }
+      },
+      "originalBuilderInputs": {
+        "mode": 1,
+        "appliedRevisionHex": ""
+      },
+      "originalPlan": {
+        "path": "playlist/v2/playlist/0000000000000000000001/changes?permission-grant-token=synthetic-long-permission-token%2B%2F%3F%3D%20%E9%9B%AA",
+        "method": "POST",
+        "headers": [
+          [
+            "Cache-Control",
+            "no-cache, no-store"
+          ],
+          [
+            "spotify-accept-geoblock",
+            "dummy"
+          ],
+          [
+            "spotify-playlist-sync-reason",
+            "CA0QAQ=="
+          ],
+          [
+            "spotify-apply-lenses",
+            "auto,fixture-lens"
+          ],
+          [
+            "spotify-dsa-mode-enabled",
+            "false"
+          ]
+        ]
+      },
+      "originalHttpEnvelope": {
+        "url": "https://spclient.example.test:443/",
+        "method": "POST",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "x-template-field": "preserved",
+          "spotify-dsa-mode-enabled": "false",
+          "spotify-apply-lenses": "auto,fixture-lens",
+          "spotify-playlist-sync-reason": "CA0QAQ==",
+          "spotify-accept-geoblock": "dummy",
+          "Cache-Control": "no-cache, no-store"
+        },
+        "bodyHex": "0a1473796e7468657469632d7265766973696f6e00ff18012001",
+        "properties": [
+          [
+            "regional_routing",
+            "true"
+          ]
+        ],
+        "headerMapMutations": [
+          [
+            "spotify-dsa-mode-enabled",
+            "false"
+          ],
+          [
+            "spotify-apply-lenses",
+            "auto,fixture-lens"
+          ],
+          [
+            "spotify-playlist-sync-reason",
+            "CA0QAQ=="
+          ],
+          [
+            "spotify-accept-geoblock",
+            "dummy"
+          ],
+          [
+            "Cache-Control",
+            "no-cache, no-store"
+          ]
+        ],
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "relativePath": "playlist/v2/playlist/0000000000000000000001/changes?permission-grant-token=synthetic-long-permission-token%2B%2F%3F%3D%20%E9%9B%AA",
+        "rawUrl": "https://spclient.example.test:443/playlist/v2/playlist/0000000000000000000001/changes?permission-grant-token=synthetic-long-permission-token%2B%2F%3F%3D%20%E9%9B%AA"
+      },
+      "listChangesLayout": [
+        {
+          "field": 1,
+          "offset": 64,
+          "hasIndex": 128
+        },
+        {
+          "field": 2,
+          "offset": 24,
+          "hasIndex": -1
+        },
+        {
+          "field": 3,
+          "offset": 72,
+          "hasIndex": 129
+        },
+        {
+          "field": 4,
+          "offset": 73,
+          "hasIndex": 130
+        },
+        {
+          "field": 6,
+          "offset": 48,
+          "hasIndex": -1
+        }
+      ]
+    },
+    {
+      "name": "requested tag-filter prefixes are excluded in original order",
+      "inputs": {
+        "permissionToken": null,
+        "requestedLenses": [
+          "auto",
+          "tag-filter:value",
+          "fixture-lens",
+          "tag-filter",
+          "tag-filterish",
+          "tag-fil",
+          "auto"
+        ],
+        "dsaMode": null,
+        "listPlayerEnabled": false,
+        "force": false,
+        "caller": 13,
+        "prioritized": true,
+        "bodyFields": {
+          "baseRevisionHex": "73796e7468657469632d7265766973696f6e00ff",
+          "wantResultingRevisions": true,
+          "wantSyncResult": true,
+          "deltas": [],
+          "nonces": []
+        }
+      },
+      "originalBuilderInputs": {
+        "mode": 1,
+        "appliedRevisionHex": ""
+      },
+      "originalPlan": {
+        "path": "playlist/v2/playlist/0000000000000000000001/changes",
+        "method": "POST",
+        "headers": [
+          [
+            "Cache-Control",
+            "no-cache, no-store"
+          ],
+          [
+            "spotify-accept-geoblock",
+            "dummy"
+          ],
+          [
+            "spotify-playlist-sync-reason",
+            "CA0QAQ=="
+          ],
+          [
+            "spotify-apply-lenses",
+            "auto,fixture-lens,tag-fil,auto"
+          ]
+        ]
+      },
+      "originalHttpEnvelope": {
+        "url": "https://spclient.example.test:443/",
+        "method": "POST",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "x-template-field": "preserved",
+          "spotify-apply-lenses": "auto,fixture-lens,tag-fil,auto",
+          "spotify-playlist-sync-reason": "CA0QAQ==",
+          "spotify-accept-geoblock": "dummy",
+          "Cache-Control": "no-cache, no-store"
+        },
+        "bodyHex": "0a1473796e7468657469632d7265766973696f6e00ff18012001",
+        "properties": [
+          [
+            "regional_routing",
+            "true"
+          ]
+        ],
+        "headerMapMutations": [
+          [
+            "spotify-apply-lenses",
+            "auto,fixture-lens,tag-fil,auto"
+          ],
+          [
+            "spotify-playlist-sync-reason",
+            "CA0QAQ=="
+          ],
+          [
+            "spotify-accept-geoblock",
+            "dummy"
+          ],
+          [
+            "Cache-Control",
+            "no-cache, no-store"
+          ]
+        ],
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "relativePath": "playlist/v2/playlist/0000000000000000000001/changes",
+        "rawUrl": "https://spclient.example.test:443/playlist/v2/playlist/0000000000000000000001/changes"
+      },
+      "listChangesLayout": [
+        {
+          "field": 1,
+          "offset": 64,
+          "hasIndex": 128
+        },
+        {
+          "field": 2,
+          "offset": 24,
+          "hasIndex": -1
+        },
+        {
+          "field": 3,
+          "offset": 72,
+          "hasIndex": 129
+        },
+        {
+          "field": 4,
+          "offset": 73,
+          "hasIndex": 130
+        },
+        {
+          "field": 6,
+          "offset": 48,
+          "hasIndex": -1
+        }
+      ]
+    },
+    {
+      "name": "all requested lenses are excluded tag-filter prefixes",
+      "inputs": {
+        "permissionToken": null,
+        "requestedLenses": [
+          "tag-filter",
+          "tag-filter:value"
+        ],
+        "dsaMode": null,
+        "listPlayerEnabled": false,
+        "force": false,
+        "caller": 13,
+        "prioritized": true,
+        "bodyFields": {
+          "baseRevisionHex": "73796e7468657469632d7265766973696f6e00ff",
+          "wantResultingRevisions": true,
+          "wantSyncResult": true,
+          "deltas": [],
+          "nonces": []
+        }
+      },
+      "originalBuilderInputs": {
+        "mode": 1,
+        "appliedRevisionHex": ""
+      },
+      "originalPlan": {
+        "path": "playlist/v2/playlist/0000000000000000000001/changes",
+        "method": "POST",
+        "headers": [
+          [
+            "Cache-Control",
+            "no-cache, no-store"
+          ],
+          [
+            "spotify-accept-geoblock",
+            "dummy"
+          ],
+          [
+            "spotify-playlist-sync-reason",
+            "CA0QAQ=="
+          ]
+        ]
+      },
+      "originalHttpEnvelope": {
+        "url": "https://spclient.example.test:443/",
+        "method": "POST",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "x-template-field": "preserved",
+          "spotify-playlist-sync-reason": "CA0QAQ==",
+          "spotify-accept-geoblock": "dummy",
+          "Cache-Control": "no-cache, no-store"
+        },
+        "bodyHex": "0a1473796e7468657469632d7265766973696f6e00ff18012001",
+        "properties": [
+          [
+            "regional_routing",
+            "true"
+          ]
+        ],
+        "headerMapMutations": [
+          [
+            "spotify-playlist-sync-reason",
+            "CA0QAQ=="
+          ],
+          [
+            "spotify-accept-geoblock",
+            "dummy"
+          ],
+          [
+            "Cache-Control",
+            "no-cache, no-store"
+          ]
+        ],
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "relativePath": "playlist/v2/playlist/0000000000000000000001/changes",
+        "rawUrl": "https://spclient.example.test:443/playlist/v2/playlist/0000000000000000000001/changes"
+      },
+      "listChangesLayout": [
+        {
+          "field": 1,
+          "offset": 64,
+          "hasIndex": 128
+        },
+        {
+          "field": 2,
+          "offset": 24,
+          "hasIndex": -1
+        },
+        {
+          "field": 3,
+          "offset": 72,
+          "hasIndex": 129
+        },
+        {
+          "field": 4,
+          "offset": 73,
+          "hasIndex": 130
+        },
+        {
+          "field": 6,
+          "offset": 48,
+          "hasIndex": -1
+        }
+      ]
+    },
+    {
+      "name": "empty requested lens strings retain delimiters",
+      "inputs": {
+        "permissionToken": null,
+        "requestedLenses": [
+          "",
+          "auto",
+          ""
+        ],
+        "dsaMode": null,
+        "listPlayerEnabled": false,
+        "force": false,
+        "caller": 13,
+        "prioritized": true,
+        "bodyFields": {
+          "baseRevisionHex": "73796e7468657469632d7265766973696f6e00ff",
+          "wantResultingRevisions": true,
+          "wantSyncResult": true,
+          "deltas": [],
+          "nonces": []
+        }
+      },
+      "originalBuilderInputs": {
+        "mode": 1,
+        "appliedRevisionHex": ""
+      },
+      "originalPlan": {
+        "path": "playlist/v2/playlist/0000000000000000000001/changes",
+        "method": "POST",
+        "headers": [
+          [
+            "Cache-Control",
+            "no-cache, no-store"
+          ],
+          [
+            "spotify-accept-geoblock",
+            "dummy"
+          ],
+          [
+            "spotify-playlist-sync-reason",
+            "CA0QAQ=="
+          ],
+          [
+            "spotify-apply-lenses",
+            ",auto,"
+          ]
+        ]
+      },
+      "originalHttpEnvelope": {
+        "url": "https://spclient.example.test:443/",
+        "method": "POST",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "x-template-field": "preserved",
+          "spotify-apply-lenses": ",auto,",
+          "spotify-playlist-sync-reason": "CA0QAQ==",
+          "spotify-accept-geoblock": "dummy",
+          "Cache-Control": "no-cache, no-store"
+        },
+        "bodyHex": "0a1473796e7468657469632d7265766973696f6e00ff18012001",
+        "properties": [
+          [
+            "regional_routing",
+            "true"
+          ]
+        ],
+        "headerMapMutations": [
+          [
+            "spotify-apply-lenses",
+            ",auto,"
+          ],
+          [
+            "spotify-playlist-sync-reason",
+            "CA0QAQ=="
+          ],
+          [
+            "spotify-accept-geoblock",
+            "dummy"
+          ],
+          [
+            "Cache-Control",
+            "no-cache, no-store"
+          ]
+        ],
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "relativePath": "playlist/v2/playlist/0000000000000000000001/changes",
+        "rawUrl": "https://spclient.example.test:443/playlist/v2/playlist/0000000000000000000001/changes"
+      },
+      "listChangesLayout": [
+        {
+          "field": 1,
+          "offset": 64,
+          "hasIndex": 128
+        },
+        {
+          "field": 2,
+          "offset": 24,
+          "hasIndex": -1
+        },
+        {
+          "field": 3,
+          "offset": 72,
+          "hasIndex": 129
+        },
+        {
+          "field": 4,
+          "offset": 73,
+          "hasIndex": 130
+        },
+        {
+          "field": 6,
+          "offset": 48,
+          "hasIndex": -1
+        }
+      ]
+    }
+  ]
+}

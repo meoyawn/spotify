@@ -1,0 +1,380 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "scope": "Compose captured original H3 metadata fields with executed original bodies.\n\nOnly retained pinned inputs are read. No Dart implementation, profile, account,\noriginal process or network is used. The ordinary Track description and audio\nsource request producers supply synthetic body bytes and their operation header.\n",
+  "inputs": [
+    {
+      "path": ".local/original-reference-streaming-netlog.json",
+      "sha256": "644660b4da3948c6f0e0e21479b34de444f295ba3e94684257e2c53dc9587489"
+    },
+    {
+      "path": ".local/original-license-rejection-reference-netlog.json",
+      "sha256": "6d8e8c9f4d71bd0e39ecff3282e86438540cf22987a33b2340d79658d4ec6d50"
+    },
+    {
+      "path": "reverse-engineering/fixtures/native-playlist-track-metadata-requests.json",
+      "sha256": "ecc42648a8e03933e33cc935b26178e5ade3952984d89b7a8220bcb42ee7004f"
+    },
+    {
+      "path": "reverse-engineering/fixtures/native-audio-files-requests.json",
+      "sha256": "7bcd2a46a363919b83061bf73c467f038723eabe5d10f6290c92f716a44922fa"
+    }
+  ],
+  "bootstrapObservation": {
+    "expectedProtocol": "h2",
+    "sourceId": 694,
+    "eventIndex": 10832,
+    "path": ".local/original-reference-streaming-netlog.json",
+    "event": "HTTP_TRANSACTION_HTTP2_SEND_REQUEST_HEADERS"
+  },
+  "cases": [
+    {
+      "name": "track-description",
+      "expectedProtocol": "h3",
+      "expectedHeaders": {
+        ":method": "POST",
+        ":authority": "guc3-spclient.spotify.com",
+        ":scheme": "https",
+        ":path": "/extended-metadata/v0/extended-metadata",
+        "content-length": "59",
+        "accept": "application/protobuf",
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer fixture-access-token",
+        "content-type": "application/protobuf",
+        "spotify-app-version": "130601921",
+        "time-zone": "Europe/Moscow",
+        "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+        "client-feature-id": "playlist_tracks_loader",
+        "client-token": "fixture-client-token",
+        "origin": "https://guc3-spclient.spotify.com",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "empty",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=4, i"
+      },
+      "bodyHex": "0a0d0a025a5a120766697874757265122a0a2473706f746966793a747261636b3a303030303030303030303030303030303030303030301202080a",
+      "originalBodyInput": {
+        "name": "1 fresh Tracks, country='ZZ', catalogue='fixture'",
+        "uris": [
+          "spotify:track:0000000000000000000000"
+        ],
+        "country": "ZZ",
+        "catalogue": "fixture",
+        "fetchAssociationsWithTrackV4Enabled": false,
+        "typedTrackCacheReadKinds": [
+          10
+        ],
+        "baseSubmissionOperation": "playlist_tracks_loader",
+        "baseSubmissionCount": 1,
+        "queryInsertions": [
+          {
+            "kind": 10,
+            "uri": "spotify:track:0000000000000000000000"
+          }
+        ],
+        "cacheInfoReads": [
+          {
+            "kind": 10,
+            "uri": "spotify:track:0000000000000000000000",
+            "status": 1
+          }
+        ],
+        "submissionOperation": "playlist_tracks_loader",
+        "rawSubmissionMode": 1,
+        "request": {
+          "method": "POST",
+          "headers": {
+            "User-Agent": "Spotify/independent-offline-fixture",
+            "Content-Type": "application/protobuf",
+            "Accept": "application/protobuf",
+            "client-feature-id": "playlist_tracks_loader"
+          },
+          "bodyHex": "0a0d0a025a5a120766697874757265122a0a2473706f746966793a747261636b3a303030303030303030303030303030303030303030301202080a",
+          "requestName": "cpp-extended_metadata-extended_metadata_impl.playlist_tracks_loader",
+          "rawUrl": "https://spclient.example.test:443/extended-metadata/v0/extended-metadata",
+          "orderedHeaders": [
+            [
+              "User-Agent",
+              "Spotify/independent-offline-fixture"
+            ],
+            [
+              "Content-Type",
+              "application/protobuf"
+            ],
+            [
+              "Accept",
+              "application/protobuf"
+            ],
+            [
+              "client-feature-id",
+              "playlist_tracks_loader"
+            ]
+          ]
+        }
+      },
+      "bodyAuthority": {
+        "path": "reverse-engineering/fixtures/native-playlist-track-metadata-requests.json",
+        "caseIndex": 0
+      },
+      "headerAuthority": {
+        "path": ".local/original-reference-streaming-netlog.json",
+        "sourceId": 1967,
+        "eventIndex": 38575,
+        "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS"
+      }
+    },
+    {
+      "name": "track-description-gzip",
+      "expectedProtocol": "h3",
+      "expectedHeaders": {
+        ":method": "POST",
+        ":authority": "guc3-spclient.spotify.com",
+        ":scheme": "https",
+        ":path": "/extended-metadata/v0/extended-metadata",
+        "content-length": "75",
+        "accept": "application/protobuf",
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer fixture-access-token",
+        "content-encoding": "gzip",
+        "content-type": "application/protobuf",
+        "spotify-app-version": "130601921",
+        "time-zone": "Europe/Moscow",
+        "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+        "client-feature-id": "playlist_tracks_loader",
+        "client-token": "fixture-client-token",
+        "origin": "https://guc3-spclient.spotify.com",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "empty",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=4, i"
+      },
+      "bodyHex": "1f8b0800000000000013e3e2e5628a8a12624fcbac28292d4a15d2e252292ec82fc94cabb42a294a4cceb632c00a849838b888546b48825a2312d41a93a0d604a416008c5dd1e7eb000000",
+      "originalBodyInput": {
+        "name": "5 fresh Tracks, country='ZZ', catalogue='fixture'",
+        "uris": [
+          "spotify:track:0000000000000000000000",
+          "spotify:track:0000000000000000000001",
+          "spotify:track:0000000000000000000002",
+          "spotify:track:0000000000000000000003",
+          "spotify:track:0000000000000000000004"
+        ],
+        "country": "ZZ",
+        "catalogue": "fixture",
+        "fetchAssociationsWithTrackV4Enabled": false,
+        "typedTrackCacheReadKinds": [
+          10,
+          10,
+          10,
+          10,
+          10
+        ],
+        "baseSubmissionOperation": "playlist_tracks_loader",
+        "baseSubmissionCount": 5,
+        "queryInsertions": [
+          {
+            "kind": 10,
+            "uri": "spotify:track:0000000000000000000000"
+          },
+          {
+            "kind": 10,
+            "uri": "spotify:track:0000000000000000000001"
+          },
+          {
+            "kind": 10,
+            "uri": "spotify:track:0000000000000000000002"
+          },
+          {
+            "kind": 10,
+            "uri": "spotify:track:0000000000000000000003"
+          },
+          {
+            "kind": 10,
+            "uri": "spotify:track:0000000000000000000004"
+          }
+        ],
+        "cacheInfoReads": [
+          {
+            "kind": 10,
+            "uri": "spotify:track:0000000000000000000000",
+            "status": 1
+          },
+          {
+            "kind": 10,
+            "uri": "spotify:track:0000000000000000000001",
+            "status": 1
+          },
+          {
+            "kind": 10,
+            "uri": "spotify:track:0000000000000000000002",
+            "status": 1
+          },
+          {
+            "kind": 10,
+            "uri": "spotify:track:0000000000000000000003",
+            "status": 1
+          },
+          {
+            "kind": 10,
+            "uri": "spotify:track:0000000000000000000004",
+            "status": 1
+          }
+        ],
+        "submissionOperation": "playlist_tracks_loader",
+        "rawSubmissionMode": 1,
+        "request": {
+          "method": "POST",
+          "headers": {
+            "User-Agent": "Spotify/independent-offline-fixture",
+            "Content-Type": "application/protobuf",
+            "Accept": "application/protobuf",
+            "client-feature-id": "playlist_tracks_loader",
+            "Content-Encoding": "gzip"
+          },
+          "bodyHex": "1f8b0800000000000013e3e2e5628a8a12624fcbac28292d4a15d2e252292ec82fc94cabb42a294a4cceb632c00a849838b888546b48825a2312d41a93a0d604a416008c5dd1e7eb000000",
+          "requestName": "cpp-extended_metadata-extended_metadata_impl.playlist_tracks_loader",
+          "rawUrl": "https://spclient.example.test:443/extended-metadata/v0/extended-metadata",
+          "orderedHeaders": [
+            [
+              "User-Agent",
+              "Spotify/independent-offline-fixture"
+            ],
+            [
+              "Content-Type",
+              "application/protobuf"
+            ],
+            [
+              "Accept",
+              "application/protobuf"
+            ],
+            [
+              "client-feature-id",
+              "playlist_tracks_loader"
+            ],
+            [
+              "Content-Encoding",
+              "gzip"
+            ]
+          ]
+        }
+      },
+      "bodyAuthority": {
+        "path": "reverse-engineering/fixtures/native-playlist-track-metadata-requests.json",
+        "caseIndex": 2
+      },
+      "headerAuthority": {
+        "path": ".local/original-license-rejection-reference-netlog.json",
+        "sourceId": 3103,
+        "eventIndex": 65494,
+        "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS"
+      }
+    },
+    {
+      "name": "audio-source",
+      "expectedProtocol": "h3",
+      "expectedHeaders": {
+        ":method": "POST",
+        ":authority": "guc3-spclient.spotify.com",
+        ":scheme": "https",
+        ":path": "/extended-metadata/v0/extended-metadata",
+        "content-length": "59",
+        "accept": "application/protobuf",
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer fixture-access-token",
+        "content-type": "application/protobuf",
+        "spotify-app-version": "130601921",
+        "time-zone": "Europe/Moscow",
+        "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+        "client-feature-id": "prefetch",
+        "client-token": "fixture-client-token",
+        "origin": "https://guc3-spclient.spotify.com",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "empty",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=4, i"
+      },
+      "bodyHex": "0a0d0a025a5a120766697874757265122a0a2473706f746966793a747261636b3a3030303030303030303030303030303030303030303012020805",
+      "originalBodyInput": {
+        "name": "Track owner flags51/52/53=0/0/0, empty pending dedup=False",
+        "uri": "spotify:track:0000000000000000000000",
+        "sourceReady": true,
+        "sourceSuppressed": false,
+        "sourceWindowIndex": 0,
+        "sourceCount": 1,
+        "pendingRequestDedupEnabled": false,
+        "nativeOwnerFlag51": false,
+        "nativeOwnerFlag52": false,
+        "nativeOwnerFlag53": false,
+        "country": "ZZ",
+        "catalogue": "fixture",
+        "maxBatchEntities": 50,
+        "maxBatchQueries": 100,
+        "cacheInfoReads": [
+          {
+            "kind": 5,
+            "uri": "spotify:track:0000000000000000000000",
+            "status": 1
+          }
+        ],
+        "queryInsertions": [
+          {
+            "kind": 5,
+            "uri": "spotify:track:0000000000000000000000"
+          }
+        ],
+        "submissionOperation": "prefetch",
+        "rawSubmissionMode": 1,
+        "request": {
+          "method": "POST",
+          "headers": {
+            "User-Agent": "Spotify/independent-offline-fixture",
+            "Content-Type": "application/protobuf",
+            "Accept": "application/protobuf",
+            "client-feature-id": "prefetch"
+          },
+          "bodyHex": "0a0d0a025a5a120766697874757265122a0a2473706f746966793a747261636b3a3030303030303030303030303030303030303030303012020805",
+          "requestName": "cpp-extended_metadata-extended_metadata_impl.prefetch",
+          "rawUrl": "https://spclient.example.test:443/extended-metadata/v0/extended-metadata",
+          "orderedHeaders": [
+            [
+              "User-Agent",
+              "Spotify/independent-offline-fixture"
+            ],
+            [
+              "Content-Type",
+              "application/protobuf"
+            ],
+            [
+              "Accept",
+              "application/protobuf"
+            ],
+            [
+              "client-feature-id",
+              "prefetch"
+            ]
+          ]
+        }
+      },
+      "bodyAuthority": {
+        "path": "reverse-engineering/fixtures/native-audio-files-requests.json",
+        "caseIndex": 0
+      },
+      "headerAuthority": {
+        "path": ".local/original-reference-streaming-netlog.json",
+        "sourceId": 1967,
+        "eventIndex": 38575,
+        "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS"
+      }
+    }
+  ],
+  "limits": [
+    "Expected fields/body are not produced by Dart.",
+    "Authority/Origin and fixture credentials are substituted at the local peer; body length and operation header come from the independently executed original producer.",
+    "The prefetch audio-source operation is a composition with the captured common native H3 metadata template, not a claimed live original prefetch H3 upload capture.",
+    "Decoded field order, method, raw target and complete body only; TLS/QUIC/QPACK fingerprint and dynamic Chromium H2/H3 selection are separate boundaries."
+  ]
+}

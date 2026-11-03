@@ -1,0 +1,221 @@
+{
+  "source": {
+    "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+    "sha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f"
+  },
+  "clock": "2026-10-29T23:00:00.000Z",
+  "locale": "en",
+  "ranges": [
+    {
+      "name": "relative formatter provider",
+      "offsetBytes": 1308616,
+      "lengthBytes": 182,
+      "sha256": "239a07cee2ced9f7e8a45fa6559a05fbd8940719be939acc383b561178178a77"
+    },
+    {
+      "name": "absolute formatter provider",
+      "offsetBytes": 1308798,
+      "lengthBytes": 193,
+      "sha256": "05fac2f3df2cddc464e05faa2fb62000f347c783d975b9e94fe3e15a9c1711d0"
+    },
+    {
+      "name": "absolute formatter",
+      "offsetBytes": 1312793,
+      "lengthBytes": 109,
+      "sha256": "51c1bb6b0015c9a1bd3db5139bcf5cefe3d587ac9e0c45a9f2cd17bf27204af5"
+    },
+    {
+      "name": "relative date formatter",
+      "offsetBytes": 1312902,
+      "lengthBytes": 768,
+      "sha256": "5ddafa8f74989727736b4d4d9f96c1a4d69f96e50691662124964cceee6968f9"
+    },
+    {
+      "name": "date-added text component47957",
+      "offsetBytes": 1772636,
+      "lengthBytes": 358,
+      "sha256": "ba6bcc7374d46fdb55aa4bce65b659d34554a34506007ebc66c6660575ac54e1"
+    },
+    {
+      "name": "metadata date-column exclusion list",
+      "offsetBytes": 3734941,
+      "lengthBytes": 86,
+      "sha256": "e4a6f44df5d109c709d7742c5759d68219665082209f1b6ee1749253ef9df036"
+    },
+    {
+      "name": "metadata hasDateAdded expression",
+      "offsetBytes": 3736845,
+      "lengthBytes": 38,
+      "sha256": "96116e17fa79f933b99af9bc83ca5334b2a2bf1b2c649ab95fb6e78197ffa5f7"
+    }
+  ],
+  "cases": [
+    {
+      "name": "offset 0 milliseconds",
+      "date": "2026-10-29T23:00:00.000Z",
+      "original": "in 0 seconds"
+    },
+    {
+      "name": "offset -1 milliseconds",
+      "date": "2026-10-29T22:59:59.999Z",
+      "original": "0 seconds ago"
+    },
+    {
+      "name": "offset -500 milliseconds",
+      "date": "2026-10-29T22:59:59.500Z",
+      "original": "0 seconds ago"
+    },
+    {
+      "name": "offset -59500 milliseconds",
+      "date": "2026-10-29T22:59:00.500Z",
+      "original": "59 seconds ago"
+    },
+    {
+      "name": "offset -60000 milliseconds",
+      "date": "2026-10-29T22:59:00.000Z",
+      "original": "1 minute ago"
+    },
+    {
+      "name": "offset -3599500 milliseconds",
+      "date": "2026-10-29T22:00:00.500Z",
+      "original": "1 hour ago"
+    },
+    {
+      "name": "offset -3600000 milliseconds",
+      "date": "2026-10-29T22:00:00.000Z",
+      "original": "1 hour ago"
+    },
+    {
+      "name": "offset -86399500 milliseconds",
+      "date": "2026-10-28T23:00:00.500Z",
+      "original": "1 day ago"
+    },
+    {
+      "name": "offset -86400000 milliseconds",
+      "date": "2026-10-28T23:00:00.000Z",
+      "original": "1 day ago"
+    },
+    {
+      "name": "offset -561600000 milliseconds",
+      "date": "2026-10-23T11:00:00.000Z",
+      "original": "6 days ago"
+    },
+    {
+      "name": "offset -604800000 milliseconds",
+      "date": "2026-10-22T23:00:00.000Z",
+      "original": "1 week ago"
+    },
+    {
+      "name": "offset -2591999999 milliseconds",
+      "date": "2026-09-29T23:00:00.001Z",
+      "original": "4 weeks ago"
+    },
+    {
+      "name": "offset -2592000000 milliseconds",
+      "date": "2026-09-29T23:00:00.000Z",
+      "original": "Sep 29, 2026"
+    },
+    {
+      "name": "offset -2592000001 milliseconds",
+      "date": "2026-09-29T22:59:59.999Z",
+      "original": "Sep 29, 2026"
+    },
+    {
+      "name": "offset 59500 milliseconds",
+      "date": "2026-10-29T23:00:59.500Z",
+      "original": "in 1 minute"
+    },
+    {
+      "name": "offset 86400000 milliseconds",
+      "date": "2026-10-30T23:00:00.000Z",
+      "original": "in 1 day"
+    },
+    {
+      "name": "offset 561600000 milliseconds",
+      "date": "2026-11-05T11:00:00.000Z",
+      "original": "in 1 week"
+    },
+    {
+      "name": "offset 2592000000 milliseconds",
+      "date": "2026-11-28T23:00:00.000Z",
+      "original": "Nov 28, 2026"
+    },
+    {
+      "name": "2013-05-06T23:55:00Z",
+      "date": "2013-05-06T23:55:00Z",
+      "original": "May 6, 2013"
+    },
+    {
+      "name": "1970-01-01T00:00:00Z",
+      "date": "1970-01-01T00:00:00Z",
+      "original": false
+    },
+    {
+      "name": "1969-12-31T23:59:59Z",
+      "date": "1969-12-31T23:59:59Z",
+      "original": false
+    },
+    {
+      "name": "invalid",
+      "date": "invalid",
+      "original": false
+    }
+  ],
+  "columnCases": [
+    {
+      "format": null,
+      "hasDateAdded": true
+    },
+    {
+      "format": "",
+      "hasDateAdded": true
+    },
+    {
+      "format": "daily-mix",
+      "hasDateAdded": false
+    },
+    {
+      "format": "my-mix",
+      "hasDateAdded": false
+    },
+    {
+      "format": "car-mix",
+      "hasDateAdded": false
+    },
+    {
+      "format": "personalized-podcasts",
+      "hasDateAdded": false
+    },
+    {
+      "format": "daylist",
+      "hasDateAdded": false
+    },
+    {
+      "format": "inspiredby-mix",
+      "hasDateAdded": false
+    },
+    {
+      "format": "ordinary-playlist",
+      "hasDateAdded": true
+    },
+    {
+      "format": "DAILY-MIX",
+      "hasDateAdded": true
+    }
+  ],
+  "playlistRoute": {
+    "path": "build/rea/xpui/xpui-routes-playlist.js",
+    "sha256": "52a02cac0223ae2606bf69fb3953d4105adc6e9f71f9212ddb24ca0fe4a26826",
+    "scope": "The ordinary header metadata/projector and playlist date-column policy are source references. Flutter separately exposes the verified creation field at the user’s request; original omission is proved in playlist-creation-renderer.json."
+  },
+  "substitutedInterfaces": [
+    "Standard Date, Math and Intl implementations.",
+    "Explicit original formatter now argument, locale en and an uncached standard formatter factory.",
+    "Inert JSX/Text interfaces record the unchanged date-added component output; no React application or DOM starts."
+  ],
+  "limits": [
+    "Original renderer presentation evidence only; no Dart/UI suite, account, network or playback is exercised.",
+    "Creation timestamps and item timestamp units use the separate original native schema/cache/write evidence.",
+    "English is the current application UI locale. This capture does not claim every locale or playlist-specific column variant."
+  ]
+}

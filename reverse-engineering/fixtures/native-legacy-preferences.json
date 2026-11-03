@@ -1,0 +1,861 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "deviceId": "synthetic-device",
+  "registration": [
+    {
+      "key": "autologin.username",
+      "value": "",
+      "flags": 4100
+    },
+    {
+      "key": "autologin.saved_credentials",
+      "value": "{}",
+      "flags": 4100
+    },
+    {
+      "key": "autologin.canonical_username",
+      "value": "",
+      "flags": 4100
+    },
+    {
+      "key": "autologin.blob",
+      "value": "",
+      "flags": 4100
+    },
+    {
+      "key": "autologin.enabled",
+      "value": true,
+      "flags": 4100
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "legacy read validates blob then reads canonical username",
+      "operation": "readLegacy",
+      "preferences": {
+        "autologin.username": "synthetic-user",
+        "autologin.blob": "nzaq62b8g1nvS/NaFgPAcUAgCFRHk2wZZtEpq6b/fE8=",
+        "autologin.canonical_username": "canonical",
+        "autologin.saved_credentials": "{}"
+      },
+      "arguments": {},
+      "expected": {
+        "result": {
+          "available": true,
+          "enabled": true,
+          "stored": {
+            "username": "synthetic-user",
+            "blobHex": "6e7a61713632623867316e76532f4e614667504163554167434652486b32775a5a7445707136622f6645383d",
+            "deviceId": "synthetic-device"
+          },
+          "canonicalUsername": "canonical"
+        },
+        "events": [
+          {
+            "operation": "get",
+            "key": "autologin.enabled"
+          },
+          {
+            "operation": "get",
+            "key": "autologin.username"
+          },
+          {
+            "operation": "get",
+            "key": "autologin.blob"
+          },
+          {
+            "operation": "get",
+            "key": "autologin.canonical_username"
+          }
+        ],
+        "preferences": {
+          "autologin.username": "synthetic-user",
+          "autologin.blob": "nzaq62b8g1nvS/NaFgPAcUAgCFRHk2wZZtEpq6b/fE8=",
+          "autologin.canonical_username": "canonical",
+          "autologin.saved_credentials": "{}",
+          "autologin.enabled": true
+        }
+      }
+    },
+    {
+      "name": "disabled flag does not suppress valid legacy read",
+      "operation": "readLegacy",
+      "preferences": {
+        "autologin.username": "synthetic-user",
+        "autologin.blob": "nzaq62b8g1nvS/NaFgPAcUAgCFRHk2wZZtEpq6b/fE8=",
+        "autologin.canonical_username": "canonical",
+        "autologin.saved_credentials": "{}",
+        "autologin.enabled": false
+      },
+      "arguments": {},
+      "expected": {
+        "result": {
+          "available": true,
+          "enabled": false,
+          "stored": {
+            "username": "synthetic-user",
+            "blobHex": "6e7a61713632623867316e76532f4e614667504163554167434652486b32775a5a7445707136622f6645383d",
+            "deviceId": "synthetic-device"
+          },
+          "canonicalUsername": "canonical"
+        },
+        "events": [
+          {
+            "operation": "get",
+            "key": "autologin.enabled"
+          },
+          {
+            "operation": "get",
+            "key": "autologin.username"
+          },
+          {
+            "operation": "get",
+            "key": "autologin.blob"
+          },
+          {
+            "operation": "get",
+            "key": "autologin.canonical_username"
+          }
+        ],
+        "preferences": {
+          "autologin.username": "synthetic-user",
+          "autologin.blob": "nzaq62b8g1nvS/NaFgPAcUAgCFRHk2wZZtEpq6b/fE8=",
+          "autologin.canonical_username": "canonical",
+          "autologin.saved_credentials": "{}",
+          "autologin.enabled": false
+        }
+      }
+    },
+    {
+      "name": "empty username stops before blob read",
+      "operation": "readLegacy",
+      "preferences": {
+        "autologin.username": "",
+        "autologin.blob": "nzaq62b8g1nvS/NaFgPAcUAgCFRHk2wZZtEpq6b/fE8=",
+        "autologin.canonical_username": "canonical",
+        "autologin.saved_credentials": "{}"
+      },
+      "arguments": {},
+      "expected": {
+        "result": {
+          "available": false,
+          "enabled": true,
+          "stored": {
+            "username": "",
+            "blobHex": "",
+            "deviceId": ""
+          },
+          "canonicalUsername": null
+        },
+        "events": [
+          {
+            "operation": "get",
+            "key": "autologin.enabled"
+          },
+          {
+            "operation": "get",
+            "key": "autologin.username"
+          }
+        ],
+        "preferences": {
+          "autologin.username": "",
+          "autologin.blob": "nzaq62b8g1nvS/NaFgPAcUAgCFRHk2wZZtEpq6b/fE8=",
+          "autologin.canonical_username": "canonical",
+          "autologin.saved_credentials": "{}",
+          "autologin.enabled": true
+        }
+      }
+    },
+    {
+      "name": "empty blob stops before canonical username read",
+      "operation": "readLegacy",
+      "preferences": {
+        "autologin.username": "synthetic-user",
+        "autologin.blob": "",
+        "autologin.canonical_username": "canonical",
+        "autologin.saved_credentials": "{}"
+      },
+      "arguments": {},
+      "expected": {
+        "result": {
+          "available": false,
+          "enabled": true,
+          "stored": {
+            "username": "synthetic-user",
+            "blobHex": "",
+            "deviceId": "synthetic-device"
+          },
+          "canonicalUsername": null
+        },
+        "events": [
+          {
+            "operation": "get",
+            "key": "autologin.enabled"
+          },
+          {
+            "operation": "get",
+            "key": "autologin.username"
+          },
+          {
+            "operation": "get",
+            "key": "autologin.blob"
+          }
+        ],
+        "preferences": {
+          "autologin.username": "synthetic-user",
+          "autologin.blob": "",
+          "autologin.canonical_username": "canonical",
+          "autologin.saved_credentials": "{}",
+          "autologin.enabled": true
+        }
+      }
+    },
+    {
+      "name": "invalid blob stops before canonical username read",
+      "operation": "readLegacy",
+      "preferences": {
+        "autologin.username": "synthetic-user",
+        "autologin.blob": "invalid",
+        "autologin.canonical_username": "canonical",
+        "autologin.saved_credentials": "{}"
+      },
+      "arguments": {},
+      "expected": {
+        "result": {
+          "available": false,
+          "enabled": true,
+          "stored": {
+            "username": "synthetic-user",
+            "blobHex": "696e76616c6964",
+            "deviceId": "synthetic-device"
+          },
+          "canonicalUsername": null
+        },
+        "events": [
+          {
+            "operation": "get",
+            "key": "autologin.enabled"
+          },
+          {
+            "operation": "get",
+            "key": "autologin.username"
+          },
+          {
+            "operation": "get",
+            "key": "autologin.blob"
+          }
+        ],
+        "preferences": {
+          "autologin.username": "synthetic-user",
+          "autologin.blob": "invalid",
+          "autologin.canonical_username": "canonical",
+          "autologin.saved_credentials": "{}",
+          "autologin.enabled": true
+        }
+      }
+    },
+    {
+      "name": "legacy caller rejects decoded kind minus one before canonical read",
+      "operation": "readLegacy",
+      "preferences": {
+        "autologin.username": "synthetic-user",
+        "autologin.blob": "nzaq62b8g1nvS/NaFgPAcRTZs36RPmkxZC7IAWJ/x/PVGqh4bX0Ig22GIoZy/Z65",
+        "autologin.canonical_username": "canonical",
+        "autologin.saved_credentials": "{}"
+      },
+      "arguments": {},
+      "expected": {
+        "result": {
+          "available": false,
+          "enabled": true,
+          "stored": {
+            "username": "synthetic-user",
+            "blobHex": "6e7a61713632623867316e76532f4e61466750416352545a73333652506d6b785a43374941574a2f782f5056477168346258304967323247496f5a792f5a3635",
+            "deviceId": "synthetic-device"
+          },
+          "canonicalUsername": null
+        },
+        "events": [
+          {
+            "operation": "get",
+            "key": "autologin.enabled"
+          },
+          {
+            "operation": "get",
+            "key": "autologin.username"
+          },
+          {
+            "operation": "get",
+            "key": "autologin.blob"
+          }
+        ],
+        "preferences": {
+          "autologin.username": "synthetic-user",
+          "autologin.blob": "nzaq62b8g1nvS/NaFgPAcRTZs36RPmkxZC7IAWJ/x/PVGqh4bX0Ig22GIoZy/Z65",
+          "autologin.canonical_username": "canonical",
+          "autologin.saved_credentials": "{}",
+          "autologin.enabled": true
+        }
+      }
+    },
+    {
+      "name": "save map precedes legacy preference writes",
+      "operation": "updateLegacy",
+      "preferences": {
+        "autologin.username": "synthetic-user",
+        "autologin.blob": "nzaq62b8g1nvS/NaFgPAcUAgCFRHk2wZZtEpq6b/fE8=",
+        "autologin.canonical_username": "canonical",
+        "autologin.saved_credentials": "{}"
+      },
+      "arguments": {
+        "username": "new-user",
+        "blob": "opaque",
+        "canonicalUsername": "new-canonical",
+        "saveCredentials": true
+      },
+      "expected": {
+        "result": null,
+        "events": [
+          {
+            "operation": "get",
+            "key": "autologin.saved_credentials"
+          },
+          {
+            "operation": "set",
+            "key": "autologin.saved_credentials",
+            "value": "{\"new-canonical\":[\"new-user\",\"opaque\"]}"
+          },
+          {
+            "operation": "set",
+            "key": "autologin.username",
+            "value": "new-user"
+          },
+          {
+            "operation": "set",
+            "key": "autologin.blob",
+            "value": "opaque"
+          },
+          {
+            "operation": "set",
+            "key": "autologin.canonical_username",
+            "value": "new-canonical"
+          }
+        ],
+        "preferences": {
+          "autologin.username": "new-user",
+          "autologin.blob": "opaque",
+          "autologin.canonical_username": "new-canonical",
+          "autologin.saved_credentials": "{\"new-canonical\":[\"new-user\",\"opaque\"]}",
+          "autologin.enabled": true
+        }
+      }
+    },
+    {
+      "name": "empty canonical save keeps previous canonical preference",
+      "operation": "updateLegacy",
+      "preferences": {
+        "autologin.username": "synthetic-user",
+        "autologin.blob": "nzaq62b8g1nvS/NaFgPAcUAgCFRHk2wZZtEpq6b/fE8=",
+        "autologin.canonical_username": "canonical",
+        "autologin.saved_credentials": "{}"
+      },
+      "arguments": {
+        "username": "new-user",
+        "blob": "opaque",
+        "canonicalUsername": "",
+        "saveCredentials": true
+      },
+      "expected": {
+        "result": null,
+        "events": [
+          {
+            "operation": "set",
+            "key": "autologin.username",
+            "value": "new-user"
+          },
+          {
+            "operation": "set",
+            "key": "autologin.blob",
+            "value": "opaque"
+          }
+        ],
+        "preferences": {
+          "autologin.username": "new-user",
+          "autologin.blob": "opaque",
+          "autologin.canonical_username": "canonical",
+          "autologin.saved_credentials": "{}",
+          "autologin.enabled": true
+        }
+      }
+    },
+    {
+      "name": "no-save removes stored username key rather than canonical key",
+      "operation": "updateLegacy",
+      "preferences": {
+        "autologin.username": "synthetic-user",
+        "autologin.blob": "nzaq62b8g1nvS/NaFgPAcUAgCFRHk2wZZtEpq6b/fE8=",
+        "autologin.canonical_username": "canonical",
+        "autologin.saved_credentials": "{\"synthetic-user\": [\"synthetic-user\", \"nzaq62b8g1nvS/NaFgPAcUAgCFRHk2wZZtEpq6b/fE8=\"], \"other\": [\"other\", \"opaque\"]}"
+      },
+      "arguments": {
+        "username": "synthetic-user",
+        "blob": "discarded",
+        "canonicalUsername": "different-canonical",
+        "saveCredentials": false
+      },
+      "expected": {
+        "result": null,
+        "events": [
+          {
+            "operation": "get",
+            "key": "autologin.saved_credentials"
+          },
+          {
+            "operation": "set",
+            "key": "autologin.saved_credentials",
+            "value": "{\"other\":[\"other\",\"opaque\"]}"
+          },
+          {
+            "operation": "set",
+            "key": "autologin.username",
+            "value": "synthetic-user"
+          },
+          {
+            "operation": "set",
+            "key": "autologin.blob",
+            "value": ""
+          },
+          {
+            "operation": "set",
+            "key": "autologin.canonical_username",
+            "value": "different-canonical"
+          }
+        ],
+        "preferences": {
+          "autologin.username": "synthetic-user",
+          "autologin.blob": "",
+          "autologin.canonical_username": "different-canonical",
+          "autologin.saved_credentials": "{\"other\":[\"other\",\"opaque\"]}",
+          "autologin.enabled": true
+        }
+      }
+    },
+    {
+      "name": "no-save clears canonical when explicitly empty",
+      "operation": "updateLegacy",
+      "preferences": {
+        "autologin.username": "synthetic-user",
+        "autologin.blob": "nzaq62b8g1nvS/NaFgPAcUAgCFRHk2wZZtEpq6b/fE8=",
+        "autologin.canonical_username": "canonical",
+        "autologin.saved_credentials": "{}"
+      },
+      "arguments": {
+        "username": "new-user",
+        "blob": "discarded",
+        "canonicalUsername": "",
+        "saveCredentials": false
+      },
+      "expected": {
+        "result": null,
+        "events": [
+          {
+            "operation": "get",
+            "key": "autologin.saved_credentials"
+          },
+          {
+            "operation": "set",
+            "key": "autologin.saved_credentials",
+            "value": "{}"
+          },
+          {
+            "operation": "set",
+            "key": "autologin.username",
+            "value": "new-user"
+          },
+          {
+            "operation": "set",
+            "key": "autologin.blob",
+            "value": ""
+          },
+          {
+            "operation": "set",
+            "key": "autologin.canonical_username",
+            "value": ""
+          }
+        ],
+        "preferences": {
+          "autologin.username": "new-user",
+          "autologin.blob": "",
+          "autologin.canonical_username": "",
+          "autologin.saved_credentials": "{}",
+          "autologin.enabled": true
+        }
+      }
+    },
+    {
+      "name": "clear blob preserves all other fields",
+      "operation": "clearBlob",
+      "preferences": {
+        "autologin.username": "synthetic-user",
+        "autologin.blob": "nzaq62b8g1nvS/NaFgPAcUAgCFRHk2wZZtEpq6b/fE8=",
+        "autologin.canonical_username": "canonical",
+        "autologin.saved_credentials": "{}"
+      },
+      "arguments": {},
+      "expected": {
+        "result": null,
+        "events": [
+          {
+            "operation": "set",
+            "key": "autologin.blob",
+            "value": ""
+          }
+        ],
+        "preferences": {
+          "autologin.username": "synthetic-user",
+          "autologin.blob": "",
+          "autologin.canonical_username": "canonical",
+          "autologin.saved_credentials": "{}",
+          "autologin.enabled": true
+        }
+      }
+    },
+    {
+      "name": "enabled getter reads only the flag",
+      "operation": "enabled",
+      "preferences": {
+        "autologin.username": "synthetic-user",
+        "autologin.blob": "nzaq62b8g1nvS/NaFgPAcUAgCFRHk2wZZtEpq6b/fE8=",
+        "autologin.canonical_username": "canonical",
+        "autologin.saved_credentials": "{}",
+        "autologin.enabled": false
+      },
+      "arguments": {},
+      "expected": {
+        "result": false,
+        "events": [
+          {
+            "operation": "get",
+            "key": "autologin.enabled"
+          }
+        ],
+        "preferences": {
+          "autologin.username": "synthetic-user",
+          "autologin.blob": "nzaq62b8g1nvS/NaFgPAcUAgCFRHk2wZZtEpq6b/fE8=",
+          "autologin.canonical_username": "canonical",
+          "autologin.saved_credentials": "{}",
+          "autologin.enabled": false
+        }
+      }
+    },
+    {
+      "name": "enabling writes only the flag",
+      "operation": "setEnabled",
+      "preferences": {
+        "autologin.username": "synthetic-user",
+        "autologin.blob": "nzaq62b8g1nvS/NaFgPAcUAgCFRHk2wZZtEpq6b/fE8=",
+        "autologin.canonical_username": "canonical",
+        "autologin.saved_credentials": "{}",
+        "autologin.enabled": false
+      },
+      "arguments": {
+        "username": "synthetic-user",
+        "enabled": true
+      },
+      "expected": {
+        "result": null,
+        "events": [
+          {
+            "operation": "set",
+            "key": "autologin.enabled",
+            "value": true
+          }
+        ],
+        "preferences": {
+          "autologin.username": "synthetic-user",
+          "autologin.blob": "nzaq62b8g1nvS/NaFgPAcUAgCFRHk2wZZtEpq6b/fE8=",
+          "autologin.canonical_username": "canonical",
+          "autologin.saved_credentials": "{}",
+          "autologin.enabled": true
+        }
+      }
+    },
+    {
+      "name": "disabling clears stored credentials and resets username",
+      "operation": "setEnabled",
+      "preferences": {
+        "autologin.username": "synthetic-user",
+        "autologin.blob": "nzaq62b8g1nvS/NaFgPAcUAgCFRHk2wZZtEpq6b/fE8=",
+        "autologin.canonical_username": "canonical",
+        "autologin.saved_credentials": "{\"synthetic-user\": [\"synthetic-user\", \"nzaq62b8g1nvS/NaFgPAcUAgCFRHk2wZZtEpq6b/fE8=\"], \"other\": [\"other\", \"opaque\"]}"
+      },
+      "arguments": {
+        "username": "synthetic-user",
+        "enabled": false
+      },
+      "expected": {
+        "result": null,
+        "events": [
+          {
+            "operation": "set",
+            "key": "autologin.enabled",
+            "value": false
+          },
+          {
+            "operation": "get",
+            "key": "autologin.saved_credentials"
+          },
+          {
+            "operation": "set",
+            "key": "autologin.saved_credentials",
+            "value": "{\"other\":[\"other\",\"opaque\"]}"
+          },
+          {
+            "operation": "set",
+            "key": "autologin.username",
+            "value": "synthetic-user"
+          },
+          {
+            "operation": "set",
+            "key": "autologin.blob",
+            "value": ""
+          },
+          {
+            "operation": "set",
+            "key": "autologin.canonical_username",
+            "value": "synthetic-device"
+          },
+          {
+            "operation": "reset",
+            "key": "autologin.username"
+          }
+        ],
+        "preferences": {
+          "autologin.username": "",
+          "autologin.blob": "",
+          "autologin.canonical_username": "synthetic-device",
+          "autologin.saved_credentials": "{\"other\":[\"other\",\"opaque\"]}",
+          "autologin.enabled": false
+        }
+      }
+    },
+    {
+      "name": "forget resets username after ordered empty-blob writes",
+      "operation": "forget",
+      "preferences": {
+        "autologin.username": "synthetic-user",
+        "autologin.blob": "nzaq62b8g1nvS/NaFgPAcUAgCFRHk2wZZtEpq6b/fE8=",
+        "autologin.canonical_username": "canonical",
+        "autologin.saved_credentials": "{\"synthetic-user\": [\"synthetic-user\", \"nzaq62b8g1nvS/NaFgPAcUAgCFRHk2wZZtEpq6b/fE8=\"], \"other\": [\"other\", \"opaque\"]}"
+      },
+      "arguments": {
+        "username": "synthetic-user"
+      },
+      "expected": {
+        "result": null,
+        "events": [
+          {
+            "operation": "get",
+            "key": "autologin.saved_credentials"
+          },
+          {
+            "operation": "set",
+            "key": "autologin.saved_credentials",
+            "value": "{\"other\":[\"other\",\"opaque\"]}"
+          },
+          {
+            "operation": "set",
+            "key": "autologin.username",
+            "value": "synthetic-user"
+          },
+          {
+            "operation": "set",
+            "key": "autologin.blob",
+            "value": ""
+          },
+          {
+            "operation": "set",
+            "key": "autologin.canonical_username",
+            "value": "synthetic-device"
+          },
+          {
+            "operation": "reset",
+            "key": "autologin.username"
+          }
+        ],
+        "preferences": {
+          "autologin.username": "",
+          "autologin.blob": "",
+          "autologin.canonical_username": "synthetic-device",
+          "autologin.saved_credentials": "{\"other\":[\"other\",\"opaque\"]}",
+          "autologin.enabled": true
+        }
+      }
+    },
+    {
+      "name": "saved read validates selected map blob",
+      "operation": "readSaved",
+      "preferences": {
+        "autologin.username": "synthetic-user",
+        "autologin.blob": "nzaq62b8g1nvS/NaFgPAcUAgCFRHk2wZZtEpq6b/fE8=",
+        "autologin.canonical_username": "canonical",
+        "autologin.saved_credentials": "{\"synthetic-user\": [\"synthetic-user\", \"nzaq62b8g1nvS/NaFgPAcUAgCFRHk2wZZtEpq6b/fE8=\"], \"other\": [\"other\", \"opaque\"]}"
+      },
+      "arguments": {
+        "canonicalUsername": "synthetic-user"
+      },
+      "expected": {
+        "result": {
+          "username": "synthetic-user",
+          "blobHex": "6e7a61713632623867316e76532f4e614667504163554167434652486b32775a5a7445707136622f6645383d",
+          "deviceId": "synthetic-device"
+        },
+        "events": [
+          {
+            "operation": "get",
+            "key": "autologin.saved_credentials"
+          }
+        ],
+        "preferences": {
+          "autologin.username": "synthetic-user",
+          "autologin.blob": "nzaq62b8g1nvS/NaFgPAcUAgCFRHk2wZZtEpq6b/fE8=",
+          "autologin.canonical_username": "canonical",
+          "autologin.saved_credentials": "{\"synthetic-user\": [\"synthetic-user\", \"nzaq62b8g1nvS/NaFgPAcUAgCFRHk2wZZtEpq6b/fE8=\"], \"other\": [\"other\", \"opaque\"]}",
+          "autologin.enabled": true
+        }
+      }
+    },
+    {
+      "name": "saved read does not fall back to legacy blob",
+      "operation": "readSaved",
+      "preferences": {
+        "autologin.username": "synthetic-user",
+        "autologin.blob": "nzaq62b8g1nvS/NaFgPAcUAgCFRHk2wZZtEpq6b/fE8=",
+        "autologin.canonical_username": "canonical",
+        "autologin.saved_credentials": "{}"
+      },
+      "arguments": {
+        "canonicalUsername": "missing"
+      },
+      "expected": {
+        "result": null,
+        "events": [
+          {
+            "operation": "get",
+            "key": "autologin.saved_credentials"
+          }
+        ],
+        "preferences": {
+          "autologin.username": "synthetic-user",
+          "autologin.blob": "nzaq62b8g1nvS/NaFgPAcUAgCFRHk2wZZtEpq6b/fE8=",
+          "autologin.canonical_username": "canonical",
+          "autologin.saved_credentials": "{}",
+          "autologin.enabled": true
+        }
+      }
+    },
+    {
+      "name": "saved caller rejects decoded kind minus one",
+      "operation": "readSaved",
+      "preferences": {
+        "autologin.username": "synthetic-user",
+        "autologin.blob": "nzaq62b8g1nvS/NaFgPAcUAgCFRHk2wZZtEpq6b/fE8=",
+        "autologin.canonical_username": "canonical",
+        "autologin.saved_credentials": "{\"canonical\": [\"synthetic-user\", \"nzaq62b8g1nvS/NaFgPAcRTZs36RPmkxZC7IAWJ/x/PVGqh4bX0Ig22GIoZy/Z65\"]}"
+      },
+      "arguments": {
+        "canonicalUsername": "canonical"
+      },
+      "expected": {
+        "result": null,
+        "events": [
+          {
+            "operation": "get",
+            "key": "autologin.saved_credentials"
+          }
+        ],
+        "preferences": {
+          "autologin.username": "synthetic-user",
+          "autologin.blob": "nzaq62b8g1nvS/NaFgPAcUAgCFRHk2wZZtEpq6b/fE8=",
+          "autologin.canonical_username": "canonical",
+          "autologin.saved_credentials": "{\"canonical\": [\"synthetic-user\", \"nzaq62b8g1nvS/NaFgPAcRTZs36RPmkxZC7IAWJ/x/PVGqh4bX0Ig22GIoZy/Z65\"]}",
+          "autologin.enabled": true
+        }
+      }
+    },
+    {
+      "name": "saved canonical usernames are sorted and do not validate blobs",
+      "operation": "savedCanonicalUsernames",
+      "preferences": {
+        "autologin.username": "synthetic-user",
+        "autologin.blob": "nzaq62b8g1nvS/NaFgPAcUAgCFRHk2wZZtEpq6b/fE8=",
+        "autologin.canonical_username": "canonical",
+        "autologin.saved_credentials": "{\"z\":[\"opaque\"],\"empty\":[],\"a\":[\"user\",\"blob\"]}"
+      },
+      "arguments": {},
+      "expected": {
+        "result": [
+          "a",
+          "z"
+        ],
+        "events": [
+          {
+            "operation": "get",
+            "key": "autologin.saved_credentials"
+          }
+        ],
+        "preferences": {
+          "autologin.username": "synthetic-user",
+          "autologin.blob": "nzaq62b8g1nvS/NaFgPAcUAgCFRHk2wZZtEpq6b/fE8=",
+          "autologin.canonical_username": "canonical",
+          "autologin.saved_credentials": "{\"z\":[\"opaque\"],\"empty\":[],\"a\":[\"user\",\"blob\"]}",
+          "autologin.enabled": true
+        }
+      }
+    }
+  ],
+  "resetCallback": [
+    {
+      "name": "no override",
+      "flags": 4615,
+      "expected": {
+        "flags": 4615,
+        "erase": false,
+        "events": []
+      }
+    },
+    {
+      "name": "ordinary override",
+      "flags": 4871,
+      "expected": {
+        "flags": 4615,
+        "erase": false,
+        "events": [
+          "prepare-change",
+          "changed"
+        ]
+      }
+    },
+    {
+      "name": "retained override flag",
+      "flags": 4999,
+      "expected": {
+        "flags": 4743,
+        "erase": false,
+        "events": [
+          "prepare-change",
+          "changed"
+        ]
+      }
+    },
+    {
+      "name": "masked override notification",
+      "flags": 4903,
+      "expected": {
+        "flags": 4647,
+        "erase": false,
+        "events": []
+      }
+    }
+  ]
+}

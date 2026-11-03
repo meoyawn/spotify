@@ -1,0 +1,66 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "method": "Execute original Accounts restoration and retained-API forwarding boundaries.\n\nSynthetic cache/session/API objects are explicit inputs. The original cold\nlookup executes unchanged up to provider construction; cache virtual methods\nsupply only their opaque input models. The desktop AP-result callback executes\nunchanged up to its delegated success handler. Its later non-null-API branch\nexecutes as a separately bounded instruction slice after product-state setup.\nNo authentication result, bearer token, HTTP response or wire bytes are supplied.\n",
+  "coldAccounts": {
+    "entry": "0x101635ea4",
+    "stopBefore": "0x1016357cc",
+    "initialAccessTokenPresent": false,
+    "initialAccessTokenFirstByte": 0
+  },
+  "apCallback": {
+    "entry": "0x1019291d4",
+    "stopBefore": "0x101926edc",
+    "suppliedApiMovedUnchanged": true,
+    "sourceApiSlotCleared": true,
+    "authOwnerForwarded": true,
+    "resultForwarded": true
+  },
+  "suppliedApiBranch": {
+    "start": "0x101927048",
+    "stopBefore": "0x101926ba0",
+    "suppliedApiRetainedForContext": true,
+    "sourceApiSlotCleared": true
+  },
+  "instructionRanges": [
+    {
+      "start": "0x101635ea4",
+      "endExclusive": "0x101635f78",
+      "sha256": "91c5c39caef8456fc6295cb41f8f5971a1334e59afe454d76ba2219947c6b57c"
+    },
+    {
+      "start": "0x1019291d4",
+      "endExclusive": "0x101929208",
+      "sha256": "5f787f65dc6807c1f6d7b8b610dad4259e52e0ecdfaf17835a67f629f5143f06"
+    },
+    {
+      "start": "0x1019293b0",
+      "endExclusive": "0x1019293e0",
+      "sha256": "edbb0d8e9e822512031bc9bde73a82e06066419ee3cbf4a22954bf33eaf0d280"
+    },
+    {
+      "start": "0x101927048",
+      "endExclusive": "0x101927058",
+      "sha256": "df087b8d3c2238d54c586f3607b04cce58ee9cba1adfd8c834fbb2304ad768a3"
+    },
+    {
+      "start": "0x10192723c",
+      "endExclusive": "0x101927260",
+      "sha256": "dc5df742706654b8deb6f230bb981be8ed1588bd09e734ffea658d76921aeb7a"
+    }
+  ],
+  "standardSubstitutions": [
+    "Inherited standard memory/allocation/libc and uncontended mutex hooks."
+  ],
+  "explicitBoundaries": [
+    "Cache lookup returns a supplied opaque stored Accounts session and nonce.",
+    "Stored-session virtual methods copy supplied username and refresh-token placeholders.",
+    "Stop before Accounts provider construction; no provider/token result is invented.",
+    "AP callback config byte1f8 is supplied0, matching the separately recovered desktop default.",
+    "The final supplied-API slice starts after product-state production with explicit registers; it does not execute that producer or the null-API alternative."
+  ],
+  "limits": [
+    "No live account, credential store, profile, native process, socket or network access.",
+    "This does not claim that every original stored session selects Accounts: a separately admitted early native cache result can select Login5.",
+    "It proves retained Accounts ownership, absent cold seed and bounded non-null-API forwarding, rather than reproducing the complete original login stack."
+  ]
+}

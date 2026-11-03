@@ -1,0 +1,88 @@
+{
+  "provenance": "Original native proof generator, default model callback, JTI construction, serializers and Base64URL execute offline under Unicorn. Only standard OS entropy/time, libc/libc++, SHA-1, SHA-256 and injected P-256 crypto-provider operations are hooked. The crypto provider uses a public fixture key and deterministic standard ECDSA plus low-S for reproducibility. The separate signature-normalization cases execute original wrapper 0x10167d4d0 with standard BN/EC hooks. Native PEM/key/session management is not executed.",
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "proofEntry": "0x1017a49f0",
+  "modelEntry": "0x1017a4704",
+  "jtiEntry": "0x1017a3fd4",
+  "standardKey": {
+    "pkcs8Pem": "-----BEGIN PRIVATE KEY-----\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAAAAAGhRANCAARrF9Hy4SxCR/i85uVjpEDydwN9gS3r\nM6D0oTlF2JjClk/jQuL+Gn+bjufrSnwPnhYrzjNXazFezsu2QGg3v1H1\n-----END PRIVATE KEY-----\n",
+    "sec1Pem": "-----BEGIN EC PRIVATE KEY-----\nMHcCAQEEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABoAoGCCqGSM49\nAwEHoUQDQgAEaxfR8uEsQkf4vOblY6RA8ncDfYEt6zOg9KE5RdiYwpZP40Li/hp/\nm47n60p8D54WK84zV2sxXs7LtkBoN79R9Q==\n-----END EC PRIVATE KEY-----\n",
+    "wrongCurvePem": "-----BEGIN PRIVATE KEY-----\nMIG2AgEAMBAGByqGSM49AgEGBSuBBAAiBIGeMIGbAgEBBDAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhZANiAASqh8oivosF\nN46xxx7zIK10bh07Younm5hZ90HgglQqOFUC8l2/VSlsOlReOHJ2Crc2F95KliYs\nb12emL+Sktwp+PQdvSiaFHzp2jETtfC4wApgsc4dfoGdekMdfJDqDl8=\n-----END PRIVATE KEY-----\n"
+  },
+  "signatureNormalizationEntry": "0x10167d4d0",
+  "signatureNormalization": [
+    {
+      "rHex": "0000000000000000000000000000000000000000000000000000000000000011",
+      "sHex": "0000000000000000000000000000000000000000000000000000000000000001",
+      "normalizedRHex": "0000000000000000000000000000000000000000000000000000000000000011",
+      "normalizedSHex": "0000000000000000000000000000000000000000000000000000000000000001"
+    },
+    {
+      "rHex": "0000000000000000000000000000000000000000000000000000000000000011",
+      "sHex": "7fffffff800000007fffffffffffffffde737d56d38bcf4279dce5617e3192a8",
+      "normalizedRHex": "0000000000000000000000000000000000000000000000000000000000000011",
+      "normalizedSHex": "7fffffff800000007fffffffffffffffde737d56d38bcf4279dce5617e3192a8"
+    },
+    {
+      "rHex": "0000000000000000000000000000000000000000000000000000000000000011",
+      "sHex": "7fffffff800000007fffffffffffffffde737d56d38bcf4279dce5617e3192a9",
+      "normalizedRHex": "0000000000000000000000000000000000000000000000000000000000000011",
+      "normalizedSHex": "7fffffff800000007fffffffffffffffde737d56d38bcf4279dce5617e3192a8"
+    },
+    {
+      "rHex": "0000000000000000000000000000000000000000000000000000000000000011",
+      "sHex": "ffffffff00000000ffffffffffffffffbce6faada7179e84f3b9cac2fc632550",
+      "normalizedRHex": "0000000000000000000000000000000000000000000000000000000000000011",
+      "normalizedSHex": "0000000000000000000000000000000000000000000000000000000000000001"
+    }
+  ],
+  "cases": [
+    {
+      "name": "native model and absent nonce",
+      "entropySeed": 5489,
+      "clockSeconds": 1793059000,
+      "claims": {
+        "htu": "https://fixture.invalid/token",
+        "htm": "POST"
+      },
+      "privateScalarHex": "0000000000000000000000000000000000000000000000000000000000000001",
+      "jtiRandomWordHex": "f69eae225cbb91d0",
+      "signingInput": "eyJhbGciOiJFUzI1NiIsInR5cCI6ImRwb3Arand0IiwiandrIjp7ImNydiI6IlAtMjU2Iiwia3R5IjoiRUMiLCJ4IjoiYXhmUjh1RXNRa2Y0dk9ibFk2UkE4bmNEZllFdDZ6T2c5S0U1UmRpWXdwWSIsInkiOiJULU5DNHY0YWY1dU81LXRLZkEtZUZpdk9NMWRyTVY3T3k3WkFhRGVfVWZVIn19.eyJodHUiOiJodHRwczovL2ZpeHR1cmUuaW52YWxpZC90b2tlbiIsImh0bSI6IlBPU1QiLCJqdGkiOiIyMGZlODc1NjA3OTM1ZjE2ZWNmMjc3Y2E2NDlmODA0MWIyMjFkNjBkIiwiaWF0IjoxNzkzMDU5MDAwfQ",
+      "signatureHex": "f70db0b9738fecc58cfb12000244a6f6a49f561d85c0a5acb474c9a3df1e05c15e4098cd8152070d676fe19216aa61d0a48e637d5641f5cc53a816811676040d",
+      "proof": "eyJhbGciOiJFUzI1NiIsInR5cCI6ImRwb3Arand0IiwiandrIjp7ImNydiI6IlAtMjU2Iiwia3R5IjoiRUMiLCJ4IjoiYXhmUjh1RXNRa2Y0dk9ibFk2UkE4bmNEZllFdDZ6T2c5S0U1UmRpWXdwWSIsInkiOiJULU5DNHY0YWY1dU81LXRLZkEtZUZpdk9NMWRyTVY3T3k3WkFhRGVfVWZVIn19.eyJodHUiOiJodHRwczovL2ZpeHR1cmUuaW52YWxpZC90b2tlbiIsImh0bSI6IlBPU1QiLCJqdGkiOiIyMGZlODc1NjA3OTM1ZjE2ZWNmMjc3Y2E2NDlmODA0MWIyMjFkNjBkIiwiaWF0IjoxNzkzMDU5MDAwfQ.9w2wuXOP7MWM-xIAAkSm9qSfVh2FwKWstHTJo98eBcFeQJjNgVIHDWdv4ZIWqmHQpI5jfVZB9cxTqBaBFnYEDQ",
+      "publicKeyHex": "6b17d1f2e12c4247f8bce6e563a440f277037d812deb33a0f4a13945d898c2964fe342e2fe1a7f9b8ee7eb4a7c0f9e162bce33576b315ececbb6406837bf51f5"
+    },
+    {
+      "name": "nonce empty and unsigned clock wrap",
+      "entropySeed": 0,
+      "clockSeconds": 4294967297,
+      "claims": {
+        "htu": "https://fixture.invalid/token?x=~+",
+        "htm": "POST",
+        "nonce": ""
+      },
+      "privateScalarHex": "0000000000000000000000000000000000000000000000000000000000000001",
+      "jtiRandomWordHex": "2faac497ac0a7f8c",
+      "signingInput": "eyJhbGciOiJFUzI1NiIsInR5cCI6ImRwb3Arand0IiwiandrIjp7ImNydiI6IlAtMjU2Iiwia3R5IjoiRUMiLCJ4IjoiYXhmUjh1RXNRa2Y0dk9ibFk2UkE4bmNEZllFdDZ6T2c5S0U1UmRpWXdwWSIsInkiOiJULU5DNHY0YWY1dU81LXRLZkEtZUZpdk9NMWRyTVY3T3k3WkFhRGVfVWZVIn19.eyJodHUiOiJodHRwczovL2ZpeHR1cmUuaW52YWxpZC90b2tlbj94PX4rIiwiaHRtIjoiUE9TVCIsImp0aSI6Ijc4NjU3ZDYyZGE5OWQ5NjdmZGVhOTRhNjVlMzJlN2FjYzY4YzQ0MDYiLCJpYXQiOjEsIm5vbmNlIjoiIn0",
+      "signatureHex": "8f89c7351f44bbe4d7602af0d9f985b31f233f683a4524996faaaf05bee76fe9037a20db7aac61e8b137bd02b4222dead12e460cecce84a52593eee06b4a20a2",
+      "proof": "eyJhbGciOiJFUzI1NiIsInR5cCI6ImRwb3Arand0IiwiandrIjp7ImNydiI6IlAtMjU2Iiwia3R5IjoiRUMiLCJ4IjoiYXhmUjh1RXNRa2Y0dk9ibFk2UkE4bmNEZllFdDZ6T2c5S0U1UmRpWXdwWSIsInkiOiJULU5DNHY0YWY1dU81LXRLZkEtZUZpdk9NMWRyTVY3T3k3WkFhRGVfVWZVIn19.eyJodHUiOiJodHRwczovL2ZpeHR1cmUuaW52YWxpZC90b2tlbj94PX4rIiwiaHRtIjoiUE9TVCIsImp0aSI6Ijc4NjU3ZDYyZGE5OWQ5NjdmZGVhOTRhNjVlMzJlN2FjYzY4YzQ0MDYiLCJpYXQiOjEsIm5vbmNlIjoiIn0.j4nHNR9Eu-TXYCrw2fmFsx8jP2g6RSSZb6qvBb7nb-kDeiDbeqxh6LE3vQK0Ii3q0S5GDOzOhKUlk-7ga0ogog",
+      "publicKeyHex": "6b17d1f2e12c4247f8bce6e563a440f277037d812deb33a0f4a13945d898c2964fe342e2fe1a7f9b8ee7eb4a7c0f9e162bce33576b315ececbb6406837bf51f5"
+    },
+    {
+      "name": "opaque nonce and maximum seed",
+      "entropySeed": 4294967295,
+      "clockSeconds": -1,
+      "claims": {
+        "htu": "https://fixture.invalid/token",
+        "htm": "POST",
+        "nonce": "nonce+/=🧪\n\u000f"
+      },
+      "privateScalarHex": "0000000000000000000000000000000000000000000000000000000000000001",
+      "jtiRandomWordHex": "2241921ca369fe18",
+      "signingInput": "eyJhbGciOiJFUzI1NiIsInR5cCI6ImRwb3Arand0IiwiandrIjp7ImNydiI6IlAtMjU2Iiwia3R5IjoiRUMiLCJ4IjoiYXhmUjh1RXNRa2Y0dk9ibFk2UkE4bmNEZllFdDZ6T2c5S0U1UmRpWXdwWSIsInkiOiJULU5DNHY0YWY1dU81LXRLZkEtZUZpdk9NMWRyTVY3T3k3WkFhRGVfVWZVIn19.eyJodHUiOiJodHRwczovL2ZpeHR1cmUuaW52YWxpZC90b2tlbiIsImh0bSI6IlBPU1QiLCJqdGkiOiI1ZGM0MDFhZmExNWFkZGYxMTE5MjcyMTU2NDQ5ODRhYTBiOTVjYjljIiwiaWF0Ijo0Mjk0OTY3Mjk1LCJub25jZSI6Im5vbmNlKy898J-nqlxuXHUwMDBGIn0",
+      "signatureHex": "11bd35fae1abd6ccb2fcf0e9318b68f31a8966e1fff29e5a0e8ce72d8e377d50455d8dff5ff917900419bfd9b26972b84a31a20590002e0380a85735b329777d",
+      "proof": "eyJhbGciOiJFUzI1NiIsInR5cCI6ImRwb3Arand0IiwiandrIjp7ImNydiI6IlAtMjU2Iiwia3R5IjoiRUMiLCJ4IjoiYXhmUjh1RXNRa2Y0dk9ibFk2UkE4bmNEZllFdDZ6T2c5S0U1UmRpWXdwWSIsInkiOiJULU5DNHY0YWY1dU81LXRLZkEtZUZpdk9NMWRyTVY3T3k3WkFhRGVfVWZVIn19.eyJodHUiOiJodHRwczovL2ZpeHR1cmUuaW52YWxpZC90b2tlbiIsImh0bSI6IlBPU1QiLCJqdGkiOiI1ZGM0MDFhZmExNWFkZGYxMTE5MjcyMTU2NDQ5ODRhYTBiOTVjYjljIiwiaWF0Ijo0Mjk0OTY3Mjk1LCJub25jZSI6Im5vbmNlKy898J-nqlxuXHUwMDBGIn0.Eb01-uGr1syy_PDpMYto8xqJZuH_8p5aDoznLY43fVBFXY3_X_kXkAQZv9myaXK4SjGiBZAALgOAqFc1syl3fQ",
+      "publicKeyHex": "6b17d1f2e12c4247f8bce6e563a440f277037d812deb33a0f4a13945d898c2964fe342e2fe1a7f9b8ee7eb4a7c0f9e162bce33576b315ececbb6406837bf51f5"
+    }
+  ]
+}

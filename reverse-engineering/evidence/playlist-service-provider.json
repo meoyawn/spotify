@@ -1,0 +1,1000 @@
+{
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "authority": "Refresh bounded static Playlist.Get provider composition evidence.\n\nOnly original constant index/name getters execute under Unicorn. Provider/cache\nconstructors are read-only parent-owned REA exports; no original account,\nprocess, native service, local playlist store or HTTP request is used.",
+  "exports": [
+    {
+      "label": "playlist_primary_context_implementation",
+      "evidenceId": "ev_0acd23537000add6e0a1fa9f535538db1ac2aa999e4544a395b246327e938eaa",
+      "address": "0x101421a80",
+      "entryAddress": "0x101421a80",
+      "decompilationSha256": "7a4cc1acdde71735e8d9783ab55c43ca606c3e1c6e0268cd1fb21fe8bfbe0f8c"
+    },
+    {
+      "label": "playlist_primary_context_build",
+      "evidenceId": "ev_8e912e8c791ad556f86019e7f5634ec89a875d596f324f7db137cc230b252844",
+      "address": "0x101423790",
+      "entryAddress": "0x101423790",
+      "decompilationSha256": "f8fda6df99039d78c004e95a4e97211ea71763ca076952b12bdcb45c0a4a9bec"
+    },
+    {
+      "label": "playlist_common_context_owner",
+      "evidenceId": "ev_e6e52304db91c9234beefae1a706ccdf376952e6f47fe1e0fb5cc5331386d746",
+      "address": "0x10080dcac",
+      "entryAddress": "0x10080dcac",
+      "decompilationSha256": "961c26f880e0158fa6f7ad6961d167ed45a35e773d8b32279bb258f843e00736"
+    },
+    {
+      "label": "playlist_common_context_getter_28",
+      "evidenceId": "ev_a937edc926c971109b4e3236e2b7a9538430651bfb4fc929651dd7466b70795a",
+      "address": "0x10080edf0",
+      "entryAddress": "0x10080edf0",
+      "decompilationSha256": "00a97d6bc96c5c173e5f5aa2081934d2df7af183803a4d17aa033b9cda391cbc"
+    },
+    {
+      "label": "playlist_common_context_getter_30",
+      "evidenceId": "ev_d942e5b49aaee0076d299d3ce1bdf25c8fb895326776fd9819732fe811356938",
+      "address": "0x10080edf8",
+      "entryAddress": "0x10080edf8",
+      "decompilationSha256": "845d404d00c058258575058d644232ca756a547126834688c899d42cca11e068"
+    },
+    {
+      "label": "playlist_tracklist_factory_constructor",
+      "evidenceId": "ev_d91d3be0bea6a67d9bf929f0b0040b3060ea324895095c78c12bb1fc30221910",
+      "address": "0x1015c6a0c",
+      "entryAddress": "0x1015c6a0c",
+      "decompilationSha256": "810b18434a568ba71a42c1570a491bb760023a18c3d00b54c5ffa5ae8ac52e85"
+    },
+    {
+      "label": "playlist_tracklist_factory_impl",
+      "evidenceId": "ev_bdb04bf1fa6ca8f2c7f51c6db80d75b42a35694b3e5d1e11549161803581772f",
+      "address": "0x1015c6784",
+      "entryAddress": "0x1015c6784",
+      "decompilationSha256": "a2dfd8abf2df0a32d10edc6d2740902804b001f00608fc7c10a05d6fda09f564"
+    },
+    {
+      "label": "playlist_common_provider_pair_constructor",
+      "evidenceId": "ev_29b14ba9888e29a09b8f0e638e3c155a3b4f229da13030c1954cd7f9d80d287e",
+      "address": "0x10080fa98",
+      "entryAddress": "0x10080fa98",
+      "decompilationSha256": "b31ff3fa5a1f4f77cb655a289718e97086a9ee43453922b76929c519bf62212c"
+    },
+    {
+      "label": "playlist_common_query_snapshot",
+      "evidenceId": "ev_fca9ff5605cd13914a89fe949e9c612c6ee843afbae531ed5e5dc8c011546421",
+      "address": "0x1014ea954",
+      "entryAddress": "0x1014ea954",
+      "decompilationSha256": "909c7da8c92e6e4843d047d0da5389f5e547527aa2007de47c28976e0fea1ab7"
+    },
+    {
+      "label": "playlist_common_provider_wrapper",
+      "evidenceId": "ev_6f63dff0071488da0124f6eea53721959a366de0991f0760ea0d5bb2a089ad13",
+      "address": "0x10080f9bc",
+      "entryAddress": "0x10080f9bc",
+      "decompilationSha256": "ded5b54a1a3865c1e00466ae9568f9ac546f7b7a3eceff5d899858f3f6b31da5"
+    },
+    {
+      "label": "playlist_request_provider_concrete",
+      "evidenceId": "ev_f41397dad2b8345a30977b0be35a99ef77cb685184948e3cdcc7c5806b980d21",
+      "address": "0x1015c6ad4",
+      "entryAddress": "0x1015c6ad4",
+      "decompilationSha256": "fd9b25c8342cbf2d8e42a36428622fffbf0d595d457f30b9363808bb8fedeec9"
+    },
+    {
+      "label": "playlist_factory_cache_a",
+      "evidenceId": "ev_eb11969c5024d4b2a836414fe9be41a1577440d046f2628be217b755659a0113",
+      "address": "0x1015c79dc",
+      "entryAddress": "0x1015c79dc",
+      "decompilationSha256": "2f6cbbe7ade34deed838df58f9da90cf596f5749578023d1424883df97cef678"
+    },
+    {
+      "label": "playlist_factory_cache_b",
+      "evidenceId": "ev_0b1e823ebf93d71136e30647787ffb2ab1ea01728a4e8773c6c8b4969ae1ca76",
+      "address": "0x1015ca8a4",
+      "entryAddress": "0x1015ca8a4",
+      "decompilationSha256": "2e971853ff698b4f4db513ac761850fec669e7a806a89d3f4f0a6ca1be73b3b5"
+    },
+    {
+      "label": "playlist_provider_cache_lookup",
+      "evidenceId": "ev_08c1c0d6ac3d1163f7a500ef99759c2dd1f346a8e62726224ee397c40fb4a0d4",
+      "address": "0x1015c6d64",
+      "entryAddress": "0x1015c6d64",
+      "decompilationSha256": "52959523ddf99af11a1d59cc520eccf7358ac6699442d7fb094d28d3ac577469"
+    },
+    {
+      "label": "playlist_provider_cache_key_equal",
+      "evidenceId": "ev_cf2bce183b5a0e2507b5f0a0dd5027e859822e3153a602da8afa3f1807ebc045",
+      "address": "0x1015c597c",
+      "entryAddress": "0x1015c597c",
+      "decompilationSha256": "99ca2dffd7e2e340c31e74149e446829f5dc314c8dab963f14662e425b9468eb"
+    },
+    {
+      "label": "playlist_provider_cache_create",
+      "evidenceId": "ev_43179c7c1f47232d115fae95477190a4bdebb1fc26eac5f595c74e3e93569f1d",
+      "address": "0x1015c7eac",
+      "entryAddress": "0x1015c7eac",
+      "decompilationSha256": "880c195aa2303fc2d7065e6cf423d3a5d9144552dba9fd8933c15118d23fc6db"
+    },
+    {
+      "label": "playlist_common_root_factory_getter",
+      "evidenceId": "ev_ab3c973845da0b9009b0f8706baa443685dfd1265ded382d2e8d5ec34973fcac",
+      "address": "0x100540630",
+      "entryAddress": "0x100540630",
+      "decompilationSha256": "030535e903b18bfcaa27e437c4e16318ea78cc4d92855d9a2a747b65d9955691"
+    },
+    {
+      "label": "playlist_managed_list_setup",
+      "evidenceId": "ev_b7cd850cda8711e0564a6fd5a84bd78175303cc0bc1b80d45d3b30cbecef64c6",
+      "address": "0x100814ef0",
+      "entryAddress": "0x100814ef0",
+      "decompilationSha256": "a01ef0758ef2885a94cc2544f0e26704e8de8e21f975d0aed49f05344efff99a"
+    },
+    {
+      "label": "playlist_base_trackdata_cache_lookup",
+      "evidenceId": "ev_ea16ba5296b555e98c231035f3044ab910d1f9d3d0751f3ee16c1e51042fdeed",
+      "address": "0x1015c8260",
+      "entryAddress": "0x1015c8260",
+      "decompilationSha256": "a7d90b9cac7d7be614bbae1295c24c07f2dae7d100a8ecfb957d11e5e4ee34cc"
+    },
+    {
+      "label": "playlist_base_trackdata_cache_miss",
+      "evidenceId": "ev_dfa547c970e3cac9ac26b06bce4a46dc179b05cb9674d32eb52b3725376f3046",
+      "address": "0x1015c84d0",
+      "entryAddress": "0x1015c84d0",
+      "decompilationSha256": "6ad112062145034919b51e8379d7638fce309f180584071205575a13bf72f16b"
+    },
+    {
+      "label": "playlist_final_provider_constructor",
+      "evidenceId": "ev_c658e80e666886ad77c14e302937a7f94a17630366fd4abd621efef803570972",
+      "address": "0x1015c6e44",
+      "entryAddress": "0x1015c6e44",
+      "decompilationSha256": "9415c829444aea8b19075eee764c11f578b8435aede444ef0222a69db0af50af"
+    },
+    {
+      "label": "playlist_final_provider_build",
+      "evidenceId": "ev_7bbee53e47db1d3da141b9aa62695eca6856b0d9b2ef0799a3b7ea88a59a0861",
+      "address": "0x1015c7148",
+      "entryAddress": "0x1015c7148",
+      "decompilationSha256": "0c96d0bb4ba50857f75870a85c2dd11f011df11b372115f2fc06ee29ecc888b4"
+    },
+    {
+      "label": "playlist_managed_list_owner",
+      "evidenceId": "ev_9a8eac083ff7c6addb31514099f36a5e7c1ac618c31386b80fd0d4e3658e55e3",
+      "address": "0x100815120",
+      "entryAddress": "0x100815120",
+      "decompilationSha256": "cdcd2f2f6d5abfab18d49afe75760586db680e9363529d717ef164de3422c735"
+    },
+    {
+      "label": "playlist_managed_factory_constructor",
+      "evidenceId": "ev_15da5fe4ffbf258d3b3fe5e51c7e38a19d564d201e7ace5a78eb1069ae0bfc74",
+      "address": "0x101ae964c",
+      "entryAddress": "0x101ae964c",
+      "decompilationSha256": "e90b19227d76c08afa292d355cfe9511365976a33464f8ac12f5a74f087ef3a4"
+    },
+    {
+      "label": "playlist_managed_list_get",
+      "evidenceId": "ev_f54dcb9494542ef86382776bdba6517cb2c4060082617ba4b7e23dd8cfc87d18",
+      "address": "0x101ae9bf8",
+      "entryAddress": "0x101ae9bf8",
+      "decompilationSha256": "517013899ffc00defeb94120388ff44982ba8ff531ca2b9c4097e1cbc3e27b11"
+    },
+    {
+      "label": "playlist_sync_service_constructor",
+      "evidenceId": "ev_83e09e37ed52c40cc2712546c438d2de55781bf76d369d28eb8ffced4e38dfb0",
+      "address": "0x101aa66d4",
+      "entryAddress": "0x101aa66d4",
+      "decompilationSha256": "1fd3ff1f356fd19dee15d0046dc3c04962ad0de05270982fda6089fa1e03c7af"
+    },
+    {
+      "label": "playlist_primary_sync_invocation",
+      "evidenceId": "ev_4773df402bf7d6c95164792f370e2b372db17e322fc4a723f5265f856ddf28c2",
+      "address": "0x101aa9f4c",
+      "entryAddress": "0x101aa9e50",
+      "decompilationSha256": "b3d06c3b5e699170a93bbb12ed5ea09f4c156c96f65c409df9b32e31fbc3ffab"
+    },
+    {
+      "label": "playlist_default_list_factory_constructor",
+      "evidenceId": "ev_8a9591078c7c1047333ddecf5def5b37754b5d942efead54f1ed4d01eef12b44",
+      "address": "0x101ab5288",
+      "entryAddress": "0x101ab5288",
+      "decompilationSha256": "5a44adb5bfbafdc61f8088f946928da7fcb024aee1c46fe9f4e59638e14b6531"
+    },
+    {
+      "label": "playlist_default_managed_list_create",
+      "evidenceId": "ev_a5b40b411b7ba478c3ff503759ef32399652e50095924616d43cdb1f37676076",
+      "address": "0x101ab1288",
+      "entryAddress": "0x101ab1288",
+      "decompilationSha256": "f183a4cad40eebe2c3d9d9e2b87863d4c080e970655bfb83928e52c8536037a6"
+    },
+    {
+      "label": "playlist_managed_instance_constructor",
+      "evidenceId": "ev_33ceb2f74285cc464babedddd124cf1b59c1577fdfec3776a8c828e1e3dc7161",
+      "address": "0x101b072dc",
+      "entryAddress": "0x101b072dc",
+      "decompilationSha256": "dbb9f68f7c513bf3b6aeffbd143511e5ceb8d617e427472e7066bdc479d3151d"
+    },
+    {
+      "label": "playlist_content_state_constructor",
+      "evidenceId": "ev_ba446fee8ae67873294ae14e57a26c62f3ba42d39671ab58eb21a5e1dc4a206c",
+      "address": "0x101b15678",
+      "entryAddress": "0x101b15678",
+      "decompilationSha256": "1321f09c98262acd6f5a3bd60827dc0b9931a6e6eb6c9a4cb4204146861d5a27"
+    },
+    {
+      "label": "playlist_managed_list_attach",
+      "evidenceId": "ev_1d77fb42143b3b32bcd17e9608b3298fe9cb0cfe437f26ad10662734a1e4d5dd",
+      "address": "0x101ab1584",
+      "entryAddress": "0x101ab1584",
+      "decompilationSha256": "75a0b44c57b2ded5e48623bb23680631295ebbdc84a24ce2187b78e3f408e671"
+    },
+    {
+      "label": "playlist_per_list_actor_constructor",
+      "evidenceId": "ev_75c99db99d8879d267758bd076493e45a99dc8b038c6cff5b677eb597c34ff44",
+      "address": "0x101ab9ce0",
+      "entryAddress": "0x101ab9ce0",
+      "decompilationSha256": "f833e92cf721bfe524542242245ab43d7b95ba0e30a92c56a475483e78c1d06e"
+    },
+    {
+      "label": "playlist_actor_update_drive",
+      "evidenceId": "ev_70c23b4ccf02f99c738786a00a99d69034018777d71d2af5a8f88c481c42403a",
+      "address": "0x101ac3a74",
+      "entryAddress": "0x101ac3a74",
+      "decompilationSha256": "562aec8c5694528839db229881afd4a2e780fe940655b84e232600f5c5c5ed16"
+    },
+    {
+      "label": "playlist_actor_observer_update",
+      "evidenceId": "ev_8ea59756f031a7de418c878bee21fecc6cda6fe052be0164f0fc85f1ef9560ab",
+      "address": "0x101ac38e4",
+      "entryAddress": "0x101ac38e4",
+      "decompilationSha256": "c4761fe61aacdbf4f100ac6a48cf147a2972fdf8d2a5663bf480838f049375a0"
+    },
+    {
+      "label": "playlist_actor_request_dispatch",
+      "evidenceId": "ev_d2819ed7e6fac307e58ae66d9e41742e1bda9b3615d229d0d586b352f1c259a2",
+      "address": "0x101ac0cc8",
+      "entryAddress": "0x101ac0cc8",
+      "decompilationSha256": "444f5e9a1ad4a1265a1c5a7f437c2984e69432e84ccc9c9f407f46fa4f0ec075"
+    },
+    {
+      "label": "playlist_actor_observer_body",
+      "evidenceId": "ev_b50611cecf78501cd027ab53b38ed9b26a5fc47288126efd69cfa5b6a1d54e0e",
+      "address": "0x101ac32e4",
+      "entryAddress": "0x101ac32e4",
+      "decompilationSha256": "b71dda3503e47f5418df5de413d0e25d3cc2363a9ac615dc2400691b33a1f19c"
+    },
+    {
+      "label": "playlist_cache_info_projection",
+      "evidenceId": "ev_f2a381603dc849ae8042d5d87df3da0301992d38ce32cbc9801c8cad74b2c0a8",
+      "address": "0x101ac27f4",
+      "entryAddress": "0x101ac27f4",
+      "decompilationSha256": "bf0aaa67a59f3605a99ec4084519da96baaf85ff0b4bff0c8df326d4c5978208"
+    },
+    {
+      "label": "playlist_cache_snapshot_projection",
+      "evidenceId": "ev_7a0552ef3dea730f94ec3bee88005e0767cb601682163e6cdcd6e80dec7d841e",
+      "address": "0x101ac2998",
+      "entryAddress": "0x101ac2998",
+      "decompilationSha256": "a8e3459a96d65ddfe0916b1dae340c27ad526f69bdba9b574d3b96aed2a77a7d"
+    },
+    {
+      "label": "playlist_cache_revision_setter",
+      "evidenceId": "ev_f2489b6f1d606bf101a901f2bf5dd30a9554e1cbd35d91fe419270dd2361ebfa",
+      "address": "0x101adc180",
+      "entryAddress": "0x101adc180",
+      "decompilationSha256": "00a4521e798edf2e39b3c2d9fa44d6e7c5ac4d92a873836044096d423c879f0e"
+    },
+    {
+      "label": "playlist_cache_list_items_projection",
+      "evidenceId": "ev_96d5ac455479b353f4ab87b941738466889f1d197710f5299712546d5682ae99",
+      "address": "0x101acf7ec",
+      "entryAddress": "0x101acf7ec",
+      "decompilationSha256": "23cddb337ae60447bfd3454077f8c363bbe9013451e014f6043d19b1ec7ced4f"
+    },
+    {
+      "label": "playlist_cache_item_callback",
+      "evidenceId": "ev_5f8d021c7029b703d08005bb90be5689b53dc1cf572131aff92114fab8ada2a7",
+      "address": "0x101ad0b2c",
+      "entryAddress": "0x101ad0b2c",
+      "decompilationSha256": "c9717a415315ed8bc41333dc538ac862ad2b10f7781ee2305bf108165f9f6d77"
+    }
+  ],
+  "protobufIdentities": [
+    {
+      "constructor": "0x101bf07d4",
+      "vtable": "0x102669048",
+      "classDataGetter": "0x101bf09b8",
+      "classData": "0x1027805e8",
+      "descriptorTable": "0x10277d8e8",
+      "defaultInstanceIndex": 31,
+      "file": "playlist_api.proto",
+      "message": "spotify.playlist4.proto.SelectedListContent",
+      "descriptorSha256": "4203124978629c882fff40081706103f99722ffc36527982341b47040dd7080e",
+      "layout": [
+        {
+          "number": 1,
+          "name": "revision",
+          "offset": 80,
+          "hasIndex": 128
+        },
+        {
+          "number": 2,
+          "name": "length",
+          "offset": 152,
+          "hasIndex": 137
+        },
+        {
+          "number": 3,
+          "name": "attributes",
+          "offset": 96,
+          "hasIndex": 130
+        },
+        {
+          "number": 5,
+          "name": "contents",
+          "offset": 104,
+          "hasIndex": 131
+        },
+        {
+          "number": 6,
+          "name": "diff",
+          "offset": 112,
+          "hasIndex": 132
+        },
+        {
+          "number": 7,
+          "name": "sync_result",
+          "offset": 120,
+          "hasIndex": 133
+        },
+        {
+          "number": 8,
+          "name": "resulting_revisions",
+          "offset": 24,
+          "hasIndex": -1
+        },
+        {
+          "number": 9,
+          "name": "multiple_heads",
+          "offset": 156,
+          "hasIndex": 138
+        },
+        {
+          "number": 10,
+          "name": "up_to_date",
+          "offset": 157,
+          "hasIndex": 139
+        },
+        {
+          "number": 14,
+          "name": "nonces",
+          "offset": 48,
+          "hasIndex": -1
+        },
+        {
+          "number": 15,
+          "name": "timestamp",
+          "offset": 160,
+          "hasIndex": 142
+        },
+        {
+          "number": 16,
+          "name": "owner_username",
+          "offset": 88,
+          "hasIndex": 129
+        },
+        {
+          "number": 17,
+          "name": "abuse_reporting_enabled",
+          "offset": 158,
+          "hasIndex": 140
+        },
+        {
+          "number": 18,
+          "name": "capabilities",
+          "offset": 128,
+          "hasIndex": 134
+        },
+        {
+          "number": 19,
+          "name": "geoblock",
+          "offset": 64,
+          "hasIndex": -1
+        },
+        {
+          "number": 20,
+          "name": "changes_require_resync",
+          "offset": 159,
+          "hasIndex": 141
+        },
+        {
+          "number": 21,
+          "name": "created_at",
+          "offset": 168,
+          "hasIndex": 143
+        },
+        {
+          "number": 22,
+          "name": "applied_lenses",
+          "offset": 136,
+          "hasIndex": 135
+        },
+        {
+          "number": 23,
+          "name": "is_user_created",
+          "offset": 176,
+          "hasIndex": 144
+        },
+        {
+          "number": 24,
+          "name": "signal_results",
+          "offset": 144,
+          "hasIndex": 136
+        }
+      ]
+    },
+    {
+      "constructor": "0x101bede4c",
+      "vtable": "0x102668b88",
+      "classDataGetter": "0x101bee1b0",
+      "classData": "0x10277e4a8",
+      "descriptorTable": "0x10277d8e8",
+      "defaultInstanceIndex": 8,
+      "file": "playlist_api.proto",
+      "message": "spotify.playlist4.proto.ListAttributes",
+      "descriptorSha256": "4203124978629c882fff40081706103f99722ffc36527982341b47040dd7080e",
+      "layout": [
+        {
+          "number": 1,
+          "name": "name",
+          "offset": 72,
+          "hasIndex": 128
+        },
+        {
+          "number": 2,
+          "name": "description",
+          "offset": 80,
+          "hasIndex": 129
+        },
+        {
+          "number": 3,
+          "name": "picture",
+          "offset": 88,
+          "hasIndex": 130
+        },
+        {
+          "number": 4,
+          "name": "collaborative",
+          "offset": 152,
+          "hasIndex": 138
+        },
+        {
+          "number": 5,
+          "name": "pl3_version",
+          "offset": 96,
+          "hasIndex": 131
+        },
+        {
+          "number": 6,
+          "name": "deleted_by_owner",
+          "offset": 153,
+          "hasIndex": 139
+        },
+        {
+          "number": 10,
+          "name": "client_id",
+          "offset": 104,
+          "hasIndex": 132
+        },
+        {
+          "number": 11,
+          "name": "format",
+          "offset": 112,
+          "hasIndex": 133
+        },
+        {
+          "number": 12,
+          "name": "format_attributes",
+          "offset": 24,
+          "hasIndex": -1
+        },
+        {
+          "number": 13,
+          "name": "picture_size",
+          "offset": 48,
+          "hasIndex": -1
+        },
+        {
+          "number": 14,
+          "name": "sequence_context_template",
+          "offset": 120,
+          "hasIndex": 134
+        },
+        {
+          "number": 15,
+          "name": "ai_curation_reference_id",
+          "offset": 128,
+          "hasIndex": 135
+        },
+        {
+          "number": 16,
+          "name": "item_id_algorithm",
+          "offset": 156,
+          "hasIndex": 142
+        },
+        {
+          "number": 17,
+          "name": "recoverable",
+          "offset": 154,
+          "hasIndex": 140
+        },
+        {
+          "number": 18,
+          "name": "is_user_created",
+          "offset": 155,
+          "hasIndex": 141
+        },
+        {
+          "number": 19,
+          "name": "tag_manifest",
+          "offset": 136,
+          "hasIndex": 136
+        },
+        {
+          "number": 20,
+          "name": "sort_manifest",
+          "offset": 144,
+          "hasIndex": 137
+        }
+      ]
+    },
+    {
+      "constructor": "0x101bf76f4",
+      "vtable": "0x10266a568",
+      "classDataGetter": "0x101bf77d4",
+      "classData": "0x102786608",
+      "descriptorTable": "0x102784e90",
+      "defaultInstanceIndex": 18,
+      "file": "playlist_permission.proto",
+      "message": "spotify.playlist_permission.proto.GetMemberPermissionsResponse",
+      "descriptorSha256": "96e534771d7907abbbba85ffbf39b23d84b634011feae049eac739b1603696e5",
+      "layout": [
+        {
+          "number": 1,
+          "name": "member_permissions",
+          "offset": 16,
+          "hasIndex": 0
+        }
+      ]
+    },
+    {
+      "constructor": "0x101b8993c",
+      "vtable": "0x10265e798",
+      "classDataGetter": "0x101b89a70",
+      "classData": "0x10274a608",
+      "descriptorTable": "0x10274a090",
+      "defaultInstanceIndex": 5,
+      "file": "playlist_cache.proto",
+      "message": "spotify.playlist_cache.proto.Playlist",
+      "descriptorSha256": "7166dd6480465e0d7111f4994ab8c672835b1fd63a1e45122767793c411d51fc",
+      "layout": [
+        {
+          "number": 1,
+          "name": "cache_info",
+          "offset": 24,
+          "hasIndex": 128
+        },
+        {
+          "number": 2,
+          "name": "selected_list_content",
+          "offset": 32,
+          "hasIndex": 129
+        },
+        {
+          "number": 3,
+          "name": "playlist_members",
+          "offset": 40,
+          "hasIndex": 130
+        },
+        {
+          "number": 4,
+          "name": "pending_changes",
+          "offset": 48,
+          "hasIndex": 131
+        },
+        {
+          "number": 6,
+          "name": "additional_data",
+          "offset": 56,
+          "hasIndex": 132
+        },
+        {
+          "number": 7,
+          "name": "permissions",
+          "offset": 64,
+          "hasIndex": 133
+        }
+      ]
+    }
+  ],
+  "cacheProjectionLayouts": [
+    {
+      "constructor": "0x101bf07d4",
+      "vtable": "0x102668f08",
+      "classDataGetter": "0x101bed964",
+      "classData": "0x10277dcb8",
+      "descriptorTable": "0x10277d8e8",
+      "defaultInstanceIndex": 2,
+      "file": "playlist_api.proto",
+      "message": "spotify.playlist4.proto.ListItems",
+      "descriptorSha256": "4203124978629c882fff40081706103f99722ffc36527982341b47040dd7080e",
+      "layout": [
+        {
+          "number": 1,
+          "name": "pos",
+          "offset": 128,
+          "hasIndex": 129
+        },
+        {
+          "number": 2,
+          "name": "truncated",
+          "offset": 132,
+          "hasIndex": 130
+        },
+        {
+          "number": 3,
+          "name": "items",
+          "offset": 24,
+          "hasIndex": -1
+        },
+        {
+          "number": 4,
+          "name": "meta_items",
+          "offset": 48,
+          "hasIndex": -1
+        },
+        {
+          "number": 5,
+          "name": "available_signals",
+          "offset": 72,
+          "hasIndex": -1
+        },
+        {
+          "number": 6,
+          "name": "continuation_token",
+          "offset": 120,
+          "hasIndex": 128
+        },
+        {
+          "number": 7,
+          "name": "lens_removed_items",
+          "offset": 96,
+          "hasIndex": -1
+        }
+      ]
+    },
+    {
+      "constructor": "0x101bf07d4",
+      "vtable": "0x102668c08",
+      "classDataGetter": "0x101bed748",
+      "classData": "0x10277d940",
+      "descriptorTable": "0x10277d8e8",
+      "defaultInstanceIndex": 0,
+      "file": "playlist_api.proto",
+      "message": "spotify.playlist4.proto.Item",
+      "descriptorSha256": "4203124978629c882fff40081706103f99722ffc36527982341b47040dd7080e",
+      "layout": [
+        {
+          "number": 1,
+          "name": "uri",
+          "offset": 24,
+          "hasIndex": 128
+        },
+        {
+          "number": 2,
+          "name": "attributes",
+          "offset": 32,
+          "hasIndex": 129
+        }
+      ]
+    },
+    {
+      "constructor": "0x101bf07d4",
+      "vtable": "0x102668d88",
+      "classDataGetter": "0x101bed878",
+      "classData": "0x10277da50",
+      "descriptorTable": "0x10277d8e8",
+      "defaultInstanceIndex": 1,
+      "file": "playlist_api.proto",
+      "message": "spotify.playlist4.proto.MetaItem",
+      "descriptorSha256": "4203124978629c882fff40081706103f99722ffc36527982341b47040dd7080e",
+      "layout": [
+        {
+          "number": 1,
+          "name": "revision",
+          "offset": 40,
+          "hasIndex": 128
+        },
+        {
+          "number": 2,
+          "name": "attributes",
+          "offset": 56,
+          "hasIndex": 130
+        },
+        {
+          "number": 3,
+          "name": "length",
+          "offset": 80,
+          "hasIndex": 133
+        },
+        {
+          "number": 4,
+          "name": "timestamp",
+          "offset": 72,
+          "hasIndex": 132
+        },
+        {
+          "number": 5,
+          "name": "owner_username",
+          "offset": 48,
+          "hasIndex": 129
+        },
+        {
+          "number": 6,
+          "name": "abuse_reporting_enabled",
+          "offset": 84,
+          "hasIndex": 134
+        },
+        {
+          "number": 7,
+          "name": "capabilities",
+          "offset": 64,
+          "hasIndex": 131
+        },
+        {
+          "number": 8,
+          "name": "geoblock",
+          "offset": 24,
+          "hasIndex": -1
+        },
+        {
+          "number": 9,
+          "name": "status_code",
+          "offset": 88,
+          "hasIndex": 135
+        }
+      ]
+    },
+    {
+      "constructor": "0x101bf07d4",
+      "vtable": "0x102668b48",
+      "classDataGetter": "0x101bf0c28",
+      "classData": "0x102780da0",
+      "descriptorTable": "0x10277d8e8",
+      "defaultInstanceIndex": 35,
+      "file": "playlist_api.proto",
+      "message": "spotify.playlist4.proto.AppliedLenses",
+      "descriptorSha256": "4203124978629c882fff40081706103f99722ffc36527982341b47040dd7080e",
+      "layout": [
+        {
+          "number": 1,
+          "name": "states",
+          "offset": 16,
+          "hasIndex": 0
+        }
+      ]
+    },
+    {
+      "constructor": "0x101b8993c",
+      "vtable": "0x10265e6d8",
+      "classDataGetter": "0x101b897e4",
+      "classData": "0x10274a2a8",
+      "descriptorTable": "0x10274a090",
+      "defaultInstanceIndex": 2,
+      "file": "playlist_cache.proto",
+      "message": "spotify.playlist_cache.proto.PlaylistCacheInfo",
+      "descriptorSha256": "7166dd6480465e0d7111f4994ab8c672835b1fd63a1e45122767793c411d51fc",
+      "layout": [
+        {
+          "number": 1,
+          "name": "cache_producer_version",
+          "offset": 40,
+          "hasIndex": 130
+        },
+        {
+          "number": 2,
+          "name": "cache_refresh_needed",
+          "offset": 44,
+          "hasIndex": 131
+        },
+        {
+          "number": 3,
+          "name": "headless_state",
+          "offset": 45,
+          "hasIndex": 132
+        },
+        {
+          "number": 4,
+          "name": "error_code",
+          "offset": 24,
+          "hasIndex": 128
+        },
+        {
+          "number": 5,
+          "name": "cache_hint_info",
+          "offset": 32,
+          "hasIndex": 129
+        },
+        {
+          "number": 6,
+          "name": "content_generation_version",
+          "offset": 48,
+          "hasIndex": 133
+        }
+      ]
+    },
+    {
+      "constructor": "0x101b8993c",
+      "vtable": "0x10265e618",
+      "classDataGetter": "0x101b89508",
+      "classData": "0x10274a0e8",
+      "descriptorTable": "0x10274a090",
+      "defaultInstanceIndex": 0,
+      "file": "playlist_cache.proto",
+      "message": "spotify.playlist_cache.proto.ContextSyncErrorCode",
+      "descriptorSha256": "7166dd6480465e0d7111f4994ab8c672835b1fd63a1e45122767793c411d51fc",
+      "layout": [
+        {
+          "number": 1,
+          "name": "code",
+          "offset": 24,
+          "hasIndex": 128
+        }
+      ]
+    }
+  ],
+  "managedListOwner": {
+    "index": 137,
+    "name": "PlaylistSetupImpl",
+    "indexGetter": "0x100814ec8",
+    "nameGetter": "0x100814ed0",
+    "nameAddress": "0x1023e44ca",
+    "getterInstructionSha256": "963593d4956063803e4cc8fa73ac050e841579207c57b53ff16d660e119e98ad",
+    "setupVtable": "0x10258ad78",
+    "apply": "0x100814ef0",
+    "implementationConstructor": "0x100815120",
+    "implementationVtable": "0x10258adb8",
+    "listFactoryGetter": "0x100819030",
+    "listFactorySharedPairOffset": "0x38"
+  },
+  "composition": {
+    "primary": {
+      "ownerConstructor": "0x101421a80",
+      "contextConstructor": "0x101423790",
+      "ownerContextOffset": "0x10",
+      "separateContextSharedPairField": "0x12",
+      "storedFromArgument": 34,
+      "note": "This primary context field is not the common request-provider context field"
+    },
+    "common": {
+      "ownerConstructor": "0x10080dcac",
+      "trackListFactoryCall": "0x1015c6a0c",
+      "trackListFactoryConstructor": "0x1015c6784",
+      "trackListFactoryOwnerOffset": "0x10",
+      "trackListFactoryGetter": "0x10080edf0",
+      "providerGetter": "0x10080edf8",
+      "providerOwnerOffset": "0x38",
+      "providerComposition": "0x10080fa98",
+      "querySnapshot": "0x1014ea954",
+      "querySnapshotWrapper": "0x10080f9bc",
+      "contextTrackListFactoryField": "0x12",
+      "contextManagedListFactoryField": "0x3"
+    },
+    "trackListFactory": {
+      "vtable": "0x1025eb4a0",
+      "providerMethodSlot": "0x10",
+      "providerMethod": "0x1015c6ad4",
+      "baseCacheConstructor": "0x1015c79dc",
+      "baseCacheOffset": "0xc8",
+      "providerCacheConstructor": "0x1015ca8a4",
+      "providerCacheOffset": "0xd0",
+      "constructorParameter": 10000,
+      "constructorParameterUnit": null,
+      "managedListFactoryOffset": "0x60",
+      "managedListFactoryMethodSlot": "0x40",
+      "providerCacheLookup": "0x1015c6d64",
+      "providerCacheCreate": "0x1015c7eac",
+      "baseCacheLookup": "0x1015c8260",
+      "baseCacheMiss": "0x1015c84d0",
+      "baseCacheCreate": "0x1015c78ec",
+      "finalProviderConstruction": "0x1015c6e44",
+      "finalProviderBuild": "0x1015c7148",
+      "finalProviderConstructor": "0x10159cd54"
+    },
+    "managedListFactory": {
+      "sharedFactoryConstruction": "0x101ae964c",
+      "constructor": "0x101ae97e4",
+      "vtable": "0x102656ac8",
+      "getMethodSlot": "0x40",
+      "getMethod": "0x101ae9bf8",
+      "uriRegistryOffset": "0xd8",
+      "defaultFactoryOffset": "0x88",
+      "alternateFactoryOffset": "0xb0",
+      "alternateSupportsMethodSlot": "0x40",
+      "createMethodSlot": "0x60",
+      "defaultFactoryConstruction": "0x101ab5288",
+      "alternateFactoryConstruction": "0x101aa93f4",
+      "defaultFactoryConstructor": "0x101aaf670",
+      "defaultFactoryVtable": "0x102655858",
+      "defaultCreateMethod": "0x101ab1288",
+      "managedInstanceConstructor": "0x101b072dc",
+      "attachMethod": "0x101ab1584",
+      "attachedActorConstructor": "0x101ab9ce0",
+      "actorVtables": [
+        "0x102655dc0",
+        "0x102655e20",
+        "0x102655e50"
+      ],
+      "actorUpdateWrapper": "0x101ac3a74",
+      "actorCacheWriteDispatch": "0x101ac0cc8",
+      "actorObserverThunk": "0x101ac38e4",
+      "actorObserverBody": "0x101ac32e4",
+      "syncServiceConstructor": "0x101aa66d4"
+    },
+    "contentState": {
+      "constructor": "0x101b15678",
+      "instancePointerOffset": "0x70",
+      "baseMessage": "spotify.playlist4.proto.ListAttributes",
+      "baseConstructor": "0x101bede4c",
+      "baseVtable": "0x102668b88",
+      "classDataGetter": "0x101bee1b0",
+      "classData": "0x10277e4a8",
+      "table": "0x10277e510",
+      "nameAddress": "0x10277e858",
+      "permissionsMessage": "spotify.playlist_permission.proto.GetMemberPermissionsResponse",
+      "permissionsOffset": "0x150"
+    }
+  },
+  "lookup": {
+    "ordinary": [
+      "weak-map live provider",
+      "retained-map revival",
+      "creator or error"
+    ],
+    "special": "When request+0x140==1, prefer compatible providers in virtual state2; this is not enabled by the current Get query compiler",
+    "compatibleKeyPredicate": "0x1015c597c",
+    "retainedRevival": "0x1015cac04",
+    "providerCacheMiss": "0x1015ccae4",
+    "baseCacheMissFailure": "List could not be created from '%s': %s"
+  },
+  "primarySyncInvocation": {
+    "function": "0x101aa9e50",
+    "requestBuilderCall": "0x101aa9f4c",
+    "taskConstructorCall": "0x101aa9fc8",
+    "mode": 0,
+    "acceptListItems": true,
+    "initialRevision": "",
+    "hintRevision": "",
+    "requestBody": null,
+    "dsaMode": "Nullable inverse of supplied preference; preference initialization is separate"
+  },
+  "cacheProjection": {
+    "cacheInfoErrorProjection": "0x101ac27f4",
+    "snapshotProjection": "0x101ac2998",
+    "revisionAndLenses": "0x101adc180",
+    "listItemsProjection": "0x101acf7ec",
+    "itemProjection": "0x101ad0b2c",
+    "production": "lib/playlist_service/cache_snapshot.dart",
+    "oracle": "reverse-engineering/tools/playlist-cache-oracle.py"
+  },
+  "nextTargets": [
+    "0x101aba73c",
+    "0x101ab2e80",
+    "0x10159cd54",
+    "0x1015c7398",
+    "0x1015ccae4"
+  ],
+  "limits": [
+    "Get remains unregistered; no fake provider or successful data handler is supplied",
+    "Native cache10000 units and eviction/callback lifecycle are not inferred from constructors",
+    "Managed-list HTTP demand/response application and cache store I/O remain under investigation"
+  ]
+}

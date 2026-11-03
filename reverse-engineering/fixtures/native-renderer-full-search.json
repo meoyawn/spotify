@@ -1,0 +1,2121 @@
+{
+  "source": [
+    {
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f"
+    },
+    {
+      "path": "build/rea/xpui/xpui-routes-search.js",
+      "sha256": "d199ab08cdbeb3e8fa0b0bb771148019e6fbbba18d31b1e8b25c8c31508cd5d6"
+    }
+  ],
+  "ranges": [
+    {
+      "kind": "factory-92464",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4161056,
+      "lengthBytes": 1531,
+      "sha256": "ea26df91582f9fa4917addc583b3587174795a9214c591d368f6962222610292"
+    },
+    {
+      "kind": "factory-83873",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4084122,
+      "lengthBytes": 1671,
+      "sha256": "1aeaa740a4a3f533e78b5c4268c6aa3203950362f5c7066bf0275640e82bee8d"
+    },
+    {
+      "kind": "factory-85418",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4160880,
+      "lengthBytes": 175,
+      "sha256": "6c0bd05958a0723942a6e91b1cb681c9f40e719af9cbc023e30c08b5889f4165"
+    },
+    {
+      "kind": "factory-1940",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4113494,
+      "lengthBytes": 624,
+      "sha256": "528ddb8b6adce775f64c3ee0371d007d51e65e564bf9b804229d9857a9985923"
+    },
+    {
+      "kind": "factory-41332",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4115028,
+      "lengthBytes": 4953,
+      "sha256": "9daaca5dd00fa6605ddd0eeb379cb5fc5c08e51a161d22a94315c4aa40e4b005"
+    },
+    {
+      "kind": "factory-87337",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4119982,
+      "lengthBytes": 1395,
+      "sha256": "e90ffc2f49b22726bf37dfc1560fc8fcc35315291a30dd20628a151b2bb198b5"
+    },
+    {
+      "kind": "factory-65505",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 2252473,
+      "lengthBytes": 2724,
+      "sha256": "6f73a586682d57fc8f4140409aeb2892b9707a122e6634c20919655f7b8f5411"
+    },
+    {
+      "kind": "factory-53737",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 2244651,
+      "lengthBytes": 1349,
+      "sha256": "0b4fa90bcd1f90ddc6b0d5a7e3f2b11658c05b64c60ace38579a812ce8a857d0"
+    },
+    {
+      "kind": "factory-43867",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 2246001,
+      "lengthBytes": 665,
+      "sha256": "33cb789076a11a0baa1027074e0fe9b77c922b763fb5d5db4c35af930b6544bd"
+    },
+    {
+      "kind": "factory-72591",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 2248179,
+      "lengthBytes": 1438,
+      "sha256": "0e6e80c8072653a3c44e2d0a0c71fafb5a411eb3864314e7dba7a442bf8e4012"
+    },
+    {
+      "kind": "factory-86749",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 2249892,
+      "lengthBytes": 463,
+      "sha256": "9bc75764166da7a781759eb98574344d7aad7bb8d790e5ce57151906e066011c"
+    },
+    {
+      "kind": "factory-39692",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 2250356,
+      "lengthBytes": 837,
+      "sha256": "736ffa96ed708d782fe2756a44d0366cb584262cafa33823b8a13c041663d904"
+    },
+    {
+      "kind": "factory-77145",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 2255198,
+      "lengthBytes": 1584,
+      "sha256": "89014a2902b2edc2522993dfdb8b5cc83e9f2cf06ea35141c3602460d0fb1b49"
+    },
+    {
+      "kind": "factory-66039",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 2256783,
+      "lengthBytes": 407,
+      "sha256": "372bcc5831a1e9bc71998a4af82b24fe49f64ec537a143e477c26d924b960cf9"
+    },
+    {
+      "kind": "factory-27868",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 2251194,
+      "lengthBytes": 632,
+      "sha256": "bb3a560254b1ca0b38baa2ea68cb71c6bbfff60094a00b67c05acb697fb6c7db"
+    },
+    {
+      "kind": "factory-43327",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 2251827,
+      "lengthBytes": 645,
+      "sha256": "37a01bcd03eae2237ee26b99d46dd8666d717c63feec957c34847e4179c090c2"
+    },
+    {
+      "kind": "factory-42475",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 2247756,
+      "lengthBytes": 422,
+      "sha256": "e130f7639c08afb48cebcbad38c8b4874ee4db05c2c2dd1cc870ce4850768b06"
+    },
+    {
+      "kind": "factory-31673",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 2246667,
+      "lengthBytes": 1088,
+      "sha256": "cc0cf3ff26ea50f6b955221d339e59e469fba471a38992b51c0100f6f97afc42"
+    },
+    {
+      "kind": "factory-59314",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 2249618,
+      "lengthBytes": 273,
+      "sha256": "b4608aa42a26a135073b7bdfbe9ff63bda73d46cf62d3cd91b1838934ab62a28"
+    },
+    {
+      "kind": "factory-25500",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4197314,
+      "lengthBytes": 171,
+      "sha256": "7d668c2d4e2c9259047dd84071db795053e99685983e2689930133cd28b35bbe"
+    },
+    {
+      "kind": "factory-56209",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 3901950,
+      "lengthBytes": 566,
+      "sha256": "e046995b12971098d5364934b4726b5d1365ed4c47553bb7e6bfb1317219ee0a"
+    },
+    {
+      "kind": "factory-68846",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4197674,
+      "lengthBytes": 733,
+      "sha256": "1385764af983a1b3755c77285792c586395def2f79ab53b2d4f30f9027e0c676"
+    },
+    {
+      "kind": "factory-47136",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 724697,
+      "lengthBytes": 30601,
+      "sha256": "69d9c484a0f66974f784f9b31a70e1260d8cc3cdb1aa0299e5f8aabae1470266"
+    },
+    {
+      "kind": "factory-69449",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 7889734,
+      "lengthBytes": 11029,
+      "sha256": "512123b971df696e5269b0cebcaf671482bd607acd58f800425c57c484e2d333"
+    },
+    {
+      "kind": "factory-45514",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 2257191,
+      "lengthBytes": 148,
+      "sha256": "0e2a20b8d662aa6f10dcc2eca3c21ab4185ce5da33791d083d5ae9861ec5ac9f"
+    },
+    {
+      "kind": "factory-1602",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 2257340,
+      "lengthBytes": 648,
+      "sha256": "00c06486a208deadd745eab1cedf12b150699b99d15eeb73e6abfa6a0c74da70"
+    },
+    {
+      "kind": "factory-98235",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4132986,
+      "lengthBytes": 109,
+      "sha256": "a0ca7a97587f2eb30ff20fd844e2e867b8b112e6d18a720aa82e38b82f2c2810"
+    },
+    {
+      "kind": "factory-78277",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4788431,
+      "lengthBytes": 929,
+      "sha256": "70681093cdf3c2000ff22bda711517dee801347742a128ba4f8a4bbcd6e72fd3"
+    },
+    {
+      "kind": "factory-87801",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4790374,
+      "lengthBytes": 73,
+      "sha256": "2ca5498abc072e7bc96c646c6eeea5d835cf3ef9440d0ff34ddb57e0113ea9de"
+    },
+    {
+      "kind": "factory-28451",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4759953,
+      "lengthBytes": 18056,
+      "sha256": "56feedb773a36b2d4260c8498c6fd33b5bd6eb5af8682e11ac98d084d2160f7e"
+    },
+    {
+      "kind": "factory-92819",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 1852088,
+      "lengthBytes": 127,
+      "sha256": "ef8c165629f5a663fc89003f2dffbee8ad8ddc10625cabf33211ccd77fa23fad"
+    },
+    {
+      "kind": "factory-41780",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 1816564,
+      "lengthBytes": 100,
+      "sha256": "8aff9cd122df8575dadbebeffbb5d555042c5c78f1279147af3974a58ab8a65c"
+    },
+    {
+      "kind": "factory-85010",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 2421995,
+      "lengthBytes": 401,
+      "sha256": "f91e883c6517db3979b988b2f1d949e25e12a163286126eef4d4a0e32d010178"
+    },
+    {
+      "kind": "factory-48153",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4778129,
+      "lengthBytes": 330,
+      "sha256": "338e3923ba008d63d69c87937ea181c1711c3c5d75ba1e2d8352e4a6b8fec334"
+    },
+    {
+      "kind": "factory-86999",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4315241,
+      "lengthBytes": 770,
+      "sha256": "c3930567cf82cfee419798c6cc901ab10365b6acfac8900d373fc0f33fc9b99d"
+    },
+    {
+      "kind": "factory-67825",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4778887,
+      "lengthBytes": 853,
+      "sha256": "e85bb4bafa436070e44ff1afdf2794f35c820d18ee7bf299749a4c534678f0e1"
+    },
+    {
+      "kind": "factory-88795",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4779905,
+      "lengthBytes": 266,
+      "sha256": "a8c8f7247fbb35ec368dfc36cec17ccdcaaf3cb9aea9134419a338000600a9f7"
+    },
+    {
+      "kind": "factory-64767",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4778460,
+      "lengthBytes": 426,
+      "sha256": "c6db1419e30f80c15ebffbd3a9fe628427ad62e22f9ac9dee885d817686ff75a"
+    },
+    {
+      "kind": "factory-53211",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4789675,
+      "lengthBytes": 149,
+      "sha256": "84275e24a61dff086b273924d72988a74bd12f526ff85542695c83a29f18a2dc"
+    },
+    {
+      "kind": "factory-92469",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4789361,
+      "lengthBytes": 313,
+      "sha256": "4d4d8254952cd89c06abb32738936c11c812fb3ef61f840d7131af34a52727d1"
+    },
+    {
+      "kind": "factory-98642",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4779741,
+      "lengthBytes": 163,
+      "sha256": "16e04c7a1ee5f2ffeefe0d2f4643f5157f9fb70607c22083cdfcaf59138f1419"
+    },
+    {
+      "kind": "factory-80149",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4367168,
+      "lengthBytes": 1685,
+      "sha256": "e52a913fa70cd3c20abd34406ac86bb03fe0bafeb28b5f1b0e5e6ed8bbd575e7"
+    },
+    {
+      "kind": "factory-19901",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4790545,
+      "lengthBytes": 233,
+      "sha256": "e3589bace8fa1ff9b5801d4047c785b6454fc616e3066b4be1b0a9db17ed5396"
+    },
+    {
+      "kind": "factory-92693",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4162712,
+      "lengthBytes": 511,
+      "sha256": "d48b0dd13a19421b6cbfec2f3600ab80bfc8280389119dc6364156dfdeec67d1"
+    },
+    {
+      "kind": "search service and category producers",
+      "path": "build/rea/xpui/xpui-routes-search.js",
+      "offsetBytes": 57022,
+      "lengthBytes": 11406,
+      "sha256": "d86f8b4a2fca11d4eb45ff1842d0d76d1c9860556a93ee2bcf5d7970396975da"
+    },
+    {
+      "kind": "initial feature branch and limits",
+      "path": "build/rea/xpui/xpui-routes-search.js",
+      "offsetBytes": 70340,
+      "lengthBytes": 44,
+      "sha256": "a43275830b38fcf905894d89eff6a60068b1d84775d05960933e2351f129f092"
+    },
+    {
+      "kind": "initial full-page query function",
+      "path": "build/rea/xpui/xpui-routes-search.js",
+      "offsetBytes": 70595,
+      "lengthBytes": 344,
+      "sha256": "c470ac844f340922b1e7332e85df63bca170c0c13babc963bc4d1ce1c4812e72"
+    },
+    {
+      "kind": "category query function",
+      "path": "build/rea/xpui/xpui-routes-search.js",
+      "offsetBytes": 22189,
+      "lengthBytes": 231,
+      "sha256": "3240d5480947cf43d0954b59468ff38522c3e724c64dd5fd42a54d428cc9857d"
+    },
+    {
+      "kind": "category next-page function",
+      "path": "build/rea/xpui/xpui-routes-search.js",
+      "offsetBytes": 22438,
+      "lengthBytes": 176,
+      "sha256": "a9206dff273d89ddae2d90e1fa7425a44b5336108eea35403330e100bb01758d"
+    },
+    {
+      "kind": "module74960 global owner",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 3846649,
+      "lengthBytes": 243,
+      "sha256": "aa9c135a625cfc5eda258f6e4722d26eadfddf5a7fc5363674f629bba109c93c"
+    },
+    {
+      "kind": "module50278 header collection",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 508595,
+      "lengthBytes": 540,
+      "sha256": "37f46555905cc743ec510308840087875503aafc38d1d4fe3d82d04c34ea10b4"
+    },
+    {
+      "kind": "module50278 fetch adapter",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 503941,
+      "lengthBytes": 2097,
+      "sha256": "ffc72cd0730018864d132897cd0f4a962f36571873afe77e81195497c3df3785"
+    }
+  ],
+  "sharedBrowserFields": {
+    "path": "reverse-engineering/evidence/native-home-netlog.json",
+    "sha256": "41e4bbdd335339e1d837906b685dfb3e7c6628e22115b4309b488676ec035b7e"
+  },
+  "cases": [
+    {
+      "name": "original full results classic page",
+      "searchKind": "full",
+      "query": "ambient 雪",
+      "flags": {
+        "includeAuthors": true,
+        "includeAlbumPreReleases": false,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsic2VhcmNoVGVybSI6ImFtYmllbnQg6ZuqIiwib2Zmc2V0IjowLCJsaW1pdCI6MTAsIm51bWJlck9mVG9wUmVzdWx0cyI6NSwiaW5jbHVkZUF1ZGlvYm9va3MiOnRydWUsImluY2x1ZGVBcnRpc3RIYXNDb25jZXJ0c0ZpZWxkIjpmYWxzZSwiaW5jbHVkZVByZVJlbGVhc2VzIjp0cnVlLCJpbmNsdWRlQWxidW1QcmVSZWxlYXNlcyI6ZmFsc2UsImluY2x1ZGVBdXRob3JzIjp0cnVlLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWUsImlzUHJlZml4IjpudWxsLCJzZWN0aW9uRmlsdGVycyI6WyJHRU5FUklDIl19LCJvcGVyYXRpb25OYW1lIjoic2VhcmNoRGVza3RvcCIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6ImVlZjdjYzU0ODg4ZDkxYmRkNjgwMjYyMzQ3Nzg3M2NhYTM5NDhhZTE3M2EwYzM0ZmQ4NjgyN2IyNjdlOTRjMDMifX19",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"searchTerm\":\"ambient 雪\",\"offset\":0,\"limit\":10,\"numberOfTopResults\":5,\"includeAudiobooks\":true,\"includeArtistHasConcertsField\":false,\"includePreReleases\":true,\"includeAlbumPreReleases\":false,\"includeAuthors\":true,\"includeEpisodeContentRatingsV2\":true,\"isPrefix\":null,\"sectionFilters\":[\"GENERIC\"]},\"operationName\":\"searchDesktop\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"eef7cc54888d91bdd6802623477873caa3948ae173a0c34fd86827b267e94c03\"}}}"
+      },
+      "operation": "searchDesktop",
+      "variables": {
+        "searchTerm": "ambient 雪",
+        "offset": 0,
+        "limit": 10,
+        "numberOfTopResults": 5,
+        "includeAudiobooks": true,
+        "includeArtistHasConcertsField": false,
+        "includePreReleases": true,
+        "includeAlbumPreReleases": false,
+        "includeAuthors": true,
+        "includeEpisodeContentRatingsV2": true,
+        "isPrefix": null,
+        "sectionFilters": [
+          "GENERIC"
+        ]
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "471"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsic2VhcmNoVGVybSI6ImFtYmllbnQg6ZuqIiwib2Zmc2V0IjowLCJsaW1pdCI6MTAsIm51bWJlck9mVG9wUmVzdWx0cyI6NSwiaW5jbHVkZUF1ZGlvYm9va3MiOnRydWUsImluY2x1ZGVBcnRpc3RIYXNDb25jZXJ0c0ZpZWxkIjpmYWxzZSwiaW5jbHVkZVByZVJlbGVhc2VzIjp0cnVlLCJpbmNsdWRlQWxidW1QcmVSZWxlYXNlcyI6ZmFsc2UsImluY2x1ZGVBdXRob3JzIjp0cnVlLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWUsImlzUHJlZml4IjpudWxsLCJzZWN0aW9uRmlsdGVycyI6WyJHRU5FUklDIl19LCJvcGVyYXRpb25OYW1lIjoic2VhcmNoRGVza3RvcCIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6ImVlZjdjYzU0ODg4ZDkxYmRkNjgwMjYyMzQ3Nzg3M2NhYTM5NDhhZTE3M2EwYzM0ZmQ4NjgyN2IyNjdlOTRjMDMifX19"
+      }
+    },
+    {
+      "name": "original full results alternate explicit feature inputs",
+      "searchKind": "full",
+      "query": "flags",
+      "flags": {
+        "includeAuthors": false,
+        "includeAlbumPreReleases": true,
+        "includeEpisodeContentRatingsV2": false
+      },
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsic2VhcmNoVGVybSI6ImZsYWdzIiwib2Zmc2V0IjowLCJsaW1pdCI6MTAsIm51bWJlck9mVG9wUmVzdWx0cyI6NSwiaW5jbHVkZUF1ZGlvYm9va3MiOnRydWUsImluY2x1ZGVBcnRpc3RIYXNDb25jZXJ0c0ZpZWxkIjpmYWxzZSwiaW5jbHVkZVByZVJlbGVhc2VzIjp0cnVlLCJpbmNsdWRlQWxidW1QcmVSZWxlYXNlcyI6dHJ1ZSwiaW5jbHVkZUF1dGhvcnMiOmZhbHNlLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOmZhbHNlLCJpc1ByZWZpeCI6bnVsbCwic2VjdGlvbkZpbHRlcnMiOlsiR0VORVJJQyJdfSwib3BlcmF0aW9uTmFtZSI6InNlYXJjaERlc2t0b3AiLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiJlZWY3Y2M1NDg4OGQ5MWJkZDY4MDI2MjM0Nzc4NzNjYWEzOTQ4YWUxNzNhMGMzNGZkODY4MjdiMjY3ZTk0YzAzIn19fQ==",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"searchTerm\":\"flags\",\"offset\":0,\"limit\":10,\"numberOfTopResults\":5,\"includeAudiobooks\":true,\"includeArtistHasConcertsField\":false,\"includePreReleases\":true,\"includeAlbumPreReleases\":true,\"includeAuthors\":false,\"includeEpisodeContentRatingsV2\":false,\"isPrefix\":null,\"sectionFilters\":[\"GENERIC\"]},\"operationName\":\"searchDesktop\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"eef7cc54888d91bdd6802623477873caa3948ae173a0c34fd86827b267e94c03\"}}}"
+      },
+      "operation": "searchDesktop",
+      "variables": {
+        "searchTerm": "flags",
+        "offset": 0,
+        "limit": 10,
+        "numberOfTopResults": 5,
+        "includeAudiobooks": true,
+        "includeArtistHasConcertsField": false,
+        "includePreReleases": true,
+        "includeAlbumPreReleases": true,
+        "includeAuthors": false,
+        "includeEpisodeContentRatingsV2": false,
+        "isPrefix": null,
+        "sectionFilters": [
+          "GENERIC"
+        ]
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "466"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsic2VhcmNoVGVybSI6ImZsYWdzIiwib2Zmc2V0IjowLCJsaW1pdCI6MTAsIm51bWJlck9mVG9wUmVzdWx0cyI6NSwiaW5jbHVkZUF1ZGlvYm9va3MiOnRydWUsImluY2x1ZGVBcnRpc3RIYXNDb25jZXJ0c0ZpZWxkIjpmYWxzZSwiaW5jbHVkZVByZVJlbGVhc2VzIjp0cnVlLCJpbmNsdWRlQWxidW1QcmVSZWxlYXNlcyI6dHJ1ZSwiaW5jbHVkZUF1dGhvcnMiOmZhbHNlLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOmZhbHNlLCJpc1ByZWZpeCI6bnVsbCwic2VjdGlvbkZpbHRlcnMiOlsiR0VORVJJQyJdfSwib3BlcmF0aW9uTmFtZSI6InNlYXJjaERlc2t0b3AiLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiJlZWY3Y2M1NDg4OGQ5MWJkZDY4MDI2MjM0Nzc4NzNjYWEzOTQ4YWUxNzNhMGMzNGZkODY4MjdiMjY3ZTk0YzAzIn19fQ=="
+      }
+    },
+    {
+      "name": "original tracks initial page",
+      "searchKind": "category",
+      "query": "ambient 雪",
+      "category": "tracks",
+      "offset": 0,
+      "limit": 20,
+      "flags": {
+        "includeAuthors": true,
+        "includeAlbumPreReleases": false,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsiaW5jbHVkZVByZVJlbGVhc2VzIjpmYWxzZSwiaW5jbHVkZUFsYnVtUHJlUmVsZWFzZXMiOmZhbHNlLCJudW1iZXJPZlRvcFJlc3VsdHMiOjIwLCJzZWFyY2hUZXJtIjoiYW1iaWVudCDpm6oiLCJvZmZzZXQiOjAsImxpbWl0IjoyMCwiaW5jbHVkZUF1ZGlvYm9va3MiOnRydWUsImluY2x1ZGVBdXRob3JzIjp0cnVlLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoic2VhcmNoVHJhY2tzIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiYjAyNjgzMTkyYTk4ZGRlNzk2NmI1ZTY2NTVhNzllZWI2MjcxM2VhYjcwM2VkYTk5MDJjOTMyODE4ZGQ1Mjc1MSJ9fX0=",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"includePreReleases\":false,\"includeAlbumPreReleases\":false,\"numberOfTopResults\":20,\"searchTerm\":\"ambient 雪\",\"offset\":0,\"limit\":20,\"includeAudiobooks\":true,\"includeAuthors\":true,\"includeEpisodeContentRatingsV2\":true},\"operationName\":\"searchTracks\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"b02683192a98dde7966b5e6655a79eeb62713eab703eda9902c932818dd52751\"}}}"
+      },
+      "operation": "searchTracks",
+      "variables": {
+        "includePreReleases": false,
+        "includeAlbumPreReleases": false,
+        "numberOfTopResults": 20,
+        "searchTerm": "ambient 雪",
+        "offset": 0,
+        "limit": 20,
+        "includeAudiobooks": true,
+        "includeAuthors": true,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "389"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsiaW5jbHVkZVByZVJlbGVhc2VzIjpmYWxzZSwiaW5jbHVkZUFsYnVtUHJlUmVsZWFzZXMiOmZhbHNlLCJudW1iZXJPZlRvcFJlc3VsdHMiOjIwLCJzZWFyY2hUZXJtIjoiYW1iaWVudCDpm6oiLCJvZmZzZXQiOjAsImxpbWl0IjoyMCwiaW5jbHVkZUF1ZGlvYm9va3MiOnRydWUsImluY2x1ZGVBdXRob3JzIjp0cnVlLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoic2VhcmNoVHJhY2tzIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiYjAyNjgzMTkyYTk4ZGRlNzk2NmI1ZTY2NTVhNzllZWI2MjcxM2VhYjcwM2VkYTk5MDJjOTMyODE4ZGQ1Mjc1MSJ9fX0="
+      }
+    },
+    {
+      "name": "original albums initial page",
+      "searchKind": "category",
+      "query": "ambient 雪",
+      "category": "albums",
+      "offset": 0,
+      "limit": 30,
+      "flags": {
+        "includeAuthors": true,
+        "includeAlbumPreReleases": false,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsiaW5jbHVkZVByZVJlbGVhc2VzIjpmYWxzZSwiaW5jbHVkZUFsYnVtUHJlUmVsZWFzZXMiOmZhbHNlLCJudW1iZXJPZlRvcFJlc3VsdHMiOjIwLCJzZWFyY2hUZXJtIjoiYW1iaWVudCDpm6oiLCJvZmZzZXQiOjAsImxpbWl0IjozMCwiaW5jbHVkZUF1ZGlvYm9va3MiOnRydWUsImluY2x1ZGVBdXRob3JzIjp0cnVlLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoic2VhcmNoQWxidW1zIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiMjAyY2IzMzA1ZTMxZTVhMDc2N2JhNzkyNWYyOGJkNzI4Y2Y4ZjhiMDIxN2U2ZGE0MzkwOTA1NjA3MWNkNzBlOSJ9fX0=",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"includePreReleases\":false,\"includeAlbumPreReleases\":false,\"numberOfTopResults\":20,\"searchTerm\":\"ambient 雪\",\"offset\":0,\"limit\":30,\"includeAudiobooks\":true,\"includeAuthors\":true,\"includeEpisodeContentRatingsV2\":true},\"operationName\":\"searchAlbums\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"202cb3305e31e5a0767ba7925f28bd728cf8f8b0217e6da43909056071cd70e9\"}}}"
+      },
+      "operation": "searchAlbums",
+      "variables": {
+        "includePreReleases": false,
+        "includeAlbumPreReleases": false,
+        "numberOfTopResults": 20,
+        "searchTerm": "ambient 雪",
+        "offset": 0,
+        "limit": 30,
+        "includeAudiobooks": true,
+        "includeAuthors": true,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "389"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsiaW5jbHVkZVByZVJlbGVhc2VzIjpmYWxzZSwiaW5jbHVkZUFsYnVtUHJlUmVsZWFzZXMiOmZhbHNlLCJudW1iZXJPZlRvcFJlc3VsdHMiOjIwLCJzZWFyY2hUZXJtIjoiYW1iaWVudCDpm6oiLCJvZmZzZXQiOjAsImxpbWl0IjozMCwiaW5jbHVkZUF1ZGlvYm9va3MiOnRydWUsImluY2x1ZGVBdXRob3JzIjp0cnVlLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoic2VhcmNoQWxidW1zIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiMjAyY2IzMzA1ZTMxZTVhMDc2N2JhNzkyNWYyOGJkNzI4Y2Y4ZjhiMDIxN2U2ZGE0MzkwOTA1NjA3MWNkNzBlOSJ9fX0="
+      }
+    },
+    {
+      "name": "original artists initial page",
+      "searchKind": "category",
+      "query": "ambient 雪",
+      "category": "artists",
+      "offset": 0,
+      "limit": 30,
+      "flags": {
+        "includeAuthors": true,
+        "includeAlbumPreReleases": false,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsiaW5jbHVkZVByZVJlbGVhc2VzIjpmYWxzZSwiaW5jbHVkZUFsYnVtUHJlUmVsZWFzZXMiOmZhbHNlLCJudW1iZXJPZlRvcFJlc3VsdHMiOjIwLCJzZWFyY2hUZXJtIjoiYW1iaWVudCDpm6oiLCJvZmZzZXQiOjAsImxpbWl0IjozMCwiaW5jbHVkZUF1ZGlvYm9va3MiOnRydWUsImluY2x1ZGVBdXRob3JzIjp0cnVlLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoic2VhcmNoQXJ0aXN0cyIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6IjdiZjk1ZDc1NGZkYmUzMmM4YjE2MWZiYmU1NGQxYWU1MDk3NDkwMGRmNGRjZTRjOGYxYWZjYmNhZDE1MzIyNGQifX19",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"includePreReleases\":false,\"includeAlbumPreReleases\":false,\"numberOfTopResults\":20,\"searchTerm\":\"ambient 雪\",\"offset\":0,\"limit\":30,\"includeAudiobooks\":true,\"includeAuthors\":true,\"includeEpisodeContentRatingsV2\":true},\"operationName\":\"searchArtists\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"7bf95d754fdbe32c8b161fbbe54d1ae50974900df4dce4c8f1afcbcad153224d\"}}}"
+      },
+      "operation": "searchArtists",
+      "variables": {
+        "includePreReleases": false,
+        "includeAlbumPreReleases": false,
+        "numberOfTopResults": 20,
+        "searchTerm": "ambient 雪",
+        "offset": 0,
+        "limit": 30,
+        "includeAudiobooks": true,
+        "includeAuthors": true,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "390"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsiaW5jbHVkZVByZVJlbGVhc2VzIjpmYWxzZSwiaW5jbHVkZUFsYnVtUHJlUmVsZWFzZXMiOmZhbHNlLCJudW1iZXJPZlRvcFJlc3VsdHMiOjIwLCJzZWFyY2hUZXJtIjoiYW1iaWVudCDpm6oiLCJvZmZzZXQiOjAsImxpbWl0IjozMCwiaW5jbHVkZUF1ZGlvYm9va3MiOnRydWUsImluY2x1ZGVBdXRob3JzIjp0cnVlLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoic2VhcmNoQXJ0aXN0cyIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6IjdiZjk1ZDc1NGZkYmUzMmM4YjE2MWZiYmU1NGQxYWU1MDk3NDkwMGRmNGRjZTRjOGYxYWZjYmNhZDE1MzIyNGQifX19"
+      }
+    },
+    {
+      "name": "original playlists initial page",
+      "searchKind": "category",
+      "query": "ambient 雪",
+      "category": "playlists",
+      "offset": 0,
+      "limit": 30,
+      "flags": {
+        "includeAuthors": true,
+        "includeAlbumPreReleases": false,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsiaW5jbHVkZVByZVJlbGVhc2VzIjpmYWxzZSwiaW5jbHVkZUFsYnVtUHJlUmVsZWFzZXMiOmZhbHNlLCJudW1iZXJPZlRvcFJlc3VsdHMiOjIwLCJzZWFyY2hUZXJtIjoiYW1iaWVudCDpm6oiLCJvZmZzZXQiOjAsImxpbWl0IjozMCwiaW5jbHVkZUF1ZGlvYm9va3MiOnRydWUsImluY2x1ZGVBdXRob3JzIjp0cnVlLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoic2VhcmNoUGxheWxpc3RzIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiZDUyMDAxNGU3NDhmOWVhNDRmNzcwN2Q4ZGYxODE5ODY3YWMxMjA1ZThiN2YzZTI4ZjIyZmU1ZmM4NTg5MjFiMSJ9fX0=",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"includePreReleases\":false,\"includeAlbumPreReleases\":false,\"numberOfTopResults\":20,\"searchTerm\":\"ambient 雪\",\"offset\":0,\"limit\":30,\"includeAudiobooks\":true,\"includeAuthors\":true,\"includeEpisodeContentRatingsV2\":true},\"operationName\":\"searchPlaylists\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"d520014e748f9ea44f7707d8df1819867ac1205e8b7f3e28f22fe5fc858921b1\"}}}"
+      },
+      "operation": "searchPlaylists",
+      "variables": {
+        "includePreReleases": false,
+        "includeAlbumPreReleases": false,
+        "numberOfTopResults": 20,
+        "searchTerm": "ambient 雪",
+        "offset": 0,
+        "limit": 30,
+        "includeAudiobooks": true,
+        "includeAuthors": true,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "392"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsiaW5jbHVkZVByZVJlbGVhc2VzIjpmYWxzZSwiaW5jbHVkZUFsYnVtUHJlUmVsZWFzZXMiOmZhbHNlLCJudW1iZXJPZlRvcFJlc3VsdHMiOjIwLCJzZWFyY2hUZXJtIjoiYW1iaWVudCDpm6oiLCJvZmZzZXQiOjAsImxpbWl0IjozMCwiaW5jbHVkZUF1ZGlvYm9va3MiOnRydWUsImluY2x1ZGVBdXRob3JzIjp0cnVlLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoic2VhcmNoUGxheWxpc3RzIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiZDUyMDAxNGU3NDhmOWVhNDRmNzcwN2Q4ZGYxODE5ODY3YWMxMjA1ZThiN2YzZTI4ZjIyZmU1ZmM4NTg5MjFiMSJ9fX0="
+      }
+    },
+    {
+      "name": "original podcasts initial page",
+      "searchKind": "category",
+      "query": "ambient 雪",
+      "category": "podcasts",
+      "offset": 0,
+      "limit": 30,
+      "flags": {
+        "includeAuthors": true,
+        "includeAlbumPreReleases": false,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsiaW5jbHVkZVByZVJlbGVhc2VzIjpmYWxzZSwiaW5jbHVkZUFsYnVtUHJlUmVsZWFzZXMiOmZhbHNlLCJudW1iZXJPZlRvcFJlc3VsdHMiOjIwLCJzZWFyY2hUZXJtIjoiYW1iaWVudCDpm6oiLCJvZmZzZXQiOjAsImxpbWl0IjozMCwiaW5jbHVkZUF1ZGlvYm9va3MiOnRydWUsImluY2x1ZGVBdXRob3JzIjp0cnVlLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoic2VhcmNoUG9kY2FzdHMiLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiIwMTk1ZDlmNjFiNDM2MDZkNDkwYmNhNjRjMzQ1NmUzNTkzNTI4Y2VhNmNjMDVjN2U4MjJjN2M0MmJlZWQwZjRlIn19fQ==",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"includePreReleases\":false,\"includeAlbumPreReleases\":false,\"numberOfTopResults\":20,\"searchTerm\":\"ambient 雪\",\"offset\":0,\"limit\":30,\"includeAudiobooks\":true,\"includeAuthors\":true,\"includeEpisodeContentRatingsV2\":true},\"operationName\":\"searchPodcasts\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"0195d9f61b43606d490bca64c3456e3593528cea6cc05c7e822c7c42beed0f4e\"}}}"
+      },
+      "operation": "searchPodcasts",
+      "variables": {
+        "includePreReleases": false,
+        "includeAlbumPreReleases": false,
+        "numberOfTopResults": 20,
+        "searchTerm": "ambient 雪",
+        "offset": 0,
+        "limit": 30,
+        "includeAudiobooks": true,
+        "includeAuthors": true,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "391"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsiaW5jbHVkZVByZVJlbGVhc2VzIjpmYWxzZSwiaW5jbHVkZUFsYnVtUHJlUmVsZWFzZXMiOmZhbHNlLCJudW1iZXJPZlRvcFJlc3VsdHMiOjIwLCJzZWFyY2hUZXJtIjoiYW1iaWVudCDpm6oiLCJvZmZzZXQiOjAsImxpbWl0IjozMCwiaW5jbHVkZUF1ZGlvYm9va3MiOnRydWUsImluY2x1ZGVBdXRob3JzIjp0cnVlLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoic2VhcmNoUG9kY2FzdHMiLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiIwMTk1ZDlmNjFiNDM2MDZkNDkwYmNhNjRjMzQ1NmUzNTkzNTI4Y2VhNmNjMDVjN2U4MjJjN2M0MmJlZWQwZjRlIn19fQ=="
+      }
+    },
+    {
+      "name": "original audiobooks initial page",
+      "searchKind": "category",
+      "query": "ambient 雪",
+      "category": "audiobooks",
+      "offset": 0,
+      "limit": 30,
+      "flags": {
+        "includeAuthors": true,
+        "includeAlbumPreReleases": false,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsiaW5jbHVkZVByZVJlbGVhc2VzIjp0cnVlLCJpbmNsdWRlQWxidW1QcmVSZWxlYXNlcyI6ZmFsc2UsIm51bWJlck9mVG9wUmVzdWx0cyI6MjAsInNlYXJjaFRlcm0iOiJhbWJpZW50IOmbqiIsIm9mZnNldCI6MCwibGltaXQiOjMwLCJpbmNsdWRlQXVkaW9ib29rcyI6dHJ1ZSwiaW5jbHVkZUF1dGhvcnMiOnRydWUsImluY2x1ZGVFcGlzb2RlQ29udGVudFJhdGluZ3NWMiI6dHJ1ZX0sIm9wZXJhdGlvbk5hbWUiOiJzZWFyY2hBdWRpb2Jvb2tzIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiZTA1YWM3NjVkMDJjMDg0Zjg3ODNkM2MxNTcyYjIzZDU3NzYxYzQzZjQ3ZWI4Yjg3Y2UyZjljY2NlZDNmYTA2OCJ9fX0=",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"includePreReleases\":true,\"includeAlbumPreReleases\":false,\"numberOfTopResults\":20,\"searchTerm\":\"ambient 雪\",\"offset\":0,\"limit\":30,\"includeAudiobooks\":true,\"includeAuthors\":true,\"includeEpisodeContentRatingsV2\":true},\"operationName\":\"searchAudiobooks\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"e05ac765d02c084f8783d3c1572b23d57761c43f47eb8b87ce2f9ccced3fa068\"}}}"
+      },
+      "operation": "searchAudiobooks",
+      "variables": {
+        "includePreReleases": true,
+        "includeAlbumPreReleases": false,
+        "numberOfTopResults": 20,
+        "searchTerm": "ambient 雪",
+        "offset": 0,
+        "limit": 30,
+        "includeAudiobooks": true,
+        "includeAuthors": true,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "392"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsiaW5jbHVkZVByZVJlbGVhc2VzIjp0cnVlLCJpbmNsdWRlQWxidW1QcmVSZWxlYXNlcyI6ZmFsc2UsIm51bWJlck9mVG9wUmVzdWx0cyI6MjAsInNlYXJjaFRlcm0iOiJhbWJpZW50IOmbqiIsIm9mZnNldCI6MCwibGltaXQiOjMwLCJpbmNsdWRlQXVkaW9ib29rcyI6dHJ1ZSwiaW5jbHVkZUF1dGhvcnMiOnRydWUsImluY2x1ZGVFcGlzb2RlQ29udGVudFJhdGluZ3NWMiI6dHJ1ZX0sIm9wZXJhdGlvbk5hbWUiOiJzZWFyY2hBdWRpb2Jvb2tzIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiZTA1YWM3NjVkMDJjMDg0Zjg3ODNkM2MxNTcyYjIzZDU3NzYxYzQzZjQ3ZWI4Yjg3Y2UyZjljY2NlZDNmYTA2OCJ9fX0="
+      }
+    },
+    {
+      "name": "original authors initial page",
+      "searchKind": "category",
+      "query": "ambient 雪",
+      "category": "authors",
+      "offset": 0,
+      "limit": 30,
+      "flags": {
+        "includeAuthors": true,
+        "includeAlbumPreReleases": false,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsiaW5jbHVkZVByZVJlbGVhc2VzIjpmYWxzZSwiaW5jbHVkZUFsYnVtUHJlUmVsZWFzZXMiOmZhbHNlLCJudW1iZXJPZlRvcFJlc3VsdHMiOjIwLCJzZWFyY2hUZXJtIjoiYW1iaWVudCDpm6oiLCJvZmZzZXQiOjAsImxpbWl0IjozMCwiaW5jbHVkZUF1ZGlvYm9va3MiOnRydWUsImluY2x1ZGVBdXRob3JzIjp0cnVlLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoic2VhcmNoQXV0aG9ycyIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6IjRhOWQ0MDNhN2NiYzdlMTlkYTU1MjBkNjE5YTg2NTQ3MmIzNTM4MmIwNDNiZmE0NTgxNTRlNzNhNWM2ZjQ2YmQifX19",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"includePreReleases\":false,\"includeAlbumPreReleases\":false,\"numberOfTopResults\":20,\"searchTerm\":\"ambient 雪\",\"offset\":0,\"limit\":30,\"includeAudiobooks\":true,\"includeAuthors\":true,\"includeEpisodeContentRatingsV2\":true},\"operationName\":\"searchAuthors\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"4a9d403a7cbc7e19da5520d619a865472b35382b043bfa458154e73a5c6f46bd\"}}}"
+      },
+      "operation": "searchAuthors",
+      "variables": {
+        "includePreReleases": false,
+        "includeAlbumPreReleases": false,
+        "numberOfTopResults": 20,
+        "searchTerm": "ambient 雪",
+        "offset": 0,
+        "limit": 30,
+        "includeAudiobooks": true,
+        "includeAuthors": true,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "390"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsiaW5jbHVkZVByZVJlbGVhc2VzIjpmYWxzZSwiaW5jbHVkZUFsYnVtUHJlUmVsZWFzZXMiOmZhbHNlLCJudW1iZXJPZlRvcFJlc3VsdHMiOjIwLCJzZWFyY2hUZXJtIjoiYW1iaWVudCDpm6oiLCJvZmZzZXQiOjAsImxpbWl0IjozMCwiaW5jbHVkZUF1ZGlvYm9va3MiOnRydWUsImluY2x1ZGVBdXRob3JzIjp0cnVlLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoic2VhcmNoQXV0aG9ycyIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6IjRhOWQ0MDNhN2NiYzdlMTlkYTU1MjBkNjE5YTg2NTQ3MmIzNTM4MmIwNDNiZmE0NTgxNTRlNzNhNWM2ZjQ2YmQifX19"
+      }
+    },
+    {
+      "name": "original genres initial page",
+      "searchKind": "category",
+      "query": "ambient 雪",
+      "category": "genres",
+      "offset": 0,
+      "limit": 30,
+      "flags": {
+        "includeAuthors": true,
+        "includeAlbumPreReleases": false,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsiaW5jbHVkZVByZVJlbGVhc2VzIjpmYWxzZSwiaW5jbHVkZUFsYnVtUHJlUmVsZWFzZXMiOmZhbHNlLCJudW1iZXJPZlRvcFJlc3VsdHMiOjIwLCJzZWFyY2hUZXJtIjoiYW1iaWVudCDpm6oiLCJvZmZzZXQiOjAsImxpbWl0IjozMCwiaW5jbHVkZUF1ZGlvYm9va3MiOnRydWUsImluY2x1ZGVBdXRob3JzIjp0cnVlLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoic2VhcmNoR2VucmVzIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiOWUxYzBlMDU2YzQ2MjM5ZGQxOTU2ZWE5MTViOTg4OTEzYzg3YzA0Y2UzZGFkY2NkYjUzNzc3NDQ5MDI2NmY0NiJ9fX0=",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"includePreReleases\":false,\"includeAlbumPreReleases\":false,\"numberOfTopResults\":20,\"searchTerm\":\"ambient 雪\",\"offset\":0,\"limit\":30,\"includeAudiobooks\":true,\"includeAuthors\":true,\"includeEpisodeContentRatingsV2\":true},\"operationName\":\"searchGenres\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"9e1c0e056c46239dd1956ea915b988913c87c04ce3dadccdb537774490266f46\"}}}"
+      },
+      "operation": "searchGenres",
+      "variables": {
+        "includePreReleases": false,
+        "includeAlbumPreReleases": false,
+        "numberOfTopResults": 20,
+        "searchTerm": "ambient 雪",
+        "offset": 0,
+        "limit": 30,
+        "includeAudiobooks": true,
+        "includeAuthors": true,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "389"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsiaW5jbHVkZVByZVJlbGVhc2VzIjpmYWxzZSwiaW5jbHVkZUFsYnVtUHJlUmVsZWFzZXMiOmZhbHNlLCJudW1iZXJPZlRvcFJlc3VsdHMiOjIwLCJzZWFyY2hUZXJtIjoiYW1iaWVudCDpm6oiLCJvZmZzZXQiOjAsImxpbWl0IjozMCwiaW5jbHVkZUF1ZGlvYm9va3MiOnRydWUsImluY2x1ZGVBdXRob3JzIjp0cnVlLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoic2VhcmNoR2VucmVzIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiOWUxYzBlMDU2YzQ2MjM5ZGQxOTU2ZWE5MTViOTg4OTEzYzg3YzA0Y2UzZGFkY2NkYjUzNzc3NDQ5MDI2NmY0NiJ9fX0="
+      }
+    },
+    {
+      "name": "original users initial page",
+      "searchKind": "category",
+      "query": "ambient 雪",
+      "category": "users",
+      "offset": 0,
+      "limit": 30,
+      "flags": {
+        "includeAuthors": true,
+        "includeAlbumPreReleases": false,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsiaW5jbHVkZVByZVJlbGVhc2VzIjpmYWxzZSwiaW5jbHVkZUFsYnVtUHJlUmVsZWFzZXMiOmZhbHNlLCJudW1iZXJPZlRvcFJlc3VsdHMiOjIwLCJzZWFyY2hUZXJtIjoiYW1iaWVudCDpm6oiLCJvZmZzZXQiOjAsImxpbWl0IjozMCwiaW5jbHVkZUF1ZGlvYm9va3MiOnRydWUsImluY2x1ZGVBdXRob3JzIjp0cnVlLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoic2VhcmNoVXNlcnMiLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiI4ZjM1OGRkODJlNjJmNjFkZDRjZWFhOWY4Y2QwODg5ZTY0NGM5YjcwN2YxYjcyNGZiZmIzNTZhNzU3Y2I3ZTVhIn19fQ==",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"includePreReleases\":false,\"includeAlbumPreReleases\":false,\"numberOfTopResults\":20,\"searchTerm\":\"ambient 雪\",\"offset\":0,\"limit\":30,\"includeAudiobooks\":true,\"includeAuthors\":true,\"includeEpisodeContentRatingsV2\":true},\"operationName\":\"searchUsers\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"8f358dd82e62f61dd4ceaa9f8cd0889e644c9b707f1b724fbfb356a757cb7e5a\"}}}"
+      },
+      "operation": "searchUsers",
+      "variables": {
+        "includePreReleases": false,
+        "includeAlbumPreReleases": false,
+        "numberOfTopResults": 20,
+        "searchTerm": "ambient 雪",
+        "offset": 0,
+        "limit": 30,
+        "includeAudiobooks": true,
+        "includeAuthors": true,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "388"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsiaW5jbHVkZVByZVJlbGVhc2VzIjpmYWxzZSwiaW5jbHVkZUFsYnVtUHJlUmVsZWFzZXMiOmZhbHNlLCJudW1iZXJPZlRvcFJlc3VsdHMiOjIwLCJzZWFyY2hUZXJtIjoiYW1iaWVudCDpm6oiLCJvZmZzZXQiOjAsImxpbWl0IjozMCwiaW5jbHVkZUF1ZGlvYm9va3MiOnRydWUsImluY2x1ZGVBdXRob3JzIjp0cnVlLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoic2VhcmNoVXNlcnMiLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiI4ZjM1OGRkODJlNjJmNjFkZDRjZWFhOWY4Y2QwODg5ZTY0NGM5YjcwN2YxYjcyNGZiZmIzNTZhNzU3Y2I3ZTVhIn19fQ=="
+      }
+    },
+    {
+      "name": "original tracks non-contiguous server cursor and shortened final page",
+      "searchKind": "category",
+      "query": "ambient 雪",
+      "category": "tracks",
+      "offset": 37,
+      "limit": 5,
+      "flags": {
+        "includeAuthors": true,
+        "includeAlbumPreReleases": false,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsiaW5jbHVkZVByZVJlbGVhc2VzIjpmYWxzZSwiaW5jbHVkZUFsYnVtUHJlUmVsZWFzZXMiOmZhbHNlLCJudW1iZXJPZlRvcFJlc3VsdHMiOjIwLCJzZWFyY2hUZXJtIjoiYW1iaWVudCDpm6oiLCJvZmZzZXQiOjM3LCJsaW1pdCI6NSwiaW5jbHVkZUF1ZGlvYm9va3MiOnRydWUsImluY2x1ZGVBdXRob3JzIjp0cnVlLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoic2VhcmNoVHJhY2tzIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiYjAyNjgzMTkyYTk4ZGRlNzk2NmI1ZTY2NTVhNzllZWI2MjcxM2VhYjcwM2VkYTk5MDJjOTMyODE4ZGQ1Mjc1MSJ9fX0=",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"includePreReleases\":false,\"includeAlbumPreReleases\":false,\"numberOfTopResults\":20,\"searchTerm\":\"ambient 雪\",\"offset\":37,\"limit\":5,\"includeAudiobooks\":true,\"includeAuthors\":true,\"includeEpisodeContentRatingsV2\":true},\"operationName\":\"searchTracks\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"b02683192a98dde7966b5e6655a79eeb62713eab703eda9902c932818dd52751\"}}}"
+      },
+      "operation": "searchTracks",
+      "variables": {
+        "includePreReleases": false,
+        "includeAlbumPreReleases": false,
+        "numberOfTopResults": 20,
+        "searchTerm": "ambient 雪",
+        "offset": 37,
+        "limit": 5,
+        "includeAudiobooks": true,
+        "includeAuthors": true,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "389"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsiaW5jbHVkZVByZVJlbGVhc2VzIjpmYWxzZSwiaW5jbHVkZUFsYnVtUHJlUmVsZWFzZXMiOmZhbHNlLCJudW1iZXJPZlRvcFJlc3VsdHMiOjIwLCJzZWFyY2hUZXJtIjoiYW1iaWVudCDpm6oiLCJvZmZzZXQiOjM3LCJsaW1pdCI6NSwiaW5jbHVkZUF1ZGlvYm9va3MiOnRydWUsImluY2x1ZGVBdXRob3JzIjp0cnVlLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoic2VhcmNoVHJhY2tzIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiYjAyNjgzMTkyYTk4ZGRlNzk2NmI1ZTY2NTVhNzllZWI2MjcxM2VhYjcwM2VkYTk5MDJjOTMyODE4ZGQ1Mjc1MSJ9fX0="
+      }
+    },
+    {
+      "name": "original albums non-contiguous server cursor and shortened final page",
+      "searchKind": "category",
+      "query": "ambient 雪",
+      "category": "albums",
+      "offset": 61,
+      "limit": 6,
+      "flags": {
+        "includeAuthors": true,
+        "includeAlbumPreReleases": false,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsiaW5jbHVkZVByZVJlbGVhc2VzIjpmYWxzZSwiaW5jbHVkZUFsYnVtUHJlUmVsZWFzZXMiOmZhbHNlLCJudW1iZXJPZlRvcFJlc3VsdHMiOjIwLCJzZWFyY2hUZXJtIjoiYW1iaWVudCDpm6oiLCJvZmZzZXQiOjYxLCJsaW1pdCI6NiwiaW5jbHVkZUF1ZGlvYm9va3MiOnRydWUsImluY2x1ZGVBdXRob3JzIjp0cnVlLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoic2VhcmNoQWxidW1zIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiMjAyY2IzMzA1ZTMxZTVhMDc2N2JhNzkyNWYyOGJkNzI4Y2Y4ZjhiMDIxN2U2ZGE0MzkwOTA1NjA3MWNkNzBlOSJ9fX0=",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"includePreReleases\":false,\"includeAlbumPreReleases\":false,\"numberOfTopResults\":20,\"searchTerm\":\"ambient 雪\",\"offset\":61,\"limit\":6,\"includeAudiobooks\":true,\"includeAuthors\":true,\"includeEpisodeContentRatingsV2\":true},\"operationName\":\"searchAlbums\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"202cb3305e31e5a0767ba7925f28bd728cf8f8b0217e6da43909056071cd70e9\"}}}"
+      },
+      "operation": "searchAlbums",
+      "variables": {
+        "includePreReleases": false,
+        "includeAlbumPreReleases": false,
+        "numberOfTopResults": 20,
+        "searchTerm": "ambient 雪",
+        "offset": 61,
+        "limit": 6,
+        "includeAudiobooks": true,
+        "includeAuthors": true,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "389"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsiaW5jbHVkZVByZVJlbGVhc2VzIjpmYWxzZSwiaW5jbHVkZUFsYnVtUHJlUmVsZWFzZXMiOmZhbHNlLCJudW1iZXJPZlRvcFJlc3VsdHMiOjIwLCJzZWFyY2hUZXJtIjoiYW1iaWVudCDpm6oiLCJvZmZzZXQiOjYxLCJsaW1pdCI6NiwiaW5jbHVkZUF1ZGlvYm9va3MiOnRydWUsImluY2x1ZGVBdXRob3JzIjp0cnVlLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoic2VhcmNoQWxidW1zIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiMjAyY2IzMzA1ZTMxZTVhMDc2N2JhNzkyNWYyOGJkNzI4Y2Y4ZjhiMDIxN2U2ZGE0MzkwOTA1NjA3MWNkNzBlOSJ9fX0="
+      }
+    },
+    {
+      "name": "original full episodes initial page",
+      "searchKind": "episodes",
+      "query": "ambient 雪",
+      "category": "episodes",
+      "offset": 0,
+      "limit": 30,
+      "flags": {
+        "includeAuthors": true,
+        "includeAlbumPreReleases": false,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsic2VhcmNoVGVybSI6ImFtYmllbnQg6ZuqIiwib2Zmc2V0IjowLCJsaW1pdCI6MzAsImluY2x1ZGVFcGlzb2RlQ29udGVudFJhdGluZ3NWMiI6dHJ1ZX0sIm9wZXJhdGlvbk5hbWUiOiJzZWFyY2hGdWxsRXBpc29kZXMiLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiIzOTdhNGU5M2EyMWQxNDBkMDg4Y2ZkMjY2NDExMzNjNTE0NmEyZjVmMDhlNDIwNjU0ODY4MTUzZTcyMGY1NTcxIn19fQ==",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"searchTerm\":\"ambient 雪\",\"offset\":0,\"limit\":30,\"includeEpisodeContentRatingsV2\":true},\"operationName\":\"searchFullEpisodes\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"397a4e93a21d140d088cfd26641133c5146a2f5f08e420654868153e720f5571\"}}}"
+      },
+      "operation": "searchFullEpisodes",
+      "variables": {
+        "searchTerm": "ambient 雪",
+        "offset": 0,
+        "limit": 30,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "265"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsic2VhcmNoVGVybSI6ImFtYmllbnQg6ZuqIiwib2Zmc2V0IjowLCJsaW1pdCI6MzAsImluY2x1ZGVFcGlzb2RlQ29udGVudFJhdGluZ3NWMiI6dHJ1ZX0sIm9wZXJhdGlvbk5hbWUiOiJzZWFyY2hGdWxsRXBpc29kZXMiLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiIzOTdhNGU5M2EyMWQxNDBkMDg4Y2ZkMjY2NDExMzNjNTE0NmEyZjVmMDhlNDIwNjU0ODY4MTUzZTcyMGY1NTcxIn19fQ=="
+      }
+    },
+    {
+      "name": "original full episodes continuation",
+      "searchKind": "episodes",
+      "query": "ambient 雪",
+      "category": "episodes",
+      "offset": 30,
+      "limit": 30,
+      "flags": {
+        "includeAuthors": true,
+        "includeAlbumPreReleases": false,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsic2VhcmNoVGVybSI6ImFtYmllbnQg6ZuqIiwib2Zmc2V0IjozMCwibGltaXQiOjMwLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoic2VhcmNoRnVsbEVwaXNvZGVzIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiMzk3YTRlOTNhMjFkMTQwZDA4OGNmZDI2NjQxMTMzYzUxNDZhMmY1ZjA4ZTQyMDY1NDg2ODE1M2U3MjBmNTU3MSJ9fX0=",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"searchTerm\":\"ambient 雪\",\"offset\":30,\"limit\":30,\"includeEpisodeContentRatingsV2\":true},\"operationName\":\"searchFullEpisodes\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"397a4e93a21d140d088cfd26641133c5146a2f5f08e420654868153e720f5571\"}}}"
+      },
+      "operation": "searchFullEpisodes",
+      "variables": {
+        "searchTerm": "ambient 雪",
+        "offset": 30,
+        "limit": 30,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "266"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsic2VhcmNoVGVybSI6ImFtYmllbnQg6ZuqIiwib2Zmc2V0IjozMCwibGltaXQiOjMwLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoic2VhcmNoRnVsbEVwaXNvZGVzIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiMzk3YTRlOTNhMjFkMTQwZDA4OGNmZDI2NjQxMTMzYzUxNDZhMmY1ZjA4ZTQyMDY1NDg2ODE1M2U3MjBmNTU3MSJ9fX0="
+      }
+    },
+    {
+      "name": "original remove one recent entity",
+      "searchKind": "remove",
+      "uris": [
+        "spotify:artist:0000000000000000000001"
+      ],
+      "flags": {
+        "includeAuthors": true,
+        "includeAlbumPreReleases": false,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpcyI6WyJzcG90aWZ5OmFydGlzdDowMDAwMDAwMDAwMDAwMDAwMDAwMDAxIl19LCJvcGVyYXRpb25OYW1lIjoicmVtb3ZlUmVjZW50U2VhcmNoZXMiLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiJlY2U5NmQ3YjgyYzgyMGZiOTkzOGRkMWRmNTBkZWUzZTUzNzM3ZDgwOGMzODgzZTNkMDFjNDY3YzQyMzYwMWIwIn19fQ==",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"uris\":[\"spotify:artist:0000000000000000000001\"]},\"operationName\":\"removeRecentSearches\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"ece96d7b82c820fb9938dd1df50dee3e53737d808c3883e3d01c467c423601b0\"}}}"
+      },
+      "operation": "removeRecentSearches",
+      "variables": {
+        "uris": [
+          "spotify:artist:0000000000000000000001"
+        ]
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "229"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpcyI6WyJzcG90aWZ5OmFydGlzdDowMDAwMDAwMDAwMDAwMDAwMDAwMDAxIl19LCJvcGVyYXRpb25OYW1lIjoicmVtb3ZlUmVjZW50U2VhcmNoZXMiLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiJlY2U5NmQ3YjgyYzgyMGZiOTkzOGRkMWRmNTBkZWUzZTUzNzM3ZDgwOGMzODgzZTNkMDFjNDY3YzQyMzYwMWIwIn19fQ=="
+      }
+    },
+    {
+      "name": "original clear rendered recent history",
+      "searchKind": "remove",
+      "uris": [
+        "spotify:artist:0000000000000000000001",
+        "spotify:artist:0000000000000000000002"
+      ],
+      "clear": true,
+      "flags": {
+        "includeAuthors": true,
+        "includeAlbumPreReleases": false,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpcyI6WyJzcG90aWZ5OmFydGlzdDowMDAwMDAwMDAwMDAwMDAwMDAwMDAxIiwic3BvdGlmeTphcnRpc3Q6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMiJdfSwib3BlcmF0aW9uTmFtZSI6InJlbW92ZVJlY2VudFNlYXJjaGVzIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiZWNlOTZkN2I4MmM4MjBmYjk5MzhkZDFkZjUwZGVlM2U1MzczN2Q4MDhjMzg4M2UzZDAxYzQ2N2M0MjM2MDFiMCJ9fX0=",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"uris\":[\"spotify:artist:0000000000000000000001\",\"spotify:artist:0000000000000000000002\"]},\"operationName\":\"removeRecentSearches\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"ece96d7b82c820fb9938dd1df50dee3e53737d808c3883e3d01c467c423601b0\"}}}"
+      },
+      "operation": "removeRecentSearches",
+      "variables": {
+        "uris": [
+          "spotify:artist:0000000000000000000001",
+          "spotify:artist:0000000000000000000002"
+        ]
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "269"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpcyI6WyJzcG90aWZ5OmFydGlzdDowMDAwMDAwMDAwMDAwMDAwMDAwMDAxIiwic3BvdGlmeTphcnRpc3Q6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMiJdfSwib3BlcmF0aW9uTmFtZSI6InJlbW92ZVJlY2VudFNlYXJjaGVzIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiZWNlOTZkN2I4MmM4MjBmYjk5MzhkZDFkZjUwZGVlM2U1MzczN2Q4MDhjMzg4M2UzZDAxYzQ2N2M0MjM2MDFiMCJ9fX0="
+      }
+    },
+    {
+      "name": "original save selected search entity",
+      "searchKind": "save",
+      "uris": [
+        "spotify:artist:0000000000000000000002"
+      ],
+      "flags": {
+        "includeAuthors": true,
+        "includeAlbumPreReleases": false,
+        "includeEpisodeContentRatingsV2": true
+      },
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpcyI6WyJzcG90aWZ5OmFydGlzdDowMDAwMDAwMDAwMDAwMDAwMDAwMDAyIl19LCJvcGVyYXRpb25OYW1lIjoic2F2ZVJlY2VudFNlYXJjaGVzIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiZWNlOTZkN2I4MmM4MjBmYjk5MzhkZDFkZjUwZGVlM2U1MzczN2Q4MDhjMzg4M2UzZDAxYzQ2N2M0MjM2MDFiMCJ9fX0=",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"uris\":[\"spotify:artist:0000000000000000000002\"]},\"operationName\":\"saveRecentSearches\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"ece96d7b82c820fb9938dd1df50dee3e53737d808c3883e3d01c467c423601b0\"}}}"
+      },
+      "operation": "saveRecentSearches",
+      "variables": {
+        "uris": [
+          "spotify:artist:0000000000000000000002"
+        ]
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "227"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpcyI6WyJzcG90aWZ5OmFydGlzdDowMDAwMDAwMDAwMDAwMDAwMDAwMDAyIl19LCJvcGVyYXRpb25OYW1lIjoic2F2ZVJlY2VudFNlYXJjaGVzIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiZWNlOTZkN2I4MmM4MjBmYjk5MzhkZDFkZjUwZGVlM2U1MzczN2Q4MDhjMzg4M2UzZDAxYzQ2N2M0MjM2MDFiMCJ9fX0="
+      }
+    }
+  ],
+  "pagingCases": [
+    {
+      "category": "tracks",
+      "pageSize": 20,
+      "previous": {
+        "totalCount": 42,
+        "pagingInfo": {
+          "nextOffset": 37
+        }
+      },
+      "original": {
+        "offset": 37,
+        "limit": 5
+      }
+    },
+    {
+      "category": "albums",
+      "pageSize": 30,
+      "previous": {
+        "totalCount": 67,
+        "pagingInfo": {
+          "nextOffset": 61
+        }
+      },
+      "original": {
+        "offset": 61,
+        "limit": 6
+      }
+    },
+    {
+      "category": "albums",
+      "pageSize": 30,
+      "previous": {
+        "totalCount": 30,
+        "pagingInfo": {
+          "nextOffset": null
+        }
+      },
+      "original": null
+    }
+  ],
+  "substitutions": [
+    "Synthetic query/URI/credentials and explicit locale/feature inputs. Original query functions, service, descriptors, shared builder, loader, headers and fetch adapter execute unchanged.",
+    "React callbacks/memo and query/mutation scheduling are inert. Recent history is synthetic; no real history or account is read or changed.",
+    "Standard transport/fetch are capture interfaces. Empty service responses; full-episode show decoration and recommendation lodash interfaces are not exercised."
+  ],
+  "limits": [
+    "Application requests only; shared automatic browser fields inherit the separately captured original Pathfinder context. No current remote experiment or live acceptance is proved.",
+    "The explicit classic branch is used. The optional list/Instant Mix experiment, concert/video shelves and full episode/show response projection are outside this integration.",
+    "A clear mutation contains the URIs of the currently rendered original history, not an invented clear-all endpoint."
+  ]
+}

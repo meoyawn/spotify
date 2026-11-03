@@ -1,0 +1,544 @@
+{
+  "method": "Link unchanged native CEF language/context producers to HTTPS peer captures.\n\nSynthetic AppleLanguages and selected-locale inputs run through original ARM64\nproducers. The shipped public CEF API receives those exact list/context fields\ninside a fresh isolated worker. Only loopback networking is permitted; user\nLibrary reads/writes are denied. No Dart implementation supplies expected data.\n",
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "sourceLibrarySha256": "ea7338318fe19b147a03707fe598af0b6680e8760885db3b14f132a95d04e618",
+  "apiVersion": 999999,
+  "apiHash": "27759c0a4b5b85c632e775838eb599b65129b798",
+  "publicSourceRevision": "beff58dbc4d0fd12b3eafea8f5314ce22e649078",
+  "publicSettingsLayout": [
+    {
+      "size": 448,
+      "no_sandbox": 8,
+      "browser_subprocess_path": 16,
+      "framework_dir_path": 40,
+      "main_bundle_path": 64,
+      "multi_threaded_message_loop": 88,
+      "external_message_pump": 92,
+      "windowless_rendering_enabled": 96,
+      "command_line_args_disabled": 100,
+      "cache_path": 104,
+      "root_cache_path": 128,
+      "user_agent": 160,
+      "locale": 208,
+      "log_file": 232,
+      "log_severity": 256,
+      "resources_dir_path": 288,
+      "locales_dir_path": 312,
+      "disable_signal_handlers": 436
+    },
+    {
+      "global": {
+        "size": 448,
+        "cache_path": 104,
+        "user_agent": 160,
+        "user_agent_product": 184,
+        "locale": 208,
+        "accept_language_list": 352
+      },
+      "requestContext": {
+        "size": 96,
+        "cache_path": 8,
+        "persist_session_cookies": 32,
+        "accept_language_list": 40,
+        "cookieable_schemes_list": 64,
+        "cookieable_schemes_exclude_defaults": 88
+      }
+    }
+  ],
+  "originalProducerEvidence": {
+    "path": "reverse-engineering/evidence/native-cef-options.json",
+    "sha256": "bc72c3c6c950d12d45ad2354ddd31c672460dac2627e89e69c047a692e60603b"
+  },
+  "producerEntryPoints": {
+    "requestContext": "0x100044180",
+    "preferredLocales": "0x10042dbf8",
+    "acceptLanguageList": "0x10042c210",
+    "requestAdapter": "0x1017d876c"
+  },
+  "limits": [
+    "Synthetic selected locale/AppleLanguages; no actual user/profile preference reads.",
+    "Original locale/list/context and adapter fields execute, but complete original CEF startup/command-line callbacks do not.",
+    "Root/cache/bundle/helper paths, headless mode and certificate policy are isolated substitutes.",
+    "HTTPS HTTP/1.1 localhost peer only; no remote traffic, HTTP/2-3 or TLS/QUIC fingerprint claim.",
+    "Metadata body is opaque synthetic binary for transport preservation; semantic protobuf encoding is separate."
+  ],
+  "profiles": [
+    {
+      "nativeOptions": {
+        "selectedLocale": "en",
+        "suppliedAppleLanguages": [
+          "ru",
+          "en-US",
+          "en",
+          "en-GB"
+        ],
+        "originalPreferredLocales": {
+          "defaultsKey": "AppleLanguages",
+          "preferredLocales": [
+            "ru",
+            "en-US",
+            "en",
+            "en-GB"
+          ]
+        },
+        "acceptLanguageList": "en-US,en,en-GB",
+        "requestContextSettingsHex": "600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000",
+        "requestContextHandler": 0
+      },
+      "arguments": [
+        [
+          "./tools/oracles/.venv/bin/python",
+          "--headless",
+          "--single-process",
+          "--no-sandbox",
+          "--disable-gpu",
+          "--in-process-gpu",
+          "--disable-software-rasterizer",
+          "--enable-features=NetworkServiceInProcess",
+          "--disable-background-networking",
+          "--disable-component-update",
+          "--disable-domain-reliability",
+          "--disable-sync",
+          "--disable-extensions",
+          "--no-first-run",
+          "--no-default-browser-check",
+          "--password-store=basic",
+          "--use-mock-keychain",
+          "--metrics-recording-only",
+          "--safebrowsing-disable-auto-update",
+          "--proxy-server=direct://",
+          "--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1",
+          "--user-data-dir=./.local/cef-native-language-4qp2yje9/request-0/root",
+          "--ignore-certificate-errors"
+        ],
+        [
+          "./tools/oracles/.venv/bin/python",
+          "--headless",
+          "--single-process",
+          "--no-sandbox",
+          "--disable-gpu",
+          "--in-process-gpu",
+          "--disable-software-rasterizer",
+          "--enable-features=NetworkServiceInProcess",
+          "--disable-background-networking",
+          "--disable-component-update",
+          "--disable-domain-reliability",
+          "--disable-sync",
+          "--disable-extensions",
+          "--no-first-run",
+          "--no-default-browser-check",
+          "--password-store=basic",
+          "--use-mock-keychain",
+          "--metrics-recording-only",
+          "--safebrowsing-disable-auto-update",
+          "--proxy-server=direct://",
+          "--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1",
+          "--user-data-dir=./.local/cef-native-language-4qp2yje9/request-1/root",
+          "--ignore-certificate-errors"
+        ],
+        [
+          "./tools/oracles/.venv/bin/python",
+          "--headless",
+          "--single-process",
+          "--no-sandbox",
+          "--disable-gpu",
+          "--in-process-gpu",
+          "--disable-software-rasterizer",
+          "--enable-features=NetworkServiceInProcess",
+          "--disable-background-networking",
+          "--disable-component-update",
+          "--disable-domain-reliability",
+          "--disable-sync",
+          "--disable-extensions",
+          "--no-first-run",
+          "--no-default-browser-check",
+          "--password-store=basic",
+          "--use-mock-keychain",
+          "--metrics-recording-only",
+          "--safebrowsing-disable-auto-update",
+          "--proxy-server=direct://",
+          "--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1",
+          "--user-data-dir=./.local/cef-native-language-4qp2yje9/request-2/root",
+          "--ignore-certificate-errors"
+        ]
+      ],
+      "sandbox": "(version 1)(allow default)(deny network*)(allow network-outbound (remote ip \"localhost:*\"))(allow network-inbound (local ip \"localhost:*\"))(allow network-bind (local unix-socket (subpath \"/private/var/folders/fixture/temporary/T\")))(deny file-read* (subpath \"<HOME>/Library\"))(deny file-write* (subpath \"<HOME>/Library\"))",
+      "dedicatedRequestContextCreated": true,
+      "cases": [
+        {
+          "name": "en HTTPS Login5 POST",
+          "input": {
+            "name": "en HTTPS Login5 POST",
+            "method": "POST",
+            "url": "https://127.0.0.1:59778/capture/login5?raw=%2f%2F&value=%7E+%2B&empty=",
+            "headers": [
+              [
+                "Cache-Control",
+                "no-cache, no-store, max-age=0"
+              ],
+              [
+                "Content-Type",
+                "application/x-protobuf"
+              ],
+              [
+                "User-Agent",
+                "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+              ],
+              [
+                "X-Retry-Count",
+                "0"
+              ]
+            ],
+            "bodyBase64": "CiQKEHN5bnRoZXRpYy1jbGllbnQSEHN5bnRoZXRpYy1kZXZpY2WiBhQKDnN5bnRoZXRpYy11c2VyEgIA/w==",
+            "adapterOption80": 0,
+            "adapterUserAgent": "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)",
+            "originalAdapter": {
+              "bodyElementsBase64": [
+                "CiQKEHN5bnRoZXRpYy1jbGllbnQSEHN5bnRoZXRpYy1kZXZpY2WiBhQKDnN5bnRoZXRpYy11c2VyEgIA/w=="
+              ],
+              "flags": 208,
+              "method": "POST",
+              "urlInput": "https://127.0.0.1:59778/capture/login5?raw=%2f%2F&value=%7E+%2B&empty=",
+              "headers": [
+                [
+                  "Cache-Control",
+                  "no-cache, no-store, max-age=0"
+                ],
+                [
+                  "Content-Type",
+                  "application/x-protobuf"
+                ],
+                [
+                  "User-Agent",
+                  "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+                ],
+                [
+                  "X-Retry-Count",
+                  "0"
+                ]
+              ]
+            },
+            "flags": 208
+          },
+          "result": {
+            "method": "POST",
+            "rawTarget": "/capture/login5?raw=%2f%2F&value=%7E+%2B&empty=",
+            "version": "HTTP/1.1",
+            "headers": [
+              [
+                "Host",
+                "127.0.0.1:59778"
+              ],
+              [
+                "Connection",
+                "keep-alive"
+              ],
+              [
+                "Content-Length",
+                "61"
+              ],
+              [
+                "Pragma",
+                "no-cache"
+              ],
+              [
+                "Cache-Control",
+                "no-cache, no-store, max-age=0"
+              ],
+              [
+                "Content-Type",
+                "application/x-protobuf"
+              ],
+              [
+                "User-Agent",
+                "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+              ],
+              [
+                "X-Retry-Count",
+                "0"
+              ],
+              [
+                "Origin",
+                "https://127.0.0.1:59778"
+              ],
+              [
+                "Accept-Language",
+                "en-US,en;q=0.9,en-GB;q=0.8"
+              ],
+              [
+                "Sec-Fetch-Site",
+                "same-origin"
+              ],
+              [
+                "Sec-Fetch-Mode",
+                "no-cors"
+              ],
+              [
+                "Sec-Fetch-Dest",
+                "empty"
+              ],
+              [
+                "Accept-Encoding",
+                "gzip, deflate, br, zstd"
+              ]
+            ],
+            "bodyBase64": "CiQKEHN5bnRoZXRpYy1jbGllbnQSEHN5bnRoZXRpYy1kZXZpY2WiBhQKDnN5bnRoZXRpYy11c2VyEgIA/w==",
+            "rawRequestBase64": "UE9TVCAvY2FwdHVyZS9sb2dpbjU/cmF3PSUyZiUyRiZ2YWx1ZT0lN0UrJTJCJmVtcHR5PSBIVFRQLzEuMQ0KSG9zdDogMTI3LjAuMC4xOjU5Nzc4DQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpDb250ZW50LUxlbmd0aDogNjENClByYWdtYTogbm8tY2FjaGUNCkNhY2hlLUNvbnRyb2w6IG5vLWNhY2hlLCBuby1zdG9yZSwgbWF4LWFnZT0wDQpDb250ZW50LVR5cGU6IGFwcGxpY2F0aW9uL3gtcHJvdG9idWYNClVzZXItQWdlbnQ6IFNwb3RpZnkvMTMwNjAxOTIxIE9TWF9BUk02NC8wIChGaXh0dXJlMSwxKQ0KWC1SZXRyeS1Db3VudDogMA0KT3JpZ2luOiBodHRwczovLzEyNy4wLjAuMTo1OTc3OA0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOSxlbi1HQjtxPTAuOA0KU2VjLUZldGNoLVNpdGU6IHNhbWUtb3JpZ2luDQpTZWMtRmV0Y2gtTW9kZTogbm8tY29ycw0KU2VjLUZldGNoLURlc3Q6IGVtcHR5DQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUsIGJyLCB6c3RkDQoNCgokChBzeW50aGV0aWMtY2xpZW50EhBzeW50aGV0aWMtZGV2aWNlogYUCg5zeW50aGV0aWMtdXNlchICAP8="
+          }
+        },
+        {
+          "name": "en HTTPS OAuth POST",
+          "input": {
+            "name": "en HTTPS OAuth POST",
+            "method": "POST",
+            "url": "https://127.0.0.1:59778/capture/oauth?raw=%2f%2F&value=%7E+%2B&empty=",
+            "headers": [
+              [
+                "Content-Type",
+                "application/x-www-form-urlencoded"
+              ],
+              [
+                "User-Agent",
+                "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+              ],
+              [
+                "dpop",
+                "fixture-dpop-proof"
+              ]
+            ],
+            "bodyBase64": "Y2xpZW50X2lkPWNsaWVudC1maXh0dXJlJmdyYW50X3R5cGU9cmVmcmVzaF90b2tlbiZyZWZyZXNoX3Rva2VuPXJlZnJlc2gtZml4dHVyZQ==",
+            "adapterOption80": 0,
+            "adapterUserAgent": "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)",
+            "originalAdapter": {
+              "bodyElementsBase64": [
+                "Y2xpZW50X2lkPWNsaWVudC1maXh0dXJlJmdyYW50X3R5cGU9cmVmcmVzaF90b2tlbiZyZWZyZXNoX3Rva2VuPXJlZnJlc2gtZml4dHVyZQ=="
+              ],
+              "flags": 208,
+              "method": "POST",
+              "urlInput": "https://127.0.0.1:59778/capture/oauth?raw=%2f%2F&value=%7E+%2B&empty=",
+              "headers": [
+                [
+                  "Content-Type",
+                  "application/x-www-form-urlencoded"
+                ],
+                [
+                  "User-Agent",
+                  "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+                ],
+                [
+                  "dpop",
+                  "fixture-dpop-proof"
+                ]
+              ]
+            },
+            "flags": 208
+          },
+          "result": {
+            "method": "POST",
+            "rawTarget": "/capture/oauth?raw=%2f%2F&value=%7E+%2B&empty=",
+            "version": "HTTP/1.1",
+            "headers": [
+              [
+                "Host",
+                "127.0.0.1:59778"
+              ],
+              [
+                "Connection",
+                "keep-alive"
+              ],
+              [
+                "Content-Length",
+                "79"
+              ],
+              [
+                "Content-Type",
+                "application/x-www-form-urlencoded"
+              ],
+              [
+                "User-Agent",
+                "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+              ],
+              [
+                "dpop",
+                "fixture-dpop-proof"
+              ],
+              [
+                "Origin",
+                "https://127.0.0.1:59778"
+              ],
+              [
+                "Accept-Language",
+                "en-US,en;q=0.9,en-GB;q=0.8"
+              ],
+              [
+                "Sec-Fetch-Site",
+                "same-origin"
+              ],
+              [
+                "Sec-Fetch-Mode",
+                "no-cors"
+              ],
+              [
+                "Sec-Fetch-Dest",
+                "empty"
+              ],
+              [
+                "Accept-Encoding",
+                "gzip, deflate, br, zstd"
+              ]
+            ],
+            "bodyBase64": "Y2xpZW50X2lkPWNsaWVudC1maXh0dXJlJmdyYW50X3R5cGU9cmVmcmVzaF90b2tlbiZyZWZyZXNoX3Rva2VuPXJlZnJlc2gtZml4dHVyZQ==",
+            "rawRequestBase64": "UE9TVCAvY2FwdHVyZS9vYXV0aD9yYXc9JTJmJTJGJnZhbHVlPSU3RSslMkImZW1wdHk9IEhUVFAvMS4xDQpIb3N0OiAxMjcuMC4wLjE6NTk3NzgNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCkNvbnRlbnQtTGVuZ3RoOiA3OQ0KQ29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi94LXd3dy1mb3JtLXVybGVuY29kZWQNClVzZXItQWdlbnQ6IFNwb3RpZnkvMTMwNjAxOTIxIE9TWF9BUk02NC8wIChGaXh0dXJlMSwxKQ0KZHBvcDogZml4dHVyZS1kcG9wLXByb29mDQpPcmlnaW46IGh0dHBzOi8vMTI3LjAuMC4xOjU5Nzc4DQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45LGVuLUdCO3E9MC44DQpTZWMtRmV0Y2gtU2l0ZTogc2FtZS1vcmlnaW4NClNlYy1GZXRjaC1Nb2RlOiBuby1jb3JzDQpTZWMtRmV0Y2gtRGVzdDogZW1wdHkNCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZSwgYnIsIHpzdGQNCg0KY2xpZW50X2lkPWNsaWVudC1maXh0dXJlJmdyYW50X3R5cGU9cmVmcmVzaF90b2tlbiZyZWZyZXNoX3Rva2VuPXJlZnJlc2gtZml4dHVyZQ=="
+          }
+        },
+        {
+          "name": "en HTTPS Metadata POST",
+          "input": {
+            "name": "en HTTPS Metadata POST",
+            "method": "POST",
+            "url": "https://127.0.0.1:59778/capture/metadata?raw=%2f%2F&value=%7E+%2B&empty=",
+            "headers": [
+              [
+                "Accept",
+                "application/protobuf"
+              ],
+              [
+                "Authorization",
+                "Bearer synthetic-access"
+              ],
+              [
+                "Content-Type",
+                "application/protobuf"
+              ],
+              [
+                "User-Agent",
+                "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+              ],
+              [
+                "client-token",
+                "synthetic-client-token"
+              ]
+            ],
+            "bodyBase64": "AID/DQoA",
+            "adapterOption80": 0,
+            "adapterUserAgent": "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)",
+            "originalAdapter": {
+              "bodyElementsBase64": [
+                "AID/DQoA"
+              ],
+              "flags": 208,
+              "method": "POST",
+              "urlInput": "https://127.0.0.1:59778/capture/metadata?raw=%2f%2F&value=%7E+%2B&empty=",
+              "headers": [
+                [
+                  "Accept",
+                  "application/protobuf"
+                ],
+                [
+                  "Authorization",
+                  "Bearer synthetic-access"
+                ],
+                [
+                  "Content-Type",
+                  "application/protobuf"
+                ],
+                [
+                  "User-Agent",
+                  "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+                ],
+                [
+                  "client-token",
+                  "synthetic-client-token"
+                ]
+              ]
+            },
+            "flags": 208
+          },
+          "result": {
+            "method": "POST",
+            "rawTarget": "/capture/metadata?raw=%2f%2F&value=%7E+%2B&empty=",
+            "version": "HTTP/1.1",
+            "headers": [
+              [
+                "Host",
+                "127.0.0.1:59778"
+              ],
+              [
+                "Connection",
+                "keep-alive"
+              ],
+              [
+                "Content-Length",
+                "6"
+              ],
+              [
+                "Accept",
+                "application/protobuf"
+              ],
+              [
+                "Authorization",
+                "Bearer synthetic-access"
+              ],
+              [
+                "Content-Type",
+                "application/protobuf"
+              ],
+              [
+                "User-Agent",
+                "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+              ],
+              [
+                "client-token",
+                "synthetic-client-token"
+              ],
+              [
+                "Origin",
+                "https://127.0.0.1:59778"
+              ],
+              [
+                "Accept-Language",
+                "en-US,en;q=0.9,en-GB;q=0.8"
+              ],
+              [
+                "Sec-Fetch-Site",
+                "same-origin"
+              ],
+              [
+                "Sec-Fetch-Mode",
+                "no-cors"
+              ],
+              [
+                "Sec-Fetch-Dest",
+                "empty"
+              ],
+              [
+                "Accept-Encoding",
+                "gzip, deflate, br, zstd"
+              ]
+            ],
+            "bodyBase64": "AID/DQoA",
+            "rawRequestBase64": "UE9TVCAvY2FwdHVyZS9tZXRhZGF0YT9yYXc9JTJmJTJGJnZhbHVlPSU3RSslMkImZW1wdHk9IEhUVFAvMS4xDQpIb3N0OiAxMjcuMC4wLjE6NTk3NzgNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCkNvbnRlbnQtTGVuZ3RoOiA2DQpBY2NlcHQ6IGFwcGxpY2F0aW9uL3Byb3RvYnVmDQpBdXRob3JpemF0aW9uOiBCZWFyZXIgc3ludGhldGljLWFjY2Vzcw0KQ29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9wcm90b2J1Zg0KVXNlci1BZ2VudDogU3BvdGlmeS8xMzA2MDE5MjEgT1NYX0FSTTY0LzAgKEZpeHR1cmUxLDEpDQpjbGllbnQtdG9rZW46IHN5bnRoZXRpYy1jbGllbnQtdG9rZW4NCk9yaWdpbjogaHR0cHM6Ly8xMjcuMC4wLjE6NTk3NzgNCkFjY2VwdC1MYW5ndWFnZTogZW4tVVMsZW47cT0wLjksZW4tR0I7cT0wLjgNClNlYy1GZXRjaC1TaXRlOiBzYW1lLW9yaWdpbg0KU2VjLUZldGNoLU1vZGU6IG5vLWNvcnMNClNlYy1GZXRjaC1EZXN0OiBlbXB0eQ0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBiciwgenN0ZA0KDQoAgP8NCgA="
+          }
+        }
+      ]
+    }
+  ],
+  "templateSourceInputs": [
+    {
+      "path": "reverse-engineering/fixtures/native-login5-exchange.json",
+      "sha256": "df2d2711c668279b4a5de58bdd24af3290ceb916a844e9a3b3831f59feb67731"
+    },
+    {
+      "path": "reverse-engineering/fixtures/native-oauth-refresh.json",
+      "sha256": "456c4830d6d743e5e7f7a10bbcd970bdf4b802377d92efb9db6495bfcabbe20f"
+    },
+    {
+      "path": "reverse-engineering/evidence/login5-v3-request-builder.json",
+      "sha256": "f470bba88e9c262e431a2d86581c1a5e5e1f5eef972ff8a24172b9a8532aeafe"
+    },
+    {
+      "path": "reverse-engineering/evidence/native-media-requests.json",
+      "sha256": "7cd780aeafeb334e4377e62c00b1893a12ba34cac48818aeba2e1e07ac13f817"
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "provenance": "Original OAuth int32 reader instructions; native parse-error entry intercepted; synthetic cursor/destination only.",
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "entry": "0x10166f924",
+  "parseErrorEntry": "0x101ed7e20",
+  "numericCases": [
+    {
+      "token": "0",
+      "value": 0
+    },
+    {
+      "token": "1",
+      "value": 1
+    },
+    {
+      "token": "-1",
+      "value": -1
+    },
+    {
+      "token": "1.0",
+      "value": 1
+    },
+    {
+      "token": "1.5",
+      "value": 1
+    },
+    {
+      "token": "1.9",
+      "value": 1
+    },
+    {
+      "token": "-1.5",
+      "value": -1
+    },
+    {
+      "token": "1e3",
+      "value": 1000
+    },
+    {
+      "token": "1e-1",
+      "value": 0
+    },
+    {
+      "token": "0.1",
+      "value": 0
+    },
+    {
+      "token": "1.234e3",
+      "value": 1234
+    },
+    {
+      "token": "1.234e4",
+      "value": 12340
+    },
+    {
+      "token": "-1e-1",
+      "value": 0
+    },
+    {
+      "token": "2147483647",
+      "value": 2147483647
+    },
+    {
+      "token": "2147483648",
+      "error": "Integer overflow"
+    },
+    {
+      "token": "4294967295",
+      "error": "Integer overflow"
+    },
+    {
+      "token": "-2147483648",
+      "value": -2147483648
+    },
+    {
+      "token": "-2147483649",
+      "error": "Integer overflow"
+    },
+    {
+      "token": "1e20",
+      "error": "Integer overflow"
+    },
+    {
+      "token": "1e-20",
+      "value": 0
+    },
+    {
+      "token": "-0.0001",
+      "value": 0
+    },
+    {
+      "token": "2.147483647e9",
+      "value": 2147483647
+    },
+    {
+      "token": "2.147483648e9",
+      "error": "Integer overflow"
+    },
+    {
+      "token": "-2.147483648e9",
+      "value": -2147483648
+    },
+    {
+      "token": "-2.147483649e9",
+      "error": "Integer overflow"
+    },
+    {
+      "token": "2147483647.999999999999999999",
+      "value": 2147483647
+    },
+    {
+      "token": "-2147483648.99999999999999",
+      "value": -2147483648
+    },
+    {
+      "token": "2147483648.00001",
+      "error": "Integer overflow"
+    },
+    {
+      "token": "1.9999999999999999999999",
+      "value": 1
+    },
+    {
+      "token": "1e400",
+      "error": "Integer overflow"
+    },
+    {
+      "token": "0e400",
+      "value": 0
+    },
+    {
+      "token": "0e-400",
+      "value": 0
+    },
+    {
+      "token": "21474836470e-1",
+      "value": 2147483647
+    },
+    {
+      "token": "-21474836480e-1",
+      "value": -2147483648
+    },
+    {
+      "token": "21474836479999999e-7",
+      "value": 2147483647
+    },
+    {
+      "token": "999999999999999999e-400",
+      "value": 0
+    }
+  ]
+}

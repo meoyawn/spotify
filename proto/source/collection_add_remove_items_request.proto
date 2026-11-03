@@ -1,0 +1,34 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: 19a19f009f6b70c21c7f5e049c2e43ae9cf90e73db6db42a22bebac77b406953
+
+syntax = "proto3";
+
+package spotify.collection_cosmos.proto;
+
+import "status.proto";
+
+import "collection_itemdata.proto";
+
+option java_multiple_files = true;
+
+option java_package = "spotify.collection.esperanto.proto";
+
+option objc_class_prefix = "ESP";
+
+option optimize_for = CODE_SIZE;
+
+message CollectionAddRemoveItem {
+  string uri = 1;
+
+  optional .spotify.collection.itemdata.ItemData item_data = 2;
+}
+
+message CollectionAddRemoveItemsRequest {
+  repeated string uri = 1;
+
+  repeated .spotify.collection_cosmos.proto.CollectionAddRemoveItem items = 2;
+}
+
+message CollectionAddRemoveItemsResponse {
+  .spotify.collection_cosmos.proto.Status status = 1;
+}

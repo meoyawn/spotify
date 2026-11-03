@@ -1,0 +1,48 @@
+// RECONSTRUCTED Login5 schema; not an extracted original descriptor.
+// Native wire facts: docs/evidence/login5-lite-tables.json.
+// Per-field provenance: proto/reconstructed/login5/manifest.json.
+// Original filenames/source options/optional declarations remain unestablished.
+
+syntax = "proto3";
+
+package spotify.login5.v4;
+
+import "spotify/login5/v4/challenges/reconstructed.proto";
+
+message ChallengeSolutions {
+  repeated .spotify.login5.v4.ChallengeSolution solutions = 1;
+}
+
+message ChallengeSolution {
+  oneof group_28 {
+    .spotify.login5.v4.challenges.HashcashSolution hashcash = 1;
+
+    .spotify.login5.v4.challenges.CodeSolution code = 2;
+
+    .spotify.login5.v4.challenges.InteractionSolution field_3 = 3;
+
+    .spotify.login5.v4.challenges.AuthnPlatformSolution field_4 = 4;
+  }
+}
+
+message ClientInfo {
+  string client_id = 1;
+
+  string device_id = 2;
+}
+
+message Recaptcha {
+  string site_key = 1;
+
+  string token = 2;
+}
+
+message LoginOk {
+  string username = 1;
+
+  string access_token = 2;
+
+  bytes stored_credential = 3;
+
+  int32 access_token_expires_in = 4;
+}

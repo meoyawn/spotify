@@ -1,0 +1,201 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "scope": "Execute the original session property owner through its canary URL boundary.\n\nSynthetic XML passes through the real property owner, original XML application,\nactual optional-property getters and integrity predicate. Standard memory,\nlibc/libc++ primitives and uncontended locks use the existing oracle providers;\nproperty-change delivery stops at an explicit notification executor boundary.\nThe property getter and integrity predicate are not replaced. No app, profile,\ncredentials, socket or request sender is used.\n",
+  "originalPropertyFactory": "0x1019302e8 ->0x1019303e0 ->0x101930644",
+  "propertyVtable": "0x102649d60",
+  "xmlApplication": "0x101d6377c ->0x101d636d0 ->0x101d6340c",
+  "originalGetter": "0x101d63344 ->vtable+0x18 ->0x1019307b8",
+  "originalPredicate": "0x100486f34",
+  "originalIdentitySlice": "0x10048822c ->path setter0x101c1fbd8",
+  "originalBody": "0x100488d98 ->0x1004d7164 /0x1004d6d40",
+  "staticSessionBinding": {
+    "desktopCore": "100063d40 calls1003ffff4 ->100405f98 ->1003f8ddc; the shared result is stored at desktop app+658. Constructor1003f8ddc installs primary vptr102564c18.",
+    "loginSubscription": "That vtable slot+88 is1003fc34c, which subscribes the desktop logged-in callback to core signal+168.",
+    "successfulPublication": "1003fb0d8 success variant1 transfers result first pointer to core+e8 at1003fb7b0..7bc, then1003fbaf8..bb00 emits signal+168 with core+e8 as argument2. This is the exact provider handle previously traced through authenticated config+60 to AppIntegrity owner+10.",
+    "earlyFactory": "101925a90 selects101930510 for supplied cached UCS properties, or1019302e8 plus101d6377c for cached XML when config+69 is set and com.spotify.madprops.use.ucs.product.state is absent or not1. UCS disables later XML application through101d63544(wrapper,0).",
+    "productUpdate": "10192ec08 checks product owner virtual+70 before applying session virtual+78 XML and virtual+80 country through101d6377c. Concrete getter1019319cc and setter1019319d4 read/write owner+120; the constructor initializes it to1.",
+    "limit": "Runtime AP/UCS selection and actual server values are not supplied by this executable slice. The concrete XML owner-to-canary path executes below; full authenticated composition remains source evidence."
+  },
+  "codeSha256": {
+    "0x1019302e8": "edc72004ede6c22cb89549a7b7accdce78dfa465690de289324f455bf2ff6483",
+    "0x101930644": "1f8f3117aec650fb7a807280ec912d913b293587c1f58ac74cd39b84dc2c6892",
+    "0x1019307b8": "7432fa06b12308d2dbebebb17ed9a61dbd3bf4f1fa265b4491613768619ff08a",
+    "0x101d6377c": "cc143f24f43a27ea4a385e7f728a61099e1922a4b9679bddc7006cce082de052",
+    "0x100063d40": "f7ce72efe17929a613235b08ca2100224bd17f763425949cc68ab7896845ef23",
+    "0x1003f8e24": "e75c6ed226187b4816e2807ae84dadf2f2e50adc28501ab6ecc86abe19318e64",
+    "0x1003fc34c": "735ba84912475c859b63eb5c725d453473870b9f13b9f717cc506cafb3d24a46",
+    "0x1003fb7b0": "cb6d57a357688e1658afa442ff3b2358b64c00aebf3ab994dc6145559e0ad475",
+    "0x1003fba54": "a883ea67a604a2ac19a554f267a99e76135244cbeae2c97432f29d147a8ebc00",
+    "0x10192ec08": "1f6014b5edc10acc6214493977bd5cfd1aeee5750034694c20d8360974bdf01a",
+    "0x1019319cc": "0d5e9f5a6791ca299de3ff7dae0fa8043f96e1d5703607f20617deaee8c86470",
+    "0x100487f78": "5215c31eb77c3336521ea130d95c4a11b631904968ddaa21ee3ec96b5fc1ae5a",
+    "0x100488160": "2c0784eba79542c6f7197757ec0eb9284cde2a9f60b5bbca55b0098c7d12feb2",
+    "0x1004888cc": "9128becde27469f0b248a60f4ba30692c8a23faf1cc9541e5e3ba65eca2106a3",
+    "0x100488b20": "6ead4ca7cc0149e1cbf51baf94b5eb28991210c317130af9481ef0bdf8a70369"
+  },
+  "cases": [
+    {
+      "name": "absent strider key",
+      "xmlHex": "3c70726f64756374733e3c70726f647563743e3c66646b732d656e67616e67653e313c2f66646b732d656e67616e67653e3c2f70726f647563743e3c2f70726f64756374733e",
+      "propertiesReadThroughOriginalOwner": {
+        "ads": null,
+        "type": null,
+        "player-license": null,
+        "feature-set-id-masked": null,
+        "strider-key": null,
+        "fdks-engange": "1"
+      },
+      "notificationPostsAtExplicitExecutorBoundary": 2,
+      "originalDigestInputs": [
+        "1",
+        "ok1793168016"
+      ],
+      "originalRelativePath": "playplay/v1/key/6c0d13b98f2b24d6a33fc2009e905b8f88861c45",
+      "originalBodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200328013090a586d706"
+    },
+    {
+      "name": "matching signed property inputs",
+      "xmlHex": "3c70726f64756374733e3c70726f647563743e3c66646b732d656e67616e67653e313c2f66646b732d656e67616e67653e3c6164733e313c2f6164733e3c747970653e667265653c2f747970653e3c706c617965722d6c6963656e73653e666978747572652d6c6963656e73653c2f706c617965722d6c6963656e73653e3c666561747572652d7365742d69642d6d61736b65643e666978747572652d66656174757265733c2f666561747572652d7365742d69642d6d61736b65643e3c737472696465722d6b65793e35323630393765373139663c2f737472696465722d6b65793e3c2f70726f647563743e3c2f70726f64756374733e",
+      "propertiesReadThroughOriginalOwner": {
+        "ads": "1",
+        "type": "free",
+        "player-license": "fixture-license",
+        "feature-set-id-masked": "fixture-features",
+        "strider-key": "526097e719f",
+        "fdks-engange": "1"
+      },
+      "notificationPostsAtExplicitExecutorBoundary": 2,
+      "originalDigestInputs": [
+        "1freefixture-licensefixture-features",
+        "ok1793168016"
+      ],
+      "originalRelativePath": "playplay/v1/key/6c0d13b98f2b24d6a33fc2009e905b8f88861c45",
+      "originalBodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200328013090a586d706"
+    },
+    {
+      "name": "mismatching signed property inputs",
+      "xmlHex": "3c70726f64756374733e3c70726f647563743e3c66646b732d656e67616e67653e313c2f66646b732d656e67616e67653e3c6164733e313c2f6164733e3c747970653e667265653c2f747970653e3c706c617965722d6c6963656e73653e666978747572652d6c6963656e73653c2f706c617965722d6c6963656e73653e3c666561747572652d7365742d69642d6d61736b65643e666978747572652d66656174757265733c2f666561747572652d7365742d69642d6d61736b65643e3c737472696465722d6b65793e30313233343536373839303c2f737472696465722d6b65793e3c2f70726f647563743e3c2f70726f64756374733e",
+      "propertiesReadThroughOriginalOwner": {
+        "ads": "1",
+        "type": "free",
+        "player-license": "fixture-license",
+        "feature-set-id-masked": "fixture-features",
+        "strider-key": "01234567890",
+        "fdks-engange": "1"
+      },
+      "notificationPostsAtExplicitExecutorBoundary": 2,
+      "originalDigestInputs": [
+        "1freefixture-licensefixture-features",
+        "mod1793168016"
+      ],
+      "originalRelativePath": "playplay/v1/key/0928618147ec65b89fa73cc1333d3079f97a7b63",
+      "originalBodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200328013090a586d706"
+    }
+  ],
+  "originalCadence": [
+    {
+      "name": "first audio start",
+      "lastAttemptNs": -9223372036854775808,
+      "nowNs": 100,
+      "timerPending": false,
+      "ownerAlive": true,
+      "originalDelayedSubmissionCounts": [
+        250
+      ]
+    },
+    {
+      "name": "before thirty minutes",
+      "lastAttemptNs": 0,
+      "nowNs": 1799999999999,
+      "timerPending": false,
+      "ownerAlive": true,
+      "originalDelayedSubmissionCounts": []
+    },
+    {
+      "name": "at thirty minutes",
+      "lastAttemptNs": 0,
+      "nowNs": 1800000000000,
+      "timerPending": false,
+      "ownerAlive": true,
+      "originalDelayedSubmissionCounts": [
+        250
+      ]
+    },
+    {
+      "name": "timer already pending",
+      "lastAttemptNs": -9223372036854775808,
+      "nowNs": 100,
+      "timerPending": true,
+      "ownerAlive": true,
+      "originalDelayedSubmissionCounts": []
+    },
+    {
+      "name": "retired owner",
+      "lastAttemptNs": -9223372036854775808,
+      "nowNs": 100,
+      "timerPending": false,
+      "ownerAlive": false,
+      "originalDelayedSubmissionCounts": []
+    }
+  ],
+  "originalReplyPolicy": [
+    {
+      "status": 200,
+      "nowNs": 2000000000000,
+      "lastAttemptBeforeNs": 100,
+      "originalLastAttemptAfterNs": 100
+    },
+    {
+      "status": 399,
+      "nowNs": 2000000000000,
+      "lastAttemptBeforeNs": 100,
+      "originalLastAttemptAfterNs": 100
+    },
+    {
+      "status": 400,
+      "nowNs": 2000000000000,
+      "lastAttemptBeforeNs": 100,
+      "originalLastAttemptAfterNs": 500000000000
+    },
+    {
+      "status": 429,
+      "nowNs": 2000000000000,
+      "lastAttemptBeforeNs": 100,
+      "originalLastAttemptAfterNs": 500000000000
+    },
+    {
+      "status": 500,
+      "nowNs": 2000000000000,
+      "lastAttemptBeforeNs": 100,
+      "originalLastAttemptAfterNs": -9223372036854775808
+    },
+    {
+      "status": 599,
+      "nowNs": 2000000000000,
+      "lastAttemptBeforeNs": 100,
+      "originalLastAttemptAfterNs": -9223372036854775808
+    },
+    {
+      "status": null,
+      "nowNs": 2000000000000,
+      "lastAttemptBeforeNs": 100,
+      "originalLastAttemptAfterNs": -9223372036854775808
+    }
+  ],
+  "originalBeginRequest": {
+    "nowNs": 123456789,
+    "lastAttemptAfterNs": 123456789
+  },
+  "schedulingInputBoundaries": [
+    "Explicit synthetic strong/weak owner handles and standard steady_clock input.",
+    "Timer pending query0x101f434ac is an explicit timer-owner input. Submission0x101f431cc is observed, not delivered.",
+    "Response helper0x101c4d874 supplies an explicit parsed HTTP status; no proprietary retry/cadence branch is replaced."
+  ],
+  "limits": [
+    "Synthetic input XML only. No actual provider values are inferred from a captured canary success.",
+    "Property-change executor0x101f42cb8 is an explicit observation boundary; notifications are counted and not delivered. No observer/event-order equivalence is claimed.",
+    "fdks-engange=1 is an explicit synthetic input that skips passive host inspection; no live default is supplied.",
+    "Desktop result publication and AP/UCS selection are separate retained source bindings, not executed by this slice.",
+    "No live session composition, timer execution, HTTP sender, account/server acceptance or429 explanation is proved."
+  ]
+}

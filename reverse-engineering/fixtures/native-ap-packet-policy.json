@@ -1,0 +1,1437 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "dispatcher": "0x1018f8f5c",
+  "readyPublisherGuard": "0x1018f9814",
+  "completionCases": [
+    {
+      "loginComplete": false,
+      "hasKey": false,
+      "alternatePublisher": false,
+      "originalPublishCount": 0
+    },
+    {
+      "loginComplete": false,
+      "hasKey": false,
+      "alternatePublisher": true,
+      "originalPublishCount": 0
+    },
+    {
+      "loginComplete": false,
+      "hasKey": true,
+      "alternatePublisher": false,
+      "originalPublishCount": 0
+    },
+    {
+      "loginComplete": false,
+      "hasKey": true,
+      "alternatePublisher": true,
+      "originalPublishCount": 0
+    },
+    {
+      "loginComplete": true,
+      "hasKey": false,
+      "alternatePublisher": false,
+      "originalPublishCount": 0
+    },
+    {
+      "loginComplete": true,
+      "hasKey": false,
+      "alternatePublisher": true,
+      "originalPublishCount": 0
+    },
+    {
+      "loginComplete": true,
+      "hasKey": true,
+      "alternatePublisher": false,
+      "originalPublishCount": 1
+    },
+    {
+      "loginComplete": true,
+      "hasKey": true,
+      "alternatePublisher": true,
+      "originalPublishCount": 1
+    }
+  ],
+  "limits": [
+    "No outstanding AP channel/Hermes jobs; native closed-channel behavior is exercised",
+    "Standard mutex/clock providers are inert/deterministic",
+    "Downstream XML parse/state drive/opaque publish/log are explicit spies; their behavior is not proved",
+    "Initial key starts pending, as initialized by original manager0x1018f73dc",
+    "Ready callback is capture-only; its original guard executes unchanged",
+    "Admission and selected raw storage only; no reconnect, playback entitlement or account traffic"
+  ],
+  "cases": [
+    {
+      "name": "native ignored opcode 02",
+      "command": 2,
+      "payloadHex": "",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "native ignored opcode 03",
+      "command": 3,
+      "payloadHex": "",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "native ignored opcode 04",
+      "command": 4,
+      "payloadHex": "",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "native ignored opcode 0d",
+      "command": 13,
+      "payloadHex": "",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "native ignored opcode 0e",
+      "command": 14,
+      "payloadHex": "",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "native ignored opcode 1f",
+      "command": 31,
+      "payloadHex": "",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "native ignored opcode 21",
+      "command": 33,
+      "payloadHex": "",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "native ignored opcode 22",
+      "command": 34,
+      "payloadHex": "",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "native ignored opcode 25",
+      "command": 37,
+      "payloadHex": "",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "native ignored opcode 26",
+      "command": 38,
+      "payloadHex": "",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "native ignored opcode 42",
+      "command": 66,
+      "payloadHex": "",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "native ignored opcode 4b",
+      "command": 75,
+      "payloadHex": "",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "native ignored opcode 5f",
+      "command": 95,
+      "payloadHex": "",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "native ignored opcode 6d",
+      "command": 109,
+      "payloadHex": "",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "native ignored opcode ae",
+      "command": 174,
+      "payloadHex": "",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "native ignored opcode b5",
+      "command": 181,
+      "payloadHex": "",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "opcode 09 payload length 0",
+      "command": 9,
+      "payloadHex": "",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "opcode 09 payload length 1",
+      "command": 9,
+      "payloadHex": "00",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "opcode 09 payload length 2",
+      "command": 9,
+      "payloadHex": "0001",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x101f58a9c"
+        ]
+      }
+    },
+    {
+      "name": "opcode 09 payload length 5",
+      "command": 9,
+      "payloadHex": "0001020304",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x101f58a9c"
+        ]
+      }
+    },
+    {
+      "name": "opcode 0a payload length 0",
+      "command": 10,
+      "payloadHex": "",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "opcode 0a payload length 3",
+      "command": 10,
+      "payloadHex": "000102",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "opcode 0a payload length 4",
+      "command": 10,
+      "payloadHex": "00010203",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x101f58a9c"
+        ]
+      }
+    },
+    {
+      "name": "opcode 10 payload length 0",
+      "command": 16,
+      "payloadHex": "",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "opcode 10 payload length 19",
+      "command": 16,
+      "payloadHex": "000102030405060708090a0b0c0d0e0f101112",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "opcode 10 payload length 20",
+      "command": 16,
+      "payloadHex": "000102030405060708090a0b0c0d0e0f10111213",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": "0405060708090a0b0c0d0e0f10111213",
+        "spies": []
+      }
+    },
+    {
+      "name": "opcode 10 payload length 21",
+      "command": 16,
+      "payloadHex": "000102030405060708090a0b0c0d0e0f1011121314",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "opcode 1b payload length 0",
+      "command": 27,
+      "payloadHex": "",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "opcode 1b payload length 1",
+      "command": 27,
+      "payloadHex": "00",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "opcode 1b payload length 2",
+      "command": 27,
+      "payloadHex": "0001",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "0001",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "opcode 1b payload length 3",
+      "command": 27,
+      "payloadHex": "000102",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "0001",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "opcode 4a payload length 0",
+      "command": 74,
+      "payloadHex": "",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "opcode 4a payload length 3",
+      "command": 74,
+      "payloadHex": "000102",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "opcode 4a payload length 4",
+      "command": 74,
+      "payloadHex": "00010203",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "opcode 4a payload length 5",
+      "command": 74,
+      "payloadHex": "0001020304",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "opcode 75 payload length 0",
+      "command": 117,
+      "payloadHex": "",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "opcode 75 payload length 3",
+      "command": 117,
+      "payloadHex": "000102",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "opcode 76 payload length 0",
+      "command": 118,
+      "payloadHex": "",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "opcode 76 payload length 1",
+      "command": 118,
+      "payloadHex": "00",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "opcode 76 payload length 2",
+      "command": 118,
+      "payloadHex": "0001",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "opcode 76 payload length 4",
+      "command": 118,
+      "payloadHex": "00010203",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "country trailing bytes ignored",
+      "command": 27,
+      "payloadHex": "55536578747261",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5553",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "a second initial-key packet does not replace the first",
+      "command": 16,
+      "payloadHex": "000102030405060708090a0b0c0d0e0f10111213",
+      "previousKeyHex": "a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": "a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+        "spies": []
+      }
+    },
+    {
+      "name": "product bytes 0",
+      "command": 80,
+      "payloadHex": "",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x10004e640"
+        ]
+      }
+    },
+    {
+      "name": "opaque bytes 0",
+      "command": 164,
+      "payloadHex": "",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": "",
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x1018f98e8"
+        ]
+      }
+    },
+    {
+      "name": "product bytes 11",
+      "command": 80,
+      "payloadHex": "3c70726f64756374732f3e",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "3c70726f64756374732f3e",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x10004e640"
+        ]
+      }
+    },
+    {
+      "name": "opaque bytes 11",
+      "command": 164,
+      "payloadHex": "3c70726f64756374732f3e",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": "3c70726f64756374732f3e",
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x1018f98e8"
+        ]
+      }
+    },
+    {
+      "name": "product bytes 34",
+      "command": 80,
+      "payloadHex": "00ff000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "00ff000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x10004e640"
+        ]
+      }
+    },
+    {
+      "name": "opaque bytes 34",
+      "command": 164,
+      "payloadHex": "00ff000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": "00ff000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x1018f98e8"
+        ]
+      }
+    },
+    {
+      "name": "Hermes b2 ",
+      "command": 178,
+      "payloadHex": "",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x101f58a9c"
+        ]
+      }
+    },
+    {
+      "name": "Hermes b2 00",
+      "command": 178,
+      "payloadHex": "00",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x101f58a9c"
+        ]
+      }
+    },
+    {
+      "name": "Hermes b2 0008",
+      "command": 178,
+      "payloadHex": "0008",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x101f58a9c"
+        ]
+      }
+    },
+    {
+      "name": "Hermes b2 00070000000000000000",
+      "command": 178,
+      "payloadHex": "00070000000000000000",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x101f58a9c"
+        ]
+      }
+    },
+    {
+      "name": "Hermes b2 00080000000000000000",
+      "command": 178,
+      "payloadHex": "00080000000000000000",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x101f58a9c"
+        ]
+      }
+    },
+    {
+      "name": "Hermes b2 00080000000000000000626f6479",
+      "command": 178,
+      "payloadHex": "00080000000000000000626f6479",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x101f58a9c"
+        ]
+      }
+    },
+    {
+      "name": "Hermes b3 ",
+      "command": 179,
+      "payloadHex": "",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x101f58a9c"
+        ]
+      }
+    },
+    {
+      "name": "Hermes b3 00",
+      "command": 179,
+      "payloadHex": "00",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x101f58a9c"
+        ]
+      }
+    },
+    {
+      "name": "Hermes b3 0008",
+      "command": 179,
+      "payloadHex": "0008",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x101f58a9c"
+        ]
+      }
+    },
+    {
+      "name": "Hermes b3 00070000000000000000",
+      "command": 179,
+      "payloadHex": "00070000000000000000",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x101f58a9c"
+        ]
+      }
+    },
+    {
+      "name": "Hermes b3 00080000000000000000",
+      "command": 179,
+      "payloadHex": "00080000000000000000",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x101f58a9c"
+        ]
+      }
+    },
+    {
+      "name": "Hermes b3 00080000000000000000626f6479",
+      "command": 179,
+      "payloadHex": "00080000000000000000626f6479",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x101f58a9c"
+        ]
+      }
+    },
+    {
+      "name": "Hermes b4 ",
+      "command": 180,
+      "payloadHex": "",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x101f58a9c"
+        ]
+      }
+    },
+    {
+      "name": "Hermes b4 00",
+      "command": 180,
+      "payloadHex": "00",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x101f58a9c"
+        ]
+      }
+    },
+    {
+      "name": "Hermes b4 0008",
+      "command": 180,
+      "payloadHex": "0008",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x101f58a9c"
+        ]
+      }
+    },
+    {
+      "name": "Hermes b4 00070000000000000000",
+      "command": 180,
+      "payloadHex": "00070000000000000000",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x101f58a9c"
+        ]
+      }
+    },
+    {
+      "name": "Hermes b4 00080000000000000000",
+      "command": 180,
+      "payloadHex": "00080000000000000000",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x101f58a9c"
+        ]
+      }
+    },
+    {
+      "name": "Hermes b4 00080000000000000000626f6479",
+      "command": 180,
+      "payloadHex": "00080000000000000000626f6479",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x101f58a9c"
+        ]
+      }
+    },
+    {
+      "name": "Hermes b6 ",
+      "command": 182,
+      "payloadHex": "",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x101f58a9c"
+        ]
+      }
+    },
+    {
+      "name": "Hermes b6 00",
+      "command": 182,
+      "payloadHex": "00",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x101f58a9c"
+        ]
+      }
+    },
+    {
+      "name": "Hermes b6 0008",
+      "command": 182,
+      "payloadHex": "0008",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x101f58a9c"
+        ]
+      }
+    },
+    {
+      "name": "Hermes b6 00070000000000000000",
+      "command": 182,
+      "payloadHex": "00070000000000000000",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x101f58a9c"
+        ]
+      }
+    },
+    {
+      "name": "Hermes b6 00080000000000000000",
+      "command": 182,
+      "payloadHex": "00080000000000000000",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x101f58a9c"
+        ]
+      }
+    },
+    {
+      "name": "Hermes b6 00080000000000000000626f6479",
+      "command": 182,
+      "payloadHex": "00080000000000000000626f6479",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x101f58a9c"
+        ]
+      }
+    },
+    {
+      "name": "invalidation ",
+      "command": 65,
+      "payloadHex": "",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x1018f8568"
+        ]
+      }
+    },
+    {
+      "name": "invalidation 00",
+      "command": 65,
+      "payloadHex": "00",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 256,
+        "initialKeyHex": null,
+        "spies": [
+          "0x1018f8568"
+        ]
+      }
+    },
+    {
+      "name": "invalidation 0078",
+      "command": 65,
+      "payloadHex": "0078",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 256,
+        "initialKeyHex": null,
+        "spies": [
+          "0x1018f8568"
+        ]
+      }
+    },
+    {
+      "name": "invalidation 036162",
+      "command": 65,
+      "payloadHex": "036162",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": [
+          "0x1018f8568"
+        ]
+      }
+    },
+    {
+      "name": "invalidation 03616263",
+      "command": 65,
+      "payloadHex": "03616263",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 256,
+        "initialKeyHex": null,
+        "spies": [
+          "0x1018f8568"
+        ]
+      }
+    },
+    {
+      "name": "invalidation 1070617373776f72642d6368616e676564",
+      "command": 65,
+      "payloadHex": "1070617373776f72642d6368616e676564",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 4096,
+        "initialKeyHex": null,
+        "spies": [
+          "0x1018f8568"
+        ]
+      }
+    },
+    {
+      "name": "invalidation 1070617373776f72642d6368616e6765646578747261",
+      "command": 65,
+      "payloadHex": "1070617373776f72642d6368616e6765646578747261",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 4096,
+        "initialKeyHex": null,
+        "spies": [
+          "0x1018f8568"
+        ]
+      }
+    },
+    {
+      "name": "invalidation 1050617373776f72642d6368616e676564",
+      "command": 65,
+      "payloadHex": "1050617373776f72642d6368616e676564",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": true,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 256,
+        "initialKeyHex": null,
+        "spies": [
+          "0x1018f8568"
+        ]
+      }
+    },
+    {
+      "name": "unknown opcode 00",
+      "command": 0,
+      "payloadHex": "66697874757265",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "unknown opcode 01",
+      "command": 1,
+      "payloadHex": "66697874757265",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "unknown opcode 49",
+      "command": 73,
+      "payloadHex": "66697874757265",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "unknown opcode 77",
+      "command": 119,
+      "payloadHex": "66697874757265",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    },
+    {
+      "name": "unknown opcode ff",
+      "command": 255,
+      "payloadHex": "66697874757265",
+      "previousKeyHex": null,
+      "original": {
+        "admitted": false,
+        "countryHex": "5a5a",
+        "productHex": "",
+        "opaqueHex": null,
+        "flags": 0,
+        "initialKeyHex": null,
+        "spies": []
+      }
+    }
+  ]
+}

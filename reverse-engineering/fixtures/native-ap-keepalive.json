@@ -1,0 +1,275 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "owner": "0x1018faca8",
+  "scope": "Connected, login requested, normal non-adaptive keepalive, no channels/output backlog; stop at close or timer boundary",
+  "providers": [
+    "Deterministic uint32 clock",
+    "Capture-only packet/close/timer providers",
+    "Inert no-work resolver and empty-output flush owners"
+  ],
+  "cases": [
+    {
+      "name": "login deadline",
+      "events": [
+        [
+          "start",
+          0
+        ],
+        [
+          "poll",
+          0
+        ],
+        [
+          "poll",
+          29999
+        ],
+        [
+          "poll",
+          30000
+        ]
+      ],
+      "decisions": [
+        {
+          "packets": [],
+          "errorCode": null,
+          "delayMilliseconds": 30050
+        },
+        {
+          "packets": [],
+          "errorCode": null,
+          "delayMilliseconds": 51
+        },
+        {
+          "packets": [],
+          "errorCode": 41,
+          "delayMilliseconds": null
+        }
+      ]
+    },
+    {
+      "name": "receive does not extend login deadline",
+      "events": [
+        [
+          "start",
+          20
+        ],
+        [
+          "received",
+          29990
+        ],
+        [
+          "poll",
+          30020
+        ]
+      ],
+      "decisions": [
+        {
+          "packets": [],
+          "errorCode": 41,
+          "delayMilliseconds": null
+        }
+      ]
+    },
+    {
+      "name": "ready idle and missing reply",
+      "events": [
+        [
+          "start",
+          0
+        ],
+        [
+          "ready",
+          1
+        ],
+        [
+          "poll",
+          59999
+        ],
+        [
+          "poll",
+          60000
+        ],
+        [
+          "poll",
+          120000
+        ]
+      ],
+      "decisions": [
+        {
+          "packets": [],
+          "errorCode": null,
+          "delayMilliseconds": 51
+        },
+        {
+          "packets": [
+            {
+              "command": 73,
+              "payloadHex": "00000000"
+            }
+          ],
+          "errorCode": null,
+          "delayMilliseconds": 60050
+        },
+        {
+          "packets": [],
+          "errorCode": 47,
+          "delayMilliseconds": null
+        }
+      ]
+    },
+    {
+      "name": "any packet clears pending pong",
+      "events": [
+        [
+          "start",
+          0
+        ],
+        [
+          "ready",
+          1
+        ],
+        [
+          "poll",
+          60000
+        ],
+        [
+          "received",
+          60100
+        ],
+        [
+          "poll",
+          120000
+        ],
+        [
+          "poll",
+          120100
+        ]
+      ],
+      "decisions": [
+        {
+          "packets": [
+            {
+              "command": 73,
+              "payloadHex": "00000000"
+            }
+          ],
+          "errorCode": null,
+          "delayMilliseconds": 60050
+        },
+        {
+          "packets": [],
+          "errorCode": null,
+          "delayMilliseconds": 150
+        },
+        {
+          "packets": [
+            {
+              "command": 73,
+              "payloadHex": "00000000"
+            }
+          ],
+          "errorCode": null,
+          "delayMilliseconds": 60050
+        }
+      ]
+    },
+    {
+      "name": "activity before ready retained",
+      "events": [
+        [
+          "start",
+          0
+        ],
+        [
+          "received",
+          24000
+        ],
+        [
+          "ready",
+          25000
+        ],
+        [
+          "poll",
+          60000
+        ],
+        [
+          "poll",
+          84000
+        ]
+      ],
+      "decisions": [
+        {
+          "packets": [],
+          "errorCode": null,
+          "delayMilliseconds": 24050
+        },
+        {
+          "packets": [
+            {
+              "command": 73,
+              "payloadHex": "00000000"
+            }
+          ],
+          "errorCode": null,
+          "delayMilliseconds": 60050
+        }
+      ]
+    },
+    {
+      "name": "native uint32 clock wrap",
+      "events": [
+        [
+          "start",
+          4294967280
+        ],
+        [
+          "ready",
+          4294967281
+        ],
+        [
+          "poll",
+          59983
+        ],
+        [
+          "poll",
+          59984
+        ],
+        [
+          "received",
+          60000
+        ],
+        [
+          "poll",
+          120000
+        ]
+      ],
+      "decisions": [
+        {
+          "packets": [],
+          "errorCode": null,
+          "delayMilliseconds": 51
+        },
+        {
+          "packets": [
+            {
+              "command": 73,
+              "payloadHex": "00000000"
+            }
+          ],
+          "errorCode": null,
+          "delayMilliseconds": 60050
+        },
+        {
+          "packets": [
+            {
+              "command": 73,
+              "payloadHex": "00000000"
+            }
+          ],
+          "errorCode": null,
+          "delayMilliseconds": 60050
+        }
+      ]
+    }
+  ]
+}

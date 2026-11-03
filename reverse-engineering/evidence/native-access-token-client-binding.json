@@ -1,0 +1,195 @@
+{
+  "sourceExecutable": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "method": "Offline original AccessTokenClient getter and force-forwarding evidence.\n\nOriginal context/owner getters and the whole getToken handler execute with\nsynthetic object inputs. The supplied API getter returns a fixed provider pair;\nthe supplied provider request records force and returns an inert cancellation.\nNo authentication decision, account data, token contents or network is supplied.\nThe push-owner constructor prefix and acquisition suffix also execute unchanged,\nstopping before timer setup and after the supplied provider request respectively.\n",
+  "oracleSourceSha256": "8396a566a0721497a57aff89d77ea17f15f48ff061ff0cd545a990de4d13fff9",
+  "service": {
+    "literalAddress": "0x102436741",
+    "literal": "spotify.authentication.login5.impl.proto.AccessTokenClient",
+    "baseConstructor": "0x1017ad370",
+    "dispatcher": "0x1017ad39c",
+    "getTokenCrc32": "0xaee5237c",
+    "concreteConstructor": "0x101404214",
+    "getToken": "0x101404244"
+  },
+  "binding": "Monolith100af2e20 parameter12 virtual88 -> context10192faa8 -> owner160 virtual38 -> API8 virtual20, identical to authenticated HTTP context98 -> owner virtual38. Factory1000a1028 captures this provider and constructs service101404214; handler101404244 forwards request byte18 to provider virtual18.",
+  "retainedSource": ".local/rea-session/native-core-component-manager-dependency-frame.json",
+  "pusherBinding": {
+    "monolithConstructor": "0x100af2e20",
+    "retainedConstructorSourceSha256": "c0108ca54815650c479d9ee0351cd6b9079770fa1d19f8ae8304b72db5dae3d8",
+    "chain": "Monolith gets context virtual88 into local90, passes local90 as core101416780 parameter4; core passes its dereferenced provider to101416e20, then10141a758 x4. The constructor stores x4 at owner30; acquisition10141a9a8 suffix10141aaa8 loads owner30 and calls provider virtual18 with its supplied force.",
+    "constructorPrefix": {
+      "start": "0x10141a758",
+      "stopBefore": "0x10141a780"
+    },
+    "acquisitionSlice": {
+      "start": "0x10141aaa8",
+      "stopBefore": "0x10141ab00"
+    }
+  },
+  "vtableEntries": [
+    {
+      "vtable": "0x102638468",
+      "slot": "0x10",
+      "target": "0x1017ad39c"
+    },
+    {
+      "vtable": "0x1025df448",
+      "slot": "0x38",
+      "target": "0x101404244"
+    },
+    {
+      "vtable": "0x102649af0",
+      "slot": "0x88",
+      "target": "0x10192faa8"
+    },
+    {
+      "vtable": "0x102649af0",
+      "slot": "0x98",
+      "target": "0x10192fac8"
+    },
+    {
+      "vtable": "0x1026499d8",
+      "slot": "0x38",
+      "target": "0x10192c9ac"
+    }
+  ],
+  "execution": {
+    "syntheticProvider": 805371904,
+    "syntheticOwner": 805372016,
+    "directContext88Pair": [
+      805371904,
+      0
+    ],
+    "context98ReturnedOwner": 805372016,
+    "context98ThenOwner38Pair": [
+      805371904,
+      0
+    ],
+    "getterObservations": [
+      {
+        "interface": 805371952,
+        "providedPair": [
+          805371904,
+          0
+        ]
+      },
+      {
+        "interface": 805371952,
+        "providedPair": [
+          805371904,
+          0
+        ]
+      }
+    ],
+    "getTokenProviderRequests": [
+      {
+        "provider": 805371904,
+        "force": 0
+      },
+      {
+        "provider": 805371904,
+        "force": 1
+      }
+    ],
+    "pusherPrefixStoredProvider": 805371904,
+    "pusherAcquireSliceProviderRequests": [
+      {
+        "provider": 805371904,
+        "force": 0
+      },
+      {
+        "provider": 805371904,
+        "force": 1
+      }
+    ]
+  },
+  "instructions": [
+    {
+      "start": "0x1017ad370",
+      "stop": "0x1017ad398",
+      "sha256": "a3b05e058cc23de6361e3448be148e82881d77cddb5e1e59f78cd97a053befc4",
+      "disassembly": "\n/Applications/Spotify.app/Contents/MacOS/Spotify:\tfile format mach-o arm64\n\nDisassembly of section __TEXT,__text:\n\n000000010162f21c <__ZN4asio6detail16service_registry6createINS0_22deadline_timer_serviceINS0_18chrono_time_traitsINSt3__16chrono12system_clockENS_11wait_traitsIS7_EEEEEENS_10io_contextEEEPNS_17execution_context7serviceEPv>:\n1017ad370:     \tstp\tx29, x30, [sp, #-0x10]!\n1017ad374:     \tmov\tx29, sp\n1017ad378:     \tadrp\tx1, 0x102436000 <_writev+0x102436000>\n1017ad37c:     \tadd\tx1, x1, #0x741\n1017ad380:     \tbl\t0x101c9c02c <__ZN4asio6detail16service_registry6createINS0_16resolver_serviceINS_2ip3tcpEEENS_10io_contextEEEPNS_17execution_context7serviceEPv+0x47fac>\n1017ad384:     \tadrp\tx8, 0x102638000 <__ZN7spotify7desktop14ClientSwitches6kFlagsE+0xfa6a0>\n1017ad388:     \tadd\tx8, x8, #0x468\n1017ad38c:     \tstr\tx8, [x0]\n1017ad390:     \tldp\tx29, x30, [sp], #0x10\n1017ad394:     \tret\n"
+    },
+    {
+      "start": "0x1017ad42c",
+      "stop": "0x1017ad464",
+      "sha256": "2510e087d0683f61e8daf66675a06ffd24fbb169f6b20a6c8fbec4e6d49e5b4c",
+      "disassembly": "\n/Applications/Spotify.app/Contents/MacOS/Spotify:\tfile format mach-o arm64\n\nDisassembly of section __TEXT,__text:\n\n000000010162f21c <__ZN4asio6detail16service_registry6createINS0_22deadline_timer_serviceINS0_18chrono_time_traitsINSt3__16chrono12system_clockENS_11wait_traitsIS7_EEEEEENS_10io_contextEEEPNS_17execution_context7serviceEPv>:\n1017ad42c:     \tadd\tx0, x22, #0x18\n1017ad430:     \tbl\t0x101c982d8 <__ZN4asio6detail16service_registry6createINS0_16resolver_serviceINS_2ip3tcpEEENS_10io_contextEEEPNS_17execution_context7serviceEPv+0x44258>\n1017ad434:     \tmov\tw8, #0x237c             ; =9084\n1017ad438:     \tmovk\tw8, #0xaee5, lsl #16\n1017ad43c:     \tcmp\tw0, w8\n1017ad440:     \tb.eq\t0x1017ad49c <__ZN4asio6detail16service_registry6createINS0_22deadline_timer_serviceINS0_18chrono_time_traitsINSt3__16chrono12system_clockENS_11wait_traitsIS7_EEEEEENS_10io_contextEEEPNS_17execution_context7serviceEPv+0x17e280>\n1017ad444:     \tmov\tw8, #0x509d             ; =20637\n1017ad448:     \tmovk\tw8, #0x2499, lsl #16\n1017ad44c:     \tcmp\tw0, w8\n1017ad450:     \tb.eq\t0x1017ad480 <__ZN4asio6detail16service_registry6createINS0_22deadline_timer_serviceINS0_18chrono_time_traitsINSt3__16chrono12system_clockENS_11wait_traitsIS7_EEEEEENS_10io_contextEEEPNS_17execution_context7serviceEPv+0x17e264>\n1017ad454:     \tmov\tw8, #0x1d5a             ; =7514\n1017ad458:     \tmovk\tw8, #0xb030, lsl #16\n1017ad45c:     \tcmp\tw0, w8\n1017ad460:     \tb.ne\t0x1017ad414 <__ZN4asio6detail16service_registry6createINS0_22deadline_timer_serviceINS0_18chrono_time_traitsINSt3__16chrono12system_clockENS_11wait_traitsIS7_EEEEEENS_10io_contextEEEPNS_17execution_context7serviceEPv+0x17e1f8>\n"
+    },
+    {
+      "start": "0x1017ad694",
+      "stop": "0x1017ad6b0",
+      "sha256": "d35f122a90834d10b599085b1cc098069cb3535c5a891297593b8b084bc51ce1",
+      "disassembly": "\n/Applications/Spotify.app/Contents/MacOS/Spotify:\tfile format mach-o arm64\n\nDisassembly of section __TEXT,__text:\n\n000000010162f21c <__ZN4asio6detail16service_registry6createINS0_22deadline_timer_serviceINS0_18chrono_time_traitsINSt3__16chrono12system_clockENS_11wait_traitsIS7_EEEEEENS_10io_contextEEEPNS_17execution_context7serviceEPv>:\n1017ad694:     \tldr\tx8, [x20]\n1017ad698:     \tldr\tx9, [x8, #0x38]\n1017ad69c:     \tadd\tx1, sp, #0x10\n1017ad6a0:     \tmov\tx2, sp\n1017ad6a4:     \tmov\tx8, x19\n1017ad6a8:     \tmov\tx0, x20\n1017ad6ac:     \tblr\tx9\n"
+    },
+    {
+      "start": "0x101404214",
+      "stop": "0x101404244",
+      "sha256": "011e0ecaf5262ca10b19246a83102af7c219a09e57a4ea880207b9acfbadc040",
+      "disassembly": "\n/Applications/Spotify.app/Contents/MacOS/Spotify:\tfile format mach-o arm64\n\nDisassembly of section __TEXT,__text:\n\n0000000101349cc8 <__ZN4asio6detail16service_registry6createINS0_22deadline_timer_serviceINS0_18chrono_time_traitsINSt3__16chrono12steady_clockENS_11wait_traitsIS7_EEEEEENS_10io_contextEEEPNS_17execution_context7serviceEPv>:\n101404214:     \tstp\tx20, x19, [sp, #-0x20]!\n101404218:     \tstp\tx29, x30, [sp, #0x10]\n10140421c:     \tadd\tx29, sp, #0x10\n101404220:     \tmov\tx19, x1\n101404224:     \tbl\t0x1017ad370 <__ZN4asio6detail16service_registry6createINS0_22deadline_timer_serviceINS0_18chrono_time_traitsINSt3__16chrono12system_clockENS_11wait_traitsIS7_EEEEEENS_10io_contextEEEPNS_17execution_context7serviceEPv+0x17e154>\n101404228:     \tadrp\tx8, 0x1025df000 <__ZN7spotify7desktop14ClientSwitches6kFlagsE+0xa16a0>\n10140422c:     \tadd\tx8, x8, #0x448\n101404230:     \tstr\tx8, [x0]\n101404234:     \tstr\tx19, [x0, #0x20]\n101404238:     \tldp\tx29, x30, [sp, #0x10]\n10140423c:     \tldp\tx20, x19, [sp], #0x20\n101404240:     \tret\n"
+    },
+    {
+      "start": "0x101404244",
+      "stop": "0x101404304",
+      "sha256": "1302f8f6acd2047bb6fa6e63c0fd81261672fb52e7e19e304b7439f16501903b",
+      "disassembly": "\n/Applications/Spotify.app/Contents/MacOS/Spotify:\tfile format mach-o arm64\n\nDisassembly of section __TEXT,__text:\n\n0000000101349cc8 <__ZN4asio6detail16service_registry6createINS0_22deadline_timer_serviceINS0_18chrono_time_traitsINSt3__16chrono12steady_clockENS_11wait_traitsIS7_EEEEEENS_10io_contextEEEPNS_17execution_context7serviceEPv>:\n101404244:     \tsub\tsp, sp, #0x60\n101404248:     \tstp\tx20, x19, [sp, #0x40]\n10140424c:     \tstp\tx29, x30, [sp, #0x50]\n101404250:     \tadd\tx29, sp, #0x50\n101404254:     \tmov\tx19, x8\n101404258:     \tadrp\tx8, 0x10268d000 <_writev+0x10268d000>\n10140425c:     \tldr\tx8, [x8, #0x888]\n101404260:     \tldr\tx8, [x8]\n101404264:     \tstur\tx8, [x29, #-0x18]\n101404268:     \tldr\tx0, [x0, #0x20]\n10140426c:     \tldr\tx8, [x2, #0x8]\n101404270:     \tldr\tq0, [x2]\n101404274:     \tcbz\tx8, 0x101404284 <__ZN4asio6detail16service_registry6createINS0_22deadline_timer_serviceINS0_18chrono_time_traitsINSt3__16chrono12steady_clockENS_11wait_traitsIS7_EEEEEENS_10io_contextEEEPNS_17execution_context7serviceEPv+0xba5bc>\n101404278:     \tadd\tx8, x8, #0x8\n10140427c:     \tmov\tw9, #0x1                ; =1\n101404280:     \tldadd\tx9, x8, [x8]\n101404284:     \tadrp\tx8, 0x1025df000 <__ZN7spotify7desktop14ClientSwitches6kFlagsE+0xa16a0>\n101404288:     \tadd\tx8, x8, #0x498\n10140428c:     \tstr\tx8, [sp, #0x10]\n101404290:     \tstur\tq0, [sp, #0x18]\n101404294:     \tadd\tx20, sp, #0x10\n101404298:     \tstr\tx20, [sp, #0x28]\n10140429c:     \tldrb\tw2, [x1, #0x18]\n1014042a0:     \tldr\tx8, [x0]\n1014042a4:     \tldr\tx9, [x8, #0x18]\n1014042a8:     \tmov\tx8, sp\n1014042ac:     \tadd\tx1, sp, #0x10\n1014042b0:     \tblr\tx9\n1014042b4:     \tldr\tx0, [sp, #0x28]\n1014042b8:     \tcmp\tx0, x20\n1014042bc:     \tb.eq\t0x1014042cc <__ZN4asio6detail16service_registry6createINS0_22deadline_timer_serviceINS0_18chrono_time_traitsINSt3__16chrono12steady_clockENS_11wait_traitsIS7_EEEEEENS_10io_contextEEEPNS_17execution_context7serviceEPv+0xba604>\n1014042c0:     \tcbz\tx0, 0x1014042dc <__ZN4asio6detail16service_registry6createINS0_22deadline_timer_serviceINS0_18chrono_time_traitsINSt3__16chrono12steady_clockENS_11wait_traitsIS7_EEEEEENS_10io_contextEEEPNS_17execution_context7serviceEPv+0xba614>\n1014042c4:     \tmov\tw8, #0x28               ; =40\n1014042c8:     \tb\t0x1014042d0 <__ZN4asio6detail16service_registry6createINS0_22deadline_timer_serviceINS0_18chrono_time_traitsINSt3__16chrono12steady_clockENS_11wait_traitsIS7_EEEEEENS_10io_contextEEEPNS_17execution_context7serviceEPv+0xba608>\n1014042cc:     \tmov\tw8, #0x20               ; =32\n1014042d0:     \tldr\tx9, [x0]\n1014042d4:     \tldr\tx8, [x9, x8]\n1014042d8:     \tblr\tx8\n1014042dc:     \tldr\tq0, [sp]\n1014042e0:     \tstp\txzr, xzr, [sp]\n1014042e4:     \tstr\tq0, [sp, #0x10]\n1014042e8:     \tadrp\tx8, 0x101404000 <__ZN4asio6detail16service_registry6createINS0_22deadline_timer_serviceINS0_18chrono_time_traitsINSt3__16chrono12steady_clockENS_11wait_traitsIS7_EEEEEENS_10io_contextEEEPNS_17execution_context7serviceEPv+0xba338>\n1014042ec:     \tadd\tx8, x8, #0xfc0\n1014042f0:     \tadrp\tx9, 0x101405000 <__ZN4asio6detail16service_registry6createINS0_22deadline_timer_serviceINS0_18chrono_time_traitsINSt3__16chrono12steady_clockENS_11wait_traitsIS7_EEEEEENS_10io_contextEEEPNS_17execution_context7serviceEPv+0xbb338>\n1014042f4:     \tadd\tx9, x9, #0x34\n1014042f8:     \tstp\tx8, x9, [sp, #0x20]\n1014042fc:     \tadd\tx0, sp, #0x10\n101404300:     \tmov\tx8, x19\n"
+    },
+    {
+      "start": "0x1000a1028",
+      "stop": "0x1000a1068",
+      "sha256": "cce22bc22d46f0a5deec6a56b3c3c94733f540000537f35fa2190b4f69080488",
+      "disassembly": "\n/Applications/Spotify.app/Contents/MacOS/Spotify:\tfile format mach-o arm64\n\nDisassembly of section __TEXT,__text:\n\n000000010003d3b0 <__ZN5boost6detail18core_typeid_lib_idEv>:\n1000a1028:     \tstp\tx22, x21, [sp, #-0x30]!\n1000a102c:     \tstp\tx20, x19, [sp, #0x10]\n1000a1030:     \tstp\tx29, x30, [sp, #0x20]\n1000a1034:     \tadd\tx29, sp, #0x20\n1000a1038:     \tmov\tx19, x8\n1000a103c:     \tldr\tx21, [x0]\n1000a1040:     \tmov\tw0, #0x28               ; =40\n1000a1044:     \tbl\t0x101fd1cf0 <_writev+0x101fd1cf0>\n1000a1048:     \tmov\tx20, x0\n1000a104c:     \tmov\tx1, x21\n1000a1050:     \tbl\t0x101404214 <__ZN4asio6detail16service_registry6createINS0_22deadline_timer_serviceINS0_18chrono_time_traitsINSt3__16chrono12steady_clockENS_11wait_traitsIS7_EEEEEENS_10io_contextEEEPNS_17execution_context7serviceEPv+0xba54c>\n1000a1054:     \tstr\tx20, [x19]\n1000a1058:     \tldp\tx29, x30, [sp, #0x20]\n1000a105c:     \tldp\tx20, x19, [sp, #0x10]\n1000a1060:     \tldp\tx22, x21, [sp], #0x30\n1000a1064:     \tret\n"
+    },
+    {
+      "start": "0x100af32d0",
+      "stop": "0x100af3328",
+      "sha256": "5e9d051fd257f9b2419df9fe39d7624958b67b926a341f77d1cc8afc7a1be757",
+      "disassembly": "\n/Applications/Spotify.app/Contents/MacOS/Spotify:\tfile format mach-o arm64\n\nDisassembly of section __TEXT,__text:\n\n00000001006a7b9c <__ZN4asio6detail16service_registry6createINS0_23reactive_socket_serviceINS_2ip3udpEEENS_10io_contextEEEPNS_17execution_context7serviceEPv>:\n100af32d0:     \tldr\tx25, [x19]\n100af32d4:     \tldr\tx8, [x23]\n100af32d8:     \tldr\tx9, [x8, #0x88]\n100af32dc:     \tsub\tx8, x29, #0x80\n100af32e0:     \tmov\tx0, x23\n100af32e4:     \tblr\tx9\n100af32e8:     \tldur\tx8, [x29, #-0x80]\n100af32ec:     \tstrb\twzr, [x19, #0x148]\n100af32f0:     \tadrp\tx9, 0x10253e000 <__ZN7spotify7desktop14ClientSwitches6kFlagsE+0x6a0>\n100af32f4:     \tadd\tx9, x9, #0xa78\n100af32f8:     \tstr\tx9, [x19, #0x140]\n100af32fc:     \tstr\tx8, [x19, #0x150]\n100af3300:     \tadrp\tx8, 0x1000a1000 <__ZN5boost6detail18core_typeid_lib_idEv+0x63c50>\n100af3304:     \tadd\tx8, x8, #0x14\n100af3308:     \tadrp\tx9, 0x1000a1000 <__ZN5boost6detail18core_typeid_lib_idEv+0x63c50>\n100af330c:     \tadd\tx9, x9, #0x28\n100af3310:     \tstp\tx8, x9, [x19, #0x160]\n100af3314:     \tadd\tx8, x19, #0x170\n100af3318:     \tbl\t0x101c98564 <__ZN4asio6detail16service_registry6createINS0_16resolver_serviceINS_2ip3tcpEEENS_10io_contextEEEPNS_17execution_context7serviceEPv+0x444e4>\n100af331c:     \tadd\tx0, x19, #0x140\n100af3320:     \tmov\tx1, x25\n100af3324:     \tbl\t0x1000a0e94 <__ZN5boost6detail18core_typeid_lib_idEv+0x63ae4>\n"
+    },
+    {
+      "start": "0x10192faa8",
+      "stop": "0x10192fad0",
+      "sha256": "78c8eaa735e76b6c2718651fa6ebc6342cdeeef907d4a5e812020a26300c5f6e",
+      "disassembly": "\n/Applications/Spotify.app/Contents/MacOS/Spotify:\tfile format mach-o arm64\n\nDisassembly of section __TEXT,__text:\n\n000000010162f21c <__ZN4asio6detail16service_registry6createINS0_22deadline_timer_serviceINS0_18chrono_time_traitsINSt3__16chrono12system_clockENS_11wait_traitsIS7_EEEEEENS_10io_contextEEEPNS_17execution_context7serviceEPv>:\n10192faa8:     \tldr\tx0, [x0, #0x160]\n10192faac:     \tldr\tx9, [x0]\n10192fab0:     \tldr\tx1, [x9, #0x38]\n10192fab4:     \tbr\tx1\n10192fab8:     \tldr\tx0, [x0, #0x8]\n10192fabc:     \tldr\tx8, [x0]\n10192fac0:     \tldr\tx1, [x8, #0x58]\n10192fac4:     \tbr\tx1\n10192fac8:     \tldr\tx0, [x0, #0x160]\n10192facc:     \tret\n"
+    },
+    {
+      "start": "0x10192c9ac",
+      "stop": "0x10192c9c0",
+      "sha256": "ca0788576178a8fe0e126db65b0a4f2e5fb35a4cd3e037b4c489a586eb9d9185",
+      "disassembly": "\n/Applications/Spotify.app/Contents/MacOS/Spotify:\tfile format mach-o arm64\n\nDisassembly of section __TEXT,__text:\n\n000000010162f21c <__ZN4asio6detail16service_registry6createINS0_22deadline_timer_serviceINS0_18chrono_time_traitsINSt3__16chrono12system_clockENS_11wait_traitsIS7_EEEEEENS_10io_contextEEEPNS_17execution_context7serviceEPv>:\n10192c9ac:     \tldr\tx0, [x0, #0x8]\n10192c9b0:     \tldr\tx9, [x0]\n10192c9b4:     \tldr\tx1, [x9, #0x20]\n10192c9b8:     \tbr\tx1\n10192c9bc:     \tstp\tx20, x19, [sp, #-0x20]!\n"
+    },
+    {
+      "start": "0x1000a0e94",
+      "stop": "0x1000a0f0c",
+      "sha256": "7b0ffb70567d8c970fb0e16202215833906f1daffd9ba817ad7ce981a1cd3228",
+      "disassembly": "\n/Applications/Spotify.app/Contents/MacOS/Spotify:\tfile format mach-o arm64\n\nDisassembly of section __TEXT,__text:\n\n000000010003d3b0 <__ZN5boost6detail18core_typeid_lib_idEv>:\n1000a0e94:     \tsub\tsp, sp, #0x60\n1000a0e98:     \tstp\tx22, x21, [sp, #0x30]\n1000a0e9c:     \tstp\tx20, x19, [sp, #0x40]\n1000a0ea0:     \tstp\tx29, x30, [sp, #0x50]\n1000a0ea4:     \tadd\tx29, sp, #0x50\n1000a0ea8:     \tmov\tx20, x1\n1000a0eac:     \tmov\tx19, x0\n1000a0eb0:     \tadd\tx0, x0, #0x30\n1000a0eb4:     \tbl\t0x101c983d0 <__ZN4asio6detail16service_registry6createINS0_16resolver_serviceINS_2ip3tcpEEENS_10io_contextEEEPNS_17execution_context7serviceEPv+0x44350>\n1000a0eb8:     \tcbnz\tw0, 0x1000a0f7c <__ZN5boost6detail18core_typeid_lib_idEv+0x63bcc>\n1000a0ebc:     \tldr\tx9, [x19, #0x28]\n1000a0ec0:     \tadd\tx8, sp, #0x8\n1000a0ec4:     \tadd\tx0, x19, #0x10\n1000a0ec8:     \tblr\tx9\n1000a0ecc:     \tldr\tx21, [sp, #0x8]\n1000a0ed0:     \tcbz\tx21, 0x1000a0ef0 <__ZN5boost6detail18core_typeid_lib_idEv+0x63b40>\n1000a0ed4:     \tmov\tw0, #0x20               ; =32\n1000a0ed8:     \tbl\t0x101fd1cf0 <_writev+0x101fd1cf0>\n1000a0edc:     \tadrp\tx8, 0x10253e000 <__ZN7spotify7desktop14ClientSwitches6kFlagsE+0x6a0>\n1000a0ee0:     \tadd\tx8, x8, #0xab0\n1000a0ee4:     \tstp\tx8, xzr, [x0]\n1000a0ee8:     \tstp\txzr, x21, [x0, #0x10]\n1000a0eec:     \tb\t0x1000a0ef4 <__ZN5boost6detail18core_typeid_lib_idEv+0x63b44>\n1000a0ef0:     \tmov\tx0, #0x0                ; =0\n1000a0ef4:     \tstr\txzr, [sp, #0x8]\n1000a0ef8:     \tstp\tx21, x0, [sp, #0x20]\n1000a0efc:     \tadd\tx8, sp, #0x10\n1000a0f00:     \tadd\tx1, sp, #0x20\n1000a0f04:     \tmov\tx0, x20\n1000a0f08:     \tbl\t0x101c98bb0 <__ZN4asio6detail16service_registry6createINS0_16resolver_serviceINS_2ip3tcpEEENS_10io_contextEEEPNS_17execution_context7serviceEPv+0x44b30>\n"
+    },
+    {
+      "start": "0x10141a758",
+      "stop": "0x10141a780",
+      "sha256": "2e95c086b3f5eae413c0eb40b95730f1d3a84ed40de26517c4f23c0549ad29c7",
+      "disassembly": "\n/Applications/Spotify.app/Contents/MacOS/Spotify:\tfile format mach-o arm64\n\nDisassembly of section __TEXT,__text:\n\n0000000101349cc8 <__ZN4asio6detail16service_registry6createINS0_22deadline_timer_serviceINS0_18chrono_time_traitsINSt3__16chrono12steady_clockENS_11wait_traitsIS7_EEEEEENS_10io_contextEEEPNS_17execution_context7serviceEPv>:\n10141a758:     \tstp\tx20, x19, [sp, #-0x20]!\n10141a75c:     \tstp\tx29, x30, [sp, #0x10]\n10141a760:     \tadd\tx29, sp, #0x10\n10141a764:     \tmov\tx19, x0\n10141a768:     \tadrp\tx8, 0x1025e0000 <__ZN7spotify7desktop14ClientSwitches6kFlagsE+0xa26a0>\n10141a76c:     \tadd\tx8, x8, #0x9b0\n10141a770:     \tstp\tx8, xzr, [x0]\n10141a774:     \tstp\txzr, x1, [x0, #0x10]\n10141a778:     \tstp\tx2, x3, [x0, #0x20]\n10141a77c:     \tstr\tx4, [x0, #0x30]\n"
+    },
+    {
+      "start": "0x10141aaa8",
+      "stop": "0x10141ab00",
+      "sha256": "b19446a39b28583da84ad3dba77d5df442a292714c7a1ae5b430826b7167a87a",
+      "disassembly": "\n/Applications/Spotify.app/Contents/MacOS/Spotify:\tfile format mach-o arm64\n\nDisassembly of section __TEXT,__text:\n\n0000000101349cc8 <__ZN4asio6detail16service_registry6createINS0_22deadline_timer_serviceINS0_18chrono_time_traitsINSt3__16chrono12steady_clockENS_11wait_traitsIS7_EEEEEENS_10io_contextEEEPNS_17execution_context7serviceEPv>:\n10141aaa8:     \tldr\tx21, [x19, #0x30]\n10141aaac:     \tldr\tx23, [x19, #0xa58]\n10141aab0:     \tldr\tx22, [x19, #0xa60]\n10141aab4:     \tcbz\tx22, 0x10141aac4 <__ZN4asio6detail16service_registry6createINS0_22deadline_timer_serviceINS0_18chrono_time_traitsINSt3__16chrono12steady_clockENS_11wait_traitsIS7_EEEEEENS_10io_contextEEEPNS_17execution_context7serviceEPv+0xd0dfc>\n10141aab8:     \tadd\tx8, x22, #0x10\n10141aabc:     \tmov\tw9, #0x1                ; =1\n10141aac0:     \tldadd\tx9, x8, [x8]\n10141aac4:     \tmov\tw0, #0x20               ; =32\n10141aac8:     \tbl\t0x101fd1cf0 <_writev+0x101fd1cf0>\n10141aacc:     \tadrp\tx8, 0x1025e0000 <__ZN7spotify7desktop14ClientSwitches6kFlagsE+0xa26a0>\n10141aad0:     \tadd\tx8, x8, #0xa00\n10141aad4:     \tstp\tx8, x19, [x0]\n10141aad8:     \tstp\tx23, x22, [x0, #0x10]\n10141aadc:     \tstr\tx0, [sp, #0x40]\n10141aae0:     \tldr\tx8, [x21]\n10141aae4:     \tldr\tx9, [x8, #0x18]\n10141aae8:     \tadd\tx22, sp, #0x28\n10141aaec:     \tadd\tx8, sp, #0x10\n10141aaf0:     \tadd\tx1, sp, #0x28\n10141aaf4:     \tmov\tx0, x21\n10141aaf8:     \tmov\tx2, x20\n10141aafc:     \tblr\tx9\n"
+    },
+    {
+      "start": "0x101416e20",
+      "stop": "0x101416ec8",
+      "sha256": "1cba82114d7e1fcde1226f7213de4046d99c393dea568a8ebbc598b491541e90",
+      "disassembly": "\n/Applications/Spotify.app/Contents/MacOS/Spotify:\tfile format mach-o arm64\n\nDisassembly of section __TEXT,__text:\n\n0000000101349cc8 <__ZN4asio6detail16service_registry6createINS0_22deadline_timer_serviceINS0_18chrono_time_traitsINSt3__16chrono12steady_clockENS_11wait_traitsIS7_EEEEEENS_10io_contextEEEPNS_17execution_context7serviceEPv>:\n101416e20:     \tsub\tsp, sp, #0x70\n101416e24:     \tstp\tx28, x27, [sp, #0x10]\n101416e28:     \tstp\tx26, x25, [sp, #0x20]\n101416e2c:     \tstp\tx24, x23, [sp, #0x30]\n101416e30:     \tstp\tx22, x21, [sp, #0x40]\n101416e34:     \tstp\tx20, x19, [sp, #0x50]\n101416e38:     \tstp\tx29, x30, [sp, #0x60]\n101416e3c:     \tadd\tx29, sp, #0x60\n101416e40:     \tmov\tx26, x5\n101416e44:     \tmov\tx22, x4\n101416e48:     \tmov\tx23, x3\n101416e4c:     \tmov\tx24, x2\n101416e50:     \tmov\tx25, x1\n101416e54:     \tmov\tx21, x8\n101416e58:     \tmov\tw0, #0xbc0              ; =3008\n101416e5c:     \tbl\t0x101fd1cf0 <_writev+0x101fd1cf0>\n101416e60:     \tmov\tx19, x0\n101416e64:     \tmov\tx27, x0\n101416e68:     \tstr\txzr, [x27, #0x8]!\n101416e6c:     \tadrp\tx8, 0x1025e0000 <__ZN7spotify7desktop14ClientSwitches6kFlagsE+0xa26a0>\n101416e70:     \tadd\tx8, x8, #0x898\n101416e74:     \tstr\txzr, [x0, #0x10]\n101416e78:     \tstr\tx8, [x0]\n101416e7c:     \tadd\tx20, x0, #0x18\n101416e80:     \tldr\tx8, [x26, #0x8]\n101416e84:     \tldr\tq0, [x26]\n101416e88:     \tstr\tq0, [sp]\n101416e8c:     \tcbz\tx8, 0x101416e9c <__ZN4asio6detail16service_registry6createINS0_22deadline_timer_serviceINS0_18chrono_time_traitsINSt3__16chrono12steady_clockENS_11wait_traitsIS7_EEEEEENS_10io_contextEEEPNS_17execution_context7serviceEPv+0xcd1d4>\n101416e90:     \tadd\tx8, x8, #0x8\n101416e94:     \tmov\tw9, #0x1                ; =1\n101416e98:     \tldadd\tx9, x8, [x8]\n101416e9c:     \tmov\tx5, sp\n101416ea0:     \tmov\tx0, x20\n101416ea4:     \tmov\tx1, x25\n101416ea8:     \tmov\tx2, x24\n101416eac:     \tmov\tx3, x23\n101416eb0:     \tmov\tx4, x22\n101416eb4:     \tbl\t0x10141a874 <__ZN4asio6detail16service_registry6createINS0_22deadline_timer_serviceINS0_18chrono_time_traitsINSt3__16chrono12steady_clockENS_11wait_traitsIS7_EEEEEENS_10io_contextEEEPNS_17execution_context7serviceEPv+0xd0bac>\n101416eb8:     \tldr\tx22, [sp, #0x8]\n101416ebc:     \tcbz\tx22, 0x101416ed0 <__ZN4asio6detail16service_registry6createINS0_22deadline_timer_serviceINS0_18chrono_time_traitsINSt3__16chrono12steady_clockENS_11wait_traitsIS7_EEEEEENS_10io_contextEEEPNS_17execution_context7serviceEPv+0xcd208>\n101416ec0:     \tadd\tx8, x22, #0x8\n101416ec4:     \tmov\tx9, #-0x1               ; =-1\n"
+    }
+  ],
+  "limits": [
+    "Static constructor/registry binding; dynamic execution is limited to both original context getters, original owner getter, and original getToken handler.",
+    "Synthetic supplied API getter writes a fixed provider pair; supplied provider request only records force and returns an inert cancellation. No token or authentication result is produced.",
+    "Inherited substitutions cover standard allocation, memory and uncontended mutex imports only.",
+    "Pusher execution covers only the constructor prefix and acquisition suffix with supplied registers; timer/closed-state gates, scheduling, connection callbacks and actual handshake are not executed.",
+    "No full Esperanto frame/dispatch execution, response callback serialization, lifecycle/race or server acceptance proof.",
+    "No account/profile/keychain reads, native application launch or network access."
+  ]
+}

@@ -1,0 +1,840 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "method": "Execute original filesystem observation -> capacity refresh -> eviction selector.\n\nOriginal filesystem virtual+0x88 dispatches through its recorded vtable, its\nstatvfs adapter multiplies public Darwin fields, and the cache controller joins\nthose observations with the original compiled capacity record. The real prune\nowner, policy/size callbacks and selector then execute until the selector returns,\nbefore logical removal, disk IO or telemetry. Supplied filesystem responses,\nclocks and descriptor/index inputs are explicit; no Dart output is an authority.\n",
+  "entryPoints": {
+    "filesystemProviderVtable": "0x10264ae40",
+    "filesystemMethod": "0x10193f5ec",
+    "statvfsAdapter": "0x101d69398",
+    "refresh": "0x1018a0bfc",
+    "pruneOwner": "0x1018a0e18",
+    "pruneStopBefore": "0x1018a0f2c",
+    "selector": "0x10189b330"
+  },
+  "originalCodeRanges": [
+    {
+      "start": "0x10193f5ec",
+      "endExclusive": "0x10193f6cc",
+      "sha256": "983f29937f759c614cebcd778cd09bb2f778b6937617e52758609ec9d51a9199",
+      "boundarySource": "LC_FUNCTION_STARTS"
+    },
+    {
+      "start": "0x101d69398",
+      "endExclusive": "0x101d69418",
+      "sha256": "e020825f1f13a7e4342662648c52722acaf01376b313e5275d5fa20f19fad447",
+      "boundarySource": "LC_FUNCTION_STARTS"
+    },
+    {
+      "start": "0x1018a0bfc",
+      "endExclusive": "0x1018a0e18",
+      "sha256": "9669c4ce57c7d17e4a79b3cc325f22f8c3aba66cccb6a16b07b2c5d855dbda5e",
+      "boundarySource": "LC_FUNCTION_STARTS"
+    },
+    {
+      "start": "0x1018a0e18",
+      "endExclusive": "0x1018a11f0",
+      "sha256": "e722d32ba2fd24cab297f05de5ad9132b7a60cbc524fa16a428912e86e48b6f8",
+      "boundarySource": "LC_FUNCTION_STARTS"
+    },
+    {
+      "start": "0x101d694b4",
+      "endExclusive": "0x101d69504",
+      "sha256": "1fd95f4a087c1931cc29f971665eefee6bd7cf5efe9ca824d7072f3b1f3f348c",
+      "boundarySource": "LC_FUNCTION_STARTS"
+    }
+  ],
+  "standardABI": {
+    "struct": "Darwin statvfs",
+    "layout": {
+      "size": 64,
+      "frsizeOffset": 8,
+      "frsizeWidth": 8,
+      "blocksOffset": 16,
+      "blocksWidth": 4,
+      "bfreeOffset": 20,
+      "bavailOffset": 24,
+      "bavailWidth": 4
+    },
+    "measurementSource": ".local/cache-statvfs-layout.c",
+    "measurementSourceSha256": "37c8666ab26282dbdabec2331a0a2c54b59769e16d747925ff6f51af630be7b5",
+    "measurementSha256": "552aa180c5bbbbf3d456ccb351464209925994b21c8814bc9ac988c9b640c317",
+    "headers": "Xcode MacOSX.sdk/usr/include/sys/statvfs.h and sys/_types.h"
+  },
+  "compiledDefaults": {
+    "cacheMaximumBytes": 10737418240,
+    "cacheDiskFractionFloat32": 0.8999999761581421,
+    "headroomDiskFractionFloat32": 0.029999999329447746,
+    "headroomMaximumBytes": 524288000,
+    "rawHex": "00000080020000006666663f8fc2f53c0000401f00000000"
+  },
+  "retainedREAExports": [
+    {
+      "path": ".local/rea-session/cache-filesystem-stats.json",
+      "sha256": "86039636acd11da5a90b12739131db5b091ad2a5460a22d71c8a5087ec4a3e74",
+      "evidenceId": "ev_e677235a96edb6bc0da0a537ca617a4c0850a24e32de4b4acc498381b34923c2"
+    },
+    {
+      "path": ".local/rea-session/cache-volume-provider.json",
+      "sha256": "d636d69e18acb3b1e65ddaa9a0689ff6b6676e76bbe491c08f605b14a6515873",
+      "evidenceId": "ev_1711bd8ff870df165973d1e98cd798f20fcea0b1ecf9eaa87e80744137b3ee7e"
+    },
+    {
+      "path": ".local/rea-session/cache-volume-vtable.json",
+      "sha256": "462cec5d4b5f90d2dae6c6d0f14abdfc715a6855a6dbac9ed5ad0bc72abffb76",
+      "evidenceId": "ev_bf93451bfff2bde037cf8a5cc58b10d017bba0a3197c271137575888eb8daf77"
+    },
+    {
+      "path": ".local/rea-session/cache-filesystem-provider-init.json",
+      "sha256": "e15914c78d4bf0c3dbb6e6e2e2c6c8f7b070e5d0a09e52cc83139f00107f3594",
+      "evidenceId": "ev_94137190da6dd0c8e6b295f5c9992e3c4840dbf3ad8785af0a45a6e2b721ffdb"
+    },
+    {
+      "path": ".local/rea-session/cache-capacity-effective.json",
+      "sha256": "22559eec32b8708457c4b15fb6b22948bea0c24adea8d02c367962f9306b34fc",
+      "evidenceId": "ev_3dfd0df1b61ad1bfaeed3999adaaf4098927161e5a74b01408de2bdd732eeafd"
+    },
+    {
+      "path": ".local/rea-session/cache-capacity-default-init.json",
+      "sha256": "3deff13235dbd4bb1c5a83441722f8500bb57bb80bc62da8b6499a8bd0ee2502",
+      "evidenceId": "ev_7ecb22154c0fe2120b5cc09aeae76900770f26ea02dcca655634e16d4a8b0621"
+    },
+    {
+      "path": ".local/rea-session/cache-prune-capacity-consumer.json",
+      "sha256": "ed8aa2637e18e0f38f56fa53fa20c8c3d4fbc245338eb5655ee705f8a2924523",
+      "evidenceId": "ev_53a34ca652dee52c9b4257811daf0421eb766425d2361e67c8c878ab7982395f"
+    }
+  ],
+  "suppliedDefaults": {
+    "bsize": 4096,
+    "frsize": 4096,
+    "blocks": 1000000,
+    "bfree": 1000,
+    "bavail": 500,
+    "errno": 0
+  },
+  "volumeCases": [
+    {
+      "name": "normal volume",
+      "supplied": {
+        "primary": {
+          "blocks": 1000000,
+          "bavail": 500000,
+          "bfree": 700000
+        }
+      },
+      "original": {
+        "sampleClock": 1700000000000000,
+        "observationReadyWord": 1,
+        "primaryCapacityBytes": 4096000000,
+        "primaryCachePlusAvailableBytes": 2048000000,
+        "secondaryCapacityBytes": 4096000000,
+        "secondaryCachePlusAvailableBytes": 2048000000,
+        "pruningBudgetBytes": 3686400000,
+        "headroomTargetBytes": 122880000,
+        "secondaryBound3Bytes": 104857600,
+        "secondaryBound4Bytes": 4096000000
+      },
+      "filesystemCalls": [
+        "/synthetic/cache/"
+      ]
+    },
+    {
+      "name": "reserved blocks are unavailable",
+      "supplied": {
+        "primary": {
+          "blocks": 1000000,
+          "bavail": 500,
+          "bfree": 900000
+        }
+      },
+      "original": {
+        "sampleClock": 1700000000000000,
+        "observationReadyWord": 1,
+        "primaryCapacityBytes": 4096000000,
+        "primaryCachePlusAvailableBytes": 2048000,
+        "secondaryCapacityBytes": 4096000000,
+        "secondaryCachePlusAvailableBytes": 2048000,
+        "pruningBudgetBytes": 3686400000,
+        "headroomTargetBytes": 122880000,
+        "secondaryBound3Bytes": 104857600,
+        "secondaryBound4Bytes": 4096000000
+      },
+      "filesystemCalls": [
+        "/synthetic/cache/"
+      ]
+    },
+    {
+      "name": "changing free blocks cannot add user headroom",
+      "supplied": {
+        "primary": {
+          "blocks": 1000000,
+          "bavail": 500,
+          "bfree": 900001
+        }
+      },
+      "original": {
+        "sampleClock": 1700000000000000,
+        "observationReadyWord": 1,
+        "primaryCapacityBytes": 4096000000,
+        "primaryCachePlusAvailableBytes": 2048000,
+        "secondaryCapacityBytes": 4096000000,
+        "secondaryCachePlusAvailableBytes": 2048000,
+        "pruningBudgetBytes": 3686400000,
+        "headroomTargetBytes": 122880000,
+        "secondaryBound3Bytes": 104857600,
+        "secondaryBound4Bytes": 4096000000
+      },
+      "filesystemCalls": [
+        "/synthetic/cache/"
+      ]
+    },
+    {
+      "name": "block size does not replace fragment size",
+      "supplied": {
+        "primary": {
+          "bsize": 65536,
+          "frsize": 1024,
+          "blocks": 1000000,
+          "bavail": 1000
+        }
+      },
+      "original": {
+        "sampleClock": 1700000000000000,
+        "observationReadyWord": 1,
+        "primaryCapacityBytes": 1024000000,
+        "primaryCachePlusAvailableBytes": 1024000,
+        "secondaryCapacityBytes": 1024000000,
+        "secondaryCachePlusAvailableBytes": 1024000,
+        "pruningBudgetBytes": 921600000,
+        "headroomTargetBytes": 30720000,
+        "secondaryBound3Bytes": 104857600,
+        "secondaryBound4Bytes": 1024000000
+      },
+      "filesystemCalls": [
+        "/synthetic/cache/"
+      ]
+    },
+    {
+      "name": "no available blocks",
+      "supplied": {
+        "primary": {
+          "blocks": 1000000,
+          "bavail": 0
+        }
+      },
+      "original": {
+        "sampleClock": 1700000000000000,
+        "observationReadyWord": 1,
+        "primaryCapacityBytes": 4096000000,
+        "primaryCachePlusAvailableBytes": 0,
+        "secondaryCapacityBytes": 4096000000,
+        "secondaryCachePlusAvailableBytes": 0,
+        "pruningBudgetBytes": 3686400000,
+        "headroomTargetBytes": 122880000,
+        "secondaryBound3Bytes": 104857600,
+        "secondaryBound4Bytes": 4096000000
+      },
+      "filesystemCalls": [
+        "/synthetic/cache/"
+      ]
+    },
+    {
+      "name": "zero volume capacity",
+      "supplied": {
+        "primary": {
+          "blocks": 0,
+          "bavail": 0
+        }
+      },
+      "original": {
+        "sampleClock": 1700000000000000,
+        "observationReadyWord": 1,
+        "primaryCapacityBytes": 0,
+        "primaryCachePlusAvailableBytes": 0,
+        "secondaryCapacityBytes": 0,
+        "secondaryCachePlusAvailableBytes": 0,
+        "pruningBudgetBytes": 0,
+        "headroomTargetBytes": 0,
+        "secondaryBound3Bytes": 0,
+        "secondaryBound4Bytes": 0
+      },
+      "filesystemCalls": [
+        "/synthetic/cache/"
+      ]
+    },
+    {
+      "name": "compiled maximum caps large volume",
+      "supplied": {
+        "primary": {
+          "frsize": 4096,
+          "blocks": 1000000000,
+          "bavail": 500000000
+        }
+      },
+      "original": {
+        "sampleClock": 1700000000000000,
+        "observationReadyWord": 1,
+        "primaryCapacityBytes": 4096000000000,
+        "primaryCachePlusAvailableBytes": 2048000000000,
+        "secondaryCapacityBytes": 4096000000000,
+        "secondaryCachePlusAvailableBytes": 2048000000000,
+        "pruningBudgetBytes": 10737418240,
+        "headroomTargetBytes": 524288000,
+        "secondaryBound3Bytes": 104857600,
+        "secondaryBound4Bytes": 53687091200
+      },
+      "filesystemCalls": [
+        "/synthetic/cache/"
+      ]
+    },
+    {
+      "name": "unsigned block counters",
+      "supplied": {
+        "primary": {
+          "frsize": 4096,
+          "blocks": 4294967295,
+          "bavail": 4294967294,
+          "bfree": 4294967295
+        }
+      },
+      "original": {
+        "sampleClock": 1700000000000000,
+        "observationReadyWord": 1,
+        "primaryCapacityBytes": 17592186040320,
+        "primaryCachePlusAvailableBytes": 17592186036224,
+        "secondaryCapacityBytes": 17592186040320,
+        "secondaryCachePlusAvailableBytes": 17592186036224,
+        "pruningBudgetBytes": 10737418240,
+        "headroomTargetBytes": 524288000,
+        "secondaryBound3Bytes": 104857600,
+        "secondaryBound4Bytes": 53687091200
+      },
+      "filesystemCalls": [
+        "/synthetic/cache/"
+      ]
+    },
+    {
+      "name": "existing cache bytes join user available bytes",
+      "supplied": {
+        "primary": {
+          "blocks": 1000000,
+          "bavail": 500
+        },
+        "used": 123
+      },
+      "original": {
+        "sampleClock": 1700000000000000,
+        "observationReadyWord": 1,
+        "primaryCapacityBytes": 4096000000,
+        "primaryCachePlusAvailableBytes": 2048123,
+        "secondaryCapacityBytes": 4096000000,
+        "secondaryCachePlusAvailableBytes": 2048123,
+        "pruningBudgetBytes": 3686400000,
+        "headroomTargetBytes": 122880000,
+        "secondaryBound3Bytes": 104857600,
+        "secondaryBound4Bytes": 4096000000
+      },
+      "filesystemCalls": [
+        "/synthetic/cache/"
+      ]
+    },
+    {
+      "name": "positive byte override replaces only cache target",
+      "supplied": {
+        "primary": {
+          "blocks": 1000000,
+          "bavail": 500
+        },
+        "used": 123,
+        "override": 100
+      },
+      "original": {
+        "sampleClock": 1700000000000000,
+        "observationReadyWord": 1,
+        "primaryCapacityBytes": 4096000000,
+        "primaryCachePlusAvailableBytes": 2048123,
+        "secondaryCapacityBytes": 4096000000,
+        "secondaryCachePlusAvailableBytes": 2048123,
+        "pruningBudgetBytes": 100,
+        "headroomTargetBytes": 122880000,
+        "secondaryBound3Bytes": 104857600,
+        "secondaryBound4Bytes": 4096000000
+      },
+      "filesystemCalls": [
+        "/synthetic/cache/"
+      ]
+    },
+    {
+      "name": "zero override keeps derived target",
+      "supplied": {
+        "primary": {
+          "blocks": 1000000,
+          "bavail": 500
+        },
+        "override": 0
+      },
+      "original": {
+        "sampleClock": 1700000000000000,
+        "observationReadyWord": 1,
+        "primaryCapacityBytes": 4096000000,
+        "primaryCachePlusAvailableBytes": 2048000,
+        "secondaryCapacityBytes": 4096000000,
+        "secondaryCachePlusAvailableBytes": 2048000,
+        "pruningBudgetBytes": 3686400000,
+        "headroomTargetBytes": 122880000,
+        "secondaryBound3Bytes": 104857600,
+        "secondaryBound4Bytes": 4096000000
+      },
+      "filesystemCalls": [
+        "/synthetic/cache/"
+      ]
+    },
+    {
+      "name": "override can exceed compiled maximum",
+      "supplied": {
+        "primary": {
+          "blocks": 1000000,
+          "bavail": 500
+        },
+        "override": 21474836480
+      },
+      "original": {
+        "sampleClock": 1700000000000000,
+        "observationReadyWord": 1,
+        "primaryCapacityBytes": 4096000000,
+        "primaryCachePlusAvailableBytes": 2048000,
+        "secondaryCapacityBytes": 4096000000,
+        "secondaryCachePlusAvailableBytes": 2048000,
+        "pruningBudgetBytes": 21474836480,
+        "headroomTargetBytes": 122880000,
+        "secondaryBound3Bytes": 104857600,
+        "secondaryBound4Bytes": 4096000000
+      },
+      "filesystemCalls": [
+        "/synthetic/cache/"
+      ]
+    },
+    {
+      "name": "statvfs failure uses compiled fallback",
+      "supplied": {
+        "primary": {
+          "errno": 5
+        }
+      },
+      "original": {
+        "sampleClock": 1700000000000000,
+        "observationReadyWord": 1,
+        "primaryCapacityBytes": 0,
+        "primaryCachePlusAvailableBytes": 10737418240,
+        "secondaryCapacityBytes": 0,
+        "secondaryCachePlusAvailableBytes": 0,
+        "pruningBudgetBytes": 10737418240,
+        "headroomTargetBytes": 524288000,
+        "secondaryBound3Bytes": 104857600,
+        "secondaryBound4Bytes": 10737418240
+      },
+      "filesystemCalls": [
+        "/synthetic/cache/"
+      ]
+    },
+    {
+      "name": "failure still admits positive override",
+      "supplied": {
+        "primary": {
+          "errno": 13
+        },
+        "used": 123,
+        "override": 100
+      },
+      "original": {
+        "sampleClock": 1700000000000000,
+        "observationReadyWord": 1,
+        "primaryCapacityBytes": 0,
+        "primaryCachePlusAvailableBytes": 10737418240,
+        "secondaryCapacityBytes": 0,
+        "secondaryCachePlusAvailableBytes": 123,
+        "pruningBudgetBytes": 100,
+        "headroomTargetBytes": 524288000,
+        "secondaryBound3Bytes": 104857600,
+        "secondaryBound4Bytes": 10737418240
+      },
+      "filesystemCalls": [
+        "/synthetic/cache/"
+      ]
+    },
+    {
+      "name": "secondary volume does not size primary target",
+      "supplied": {
+        "primary": {
+          "blocks": 1000000,
+          "bavail": 500
+        },
+        "used": 123,
+        "secondary": {
+          "frsize": 1024,
+          "blocks": 10000000,
+          "bavail": 1234
+        }
+      },
+      "original": {
+        "sampleClock": 1700000000000000,
+        "observationReadyWord": 1,
+        "primaryCapacityBytes": 4096000000,
+        "primaryCachePlusAvailableBytes": 2048123,
+        "secondaryCapacityBytes": 10240000000,
+        "secondaryCachePlusAvailableBytes": 1263739,
+        "pruningBudgetBytes": 3686400000,
+        "headroomTargetBytes": 122880000,
+        "secondaryBound3Bytes": 104857600,
+        "secondaryBound4Bytes": 4096000000
+      },
+      "filesystemCalls": [
+        "/synthetic/cache/",
+        "/synthetic/secondary/"
+      ]
+    },
+    {
+      "name": "secondary failure leaves primary sizing valid",
+      "supplied": {
+        "primary": {
+          "blocks": 1000000,
+          "bavail": 500
+        },
+        "secondary": {
+          "errno": 5
+        }
+      },
+      "original": {
+        "sampleClock": 1700000000000000,
+        "observationReadyWord": 1,
+        "primaryCapacityBytes": 4096000000,
+        "primaryCachePlusAvailableBytes": 2048000,
+        "secondaryCapacityBytes": 0,
+        "secondaryCachePlusAvailableBytes": 0,
+        "pruningBudgetBytes": 3686400000,
+        "headroomTargetBytes": 122880000,
+        "secondaryBound3Bytes": 104857600,
+        "secondaryBound4Bytes": 4096000000
+      },
+      "filesystemCalls": [
+        "/synthetic/cache/",
+        "/synthetic/secondary/"
+      ]
+    },
+    {
+      "name": "primary failure with valid secondary keeps primary fallback",
+      "supplied": {
+        "primary": {
+          "errno": 5
+        },
+        "secondary": {
+          "blocks": 10000000,
+          "bavail": 1234
+        }
+      },
+      "original": {
+        "sampleClock": 1700000000000000,
+        "observationReadyWord": 1,
+        "primaryCapacityBytes": 0,
+        "primaryCachePlusAvailableBytes": 10737418240,
+        "secondaryCapacityBytes": 40960000000,
+        "secondaryCachePlusAvailableBytes": 5054464,
+        "pruningBudgetBytes": 10737418240,
+        "headroomTargetBytes": 524288000,
+        "secondaryBound3Bytes": 104857600,
+        "secondaryBound4Bytes": 10737418240
+      },
+      "filesystemCalls": [
+        "/synthetic/cache/",
+        "/synthetic/secondary/"
+      ]
+    }
+  ],
+  "joinedPruningCases": [
+    {
+      "name": "volume headroom pressure",
+      "supplied": {
+        "primary": {
+          "blocks": 1000000,
+          "bavail": 2560
+        },
+        "entries": [
+          {
+            "name": "older",
+            "bytes": 83886080
+          },
+          {
+            "name": "newer",
+            "bytes": 83886080,
+            "timestamp30": 1699993000
+          }
+        ]
+      },
+      "originalCapacity": {
+        "sampleClock": 1700000000000000,
+        "observationReadyWord": 1,
+        "primaryCapacityBytes": 4096000000,
+        "primaryCachePlusAvailableBytes": 178257920,
+        "secondaryCapacityBytes": 4096000000,
+        "secondaryCachePlusAvailableBytes": 178257920,
+        "pruningBudgetBytes": 3686400000,
+        "headroomTargetBytes": 122880000,
+        "secondaryBound3Bytes": 104857600,
+        "secondaryBound4Bytes": 4096000000
+      },
+      "originalSelector": {
+        "selectorInputs": {
+          "budget": 3686400000,
+          "headroomTarget": 122880000,
+          "availableHeadroom": 10485760
+        },
+        "selected": [
+          {
+            "entry": "older",
+            "reason": 4
+          },
+          {
+            "entry": "newer",
+            "reason": 4
+          }
+        ],
+        "calls": [
+          "/synthetic/cache/"
+        ]
+      }
+    },
+    {
+      "name": "available headroom suppresses eviction",
+      "supplied": {
+        "primary": {
+          "blocks": 1000000,
+          "bavail": 1000000
+        },
+        "entries": [
+          {
+            "name": "older",
+            "bytes": 83886080
+          },
+          {
+            "name": "newer",
+            "bytes": 83886080,
+            "timestamp30": 1699993000
+          }
+        ]
+      },
+      "originalCapacity": {
+        "sampleClock": 1700000000000000,
+        "observationReadyWord": 1,
+        "primaryCapacityBytes": 4096000000,
+        "primaryCachePlusAvailableBytes": 4263772160,
+        "secondaryCapacityBytes": 4096000000,
+        "secondaryCachePlusAvailableBytes": 4263772160,
+        "pruningBudgetBytes": 3686400000,
+        "headroomTargetBytes": 122880000,
+        "secondaryBound3Bytes": 104857600,
+        "secondaryBound4Bytes": 4096000000
+      },
+      "originalSelector": {
+        "selectorInputs": {
+          "budget": 3686400000,
+          "headroomTarget": 122880000,
+          "availableHeadroom": 4096000000
+        },
+        "selected": [],
+        "calls": [
+          "/synthetic/cache/"
+        ]
+      }
+    },
+    {
+      "name": "explicit cache target produces capacity reason",
+      "supplied": {
+        "primary": {
+          "blocks": 1000000,
+          "bavail": 1000000
+        },
+        "entries": [
+          {
+            "name": "older",
+            "bytes": 83886080
+          },
+          {
+            "name": "newer",
+            "bytes": 83886080,
+            "timestamp30": 1699993000
+          }
+        ],
+        "override": 104857600
+      },
+      "originalCapacity": {
+        "sampleClock": 1700000000000000,
+        "observationReadyWord": 1,
+        "primaryCapacityBytes": 4096000000,
+        "primaryCachePlusAvailableBytes": 4263772160,
+        "secondaryCapacityBytes": 4096000000,
+        "secondaryCachePlusAvailableBytes": 4263772160,
+        "pruningBudgetBytes": 104857600,
+        "headroomTargetBytes": 122880000,
+        "secondaryBound3Bytes": 104857600,
+        "secondaryBound4Bytes": 4096000000
+      },
+      "originalSelector": {
+        "selectorInputs": {
+          "budget": 104857600,
+          "headroomTarget": 122880000,
+          "availableHeadroom": 4096000000
+        },
+        "selected": [
+          {
+            "entry": "older",
+            "reason": 2
+          }
+        ],
+        "calls": [
+          "/synthetic/cache/"
+        ]
+      }
+    },
+    {
+      "name": "retained descriptors survive physical headroom pressure",
+      "supplied": {
+        "primary": {
+          "blocks": 1000000,
+          "bavail": 2560
+        },
+        "entries": [
+          {
+            "name": "retained",
+            "bytes": 167772160,
+            "retainedHandle": 1
+          }
+        ]
+      },
+      "originalCapacity": {
+        "sampleClock": 1700000000000000,
+        "observationReadyWord": 1,
+        "primaryCapacityBytes": 4096000000,
+        "primaryCachePlusAvailableBytes": 178257920,
+        "secondaryCapacityBytes": 4096000000,
+        "secondaryCachePlusAvailableBytes": 178257920,
+        "pruningBudgetBytes": 3686400000,
+        "headroomTargetBytes": 122880000,
+        "secondaryBound3Bytes": 104857600,
+        "secondaryBound4Bytes": 4096000000
+      },
+      "originalSelector": {
+        "selectorInputs": {
+          "budget": 3686400000,
+          "headroomTarget": 122880000,
+          "availableHeadroom": 10485760
+        },
+        "selected": [],
+        "calls": [
+          "/synthetic/cache/"
+        ]
+      }
+    },
+    {
+      "name": "young descriptors survive physical headroom pressure",
+      "supplied": {
+        "primary": {
+          "blocks": 1000000,
+          "bavail": 2560
+        },
+        "entries": [
+          {
+            "name": "young",
+            "bytes": 167772160,
+            "timestamp30": 1699998200
+          }
+        ]
+      },
+      "originalCapacity": {
+        "sampleClock": 1700000000000000,
+        "observationReadyWord": 1,
+        "primaryCapacityBytes": 4096000000,
+        "primaryCachePlusAvailableBytes": 178257920,
+        "secondaryCapacityBytes": 4096000000,
+        "secondaryCachePlusAvailableBytes": 178257920,
+        "pruningBudgetBytes": 3686400000,
+        "headroomTargetBytes": 122880000,
+        "secondaryBound3Bytes": 104857600,
+        "secondaryBound4Bytes": 4096000000
+      },
+      "originalSelector": {
+        "selectorInputs": {
+          "budget": 3686400000,
+          "headroomTarget": 122880000,
+          "availableHeadroom": 10485760
+        },
+        "selected": [],
+        "calls": [
+          "/synthetic/cache/"
+        ]
+      }
+    },
+    {
+      "name": "failed disk observation does not invent no-space eviction",
+      "supplied": {
+        "primary": {
+          "errno": 5
+        },
+        "entries": [
+          {
+            "name": "older",
+            "bytes": 83886080
+          },
+          {
+            "name": "newer",
+            "bytes": 83886080,
+            "timestamp30": 1699993000
+          }
+        ]
+      },
+      "originalCapacity": {
+        "sampleClock": 1700000000000000,
+        "observationReadyWord": 1,
+        "primaryCapacityBytes": 0,
+        "primaryCachePlusAvailableBytes": 10737418240,
+        "secondaryCapacityBytes": 0,
+        "secondaryCachePlusAvailableBytes": 167772160,
+        "pruningBudgetBytes": 10737418240,
+        "headroomTargetBytes": 524288000,
+        "secondaryBound3Bytes": 104857600,
+        "secondaryBound4Bytes": 10737418240
+      },
+      "originalSelector": {
+        "selectorInputs": {
+          "budget": 10737418240,
+          "headroomTarget": 524288000,
+          "availableHeadroom": 10569646080
+        },
+        "selected": [],
+        "calls": [
+          "/synthetic/cache/"
+        ]
+      }
+    }
+  ],
+  "hostCalendar": {
+    "timeZoneNames": [
+      "MSK",
+      "MSK"
+    ],
+    "standardOffsetSecondsWest": -10800
+  },
+  "substitutions": [
+    "Synthetic cache root, explicit root+0x38 cache-byte count, descriptor/index inputs and optional capacity override.",
+    "statvfs receives an explicit synthetic path and returns supplied Darwin fields/errno without a system call.",
+    "Injected root-path provider, wall/monotonic clock, standard memory/allocation/string/chrono/calendar providers.",
+    "Uncontended static guards, standard destructor registration and system error-category interfaces.",
+    "Original filesystem vtable, multiplication/error handling, capacity leaf, refresh, prune caller, policy callbacks and selector all execute unchanged."
+  ],
+  "limits": [
+    "No original profile/cache IO, file deletion, telemetry or network.",
+    "The default/override record is explicit input; current account preference/experiment values are not observed.",
+    "Root+0x38 is supplied; its aggregation from persistent files/index entries is not established here.",
+    "Fresh-root refresh cases only; stale observations after later failures and complete scheduler invalidation are not proved.",
+    "Selected descriptors stop at the prune-owner return from the selector, before cache removal.",
+    "Original expiry timestamp/flag write owners and persistent index/file layout still require recovery."
+  ]
+}

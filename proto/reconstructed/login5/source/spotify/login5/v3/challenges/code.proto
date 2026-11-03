@@ -1,0 +1,28 @@
+// RECONSTRUCTED Login5 schema; not an extracted original descriptor.
+// Native wire facts: docs/evidence/login5-lite-tables.json.
+// Per-field provenance: proto/reconstructed/login5/manifest.json.
+// Original filenames/source options/optional declarations remain unestablished.
+
+syntax = "proto3";
+
+package spotify.login5.v3.challenges;
+
+message CodeChallenge {
+  .spotify.login5.v3.challenges.CodeChallenge.Method method = 1;
+
+  int32 code_length = 2;
+
+  int32 expires_in = 3;
+
+  string canonical_phone_number = 4;
+
+  enum Method {
+    UNKNOWN = 0;
+
+    SMS = 1;
+  }
+}
+
+message CodeSolution {
+  string code = 1;
+}

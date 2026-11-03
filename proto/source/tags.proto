@@ -1,0 +1,34 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: 67db9609b33183b32ff843e79b3108124ea7a31c408aa7cccd8ba27badcbc9c0
+
+syntax = "proto3";
+
+package spotify.list.v1.model.attributes;
+
+option optimize_for = SPEED;
+
+message TagDefinition {
+  string id = 1 [deprecated = true];
+
+  string name = 2;
+
+  optional string internal_id = 3;
+
+  repeated .spotify.list.v1.model.attributes.TagDefinition sub_tags = 4;
+
+  optional int32 tag_id = 5;
+
+  optional int32 count = 6;
+}
+
+message TagManifest {
+  repeated .spotify.list.v1.model.attributes.TagDefinition tags = 1;
+}
+
+message Tags {
+  repeated .spotify.list.v1.model.attributes.Tag tags = 1;
+}
+
+message Tag {
+  optional int32 tag_id = 1;
+}

@@ -1,0 +1,14 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: 998e60543722be9fe87b1c1de1c1d00ccdc30c911d5b75e3108a7eb78d9cb371
+
+syntax = "proto3";
+
+package spotify.collection_cosmos.proto;
+
+option optimize_for = CODE_SIZE;
+
+message Status {
+  int32 code = 1;
+
+  string reason = 2;
+}

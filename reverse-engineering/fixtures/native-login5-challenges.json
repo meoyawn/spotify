@@ -1,0 +1,799 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "taskEntry": "0x1018bdc5c",
+  "worker": "0x1018bdec0",
+  "method": "Original v3 challenge task/worker/callbacks with synthetic observers only.\n\nStandard SHA-1, nonthrowing call_once and weak-control operations use bounded\nproviders. The SMS observer retains original callback clones. Native iteration, validation, captures,\nanswers, duration conversion and continuation gates execute unchanged. No UI,\naccount, original process, request sender or network is supplied.\n",
+  "finalContinuation": "0x1018bfe70",
+  "stopBeforeSend": "0x1018bc39c",
+  "limits": [
+    "Standard call_once provider covers serialized nonthrowing callbacks, not reentrant throws or thread contention",
+    "Weak-control provider models expiration; it does not claim native solver/UI abort acknowledgement",
+    "Original captures and SMS callback clones execute before the synthetic observer retains them",
+    "All response/request objects, clocks, UI answers and owner-release actions are synthetic"
+  ],
+  "cases": [
+    {
+      "responseAtMicroseconds": 123456789,
+      "savedResponseAttempts": 3,
+      "loginContextHex": "00636f6e74657874ff",
+      "name": "empty list completes",
+      "challenges": [],
+      "clocks": [],
+      "actions": [],
+      "responseHex": "1a002a0900636f6e74657874ff",
+      "nativeEvents": [],
+      "nativeClockReads": [],
+      "nativeResult": {
+        "kind": "complete",
+        "elapsedMilliseconds": 0,
+        "request": {
+          "size": 71,
+          "hex": "0a240a1073796e7468657469632d636c69656e74121073796e7468657469632d646576696365120900636f6e74657874ffa206130a0e73796e7468657469632d75736572120100",
+          "sizeProcedure": "0x1018d4480",
+          "serializeProcedure": "0x1018d42b4"
+        }
+      }
+    },
+    {
+      "responseAtMicroseconds": 123456789,
+      "savedResponseAttempts": 3,
+      "loginContextHex": "00636f6e74657874ff",
+      "name": "hashcash exact nanoseconds",
+      "challenges": [
+        {
+          "kind": "hashcash",
+          "prefixHex": "001122",
+          "difficulty": 0
+        }
+      ],
+      "clocks": [
+        100,
+        1234567991
+      ],
+      "actions": [],
+      "responseHex": "1a090a070a050a030011222a0900636f6e74657874ff",
+      "nativeEvents": [
+        {
+          "kind": "hashcash",
+          "prefixHex": "001122",
+          "difficulty": 0
+        }
+      ],
+      "nativeClockReads": [
+        100,
+        1234567991
+      ],
+      "nativeResult": {
+        "kind": "complete",
+        "elapsedMilliseconds": 0,
+        "request": {
+          "size": 104,
+          "hex": "0a240a1073796e7468657469632d636c69656e74121073796e7468657469632d646576696365120900636f6e74657874ff1a1f0a1d0a1b0a103cac7403cd5d510600000000000000001207080110d3f1ec6fa206130a0e73796e7468657469632d75736572120100",
+          "sizeProcedure": "0x1018d4480",
+          "serializeProcedure": "0x1018d42b4"
+        }
+      }
+    },
+    {
+      "responseAtMicroseconds": 123456789,
+      "savedResponseAttempts": 3,
+      "loginContextHex": "00636f6e74657874ff",
+      "name": "sms submit",
+      "challenges": [
+        {
+          "kind": "sms",
+          "method": 1,
+          "codeLength": 6,
+          "expiresInSeconds": 30,
+          "phoneNumber": "+15555550123"
+        }
+      ],
+      "clocks": [
+        1000,
+        2501999
+      ],
+      "actions": [
+        {
+          "kind": "submit",
+          "code": "12\u0000雪"
+        }
+      ],
+      "responseHex": "1a180a16121408011006181e220c2b31353535353535303132332a0900636f6e74657874ff",
+      "nativeEvents": [
+        {
+          "kind": "sms",
+          "method": 1,
+          "codeLength": 6,
+          "phoneNumber": "+15555550123",
+          "expiresInSeconds": 30,
+          "expiresAtMicroseconds": 153456789,
+          "savedResponseAttempts": 3
+        }
+      ],
+      "nativeClockReads": [
+        1000,
+        2501999
+      ],
+      "nativeResult": {
+        "kind": "complete",
+        "elapsedMilliseconds": 2,
+        "request": {
+          "size": 85,
+          "hex": "0a240a1073796e7468657469632d636c69656e74121073796e7468657469632d646576696365120900636f6e74657874ff1a0c0a0a12080a06313200e99baaa206130a0e73796e7468657469632d75736572120100",
+          "sizeProcedure": "0x1018d4480",
+          "serializeProcedure": "0x1018d42b4"
+        }
+      }
+    },
+    {
+      "responseAtMicroseconds": 123456789,
+      "savedResponseAttempts": 3,
+      "loginContextHex": "00636f6e74657874ff",
+      "name": "method zero and zero length accepted",
+      "challenges": [
+        {
+          "kind": "sms",
+          "method": 0,
+          "codeLength": 0,
+          "expiresInSeconds": -1,
+          "phoneNumber": "+15555550123"
+        }
+      ],
+      "clocks": [
+        1000,
+        999
+      ],
+      "actions": [
+        {
+          "kind": "submit",
+          "code": ""
+        }
+      ],
+      "responseHex": "1a1d0a1b121918ffffffffffffffffff01220c2b31353535353535303132332a0900636f6e74657874ff",
+      "nativeEvents": [
+        {
+          "kind": "sms",
+          "method": 0,
+          "codeLength": 0,
+          "phoneNumber": "+15555550123",
+          "expiresInSeconds": -1,
+          "expiresAtMicroseconds": 122456789,
+          "savedResponseAttempts": 3
+        }
+      ],
+      "nativeClockReads": [
+        1000,
+        999
+      ],
+      "nativeResult": {
+        "kind": "complete",
+        "elapsedMilliseconds": 0,
+        "request": {
+          "size": 77,
+          "hex": "0a240a1073796e7468657469632d636c69656e74121073796e7468657469632d646576696365120900636f6e74657874ff1a040a021200a206130a0e73796e7468657469632d75736572120100",
+          "sizeProcedure": "0x1018d4480",
+          "serializeProcedure": "0x1018d42b4"
+        }
+      }
+    },
+    {
+      "responseAtMicroseconds": 123456789,
+      "savedResponseAttempts": 3,
+      "loginContextHex": "00636f6e74657874ff",
+      "name": "method 2 rejected",
+      "challenges": [
+        {
+          "kind": "sms",
+          "method": 2,
+          "codeLength": 6,
+          "expiresInSeconds": 30,
+          "phoneNumber": "+15555550123"
+        }
+      ],
+      "clocks": [],
+      "actions": [],
+      "responseHex": "1a180a16121408021006181e220c2b31353535353535303132332a0900636f6e74657874ff",
+      "nativeEvents": [],
+      "nativeClockReads": [],
+      "nativeResult": {
+        "kind": "failure",
+        "code": 2
+      }
+    },
+    {
+      "responseAtMicroseconds": 123456789,
+      "savedResponseAttempts": 3,
+      "loginContextHex": "00636f6e74657874ff",
+      "name": "method -1 rejected",
+      "challenges": [
+        {
+          "kind": "sms",
+          "method": -1,
+          "codeLength": 6,
+          "expiresInSeconds": 30,
+          "phoneNumber": "+15555550123"
+        }
+      ],
+      "clocks": [],
+      "actions": [],
+      "responseHex": "1a210a1f121d08ffffffffffffffffff011006181e220c2b31353535353535303132332a0900636f6e74657874ff",
+      "nativeEvents": [],
+      "nativeClockReads": [],
+      "nativeResult": {
+        "kind": "failure",
+        "code": 2
+      }
+    },
+    {
+      "responseAtMicroseconds": 123456789,
+      "savedResponseAttempts": 3,
+      "loginContextHex": "00636f6e74657874ff",
+      "name": "negative length rejected",
+      "challenges": [
+        {
+          "kind": "sms",
+          "method": 1,
+          "codeLength": -1,
+          "expiresInSeconds": 30,
+          "phoneNumber": "+15555550123"
+        }
+      ],
+      "clocks": [],
+      "actions": [],
+      "responseHex": "1a210a1f121d080110ffffffffffffffffff01181e220c2b31353535353535303132332a0900636f6e74657874ff",
+      "nativeEvents": [],
+      "nativeClockReads": [],
+      "nativeResult": {
+        "kind": "failure",
+        "code": 2
+      }
+    },
+    {
+      "responseAtMicroseconds": 123456789,
+      "savedResponseAttempts": 3,
+      "loginContextHex": "00636f6e74657874ff",
+      "name": "sms skip appends nothing",
+      "challenges": [
+        {
+          "kind": "sms",
+          "method": 1,
+          "codeLength": 6,
+          "expiresInSeconds": 30,
+          "phoneNumber": "+15555550123"
+        }
+      ],
+      "clocks": [
+        1000,
+        1501999
+      ],
+      "actions": [
+        {
+          "kind": "skip"
+        }
+      ],
+      "responseHex": "1a180a16121408011006181e220c2b31353535353535303132332a0900636f6e74657874ff",
+      "nativeEvents": [
+        {
+          "kind": "sms",
+          "method": 1,
+          "codeLength": 6,
+          "phoneNumber": "+15555550123",
+          "expiresInSeconds": 30,
+          "expiresAtMicroseconds": 153456789,
+          "savedResponseAttempts": 3
+        }
+      ],
+      "nativeClockReads": [
+        1000,
+        1501999
+      ],
+      "nativeResult": {
+        "kind": "complete",
+        "elapsedMilliseconds": 1,
+        "request": {
+          "size": 71,
+          "hex": "0a240a1073796e7468657469632d636c69656e74121073796e7468657469632d646576696365120900636f6e74657874ffa206130a0e73796e7468657469632d75736572120100",
+          "sizeProcedure": "0x1018d4480",
+          "serializeProcedure": "0x1018d42b4"
+        }
+      }
+    },
+    {
+      "responseAtMicroseconds": 123456789,
+      "savedResponseAttempts": 3,
+      "loginContextHex": "00636f6e74657874ff",
+      "name": "submit wins shared once gate",
+      "challenges": [
+        {
+          "kind": "sms",
+          "method": 1,
+          "codeLength": 6,
+          "expiresInSeconds": 30,
+          "phoneNumber": "+15555550123"
+        }
+      ],
+      "clocks": [
+        1000,
+        2501999
+      ],
+      "actions": [
+        {
+          "kind": "submit",
+          "code": "first"
+        },
+        {
+          "kind": "submit",
+          "code": "second"
+        },
+        {
+          "kind": "skip"
+        }
+      ],
+      "responseHex": "1a180a16121408011006181e220c2b31353535353535303132332a0900636f6e74657874ff",
+      "nativeEvents": [
+        {
+          "kind": "sms",
+          "method": 1,
+          "codeLength": 6,
+          "phoneNumber": "+15555550123",
+          "expiresInSeconds": 30,
+          "expiresAtMicroseconds": 153456789,
+          "savedResponseAttempts": 3
+        }
+      ],
+      "nativeClockReads": [
+        1000,
+        2501999
+      ],
+      "nativeResult": {
+        "kind": "complete",
+        "elapsedMilliseconds": 2,
+        "request": {
+          "size": 84,
+          "hex": "0a240a1073796e7468657469632d636c69656e74121073796e7468657469632d646576696365120900636f6e74657874ff1a0b0a0912070a056669727374a206130a0e73796e7468657469632d75736572120100",
+          "sizeProcedure": "0x1018d4480",
+          "serializeProcedure": "0x1018d42b4"
+        }
+      }
+    },
+    {
+      "responseAtMicroseconds": 123456789,
+      "savedResponseAttempts": 3,
+      "loginContextHex": "00636f6e74657874ff",
+      "name": "skip wins shared once gate",
+      "challenges": [
+        {
+          "kind": "sms",
+          "method": 1,
+          "codeLength": 6,
+          "expiresInSeconds": 30,
+          "phoneNumber": "+15555550123"
+        }
+      ],
+      "clocks": [
+        1000,
+        2501999
+      ],
+      "actions": [
+        {
+          "kind": "skip"
+        },
+        {
+          "kind": "submit",
+          "code": "later"
+        }
+      ],
+      "responseHex": "1a180a16121408011006181e220c2b31353535353535303132332a0900636f6e74657874ff",
+      "nativeEvents": [
+        {
+          "kind": "sms",
+          "method": 1,
+          "codeLength": 6,
+          "phoneNumber": "+15555550123",
+          "expiresInSeconds": 30,
+          "expiresAtMicroseconds": 153456789,
+          "savedResponseAttempts": 3
+        }
+      ],
+      "nativeClockReads": [
+        1000,
+        2501999
+      ],
+      "nativeResult": {
+        "kind": "complete",
+        "elapsedMilliseconds": 2,
+        "request": {
+          "size": 71,
+          "hex": "0a240a1073796e7468657469632d636c69656e74121073796e7468657469632d646576696365120900636f6e74657874ffa206130a0e73796e7468657469632d75736572120100",
+          "sizeProcedure": "0x1018d4480",
+          "serializeProcedure": "0x1018d42b4"
+        }
+      }
+    },
+    {
+      "responseAtMicroseconds": 123456789,
+      "savedResponseAttempts": 3,
+      "loginContextHex": "00636f6e74657874ff",
+      "name": "released owner blocks continuation",
+      "challenges": [
+        {
+          "kind": "sms",
+          "method": 1,
+          "codeLength": 6,
+          "expiresInSeconds": 30,
+          "phoneNumber": "+15555550123"
+        },
+        {
+          "kind": "hashcash",
+          "prefixHex": "ff",
+          "difficulty": 0
+        }
+      ],
+      "clocks": [
+        1000,
+        2501999
+      ],
+      "actions": [
+        {
+          "kind": "release"
+        },
+        {
+          "kind": "submit",
+          "code": "late"
+        },
+        {
+          "kind": "skip"
+        }
+      ],
+      "responseHex": "1a1f0a16121408011006181e220c2b31353535353535303132330a050a030a01ff2a0900636f6e74657874ff",
+      "nativeEvents": [
+        {
+          "kind": "sms",
+          "method": 1,
+          "codeLength": 6,
+          "phoneNumber": "+15555550123",
+          "expiresInSeconds": 30,
+          "expiresAtMicroseconds": 153456789,
+          "savedResponseAttempts": 3
+        },
+        {
+          "kind": "ownerReleased"
+        }
+      ],
+      "nativeClockReads": [
+        1000,
+        2501999
+      ],
+      "nativeResult": {
+        "kind": "pending"
+      }
+    },
+    {
+      "responseAtMicroseconds": 123456789,
+      "savedResponseAttempts": 3,
+      "loginContextHex": "00636f6e74657874ff",
+      "name": "unknown challenge stalls",
+      "challenges": [
+        {
+          "kind": "unset"
+        }
+      ],
+      "clocks": [],
+      "actions": [],
+      "responseHex": "1a020a002a0900636f6e74657874ff",
+      "nativeEvents": [],
+      "nativeClockReads": [],
+      "nativeResult": {
+        "kind": "pending"
+      }
+    },
+    {
+      "responseAtMicroseconds": 123456789,
+      "savedResponseAttempts": 3,
+      "loginContextHex": "00636f6e74657874ff",
+      "name": "ordered hashcash sms hashcash",
+      "challenges": [
+        {
+          "kind": "hashcash",
+          "prefixHex": "abcd",
+          "difficulty": 8
+        },
+        {
+          "kind": "sms",
+          "method": 1,
+          "codeLength": 6,
+          "expiresInSeconds": 30,
+          "phoneNumber": "+15555550123"
+        },
+        {
+          "kind": "hashcash",
+          "prefixHex": "0011",
+          "difficulty": 32
+        }
+      ],
+      "clocks": [
+        100,
+        201,
+        300,
+        2500000,
+        3000000,
+        4000001
+      ],
+      "actions": [
+        {
+          "kind": "submit",
+          "code": "42"
+        }
+      ],
+      "responseHex": "1a2c0a080a060a02abcd10080a16121408011006181e220c2b31353535353535303132330a080a060a02001110202a0900636f6e74657874ff",
+      "nativeEvents": [
+        {
+          "kind": "hashcash",
+          "prefixHex": "abcd",
+          "difficulty": 8
+        },
+        {
+          "kind": "sms",
+          "method": 1,
+          "codeLength": 6,
+          "phoneNumber": "+15555550123",
+          "expiresInSeconds": 30,
+          "expiresAtMicroseconds": 153456789,
+          "savedResponseAttempts": 3
+        },
+        {
+          "kind": "hashcash",
+          "prefixHex": "0011",
+          "difficulty": 32
+        }
+      ],
+      "nativeClockReads": [
+        100,
+        201,
+        300,
+        2500000,
+        3000000,
+        4000001
+      ],
+      "nativeResult": {
+        "kind": "complete",
+        "elapsedMilliseconds": 2,
+        "request": {
+          "size": 135,
+          "hex": "0a240a1073796e7468657469632d636c69656e74121073796e7468657469632d646576696365120900636f6e74657874ff1a3e0a180a160a103cac7403cd5d51580000000000000052120210650a0612040a0234320a1a0a180a103cac7403cd5d51060000000000000000120410c1843da206130a0e73796e7468657469632d75736572120100",
+          "sizeProcedure": "0x1018d4480",
+          "serializeProcedure": "0x1018d42b4"
+        }
+      }
+    },
+    {
+      "responseAtMicroseconds": 123456789,
+      "savedResponseAttempts": 3,
+      "loginContextHex": "00636f6e74657874ff",
+      "name": "sms skip advances to hashcash",
+      "challenges": [
+        {
+          "kind": "sms",
+          "method": 1,
+          "codeLength": 6,
+          "expiresInSeconds": 30,
+          "phoneNumber": "+15555550123"
+        },
+        {
+          "kind": "hashcash",
+          "prefixHex": "001122",
+          "difficulty": 0
+        }
+      ],
+      "clocks": [
+        0,
+        1500000,
+        2000000,
+        2999999
+      ],
+      "actions": [
+        {
+          "kind": "skip"
+        }
+      ],
+      "responseHex": "1a210a16121408011006181e220c2b31353535353535303132330a070a050a030011222a0900636f6e74657874ff",
+      "nativeEvents": [
+        {
+          "kind": "sms",
+          "method": 1,
+          "codeLength": 6,
+          "phoneNumber": "+15555550123",
+          "expiresInSeconds": 30,
+          "expiresAtMicroseconds": 153456789,
+          "savedResponseAttempts": 3
+        },
+        {
+          "kind": "hashcash",
+          "prefixHex": "001122",
+          "difficulty": 0
+        }
+      ],
+      "nativeClockReads": [
+        0,
+        1500000,
+        2000000,
+        2999999
+      ],
+      "nativeResult": {
+        "kind": "complete",
+        "elapsedMilliseconds": 1,
+        "request": {
+          "size": 101,
+          "hex": "0a240a1073796e7468657469632d636c69656e74121073796e7468657469632d646576696365120900636f6e74657874ff1a1c0a1a0a180a103cac7403cd5d51060000000000000000120410bf843da206130a0e73796e7468657469632d75736572120100",
+          "sizeProcedure": "0x1018d4480",
+          "serializeProcedure": "0x1018d42b4"
+        }
+      }
+    },
+    {
+      "responseAtMicroseconds": 123456789,
+      "savedResponseAttempts": 3,
+      "loginContextHex": "00636f6e74657874ff",
+      "name": "validation occurs at sequential position",
+      "challenges": [
+        {
+          "kind": "hashcash",
+          "prefixHex": "01",
+          "difficulty": 0
+        },
+        {
+          "kind": "sms",
+          "method": 99,
+          "codeLength": 6,
+          "expiresInSeconds": 30,
+          "phoneNumber": "+15555550123"
+        }
+      ],
+      "clocks": [
+        1000,
+        2000
+      ],
+      "actions": [],
+      "responseHex": "1a1f0a050a030a01010a16121408631006181e220c2b31353535353535303132332a0900636f6e74657874ff",
+      "nativeEvents": [
+        {
+          "kind": "hashcash",
+          "prefixHex": "01",
+          "difficulty": 0
+        }
+      ],
+      "nativeClockReads": [
+        1000,
+        2000
+      ],
+      "nativeResult": {
+        "kind": "failure",
+        "code": 2
+      }
+    },
+    {
+      "responseAtMicroseconds": 123456789,
+      "savedResponseAttempts": 3,
+      "loginContextHex": "00636f6e74657874ff",
+      "name": "each SMS owns its own once gate",
+      "challenges": [
+        {
+          "kind": "sms",
+          "method": 1,
+          "codeLength": 6,
+          "expiresInSeconds": 30,
+          "phoneNumber": "+15555550123"
+        },
+        {
+          "kind": "sms",
+          "method": 0,
+          "codeLength": 6,
+          "expiresInSeconds": 30,
+          "phoneNumber": "+15555550123"
+        }
+      ],
+      "clocks": [
+        1000,
+        2000,
+        3000,
+        4000
+      ],
+      "actions": [
+        {
+          "kind": "submit",
+          "code": "first"
+        },
+        {
+          "kind": "skip",
+          "smsIndex": 0
+        },
+        {
+          "kind": "submit",
+          "code": "second",
+          "smsIndex": 1
+        }
+      ],
+      "responseHex": "1a2e0a16121408011006181e220c2b31353535353535303132330a1412121006181e220c2b31353535353535303132332a0900636f6e74657874ff",
+      "nativeEvents": [
+        {
+          "kind": "sms",
+          "method": 1,
+          "codeLength": 6,
+          "phoneNumber": "+15555550123",
+          "expiresInSeconds": 30,
+          "expiresAtMicroseconds": 153456789,
+          "savedResponseAttempts": 3
+        },
+        {
+          "kind": "sms",
+          "method": 0,
+          "codeLength": 6,
+          "phoneNumber": "+15555550123",
+          "expiresInSeconds": 30,
+          "expiresAtMicroseconds": 153456789,
+          "savedResponseAttempts": 3
+        }
+      ],
+      "nativeClockReads": [
+        1000,
+        2000,
+        3000,
+        4000
+      ],
+      "nativeResult": {
+        "kind": "complete",
+        "elapsedMilliseconds": 0,
+        "request": {
+          "size": 96,
+          "hex": "0a240a1073796e7468657469632d636c69656e74121073796e7468657469632d646576696365120900636f6e74657874ff1a170a0912070a0566697273740a0a12080a067365636f6e64a206130a0e73796e7468657469632d75736572120100",
+          "sizeProcedure": "0x1018d4480",
+          "serializeProcedure": "0x1018d42b4"
+        }
+      }
+    },
+    {
+      "responseAtMicroseconds": 123456789,
+      "savedResponseAttempts": 3,
+      "loginContextHex": "00636f6e74657874ff",
+      "name": "released owner while hashcash blocks next step",
+      "challenges": [
+        {
+          "kind": "hashcash",
+          "prefixHex": "001122",
+          "difficulty": 0
+        },
+        {
+          "kind": "sms",
+          "method": 1,
+          "codeLength": 6,
+          "expiresInSeconds": 30,
+          "phoneNumber": "+15555550123"
+        }
+      ],
+      "clocks": [
+        1000,
+        2000
+      ],
+      "releaseAtHashcash": true,
+      "actions": [],
+      "responseHex": "1a210a070a050a030011220a16121408011006181e220c2b31353535353535303132332a0900636f6e74657874ff",
+      "nativeEvents": [
+        {
+          "kind": "hashcash",
+          "prefixHex": "001122",
+          "difficulty": 0
+        },
+        {
+          "kind": "ownerReleased"
+        }
+      ],
+      "nativeClockReads": [
+        1000,
+        2000
+      ],
+      "nativeResult": {
+        "kind": "pending"
+      }
+    }
+  ]
+}

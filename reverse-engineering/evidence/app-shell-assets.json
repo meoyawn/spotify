@@ -1,0 +1,528 @@
+{
+  "archive": "/Applications/Spotify.app/Contents/Resources/Apps/xpui.spa",
+  "archiveSha256": "20038c2af5d9bb785c3181c3e9a04073b43eb501a72950b19d1a2a085b9a18df",
+  "rendererSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+  "conversion": "fonttools 4.60.1; WOFF2 decompression to SFNT; SVG path contours to quadratic TTF glyphs",
+  "fonts": [
+    {
+      "member": "fonts/SpotifyMixUI-Regular.woff2",
+      "originalSha256": "91623228bbcef3805f91d3df656132fcf95b5572bf345039eedc91a136b7ed09",
+      "output": "assets/app-shell/fonts/SpotifyMixUI-Regular.ttf",
+      "sha256": "97b8d1b10e278a5bc158dfe6c328b2e60a201674fba9ae3bc832a072b72429e9"
+    },
+    {
+      "member": "fonts/SpotifyMixUI-Bold.woff2",
+      "originalSha256": "4252606cf3c6b177ae87bf37e83c73db1895a99d44b9c6965309cd343124c9ba",
+      "output": "assets/app-shell/fonts/SpotifyMixUI-Bold.ttf",
+      "sha256": "08c46eb53dd52749f38c8393057d79c7acd8b70a5903b124b70db4f5ff036d2c"
+    },
+    {
+      "member": "fonts/SpotifyMixUITitle-Bold.woff2",
+      "originalSha256": "9164e08c61e16f0dfb8390517c3c0730252208aebf0e1c8b924b67bf47d368db",
+      "output": "assets/app-shell/fonts/SpotifyMixUITitle-Bold.ttf",
+      "sha256": "b6fd1ffe80381e4f4f09caa1a8a2019d93330dc6cc4fb056abb884523620f8cc"
+    },
+    {
+      "member": "fonts/SpotifyMixUITitle-Extrabold.woff2",
+      "originalSha256": "85564946a706be50f09f4602bb41d3c21aaa57bd492603a269b2d30657ddf668",
+      "output": "assets/app-shell/fonts/SpotifyMixUITitle-Extrabold.ttf",
+      "sha256": "893356bcc52f8b48b6f9c2af965c1aec76908987b753d1fde5027ca4a7b7b8c0"
+    }
+  ],
+  "icons": [
+    {
+      "name": "back",
+      "codepoint": 57344,
+      "viewBox": "0 0 24 24",
+      "advanceWidth": 1024,
+      "leftSideBearing": 228,
+      "paths": [
+        {
+          "d": "M15.957 2.793a1 1 0 0 1 0 1.414L8.164 12l7.793 7.793a1 1 0 1 1-1.414 1.414L5.336 12l9.207-9.207a1 1 0 0 1 1.414 0",
+          "fillRule": null,
+          "transform": null,
+          "location": {
+            "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+            "sourceSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+            "sourceOffsetBytes": 8163540
+          }
+        }
+      ]
+    },
+    {
+      "name": "forward",
+      "codepoint": 57345,
+      "viewBox": "0 0 24 24",
+      "advanceWidth": 1024,
+      "leftSideBearing": 329,
+      "paths": [
+        {
+          "d": "M8.043 2.793a1 1 0 0 0 0 1.414L15.836 12l-7.793 7.793a1 1 0 1 0 1.414 1.414L18.664 12 9.457 2.793a1 1 0 0 0-1.414 0",
+          "fillRule": null,
+          "transform": null,
+          "location": {
+            "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+            "sourceSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+            "sourceOffsetBytes": 8164324
+          }
+        }
+      ]
+    },
+    {
+      "name": "home",
+      "codepoint": 57346,
+      "viewBox": "0 0 24 24",
+      "advanceWidth": 1024,
+      "leftSideBearing": 85,
+      "paths": [
+        {
+          "d": "M12.5 3.247a1 1 0 0 0-1 0L4 7.577V20h4.5v-6a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v6H20V7.577zm-2-1.732a3 3 0 0 1 3 0l7.5 4.33a2 2 0 0 1 1 1.732V21a1 1 0 0 1-1 1h-6.5a1 1 0 0 1-1-1v-6h-3v6a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.577a2 2 0 0 1 1-1.732z",
+          "fillRule": null,
+          "transform": null,
+          "location": {
+            "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+            "sourceSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+            "sourceOffsetBytes": 8206956
+          }
+        }
+      ]
+    },
+    {
+      "name": "search",
+      "codepoint": 57347,
+      "viewBox": "0 0 24 24",
+      "advanceWidth": 1024,
+      "leftSideBearing": 48,
+      "paths": [
+        {
+          "d": "M10.533 1.27893C5.35215 1.27893 1.12598 5.41887 1.12598 10.5579C1.12598 15.697 5.35215 19.8369 10.533 19.8369C12.767 19.8369 14.8235 19.0671 16.4402 17.7794L20.7929 22.132C21.1834 22.5226 21.8166 22.5226 22.2071 22.132C22.5976 21.7415 22.5976 21.1083 22.2071 20.7178L17.8634 16.3741C19.1616 14.7849 19.94 12.7634 19.94 10.5579C19.94 5.41887 15.7138 1.27893 10.533 1.27893ZM3.12598 10.5579C3.12598 6.55226 6.42768 3.27893 10.533 3.27893C14.6383 3.27893 17.94 6.55226 17.94 10.5579C17.94 14.5636 14.6383 17.8369 10.533 17.8369C6.42768 17.8369 3.12598 14.5636 3.12598 10.5579Z",
+          "fillRule": null,
+          "transform": null,
+          "location": {
+            "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+            "sourceSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+            "sourceOffsetBytes": 8236959
+          }
+        }
+      ]
+    },
+    {
+      "name": "browse",
+      "codepoint": 57348,
+      "viewBox": "0 0 24 24",
+      "advanceWidth": 1024,
+      "leftSideBearing": 54,
+      "paths": [
+        {
+          "d": "M15 15.5c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2",
+          "fillRule": null,
+          "transform": null,
+          "location": {
+            "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+            "sourceSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+            "sourceOffsetBytes": 2729228
+          }
+        },
+        {
+          "d": "M1.513 9.37A1 1 0 0 1 2.291 9h19.418a1 1 0 0 1 .979 1.208l-2.339 11a1 1 0 0 1-.978.792H4.63a1 1 0 0 1-.978-.792l-2.339-11a1 1 0 0 1 .201-.837zM3.525 11l1.913 9h13.123l1.913-9zM4 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v4h-2V3H6v3H4z",
+          "fillRule": null,
+          "transform": null,
+          "location": {
+            "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+            "sourceSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+            "sourceOffsetBytes": 2729303
+          }
+        }
+      ]
+    },
+    {
+      "name": "collapseLibrary",
+      "codepoint": 57349,
+      "viewBox": "0 0 16 16",
+      "advanceWidth": 1024,
+      "leftSideBearing": 0,
+      "paths": [
+        {
+          "d": "M10.97 5.47a.75.75 0 1 1 1.06 1.06L10.56 8l1.47 1.47a.75.75 0 1 1-1.06 1.06l-2-2a.75.75 0 0 1 0-1.06z",
+          "fillRule": null,
+          "transform": null,
+          "location": {
+            "source": ".local/native-scripts/50566ac1f672b379017b59bd0de112998065f7ce7f5a7f9c8c8127d7c5220caa.js",
+            "sourceSha256": "50566ac1f672b379017b59bd0de112998065f7ce7f5a7f9c8c8127d7c5220caa",
+            "sourceOffsetBytes": 10413
+          }
+        },
+        {
+          "d": "M1 0a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1zm.5 1.5H5v13H1.5zm13 13h-8v-13h8z",
+          "fillRule": null,
+          "transform": null,
+          "location": {
+            "source": ".local/native-scripts/50566ac1f672b379017b59bd0de112998065f7ce7f5a7f9c8c8127d7c5220caa.js",
+            "sourceSha256": "50566ac1f672b379017b59bd0de112998065f7ce7f5a7f9c8c8127d7c5220caa",
+            "sourceOffsetBytes": 10526
+          }
+        }
+      ]
+    },
+    {
+      "name": "expandLibrary",
+      "codepoint": 57350,
+      "viewBox": "0 0 16 16",
+      "advanceWidth": 1024,
+      "leftSideBearing": 80,
+      "paths": [
+        {
+          "d": "M6.53 9.47a.75.75 0 0 1 0 1.06l-2.72 2.72h1.018a.75.75 0 0 1 0 1.5H1.25v-3.579a.75.75 0 0 1 1.5 0v1.018l2.72-2.72a.75.75 0 0 1 1.06 0zm2.94-2.94a.75.75 0 0 1 0-1.06l2.72-2.72h-1.018a.75.75 0 1 1 0-1.5h3.578v3.579a.75.75 0 0 1-1.5 0V3.81l-2.72 2.72a.75.75 0 0 1-1.06 0",
+          "fillRule": null,
+          "transform": null,
+          "location": {
+            "source": ".local/native-scripts/50566ac1f672b379017b59bd0de112998065f7ce7f5a7f9c8c8127d7c5220caa.js",
+            "sourceSha256": "50566ac1f672b379017b59bd0de112998065f7ce7f5a7f9c8c8127d7c5220caa",
+            "sourceOffsetBytes": 5887
+          }
+        }
+      ]
+    },
+    {
+      "name": "previous",
+      "codepoint": 57351,
+      "viewBox": "0 0 16 16",
+      "advanceWidth": 1024,
+      "leftSideBearing": 64,
+      "paths": [
+        {
+          "d": "M3.3 1a.7.7 0 0 1 .7.7v5.15l9.95-5.744a.7.7 0 0 1 1.05.606v12.575a.7.7 0 0 1-1.05.607L4 9.149V14.3a.7.7 0 0 1-.7.7H1.7a.7.7 0 0 1-.7-.7V1.7a.7.7 0 0 1 .7-.7z",
+          "fillRule": null,
+          "transform": null,
+          "location": {
+            "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+            "sourceSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+            "sourceOffsetBytes": 8239153
+          }
+        }
+      ]
+    },
+    {
+      "name": "play",
+      "codepoint": 57352,
+      "viewBox": "0 0 16 16",
+      "advanceWidth": 1024,
+      "leftSideBearing": 192,
+      "paths": [
+        {
+          "d": "M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288z",
+          "fillRule": null,
+          "transform": null,
+          "location": {
+            "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+            "sourceSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+            "sourceOffsetBytes": 8226134
+          }
+        }
+      ]
+    },
+    {
+      "name": "next",
+      "codepoint": 57353,
+      "viewBox": "0 0 16 16",
+      "advanceWidth": 1024,
+      "leftSideBearing": 64,
+      "paths": [
+        {
+          "d": "M12.7 1a.7.7 0 0 0-.7.7v5.15L2.05 1.107A.7.7 0 0 0 1 1.712v12.575a.7.7 0 0 0 1.05.607L12 9.149V14.3a.7.7 0 0 0 .7.7h1.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7z",
+          "fillRule": null,
+          "transform": null,
+          "location": {
+            "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+            "sourceSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+            "sourceOffsetBytes": 8240035
+          }
+        }
+      ]
+    },
+    {
+      "name": "queue",
+      "codepoint": 57354,
+      "viewBox": "0 0 16 16",
+      "advanceWidth": 1024,
+      "leftSideBearing": 64,
+      "paths": [
+        {
+          "d": "M15 15H1v-1.5h14zm0-4.5H1V9h14zm-14-7A2.5 2.5 0 0 1 3.5 1h9a2.5 2.5 0 0 1 0 5h-9A2.5 2.5 0 0 1 1 3.5m2.5-1a1 1 0 0 0 0 2h9a1 1 0 1 0 0-2z",
+          "fillRule": null,
+          "transform": null,
+          "location": {
+            "source": ".local/native-scripts/8a4c43bb1c7b48c11cf13b00a8a877ea615732ae0d74e4b971f734cce871bbed.js",
+            "sourceSha256": "8a4c43bb1c7b48c11cf13b00a8a877ea615732ae0d74e4b971f734cce871bbed",
+            "sourceOffsetBytes": 22466
+          }
+        }
+      ]
+    },
+    {
+      "name": "devices",
+      "codepoint": 57355,
+      "viewBox": "0 0 16 16",
+      "advanceWidth": 1024,
+      "leftSideBearing": 0,
+      "paths": [
+        {
+          "d": "M6 2.75C6 1.784 6.784 1 7.75 1h6.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15h-6.5A1.75 1.75 0 0 1 6 13.25zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h6.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25zm-6 0a.25.25 0 0 0-.25.25v6.5c0 .138.112.25.25.25H4V11H1.75A1.75 1.75 0 0 1 0 9.25v-6.5C0 1.784.784 1 1.75 1H4v1.5zM4 15H2v-1.5h2z",
+          "fillRule": null,
+          "transform": null,
+          "location": {
+            "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+            "sourceSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+            "sourceOffsetBytes": 8170939
+          }
+        },
+        {
+          "d": "M13 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0m-1-5a1 1 0 1 1-2 0 1 1 0 0 1 2 0",
+          "fillRule": null,
+          "transform": null,
+          "location": {
+            "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+            "sourceSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+            "sourceOffsetBytes": 8171307
+          }
+        }
+      ]
+    },
+    {
+      "name": "volume",
+      "codepoint": 57356,
+      "viewBox": "0 0 16 16",
+      "advanceWidth": 1024,
+      "leftSideBearing": 16,
+      "paths": [
+        {
+          "d": "M9.741.85a.75.75 0 0 1 .375.65v13a.75.75 0 0 1-1.125.65l-6.925-4a3.64 3.64 0 0 1-1.33-4.967 3.64 3.64 0 0 1 1.33-1.332l6.925-4a.75.75 0 0 1 .75 0zm-6.924 5.3a2.14 2.14 0 0 0 0 3.7l5.8 3.35V2.8zm8.683 4.29V5.56a2.75 2.75 0 0 1 0 4.88",
+          "fillRule": null,
+          "transform": null,
+          "location": {
+            "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+            "sourceSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+            "sourceOffsetBytes": 8262375
+          }
+        },
+        {
+          "d": "M11.5 13.614a5.752 5.752 0 0 0 0-11.228v1.55a4.252 4.252 0 0 1 0 8.127z",
+          "fillRule": null,
+          "transform": null,
+          "location": {
+            "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+            "sourceSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+            "sourceOffsetBytes": 8262619
+          }
+        }
+      ]
+    },
+    {
+      "name": "homeFilled",
+      "codepoint": 57357,
+      "viewBox": "0 0 24 24",
+      "advanceWidth": 1024,
+      "leftSideBearing": 85,
+      "paths": [
+        {
+          "d": "M13.5 1.515a3 3 0 0 0-3 0L3 5.845a2 2 0 0 0-1 1.732V21a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6h4v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V7.577a2 2 0 0 0-1-1.732z",
+          "location": {
+            "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+            "sourceSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+            "sourceOffsetBytes": 2726189
+          }
+        }
+      ]
+    },
+    {
+      "name": "brand",
+      "codepoint": 57358,
+      "viewBox": "0 0 24 24",
+      "advanceWidth": 1024,
+      "leftSideBearing": -2,
+      "paths": [
+        {
+          "d": "M13.427.01C6.805-.253 1.224 4.902.961 11.524.698 18.147 5.853 23.728 12.476 23.99c6.622.263 12.203-4.892 12.466-11.514S20.049.272 13.427.01m5.066 17.579a.717.717 0 0 1-.977.268 14.4 14.4 0 0 0-5.138-1.747 14.4 14.4 0 0 0-5.42.263.717.717 0 0 1-.338-1.392c1.95-.474 3.955-.571 5.958-.29 2.003.282 3.903.928 5.647 1.92a.717.717 0 0 1 .268.978m1.577-3.15a.93.93 0 0 1-1.262.376 17.7 17.7 0 0 0-5.972-1.96 17.7 17.7 0 0 0-6.281.238.93.93 0 0 1-1.11-.71.93.93 0 0 1 .71-1.11 19.5 19.5 0 0 1 6.94-.262 19.5 19.5 0 0 1 6.599 2.165c.452.245.62.81.376 1.263m1.748-3.551a1.147 1.147 0 0 1-1.546.488 21.4 21.4 0 0 0-6.918-2.208 21.4 21.4 0 0 0-7.259.215 1.146 1.146 0 0 1-.456-2.246 23.7 23.7 0 0 1 8.034-.24 23.7 23.7 0 0 1 7.657 2.445c.561.292.78.984.488 1.546",
+          "transform": "translate(-0.95,0)",
+          "location": {
+            "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+            "sourceSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+            "sourceOffsetBytes": 8281624
+          }
+        }
+      ]
+    },
+    {
+      "name": "pause",
+      "codepoint": 57359,
+      "viewBox": "0 0 16 16",
+      "advanceWidth": 1024,
+      "leftSideBearing": 128,
+      "paths": [
+        {
+          "d": "M2.7 1a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7zm8 0a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7z",
+          "location": {
+            "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+            "sourceSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+            "sourceOffsetBytes": 8221171
+          }
+        }
+      ]
+    },
+    {
+      "name": "close",
+      "codepoint": 57360,
+      "viewBox": "0 0 24 24",
+      "advanceWidth": 1024,
+      "leftSideBearing": 128,
+      "paths": [
+        {
+          "d": "M3.293 3.293a1 1 0 0 1 1.414 0L12 10.586l7.293-7.293a1 1 0 1 1 1.414 1.414L13.414 12l7.293 7.293a1 1 0 0 1-1.414 1.414L12 13.414l-7.293 7.293a1 1 0 0 1-1.414-1.414L10.586 12 3.293 4.707a1 1 0 0 1 0-1.414",
+          "location": {
+            "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+            "sourceSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+            "sourceOffsetBytes": 8267243
+          }
+        }
+      ]
+    },
+    {
+      "name": "shuffle",
+      "codepoint": 57361,
+      "viewBox": "0 0 16 16",
+      "advanceWidth": 1024,
+      "leftSideBearing": 0,
+      "paths": [
+        {
+          "d": "M13.151.922a.75.75 0 1 0-1.06 1.06L13.109 3H11.16a3.75 3.75 0 0 0-2.873 1.34l-6.173 7.356A2.25 2.25 0 0 1 .39 12.5H0V14h.391a3.75 3.75 0 0 0 2.873-1.34l6.173-7.356a2.25 2.25 0 0 1 1.724-.804h1.947l-1.017 1.018a.75.75 0 0 0 1.06 1.06L15.98 3.75zM.391 3.5H0V2h.391c1.109 0 2.16.49 2.873 1.34L4.89 5.277l-.979 1.167-1.796-2.14A2.25 2.25 0 0 0 .39 3.5z",
+          "location": {
+            "source": ".local/native-scripts/5f48b601fba02bb9440ba52a77c83bb9c6726d0fd78d1c4e642e82ac2e9d38ae.js",
+            "sourceSha256": "5f48b601fba02bb9440ba52a77c83bb9c6726d0fd78d1c4e642e82ac2e9d38ae",
+            "sourceOffsetBytes": 261
+          }
+        },
+        {
+          "d": "m7.5 10.723.98-1.167.957 1.14a2.25 2.25 0 0 0 1.724.804h1.947l-1.017-1.018a.75.75 0 1 1 1.06-1.06l2.829 2.828-2.829 2.828a.75.75 0 1 1-1.06-1.06L13.109 13H11.16a3.75 3.75 0 0 1-2.873-1.34l-.787-.938z",
+          "location": {
+            "source": ".local/native-scripts/5f48b601fba02bb9440ba52a77c83bb9c6726d0fd78d1c4e642e82ac2e9d38ae.js",
+            "sourceSha256": "5f48b601fba02bb9440ba52a77c83bb9c6726d0fd78d1c4e642e82ac2e9d38ae",
+            "sourceOffsetBytes": 621
+          }
+        }
+      ]
+    },
+    {
+      "name": "repeat",
+      "codepoint": 57362,
+      "viewBox": "0 0 16 16",
+      "advanceWidth": 1024,
+      "leftSideBearing": 0,
+      "paths": [
+        {
+          "d": "M0 4.75A3.75 3.75 0 0 1 3.75 1h8.5A3.75 3.75 0 0 1 16 4.75v5a3.75 3.75 0 0 1-3.75 3.75H9.81l1.018 1.018a.75.75 0 1 1-1.06 1.06L6.939 12.75l2.829-2.828a.75.75 0 1 1 1.06 1.06L9.811 12h2.439a2.25 2.25 0 0 0 2.25-2.25v-5a2.25 2.25 0 0 0-2.25-2.25h-8.5A2.25 2.25 0 0 0 1.5 4.75v5A2.25 2.25 0 0 0 3.75 12H5v1.5H3.75A3.75 3.75 0 0 1 0 9.75z",
+          "location": {
+            "source": ".local/native-scripts/30fa8932c02806bb5e23c777e276618a2e6c9f8e90d1219ab892ed8d81343012.js",
+            "sourceSha256": "30fa8932c02806bb5e23c777e276618a2e6c9f8e90d1219ab892ed8d81343012",
+            "sourceOffsetBytes": 261
+          }
+        }
+      ]
+    },
+    {
+      "name": "repeatOne",
+      "codepoint": 57363,
+      "viewBox": "0 0 16 16",
+      "advanceWidth": 1024,
+      "leftSideBearing": 0,
+      "paths": [
+        {
+          "d": "M0 4.75A3.75 3.75 0 0 1 3.75 1h.75v1.5h-.75A2.25 2.25 0 0 0 1.5 4.75v5A2.25 2.25 0 0 0 3.75 12H5v1.5H3.75A3.75 3.75 0 0 1 0 9.75zM12.25 2.5a2.25 2.25 0 0 1 2.25 2.25v5A2.25 2.25 0 0 1 12.25 12H9.81l1.018-1.018a.75.75 0 0 0-1.06-1.06L6.939 12.75l2.829 2.828a.75.75 0 1 0 1.06-1.06L9.811 13.5h2.439A3.75 3.75 0 0 0 16 9.75v-5A3.75 3.75 0 0 0 12.25 1h-.75v1.5z",
+          "location": {
+            "source": ".local/native-scripts/30fa8932c02806bb5e23c777e276618a2e6c9f8e90d1219ab892ed8d81343012.js",
+            "sourceSha256": "30fa8932c02806bb5e23c777e276618a2e6c9f8e90d1219ab892ed8d81343012",
+            "sourceOffsetBytes": 1380
+          }
+        },
+        {
+          "d": "m8 1.85.77.694H6.095V1.488q1.046-.077 1.507-.385.474-.308.583-.913h1.32V8H8z",
+          "location": {
+            "source": ".local/native-scripts/30fa8932c02806bb5e23c777e276618a2e6c9f8e90d1219ab892ed8d81343012.js",
+            "sourceSha256": "30fa8932c02806bb5e23c777e276618a2e6c9f8e90d1219ab892ed8d81343012",
+            "sourceOffsetBytes": 1749
+          }
+        },
+        {
+          "d": "M8.77 2.544 8 1.85v.693z",
+          "location": {
+            "source": ".local/native-scripts/30fa8932c02806bb5e23c777e276618a2e6c9f8e90d1219ab892ed8d81343012.js",
+            "sourceSha256": "30fa8932c02806bb5e23c777e276618a2e6c9f8e90d1219ab892ed8d81343012",
+            "sourceOffsetBytes": 1837
+          }
+        }
+      ]
+    },
+    {
+      "name": "volumeOff",
+      "codepoint": 57364,
+      "viewBox": "0 0 16 16",
+      "advanceWidth": 1024,
+      "leftSideBearing": 16,
+      "paths": [
+        {
+          "d": "M13.86 5.47a.75.75 0 0 0-1.061 0l-1.47 1.47-1.47-1.47A.75.75 0 0 0 8.8 6.53L10.269 8l-1.47 1.47a.75.75 0 1 0 1.06 1.06l1.47-1.47 1.47 1.47a.75.75 0 0 0 1.06-1.06L12.39 8l1.47-1.47a.75.75 0 0 0 0-1.06",
+          "location": {
+            "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+            "sourceSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+            "sourceOffsetBytes": 8263541
+          }
+        },
+        {
+          "d": "M10.116 1.5A.75.75 0 0 0 8.991.85l-6.925 4a3.64 3.64 0 0 0-1.33 4.967 3.64 3.64 0 0 0 1.33 1.332l6.925 4a.75.75 0 0 0 1.125-.649v-1.906a4.7 4.7 0 0 1-1.5-.694v1.3L2.817 9.852a2.14 2.14 0 0 1-.781-2.92c.187-.324.456-.594.78-.782l5.8-3.35v1.3c.45-.313.956-.55 1.5-.694z",
+          "location": {
+            "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+            "sourceSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+            "sourceOffsetBytes": 8263752
+          }
+        }
+      ]
+    },
+    {
+      "name": "volumeLow",
+      "codepoint": 57365,
+      "viewBox": "0 0 16 16",
+      "advanceWidth": 1024,
+      "leftSideBearing": 16,
+      "paths": [
+        {
+          "d": "M9.741.85a.75.75 0 0 1 .375.65v13a.75.75 0 0 1-1.125.65l-6.925-4a3.64 3.64 0 0 1-1.33-4.967 3.64 3.64 0 0 1 1.33-1.332l6.925-4a.75.75 0 0 1 .75 0zm-6.924 5.3a2.14 2.14 0 0 0 0 3.7l5.8 3.35V2.8zm8.683 4.29V5.56a2.75 2.75 0 0 1 0 4.88",
+          "location": {
+            "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+            "sourceSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+            "sourceOffsetBytes": 8262375
+          }
+        }
+      ]
+    },
+    {
+      "name": "volumeMedium",
+      "codepoint": 57366,
+      "viewBox": "0 0 16 16",
+      "advanceWidth": 1024,
+      "leftSideBearing": 16,
+      "paths": [
+        {
+          "d": "M9.741.85a.75.75 0 0 1 .375.65v13a.75.75 0 0 1-1.125.65l-6.925-4a3.64 3.64 0 0 1-1.33-4.967 3.64 3.64 0 0 1 1.33-1.332l6.925-4a.75.75 0 0 1 .75 0zm-6.924 5.3a2.14 2.14 0 0 0 0 3.7l5.8 3.35V2.8zm8.683 6.087a4.502 4.502 0 0 0 0-8.474v1.65a3 3 0 0 1 0 5.175z",
+          "location": {
+            "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+            "sourceSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+            "sourceOffsetBytes": 8265961
+          }
+        }
+      ]
+    }
+  ],
+  "iconFont": {
+    "output": "assets/app-shell/fonts/SpotifyShellIcons.ttf",
+    "sha256": "f23c288f1ae4b157e72fc5b8c3928adbff037888448aa915d257e8c50ebe24ac"
+  }
+}

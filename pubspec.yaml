@@ -1,0 +1,63 @@
+name: spotify_flutter
+description: "Flutter reconstruction of Spotify desktop protocols and interface."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.7
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  http: ^1.6.0
+  cancellation_token:
+    path: third_party/cancellation_token
+  protobuf: ^6.1.0
+  shared_preferences: ^2.5.6
+  path_provider: ^2.1.6
+  fixnum: ^1.1.1
+  crypto: ^3.0.8
+  pointycastle: ^4.0.0
+  convert: ^3.1.2
+  ffi: ^2.2.0
+  mt19937: 0.1.0
+  http2:
+    path: third_party/http2
+  archive: 4.5.2
+  brotli: 0.6.0
+  tray_manager: 0.5.2
+  just_audio: ^0.10.6
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+  protoc_plugin: ^25.1.0
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/protocol/native-desktop-locales.json
+    - assets/app-shell/icons/tray.png
+
+  fonts:
+    - family: SpotifyMixUI
+      fonts:
+        - asset: assets/app-shell/fonts/SpotifyMixUI-Regular.ttf
+          weight: 400
+        - asset: assets/app-shell/fonts/SpotifyMixUI-Bold.ttf
+          weight: 700
+    - family: SpotifyMixUITitle
+      fonts:
+        - asset: assets/app-shell/fonts/SpotifyMixUITitle-Bold.ttf
+          weight: 700
+        - asset: assets/app-shell/fonts/SpotifyMixUITitle-Extrabold.ttf
+          weight: 800
+    - family: SpotifyShellIcons
+      fonts:
+        - asset: assets/app-shell/fonts/SpotifyShellIcons.ttf

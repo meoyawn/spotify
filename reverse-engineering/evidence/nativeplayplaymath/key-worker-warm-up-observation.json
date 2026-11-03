@@ -1,0 +1,386 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "originalResponseEntry": "0x10048de68",
+  "originalProtectedKeyScheduleEntry": "0x101c85fc4",
+  "contentKeyObservationStop": "0x101c86940",
+  "scope": "CPU-only Dart isolate/warm-up observation, using unchanged retained independently executed original content-key bytes. No original application process, network, account, real license response, session or native handle is used.",
+  "independentAuthority": {
+    "document": "content-key-observation.json",
+    "retainedFixture": ".local/rea-session/native-playplay-independent-content-key.json",
+    "sha256": "e9d3fa27d51b7646be2745f5f784a0f8ee06baee00109854103cd9713737b82a",
+    "fixtureUnchangedFromOriginalObservation": true,
+    "defaultTableCases": 36,
+    "originalByteMismatches": 0,
+    "additionalOriginalByteComparisonsAfterWarmUpResetOrCancellation": 2,
+    "explicitConstantPointerOverridesExercised": false
+  },
+  "implementation": {
+    "file": "lib/playback/native_playplay_key_worker.dart",
+    "sha256": "a968c1d820c73991b6fa9dbc5072e9caf878eb9f7b55f1cc97aed1bd52faecff",
+    "keepsIsolateRun": true,
+    "maximumSyntheticSamplesPerGeneration": 4,
+    "maximumConcurrentSyntheticTransforms": 1,
+    "syntheticInputPatterns": [
+      "16 zero octets",
+      "octets0..15",
+      "octets255..240",
+      "16 octets0xa5"
+    ],
+    "results": "Synthetic outputs are cleared inside the warm-up helper; they are never returned, admitted or cached.",
+    "interrupt": "A real key request prevents subsequent synthetic samples. Shutdown/hot reload invalidates remaining samples and awaits the one in-flight bounded transform.",
+    "hotReload": "Each real transform uses a fresh Isolate.run invocation. stopNativePlayPlayMusicKeyWarmUp() invalidates old warm-up closures before the owner starts warming current Dart again.",
+    "unchangedArithmeticFiles": [
+      "reverse-engineering/tools/native_playplay_math_lift.py",
+      "lib/playback/native_playplay_unwrap.dart",
+      "lib/playback/native_playplay_math/blocks_10048e.dart",
+      "lib/playback/native_playplay_math/blocks_10048f.dart",
+      "lib/playback/native_playplay_math/blocks_100490.dart",
+      "lib/playback/native_playplay_math/blocks_100491.dart",
+      "lib/playback/native_playplay_math/blocks_100492.dart",
+      "lib/playback/native_playplay_math/blocks_100493.dart",
+      "lib/playback/native_playplay_math/blocks_100494.dart",
+      "lib/playback/native_playplay_math/blocks_100495.dart",
+      "lib/playback/native_playplay_math/blocks_100496.dart",
+      "lib/playback/native_playplay_math/blocks_100497.dart",
+      "lib/playback/native_playplay_math/blocks_100498.dart",
+      "lib/playback/native_playplay_math/blocks_100499.dart",
+      "lib/playback/native_playplay_math/blocks_10049a.dart",
+      "lib/playback/native_playplay_math/blocks_10049b.dart",
+      "lib/playback/native_playplay_math/blocks_10049c.dart",
+      "lib/playback/native_playplay_math/blocks_10049d.dart",
+      "lib/playback/native_playplay_math/blocks_10049e.dart",
+      "lib/playback/native_playplay_math/blocks_10049f.dart",
+      "lib/playback/native_playplay_math/blocks_1004a0.dart",
+      "lib/playback/native_playplay_math/blocks_1004a1.dart",
+      "lib/playback/native_playplay_math/blocks_1004a2.dart",
+      "lib/playback/native_playplay_math/blocks_1004a3.dart",
+      "lib/playback/native_playplay_math/blocks_1004a4.dart",
+      "lib/playback/native_playplay_math/blocks_1004a5.dart",
+      "lib/playback/native_playplay_math/blocks_1004a6.dart",
+      "lib/playback/native_playplay_math/blocks_1004a7.dart",
+      "lib/playback/native_playplay_math/blocks_1004a8.dart",
+      "lib/playback/native_playplay_math/blocks_1004a9.dart",
+      "lib/playback/native_playplay_math/blocks_1004aa.dart",
+      "lib/playback/native_playplay_math/blocks_1004ab.dart",
+      "lib/playback/native_playplay_math/blocks_1004ac.dart",
+      "lib/playback/native_playplay_math/blocks_1004ad.dart",
+      "lib/playback/native_playplay_math/blocks_1004ae.dart",
+      "lib/playback/native_playplay_math/blocks_1004af.dart",
+      "lib/playback/native_playplay_math/blocks_1004b0.dart",
+      "lib/playback/native_playplay_math/blocks_1004b1.dart",
+      "lib/playback/native_playplay_math/blocks_1004b2.dart",
+      "lib/playback/native_playplay_math/blocks_1004b3.dart",
+      "lib/playback/native_playplay_math/blocks_1004b4.dart",
+      "lib/playback/native_playplay_math/blocks_1004b5.dart",
+      "lib/playback/native_playplay_math/blocks_1004b6.dart",
+      "lib/playback/native_playplay_math/blocks_1004b7.dart",
+      "lib/playback/native_playplay_math/blocks_1004b8.dart",
+      "lib/playback/native_playplay_math/blocks_1004b9.dart",
+      "lib/playback/native_playplay_math/blocks_1004ba.dart",
+      "lib/playback/native_playplay_math/blocks_1004bb.dart",
+      "lib/playback/native_playplay_math/blocks_1004bc.dart",
+      "lib/playback/native_playplay_math/blocks_1004bf.dart",
+      "lib/playback/native_playplay_math/blocks_1004c0.dart",
+      "lib/playback/native_playplay_math/blocks_1004c1.dart",
+      "lib/playback/native_playplay_math/blocks_1004c2.dart",
+      "lib/playback/native_playplay_math/blocks_1004c3.dart",
+      "lib/playback/native_playplay_math/blocks_1004c4.dart",
+      "lib/playback/native_playplay_math/blocks_1004c5.dart",
+      "lib/playback/native_playplay_math/blocks_1004c6.dart",
+      "lib/playback/native_playplay_math/blocks_1004c7.dart",
+      "lib/playback/native_playplay_math/blocks_1004c8.dart",
+      "lib/playback/native_playplay_math/blocks_1004c9.dart",
+      "lib/playback/native_playplay_math/blocks_1004ca.dart",
+      "lib/playback/native_playplay_math/blocks_1004cb.dart",
+      "lib/playback/native_playplay_math/blocks_1004cc.dart",
+      "lib/playback/native_playplay_math/blocks_1004cd.dart",
+      "lib/playback/native_playplay_math/blocks_1004ce.dart",
+      "lib/playback/native_playplay_math/blocks_1004cf.dart",
+      "lib/playback/native_playplay_math/blocks_1004d0.dart",
+      "lib/playback/native_playplay_math/blocks_1004d1.dart",
+      "lib/playback/native_playplay_math/blocks_1004d2.dart",
+      "lib/playback/native_playplay_math/blocks_1004d3.dart",
+      "lib/playback/native_playplay_math/blocks_1004d4.dart",
+      "lib/playback/native_playplay_math/blocks_1004d5.dart",
+      "lib/playback/native_playplay_math/blocks_1004d6.dart",
+      "lib/playback/native_playplay_math/blocks_101c85.dart",
+      "lib/playback/native_playplay_math/blocks_101c86.dart",
+      "lib/playback/native_playplay_math/blocks_101f78.dart",
+      "lib/playback/native_playplay_math/data.dart",
+      "lib/playback/native_playplay_math/dispatch.dart"
+    ]
+  },
+  "timing": {
+    "measurement": "Stopwatch around await unwrapNativePlayPlayMusicKey, or await warmNativePlayPlayMusicKeyWorker, in separate fresh standalone dart run VMs. Includes worker isolate startup and arithmetic; excludes process startup/build hooks. No Flutter-runtime latency claim.",
+    "firstUnseenFixtureIndex": 4,
+    "firstSameInputColdUs": 1366051,
+    "fourSyntheticWarmUpIncludingIsolateStartupUs": 2464994,
+    "firstSameInputAfterWarmUpUs": 148991,
+    "firstUnseenSpeedup": 9.16868132974475,
+    "last12KeyMedianUs": 29040.0,
+    "cancelOneInFlightSyntheticTransformUs": 18239,
+    "warmUpShutdownUs": 5,
+    "rows": [
+      {
+        "phase": "fourSyntheticWarmUpIncludingIsolateStartup",
+        "elapsedUs": 2464994
+      },
+      {
+        "index": 4,
+        "phase": "key",
+        "elapsedUs": 148991,
+        "matchesOriginal": true
+      },
+      {
+        "index": 0,
+        "phase": "key",
+        "elapsedUs": 56395,
+        "matchesOriginal": true
+      },
+      {
+        "index": 1,
+        "phase": "key",
+        "elapsedUs": 46046,
+        "matchesOriginal": true
+      },
+      {
+        "index": 2,
+        "phase": "key",
+        "elapsedUs": 47290,
+        "matchesOriginal": true
+      },
+      {
+        "index": 3,
+        "phase": "key",
+        "elapsedUs": 56205,
+        "matchesOriginal": true
+      },
+      {
+        "index": 5,
+        "phase": "key",
+        "elapsedUs": 96035,
+        "matchesOriginal": true
+      },
+      {
+        "index": 6,
+        "phase": "key",
+        "elapsedUs": 73991,
+        "matchesOriginal": true
+      },
+      {
+        "index": 7,
+        "phase": "key",
+        "elapsedUs": 43702,
+        "matchesOriginal": true
+      },
+      {
+        "index": 8,
+        "phase": "key",
+        "elapsedUs": 70579,
+        "matchesOriginal": true
+      },
+      {
+        "index": 9,
+        "phase": "key",
+        "elapsedUs": 52956,
+        "matchesOriginal": true
+      },
+      {
+        "index": 10,
+        "phase": "key",
+        "elapsedUs": 53695,
+        "matchesOriginal": true
+      },
+      {
+        "index": 11,
+        "phase": "key",
+        "elapsedUs": 74721,
+        "matchesOriginal": true
+      },
+      {
+        "index": 12,
+        "phase": "key",
+        "elapsedUs": 50196,
+        "matchesOriginal": true
+      },
+      {
+        "index": 13,
+        "phase": "key",
+        "elapsedUs": 33962,
+        "matchesOriginal": true
+      },
+      {
+        "index": 14,
+        "phase": "key",
+        "elapsedUs": 38526,
+        "matchesOriginal": true
+      },
+      {
+        "index": 15,
+        "phase": "key",
+        "elapsedUs": 28424,
+        "matchesOriginal": true
+      },
+      {
+        "index": 16,
+        "phase": "key",
+        "elapsedUs": 33440,
+        "matchesOriginal": true
+      },
+      {
+        "index": 17,
+        "phase": "key",
+        "elapsedUs": 34462,
+        "matchesOriginal": true
+      },
+      {
+        "index": 18,
+        "phase": "key",
+        "elapsedUs": 39748,
+        "matchesOriginal": true
+      },
+      {
+        "index": 19,
+        "phase": "key",
+        "elapsedUs": 37605,
+        "matchesOriginal": true
+      },
+      {
+        "index": 20,
+        "phase": "key",
+        "elapsedUs": 33925,
+        "matchesOriginal": true
+      },
+      {
+        "index": 21,
+        "phase": "key",
+        "elapsedUs": 32225,
+        "matchesOriginal": true
+      },
+      {
+        "index": 22,
+        "phase": "key",
+        "elapsedUs": 25187,
+        "matchesOriginal": true
+      },
+      {
+        "index": 23,
+        "phase": "key",
+        "elapsedUs": 24013,
+        "matchesOriginal": true
+      },
+      {
+        "index": 24,
+        "phase": "key",
+        "elapsedUs": 26264,
+        "matchesOriginal": true
+      },
+      {
+        "index": 25,
+        "phase": "key",
+        "elapsedUs": 28730,
+        "matchesOriginal": true
+      },
+      {
+        "index": 26,
+        "phase": "key",
+        "elapsedUs": 31650,
+        "matchesOriginal": true
+      },
+      {
+        "index": 27,
+        "phase": "key",
+        "elapsedUs": 26550,
+        "matchesOriginal": true
+      },
+      {
+        "index": 28,
+        "phase": "key",
+        "elapsedUs": 29350,
+        "matchesOriginal": true
+      },
+      {
+        "index": 29,
+        "phase": "key",
+        "elapsedUs": 36046,
+        "matchesOriginal": true
+      },
+      {
+        "index": 30,
+        "phase": "key",
+        "elapsedUs": 28711,
+        "matchesOriginal": true
+      },
+      {
+        "index": 31,
+        "phase": "key",
+        "elapsedUs": 31048,
+        "matchesOriginal": true
+      },
+      {
+        "index": 32,
+        "phase": "key",
+        "elapsedUs": 22682,
+        "matchesOriginal": true
+      },
+      {
+        "index": 33,
+        "phase": "key",
+        "elapsedUs": 30928,
+        "matchesOriginal": true
+      },
+      {
+        "index": 34,
+        "phase": "key",
+        "elapsedUs": 46801,
+        "matchesOriginal": true
+      },
+      {
+        "index": 35,
+        "phase": "key",
+        "elapsedUs": 27551,
+        "matchesOriginal": true
+      },
+      {
+        "phase": "resetWarmUpStateAfterKeys",
+        "elapsedUs": 264
+      },
+      {
+        "phase": "cancelOneInFlightSyntheticTransform",
+        "elapsedUs": 18239
+      },
+      {
+        "index": 4,
+        "phase": "afterWarmUpCancellation",
+        "elapsedUs": 30122,
+        "matchesOriginal": true
+      },
+      {
+        "index": 0,
+        "phase": "keyDuringWarmUpReset",
+        "elapsedUs": 20522,
+        "matchesOriginal": true
+      },
+      {
+        "phase": "warmUpShutdown",
+        "elapsedUs": 5
+      }
+    ],
+    "dartVersion": "Dart SDK version: 3.13.7 (stable) (Thu Oct 22 14:28:57 2026 -0700) on \"macos_arm64\"",
+    "hostArchitecture": "arm64"
+  },
+  "runner": {
+    "file": ".local/rea-session/native-playplay-key-warm-up-perf.dart",
+    "sha256": "32bdfd7a6afbac2ce9953e499f190a3301de36707fb20d9e88bb3e16cd538343",
+    "command": "dart run .local/rea-session/native-playplay-key-warm-up-perf.dart .local/rea-session/native-playplay-independent-content-key.json"
+  },
+  "standardAdapters": "Unchanged proprietary arithmetic observation boundary and standard adapters from content-key-observation.json; Dart Isolate.run, memory and Random.secure only. Public standard AES is outside this observation.",
+  "limits": [
+    "Synthetic inputs only; warm-up does not cover every input-dependent branch or remove every later JIT compilation.",
+    "Warm-up moves bounded CPU work before playback; its complete time is additional background work and must not be awaited on the user click path.",
+    "If playback arrives while a synthetic transform runs, that one finishes and no later sample begins; actual key work does not await warm-up.",
+    "Cancellation safely waits for a bounded transform rather than interrupting arithmetic or fabricating a result.",
+    "36 default-table original vectors are exercised; earlier explicit constant-pointer override evidence remains separate.",
+    "No HTTP, envelope validity, entitlement, session, cache admission, transport or audible playback compatibility is established."
+  ]
+}

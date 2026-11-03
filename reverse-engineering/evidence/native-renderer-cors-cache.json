@@ -1,0 +1,35 @@
+{
+  "scope": "Pin public Chromium cache limits beside independently captured preflights.\n\nThis is static public-source evidence, not decompiled Chromium or a timing\nmeasurement. The original captures independently prove OPTIONS/cache passes;\ntheir seven-day advertised max-age is capped by the public two-hour policy.\n",
+  "toolSha256": "4cd80ac258d41acd59d3e91e3402c127eeba39c4c9dfe2b5de0968e1fdf24cd7",
+  "publicSources": [
+    {
+      "path": ".local/cef-source/preflight_cache-151.0.7922.138.cc",
+      "sha256": "733e501294a89d6b33ef81942cb88b4130138669159468176b44cb7847782f3c",
+      "url": "https://github.com/chromium/chromium/blob/151.0.7922.138/services/network/cors/preflight_cache.cc"
+    },
+    {
+      "path": ".local/cef-source/preflight_controller-151.0.7922.138.cc",
+      "sha256": "c1b8f9ceb042d2877d2246f6c0596b10bad0f55ebf639753548238a30dd2bca3",
+      "url": "https://github.com/chromium/chromium/blob/151.0.7922.138/services/network/cors/preflight_controller.cc"
+    },
+    {
+      "path": ".local/cef-source/preflight_result-151.0.7922.138.cc",
+      "sha256": "a601241b3d0ef5c3e7a9bcbf03669138cee541de7341aa6dd3db420192370b42",
+      "url": "https://github.com/chromium/chromium/blob/151.0.7922.138/services/network/cors/preflight_result.cc"
+    }
+  ],
+  "originalPreflightFixture": {
+    "path": "reverse-engineering/fixtures/native-renderer-preflight.json",
+    "sha256": "d14a274501cdf79ed9f47d9347ba4fa65a12a85358ab6631cc6bea1d19a0d380"
+  },
+  "defaultExpiryMicroseconds": 5000000,
+  "maximumExpiryMicroseconds": 7200000000,
+  "capturedServerMaxAgeSeconds": 604800,
+  "expiryBoundary": "expired when absolute_expiry_time <= monotonic now",
+  "limits": [
+    "Expiry constants/boundary come from pinned public source, not Dart or a measured original two-hour session.",
+    "Original captures prove accepted cache permissions and independent concurrent misses; complete partition keys, expiry measurement and cross-session persistence remain unproved.",
+    "The outgoing local check substitutes a monotonic clock at just-before/exact maximum expiry while retaining original request fields and captured server permissions.",
+    "No application, profile, account or network action runs."
+  ]
+}

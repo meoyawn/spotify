@@ -1,0 +1,1620 @@
+{
+  "originalBundleSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+  "source": [
+    {
+      "kind": "factory-92693",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 4162472,
+      "offsetBytes": 4162712,
+      "lengthBytes": 511,
+      "sha256": "d48b0dd13a19421b6cbfec2f3600ab80bfc8280389119dc6364156dfdeec67d1"
+    },
+    {
+      "kind": "factory-41332",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 4114788,
+      "offsetBytes": 4115028,
+      "lengthBytes": 4953,
+      "sha256": "9daaca5dd00fa6605ddd0eeb379cb5fc5c08e51a161d22a94315c4aa40e4b005"
+    },
+    {
+      "kind": "factory-87337",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 4119742,
+      "offsetBytes": 4119982,
+      "lengthBytes": 1395,
+      "sha256": "e90ffc2f49b22726bf37dfc1560fc8fcc35315291a30dd20628a151b2bb198b5"
+    },
+    {
+      "kind": "factory-92464",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 4160816,
+      "offsetBytes": 4161056,
+      "lengthBytes": 1531,
+      "sha256": "ea26df91582f9fa4917addc583b3587174795a9214c591d368f6962222610292"
+    },
+    {
+      "kind": "factory-83873",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 4083882,
+      "offsetBytes": 4084122,
+      "lengthBytes": 1671,
+      "sha256": "1aeaa740a4a3f533e78b5c4268c6aa3203950362f5c7066bf0275640e82bee8d"
+    },
+    {
+      "kind": "factory-85418",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 4160640,
+      "offsetBytes": 4160880,
+      "lengthBytes": 175,
+      "sha256": "6c0bd05958a0723942a6e91b1cb681c9f40e719af9cbc023e30c08b5889f4165"
+    },
+    {
+      "kind": "factory-1940",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 4113254,
+      "offsetBytes": 4113494,
+      "lengthBytes": 624,
+      "sha256": "528ddb8b6adce775f64c3ee0371d007d51e65e564bf9b804229d9857a9985923"
+    },
+    {
+      "kind": "factory-50573",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 1419015,
+      "offsetBytes": 1419036,
+      "lengthBytes": 187,
+      "sha256": "14032bc636d3d26f30bf23437b063f8f4a0f991738ad6d664ca8d52c416d4d87"
+    },
+    {
+      "kind": "factory-91153",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 4795950,
+      "offsetBytes": 4796526,
+      "lengthBytes": 205,
+      "sha256": "25731a58a595c718756bfcc3f2066874a3003cfd430441de1d1255d2eb4b6495"
+    },
+    {
+      "kind": "factory-31773",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 4162984,
+      "offsetBytes": 4163224,
+      "lengthBytes": 1005,
+      "sha256": "6c37fbbac6ace8e97d100acb521fbf2410bd7bf03254f3a1403c7d5cfac2695d"
+    },
+    {
+      "kind": "module87922-overview-descriptor",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 1902276,
+      "offsetBytes": 1902321,
+      "lengthBytes": 110,
+      "sha256": "0457fe3fe7b67689c75db28bb23e3ede5c9935f3f6c39198d5a2ed83bc07baee"
+    },
+    {
+      "kind": "module87922-overview-producer",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 1902574,
+      "offsetBytes": 1902619,
+      "lengthBytes": 209,
+      "sha256": "b76456882311c3ebd4205d17cbd3c4194797e6afb989c992ba3366272c08a14b"
+    },
+    {
+      "kind": "module54896-tracks-descriptor",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 2289888,
+      "offsetBytes": 2289993,
+      "lengthBytes": 113,
+      "sha256": "ce1efe8a1087090d5205e2dbd25252160b578730cbadd90fd29a600c908d446e"
+    },
+    {
+      "kind": "module54896-initial-top-tracks-producer",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 2290861,
+      "offsetBytes": 2290966,
+      "lengthBytes": 338,
+      "sha256": "55b56cd906c84cc21f8dd602178eb818e49b3f1cc0eb085a61958381543d0ab9"
+    },
+    {
+      "kind": "module74960-global-owner",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 3846409,
+      "offsetBytes": 3846649,
+      "lengthBytes": 243,
+      "sha256": "aa9c135a625cfc5eda258f6e4722d26eadfddf5a7fc5363674f629bba109c93c"
+    },
+    {
+      "kind": "module50278-header-collection",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 508588,
+      "offsetBytes": 508595,
+      "lengthBytes": 540,
+      "sha256": "37f46555905cc743ec510308840087875503aafc38d1d4fe3d82d04c34ea10b4"
+    },
+    {
+      "kind": "module50278-fetch-adapter",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetUtf16": 503934,
+      "offsetBytes": 503941,
+      "lengthBytes": 2097,
+      "sha256": "ffc72cd0730018864d132897cd0f4a962f36571873afe77e81195497c3df3785"
+    },
+    {
+      "kind": "queryArtistDiscographyOverview descriptor",
+      "path": "build/rea/xpui/xpui-routes-artist.js",
+      "offsetBytes": 21060,
+      "lengthBytes": 121,
+      "sha256": "3eca6fe376811acc0b61bf16ce91881b84110ddd8e6fadc2129a22714c77a71f"
+    },
+    {
+      "kind": "queryArtistDiscographyOverview route producer",
+      "path": "build/rea/xpui/xpui-routes-artist.js",
+      "offsetBytes": 25688,
+      "lengthBytes": 40,
+      "sha256": "2b983decef543c460e8be649c1cbd81403ebead94093bf5f464677475fc0be52"
+    },
+    {
+      "kind": "queryArtistDiscographyAlbums descriptor",
+      "path": "build/rea/xpui/xpui-routes-artist.js",
+      "offsetBytes": 20564,
+      "lengthBytes": 119,
+      "sha256": "c798210364c7f1a85caa3c79462d883f8e09891870f8e6c04f602cff56d7a9e7"
+    },
+    {
+      "kind": "queryArtistDiscographyAlbums paging producer",
+      "path": "build/rea/xpui/xpui-routes-artist.js",
+      "offsetBytes": 21962,
+      "lengthBytes": 191,
+      "sha256": "31fb3511ba15d4740e305f1a7eb64266f45c048ca6cbfe3d60675eea3f455a48"
+    },
+    {
+      "kind": "queryArtistDiscographySingles descriptor",
+      "path": "build/rea/xpui/xpui-routes-artist.js",
+      "offsetBytes": 20687,
+      "lengthBytes": 120,
+      "sha256": "9d69579cf51fcd3e160af3409feea3ba69f4e4f143fde9ae4acb0d329c1eed58"
+    },
+    {
+      "kind": "queryArtistDiscographySingles paging producer",
+      "path": "build/rea/xpui/xpui-routes-artist.js",
+      "offsetBytes": 22183,
+      "lengthBytes": 192,
+      "sha256": "036a495d2c6cf4e4f92c51c4a0e46e31c2f863cbaeba1253149066a300c568fc"
+    },
+    {
+      "kind": "queryArtistDiscographyCompilations descriptor",
+      "path": "build/rea/xpui/xpui-routes-artist.js",
+      "offsetBytes": 20811,
+      "lengthBytes": 125,
+      "sha256": "be567b650c6b24c6c12ac8acfdfa5d75ac1418b72e427fb925ab4d0e851ccc55"
+    },
+    {
+      "kind": "queryArtistDiscographyCompilations paging producer",
+      "path": "build/rea/xpui/xpui-routes-artist.js",
+      "offsetBytes": 22463,
+      "lengthBytes": 197,
+      "sha256": "b00cca701eaa5f8e0bd81f74b431a55b5b2c2fa72726601b35bfd94f6b652ef0"
+    },
+    {
+      "kind": "queryArtistDiscographyAll descriptor",
+      "path": "build/rea/xpui/xpui-routes-artist.js",
+      "offsetBytes": 20940,
+      "lengthBytes": 116,
+      "sha256": "f039ecbd91c61a66a85093bbd724b3c38857bd5de8e75848f97d1351f1b7abd7"
+    },
+    {
+      "kind": "queryArtistDiscographyAll paging producer",
+      "path": "build/rea/xpui/xpui-routes-artist.js",
+      "offsetBytes": 22699,
+      "lengthBytes": 188,
+      "sha256": "3a87be33f8a4e281d9465c2a2d497f0e94fceeb07a163611d63f26057ace4f2d"
+    },
+    {
+      "kind": "queryArtistRelated descriptor",
+      "path": "build/rea/xpui/xpui-routes-artist.js",
+      "offsetBytes": 79273,
+      "lengthBytes": 109,
+      "sha256": "ce3da4cd9b5a1c12765cfdaf6be9a8cf95efd0d76838a8dfbe914463bb503043"
+    },
+    {
+      "kind": "queryArtistRelated route producer",
+      "path": "build/rea/xpui/xpui-routes-artist.js",
+      "offsetBytes": 79466,
+      "lengthBytes": 50,
+      "sha256": "a6183816bb787a29c268c6355ea7960a9c714e25357bdf145aee8e7c875b14cf"
+    },
+    {
+      "kind": "queryArtistAppearsOn descriptor",
+      "path": "build/rea/xpui/xpui-routes-artist.js",
+      "offsetBytes": 13439,
+      "lengthBytes": 111,
+      "sha256": "ecd5a93049fa34e3f9098d9ea9e0aa8ea45edb4ccd884f3860d2e8fa2fe985d5"
+    },
+    {
+      "kind": "queryArtistAppearsOn route producer",
+      "path": "build/rea/xpui/xpui-routes-artist.js",
+      "offsetBytes": 13663,
+      "lengthBytes": 49,
+      "sha256": "ddb685bb52ba457d1e665f241081ca1568c41133f0d87a8ae9dc4b4314868be6"
+    },
+    {
+      "kind": "queryArtistFeaturing descriptor",
+      "path": "build/rea/xpui/xpui-routes-artist.js",
+      "offsetBytes": 28142,
+      "lengthBytes": 111,
+      "sha256": "54599e7c0c27d1e581fe824f13cf49019def2f2904387d2fa50b7ba5d9ac3bed"
+    },
+    {
+      "kind": "queryArtistFeaturing route producer",
+      "path": "build/rea/xpui/xpui-routes-artist.js",
+      "offsetBytes": 28337,
+      "lengthBytes": 50,
+      "sha256": "064178b220c0da63f0949cce83f9448ebeb0c9d3d8ae80667fd890db46994cf5"
+    },
+    {
+      "kind": "queryArtistDiscoveredOn descriptor",
+      "path": "build/rea/xpui/xpui-routes-artist.js",
+      "offsetBytes": 27098,
+      "lengthBytes": 114,
+      "sha256": "287fc5d2f82d651f95ad7483d651d560bd02072a3cc942eb43b7ab8ea533f26c"
+    },
+    {
+      "kind": "queryArtistDiscoveredOn route producer",
+      "path": "build/rea/xpui/xpui-routes-artist.js",
+      "offsetBytes": 27296,
+      "lengthBytes": 50,
+      "sha256": "c0214093ade62d34cc7ec249ed89407e8400af465e37c7cdbbd7dc7dbc6d64d6"
+    },
+    {
+      "kind": "queryArtistDiscographyAlbums descriptor",
+      "path": "build/rea/xpui/xpui-routes-artist.js",
+      "offsetBytes": 20564,
+      "lengthBytes": 119,
+      "sha256": "c798210364c7f1a85caa3c79462d883f8e09891870f8e6c04f602cff56d7a9e7"
+    },
+    {
+      "kind": "queryArtistDiscographyAlbums paging producer",
+      "path": "build/rea/xpui/xpui-routes-artist.js",
+      "offsetBytes": 21962,
+      "lengthBytes": 191,
+      "sha256": "31fb3511ba15d4740e305f1a7eb64266f45c048ca6cbfe3d60675eea3f455a48"
+    }
+  ],
+  "sharedBrowserFields": {
+    "path": "reverse-engineering/evidence/native-home-netlog.json",
+    "sha256": "41e4bbdd335339e1d837906b685dfb3e7c6628e22115b4309b488676ec035b7e"
+  },
+  "artistRoute": {
+    "path": "build/rea/xpui/xpui-routes-artist.js",
+    "sha256": "0d6ba55d420cb6264f2a56724d31a622b921fecb752c4baa43e35216c9613065",
+    "anchors": [
+      {
+        "text": "profile:{name:q,pinnedItem:H,biography:z,externalLinks:$,playlistsV2:W}",
+        "offsetBytes": 71698
+      },
+      {
+        "text": "headerImage:G,visuals:{avatarImage:Y,gallery:Z}",
+        "offsetBytes": 71770
+      },
+      {
+        "text": "topTracksListUri:t,topTracksOptions:a",
+        "offsetBytes": 31260
+      },
+      {
+        "text": "U=T.relatedContent.relatedArtists.items",
+        "offsetBytes": 71413
+      },
+      {
+        "text": "P=T.relatedContent.featuringV2.items",
+        "offsetBytes": 71469
+      },
+      {
+        "text": "L=(0,tH.Ey)(T.relatedContent.appearsOn.items)",
+        "offsetBytes": 71506
+      },
+      {
+        "text": "i.popularReleasesAlbums.totalCount>0",
+        "offsetBytes": 36083
+      },
+      {
+        "text": "y={...i[o],items:[i.latest,...i[o].items.filter(e=>e.uri!==i.latest?.uri)]}",
+        "offsetBytes": 37282
+      }
+    ]
+  },
+  "releaseProjection": {
+    "artists": [
+      {
+        "uri": "spotify:artist:0000000000000000000001",
+        "name": "Synthetic artist"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://fixture.invalid/cover"
+      }
+    ],
+    "name": "Synthetic album",
+    "uri": "spotify:album:0000000000000000000001",
+    "year": 2026,
+    "type": "ALBUM"
+  },
+  "substitutions": [
+    "Synthetic URI/credentials, explicit app locale en and explicit feature flag input; original descriptors, caller variable order, version header, request builder, loader, HeaderCollection and fetch adapter execute unchanged.",
+    "Original transport and standard fetch are inert capture interfaces; no network or original profile/account is accessed.",
+    "Browser automatic headers inherit independently captured common original Pathfinder fields; operation-specific headers come from this original execution."
+  ],
+  "limits": [
+    "No retained actual artist request/response exists in the inspected original-http.json capture. Producer execution proves application outgoing fields; full H2/H3 ordered wire parity for this new operation is separate.",
+    "Current artist popular rows use native popular-release-segments-main-roles list; the separate original-used getArtistNameAndTracks read supplies its own true top-track order and is not claimed to reproduce that current list.",
+    "Normal locale empty and false prerelease flag are explicit application inputs; remote flag value and native-list/prefetch policy remain separate. Section React/query hooks have inert state/scheduling, and their original query function executes. Discography limits/offsets and DATE_DESC are explicit caller inputs; the exact original producers construct all variables.",
+    "Response schema paths come from original route/source access; synthetic responses do not prove current server field availability or account permissions."
+  ],
+  "cases": [
+    {
+      "name": "normal artist overview explicit false prerelease flag",
+      "kind": "overview",
+      "uri": "spotify:artist:0000000000000000000001",
+      "artistLocale": "",
+      "preReleaseV2": false,
+      "artistKind": "overview",
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "spotify-app-version": "896000000",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphcnRpc3Q6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMSIsImxvY2FsZSI6IiIsInByZVJlbGVhc2VWMiI6ZmFsc2V9LCJvcGVyYXRpb25OYW1lIjoicXVlcnlBcnRpc3RPdmVydmlldyIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6IjlmODEzNGVmNTY1ZTc4NjIxZjFlMTc5MzU1NWJkNjYzM2M1YWMxNDRhZTBmODk2MDRlZDNhZTNmODBiM2M4ZTYifX19",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "896000000",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "896000000",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"uri\":\"spotify:artist:0000000000000000000001\",\"locale\":\"\",\"preReleaseV2\":false},\"operationName\":\"queryArtistOverview\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"9f8134ef565e78621f1e1793555bd6633c5ac144ae0f89604ed3ae3f80b3c8e6\"}}}"
+      },
+      "operation": "queryArtistOverview",
+      "variables": {
+        "uri": "spotify:artist:0000000000000000000001",
+        "locale": "",
+        "preReleaseV2": false
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "896000000",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "258"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphcnRpc3Q6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMSIsImxvY2FsZSI6IiIsInByZVJlbGVhc2VWMiI6ZmFsc2V9LCJvcGVyYXRpb25OYW1lIjoicXVlcnlBcnRpc3RPdmVydmlldyIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6IjlmODEzNGVmNTY1ZTc4NjIxZjFlMTc5MzU1NWJkNjYzM2M1YWMxNDRhZTBmODk2MDRlZDNhZTNmODBiM2M4ZTYifX19"
+      },
+      "result": {
+        "artistUnionType": "Artist"
+      }
+    },
+    {
+      "name": "artist overview explicit link locale and true flag",
+      "kind": "overview",
+      "uri": "spotify:artist:0000000000000000000002",
+      "artistLocale": "intl-en",
+      "preReleaseV2": true,
+      "artistKind": "overview",
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "spotify-app-version": "896000000",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphcnRpc3Q6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMiIsImxvY2FsZSI6ImludGwtZW4iLCJwcmVSZWxlYXNlVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoicXVlcnlBcnRpc3RPdmVydmlldyIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6IjlmODEzNGVmNTY1ZTc4NjIxZjFlMTc5MzU1NWJkNjYzM2M1YWMxNDRhZTBmODk2MDRlZDNhZTNmODBiM2M4ZTYifX19",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "896000000",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "896000000",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"uri\":\"spotify:artist:0000000000000000000002\",\"locale\":\"intl-en\",\"preReleaseV2\":true},\"operationName\":\"queryArtistOverview\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"9f8134ef565e78621f1e1793555bd6633c5ac144ae0f89604ed3ae3f80b3c8e6\"}}}"
+      },
+      "operation": "queryArtistOverview",
+      "variables": {
+        "uri": "spotify:artist:0000000000000000000002",
+        "locale": "intl-en",
+        "preReleaseV2": true
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "896000000",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "264"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphcnRpc3Q6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMiIsImxvY2FsZSI6ImludGwtZW4iLCJwcmVSZWxlYXNlVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoicXVlcnlBcnRpc3RPdmVydmlldyIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6IjlmODEzNGVmNTY1ZTc4NjIxZjFlMTc5MzU1NWJkNjYzM2M1YWMxNDRhZTBmODk2MDRlZDNhZTNmODBiM2M4ZTYifX19"
+      },
+      "result": {
+        "artistUnionType": "Artist"
+      }
+    },
+    {
+      "name": "fresh original artist top-track URI batch",
+      "kind": "tracks",
+      "uri": "spotify:artist:0000000000000000000001",
+      "offset": 0,
+      "limit": 200,
+      "artistKind": "tracks",
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphcnRpc3Q6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMSIsIm9mZnNldCI6MCwibGltaXQiOjIwMH0sIm9wZXJhdGlvbk5hbWUiOiJnZXRBcnRpc3ROYW1lQW5kVHJhY2tzIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiMGFkYWYxYTFhOGE5NGM3ZWQwOTU2MzljNGQ5NDU2ZDJiMWNmYWMxNmFjNTExZDVkZDJiMDFiNmRkODlmNzQ4YSJ9fX0=",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"uri\":\"spotify:artist:0000000000000000000001\",\"offset\":0,\"limit\":200},\"operationName\":\"getArtistNameAndTracks\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"0adaf1a1a8a94c7ed095639c4d9456d2b1cfac16ac511d5dd2b01b6dd89f748a\"}}}"
+      },
+      "operation": "getArtistNameAndTracks",
+      "variables": {
+        "uri": "spotify:artist:0000000000000000000001",
+        "offset": 0,
+        "limit": 200
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "251"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphcnRpc3Q6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMSIsIm9mZnNldCI6MCwibGltaXQiOjIwMH0sIm9wZXJhdGlvbk5hbWUiOiJnZXRBcnRpc3ROYW1lQW5kVHJhY2tzIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiMGFkYWYxYTFhOGE5NGM3ZWQwOTU2MzljNGQ5NDU2ZDJiMWNmYWMxNmFjNTExZDVkZDJiMDFiNmRkODlmNzQ4YSJ9fX0="
+      },
+      "result": {
+        "name": "Synthetic artist",
+        "trackUris": [
+          "spotify:track:0000000000000000000001",
+          "spotify:track:0000000000000000000002"
+        ],
+        "nextOffset": null,
+        "contextUri": "spotify:artist:0000000000000000000001"
+      }
+    },
+    {
+      "name": "original artist top-track continuation uses server cursor",
+      "kind": "tracks",
+      "uri": "spotify:artist:0000000000000000000001",
+      "offset": 257,
+      "limit": 200,
+      "artistKind": "tracks",
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphcnRpc3Q6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMSIsIm9mZnNldCI6MjU3LCJsaW1pdCI6MjAwfSwib3BlcmF0aW9uTmFtZSI6ImdldEFydGlzdE5hbWVBbmRUcmFja3MiLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiIwYWRhZjFhMWE4YTk0YzdlZDA5NTYzOWM0ZDk0NTZkMmIxY2ZhYzE2YWM1MTFkNWRkMmIwMWI2ZGQ4OWY3NDhhIn19fQ==",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"uri\":\"spotify:artist:0000000000000000000001\",\"offset\":257,\"limit\":200},\"operationName\":\"getArtistNameAndTracks\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"0adaf1a1a8a94c7ed095639c4d9456d2b1cfac16ac511d5dd2b01b6dd89f748a\"}}}"
+      },
+      "operation": "getArtistNameAndTracks",
+      "variables": {
+        "uri": "spotify:artist:0000000000000000000001",
+        "offset": 257,
+        "limit": 200
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "253"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphcnRpc3Q6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMSIsIm9mZnNldCI6MjU3LCJsaW1pdCI6MjAwfSwib3BlcmF0aW9uTmFtZSI6ImdldEFydGlzdE5hbWVBbmRUcmFja3MiLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiIwYWRhZjFhMWE4YTk0YzdlZDA5NTYzOWM0ZDk0NTZkMmIxY2ZhYzE2YWM1MTFkNWRkMmIwMWI2ZGQ4OWY3NDhhIn19fQ=="
+      },
+      "result": {
+        "name": "Synthetic artist",
+        "trackUris": [
+          "spotify:track:0000000000000000000001",
+          "spotify:track:0000000000000000000002"
+        ],
+        "nextOffset": null,
+        "contextUri": "spotify:artist:0000000000000000000001"
+      }
+    },
+    {
+      "name": "original queryArtistDiscographyOverview",
+      "kind": "section",
+      "uri": "spotify:artist:0000000000000000000001",
+      "routeUri": "spotify:app:artist:0000000000000000000001:discography:all",
+      "operation": "queryArtistDiscographyOverview",
+      "symbol": "eE",
+      "section": "discography:all",
+      "offset": 0,
+      "limit": 50,
+      "order": "DATE_DESC",
+      "artistKind": "section",
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphcnRpc3Q6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMSJ9LCJvcGVyYXRpb25OYW1lIjoicXVlcnlBcnRpc3REaXNjb2dyYXBoeU92ZXJ2aWV3IiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiNWUwN2QzMjNmZWJiNTdiNGE1NmE0MmFiYmY3ODE0OTBlNTg3NjRhYTQ1ZmViNmUzZGMwNTkxNTY0ZmM1NjU5OSJ9fX0=",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"uri\":\"spotify:artist:0000000000000000000001\"},\"operationName\":\"queryArtistDiscographyOverview\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"5e07d323febb57b4a56a42abbf781490e58764aa45feb6e3dc0591564fc56599\"}}}"
+      },
+      "variables": {
+        "uri": "spotify:artist:0000000000000000000001"
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "236"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphcnRpc3Q6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMSJ9LCJvcGVyYXRpb25OYW1lIjoicXVlcnlBcnRpc3REaXNjb2dyYXBoeU92ZXJ2aWV3IiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiNWUwN2QzMjNmZWJiNTdiNGE1NmE0MmFiYmY3ODE0OTBlNTg3NjRhYTQ1ZmViNmUzZGMwNTkxNTY0ZmM1NjU5OSJ9fX0="
+      },
+      "result": {
+        "artistUnionType": "Artist"
+      }
+    },
+    {
+      "name": "original queryArtistDiscographyAlbums",
+      "kind": "section",
+      "uri": "spotify:artist:0000000000000000000001",
+      "routeUri": "spotify:app:artist:0000000000000000000001:discography:album",
+      "operation": "queryArtistDiscographyAlbums",
+      "symbol": "eN",
+      "section": "discography:album",
+      "offset": 0,
+      "limit": 50,
+      "order": "DATE_DESC",
+      "artistKind": "section",
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphcnRpc3Q6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMSIsIm9mZnNldCI6MCwibGltaXQiOjUwLCJvcmRlciI6IkRBVEVfREVTQyJ9LCJvcGVyYXRpb25OYW1lIjoicXVlcnlBcnRpc3REaXNjb2dyYXBoeUFsYnVtcyIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6IjVlMDdkMzIzZmViYjU3YjRhNTZhNDJhYmJmNzgxNDkwZTU4NzY0YWE0NWZlYjZlM2RjMDU5MTU2NGZjNTY1OTkifX19",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"uri\":\"spotify:artist:0000000000000000000001\",\"offset\":0,\"limit\":50,\"order\":\"DATE_DESC\"},\"operationName\":\"queryArtistDiscographyAlbums\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"5e07d323febb57b4a56a42abbf781490e58764aa45feb6e3dc0591564fc56599\"}}}"
+      },
+      "variables": {
+        "uri": "spotify:artist:0000000000000000000001",
+        "offset": 0,
+        "limit": 50,
+        "order": "DATE_DESC"
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "276"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphcnRpc3Q6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMSIsIm9mZnNldCI6MCwibGltaXQiOjUwLCJvcmRlciI6IkRBVEVfREVTQyJ9LCJvcGVyYXRpb25OYW1lIjoicXVlcnlBcnRpc3REaXNjb2dyYXBoeUFsYnVtcyIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6IjVlMDdkMzIzZmViYjU3YjRhNTZhNDJhYmJmNzgxNDkwZTU4NzY0YWE0NWZlYjZlM2RjMDU5MTU2NGZjNTY1OTkifX19"
+      },
+      "result": {
+        "artistUnionType": "Artist"
+      }
+    },
+    {
+      "name": "original queryArtistDiscographySingles",
+      "kind": "section",
+      "uri": "spotify:artist:0000000000000000000001",
+      "routeUri": "spotify:app:artist:0000000000000000000001:discography:single",
+      "operation": "queryArtistDiscographySingles",
+      "symbol": "e_",
+      "section": "discography:single",
+      "offset": 0,
+      "limit": 50,
+      "order": "DATE_DESC",
+      "artistKind": "section",
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphcnRpc3Q6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMSIsIm9mZnNldCI6MCwibGltaXQiOjUwLCJvcmRlciI6IkRBVEVfREVTQyJ9LCJvcGVyYXRpb25OYW1lIjoicXVlcnlBcnRpc3REaXNjb2dyYXBoeVNpbmdsZXMiLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiI1ZTA3ZDMyM2ZlYmI1N2I0YTU2YTQyYWJiZjc4MTQ5MGU1ODc2NGFhNDVmZWI2ZTNkYzA1OTE1NjRmYzU2NTk5In19fQ==",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"uri\":\"spotify:artist:0000000000000000000001\",\"offset\":0,\"limit\":50,\"order\":\"DATE_DESC\"},\"operationName\":\"queryArtistDiscographySingles\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"5e07d323febb57b4a56a42abbf781490e58764aa45feb6e3dc0591564fc56599\"}}}"
+      },
+      "variables": {
+        "uri": "spotify:artist:0000000000000000000001",
+        "offset": 0,
+        "limit": 50,
+        "order": "DATE_DESC"
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "277"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphcnRpc3Q6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMSIsIm9mZnNldCI6MCwibGltaXQiOjUwLCJvcmRlciI6IkRBVEVfREVTQyJ9LCJvcGVyYXRpb25OYW1lIjoicXVlcnlBcnRpc3REaXNjb2dyYXBoeVNpbmdsZXMiLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiI1ZTA3ZDMyM2ZlYmI1N2I0YTU2YTQyYWJiZjc4MTQ5MGU1ODc2NGFhNDVmZWI2ZTNkYzA1OTE1NjRmYzU2NTk5In19fQ=="
+      },
+      "result": {
+        "artistUnionType": "Artist"
+      }
+    },
+    {
+      "name": "original queryArtistDiscographyCompilations",
+      "kind": "section",
+      "uri": "spotify:artist:0000000000000000000001",
+      "routeUri": "spotify:app:artist:0000000000000000000001:discography:compilation",
+      "operation": "queryArtistDiscographyCompilations",
+      "symbol": "eT",
+      "section": "discography:compilation",
+      "offset": 0,
+      "limit": 50,
+      "order": "DATE_DESC",
+      "artistKind": "section",
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphcnRpc3Q6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMSIsIm9mZnNldCI6MCwibGltaXQiOjUwLCJvcmRlciI6IkRBVEVfREVTQyJ9LCJvcGVyYXRpb25OYW1lIjoicXVlcnlBcnRpc3REaXNjb2dyYXBoeUNvbXBpbGF0aW9ucyIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6IjVlMDdkMzIzZmViYjU3YjRhNTZhNDJhYmJmNzgxNDkwZTU4NzY0YWE0NWZlYjZlM2RjMDU5MTU2NGZjNTY1OTkifX19",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"uri\":\"spotify:artist:0000000000000000000001\",\"offset\":0,\"limit\":50,\"order\":\"DATE_DESC\"},\"operationName\":\"queryArtistDiscographyCompilations\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"5e07d323febb57b4a56a42abbf781490e58764aa45feb6e3dc0591564fc56599\"}}}"
+      },
+      "variables": {
+        "uri": "spotify:artist:0000000000000000000001",
+        "offset": 0,
+        "limit": 50,
+        "order": "DATE_DESC"
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "282"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphcnRpc3Q6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMSIsIm9mZnNldCI6MCwibGltaXQiOjUwLCJvcmRlciI6IkRBVEVfREVTQyJ9LCJvcGVyYXRpb25OYW1lIjoicXVlcnlBcnRpc3REaXNjb2dyYXBoeUNvbXBpbGF0aW9ucyIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6IjVlMDdkMzIzZmViYjU3YjRhNTZhNDJhYmJmNzgxNDkwZTU4NzY0YWE0NWZlYjZlM2RjMDU5MTU2NGZjNTY1OTkifX19"
+      },
+      "result": {
+        "artistUnionType": "Artist"
+      }
+    },
+    {
+      "name": "original queryArtistDiscographyAll",
+      "kind": "section",
+      "uri": "spotify:artist:0000000000000000000001",
+      "routeUri": "spotify:app:artist:0000000000000000000001:discography:all",
+      "operation": "queryArtistDiscographyAll",
+      "symbol": "eU",
+      "section": "discography:all",
+      "offset": 0,
+      "limit": 50,
+      "order": "DATE_DESC",
+      "artistKind": "section",
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphcnRpc3Q6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMSIsIm9mZnNldCI6MCwibGltaXQiOjUwLCJvcmRlciI6IkRBVEVfREVTQyJ9LCJvcGVyYXRpb25OYW1lIjoicXVlcnlBcnRpc3REaXNjb2dyYXBoeUFsbCIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6IjVlMDdkMzIzZmViYjU3YjRhNTZhNDJhYmJmNzgxNDkwZTU4NzY0YWE0NWZlYjZlM2RjMDU5MTU2NGZjNTY1OTkifX19",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"uri\":\"spotify:artist:0000000000000000000001\",\"offset\":0,\"limit\":50,\"order\":\"DATE_DESC\"},\"operationName\":\"queryArtistDiscographyAll\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"5e07d323febb57b4a56a42abbf781490e58764aa45feb6e3dc0591564fc56599\"}}}"
+      },
+      "variables": {
+        "uri": "spotify:artist:0000000000000000000001",
+        "offset": 0,
+        "limit": 50,
+        "order": "DATE_DESC"
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "273"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphcnRpc3Q6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMSIsIm9mZnNldCI6MCwibGltaXQiOjUwLCJvcmRlciI6IkRBVEVfREVTQyJ9LCJvcGVyYXRpb25OYW1lIjoicXVlcnlBcnRpc3REaXNjb2dyYXBoeUFsbCIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6IjVlMDdkMzIzZmViYjU3YjRhNTZhNDJhYmJmNzgxNDkwZTU4NzY0YWE0NWZlYjZlM2RjMDU5MTU2NGZjNTY1OTkifX19"
+      },
+      "result": {
+        "artistUnionType": "Artist"
+      }
+    },
+    {
+      "name": "original queryArtistRelated",
+      "kind": "section",
+      "uri": "spotify:artist:0000000000000000000001",
+      "routeUri": "spotify:app:artist:0000000000000000000001:related",
+      "operation": "queryArtistRelated",
+      "symbol": "iq",
+      "section": "related",
+      "offset": 0,
+      "limit": 50,
+      "order": "DATE_DESC",
+      "artistKind": "section",
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphcnRpc3Q6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMSJ9LCJvcGVyYXRpb25OYW1lIjoicXVlcnlBcnRpc3RSZWxhdGVkIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiM2QwMzFkNmNiMjJhMmFhN2M4ZDIwM2Q0OWI0OWRmNzMxZjU4YjFlMjc5OWNjMzhkOTg3NmQ1ODc3MWFhNjZmMyJ9fX0=",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"uri\":\"spotify:artist:0000000000000000000001\"},\"operationName\":\"queryArtistRelated\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"3d031d6cb22a2aa7c8d203d49b49df731f58b1e2799cc38d9876d58771aa66f3\"}}}"
+      },
+      "variables": {
+        "uri": "spotify:artist:0000000000000000000001"
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "224"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphcnRpc3Q6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMSJ9LCJvcGVyYXRpb25OYW1lIjoicXVlcnlBcnRpc3RSZWxhdGVkIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiM2QwMzFkNmNiMjJhMmFhN2M4ZDIwM2Q0OWI0OWRmNzMxZjU4YjFlMjc5OWNjMzhkOTg3NmQ1ODc3MWFhNjZmMyJ9fX0="
+      },
+      "result": {
+        "artistUnionType": "Artist"
+      }
+    },
+    {
+      "name": "original queryArtistAppearsOn",
+      "kind": "section",
+      "uri": "spotify:artist:0000000000000000000001",
+      "routeUri": "spotify:app:artist:0000000000000000000001:appears-on",
+      "operation": "queryArtistAppearsOn",
+      "symbol": "j",
+      "section": "appears-on",
+      "offset": 0,
+      "limit": 50,
+      "order": "DATE_DESC",
+      "artistKind": "section",
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphcnRpc3Q6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMSJ9LCJvcGVyYXRpb25OYW1lIjoicXVlcnlBcnRpc3RBcHBlYXJzT24iLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiI5YTRiYjdhMjBkNjcyMGZlNTJkN2I0N2JjMDAxY2ZhOTE5NDBkZGY1ZTcxMTM3NjE0NjBiNGEyODhkMThhNGMxIn19fQ==",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"uri\":\"spotify:artist:0000000000000000000001\"},\"operationName\":\"queryArtistAppearsOn\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"9a4bb7a20d6720fe52d7b47bc001cfa91940ddf5e7113761460b4a288d18a4c1\"}}}"
+      },
+      "variables": {
+        "uri": "spotify:artist:0000000000000000000001"
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "226"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphcnRpc3Q6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMSJ9LCJvcGVyYXRpb25OYW1lIjoicXVlcnlBcnRpc3RBcHBlYXJzT24iLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiI5YTRiYjdhMjBkNjcyMGZlNTJkN2I0N2JjMDAxY2ZhOTE5NDBkZGY1ZTcxMTM3NjE0NjBiNGEyODhkMThhNGMxIn19fQ=="
+      },
+      "result": {
+        "artistUnionType": "Artist"
+      }
+    },
+    {
+      "name": "original queryArtistFeaturing",
+      "kind": "section",
+      "uri": "spotify:artist:0000000000000000000001",
+      "routeUri": "spotify:app:artist:0000000000000000000001:featuring",
+      "operation": "queryArtistFeaturing",
+      "symbol": "eY",
+      "section": "featuring",
+      "offset": 0,
+      "limit": 50,
+      "order": "DATE_DESC",
+      "artistKind": "section",
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphcnRpc3Q6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMSJ9LCJvcGVyYXRpb25OYW1lIjoicXVlcnlBcnRpc3RGZWF0dXJpbmciLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiIyMDg0MmQ2ZDlkMmQyOGVmOTQ1OTg0YjY4Y2I5MjdiYjMzZWRkMDBlYWI4NGE4ZGExNjY3ZGVmMjFmMWYyYzU0In19fQ==",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"uri\":\"spotify:artist:0000000000000000000001\"},\"operationName\":\"queryArtistFeaturing\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"20842d6d9d2d28ef945984b68cb927bb33edd00eab84a8da1667def21f1f2c54\"}}}"
+      },
+      "variables": {
+        "uri": "spotify:artist:0000000000000000000001"
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "226"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphcnRpc3Q6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMSJ9LCJvcGVyYXRpb25OYW1lIjoicXVlcnlBcnRpc3RGZWF0dXJpbmciLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiIyMDg0MmQ2ZDlkMmQyOGVmOTQ1OTg0YjY4Y2I5MjdiYjMzZWRkMDBlYWI4NGE4ZGExNjY3ZGVmMjFmMWYyYzU0In19fQ=="
+      },
+      "result": {
+        "artistUnionType": "Artist"
+      }
+    },
+    {
+      "name": "original queryArtistDiscoveredOn",
+      "kind": "section",
+      "uri": "spotify:artist:0000000000000000000001",
+      "routeUri": "spotify:app:artist:0000000000000000000001:discovered-on",
+      "operation": "queryArtistDiscoveredOn",
+      "symbol": "eW",
+      "section": "discovered-on",
+      "offset": 0,
+      "limit": 50,
+      "order": "DATE_DESC",
+      "artistKind": "section",
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphcnRpc3Q6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMSJ9LCJvcGVyYXRpb25OYW1lIjoicXVlcnlBcnRpc3REaXNjb3ZlcmVkT24iLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiI3MWMyMzkyZTRjZWNmNmI0OGI5YWQxMzExYWUwODgzOGNiZGFiY2ZkMTg5YzZiZjBjNjZjMjQzMGI4ZGNmZGIxIn19fQ==",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"uri\":\"spotify:artist:0000000000000000000001\"},\"operationName\":\"queryArtistDiscoveredOn\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"71c2392e4cecf6b48b9ad1311ae08838cbdabcfd189c6bf0c66c2430b8dcfdb1\"}}}"
+      },
+      "variables": {
+        "uri": "spotify:artist:0000000000000000000001"
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "229"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphcnRpc3Q6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMSJ9LCJvcGVyYXRpb25OYW1lIjoicXVlcnlBcnRpc3REaXNjb3ZlcmVkT24iLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiI3MWMyMzkyZTRjZWNmNmI0OGI5YWQxMzExYWUwODgzOGNiZGFiY2ZkMTg5YzZiZjBjNjZjMjQzMGI4ZGNmZGIxIn19fQ=="
+      },
+      "result": {
+        "artistUnionType": "Artist"
+      }
+    },
+    {
+      "name": "original discography continuation",
+      "kind": "section",
+      "uri": "spotify:artist:0000000000000000000001",
+      "routeUri": "spotify:app:artist:0000000000000000000001:discography:album",
+      "operation": "queryArtistDiscographyAlbums",
+      "symbol": "eN",
+      "section": "discography:album",
+      "offset": 50,
+      "limit": 50,
+      "order": "DATE_DESC",
+      "artistKind": "section",
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "method": "POST",
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921",
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphcnRpc3Q6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMSIsIm9mZnNldCI6NTAsImxpbWl0Ijo1MCwib3JkZXIiOiJEQVRFX0RFU0MifSwib3BlcmF0aW9uTmFtZSI6InF1ZXJ5QXJ0aXN0RGlzY29ncmFwaHlBbGJ1bXMiLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiI1ZTA3ZDMyM2ZlYmI1N2I0YTU2YTQyYWJiZjc4MTQ5MGU1ODc2NGFhNDVmZWI2ZTNkYzA1OTE1NjRmYzU2NTk5In19fQ==",
+        "authorize": true,
+        "includeCredentials": false,
+        "responseType": "json"
+      },
+      "normalizedHeaders": {
+        "accept-language": "en",
+        "authorization": "Bearer fixture-access-token",
+        "accept": "application/json",
+        "app-platform": "OSX_ARM64",
+        "spotify-app-version": "1.3.6.1921",
+        "content-type": "application/json;charset=UTF-8"
+      },
+      "fetchBoundary": {
+        "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+        "mode": "cors",
+        "credentials": "same-origin",
+        "redirect": "follow",
+        "method": "POST",
+        "headers": {
+          "accept-language": "en",
+          "authorization": "Bearer fixture-access-token",
+          "accept": "application/json",
+          "app-platform": "OSX_ARM64",
+          "spotify-app-version": "1.3.6.1921",
+          "content-type": "application/json;charset=UTF-8"
+        },
+        "body": "{\"variables\":{\"uri\":\"spotify:artist:0000000000000000000001\",\"offset\":50,\"limit\":50,\"order\":\"DATE_DESC\"},\"operationName\":\"queryArtistDiscographyAlbums\",\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"5e07d323febb57b4a56a42abbf781490e58764aa45feb6e3dc0591564fc56599\"}}}"
+      },
+      "variables": {
+        "uri": "spotify:artist:0000000000000000000001",
+        "offset": 50,
+        "limit": 50,
+        "order": "DATE_DESC"
+      },
+      "expected": {
+        "headers": {
+          ":method": "POST",
+          ":authority": "api-partner.spotify.com",
+          ":scheme": "https",
+          ":path": "/pathfinder/v2/query",
+          "origin": "https://xpui.app.spotify.com",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "accept": "application/json",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "content-type": "application/json;charset=UTF-8",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "spotify-app-version": "1.3.6.1921",
+          "sec-fetch-site": "same-site",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-dest": "empty",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=1, i",
+          "authorization": "Bearer fixture-access-token",
+          "client-token": "fixture-client-token",
+          "content-length": "277"
+        },
+        "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphcnRpc3Q6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMSIsIm9mZnNldCI6NTAsImxpbWl0Ijo1MCwib3JkZXIiOiJEQVRFX0RFU0MifSwib3BlcmF0aW9uTmFtZSI6InF1ZXJ5QXJ0aXN0RGlzY29ncmFwaHlBbGJ1bXMiLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiI1ZTA3ZDMyM2ZlYmI1N2I0YTU2YTQyYWJiZjc4MTQ5MGU1ODc2NGFhNDVmZWI2ZTNkYzA1OTE1NjRmYzU2NTk5In19fQ=="
+      },
+      "result": {
+        "artistUnionType": "Artist"
+      }
+    }
+  ]
+}

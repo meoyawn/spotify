@@ -1,0 +1,20 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: a8a77dc38a53ccb4cc8a54ed1590c8b52253aaec2b90a0ed34d7de7690d5c6e3
+
+syntax = "proto2";
+
+package spotify.on_demand_set.proto;
+
+option optimize_for = CODE_SIZE;
+
+enum OnDemandInFreeReason {
+  UNKNOWN = 0;
+
+  NOT_ON_DEMAND = 1;
+
+  ON_DEMAND = 2;
+
+  ON_DEMAND_EPISODES_ONLY = 3;
+
+  ON_DEMAND_NON_MUSIC_ONLY = 4;
+}

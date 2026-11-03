@@ -1,0 +1,40 @@
+{
+  "through": "2026-10-30T06:20:51Z",
+  "pid": 68480,
+  "logSnapshotSha256": "ac72d56d6fdeb8b527e75d51543c24a64868625cb203993c2e21fd6b8981afd1",
+  "privateLogSnapshot": ".local/lastfm/license-renewal-http.json",
+  "initialRestoration": {
+    "time": "2026-10-30T04:40:42.845546Z",
+    "request_id": 2,
+    "status": 200
+  },
+  "automaticAccountsRenewal": {
+    "time": "2026-10-30T05:35:43.706503Z",
+    "request_id": 163,
+    "status": 200,
+    "headers_ms": 904
+  },
+  "subsequentMusicKeyResponses": {
+    "200": 13
+  },
+  "subsequentKeyHeadersMilliseconds": [
+    190,
+    201,
+    198,
+    195,
+    195,
+    199,
+    201,
+    188,
+    187,
+    215,
+    193,
+    203,
+    193
+  ],
+  "limits": [
+    "Read existing redacted current and rotated debug logs first; no diagnostic HTTP or forced renewal sent.",
+    "Does not repair or explain earlier 429 failures, establish indefinite session reliability or imply that Connect reporting caused admission.",
+    "A prior waiting job recovered at 05:03 UTC, before the first Connect PUT at 05:27 UTC."
+  ]
+}

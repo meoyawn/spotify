@@ -1,0 +1,948 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "constructor": "0x101a6ed1c",
+  "queryHelpers": {
+    "site": "0x101f52d30",
+    "append": "0x101f53aa0"
+  },
+  "responseOwner": "0x101a701dc",
+  "jsonParser": "0x101a6d898",
+  "endpointParser": "0x101a7099c",
+  "profileScalarBranch": {
+    "start": "0x10191b280",
+    "stop": "0x10191b374",
+    "owner": "0x10191b1b0",
+    "platformDefault": "0x101a4c850",
+    "productDefault": "0x101a4c858",
+    "systemInfo": "0x101a4c860",
+    "osExtraction": "x0 bits32..39"
+  },
+  "limits": [
+    "Synthetic configuration, clock and HTTP responses; no request is executed",
+    "Original native query helpers execute unchanged; standard libc/libc++ operations are injected",
+    "Inherited method/auth/context semantics are not inferred from the captured URL and UA setters",
+    "The response callback is captured before cleanup; invalid-port diagnostic logging is suppressed",
+    "Malformed JSON captures the original exception-allocation boundary, not C++ exception unwinding or an outer error policy",
+    "Scalar profile cases execute an original branch fragment with synthetic owner/frame inputs; they do not prove the desktop version source or the whole credential owner"
+  ],
+  "cases": [
+    {
+      "versionValue": 1234567890,
+      "byte4": 17,
+      "value8": 4000000000,
+      "byte12": 255,
+      "nowMicroseconds": 1793059000123456,
+      "endpointTypes": [
+        0,
+        1,
+        2,
+        3,
+        99
+      ],
+      "name": "default profile",
+      "original": {
+        "url": "https://apresolve.spotify.com/v2?time=1793059000&type=accesspoint&type=spclient&type=dealer-g2",
+        "headers": {
+          "User-Agent": "Spotify/1234567890 (17; 4000000000; 255)"
+        },
+        "opaqueContext": 4660,
+        "option101c20240": 1,
+        "clockReads": 1
+      }
+    },
+    {
+      "versionValue": 1234567890,
+      "byte4": 17,
+      "value8": 4000000000,
+      "byte12": 255,
+      "nowMicroseconds": 1793059000123456,
+      "endpointTypes": [],
+      "name": "empty type vector",
+      "original": {
+        "url": "https://apresolve.spotify.com/v2?time=1793059000",
+        "headers": {
+          "User-Agent": "Spotify/1234567890 (17; 4000000000; 255)"
+        },
+        "opaqueContext": 4660,
+        "option101c20240": 1,
+        "clockReads": 1
+      }
+    },
+    {
+      "versionValue": 1234567890,
+      "byte4": 17,
+      "value8": 4000000000,
+      "byte12": 255,
+      "nowMicroseconds": 1793059000123456,
+      "endpointTypes": [
+        1,
+        3,
+        0,
+        1,
+        2,
+        0,
+        -1
+      ],
+      "name": "deduplicated fixed type order",
+      "original": {
+        "url": "https://apresolve.spotify.com/v2?time=1793059000&type=accesspoint&type=spclient&type=dealer-g2",
+        "headers": {
+          "User-Agent": "Spotify/1234567890 (17; 4000000000; 255)"
+        },
+        "opaqueContext": 4660,
+        "option101c20240": 1,
+        "clockReads": 1
+      }
+    },
+    {
+      "versionValue": 1234567890,
+      "byte4": 17,
+      "value8": 4000000000,
+      "byte12": 255,
+      "nowMicroseconds": 1793059000123456,
+      "endpointTypes": [
+        -1,
+        4,
+        2147483647
+      ],
+      "name": "unknown types ignored",
+      "original": {
+        "url": "https://apresolve.spotify.com/v2?time=1793059000",
+        "headers": {
+          "User-Agent": "Spotify/1234567890 (17; 4000000000; 255)"
+        },
+        "opaqueContext": 4660,
+        "option101c20240": 1,
+        "clockReads": 1
+      }
+    },
+    {
+      "versionValue": 1234567890,
+      "byte4": 17,
+      "value8": 4000000000,
+      "byte12": 255,
+      "nowMicroseconds": 1793059000123456,
+      "endpointTypes": [
+        0,
+        1,
+        2,
+        3,
+        99
+      ],
+      "name": "empty explicit site",
+      "site": "",
+      "original": {
+        "url": "https://apresolve.spotify.com/v2?site=&time=1793059000&type=accesspoint&type=spclient&type=dealer-g2",
+        "headers": {
+          "User-Agent": "Spotify/1234567890 (17; 4000000000; 255)"
+        },
+        "opaqueContext": 4660,
+        "option101c20240": 1,
+        "clockReads": 1
+      }
+    },
+    {
+      "versionValue": 1234567890,
+      "byte4": 17,
+      "value8": 4000000000,
+      "byte12": 255,
+      "nowMicroseconds": 1793059000123456,
+      "endpointTypes": [
+        0,
+        1,
+        2,
+        3,
+        99
+      ],
+      "name": "opaque site encoding",
+      "site": "a b+/%7E&=雪",
+      "original": {
+        "url": "https://apresolve.spotify.com/v2?site=a%20b%2B%2F%257E%26%3D%E9%9B%AA&time=1793059000&type=accesspoint&type=spclient&type=dealer-g2",
+        "headers": {
+          "User-Agent": "Spotify/1234567890 (17; 4000000000; 255)"
+        },
+        "opaqueContext": 4660,
+        "option101c20240": 1,
+        "clockReads": 1
+      }
+    },
+    {
+      "versionValue": 1234567890,
+      "byte4": 17,
+      "value8": 4000000000,
+      "byte12": 255,
+      "nowMicroseconds": 1793059000123456,
+      "endpointTypes": [
+        0,
+        1,
+        2,
+        3,
+        99
+      ],
+      "name": "query and fragment",
+      "urlOverride": "https://local.test/p%2f?q=a+b&site=old&time=7&type=old#frag%7e",
+      "site": "x&y",
+      "original": {
+        "url": "https://local.test/p%2f?q=a+b&site=old&time=7&type=old#frag%7e&site=x%26y&time=1793059000&type=accesspoint&type=spclient&type=dealer-g2",
+        "headers": {
+          "User-Agent": "Spotify/1234567890 (17; 4000000000; 255)"
+        },
+        "opaqueContext": 4660,
+        "option101c20240": 1,
+        "clockReads": 1
+      }
+    },
+    {
+      "versionValue": 1234567890,
+      "byte4": 17,
+      "value8": 4000000000,
+      "byte12": 255,
+      "nowMicroseconds": 1793059000123456,
+      "endpointTypes": [
+        0,
+        1,
+        2,
+        3,
+        99
+      ],
+      "name": "repeated existing params",
+      "urlOverride": "https://local.test/path?type=a&type=b&site=a&site=b&time=1&time=2&x=%7e",
+      "site": "new",
+      "original": {
+        "url": "https://local.test/path?type=a&type=b&site=a&site=b&time=1&time=2&x=%7e&site=new&time=1793059000&type=accesspoint&type=spclient&type=dealer-g2",
+        "headers": {
+          "User-Agent": "Spotify/1234567890 (17; 4000000000; 255)"
+        },
+        "opaqueContext": 4660,
+        "option101c20240": 1,
+        "clockReads": 1
+      }
+    },
+    {
+      "versionValue": 1234567890,
+      "byte4": 17,
+      "value8": 4000000000,
+      "byte12": 255,
+      "nowMicroseconds": 1793059000123456,
+      "endpointTypes": [
+        0,
+        1,
+        2,
+        3,
+        99
+      ],
+      "name": "empty query delimiter",
+      "urlOverride": "https://local.test/path?",
+      "original": {
+        "url": "https://local.test/path?time=1793059000&type=accesspoint&type=spclient&type=dealer-g2",
+        "headers": {
+          "User-Agent": "Spotify/1234567890 (17; 4000000000; 255)"
+        },
+        "opaqueContext": 4660,
+        "option101c20240": 1,
+        "clockReads": 1
+      }
+    },
+    {
+      "versionValue": 1234567890,
+      "byte4": 17,
+      "value8": 4000000000,
+      "byte12": 255,
+      "nowMicroseconds": 1793059000123456,
+      "endpointTypes": [
+        0,
+        1,
+        2,
+        3,
+        99
+      ],
+      "name": "trailing query ampersand",
+      "urlOverride": "https://local.test/path?x=1&",
+      "original": {
+        "url": "https://local.test/path?x=1&&time=1793059000&type=accesspoint&type=spclient&type=dealer-g2",
+        "headers": {
+          "User-Agent": "Spotify/1234567890 (17; 4000000000; 255)"
+        },
+        "opaqueContext": 4660,
+        "option101c20240": 1,
+        "clockReads": 1
+      }
+    },
+    {
+      "versionValue": 1234567890,
+      "byte4": 17,
+      "value8": 4000000000,
+      "byte12": 255,
+      "nowMicroseconds": -1234567,
+      "endpointTypes": [
+        0,
+        1,
+        2,
+        3,
+        99
+      ],
+      "name": "negative fractional clock",
+      "original": {
+        "url": "https://apresolve.spotify.com/v2?time=-1&type=accesspoint&type=spclient&type=dealer-g2",
+        "headers": {
+          "User-Agent": "Spotify/1234567890 (17; 4000000000; 255)"
+        },
+        "opaqueContext": 4660,
+        "option101c20240": 1,
+        "clockReads": 1
+      }
+    },
+    {
+      "versionValue": 4294967295,
+      "byte4": 255,
+      "value8": 4294967295,
+      "byte12": 255,
+      "nowMicroseconds": 1793059000123456,
+      "endpointTypes": [
+        0,
+        1,
+        2,
+        3,
+        99
+      ],
+      "name": "unsigned UA limits",
+      "original": {
+        "url": "https://apresolve.spotify.com/v2?time=1793059000&type=accesspoint&type=spclient&type=dealer-g2",
+        "headers": {
+          "User-Agent": "Spotify/4294967295 (255; 4294967295; 255)"
+        },
+        "opaqueContext": 4660,
+        "option101c20240": 1,
+        "clockReads": 1
+      }
+    },
+    {
+      "versionValue": 1234567890,
+      "byte4": 17,
+      "value8": 4000000000,
+      "byte12": 255,
+      "nowMicroseconds": 1793059000123456,
+      "endpointTypes": [
+        2
+      ],
+      "name": "spclient type two alone",
+      "original": {
+        "url": "https://apresolve.spotify.com/v2?time=1793059000&type=spclient",
+        "headers": {
+          "User-Agent": "Spotify/1234567890 (17; 4000000000; 255)"
+        },
+        "opaqueContext": 4660,
+        "option101c20240": 1,
+        "clockReads": 1
+      }
+    },
+    {
+      "versionValue": 1234567890,
+      "byte4": 17,
+      "value8": 4000000000,
+      "byte12": 255,
+      "nowMicroseconds": 1793059000123456,
+      "endpointTypes": [
+        3
+      ],
+      "name": "spclient type three alone",
+      "original": {
+        "url": "https://apresolve.spotify.com/v2?time=1793059000&type=spclient",
+        "headers": {
+          "User-Agent": "Spotify/1234567890 (17; 4000000000; 255)"
+        },
+        "opaqueContext": 4660,
+        "option101c20240": 1,
+        "clockReads": 1
+      }
+    },
+    {
+      "versionValue": 1234567890,
+      "byte4": 17,
+      "value8": 4000000000,
+      "byte12": 255,
+      "nowMicroseconds": 1793059000123456,
+      "endpointTypes": [
+        0,
+        1,
+        2,
+        3,
+        99
+      ],
+      "name": "explicit empty override",
+      "urlOverride": "",
+      "original": {
+        "url": "?time=1793059000&type=accesspoint&type=spclient&type=dealer-g2",
+        "headers": {
+          "User-Agent": "Spotify/1234567890 (17; 4000000000; 255)"
+        },
+        "opaqueContext": 4660,
+        "option101c20240": 1,
+        "clockReads": 1
+      }
+    },
+    {
+      "versionValue": 1234567890,
+      "byte4": 17,
+      "value8": 4000000000,
+      "byte12": 255,
+      "nowMicroseconds": 1793059000123456,
+      "endpointTypes": [
+        0,
+        1,
+        2,
+        3,
+        99
+      ],
+      "name": "fragment without question mark",
+      "urlOverride": "https://local.test/path#raw",
+      "original": {
+        "url": "https://local.test/path#raw?time=1793059000&type=accesspoint&type=spclient&type=dealer-g2",
+        "headers": {
+          "User-Agent": "Spotify/1234567890 (17; 4000000000; 255)"
+        },
+        "opaqueContext": 4660,
+        "option101c20240": 1,
+        "clockReads": 1
+      }
+    },
+    {
+      "versionValue": 1234567890,
+      "byte4": 17,
+      "value8": 4000000000,
+      "byte12": 255,
+      "nowMicroseconds": 1793059000123456,
+      "endpointTypes": [
+        0,
+        1,
+        2,
+        3,
+        99
+      ],
+      "name": "all site punctuation",
+      "site": "AZaz09-._~!'()*:/?@&=+$,;#[]\u0000",
+      "original": {
+        "url": "https://apresolve.spotify.com/v2?site=AZaz09-._~%21%27%28%29%2A%3A%2F%3F%40%26%3D%2B%24%2C%3B%23%5B%5D%00&time=1793059000&type=accesspoint&type=spclient&type=dealer-g2",
+        "headers": {
+          "User-Agent": "Spotify/1234567890 (17; 4000000000; 255)"
+        },
+        "opaqueContext": 4660,
+        "option101c20240": 1,
+        "clockReads": 1
+      }
+    },
+    {
+      "versionValue": 1234567890,
+      "byte4": 17,
+      "value8": 4000000000,
+      "byte12": 255,
+      "nowMicroseconds": -999999,
+      "endpointTypes": [
+        0,
+        1,
+        2,
+        3,
+        99
+      ],
+      "name": "negative subsecond clock",
+      "original": {
+        "url": "https://apresolve.spotify.com/v2?time=0&type=accesspoint&type=spclient&type=dealer-g2",
+        "headers": {
+          "User-Agent": "Spotify/1234567890 (17; 4000000000; 255)"
+        },
+        "opaqueContext": 4660,
+        "option101c20240": 1,
+        "clockReads": 1
+      }
+    },
+    {
+      "versionValue": 1234567890,
+      "byte4": 17,
+      "value8": 4000000000,
+      "byte12": 255,
+      "nowMicroseconds": 999999,
+      "endpointTypes": [
+        0,
+        1,
+        2,
+        3,
+        99
+      ],
+      "name": "positive subsecond clock",
+      "original": {
+        "url": "https://apresolve.spotify.com/v2?time=0&type=accesspoint&type=spclient&type=dealer-g2",
+        "headers": {
+          "User-Agent": "Spotify/1234567890 (17; 4000000000; 255)"
+        },
+        "opaqueContext": 4660,
+        "option101c20240": 1,
+        "clockReads": 1
+      }
+    },
+    {
+      "versionValue": 1234567890,
+      "byte4": 17,
+      "value8": 4000000000,
+      "byte12": 255,
+      "nowMicroseconds": -9223372036854775808,
+      "endpointTypes": [
+        0,
+        1,
+        2,
+        3,
+        99
+      ],
+      "name": "minimum signed64 clock",
+      "original": {
+        "url": "https://apresolve.spotify.com/v2?time=-9223372036854&type=accesspoint&type=spclient&type=dealer-g2",
+        "headers": {
+          "User-Agent": "Spotify/1234567890 (17; 4000000000; 255)"
+        },
+        "opaqueContext": 4660,
+        "option101c20240": 1,
+        "clockReads": 1
+      }
+    },
+    {
+      "versionValue": 1234567890,
+      "byte4": 17,
+      "value8": 4000000000,
+      "byte12": 255,
+      "nowMicroseconds": 9223372036854775807,
+      "endpointTypes": [
+        0,
+        1,
+        2,
+        3,
+        99
+      ],
+      "name": "maximum signed64 clock",
+      "original": {
+        "url": "https://apresolve.spotify.com/v2?time=9223372036854&type=accesspoint&type=spclient&type=dealer-g2",
+        "headers": {
+          "User-Agent": "Spotify/1234567890 (17; 4000000000; 255)"
+        },
+        "opaqueContext": 4660,
+        "option101c20240": 1,
+        "clockReads": 1
+      }
+    }
+  ],
+  "responseCases": [
+    {
+      "name": "all v2 endpoint groups and duplicates",
+      "status": 200,
+      "body": "{\"accesspoint\":[\"ap.test:443\",\"ap.test:443\"],\"spclient\":{\"regional\":[\"r.test:444\"],\"global\":[\"g.test:445\"]},\"dealer-g2\":[\"d.test:446\"]}",
+      "original": {
+        "endpoints": [
+          {
+            "type": 0,
+            "host": "ap.test",
+            "port": 443
+          },
+          {
+            "type": 0,
+            "host": "ap.test",
+            "port": 443
+          },
+          {
+            "type": 1,
+            "host": "d.test",
+            "port": 446
+          },
+          {
+            "type": 2,
+            "host": "g.test",
+            "port": 445
+          },
+          {
+            "type": 3,
+            "host": "r.test",
+            "port": 444
+          }
+        ]
+      }
+    },
+    {
+      "name": "valid empty object",
+      "status": 200,
+      "body": "{}",
+      "original": {
+        "endpoints": []
+      }
+    },
+    {
+      "name": "empty nested object",
+      "status": 299,
+      "body": "{\"spclient\":{}}",
+      "original": {
+        "endpoints": []
+      }
+    },
+    {
+      "name": "unknown JSON members",
+      "status": 201,
+      "body": "{\"unknown\":{\"a\":[null,1]},\"accesspoint\":[\"a:1\"]}",
+      "original": {
+        "endpoints": [
+          {
+            "type": 0,
+            "host": "a",
+            "port": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "endpoint ports and opaque hosts",
+      "status": 200,
+      "body": "{\"accesspoint\": [\"a:00080\", \":443\", \"雪\\u0000tail:65535\", \"a\", \"a:\", \"a:0\", \"a:65536\", \"a:-1\", \"a:+1\", \"a: 1\", \"a:1 \", \"a:1x\", \"a:2147483648\", \"[::1]:443\", \"a:1:2\"]}",
+      "original": {
+        "endpoints": [
+          {
+            "type": 0,
+            "host": "a",
+            "port": 80
+          },
+          {
+            "type": 0,
+            "host": "",
+            "port": 443
+          },
+          {
+            "type": 0,
+            "host": "雪\u0000tail",
+            "port": 65535
+          }
+        ]
+      }
+    },
+    {
+      "name": "duplicate fields replace vectors",
+      "status": 200,
+      "body": "{\"accesspoint\":[\"a:1\"],\"accesspoint\":[\"b:2\"],\"spclient\":{\"regional\":[\"a:1\"]},\"spclient\":{\"global\":[\"g:3\"]}}",
+      "original": {
+        "endpoints": [
+          {
+            "type": 0,
+            "host": "b",
+            "port": 2
+          },
+          {
+            "type": 2,
+            "host": "g",
+            "port": 3
+          }
+        ]
+      }
+    },
+    {
+      "name": "non2xx ignores body",
+      "status": 300,
+      "body": "{",
+      "original": {
+        "errorCode": 1,
+        "categoryAddress": "0x102738488"
+      }
+    },
+    {
+      "name": "below2xx ignores body",
+      "status": 199,
+      "body": "{}",
+      "original": {
+        "errorCode": 1,
+        "categoryAddress": "0x102738488"
+      }
+    },
+    {
+      "name": "empty body",
+      "status": 204,
+      "body": "",
+      "original": {
+        "errorCode": 2,
+        "categoryAddress": "0x102738488"
+      }
+    },
+    {
+      "name": "flat legacy spclient is invalid",
+      "status": 200,
+      "body": "{\"spclient\":[\"a:1\"]}",
+      "original": {
+        "exceptionBoundary": "__cxa_allocate_exception"
+      }
+    },
+    {
+      "name": "null object is invalid",
+      "status": 200,
+      "body": "null",
+      "original": {
+        "exceptionBoundary": "__cxa_allocate_exception"
+      }
+    },
+    {
+      "name": "null vector is invalid",
+      "status": 200,
+      "body": "{\"accesspoint\":null}",
+      "original": {
+        "exceptionBoundary": "__cxa_allocate_exception"
+      }
+    },
+    {
+      "name": "null nested object is invalid",
+      "status": 200,
+      "body": "{\"spclient\":null}",
+      "original": {
+        "exceptionBoundary": "__cxa_allocate_exception"
+      }
+    },
+    {
+      "name": "nonstring vector item is invalid",
+      "status": 200,
+      "body": "{\"accesspoint\":[1]}",
+      "original": {
+        "exceptionBoundary": "__cxa_allocate_exception"
+      }
+    },
+    {
+      "name": "trailing input is invalid",
+      "status": 200,
+      "body": "{} x",
+      "original": {
+        "exceptionBoundary": "__cxa_allocate_exception"
+      }
+    },
+    {
+      "name": "surrounding whitespace",
+      "status": 200,
+      "body": " \r\n{}\t ",
+      "original": {
+        "endpoints": []
+      }
+    }
+  ],
+  "profileCases": [
+    {
+      "versionValue": 130601921,
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 16777228,
+        "cpuSubtype": 2,
+        "gestaltFailureAt": null
+      },
+      "name": "native defaults",
+      "original": {
+        "versionValue": 130601921,
+        "byte4": 43,
+        "value8": 0,
+        "byte12": 2,
+        "systemProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ]
+      }
+    },
+    {
+      "versionValue": 130601921,
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 16777228,
+        "cpuSubtype": 2,
+        "gestaltFailureAt": null
+      },
+      "name": "explicit zero overrides",
+      "platform": 0,
+      "product": 0,
+      "os": 0,
+      "original": {
+        "versionValue": 130601921,
+        "byte4": 0,
+        "value8": 0,
+        "byte12": 0,
+        "systemProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ]
+      }
+    },
+    {
+      "versionValue": 4294967295,
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 16777228,
+        "cpuSubtype": 2,
+        "gestaltFailureAt": null
+      },
+      "name": "unsigned override limits",
+      "platform": 255,
+      "product": 4294967295,
+      "os": 255,
+      "original": {
+        "versionValue": 4294967295,
+        "byte4": 255,
+        "value8": 4294967295,
+        "byte12": 255,
+        "systemProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ]
+      }
+    },
+    {
+      "versionValue": 130601921,
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 16777228,
+        "cpuSubtype": 2,
+        "gestaltFailureAt": null
+      },
+      "name": "platform override only",
+      "platform": 17,
+      "original": {
+        "versionValue": 130601921,
+        "byte4": 17,
+        "value8": 0,
+        "byte12": 2,
+        "systemProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ]
+      }
+    },
+    {
+      "versionValue": 130601921,
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 16777228,
+        "cpuSubtype": 2,
+        "gestaltFailureAt": null
+      },
+      "name": "product override only",
+      "product": 4000000000,
+      "original": {
+        "versionValue": 130601921,
+        "byte4": 43,
+        "value8": 4000000000,
+        "byte12": 2,
+        "systemProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ]
+      }
+    },
+    {
+      "versionValue": 130601921,
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 16777228,
+        "cpuSubtype": 2,
+        "gestaltFailureAt": null
+      },
+      "name": "OS override only",
+      "os": 255,
+      "original": {
+        "versionValue": 130601921,
+        "byte4": 43,
+        "value8": 0,
+        "byte12": 255,
+        "systemProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ]
+      }
+    },
+    {
+      "versionValue": 130601921,
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 7,
+        "cpuSubtype": 3,
+        "gestaltFailureAt": null
+      },
+      "name": "x86 facts do not substitute CPU family for platform",
+      "original": {
+        "versionValue": 130601921,
+        "byte4": 43,
+        "value8": 0,
+        "byte12": 2,
+        "systemProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ]
+      }
+    },
+    {
+      "versionValue": 130601921,
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 16777228,
+        "cpuSubtype": 2,
+        "gestaltFailureAt": 0
+      },
+      "name": "Gestalt failure still uses native OS constant",
+      "original": {
+        "versionValue": 130601921,
+        "byte4": 43,
+        "value8": 0,
+        "byte12": 2,
+        "systemProviderCalls": [
+          "Gestalt(sys1)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ]
+      }
+    }
+  ]
+}

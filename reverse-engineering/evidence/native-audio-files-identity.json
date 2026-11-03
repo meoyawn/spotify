@@ -1,0 +1,75 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "method": "Capture the original selected-stream AudioFiles identity accessor offline.\n\nOriginal source virtual+0x28 (0x10129a720) and its original field-4 getter\n(0x101d0715c) execute unchanged. The original URI parser creates the separate\nrequested source URI; generated AudioFiles construction and explicit synthetic\nprotobuf string storage supply inputs. No key request, transport, account or\nprofile is used. This proves the streaming source's raw identity, not which\nencryption/license transport consumes it.\n",
+  "sourceConstructor": "0x101299a34",
+  "sourceVtable": "0x1025d8880",
+  "audioFilesGetter": "0x10129a718 / virtual+0x20 / owner+0x120",
+  "sourceIdentityGetter": "0x10129a720 / virtual+0x28",
+  "audioIdGetter": "0x101d0715c / AudioFilesExtensionResponse+0x30",
+  "ranges": [
+    {
+      "start": "0x10129a718",
+      "endExclusive": "0x10129a758",
+      "sha256": "59d77649252d5a163d40b32db0aac1293ca59f14f9cd597534c35a432cd21f5d"
+    },
+    {
+      "start": "0x101d0715c",
+      "endExclusive": "0x101d07188",
+      "sha256": "989763c4a1b225783cb93174f764851d54d0ae6bce011a80a3058d27c519075e"
+    }
+  ],
+  "substitutedInputs": [
+    "Synthetic source object with original source vtable and original-parser URI.",
+    "Original generated AudioFiles constructor with explicit standard protobuf ArenaStringPtr storage.",
+    "Standard memory/allocation/string providers inherited from the native query oracle."
+  ],
+  "limits": [
+    "Only raw streaming-source identity access is proved; no original AP or HTTP key/license owner executes.",
+    "Requested URI and source audio identity are distinct; equality is not checked by this accessor.",
+    "A missing response or audio_id length other than16 returns null; there is no URI fallback here."
+  ],
+  "cases": [
+    {
+      "requestedUri": "spotify:track:0000000000000000000001",
+      "audioIdHex": null,
+      "nativeStringStorage": "SSO",
+      "sourceIdentityHex": null
+    },
+    {
+      "requestedUri": "spotify:track:0000000000000000000001",
+      "audioIdHex": "",
+      "nativeStringStorage": "SSO",
+      "sourceIdentityHex": null
+    },
+    {
+      "requestedUri": "spotify:track:0000000000000000000001",
+      "audioIdHex": "000102030405060708090a0b0c0d0e",
+      "nativeStringStorage": "SSO",
+      "sourceIdentityHex": null
+    },
+    {
+      "requestedUri": "spotify:track:0000000000000000000001",
+      "audioIdHex": "000102030405060708090a0b0c0d0e0f",
+      "nativeStringStorage": "SSO",
+      "sourceIdentityHex": "000102030405060708090a0b0c0d0e0f"
+    },
+    {
+      "requestedUri": "spotify:track:0000000000000000000001",
+      "audioIdHex": "000102030405060708090a0b0c0d0e0f",
+      "nativeStringStorage": "heap",
+      "sourceIdentityHex": "000102030405060708090a0b0c0d0e0f"
+    },
+    {
+      "requestedUri": "spotify:track:0000000000000000000001",
+      "audioIdHex": "000102030405060708090a0b0c0d0e0f10",
+      "nativeStringStorage": "SSO",
+      "sourceIdentityHex": null
+    },
+    {
+      "requestedUri": "spotify:track:0000000000000000000001",
+      "audioIdHex": "000102030405060708090a0b0c0d0e0f10111213141516",
+      "nativeStringStorage": "heap",
+      "sourceIdentityHex": null
+    }
+  ]
+}

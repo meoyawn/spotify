@@ -1,0 +1,1216 @@
+{
+  "scope": "Join original HTTP/3 transaction sends to their PRIORITY_UPDATE events.\n\nOnly exact public priority field bytes, fixed route-family labels, aggregate\ncounts and NetLog source/event/stream anchors leave this offline extractor.\nCredentials, URLs, opaque account/media/device identifiers and packet bytes are\nneither exported nor hashed. Pinned public source separately explains frame\nencoding, logger chronology and the existing nghttp3 enqueue API.\n",
+  "toolSha256": "4b53bd58f2ab6961c15aa229aabc7e343e2204abc05b1874573ab5092391cf30",
+  "frameType": 984832,
+  "frameTypeHex": "0xf0700",
+  "profiles": {
+    "native": {
+      "fieldValue": "u=4, i",
+      "asciiFieldBytesHex": "753d342c2069",
+      "originalSendsWithThisFieldValue": 938,
+      "scope": "All captured Spotify/ native-context requests; this field value also occurs on 51 Mozilla/-shaped requests to nonallowlisted origins."
+    },
+    "renderer": {
+      "fieldValue": "u=1, i",
+      "asciiFieldBytesHex": "753d312c2069",
+      "originalSendsWithThisFieldValue": 416,
+      "scope": "All captured renderer Pathfinder requests, including preflight; not a universal renderer request default."
+    }
+  },
+  "defaultH3TransactionSends": 1354,
+  "defaultExactUniquePriorityUpdateJoins": 1354,
+  "familyCounts": [
+    {
+      "family": "collection",
+      "userAgentContext": "native",
+      "priorityFieldProfile": "native",
+      "sends": 21
+    },
+    {
+      "family": "connect",
+      "userAgentContext": "native",
+      "priorityFieldProfile": "native",
+      "sends": 12
+    },
+    {
+      "family": "connect",
+      "userAgentContext": "renderer",
+      "priorityFieldProfile": "renderer",
+      "sends": 6
+    },
+    {
+      "family": "extended-metadata",
+      "userAgentContext": "native",
+      "priorityFieldProfile": "native",
+      "sends": 418
+    },
+    {
+      "family": "music-key",
+      "userAgentContext": "native",
+      "priorityFieldProfile": "native",
+      "sends": 4
+    },
+    {
+      "family": "nonallowlisted-origin",
+      "userAgentContext": "renderer",
+      "priorityFieldProfile": "native",
+      "sends": 51
+    },
+    {
+      "family": "nonallowlisted-origin",
+      "userAgentContext": "renderer",
+      "priorityFieldProfile": "renderer",
+      "sends": 21
+    },
+    {
+      "family": "other-spclient",
+      "userAgentContext": "native",
+      "priorityFieldProfile": "native",
+      "sends": 188
+    },
+    {
+      "family": "other-spclient",
+      "userAgentContext": "renderer",
+      "priorityFieldProfile": "renderer",
+      "sends": 265
+    },
+    {
+      "family": "playlist",
+      "userAgentContext": "native",
+      "priorityFieldProfile": "native",
+      "sends": 221
+    },
+    {
+      "family": "renderer-pathfinder",
+      "userAgentContext": "renderer",
+      "priorityFieldProfile": "renderer",
+      "sends": 103
+    },
+    {
+      "family": "storage-resolve",
+      "userAgentContext": "native",
+      "priorityFieldProfile": "native",
+      "sends": 2
+    },
+    {
+      "family": "unclassified-spclient",
+      "userAgentContext": "native",
+      "priorityFieldProfile": "native",
+      "sends": 21
+    },
+    {
+      "family": "unclassified-spclient",
+      "userAgentContext": "renderer",
+      "priorityFieldProfile": "renderer",
+      "sends": 21
+    }
+  ],
+  "captures": [
+    {
+      "path": ".local/original-reference-streaming-netlog.json",
+      "sha256": "644660b4da3948c6f0e0e21479b34de444f295ba3e94684257e2c53dc9587489",
+      "disableQuic": false,
+      "h3TransactionSends": 312,
+      "exactUniquePriorityUpdateJoins": 312,
+      "totalPriorityUpdateSentEvents": 312,
+      "matchingPriorityHeaderValues": 312,
+      "priorityEventPrecedesTransactionSend": 312,
+      "fieldProfileCounts": {
+        "native": 214,
+        "renderer": 98
+      },
+      "contextCounts": [
+        {
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 205
+        },
+        {
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "native",
+          "sends": 9
+        },
+        {
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "sends": 98
+        }
+      ],
+      "familyCounts": [
+        {
+          "family": "collection",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 2,
+          "exactUniquePriorityUpdateJoins": 2
+        },
+        {
+          "family": "connect",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 6,
+          "exactUniquePriorityUpdateJoins": 6
+        },
+        {
+          "family": "connect",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "sends": 2,
+          "exactUniquePriorityUpdateJoins": 2
+        },
+        {
+          "family": "extended-metadata",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 119,
+          "exactUniquePriorityUpdateJoins": 119
+        },
+        {
+          "family": "music-key",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 2,
+          "exactUniquePriorityUpdateJoins": 2
+        },
+        {
+          "family": "nonallowlisted-origin",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "native",
+          "sends": 9,
+          "exactUniquePriorityUpdateJoins": 9
+        },
+        {
+          "family": "nonallowlisted-origin",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "sends": 6,
+          "exactUniquePriorityUpdateJoins": 6
+        },
+        {
+          "family": "other-spclient",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 20,
+          "exactUniquePriorityUpdateJoins": 20
+        },
+        {
+          "family": "other-spclient",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "sends": 68,
+          "exactUniquePriorityUpdateJoins": 68
+        },
+        {
+          "family": "playlist",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 45,
+          "exactUniquePriorityUpdateJoins": 45
+        },
+        {
+          "family": "renderer-pathfinder",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "sends": 16,
+          "exactUniquePriorityUpdateJoins": 16
+        },
+        {
+          "family": "storage-resolve",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 1,
+          "exactUniquePriorityUpdateJoins": 1
+        },
+        {
+          "family": "unclassified-spclient",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 10,
+          "exactUniquePriorityUpdateJoins": 10
+        },
+        {
+          "family": "unclassified-spclient",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "sends": 6,
+          "exactUniquePriorityUpdateJoins": 6
+        }
+      ],
+      "exampleSourceAnchors": [
+        {
+          "family": "collection",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 1957,
+          "bindingEventIndex": 38457,
+          "quicSessionSourceId": 957,
+          "quicStreamId": 20,
+          "priorityUpdateEventIndex": 38462,
+          "transactionSendEventIndex": 38463
+        },
+        {
+          "family": "connect",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 3567,
+          "bindingEventIndex": 73489,
+          "quicSessionSourceId": 3292,
+          "quicStreamId": 104,
+          "priorityUpdateEventIndex": 73494,
+          "transactionSendEventIndex": 73496
+        },
+        {
+          "family": "connect",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "requestSourceId": 3123,
+          "bindingEventIndex": 65257,
+          "quicSessionSourceId": 3131,
+          "quicStreamId": 0,
+          "priorityUpdateEventIndex": 65260,
+          "transactionSendEventIndex": 65262
+        },
+        {
+          "family": "extended-metadata",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 1912,
+          "bindingEventIndex": 35615,
+          "quicSessionSourceId": 957,
+          "quicStreamId": 0,
+          "priorityUpdateEventIndex": 35620,
+          "transactionSendEventIndex": 35622
+        },
+        {
+          "family": "music-key",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 3404,
+          "bindingEventIndex": 70944,
+          "quicSessionSourceId": 3292,
+          "quicStreamId": 32,
+          "priorityUpdateEventIndex": 70949,
+          "transactionSendEventIndex": 70952
+        },
+        {
+          "family": "nonallowlisted-origin",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 40,
+          "bindingEventIndex": 3730,
+          "quicSessionSourceId": 179,
+          "quicStreamId": 0,
+          "priorityUpdateEventIndex": 3733,
+          "transactionSendEventIndex": 3736
+        },
+        {
+          "family": "nonallowlisted-origin",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "requestSourceId": 465,
+          "bindingEventIndex": 5634,
+          "quicSessionSourceId": 250,
+          "quicStreamId": 0,
+          "priorityUpdateEventIndex": 5637,
+          "transactionSendEventIndex": 5640
+        },
+        {
+          "family": "other-spclient",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 1020,
+          "bindingEventIndex": 17575,
+          "quicSessionSourceId": 611,
+          "quicStreamId": 0,
+          "priorityUpdateEventIndex": 17580,
+          "transactionSendEventIndex": 17582
+        },
+        {
+          "family": "other-spclient",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "requestSourceId": 821,
+          "bindingEventIndex": 10139,
+          "quicSessionSourceId": 273,
+          "quicStreamId": 0,
+          "priorityUpdateEventIndex": 10142,
+          "transactionSendEventIndex": 10144
+        },
+        {
+          "family": "playlist",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 1988,
+          "bindingEventIndex": 38825,
+          "quicSessionSourceId": 957,
+          "quicStreamId": 44,
+          "priorityUpdateEventIndex": 38828,
+          "transactionSendEventIndex": 38829
+        },
+        {
+          "family": "renderer-pathfinder",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "requestSourceId": 1482,
+          "bindingEventIndex": 27637,
+          "quicSessionSourceId": 250,
+          "quicStreamId": 16,
+          "priorityUpdateEventIndex": 27640,
+          "transactionSendEventIndex": 27642
+        },
+        {
+          "family": "storage-resolve",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 3422,
+          "bindingEventIndex": 71089,
+          "quicSessionSourceId": 3292,
+          "quicStreamId": 36,
+          "priorityUpdateEventIndex": 71092,
+          "transactionSendEventIndex": 71094
+        },
+        {
+          "family": "unclassified-spclient",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 1903,
+          "bindingEventIndex": 34475,
+          "quicSessionSourceId": 611,
+          "quicStreamId": 4,
+          "priorityUpdateEventIndex": 34480,
+          "transactionSendEventIndex": 34482
+        },
+        {
+          "family": "unclassified-spclient",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "requestSourceId": 1470,
+          "bindingEventIndex": 38288,
+          "quicSessionSourceId": 1591,
+          "quicStreamId": 4,
+          "priorityUpdateEventIndex": 38291,
+          "transactionSendEventIndex": 38293
+        }
+      ]
+    },
+    {
+      "path": ".local/original-license-upload-http2-netlog.json",
+      "sha256": "7ad17ebaf96eda74ecd2c0cd822370287f4aed26310a49faa930cdda92fd64fa",
+      "disableQuic": true,
+      "h3TransactionSends": 0,
+      "exactUniquePriorityUpdateJoins": 0,
+      "totalPriorityUpdateSentEvents": 0,
+      "matchingPriorityHeaderValues": 0,
+      "priorityEventPrecedesTransactionSend": 0,
+      "fieldProfileCounts": {},
+      "contextCounts": [],
+      "familyCounts": [],
+      "exampleSourceAnchors": []
+    },
+    {
+      "path": ".local/original-license-rejection-reference-netlog.json",
+      "sha256": "6d8e8c9f4d71bd0e39ecff3282e86438540cf22987a33b2340d79658d4ec6d50",
+      "disableQuic": false,
+      "h3TransactionSends": 424,
+      "exactUniquePriorityUpdateJoins": 424,
+      "totalPriorityUpdateSentEvents": 424,
+      "matchingPriorityHeaderValues": 424,
+      "priorityEventPrecedesTransactionSend": 424,
+      "fieldProfileCounts": {
+        "native": 312,
+        "renderer": 112
+      },
+      "contextCounts": [
+        {
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 295
+        },
+        {
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "native",
+          "sends": 17
+        },
+        {
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "sends": 112
+        }
+      ],
+      "familyCounts": [
+        {
+          "family": "collection",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 3,
+          "exactUniquePriorityUpdateJoins": 3
+        },
+        {
+          "family": "connect",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 5,
+          "exactUniquePriorityUpdateJoins": 5
+        },
+        {
+          "family": "connect",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "sends": 2,
+          "exactUniquePriorityUpdateJoins": 2
+        },
+        {
+          "family": "extended-metadata",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 191,
+          "exactUniquePriorityUpdateJoins": 191
+        },
+        {
+          "family": "music-key",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 2,
+          "exactUniquePriorityUpdateJoins": 2
+        },
+        {
+          "family": "nonallowlisted-origin",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "native",
+          "sends": 17,
+          "exactUniquePriorityUpdateJoins": 17
+        },
+        {
+          "family": "nonallowlisted-origin",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "sends": 5,
+          "exactUniquePriorityUpdateJoins": 5
+        },
+        {
+          "family": "other-spclient",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 44,
+          "exactUniquePriorityUpdateJoins": 44
+        },
+        {
+          "family": "other-spclient",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "sends": 77,
+          "exactUniquePriorityUpdateJoins": 77
+        },
+        {
+          "family": "playlist",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 43,
+          "exactUniquePriorityUpdateJoins": 43
+        },
+        {
+          "family": "renderer-pathfinder",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "sends": 23,
+          "exactUniquePriorityUpdateJoins": 23
+        },
+        {
+          "family": "storage-resolve",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 1,
+          "exactUniquePriorityUpdateJoins": 1
+        },
+        {
+          "family": "unclassified-spclient",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 6,
+          "exactUniquePriorityUpdateJoins": 6
+        },
+        {
+          "family": "unclassified-spclient",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "sends": 5,
+          "exactUniquePriorityUpdateJoins": 5
+        }
+      ],
+      "exampleSourceAnchors": [
+        {
+          "family": "collection",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 1112,
+          "bindingEventIndex": 19792,
+          "quicSessionSourceId": 850,
+          "quicStreamId": 0,
+          "priorityUpdateEventIndex": 19797,
+          "transactionSendEventIndex": 19799
+        },
+        {
+          "family": "connect",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 4054,
+          "bindingEventIndex": 88181,
+          "quicSessionSourceId": 850,
+          "quicStreamId": 1112,
+          "priorityUpdateEventIndex": 88186,
+          "transactionSendEventIndex": 88190
+        },
+        {
+          "family": "connect",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "requestSourceId": 4281,
+          "bindingEventIndex": 95108,
+          "quicSessionSourceId": 4244,
+          "quicStreamId": 12,
+          "priorityUpdateEventIndex": 95111,
+          "transactionSendEventIndex": 95113
+        },
+        {
+          "family": "extended-metadata",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 1127,
+          "bindingEventIndex": 19999,
+          "quicSessionSourceId": 850,
+          "quicStreamId": 12,
+          "priorityUpdateEventIndex": 20004,
+          "transactionSendEventIndex": 20006
+        },
+        {
+          "family": "music-key",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 3897,
+          "bindingEventIndex": 85908,
+          "quicSessionSourceId": 850,
+          "quicStreamId": 1040,
+          "priorityUpdateEventIndex": 85913,
+          "transactionSendEventIndex": 85915
+        },
+        {
+          "family": "nonallowlisted-origin",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 41,
+          "bindingEventIndex": 3829,
+          "quicSessionSourceId": 72,
+          "quicStreamId": 0,
+          "priorityUpdateEventIndex": 3832,
+          "transactionSendEventIndex": 3835
+        },
+        {
+          "family": "nonallowlisted-origin",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "requestSourceId": 438,
+          "bindingEventIndex": 5874,
+          "quicSessionSourceId": 274,
+          "quicStreamId": 0,
+          "priorityUpdateEventIndex": 5877,
+          "transactionSendEventIndex": 5880
+        },
+        {
+          "family": "other-spclient",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 1279,
+          "bindingEventIndex": 21713,
+          "quicSessionSourceId": 850,
+          "quicStreamId": 116,
+          "priorityUpdateEventIndex": 21716,
+          "transactionSendEventIndex": 21717
+        },
+        {
+          "family": "other-spclient",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "requestSourceId": 1035,
+          "bindingEventIndex": 19140,
+          "quicSessionSourceId": 988,
+          "quicStreamId": 0,
+          "priorityUpdateEventIndex": 19143,
+          "transactionSendEventIndex": 19146
+        },
+        {
+          "family": "playlist",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 1164,
+          "bindingEventIndex": 20407,
+          "quicSessionSourceId": 850,
+          "quicStreamId": 24,
+          "priorityUpdateEventIndex": 20410,
+          "transactionSendEventIndex": 20411
+        },
+        {
+          "family": "renderer-pathfinder",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "requestSourceId": 2091,
+          "bindingEventIndex": 36961,
+          "quicSessionSourceId": 931,
+          "quicStreamId": 8,
+          "priorityUpdateEventIndex": 36964,
+          "transactionSendEventIndex": 36966
+        },
+        {
+          "family": "storage-resolve",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 3917,
+          "bindingEventIndex": 86060,
+          "quicSessionSourceId": 850,
+          "quicStreamId": 1044,
+          "priorityUpdateEventIndex": 86063,
+          "transactionSendEventIndex": 86065
+        },
+        {
+          "family": "unclassified-spclient",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 820,
+          "bindingEventIndex": 16853,
+          "quicSessionSourceId": 828,
+          "quicStreamId": 0,
+          "priorityUpdateEventIndex": 16858,
+          "transactionSendEventIndex": 16861
+        },
+        {
+          "family": "unclassified-spclient",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "requestSourceId": 2059,
+          "bindingEventIndex": 50377,
+          "quicSessionSourceId": 2102,
+          "quicStreamId": 0,
+          "priorityUpdateEventIndex": 50380,
+          "transactionSendEventIndex": 50383
+        }
+      ]
+    },
+    {
+      "path": ".local/original-playback-netlog.json",
+      "sha256": "fd7239adbef628625faa665ed75199ef34429ed46944409378caeb01ba2c9655",
+      "disableQuic": false,
+      "h3TransactionSends": 322,
+      "exactUniquePriorityUpdateJoins": 322,
+      "totalPriorityUpdateSentEvents": 322,
+      "matchingPriorityHeaderValues": 322,
+      "priorityEventPrecedesTransactionSend": 322,
+      "fieldProfileCounts": {
+        "native": 226,
+        "renderer": 96
+      },
+      "contextCounts": [
+        {
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 215
+        },
+        {
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "native",
+          "sends": 11
+        },
+        {
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "sends": 96
+        }
+      ],
+      "familyCounts": [
+        {
+          "family": "collection",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 4,
+          "exactUniquePriorityUpdateJoins": 4
+        },
+        {
+          "family": "connect",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "sends": 2,
+          "exactUniquePriorityUpdateJoins": 2
+        },
+        {
+          "family": "extended-metadata",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 52,
+          "exactUniquePriorityUpdateJoins": 52
+        },
+        {
+          "family": "nonallowlisted-origin",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "native",
+          "sends": 11,
+          "exactUniquePriorityUpdateJoins": 11
+        },
+        {
+          "family": "nonallowlisted-origin",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "sends": 5,
+          "exactUniquePriorityUpdateJoins": 5
+        },
+        {
+          "family": "other-spclient",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 77,
+          "exactUniquePriorityUpdateJoins": 77
+        },
+        {
+          "family": "other-spclient",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "sends": 66,
+          "exactUniquePriorityUpdateJoins": 66
+        },
+        {
+          "family": "playlist",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 79,
+          "exactUniquePriorityUpdateJoins": 79
+        },
+        {
+          "family": "renderer-pathfinder",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "sends": 18,
+          "exactUniquePriorityUpdateJoins": 18
+        },
+        {
+          "family": "unclassified-spclient",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 3,
+          "exactUniquePriorityUpdateJoins": 3
+        },
+        {
+          "family": "unclassified-spclient",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "sends": 5,
+          "exactUniquePriorityUpdateJoins": 5
+        }
+      ],
+      "exampleSourceAnchors": [
+        {
+          "family": "collection",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 2057,
+          "bindingEventIndex": 37908,
+          "quicSessionSourceId": 963,
+          "quicStreamId": 184,
+          "priorityUpdateEventIndex": 37913,
+          "transactionSendEventIndex": 37914
+        },
+        {
+          "family": "connect",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "requestSourceId": 3573,
+          "bindingEventIndex": 90535,
+          "quicSessionSourceId": 3583,
+          "quicStreamId": 0,
+          "priorityUpdateEventIndex": 90538,
+          "transactionSendEventIndex": 90540
+        },
+        {
+          "family": "extended-metadata",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 2027,
+          "bindingEventIndex": 37513,
+          "quicSessionSourceId": 963,
+          "quicStreamId": 164,
+          "priorityUpdateEventIndex": 37518,
+          "transactionSendEventIndex": 37519
+        },
+        {
+          "family": "nonallowlisted-origin",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 41,
+          "bindingEventIndex": 3435,
+          "quicSessionSourceId": 137,
+          "quicStreamId": 0,
+          "priorityUpdateEventIndex": 3438,
+          "transactionSendEventIndex": 3441
+        },
+        {
+          "family": "nonallowlisted-origin",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "requestSourceId": 480,
+          "bindingEventIndex": 6083,
+          "quicSessionSourceId": 288,
+          "quicStreamId": 0,
+          "priorityUpdateEventIndex": 6086,
+          "transactionSendEventIndex": 6089
+        },
+        {
+          "family": "other-spclient",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 1780,
+          "bindingEventIndex": 35023,
+          "quicSessionSourceId": 963,
+          "quicStreamId": 0,
+          "priorityUpdateEventIndex": 35026,
+          "transactionSendEventIndex": 35028
+        },
+        {
+          "family": "other-spclient",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "requestSourceId": 807,
+          "bindingEventIndex": 9878,
+          "quicSessionSourceId": 303,
+          "quicStreamId": 0,
+          "priorityUpdateEventIndex": 9881,
+          "transactionSendEventIndex": 9883
+        },
+        {
+          "family": "playlist",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 2062,
+          "bindingEventIndex": 38014,
+          "quicSessionSourceId": 963,
+          "quicStreamId": 188,
+          "priorityUpdateEventIndex": 38017,
+          "transactionSendEventIndex": 38018
+        },
+        {
+          "family": "renderer-pathfinder",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "requestSourceId": 1501,
+          "bindingEventIndex": 29824,
+          "quicSessionSourceId": 288,
+          "quicStreamId": 16,
+          "priorityUpdateEventIndex": 29827,
+          "transactionSendEventIndex": 29829
+        },
+        {
+          "family": "unclassified-spclient",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 2563,
+          "bindingEventIndex": 49742,
+          "quicSessionSourceId": 1002,
+          "quicStreamId": 8,
+          "priorityUpdateEventIndex": 49747,
+          "transactionSendEventIndex": 49749
+        },
+        {
+          "family": "unclassified-spclient",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "requestSourceId": 1475,
+          "bindingEventIndex": 34756,
+          "quicSessionSourceId": 1516,
+          "quicStreamId": 8,
+          "priorityUpdateEventIndex": 34759,
+          "transactionSendEventIndex": 34761
+        }
+      ]
+    },
+    {
+      "path": ".local/original-playback-key-netlog.json",
+      "sha256": "9a58d8b2ce592e8614f795cb85712a2c598b09f0a427962648dc8f2475755467",
+      "disableQuic": false,
+      "h3TransactionSends": 296,
+      "exactUniquePriorityUpdateJoins": 296,
+      "totalPriorityUpdateSentEvents": 296,
+      "matchingPriorityHeaderValues": 296,
+      "priorityEventPrecedesTransactionSend": 296,
+      "fieldProfileCounts": {
+        "native": 186,
+        "renderer": 110
+      },
+      "contextCounts": [
+        {
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 172
+        },
+        {
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "native",
+          "sends": 14
+        },
+        {
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "sends": 110
+        }
+      ],
+      "familyCounts": [
+        {
+          "family": "collection",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 12,
+          "exactUniquePriorityUpdateJoins": 12
+        },
+        {
+          "family": "connect",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 1,
+          "exactUniquePriorityUpdateJoins": 1
+        },
+        {
+          "family": "extended-metadata",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 56,
+          "exactUniquePriorityUpdateJoins": 56
+        },
+        {
+          "family": "nonallowlisted-origin",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "native",
+          "sends": 14,
+          "exactUniquePriorityUpdateJoins": 14
+        },
+        {
+          "family": "nonallowlisted-origin",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "sends": 5,
+          "exactUniquePriorityUpdateJoins": 5
+        },
+        {
+          "family": "other-spclient",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 47,
+          "exactUniquePriorityUpdateJoins": 47
+        },
+        {
+          "family": "other-spclient",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "sends": 54,
+          "exactUniquePriorityUpdateJoins": 54
+        },
+        {
+          "family": "playlist",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 54,
+          "exactUniquePriorityUpdateJoins": 54
+        },
+        {
+          "family": "renderer-pathfinder",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "sends": 46,
+          "exactUniquePriorityUpdateJoins": 46
+        },
+        {
+          "family": "unclassified-spclient",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "sends": 2,
+          "exactUniquePriorityUpdateJoins": 2
+        },
+        {
+          "family": "unclassified-spclient",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "sends": 5,
+          "exactUniquePriorityUpdateJoins": 5
+        }
+      ],
+      "exampleSourceAnchors": [
+        {
+          "family": "collection",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 1395,
+          "bindingEventIndex": 28835,
+          "quicSessionSourceId": 1272,
+          "quicStreamId": 40,
+          "priorityUpdateEventIndex": 28840,
+          "transactionSendEventIndex": 28842
+        },
+        {
+          "family": "connect",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 1350,
+          "bindingEventIndex": 28251,
+          "quicSessionSourceId": 1272,
+          "quicStreamId": 8,
+          "priorityUpdateEventIndex": 28256,
+          "transactionSendEventIndex": 28258
+        },
+        {
+          "family": "extended-metadata",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 1360,
+          "bindingEventIndex": 28382,
+          "quicSessionSourceId": 1272,
+          "quicStreamId": 16,
+          "priorityUpdateEventIndex": 28387,
+          "transactionSendEventIndex": 28389
+        },
+        {
+          "family": "nonallowlisted-origin",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 55,
+          "bindingEventIndex": 3397,
+          "quicSessionSourceId": 139,
+          "quicStreamId": 0,
+          "priorityUpdateEventIndex": 3400,
+          "transactionSendEventIndex": 3403
+        },
+        {
+          "family": "nonallowlisted-origin",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "requestSourceId": 472,
+          "bindingEventIndex": 4980,
+          "quicSessionSourceId": 275,
+          "quicStreamId": 0,
+          "priorityUpdateEventIndex": 4983,
+          "transactionSendEventIndex": 4986
+        },
+        {
+          "family": "other-spclient",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 1338,
+          "bindingEventIndex": 28109,
+          "quicSessionSourceId": 1272,
+          "quicStreamId": 0,
+          "priorityUpdateEventIndex": 28112,
+          "transactionSendEventIndex": 28114
+        },
+        {
+          "family": "other-spclient",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "requestSourceId": 819,
+          "bindingEventIndex": 11175,
+          "quicSessionSourceId": 305,
+          "quicStreamId": 0,
+          "priorityUpdateEventIndex": 11178,
+          "transactionSendEventIndex": 11180
+        },
+        {
+          "family": "playlist",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 1365,
+          "bindingEventIndex": 28448,
+          "quicSessionSourceId": 1272,
+          "quicStreamId": 20,
+          "priorityUpdateEventIndex": 28451,
+          "transactionSendEventIndex": 28453
+        },
+        {
+          "family": "renderer-pathfinder",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "requestSourceId": 1010,
+          "bindingEventIndex": 20052,
+          "quicSessionSourceId": 275,
+          "quicStreamId": 16,
+          "priorityUpdateEventIndex": 20055,
+          "transactionSendEventIndex": 20057
+        },
+        {
+          "family": "unclassified-spclient",
+          "userAgentContext": "native",
+          "priorityFieldProfile": "native",
+          "requestSourceId": 1380,
+          "bindingEventIndex": 28640,
+          "quicSessionSourceId": 1272,
+          "quicStreamId": 28,
+          "priorityUpdateEventIndex": 28645,
+          "transactionSendEventIndex": 28647
+        },
+        {
+          "family": "unclassified-spclient",
+          "userAgentContext": "renderer",
+          "priorityFieldProfile": "renderer",
+          "requestSourceId": 994,
+          "bindingEventIndex": 24840,
+          "quicSessionSourceId": 1131,
+          "quicStreamId": 8,
+          "priorityUpdateEventIndex": 24843,
+          "transactionSendEventIndex": 24845
+        }
+      ]
+    }
+  ],
+  "publicSources": [
+    {
+      "path": ".local/cef-source/chromium-DEPS-151.0.7922.138",
+      "url": "https://github.com/chromium/chromium/blob/151.0.7922.138/DEPS",
+      "sha256": "020af99baae3892b9fc0e37f79c95fb2882dcbbf1c789c3e6c56bf0dc3c3f335"
+    },
+    {
+      "path": ".local/cef-source/quic_http3_logger-151.0.7922.138.cc",
+      "url": "https://github.com/chromium/chromium/blob/151.0.7922.138/net/quic/quic_http3_logger.cc",
+      "sha256": "fc41ee11125c595e76dd86d4ac28d8a1338d3a16c380d754e79a10fef8bb5572"
+    },
+    {
+      "path": ".local/cef-source/google-quiche-4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/quic/core/http/http_frames.h",
+      "url": "https://github.com/google/quiche/blob/4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/quic/core/http/http_frames.h",
+      "sha256": "66f76c4ecaed1c2fdccdab8a76b088238229b0c045846587656ecd41c11fb9ef"
+    },
+    {
+      "path": ".local/cef-source/google-quiche-4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/quic/core/http/http_encoder.cc",
+      "url": "https://github.com/google/quiche/blob/4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/quic/core/http/http_encoder.cc",
+      "sha256": "1bf378c35bca0eee3375fd8a00daadfa83c93b47091c2b6001d54ef00e4e868a"
+    },
+    {
+      "path": ".local/cef-source/google-quiche-4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/quic/core/http/quic_send_control_stream.cc",
+      "url": "https://github.com/google/quiche/blob/4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/quic/core/http/quic_send_control_stream.cc",
+      "sha256": "ad2ea052196e8fd86362c113079555a7c53dd0fab4cca043e76e888ccd523b2b"
+    },
+    {
+      "path": ".local/cef-source/nghttp3-dbfc24286138cb0b6490160e7ca87fe1ce6722a0/lib/nghttp3_conn.c",
+      "url": "https://github.com/ngtcp2/nghttp3/blob/dbfc24286138cb0b6490160e7ca87fe1ce6722a0/lib/nghttp3_conn.c",
+      "sha256": "332de5870a6bc8862a261b45add6ccf756c95597114ab78711251014006b01a1"
+    },
+    {
+      "path": ".local/cef-source/nghttp3-dbfc24286138cb0b6490160e7ca87fe1ce6722a0/lib/includes/nghttp3/nghttp3.h",
+      "url": "https://github.com/ngtcp2/nghttp3/blob/dbfc24286138cb0b6490160e7ca87fe1ce6722a0/lib/includes/nghttp3/nghttp3.h",
+      "sha256": "4cf23df44bb91cda59eb72bd7e13a24eb9388cab8acc0b8e74cd85f2a2a5c72a"
+    }
+  ],
+  "sourceProof": {
+    "frameEncoding": "Google http_frames.h:36 defines request-stream PRIORITY_UPDATE type 0xf0700. HttpEncoder::SerializePriorityUpdateFrame http_encoder.cc:138-160 serializes frame type/length, prioritized request-stream ID as QUIC varint, then the exact field-value bytes without a terminator.",
+    "loggerMeaning": "Chromium quic_http3_logger.cc:36-41 logs prioritized_element_id and priority_field_value; OnPriorityUpdateFrameSent:275-282 emits HTTP3_PRIORITY_UPDATE_SENT on that QUIC session source.",
+    "originalChronology": "Google QuicSendControlStream::WritePriorityUpdate:104-122 invokes MaybeSendSettingsFrame, serializes the priority field, calls the debug visitor, then encodes the frame and calls WriteOrBufferData on the control stream. The captured event precedes each matching transaction-send event.",
+    "nghttp3ExistingApi": "Unmodified nghttp3 v1.18.0 header:3374-3397 documents nghttp3_conn_set_client_stream_priority. Pristine nghttp3_conn.c:2929-2976 asserts client role and stream-ID range; rejects non-client-bidi or missing streams; copies caller data, enqueues a PRIORITY_UPDATE containing stream ID and exact bytes on tx.ctrl, then returns 0. It does not parse/reformat the data or change local request scheduler priority fields.",
+    "nghttp3OutputOrder": "Pristine nghttp3_conn.c:2297-2328 checks unblocked control-stream output before QPACK decoder/request output. This is library output-selection policy; transport packet scheduling remains separate."
+  },
+  "joinContract": "Transaction request source -> latest preceding HTTP_STREAM_REQUEST_BOUND_TO_QUIC_SESSION dependency -> exactly one HTTP3_PRIORITY_UPDATE_SENT on that session with prioritized_element_id equal to transaction quic_stream_id; priority field matches outgoing priority header byte-for-byte.",
+  "limits": [
+    "Original capture events prove exact priority field values and source/stream association, with logging/call chronology. They do not reveal the full encoded frame bytes or packet payloads.",
+    "Public pinned source supplies the frame type/encoding and enqueue semantics; no original proprietary routine was executed by this extractor.",
+    "Priority and request HEADERS use different QUIC streams. Logging order does not prove packet emission, receipt or cross-stream wire ordering, retransmission order or a scheduling/performance guarantee.",
+    "User-Agent context is classified independently by the captured Spotify/ or Mozilla/ prefix. Native context and bounded renderer Pathfinder values are checked separately; 51 Mozilla/-shaped requests to nonallowlisted origins also use u=4, i, so u=1, i is not a universal renderer policy.",
+    "No native patches, Dart production changes, tests, app/account requests or transport probes are included."
+  ]
+}

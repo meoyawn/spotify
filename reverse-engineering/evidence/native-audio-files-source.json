@@ -1,0 +1,103 @@
+{
+  "sourceExecutable": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "sourceVersion": "1.3.6.1921",
+  "schema": {
+    "file": "audio_files_extension.proto",
+    "address": "0x102319a4c",
+    "length": 744,
+    "sha256": "16ae20c292b6c8f8e5ce6d775e3d26c627b09ae3a05a25fec211df2b400a33e3"
+  },
+  "nativeConsumer": {
+    "entryPoint": "0x101c198dc",
+    "lookupBoundary": "0x101d0b118",
+    "extensionKind": 5,
+    "execution": "Unchanged original instructions through the extension-map lookup; synthetic zero map and output. Stop before lookup; no native condition or kind value substituted."
+  },
+  "ranges": [
+    {
+      "start": "0x101c198dc",
+      "endExclusive": "0x101c19b08",
+      "sha256": "4488574c4bb876c397f6ab75624ee38d096a3096c328f50de068f33fe86728c3"
+    },
+    {
+      "start": "0x101d070a0",
+      "endExclusive": "0x101d070e8",
+      "sha256": "dc45b224a462a7df182be360332e3f339fecd4b0235344f09d36f0df47c3ccf5"
+    },
+    {
+      "start": "0x101d0711c",
+      "endExclusive": "0x101d0715c",
+      "sha256": "d5102638afeaed091b9a009009c8dbd087d7d6c0b6a1b0fe2d2922a8d88f207c"
+    },
+    {
+      "start": "0x101296c50",
+      "endExclusive": "0x101296c68",
+      "sha256": "a1305ae92726a3f1ada082d8a78aaa196982e559f4d8b88d9501097ec43076dd"
+    }
+  ],
+  "sourceVariants": {
+    "table": "0x1025d8708",
+    "0": {
+      "projection": "0x101296c50",
+      "type": "spotify.extendedmetadata.audiofiles.AudioFilesExtensionResponse",
+      "payloadOffset": 0
+    },
+    "1": {
+      "projection": "0x101296c58",
+      "type": "24-byte prefix followed by the same AudioFilesExtensionResponse",
+      "payloadOffset": 24
+    },
+    "2": {
+      "projection": "0x101296c60",
+      "projectionResult": null
+    }
+  },
+  "formatGate": {
+    "entryPoint": "0x101d070a0",
+    "nestedFileOffset": 24,
+    "presenceOffset": 16,
+    "presenceMask": 2,
+    "formatOffset": 32,
+    "recognizedRawFormats": [
+      0,
+      1,
+      2,
+      8,
+      9,
+      16,
+      18,
+      19,
+      20,
+      22,
+      57
+    ]
+  },
+  "limits": [
+    "Native kind-5 lookup is a response consumer, not an outgoing request capture.",
+    "Source variant 0 identity follows original constructor/class-data/descriptor/default-instance pointers; no Track.file or Episode.audio equivalence asserted.",
+    "The file-format gate reads only format presence and its recognized-format bitmask. It reads no country, catalogue, content-access or provider/entity status.",
+    "Provider/entity admission and source-provider account admission remain unresolved. Original logical AUDIO_FILES query generation is recovered; typed Dart projection still neither authorizes files nor creates or sends a request.",
+    "Standard protobuf and libc++ behavior comes from installed public headers and generated schemas; no standard implementation was decompiled."
+  ],
+  "requestProducer": {
+    "entryPoint": "0x1008446e8",
+    "capture": "reverse-engineering/evidence/native-audio-files-query-plan.json",
+    "httpSubmitBoundary": "0x1008453c4: owner+0x38 virtual+0x10",
+    "rawContentKindGate": {
+      "entryPoint": "0x101d07060",
+      "accepted": [
+        4,
+        63,
+        80
+      ]
+    },
+    "originalResponseChain": [
+      "0x100845e34",
+      "0x101c198dc",
+      "0x100845ee4",
+      "0x100753cb0"
+    ],
+    "limitations": "Original logical query producer is recovered; concrete HTTP serialization/endpoint/header owner remains unresolved. No account eligibility inferred."
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "authority": "https://github.com/SpotX-Official/SpotX",
+  "commit": "06f7fa2eac989c84613b2e0efc9b18acaf97f6cb",
+  "readDate": "2026-10-29",
+  "sources": [
+    {
+      "path": "patches/patches.json",
+      "gitBlob": "d8595031111569026976295fe697654849c6b4de",
+      "appliedConcepts": [
+        "free.emptyblock",
+        "VariousJs.banner_home",
+        "others.binary.block_slots",
+        "others.binary.block_slots_2",
+        "others.binary.block_slots_3",
+        "free.audioads"
+      ],
+      "limits": "Version-limited Windows binary/string patches are a suppression reference, not proof of macOS protocol compatibility. Product-state Premium overrides are not applied."
+    },
+    {
+      "path": "js-helper/sectionBlock.js",
+      "gitBlob": "8f80bba433f354221acdfc5d90c2084a4c4962be",
+      "scope": "Original content fetch runs first; response presentation is filtered. Its ordinary music-section blocklist and optional podcast filtering are not copied."
+    }
+  ],
+  "implementation": [
+    "lib/content/advertising.dart",
+    "lib/home/models.dart",
+    "lib/home/view.dart",
+    "lib/playback/context_player_backend.dart",
+    "lib/playback/models.dart",
+    "lib/app/playback_bar.dart"
+  ],
+  "behavior": [
+    "No advertising creative output or reserved Home advertising space.",
+    "Ad-marked queue entries do not enter audio selection or prefetch; ad frames do not reach UI/media-control getters.",
+    "Real Free product state and licensing inputs remain unchanged.",
+    "No advertising polling, creative fetch, silent decode or fake impression/completion traffic is added."
+  ],
+  "policy": "AGENTS.md"
+}

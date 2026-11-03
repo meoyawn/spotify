@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "authority": "Capture the installed desktop's AP hello profile without account traffic.\n\nOriginal root configuration fragments set version, flags and optional-presence\nbytes. The traced scalar copies compose those fragments with the original\nmanager copy, connection assembly, platform/product helpers and APIO copy.\nRetry bookkeeping, absent-proxy selection and the output factory are explicit\ninert dependencies. This does not execute whole startup, open a socket, read a\nprofile, or prove authentication/server acceptance.",
+  "rootFragments": [
+    [
+      "0x1000621d0",
+      "0x1000621d4"
+    ],
+    [
+      "0x100062314",
+      "0x100062320"
+    ],
+    [
+      "0x100062368",
+      "0x1000623a8"
+    ]
+  ],
+  "rootCapture": {
+    "versionHex": "c1d3c807",
+    "flagsHex": "00000000",
+    "platformOptionalHex": "0000",
+    "productOptionalHex": "00a5a5a500",
+    "paddingPoison": "a5; absent product value/padding is not an identity"
+  },
+  "copyPath": [
+    "100061f64 config+98/d0/e2/e4/e8",
+    "101651dc4 -> monolithic scope101652194 param8",
+    "101652194 shared config+58/90/4a/4c/50",
+    "1018eee24 -> 1018ef2cc intermediate+0/50/54/58/5c",
+    "1018fe5b8 -> manager+48/98/9c/a0/a4",
+    "1018fc904 selects optional/default profile -> IO config+18/68/f8/fc",
+    "1018f5c80 copies installed IO config unchanged"
+  ],
+  "originalProcedures": [
+    "0x1018fe5b8",
+    "0x1018fc904",
+    "0x101a4c850",
+    "0x101a4c858",
+    "0x1018f5c80"
+  ],
+  "cases": [
+    {
+      "name": "reference desktop without optional overrides",
+      "profile": {
+        "version": 130601921,
+        "featureFlags": 0,
+        "platform": 43,
+        "product": 0
+      },
+      "dependencies": [
+        "retry counter: zero",
+        "retry counter: zero",
+        "retry counter: zero",
+        "retry transition: ignored",
+        "proxy selection: ignored",
+        "IO factory: inert",
+        "proxy provider: absent",
+        "IO connect: capture only; no transport"
+      ]
+    },
+    {
+      "name": "synthetic explicit foreign enum overrides",
+      "profile": {
+        "version": 4294967295,
+        "featureFlags": 251,
+        "platform": 255,
+        "product": 4294967295
+      },
+      "dependencies": [
+        "retry counter: zero",
+        "retry counter: zero",
+        "retry counter: zero",
+        "retry transition: ignored",
+        "proxy selection: ignored",
+        "IO factory: inert",
+        "proxy provider: absent",
+        "IO connect: capture only; no transport"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "path": ".local/rea-session/dart-native-ap-desktop-root-config-instructions.json",
+      "sha256": "6d567a51299af3339796548985b8e4d179116d187a5951bd91db81938f119e4c",
+      "evidenceId": "ev_9de2022d50d6cbf85c561e80c2f236d194c60dcd90a10c04ed529ffe6047cbef"
+    },
+    {
+      "path": ".local/rea-session/dart-native-ap-desktop-config-forwarding-proof.json",
+      "sha256": "8db38227edae2d8b6c11c6d9f0bf330a26e833ffeeb92ee9a773b7f0c1be343a",
+      "evidenceId": "ev_7bb220b9e81e7d5011ba872c108c76eab9e3e4f4019a8fb7cd975c4c5b2fb207"
+    },
+    {
+      "path": ".local/rea-session/dart-native-ap-desktop-root-connection-config.json",
+      "sha256": "a539d7fab33cf7c4af29d3f50c735bf3be8f0f543fa828cb28653aea91bc9f4d",
+      "evidenceId": "ev_85f58d870d27b60aa85957a70ebe147e7bfc4921ebad4d77791ea7ed55dda0a3"
+    },
+    {
+      "path": ".local/rea-session/dart-native-ap-connection-and-resolver-constructors.json",
+      "sha256": "023e381c32852912790bf5a8637b73c92c80682ec122db46410eee0d5d243737",
+      "evidenceId": "ev_e190c35e226e1e5b2079ef12a1f80611bd27020819dc80abcbc2e9e79d8af0c3"
+    },
+    {
+      "path": ".local/rea-session/dart-native-ap-config-mapping-and-manager-constructor.json",
+      "sha256": "cc4453a45099cf6c041610b767117954e0282b1a5244ba6d34c98ce7fb5483bf",
+      "evidenceId": "ev_a3b157d99921a04b36629218758017c241ab310f234624528a7869c092389636"
+    },
+    {
+      "path": ".local/rea-session/dart-native-ap-native-hello-config-assembly.json",
+      "sha256": "746224836ba40f300c60c49dee3b0ab649970e299f8e0c9bb085b048809d79e3",
+      "evidenceId": "ev_3b7cfa4a570d101f0b355493528dc853d3a6bf83dd5cc2ffe4f06ca3ce7f257f"
+    }
+  ],
+  "limitations": [
+    "Root fragments and final original copy/selection execute; intermediate scalar composition follows the retained static copy path, not whole scope/startup execution",
+    "Synthetic retry/proxy/factory providers are enumerated per case; no actual AP peer, account, resolver result or authentication is exercised",
+    "43 is the native numeric hello platform; no reference enum label or server capability is inferred"
+  ],
+  "oracle": {
+    "path": "reverse-engineering/tools/native_ap_hello_profile_oracle.py",
+    "sha256": "ffb33d0fe58cea30a38242e92861b54ca1c985f1e158fadb832b919b3870102e"
+  }
+}

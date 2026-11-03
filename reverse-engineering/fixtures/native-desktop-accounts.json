@@ -1,0 +1,1096 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "identity": {
+    "clientId": "65b708073fc0480ea92a077233ca87bd",
+    "scopes": [
+      "app-remote-control",
+      "playlist-modify",
+      "playlist-modify-private",
+      "playlist-modify-public",
+      "playlist-read",
+      "playlist-read-collaborative",
+      "playlist-read-private",
+      "streaming",
+      "transfer-auth-session",
+      "sts-content-management",
+      "ugc-image-upload",
+      "user-follow-modify",
+      "user-follow-read",
+      "user-library-modify",
+      "user-library-read",
+      "user-modify",
+      "user-modify-playback-state",
+      "user-modify-private",
+      "user-personalized",
+      "user-read-birthdate",
+      "user-read-currently-playing",
+      "user-read-email",
+      "user-read-play-history",
+      "user-read-playback-position",
+      "user-read-playback-state",
+      "user-read-private",
+      "user-read-recently-played",
+      "user-top-read"
+    ]
+  },
+  "entries": {
+    "descriptorInitializer": "0x101d845a0",
+    "clientDescriptor": "0x102808838",
+    "scopeDescriptors": "0x102808848",
+    "decoder": "0x101d84a58",
+    "scopeProducer": "0x101d84484",
+    "pkceProducer": "0x1017a6224",
+    "urlOwner": "0x101673dd8",
+    "authorizationPairs": "0x101674600",
+    "creationPoint": "0x10167564c",
+    "campaign": "0x10167b894",
+    "flowContext": "0x101674284",
+    "querySerializer": "0x101f52f44",
+    "callbackOwner": "0x101670c9c",
+    "callbackQuery": "0x101f54d20",
+    "tokenFields": "0x1016721e0",
+    "formSerializer": "0x10167d228"
+  },
+  "sourceRanges": [
+    {
+      "start": "0x101d845a0",
+      "byteCount": 1196,
+      "sha256": "f445977ed7855f81b283e49de607232bba920e99b08aa394809b75b41eec946f"
+    },
+    {
+      "start": "0x101d84484",
+      "byteCount": 284,
+      "sha256": "cfcf7f92926b119bfebc4eb70e610f2641ce563918e68ff4dc2c0d8916d99415"
+    },
+    {
+      "start": "0x101d84a58",
+      "byteCount": 360,
+      "sha256": "56e94f5c099efaa222a079a6c1d95e878a6787adc3fcf8695142a5330c4a272c"
+    },
+    {
+      "start": "0x1017a6224",
+      "byteCount": 436,
+      "sha256": "7a163553c956439aa3ffa3a427dd6a3d6d296cf4c42a4aa5b5e78dd18e04f783"
+    },
+    {
+      "start": "0x101673dd8",
+      "byteCount": 1196,
+      "sha256": "8932187937250c95249275ae6a9d4a748fe18cbedd30d709925b4d43a1a315ba"
+    },
+    {
+      "start": "0x101674600",
+      "byteCount": 2264,
+      "sha256": "ecadcd46db2c0165e5c7322a936a6e8460cebb2f3e37bc9aec17c24ac7662127"
+    },
+    {
+      "start": "0x10167564c",
+      "byteCount": 448,
+      "sha256": "8352442220fca5ccc0dabb87e3beccebbd49df4606eb434f7ff5233d641efd61"
+    },
+    {
+      "start": "0x10167b894",
+      "byteCount": 396,
+      "sha256": "3662e251d415328d97dc10e33391ac727c3ae9a76cba049484e84d4a45377f83"
+    },
+    {
+      "start": "0x101670c9c",
+      "byteCount": 1152,
+      "sha256": "756fa0c4010cb4f547372a3f4b03795fbc786822c0d46bafd276abaa10f7b1d6"
+    },
+    {
+      "start": "0x101f54d20",
+      "byteCount": 360,
+      "sha256": "3b346b1aaf8153e737deca90a2f8691ce3e10c08e14844d5a4b953eafa203a55"
+    },
+    {
+      "start": "0x1016721e0",
+      "byteCount": 716,
+      "sha256": "d92254f65573de939a3ce46b402901831bc399fc178aa5241297f95bc075ad2c"
+    },
+    {
+      "start": "0x10167d228",
+      "byteCount": 672,
+      "sha256": "93c0d09bd38306c8d954c2a6356dbdd6009389aba6ebc5216b268a8a14dc97d9"
+    }
+  ],
+  "method": "Capture the original primary desktop Accounts authorization URL offline.\n\nThe original initializer, client-ID decoder, 28-scope producer, PKCE producer,\nprimary URL owner and nested URL/query serializers execute under Unicorn.\nOnly standard allocation/string/stream/locale operations, supplied 32-byte\nentropy, a SHA-256 provider and time() are substituted. No URL/query decision\nis implemented here. No app, browser, account, profile or socket is opened.\n",
+  "limits": [
+    "Whole primary URL owner with supplied campaign, callback, flow mode, DPoP thumbprint and time; no browser execution.",
+    "Actual immutable desktop client ID and scope vector are produced by the original initializer/decoder/scope routine.",
+    "PKCE uses the original producer with supplied standard entropy and a successful standard SHA-256 provider.",
+    "Callback cases execute original owner0x101670c9c and raw query lookup0x101f54d20 to its original token-task factory boundary.",
+    "Token form fields execute original0x1016721e0 with a successful supplied proof result, followed by original serializer0x10167d228. Browser/error-preflight admission and actual proof generation are separate.",
+    "No browser HTTP headers, callback server/network delivery, complete token exchange, transport fingerprint or account acceptance is proved."
+  ],
+  "cases": [
+    {
+      "clientId": "65b708073fc0480ea92a077233ca87bd",
+      "scopes": [
+        "app-remote-control",
+        "playlist-modify",
+        "playlist-modify-private",
+        "playlist-modify-public",
+        "playlist-read",
+        "playlist-read-collaborative",
+        "playlist-read-private",
+        "streaming",
+        "transfer-auth-session",
+        "sts-content-management",
+        "ugc-image-upload",
+        "user-follow-modify",
+        "user-follow-read",
+        "user-library-modify",
+        "user-library-read",
+        "user-modify",
+        "user-modify-playback-state",
+        "user-modify-private",
+        "user-personalized",
+        "user-read-birthdate",
+        "user-read-currently-playing",
+        "user-read-email",
+        "user-read-play-history",
+        "user-read-playback-position",
+        "user-read-playback-state",
+        "user-read-private",
+        "user-read-recently-played",
+        "user-top-read"
+      ],
+      "source": "spotify",
+      "medium": "desktop-macos",
+      "campaign": "organic",
+      "referral": "",
+      "msclkid": null,
+      "flow": "login-accounts",
+      "signUp": false,
+      "flowContext": "",
+      "redirectUri": "http://127.0.0.1:4381/login",
+      "dpopThumbprint": "synthetic-DPoP_thumbprint",
+      "nowSeconds": 1793138000,
+      "entropyHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "name": "primary desktop sign-in",
+      "original": {
+        "url": "https://accounts.spotify.com/oauth2/v2/auth?client_id=65b708073fc0480ea92a077233ca87bd&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A4381%2Flogin&scope=app-remote-control%2Cplaylist-modify%2Cplaylist-modify-private%2Cplaylist-modify-public%2Cplaylist-read%2Cplaylist-read-collaborative%2Cplaylist-read-private%2Cstreaming%2Ctransfer-auth-session%2Csts-content-management%2Cugc-image-upload%2Cuser-follow-modify%2Cuser-follow-read%2Cuser-library-modify%2Cuser-library-read%2Cuser-modify%2Cuser-modify-playback-state%2Cuser-modify-private%2Cuser-personalized%2Cuser-read-birthdate%2Cuser-read-currently-playing%2Cuser-read-email%2Cuser-read-play-history%2Cuser-read-playback-position%2Cuser-read-playback-state%2Cuser-read-private%2Cuser-read-recently-played%2Cuser-top-read&code_challenge_method=S256&code_challenge=6oZqdX5MOLq_qBJ8vppAnT4fk6AP8UiP9zX8-Rev_9A&dpop_jkt=synthetic-DPoP_thumbprint&utm_source=spotify&utm_medium=desktop-macos&utm_campaign=organic&creation_flow=desktop&creation_point=https%3A%2F%2Flogin.app.spotify.com%2F%3Fclient_id%3D65b708073fc0480ea92a077233ca87bd%26utm_source%3Dspotify%26utm_medium%3Ddesktop-macos%26utm_campaign%3Dorganic",
+        "pkce": {
+          "verifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+          "challenge": "6oZqdX5MOLq_qBJ8vppAnT4fk6AP8UiP9zX8-Rev_9A",
+          "method": "S256"
+        },
+        "sha256Inputs": [
+          "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8"
+        ],
+        "timeReads": 0
+      }
+    },
+    {
+      "clientId": "65b708073fc0480ea92a077233ca87bd",
+      "scopes": [
+        "app-remote-control",
+        "playlist-modify",
+        "playlist-modify-private",
+        "playlist-modify-public",
+        "playlist-read",
+        "playlist-read-collaborative",
+        "playlist-read-private",
+        "streaming",
+        "transfer-auth-session",
+        "sts-content-management",
+        "ugc-image-upload",
+        "user-follow-modify",
+        "user-follow-read",
+        "user-library-modify",
+        "user-library-read",
+        "user-modify",
+        "user-modify-playback-state",
+        "user-modify-private",
+        "user-personalized",
+        "user-read-birthdate",
+        "user-read-currently-playing",
+        "user-read-email",
+        "user-read-play-history",
+        "user-read-playback-position",
+        "user-read-playback-state",
+        "user-read-private",
+        "user-read-recently-played",
+        "user-top-read"
+      ],
+      "source": "spotify",
+      "medium": "desktop-macos",
+      "campaign": "organic",
+      "referral": "",
+      "msclkid": null,
+      "flow": "login-accounts",
+      "signUp": false,
+      "flowContext": "",
+      "redirectUri": "http://127.0.0.1:4382/login",
+      "dpopThumbprint": "synthetic-DPoP_thumbprint",
+      "nowSeconds": 1793138000,
+      "entropyHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "name": "next original callback port",
+      "original": {
+        "url": "https://accounts.spotify.com/oauth2/v2/auth?client_id=65b708073fc0480ea92a077233ca87bd&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A4382%2Flogin&scope=app-remote-control%2Cplaylist-modify%2Cplaylist-modify-private%2Cplaylist-modify-public%2Cplaylist-read%2Cplaylist-read-collaborative%2Cplaylist-read-private%2Cstreaming%2Ctransfer-auth-session%2Csts-content-management%2Cugc-image-upload%2Cuser-follow-modify%2Cuser-follow-read%2Cuser-library-modify%2Cuser-library-read%2Cuser-modify%2Cuser-modify-playback-state%2Cuser-modify-private%2Cuser-personalized%2Cuser-read-birthdate%2Cuser-read-currently-playing%2Cuser-read-email%2Cuser-read-play-history%2Cuser-read-playback-position%2Cuser-read-playback-state%2Cuser-read-private%2Cuser-read-recently-played%2Cuser-top-read&code_challenge_method=S256&code_challenge=6oZqdX5MOLq_qBJ8vppAnT4fk6AP8UiP9zX8-Rev_9A&dpop_jkt=synthetic-DPoP_thumbprint&utm_source=spotify&utm_medium=desktop-macos&utm_campaign=organic&creation_flow=desktop&creation_point=https%3A%2F%2Flogin.app.spotify.com%2F%3Fclient_id%3D65b708073fc0480ea92a077233ca87bd%26utm_source%3Dspotify%26utm_medium%3Ddesktop-macos%26utm_campaign%3Dorganic",
+        "pkce": {
+          "verifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+          "challenge": "6oZqdX5MOLq_qBJ8vppAnT4fk6AP8UiP9zX8-Rev_9A",
+          "method": "S256"
+        },
+        "sha256Inputs": [
+          "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8"
+        ],
+        "timeReads": 0
+      }
+    },
+    {
+      "clientId": "65b708073fc0480ea92a077233ca87bd",
+      "scopes": [],
+      "source": "spotify",
+      "medium": "desktop-macos",
+      "campaign": "organic",
+      "referral": "",
+      "msclkid": null,
+      "flow": "login-accounts",
+      "signUp": false,
+      "flowContext": "",
+      "redirectUri": "http://127.0.0.1:4381/login",
+      "dpopThumbprint": "synthetic-DPoP_thumbprint",
+      "nowSeconds": 1793138000,
+      "entropyHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "name": "empty scope vector",
+      "original": {
+        "url": "https://accounts.spotify.com/oauth2/v2/auth?client_id=65b708073fc0480ea92a077233ca87bd&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A4381%2Flogin&scope=&code_challenge_method=S256&code_challenge=6oZqdX5MOLq_qBJ8vppAnT4fk6AP8UiP9zX8-Rev_9A&dpop_jkt=synthetic-DPoP_thumbprint&utm_source=spotify&utm_medium=desktop-macos&utm_campaign=organic&creation_flow=desktop&creation_point=https%3A%2F%2Flogin.app.spotify.com%2F%3Fclient_id%3D65b708073fc0480ea92a077233ca87bd%26utm_source%3Dspotify%26utm_medium%3Ddesktop-macos%26utm_campaign%3Dorganic",
+        "pkce": {
+          "verifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+          "challenge": "6oZqdX5MOLq_qBJ8vppAnT4fk6AP8UiP9zX8-Rev_9A",
+          "method": "S256"
+        },
+        "sha256Inputs": [
+          "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8"
+        ],
+        "timeReads": 0
+      }
+    },
+    {
+      "clientId": "65b708073fc0480ea92a077233ca87bd",
+      "scopes": [
+        "streaming",
+        "user-read-email",
+        "streaming"
+      ],
+      "source": "spotify",
+      "medium": "desktop-macos",
+      "campaign": "organic",
+      "referral": "",
+      "msclkid": null,
+      "flow": "login-accounts",
+      "signUp": false,
+      "flowContext": "",
+      "redirectUri": "http://127.0.0.1:4381/login",
+      "dpopThumbprint": "synthetic-DPoP_thumbprint",
+      "nowSeconds": 1793138000,
+      "entropyHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "name": "scope order and duplicates",
+      "original": {
+        "url": "https://accounts.spotify.com/oauth2/v2/auth?client_id=65b708073fc0480ea92a077233ca87bd&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A4381%2Flogin&scope=streaming%2Cuser-read-email%2Cstreaming&code_challenge_method=S256&code_challenge=6oZqdX5MOLq_qBJ8vppAnT4fk6AP8UiP9zX8-Rev_9A&dpop_jkt=synthetic-DPoP_thumbprint&utm_source=spotify&utm_medium=desktop-macos&utm_campaign=organic&creation_flow=desktop&creation_point=https%3A%2F%2Flogin.app.spotify.com%2F%3Fclient_id%3D65b708073fc0480ea92a077233ca87bd%26utm_source%3Dspotify%26utm_medium%3Ddesktop-macos%26utm_campaign%3Dorganic",
+        "pkce": {
+          "verifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+          "challenge": "6oZqdX5MOLq_qBJ8vppAnT4fk6AP8UiP9zX8-Rev_9A",
+          "method": "S256"
+        },
+        "sha256Inputs": [
+          "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8"
+        ],
+        "timeReads": 0
+      }
+    },
+    {
+      "clientId": "65b708073fc0480ea92a077233ca87bd",
+      "scopes": [
+        "app-remote-control",
+        "playlist-modify",
+        "playlist-modify-private",
+        "playlist-modify-public",
+        "playlist-read",
+        "playlist-read-collaborative",
+        "playlist-read-private",
+        "streaming",
+        "transfer-auth-session",
+        "sts-content-management",
+        "ugc-image-upload",
+        "user-follow-modify",
+        "user-follow-read",
+        "user-library-modify",
+        "user-library-read",
+        "user-modify",
+        "user-modify-playback-state",
+        "user-modify-private",
+        "user-personalized",
+        "user-read-birthdate",
+        "user-read-currently-playing",
+        "user-read-email",
+        "user-read-play-history",
+        "user-read-playback-position",
+        "user-read-playback-state",
+        "user-read-private",
+        "user-read-recently-played",
+        "user-top-read"
+      ],
+      "source": "spotify",
+      "medium": "desktop-macos",
+      "campaign": "organic",
+      "referral": "",
+      "msclkid": null,
+      "flow": "login-accounts",
+      "signUp": true,
+      "flowContext": "",
+      "redirectUri": "http://127.0.0.1:4381/login",
+      "dpopThumbprint": "synthetic-DPoP_thumbprint",
+      "nowSeconds": 1793138000,
+      "entropyHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "name": "sign-up forward URL",
+      "original": {
+        "url": "https://www.spotify.com/signup?forward_url=https%3A%2F%2Faccounts.spotify.com%2Foauth2%2Fv2%2Fauth%3Fclient_id%3D65b708073fc0480ea92a077233ca87bd%26response_type%3Dcode%26redirect_uri%3Dhttp%253A%252F%252F127.0.0.1%253A4381%252Flogin%26scope%3Dapp-remote-control%252Cplaylist-modify%252Cplaylist-modify-private%252Cplaylist-modify-public%252Cplaylist-read%252Cplaylist-read-collaborative%252Cplaylist-read-private%252Cstreaming%252Ctransfer-auth-session%252Csts-content-management%252Cugc-image-upload%252Cuser-follow-modify%252Cuser-follow-read%252Cuser-library-modify%252Cuser-library-read%252Cuser-modify%252Cuser-modify-playback-state%252Cuser-modify-private%252Cuser-personalized%252Cuser-read-birthdate%252Cuser-read-currently-playing%252Cuser-read-email%252Cuser-read-play-history%252Cuser-read-playback-position%252Cuser-read-playback-state%252Cuser-read-private%252Cuser-read-recently-played%252Cuser-top-read%26code_challenge_method%3DS256%26code_challenge%3D6oZqdX5MOLq_qBJ8vppAnT4fk6AP8UiP9zX8-Rev_9A%26dpop_jkt%3Dsynthetic-DPoP_thumbprint%26utm_source%3Dspotify%26utm_medium%3Ddesktop-macos%26utm_campaign%3Dorganic&flow=login-accounts&creation_flow=desktop&creation_point=https%3A%2F%2Flogin.app.spotify.com%2F%3Fclient_id%3D65b708073fc0480ea92a077233ca87bd%26utm_source%3Dspotify%26utm_medium%3Ddesktop-macos%26utm_campaign%3Dorganic",
+        "pkce": {
+          "verifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+          "challenge": "6oZqdX5MOLq_qBJ8vppAnT4fk6AP8UiP9zX8-Rev_9A",
+          "method": "S256"
+        },
+        "sha256Inputs": [
+          "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8"
+        ],
+        "timeReads": 0
+      }
+    },
+    {
+      "clientId": "65b708073fc0480ea92a077233ca87bd",
+      "scopes": [
+        "app-remote-control",
+        "playlist-modify",
+        "playlist-modify-private",
+        "playlist-modify-public",
+        "playlist-read",
+        "playlist-read-collaborative",
+        "playlist-read-private",
+        "streaming",
+        "transfer-auth-session",
+        "sts-content-management",
+        "ugc-image-upload",
+        "user-follow-modify",
+        "user-follow-read",
+        "user-library-modify",
+        "user-library-read",
+        "user-modify",
+        "user-modify-playback-state",
+        "user-modify-private",
+        "user-personalized",
+        "user-read-birthdate",
+        "user-read-currently-playing",
+        "user-read-email",
+        "user-read-play-history",
+        "user-read-playback-position",
+        "user-read-playback-state",
+        "user-read-private",
+        "user-read-recently-played",
+        "user-top-read"
+      ],
+      "source": "spotify",
+      "medium": "desktop-macos",
+      "campaign": "organic",
+      "referral": "",
+      "msclkid": null,
+      "flow": "",
+      "signUp": true,
+      "flowContext": "",
+      "redirectUri": "http://127.0.0.1:4381/login",
+      "dpopThumbprint": "synthetic-DPoP_thumbprint",
+      "nowSeconds": 1793138000,
+      "entropyHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "name": "sign-up empty flow omits flow member",
+      "original": {
+        "url": "https://www.spotify.com/signup?forward_url=https%3A%2F%2Faccounts.spotify.com%2Foauth2%2Fv2%2Fauth%3Fclient_id%3D65b708073fc0480ea92a077233ca87bd%26response_type%3Dcode%26redirect_uri%3Dhttp%253A%252F%252F127.0.0.1%253A4381%252Flogin%26scope%3Dapp-remote-control%252Cplaylist-modify%252Cplaylist-modify-private%252Cplaylist-modify-public%252Cplaylist-read%252Cplaylist-read-collaborative%252Cplaylist-read-private%252Cstreaming%252Ctransfer-auth-session%252Csts-content-management%252Cugc-image-upload%252Cuser-follow-modify%252Cuser-follow-read%252Cuser-library-modify%252Cuser-library-read%252Cuser-modify%252Cuser-modify-playback-state%252Cuser-modify-private%252Cuser-personalized%252Cuser-read-birthdate%252Cuser-read-currently-playing%252Cuser-read-email%252Cuser-read-play-history%252Cuser-read-playback-position%252Cuser-read-playback-state%252Cuser-read-private%252Cuser-read-recently-played%252Cuser-top-read%26code_challenge_method%3DS256%26code_challenge%3D6oZqdX5MOLq_qBJ8vppAnT4fk6AP8UiP9zX8-Rev_9A%26dpop_jkt%3Dsynthetic-DPoP_thumbprint%26utm_source%3Dspotify%26utm_medium%3Ddesktop-macos%26utm_campaign%3Dorganic&creation_flow=desktop&creation_point=https%3A%2F%2Flogin.app.spotify.com%2F%3Fclient_id%3D65b708073fc0480ea92a077233ca87bd%26utm_source%3Dspotify%26utm_medium%3Ddesktop-macos%26utm_campaign%3Dorganic",
+        "pkce": {
+          "verifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+          "challenge": "6oZqdX5MOLq_qBJ8vppAnT4fk6AP8UiP9zX8-Rev_9A",
+          "method": "S256"
+        },
+        "sha256Inputs": [
+          "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8"
+        ],
+        "timeReads": 0
+      }
+    },
+    {
+      "clientId": "65b708073fc0480ea92a077233ca87bd",
+      "scopes": [
+        "app-remote-control",
+        "playlist-modify",
+        "playlist-modify-private",
+        "playlist-modify-public",
+        "playlist-read",
+        "playlist-read-collaborative",
+        "playlist-read-private",
+        "streaming",
+        "transfer-auth-session",
+        "sts-content-management",
+        "ugc-image-upload",
+        "user-follow-modify",
+        "user-follow-read",
+        "user-library-modify",
+        "user-library-read",
+        "user-modify",
+        "user-modify-playback-state",
+        "user-modify-private",
+        "user-personalized",
+        "user-read-birthdate",
+        "user-read-currently-playing",
+        "user-read-email",
+        "user-read-play-history",
+        "user-read-playback-position",
+        "user-read-playback-state",
+        "user-read-private",
+        "user-read-recently-played",
+        "user-top-read"
+      ],
+      "source": "spotify",
+      "medium": "desktop-macos",
+      "campaign": "organic",
+      "referral": "",
+      "msclkid": null,
+      "flow": "arbitrary-supplied-flow",
+      "signUp": false,
+      "flowContext": "",
+      "redirectUri": "http://127.0.0.1:4381/login",
+      "dpopThumbprint": "synthetic-DPoP_thumbprint",
+      "nowSeconds": 1793138000,
+      "entropyHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "name": "sign-in ignores flow name",
+      "original": {
+        "url": "https://accounts.spotify.com/oauth2/v2/auth?client_id=65b708073fc0480ea92a077233ca87bd&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A4381%2Flogin&scope=app-remote-control%2Cplaylist-modify%2Cplaylist-modify-private%2Cplaylist-modify-public%2Cplaylist-read%2Cplaylist-read-collaborative%2Cplaylist-read-private%2Cstreaming%2Ctransfer-auth-session%2Csts-content-management%2Cugc-image-upload%2Cuser-follow-modify%2Cuser-follow-read%2Cuser-library-modify%2Cuser-library-read%2Cuser-modify%2Cuser-modify-playback-state%2Cuser-modify-private%2Cuser-personalized%2Cuser-read-birthdate%2Cuser-read-currently-playing%2Cuser-read-email%2Cuser-read-play-history%2Cuser-read-playback-position%2Cuser-read-playback-state%2Cuser-read-private%2Cuser-read-recently-played%2Cuser-top-read&code_challenge_method=S256&code_challenge=6oZqdX5MOLq_qBJ8vppAnT4fk6AP8UiP9zX8-Rev_9A&dpop_jkt=synthetic-DPoP_thumbprint&utm_source=spotify&utm_medium=desktop-macos&utm_campaign=organic&creation_flow=desktop&creation_point=https%3A%2F%2Flogin.app.spotify.com%2F%3Fclient_id%3D65b708073fc0480ea92a077233ca87bd%26utm_source%3Dspotify%26utm_medium%3Ddesktop-macos%26utm_campaign%3Dorganic",
+        "pkce": {
+          "verifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+          "challenge": "6oZqdX5MOLq_qBJ8vppAnT4fk6AP8UiP9zX8-Rev_9A",
+          "method": "S256"
+        },
+        "sha256Inputs": [
+          "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8"
+        ],
+        "timeReads": 0
+      }
+    },
+    {
+      "clientId": "65b708073fc0480ea92a077233ca87bd",
+      "scopes": [
+        "app-remote-control",
+        "playlist-modify",
+        "playlist-modify-private",
+        "playlist-modify-public",
+        "playlist-read",
+        "playlist-read-collaborative",
+        "playlist-read-private",
+        "streaming",
+        "transfer-auth-session",
+        "sts-content-management",
+        "ugc-image-upload",
+        "user-follow-modify",
+        "user-follow-read",
+        "user-library-modify",
+        "user-library-read",
+        "user-modify",
+        "user-modify-playback-state",
+        "user-modify-private",
+        "user-personalized",
+        "user-read-birthdate",
+        "user-read-currently-playing",
+        "user-read-email",
+        "user-read-play-history",
+        "user-read-playback-position",
+        "user-read-playback-state",
+        "user-read-private",
+        "user-read-recently-played",
+        "user-top-read"
+      ],
+      "source": "spotify",
+      "medium": "desktop-macos",
+      "campaign": "organic",
+      "referral": "campaign-referral",
+      "msclkid": null,
+      "flow": "login-accounts",
+      "signUp": false,
+      "flowContext": "",
+      "redirectUri": "http://127.0.0.1:4381/login",
+      "dpopThumbprint": "synthetic-DPoP_thumbprint",
+      "nowSeconds": 1793138000,
+      "entropyHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "name": "nonempty referral",
+      "original": {
+        "url": "https://accounts.spotify.com/oauth2/v2/auth?client_id=65b708073fc0480ea92a077233ca87bd&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A4381%2Flogin&scope=app-remote-control%2Cplaylist-modify%2Cplaylist-modify-private%2Cplaylist-modify-public%2Cplaylist-read%2Cplaylist-read-collaborative%2Cplaylist-read-private%2Cstreaming%2Ctransfer-auth-session%2Csts-content-management%2Cugc-image-upload%2Cuser-follow-modify%2Cuser-follow-read%2Cuser-library-modify%2Cuser-library-read%2Cuser-modify%2Cuser-modify-playback-state%2Cuser-modify-private%2Cuser-personalized%2Cuser-read-birthdate%2Cuser-read-currently-playing%2Cuser-read-email%2Cuser-read-play-history%2Cuser-read-playback-position%2Cuser-read-playback-state%2Cuser-read-private%2Cuser-read-recently-played%2Cuser-top-read&code_challenge_method=S256&code_challenge=6oZqdX5MOLq_qBJ8vppAnT4fk6AP8UiP9zX8-Rev_9A&dpop_jkt=synthetic-DPoP_thumbprint&utm_source=spotify&utm_medium=desktop-macos&utm_campaign=organic&referral=campaign-referral&creation_flow=desktop&creation_point=https%3A%2F%2Flogin.app.spotify.com%2F%3Fclient_id%3D65b708073fc0480ea92a077233ca87bd%26utm_source%3Dspotify%26utm_medium%3Ddesktop-macos%26utm_campaign%3Dorganic%26referral%3Dcampaign-referral",
+        "pkce": {
+          "verifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+          "challenge": "6oZqdX5MOLq_qBJ8vppAnT4fk6AP8UiP9zX8-Rev_9A",
+          "method": "S256"
+        },
+        "sha256Inputs": [
+          "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8"
+        ],
+        "timeReads": 0
+      }
+    },
+    {
+      "clientId": "65b708073fc0480ea92a077233ca87bd",
+      "scopes": [
+        "app-remote-control",
+        "playlist-modify",
+        "playlist-modify-private",
+        "playlist-modify-public",
+        "playlist-read",
+        "playlist-read-collaborative",
+        "playlist-read-private",
+        "streaming",
+        "transfer-auth-session",
+        "sts-content-management",
+        "ugc-image-upload",
+        "user-follow-modify",
+        "user-follow-read",
+        "user-library-modify",
+        "user-library-read",
+        "user-modify",
+        "user-modify-playback-state",
+        "user-modify-private",
+        "user-personalized",
+        "user-read-birthdate",
+        "user-read-currently-playing",
+        "user-read-email",
+        "user-read-play-history",
+        "user-read-playback-position",
+        "user-read-playback-state",
+        "user-read-private",
+        "user-read-recently-played",
+        "user-top-read"
+      ],
+      "source": "spotify",
+      "medium": "desktop-macos",
+      "campaign": "organic",
+      "referral": "",
+      "msclkid": "",
+      "flow": "login-accounts",
+      "signUp": false,
+      "flowContext": "",
+      "redirectUri": "http://127.0.0.1:4381/login",
+      "dpopThumbprint": "synthetic-DPoP_thumbprint",
+      "nowSeconds": 1793138000,
+      "entropyHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "name": "present empty msclkid",
+      "original": {
+        "url": "https://accounts.spotify.com/oauth2/v2/auth?client_id=65b708073fc0480ea92a077233ca87bd&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A4381%2Flogin&scope=app-remote-control%2Cplaylist-modify%2Cplaylist-modify-private%2Cplaylist-modify-public%2Cplaylist-read%2Cplaylist-read-collaborative%2Cplaylist-read-private%2Cstreaming%2Ctransfer-auth-session%2Csts-content-management%2Cugc-image-upload%2Cuser-follow-modify%2Cuser-follow-read%2Cuser-library-modify%2Cuser-library-read%2Cuser-modify%2Cuser-modify-playback-state%2Cuser-modify-private%2Cuser-personalized%2Cuser-read-birthdate%2Cuser-read-currently-playing%2Cuser-read-email%2Cuser-read-play-history%2Cuser-read-playback-position%2Cuser-read-playback-state%2Cuser-read-private%2Cuser-read-recently-played%2Cuser-top-read&code_challenge_method=S256&code_challenge=6oZqdX5MOLq_qBJ8vppAnT4fk6AP8UiP9zX8-Rev_9A&dpop_jkt=synthetic-DPoP_thumbprint&utm_source=spotify&utm_medium=desktop-macos&utm_campaign=organic&msclkid=&creation_flow=desktop&creation_point=https%3A%2F%2Flogin.app.spotify.com%2F%3Fclient_id%3D65b708073fc0480ea92a077233ca87bd%26utm_source%3Dspotify%26utm_medium%3Ddesktop-macos%26utm_campaign%3Dorganic%26msclkid%3D",
+        "pkce": {
+          "verifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+          "challenge": "6oZqdX5MOLq_qBJ8vppAnT4fk6AP8UiP9zX8-Rev_9A",
+          "method": "S256"
+        },
+        "sha256Inputs": [
+          "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8"
+        ],
+        "timeReads": 0
+      }
+    },
+    {
+      "clientId": "65b708073fc0480ea92a077233ca87bd",
+      "scopes": [
+        "app-remote-control",
+        "playlist-modify",
+        "playlist-modify-private",
+        "playlist-modify-public",
+        "playlist-read",
+        "playlist-read-collaborative",
+        "playlist-read-private",
+        "streaming",
+        "transfer-auth-session",
+        "sts-content-management",
+        "ugc-image-upload",
+        "user-follow-modify",
+        "user-follow-read",
+        "user-library-modify",
+        "user-library-read",
+        "user-modify",
+        "user-modify-playback-state",
+        "user-modify-private",
+        "user-personalized",
+        "user-read-birthdate",
+        "user-read-currently-playing",
+        "user-read-email",
+        "user-read-play-history",
+        "user-read-playback-position",
+        "user-read-playback-state",
+        "user-read-private",
+        "user-read-recently-played",
+        "user-top-read"
+      ],
+      "source": "source +雪",
+      "medium": "medium&value",
+      "campaign": "campaign=%7e",
+      "referral": "r/?#",
+      "msclkid": "m+&=",
+      "flow": "login-accounts",
+      "signUp": false,
+      "flowContext": "",
+      "redirectUri": "http://127.0.0.1:4381/login",
+      "dpopThumbprint": "synthetic-DPoP_thumbprint",
+      "nowSeconds": 1793138000,
+      "entropyHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "name": "campaign values encode at both nesting levels",
+      "original": {
+        "url": "https://accounts.spotify.com/oauth2/v2/auth?client_id=65b708073fc0480ea92a077233ca87bd&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A4381%2Flogin&scope=app-remote-control%2Cplaylist-modify%2Cplaylist-modify-private%2Cplaylist-modify-public%2Cplaylist-read%2Cplaylist-read-collaborative%2Cplaylist-read-private%2Cstreaming%2Ctransfer-auth-session%2Csts-content-management%2Cugc-image-upload%2Cuser-follow-modify%2Cuser-follow-read%2Cuser-library-modify%2Cuser-library-read%2Cuser-modify%2Cuser-modify-playback-state%2Cuser-modify-private%2Cuser-personalized%2Cuser-read-birthdate%2Cuser-read-currently-playing%2Cuser-read-email%2Cuser-read-play-history%2Cuser-read-playback-position%2Cuser-read-playback-state%2Cuser-read-private%2Cuser-read-recently-played%2Cuser-top-read&code_challenge_method=S256&code_challenge=6oZqdX5MOLq_qBJ8vppAnT4fk6AP8UiP9zX8-Rev_9A&dpop_jkt=synthetic-DPoP_thumbprint&utm_source=source%20%2B%E9%9B%AA&utm_medium=medium%26value&utm_campaign=campaign%3D%257e&referral=r%2F%3F%23&msclkid=m%2B%26%3D&creation_flow=desktop&creation_point=https%3A%2F%2Flogin.app.spotify.com%2F%3Fclient_id%3D65b708073fc0480ea92a077233ca87bd%26utm_source%3Dsource%2520%252B%25E9%259B%25AA%26utm_medium%3Dmedium%2526value%26utm_campaign%3Dcampaign%253D%25257e%26referral%3Dr%252F%253F%2523%26msclkid%3Dm%252B%2526%253D",
+        "pkce": {
+          "verifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+          "challenge": "6oZqdX5MOLq_qBJ8vppAnT4fk6AP8UiP9zX8-Rev_9A",
+          "method": "S256"
+        },
+        "sha256Inputs": [
+          "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8"
+        ],
+        "timeReads": 0
+      }
+    },
+    {
+      "clientId": "65b708073fc0480ea92a077233ca87bd",
+      "scopes": [
+        "app-remote-control",
+        "playlist-modify",
+        "playlist-modify-private",
+        "playlist-modify-public",
+        "playlist-read",
+        "playlist-read-collaborative",
+        "playlist-read-private",
+        "streaming",
+        "transfer-auth-session",
+        "sts-content-management",
+        "ugc-image-upload",
+        "user-follow-modify",
+        "user-follow-read",
+        "user-library-modify",
+        "user-library-read",
+        "user-modify",
+        "user-modify-playback-state",
+        "user-modify-private",
+        "user-personalized",
+        "user-read-birthdate",
+        "user-read-currently-playing",
+        "user-read-email",
+        "user-read-play-history",
+        "user-read-playback-position",
+        "user-read-playback-state",
+        "user-read-private",
+        "user-read-recently-played",
+        "user-top-read"
+      ],
+      "source": "spotify",
+      "medium": "desktop-macos",
+      "campaign": "organic",
+      "referral": "",
+      "msclkid": null,
+      "flow": "login-accounts",
+      "signUp": false,
+      "flowContext": "synthetic-context",
+      "redirectUri": "http://127.0.0.1:4381/login",
+      "dpopThumbprint": "synthetic-DPoP_thumbprint",
+      "nowSeconds": 1793138000,
+      "entropyHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "name": "flow context timestamp",
+      "original": {
+        "url": "https://accounts.spotify.com/oauth2/v2/auth?client_id=65b708073fc0480ea92a077233ca87bd&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A4381%2Flogin&scope=app-remote-control%2Cplaylist-modify%2Cplaylist-modify-private%2Cplaylist-modify-public%2Cplaylist-read%2Cplaylist-read-collaborative%2Cplaylist-read-private%2Cstreaming%2Ctransfer-auth-session%2Csts-content-management%2Cugc-image-upload%2Cuser-follow-modify%2Cuser-follow-read%2Cuser-library-modify%2Cuser-library-read%2Cuser-modify%2Cuser-modify-playback-state%2Cuser-modify-private%2Cuser-personalized%2Cuser-read-birthdate%2Cuser-read-currently-playing%2Cuser-read-email%2Cuser-read-play-history%2Cuser-read-playback-position%2Cuser-read-playback-state%2Cuser-read-private%2Cuser-read-recently-played%2Cuser-top-read&code_challenge_method=S256&code_challenge=6oZqdX5MOLq_qBJ8vppAnT4fk6AP8UiP9zX8-Rev_9A&flow_ctx=synthetic-context%3A1793159600&dpop_jkt=synthetic-DPoP_thumbprint&utm_source=spotify&utm_medium=desktop-macos&utm_campaign=organic&creation_flow=desktop&creation_point=https%3A%2F%2Flogin.app.spotify.com%2F%3Fclient_id%3D65b708073fc0480ea92a077233ca87bd%26utm_source%3Dspotify%26utm_medium%3Ddesktop-macos%26utm_campaign%3Dorganic&flow_ctx=synthetic-context%3A1793159600",
+        "pkce": {
+          "verifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+          "challenge": "6oZqdX5MOLq_qBJ8vppAnT4fk6AP8UiP9zX8-Rev_9A",
+          "method": "S256"
+        },
+        "sha256Inputs": [
+          "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8"
+        ],
+        "timeReads": 2
+      }
+    },
+    {
+      "clientId": "65b708073fc0480ea92a077233ca87bd",
+      "scopes": [
+        "app-remote-control",
+        "playlist-modify",
+        "playlist-modify-private",
+        "playlist-modify-public",
+        "playlist-read",
+        "playlist-read-collaborative",
+        "playlist-read-private",
+        "streaming",
+        "transfer-auth-session",
+        "sts-content-management",
+        "ugc-image-upload",
+        "user-follow-modify",
+        "user-follow-read",
+        "user-library-modify",
+        "user-library-read",
+        "user-modify",
+        "user-modify-playback-state",
+        "user-modify-private",
+        "user-personalized",
+        "user-read-birthdate",
+        "user-read-currently-playing",
+        "user-read-email",
+        "user-read-play-history",
+        "user-read-playback-position",
+        "user-read-playback-state",
+        "user-read-private",
+        "user-read-recently-played",
+        "user-top-read"
+      ],
+      "source": "spotify",
+      "medium": "desktop-macos",
+      "campaign": "organic",
+      "referral": "",
+      "msclkid": null,
+      "flow": "login-accounts",
+      "signUp": true,
+      "flowContext": "ctx:?&雪",
+      "redirectUri": "http://127.0.0.1:4381/login",
+      "dpopThumbprint": "synthetic-DPoP_thumbprint",
+      "nowSeconds": 1793138000,
+      "entropyHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "name": "sign-up context at outer and inner levels",
+      "original": {
+        "url": "https://www.spotify.com/signup?forward_url=https%3A%2F%2Faccounts.spotify.com%2Foauth2%2Fv2%2Fauth%3Fclient_id%3D65b708073fc0480ea92a077233ca87bd%26response_type%3Dcode%26redirect_uri%3Dhttp%253A%252F%252F127.0.0.1%253A4381%252Flogin%26scope%3Dapp-remote-control%252Cplaylist-modify%252Cplaylist-modify-private%252Cplaylist-modify-public%252Cplaylist-read%252Cplaylist-read-collaborative%252Cplaylist-read-private%252Cstreaming%252Ctransfer-auth-session%252Csts-content-management%252Cugc-image-upload%252Cuser-follow-modify%252Cuser-follow-read%252Cuser-library-modify%252Cuser-library-read%252Cuser-modify%252Cuser-modify-playback-state%252Cuser-modify-private%252Cuser-personalized%252Cuser-read-birthdate%252Cuser-read-currently-playing%252Cuser-read-email%252Cuser-read-play-history%252Cuser-read-playback-position%252Cuser-read-playback-state%252Cuser-read-private%252Cuser-read-recently-played%252Cuser-top-read%26code_challenge_method%3DS256%26code_challenge%3D6oZqdX5MOLq_qBJ8vppAnT4fk6AP8UiP9zX8-Rev_9A%26flow_ctx%3Dctx%253A%253F%2526%25E9%259B%25AA%253A1793159600%26dpop_jkt%3Dsynthetic-DPoP_thumbprint%26utm_source%3Dspotify%26utm_medium%3Ddesktop-macos%26utm_campaign%3Dorganic&flow=login-accounts&creation_flow=desktop&creation_point=https%3A%2F%2Flogin.app.spotify.com%2F%3Fclient_id%3D65b708073fc0480ea92a077233ca87bd%26utm_source%3Dspotify%26utm_medium%3Ddesktop-macos%26utm_campaign%3Dorganic&flow_ctx=ctx%3A%3F%26%E9%9B%AA%3A1793159600",
+        "pkce": {
+          "verifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+          "challenge": "6oZqdX5MOLq_qBJ8vppAnT4fk6AP8UiP9zX8-Rev_9A",
+          "method": "S256"
+        },
+        "sha256Inputs": [
+          "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8"
+        ],
+        "timeReads": 2
+      }
+    },
+    {
+      "clientId": "65b708073fc0480ea92a077233ca87bd",
+      "scopes": [
+        "app-remote-control",
+        "playlist-modify",
+        "playlist-modify-private",
+        "playlist-modify-public",
+        "playlist-read",
+        "playlist-read-collaborative",
+        "playlist-read-private",
+        "streaming",
+        "transfer-auth-session",
+        "sts-content-management",
+        "ugc-image-upload",
+        "user-follow-modify",
+        "user-follow-read",
+        "user-library-modify",
+        "user-library-read",
+        "user-modify",
+        "user-modify-playback-state",
+        "user-modify-private",
+        "user-personalized",
+        "user-read-birthdate",
+        "user-read-currently-playing",
+        "user-read-email",
+        "user-read-play-history",
+        "user-read-playback-position",
+        "user-read-playback-state",
+        "user-read-private",
+        "user-read-recently-played",
+        "user-top-read"
+      ],
+      "source": "spotify",
+      "medium": "desktop-macos",
+      "campaign": "organic",
+      "referral": "",
+      "msclkid": null,
+      "flow": "login-accounts",
+      "signUp": false,
+      "flowContext": "ctx",
+      "redirectUri": "http://127.0.0.1:4381/login",
+      "dpopThumbprint": "synthetic-DPoP_thumbprint",
+      "nowSeconds": -1,
+      "entropyHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "name": "negative clock for flow context",
+      "original": {
+        "url": "https://accounts.spotify.com/oauth2/v2/auth?client_id=65b708073fc0480ea92a077233ca87bd&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A4381%2Flogin&scope=app-remote-control%2Cplaylist-modify%2Cplaylist-modify-private%2Cplaylist-modify-public%2Cplaylist-read%2Cplaylist-read-collaborative%2Cplaylist-read-private%2Cstreaming%2Ctransfer-auth-session%2Csts-content-management%2Cugc-image-upload%2Cuser-follow-modify%2Cuser-follow-read%2Cuser-library-modify%2Cuser-library-read%2Cuser-modify%2Cuser-modify-playback-state%2Cuser-modify-private%2Cuser-personalized%2Cuser-read-birthdate%2Cuser-read-currently-playing%2Cuser-read-email%2Cuser-read-play-history%2Cuser-read-playback-position%2Cuser-read-playback-state%2Cuser-read-private%2Cuser-read-recently-played%2Cuser-top-read&code_challenge_method=S256&code_challenge=6oZqdX5MOLq_qBJ8vppAnT4fk6AP8UiP9zX8-Rev_9A&flow_ctx=ctx%3A21599&dpop_jkt=synthetic-DPoP_thumbprint&utm_source=spotify&utm_medium=desktop-macos&utm_campaign=organic&creation_flow=desktop&creation_point=https%3A%2F%2Flogin.app.spotify.com%2F%3Fclient_id%3D65b708073fc0480ea92a077233ca87bd%26utm_source%3Dspotify%26utm_medium%3Ddesktop-macos%26utm_campaign%3Dorganic&flow_ctx=ctx%3A21599",
+        "pkce": {
+          "verifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+          "challenge": "6oZqdX5MOLq_qBJ8vppAnT4fk6AP8UiP9zX8-Rev_9A",
+          "method": "S256"
+        },
+        "sha256Inputs": [
+          "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8"
+        ],
+        "timeReads": 2
+      }
+    },
+    {
+      "clientId": "65b708073fc0480ea92a077233ca87bd",
+      "scopes": [
+        "app-remote-control",
+        "playlist-modify",
+        "playlist-modify-private",
+        "playlist-modify-public",
+        "playlist-read",
+        "playlist-read-collaborative",
+        "playlist-read-private",
+        "streaming",
+        "transfer-auth-session",
+        "sts-content-management",
+        "ugc-image-upload",
+        "user-follow-modify",
+        "user-follow-read",
+        "user-library-modify",
+        "user-library-read",
+        "user-modify",
+        "user-modify-playback-state",
+        "user-modify-private",
+        "user-personalized",
+        "user-read-birthdate",
+        "user-read-currently-playing",
+        "user-read-email",
+        "user-read-play-history",
+        "user-read-playback-position",
+        "user-read-playback-state",
+        "user-read-private",
+        "user-read-recently-played",
+        "user-top-read"
+      ],
+      "source": "spotify",
+      "medium": "desktop-macos",
+      "campaign": "organic",
+      "referral": "",
+      "msclkid": null,
+      "flow": "login-accounts",
+      "signUp": false,
+      "flowContext": "",
+      "redirectUri": "http://127.0.0.1:4381/login",
+      "dpopThumbprint": "synthetic-DPoP_thumbprint",
+      "nowSeconds": 1793138000,
+      "entropyHex": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "PKCE zero entropy",
+      "original": {
+        "url": "https://accounts.spotify.com/oauth2/v2/auth?client_id=65b708073fc0480ea92a077233ca87bd&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A4381%2Flogin&scope=app-remote-control%2Cplaylist-modify%2Cplaylist-modify-private%2Cplaylist-modify-public%2Cplaylist-read%2Cplaylist-read-collaborative%2Cplaylist-read-private%2Cstreaming%2Ctransfer-auth-session%2Csts-content-management%2Cugc-image-upload%2Cuser-follow-modify%2Cuser-follow-read%2Cuser-library-modify%2Cuser-library-read%2Cuser-modify%2Cuser-modify-playback-state%2Cuser-modify-private%2Cuser-personalized%2Cuser-read-birthdate%2Cuser-read-currently-playing%2Cuser-read-email%2Cuser-read-play-history%2Cuser-read-playback-position%2Cuser-read-playback-state%2Cuser-read-private%2Cuser-read-recently-played%2Cuser-top-read&code_challenge_method=S256&code_challenge=DwBzhbb51LfusnSGBa_hqYSgo7-j8BTQnip4TOnlzRo&dpop_jkt=synthetic-DPoP_thumbprint&utm_source=spotify&utm_medium=desktop-macos&utm_campaign=organic&creation_flow=desktop&creation_point=https%3A%2F%2Flogin.app.spotify.com%2F%3Fclient_id%3D65b708073fc0480ea92a077233ca87bd%26utm_source%3Dspotify%26utm_medium%3Ddesktop-macos%26utm_campaign%3Dorganic",
+        "pkce": {
+          "verifier": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "challenge": "DwBzhbb51LfusnSGBa_hqYSgo7-j8BTQnip4TOnlzRo",
+          "method": "S256"
+        },
+        "sha256Inputs": [
+          "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        ],
+        "timeReads": 0
+      }
+    },
+    {
+      "clientId": "65b708073fc0480ea92a077233ca87bd",
+      "scopes": [
+        "app-remote-control",
+        "playlist-modify",
+        "playlist-modify-private",
+        "playlist-modify-public",
+        "playlist-read",
+        "playlist-read-collaborative",
+        "playlist-read-private",
+        "streaming",
+        "transfer-auth-session",
+        "sts-content-management",
+        "ugc-image-upload",
+        "user-follow-modify",
+        "user-follow-read",
+        "user-library-modify",
+        "user-library-read",
+        "user-modify",
+        "user-modify-playback-state",
+        "user-modify-private",
+        "user-personalized",
+        "user-read-birthdate",
+        "user-read-currently-playing",
+        "user-read-email",
+        "user-read-play-history",
+        "user-read-playback-position",
+        "user-read-playback-state",
+        "user-read-private",
+        "user-read-recently-played",
+        "user-top-read"
+      ],
+      "source": "spotify",
+      "medium": "desktop-macos",
+      "campaign": "organic",
+      "referral": "",
+      "msclkid": null,
+      "flow": "login-accounts",
+      "signUp": false,
+      "flowContext": "",
+      "redirectUri": "http://127.0.0.1:4381/login",
+      "dpopThumbprint": "synthetic-DPoP_thumbprint",
+      "nowSeconds": 1793138000,
+      "entropyHex": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "name": "PKCE all-one entropy",
+      "original": {
+        "url": "https://accounts.spotify.com/oauth2/v2/auth?client_id=65b708073fc0480ea92a077233ca87bd&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A4381%2Flogin&scope=app-remote-control%2Cplaylist-modify%2Cplaylist-modify-private%2Cplaylist-modify-public%2Cplaylist-read%2Cplaylist-read-collaborative%2Cplaylist-read-private%2Cstreaming%2Ctransfer-auth-session%2Csts-content-management%2Cugc-image-upload%2Cuser-follow-modify%2Cuser-follow-read%2Cuser-library-modify%2Cuser-library-read%2Cuser-modify%2Cuser-modify-playback-state%2Cuser-modify-private%2Cuser-personalized%2Cuser-read-birthdate%2Cuser-read-currently-playing%2Cuser-read-email%2Cuser-read-play-history%2Cuser-read-playback-position%2Cuser-read-playback-state%2Cuser-read-private%2Cuser-read-recently-played%2Cuser-top-read&code_challenge_method=S256&code_challenge=Il9-dTKd1FqjVJddc5hzGTCTk686TGczvBNgGk8bh5Y&dpop_jkt=synthetic-DPoP_thumbprint&utm_source=spotify&utm_medium=desktop-macos&utm_campaign=organic&creation_flow=desktop&creation_point=https%3A%2F%2Flogin.app.spotify.com%2F%3Fclient_id%3D65b708073fc0480ea92a077233ca87bd%26utm_source%3Dspotify%26utm_medium%3Ddesktop-macos%26utm_campaign%3Dorganic",
+        "pkce": {
+          "verifier": "__________________________________________8",
+          "challenge": "Il9-dTKd1FqjVJddc5hzGTCTk686TGczvBNgGk8bh5Y",
+          "method": "S256"
+        },
+        "sha256Inputs": [
+          "__________________________________________8"
+        ],
+        "timeReads": 0
+      }
+    },
+    {
+      "clientId": "client\u0000tail",
+      "scopes": [
+        "a b",
+        "雪&,+/%7e"
+      ],
+      "source": "spotify",
+      "medium": "desktop-macos",
+      "campaign": "organic",
+      "referral": "",
+      "msclkid": null,
+      "flow": "login-accounts",
+      "signUp": false,
+      "flowContext": "",
+      "redirectUri": "http://127.0.0.1:4381/login?raw=%2f%7E#frag",
+      "dpopThumbprint": "thumb+/=\u0000tail",
+      "nowSeconds": 1793138000,
+      "entropyHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "name": "opaque length-bearing input encoding",
+      "original": {
+        "url": "https://accounts.spotify.com/oauth2/v2/auth?client_id=client%00tail&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A4381%2Flogin%3Fraw%3D%252f%257E%23frag&scope=a%20b%2C%E9%9B%AA%26%2C%2B%2F%257e&code_challenge_method=S256&code_challenge=6oZqdX5MOLq_qBJ8vppAnT4fk6AP8UiP9zX8-Rev_9A&dpop_jkt=thumb%2B%2F%3D%00tail&utm_source=spotify&utm_medium=desktop-macos&utm_campaign=organic&creation_flow=desktop&creation_point=https%3A%2F%2Flogin.app.spotify.com%2F%3Fclient_id%3Dclient%2500tail%26utm_source%3Dspotify%26utm_medium%3Ddesktop-macos%26utm_campaign%3Dorganic",
+        "pkce": {
+          "verifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+          "challenge": "6oZqdX5MOLq_qBJ8vppAnT4fk6AP8UiP9zX8-Rev_9A",
+          "method": "S256"
+        },
+        "sha256Inputs": [
+          "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8"
+        ],
+        "timeReads": 0
+      }
+    }
+  ],
+  "callbackCases": [
+    {
+      "url": "http://127.0.0.1:4381/login?code=synthetic-code",
+      "codeVerifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+      "original": {
+        "clientId": "65b708073fc0480ea92a077233ca87bd",
+        "code": "synthetic-code",
+        "codeVerifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+        "redirectUri": "http://127.0.0.1:4381/login",
+        "body": "client_id=65b708073fc0480ea92a077233ca87bd&code=synthetic-code&code_verifier=AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8&grant_type=authorization_code&redirect_uri=http%3A%2F%2F127.0.0.1%3A4381%2Flogin"
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4381/login?code=raw+code%2B%2f%00tail",
+      "codeVerifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+      "original": {
+        "clientId": "65b708073fc0480ea92a077233ca87bd",
+        "code": "raw+code%2B%2f%00tail",
+        "codeVerifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+        "redirectUri": "http://127.0.0.1:4381/login",
+        "body": "client_id=65b708073fc0480ea92a077233ca87bd&code=raw%2Bcode%252B%252f%2500tail&code_verifier=AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8&grant_type=authorization_code&redirect_uri=http%3A%2F%2F127.0.0.1%3A4381%2Flogin"
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4381/login?x=one&code=first&code=second",
+      "codeVerifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+      "original": {
+        "clientId": "65b708073fc0480ea92a077233ca87bd",
+        "code": "first",
+        "codeVerifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+        "redirectUri": "http://127.0.0.1:4381/login",
+        "body": "client_id=65b708073fc0480ea92a077233ca87bd&code=first&code_verifier=AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8&grant_type=authorization_code&redirect_uri=http%3A%2F%2F127.0.0.1%3A4381%2Flogin"
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4381/login?code=first&code=second",
+      "codeVerifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+      "original": {
+        "clientId": "65b708073fc0480ea92a077233ca87bd",
+        "code": "first",
+        "codeVerifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+        "redirectUri": "http://127.0.0.1:4381/login",
+        "body": "client_id=65b708073fc0480ea92a077233ca87bd&code=first&code_verifier=AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8&grant_type=authorization_code&redirect_uri=http%3A%2F%2F127.0.0.1%3A4381%2Flogin"
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4381/login?code=a=b=c",
+      "codeVerifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+      "original": {
+        "clientId": "65b708073fc0480ea92a077233ca87bd",
+        "code": "a=b=c",
+        "codeVerifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+        "redirectUri": "http://127.0.0.1:4381/login",
+        "body": "client_id=65b708073fc0480ea92a077233ca87bd&code=a%3Db%3Dc&code_verifier=AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8&grant_type=authorization_code&redirect_uri=http%3A%2F%2F127.0.0.1%3A4381%2Flogin"
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4381/login?code=raw%ZZ",
+      "codeVerifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+      "original": {
+        "clientId": "65b708073fc0480ea92a077233ca87bd",
+        "code": "raw%ZZ",
+        "codeVerifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+        "redirectUri": "http://127.0.0.1:4381/login",
+        "body": "client_id=65b708073fc0480ea92a077233ca87bd&code=raw%25ZZ&code_verifier=AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8&grant_type=authorization_code&redirect_uri=http%3A%2F%2F127.0.0.1%3A4381%2Flogin"
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4381/login?code=abc#fragment",
+      "codeVerifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+      "original": {
+        "clientId": "65b708073fc0480ea92a077233ca87bd",
+        "code": "abc#fragment",
+        "codeVerifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+        "redirectUri": "http://127.0.0.1:4381/login",
+        "body": "client_id=65b708073fc0480ea92a077233ca87bd&code=abc%23fragment&code_verifier=AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8&grant_type=authorization_code&redirect_uri=http%3A%2F%2F127.0.0.1%3A4381%2Flogin"
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4381/login?%63ode=encoded-key",
+      "codeVerifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+      "original": {
+        "errorCode": 108
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4381/login?CODE=case-key",
+      "codeVerifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+      "original": {
+        "errorCode": 108
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4381/login?code=",
+      "codeVerifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+      "original": {
+        "errorCode": 108
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4381/login?code=&code=second",
+      "codeVerifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+      "original": {
+        "errorCode": 108
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4381/login?other=missing-code",
+      "codeVerifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+      "original": {
+        "errorCode": 108
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4381/login",
+      "codeVerifier": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+      "original": {
+        "errorCode": 108
+      }
+    }
+  ]
+}

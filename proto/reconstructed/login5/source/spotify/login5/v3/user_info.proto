@@ -1,0 +1,36 @@
+// RECONSTRUCTED Login5 schema; not an extracted original descriptor.
+// Native wire facts: docs/evidence/login5-lite-tables.json.
+// Per-field provenance: proto/reconstructed/login5/manifest.json.
+// Original filenames/source options/optional declarations remain unestablished.
+
+syntax = "proto3";
+
+package spotify.login5.v3;
+
+message UserInfo {
+  string name = 1;
+
+  string email = 2;
+
+  bool email_verified = 3;
+
+  string birthdate = 4;
+
+  .spotify.login5.v3.UserInfo.Gender gender = 5;
+
+  string phone_number = 6;
+
+  bool phone_number_verified = 7;
+
+  bool email_already_registered = 8;
+
+  enum Gender {
+    UNKNOWN = 0;
+
+    MALE = 1;
+
+    FEMALE = 2;
+
+    NEUTRAL = 3;
+  }
+}

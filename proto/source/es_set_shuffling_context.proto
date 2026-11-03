@@ -1,0 +1,24 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: e1b5ef4e27ff5e232da02172b9aac671d96ebc23a49e6caf1293602cb29fa903
+
+syntax = "proto3";
+
+package spotify.player.esperanto.proto;
+
+import "es_command_options.proto";
+
+import "es_logging_params.proto";
+
+option java_package = "com.spotify.player.esperanto.proto";
+
+option objc_class_prefix = "ESP";
+
+option optimize_for = CODE_SIZE;
+
+message SetShufflingContextRequest {
+  bool shuffling_context = 1;
+
+  .spotify.player.esperanto.proto.CommandOptions options = 2;
+
+  .spotify.player.esperanto.proto.LoggingParams logging_params = 3;
+}

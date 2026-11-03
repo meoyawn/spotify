@@ -1,0 +1,130 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "ownerEntryPoint": "0x1008446e8",
+  "queryInsertion": "0x101d0a0b0",
+  "stopBoundary": {
+    "callSite": "0x1008453c4",
+    "interface": "owner+0x38 virtual+0x10"
+  },
+  "ranges": [
+    {
+      "start": "0x1008446e8",
+      "endExclusive": "0x1008458b0",
+      "sha256": "8971092de374928a0b839f30fd18fd75bc9588875e62cb31cee7764072e71bec"
+    },
+    {
+      "start": "0x1008458b0",
+      "endExclusive": "0x1008459c4",
+      "sha256": "8c3feb90044de35fcd6132947eb63be7fe832629b8fb7f71fa481432027d5905"
+    },
+    {
+      "start": "0x100847140",
+      "endExclusive": "0x10084725c",
+      "sha256": "6dc7b55d03ab197b1d809ebc52b9b7dc89938c11b7014d46a79a44d3360b858b"
+    },
+    {
+      "start": "0x101d07060",
+      "endExclusive": "0x101d07080",
+      "sha256": "a5317c8cee588b45790b92481d5be4fbee6ce1f684c419647bf92a9897269c5d"
+    }
+  ],
+  "substitutedInterfaces": [
+    "owner+0x18 virtual+0xe8 returns a one-element synthetic context deque",
+    "owner+0x28 virtual+0x10 returns an explicit synthetic ready source",
+    "source virtual+0x10 returns the original parser-produced Spotify URI link",
+    "source virtual+0x18 returns the explicit resolved source URI",
+    "source virtual+0x48 and+0x78 return absent metadata/GID views",
+    "metadata submit virtual call captures the original query collection and stops"
+  ],
+  "standardProviders": [
+    "libc memory/allocation/string operations",
+    "uncontended libc++ static guards",
+    "libc++ small-map next-prime sizing",
+    "libc++ unsigned decimal conversion",
+    "standard destructor registration without native process exit"
+  ],
+  "limits": [
+    "Query insertion order is not HTTP protobuf serialization order.",
+    "The concrete metadata submitter and HTTP envelope/body remain unresolved; null fields are not empty bodies.",
+    "Raw owner flags and source state are explicit inputs, not recovered runtime defaults or account entitlement.",
+    "Only ordinary Track server-source query generation is captured. No local, offline or ad strategy is used."
+  ],
+  "cases": [
+    {
+      "uri": "spotify:track:0000000000000000000000",
+      "sourceReady": true,
+      "sourceSuppressed": false,
+      "sourceWindowIndex": 0,
+      "sourceCount": 1,
+      "pendingRequestDedupEnabled": false,
+      "nativeOwnerFlag51": false,
+      "nativeOwnerFlag52": false,
+      "nativeOwnerFlag53": false,
+      "result": {
+        "nativeParsedContentKind": 4,
+        "queryInsertions": [
+          {
+            "kind": 5,
+            "uri": "spotify:track:0000000000000000000000"
+          }
+        ],
+        "submissionOperation": "prefetch",
+        "rawSubmissionMode": 1,
+        "httpEnvelope": null,
+        "bodyHex": null
+      }
+    },
+    {
+      "uri": "spotify:track:0000000000000000000000",
+      "sourceReady": true,
+      "sourceSuppressed": false,
+      "sourceWindowIndex": 0,
+      "sourceCount": 1,
+      "pendingRequestDedupEnabled": false,
+      "nativeOwnerFlag51": true,
+      "nativeOwnerFlag52": false,
+      "nativeOwnerFlag53": false,
+      "result": {
+        "nativeParsedContentKind": 4,
+        "queryInsertions": [
+          {
+            "kind": 178,
+            "uri": "spotify:track:0000000000000000000000"
+          },
+          {
+            "kind": 179,
+            "uri": "spotify:track:0000000000000000000000"
+          },
+          {
+            "kind": 182,
+            "uri": "spotify:track:0000000000000000000000"
+          },
+          {
+            "kind": 212,
+            "uri": "spotify:track:0000000000000000000000"
+          },
+          {
+            "kind": 220,
+            "uri": "spotify:track:0000000000000000000000"
+          },
+          {
+            "kind": 239,
+            "uri": "spotify:track:0000000000000000000000"
+          },
+          {
+            "kind": 249,
+            "uri": "spotify:track:0000000000000000000000"
+          },
+          {
+            "kind": 5,
+            "uri": "spotify:track:0000000000000000000000"
+          }
+        ],
+        "submissionOperation": "prefetch",
+        "rawSubmissionMode": 1,
+        "httpEnvelope": null,
+        "bodyHex": null
+      }
+    }
+  ]
+}

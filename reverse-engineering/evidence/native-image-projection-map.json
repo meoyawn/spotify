@@ -1,0 +1,730 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "entries": {
+    "getOwner": "0x10059dcc0",
+    "stopBeforeHttp": "0x101c20464",
+    "expansion": "0x10059e788",
+    "sortComparator": "0x10059ee80",
+    "onlineProjection": "0x10059bf48",
+    "sizePicker": "0x10059cd28"
+  },
+  "codeDigests": {
+    "0x10059dcc0": "c2df45ae3408c4ecd61c97d3cdc4f1757b7ae55a64f66406ead23434a2e876d7",
+    "0x10059e788": "aeb6af8179cd714ac370dbe6f238b6bf5d92e02a1b7750e0235693fec9beb49a",
+    "0x10059bf48": "9fdfc273b08c4fcae684b31b0fbca871714193cf38a411f8558ac0de971371fe",
+    "0x10059cd28": "1ad1c3c59ef377adb0ea293cd216201c1d37889f26850d6fb0b876650e9a1f79"
+  },
+  "requestCases": [
+    {
+      "name": "empty template body",
+      "template": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/explicit-offline-template",
+          "Accept-Language": "en",
+          "Authorization": "Bearer synthetic-input",
+          "x-template-field": "preserved"
+        },
+        "bodyHex": ""
+      },
+      "original": {
+        "method": "GET",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/explicit-offline-template",
+          "Accept-Language": "en",
+          "Authorization": "Bearer synthetic-input",
+          "x-template-field": "preserved"
+        },
+        "bodyHex": "",
+        "relativePath": "image-resolve/v1/resolve/map",
+        "options": {
+          "opaqueContext": "0x12345678"
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/image-resolve/v1/resolve/map"
+      }
+    },
+    {
+      "name": "opaque template body inherited",
+      "template": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/explicit-offline-template",
+          "Accept-Language": "en",
+          "Authorization": "Bearer synthetic-input",
+          "x-template-field": "preserved"
+        },
+        "bodyHex": "0001ff00"
+      },
+      "original": {
+        "method": "GET",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/explicit-offline-template",
+          "Accept-Language": "en",
+          "Authorization": "Bearer synthetic-input",
+          "x-template-field": "preserved"
+        },
+        "bodyHex": "0001ff00",
+        "relativePath": "image-resolve/v1/resolve/map",
+        "options": {
+          "opaqueContext": "0x12345678"
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/image-resolve/v1/resolve/map"
+      }
+    }
+  ],
+  "projectionMap": {
+    "templates": [
+      "https://online.example.test/image/{file_id}",
+      "https://offline.example.test/image/{file_id}",
+      "https://neutral.example.test/image/{file_id}"
+    ],
+    "metadata": [
+      {
+        "width": 640,
+        "height": 640,
+        "fetchOnline": true,
+        "downloadForOffline": false
+      },
+      {
+        "width": 64,
+        "height": 64,
+        "fetchOnline": true,
+        "downloadForOffline": false
+      },
+      {
+        "width": 300,
+        "height": 300,
+        "fetchOnline": false,
+        "downloadForOffline": true
+      },
+      {
+        "width": 1000,
+        "height": 1000,
+        "fetchOnline": false,
+        "downloadForOffline": true
+      },
+      {
+        "width": 250,
+        "height": 250,
+        "fetchOnline": false,
+        "downloadForOffline": false
+      }
+    ],
+    "collections": [
+      {
+        "idHex": "ab010203",
+        "projections": [
+          {
+            "idHex": "00000001",
+            "metadataIndex": 0,
+            "templateIndex": 0
+          },
+          {
+            "idHex": "00000002",
+            "metadataIndex": 1,
+            "templateIndex": 0
+          },
+          {
+            "idHex": "00000003",
+            "metadataIndex": 2,
+            "templateIndex": 1
+          },
+          {
+            "idHex": "00000004",
+            "metadataIndex": 3,
+            "templateIndex": 1
+          },
+          {
+            "idHex": "00000005",
+            "metadataIndex": 4,
+            "templateIndex": 2
+          },
+          {
+            "idHex": "00000006",
+            "metadataIndex": -1,
+            "templateIndex": 0
+          },
+          {
+            "idHex": "00000007",
+            "metadataIndex": 0,
+            "templateIndex": 99
+          }
+        ]
+      }
+    ]
+  },
+  "expanded": {
+    "ab010203": [
+      {
+        "id": "00000002",
+        "template": "https://online.example.test/image/{file_id}",
+        "width": 64,
+        "height": 64,
+        "fetchOnline": true,
+        "downloadForOffline": false
+      },
+      {
+        "id": "00000005",
+        "template": "https://neutral.example.test/image/{file_id}",
+        "width": 250,
+        "height": 250,
+        "fetchOnline": false,
+        "downloadForOffline": false
+      },
+      {
+        "id": "00000003",
+        "template": "https://offline.example.test/image/{file_id}",
+        "width": 300,
+        "height": 300,
+        "fetchOnline": false,
+        "downloadForOffline": true
+      },
+      {
+        "id": "00000001",
+        "template": "https://online.example.test/image/{file_id}",
+        "width": 640,
+        "height": 640,
+        "fetchOnline": true,
+        "downloadForOffline": false
+      },
+      {
+        "id": "00000004",
+        "template": "https://offline.example.test/image/{file_id}",
+        "width": 1000,
+        "height": 1000,
+        "fetchOnline": false,
+        "downloadForOffline": true
+      }
+    ]
+  },
+  "responseBodyHex": "0a92020a2b68747470733a2f2f6f6e6c696e652e6578616d706c652e746573742f696d6167652f7b66696c655f69647d0a2c68747470733a2f2f6f66666c696e652e6578616d706c652e746573742f696d6167652f7b66696c655f69647d0a2c68747470733a2f2f6e65757472616c2e6578616d706c652e746573742f696d6167652f7b66696c655f69647d120810800518800520011206104018402001120810ac0218ac022801120810e80718e8072801120610fa0118fa011a590a04ab010203120612040000000112081204000000021801120a12040000000318022001120a12040000000418032001120a12040000000518042002121112040000000618ffffffffffffffffff0112081204000000072063",
+  "projectionCases": [
+    {
+      "name": "small requested size",
+      "imageIdHex": "ab010203000000028899aabbccddeeff00112233",
+      "width": 32,
+      "height": 32,
+      "enableOnlineSizeImageResolve": true,
+      "nativePreference": false,
+      "original": {
+        "urls": [
+          "https://offline.example.test/image/ab010203000000038899aabbccddeeff00112233",
+          "https://online.example.test/image/ab010203000000028899aabbccddeeff00112233",
+          "https://neutral.example.test/image/ab010203000000058899aabbccddeeff00112233",
+          "spotify:image:ab010203000000028899aabbccddeeff00112233"
+        ],
+        "preferredUrl": "https://online.example.test/image/ab010203000000028899aabbccddeeff00112233",
+        "scaleOptionalRaw": 5351931904
+      }
+    },
+    {
+      "name": "medium requested size",
+      "imageIdHex": "ab010203000000028899aabbccddeeff00112233",
+      "width": 128,
+      "height": 128,
+      "enableOnlineSizeImageResolve": true,
+      "nativePreference": false,
+      "original": {
+        "urls": [
+          "https://offline.example.test/image/ab010203000000038899aabbccddeeff00112233",
+          "https://online.example.test/image/ab010203000000018899aabbccddeeff00112233",
+          "https://neutral.example.test/image/ab010203000000058899aabbccddeeff00112233",
+          "spotify:image:ab010203000000028899aabbccddeeff00112233"
+        ],
+        "preferredUrl": "https://online.example.test/image/ab010203000000018899aabbccddeeff00112233",
+        "scaleOptionalRaw": 5340187853
+      }
+    },
+    {
+      "name": "largest fallback",
+      "imageIdHex": "ab010203000000028899aabbccddeeff00112233",
+      "width": 2000,
+      "height": 2000,
+      "enableOnlineSizeImageResolve": true,
+      "nativePreference": false,
+      "original": {
+        "urls": [
+          "https://offline.example.test/image/ab010203000000048899aabbccddeeff00112233",
+          "https://online.example.test/image/ab010203000000018899aabbccddeeff00112233",
+          "https://neutral.example.test/image/ab010203000000058899aabbccddeeff00112233",
+          "spotify:image:ab010203000000028899aabbccddeeff00112233"
+        ],
+        "preferredUrl": "https://online.example.test/image/ab010203000000018899aabbccddeeff00112233",
+        "scaleOptionalRaw": 5373427712
+      }
+    },
+    {
+      "name": "alternate native preference",
+      "imageIdHex": "ab010203000000028899aabbccddeeff00112233",
+      "width": 128,
+      "height": 128,
+      "enableOnlineSizeImageResolve": true,
+      "nativePreference": true,
+      "original": {
+        "urls": [
+          "https://offline.example.test/image/ab010203000000038899aabbccddeeff00112233",
+          "https://online.example.test/image/ab010203000000018899aabbccddeeff00112233",
+          "https://neutral.example.test/image/ab010203000000058899aabbccddeeff00112233",
+          "spotify:image:ab010203000000028899aabbccddeeff00112233"
+        ],
+        "preferredUrl": "https://offline.example.test/image/ab010203000000038899aabbccddeeff00112233",
+        "scaleOptionalRaw": 5340187853
+      }
+    },
+    {
+      "name": "size disabled uses current projection dimensions",
+      "imageIdHex": "ab010203000000018899aabbccddeeff00112233",
+      "width": 32,
+      "height": 32,
+      "enableOnlineSizeImageResolve": false,
+      "nativePreference": false,
+      "original": {
+        "urls": [
+          "https://offline.example.test/image/ab010203000000048899aabbccddeeff00112233",
+          "https://online.example.test/image/ab010203000000018899aabbccddeeff00112233",
+          "https://neutral.example.test/image/ab010203000000058899aabbccddeeff00112233",
+          "spotify:image:ab010203000000018899aabbccddeeff00112233"
+        ],
+        "preferredUrl": "https://online.example.test/image/ab010203000000018899aabbccddeeff00112233",
+        "scaleOptionalRaw": 5323410637
+      }
+    },
+    {
+      "name": "missing requested dimension uses current projection",
+      "imageIdHex": "ab010203000000038899aabbccddeeff00112233",
+      "width": null,
+      "height": 32,
+      "enableOnlineSizeImageResolve": true,
+      "nativePreference": false,
+      "original": {
+        "urls": [
+          "https://offline.example.test/image/ab010203000000038899aabbccddeeff00112233",
+          "https://online.example.test/image/ab010203000000018899aabbccddeeff00112233",
+          "https://neutral.example.test/image/ab010203000000058899aabbccddeeff00112233",
+          "spotify:image:ab010203000000038899aabbccddeeff00112233"
+        ],
+        "preferredUrl": "https://online.example.test/image/ab010203000000018899aabbccddeeff00112233",
+        "scaleOptionalRaw": 0
+      }
+    },
+    {
+      "name": "unknown current projection without size",
+      "imageIdHex": "ab010203ffffffff8899aabbccddeeff00112233",
+      "width": null,
+      "height": null,
+      "enableOnlineSizeImageResolve": false,
+      "nativePreference": false,
+      "original": null
+    },
+    {
+      "name": "unknown collection",
+      "imageIdHex": "ffffffff000000028899aabbccddeeff00112233",
+      "width": 128,
+      "height": 128,
+      "enableOnlineSizeImageResolve": true,
+      "nativePreference": false,
+      "original": null
+    }
+  ],
+  "mapCases": [
+    {
+      "name": "duplicate collection retains first",
+      "projectionMap": {
+        "templates": [
+          "https://online.example.test/image/{file_id}",
+          "https://offline.example.test/image/{file_id}",
+          "https://neutral.example.test/image/{file_id}"
+        ],
+        "metadata": [
+          {
+            "width": 640,
+            "height": 640,
+            "fetchOnline": true,
+            "downloadForOffline": false
+          },
+          {
+            "width": 64,
+            "height": 64,
+            "fetchOnline": true,
+            "downloadForOffline": false
+          },
+          {
+            "width": 300,
+            "height": 300,
+            "fetchOnline": false,
+            "downloadForOffline": true
+          },
+          {
+            "width": 1000,
+            "height": 1000,
+            "fetchOnline": false,
+            "downloadForOffline": true
+          },
+          {
+            "width": 250,
+            "height": 250,
+            "fetchOnline": false,
+            "downloadForOffline": false
+          }
+        ],
+        "collections": [
+          {
+            "idHex": "ab010203",
+            "projections": [
+              {
+                "idHex": "00000001",
+                "metadataIndex": 0,
+                "templateIndex": 0
+              },
+              {
+                "idHex": "00000002",
+                "metadataIndex": 1,
+                "templateIndex": 0
+              },
+              {
+                "idHex": "00000003",
+                "metadataIndex": 2,
+                "templateIndex": 1
+              },
+              {
+                "idHex": "00000004",
+                "metadataIndex": 3,
+                "templateIndex": 1
+              },
+              {
+                "idHex": "00000005",
+                "metadataIndex": 4,
+                "templateIndex": 2
+              },
+              {
+                "idHex": "00000006",
+                "metadataIndex": -1,
+                "templateIndex": 0
+              },
+              {
+                "idHex": "00000007",
+                "metadataIndex": 0,
+                "templateIndex": 99
+              }
+            ]
+          },
+          {
+            "idHex": "ab010203",
+            "projections": [
+              {
+                "idHex": "11223344",
+                "metadataIndex": 0,
+                "templateIndex": 0
+              }
+            ]
+          }
+        ]
+      },
+      "expanded": {
+        "ab010203": [
+          {
+            "id": "00000002",
+            "template": "https://online.example.test/image/{file_id}",
+            "width": 64,
+            "height": 64,
+            "fetchOnline": true,
+            "downloadForOffline": false
+          },
+          {
+            "id": "00000005",
+            "template": "https://neutral.example.test/image/{file_id}",
+            "width": 250,
+            "height": 250,
+            "fetchOnline": false,
+            "downloadForOffline": false
+          },
+          {
+            "id": "00000003",
+            "template": "https://offline.example.test/image/{file_id}",
+            "width": 300,
+            "height": 300,
+            "fetchOnline": false,
+            "downloadForOffline": true
+          },
+          {
+            "id": "00000001",
+            "template": "https://online.example.test/image/{file_id}",
+            "width": 640,
+            "height": 640,
+            "fetchOnline": true,
+            "downloadForOffline": false
+          },
+          {
+            "id": "00000004",
+            "template": "https://offline.example.test/image/{file_id}",
+            "width": 1000,
+            "height": 1000,
+            "fetchOnline": false,
+            "downloadForOffline": true
+          }
+        ]
+      },
+      "responseBodyHex": "0aa2020a2b68747470733a2f2f6f6e6c696e652e6578616d706c652e746573742f696d6167652f7b66696c655f69647d0a2c68747470733a2f2f6f66666c696e652e6578616d706c652e746573742f696d6167652f7b66696c655f69647d0a2c68747470733a2f2f6e65757472616c2e6578616d706c652e746573742f696d6167652f7b66696c655f69647d120810800518800520011206104018402001120810ac0218ac022801120810e80718e8072801120610fa0118fa011a590a04ab010203120612040000000112081204000000021801120a12040000000318022001120a12040000000418032001120a12040000000518042002121112040000000618ffffffffffffffffff01120812040000000720631a0e0a04ab0102031206120411223344",
+      "imageIdHex": "ab010203000000018899aabbccddeeff00112233",
+      "width": 32,
+      "height": 32,
+      "enableOnlineSizeImageResolve": true,
+      "nativePreference": false,
+      "original": {
+        "urls": [
+          "https://offline.example.test/image/ab010203000000038899aabbccddeeff00112233",
+          "https://online.example.test/image/ab010203000000028899aabbccddeeff00112233",
+          "https://neutral.example.test/image/ab010203000000058899aabbccddeeff00112233",
+          "spotify:image:ab010203000000018899aabbccddeeff00112233"
+        ],
+        "preferredUrl": "https://online.example.test/image/ab010203000000028899aabbccddeeff00112233",
+        "scaleOptionalRaw": 5351931904
+      }
+    },
+    {
+      "name": "both flags preserve duplicate URLs",
+      "projectionMap": {
+        "templates": [
+          "https://online.example.test/image/{file_id}",
+          "https://offline.example.test/image/{file_id}",
+          "https://neutral.example.test/image/{file_id}"
+        ],
+        "metadata": [
+          {
+            "width": 640,
+            "height": 640,
+            "fetchOnline": true,
+            "downloadForOffline": true
+          },
+          {
+            "width": 64,
+            "height": 64,
+            "fetchOnline": true,
+            "downloadForOffline": false
+          },
+          {
+            "width": 300,
+            "height": 300,
+            "fetchOnline": false,
+            "downloadForOffline": true
+          },
+          {
+            "width": 1000,
+            "height": 1000,
+            "fetchOnline": false,
+            "downloadForOffline": true
+          },
+          {
+            "width": 250,
+            "height": 250,
+            "fetchOnline": false,
+            "downloadForOffline": false
+          }
+        ],
+        "collections": [
+          {
+            "idHex": "ab010203",
+            "projections": [
+              {
+                "idHex": "00000001",
+                "metadataIndex": 0,
+                "templateIndex": 0
+              }
+            ]
+          }
+        ]
+      },
+      "expanded": {
+        "ab010203": [
+          {
+            "id": "00000001",
+            "template": "https://online.example.test/image/{file_id}",
+            "width": 640,
+            "height": 640,
+            "fetchOnline": true,
+            "downloadForOffline": true
+          }
+        ]
+      },
+      "responseBodyHex": "0ac9010a2b68747470733a2f2f6f6e6c696e652e6578616d706c652e746573742f696d6167652f7b66696c655f69647d0a2c68747470733a2f2f6f66666c696e652e6578616d706c652e746573742f696d6167652f7b66696c655f69647d0a2c68747470733a2f2f6e65757472616c2e6578616d706c652e746573742f696d6167652f7b66696c655f69647d120a108005188005200128011206104018402001120810ac0218ac022801120810e80718e8072801120610fa0118fa011a0e0a04ab0102031206120400000001",
+      "imageIdHex": "ab010203000000018899aabbccddeeff00112233",
+      "width": 32,
+      "height": 32,
+      "enableOnlineSizeImageResolve": true,
+      "nativePreference": false,
+      "original": {
+        "urls": [
+          "https://online.example.test/image/ab010203000000018899aabbccddeeff00112233",
+          "https://online.example.test/image/ab010203000000018899aabbccddeeff00112233",
+          "spotify:image:ab010203000000018899aabbccddeeff00112233"
+        ],
+        "preferredUrl": "https://online.example.test/image/ab010203000000018899aabbccddeeff00112233",
+        "scaleOptionalRaw": 5323410637
+      }
+    },
+    {
+      "name": "repeated file ID placeholders",
+      "projectionMap": {
+        "templates": [
+          "https://online.example.test/image/{file_id}?repeat={file_id}",
+          "https://offline.example.test/image/{file_id}",
+          "https://neutral.example.test/image/{file_id}"
+        ],
+        "metadata": [
+          {
+            "width": 640,
+            "height": 640,
+            "fetchOnline": true,
+            "downloadForOffline": false
+          },
+          {
+            "width": 64,
+            "height": 64,
+            "fetchOnline": true,
+            "downloadForOffline": false
+          },
+          {
+            "width": 300,
+            "height": 300,
+            "fetchOnline": false,
+            "downloadForOffline": true
+          },
+          {
+            "width": 1000,
+            "height": 1000,
+            "fetchOnline": false,
+            "downloadForOffline": true
+          },
+          {
+            "width": 250,
+            "height": 250,
+            "fetchOnline": false,
+            "downloadForOffline": false
+          }
+        ],
+        "collections": [
+          {
+            "idHex": "ab010203",
+            "projections": [
+              {
+                "idHex": "00000001",
+                "metadataIndex": 0,
+                "templateIndex": 0
+              },
+              {
+                "idHex": "00000002",
+                "metadataIndex": 1,
+                "templateIndex": 0
+              },
+              {
+                "idHex": "00000003",
+                "metadataIndex": 2,
+                "templateIndex": 1
+              },
+              {
+                "idHex": "00000004",
+                "metadataIndex": 3,
+                "templateIndex": 1
+              },
+              {
+                "idHex": "00000005",
+                "metadataIndex": 4,
+                "templateIndex": 2
+              },
+              {
+                "idHex": "00000006",
+                "metadataIndex": -1,
+                "templateIndex": 0
+              },
+              {
+                "idHex": "00000007",
+                "metadataIndex": 0,
+                "templateIndex": 99
+              }
+            ]
+          }
+        ]
+      },
+      "expanded": {
+        "ab010203": [
+          {
+            "id": "00000002",
+            "template": "https://online.example.test/image/{file_id}?repeat={file_id}",
+            "width": 64,
+            "height": 64,
+            "fetchOnline": true,
+            "downloadForOffline": false
+          },
+          {
+            "id": "00000005",
+            "template": "https://neutral.example.test/image/{file_id}",
+            "width": 250,
+            "height": 250,
+            "fetchOnline": false,
+            "downloadForOffline": false
+          },
+          {
+            "id": "00000003",
+            "template": "https://offline.example.test/image/{file_id}",
+            "width": 300,
+            "height": 300,
+            "fetchOnline": false,
+            "downloadForOffline": true
+          },
+          {
+            "id": "00000001",
+            "template": "https://online.example.test/image/{file_id}?repeat={file_id}",
+            "width": 640,
+            "height": 640,
+            "fetchOnline": true,
+            "downloadForOffline": false
+          },
+          {
+            "id": "00000004",
+            "template": "https://offline.example.test/image/{file_id}",
+            "width": 1000,
+            "height": 1000,
+            "fetchOnline": false,
+            "downloadForOffline": true
+          }
+        ]
+      },
+      "responseBodyHex": "0aa3020a3c68747470733a2f2f6f6e6c696e652e6578616d706c652e746573742f696d6167652f7b66696c655f69647d3f7265706561743d7b66696c655f69647d0a2c68747470733a2f2f6f66666c696e652e6578616d706c652e746573742f696d6167652f7b66696c655f69647d0a2c68747470733a2f2f6e65757472616c2e6578616d706c652e746573742f696d6167652f7b66696c655f69647d120810800518800520011206104018402001120810ac0218ac022801120810e80718e8072801120610fa0118fa011a590a04ab010203120612040000000112081204000000021801120a12040000000318022001120a12040000000418032001120a12040000000518042002121112040000000618ffffffffffffffffff0112081204000000072063",
+      "imageIdHex": "ab010203000000018899aabbccddeeff00112233",
+      "width": 32,
+      "height": 32,
+      "enableOnlineSizeImageResolve": true,
+      "nativePreference": false,
+      "original": {
+        "urls": [
+          "https://offline.example.test/image/ab010203000000038899aabbccddeeff00112233",
+          "https://online.example.test/image/ab010203000000028899aabbccddeeff00112233?repeat=ab010203000000028899aabbccddeeff00112233",
+          "https://neutral.example.test/image/ab010203000000058899aabbccddeeff00112233",
+          "spotify:image:ab010203000000018899aabbccddeeff00112233"
+        ],
+        "preferredUrl": "https://online.example.test/image/ab010203000000028899aabbccddeeff00112233?repeat=ab010203000000028899aabbccddeeff00112233",
+        "scaleOptionalRaw": 5351931904
+      }
+    }
+  ],
+  "substitutions": [
+    "Explicit opaque HTTP template and builder capture interfaces",
+    "Public protobuf RepeatedPtrField/ArenaStringPtr storage",
+    "Explicit abstract map-snapshot getter and raw native preference",
+    "Inherited standard libc/libc++ allocation, memory and strings",
+    "Host libc snprintf for original image URI format and varargs"
+  ],
+  "limits": [
+    "No network, original cache/profile or actual remote-config values.",
+    "GET owner inherits template headers/body and sets no additional headers; final backend additions are separate.",
+    "The synthetic response is encoded by pinned public protoc; original generic reflection parser startup was not emulated.",
+    "Map expansion, sorting, filtering, size choice, file-ID and URL construction execute original code unchanged.",
+    "Equal width+height ordering is not admitted; the Dart caller rejects an ambiguous selection."
+  ]
+}

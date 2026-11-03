@@ -1,0 +1,61 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "constructor": "0x1004d758c",
+  "sourceConstructorSha256": "5e04292a076f59d082e795280784f237a6ebd686089b979212555d436aad805e",
+  "standardSubstitutions": [
+    "ResolverOracle standard allocation/memory/string providers",
+    "Explicit synthetic values in the original ArenaStringPtr storage slots",
+    "Both field-presence bits set at +0x10, as read by the original size/writer"
+  ],
+  "limits": [
+    "Schema writer proves wire layout only; no actual server reply is decoded.",
+    "Field names are descriptive, not recovered reflection identifiers.",
+    "This does not establish plaintext key or protection semantics."
+  ],
+  "cases": [
+    {
+      "name": "both empty",
+      "firstHex": "",
+      "secondHex": "",
+      "originalWire": {
+        "size": 0,
+        "hex": "",
+        "sizeProcedure": "0x1004d7a4c",
+        "serializeProcedure": "0x1004d7880"
+      }
+    },
+    {
+      "name": "first field",
+      "firstHex": "000102030405060708090a0b0c0d0e0f",
+      "secondHex": "",
+      "originalWire": {
+        "size": 18,
+        "hex": "0a10000102030405060708090a0b0c0d0e0f",
+        "sizeProcedure": "0x1004d7a4c",
+        "serializeProcedure": "0x1004d7880"
+      }
+    },
+    {
+      "name": "second field",
+      "firstHex": "",
+      "secondHex": "01020304",
+      "originalWire": {
+        "size": 6,
+        "hex": "120401020304",
+        "sizeProcedure": "0x1004d7a4c",
+        "serializeProcedure": "0x1004d7880"
+      }
+    },
+    {
+      "name": "both fields",
+      "firstHex": "000102030405060708090a0b0c0d0e0f",
+      "secondHex": "01020304",
+      "originalWire": {
+        "size": 24,
+        "hex": "0a10000102030405060708090a0b0c0d0e0f120401020304",
+        "sizeProcedure": "0x1004d7a4c",
+        "serializeProcedure": "0x1004d7880"
+      }
+    }
+  ]
+}

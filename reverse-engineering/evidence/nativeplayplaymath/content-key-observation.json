@@ -1,0 +1,491 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "scope": "Observe proprietary license-key unwrapping before the public AES schedule.\n\nOffline synthetic original instruction execution is the independent authority.\nThe standard AES implementation is neither translated nor executed: observation\nstops after the proprietary protected-input arithmetic and before key expansion.\nNo account, real license response, application process, or network is used.\n",
+  "originalResponseEntry": "0x10048de68",
+  "protectedKeyScheduleEntry": "0x101c85fc4",
+  "protectedFlagW3": 1,
+  "contentKeyObservationStop": "0x101c86940",
+  "independentCtrPrefix": {
+    "entry": "0x101c70d10",
+    "observation": "0x101c70e40",
+    "stopAfterScratchRelease": "0x101c70e94"
+  },
+  "byteOrder": "Exact16 memory bytes atSP+0x28 before the original AES key schedule reads and assembles big-endian words; pass these octets unchanged to a standard AES-128 implementation.",
+  "originalCases": 42,
+  "dartCases": 38,
+  "originalUnprotectPathsAgree": true,
+  "originalContentKeyStableAcrossFourEntropyFixtures": true,
+  "mismatches": [],
+  "nativeObservationSha256": "e9d3fa27d51b7646be2745f5f784a0f8ee06baee00109854103cd9713737b82a",
+  "dartSourceSha256": {
+    "lib/playback/native_playplay_unwrap.dart": "c1ca398bacc022e1c2a9829d6ec8bda8aa986105f95f45e6abdd844581debd05",
+    "lib/playback/native_playplay_math/blocks_10048e.dart": "86a6dd85c03876acd2ea3556e0e98361d930ed990057d1f1d45e41cd49681577",
+    "lib/playback/native_playplay_math/blocks_10048f.dart": "825422a4f890322b077992c05e6542c1d84c0127c116c37234e16cc1129b520d",
+    "lib/playback/native_playplay_math/blocks_100490.dart": "25565646c509da79d98872470147ddc34a664fb4574def826a1518d8154dfc21",
+    "lib/playback/native_playplay_math/blocks_100491.dart": "ca2f5c2786308d2cfe3f4981b50aa26ca6e916ca2d265b1784309265c09f54b8",
+    "lib/playback/native_playplay_math/blocks_100492.dart": "2d0f54cbef340faaf7bbdb98ea159ef106214fcc49cbdca7af980b9f00df5b4b",
+    "lib/playback/native_playplay_math/blocks_100493.dart": "21ea60ef1aa88f90882bc33e39cd9ffc3260678f1113205c534525916f758cfd",
+    "lib/playback/native_playplay_math/blocks_100494.dart": "95f89f80b475154f2f386be2f2772dc6cf072cddddfa2cca54786a43f2442ac3",
+    "lib/playback/native_playplay_math/blocks_100495.dart": "4f350deaeffe34b9dd8a15f6ded2142f331cc3235c7aebd7d0f25ff0344b042d",
+    "lib/playback/native_playplay_math/blocks_100496.dart": "da10d2466a8c88098861de5b5dd10f9bf058687a5a27a1e71ed26172cdf3db4c",
+    "lib/playback/native_playplay_math/blocks_100497.dart": "54d73b3534480a4d5ea5eb3ea493d5c7425663fff18e9244714e8452608d094d",
+    "lib/playback/native_playplay_math/blocks_100498.dart": "ddd37fe55d0aadda65b367af32b5bf29a281b2ef9b2c56f4bb66c57392779874",
+    "lib/playback/native_playplay_math/blocks_100499.dart": "38a088baf5f96658add7c523e754aceb4c56d787e536a161eb947bfdcb399dba",
+    "lib/playback/native_playplay_math/blocks_10049a.dart": "1022b3e15cf7e91e87d52a16eee2fc40a8a5077b4b86814ca375cde5037ec554",
+    "lib/playback/native_playplay_math/blocks_10049b.dart": "05d08e8da25bace07c439a84ba78e6c0010e39fbc41e54f5f8070b7dee8cf824",
+    "lib/playback/native_playplay_math/blocks_10049c.dart": "54a0beed6d9a71b1df64eaf060f606c8b4796969f00cd4808e8d123d14ef1207",
+    "lib/playback/native_playplay_math/blocks_10049d.dart": "37082de8dee011f5f6c700d752f813c0ecc7d382a9edf3343817468cd2a78f7c",
+    "lib/playback/native_playplay_math/blocks_10049e.dart": "5910806de8cdf5163fbed0f259ecc07af398644bec53a5727aca5a07b046ecd9",
+    "lib/playback/native_playplay_math/blocks_10049f.dart": "4c56452f9fe2b4c065b029a22d3fb332139a026175fa2372ea03b00726f12654",
+    "lib/playback/native_playplay_math/blocks_1004a0.dart": "2d05d924d93e427f45a46d167ea47c0fdf66e90f3129736a3cedc9c4f8945c21",
+    "lib/playback/native_playplay_math/blocks_1004a1.dart": "e62f2ea92e767d6010bf11f281255d25f2964c3f00f9316a64467cc5626c424e",
+    "lib/playback/native_playplay_math/blocks_1004a2.dart": "f3990a5ce7bef0dc3acef73bf6207f7127325855d58a2295a316cc26f84b2932",
+    "lib/playback/native_playplay_math/blocks_1004a3.dart": "be18a18e7b2026ecb28f77f2892244562a3071a803113a1fd9ab6c9c6f30bd60",
+    "lib/playback/native_playplay_math/blocks_1004a4.dart": "55d7937ea85aff722564e9698451beae309474ca80d979454b62728a3c237aa3",
+    "lib/playback/native_playplay_math/blocks_1004a5.dart": "dd2367262f8995988c93bd8cd39e5576e7fdcd56634a628f112120c24678f868",
+    "lib/playback/native_playplay_math/blocks_1004a6.dart": "539d2e5f322a9bb5841f2736fcc5c6a7aa9422495d7df6f44326a353b792d1de",
+    "lib/playback/native_playplay_math/blocks_1004a7.dart": "a537a1f5b6076ba3e9cb231e177d0b28ac4bfb6ff57da584c8939c38a8455211",
+    "lib/playback/native_playplay_math/blocks_1004a8.dart": "069e4c46e6d207829a8073d54015722b967ca6a34fa625beb8b5e0df673a650e",
+    "lib/playback/native_playplay_math/blocks_1004a9.dart": "acc096368fabd5ea1db16bbbea972d82cb7d6616bf4ee2d76084588dfef1fd99",
+    "lib/playback/native_playplay_math/blocks_1004aa.dart": "0a1a536f86de3e8710d9a140f53eab3a15cfd788eef8e8c7dc416bb405f7b7ed",
+    "lib/playback/native_playplay_math/blocks_1004ab.dart": "074de7efa25feb451f4f28fe8c655af3a6a69554b6c4a9cebd4aa36b3c837f10",
+    "lib/playback/native_playplay_math/blocks_1004ac.dart": "6bd6d1730860ae40dfd92033ae800ef1970a36753570cfa0e99cebc7b005a4d1",
+    "lib/playback/native_playplay_math/blocks_1004ad.dart": "059fc24790db98383432adbc9689ba8aa5f693bbe149fc4286b24050545c0625",
+    "lib/playback/native_playplay_math/blocks_1004ae.dart": "3395330d3ab7f826b5a5010f5b70402b34c9ea1752c8d8a91dd1ca014d60478b",
+    "lib/playback/native_playplay_math/blocks_1004af.dart": "828009b0ed5bab9159424aad9ad38eff3f208a9103e68735a15b7e085c0e2f51",
+    "lib/playback/native_playplay_math/blocks_1004b0.dart": "70cb612ed1ad51cf5327d16f5409ca451ea4c4f03f96012efad867ff18ab9513",
+    "lib/playback/native_playplay_math/blocks_1004b1.dart": "fd54ada07398938d769acdc536a13053588b2386d748524fcab1650e82ee3346",
+    "lib/playback/native_playplay_math/blocks_1004b2.dart": "4ceb60e1ff84ffab85d7283a831ea892a3b257ab0b81eca5f78e6f95f41d2ddb",
+    "lib/playback/native_playplay_math/blocks_1004b3.dart": "8251553447861e56c2cb4b388bd9fc7e092769871f318ba2a713af2ea41de98b",
+    "lib/playback/native_playplay_math/blocks_1004b4.dart": "436519958cb2f9f323f7b3e80ebf55f115a378b1426fa98d08e73985945a8604",
+    "lib/playback/native_playplay_math/blocks_1004b5.dart": "7bd5fc9e8d0fe49a57880b1f6867dcbc3c531978503ad7a1f0958be3e1eb3705",
+    "lib/playback/native_playplay_math/blocks_1004b6.dart": "e6697e4955df899958f9b7c6e883988df73aad0e645d052383b7b8d0b66fcac1",
+    "lib/playback/native_playplay_math/blocks_1004b7.dart": "80372b4a1c30dbfc648708e91167371699b8b544e7ac975be076a478b3d51dc4",
+    "lib/playback/native_playplay_math/blocks_1004b8.dart": "cf7fa8e261e34b3f8334ff4621cc0e777e34d398ac6cfdc919358e78c2423fcc",
+    "lib/playback/native_playplay_math/blocks_1004b9.dart": "bf07a0748f2f95102427cd37c4c0809004f7258d0de19e315443e8151346385b",
+    "lib/playback/native_playplay_math/blocks_1004ba.dart": "25e88e14d6c79eb3352e1181f7bf623af635c14047b57db8f5ac51c3dd36829b",
+    "lib/playback/native_playplay_math/blocks_1004bb.dart": "b7d802f990511a233e5dbb5d2c4439c0de561a7f5b24afb26ce9010e3dc6352c",
+    "lib/playback/native_playplay_math/blocks_1004bc.dart": "6abfd09a1fccf08e00fbe76c025ee66b74729c7a7ba1f9568b1e06aa969d6eaa",
+    "lib/playback/native_playplay_math/blocks_1004bf.dart": "d123b5559e603cb66647355f50dbdeecbbf217472e144bb4cde956e29a40816e",
+    "lib/playback/native_playplay_math/blocks_1004c0.dart": "7abf4501223e6f17157867e889fcc8addb4b28d3c7bce2517175713cf3f1cd90",
+    "lib/playback/native_playplay_math/blocks_1004c1.dart": "854f3e6c739a37be678429d7183b9a6470a432118d656021a91c0666f1fdcb68",
+    "lib/playback/native_playplay_math/blocks_1004c2.dart": "a0931c8f4b5c399021fd6202b32a4ba67aaf9dfae65411e971e29c4c3653a84b",
+    "lib/playback/native_playplay_math/blocks_1004c3.dart": "6595931055b91f1562df46d8a50e71c6a4ca0f7561daabbbee5c9f75a0466f21",
+    "lib/playback/native_playplay_math/blocks_1004c4.dart": "06b61a61d2791174137124534468d4e8560c667293aca2763916dd10b59fdc45",
+    "lib/playback/native_playplay_math/blocks_1004c5.dart": "b8c0aca24a35261925258fd7c3b0c4cf2794497f5256d8f0d16e1422d0d82437",
+    "lib/playback/native_playplay_math/blocks_1004c6.dart": "2b6fa015c56800dd9e4c01e00ba7be6828132bc968583c278f639fe0a73496f7",
+    "lib/playback/native_playplay_math/blocks_1004c7.dart": "dfe99cafa38e43bcecd58e134f1d56492c7bcd1a7ebe13f303900877f63973d4",
+    "lib/playback/native_playplay_math/blocks_1004c8.dart": "d6212c66841f8c031ab633f448603b9863e47e306a29845c42fe9142a6d018de",
+    "lib/playback/native_playplay_math/blocks_1004c9.dart": "3cd646be2e2d83a528d5734f6faf6c9b8f20d752a49714fd5333db600c5a0bbb",
+    "lib/playback/native_playplay_math/blocks_1004ca.dart": "cc3ca7be26b8ff45ea2fef833d9e51a49fbed24ce0d0dcef2d4d821fddb34743",
+    "lib/playback/native_playplay_math/blocks_1004cb.dart": "2af2dced8700bbfbd9097ecc95b9fe0f9d707b9a6d829e4f328497ad41535241",
+    "lib/playback/native_playplay_math/blocks_1004cc.dart": "5731af532c02de2cf94da251e9fcc392bcc2ddba988a629b2a29a1232eee0926",
+    "lib/playback/native_playplay_math/blocks_1004cd.dart": "b351e5eac2a27248798ab425934ba2aada80fc775000c938cfc2fefef5866b5b",
+    "lib/playback/native_playplay_math/blocks_1004ce.dart": "dae08f253b44c94d9e078598d52eac97cceff2007a5f9718e8a141455b4020c7",
+    "lib/playback/native_playplay_math/blocks_1004cf.dart": "a639c5666e916130e91673d0bc044a960cb637838b70a695a2be8bf938978353",
+    "lib/playback/native_playplay_math/blocks_1004d0.dart": "0bcd7438a363b43d2e7468b7b6872580d8c1fb2dee7e96f28587b340294f37c7",
+    "lib/playback/native_playplay_math/blocks_1004d1.dart": "85cfae8a60598038b66654ff63f4aaa70ee66e85340a3c20f12c4de6adb74557",
+    "lib/playback/native_playplay_math/blocks_1004d2.dart": "a91cbaaad0c35664692589c8c41bd3a5bdbd41ad8edfa81ec2eb4de7d494c3e7",
+    "lib/playback/native_playplay_math/blocks_1004d3.dart": "a68dc0fa463523998c57a4f8da0e699f83e1420a695ebe910425dd0e741fc729",
+    "lib/playback/native_playplay_math/blocks_1004d4.dart": "e0826cf3e648c77b45e954ad75f772f0410254c3663924e875b3778a426c0ed8",
+    "lib/playback/native_playplay_math/blocks_1004d5.dart": "8452b8446bb25d78810c9f44a773dea111ff13fd639fbf531686df58fc9d620f",
+    "lib/playback/native_playplay_math/blocks_1004d6.dart": "1bab395aafdf1e2daab5d651b7519d6ae19323d09ecf2d82b8ff19205cb6ab56",
+    "lib/playback/native_playplay_math/blocks_101c85.dart": "76b93eaa98e6aaf07653b6583d4a9f70bd3922b18678e0b0ef082aabf241dc14",
+    "lib/playback/native_playplay_math/blocks_101c86.dart": "b9aa1b119dc2a050e474e920cc417803bde0768dc53a0f45aae34b07e7c40b33",
+    "lib/playback/native_playplay_math/blocks_101f78.dart": "0f0b907379cbb6efc3006687f28a25b3acae3be33ae7f9e2ed47693018fd8950",
+    "lib/playback/native_playplay_math/data.dart": "2f1c6e5b8d904960e7c23aee33179349e1d5ff7398a5658c0b08e57b158a4c07",
+    "lib/playback/native_playplay_math/dispatch.dart": "19518cce1626a511c33d2ddde661dc3e0942b975e33df928923e1ded50ab64f6"
+  },
+  "cases": [
+    {
+      "inputHex": "00000000000000000000000000000000",
+      "original": "6eba0f04c108d4b2998a22ee75f0e8a6",
+      "originalProtectedHex": "8d76d75064feef3314731169caaf461ba32ec33a5ae29d2c01000000",
+      "originalIntermediateHex": "d7373ae7b3f32050bc4e61820748cd9e",
+      "originalCtrPrefixHex": "6eba0f04c108d4b2998a22ee75f0e8a6",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "6eba0f04c108d4b2998a22ee75f0e8a6"
+    },
+    {
+      "inputHex": "000102030405060708090a0b0c0d0e0f",
+      "original": "206e8e067c449bfaeddb2afff56feaf7",
+      "originalProtectedHex": "d6c4c86e95ae017a8ddb188a746ede6d1d2023344a5f908d01000000",
+      "originalIntermediateHex": "ac1327a2a3f229312fe7619bd3393aee",
+      "originalCtrPrefixHex": "206e8e067c449bfaeddb2afff56feaf7",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "206e8e067c449bfaeddb2afff56feaf7"
+    },
+    {
+      "inputHex": "fffefdfcfbfaf9f8f7f6f5f4f3f2f1f0",
+      "original": "ecbd6a98e8be6a9cdb033106c0bad06d",
+      "originalProtectedHex": "7fd09bcf2e250f0c6843f3cde9ea88e5ab310348db23e07101000000",
+      "originalIntermediateHex": "de0c929166282b09cf0a6ce0d3025649",
+      "originalCtrPrefixHex": "ecbd6a98e8be6a9cdb033106c0bad06d",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "ecbd6a98e8be6a9cdb033106c0bad06d"
+    },
+    {
+      "inputHex": "a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "original": "da1f65ff0789aa28b88279169decd864",
+      "originalProtectedHex": "a8da5ba48712a2ded411ec53353a84236adfb06dff880f7901000000",
+      "originalIntermediateHex": "f557189b57291742876c3718a011998c",
+      "originalCtrPrefixHex": "da1f65ff0789aa28b88279169decd864",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "da1f65ff0789aa28b88279169decd864"
+    },
+    {
+      "inputHex": "e25fa4eeec501dd1f52ffc1f753cc05e",
+      "original": "4bd9e92f7a48695f096e994e05604b3d",
+      "originalProtectedHex": "5910f866a89adfca8d01f4a113e910fcaca513367e9bb82a01000000",
+      "originalIntermediateHex": "720b16bf21e9f3ef964aed1e188ebcfc",
+      "originalCtrPrefixHex": "4bd9e92f7a48695f096e994e05604b3d",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "4bd9e92f7a48695f096e994e05604b3d"
+    },
+    {
+      "inputHex": "0c0353af422b1f5c4a479ceb2e8a3af7",
+      "original": "d8ec0bb3aed1e6b2625febe36d9462b5",
+      "originalProtectedHex": "32d94e4b893550b572c12cc0dcc41411202754dec368ac7e01000000",
+      "originalIntermediateHex": "31299567edfac8fbaa75567ffb9938cf",
+      "originalCtrPrefixHex": "d8ec0bb3aed1e6b2625febe36d9462b5",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "d8ec0bb3aed1e6b2625febe36d9462b5"
+    },
+    {
+      "inputHex": "de5df6eed87ee88cac970a566f7346d8",
+      "original": "5fc380a83df876b855627793b757d915",
+      "originalProtectedHex": "ab32cabc72e46aaa043b9bd6e343b27468a0c4683ec007c701000000",
+      "originalIntermediateHex": "a7803d5efda86aa20553181a3309b192",
+      "originalCtrPrefixHex": "5fc380a83df876b855627793b757d915",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "5fc380a83df876b855627793b757d915"
+    },
+    {
+      "inputHex": "98de59105144eb14dc1fb56d7b0fa7c0",
+      "original": "068c2fdaf3a6974b5f485a8d8ba02a4d",
+      "originalProtectedHex": "f4be22531b0b8981aec67ada9abaf0294b648589f5fa11b601000000",
+      "originalIntermediateHex": "c54f16fba6a9452a9b9527616fcec884",
+      "originalCtrPrefixHex": "068c2fdaf3a6974b5f485a8d8ba02a4d",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "068c2fdaf3a6974b5f485a8d8ba02a4d"
+    },
+    {
+      "inputHex": "bd65f22f24058a89ca80168f88415eca",
+      "original": "7050bfe627f13fe4ac78d06a18b33c75",
+      "originalProtectedHex": "f5f70ee92cfc358b7fe8da93f037e3c09abb8f0e37d10b5e01000000",
+      "originalIntermediateHex": "1d279d92f086130201f633eed7f3a9c1",
+      "originalCtrPrefixHex": "7050bfe627f13fe4ac78d06a18b33c75",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "7050bfe627f13fe4ac78d06a18b33c75"
+    },
+    {
+      "inputHex": "ae0775a46a9fae161640201278fc2a9d",
+      "original": "162fa4caa0cacecdeaf31e605427c7ad",
+      "originalProtectedHex": "5e6207a8bd4aa0e03a343dc511625f2809a459722b6eb84801000000",
+      "originalIntermediateHex": "3cec5346665a131b87badc5121ff6d90",
+      "originalCtrPrefixHex": "162fa4caa0cacecdeaf31e605427c7ad",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "162fa4caa0cacecdeaf31e605427c7ad"
+    },
+    {
+      "inputHex": "f594f2f80e7e6cb1fc926f914b9445a6",
+      "original": "520615dd6a297b9be16d3e62243d6f30",
+      "originalProtectedHex": "a73cd6eb162fa925e4c149e5e64b2cb2dcf8acf607d81a8601000000",
+      "originalIntermediateHex": "bd82f7d354423c85d41f19a0b93f01d4",
+      "originalCtrPrefixHex": "520615dd6a297b9be16d3e62243d6f30",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "520615dd6a297b9be16d3e62243d6f30"
+    },
+    {
+      "inputHex": "7fb44ba44a1f8c46c28529ceb024fc18",
+      "original": "53947dadfe7cd7abf1607605b814a7e3",
+      "originalProtectedHex": "f011d51cef8fe29b8e796e569a151f392dcf4de0f13fcac201000000",
+      "originalIntermediateHex": "b0b1027c54a4e605e26b89e85529e045",
+      "originalCtrPrefixHex": "53947dadfe7cd7abf1607605b814a7e3",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "53947dadfe7cd7abf1607605b814a7e3"
+    },
+    {
+      "inputHex": "2176e69b7ea04f98142eca441ed087f6",
+      "original": "ccc08090b5b84792af5abc7d64871cae",
+      "originalProtectedHex": "41f1b5efd03eae66ec445e67caade8e1864263a98ccca0dc01000000",
+      "originalIntermediateHex": "585097517e2de232d01fd48187513e90",
+      "originalCtrPrefixHex": "ccc08090b5b84792af5abc7d64871cae",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "ccc08090b5b84792af5abc7d64871cae"
+    },
+    {
+      "inputHex": "7d19be67576962c2f3af5a56c2d1d461",
+      "original": "d3d2f5df93aba2851a99c51f10145bea",
+      "originalProtectedHex": "3a806d5411baaef52d5cd4a7704a13bac1eedd07b744ae7301000000",
+      "originalIntermediateHex": "c05317f5d226e04bba88b611bbe1965c",
+      "originalCtrPrefixHex": "d3d2f5df93aba2851a99c51f10145bea",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "d3d2f5df93aba2851a99c51f10145bea"
+    },
+    {
+      "inputHex": "21256e96c4ceac9e711dcff0c3ec3583",
+      "original": "0c7fe8c24cea52368aab3562f490a00a",
+      "originalProtectedHex": "53dab1dffac0a277c1475737a7a4d1e1dae55cf195c9b1b801000000",
+      "originalIntermediateHex": "908c7e9c555b6f70209e316fa62d5f0e",
+      "originalCtrPrefixHex": "0c7fe8c24cea52368aab3562f490a00a",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "0c7fe8c24cea52368aab3562f490a00a"
+    },
+    {
+      "inputHex": "157ca77385672cc8613be581fd2f2d39",
+      "original": "b454ab00b42b5639852c4ad3c1a187ba",
+      "originalProtectedHex": "bc8bd81ee34cfcd1331d897d1004803bf55203f75293c55201000000",
+      "originalIntermediateHex": "8d260b48116b74fe12d7955dec1bd168",
+      "originalCtrPrefixHex": "b454ab00b42b5639852c4ad3c1a187ba",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "b454ab00b42b5639852c4ad3c1a187ba"
+    },
+    {
+      "inputHex": "3f8d2f5afb46f6531ee27c07cddfee26",
+      "original": "f7998eb96ac230c728592c10f7c13d93",
+      "originalProtectedHex": "5dec904bd4be53c539abc8db2a3e0006552aa27c8fd2df9401000000",
+      "originalIntermediateHex": "44628a7972bc20068b9e9352071e4982",
+      "originalCtrPrefixHex": "f7998eb96ac230c728592c10f7c13d93",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "f7998eb96ac230c728592c10f7c13d93"
+    },
+    {
+      "inputHex": "1d73e930fb4063e50acc3ff4984c17d4",
+      "original": "f900d86e0d06e2826f2aebcf44b81bc7",
+      "originalProtectedHex": "e68e0262c5cf663bed9369df23701a8dd5dea024084e2c5e01000000",
+      "originalIntermediateHex": "e88bdacb8e45659b436e67d25070f0af",
+      "originalCtrPrefixHex": "f900d86e0d06e2826f2aebcf44b81bc7",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "f900d86e0d06e2826f2aebcf44b81bc7"
+    },
+    {
+      "inputHex": "8141ac0e2f232c4b681c08eadd122e72",
+      "original": "f7b944ada55a80e6ceb960faaeba403a",
+      "originalProtectedHex": "cfbbdb011e56243491920a40443c6c2f4d7e08c97f11a34301000000",
+      "originalIntermediateHex": "ada0df6e479aca6c3956510070e4e341",
+      "originalCtrPrefixHex": "f7b944ada55a80e6ceb960faaeba403a",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "f7b944ada55a80e6ceb960faaeba403a"
+    },
+    {
+      "inputHex": "d57405e1e4b328795f4aa77430169527",
+      "original": "af2635b7d7a8a6cef250f23cac90b879",
+      "originalProtectedHex": "38080732376e4016e50545cb771f2656d1902db57e04aee401000000",
+      "originalIntermediateHex": "27e7b13dcda68ac8f57f13fe0e0472cd",
+      "originalCtrPrefixHex": "af2635b7d7a8a6cef250f23cac90b879",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "af2635b7d7a8a6cef250f23cac90b879"
+    },
+    {
+      "inputHex": "cde6bc314847909276244313e8488c7b",
+      "original": "f2802ca42f979f4170436b1974023ba9",
+      "originalProtectedHex": "2999f7a71898c0c41b28e0a835c62b063b9f87cc0df2f24001000000",
+      "originalIntermediateHex": "a893dbdc393b587a15972a152d46bfea",
+      "originalCtrPrefixHex": "f2802ca42f979f4170436b1974023ba9",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "f2802ca42f979f4170436b1974023ba9"
+    },
+    {
+      "inputHex": "cee9bcc1016b98fa911ced864ce98efc",
+      "original": "21b51a66f59830a035ce03f86ebcc7ce",
+      "originalProtectedHex": "42467039b9d7b018ad1a1c7e16e4aae6110f83339a42aa5201000000",
+      "originalIntermediateHex": "cf35771ffe5318cace859a2384badc26",
+      "originalCtrPrefixHex": "21b51a66f59830a035ce03f86ebcc7ce",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "21b51a66f59830a035ce03f86ebcc7ce"
+    },
+    {
+      "inputHex": "92cb2d1bb51c7e479edd10bb958efae6",
+      "original": "4c4ced14cd887b954e0728de9be1fc9a",
+      "originalProtectedHex": "fba46733626a5679aed3dacee341f9334e3a28bb4a3d33d201000000",
+      "originalIntermediateHex": "e84eb1cc5055eaedf35cb6e2a4c992c2",
+      "originalCtrPrefixHex": "4c4ced14cd887b954e0728de9be1fc9a",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "4c4ced14cd887b954e0728de9be1fc9a"
+    },
+    {
+      "inputHex": "2a57456a9c61bd0350730fd8b37388e1",
+      "original": "efeef9c6198e5bf32059280c836ed4fc",
+      "originalProtectedHex": "84cb3164cb5f6c5d3b730efdfbb5580c744f41a66a24aa9601000000",
+      "originalIntermediateHex": "7fd7ad264321b86f3412dccfed92b01c",
+      "originalCtrPrefixHex": "efeef9c6198e5bf32059280c836ed4fc",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "efeef9c6198e5bf32059280c836ed4fc"
+    },
+    {
+      "inputHex": "606b52775d9417025dd753a673714ce4",
+      "original": "bf04a84e713b895e549fe43ad2c8ad89",
+      "originalProtectedHex": "c59fb28a9c266445aa83b3341d05e7022aabbce4ab39a12c01000000",
+      "originalIntermediateHex": "ab947ee310e8a904abad5b3fb42fc5e9",
+      "originalCtrPrefixHex": "bf04a84e713b895e549fe43ad2c8ad89",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "bf04a84e713b895e549fe43ad2c8ad89"
+    },
+    {
+      "inputHex": "fe97fa770a8c2ba151004199c7fbe7ba",
+      "original": "3462e394094329a2665fd5dbcf1f07a1",
+      "originalProtectedHex": "6e26fc0ded5d0a68e44798d6b9c575b6dcd9e49b20126f7101000000",
+      "originalIntermediateHex": "62e73fde6e40ea45c36327c00ed545e8",
+      "originalCtrPrefixHex": "3462e394094329a2665fd5dbcf1f07a1",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "3462e394094329a2665fd5dbcf1f07a1"
+    },
+    {
+      "inputHex": "6c2372bd554061a83c327efc30f14dfd",
+      "original": "ec8a66a5f6d5279a8b3cc72280c90a7b",
+      "originalProtectedHex": "f709ee95063a2074b2726036d85f567dff89a56358b3fbbc01000000",
+      "originalIntermediateHex": "a3ccbcb40eeabb65eaf491b706187690",
+      "originalCtrPrefixHex": "ec8a66a5f6d5279a8b3cc72280c90a7b",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "ec8a66a5f6d5279a8b3cc72280c90a7b"
+    },
+    {
+      "inputHex": "9b4a84397202b3a4d7a6cc199e7ed86c",
+      "original": "dbf6b9b4cb3328be2b109b6dd4a2a07e",
+      "originalProtectedHex": "80e9b36a9f4d02e6ae8eeefe1297406969f2bd56afee733a01000000",
+      "originalIntermediateHex": "764e8560dccbc52e59bbbd52fe6ec462",
+      "originalCtrPrefixHex": "dbf6b9b4cb3328be2b109b6dd4a2a07e",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "dbf6b9b4cb3328be2b109b6dd4a2a07e"
+    },
+    {
+      "inputHex": "ec1ac8326230cc44786489bba2b31017",
+      "original": "12920db71aef42a9813a23c15c4780a5",
+      "originalProtectedHex": "11487e544046472d965b738d29e36691901ae7d57de634f601000000",
+      "originalIntermediateHex": "476311333121adf1c91cae90f1dac04f",
+      "originalCtrPrefixHex": "12920db71aef42a9813a23c15c4780a5",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "12920db71aef42a9813a23c15c4780a5"
+    },
+    {
+      "inputHex": "b20e47ae9a7d5f0f15fd5cd08fda1796",
+      "original": "5930d1e6ecd3e50dadb0dd4cddc0d85f",
+      "originalProtectedHex": "4a6b806841aed70fb99d224a7af64db438263a60214487dd01000000",
+      "originalIntermediateHex": "2a185d17d448528ae652f28941182185",
+      "originalCtrPrefixHex": "5930d1e6ecd3e50dadb0dd4cddc0d85f",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "5930d1e6ecd3e50dadb0dd4cddc0d85f"
+    },
+    {
+      "inputHex": "8e030875d6f88fc48afa1b25e887c84d",
+      "original": "70a59c28608202291a4f62f4947f9ae2",
+      "originalProtectedHex": "a3ae99a0eac04c7fe34d06e78537fb9f147208f52bb011ca01000000",
+      "originalIntermediateHex": "40a4616e7663aaf2d0bf11f6751c85e3",
+      "originalCtrPrefixHex": "70a59c28608202291a4f62f4947f9ae2",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "70a59c28608202291a4f62f4947f9ae2"
+    },
+    {
+      "inputHex": "2669d2cedc33dca02abfeab666868a5f",
+      "original": "3dd65293cbf5bb46b1ca6339e04d9dbc",
+      "originalProtectedHex": "4c5ed95393e3be85ef41f577e74f26698532c1541202052001000000",
+      "originalIntermediateHex": "fd9354039e35ec620072c2f756c67474",
+      "originalCtrPrefixHex": "3dd65293cbf5bb46b1ca6339e04d9dbc",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "3dd65293cbf5bb46b1ca6339e04d9dbc"
+    },
+    {
+      "inputHex": "b72566c30b414872fa0b1b284058f4a6",
+      "original": "2fa89a164a800e161ec6b405c49cf38e",
+      "originalProtectedHex": "2d66beb144d30df60caeb4f77f1b75101f0aaea5c00d825601000000",
+      "originalIntermediateHex": "fe7636fc63070a5417074461a9c550c6",
+      "originalCtrPrefixHex": "2fa89a164a800e161ec6b405c49cf38e",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "2fa89a164a800e161ec6b405c49cf38e"
+    },
+    {
+      "inputHex": "a32dbc0ea89ee203852537cb4e22a8ee",
+      "original": "8db8d3fbc3b8487f368f97b236d3f383",
+      "originalProtectedHex": "f68c48bcf5543b5c17e67f6ef2753806558e8117f96e047f01000000",
+      "originalIntermediateHex": "8223059266868bf3d61f2f8e5528edbf",
+      "originalCtrPrefixHex": "8db8d3fbc3b8487f368f97b236d3f383",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "8db8d3fbc3b8487f368f97b236d3f383"
+    },
+    {
+      "inputHex": "643583106ccf6685f4559ca88e609c45",
+      "original": "efffa096bc88bb8febcdbb888ee0e699",
+      "originalProtectedHex": "1f47fc190efbebfd34be142d9be55810f3458ef1306e9ec101000000",
+      "originalIntermediateHex": "1e1abcd1bd4517c434d018ccb21cfac8",
+      "originalCtrPrefixHex": "efffa096bc88bb8febcdbb888ee0e699",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "efffa096bc88bb8febcdbb888ee0e699"
+    },
+    {
+      "inputHex": "e47db765cf8789a50f2e07e65ad71ec2",
+      "original": "29e0a0ded95e9bc1e66d1466c2da8858",
+      "originalProtectedHex": "c86d0038e74d0c533d5055916fb3ff9940e8b9022cfbe28201000000",
+      "originalIntermediateHex": "7cc4fd877759b5bbf4d51ac11d4df305",
+      "originalCtrPrefixHex": "29e0a0ded95e9bc1e66d1466c2da8858",
+      "constantTable": "original-default",
+      "dartContentKeyHex": "29e0a0ded95e9bc1e66d1466c2da8858"
+    },
+    {
+      "inputHex": "00000000000000000000000000000000",
+      "original": "6eba0f04c108d4b2998a22ee75f0e8a6",
+      "originalProtectedHex": "f9a53b0e88293d9d9c4210e83cf545570f125eaa8f47aba001000000",
+      "originalIntermediateHex": "d7373ae7b3f32050bc4e61820748cd9e",
+      "originalCtrPrefixHex": "6eba0f04c108d4b2998a22ee75f0e8a6",
+      "constantTable": "explicit-original-copy",
+      "dartContentKeyHex": "6eba0f04c108d4b2998a22ee75f0e8a6"
+    },
+    {
+      "inputHex": "000102030405060708090a0b0c0d0e0f",
+      "original": "206e8e067c449bfaeddb2afff56feaf7",
+      "originalProtectedHex": "524b0de5e99de361cc9a9674b2fbac2a63a45b2248255dc501000000",
+      "originalIntermediateHex": "ac1327a2a3f229312fe7619bd3393aee",
+      "originalCtrPrefixHex": "206e8e067c449bfaeddb2afff56feaf7",
+      "constantTable": "explicit-original-copy",
+      "dartContentKeyHex": "206e8e067c449bfaeddb2afff56feaf7"
+    }
+  ],
+  "seedObservations": [
+    {
+      "randomDeviceInitialState": 0,
+      "inputHex": "000102030405060708090a0b0c0d0e0f",
+      "original": "206e8e067c449bfaeddb2afff56feaf7",
+      "originalProtectedHex": "a5a2fa193c898fb90493a0be8f20f0526a7bf5b6f564709a01000000",
+      "originalIntermediateHex": "ac1327a2a3f229312fe7619bd3393aee",
+      "originalCtrPrefixHex": "206e8e067c449bfaeddb2afff56feaf7"
+    },
+    {
+      "randomDeviceInitialState": 1,
+      "inputHex": "000102030405060708090a0b0c0d0e0f",
+      "original": "206e8e067c449bfaeddb2afff56feaf7",
+      "originalProtectedHex": "96081c19d52557a020b8653e129f65db369706940e021b3c01000000",
+      "originalIntermediateHex": "ac1327a2a3f229312fe7619bd3393aee",
+      "originalCtrPrefixHex": "206e8e067c449bfaeddb2afff56feaf7"
+    },
+    {
+      "randomDeviceInitialState": 305419896,
+      "inputHex": "000102030405060708090a0b0c0d0e0f",
+      "original": "206e8e067c449bfaeddb2afff56feaf7",
+      "originalProtectedHex": "8d76d75064feef33d7421072e6f071dfd75e33f2714d1e9d01000000",
+      "originalIntermediateHex": "ac1327a2a3f229312fe7619bd3393aee",
+      "originalCtrPrefixHex": "206e8e067c449bfaeddb2afff56feaf7"
+    },
+    {
+      "randomDeviceInitialState": 4294967295,
+      "inputHex": "000102030405060708090a0b0c0d0e0f",
+      "original": "206e8e067c449bfaeddb2afff56feaf7",
+      "originalProtectedHex": "a8dcc119876cc8ce779160eabe3f88c9df003b7367b2d13b01000000",
+      "originalIntermediateHex": "ac1327a2a3f229312fe7619bd3393aee",
+      "originalCtrPrefixHex": "206e8e067c449bfaeddb2afff56feaf7"
+    }
+  ],
+  "standardAdapters": [
+    "Pinned original protobuf field storage",
+    "Memory/string/allocation, single-thread TLS, guards and C++ exception dispatch",
+    "Original entropy observations use explicit synthetic standard random-device fixture",
+    "Dart transient protection uses standard Random.secure for random bytes and words"
+  ],
+  "limits": [
+    "Synthetic inputs only; not an exhaustive proof over128-bit inputs",
+    "The earlier16-byte intermediate is not the content key and must never be used as one",
+    "No standard AES algorithm source/instructions are emitted by the static lift",
+    "No HTTP, license envelope validity, entitlement, playback, or account behavior is checked",
+    "Runtime integration remains owned by the main agent",
+    "Static translation targets the64-bit Dart VM used by macOS Flutter"
+  ]
+}

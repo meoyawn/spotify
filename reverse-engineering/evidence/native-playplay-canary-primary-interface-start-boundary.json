@@ -1,0 +1,133 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "authority": "Static original proprietary instructions, retained original REA pseudocode and original rebased vtables. No original application, audio, scheduler or outgoing request execution.",
+  "standardSubstitutions": "None; static disassembly/data reading only.",
+  "rawAssembly": {
+    "path": ".local/rea-session/native-playplay-canary-primary-interface-start-boundary.asm",
+    "sha256": "abe0b1b46154ced8c2fbcf1ad8dce2774864cc16756768b9b3a7fcdaed9e91dd"
+  },
+  "retainedSetupExport": {
+    "path": ".local/rea-session/native-component-registry-shared-setup-frame.json",
+    "sha256": "f26c2f6af1a9c57126f1d285e66f9c9a860905a1893bee9e1ad51c96422c4499"
+  },
+  "codeRanges": [
+    {
+      "start": "0x1000a0e50",
+      "endExclusive": "0x1000a0e60",
+      "sha256": "86c84a95ad03e66046eeb6fc2639a038a9400c0971c0b70c7db9bc9d111ea16f"
+    },
+    {
+      "start": "0x100485914",
+      "endExclusive": "0x10048592c",
+      "sha256": "7c2e61c5281a307ad2d4e4da2d8ec5b344ef508f85b870cec9c2b0d4d289444f"
+    },
+    {
+      "start": "0x100485a1c",
+      "endExclusive": "0x100485a24",
+      "sha256": "cd002ad89342cc5e3b3e3226644b7f3a6246dde50951c24f8a2920e8463f6a81"
+    },
+    {
+      "start": "0x100485c40",
+      "endExclusive": "0x100485c94",
+      "sha256": "80587e0ce8da905cb4d419bacf459a266b38eeb35b86f297d7947ff2e739142f"
+    },
+    {
+      "start": "0x100485d74",
+      "endExclusive": "0x100485d7c",
+      "sha256": "dfb556a413c8bda5332942d0202e8d5f1e52f45158aec3676294cf11ad5909cb"
+    },
+    {
+      "start": "0x100485f08",
+      "endExclusive": "0x100485f0c",
+      "sha256": "0d4058d6366e2020f0cef21d66e7e6160fbd79fa1b22b2a80e46b7a0ad4b3527"
+    },
+    {
+      "start": "0x1004862c0",
+      "endExclusive": "0x1004862d8",
+      "sha256": "8dc7e739635892c274b30b93afefe65c992c9965446f3e5d02cd4ace86c628ca"
+    },
+    {
+      "start": "0x100af693c",
+      "endExclusive": "0x100af697c",
+      "sha256": "171c634fdfdf0bb5d2f9b0e812bd73692672741b1326a8341dbd48e448d95d56"
+    }
+  ],
+  "registeredComponent": {
+    "id": 10,
+    "idGetter": "0x100485914",
+    "nameGetter": "0x10048591c",
+    "nameLiteral": {
+      "address": "0x1023d5749",
+      "utf8": "AppIntegrityLoggerSetupImpl"
+    },
+    "factory": "0x10048593c",
+    "wrapperConstructor": "0x100485c0c",
+    "wrapperVtable": {
+      "address": "0x102569ba8",
+      "bytesHex": "e45c4800010000002c5d480001000000500e0a0001000000540e0a0001000000580e0a0001000000745d480001000000",
+      "entries": [
+        "0x100485ce4",
+        "0x100485d2c",
+        "0x1000a0e50",
+        "0x1000a0e54",
+        "0x1000a0e58",
+        "0x100485d74"
+      ]
+    },
+    "ownerConstructor": "0x100485d7c through100486130",
+    "primaryOwnerVtable": {
+      "address": "0x102569be8",
+      "bytesHex": "48624800010000005462480001000000085f480001000000c062480001000000",
+      "entries": [
+        "0x100486248",
+        "0x100486254",
+        "0x100485f08",
+        "0x1004862c0"
+      ]
+    },
+    "getter": "Wrapper virtual+28 ->100485d74 loads wrapper+10 and returns the concrete owner.100485c80 stores the freshly constructed owner at wrapper+10;100485a20 returns the wrapper as the factory result.",
+    "primaryMethods": {
+      "slot10": "100485f08 ->100486408 report",
+      "slot18": "1004862c0 ->1004862c4 cadence poster"
+    },
+    "interfaceNameLimit": "The concrete primary interface is identified through service10 and this getter/vtable. A declared C++ interface/class symbol name beyond the literal AppIntegrityLoggerSetupImpl is not recovered."
+  },
+  "authenticatedSetupCaller": {
+    "entry": "0x100af609c",
+    "loop": "0x100af6950..0x100af6978",
+    "callsite": "0x100af6970",
+    "behavior": "The loop reads each service ID from the constructed-service order vector at authenticated scope+ad0..ad8, loads its registered wrapper from the service array, then invokes wrapper virtual+10.",
+    "appIntegrityResolution": "Service10 wrappervptr102569ba8 +10 points1000a0e50, whose complete body is RET. Thus this specific setup callback does not invoke primary owner virtual+18 or the cadence poster.",
+    "otherWrapperSlots": "Wrapper+18 also points a RET (1000a0e54); wrapper+20 points1000a0e58, which clears wrapper byte+8 and returns. These are distinct from primary-owner slots.",
+    "constructionLimit": "Previously retained complete100485d7c/100485f0c construction reports through100486408 and registers callbacks; no direct canary cadence call was found there."
+  },
+  "directBranchScan": {
+    "originalTextWords": 8329000,
+    "targets": [
+      "0x1004862c0",
+      "0x1004862c4"
+    ],
+    "matches": [
+      {
+        "site": "0x1004862c0",
+        "target": "0x1004862c4"
+      },
+      {
+        "site": "0x100486404",
+        "target": "0x1004862c4"
+      },
+      {
+        "site": "0x100487ee8",
+        "target": "0x1004862c4"
+      }
+    ],
+    "meaning": "No direct B/BL to1004862c0. Direct entries to1004862c4 are the primary thunk itself and the already recovered secondary observer/event callback thunks. This is not an exhaustive indirect-call proof."
+  },
+  "unresolved": [
+    "No concrete consumer invoking service10 getter+28 and then primary-owner virtual+18 was resolved in this bounded query.",
+    "An indirect call through a stored owner/interface, or another explicit consumer outside the retained setup slice, remains possible.",
+    "Absence of a resolved primary-interface caller does not prove that method unused. Slot position does not establish lifecycle meaning.",
+    "This evidence does not establish an initial pre-audio cadence check. The separately recovered onAudioStarted route and still-unresolved selector13 route retain their own scope."
+  ],
+  "changes": "Source/evidence note only; no Dart/runtime/session/protocol, application/account/profile/network, tests, AGENTS or formatter actions."
+}

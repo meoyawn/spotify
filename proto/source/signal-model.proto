@@ -1,0 +1,32 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: ed0ea84f3bfa67ec9ea0e5e5f4f352566436590c0716bb346f3a0c82e45f0dd7
+
+syntax = "proto3";
+
+package spotify.playlist.signal.proto;
+
+option java_outer_classname = "SignalModelProto";
+
+option java_package = "com.spotify.playlist_signal.model.proto";
+
+option optimize_for = CODE_SIZE;
+
+message Signal {
+  string identifier = 1;
+
+  bytes data = 2;
+
+  bytes client_payload = 3;
+
+  string instance_id = 4;
+}
+
+message SignalData {
+  string lens_identifier = 1;
+
+  string uri = 2;
+
+  bytes item_id = 3;
+
+  bytes additional_data = 4;
+}

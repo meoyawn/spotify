@@ -1,0 +1,164 @@
+{
+  "mainBundleSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+  "modalBundleSha256": "bfb65aab36dcc6444b76be342b2b4a8f366bb705d29559eafa10c58a6622310a",
+  "producer": {
+    "offsetUtf16": 166729,
+    "offsetBytes": 166738,
+    "lengthBytes": 3441,
+    "sha256": "276d870b1b882837f35bbcde2838b4674ead1bfda9c8285f57b58f3dbe046ff7"
+  },
+  "descriptor": "new ei.l(\"searchModalResults\",\"query\",\"9a79751378a306d87d9789fa0c4a8f7c7213891c47a3993a0d0b58ff26514e59\",null)",
+  "modules": [
+    {
+      "id": 92464,
+      "offsetUtf16": 4160816,
+      "offsetBytes": 4161056,
+      "lengthBytes": 1531,
+      "sha256": "ea26df91582f9fa4917addc583b3587174795a9214c591d368f6962222610292"
+    },
+    {
+      "id": 83873,
+      "offsetUtf16": 4083882,
+      "offsetBytes": 4084122,
+      "lengthBytes": 1671,
+      "sha256": "1aeaa740a4a3f533e78b5c4268c6aa3203950362f5c7066bf0275640e82bee8d"
+    },
+    {
+      "id": 85418,
+      "offsetUtf16": 4160640,
+      "offsetBytes": 4160880,
+      "lengthBytes": 175,
+      "sha256": "6c0bd05958a0723942a6e91b1cb681c9f40e719af9cbc023e30c08b5889f4165"
+    },
+    {
+      "id": 1940,
+      "offsetUtf16": 4113254,
+      "offsetBytes": 4113494,
+      "lengthBytes": 624,
+      "sha256": "528ddb8b6adce775f64c3ee0371d007d51e65e564bf9b804229d9857a9985923"
+    },
+    {
+      "id": 41332,
+      "offsetUtf16": 4114788,
+      "offsetBytes": 4115028,
+      "lengthBytes": 4953,
+      "sha256": "9daaca5dd00fa6605ddd0eeb379cb5fc5c08e51a161d22a94315c4aa40e4b005"
+    },
+    {
+      "id": 87337,
+      "offsetUtf16": 4119742,
+      "offsetBytes": 4119982,
+      "lengthBytes": 1395,
+      "sha256": "e90ffc2f49b22726bf37dfc1560fc8fcc35315291a30dd20628a151b2bb198b5"
+    }
+  ],
+  "scenarios": [
+    {
+      "query": "underground 2",
+      "includeAuthors": true,
+      "queryOptions": {
+        "gcTime": 1800000,
+        "staleTime": 300000,
+        "enabled": true,
+        "abortRequestWhenInactive": false
+      },
+      "expectedRequests": [
+        {
+          "method": "POST",
+          "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+          "headers": {
+            "Accept-Language": "en",
+            "Authorization": "Bearer fixture-access-token",
+            "Accept": "application/json",
+            "App-Platform": "OSX_ARM64",
+            "Spotify-App-Version": "1.3.6.1921",
+            "Content-Type": "application/json;charset=UTF-8"
+          },
+          "bodyBase64": "eyJ2YXJpYWJsZXMiOnsibGltaXQiOjMwLCJudW1iZXJPZlRvcFJlc3VsdHMiOjMwLCJvZmZzZXQiOjAsInNlYXJjaFRlcm0iOiJ1bmRlcmdyb3VuZCAyIiwiaW5jbHVkZUF1dGhvcnMiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoic2VhcmNoTW9kYWxSZXN1bHRzIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiOWE3OTc1MTM3OGEzMDZkODdkOTc4OWZhMGM0YThmN2M3MjEzODkxYzQ3YTM5OTNhMGQwYjU4ZmYyNjUxNGU1OSJ9fX0=",
+          "authorize": true,
+          "includeCredentials": false,
+          "responseType": "json"
+        }
+      ]
+    },
+    {
+      "query": "Björk 雪 + \"soundtrack\"",
+      "includeAuthors": false,
+      "queryOptions": {
+        "gcTime": 1800000,
+        "staleTime": 300000,
+        "enabled": true,
+        "abortRequestWhenInactive": false
+      },
+      "expectedRequests": [
+        {
+          "method": "POST",
+          "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+          "headers": {
+            "Accept-Language": "en",
+            "Authorization": "Bearer fixture-access-token",
+            "Accept": "application/json",
+            "App-Platform": "OSX_ARM64",
+            "Spotify-App-Version": "1.3.6.1921",
+            "Content-Type": "application/json;charset=UTF-8"
+          },
+          "bodyBase64": "eyJ2YXJpYWJsZXMiOnsibGltaXQiOjMwLCJudW1iZXJPZlRvcFJlc3VsdHMiOjMwLCJvZmZzZXQiOjAsInNlYXJjaFRlcm0iOiJCasO2cmsg6ZuqICsgXCJzb3VuZHRyYWNrXCIiLCJpbmNsdWRlQXV0aG9ycyI6ZmFsc2V9LCJvcGVyYXRpb25OYW1lIjoic2VhcmNoTW9kYWxSZXN1bHRzIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiOWE3OTc1MTM3OGEzMDZkODdkOTc4OWZhMGM0YThmN2M3MjEzODkxYzQ3YTM5OTNhMGQwYjU4ZmYyNjUxNGU1OSJ9fX0=",
+          "authorize": true,
+          "includeCredentials": false,
+          "responseType": "json"
+        }
+      ]
+    },
+    {
+      "query": "  Need for Speed: Underground 2  ",
+      "includeAuthors": true,
+      "queryOptions": {
+        "gcTime": 1800000,
+        "staleTime": 300000,
+        "enabled": true,
+        "abortRequestWhenInactive": false
+      },
+      "expectedRequests": [
+        {
+          "method": "POST",
+          "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+          "headers": {
+            "Accept-Language": "en",
+            "Authorization": "Bearer fixture-access-token",
+            "Accept": "application/json",
+            "App-Platform": "OSX_ARM64",
+            "Spotify-App-Version": "1.3.6.1921",
+            "Content-Type": "application/json;charset=UTF-8"
+          },
+          "bodyBase64": "eyJ2YXJpYWJsZXMiOnsibGltaXQiOjMwLCJudW1iZXJPZlRvcFJlc3VsdHMiOjMwLCJvZmZzZXQiOjAsInNlYXJjaFRlcm0iOiIgIE5lZWQgZm9yIFNwZWVkOiBVbmRlcmdyb3VuZCAyICAiLCJpbmNsdWRlQXV0aG9ycyI6dHJ1ZX0sIm9wZXJhdGlvbk5hbWUiOiJzZWFyY2hNb2RhbFJlc3VsdHMiLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiI5YTc5NzUxMzc4YTMwNmQ4N2Q5Nzg5ZmEwYzRhOGY3YzcyMTM4OTFjNDdhMzk5M2EwZDBiNThmZjI2NTE0ZTU5In19fQ==",
+          "authorize": true,
+          "includeCredentials": false,
+          "responseType": "json"
+        }
+      ]
+    },
+    {
+      "query": "",
+      "includeAuthors": true,
+      "queryOptions": {
+        "gcTime": 1800000,
+        "staleTime": 300000,
+        "enabled": false,
+        "abortRequestWhenInactive": false
+      },
+      "expectedRequests": []
+    },
+    {
+      "query": " \t\n ",
+      "includeAuthors": false,
+      "queryOptions": {
+        "gcTime": 1800000,
+        "staleTime": 300000,
+        "enabled": false,
+        "abortRequestWhenInactive": false
+      },
+      "expectedRequests": []
+    }
+  ],
+  "scope": "Unchanged original modal query producer, descriptor, Pathfinder loader and RequestBuilder. React scheduling, online and include-authors experiment are explicit substitutions. Synthetic transport records pre-fetch application envelopes; no account, browser, socket, native CEF, response mapper or server runs."
+}

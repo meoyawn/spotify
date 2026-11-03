@@ -1,0 +1,350 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "descriptorSetSha256": "8d6910583ad931941fdf0b6abb98703a6ca5b517e15c64593b3ddfddff306225",
+  "protobufToolchain": {
+    "protocVersion": "36.2",
+    "protocPluginVersion": "25.1.0"
+  },
+  "scope": "Raw framing and PendingEventEntity owner transform; no credential projection, event queue or persistence implementation",
+  "messageIdentity": {
+    "constructor": "0x1018b89a4",
+    "vtable": "0x102643ac8",
+    "classDataGetter": "0x1018b8b10",
+    "classData": "0x102724a28",
+    "descriptorTable": "0x1027249d0",
+    "defaultInstanceIndex": 0,
+    "file": "pending_event_entity.proto",
+    "message": "spotify.pending_events.proto.PendingEventEntity",
+    "descriptorSha256": "73679737501af58963288e46e0390599ff5275280b53ddb87bab636c048057f8",
+    "fields": [
+      {
+        "name": "event_name",
+        "number": 1,
+        "type": 9,
+        "offset": "0x18"
+      },
+      {
+        "name": "payload",
+        "number": 2,
+        "type": 12,
+        "offset": "0x20"
+      },
+      {
+        "name": "username",
+        "number": 3,
+        "type": 9,
+        "offset": "0x28"
+      }
+    ]
+  },
+  "layoutReferences": [
+    "https://github.com/protocolbuffers/protobuf/blob/v29.3/src/google/protobuf/message_lite.h",
+    "https://github.com/protocolbuffers/protobuf/blob/v29.3/src/google/protobuf/generated_message_reflection.h"
+  ],
+  "layoutVersionNote": "Matching published metadata layout, not identification of the shipped runtime version",
+  "nativeEncrypt": "0x1018ac0b0",
+  "nativeDecrypt": "0x1018ac0e0",
+  "genericEncrypt": "0x101c6ee2c",
+  "genericDecrypt": "0x101c6f224",
+  "keyInput": {
+    "source": "immutable image constant",
+    "address": "0x1022a7b47",
+    "length": 16,
+    "sha256": "7b8240bef8c98963a08f4b3e01b291ab3ac6cba780f5deb949dfbd2822ff651f"
+  },
+  "method": "Unchanged proprietary binding/frame code and unchanged standard crypto dependency; synthetic IV/plaintext; inert standard allocation/string/memory and rejection-log boundaries",
+  "vectors": [
+    {
+      "name": "empty",
+      "plaintextHex": "",
+      "ivHex": "00000000000000000000000000000000",
+      "frameHex": "00000000000000000000000000000000a9acc08e8562d64531fdaa2833c1400a3674d2bb",
+      "decode": {
+        "accepted": true,
+        "plaintextHex": ""
+      }
+    },
+    {
+      "name": "binary",
+      "plaintextHex": "00ff804100",
+      "ivHex": "000102030405060708090a0b0c0d0e0f",
+      "frameHex": "000102030405060708090a0b0c0d0e0f2a515e0000a2afcb9baa81ed1bef3ad37896fc43fc534968b4",
+      "decode": {
+        "accepted": true,
+        "plaintextHex": "00ff804100"
+      }
+    },
+    {
+      "name": "UTF-8 and embedded NUL",
+      "plaintextHex": "73796e7468657469632de99baa007061796c6f6164",
+      "ivHex": "101112131415161718191a1b1c1d1e1f",
+      "frameHex": "101112131415161718191a1b1c1d1e1f4480e0ae088d22d55981d1d03834a6f9ae8943c0318c054154c3be54fbfd5e0c58997732500e588e9a",
+      "decode": {
+        "accepted": true,
+        "plaintextHex": "73796e7468657469632de99baa007061796c6f6164"
+      }
+    },
+    {
+      "name": "long binary",
+      "plaintextHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff73796e74686574696373796e74686574696373796e74686574696373796e74686574696373796e74686574696373796e746865746963",
+      "ivHex": "202122232425262728292a2b2c2d2e2f",
+      "frameHex": "202122232425262728292a2b2c2d2e2f6cc7ee95fa548cc46679eb09c2ef96ad23bf53f873f07a81e7c68ba8859be6224c4ca587eba44a762ecc060b222fc10a7550fdd41df59a657c88a15d82d2c8bd3b7094d3ad54b6b64e86170969d4e4a236021de58b816359097aad67b7f5da1d8c875a2b57ff1f23b74d899c884bafdc47cf084cd0ff802ab6fce8938ef99ae3407def05e8e092e91b1085c063074e7d87397c045c50cdc9249296e8c0eb77508c334c49d6bb17ff61521a19e317a03bf5ea70c8d8e9edaa39bd175caa5edfebbe5d5d299dbe6e5efc0ae47e7f194a64fb2302d8b8a989e9b59cf9ada43a1de8fe8793a2938f5ce8affc28b555f258e32bd8e0160075111a6aa84051530cc62ef0c039f06ed07573347c9944790b37f24383c8ccf4140b72bb081c15d127d527e322712165bfed712437b5be67de7a84acd8c6e9de924ef8a1656113c043b98cb2d2bd5e33c4663ce5ae",
+      "decode": {
+        "accepted": true,
+        "plaintextHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff73796e74686574696373796e74686574696373796e74686574696373796e74686574696373796e74686574696373796e746865746963"
+      }
+    },
+    {
+      "name": "full counter wrap",
+      "plaintextHex": "73796e7468657469632d7061796c6f616473796e7468657469632d7061796c6f616473796e7468657469632d7061796c6f6164",
+      "ivHex": "ffffffffffffffffffffffffffffffff",
+      "frameHex": "fffffffffffffffffffffffffffffffffe70eb509b557f5fa7b2efeb54b28f5365a78f1ed49ed9486cea61e860f17c40e427e099afe75133a76d4775736625583adfef18153537edd5bcf8827719f6a77929b773dbbf68",
+      "decode": {
+        "accepted": true,
+        "plaintextHex": "73796e7468657469632d7061796c6f616473796e7468657469632d7061796c6f616473796e7468657469632d7061796c6f6164"
+      }
+    }
+  ],
+  "acceptance": [
+    {
+      "name": "empty input",
+      "frameHex": "",
+      "accepted": false,
+      "plaintextHex": ""
+    },
+    {
+      "name": "short frame",
+      "frameHex": "0000000000000000000000000000000000000000000000000000000000000000000000",
+      "accepted": false,
+      "plaintextHex": ""
+    },
+    {
+      "name": "ciphertext changed",
+      "frameHex": "000102030405060708090a0b0c0d0e0f2b515e0000a2afcb9baa81ed1bef3ad37896fc43fc534968b4",
+      "accepted": false,
+      "plaintextHex": ""
+    },
+    {
+      "name": "MAC changed",
+      "frameHex": "000102030405060708090a0b0c0d0e0f2a515e0000a2afcb9baa81ed1bef3ad37896fc43fc534968b5",
+      "accepted": false,
+      "plaintextHex": ""
+    },
+    {
+      "name": "appended byte",
+      "frameHex": "000102030405060708090a0b0c0d0e0f2a515e0000a2afcb9baa81ed1bef3ad37896fc43fc534968b400",
+      "accepted": false,
+      "plaintextHex": ""
+    },
+    {
+      "name": "empty authenticated payload with changed IV",
+      "frameHex": "01000000000000000000000000000000a9acc08e8562d64531fdaa2833c1400a3674d2bb",
+      "accepted": true,
+      "plaintextHex": ""
+    }
+  ],
+  "pendingEventEncoder": "0x1018af004",
+  "pendingEventDecoder": "0x1018b0e60",
+  "ownerCases": [
+    {
+      "name": "binary payload",
+      "input": {
+        "eventName": "synthetic-event",
+        "payloadHex": "00ff6576656e742d7061796c6f6164",
+        "username": "synthetic-user"
+      },
+      "ivHex": "000102030405060708090a0b0c0d0e0f",
+      "nativeHasBits": 7,
+      "fields": {
+        "eventName": "synthetic-event",
+        "payloadHex": "000102030405060708090a0b0c0d0e0f2a51bb37653feaf42dc27c2e5f16b078b81b43032c4149d5a75dab80d932b8fc703047",
+        "username": "synthetic-user"
+      },
+      "wireHex": "0a0f73796e7468657469632d6576656e741233000102030405060708090a0b0c0d0e0f2a51bb37653feaf42dc27c2e5f16b078b81b43032c4149d5a75dab80d932b8fc7030471a0e73796e7468657469632d75736572",
+      "decode": {
+        "accepted": true,
+        "eventName": "synthetic-event",
+        "payloadHex": "00ff6576656e742d7061796c6f6164",
+        "username": "synthetic-user"
+      }
+    },
+    {
+      "name": "empty event name and plaintext",
+      "input": {
+        "eventName": "",
+        "payloadHex": "",
+        "username": null
+      },
+      "ivHex": "000102030405060708090a0b0c0d0e0f",
+      "nativeHasBits": 3,
+      "fields": {
+        "eventName": "",
+        "payloadHex": "000102030405060708090a0b0c0d0e0fa9acc08e8562d64531fdaa2833c1400a3674d2bb",
+        "username": ""
+      },
+      "wireHex": "1224000102030405060708090a0b0c0d0e0fa9acc08e8562d64531fdaa2833c1400a3674d2bb",
+      "decode": {
+        "accepted": true,
+        "eventName": "",
+        "payloadHex": "",
+        "username": null
+      }
+    },
+    {
+      "name": "absent username",
+      "input": {
+        "eventName": "synthetic-event",
+        "payloadHex": "6f7061717565",
+        "username": null
+      },
+      "ivHex": "000102030405060708090a0b0c0d0e0f",
+      "nativeHasBits": 3,
+      "fields": {
+        "eventName": "synthetic-event",
+        "payloadHex": "000102030405060708090a0b0c0d0e0f45debf307534dd686a397cfea38dff29ab0da71b1b9a5fbf2b99",
+        "username": ""
+      },
+      "wireHex": "0a0f73796e7468657469632d6576656e74122a000102030405060708090a0b0c0d0e0f45debf307534dd686a397cfea38dff29ab0da71b1b9a5fbf2b99",
+      "decode": {
+        "accepted": true,
+        "eventName": "synthetic-event",
+        "payloadHex": "6f7061717565",
+        "username": null
+      }
+    },
+    {
+      "name": "present empty username",
+      "input": {
+        "eventName": "synthetic-event",
+        "payloadHex": "6f7061717565",
+        "username": ""
+      },
+      "ivHex": "000102030405060708090a0b0c0d0e0f",
+      "nativeHasBits": 7,
+      "fields": {
+        "eventName": "synthetic-event",
+        "payloadHex": "000102030405060708090a0b0c0d0e0f45debf307534dd686a397cfea38dff29ab0da71b1b9a5fbf2b99",
+        "username": ""
+      },
+      "wireHex": "0a0f73796e7468657469632d6576656e74122a000102030405060708090a0b0c0d0e0f45debf307534dd686a397cfea38dff29ab0da71b1b9a5fbf2b99",
+      "decode": {
+        "accepted": true,
+        "eventName": "synthetic-event",
+        "payloadHex": "6f7061717565",
+        "username": null
+      }
+    },
+    {
+      "name": "UTF-8 and embedded NUL",
+      "input": {
+        "eventName": "synthetic-雪\u0000event",
+        "payloadHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e",
+        "username": "username-雪\u0000tail"
+      },
+      "ivHex": "000102030405060708090a0b0c0d0e0f",
+      "nativeHasBits": 7,
+      "fields": {
+        "eventName": "synthetic-雪\u0000event",
+        "payloadHex": "000102030405060708090a0b0c0d0e0f2aafdc42045498de55aa0f493c7ada9a4dc83df9e07da1da441577480cab00be1658eb8b954cea5d2a191bff0c5ea4d42eb2b7",
+        "username": "username-雪\u0000tail"
+      },
+      "wireHex": "0a1373796e7468657469632de99baa006576656e741243000102030405060708090a0b0c0d0e0f2aafdc42045498de55aa0f493c7ada9a4dc83df9e07da1da441577480cab00be1658eb8b954cea5d2a191bff0c5ea4d42eb2b71a11757365726e616d652de99baa007461696c",
+      "decode": {
+        "accepted": true,
+        "eventName": "synthetic-雪\u0000event",
+        "payloadHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e",
+        "username": "username-雪\u0000tail"
+      }
+    },
+    {
+      "name": "long fields",
+      "input": {
+        "eventName": "synthetic-eventsynthetic-eventsynthetic-eventsynthetic-event",
+        "payloadHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff",
+        "username": "synthetic-usersynthetic-usersynthetic-usersynthetic-user"
+      },
+      "ivHex": "000102030405060708090a0b0c0d0e0f",
+      "nativeHasBits": 7,
+      "fields": {
+        "eventName": "synthetic-eventsynthetic-eventsynthetic-eventsynthetic-event",
+        "payloadHex": "000102030405060708090a0b0c0d0e0f2aafdc42045498de55aa0f493c7ada9a4dc83df9e07da1da441577480cab00b6fe4d1804d5a049085c6abc248fc992887485d444c2373da923a410f78b3c729448ebf6cce3b0397631f4b8cc57936dedf8295bab3dad5825ca4e6d341ae959482cab0a44d2be8441067bc57e1350b8e4ac04408e16c036f1a895cf341e00ccafe30029959f6f7ccf54115385741619343c65cbdaf78a6da2fade546e07eea7d44aaa14bdaeb9214a14bf26f0bb4d4c2d45842aa51ee3feca11dece04f5cadedf5e9418308b92750dfd2e74d66645fb807e130162fbedb12cfd2e1e3d7af9d5ef0373b575b8dac0c0e4c4b1a876e96175283f5fe28ba2add67364d7ecea7537e9feddba1e6e63eb9a395f2c0ea8b9f6429f027862",
+        "username": "synthetic-usersynthetic-usersynthetic-usersynthetic-user"
+      },
+      "wireHex": "0a3c73796e7468657469632d6576656e7473796e7468657469632d6576656e7473796e7468657469632d6576656e7473796e7468657469632d6576656e7412a402000102030405060708090a0b0c0d0e0f2aafdc42045498de55aa0f493c7ada9a4dc83df9e07da1da441577480cab00b6fe4d1804d5a049085c6abc248fc992887485d444c2373da923a410f78b3c729448ebf6cce3b0397631f4b8cc57936dedf8295bab3dad5825ca4e6d341ae959482cab0a44d2be8441067bc57e1350b8e4ac04408e16c036f1a895cf341e00ccafe30029959f6f7ccf54115385741619343c65cbdaf78a6da2fade546e07eea7d44aaa14bdaeb9214a14bf26f0bb4d4c2d45842aa51ee3feca11dece04f5cadedf5e9418308b92750dfd2e74d66645fb807e130162fbedb12cfd2e1e3d7af9d5ef0373b575b8dac0c0e4c4b1a876e96175283f5fe28ba2add67364d7ecea7537e9feddba1e6e63eb9a395f2c0ea8b9f6429f0278621a3873796e7468657469632d7573657273796e7468657469632d7573657273796e7468657469632d7573657273796e7468657469632d75736572",
+      "decode": {
+        "accepted": true,
+        "eventName": "synthetic-eventsynthetic-eventsynthetic-eventsynthetic-event",
+        "payloadHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff",
+        "username": "synthetic-usersynthetic-usersynthetic-usersynthetic-user"
+      }
+    }
+  ],
+  "ownerDecodeCases": [
+    {
+      "name": "empty input",
+      "frameHex": "",
+      "decode": {
+        "accepted": false,
+        "eventName": "synthetic-event",
+        "payloadHex": "",
+        "username": "prior-synthetic-username"
+      }
+    },
+    {
+      "name": "short frame",
+      "frameHex": "0000000000000000000000000000000000000000000000000000000000000000000000",
+      "decode": {
+        "accepted": false,
+        "eventName": "synthetic-event",
+        "payloadHex": "",
+        "username": "prior-synthetic-username"
+      }
+    },
+    {
+      "name": "ciphertext changed",
+      "frameHex": "000102030405060708090a0b0c0d0e0f2b515e0000a2afcb9baa81ed1bef3ad37896fc43fc534968b4",
+      "decode": {
+        "accepted": false,
+        "eventName": "synthetic-event",
+        "payloadHex": "",
+        "username": "prior-synthetic-username"
+      }
+    },
+    {
+      "name": "MAC changed",
+      "frameHex": "000102030405060708090a0b0c0d0e0f2a515e0000a2afcb9baa81ed1bef3ad37896fc43fc534968b5",
+      "decode": {
+        "accepted": false,
+        "eventName": "synthetic-event",
+        "payloadHex": "",
+        "username": "prior-synthetic-username"
+      }
+    },
+    {
+      "name": "appended byte",
+      "frameHex": "000102030405060708090a0b0c0d0e0f2a515e0000a2afcb9baa81ed1bef3ad37896fc43fc534968b400",
+      "decode": {
+        "accepted": false,
+        "eventName": "synthetic-event",
+        "payloadHex": "",
+        "username": "prior-synthetic-username"
+      }
+    },
+    {
+      "name": "empty authenticated payload with changed IV",
+      "frameHex": "01000000000000000000000000000000a9acc08e8562d64531fdaa2833c1400a3674d2bb",
+      "decode": {
+        "accepted": true,
+        "eventName": "synthetic-event",
+        "payloadHex": "",
+        "username": "synthetic-user"
+      }
+    }
+  ],
+  "serializationBoundary": "Original field assignments with inert standard ArenaStringPtr setters; pinned Google protoc serializes the exact recovered descriptor. CODE_SIZE reflection initialization and original parser execution are not reconstructed",
+  "limitations": [
+    "No event queue, persistence or account authentication behavior is inferred",
+    "No original account/profile/credential or remote service is read",
+    "The static image key is not included in this evidence"
+  ]
+}

@@ -1,0 +1,666 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "method": "Execute original terminal key failures and the disabled-client admission gate.\n\nThe HTTP callback, 403 protobuf parser, pending-job removal, actual scheduled\nowner callback and subsequent POST admission instructions run unchanged.\nSynthetic live weak references, response inputs and callback sinks are explicit.\nThe next disabled POST stops at its error-job constructor; an enabled POST\nstops at body construction. Neither branch sends HTTP or opens a profile.\n",
+  "sourceExports": [
+    ".local/rea-session/license-rejection-owner-current.json",
+    ".local/rea-session/native-image-map-expansion-and-license-rejection-policy.json",
+    ".local/rea-session/stream-cache-constructor-and-key-admission.json"
+  ],
+  "ranges": [
+    {
+      "start": "0x1004be88c",
+      "endExclusive": "0x1004beb5c",
+      "sha256": "a6a094c0bb08a4ad28df1cd1312fe6def1ca0583cf77b8563a7ab9736cd8bab1"
+    },
+    {
+      "start": "0x10048f214",
+      "endExclusive": "0x10048f338",
+      "sha256": "ecccf6be388f717fd6b05d8005fd0fe7d1ab0cf3d1cbd7968d4082522cfb13fb"
+    },
+    {
+      "start": "0x10048f338",
+      "endExclusive": "0x10048f4f8",
+      "sha256": "0807fc9ebb12bd55cff2241769cb357b4cb1c07a01e17de5e0d17e1d2b767901"
+    },
+    {
+      "start": "0x1004bf384",
+      "endExclusive": "0x1004bf4f4",
+      "sha256": "cb2980c56e215c4b83c05b74f534c4d34711a0cea0f0b25beb9a9c64b0044155"
+    },
+    {
+      "start": "0x10048c604",
+      "endExclusive": "0x10048ca54",
+      "sha256": "5a2bcab58bad4e2e5b1475679f610d1e3248134b783d4d6e3cac72a02aaaceb3"
+    }
+  ],
+  "cases": [
+    {
+      "status": 402,
+      "bodyHex": "",
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "bodyReadCount": 0,
+      "keyErrors": [
+        {
+          "job": "rejected",
+          "code": 2
+        }
+      ],
+      "getCompletions": [],
+      "removedJobs": [
+        "rejected"
+      ],
+      "ownerCallback": null,
+      "clientDisabled": false,
+      "remainingWeakEntries": 3,
+      "nextPostAdmission": {
+        "bodyConstructionReached": true,
+        "immediateKeyError": null
+      }
+    },
+    {
+      "status": 402,
+      "bodyHex": "0803",
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "bodyReadCount": 0,
+      "keyErrors": [
+        {
+          "job": "rejected",
+          "code": 2
+        }
+      ],
+      "getCompletions": [],
+      "removedJobs": [
+        "rejected"
+      ],
+      "ownerCallback": null,
+      "clientDisabled": false,
+      "remainingWeakEntries": 3,
+      "nextPostAdmission": {
+        "bodyConstructionReached": true,
+        "immediateKeyError": null
+      }
+    },
+    {
+      "status": 403,
+      "bodyHex": "",
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "bodyReadCount": 1,
+      "keyErrors": [
+        {
+          "job": "rejected",
+          "code": 1
+        }
+      ],
+      "getCompletions": [],
+      "removedJobs": [
+        "rejected"
+      ],
+      "ownerCallback": null,
+      "clientDisabled": false,
+      "remainingWeakEntries": 3,
+      "nextPostAdmission": {
+        "bodyConstructionReached": true,
+        "immediateKeyError": null
+      }
+    },
+    {
+      "status": 403,
+      "bodyHex": "0800",
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "bodyReadCount": 1,
+      "keyErrors": [
+        {
+          "job": "rejected",
+          "code": 1
+        }
+      ],
+      "getCompletions": [],
+      "removedJobs": [
+        "rejected"
+      ],
+      "ownerCallback": null,
+      "clientDisabled": false,
+      "remainingWeakEntries": 3,
+      "nextPostAdmission": {
+        "bodyConstructionReached": true,
+        "immediateKeyError": null
+      }
+    },
+    {
+      "status": 403,
+      "bodyHex": "0802",
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "bodyReadCount": 1,
+      "keyErrors": [
+        {
+          "job": "rejected",
+          "code": 1
+        }
+      ],
+      "getCompletions": [],
+      "removedJobs": [
+        "rejected"
+      ],
+      "ownerCallback": null,
+      "clientDisabled": false,
+      "remainingWeakEntries": 3,
+      "nextPostAdmission": {
+        "bodyConstructionReached": true,
+        "immediateKeyError": null
+      }
+    },
+    {
+      "status": 403,
+      "bodyHex": "0803",
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "bodyReadCount": 1,
+      "keyErrors": [
+        {
+          "job": "rejected",
+          "code": 5
+        },
+        {
+          "job": "pendingPost",
+          "code": 5
+        }
+      ],
+      "getCompletions": [
+        {
+          "job": "pendingGet",
+          "argument": 2
+        }
+      ],
+      "removedJobs": [
+        "rejected"
+      ],
+      "ownerCallback": {
+        "invoke": "0x1004bf384",
+        "delayMilliseconds": 0
+      },
+      "clientDisabled": true,
+      "remainingWeakEntries": 0,
+      "nextPostAdmission": {
+        "bodyConstructionReached": false,
+        "immediateKeyError": 5
+      }
+    },
+    {
+      "status": 403,
+      "bodyHex": "0804",
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "bodyReadCount": 1,
+      "keyErrors": [
+        {
+          "job": "rejected",
+          "code": 1
+        }
+      ],
+      "getCompletions": [],
+      "removedJobs": [
+        "rejected"
+      ],
+      "ownerCallback": null,
+      "clientDisabled": false,
+      "remainingWeakEntries": 3,
+      "nextPostAdmission": {
+        "bodyConstructionReached": true,
+        "immediateKeyError": null
+      }
+    },
+    {
+      "status": 403,
+      "bodyHex": "08030804",
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "bodyReadCount": 1,
+      "keyErrors": [
+        {
+          "job": "rejected",
+          "code": 1
+        }
+      ],
+      "getCompletions": [],
+      "removedJobs": [
+        "rejected"
+      ],
+      "ownerCallback": null,
+      "clientDisabled": false,
+      "remainingWeakEntries": 3,
+      "nextPostAdmission": {
+        "bodyConstructionReached": true,
+        "immediateKeyError": null
+      }
+    },
+    {
+      "status": 403,
+      "bodyHex": "08040803",
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "bodyReadCount": 1,
+      "keyErrors": [
+        {
+          "job": "rejected",
+          "code": 5
+        },
+        {
+          "job": "pendingPost",
+          "code": 5
+        }
+      ],
+      "getCompletions": [
+        {
+          "job": "pendingGet",
+          "argument": 2
+        }
+      ],
+      "removedJobs": [
+        "rejected"
+      ],
+      "ownerCallback": {
+        "invoke": "0x1004bf384",
+        "delayMilliseconds": 0
+      },
+      "clientDisabled": true,
+      "remainingWeakEntries": 0,
+      "nextPostAdmission": {
+        "bodyConstructionReached": false,
+        "immediateKeyError": 5
+      }
+    },
+    {
+      "status": 403,
+      "bodyHex": "08031001",
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "bodyReadCount": 1,
+      "keyErrors": [
+        {
+          "job": "rejected",
+          "code": 5
+        },
+        {
+          "job": "pendingPost",
+          "code": 5
+        }
+      ],
+      "getCompletions": [
+        {
+          "job": "pendingGet",
+          "argument": 2
+        }
+      ],
+      "removedJobs": [
+        "rejected"
+      ],
+      "ownerCallback": {
+        "invoke": "0x1004bf384",
+        "delayMilliseconds": 0
+      },
+      "clientDisabled": true,
+      "remainingWeakEntries": 0,
+      "nextPostAdmission": {
+        "bodyConstructionReached": false,
+        "immediateKeyError": 5
+      }
+    },
+    {
+      "status": 403,
+      "bodyHex": "0a020803",
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "bodyReadCount": 1,
+      "keyErrors": [
+        {
+          "job": "rejected",
+          "code": 1
+        }
+      ],
+      "getCompletions": [],
+      "removedJobs": [
+        "rejected"
+      ],
+      "ownerCallback": null,
+      "clientDisabled": false,
+      "remainingWeakEntries": 3,
+      "nextPostAdmission": {
+        "bodyConstructionReached": true,
+        "immediateKeyError": null
+      }
+    },
+    {
+      "status": 403,
+      "bodyHex": "0803ff",
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "bodyReadCount": 1,
+      "keyErrors": [
+        {
+          "job": "rejected",
+          "code": 1
+        }
+      ],
+      "getCompletions": [],
+      "removedJobs": [
+        "rejected"
+      ],
+      "ownerCallback": null,
+      "clientDisabled": false,
+      "remainingWeakEntries": 3,
+      "nextPostAdmission": {
+        "bodyConstructionReached": true,
+        "immediateKeyError": null
+      }
+    },
+    {
+      "status": 403,
+      "bodyHex": "080380",
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "bodyReadCount": 1,
+      "keyErrors": [
+        {
+          "job": "rejected",
+          "code": 1
+        }
+      ],
+      "getCompletions": [],
+      "removedJobs": [
+        "rejected"
+      ],
+      "ownerCallback": null,
+      "clientDisabled": false,
+      "remainingWeakEntries": 3,
+      "nextPostAdmission": {
+        "bodyConstructionReached": true,
+        "immediateKeyError": null
+      }
+    },
+    {
+      "status": 403,
+      "bodyHex": "088300",
+      "initialRequest": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token"
+        },
+        "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "bodyReadCount": 1,
+      "keyErrors": [
+        {
+          "job": "rejected",
+          "code": 5
+        },
+        {
+          "job": "pendingPost",
+          "code": 5
+        }
+      ],
+      "getCompletions": [
+        {
+          "job": "pendingGet",
+          "argument": 2
+        }
+      ],
+      "removedJobs": [
+        "rejected"
+      ],
+      "ownerCallback": {
+        "invoke": "0x1004bf384",
+        "delayMilliseconds": 0
+      },
+      "clientDisabled": true,
+      "remainingWeakEntries": 0,
+      "nextPostAdmission": {
+        "bodyConstructionReached": false,
+        "immediateKeyError": 5
+      }
+    }
+  ],
+  "errorLayout": {
+    "constructor": "0x1004d732c",
+    "parseFromArray": "0x101fcaf94",
+    "cases": [
+      {
+        "inputHex": "0800",
+        "scalarAt18Hex": 0,
+        "originalSerialization": {
+          "size": 0,
+          "hex": "",
+          "sizeProcedure": "0x1004d7520",
+          "serializeProcedure": "0x1004d7404"
+        }
+      },
+      {
+        "inputHex": "0803",
+        "scalarAt18Hex": 3,
+        "originalSerialization": {
+          "size": 2,
+          "hex": "0803",
+          "sizeProcedure": "0x1004d7520",
+          "serializeProcedure": "0x1004d7404"
+        }
+      },
+      {
+        "inputHex": "0804",
+        "scalarAt18Hex": 4,
+        "originalSerialization": {
+          "size": 2,
+          "hex": "0804",
+          "sizeProcedure": "0x1004d7520",
+          "serializeProcedure": "0x1004d7404"
+        }
+      }
+    ]
+  },
+  "substitutions": [
+    "Explicit response status/body and high-count live standard weak-reference controls; an empty weak entry is also supplied.",
+    "Original error-message constructor/parser and vector removal/clear execute. Standard memory/allocation/string and positive weak-lock/weak-release primitives are supplied.",
+    "Key and GET callbacks record arguments; original zero-delay owner callback is retained and manually invoked offline, without a wall-clock timer.",
+    "Original initial body and HTTP producer supply outgoing fields; no Dart output supplies expectations.",
+    "The next POST supplies an opaque clock and stops at the original disabled error-job constructor or enabled body constructor."
+  ],
+  "limits": [
+    "The next POST admission is executed only through its explicit constructor boundary, not a complete second outgoing request.",
+    "No live account, session/re-enable event, complete three-client factory or runtime binding is executed.",
+    "No server rejection, license key, HTTP, profile or original cache is accessed."
+  ]
+}

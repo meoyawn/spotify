@@ -1,0 +1,68 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "method": "Original ordinary music source -> raw interactivity -> original request body.\n\nThe complete unchanged proprietary source producer executes with a synthetic\n20-byte music identity. Its injected request interface captures arguments and\nstops before dispatch. The original body producer/writer then uses those actual\ncaptured arguments. There is no account, original profile, key or network.\n",
+  "sourceProducer": "0x100a41748",
+  "sourceVariantTable": "0x10259f560",
+  "music20Converter": "0x100a423cc",
+  "rawInputInstruction": "0x100a419b0: mov w2,#0",
+  "requestInterfaceCall": "0x100a419b4: owner+0x18 virtual+0x10",
+  "bodyProducer": "0x10048c604",
+  "sizeProcedure": "0x1004d7164",
+  "serializeProcedure": "0x1004d6d40",
+  "knownPrefetchSource": "0x1005b6524 / call0x1005b6a48 literal raw2",
+  "ranges": [
+    {
+      "start": "0x100a41748",
+      "endExclusive": "0x100a419b8",
+      "sha256": "a1df5639941c707000fe45ffcbee3d37bd26d5d5e7da23547a027be653bc54dc"
+    },
+    {
+      "start": "0x100a423cc",
+      "endExclusive": "0x100a423e8",
+      "sha256": "e7de84a3d87b6c3d740189e5d48b2863bd3bf2f74d7215495725e055c96b4797"
+    }
+  ],
+  "executedSourceInstructionCount": 154,
+  "executedSourceInstructionSha256": "e385e5051ecf44997ec3414b72425c6846cfd25c28e0854d28ab1568962a1132",
+  "substitutions": [
+    "Synthetic explicit source variant0 with20 identity bytes; empty optional input and opaque observer storage.",
+    "Injected key-request interface only records its supplied identity/raw interactivity and stops. Its concrete service-registry binding is not executed.",
+    "Inherited standard allocation/libc/libc++ memory providers; original source variant conversion and copies execute unchanged.",
+    "Original body producer uses explicit synthetic Unix-seconds clock and empty cache identity; original compiled protobuf size/writer executes."
+  ],
+  "limits": [
+    "Proves this ordinary source music20 branch passes raw0, which original body producer maps to wire field4=1. Prefetch raw2 maps to3.",
+    "Does not prove every foreground queue path reaches this source, actual installed requester binding, account entitlements, HTTP429 cause, or safe remote retry time.",
+    "Raw1 metadata caller10072697c is a separate producer scope and is not relabeled as ordinary foreground."
+  ],
+  "cases": [
+    {
+      "name": "ordinary sequential music identity",
+      "inputFileIdHex": "000102030405060708090a0b0c0d0e0f10111213",
+      "observed": {
+        "nativeInteractivity": 0,
+        "sourceKind": 0,
+        "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213"
+      },
+      "cacheId": "",
+      "timestampSeconds": 1700000000,
+      "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+      "bodySha256": "a64445eb99e041399b5923265873f517b94a245419999e61656cb4af0cfacde7",
+      "comparisonPrefetchBodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200328013080e2cfaa06"
+    },
+    {
+      "name": "ordinary zero music identity",
+      "inputFileIdHex": "0000000000000000000000000000000000000000",
+      "observed": {
+        "nativeInteractivity": 0,
+        "sourceKind": 0,
+        "fileIdHex": "0000000000000000000000000000000000000000"
+      },
+      "cacheId": "",
+      "timestampSeconds": 1700000000,
+      "bodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200128013080e2cfaa06",
+      "bodySha256": "a64445eb99e041399b5923265873f517b94a245419999e61656cb4af0cfacde7",
+      "comparisonPrefetchBodyHex": "0805121002a266c4cdd3d08b5e0f13eaac0f7824200328013080e2cfaa06"
+    }
+  ]
+}

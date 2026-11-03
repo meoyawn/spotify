@@ -1,0 +1,47 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: 4b816c592148a6616ceb611643fa52514eed1da76c78064ad63ab8ec3738fa4a
+
+syntax = "proto3";
+
+package spotify.connectstate;
+
+import "connect.proto";
+
+option java_package = "com.spotify.connectstate.model";
+
+option optimize_for = CODE_SIZE;
+
+message PutStateRequestWrapper {
+  string device_id = 1;
+
+  string connection_id = 2;
+
+  bool ignore_response = 3;
+
+  .spotify.connectstate.PutStateRequest put_state_request = 4;
+
+  optional bool wake_devices = 5;
+}
+
+message SetDeviceInactiveRequest {
+  string device_id = 1;
+
+  optional bool notify_others = 2;
+
+  uint64 client_side_timestamp = 3;
+}
+
+message SetDoDoRequest {
+  string dodo1 = 1;
+
+  string dodo2 = 2;
+}
+
+message UpdateLocalDevicesRequest {
+  string reporting_device_id = 1 [json_name = "reporting_device_id"];
+
+  repeated .spotify.connectstate.LocalDevice local_devices = 2 [json_name = "local_devices"];
+}
+
+message UpdateLocalDevicesResponse {
+}

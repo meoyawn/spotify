@@ -1,0 +1,214 @@
+{
+  "original": {
+    "path": "reverse-engineering/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+    "sha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+    "spotifyVersion": "1.3.6.1921"
+  },
+  "rea": {
+    "evidenceId": "ev_cedc5b1bef8777d31d27d67405bbe9492fee1ec4268240f033d93610b144a954",
+    "subject": {
+      "name": "playlist-keyboard-rea-target",
+      "digest": {
+        "sha256": "cb181df365b503898cbbcba7a677a7d56a87fdba6ee9379d4001dfc152a46ff4"
+      },
+      "local_path": "/Users/fixture/Developer/spotify/.local/playlist-keyboard-rea-target",
+      "format": "directory",
+      "architecture": null
+    },
+    "provider": {
+      "id": "rea-javascript-application",
+      "name": "REA JavaScript application analyzer",
+      "version": "1"
+    }
+  },
+  "ranges": [
+    {
+      "module": "47603",
+      "offsetBytes": 1804955,
+      "lengthBytes": 1617,
+      "sha256": "dd2c1b70150cfa9d61d7f6c5859fd3f3c8ed43f940e42d5744f2cfbea0ef8a2a"
+    },
+    {
+      "module": "93204",
+      "offsetBytes": 1725330,
+      "lengthBytes": 3386,
+      "sha256": "56a97d6e5cdf9fbe888bd04c8626e84cf949d376a6d71570af9cfcab0f312d75"
+    },
+    {
+      "module": "22483",
+      "offsetBytes": 4024781,
+      "lengthBytes": 1344,
+      "sha256": "0aba363767b2dddd11b14e1509f1ce23630e9a204f1d00090a9007eab6b64353"
+    },
+    {
+      "module": "74228",
+      "offsetBytes": 1817649,
+      "lengthBytes": 1606,
+      "sha256": "bb4bd999cd32eb0d91255f01e1c7d341edf5999273cc6f598975c28c61b158f4"
+    },
+    {
+      "module": "60506",
+      "offsetBytes": 1820462,
+      "lengthBytes": 4332,
+      "sha256": "a43b618f9561b34f09dcbfb884c0da9298978d0e341cb4131a23a6e5b0d83384"
+    },
+    {
+      "module": "71983",
+      "offsetBytes": 4023505,
+      "lengthBytes": 311,
+      "sha256": "473a2cc9b46f69eed4405bc0522595403bd30acecf4b2898c0f6ec840c0419ea"
+    }
+  ],
+  "executedModules": [
+    "47603",
+    "93204",
+    "22483"
+  ],
+  "execution": {
+    "cases": [
+      {
+        "name": "Down selects the next row",
+        "initialIndex": 1,
+        "events": [
+          {
+            "key": "ArrowDown"
+          }
+        ],
+        "selectMode": false,
+        "withinRow": true,
+        "afterEvents": [
+          [
+            2
+          ]
+        ],
+        "playCalls": 0
+      },
+      {
+        "name": "Up selects the previous row",
+        "initialIndex": 2,
+        "events": [
+          {
+            "key": "ArrowUp"
+          }
+        ],
+        "selectMode": false,
+        "withinRow": true,
+        "afterEvents": [
+          [
+            1
+          ]
+        ],
+        "playCalls": 0
+      },
+      {
+        "name": "Repeats move one row per event",
+        "initialIndex": 0,
+        "events": [
+          {
+            "key": "ArrowDown"
+          },
+          {
+            "key": "ArrowDown",
+            "repeat": true
+          }
+        ],
+        "selectMode": false,
+        "withinRow": true,
+        "afterEvents": [
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "playCalls": 0
+      },
+      {
+        "name": "Other keys retain selection",
+        "initialIndex": 1,
+        "events": [
+          {
+            "key": "ArrowLeft"
+          }
+        ],
+        "selectMode": false,
+        "withinRow": true,
+        "afterEvents": [
+          [
+            1
+          ]
+        ],
+        "playCalls": 0
+      },
+      {
+        "name": "Events outside the row are ignored",
+        "initialIndex": 1,
+        "events": [
+          {
+            "key": "ArrowDown"
+          }
+        ],
+        "selectMode": false,
+        "withinRow": false,
+        "afterEvents": [
+          [
+            1
+          ]
+        ],
+        "playCalls": 0
+      },
+      {
+        "name": "Select mode suppresses plain arrow selection",
+        "initialIndex": 1,
+        "events": [
+          {
+            "key": "ArrowDown"
+          }
+        ],
+        "selectMode": true,
+        "withinRow": true,
+        "afterEvents": [
+          [
+            1
+          ]
+        ],
+        "playCalls": 0
+      },
+      {
+        "name": "Shift extends the original range selection",
+        "initialIndex": 1,
+        "events": [
+          {
+            "key": "ArrowDown",
+            "shiftKey": true
+          }
+        ],
+        "selectMode": false,
+        "withinRow": true,
+        "afterEvents": [
+          [
+            1,
+            2
+          ]
+        ],
+        "playCalls": 0
+      }
+    ],
+    "focusCalls": [
+      {
+        "preventScroll": false
+      },
+      {
+        "preventScroll": true
+      }
+    ]
+  },
+  "substitutions": [
+    "Node.js standard vm executes exact original factories; no Dart selection implementation supplies expected values.",
+    "React refs and callbacks execute synchronously; state setters and effects are inert. JSX returns records.",
+    "Synthetic cached track records and element containment replace the DOM and data source. DOM focus records its options.",
+    "Player settings disable playOnTap. Context-menu dependencies are inert. No network or application bootstrap runs."
+  ],
+  "scope": "Original row click, Up/Down selection, repeat handling, target containment, select-mode guard, Shift range extension and default DOM focus options. Flutter ports plain single-row navigation; it retains selection at loaded bounds and skips unsupported/disc rows. Original multi-selection, whole-grid virtualization and exact browser scroll geometry are outside this proof."
+}

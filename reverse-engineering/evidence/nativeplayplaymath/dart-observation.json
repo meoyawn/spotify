@@ -1,0 +1,905 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "originalEntry": "0x10048de68",
+  "observationStop": "0x10048ef24",
+  "byteOrder": "Exact little-endian memory bytes of four original32-bit words atFP-0x70",
+  "independentOriginalCases": 134,
+  "defaultTableCases": 132,
+  "explicitPointerOverrideCases": 2,
+  "mismatches": [],
+  "result": "All observed original intermediates match",
+  "scope": "Compare the static Dart lift with independently executed original routines.\n\nThis is a bounded offline REA observation. All inputs are synthetic; expected\nbytes come from the original arm64 instructions, never from Dart. It observes\nthe deterministic 16-byte intermediate only, not an AES key, HTTP compatibility,\nor the native protected-result interpretation. No account or network runs.\n",
+  "nativeObservationSha256": "a8b1ef5fc3c1cdbfdeb05590f21abc5cffcf17dec76e55ffac07d4f44b2913ff",
+  "dartSourceSha256": {
+    "lib/playback/native_playplay_unwrap.dart": "cf3e71d21e060b5d107cb57ccee29425b5c20ef587820debc6b1842a3b786b14",
+    "lib/playback/native_playplay_math/blocks_10048e.dart": "c39f6c91ce1ee79932ba8e81e18c2b4275d3ff290b10bbbb89f06519534a2354",
+    "lib/playback/native_playplay_math/blocks_10048f.dart": "825422a4f890322b077992c05e6542c1d84c0127c116c37234e16cc1129b520d",
+    "lib/playback/native_playplay_math/blocks_100490.dart": "25565646c509da79d98872470147ddc34a664fb4574def826a1518d8154dfc21",
+    "lib/playback/native_playplay_math/blocks_100491.dart": "ca2f5c2786308d2cfe3f4981b50aa26ca6e916ca2d265b1784309265c09f54b8",
+    "lib/playback/native_playplay_math/blocks_100492.dart": "2d0f54cbef340faaf7bbdb98ea159ef106214fcc49cbdca7af980b9f00df5b4b",
+    "lib/playback/native_playplay_math/blocks_100493.dart": "21ea60ef1aa88f90882bc33e39cd9ffc3260678f1113205c534525916f758cfd",
+    "lib/playback/native_playplay_math/blocks_100494.dart": "95f89f80b475154f2f386be2f2772dc6cf072cddddfa2cca54786a43f2442ac3",
+    "lib/playback/native_playplay_math/blocks_100495.dart": "4f350deaeffe34b9dd8a15f6ded2142f331cc3235c7aebd7d0f25ff0344b042d",
+    "lib/playback/native_playplay_math/blocks_100496.dart": "da10d2466a8c88098861de5b5dd10f9bf058687a5a27a1e71ed26172cdf3db4c",
+    "lib/playback/native_playplay_math/blocks_100497.dart": "54d73b3534480a4d5ea5eb3ea493d5c7425663fff18e9244714e8452608d094d",
+    "lib/playback/native_playplay_math/blocks_100498.dart": "ddd37fe55d0aadda65b367af32b5bf29a281b2ef9b2c56f4bb66c57392779874",
+    "lib/playback/native_playplay_math/blocks_100499.dart": "38a088baf5f96658add7c523e754aceb4c56d787e536a161eb947bfdcb399dba",
+    "lib/playback/native_playplay_math/blocks_10049a.dart": "1022b3e15cf7e91e87d52a16eee2fc40a8a5077b4b86814ca375cde5037ec554",
+    "lib/playback/native_playplay_math/blocks_10049b.dart": "05d08e8da25bace07c439a84ba78e6c0010e39fbc41e54f5f8070b7dee8cf824",
+    "lib/playback/native_playplay_math/blocks_10049c.dart": "54a0beed6d9a71b1df64eaf060f606c8b4796969f00cd4808e8d123d14ef1207",
+    "lib/playback/native_playplay_math/blocks_10049d.dart": "37082de8dee011f5f6c700d752f813c0ecc7d382a9edf3343817468cd2a78f7c",
+    "lib/playback/native_playplay_math/blocks_10049e.dart": "5910806de8cdf5163fbed0f259ecc07af398644bec53a5727aca5a07b046ecd9",
+    "lib/playback/native_playplay_math/blocks_10049f.dart": "4c56452f9fe2b4c065b029a22d3fb332139a026175fa2372ea03b00726f12654",
+    "lib/playback/native_playplay_math/blocks_1004a0.dart": "2d05d924d93e427f45a46d167ea47c0fdf66e90f3129736a3cedc9c4f8945c21",
+    "lib/playback/native_playplay_math/blocks_1004a1.dart": "e62f2ea92e767d6010bf11f281255d25f2964c3f00f9316a64467cc5626c424e",
+    "lib/playback/native_playplay_math/blocks_1004a2.dart": "f3990a5ce7bef0dc3acef73bf6207f7127325855d58a2295a316cc26f84b2932",
+    "lib/playback/native_playplay_math/blocks_1004a3.dart": "be18a18e7b2026ecb28f77f2892244562a3071a803113a1fd9ab6c9c6f30bd60",
+    "lib/playback/native_playplay_math/blocks_1004a4.dart": "55d7937ea85aff722564e9698451beae309474ca80d979454b62728a3c237aa3",
+    "lib/playback/native_playplay_math/blocks_1004a5.dart": "dd2367262f8995988c93bd8cd39e5576e7fdcd56634a628f112120c24678f868",
+    "lib/playback/native_playplay_math/blocks_1004a6.dart": "539d2e5f322a9bb5841f2736fcc5c6a7aa9422495d7df6f44326a353b792d1de",
+    "lib/playback/native_playplay_math/blocks_1004a7.dart": "a537a1f5b6076ba3e9cb231e177d0b28ac4bfb6ff57da584c8939c38a8455211",
+    "lib/playback/native_playplay_math/blocks_1004a8.dart": "069e4c46e6d207829a8073d54015722b967ca6a34fa625beb8b5e0df673a650e",
+    "lib/playback/native_playplay_math/blocks_1004a9.dart": "acc096368fabd5ea1db16bbbea972d82cb7d6616bf4ee2d76084588dfef1fd99",
+    "lib/playback/native_playplay_math/blocks_1004aa.dart": "0a1a536f86de3e8710d9a140f53eab3a15cfd788eef8e8c7dc416bb405f7b7ed",
+    "lib/playback/native_playplay_math/blocks_1004ab.dart": "074de7efa25feb451f4f28fe8c655af3a6a69554b6c4a9cebd4aa36b3c837f10",
+    "lib/playback/native_playplay_math/blocks_1004ac.dart": "6bd6d1730860ae40dfd92033ae800ef1970a36753570cfa0e99cebc7b005a4d1",
+    "lib/playback/native_playplay_math/blocks_1004ad.dart": "059fc24790db98383432adbc9689ba8aa5f693bbe149fc4286b24050545c0625",
+    "lib/playback/native_playplay_math/blocks_1004ae.dart": "3395330d3ab7f826b5a5010f5b70402b34c9ea1752c8d8a91dd1ca014d60478b",
+    "lib/playback/native_playplay_math/blocks_1004af.dart": "828009b0ed5bab9159424aad9ad38eff3f208a9103e68735a15b7e085c0e2f51",
+    "lib/playback/native_playplay_math/blocks_1004b0.dart": "70cb612ed1ad51cf5327d16f5409ca451ea4c4f03f96012efad867ff18ab9513",
+    "lib/playback/native_playplay_math/blocks_1004b1.dart": "fd54ada07398938d769acdc536a13053588b2386d748524fcab1650e82ee3346",
+    "lib/playback/native_playplay_math/blocks_1004b2.dart": "4ceb60e1ff84ffab85d7283a831ea892a3b257ab0b81eca5f78e6f95f41d2ddb",
+    "lib/playback/native_playplay_math/blocks_1004b3.dart": "8251553447861e56c2cb4b388bd9fc7e092769871f318ba2a713af2ea41de98b",
+    "lib/playback/native_playplay_math/blocks_1004b4.dart": "436519958cb2f9f323f7b3e80ebf55f115a378b1426fa98d08e73985945a8604",
+    "lib/playback/native_playplay_math/blocks_1004b5.dart": "7bd5fc9e8d0fe49a57880b1f6867dcbc3c531978503ad7a1f0958be3e1eb3705",
+    "lib/playback/native_playplay_math/blocks_1004b6.dart": "e6697e4955df899958f9b7c6e883988df73aad0e645d052383b7b8d0b66fcac1",
+    "lib/playback/native_playplay_math/blocks_1004b7.dart": "80372b4a1c30dbfc648708e91167371699b8b544e7ac975be076a478b3d51dc4",
+    "lib/playback/native_playplay_math/blocks_1004b8.dart": "cf7fa8e261e34b3f8334ff4621cc0e777e34d398ac6cfdc919358e78c2423fcc",
+    "lib/playback/native_playplay_math/blocks_1004b9.dart": "bf07a0748f2f95102427cd37c4c0809004f7258d0de19e315443e8151346385b",
+    "lib/playback/native_playplay_math/blocks_1004ba.dart": "25e88e14d6c79eb3352e1181f7bf623af635c14047b57db8f5ac51c3dd36829b",
+    "lib/playback/native_playplay_math/blocks_1004bb.dart": "b7d802f990511a233e5dbb5d2c4439c0de561a7f5b24afb26ce9010e3dc6352c",
+    "lib/playback/native_playplay_math/blocks_1004bc.dart": "6abfd09a1fccf08e00fbe76c025ee66b74729c7a7ba1f9568b1e06aa969d6eaa",
+    "lib/playback/native_playplay_math/blocks_1004bf.dart": "d123b5559e603cb66647355f50dbdeecbbf217472e144bb4cde956e29a40816e",
+    "lib/playback/native_playplay_math/blocks_1004c0.dart": "7abf4501223e6f17157867e889fcc8addb4b28d3c7bce2517175713cf3f1cd90",
+    "lib/playback/native_playplay_math/blocks_1004c1.dart": "854f3e6c739a37be678429d7183b9a6470a432118d656021a91c0666f1fdcb68",
+    "lib/playback/native_playplay_math/blocks_1004c2.dart": "a0931c8f4b5c399021fd6202b32a4ba67aaf9dfae65411e971e29c4c3653a84b",
+    "lib/playback/native_playplay_math/blocks_1004c3.dart": "6595931055b91f1562df46d8a50e71c6a4ca0f7561daabbbee5c9f75a0466f21",
+    "lib/playback/native_playplay_math/blocks_1004c4.dart": "06b61a61d2791174137124534468d4e8560c667293aca2763916dd10b59fdc45",
+    "lib/playback/native_playplay_math/blocks_1004c5.dart": "b8c0aca24a35261925258fd7c3b0c4cf2794497f5256d8f0d16e1422d0d82437",
+    "lib/playback/native_playplay_math/blocks_1004c6.dart": "2b6fa015c56800dd9e4c01e00ba7be6828132bc968583c278f639fe0a73496f7",
+    "lib/playback/native_playplay_math/blocks_1004c7.dart": "dfe99cafa38e43bcecd58e134f1d56492c7bcd1a7ebe13f303900877f63973d4",
+    "lib/playback/native_playplay_math/blocks_1004c8.dart": "d6212c66841f8c031ab633f448603b9863e47e306a29845c42fe9142a6d018de",
+    "lib/playback/native_playplay_math/blocks_1004c9.dart": "3cd646be2e2d83a528d5734f6faf6c9b8f20d752a49714fd5333db600c5a0bbb",
+    "lib/playback/native_playplay_math/blocks_1004ca.dart": "cc3ca7be26b8ff45ea2fef833d9e51a49fbed24ce0d0dcef2d4d821fddb34743",
+    "lib/playback/native_playplay_math/blocks_1004cb.dart": "2af2dced8700bbfbd9097ecc95b9fe0f9d707b9a6d829e4f328497ad41535241",
+    "lib/playback/native_playplay_math/blocks_1004cc.dart": "5731af532c02de2cf94da251e9fcc392bcc2ddba988a629b2a29a1232eee0926",
+    "lib/playback/native_playplay_math/blocks_1004cd.dart": "b351e5eac2a27248798ab425934ba2aada80fc775000c938cfc2fefef5866b5b",
+    "lib/playback/native_playplay_math/blocks_1004ce.dart": "dae08f253b44c94d9e078598d52eac97cceff2007a5f9718e8a141455b4020c7",
+    "lib/playback/native_playplay_math/blocks_1004cf.dart": "a639c5666e916130e91673d0bc044a960cb637838b70a695a2be8bf938978353",
+    "lib/playback/native_playplay_math/blocks_1004d0.dart": "0bcd7438a363b43d2e7468b7b6872580d8c1fb2dee7e96f28587b340294f37c7",
+    "lib/playback/native_playplay_math/blocks_1004d1.dart": "85cfae8a60598038b66654ff63f4aaa70ee66e85340a3c20f12c4de6adb74557",
+    "lib/playback/native_playplay_math/blocks_1004d2.dart": "a91cbaaad0c35664692589c8c41bd3a5bdbd41ad8edfa81ec2eb4de7d494c3e7",
+    "lib/playback/native_playplay_math/blocks_1004d3.dart": "a68dc0fa463523998c57a4f8da0e699f83e1420a695ebe910425dd0e741fc729",
+    "lib/playback/native_playplay_math/blocks_1004d4.dart": "e0826cf3e648c77b45e954ad75f772f0410254c3663924e875b3778a426c0ed8",
+    "lib/playback/native_playplay_math/blocks_1004d5.dart": "8452b8446bb25d78810c9f44a773dea111ff13fd639fbf531686df58fc9d620f",
+    "lib/playback/native_playplay_math/blocks_1004d6.dart": "1bab395aafdf1e2daab5d651b7519d6ae19323d09ecf2d82b8ff19205cb6ab56",
+    "lib/playback/native_playplay_math/blocks_101f78.dart": "0f0b907379cbb6efc3006687f28a25b3acae3be33ae7f9e2ed47693018fd8950",
+    "lib/playback/native_playplay_math/data.dart": "2f1c6e5b8d904960e7c23aee33179349e1d5ff7398a5658c0b08e57b158a4c07",
+    "lib/playback/native_playplay_math/dispatch.dart": "c0e95d6371d70b6bb2bde9d7ef04200b2723bc3d5ea3c42c0c38f07f9ae862d2"
+  },
+  "cases": [
+    {
+      "inputHex": "00000000000000000000000000000000",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "d7373ae7b3f32050bc4e61820748cd9e",
+      "dartIntermediateHex": "d7373ae7b3f32050bc4e61820748cd9e"
+    },
+    {
+      "inputHex": "000102030405060708090a0b0c0d0e0f",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "ac1327a2a3f229312fe7619bd3393aee",
+      "dartIntermediateHex": "ac1327a2a3f229312fe7619bd3393aee"
+    },
+    {
+      "inputHex": "fffefdfcfbfaf9f8f7f6f5f4f3f2f1f0",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "de0c929166282b09cf0a6ce0d3025649",
+      "dartIntermediateHex": "de0c929166282b09cf0a6ce0d3025649"
+    },
+    {
+      "inputHex": "a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "f557189b57291742876c3718a011998c",
+      "dartIntermediateHex": "f557189b57291742876c3718a011998c"
+    },
+    {
+      "inputHex": "1ed7e0630c4ca99121d33e1e88040108",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "03a7296d5164ea7566ef045f43334305",
+      "dartIntermediateHex": "03a7296d5164ea7566ef045f43334305"
+    },
+    {
+      "inputHex": "7660a59bd6c369e4073dbb57de4fa8cf",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "b4a9559871255a766ed76cbf85869521",
+      "dartIntermediateHex": "b4a9559871255a766ed76cbf85869521"
+    },
+    {
+      "inputHex": "637f9cbb5de96b5bbe780feda9e0c8bd",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "2086f2a808ced87b53b3d7e4ef12eccf",
+      "dartIntermediateHex": "2086f2a808ced87b53b3d7e4ef12eccf"
+    },
+    {
+      "inputHex": "80c16392e1969c7219b0ebf7d3dc20fa",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "fff5ff6029fcfd8df9266c9184b12c08",
+      "dartIntermediateHex": "fff5ff6029fcfd8df9266c9184b12c08"
+    },
+    {
+      "inputHex": "4492e95b3c80741600437858298e9106",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "589bdafea6fba1c102216f4a0ab1ecf3",
+      "dartIntermediateHex": "589bdafea6fba1c102216f4a0ab1ecf3"
+    },
+    {
+      "inputHex": "530f6b66f5f51180ea7103c6070d7b27",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "03c0b2824956f6f6b601b874ea0f3f10",
+      "dartIntermediateHex": "03c0b2824956f6f6b601b874ea0f3f10"
+    },
+    {
+      "inputHex": "617d52d884333312957732f2475cc678",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "c0d05ade4593c1513fb6a8e01ce08e56",
+      "dartIntermediateHex": "c0d05ade4593c1513fb6a8e01ce08e56"
+    },
+    {
+      "inputHex": "e91e4a97b7954bbd62e5ab6d1d22758c",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "9915f8df12c988b663c0926f8da5c306",
+      "dartIntermediateHex": "9915f8df12c988b663c0926f8da5c306"
+    },
+    {
+      "inputHex": "39b4f0b51e9a97addd7ec01c1e87369e",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "e7fe3894cad5f0bead6d46bd6e1493d2",
+      "dartIntermediateHex": "e7fe3894cad5f0bead6d46bd6e1493d2"
+    },
+    {
+      "inputHex": "c255de0ec27ceaf87630a053f0ed8826",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "0f09a36c4ccc971151de088bd7c99bc7",
+      "dartIntermediateHex": "0f09a36c4ccc971151de088bd7c99bc7"
+    },
+    {
+      "inputHex": "9675061cec2e304147cdda7943e11574",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "80cc32f2cee626797119b9470eda6a84",
+      "dartIntermediateHex": "80cc32f2cee626797119b9470eda6a84"
+    },
+    {
+      "inputHex": "231b9284b1e61be51072761dca763010",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "35a3f300bdcfe41027852320f5159c51",
+      "dartIntermediateHex": "35a3f300bdcfe41027852320f5159c51"
+    },
+    {
+      "inputHex": "f13d4fe8f2a05dccfb9d4e6e839be6d2",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "797e0f33604373aa337ec8d6385554e9",
+      "dartIntermediateHex": "797e0f33604373aa337ec8d6385554e9"
+    },
+    {
+      "inputHex": "b60c51bf33287630d736f449f96dd2b9",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "9b7f3905e2063329a824bad9a5b1ae4b",
+      "dartIntermediateHex": "9b7f3905e2063329a824bad9a5b1ae4b"
+    },
+    {
+      "inputHex": "c2ddd68694d0839aa14dfac58abd3210",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "de3021e1b49da7e65bcdd97138087f21",
+      "dartIntermediateHex": "de3021e1b49da7e65bcdd97138087f21"
+    },
+    {
+      "inputHex": "e6474d04a26efa96503a965bb92cda28",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "d7ff64d92d143410b4a93059c292a764",
+      "dartIntermediateHex": "d7ff64d92d143410b4a93059c292a764"
+    },
+    {
+      "inputHex": "054f5fd66391930f6b0e2007d609fee3",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "a61ee5505f54b2c3f9376d156891f235",
+      "dartIntermediateHex": "a61ee5505f54b2c3f9376d156891f235"
+    },
+    {
+      "inputHex": "2b1032840576587f73ad4901d5c15e0c",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "c253883d346f009c3991fc896756283e",
+      "dartIntermediateHex": "c253883d346f009c3991fc896756283e"
+    },
+    {
+      "inputHex": "bc5dcf2ab77873704a8f5c8def974c55",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "96fbecfd1349d1ea845546db1f42b96d",
+      "dartIntermediateHex": "96fbecfd1349d1ea845546db1f42b96d"
+    },
+    {
+      "inputHex": "0ee339777041646bac01da3f60ed4580",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "8cb896c1954b4d88308b89b3458bdbc6",
+      "dartIntermediateHex": "8cb896c1954b4d88308b89b3458bdbc6"
+    },
+    {
+      "inputHex": "a3a16e3b143378bce4593369d1c73574",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "7acd6e020e53d6e51e5a268ad5f65f1c",
+      "dartIntermediateHex": "7acd6e020e53d6e51e5a268ad5f65f1c"
+    },
+    {
+      "inputHex": "b301096169ccee83e4e8e372f1c01e7f",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "ef8fcb86f3ea73f7d55305fcdd8579de",
+      "dartIntermediateHex": "ef8fcb86f3ea73f7d55305fcdd8579de"
+    },
+    {
+      "inputHex": "51f5ed07d3d34ea7da1cdd2ffcd34fe0",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "371c4caa1e8c66d8a79384803110dba6",
+      "dartIntermediateHex": "371c4caa1e8c66d8a79384803110dba6"
+    },
+    {
+      "inputHex": "6e90400e4917e8b50269c46c331dc7a0",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "df8608cf731477f1c25324f5a4dfb70c",
+      "dartIntermediateHex": "df8608cf731477f1c25324f5a4dfb70c"
+    },
+    {
+      "inputHex": "8ed3dab1f9da84e73669104ed017b8bc",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "3c99356ec7830d4b3e5ec4a128882bfd",
+      "dartIntermediateHex": "3c99356ec7830d4b3e5ec4a128882bfd"
+    },
+    {
+      "inputHex": "4e119a4d2a9f285586dab37c28e88099",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "64eec16d42e84b3c56d64b2f3cdfcd8a",
+      "dartIntermediateHex": "64eec16d42e84b3c56d64b2f3cdfcd8a"
+    },
+    {
+      "inputHex": "dc0dcbe1c9e265c6a92ac962b7fd7c01",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "f2561452bbd2929a94da2a69aa01be68",
+      "dartIntermediateHex": "f2561452bbd2929a94da2a69aa01be68"
+    },
+    {
+      "inputHex": "a892005c0c3acc217af73c3274fd75c1",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "4649931b0d573c08d6e72c21d4f37977",
+      "dartIntermediateHex": "4649931b0d573c08d6e72c21d4f37977"
+    },
+    {
+      "inputHex": "307bdfaf26598d09e325078f25ae3585",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "00e3d5296fdee38fd57ee05b79b81363",
+      "dartIntermediateHex": "00e3d5296fdee38fd57ee05b79b81363"
+    },
+    {
+      "inputHex": "64d8bd275f00e97fc54deaea7528344c",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "e1e91ddc2ad44590d47e13feb1bb9326",
+      "dartIntermediateHex": "e1e91ddc2ad44590d47e13feb1bb9326"
+    },
+    {
+      "inputHex": "0da86356ee988dbfa1cd1e3ede87a267",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "6807b1008047f16d1abbdc4b151f6109",
+      "dartIntermediateHex": "6807b1008047f16d1abbdc4b151f6109"
+    },
+    {
+      "inputHex": "f1443698f03cc949f3be8e65b26edada",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "7e0600552af2018938009e21fa029ff1",
+      "dartIntermediateHex": "7e0600552af2018938009e21fa029ff1"
+    },
+    {
+      "inputHex": "de8349a523cbd5747a73f6a597e0a64d",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "762a85675393d63d6bc3b5e29fbae627",
+      "dartIntermediateHex": "762a85675393d63d6bc3b5e29fbae627"
+    },
+    {
+      "inputHex": "c98f274e5b0620ea1222b42883d3225f",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "1d5cd139f45cd5778daf339ee6262e6f",
+      "dartIntermediateHex": "1d5cd139f45cd5778daf339ee6262e6f"
+    },
+    {
+      "inputHex": "01e00ffac1c0595d5144157b6307c14c",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "f494b91b70f16c96c68278b31e1f2d6c",
+      "dartIntermediateHex": "f494b91b70f16c96c68278b31e1f2d6c"
+    },
+    {
+      "inputHex": "0c2ecc1e77560153fa0be62016fb0ae2",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "0dfd609cd3bfce6a2f2039e4213f07ac",
+      "dartIntermediateHex": "0dfd609cd3bfce6a2f2039e4213f07ac"
+    },
+    {
+      "inputHex": "6a088adc7f307a0dade98a563d3d0656",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "baf8fa1753076e4aaa552f3b29d88425",
+      "dartIntermediateHex": "baf8fa1753076e4aaa552f3b29d88425"
+    },
+    {
+      "inputHex": "bb4677f0be22f240f44b27bff866846e",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "670c6246e00df6c7c9781184767fb569",
+      "dartIntermediateHex": "670c6246e00df6c7c9781184767fb569"
+    },
+    {
+      "inputHex": "33f97a83bb29024ca3e61a8a23e9124d",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "c8982d2d76935e9443110b58fa644af7",
+      "dartIntermediateHex": "c8982d2d76935e9443110b58fa644af7"
+    },
+    {
+      "inputHex": "404ddacb3f5bf0a73a27fe560d30b7a9",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "50693925bfc17d8617b1b7f2d381c55b",
+      "dartIntermediateHex": "50693925bfc17d8617b1b7f2d381c55b"
+    },
+    {
+      "inputHex": "2faa85416ddd3f2563881bda6968bc1f",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "f030cdf39f25675fbb3f281062f3a0e0",
+      "dartIntermediateHex": "f030cdf39f25675fbb3f281062f3a0e0"
+    },
+    {
+      "inputHex": "61a78a4d5e635942d67f1c42c34b7125",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "53a8fedca726be550628c329c7e26ab0",
+      "dartIntermediateHex": "53a8fedca726be550628c329c7e26ab0"
+    },
+    {
+      "inputHex": "b8bc6d561428ea60dc9b84784e1784d3",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "975c02aab1ce50048eb9140bb58cc65f",
+      "dartIntermediateHex": "975c02aab1ce50048eb9140bb58cc65f"
+    },
+    {
+      "inputHex": "594f8079873c0b943c528a6dfdb0baaa",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "cefffdabbcb99bcda97d6fdd2bc03e79",
+      "dartIntermediateHex": "cefffdabbcb99bcda97d6fdd2bc03e79"
+    },
+    {
+      "inputHex": "acff8ad284b0f2c3a0a48e7b2181bff6",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "61e7962fa45b48d6f4a0656d7162badc",
+      "dartIntermediateHex": "61e7962fa45b48d6f4a0656d7162badc"
+    },
+    {
+      "inputHex": "7f26e68d25ab5d9b807091313469deb8",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "433c808b5d75edede164910999326361",
+      "dartIntermediateHex": "433c808b5d75edede164910999326361"
+    },
+    {
+      "inputHex": "fdb0f67923eef98817853149de41f325",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "912a563249bf73bd3100b9cd34f9f634",
+      "dartIntermediateHex": "912a563249bf73bd3100b9cd34f9f634"
+    },
+    {
+      "inputHex": "8f96b6e7571d298cc6d7b086b824520a",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "d9f64980a6abcbfe71f7bb66ce44084b",
+      "dartIntermediateHex": "d9f64980a6abcbfe71f7bb66ce44084b"
+    },
+    {
+      "inputHex": "59b0c46ca572a862951c8e941f94e13b",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "89b71fce27f8c7bb549b7d2414e2554e",
+      "dartIntermediateHex": "89b71fce27f8c7bb549b7d2414e2554e"
+    },
+    {
+      "inputHex": "b7b39b074cc3dd63592b7a148a46db47",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "a60ae8c71f0e9520c258068ee25b1728",
+      "dartIntermediateHex": "a60ae8c71f0e9520c258068ee25b1728"
+    },
+    {
+      "inputHex": "b1ec9a96dc96665e0d50467921f53a3c",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "1cf9d132da95b7651c6eeaae94abd071",
+      "dartIntermediateHex": "1cf9d132da95b7651c6eeaae94abd071"
+    },
+    {
+      "inputHex": "7ff6a2222c9c7b965171a4bfa63b900e",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "5e6c5c92b1937bd26e7af8ceb1a8b444",
+      "dartIntermediateHex": "5e6c5c92b1937bd26e7af8ceb1a8b444"
+    },
+    {
+      "inputHex": "f639ab1f625cdf1ce7e48f78ea350e58",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "64e1d022139e39d1e1fe85d82de430b3",
+      "dartIntermediateHex": "64e1d022139e39d1e1fe85d82de430b3"
+    },
+    {
+      "inputHex": "89f96fe5a1b27ae53b9e7dbb92c6fb81",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "2cb6364f22b7547cec8cbae19b7d1f4c",
+      "dartIntermediateHex": "2cb6364f22b7547cec8cbae19b7d1f4c"
+    },
+    {
+      "inputHex": "35cba553744e2d3b738df5f517563e41",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "b2da732a66443efefbdf1bf89db7fe87",
+      "dartIntermediateHex": "b2da732a66443efefbdf1bf89db7fe87"
+    },
+    {
+      "inputHex": "d2e0ef70d95b9997f1f23e9c0e300764",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "1ceec912f61b61fa8f745154fa1754e6",
+      "dartIntermediateHex": "1ceec912f61b61fa8f745154fa1754e6"
+    },
+    {
+      "inputHex": "9bf21b9a7c1933474358f1bb91c1b28b",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "37a90bf53ae8fed5f37a114cb4876e96",
+      "dartIntermediateHex": "37a90bf53ae8fed5f37a114cb4876e96"
+    },
+    {
+      "inputHex": "7c19a982927b361b4d5f099a49213b6c",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "735b2a1a25b968493e24dcd448e06ddf",
+      "dartIntermediateHex": "735b2a1a25b968493e24dcd448e06ddf"
+    },
+    {
+      "inputHex": "d9c36c96c9233386f08fc6e12add6d56",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "4fc46dadccf53a05c1fad580fc7ebed8",
+      "dartIntermediateHex": "4fc46dadccf53a05c1fad580fc7ebed8"
+    },
+    {
+      "inputHex": "ce9a50ffccc2f7b427a39bb7356c755b",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "36dd9927e4ca9c36c91f14786f2ccdd5",
+      "dartIntermediateHex": "36dd9927e4ca9c36c91f14786f2ccdd5"
+    },
+    {
+      "inputHex": "6f930e0f2fe1f388131e69fdf730278f",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "7f3846b182ae7bfb86066a348abccf08",
+      "dartIntermediateHex": "7f3846b182ae7bfb86066a348abccf08"
+    },
+    {
+      "inputHex": "58f821f836a3cb2bf65e852cc8361993",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "ff5bf2c22e8d939bfc30aee5d549b057",
+      "dartIntermediateHex": "ff5bf2c22e8d939bfc30aee5d549b057"
+    },
+    {
+      "inputHex": "0039e25d602303b9e1d9bc8a86cd00ca",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "f98d59f03513febc7a5b78991ebe08b2",
+      "dartIntermediateHex": "f98d59f03513febc7a5b78991ebe08b2"
+    },
+    {
+      "inputHex": "5697ed67a754920714048dec702573c2",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "5c0e24bdf4f1c21b7cc8e132b0bd7d3e",
+      "dartIntermediateHex": "5c0e24bdf4f1c21b7cc8e132b0bd7d3e"
+    },
+    {
+      "inputHex": "eddf7a571b1e98721b9e21f63b8b056e",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "984e9a1cf676f1902aae0840d95cf47f",
+      "dartIntermediateHex": "984e9a1cf676f1902aae0840d95cf47f"
+    },
+    {
+      "inputHex": "4bc20cdf6d6449b7897f29f167569bd8",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "db206595ec78bf6d40d9f59f9a6cb501",
+      "dartIntermediateHex": "db206595ec78bf6d40d9f59f9a6cb501"
+    },
+    {
+      "inputHex": "face87b77fb1c7c1e726770826d4b613",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "21e567425ad690f5d9319e5588740edb",
+      "dartIntermediateHex": "21e567425ad690f5d9319e5588740edb"
+    },
+    {
+      "inputHex": "1cc8661c3942736e515542fb3038e655",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "66af29a80a9731d2cdd4365719b87703",
+      "dartIntermediateHex": "66af29a80a9731d2cdd4365719b87703"
+    },
+    {
+      "inputHex": "85c07535f13e13616531f5d607449595",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "fa109aa9c6a293e96593eeecdb603254",
+      "dartIntermediateHex": "fa109aa9c6a293e96593eeecdb603254"
+    },
+    {
+      "inputHex": "300414ee0682f48624120f8a867ef8c9",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "358b07d2a8197446bb5a2d6e1112e517",
+      "dartIntermediateHex": "358b07d2a8197446bb5a2d6e1112e517"
+    },
+    {
+      "inputHex": "29da2023fe877e47b24379b5991df92f",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "75f6f0cdd0a3a4966188335de83126a8",
+      "dartIntermediateHex": "75f6f0cdd0a3a4966188335de83126a8"
+    },
+    {
+      "inputHex": "c85fa7ad52c26e8ea7eeb715a80f25ef",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "679d25705666ca9e41a2264a75fa8ea5",
+      "dartIntermediateHex": "679d25705666ca9e41a2264a75fa8ea5"
+    },
+    {
+      "inputHex": "2000d5ba4cd6209dfd47486205754033",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "6db67c855ca98b7b034e928f151cbe1f",
+      "dartIntermediateHex": "6db67c855ca98b7b034e928f151cbe1f"
+    },
+    {
+      "inputHex": "a843391a3f9c0a247ccd3c6e271bb8b3",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "5c49ccc54fd2c1f9e5a908b015e3cd3c",
+      "dartIntermediateHex": "5c49ccc54fd2c1f9e5a908b015e3cd3c"
+    },
+    {
+      "inputHex": "4dcb08f2f862d73b667be397dda537e9",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "a7f4f25335ffa374b8e41731bbb93e69",
+      "dartIntermediateHex": "a7f4f25335ffa374b8e41731bbb93e69"
+    },
+    {
+      "inputHex": "2d76f58597864f5137aeb5dc499810e1",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "5d7e65940c9ff7940cbeeedbcdb9c4f0",
+      "dartIntermediateHex": "5d7e65940c9ff7940cbeeedbcdb9c4f0"
+    },
+    {
+      "inputHex": "24e3a16c15830d3bb9d033c76b39a40d",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "2ed455c484c133e10212720943d277a2",
+      "dartIntermediateHex": "2ed455c484c133e10212720943d277a2"
+    },
+    {
+      "inputHex": "05249112251f261f0f9c6c4208a9849f",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "96e9ca220d6669f2ed6e12c298b7cdc4",
+      "dartIntermediateHex": "96e9ca220d6669f2ed6e12c298b7cdc4"
+    },
+    {
+      "inputHex": "8fb5100da02680d5b36351f8d2796381",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "7fb57adcae7c6881f83bdf70c9f65b18",
+      "dartIntermediateHex": "7fb57adcae7c6881f83bdf70c9f65b18"
+    },
+    {
+      "inputHex": "18f02ab0ff2483f1ae8d7d3feefa9ed2",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "2c0b0740b81c94301ce6694163d29eb2",
+      "dartIntermediateHex": "2c0b0740b81c94301ce6694163d29eb2"
+    },
+    {
+      "inputHex": "c5ca794fe076125474adc2d0699f565f",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "3fd58f8c60c34ef1d476d6a2d4a8dc38",
+      "dartIntermediateHex": "3fd58f8c60c34ef1d476d6a2d4a8dc38"
+    },
+    {
+      "inputHex": "7219c10bb0bc9afc5029790c7bb155de",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "0895d0311fc55ac9310aec76d79c0f05",
+      "dartIntermediateHex": "0895d0311fc55ac9310aec76d79c0f05"
+    },
+    {
+      "inputHex": "01455586a49a435156671042c47032c2",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "58065c73a7f514f44740a39960f57cf6",
+      "dartIntermediateHex": "58065c73a7f514f44740a39960f57cf6"
+    },
+    {
+      "inputHex": "ced368ddf818447452cdace57b34fc1f",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "9fa179124791634e85b3b01df24d09db",
+      "dartIntermediateHex": "9fa179124791634e85b3b01df24d09db"
+    },
+    {
+      "inputHex": "1092bde7fb9e759475cd21f59f635c92",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "5e517b45b2f6be6dd722d32fdb614e5a",
+      "dartIntermediateHex": "5e517b45b2f6be6dd722d32fdb614e5a"
+    },
+    {
+      "inputHex": "9f83bc35b1699b1c4f6334c85f0f93fc",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "38c403e8d85b2b6f80c639ec7000007c",
+      "dartIntermediateHex": "38c403e8d85b2b6f80c639ec7000007c"
+    },
+    {
+      "inputHex": "5c54fd187fcd7dff965b4520ece04c8d",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "3cbadfe9c149eabe6e85cbcffb5de2f9",
+      "dartIntermediateHex": "3cbadfe9c149eabe6e85cbcffb5de2f9"
+    },
+    {
+      "inputHex": "7f1adcc8a99ea8cf59c11f1329ab7469",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "568282c24deb3a95d21389e0e001493d",
+      "dartIntermediateHex": "568282c24deb3a95d21389e0e001493d"
+    },
+    {
+      "inputHex": "777923126d987ace5d448939746d4003",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "17058dcf048eebfbaba20e3b35fca720",
+      "dartIntermediateHex": "17058dcf048eebfbaba20e3b35fca720"
+    },
+    {
+      "inputHex": "c949e0f8d4902933771be82d3115a01f",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "a895e1d749414e48233d2ce32f76106f",
+      "dartIntermediateHex": "a895e1d749414e48233d2ce32f76106f"
+    },
+    {
+      "inputHex": "1c1f4c5cd5f36c8de2ea88ebaba92049",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "cb509fc50783f7af8229a23f3be9917f",
+      "dartIntermediateHex": "cb509fc50783f7af8229a23f3be9917f"
+    },
+    {
+      "inputHex": "e538da91354e8cc8636f6e772126f3b9",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "1e566108b28f4ccbec5a0f8cb8e4932d",
+      "dartIntermediateHex": "1e566108b28f4ccbec5a0f8cb8e4932d"
+    },
+    {
+      "inputHex": "047d9fc121ce22a278e32049c4f16947",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "d7d5f6cbc5609d1eb7bf96c31f94166f",
+      "dartIntermediateHex": "d7d5f6cbc5609d1eb7bf96c31f94166f"
+    },
+    {
+      "inputHex": "6435ef89d28913eca81f3fdd27419053",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "d6b7b38494c7bbc86f452da95fa0c4b8",
+      "dartIntermediateHex": "d6b7b38494c7bbc86f452da95fa0c4b8"
+    },
+    {
+      "inputHex": "ba9871a625e23183a07d93f31d5450fc",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "e471c81baf4674682230a8d48a59cf38",
+      "dartIntermediateHex": "e471c81baf4674682230a8d48a59cf38"
+    },
+    {
+      "inputHex": "ff27eb69a3457bdcb6d637adac4f87be",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "b8e5492bbd6fb61f9de390a8aaafba42",
+      "dartIntermediateHex": "b8e5492bbd6fb61f9de390a8aaafba42"
+    },
+    {
+      "inputHex": "2b46d4a7f389dbc0d3e4c9123e7a04ff",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "5aa4cf8328c08dab99cd29882b5b1604",
+      "dartIntermediateHex": "5aa4cf8328c08dab99cd29882b5b1604"
+    },
+    {
+      "inputHex": "3840164c80ee69b9d45c5df5f9a6f272",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "b7fb0d6329033952832cafcfa0d8923a",
+      "dartIntermediateHex": "b7fb0d6329033952832cafcfa0d8923a"
+    },
+    {
+      "inputHex": "caa4bbd65c60826870d34adb3658f25a",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "5d3093a7fd6bfadf3aa74e9619826baf",
+      "dartIntermediateHex": "5d3093a7fd6bfadf3aa74e9619826baf"
+    },
+    {
+      "inputHex": "9a317816d656afd0f589780ebe028bf6",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "f8700483e3223fef36a9c2d89ed5d685",
+      "dartIntermediateHex": "f8700483e3223fef36a9c2d89ed5d685"
+    },
+    {
+      "inputHex": "aac9b17748b092b8eb476fd906f7c8ea",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "d8bc67ae2e16047e9cf4f622904f90eb",
+      "dartIntermediateHex": "d8bc67ae2e16047e9cf4f622904f90eb"
+    },
+    {
+      "inputHex": "438de4d1fefb759c2f1c870b55ab6046",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "5d61854241180bb493ffa48fb4aaa302",
+      "dartIntermediateHex": "5d61854241180bb493ffa48fb4aaa302"
+    },
+    {
+      "inputHex": "c986d7d655abd06a627e727aaa522e83",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "23bc5d7c1e1bfa713bd0b5a2c7e231e8",
+      "dartIntermediateHex": "23bc5d7c1e1bfa713bd0b5a2c7e231e8"
+    },
+    {
+      "inputHex": "00ac16a7b045dd47fa435fc71e4cce1d",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "847fa1feebfba5c89ed8c4d6fd0f7b7c",
+      "dartIntermediateHex": "847fa1feebfba5c89ed8c4d6fd0f7b7c"
+    },
+    {
+      "inputHex": "4d05b3bc73fa572c65d0f7d2ce3b2eb6",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "7516ba23f766e3cea501bd16464d255f",
+      "dartIntermediateHex": "7516ba23f766e3cea501bd16464d255f"
+    },
+    {
+      "inputHex": "87a862f2bc2702cc03cce091f1fd927c",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "ac798de65a304be751bec581eb35ab41",
+      "dartIntermediateHex": "ac798de65a304be751bec581eb35ab41"
+    },
+    {
+      "inputHex": "be39490e5a3e9a06fa9ef78fd4e85d6e",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "d77a8c35f9ce933ff559137fb53b5d20",
+      "dartIntermediateHex": "d77a8c35f9ce933ff559137fb53b5d20"
+    },
+    {
+      "inputHex": "7448aa0b79e9ab320ee554df3b21344e",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "7484a2118a31a290cac77f6568d6b92c",
+      "dartIntermediateHex": "7484a2118a31a290cac77f6568d6b92c"
+    },
+    {
+      "inputHex": "8e7033f57b23f165ba6fcf2b7d323f36",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "cf578bd4a3275da3e9eda27399ea71b2",
+      "dartIntermediateHex": "cf578bd4a3275da3e9eda27399ea71b2"
+    },
+    {
+      "inputHex": "1a8e02b36228da977df619536d621151",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "cb1de6c2087d11e4923bf509ce688393",
+      "dartIntermediateHex": "cb1de6c2087d11e4923bf509ce688393"
+    },
+    {
+      "inputHex": "6c72f6e0f29434df9efbc88bcad88a5f",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "9b9f684b0b34de6a0697b767d2afa5f0",
+      "dartIntermediateHex": "9b9f684b0b34de6a0697b767d2afa5f0"
+    },
+    {
+      "inputHex": "6089ddc6f22d9b3f3eca7ef298ae384b",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "46858de874973cd7ebce6f94c7196f01",
+      "dartIntermediateHex": "46858de874973cd7ebce6f94c7196f01"
+    },
+    {
+      "inputHex": "1aa0890fbc2b955d440d045db6f57eea",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "e0c0374071c46a64203d45d59c976ff2",
+      "dartIntermediateHex": "e0c0374071c46a64203d45d59c976ff2"
+    },
+    {
+      "inputHex": "25b4a047d77bc813c94621bbaa299c11",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "f886481a86bb810b27ef94f3a6db0991",
+      "dartIntermediateHex": "f886481a86bb810b27ef94f3a6db0991"
+    },
+    {
+      "inputHex": "40285b952b982ca2163e99518e4235da",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "78ba6bfab2a2506d2ddf2bd13bf20376",
+      "dartIntermediateHex": "78ba6bfab2a2506d2ddf2bd13bf20376"
+    },
+    {
+      "inputHex": "e388d873efb2be7aac6b754505abb68d",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "8bc94e64cfa225c42d986090aa2abe44",
+      "dartIntermediateHex": "8bc94e64cfa225c42d986090aa2abe44"
+    },
+    {
+      "inputHex": "a4c44b03c8084a3074594e7d2fb73b2d",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "7e1577ea7aac640f7ee2c774d233a3a1",
+      "dartIntermediateHex": "7e1577ea7aac640f7ee2c774d233a3a1"
+    },
+    {
+      "inputHex": "aae7afe3499da3714db6ad50f95b726c",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "c53565ebfeee9f9ba6ff3bcff955c194",
+      "dartIntermediateHex": "c53565ebfeee9f9ba6ff3bcff955c194"
+    },
+    {
+      "inputHex": "f54240df7920256f2279cdaf0906fcea",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "9075e1c13ba4dfa0d3bda64ea2cdb553",
+      "dartIntermediateHex": "9075e1c13ba4dfa0d3bda64ea2cdb553"
+    },
+    {
+      "inputHex": "3db61109f3208841507d3d1e8969fb58",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "f0062b90d26cdf5b42974d97741eb191",
+      "dartIntermediateHex": "f0062b90d26cdf5b42974d97741eb191"
+    },
+    {
+      "inputHex": "56c0b348d9a26652e2df17fbfad29d37",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "d28f02ce33a6fbf282f1394780a9be58",
+      "dartIntermediateHex": "d28f02ce33a6fbf282f1394780a9be58"
+    },
+    {
+      "inputHex": "b565c6b31392e7f9cafe9f504c6828b1",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "a531d7ddfa5cf869748188de4cf6fad4",
+      "dartIntermediateHex": "a531d7ddfa5cf869748188de4cf6fad4"
+    },
+    {
+      "inputHex": "007aeb612cc883a874ed70f3d97bb5a4",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "5c19838525d577bf7d1c653cf674c3b9",
+      "dartIntermediateHex": "5c19838525d577bf7d1c653cf674c3b9"
+    },
+    {
+      "inputHex": "670126e62bcf464a656fde2a140bc89e",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "49e6c6939358424e0ed14de2c15ff4b2",
+      "dartIntermediateHex": "49e6c6939358424e0ed14de2c15ff4b2"
+    },
+    {
+      "inputHex": "b7b81684e144cf1373ea3641ddb383a3",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "d0a4de168a34ba71282dd85efff1bef0",
+      "dartIntermediateHex": "d0a4de168a34ba71282dd85efff1bef0"
+    },
+    {
+      "inputHex": "a13f6b732d4ac7257df418dbe2de85a4",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "c878f3f31c4436ae45a0f962e5d33888",
+      "dartIntermediateHex": "c878f3f31c4436ae45a0f962e5d33888"
+    },
+    {
+      "inputHex": "5ad4b408e1079769e3a5426ea004c0da",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "4cb8790d76ee29259aca96466f2ea32b",
+      "dartIntermediateHex": "4cb8790d76ee29259aca96466f2ea32b"
+    },
+    {
+      "inputHex": "cd52aec267ab450a60c2a18be252e672",
+      "constantTable": "original-default",
+      "originalIntermediateHex": "8f17de26f61cdac5bdc26a1315a8a3da",
+      "dartIntermediateHex": "8f17de26f61cdac5bdc26a1315a8a3da"
+    },
+    {
+      "inputHex": "00000000000000000000000000000000",
+      "constantTable": "explicit-original-copy",
+      "originalIntermediateHex": "d7373ae7b3f32050bc4e61820748cd9e",
+      "dartIntermediateHex": "d7373ae7b3f32050bc4e61820748cd9e"
+    },
+    {
+      "inputHex": "000102030405060708090a0b0c0d0e0f",
+      "constantTable": "explicit-original-copy",
+      "originalIntermediateHex": "ac1327a2a3f229312fe7619bd3393aee",
+      "dartIntermediateHex": "ac1327a2a3f229312fe7619bd3393aee"
+    }
+  ],
+  "limits": [
+    "Synthetic inputs only; this is not a proof for every possible input",
+    "The16-byte intermediate is not proved to be an AES key",
+    "The28-byte protected object and actual plaintext AES boundary remain separate",
+    "No outgoing request, session, entitlement, playback or account behavior is checked",
+    "Static translation currently targets the64-bit Dart VM used by macOS Flutter",
+    "Standard memory, allocation, guard, single-thread TLS and exception dispatch are explicit adapters",
+    "Runtime request/playback gates must stay closed until the AES consumer interpretation is established"
+  ]
+}

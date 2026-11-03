@@ -1,0 +1,359 @@
+{
+  "originalBundleSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+  "sources": [
+    {
+      "kind": "module91243 response projection",
+      "path": "reverse-engineering/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 2069194,
+      "lengthBytes": 878,
+      "sha256": "cdef5955074f7a572e5436a5459e477e1f2dce34711a739cdcea0647c193ac4a"
+    },
+    {
+      "id": 41332,
+      "path": "reverse-engineering/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4115028,
+      "lengthBytes": 4953,
+      "sha256": "9daaca5dd00fa6605ddd0eeb379cb5fc5c08e51a161d22a94315c4aa40e4b005"
+    },
+    {
+      "id": 87337,
+      "path": "reverse-engineering/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4119982,
+      "lengthBytes": 1395,
+      "sha256": "e90ffc2f49b22726bf37dfc1560fc8fcc35315291a30dd20628a151b2bb198b5"
+    },
+    {
+      "id": 68900,
+      "path": "reverse-engineering/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 2071911,
+      "lengthBytes": 596,
+      "sha256": "e5427010b0d55982196672f024a5260a792a76b2e21b5d7cf822e20d59fd135d"
+    },
+    {
+      "id": 83873,
+      "path": "reverse-engineering/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "offsetBytes": 4084122,
+      "lengthBytes": 1671,
+      "sha256": "1aeaa740a4a3f533e78b5c4268c6aa3203950362f5c7066bf0275640e82bee8d"
+    }
+  ],
+  "wireSource": {
+    "path": ".local/original-license-rejection-reference-netlog.json",
+    "sha256": "6d8e8c9f4d71bd0e39ecff3282e86438540cf22987a33b2340d79658d4ec6d50",
+    "eventType": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+    "sourceId": 2460,
+    "orderedFields": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "origin",
+      "user-agent",
+      "accept",
+      "accept-language",
+      "app-platform",
+      "authorization",
+      "client-token",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "spotify-app-version",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-dest",
+      "referer",
+      "accept-encoding",
+      "priority"
+    ]
+  },
+  "substitutions": [
+    "Inert transport, synthetic credentials and content IDs; original module68900 and RequestBuilder execute unchanged.",
+    "URI splitting and standard base62-to-hex conversion substitute module47136; the native original ID codec is independently recorded in native_spotify_gid_oracle.py.",
+    "Browser-managed decoded GET fields and ordering come from an original NetLog GET; application URL/headers come from original producer execution."
+  ],
+  "responseProjection": {
+    "isTimeSynced": true,
+    "syncType": "LINE_SYNCED",
+    "capStatus": "CAPPED",
+    "lines": [
+      {
+        "start": 100,
+        "end": 250,
+        "text": "Synthetic first line"
+      },
+      {
+        "start": 250,
+        "end": "Infinity",
+        "text": "Synthetic second line"
+      }
+    ],
+    "previewLines": [
+      {
+        "start": 250,
+        "end": "Infinity",
+        "text": "Synthetic preview"
+      }
+    ]
+  },
+  "limits": [
+    "No live server or account request is made. QPACK, TLS and QUIC fingerprints are outside this proof.",
+    "Response timing, preview separation and cap status execute original91243 with synthetic text. Standard integer-to-CSS conversion is replaced by an inert string primitive; projected colors are not asserted.",
+    "The original availability producer requests metadata/4. Its browser header context is inherited from the same renderer GET owner; this capture proves lyrics GET ordering directly.",
+    "Vocal removal stays false. Remote language/availability feature flags and account entitlements are not fabricated."
+  ],
+  "cases": [
+    {
+      "kind": "availability",
+      "uri": "spotify:track:0000000000000000000001",
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "url": "https://spclient.wg.spotify.com/metadata/4/track/00000000000000000000000000000001?market=from_token",
+        "method": "GET",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921"
+        },
+        "bodyBase64": "",
+        "authorize": true,
+        "responseType": "json",
+        "includeCredentials": false
+      },
+      "expected": {
+        ":method": "GET",
+        ":authority": "spclient.wg.spotify.com",
+        ":scheme": "https",
+        ":path": "/metadata/4/track/00000000000000000000000000000001?market=from_token",
+        "origin": "https://xpui.app.spotify.com",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+        "accept": "application/json",
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer fixture-access-token",
+        "client-token": "fixture-client-token",
+        "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "spotify-app-version": "1.3.6.1921",
+        "sec-fetch-site": "same-site",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-dest": "empty",
+        "referer": "https://xpui.app.spotify.com/",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=1, i"
+      },
+      "expectedPreflight": {
+        ":method": "OPTIONS",
+        ":authority": "spclient.wg.spotify.com",
+        ":scheme": "https",
+        ":path": "/metadata/4/track/00000000000000000000000000000001?market=from_token",
+        "accept": "*/*",
+        "access-control-request-method": "GET",
+        "access-control-request-headers": "app-platform,authorization,client-token,spotify-app-version",
+        "origin": "https://xpui.app.spotify.com",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "same-site",
+        "sec-fetch-dest": "empty",
+        "referer": "https://xpui.app.spotify.com/",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "accept-language": "en-US,en;q=0.9",
+        "priority": "u=1, i"
+      }
+    },
+    {
+      "kind": "lyrics",
+      "uri": "spotify:track:0000000000000000000001",
+      "image": "spotify:image:fixture",
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "url": "https://spclient.wg.spotify.com/color-lyrics/v2/track/0000000000000000000001/image/spotify%3Aimage%3Afixture?format=json&vocalRemoval=false&market=from_token",
+        "method": "GET",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921"
+        },
+        "bodyBase64": "",
+        "authorize": true,
+        "responseType": "json",
+        "includeCredentials": false
+      },
+      "expected": {
+        ":method": "GET",
+        ":authority": "spclient.wg.spotify.com",
+        ":scheme": "https",
+        ":path": "/color-lyrics/v2/track/0000000000000000000001/image/spotify%3Aimage%3Afixture?format=json&vocalRemoval=false&market=from_token",
+        "origin": "https://xpui.app.spotify.com",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+        "accept": "application/json",
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer fixture-access-token",
+        "client-token": "fixture-client-token",
+        "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "spotify-app-version": "1.3.6.1921",
+        "sec-fetch-site": "same-site",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-dest": "empty",
+        "referer": "https://xpui.app.spotify.com/",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=1, i"
+      },
+      "expectedPreflight": {
+        ":method": "OPTIONS",
+        ":authority": "spclient.wg.spotify.com",
+        ":scheme": "https",
+        ":path": "/color-lyrics/v2/track/0000000000000000000001/image/spotify%3Aimage%3Afixture?format=json&vocalRemoval=false&market=from_token",
+        "accept": "*/*",
+        "access-control-request-method": "GET",
+        "access-control-request-headers": "app-platform,authorization,client-token,spotify-app-version",
+        "origin": "https://xpui.app.spotify.com",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "same-site",
+        "sec-fetch-dest": "empty",
+        "referer": "https://xpui.app.spotify.com/",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "accept-language": "en-US,en;q=0.9",
+        "priority": "u=1, i"
+      }
+    },
+    {
+      "kind": "lyrics",
+      "uri": "spotify:track:0000000000000000000002",
+      "image": "https://fixture.invalid/image/a b?x=1&y=2",
+      "clientLanguage": "all",
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "url": "https://spclient.wg.spotify.com/color-lyrics/v2/track/0000000000000000000002/image/https%3A%2F%2Ffixture.invalid%2Fimage%2Fa%20b%3Fx%3D1%26y%3D2?format=json&vocalRemoval=false&clientLanguage=all&market=from_token",
+        "method": "GET",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921"
+        },
+        "bodyBase64": "",
+        "authorize": true,
+        "responseType": "json",
+        "includeCredentials": false
+      },
+      "expected": {
+        ":method": "GET",
+        ":authority": "spclient.wg.spotify.com",
+        ":scheme": "https",
+        ":path": "/color-lyrics/v2/track/0000000000000000000002/image/https%3A%2F%2Ffixture.invalid%2Fimage%2Fa%20b%3Fx%3D1%26y%3D2?format=json&vocalRemoval=false&clientLanguage=all&market=from_token",
+        "origin": "https://xpui.app.spotify.com",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+        "accept": "application/json",
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer fixture-access-token",
+        "client-token": "fixture-client-token",
+        "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "spotify-app-version": "1.3.6.1921",
+        "sec-fetch-site": "same-site",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-dest": "empty",
+        "referer": "https://xpui.app.spotify.com/",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=1, i"
+      },
+      "expectedPreflight": {
+        ":method": "OPTIONS",
+        ":authority": "spclient.wg.spotify.com",
+        ":scheme": "https",
+        ":path": "/color-lyrics/v2/track/0000000000000000000002/image/https%3A%2F%2Ffixture.invalid%2Fimage%2Fa%20b%3Fx%3D1%26y%3D2?format=json&vocalRemoval=false&clientLanguage=all&market=from_token",
+        "accept": "*/*",
+        "access-control-request-method": "GET",
+        "access-control-request-headers": "app-platform,authorization,client-token,spotify-app-version",
+        "origin": "https://xpui.app.spotify.com",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "same-site",
+        "sec-fetch-dest": "empty",
+        "referer": "https://xpui.app.spotify.com/",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "accept-language": "en-US,en;q=0.9",
+        "priority": "u=1, i"
+      }
+    },
+    {
+      "kind": "lyrics",
+      "uri": "spotify:track:0000000000000000000003",
+      "image": "https://fixture.invalid/café",
+      "clientLanguage": "en-US",
+      "locale": "en",
+      "clientToken": "fixture-client-token",
+      "application": {
+        "url": "https://spclient.wg.spotify.com/color-lyrics/v2/track/0000000000000000000003/image/https%3A%2F%2Ffixture.invalid%2Fcaf%C3%A9?format=json&vocalRemoval=false&clientLanguage=en-US&market=from_token",
+        "method": "GET",
+        "headers": {
+          "Accept-Language": "en",
+          "Authorization": "Bearer fixture-access-token",
+          "Accept": "application/json",
+          "App-Platform": "OSX_ARM64",
+          "Spotify-App-Version": "1.3.6.1921"
+        },
+        "bodyBase64": "",
+        "authorize": true,
+        "responseType": "json",
+        "includeCredentials": false
+      },
+      "expected": {
+        ":method": "GET",
+        ":authority": "spclient.wg.spotify.com",
+        ":scheme": "https",
+        ":path": "/color-lyrics/v2/track/0000000000000000000003/image/https%3A%2F%2Ffixture.invalid%2Fcaf%C3%A9?format=json&vocalRemoval=false&clientLanguage=en-US&market=from_token",
+        "origin": "https://xpui.app.spotify.com",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+        "accept": "application/json",
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer fixture-access-token",
+        "client-token": "fixture-client-token",
+        "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "spotify-app-version": "1.3.6.1921",
+        "sec-fetch-site": "same-site",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-dest": "empty",
+        "referer": "https://xpui.app.spotify.com/",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=1, i"
+      },
+      "expectedPreflight": {
+        ":method": "OPTIONS",
+        ":authority": "spclient.wg.spotify.com",
+        ":scheme": "https",
+        ":path": "/color-lyrics/v2/track/0000000000000000000003/image/https%3A%2F%2Ffixture.invalid%2Fcaf%C3%A9?format=json&vocalRemoval=false&clientLanguage=en-US&market=from_token",
+        "accept": "*/*",
+        "access-control-request-method": "GET",
+        "access-control-request-headers": "app-platform,authorization,client-token,spotify-app-version",
+        "origin": "https://xpui.app.spotify.com",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "same-site",
+        "sec-fetch-dest": "empty",
+        "referer": "https://xpui.app.spotify.com/",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "accept-language": "en-US,en;q=0.9",
+        "priority": "u=1, i"
+      }
+    }
+  ]
+}

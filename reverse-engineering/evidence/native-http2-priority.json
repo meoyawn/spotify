@@ -1,0 +1,1038 @@
+{
+  "scope": "Retain scoped original H2 priority metadata and its pinned public policy.\n\nSelected sends are native-User-Agent global/regional spclient HEADERS plus\nrenderer Pathfinder HEADERS. Only fixed family labels, public priority fields,\naggregate counts and NetLog source/event/stream anchors are exported. The\nforced-H2 diagnostic remains separate from the four default captures. This\nextractor does not replay the complete live dependency graph or inspect bodies.\n",
+  "toolSha256": "43395759e551cd54e8de105904ad59e9ac4a7b6131659de748454c64728567c0",
+  "defaultSelectedHeaders": 357,
+  "defaultProfileCounts": {
+    "native": 355,
+    "renderer-pathfinder": 2
+  },
+  "profiles": {
+    "native": {
+      "fieldValue": "u=4, i",
+      "hasPriority": true,
+      "exclusive": true,
+      "weight": 110
+    },
+    "renderer-pathfinder": {
+      "fieldValue": "u=1, i",
+      "hasPriority": true,
+      "exclusive": true,
+      "weight": 220
+    }
+  },
+  "defaultParentRelationCounts": {
+    "other-stream": 2,
+    "previous-sent-headers-stream": 332,
+    "root": 23
+  },
+  "weightsByPriorityBand": [
+    256,
+    220,
+    183,
+    147,
+    110,
+    74,
+    37,
+    1
+  ],
+  "creationTraceScenarios": [
+    {
+      "name": "native-live",
+      "steps": [
+        {
+          "action": "create",
+          "streamId": 1,
+          "priorityBand": 4,
+          "originalOutput": {
+            "parentStreamId": 0,
+            "weight": 110,
+            "exclusive": true
+          }
+        },
+        {
+          "action": "create",
+          "streamId": 3,
+          "priorityBand": 4,
+          "originalOutput": {
+            "parentStreamId": 1,
+            "weight": 110,
+            "exclusive": true
+          }
+        },
+        {
+          "action": "destroy",
+          "streamId": 3
+        },
+        {
+          "action": "create",
+          "streamId": 5,
+          "priorityBand": 4,
+          "originalOutput": {
+            "parentStreamId": 1,
+            "weight": 110,
+            "exclusive": true
+          }
+        },
+        {
+          "action": "destroy",
+          "streamId": 1
+        },
+        {
+          "action": "destroy",
+          "streamId": 5
+        },
+        {
+          "action": "create",
+          "streamId": 7,
+          "priorityBand": 4,
+          "originalOutput": {
+            "parentStreamId": 0,
+            "weight": 110,
+            "exclusive": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "mixed-bands",
+      "steps": [
+        {
+          "action": "create",
+          "streamId": 1,
+          "priorityBand": 4,
+          "originalOutput": {
+            "parentStreamId": 0,
+            "weight": 110,
+            "exclusive": true
+          }
+        },
+        {
+          "action": "create",
+          "streamId": 3,
+          "priorityBand": 1,
+          "originalOutput": {
+            "parentStreamId": 0,
+            "weight": 220,
+            "exclusive": true
+          }
+        },
+        {
+          "action": "create",
+          "streamId": 5,
+          "priorityBand": 3,
+          "originalOutput": {
+            "parentStreamId": 3,
+            "weight": 147,
+            "exclusive": true
+          }
+        },
+        {
+          "action": "create",
+          "streamId": 7,
+          "priorityBand": 4,
+          "originalOutput": {
+            "parentStreamId": 1,
+            "weight": 110,
+            "exclusive": true
+          }
+        },
+        {
+          "action": "create",
+          "streamId": 9,
+          "priorityBand": 0,
+          "originalOutput": {
+            "parentStreamId": 0,
+            "weight": 256,
+            "exclusive": true
+          }
+        },
+        {
+          "action": "destroy",
+          "streamId": 3
+        },
+        {
+          "action": "create",
+          "streamId": 11,
+          "priorityBand": 2,
+          "originalOutput": {
+            "parentStreamId": 9,
+            "weight": 183,
+            "exclusive": true
+          }
+        },
+        {
+          "action": "destroy",
+          "streamId": 9
+        },
+        {
+          "action": "create",
+          "streamId": 13,
+          "priorityBand": 1,
+          "originalOutput": {
+            "parentStreamId": 0,
+            "weight": 220,
+            "exclusive": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "unknown-and-repeated-destruction",
+      "steps": [
+        {
+          "action": "destroy",
+          "streamId": 999
+        },
+        {
+          "action": "create",
+          "streamId": 1,
+          "priorityBand": 4,
+          "originalOutput": {
+            "parentStreamId": 0,
+            "weight": 110,
+            "exclusive": true
+          }
+        },
+        {
+          "action": "destroy",
+          "streamId": 999
+        },
+        {
+          "action": "create",
+          "streamId": 3,
+          "priorityBand": 4,
+          "originalOutput": {
+            "parentStreamId": 1,
+            "weight": 110,
+            "exclusive": true
+          }
+        },
+        {
+          "action": "destroy",
+          "streamId": 1
+        },
+        {
+          "action": "destroy",
+          "streamId": 1
+        },
+        {
+          "action": "create",
+          "streamId": 5,
+          "priorityBand": 4,
+          "originalOutput": {
+            "parentStreamId": 3,
+            "weight": 110,
+            "exclusive": true
+          }
+        },
+        {
+          "action": "destroy",
+          "streamId": 3
+        },
+        {
+          "action": "destroy",
+          "streamId": 5
+        },
+        {
+          "action": "destroy",
+          "streamId": 5
+        },
+        {
+          "action": "create",
+          "streamId": 7,
+          "priorityBand": 4,
+          "originalOutput": {
+            "parentStreamId": 0,
+            "weight": 110,
+            "exclusive": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "duplicate-creation-leaves-outputs-and-state",
+      "steps": [
+        {
+          "action": "create",
+          "streamId": 1,
+          "priorityBand": 4,
+          "originalOutput": {
+            "parentStreamId": 0,
+            "weight": 110,
+            "exclusive": true
+          }
+        },
+        {
+          "action": "create",
+          "streamId": 1,
+          "priorityBand": 1,
+          "originalOutput": {
+            "parentStreamId": 2147483646,
+            "weight": -12345,
+            "exclusive": false
+          }
+        },
+        {
+          "action": "create",
+          "streamId": 3,
+          "priorityBand": 2,
+          "originalOutput": {
+            "parentStreamId": 0,
+            "weight": 183,
+            "exclusive": true
+          }
+        },
+        {
+          "action": "create",
+          "streamId": 5,
+          "priorityBand": 4,
+          "originalOutput": {
+            "parentStreamId": 1,
+            "weight": 110,
+            "exclusive": true
+          }
+        }
+      ]
+    }
+  ],
+  "dependencyExecution": {
+    "authority": "Unchanged extracted public C++ bodies, independently compiled and executed; no Dart implementation is an input.",
+    "extractedBlocks": [
+      {
+        "name": "declaration",
+        "sourcePath": ".local/cef-source/chromium-151.0.7922.138/net/spdy/http2_priority_dependencies.h",
+        "firstLine": 27,
+        "lastLine": 94,
+        "extractedTextSha256": "cb51e8425b35775d406905c589b24d2a176279e4b364975305f79ae3403fe60e"
+      },
+      {
+        "name": "creation",
+        "sourcePath": ".local/cef-source/chromium-151.0.7922.138/net/spdy/http2_priority_dependencies.cc",
+        "firstLine": 22,
+        "lastLine": 51,
+        "extractedTextSha256": "2dbbeabd27208c2cbaf6d60b538ab63f298ea82d6525bcee3147442bccf9ab57"
+      },
+      {
+        "name": "lowerBound",
+        "sourcePath": ".local/cef-source/chromium-151.0.7922.138/net/spdy/http2_priority_dependencies.cc",
+        "firstLine": 53,
+        "lastLine": 63,
+        "extractedTextSha256": "14c5e0e481b4bae51a7a047860cae241d1d217c796de27689f36b786cba5f8aa"
+      },
+      {
+        "name": "destruction",
+        "sourcePath": ".local/cef-source/chromium-151.0.7922.138/net/spdy/http2_priority_dependencies.cc",
+        "firstLine": 175,
+        "lastLine": 183,
+        "extractedTextSha256": "8d969d5f88ea4bdf83ae54084b4e38ac83f67d9632f637345332743dfa2b3963"
+      },
+      {
+        "name": "clamp",
+        "sourcePath": ".local/cef-source/google-quiche-4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/http2/core/spdy_protocol.cc",
+        "firstLine": 36,
+        "lastLine": 46,
+        "extractedTextSha256": "9401a888474775db4fba68435b7ff1106683bfc4b53c2a4cc437cdaa019c248c"
+      },
+      {
+        "name": "weight",
+        "sourcePath": ".local/cef-source/google-quiche-4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/http2/core/spdy_protocol.cc",
+        "firstLine": 60,
+        "lastLine": 64,
+        "extractedTextSha256": "7edd91c695b545e7ec29ff8231834ab19df34f6fc4db1bf0cce621b85cfc919a"
+      }
+    ],
+    "compiledHarnessSha256": "7cec03ff8503e1e7d6a0ebc2f324d01800bbb3e89d6bc2d994251787fc47adc9",
+    "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+    "compilerOptions": [
+      "-std=c++20",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Werror"
+    ],
+    "creationOutputSeed": {
+      "parentStreamId": 2147483646,
+      "weight": -12345,
+      "exclusive": false
+    },
+    "substitutions": [
+      "Standard C++ array/list/map/vector/pair and fixed-width integer headers replace Chromium include dependencies; original class declaration, container member types and selected function bodies are unchanged.",
+      "SpdyStreamId=uint32_t, SpdyPriority=uint8_t and highest/lowest bands 0/7 reproduce the pinned public protocol declarations. NET_EXPORT_PRIVATE is empty.",
+      "QUICHE_BUG writes to std::cerr; its invalid-input path is not exercised because all priority bands are 0..7. Original ClampSpdy3Priority and the float weight routine execute unchanged.",
+      "Original default constructor/destructor definitions are retained. Only creation, lower-bound lookup, destruction, clamp and weight routines execute; reprioritization methods are not linked or exercised.",
+      "Synthetic input stream IDs, explicit resets and stdin/stdout harness observe outputs; seeded output sentinels expose the unchanged early return for duplicate stream creation."
+    ],
+    "limits": "The scenarios prove the listed synthetic lifecycle traces and weight outputs only. They do not reconstruct original live sessions, feature overrides, request scheduling or complete outgoing frames."
+  },
+  "captures": [
+    {
+      "path": ".local/original-reference-streaming-netlog.json",
+      "sha256": "644660b4da3948c6f0e0e21479b34de444f295ba3e94684257e2c53dc9587489",
+      "disableQuic": false,
+      "selectedHeaders": 148,
+      "allSelectedHavePriority": true,
+      "allSelectedExclusive": true,
+      "profileCounts": {
+        "native": 148
+      },
+      "weightCounts": {
+        "110": 148
+      },
+      "familyCounts": [
+        {
+          "family": "collection",
+          "profile": "native",
+          "headers": 22
+        },
+        {
+          "family": "connect",
+          "profile": "native",
+          "headers": 2
+        },
+        {
+          "family": "extended-metadata",
+          "profile": "native",
+          "headers": 66
+        },
+        {
+          "family": "other-spclient",
+          "profile": "native",
+          "headers": 37
+        },
+        {
+          "family": "playlist",
+          "profile": "native",
+          "headers": 8
+        },
+        {
+          "family": "rootlist",
+          "profile": "native",
+          "headers": 2
+        },
+        {
+          "family": "unclassified-spclient",
+          "profile": "native",
+          "headers": 11
+        }
+      ],
+      "parentRelationCounts": {
+        "other-stream": 1,
+        "previous-sent-headers-stream": 140,
+        "root": 7
+      },
+      "exampleSourceAnchors": [
+        {
+          "profile": "native",
+          "parentRelation": "other-stream",
+          "family": "collection",
+          "eventIndex": 16687,
+          "sessionSourceId": 844,
+          "requestSourceId": 951,
+          "streamId": 73,
+          "parentStreamId": 53,
+          "previousSentHeadersStreamId": 71,
+          "fieldValue": "u=4, i",
+          "hasPriority": true,
+          "exclusive": true,
+          "weight": 110
+        },
+        {
+          "profile": "native",
+          "parentRelation": "previous-sent-headers-stream",
+          "family": "other-spclient",
+          "eventIndex": 8450,
+          "sessionSourceId": 570,
+          "requestSourceId": 720,
+          "streamId": 5,
+          "parentStreamId": 3,
+          "previousSentHeadersStreamId": 3,
+          "fieldValue": "u=4, i",
+          "hasPriority": true,
+          "exclusive": true,
+          "weight": 110
+        },
+        {
+          "profile": "native",
+          "parentRelation": "root",
+          "family": "unclassified-spclient",
+          "eventIndex": 7076,
+          "sessionSourceId": 570,
+          "requestSourceId": 513,
+          "streamId": 1,
+          "parentStreamId": 0,
+          "previousSentHeadersStreamId": null,
+          "fieldValue": "u=4, i",
+          "hasPriority": true,
+          "exclusive": true,
+          "weight": 110
+        }
+      ],
+      "noRfc7540PrioritySettingEventsOnSelectedSessions": []
+    },
+    {
+      "path": ".local/original-license-upload-http2-netlog.json",
+      "sha256": "7ad17ebaf96eda74ecd2c0cd822370287f4aed26310a49faa930cdda92fd64fa",
+      "disableQuic": true,
+      "selectedHeaders": 290,
+      "allSelectedHavePriority": true,
+      "allSelectedExclusive": true,
+      "profileCounts": {
+        "native": 272,
+        "renderer-pathfinder": 18
+      },
+      "weightCounts": {
+        "110": 272,
+        "220": 18
+      },
+      "familyCounts": [
+        {
+          "family": "collection",
+          "profile": "native",
+          "headers": 24
+        },
+        {
+          "family": "connect",
+          "profile": "native",
+          "headers": 7
+        },
+        {
+          "family": "extended-metadata",
+          "profile": "native",
+          "headers": 113
+        },
+        {
+          "family": "music-key",
+          "profile": "native",
+          "headers": 2
+        },
+        {
+          "family": "other-spclient",
+          "profile": "native",
+          "headers": 56
+        },
+        {
+          "family": "playlist",
+          "profile": "native",
+          "headers": 52
+        },
+        {
+          "family": "renderer-pathfinder",
+          "profile": "renderer-pathfinder",
+          "headers": 18
+        },
+        {
+          "family": "rootlist",
+          "profile": "native",
+          "headers": 2
+        },
+        {
+          "family": "storage-resolve",
+          "profile": "native",
+          "headers": 1
+        },
+        {
+          "family": "unclassified-spclient",
+          "profile": "native",
+          "headers": 15
+        }
+      ],
+      "parentRelationCounts": {
+        "other-stream": 2,
+        "previous-sent-headers-stream": 257,
+        "root": 31
+      },
+      "exampleSourceAnchors": [
+        {
+          "profile": "native",
+          "parentRelation": "other-stream",
+          "family": "extended-metadata",
+          "eventIndex": 41414,
+          "sessionSourceId": 697,
+          "requestSourceId": 1841,
+          "streamId": 415,
+          "parentStreamId": 411,
+          "previousSentHeadersStreamId": 413,
+          "fieldValue": "u=4, i",
+          "hasPriority": true,
+          "exclusive": true,
+          "weight": 110
+        },
+        {
+          "profile": "native",
+          "parentRelation": "previous-sent-headers-stream",
+          "family": "other-spclient",
+          "eventIndex": 7077,
+          "sessionSourceId": 513,
+          "requestSourceId": 633,
+          "streamId": 5,
+          "parentStreamId": 3,
+          "previousSentHeadersStreamId": 3,
+          "fieldValue": "u=4, i",
+          "hasPriority": true,
+          "exclusive": true,
+          "weight": 110
+        },
+        {
+          "profile": "native",
+          "parentRelation": "root",
+          "family": "unclassified-spclient",
+          "eventIndex": 5778,
+          "sessionSourceId": 513,
+          "requestSourceId": 467,
+          "streamId": 1,
+          "parentStreamId": 0,
+          "previousSentHeadersStreamId": null,
+          "fieldValue": "u=4, i",
+          "hasPriority": true,
+          "exclusive": true,
+          "weight": 110
+        },
+        {
+          "profile": "renderer-pathfinder",
+          "parentRelation": "other-stream",
+          "family": "renderer-pathfinder",
+          "eventIndex": 29709,
+          "sessionSourceId": 1358,
+          "requestSourceId": 1409,
+          "streamId": 13,
+          "parentStreamId": 1,
+          "previousSentHeadersStreamId": 11,
+          "fieldValue": "u=1, i",
+          "hasPriority": true,
+          "exclusive": true,
+          "weight": 220
+        },
+        {
+          "profile": "renderer-pathfinder",
+          "parentRelation": "previous-sent-headers-stream",
+          "family": "renderer-pathfinder",
+          "eventIndex": 25110,
+          "sessionSourceId": 1358,
+          "requestSourceId": 1360,
+          "streamId": 3,
+          "parentStreamId": 1,
+          "previousSentHeadersStreamId": 1,
+          "fieldValue": "u=1, i",
+          "hasPriority": true,
+          "exclusive": true,
+          "weight": 220
+        },
+        {
+          "profile": "renderer-pathfinder",
+          "parentRelation": "root",
+          "family": "renderer-pathfinder",
+          "eventIndex": 25069,
+          "sessionSourceId": 1358,
+          "requestSourceId": 1357,
+          "streamId": 1,
+          "parentStreamId": 0,
+          "previousSentHeadersStreamId": null,
+          "fieldValue": "u=1, i",
+          "hasPriority": true,
+          "exclusive": true,
+          "weight": 220
+        }
+      ],
+      "noRfc7540PrioritySettingEventsOnSelectedSessions": []
+    },
+    {
+      "path": ".local/original-license-rejection-reference-netlog.json",
+      "sha256": "6d8e8c9f4d71bd0e39ecff3282e86438540cf22987a33b2340d79658d4ec6d50",
+      "disableQuic": false,
+      "selectedHeaders": 59,
+      "allSelectedHavePriority": true,
+      "allSelectedExclusive": true,
+      "profileCounts": {
+        "native": 57,
+        "renderer-pathfinder": 2
+      },
+      "weightCounts": {
+        "110": 57,
+        "220": 2
+      },
+      "familyCounts": [
+        {
+          "family": "collection",
+          "profile": "native",
+          "headers": 16
+        },
+        {
+          "family": "connect",
+          "profile": "native",
+          "headers": 2
+        },
+        {
+          "family": "extended-metadata",
+          "profile": "native",
+          "headers": 10
+        },
+        {
+          "family": "other-spclient",
+          "profile": "native",
+          "headers": 12
+        },
+        {
+          "family": "playlist",
+          "profile": "native",
+          "headers": 4
+        },
+        {
+          "family": "renderer-pathfinder",
+          "profile": "renderer-pathfinder",
+          "headers": 2
+        },
+        {
+          "family": "rootlist",
+          "profile": "native",
+          "headers": 2
+        },
+        {
+          "family": "unclassified-spclient",
+          "profile": "native",
+          "headers": 11
+        }
+      ],
+      "parentRelationCounts": {
+        "previous-sent-headers-stream": 51,
+        "root": 8
+      },
+      "exampleSourceAnchors": [
+        {
+          "profile": "native",
+          "parentRelation": "previous-sent-headers-stream",
+          "family": "other-spclient",
+          "eventIndex": 9022,
+          "sessionSourceId": 606,
+          "requestSourceId": 767,
+          "streamId": 5,
+          "parentStreamId": 3,
+          "previousSentHeadersStreamId": 3,
+          "fieldValue": "u=4, i",
+          "hasPriority": true,
+          "exclusive": true,
+          "weight": 110
+        },
+        {
+          "profile": "native",
+          "parentRelation": "root",
+          "family": "unclassified-spclient",
+          "eventIndex": 7052,
+          "sessionSourceId": 606,
+          "requestSourceId": 519,
+          "streamId": 1,
+          "parentStreamId": 0,
+          "previousSentHeadersStreamId": null,
+          "fieldValue": "u=4, i",
+          "hasPriority": true,
+          "exclusive": true,
+          "weight": 110
+        },
+        {
+          "profile": "renderer-pathfinder",
+          "parentRelation": "previous-sent-headers-stream",
+          "family": "renderer-pathfinder",
+          "eventIndex": 89062,
+          "sessionSourceId": 4071,
+          "requestSourceId": 4027,
+          "streamId": 3,
+          "parentStreamId": 1,
+          "previousSentHeadersStreamId": 1,
+          "fieldValue": "u=1, i",
+          "hasPriority": true,
+          "exclusive": true,
+          "weight": 220
+        },
+        {
+          "profile": "renderer-pathfinder",
+          "parentRelation": "root",
+          "family": "renderer-pathfinder",
+          "eventIndex": 88955,
+          "sessionSourceId": 4071,
+          "requestSourceId": 3997,
+          "streamId": 1,
+          "parentStreamId": 0,
+          "previousSentHeadersStreamId": null,
+          "fieldValue": "u=1, i",
+          "hasPriority": true,
+          "exclusive": true,
+          "weight": 220
+        }
+      ],
+      "noRfc7540PrioritySettingEventsOnSelectedSessions": []
+    },
+    {
+      "path": ".local/original-playback-netlog.json",
+      "sha256": "fd7239adbef628625faa665ed75199ef34429ed46944409378caeb01ba2c9655",
+      "disableQuic": false,
+      "selectedHeaders": 110,
+      "allSelectedHavePriority": true,
+      "allSelectedExclusive": true,
+      "profileCounts": {
+        "native": 110
+      },
+      "weightCounts": {
+        "110": 110
+      },
+      "familyCounts": [
+        {
+          "family": "collection",
+          "profile": "native",
+          "headers": 20
+        },
+        {
+          "family": "connect",
+          "profile": "native",
+          "headers": 2
+        },
+        {
+          "family": "extended-metadata",
+          "profile": "native",
+          "headers": 57
+        },
+        {
+          "family": "other-spclient",
+          "profile": "native",
+          "headers": 12
+        },
+        {
+          "family": "playlist",
+          "profile": "native",
+          "headers": 7
+        },
+        {
+          "family": "rootlist",
+          "profile": "native",
+          "headers": 2
+        },
+        {
+          "family": "unclassified-spclient",
+          "profile": "native",
+          "headers": 10
+        }
+      ],
+      "parentRelationCounts": {
+        "other-stream": 1,
+        "previous-sent-headers-stream": 106,
+        "root": 3
+      },
+      "exampleSourceAnchors": [
+        {
+          "profile": "native",
+          "parentRelation": "other-stream",
+          "family": "collection",
+          "eventIndex": 16637,
+          "sessionSourceId": 820,
+          "requestSourceId": 957,
+          "streamId": 65,
+          "parentStreamId": 59,
+          "previousSentHeadersStreamId": 63,
+          "fieldValue": "u=4, i",
+          "hasPriority": true,
+          "exclusive": true,
+          "weight": 110
+        },
+        {
+          "profile": "native",
+          "parentRelation": "previous-sent-headers-stream",
+          "family": "other-spclient",
+          "eventIndex": 7432,
+          "sessionSourceId": 574,
+          "requestSourceId": 606,
+          "streamId": 3,
+          "parentStreamId": 1,
+          "previousSentHeadersStreamId": 1,
+          "fieldValue": "u=4, i",
+          "hasPriority": true,
+          "exclusive": true,
+          "weight": 110
+        },
+        {
+          "profile": "native",
+          "parentRelation": "root",
+          "family": "unclassified-spclient",
+          "eventIndex": 7036,
+          "sessionSourceId": 574,
+          "requestSourceId": 503,
+          "streamId": 1,
+          "parentStreamId": 0,
+          "previousSentHeadersStreamId": null,
+          "fieldValue": "u=4, i",
+          "hasPriority": true,
+          "exclusive": true,
+          "weight": 110
+        }
+      ],
+      "noRfc7540PrioritySettingEventsOnSelectedSessions": []
+    },
+    {
+      "path": ".local/original-playback-key-netlog.json",
+      "sha256": "9a58d8b2ce592e8614f795cb85712a2c598b09f0a427962648dc8f2475755467",
+      "disableQuic": false,
+      "selectedHeaders": 40,
+      "allSelectedHavePriority": true,
+      "allSelectedExclusive": true,
+      "profileCounts": {
+        "native": 40
+      },
+      "weightCounts": {
+        "110": 40
+      },
+      "familyCounts": [
+        {
+          "family": "collection",
+          "profile": "native",
+          "headers": 12
+        },
+        {
+          "family": "connect",
+          "profile": "native",
+          "headers": 1
+        },
+        {
+          "family": "extended-metadata",
+          "profile": "native",
+          "headers": 5
+        },
+        {
+          "family": "other-spclient",
+          "profile": "native",
+          "headers": 8
+        },
+        {
+          "family": "playlist",
+          "profile": "native",
+          "headers": 3
+        },
+        {
+          "family": "rootlist",
+          "profile": "native",
+          "headers": 2
+        },
+        {
+          "family": "unclassified-spclient",
+          "profile": "native",
+          "headers": 9
+        }
+      ],
+      "parentRelationCounts": {
+        "previous-sent-headers-stream": 35,
+        "root": 5
+      },
+      "exampleSourceAnchors": [
+        {
+          "profile": "native",
+          "parentRelation": "previous-sent-headers-stream",
+          "family": "other-spclient",
+          "eventIndex": 8479,
+          "sessionSourceId": 573,
+          "requestSourceId": 717,
+          "streamId": 5,
+          "parentStreamId": 3,
+          "previousSentHeadersStreamId": 3,
+          "fieldValue": "u=4, i",
+          "hasPriority": true,
+          "exclusive": true,
+          "weight": 110
+        },
+        {
+          "profile": "native",
+          "parentRelation": "root",
+          "family": "unclassified-spclient",
+          "eventIndex": 7079,
+          "sessionSourceId": 573,
+          "requestSourceId": 507,
+          "streamId": 1,
+          "parentStreamId": 0,
+          "previousSentHeadersStreamId": null,
+          "fieldValue": "u=4, i",
+          "hasPriority": true,
+          "exclusive": true,
+          "weight": 110
+        }
+      ],
+      "noRfc7540PrioritySettingEventsOnSelectedSessions": []
+    }
+  ],
+  "publicSources": [
+    {
+      "path": ".local/cef-source/chromium-151.0.7922.138/net/spdy/http2_priority_dependencies.cc",
+      "url": "https://github.com/chromium/chromium/blob/151.0.7922.138/net/spdy/http2_priority_dependencies.cc",
+      "sha256": "6be35debd2391e58253c691c24d00c9a5ff44c9a86c14c7da48ced04bea337d8"
+    },
+    {
+      "path": ".local/cef-source/chromium-151.0.7922.138/net/spdy/http2_priority_dependencies.h",
+      "url": "https://github.com/chromium/chromium/blob/151.0.7922.138/net/spdy/http2_priority_dependencies.h",
+      "sha256": "6abaa1a94a0bd978917e06c6c57f132c214a92fbd7da1175638f031122304208"
+    },
+    {
+      "path": ".local/cef-source/chromium-151.0.7922.138/net/spdy/spdy_session.cc",
+      "url": "https://github.com/chromium/chromium/blob/151.0.7922.138/net/spdy/spdy_session.cc",
+      "sha256": "64b11f574cf49e266ea7f8415c4df9e03e51fb4d4a1e4efd5cbe467edcd04aee"
+    },
+    {
+      "path": ".local/cef-source/chromium-151.0.7922.138/net/spdy/spdy_session.h",
+      "url": "https://github.com/chromium/chromium/blob/151.0.7922.138/net/spdy/spdy_session.h",
+      "sha256": "ae815a374dd4e3461a07ebf4550a15e6eb50d328afde8f2b49cac742a288706a"
+    },
+    {
+      "path": ".local/cef-source/chromium-151.0.7922.138/net/spdy/spdy_stream.cc",
+      "url": "https://github.com/chromium/chromium/blob/151.0.7922.138/net/spdy/spdy_stream.cc",
+      "sha256": "24b6d8d32370209846aee6408e2b6df6f59fd385527dbbb50f3265b3f6531e01"
+    },
+    {
+      "path": ".local/cef-source/chromium-151.0.7922.138/net/spdy/spdy_http_utils.cc",
+      "url": "https://github.com/chromium/chromium/blob/151.0.7922.138/net/spdy/spdy_http_utils.cc",
+      "sha256": "787bd8e7365c57db3ecda6632ded3c9d1b2a21b0a7d1c5ad8c990c2bd9df0d21"
+    },
+    {
+      "path": ".local/cef-source/chromium-151.0.7922.138/net/base/request_priority.h",
+      "url": "https://github.com/chromium/chromium/blob/151.0.7922.138/net/base/request_priority.h",
+      "sha256": "355e4d31be9bb8173fc3747f106e889cc766c14e82a120a196c81e77c05dcf57"
+    },
+    {
+      "path": ".local/cef-source/chromium-151.0.7922.138/net/quic/quic_http_utils.cc",
+      "url": "https://github.com/chromium/chromium/blob/151.0.7922.138/net/quic/quic_http_utils.cc",
+      "sha256": "baca244d0188e49b6bfdf7a8fc06b850d984218998816df711b093a6ffa39ce5"
+    },
+    {
+      "path": ".local/cef-source/google-quiche-4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/http2/core/spdy_protocol.cc",
+      "url": "https://github.com/google/quiche/blob/4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/http2/core/spdy_protocol.cc",
+      "sha256": "ca2f7e4afc8646696dfa48f45bde299b62843ef65e72eb2653adeabe2d65ddfc"
+    },
+    {
+      "path": ".local/cef-source/google-quiche-4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/http2/core/spdy_protocol.h",
+      "url": "https://github.com/google/quiche/blob/4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/http2/core/spdy_protocol.h",
+      "sha256": "6f43f60f3b3d3f0ed8efc85c82ac13fe90fc3c0bd95b6ff288af4cb02c70d1db"
+    },
+    {
+      "path": ".local/cef-source/chromium-DEPS-151.0.7922.138",
+      "url": "https://github.com/chromium/chromium/blob/151.0.7922.138/DEPS",
+      "sha256": "020af99baae3892b9fc0e37f79c95fb2882dcbbf1c789c3e6c56bf0dc3c3f335"
+    },
+    {
+      "path": ".local/cef-source/features-151.0.7922.138.cc",
+      "url": "https://github.com/chromium/chromium/blob/151.0.7922.138/net/base/features.cc",
+      "sha256": "78d0d0113fc7e83d63e8c2614927acd29fd4e552c4c3b365d05b3fa6773928a1"
+    }
+  ],
+  "sourcePolicy": {
+    "classIdentity": "Pinned Chromium names this class Http2PriorityDependencies (formerly SpdyPriorityDependencies). Sources are net/spdy/http2_priority_dependencies.cc and .h.",
+    "priorityConversion": "request_priority.h:28-45 defines HIGHEST=5, MEDIUM=4, IDLE=1. spdy_http_utils.cc:286-292 maps RequestPriority to SpdyPriority as 5 - priority; quic_http_utils.cc:14-20 uses the same 5 - priority for extensible urgency. Native u=4 corresponds to IDLE and renderer u=1 to MEDIUM in these scoped captured contexts.",
+    "weightConversion": "Google spdy_protocol.cc:60-64 clamps SPDY priority to 0..7, computes float kSteps=255.9f/7.f, and returns static_cast<int>(kSteps*(7.f-priority))+1. The complete original routine and clamp execute unchanged for bands 0..7. Thus priority 4 maps to 110 and priority 1 to 220, matching all selected captured headers.",
+    "registration": "SpdyStream::ProduceHeadersFrame spdy_stream.cc:129-143 calls SpdySession::CreateHeaders with its current priority. CreateHeaders spdy_session.cc:1076-1124 sets has_priority=true unconditionally, calls dependency OnStreamCreation before logging, then sets weight/parent/exclusive on SpdyHeadersIR and serializes it.",
+    "creation": "Http2PriorityDependencies::OnStreamCreation lines22-51 ignores an already registered ID. Otherwise root parent 0 and exclusive=true are defaults, weight is converted from SPDY priority. PriorityLowerBound lines53-64 scans from the requested numeric band downward to 0, choosing the most recently appended stream in the first nonempty band. Append the new stream to its band. This is same-band latest live stream, else nearest higher-precedence nonempty band; not universally the previous stream ID.",
+    "destruction": "OnStreamDestruction lines175-183 removes only that stream from its band and ID map. SpdySession::CloseActiveStreamIterator lines1847-1856 invokes it when the active stream is removed. SpdyStream lines459-467 and515-541 retain half-closed streams and close when both directions finish; reset/cancellation follows active-stream close paths. Do not remove dependency state merely when response headers arrive or only one direction finishes.",
+    "priorityChange": "SpdySession::UpdateStreamPriority lines1230-1255 always updates queued-write priority, skips dependency updates while stream ID is 0, and skips wire reprioritization when kAvoidH2Reprioritization is enabled. Public features.cc:37 defaults that feature disabled. Otherwise OnStreamUpdate is called and returned updates are sent in order; EnqueuePriorityFrame lines1928-1950 puts all such frames at HIGHEST to serialize them.",
+    "dependencyUpdate": "OnStreamUpdate lines111-173 returns empty for absent ID or unchanged priority. Find old parent, new lower-bound parent, and substitute old parent when the new lookup returns the moving stream itself. If parent changes, first reattach its old child to old parent/root with that child's mapped weight and exclusive=true, then reattach the moving stream to new parent/root with new mapped weight and exclusive=true. Finally remove the stream from the old band and append to the new band, even if no wire updates were required.",
+    "serverNoRfc7540Setting": "Google spdy_protocol.h:163 defines SETTINGS_DEPRECATE_HTTP2_PRIORITIES as ID 0x9 (the no-RFC7540-priorities setting). SpdySession::HandleSetting lines2389-2408 accepts only 0/1; a changed value after the first SETTINGS drains with ERR_HTTP2_PROTOCOL_ERROR. Before the first SETTINGS completes, value 1 sets deprecate_http2_priorities_=true, while value 0 does not change it; its initial value is false. ALPS settings also pass through HandleSetting (spdy_session.cc:952-960). OnSettingsEnd:3112-3114 marks the first SETTINGS received.",
+    "documentedHelperConditions": "SpdySession::ShouldSendHttp2Priority lines1045-1047 returns !enable_priority_update_ || !deprecate_http2_priorities_. ShouldSendPriorityUpdate lines1049-1055 is false when enable_priority_update_ is false; otherwise true before initial server SETTINGS, then equal to deprecate_http2_priorities_. The header comments document those conditions.",
+    "helperUseLimit": "Neither CreateHeaders nor UpdateStreamPriority in the retained pinned source calls those helper functions. Initial HEADERS priority metadata is unconditional in CreateHeaders. Parsing server setting 9 and helper documentation alone do not prove actual suppression of that outgoing metadata in this pinned build; no such suppression is inferred here.",
+    "logger": "NetLogSpdyHeadersSentParams spdy_session.cc:189-213 logs has_priority and, only when true, parent_stream_id/weight/exclusive supplied to the outgoing frame serializer. Capture fields therefore describe encoder inputs, not guessed stream policy."
+  },
+  "limits": [
+    "Only selected native global/regional spclient and renderer Pathfinder HEADERS are covered. Other hosts and arbitrary renderer requests are outside this profile; the forced-H2 diagnostic is counted separately.",
+    "Parent IDs are observed protocol stream IDs with source anchors. Full historical active-stream lifecycles and priority changes were not replayed from these captures, so parent-relation counts do not independently validate the complete dependency algorithm.",
+    "Header priority presence, weight, exclusivity and dynamic parent inputs are directly captured. Selected unchanged public creation/destruction/weight routines execute on explicit synthetic inputs; no proprietary routine or original app executes.",
+    "Live feature overrides, application scheduling, server behavior, HPACK/TLS bytes and complete frame/packet order remain unproved. No tests, production edits, app/account requests or probes are included."
+  ]
+}

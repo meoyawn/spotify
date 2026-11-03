@@ -1,0 +1,217 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "freshAndLogin5Template": {
+    "method": "POST",
+    "url": "https://login5.spotify.com/v3/login",
+    "initialFreshHeaders": [],
+    "constructorHeaders": [
+      [
+        "Cache-Control",
+        "no-cache, no-store, max-age=0"
+      ],
+      [
+        "Content-Type",
+        "application/x-protobuf"
+      ]
+    ],
+    "headers": [
+      [
+        "X-Retry-Count",
+        "0"
+      ],
+      [
+        "Cache-Control",
+        "no-cache, no-store, max-age=0"
+      ],
+      [
+        "Content-Type",
+        "application/x-protobuf"
+      ]
+    ],
+    "retryCount": 0
+  },
+  "userAgent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+  "cefNativeOptions": {
+    "selectedLocale": "en",
+    "suppliedAppleLanguages": [
+      "ru",
+      "en-US",
+      "en",
+      "en-GB"
+    ],
+    "originalPreferredLocales": {
+      "defaultsKey": "AppleLanguages",
+      "preferredLocales": [
+        "ru",
+        "en-US",
+        "en",
+        "en-GB"
+      ]
+    },
+    "acceptLanguageList": "en-US,en,en-GB",
+    "requestContextSettingsHex": "600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000",
+    "requestContextHandler": 0
+  },
+  "cefAutomaticFieldsCapture": {
+    "path": "reverse-engineering/fixtures/native-cef-h2-loopback.json",
+    "sha256": "d896a0fad537b0fb5da2b51f3ca283d2959eecd40a5e41e06ec360d27b2d65b2",
+    "case": "en HTTPS Login5 POST"
+  },
+  "sourceExports": [
+    {
+      "path": ".local/rea-session/auth_native_connectivity_scope_setup.json",
+      "sha256": "a64d248521aa8c69569397df45eae62639e1df8f143ef3f44db0908c6462a32e"
+    },
+    {
+      "path": ".local/rea-session/auth_native_user_agent_scope_current.json",
+      "sha256": "f669d2114387c3b0567c7999768c66021648d785986787b9fe172fcc492e61e3"
+    },
+    {
+      "path": ".local/rea-session/native-http-auth-provider-accounts-factory-binding.json",
+      "sha256": "56a02b341e23cb3dec6a4b714f485bac87e90240fb9c51f390fdc91cfdbd4c7e"
+    },
+    {
+      "path": ".local/rea-session/native-login5-preauth-http-template-and-bare-factory.json",
+      "sha256": "d8f863f717278579da56f622b00a5b846532aee9408e025d6b0610b7c879417c"
+    },
+    {
+      "path": ".local/rea-session/native_http_builder_options_constructor.json",
+      "sha256": "dde7f37ac9de08b7fc3e8e84c1dd77ee03db4655ebdf4ed5334eb55004b4eee4"
+    },
+    {
+      "path": ".local/rea-session/native_http_factory_request_context.json",
+      "sha256": "f4770c5f2ba1abb3c2a6d8572246c1565a2cc4b33f792ebd2efa576249491f5b"
+    },
+    {
+      "path": ".local/rea-session/login5_api_owner_constructor.json",
+      "sha256": "6b48e82aa67e3362d77d2cdf0aed8e225480e6b970f14a23621372e66b606daa"
+    },
+    {
+      "path": ".local/rea-session/login5_v3_task_owner.json",
+      "sha256": "64a9c27eecbb20960a6a40ce38ab5d458a72c6a530ed1561dfe335056e0fa590"
+    },
+    {
+      "path": ".local/rea-session/login5-v3-request-builder.json",
+      "sha256": "47eb4402e1e52e3969921a3cc325c82b702eac124e5557490d6c01344fe16e5b"
+    }
+  ],
+  "originalEntries": {
+    "freshBuilder": "0x101c23efc",
+    "login5Constructor": "0x1018c02cc",
+    "clientTokenDecorator": "0x101a4e0fc",
+    "uaConstructorRegion": [
+      "0x101c20fa0",
+      "0x101c20fd8"
+    ]
+  },
+  "substitutions": [
+    "Synthetic opaque backend/default/context pairs; actual fresh HTTP model and proprietary setters execute.",
+    "Original constructor stops at final template store; no task/callback/transport is created.",
+    "Original retry-reader zero-start state and exact original X-Retry-Count setter.",
+    "Original UA constructor region executes with captured native shared-factory UA as explicit input.",
+    "Original client-token decorator executes with synthetic cached provider, explicit enabled flag and domain list.",
+    "Original Login5 stored-credential constructor and compiled protobuf serializer supply body bytes.",
+    "Standard libc allocation, memory/string/case-folding and prime-capacity providers only."
+  ],
+  "limits": [
+    "Independent composition of original routines and shipped CEF local capture, not a fresh remote Login5 capture.",
+    "Effective client-token enabled state/token/domains and native UA/CEF locale remain explicit original-owner inputs.",
+    "No Authorization/access-token decorator is installed by this PREAUTH pipeline; authenticated seven-header core template is separate.",
+    "CEF automatic fields reuse its captured Login5 POST shape with explicit authority/path/UA/body substitutions.",
+    "No account credentials, original profile, network or response keys are read."
+  ],
+  "cases": [
+    {
+      "name": "client token disabled",
+      "clientTokenEnabled": false,
+      "clientToken": "synthetic-client-token",
+      "clientTokenDomains": [
+        "spotify.com"
+      ],
+      "clientProviderReads": 0,
+      "credential": {
+        "variant": "stored",
+        "nativeKind": 1,
+        "id": "synthetic-user",
+        "secretHex": "00ff"
+      },
+      "clientId": "synthetic-client",
+      "deviceId": "synthetic-device",
+      "method": "POST",
+      "url": "https://login5.spotify.com/v3/login",
+      "headers": {
+        "User-Agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+        "Content-Type": "application/x-protobuf",
+        "Cache-Control": "no-cache, no-store, max-age=0",
+        "X-Retry-Count": "0"
+      },
+      "bodyHex": "0a240a1073796e7468657469632d636c69656e74121073796e7468657469632d646576696365a206140a0e73796e7468657469632d75736572120200ff",
+      "expectedHttp2Headers": {
+        ":method": "POST",
+        ":authority": "login5.spotify.com",
+        ":scheme": "https",
+        ":path": "/v3/login",
+        "content-length": "61",
+        "pragma": "no-cache",
+        "origin": "https://login5.spotify.com",
+        "accept-language": "en-US,en;q=0.9,en-GB;q=0.8",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "empty",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=4, i",
+        "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+        "content-type": "application/x-protobuf",
+        "cache-control": "no-cache, no-store, max-age=0",
+        "x-retry-count": "0"
+      }
+    },
+    {
+      "name": "client token enabled",
+      "clientTokenEnabled": true,
+      "clientToken": "synthetic-client-token",
+      "clientTokenDomains": [
+        "spotify.com"
+      ],
+      "clientProviderReads": 1,
+      "credential": {
+        "variant": "stored",
+        "nativeKind": 1,
+        "id": "synthetic-user",
+        "secretHex": "00ff"
+      },
+      "clientId": "synthetic-client",
+      "deviceId": "synthetic-device",
+      "method": "POST",
+      "url": "https://login5.spotify.com/v3/login",
+      "headers": {
+        "User-Agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+        "Content-Type": "application/x-protobuf",
+        "Cache-Control": "no-cache, no-store, max-age=0",
+        "X-Retry-Count": "0",
+        "client-token": "synthetic-client-token"
+      },
+      "bodyHex": "0a240a1073796e7468657469632d636c69656e74121073796e7468657469632d646576696365a206140a0e73796e7468657469632d75736572120200ff",
+      "expectedHttp2Headers": {
+        ":method": "POST",
+        ":authority": "login5.spotify.com",
+        ":scheme": "https",
+        ":path": "/v3/login",
+        "content-length": "61",
+        "pragma": "no-cache",
+        "origin": "https://login5.spotify.com",
+        "accept-language": "en-US,en;q=0.9,en-GB;q=0.8",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "empty",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=4, i",
+        "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+        "content-type": "application/x-protobuf",
+        "cache-control": "no-cache, no-store, max-age=0",
+        "x-retry-count": "0",
+        "client-token": "synthetic-client-token"
+      }
+    }
+  ]
+}

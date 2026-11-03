@@ -1,0 +1,580 @@
+{
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "descriptorSetSha256": "e05cf03aafc96fc69bcf9415def2648fd4ef88c98d131c9f475025ee735221e6",
+  "protobufCompiler": "libprotoc 36.2",
+  "cppProtobufVersion": "36.2.0",
+  "provenance": "Run original playlist sync reply decisions with inert standard dependencies.\n\nSynthetic reply/owner/container memory only. Standard protobuf 36.2 parses the\nexact portable descriptor. No original process, service, storage or HTTP runs.",
+  "scenarios": [
+    {
+      "name": "decoded content and copied headers",
+      "operations": [
+        {
+          "kind": "response",
+          "statusCode": 200,
+          "bodyHex": "0a0372657610012a1f080010001a190a1773706f746966793a747261636b3a73796e746865746963820108536e6f7720e99baa",
+          "headers": {
+            "Content-Type": "application/x-protobuf",
+            "ETag": "synthetic-revision"
+          }
+        }
+      ],
+      "expected": {
+        "deliveries": [
+          {
+            "error": {
+              "value": 0,
+              "category": "http"
+            },
+            "status": {
+              "value": 200,
+              "category": "http"
+            },
+            "headers": {
+              "Content-Type": "application/x-protobuf",
+              "ETag": "synthetic-revision"
+            },
+            "contentLength": 1,
+            "contentInitialized": true,
+            "contentWireHex": "0a0372657610012a1f080010001a190a1773706f746966793a747261636b3a73796e746865746963820108536e6f7720e99baa"
+          }
+        ],
+        "events": [
+          "parse",
+          "deliver",
+          "return-to-pool"
+        ]
+      }
+    },
+    {
+      "name": "empty successful proto2 reply",
+      "operations": [
+        {
+          "kind": "response",
+          "statusCode": 204
+        }
+      ],
+      "expected": {
+        "deliveries": [
+          {
+            "error": {
+              "value": 0,
+              "category": "http"
+            },
+            "status": {
+              "value": 204,
+              "category": "http"
+            },
+            "headers": {},
+            "contentLength": null,
+            "contentInitialized": true,
+            "contentWireHex": ""
+          }
+        ],
+        "events": [
+          "parse",
+          "deliver",
+          "return-to-pool"
+        ]
+      }
+    },
+    {
+      "name": "upper successful HTTP status boundary",
+      "operations": [
+        {
+          "kind": "response",
+          "statusCode": 299,
+          "bodyHex": "0a0372657610012a1f080010001a190a1773706f746966793a747261636b3a73796e746865746963820108536e6f7720e99baa"
+        }
+      ],
+      "expected": {
+        "deliveries": [
+          {
+            "error": {
+              "value": 0,
+              "category": "http"
+            },
+            "status": {
+              "value": 299,
+              "category": "http"
+            },
+            "headers": {},
+            "contentLength": 1,
+            "contentInitialized": true,
+            "contentWireHex": "0a0372657610012a1f080010001a190a1773706f746966793a747261636b3a73796e746865746963820108536e6f7720e99baa"
+          }
+        ],
+        "events": [
+          "parse",
+          "deliver",
+          "return-to-pool"
+        ]
+      }
+    },
+    {
+      "name": "lower non-success HTTP status boundary",
+      "operations": [
+        {
+          "kind": "response",
+          "statusCode": 199,
+          "bodyHex": "ff"
+        }
+      ],
+      "expected": {
+        "deliveries": [
+          {
+            "error": {
+              "value": 0,
+              "category": "http"
+            },
+            "status": {
+              "value": 199,
+              "category": "http"
+            },
+            "headers": {},
+            "contentLength": null,
+            "contentInitialized": true,
+            "contentWireHex": ""
+          }
+        ],
+        "events": [
+          "deliver"
+        ]
+      }
+    },
+    {
+      "name": "upper non-success HTTP status boundary",
+      "operations": [
+        {
+          "kind": "response",
+          "statusCode": 300,
+          "bodyHex": "0a0372657610012a1f080010001a190a1773706f746966793a747261636b3a73796e746865746963820108536e6f7720e99baa"
+        }
+      ],
+      "expected": {
+        "deliveries": [
+          {
+            "error": {
+              "value": 0,
+              "category": "http"
+            },
+            "status": {
+              "value": 300,
+              "category": "http"
+            },
+            "headers": {},
+            "contentLength": null,
+            "contentInitialized": true,
+            "contentWireHex": ""
+          }
+        ],
+        "events": [
+          "deliver"
+        ]
+      }
+    },
+    {
+      "name": "server error keeps headers and empty content",
+      "operations": [
+        {
+          "kind": "response",
+          "statusCode": 503,
+          "bodyHex": "ff",
+          "headers": {
+            "Retry-After": "12"
+          }
+        }
+      ],
+      "expected": {
+        "deliveries": [
+          {
+            "error": {
+              "value": 0,
+              "category": "http"
+            },
+            "status": {
+              "value": 503,
+              "category": "http"
+            },
+            "headers": {
+              "Retry-After": "12"
+            },
+            "contentLength": null,
+            "contentInitialized": true,
+            "contentWireHex": ""
+          }
+        ],
+        "events": [
+          "deliver"
+        ]
+      }
+    },
+    {
+      "name": "truncated protobuf retains prior parsed fields and replaces both code pairs",
+      "operations": [
+        {
+          "kind": "response",
+          "statusCode": 200,
+          "bodyHex": "100782010561"
+        }
+      ],
+      "expected": {
+        "deliveries": [
+          {
+            "error": {
+              "value": 4,
+              "category": "http"
+            },
+            "status": {
+              "value": 4,
+              "category": "http"
+            },
+            "headers": {},
+            "contentLength": 7,
+            "contentInitialized": true,
+            "contentWireHex": "10078201056100000000"
+          }
+        ],
+        "events": [
+          "parse",
+          "deliver",
+          "return-to-pool"
+        ]
+      }
+    },
+    {
+      "name": "nested required fields fail full protobuf parsing",
+      "operations": [
+        {
+          "kind": "response",
+          "statusCode": 200,
+          "bodyHex": "2a021a00"
+        }
+      ],
+      "expected": {
+        "deliveries": [
+          {
+            "error": {
+              "value": 4,
+              "category": "http"
+            },
+            "status": {
+              "value": 4,
+              "category": "http"
+            },
+            "headers": {},
+            "contentLength": null,
+            "contentInitialized": false,
+            "contentWireHex": "2a021a00"
+          }
+        ],
+        "events": [
+          "parse",
+          "deliver",
+          "return-to-pool"
+        ]
+      }
+    },
+    {
+      "name": "proto2 malformed UTF8 is accepted and raw string bytes survive",
+      "operations": [
+        {
+          "kind": "response",
+          "statusCode": 200,
+          "bodyHex": "820101ff"
+        }
+      ],
+      "expected": {
+        "deliveries": [
+          {
+            "error": {
+              "value": 0,
+              "category": "http"
+            },
+            "status": {
+              "value": 200,
+              "category": "http"
+            },
+            "headers": {},
+            "contentLength": null,
+            "contentInitialized": true,
+            "contentWireHex": "820101ff"
+          }
+        ],
+        "events": [
+          "parse",
+          "deliver",
+          "return-to-pool"
+        ]
+      }
+    },
+    {
+      "name": "nested proto3 malformed UTF8 is rejected inside proto2 content",
+      "operations": [
+        {
+          "kind": "response",
+          "statusCode": 200,
+          "bodyHex": "b201050a030a01ff"
+        }
+      ],
+      "expected": {
+        "deliveries": [
+          {
+            "error": {
+              "value": 4,
+              "category": "http"
+            },
+            "status": {
+              "value": 4,
+              "category": "http"
+            },
+            "headers": {},
+            "contentLength": null,
+            "contentInitialized": true,
+            "contentWireHex": "b201050a030a01ff"
+          }
+        ],
+        "events": [
+          "parse",
+          "deliver",
+          "return-to-pool"
+        ]
+      }
+    },
+    {
+      "name": "unknown fields survive content parsing",
+      "operations": [
+        {
+          "kind": "response",
+          "statusCode": 200,
+          "bodyHex": "1007a00601"
+        }
+      ],
+      "expected": {
+        "deliveries": [
+          {
+            "error": {
+              "value": 0,
+              "category": "http"
+            },
+            "status": {
+              "value": 200,
+              "category": "http"
+            },
+            "headers": {},
+            "contentLength": 7,
+            "contentInitialized": true,
+            "contentWireHex": "1007a00601"
+          }
+        ],
+        "events": [
+          "parse",
+          "deliver",
+          "return-to-pool"
+        ]
+      }
+    },
+    {
+      "name": "HTTP cancellation is suppressed",
+      "operations": [
+        {
+          "kind": "failure",
+          "value": 10,
+          "category": "http"
+        }
+      ],
+      "expected": {
+        "deliveries": [],
+        "events": []
+      }
+    },
+    {
+      "name": "same numeric code from system category is delivered",
+      "operations": [
+        {
+          "kind": "failure",
+          "value": 10,
+          "category": "system"
+        }
+      ],
+      "expected": {
+        "deliveries": [
+          {
+            "error": {
+              "value": 10,
+              "category": "system"
+            },
+            "status": {
+              "value": 0,
+              "category": "system"
+            },
+            "headers": {},
+            "contentLength": null,
+            "contentInitialized": true,
+            "contentWireHex": ""
+          }
+        ],
+        "events": [
+          "deliver"
+        ]
+      }
+    },
+    {
+      "name": "opaque category cannot impersonate HTTP cancellation",
+      "operations": [
+        {
+          "kind": "failure",
+          "value": 10,
+          "category": "external"
+        }
+      ],
+      "expected": {
+        "deliveries": [
+          {
+            "error": {
+              "value": 10,
+              "category": "external"
+            },
+            "status": {
+              "value": 0,
+              "category": "system"
+            },
+            "headers": {},
+            "contentLength": null,
+            "contentInitialized": true,
+            "contentWireHex": ""
+          }
+        ],
+        "events": [
+          "deliver"
+        ]
+      }
+    },
+    {
+      "name": "HTTP transport failure has empty status in system category",
+      "operations": [
+        {
+          "kind": "failure",
+          "value": 7,
+          "category": "http"
+        }
+      ],
+      "expected": {
+        "deliveries": [
+          {
+            "error": {
+              "value": 7,
+              "category": "http"
+            },
+            "status": {
+              "value": 0,
+              "category": "system"
+            },
+            "headers": {},
+            "contentLength": null,
+            "contentInitialized": true,
+            "contentWireHex": ""
+          }
+        ],
+        "events": [
+          "deliver"
+        ]
+      }
+    },
+    {
+      "name": "close suppresses response and failure without parsing",
+      "operations": [
+        {
+          "kind": "close"
+        },
+        {
+          "kind": "response",
+          "statusCode": 200,
+          "bodyHex": "ff"
+        },
+        {
+          "kind": "failure",
+          "value": 7,
+          "category": "http"
+        }
+      ],
+      "expected": {
+        "deliveries": [],
+        "events": []
+      }
+    },
+    {
+      "name": "active callback lifetime permits repeated replies",
+      "operations": [
+        {
+          "kind": "response",
+          "statusCode": 200,
+          "bodyHex": "0a0372657610012a1f080010001a190a1773706f746966793a747261636b3a73796e746865746963820108536e6f7720e99baa"
+        },
+        {
+          "kind": "response",
+          "statusCode": 204
+        },
+        {
+          "kind": "failure",
+          "value": 7,
+          "category": "http"
+        }
+      ],
+      "expected": {
+        "deliveries": [
+          {
+            "error": {
+              "value": 0,
+              "category": "http"
+            },
+            "status": {
+              "value": 200,
+              "category": "http"
+            },
+            "headers": {},
+            "contentLength": 1,
+            "contentInitialized": true,
+            "contentWireHex": "0a0372657610012a1f080010001a190a1773706f746966793a747261636b3a73796e746865746963820108536e6f7720e99baa"
+          },
+          {
+            "error": {
+              "value": 0,
+              "category": "http"
+            },
+            "status": {
+              "value": 204,
+              "category": "http"
+            },
+            "headers": {},
+            "contentLength": null,
+            "contentInitialized": true,
+            "contentWireHex": ""
+          },
+          {
+            "error": {
+              "value": 7,
+              "category": "http"
+            },
+            "status": {
+              "value": 0,
+              "category": "system"
+            },
+            "headers": {},
+            "contentLength": null,
+            "contentInitialized": true,
+            "contentWireHex": ""
+          }
+        ],
+        "events": [
+          "parse",
+          "deliver",
+          "return-to-pool",
+          "parse",
+          "deliver",
+          "return-to-pool",
+          "deliver"
+        ]
+      }
+    }
+  ]
+}

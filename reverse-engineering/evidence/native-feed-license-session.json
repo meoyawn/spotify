@@ -1,0 +1,331 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "originalCapture": {
+    "path": ".local/license-feed-original-netlog.json",
+    "sha256": "d607bdf3f8926c7bfb0224c5e805563ba12c54e31e3654cde80a000bda58de9f",
+    "events": 98871,
+    "provenance": "REA capture_process_scenario ran the unchanged original with --disable-quic, NetLog and loopback CDP; the selected Feed The Addiction URI was matched before its observed Play control was clicked and paused after eight seconds. Process exit was confirmed."
+  },
+  "originalSelectedLicense": {
+    "source": 3171,
+    "sameSelectedFileAsApp": true,
+    "status": 200,
+    "bodyBytes": 30,
+    "wholeBodyMatchesUnchangedOriginalProducer": true,
+    "sameAppBodyExceptClock": true
+  },
+  "originalTokenProvenance": {
+    "source": 485,
+    "endpoint": "accounts.spotify.com/api/token",
+    "status": 200,
+    "licenseUsesThisResponseTokenExactly": true,
+    "tokenType": "Bearer",
+    "expiresIn": 3600,
+    "clientIdMatchesDesktopConstant": true,
+    "sameScopeSetAsExistingAppGrant": true,
+    "scopeCount": 28
+  },
+  "diagnosticClipSha256": "bb9013c260981b162e19b16f76ce47a5ada9fc7d7fc780e28e7f3a05df61e174",
+  "controlledProbes": [
+    {
+      "requestId": 93,
+      "credentialInput": "existing app Accounts grant",
+      "time": "2026-10-30T03:56:38.167629Z",
+      "transport": "h2",
+      "status": 200,
+      "headers_ms": 206
+    },
+    {
+      "requestId": 94,
+      "credentialInput": "existing app Accounts grant",
+      "time": "2026-10-30T03:56:38.839704Z",
+      "transport": "h3",
+      "status": 429,
+      "headers_ms": 649
+    },
+    {
+      "requestId": 95,
+      "credentialInput": "captured original Accounts token",
+      "time": "2026-10-30T03:56:39.115913Z",
+      "transport": "h2",
+      "status": 200,
+      "headers_ms": 188
+    },
+    {
+      "requestId": 96,
+      "credentialInput": "captured original Accounts token",
+      "time": "2026-10-30T03:57:55.935649Z",
+      "transport": "h3",
+      "status": 200,
+      "headers_ms": 679
+    },
+    {
+      "requestId": 97,
+      "credentialInput": "existing app Accounts grant",
+      "time": "2026-10-30T03:57:56.187023Z",
+      "transport": "h2",
+      "status": 429,
+      "headers_ms": 189
+    },
+    {
+      "requestId": 98,
+      "credentialInput": "existing app Accounts grant",
+      "time": "2026-10-30T03:57:56.403563Z",
+      "transport": "h2",
+      "status": 429,
+      "headers_ms": 189
+    },
+    {
+      "requestId": 99,
+      "credentialInput": "existing app Accounts grant",
+      "time": "2026-10-30T03:57:56.626537Z",
+      "transport": "h3",
+      "status": 429,
+      "headers_ms": 193
+    },
+    {
+      "requestId": 100,
+      "credentialInput": "existing app Accounts grant; retained Dart body clock",
+      "time": "2026-10-30T03:57:56.851357Z",
+      "transport": "h2",
+      "status": 429,
+      "headers_ms": 194
+    },
+    {
+      "requestId": 102,
+      "credentialInput": "freshly renewed token from existing app Accounts grant",
+      "time": "2026-10-30T03:58:32.695553Z",
+      "transport": "h2",
+      "status": 429,
+      "headers_ms": 186
+    },
+    {
+      "requestId": 103,
+      "credentialInput": "freshly renewed token from existing app Accounts grant",
+      "time": "2026-10-30T03:58:32.927702Z",
+      "transport": "h2",
+      "status": 429,
+      "headers_ms": 189
+    },
+    {
+      "requestId": 104,
+      "credentialInput": "freshly renewed token from existing app Accounts grant",
+      "time": "2026-10-30T03:58:33.630107Z",
+      "transport": "h3",
+      "status": 429,
+      "headers_ms": 673
+    }
+  ],
+  "oldGrantRenewalStatus": 200,
+  "freshBrowserLoginAcceptance": {
+    "pid": 59028,
+    "observedAt": "2026-10-30T04:20:17Z",
+    "attempts": 8,
+    "responses": {
+      "200": 8
+    },
+    "purpose": {
+      "foreground": {
+        "200": 5
+      },
+      "prefetch": {
+        "200": 3
+      }
+    },
+    "canary": 200,
+    "timings": [
+      {
+        "next": false,
+        "track_info_ms": 201,
+        "audio_info_http_ms": 190,
+        "cached_audio_info": false,
+        "audio_info_ms": 198,
+        "storage_http_ms": 180,
+        "license_ms": 191,
+        "license_admitted_ms": 396,
+        "cdn_started_ms": 398,
+        "unwrap_ms": 116,
+        "cached_key": false,
+        "key_ms": 308,
+        "key_ready_ms": 513,
+        "cdn_response_headers_ms": 616,
+        "container_ms": 829,
+        "first_pcm_ms": 1033,
+        "progressive_pcm": true,
+        "cached_pcm": false,
+        "result": "ready",
+        "total_ms": 1292
+      },
+      {
+        "next": false,
+        "track_info_ms": 0,
+        "audio_info_http_ms": 186,
+        "cached_audio_info": false,
+        "audio_info_ms": 186,
+        "storage_http_ms": 181,
+        "license_ms": 186,
+        "license_admitted_ms": 373,
+        "cdn_started_ms": 373,
+        "unwrap_ms": 111,
+        "cached_key": false,
+        "key_ms": 298,
+        "key_ready_ms": 485,
+        "cdn_response_headers_ms": 636,
+        "container_ms": 853,
+        "first_pcm_ms": 1040,
+        "progressive_pcm": true,
+        "cached_pcm": false,
+        "result": "ready",
+        "total_ms": 1041
+      },
+      {
+        "next": true,
+        "track_info_ms": 0,
+        "audio_info_http_ms": 181,
+        "cached_audio_info": false,
+        "audio_info_ms": 182,
+        "storage_http_ms": 177,
+        "license_ms": 185,
+        "license_admitted_ms": 368,
+        "cdn_started_ms": 368,
+        "unwrap_ms": 144,
+        "cached_key": false,
+        "key_ms": 330,
+        "key_ready_ms": 512,
+        "cdn_response_headers_ms": 679,
+        "container_ms": 936,
+        "first_pcm_ms": 1119,
+        "progressive_pcm": true,
+        "cached_pcm": false,
+        "result": "ready",
+        "total_ms": 1119
+      },
+      {
+        "next": false,
+        "track_info_ms": 0,
+        "audio_info_http_ms": 197,
+        "cached_audio_info": false,
+        "audio_info_ms": 197,
+        "storage_http_ms": 181,
+        "license_ms": 187,
+        "license_admitted_ms": 385,
+        "cdn_started_ms": 385,
+        "unwrap_ms": 80,
+        "cached_key": false,
+        "key_ms": 267,
+        "key_ready_ms": 465,
+        "cdn_response_headers_ms": 153,
+        "container_ms": 355,
+        "first_pcm_ms": 553,
+        "progressive_pcm": true,
+        "cached_pcm": false,
+        "result": "ready",
+        "total_ms": 554
+      },
+      {
+        "next": true,
+        "track_info_ms": 0,
+        "audio_info_http_ms": 183,
+        "cached_audio_info": false,
+        "audio_info_ms": 184,
+        "storage_http_ms": 184,
+        "license_ms": 190,
+        "license_admitted_ms": 375,
+        "cdn_started_ms": 375,
+        "unwrap_ms": 69,
+        "cached_key": false,
+        "key_ms": 260,
+        "key_ready_ms": 444,
+        "cdn_response_headers_ms": 614,
+        "container_ms": 828,
+        "first_pcm_ms": 1013,
+        "progressive_pcm": true,
+        "cached_pcm": false,
+        "result": "ready",
+        "total_ms": 1013
+      },
+      {
+        "next": false,
+        "track_info_ms": 198,
+        "audio_info_http_ms": 183,
+        "cached_audio_info": false,
+        "audio_info_ms": 183,
+        "storage_http_ms": 186,
+        "license_ms": 186,
+        "license_admitted_ms": 370,
+        "cdn_started_ms": 371,
+        "unwrap_ms": 46,
+        "cached_key": false,
+        "key_ms": 233,
+        "key_ready_ms": 417,
+        "result": "failed",
+        "total_ms": 1037
+      },
+      {
+        "next": false,
+        "track_info_ms": 193,
+        "audio_info_http_ms": 194,
+        "cached_audio_info": false,
+        "audio_info_ms": 194,
+        "storage_http_ms": 190,
+        "license_ms": 196,
+        "license_admitted_ms": 391,
+        "cdn_started_ms": 391,
+        "unwrap_ms": 80,
+        "cached_key": false,
+        "key_ms": 276,
+        "key_ready_ms": 471,
+        "cdn_response_headers_ms": 593,
+        "container_ms": 854,
+        "first_pcm_ms": 1049,
+        "progressive_pcm": true,
+        "cached_pcm": false,
+        "result": "ready",
+        "total_ms": 1243
+      },
+      {
+        "next": true,
+        "track_info_ms": 190,
+        "audio_info_http_ms": 193,
+        "cached_audio_info": false,
+        "audio_info_ms": 193,
+        "storage_http_ms": 189,
+        "license_ms": 193,
+        "license_admitted_ms": 388,
+        "cdn_started_ms": 388,
+        "unwrap_ms": 39,
+        "cached_key": false,
+        "key_ms": 233,
+        "key_ready_ms": 427,
+        "cdn_response_headers_ms": 624,
+        "container_ms": 839,
+        "first_pcm_ms": 1033,
+        "progressive_pcm": true,
+        "cached_pcm": false,
+        "result": "ready",
+        "total_ms": 1226
+      }
+    ],
+    "ui": {
+      "libraryPhase": "ready",
+      "loadedLibraryItems": 150,
+      "profileLogoutEnabled": true,
+      "trackMetadataAndArtworkPresent": true,
+      "observedPlaybackPositionsAdvance": true
+    },
+    "limits": [
+      "One explicit logout/browser-login and subsequent complete process replacement; natural grant expiry is not observed.",
+      "License and source counters are bounded live app diagnostics, not precise click-to-DAC measurements."
+    ]
+  },
+  "substitutions": [
+    "Original is explicitly forced to H2 for capture; this does not prove default version selection.",
+    "Public hyperframe decodes H2 DATA, gzip decodes the Accounts reply, and the existing Unicorn oracle executes the unchanged proprietary body producer/serializer with its documented standard-library substitutions."
+  ],
+  "limits": [
+    "Original credentials are private diagnostic inputs only; production never installs them.",
+    "One H2 success is insufficient to blame HTTP/3: subsequent old-grant H2 attempts fail and the original token succeeds over H3.",
+    "New browser login recovers these observations; the server reason for rejecting the old grant remains unknown.",
+    "No general UI/lifecycle suite, Chromium decompilation, fabricated acknowledgement or forced production token refresh is introduced."
+  ]
+}

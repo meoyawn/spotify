@@ -1,0 +1,4259 @@
+{
+  "capture": {
+    "path": ".local/original-license-upload-http2-netlog.json",
+    "sha256": "7ad17ebaf96eda74ecd2c0cd822370287f4aed26310a49faa930cdda92fd64fa",
+    "eventCount": 67442,
+    "provenance": "Supervisor launched the owned original with --disable-quic, played music for about8seconds, paused and finalized its NetLog. Free account and playback context are supervisor observations."
+  },
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "schemas": [
+    {
+      "file": "connect.proto",
+      "package": "spotify.connectstate",
+      "offset": 36366920,
+      "length": 13685,
+      "sha256": "a1d89b84ddb2c6966fb2073ce9cab8267b8e808c96adb484cec886a1ac7fbe6e",
+      "dependencies": [
+        "player.proto",
+        "devices.proto",
+        "media.proto"
+      ]
+    },
+    {
+      "file": "player.proto",
+      "package": "spotify.connectstate",
+      "offset": 36383692,
+      "length": 8619,
+      "sha256": "374dcce7e32e532567f63e3cfb307c1c57c8b65d13d12da5c11257947fa0f6f6",
+      "dependencies": []
+    },
+    {
+      "file": "devices.proto",
+      "package": "spotify.connectstate.devices",
+      "offset": 36381900,
+      "length": 540,
+      "sha256": "aaa4698b52ae0dd4c725f68c6267c344b78132235c51fcbeddf5e84fd5859d4c",
+      "dependencies": []
+    },
+    {
+      "file": "media.proto",
+      "package": "spotify.common.media",
+      "offset": 36382456,
+      "length": 171,
+      "sha256": "59ff63e49a7fa489d19b40a6d54c55682861d358989ed3dee152211914482751",
+      "dependencies": []
+    }
+  ],
+  "recovery": "Original URL request source -> stream-job dependency -> H2session/stream -> TLSsocket; pinned public hyperframe parses SSL_SOCKET_BYTES_SENT DATA, standard gzip decompresses; original embedded schema maps field numbers.",
+  "standardSubstitutions": [
+    "Read-only standard hyperframe H2 DATA decoder and Python gzip decompressor; no native application function or response body is executed/read."
+  ],
+  "limits": [
+    "Account/device/track identities, names, metadata values, headers and complete request payloads are not exported. Gzip/protobuf originals remain private mode0600 under ignored .local.",
+    "Boolean effective values include proto3 false defaults; wirePresent distinguishes absence from an explicit encoded value.",
+    "Identifier formats and equality are observed without publishing identifiers. Format does not establish an identifier generation algorithm.",
+    "Clock unit classifications compare private values with the original NetLog clock; duration units are interpretations of original field names and observed magnitude, not a clock-source implementation proof.",
+    "Advertised original capabilities and supported types are observations, not permission to advertise unimplemented features or Premium entitlements in the Dart app.",
+    "These observed state shapes do not prove Dart state construction, actual runtime policy, Dealer command acknowledgements, server permissions, or TLS/QUIC fingerprint parity."
+  ],
+  "putCount": 7,
+  "capabilityProfiles": [
+    {
+      "profileId": 1,
+      "fields": [
+        {
+          "number": 2,
+          "wire": 0,
+          "name": "can_be_player",
+          "boolean": true
+        },
+        {
+          "number": 5,
+          "wire": 0,
+          "name": "gaia_eq_connect_id",
+          "boolean": true
+        },
+        {
+          "number": 6,
+          "wire": 0,
+          "name": "supports_logout",
+          "boolean": true
+        },
+        {
+          "number": 7,
+          "wire": 0,
+          "name": "is_observable",
+          "boolean": true
+        },
+        {
+          "number": 8,
+          "wire": 0,
+          "name": "volume_steps"
+        },
+        {
+          "number": 9,
+          "wire": 2,
+          "name": "supported_types",
+          "occurrences": 15
+        },
+        {
+          "number": 10,
+          "wire": 0,
+          "name": "command_acks",
+          "boolean": true
+        },
+        {
+          "number": 15,
+          "wire": 0,
+          "name": "supports_playlist_v2",
+          "boolean": true
+        },
+        {
+          "number": 16,
+          "wire": 0,
+          "name": "is_controllable",
+          "boolean": true
+        },
+        {
+          "number": 17,
+          "wire": 0,
+          "name": "supports_external_episodes",
+          "boolean": true
+        },
+        {
+          "number": 18,
+          "wire": 0,
+          "name": "supports_set_backend_metadata",
+          "boolean": true
+        },
+        {
+          "number": 19,
+          "wire": 0,
+          "name": "supports_transfer_command",
+          "boolean": true
+        },
+        {
+          "number": 20,
+          "wire": 0,
+          "name": "supports_command_request",
+          "boolean": true
+        },
+        {
+          "number": 23,
+          "wire": 0,
+          "name": "supports_gzip_pushes",
+          "boolean": true
+        },
+        {
+          "number": 25,
+          "wire": 0,
+          "name": "supports_set_options_command",
+          "boolean": true
+        },
+        {
+          "number": 26,
+          "wire": 2,
+          "name": "supports_hifi",
+          "byteLength": 0
+        },
+        {
+          "number": 33,
+          "wire": 0,
+          "name": "supports_smart_shuffle_mode",
+          "boolean": true
+        },
+        {
+          "number": 34,
+          "wire": 0,
+          "name": "supports_remote_sleep_timer",
+          "boolean": true
+        },
+        {
+          "number": 35,
+          "wire": 0,
+          "name": "supports_ping_request",
+          "boolean": true
+        },
+        {
+          "number": 38,
+          "wire": 0,
+          "name": "supports_zephyr",
+          "boolean": true
+        }
+      ],
+      "booleans": {
+        "can_be_player": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "restrict_to_local": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "gaia_eq_connect_id": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_logout": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "is_observable": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "command_acks": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_rename": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "hidden": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "disable_volume": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "connect_disabled": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "supports_playlist_v2": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "is_controllable": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_external_episodes": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_set_backend_metadata": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_transfer_command": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_command_request": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "is_voice_enabled": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "needs_full_player_state": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "supports_gzip_pushes": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_set_options_command": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_rooms": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "supports_dj": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "supports_smart_shuffle_mode": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_remote_sleep_timer": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_ping_request": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_playlist_mixing": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "supports_remote_audio_quality_control": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "supports_zephyr": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_gapless": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "supports_crossfade": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "supports_remote_equalizer": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "hifiSupportBooleans": {
+        "fully_supported": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "user_eligible": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "device_supported": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "supportedTypes": [
+        "audio/ad",
+        "audio/audio",
+        "audio/episode",
+        "audio/episode+track",
+        "audio/interruption",
+        "audio/local",
+        "audio/media",
+        "audio/podcast-chapter",
+        "audio/track",
+        "audio/user-highlight",
+        "video/ad",
+        "video/episode",
+        "video/podcast-chapter",
+        "video/track",
+        "video/user-highlight"
+      ],
+      "connectCapabilitiesWirePresent": false
+    },
+    {
+      "profileId": 2,
+      "fields": [
+        {
+          "number": 2,
+          "wire": 0,
+          "name": "can_be_player",
+          "boolean": true
+        },
+        {
+          "number": 5,
+          "wire": 0,
+          "name": "gaia_eq_connect_id",
+          "boolean": true
+        },
+        {
+          "number": 6,
+          "wire": 0,
+          "name": "supports_logout",
+          "boolean": true
+        },
+        {
+          "number": 7,
+          "wire": 0,
+          "name": "is_observable",
+          "boolean": true
+        },
+        {
+          "number": 8,
+          "wire": 0,
+          "name": "volume_steps"
+        },
+        {
+          "number": 9,
+          "wire": 2,
+          "name": "supported_types",
+          "occurrences": 15
+        },
+        {
+          "number": 10,
+          "wire": 0,
+          "name": "command_acks",
+          "boolean": true
+        },
+        {
+          "number": 15,
+          "wire": 0,
+          "name": "supports_playlist_v2",
+          "boolean": true
+        },
+        {
+          "number": 16,
+          "wire": 0,
+          "name": "is_controllable",
+          "boolean": true
+        },
+        {
+          "number": 17,
+          "wire": 0,
+          "name": "supports_external_episodes",
+          "boolean": true
+        },
+        {
+          "number": 18,
+          "wire": 0,
+          "name": "supports_set_backend_metadata",
+          "boolean": true
+        },
+        {
+          "number": 19,
+          "wire": 0,
+          "name": "supports_transfer_command",
+          "boolean": true
+        },
+        {
+          "number": 20,
+          "wire": 0,
+          "name": "supports_command_request",
+          "boolean": true
+        },
+        {
+          "number": 23,
+          "wire": 0,
+          "name": "supports_gzip_pushes",
+          "boolean": true
+        },
+        {
+          "number": 25,
+          "wire": 0,
+          "name": "supports_set_options_command",
+          "boolean": true
+        },
+        {
+          "number": 26,
+          "wire": 2,
+          "name": "supports_hifi",
+          "byteLength": 2
+        },
+        {
+          "number": 29,
+          "wire": 0,
+          "name": "supports_dj",
+          "boolean": true
+        },
+        {
+          "number": 30,
+          "wire": 0,
+          "name": "supported_audio_quality",
+          "enum": "HIFI",
+          "enumNumber": 5
+        },
+        {
+          "number": 33,
+          "wire": 0,
+          "name": "supports_smart_shuffle_mode",
+          "boolean": true
+        },
+        {
+          "number": 34,
+          "wire": 0,
+          "name": "supports_remote_sleep_timer",
+          "boolean": true
+        },
+        {
+          "number": 35,
+          "wire": 0,
+          "name": "supports_ping_request",
+          "boolean": true
+        },
+        {
+          "number": 38,
+          "wire": 0,
+          "name": "supports_zephyr",
+          "boolean": true
+        }
+      ],
+      "booleans": {
+        "can_be_player": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "restrict_to_local": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "gaia_eq_connect_id": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_logout": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "is_observable": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "command_acks": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_rename": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "hidden": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "disable_volume": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "connect_disabled": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "supports_playlist_v2": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "is_controllable": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_external_episodes": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_set_backend_metadata": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_transfer_command": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_command_request": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "is_voice_enabled": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "needs_full_player_state": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "supports_gzip_pushes": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_set_options_command": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_rooms": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "supports_dj": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_smart_shuffle_mode": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_remote_sleep_timer": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_ping_request": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_playlist_mixing": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "supports_remote_audio_quality_control": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "supports_zephyr": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_gapless": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "supports_crossfade": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "supports_remote_equalizer": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "hifiSupportBooleans": {
+        "fully_supported": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "user_eligible": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "device_supported": {
+          "wirePresent": true,
+          "effectiveValue": true
+        }
+      },
+      "supportedTypes": [
+        "audio/ad",
+        "audio/audio",
+        "audio/episode",
+        "audio/episode+track",
+        "audio/interruption",
+        "audio/local",
+        "audio/media",
+        "audio/podcast-chapter",
+        "audio/track",
+        "audio/user-highlight",
+        "video/ad",
+        "video/episode",
+        "video/podcast-chapter",
+        "video/track",
+        "video/user-highlight"
+      ],
+      "connectCapabilitiesWirePresent": false
+    },
+    {
+      "profileId": 3,
+      "fields": [
+        {
+          "number": 2,
+          "wire": 0,
+          "name": "can_be_player",
+          "boolean": true
+        },
+        {
+          "number": 5,
+          "wire": 0,
+          "name": "gaia_eq_connect_id",
+          "boolean": true
+        },
+        {
+          "number": 6,
+          "wire": 0,
+          "name": "supports_logout",
+          "boolean": true
+        },
+        {
+          "number": 7,
+          "wire": 0,
+          "name": "is_observable",
+          "boolean": true
+        },
+        {
+          "number": 8,
+          "wire": 0,
+          "name": "volume_steps"
+        },
+        {
+          "number": 9,
+          "wire": 2,
+          "name": "supported_types",
+          "occurrences": 15
+        },
+        {
+          "number": 10,
+          "wire": 0,
+          "name": "command_acks",
+          "boolean": true
+        },
+        {
+          "number": 15,
+          "wire": 0,
+          "name": "supports_playlist_v2",
+          "boolean": true
+        },
+        {
+          "number": 16,
+          "wire": 0,
+          "name": "is_controllable",
+          "boolean": true
+        },
+        {
+          "number": 17,
+          "wire": 0,
+          "name": "supports_external_episodes",
+          "boolean": true
+        },
+        {
+          "number": 18,
+          "wire": 0,
+          "name": "supports_set_backend_metadata",
+          "boolean": true
+        },
+        {
+          "number": 19,
+          "wire": 0,
+          "name": "supports_transfer_command",
+          "boolean": true
+        },
+        {
+          "number": 20,
+          "wire": 0,
+          "name": "supports_command_request",
+          "boolean": true
+        },
+        {
+          "number": 23,
+          "wire": 0,
+          "name": "supports_gzip_pushes",
+          "boolean": true
+        },
+        {
+          "number": 25,
+          "wire": 0,
+          "name": "supports_set_options_command",
+          "boolean": true
+        },
+        {
+          "number": 26,
+          "wire": 2,
+          "name": "supports_hifi",
+          "byteLength": 2
+        },
+        {
+          "number": 29,
+          "wire": 0,
+          "name": "supports_dj",
+          "boolean": true
+        },
+        {
+          "number": 30,
+          "wire": 0,
+          "name": "supported_audio_quality",
+          "enum": "HIFI",
+          "enumNumber": 5
+        },
+        {
+          "number": 33,
+          "wire": 0,
+          "name": "supports_smart_shuffle_mode",
+          "boolean": true
+        },
+        {
+          "number": 34,
+          "wire": 0,
+          "name": "supports_remote_sleep_timer",
+          "boolean": true
+        },
+        {
+          "number": 35,
+          "wire": 0,
+          "name": "supports_ping_request",
+          "boolean": true
+        },
+        {
+          "number": 38,
+          "wire": 0,
+          "name": "supports_zephyr",
+          "boolean": true
+        },
+        {
+          "number": 39,
+          "wire": 0,
+          "name": "supports_gapless",
+          "boolean": true
+        },
+        {
+          "number": 40,
+          "wire": 0,
+          "name": "supports_crossfade",
+          "boolean": true
+        },
+        {
+          "number": 41,
+          "wire": 0,
+          "name": "supports_remote_equalizer",
+          "boolean": true
+        }
+      ],
+      "booleans": {
+        "can_be_player": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "restrict_to_local": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "gaia_eq_connect_id": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_logout": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "is_observable": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "command_acks": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_rename": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "hidden": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "disable_volume": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "connect_disabled": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "supports_playlist_v2": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "is_controllable": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_external_episodes": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_set_backend_metadata": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_transfer_command": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_command_request": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "is_voice_enabled": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "needs_full_player_state": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "supports_gzip_pushes": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_set_options_command": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_rooms": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "supports_dj": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_smart_shuffle_mode": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_remote_sleep_timer": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_ping_request": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_playlist_mixing": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "supports_remote_audio_quality_control": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "supports_zephyr": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_gapless": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_crossfade": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "supports_remote_equalizer": {
+          "wirePresent": true,
+          "effectiveValue": true
+        }
+      },
+      "hifiSupportBooleans": {
+        "fully_supported": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "user_eligible": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "device_supported": {
+          "wirePresent": true,
+          "effectiveValue": true
+        }
+      },
+      "supportedTypes": [
+        "audio/ad",
+        "audio/audio",
+        "audio/episode",
+        "audio/episode+track",
+        "audio/interruption",
+        "audio/local",
+        "audio/media",
+        "audio/podcast-chapter",
+        "audio/track",
+        "audio/user-highlight",
+        "video/ad",
+        "video/episode",
+        "video/podcast-chapter",
+        "video/track",
+        "video/user-highlight"
+      ],
+      "connectCapabilitiesWirePresent": false
+    }
+  ],
+  "stateTransitions": [
+    {
+      "sourceId": 880,
+      "responseStatus": 200,
+      "isActive": false,
+      "isPlaying": false,
+      "isPaused": false,
+      "isBuffering": false,
+      "playbackSpeedWirePresent": false,
+      "playbackSpeed": 0.0,
+      "optionsPlaybackSpeed": {
+        "wirePresent": false,
+        "value": null
+      }
+    },
+    {
+      "sourceId": 883,
+      "responseStatus": 200,
+      "isActive": false,
+      "isPlaying": false,
+      "isPaused": false,
+      "isBuffering": false,
+      "playbackSpeedWirePresent": false,
+      "playbackSpeed": 0.0,
+      "optionsPlaybackSpeed": {
+        "wirePresent": false,
+        "value": null
+      }
+    },
+    {
+      "sourceId": 2298,
+      "responseStatus": null,
+      "isActive": true,
+      "isPlaying": true,
+      "isPaused": false,
+      "isBuffering": true,
+      "playbackSpeedWirePresent": false,
+      "playbackSpeed": 0.0,
+      "optionsPlaybackSpeed": {
+        "wirePresent": true,
+        "value": 1.0
+      }
+    },
+    {
+      "sourceId": 2313,
+      "responseStatus": 200,
+      "isActive": true,
+      "isPlaying": true,
+      "isPaused": false,
+      "isBuffering": true,
+      "playbackSpeedWirePresent": false,
+      "playbackSpeed": 0.0,
+      "optionsPlaybackSpeed": {
+        "wirePresent": true,
+        "value": 1.0
+      }
+    },
+    {
+      "sourceId": 2403,
+      "responseStatus": null,
+      "isActive": true,
+      "isPlaying": true,
+      "isPaused": false,
+      "isBuffering": false,
+      "playbackSpeedWirePresent": true,
+      "playbackSpeed": 1.0,
+      "optionsPlaybackSpeed": {
+        "wirePresent": true,
+        "value": 1.0
+      }
+    },
+    {
+      "sourceId": 2412,
+      "responseStatus": 200,
+      "isActive": true,
+      "isPlaying": true,
+      "isPaused": false,
+      "isBuffering": false,
+      "playbackSpeedWirePresent": true,
+      "playbackSpeed": 1.0,
+      "optionsPlaybackSpeed": {
+        "wirePresent": true,
+        "value": 1.0
+      }
+    },
+    {
+      "sourceId": 2462,
+      "responseStatus": 200,
+      "isActive": true,
+      "isPlaying": true,
+      "isPaused": true,
+      "isBuffering": false,
+      "playbackSpeedWirePresent": false,
+      "playbackSpeed": 0.0,
+      "optionsPlaybackSpeed": {
+        "wirePresent": true,
+        "value": 1.0
+      }
+    }
+  ],
+  "cases": [
+    {
+      "sourceId": 880,
+      "eventIndex": 14828,
+      "captureRelativeMilliseconds": 0,
+      "http2SessionSourceId": 697,
+      "tlsSocketSourceId": 596,
+      "streamId": 105,
+      "responseStatus": 200,
+      "gzipByteLength": 458,
+      "protobufByteLength": 603,
+      "privateGzipPath": ".local/connect-state-active-evidence/source-880-request.gz",
+      "privateProtobufPath": ".local/connect-state-active-evidence/source-880-request.pb",
+      "putStateFields": [
+        {
+          "number": 2,
+          "wire": 2,
+          "name": "device",
+          "byteLength": 596
+        },
+        {
+          "number": 3,
+          "wire": 0,
+          "name": "member_type",
+          "enum": "CONNECT_STATE",
+          "enumNumber": 2
+        },
+        {
+          "number": 5,
+          "wire": 0,
+          "name": "put_state_reason",
+          "enum": "AUDIO_DRIVER_INFO_CHANGED",
+          "enumNumber": 11
+        }
+      ],
+      "putStateBooleans": {
+        "is_active": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "only_write_player_state": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "deviceFields": [
+        {
+          "number": 1,
+          "wire": 2,
+          "name": "device_info",
+          "byteLength": 551
+        },
+        {
+          "number": 2,
+          "wire": 2,
+          "name": "player_state",
+          "byteLength": 17
+        },
+        {
+          "number": 3,
+          "wire": 2,
+          "name": "private_device_info",
+          "byteLength": 21
+        }
+      ],
+      "deviceInfoFields": [
+        {
+          "number": 1,
+          "wire": 0,
+          "name": "can_play",
+          "boolean": true
+        },
+        {
+          "number": 2,
+          "wire": 0,
+          "name": "volume"
+        },
+        {
+          "number": 3,
+          "wire": 2,
+          "name": "name",
+          "byteLength": 24
+        },
+        {
+          "number": 4,
+          "wire": 2,
+          "name": "capabilities",
+          "byteLength": 296
+        },
+        {
+          "number": 6,
+          "wire": 2,
+          "name": "device_software_version",
+          "byteLength": 24
+        },
+        {
+          "number": 7,
+          "wire": 0,
+          "name": "device_type",
+          "enum": "COMPUTER",
+          "enumNumber": 1
+        },
+        {
+          "number": 9,
+          "wire": 2,
+          "name": "spirc_version",
+          "byteLength": 5
+        },
+        {
+          "number": 10,
+          "wire": 2,
+          "name": "device_id",
+          "byteLength": 40
+        },
+        {
+          "number": 13,
+          "wire": 2,
+          "name": "client_id",
+          "byteLength": 32
+        },
+        {
+          "number": 14,
+          "wire": 2,
+          "name": "brand",
+          "byteLength": 5
+        },
+        {
+          "number": 15,
+          "wire": 2,
+          "name": "model",
+          "byteLength": 14
+        },
+        {
+          "number": 16,
+          "wire": 2,
+          "name": "metadata_map",
+          "occurrences": 2
+        },
+        {
+          "number": 24,
+          "wire": 2,
+          "name": "audio_output_device_info",
+          "byteLength": 26
+        }
+      ],
+      "deviceInfoBooleans": {
+        "can_play": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "is_private_session": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_social_connect": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_offline": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_group": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_dynamic_device": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_locally_discovered": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_public": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_wol_capable": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "playerStateFields": [
+        {
+          "number": 4,
+          "wire": 2,
+          "name": "context_restrictions",
+          "byteLength": 0
+        },
+        {
+          "number": 5,
+          "wire": 2,
+          "name": "play_origin",
+          "byteLength": 0
+        },
+        {
+          "number": 16,
+          "wire": 2,
+          "name": "options",
+          "byteLength": 0
+        },
+        {
+          "number": 17,
+          "wire": 2,
+          "name": "restrictions",
+          "byteLength": 0
+        },
+        {
+          "number": 18,
+          "wire": 2,
+          "name": "suppressions",
+          "byteLength": 0
+        },
+        {
+          "number": 24,
+          "wire": 2,
+          "name": "queue_revision",
+          "byteLength": 1
+        }
+      ],
+      "playerStateBooleans": {
+        "is_playing": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_paused": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_buffering": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_system_initiated": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "trackFields": [],
+      "playbackQualityFields": [],
+      "playerOptionsBooleans": {
+        "shuffling_context": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "repeating_context": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "repeating_track": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "identifierFormats": {
+        "playback_id": {
+          "present": false,
+          "effectiveProto3Value": "empty"
+        },
+        "session_id": {
+          "present": false,
+          "effectiveProto3Value": "empty"
+        },
+        "queue_revision": {
+          "present": true,
+          "utf8ByteLength": 1,
+          "characterCount": 1,
+          "format": "decimal-digits"
+        }
+      },
+      "trackProvider": {
+        "wirePresent": false,
+        "value": null
+      },
+      "playbackSpeed": {
+        "wirePresent": false,
+        "effectiveProto3Value": 0.0
+      },
+      "optionsPlaybackSpeed": {
+        "wirePresent": false,
+        "value": null
+      },
+      "timing": {
+        "started_playing_at": {
+          "wirePresent": false,
+          "effectiveProto3Value": 0
+        },
+        "has_been_playing_for_ms": {
+          "wirePresent": false,
+          "effectiveProto3Value": 0
+        },
+        "client_side_timestamp": {
+          "wirePresent": false,
+          "effectiveProto3Value": 0
+        },
+        "player_timestamp": {
+          "wirePresent": false,
+          "effectiveProto3Value": 0
+        },
+        "position_as_of_timestamp": {
+          "wirePresent": false,
+          "effectiveProto3Value": 0
+        },
+        "duration": {
+          "wirePresent": false,
+          "effectiveProto3Value": 0
+        },
+        "position": {
+          "wirePresent": false,
+          "effectiveProto3Value": 0
+        }
+      },
+      "capabilityProfileId": 1
+    },
+    {
+      "sourceId": 883,
+      "eventIndex": 14883,
+      "captureRelativeMilliseconds": 1,
+      "http2SessionSourceId": 697,
+      "tlsSocketSourceId": 596,
+      "streamId": 107,
+      "responseStatus": 200,
+      "gzipByteLength": 473,
+      "protobufByteLength": 617,
+      "privateGzipPath": ".local/connect-state-active-evidence/source-883-request.gz",
+      "privateProtobufPath": ".local/connect-state-active-evidence/source-883-request.pb",
+      "putStateFields": [
+        {
+          "number": 2,
+          "wire": 2,
+          "name": "device",
+          "byteLength": 610
+        },
+        {
+          "number": 3,
+          "wire": 0,
+          "name": "member_type",
+          "enum": "CONNECT_STATE",
+          "enumNumber": 2
+        },
+        {
+          "number": 5,
+          "wire": 0,
+          "name": "put_state_reason",
+          "enum": "NEW_CONNECTION",
+          "enumNumber": 9
+        }
+      ],
+      "putStateBooleans": {
+        "is_active": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "only_write_player_state": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "deviceFields": [
+        {
+          "number": 1,
+          "wire": 2,
+          "name": "device_info",
+          "byteLength": 565
+        },
+        {
+          "number": 2,
+          "wire": 2,
+          "name": "player_state",
+          "byteLength": 17
+        },
+        {
+          "number": 3,
+          "wire": 2,
+          "name": "private_device_info",
+          "byteLength": 21
+        }
+      ],
+      "deviceInfoFields": [
+        {
+          "number": 1,
+          "wire": 0,
+          "name": "can_play",
+          "boolean": true
+        },
+        {
+          "number": 2,
+          "wire": 0,
+          "name": "volume"
+        },
+        {
+          "number": 3,
+          "wire": 2,
+          "name": "name",
+          "byteLength": 24
+        },
+        {
+          "number": 4,
+          "wire": 2,
+          "name": "capabilities",
+          "byteLength": 304
+        },
+        {
+          "number": 6,
+          "wire": 2,
+          "name": "device_software_version",
+          "byteLength": 24
+        },
+        {
+          "number": 7,
+          "wire": 0,
+          "name": "device_type",
+          "enum": "COMPUTER",
+          "enumNumber": 1
+        },
+        {
+          "number": 9,
+          "wire": 2,
+          "name": "spirc_version",
+          "byteLength": 5
+        },
+        {
+          "number": 10,
+          "wire": 2,
+          "name": "device_id",
+          "byteLength": 40
+        },
+        {
+          "number": 13,
+          "wire": 2,
+          "name": "client_id",
+          "byteLength": 32
+        },
+        {
+          "number": 14,
+          "wire": 2,
+          "name": "brand",
+          "byteLength": 5
+        },
+        {
+          "number": 15,
+          "wire": 2,
+          "name": "model",
+          "byteLength": 14
+        },
+        {
+          "number": 16,
+          "wire": 2,
+          "name": "metadata_map",
+          "occurrences": 2
+        },
+        {
+          "number": 23,
+          "wire": 2,
+          "name": "license",
+          "byteLength": 3
+        },
+        {
+          "number": 24,
+          "wire": 2,
+          "name": "audio_output_device_info",
+          "byteLength": 26
+        }
+      ],
+      "deviceInfoBooleans": {
+        "can_play": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "is_private_session": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_social_connect": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_offline": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_group": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_dynamic_device": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_locally_discovered": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_public": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_wol_capable": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "playerStateFields": [
+        {
+          "number": 4,
+          "wire": 2,
+          "name": "context_restrictions",
+          "byteLength": 0
+        },
+        {
+          "number": 5,
+          "wire": 2,
+          "name": "play_origin",
+          "byteLength": 0
+        },
+        {
+          "number": 16,
+          "wire": 2,
+          "name": "options",
+          "byteLength": 0
+        },
+        {
+          "number": 17,
+          "wire": 2,
+          "name": "restrictions",
+          "byteLength": 0
+        },
+        {
+          "number": 18,
+          "wire": 2,
+          "name": "suppressions",
+          "byteLength": 0
+        },
+        {
+          "number": 24,
+          "wire": 2,
+          "name": "queue_revision",
+          "byteLength": 1
+        }
+      ],
+      "playerStateBooleans": {
+        "is_playing": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_paused": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_buffering": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_system_initiated": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "trackFields": [],
+      "playbackQualityFields": [],
+      "playerOptionsBooleans": {
+        "shuffling_context": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "repeating_context": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "repeating_track": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "identifierFormats": {
+        "playback_id": {
+          "present": false,
+          "effectiveProto3Value": "empty"
+        },
+        "session_id": {
+          "present": false,
+          "effectiveProto3Value": "empty"
+        },
+        "queue_revision": {
+          "present": true,
+          "utf8ByteLength": 1,
+          "characterCount": 1,
+          "format": "decimal-digits"
+        }
+      },
+      "trackProvider": {
+        "wirePresent": false,
+        "value": null
+      },
+      "playbackSpeed": {
+        "wirePresent": false,
+        "effectiveProto3Value": 0.0
+      },
+      "optionsPlaybackSpeed": {
+        "wirePresent": false,
+        "value": null
+      },
+      "timing": {
+        "started_playing_at": {
+          "wirePresent": false,
+          "effectiveProto3Value": 0
+        },
+        "has_been_playing_for_ms": {
+          "wirePresent": false,
+          "effectiveProto3Value": 0
+        },
+        "client_side_timestamp": {
+          "wirePresent": false,
+          "effectiveProto3Value": 0
+        },
+        "player_timestamp": {
+          "wirePresent": false,
+          "effectiveProto3Value": 0
+        },
+        "position_as_of_timestamp": {
+          "wirePresent": false,
+          "effectiveProto3Value": 0
+        },
+        "duration": {
+          "wirePresent": false,
+          "effectiveProto3Value": 0
+        },
+        "position": {
+          "wirePresent": false,
+          "effectiveProto3Value": 0
+        }
+      },
+      "capabilityProfileId": 2,
+      "identifierComparisonToPreviousPut": {
+        "playback_id": {
+          "bothPresent": false,
+          "equal": true
+        },
+        "session_id": {
+          "bothPresent": false,
+          "equal": true
+        },
+        "queue_revision": {
+          "bothPresent": true,
+          "equal": true
+        }
+      }
+    },
+    {
+      "sourceId": 2298,
+      "eventIndex": 56247,
+      "captureRelativeMilliseconds": 94253,
+      "http2SessionSourceId": 1907,
+      "tlsSocketSourceId": 1905,
+      "streamId": 55,
+      "responseStatus": null,
+      "gzipByteLength": 1636,
+      "protobufByteLength": 3884,
+      "privateGzipPath": ".local/connect-state-active-evidence/source-2298-request.gz",
+      "privateProtobufPath": ".local/connect-state-active-evidence/source-2298-request.pb",
+      "putStateFields": [
+        {
+          "number": 2,
+          "wire": 2,
+          "name": "device",
+          "byteLength": 3858
+        },
+        {
+          "number": 3,
+          "wire": 0,
+          "name": "member_type",
+          "enum": "CONNECT_STATE",
+          "enumNumber": 2
+        },
+        {
+          "number": 4,
+          "wire": 0,
+          "name": "is_active",
+          "boolean": true
+        },
+        {
+          "number": 5,
+          "wire": 0,
+          "name": "put_state_reason",
+          "enum": "PLAYER_STATE_CHANGED",
+          "enumNumber": 4
+        },
+        {
+          "number": 9,
+          "wire": 0,
+          "name": "started_playing_at"
+        },
+        {
+          "number": 11,
+          "wire": 0,
+          "name": "has_been_playing_for_ms"
+        },
+        {
+          "number": 12,
+          "wire": 0,
+          "name": "client_side_timestamp"
+        }
+      ],
+      "putStateBooleans": {
+        "is_active": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "only_write_player_state": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "deviceFields": [
+        {
+          "number": 1,
+          "wire": 2,
+          "name": "device_info",
+          "byteLength": 589
+        },
+        {
+          "number": 2,
+          "wire": 2,
+          "name": "player_state",
+          "byteLength": 1191
+        },
+        {
+          "number": 3,
+          "wire": 2,
+          "name": "private_device_info",
+          "byteLength": 21
+        },
+        {
+          "number": 4,
+          "wire": 2,
+          "name": "transfer_data",
+          "byteLength": 2046
+        }
+      ],
+      "deviceInfoFields": [
+        {
+          "number": 1,
+          "wire": 0,
+          "name": "can_play",
+          "boolean": true
+        },
+        {
+          "number": 2,
+          "wire": 0,
+          "name": "volume"
+        },
+        {
+          "number": 3,
+          "wire": 2,
+          "name": "name",
+          "byteLength": 24
+        },
+        {
+          "number": 4,
+          "wire": 2,
+          "name": "capabilities",
+          "byteLength": 313
+        },
+        {
+          "number": 6,
+          "wire": 2,
+          "name": "device_software_version",
+          "byteLength": 24
+        },
+        {
+          "number": 7,
+          "wire": 0,
+          "name": "device_type",
+          "enum": "COMPUTER",
+          "enumNumber": 1
+        },
+        {
+          "number": 9,
+          "wire": 2,
+          "name": "spirc_version",
+          "byteLength": 5
+        },
+        {
+          "number": 10,
+          "wire": 2,
+          "name": "device_id",
+          "byteLength": 40
+        },
+        {
+          "number": 13,
+          "wire": 2,
+          "name": "client_id",
+          "byteLength": 32
+        },
+        {
+          "number": 14,
+          "wire": 2,
+          "name": "brand",
+          "byteLength": 5
+        },
+        {
+          "number": 15,
+          "wire": 2,
+          "name": "model",
+          "byteLength": 14
+        },
+        {
+          "number": 16,
+          "wire": 2,
+          "name": "metadata_map",
+          "occurrences": 2
+        },
+        {
+          "number": 22,
+          "wire": 2,
+          "name": "public_ip",
+          "byteLength": 12
+        },
+        {
+          "number": 23,
+          "wire": 2,
+          "name": "license",
+          "byteLength": 3
+        },
+        {
+          "number": 24,
+          "wire": 2,
+          "name": "audio_output_device_info",
+          "byteLength": 26
+        }
+      ],
+      "deviceInfoBooleans": {
+        "can_play": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "is_private_session": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_social_connect": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_offline": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_group": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_dynamic_device": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_locally_discovered": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_public": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_wol_capable": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "playerStateFields": [
+        {
+          "number": 1,
+          "wire": 0,
+          "name": "timestamp"
+        },
+        {
+          "number": 2,
+          "wire": 2,
+          "name": "context_uri",
+          "byteLength": 36
+        },
+        {
+          "number": 3,
+          "wire": 2,
+          "name": "context_url",
+          "byteLength": 46
+        },
+        {
+          "number": 4,
+          "wire": 2,
+          "name": "context_restrictions",
+          "byteLength": 0
+        },
+        {
+          "number": 5,
+          "wire": 2,
+          "name": "play_origin",
+          "byteLength": 16
+        },
+        {
+          "number": 7,
+          "wire": 2,
+          "name": "track",
+          "byteLength": 399
+        },
+        {
+          "number": 8,
+          "wire": 2,
+          "name": "playback_id",
+          "byteLength": 32
+        },
+        {
+          "number": 12,
+          "wire": 0,
+          "name": "is_playing",
+          "boolean": true
+        },
+        {
+          "number": 14,
+          "wire": 0,
+          "name": "is_buffering",
+          "boolean": true
+        },
+        {
+          "number": 16,
+          "wire": 2,
+          "name": "options",
+          "byteLength": 46
+        },
+        {
+          "number": 17,
+          "wire": 2,
+          "name": "restrictions",
+          "byteLength": 58
+        },
+        {
+          "number": 18,
+          "wire": 2,
+          "name": "suppressions",
+          "byteLength": 0
+        },
+        {
+          "number": 21,
+          "wire": 2,
+          "name": "context_metadata",
+          "occurrences": 12
+        },
+        {
+          "number": 23,
+          "wire": 2,
+          "name": "session_id",
+          "byteLength": 22
+        },
+        {
+          "number": 24,
+          "wire": 2,
+          "name": "queue_revision",
+          "byteLength": 19
+        },
+        {
+          "number": 32,
+          "wire": 2,
+          "name": "playback_quality",
+          "byteLength": 0
+        },
+        {
+          "number": 33,
+          "wire": 2,
+          "name": "signals",
+          "occurrences": 4
+        },
+        {
+          "number": 35,
+          "wire": 2,
+          "name": "session_command_id",
+          "byteLength": 32
+        }
+      ],
+      "playerStateBooleans": {
+        "is_playing": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "is_paused": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_buffering": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "is_system_initiated": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "trackFields": [
+        {
+          "number": 1,
+          "wire": 2,
+          "name": "uri",
+          "byteLength": 36
+        },
+        {
+          "number": 2,
+          "wire": 2,
+          "name": "uid",
+          "byteLength": 20
+        },
+        {
+          "number": 3,
+          "wire": 2,
+          "name": "metadata",
+          "occurrences": 9
+        },
+        {
+          "number": 6,
+          "wire": 2,
+          "name": "provider",
+          "byteLength": 7
+        }
+      ],
+      "playbackQualityFields": [],
+      "playerOptionsBooleans": {
+        "shuffling_context": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "repeating_context": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "repeating_track": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "identifierFormats": {
+        "playback_id": {
+          "present": true,
+          "utf8ByteLength": 32,
+          "characterCount": 32,
+          "format": "lowercase-hexadecimal"
+        },
+        "session_id": {
+          "present": true,
+          "utf8ByteLength": 22,
+          "characterCount": 22,
+          "format": "ASCII-alphanumeric"
+        },
+        "queue_revision": {
+          "present": true,
+          "utf8ByteLength": 19,
+          "characterCount": 19,
+          "format": "decimal-digits"
+        }
+      },
+      "trackProvider": {
+        "wirePresent": true,
+        "value": "context"
+      },
+      "playbackSpeed": {
+        "wirePresent": false,
+        "effectiveProto3Value": 0.0
+      },
+      "optionsPlaybackSpeed": {
+        "wirePresent": true,
+        "value": 1.0
+      },
+      "timing": {
+        "started_playing_at": {
+          "wirePresent": true,
+          "isZero": false,
+          "observedUnit": "Unix-milliseconds",
+          "captureMinusValueMilliseconds": 359
+        },
+        "has_been_playing_for_ms": {
+          "wirePresent": true,
+          "isZero": false,
+          "fieldNameUnit": "milliseconds",
+          "observedMagnitude": "under-one-hour"
+        },
+        "client_side_timestamp": {
+          "wirePresent": true,
+          "isZero": false,
+          "observedUnit": "Unix-milliseconds",
+          "captureMinusValueMilliseconds": 57
+        },
+        "player_timestamp": {
+          "wirePresent": true,
+          "isZero": false,
+          "observedUnit": "Unix-milliseconds",
+          "captureMinusValueMilliseconds": 361
+        },
+        "position_as_of_timestamp": {
+          "wirePresent": false,
+          "effectiveProto3Value": 0
+        },
+        "duration": {
+          "wirePresent": false,
+          "effectiveProto3Value": 0
+        },
+        "position": {
+          "wirePresent": false,
+          "effectiveProto3Value": 0
+        }
+      },
+      "capabilityProfileId": 3,
+      "identifierComparisonToPreviousPut": {
+        "playback_id": {
+          "bothPresent": false,
+          "equal": false
+        },
+        "session_id": {
+          "bothPresent": false,
+          "equal": false
+        },
+        "queue_revision": {
+          "bothPresent": true,
+          "equal": false
+        }
+      }
+    },
+    {
+      "sourceId": 2313,
+      "eventIndex": 56996,
+      "captureRelativeMilliseconds": 94568,
+      "http2SessionSourceId": 1907,
+      "tlsSocketSourceId": 1905,
+      "streamId": 61,
+      "responseStatus": 200,
+      "gzipByteLength": 1671,
+      "protobufByteLength": 3971,
+      "privateGzipPath": ".local/connect-state-active-evidence/source-2313-request.gz",
+      "privateProtobufPath": ".local/connect-state-active-evidence/source-2313-request.pb",
+      "putStateFields": [
+        {
+          "number": 2,
+          "wire": 2,
+          "name": "device",
+          "byteLength": 3945
+        },
+        {
+          "number": 3,
+          "wire": 0,
+          "name": "member_type",
+          "enum": "CONNECT_STATE",
+          "enumNumber": 2
+        },
+        {
+          "number": 4,
+          "wire": 0,
+          "name": "is_active",
+          "boolean": true
+        },
+        {
+          "number": 5,
+          "wire": 0,
+          "name": "put_state_reason",
+          "enum": "PLAYER_STATE_CHANGED",
+          "enumNumber": 4
+        },
+        {
+          "number": 9,
+          "wire": 0,
+          "name": "started_playing_at"
+        },
+        {
+          "number": 11,
+          "wire": 0,
+          "name": "has_been_playing_for_ms"
+        },
+        {
+          "number": 12,
+          "wire": 0,
+          "name": "client_side_timestamp"
+        }
+      ],
+      "putStateBooleans": {
+        "is_active": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "only_write_player_state": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "deviceFields": [
+        {
+          "number": 1,
+          "wire": 2,
+          "name": "device_info",
+          "byteLength": 589
+        },
+        {
+          "number": 2,
+          "wire": 2,
+          "name": "player_state",
+          "byteLength": 1241
+        },
+        {
+          "number": 3,
+          "wire": 2,
+          "name": "private_device_info",
+          "byteLength": 21
+        },
+        {
+          "number": 4,
+          "wire": 2,
+          "name": "transfer_data",
+          "byteLength": 2083
+        }
+      ],
+      "deviceInfoFields": [
+        {
+          "number": 1,
+          "wire": 0,
+          "name": "can_play",
+          "boolean": true
+        },
+        {
+          "number": 2,
+          "wire": 0,
+          "name": "volume"
+        },
+        {
+          "number": 3,
+          "wire": 2,
+          "name": "name",
+          "byteLength": 24
+        },
+        {
+          "number": 4,
+          "wire": 2,
+          "name": "capabilities",
+          "byteLength": 313
+        },
+        {
+          "number": 6,
+          "wire": 2,
+          "name": "device_software_version",
+          "byteLength": 24
+        },
+        {
+          "number": 7,
+          "wire": 0,
+          "name": "device_type",
+          "enum": "COMPUTER",
+          "enumNumber": 1
+        },
+        {
+          "number": 9,
+          "wire": 2,
+          "name": "spirc_version",
+          "byteLength": 5
+        },
+        {
+          "number": 10,
+          "wire": 2,
+          "name": "device_id",
+          "byteLength": 40
+        },
+        {
+          "number": 13,
+          "wire": 2,
+          "name": "client_id",
+          "byteLength": 32
+        },
+        {
+          "number": 14,
+          "wire": 2,
+          "name": "brand",
+          "byteLength": 5
+        },
+        {
+          "number": 15,
+          "wire": 2,
+          "name": "model",
+          "byteLength": 14
+        },
+        {
+          "number": 16,
+          "wire": 2,
+          "name": "metadata_map",
+          "occurrences": 2
+        },
+        {
+          "number": 22,
+          "wire": 2,
+          "name": "public_ip",
+          "byteLength": 12
+        },
+        {
+          "number": 23,
+          "wire": 2,
+          "name": "license",
+          "byteLength": 3
+        },
+        {
+          "number": 24,
+          "wire": 2,
+          "name": "audio_output_device_info",
+          "byteLength": 26
+        }
+      ],
+      "deviceInfoBooleans": {
+        "can_play": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "is_private_session": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_social_connect": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_offline": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_group": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_dynamic_device": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_locally_discovered": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_public": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_wol_capable": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "playerStateFields": [
+        {
+          "number": 1,
+          "wire": 0,
+          "name": "timestamp"
+        },
+        {
+          "number": 2,
+          "wire": 2,
+          "name": "context_uri",
+          "byteLength": 36
+        },
+        {
+          "number": 3,
+          "wire": 2,
+          "name": "context_url",
+          "byteLength": 46
+        },
+        {
+          "number": 4,
+          "wire": 2,
+          "name": "context_restrictions",
+          "byteLength": 0
+        },
+        {
+          "number": 5,
+          "wire": 2,
+          "name": "play_origin",
+          "byteLength": 16
+        },
+        {
+          "number": 7,
+          "wire": 2,
+          "name": "track",
+          "byteLength": 399
+        },
+        {
+          "number": 8,
+          "wire": 2,
+          "name": "playback_id",
+          "byteLength": 32
+        },
+        {
+          "number": 12,
+          "wire": 0,
+          "name": "is_playing",
+          "boolean": true
+        },
+        {
+          "number": 14,
+          "wire": 0,
+          "name": "is_buffering",
+          "boolean": true
+        },
+        {
+          "number": 16,
+          "wire": 2,
+          "name": "options",
+          "byteLength": 46
+        },
+        {
+          "number": 17,
+          "wire": 2,
+          "name": "restrictions",
+          "byteLength": 58
+        },
+        {
+          "number": 18,
+          "wire": 2,
+          "name": "suppressions",
+          "byteLength": 0
+        },
+        {
+          "number": 21,
+          "wire": 2,
+          "name": "context_metadata",
+          "occurrences": 13
+        },
+        {
+          "number": 23,
+          "wire": 2,
+          "name": "session_id",
+          "byteLength": 22
+        },
+        {
+          "number": 24,
+          "wire": 2,
+          "name": "queue_revision",
+          "byteLength": 19
+        },
+        {
+          "number": 32,
+          "wire": 2,
+          "name": "playback_quality",
+          "byteLength": 12
+        },
+        {
+          "number": 33,
+          "wire": 2,
+          "name": "signals",
+          "occurrences": 4
+        },
+        {
+          "number": 35,
+          "wire": 2,
+          "name": "session_command_id",
+          "byteLength": 32
+        }
+      ],
+      "playerStateBooleans": {
+        "is_playing": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "is_paused": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_buffering": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "is_system_initiated": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "trackFields": [
+        {
+          "number": 1,
+          "wire": 2,
+          "name": "uri",
+          "byteLength": 36
+        },
+        {
+          "number": 2,
+          "wire": 2,
+          "name": "uid",
+          "byteLength": 20
+        },
+        {
+          "number": 3,
+          "wire": 2,
+          "name": "metadata",
+          "occurrences": 9
+        },
+        {
+          "number": 6,
+          "wire": 2,
+          "name": "provider",
+          "byteLength": 7
+        }
+      ],
+      "playbackQualityFields": [
+        {
+          "number": 1,
+          "wire": 0,
+          "name": "bitrate_level",
+          "enum": "high",
+          "enumNumber": 3
+        },
+        {
+          "number": 2,
+          "wire": 0,
+          "name": "strategy",
+          "enum": "best_matching",
+          "enumNumber": 1
+        },
+        {
+          "number": 3,
+          "wire": 0,
+          "name": "target_bitrate_level",
+          "enum": "high",
+          "enumNumber": 3
+        },
+        {
+          "number": 4,
+          "wire": 0,
+          "name": "target_bitrate_available",
+          "boolean": true
+        },
+        {
+          "number": 6,
+          "wire": 0,
+          "name": "highest_available_quality",
+          "enum": "hifi",
+          "enumNumber": 5
+        },
+        {
+          "number": 7,
+          "wire": 0,
+          "name": "file_origin",
+          "enum": "internal",
+          "enumNumber": 1
+        }
+      ],
+      "playerOptionsBooleans": {
+        "shuffling_context": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "repeating_context": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "repeating_track": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "identifierFormats": {
+        "playback_id": {
+          "present": true,
+          "utf8ByteLength": 32,
+          "characterCount": 32,
+          "format": "lowercase-hexadecimal"
+        },
+        "session_id": {
+          "present": true,
+          "utf8ByteLength": 22,
+          "characterCount": 22,
+          "format": "ASCII-alphanumeric"
+        },
+        "queue_revision": {
+          "present": true,
+          "utf8ByteLength": 19,
+          "characterCount": 19,
+          "format": "decimal-digits"
+        }
+      },
+      "trackProvider": {
+        "wirePresent": true,
+        "value": "context"
+      },
+      "playbackSpeed": {
+        "wirePresent": false,
+        "effectiveProto3Value": 0.0
+      },
+      "optionsPlaybackSpeed": {
+        "wirePresent": true,
+        "value": 1.0
+      },
+      "timing": {
+        "started_playing_at": {
+          "wirePresent": true,
+          "isZero": false,
+          "observedUnit": "Unix-milliseconds",
+          "captureMinusValueMilliseconds": 674
+        },
+        "has_been_playing_for_ms": {
+          "wirePresent": true,
+          "isZero": false,
+          "fieldNameUnit": "milliseconds",
+          "observedMagnitude": "under-one-hour"
+        },
+        "client_side_timestamp": {
+          "wirePresent": true,
+          "isZero": false,
+          "observedUnit": "Unix-milliseconds",
+          "captureMinusValueMilliseconds": 57
+        },
+        "player_timestamp": {
+          "wirePresent": true,
+          "isZero": false,
+          "observedUnit": "Unix-milliseconds",
+          "captureMinusValueMilliseconds": 463
+        },
+        "position_as_of_timestamp": {
+          "wirePresent": false,
+          "effectiveProto3Value": 0
+        },
+        "duration": {
+          "wirePresent": false,
+          "effectiveProto3Value": 0
+        },
+        "position": {
+          "wirePresent": false,
+          "effectiveProto3Value": 0
+        }
+      },
+      "capabilityProfileId": 3,
+      "identifierComparisonToPreviousPut": {
+        "playback_id": {
+          "bothPresent": true,
+          "equal": true
+        },
+        "session_id": {
+          "bothPresent": true,
+          "equal": true
+        },
+        "queue_revision": {
+          "bothPresent": true,
+          "equal": true
+        }
+      }
+    },
+    {
+      "sourceId": 2403,
+      "eventIndex": 63496,
+      "captureRelativeMilliseconds": 96434,
+      "http2SessionSourceId": 1907,
+      "tlsSocketSourceId": 1905,
+      "streamId": 73,
+      "responseStatus": null,
+      "gzipByteLength": 1698,
+      "protobufByteLength": 4039,
+      "privateGzipPath": ".local/connect-state-active-evidence/source-2403-request.gz",
+      "privateProtobufPath": ".local/connect-state-active-evidence/source-2403-request.pb",
+      "putStateFields": [
+        {
+          "number": 2,
+          "wire": 2,
+          "name": "device",
+          "byteLength": 4016
+        },
+        {
+          "number": 3,
+          "wire": 0,
+          "name": "member_type",
+          "enum": "CONNECT_STATE",
+          "enumNumber": 2
+        },
+        {
+          "number": 4,
+          "wire": 0,
+          "name": "is_active",
+          "boolean": true
+        },
+        {
+          "number": 5,
+          "wire": 0,
+          "name": "put_state_reason",
+          "enum": "PLAYER_STATE_CHANGED",
+          "enumNumber": 4
+        },
+        {
+          "number": 9,
+          "wire": 0,
+          "name": "started_playing_at"
+        },
+        {
+          "number": 12,
+          "wire": 0,
+          "name": "client_side_timestamp"
+        }
+      ],
+      "putStateBooleans": {
+        "is_active": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "only_write_player_state": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "deviceFields": [
+        {
+          "number": 1,
+          "wire": 2,
+          "name": "device_info",
+          "byteLength": 589
+        },
+        {
+          "number": 2,
+          "wire": 2,
+          "name": "player_state",
+          "byteLength": 1272
+        },
+        {
+          "number": 3,
+          "wire": 2,
+          "name": "private_device_info",
+          "byteLength": 21
+        },
+        {
+          "number": 4,
+          "wire": 2,
+          "name": "transfer_data",
+          "byteLength": 2123
+        }
+      ],
+      "deviceInfoFields": [
+        {
+          "number": 1,
+          "wire": 0,
+          "name": "can_play",
+          "boolean": true
+        },
+        {
+          "number": 2,
+          "wire": 0,
+          "name": "volume"
+        },
+        {
+          "number": 3,
+          "wire": 2,
+          "name": "name",
+          "byteLength": 24
+        },
+        {
+          "number": 4,
+          "wire": 2,
+          "name": "capabilities",
+          "byteLength": 313
+        },
+        {
+          "number": 6,
+          "wire": 2,
+          "name": "device_software_version",
+          "byteLength": 24
+        },
+        {
+          "number": 7,
+          "wire": 0,
+          "name": "device_type",
+          "enum": "COMPUTER",
+          "enumNumber": 1
+        },
+        {
+          "number": 9,
+          "wire": 2,
+          "name": "spirc_version",
+          "byteLength": 5
+        },
+        {
+          "number": 10,
+          "wire": 2,
+          "name": "device_id",
+          "byteLength": 40
+        },
+        {
+          "number": 13,
+          "wire": 2,
+          "name": "client_id",
+          "byteLength": 32
+        },
+        {
+          "number": 14,
+          "wire": 2,
+          "name": "brand",
+          "byteLength": 5
+        },
+        {
+          "number": 15,
+          "wire": 2,
+          "name": "model",
+          "byteLength": 14
+        },
+        {
+          "number": 16,
+          "wire": 2,
+          "name": "metadata_map",
+          "occurrences": 2
+        },
+        {
+          "number": 22,
+          "wire": 2,
+          "name": "public_ip",
+          "byteLength": 12
+        },
+        {
+          "number": 23,
+          "wire": 2,
+          "name": "license",
+          "byteLength": 3
+        },
+        {
+          "number": 24,
+          "wire": 2,
+          "name": "audio_output_device_info",
+          "byteLength": 26
+        }
+      ],
+      "deviceInfoBooleans": {
+        "can_play": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "is_private_session": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_social_connect": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_offline": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_group": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_dynamic_device": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_locally_discovered": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_public": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_wol_capable": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "playerStateFields": [
+        {
+          "number": 1,
+          "wire": 0,
+          "name": "timestamp"
+        },
+        {
+          "number": 2,
+          "wire": 2,
+          "name": "context_uri",
+          "byteLength": 36
+        },
+        {
+          "number": 3,
+          "wire": 2,
+          "name": "context_url",
+          "byteLength": 46
+        },
+        {
+          "number": 4,
+          "wire": 2,
+          "name": "context_restrictions",
+          "byteLength": 0
+        },
+        {
+          "number": 5,
+          "wire": 2,
+          "name": "play_origin",
+          "byteLength": 16
+        },
+        {
+          "number": 7,
+          "wire": 2,
+          "name": "track",
+          "byteLength": 419
+        },
+        {
+          "number": 8,
+          "wire": 2,
+          "name": "playback_id",
+          "byteLength": 32
+        },
+        {
+          "number": 9,
+          "wire": 1,
+          "name": "playback_speed",
+          "byteLength": 8
+        },
+        {
+          "number": 11,
+          "wire": 0,
+          "name": "duration"
+        },
+        {
+          "number": 12,
+          "wire": 0,
+          "name": "is_playing",
+          "boolean": true
+        },
+        {
+          "number": 16,
+          "wire": 2,
+          "name": "options",
+          "byteLength": 46
+        },
+        {
+          "number": 17,
+          "wire": 2,
+          "name": "restrictions",
+          "byteLength": 58
+        },
+        {
+          "number": 18,
+          "wire": 2,
+          "name": "suppressions",
+          "byteLength": 0
+        },
+        {
+          "number": 21,
+          "wire": 2,
+          "name": "context_metadata",
+          "occurrences": 13
+        },
+        {
+          "number": 23,
+          "wire": 2,
+          "name": "session_id",
+          "byteLength": 22
+        },
+        {
+          "number": 24,
+          "wire": 2,
+          "name": "queue_revision",
+          "byteLength": 19
+        },
+        {
+          "number": 32,
+          "wire": 2,
+          "name": "playback_quality",
+          "byteLength": 12
+        },
+        {
+          "number": 33,
+          "wire": 2,
+          "name": "signals",
+          "occurrences": 4
+        },
+        {
+          "number": 35,
+          "wire": 2,
+          "name": "session_command_id",
+          "byteLength": 32
+        }
+      ],
+      "playerStateBooleans": {
+        "is_playing": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "is_paused": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_buffering": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_system_initiated": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "trackFields": [
+        {
+          "number": 1,
+          "wire": 2,
+          "name": "uri",
+          "byteLength": 36
+        },
+        {
+          "number": 2,
+          "wire": 2,
+          "name": "uid",
+          "byteLength": 20
+        },
+        {
+          "number": 3,
+          "wire": 2,
+          "name": "metadata",
+          "occurrences": 10
+        },
+        {
+          "number": 6,
+          "wire": 2,
+          "name": "provider",
+          "byteLength": 7
+        }
+      ],
+      "playbackQualityFields": [
+        {
+          "number": 1,
+          "wire": 0,
+          "name": "bitrate_level",
+          "enum": "high",
+          "enumNumber": 3
+        },
+        {
+          "number": 2,
+          "wire": 0,
+          "name": "strategy",
+          "enum": "best_matching",
+          "enumNumber": 1
+        },
+        {
+          "number": 3,
+          "wire": 0,
+          "name": "target_bitrate_level",
+          "enum": "high",
+          "enumNumber": 3
+        },
+        {
+          "number": 4,
+          "wire": 0,
+          "name": "target_bitrate_available",
+          "boolean": true
+        },
+        {
+          "number": 6,
+          "wire": 0,
+          "name": "highest_available_quality",
+          "enum": "hifi",
+          "enumNumber": 5
+        },
+        {
+          "number": 7,
+          "wire": 0,
+          "name": "file_origin",
+          "enum": "internal",
+          "enumNumber": 1
+        }
+      ],
+      "playerOptionsBooleans": {
+        "shuffling_context": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "repeating_context": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "repeating_track": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "identifierFormats": {
+        "playback_id": {
+          "present": true,
+          "utf8ByteLength": 32,
+          "characterCount": 32,
+          "format": "lowercase-hexadecimal"
+        },
+        "session_id": {
+          "present": true,
+          "utf8ByteLength": 22,
+          "characterCount": 22,
+          "format": "ASCII-alphanumeric"
+        },
+        "queue_revision": {
+          "present": true,
+          "utf8ByteLength": 19,
+          "characterCount": 19,
+          "format": "decimal-digits"
+        }
+      },
+      "trackProvider": {
+        "wirePresent": true,
+        "value": "context"
+      },
+      "playbackSpeed": {
+        "wirePresent": true,
+        "effectiveProto3Value": 1.0
+      },
+      "optionsPlaybackSpeed": {
+        "wirePresent": true,
+        "value": 1.0
+      },
+      "timing": {
+        "started_playing_at": {
+          "wirePresent": true,
+          "isZero": false,
+          "observedUnit": "Unix-milliseconds",
+          "captureMinusValueMilliseconds": 2046
+        },
+        "has_been_playing_for_ms": {
+          "wirePresent": false,
+          "effectiveProto3Value": 0
+        },
+        "client_side_timestamp": {
+          "wirePresent": true,
+          "isZero": false,
+          "observedUnit": "Unix-milliseconds",
+          "captureMinusValueMilliseconds": 1327
+        },
+        "player_timestamp": {
+          "wirePresent": true,
+          "isZero": false,
+          "observedUnit": "Unix-milliseconds",
+          "captureMinusValueMilliseconds": 1330
+        },
+        "position_as_of_timestamp": {
+          "wirePresent": false,
+          "effectiveProto3Value": 0
+        },
+        "duration": {
+          "wirePresent": true,
+          "isZero": false,
+          "inferredUnit": "milliseconds",
+          "observedMagnitude": "under-one-hour"
+        },
+        "position": {
+          "wirePresent": false,
+          "effectiveProto3Value": 0
+        }
+      },
+      "capabilityProfileId": 3,
+      "identifierComparisonToPreviousPut": {
+        "playback_id": {
+          "bothPresent": true,
+          "equal": true
+        },
+        "session_id": {
+          "bothPresent": true,
+          "equal": true
+        },
+        "queue_revision": {
+          "bothPresent": true,
+          "equal": true
+        }
+      }
+    },
+    {
+      "sourceId": 2412,
+      "eventIndex": 63838,
+      "captureRelativeMilliseconds": 96536,
+      "http2SessionSourceId": 1907,
+      "tlsSocketSourceId": 1905,
+      "streamId": 79,
+      "responseStatus": 200,
+      "gzipByteLength": 1700,
+      "protobufByteLength": 4041,
+      "privateGzipPath": ".local/connect-state-active-evidence/source-2412-request.gz",
+      "privateProtobufPath": ".local/connect-state-active-evidence/source-2412-request.pb",
+      "putStateFields": [
+        {
+          "number": 2,
+          "wire": 2,
+          "name": "device",
+          "byteLength": 4018
+        },
+        {
+          "number": 3,
+          "wire": 0,
+          "name": "member_type",
+          "enum": "CONNECT_STATE",
+          "enumNumber": 2
+        },
+        {
+          "number": 4,
+          "wire": 0,
+          "name": "is_active",
+          "boolean": true
+        },
+        {
+          "number": 5,
+          "wire": 0,
+          "name": "put_state_reason",
+          "enum": "PLAYER_STATE_CHANGED",
+          "enumNumber": 4
+        },
+        {
+          "number": 9,
+          "wire": 0,
+          "name": "started_playing_at"
+        },
+        {
+          "number": 12,
+          "wire": 0,
+          "name": "client_side_timestamp"
+        }
+      ],
+      "putStateBooleans": {
+        "is_active": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "only_write_player_state": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "deviceFields": [
+        {
+          "number": 1,
+          "wire": 2,
+          "name": "device_info",
+          "byteLength": 589
+        },
+        {
+          "number": 2,
+          "wire": 2,
+          "name": "player_state",
+          "byteLength": 1274
+        },
+        {
+          "number": 3,
+          "wire": 2,
+          "name": "private_device_info",
+          "byteLength": 21
+        },
+        {
+          "number": 4,
+          "wire": 2,
+          "name": "transfer_data",
+          "byteLength": 2123
+        }
+      ],
+      "deviceInfoFields": [
+        {
+          "number": 1,
+          "wire": 0,
+          "name": "can_play",
+          "boolean": true
+        },
+        {
+          "number": 2,
+          "wire": 0,
+          "name": "volume"
+        },
+        {
+          "number": 3,
+          "wire": 2,
+          "name": "name",
+          "byteLength": 24
+        },
+        {
+          "number": 4,
+          "wire": 2,
+          "name": "capabilities",
+          "byteLength": 313
+        },
+        {
+          "number": 6,
+          "wire": 2,
+          "name": "device_software_version",
+          "byteLength": 24
+        },
+        {
+          "number": 7,
+          "wire": 0,
+          "name": "device_type",
+          "enum": "COMPUTER",
+          "enumNumber": 1
+        },
+        {
+          "number": 9,
+          "wire": 2,
+          "name": "spirc_version",
+          "byteLength": 5
+        },
+        {
+          "number": 10,
+          "wire": 2,
+          "name": "device_id",
+          "byteLength": 40
+        },
+        {
+          "number": 13,
+          "wire": 2,
+          "name": "client_id",
+          "byteLength": 32
+        },
+        {
+          "number": 14,
+          "wire": 2,
+          "name": "brand",
+          "byteLength": 5
+        },
+        {
+          "number": 15,
+          "wire": 2,
+          "name": "model",
+          "byteLength": 14
+        },
+        {
+          "number": 16,
+          "wire": 2,
+          "name": "metadata_map",
+          "occurrences": 2
+        },
+        {
+          "number": 22,
+          "wire": 2,
+          "name": "public_ip",
+          "byteLength": 12
+        },
+        {
+          "number": 23,
+          "wire": 2,
+          "name": "license",
+          "byteLength": 3
+        },
+        {
+          "number": 24,
+          "wire": 2,
+          "name": "audio_output_device_info",
+          "byteLength": 26
+        }
+      ],
+      "deviceInfoBooleans": {
+        "can_play": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "is_private_session": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_social_connect": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_offline": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_group": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_dynamic_device": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_locally_discovered": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_public": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_wol_capable": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "playerStateFields": [
+        {
+          "number": 1,
+          "wire": 0,
+          "name": "timestamp"
+        },
+        {
+          "number": 2,
+          "wire": 2,
+          "name": "context_uri",
+          "byteLength": 36
+        },
+        {
+          "number": 3,
+          "wire": 2,
+          "name": "context_url",
+          "byteLength": 46
+        },
+        {
+          "number": 4,
+          "wire": 2,
+          "name": "context_restrictions",
+          "byteLength": 0
+        },
+        {
+          "number": 5,
+          "wire": 2,
+          "name": "play_origin",
+          "byteLength": 16
+        },
+        {
+          "number": 7,
+          "wire": 2,
+          "name": "track",
+          "byteLength": 419
+        },
+        {
+          "number": 8,
+          "wire": 2,
+          "name": "playback_id",
+          "byteLength": 32
+        },
+        {
+          "number": 9,
+          "wire": 1,
+          "name": "playback_speed",
+          "byteLength": 8
+        },
+        {
+          "number": 10,
+          "wire": 0,
+          "name": "position_as_of_timestamp"
+        },
+        {
+          "number": 11,
+          "wire": 0,
+          "name": "duration"
+        },
+        {
+          "number": 12,
+          "wire": 0,
+          "name": "is_playing",
+          "boolean": true
+        },
+        {
+          "number": 16,
+          "wire": 2,
+          "name": "options",
+          "byteLength": 46
+        },
+        {
+          "number": 17,
+          "wire": 2,
+          "name": "restrictions",
+          "byteLength": 58
+        },
+        {
+          "number": 18,
+          "wire": 2,
+          "name": "suppressions",
+          "byteLength": 0
+        },
+        {
+          "number": 21,
+          "wire": 2,
+          "name": "context_metadata",
+          "occurrences": 13
+        },
+        {
+          "number": 23,
+          "wire": 2,
+          "name": "session_id",
+          "byteLength": 22
+        },
+        {
+          "number": 24,
+          "wire": 2,
+          "name": "queue_revision",
+          "byteLength": 19
+        },
+        {
+          "number": 32,
+          "wire": 2,
+          "name": "playback_quality",
+          "byteLength": 12
+        },
+        {
+          "number": 33,
+          "wire": 2,
+          "name": "signals",
+          "occurrences": 4
+        },
+        {
+          "number": 35,
+          "wire": 2,
+          "name": "session_command_id",
+          "byteLength": 32
+        }
+      ],
+      "playerStateBooleans": {
+        "is_playing": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "is_paused": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_buffering": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_system_initiated": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "trackFields": [
+        {
+          "number": 1,
+          "wire": 2,
+          "name": "uri",
+          "byteLength": 36
+        },
+        {
+          "number": 2,
+          "wire": 2,
+          "name": "uid",
+          "byteLength": 20
+        },
+        {
+          "number": 3,
+          "wire": 2,
+          "name": "metadata",
+          "occurrences": 10
+        },
+        {
+          "number": 6,
+          "wire": 2,
+          "name": "provider",
+          "byteLength": 7
+        }
+      ],
+      "playbackQualityFields": [
+        {
+          "number": 1,
+          "wire": 0,
+          "name": "bitrate_level",
+          "enum": "high",
+          "enumNumber": 3
+        },
+        {
+          "number": 2,
+          "wire": 0,
+          "name": "strategy",
+          "enum": "best_matching",
+          "enumNumber": 1
+        },
+        {
+          "number": 3,
+          "wire": 0,
+          "name": "target_bitrate_level",
+          "enum": "high",
+          "enumNumber": 3
+        },
+        {
+          "number": 4,
+          "wire": 0,
+          "name": "target_bitrate_available",
+          "boolean": true
+        },
+        {
+          "number": 6,
+          "wire": 0,
+          "name": "highest_available_quality",
+          "enum": "hifi",
+          "enumNumber": 5
+        },
+        {
+          "number": 7,
+          "wire": 0,
+          "name": "file_origin",
+          "enum": "internal",
+          "enumNumber": 1
+        }
+      ],
+      "playerOptionsBooleans": {
+        "shuffling_context": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "repeating_context": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "repeating_track": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "identifierFormats": {
+        "playback_id": {
+          "present": true,
+          "utf8ByteLength": 32,
+          "characterCount": 32,
+          "format": "lowercase-hexadecimal"
+        },
+        "session_id": {
+          "present": true,
+          "utf8ByteLength": 22,
+          "characterCount": 22,
+          "format": "ASCII-alphanumeric"
+        },
+        "queue_revision": {
+          "present": true,
+          "utf8ByteLength": 19,
+          "characterCount": 19,
+          "format": "decimal-digits"
+        }
+      },
+      "trackProvider": {
+        "wirePresent": true,
+        "value": "context"
+      },
+      "playbackSpeed": {
+        "wirePresent": true,
+        "effectiveProto3Value": 1.0
+      },
+      "optionsPlaybackSpeed": {
+        "wirePresent": true,
+        "value": 1.0
+      },
+      "timing": {
+        "started_playing_at": {
+          "wirePresent": true,
+          "isZero": false,
+          "observedUnit": "Unix-milliseconds",
+          "captureMinusValueMilliseconds": 2148
+        },
+        "has_been_playing_for_ms": {
+          "wirePresent": false,
+          "effectiveProto3Value": 0
+        },
+        "client_side_timestamp": {
+          "wirePresent": true,
+          "isZero": false,
+          "observedUnit": "Unix-milliseconds",
+          "captureMinusValueMilliseconds": 1325
+        },
+        "player_timestamp": {
+          "wirePresent": true,
+          "isZero": false,
+          "observedUnit": "Unix-milliseconds",
+          "captureMinusValueMilliseconds": 1429
+        },
+        "position_as_of_timestamp": {
+          "wirePresent": true,
+          "isZero": false,
+          "inferredUnit": "milliseconds",
+          "observedMagnitude": "under-one-hour"
+        },
+        "duration": {
+          "wirePresent": true,
+          "isZero": false,
+          "inferredUnit": "milliseconds",
+          "observedMagnitude": "under-one-hour"
+        },
+        "position": {
+          "wirePresent": false,
+          "effectiveProto3Value": 0
+        }
+      },
+      "capabilityProfileId": 3,
+      "identifierComparisonToPreviousPut": {
+        "playback_id": {
+          "bothPresent": true,
+          "equal": true
+        },
+        "session_id": {
+          "bothPresent": true,
+          "equal": true
+        },
+        "queue_revision": {
+          "bothPresent": true,
+          "equal": true
+        }
+      }
+    },
+    {
+      "sourceId": 2462,
+      "eventIndex": 66409,
+      "captureRelativeMilliseconds": 102183,
+      "http2SessionSourceId": 1907,
+      "tlsSocketSourceId": 1905,
+      "streamId": 83,
+      "responseStatus": 200,
+      "gzipByteLength": 1703,
+      "protobufByteLength": 4048,
+      "privateGzipPath": ".local/connect-state-active-evidence/source-2462-request.gz",
+      "privateProtobufPath": ".local/connect-state-active-evidence/source-2462-request.pb",
+      "putStateFields": [
+        {
+          "number": 2,
+          "wire": 2,
+          "name": "device",
+          "byteLength": 4025
+        },
+        {
+          "number": 3,
+          "wire": 0,
+          "name": "member_type",
+          "enum": "CONNECT_STATE",
+          "enumNumber": 2
+        },
+        {
+          "number": 4,
+          "wire": 0,
+          "name": "is_active",
+          "boolean": true
+        },
+        {
+          "number": 5,
+          "wire": 0,
+          "name": "put_state_reason",
+          "enum": "PLAYER_STATE_CHANGED",
+          "enumNumber": 4
+        },
+        {
+          "number": 9,
+          "wire": 0,
+          "name": "started_playing_at"
+        },
+        {
+          "number": 12,
+          "wire": 0,
+          "name": "client_side_timestamp"
+        }
+      ],
+      "putStateBooleans": {
+        "is_active": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "only_write_player_state": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "deviceFields": [
+        {
+          "number": 1,
+          "wire": 2,
+          "name": "device_info",
+          "byteLength": 589
+        },
+        {
+          "number": 2,
+          "wire": 2,
+          "name": "player_state",
+          "byteLength": 1275
+        },
+        {
+          "number": 3,
+          "wire": 2,
+          "name": "private_device_info",
+          "byteLength": 21
+        },
+        {
+          "number": 4,
+          "wire": 2,
+          "name": "transfer_data",
+          "byteLength": 2129
+        }
+      ],
+      "deviceInfoFields": [
+        {
+          "number": 1,
+          "wire": 0,
+          "name": "can_play",
+          "boolean": true
+        },
+        {
+          "number": 2,
+          "wire": 0,
+          "name": "volume"
+        },
+        {
+          "number": 3,
+          "wire": 2,
+          "name": "name",
+          "byteLength": 24
+        },
+        {
+          "number": 4,
+          "wire": 2,
+          "name": "capabilities",
+          "byteLength": 313
+        },
+        {
+          "number": 6,
+          "wire": 2,
+          "name": "device_software_version",
+          "byteLength": 24
+        },
+        {
+          "number": 7,
+          "wire": 0,
+          "name": "device_type",
+          "enum": "COMPUTER",
+          "enumNumber": 1
+        },
+        {
+          "number": 9,
+          "wire": 2,
+          "name": "spirc_version",
+          "byteLength": 5
+        },
+        {
+          "number": 10,
+          "wire": 2,
+          "name": "device_id",
+          "byteLength": 40
+        },
+        {
+          "number": 13,
+          "wire": 2,
+          "name": "client_id",
+          "byteLength": 32
+        },
+        {
+          "number": 14,
+          "wire": 2,
+          "name": "brand",
+          "byteLength": 5
+        },
+        {
+          "number": 15,
+          "wire": 2,
+          "name": "model",
+          "byteLength": 14
+        },
+        {
+          "number": 16,
+          "wire": 2,
+          "name": "metadata_map",
+          "occurrences": 2
+        },
+        {
+          "number": 22,
+          "wire": 2,
+          "name": "public_ip",
+          "byteLength": 12
+        },
+        {
+          "number": 23,
+          "wire": 2,
+          "name": "license",
+          "byteLength": 3
+        },
+        {
+          "number": 24,
+          "wire": 2,
+          "name": "audio_output_device_info",
+          "byteLength": 26
+        }
+      ],
+      "deviceInfoBooleans": {
+        "can_play": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "is_private_session": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_social_connect": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_offline": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_group": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_dynamic_device": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_locally_discovered": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_public": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_wol_capable": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "playerStateFields": [
+        {
+          "number": 1,
+          "wire": 0,
+          "name": "timestamp"
+        },
+        {
+          "number": 2,
+          "wire": 2,
+          "name": "context_uri",
+          "byteLength": 36
+        },
+        {
+          "number": 3,
+          "wire": 2,
+          "name": "context_url",
+          "byteLength": 46
+        },
+        {
+          "number": 4,
+          "wire": 2,
+          "name": "context_restrictions",
+          "byteLength": 0
+        },
+        {
+          "number": 5,
+          "wire": 2,
+          "name": "play_origin",
+          "byteLength": 16
+        },
+        {
+          "number": 7,
+          "wire": 2,
+          "name": "track",
+          "byteLength": 422
+        },
+        {
+          "number": 8,
+          "wire": 2,
+          "name": "playback_id",
+          "byteLength": 32
+        },
+        {
+          "number": 10,
+          "wire": 0,
+          "name": "position_as_of_timestamp"
+        },
+        {
+          "number": 11,
+          "wire": 0,
+          "name": "duration"
+        },
+        {
+          "number": 12,
+          "wire": 0,
+          "name": "is_playing",
+          "boolean": true
+        },
+        {
+          "number": 13,
+          "wire": 0,
+          "name": "is_paused",
+          "boolean": true
+        },
+        {
+          "number": 16,
+          "wire": 2,
+          "name": "options",
+          "byteLength": 46
+        },
+        {
+          "number": 17,
+          "wire": 2,
+          "name": "restrictions",
+          "byteLength": 62
+        },
+        {
+          "number": 18,
+          "wire": 2,
+          "name": "suppressions",
+          "byteLength": 0
+        },
+        {
+          "number": 21,
+          "wire": 2,
+          "name": "context_metadata",
+          "occurrences": 13
+        },
+        {
+          "number": 23,
+          "wire": 2,
+          "name": "session_id",
+          "byteLength": 22
+        },
+        {
+          "number": 24,
+          "wire": 2,
+          "name": "queue_revision",
+          "byteLength": 19
+        },
+        {
+          "number": 32,
+          "wire": 2,
+          "name": "playback_quality",
+          "byteLength": 12
+        },
+        {
+          "number": 33,
+          "wire": 2,
+          "name": "signals",
+          "occurrences": 4
+        },
+        {
+          "number": 35,
+          "wire": 2,
+          "name": "session_command_id",
+          "byteLength": 32
+        }
+      ],
+      "playerStateBooleans": {
+        "is_playing": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "is_paused": {
+          "wirePresent": true,
+          "effectiveValue": true
+        },
+        "is_buffering": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "is_system_initiated": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "trackFields": [
+        {
+          "number": 1,
+          "wire": 2,
+          "name": "uri",
+          "byteLength": 36
+        },
+        {
+          "number": 2,
+          "wire": 2,
+          "name": "uid",
+          "byteLength": 20
+        },
+        {
+          "number": 3,
+          "wire": 2,
+          "name": "metadata",
+          "occurrences": 10
+        },
+        {
+          "number": 6,
+          "wire": 2,
+          "name": "provider",
+          "byteLength": 7
+        }
+      ],
+      "playbackQualityFields": [
+        {
+          "number": 1,
+          "wire": 0,
+          "name": "bitrate_level",
+          "enum": "high",
+          "enumNumber": 3
+        },
+        {
+          "number": 2,
+          "wire": 0,
+          "name": "strategy",
+          "enum": "best_matching",
+          "enumNumber": 1
+        },
+        {
+          "number": 3,
+          "wire": 0,
+          "name": "target_bitrate_level",
+          "enum": "high",
+          "enumNumber": 3
+        },
+        {
+          "number": 4,
+          "wire": 0,
+          "name": "target_bitrate_available",
+          "boolean": true
+        },
+        {
+          "number": 6,
+          "wire": 0,
+          "name": "highest_available_quality",
+          "enum": "hifi",
+          "enumNumber": 5
+        },
+        {
+          "number": 7,
+          "wire": 0,
+          "name": "file_origin",
+          "enum": "internal",
+          "enumNumber": 1
+        }
+      ],
+      "playerOptionsBooleans": {
+        "shuffling_context": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "repeating_context": {
+          "wirePresent": false,
+          "effectiveValue": false
+        },
+        "repeating_track": {
+          "wirePresent": false,
+          "effectiveValue": false
+        }
+      },
+      "identifierFormats": {
+        "playback_id": {
+          "present": true,
+          "utf8ByteLength": 32,
+          "characterCount": 32,
+          "format": "lowercase-hexadecimal"
+        },
+        "session_id": {
+          "present": true,
+          "utf8ByteLength": 22,
+          "characterCount": 22,
+          "format": "ASCII-alphanumeric"
+        },
+        "queue_revision": {
+          "present": true,
+          "utf8ByteLength": 19,
+          "characterCount": 19,
+          "format": "decimal-digits"
+        }
+      },
+      "trackProvider": {
+        "wirePresent": true,
+        "value": "context"
+      },
+      "playbackSpeed": {
+        "wirePresent": false,
+        "effectiveProto3Value": 0.0
+      },
+      "optionsPlaybackSpeed": {
+        "wirePresent": true,
+        "value": 1.0
+      },
+      "timing": {
+        "started_playing_at": {
+          "wirePresent": true,
+          "isZero": false,
+          "observedUnit": "Unix-milliseconds",
+          "captureMinusValueMilliseconds": 7795
+        },
+        "has_been_playing_for_ms": {
+          "wirePresent": false,
+          "effectiveProto3Value": 0
+        },
+        "client_side_timestamp": {
+          "wirePresent": true,
+          "isZero": false,
+          "observedUnit": "Unix-milliseconds",
+          "captureMinusValueMilliseconds": -252
+        },
+        "player_timestamp": {
+          "wirePresent": true,
+          "isZero": false,
+          "observedUnit": "Unix-milliseconds",
+          "captureMinusValueMilliseconds": -249
+        },
+        "position_as_of_timestamp": {
+          "wirePresent": true,
+          "isZero": false,
+          "inferredUnit": "milliseconds",
+          "observedMagnitude": "under-one-hour"
+        },
+        "duration": {
+          "wirePresent": true,
+          "isZero": false,
+          "inferredUnit": "milliseconds",
+          "observedMagnitude": "under-one-hour"
+        },
+        "position": {
+          "wirePresent": false,
+          "effectiveProto3Value": 0
+        }
+      },
+      "capabilityProfileId": 3,
+      "identifierComparisonToPreviousPut": {
+        "playback_id": {
+          "bothPresent": true,
+          "equal": true
+        },
+        "session_id": {
+          "bothPresent": true,
+          "equal": true
+        },
+        "queue_revision": {
+          "bothPresent": true,
+          "equal": true
+        }
+      }
+    }
+  ]
+}

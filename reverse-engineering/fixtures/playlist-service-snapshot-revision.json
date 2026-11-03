@@ -1,0 +1,881 @@
+{
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "scope": "Execute original full-snapshot revision/cache-owner bookkeeping offline.\n\nThe list-data transaction facade, empty attribute-difference mask, read-only\nempty current attributes, managed-list begin/end mutation hooks, notifications\nand log formatting are inert supplied dependencies. No row tree,\nattribute mutation, URI interning, controller/lens reconciliation or store I/O\nis claimed. Original actor memory decides revision/lens ownership, queue clears,\nheadless/drop flags, optional content version and return status.",
+  "scenarios": [
+    {
+      "name": "missing revision leaves bookkeeping unchanged",
+      "current": {
+        "revision": "b2xk",
+        "revisionLenses": [
+          {
+            "identifier": "old",
+            "revision": "AQ=="
+          }
+        ],
+        "pendingChanges": [],
+        "stagedOperations": [],
+        "headless": true,
+        "dropPendingChangesOnSnapshot": true,
+        "contentGenerationVersion": 7
+      },
+      "reply": {},
+      "contentGenerationVersion": 0,
+      "replyWireHex": "",
+      "expected": {
+        "applied": false,
+        "revision": "b2xk",
+        "revisionLenses": [
+          {
+            "identifier": "old",
+            "revision": "AQ=="
+          }
+        ],
+        "pendingChanges": [],
+        "stagedOperations": [],
+        "headless": true,
+        "dropPendingChangesOnSnapshot": true,
+        "contentGenerationVersion": 7,
+        "suppliedDependencyCalls": []
+      }
+    },
+    {
+      "name": "present empty revision is accepted",
+      "current": {
+        "revision": "b2xk",
+        "revisionLenses": [
+          {
+            "identifier": "old",
+            "revision": "AQ=="
+          }
+        ],
+        "pendingChanges": [],
+        "stagedOperations": [],
+        "headless": false,
+        "dropPendingChangesOnSnapshot": false,
+        "contentGenerationVersion": 7
+      },
+      "reply": {
+        "revision": "",
+        "contents": {
+          "pos": 0,
+          "truncated": false
+        }
+      },
+      "replyWireHex": "0a002a0408001000",
+      "expected": {
+        "applied": true,
+        "revision": "",
+        "revisionLenses": [
+          {
+            "identifier": "old",
+            "revision": "AQ=="
+          }
+        ],
+        "pendingChanges": [],
+        "stagedOperations": [],
+        "headless": false,
+        "dropPendingChangesOnSnapshot": false,
+        "contentGenerationVersion": 7,
+        "suppliedDependencyCalls": [
+          "notify-batch",
+          "managed-begin",
+          "reset-rows",
+          "owner-username",
+          "created-at",
+          "timestamp",
+          "abuse-reporting",
+          "effective-lenses",
+          "attributes",
+          "rows",
+          "signals",
+          "managed-end",
+          "notify-batch"
+        ]
+      }
+    },
+    {
+      "name": "contents with absent lens field retain existing revision lenses",
+      "current": {
+        "revision": "b2xk",
+        "revisionLenses": [
+          {
+            "identifier": "old",
+            "revision": "AQ=="
+          }
+        ],
+        "pendingChanges": [],
+        "stagedOperations": [],
+        "headless": false,
+        "dropPendingChangesOnSnapshot": false,
+        "contentGenerationVersion": 7
+      },
+      "reply": {
+        "revision": "bmV3AP8=",
+        "contents": {
+          "pos": 0,
+          "truncated": false
+        }
+      },
+      "replyWireHex": "0a056e657700ff2a0408001000",
+      "expected": {
+        "applied": true,
+        "revision": "bmV3AP8=",
+        "revisionLenses": [
+          {
+            "identifier": "old",
+            "revision": "AQ=="
+          }
+        ],
+        "pendingChanges": [],
+        "stagedOperations": [],
+        "headless": false,
+        "dropPendingChangesOnSnapshot": false,
+        "contentGenerationVersion": 7,
+        "suppliedDependencyCalls": [
+          "notify-batch",
+          "managed-begin",
+          "reset-rows",
+          "owner-username",
+          "created-at",
+          "timestamp",
+          "abuse-reporting",
+          "effective-lenses",
+          "attributes",
+          "rows",
+          "signals",
+          "managed-end",
+          "notify-batch"
+        ]
+      }
+    },
+    {
+      "name": "present empty lens field clears revision lenses",
+      "current": {
+        "revision": "b2xk",
+        "revisionLenses": [
+          {
+            "identifier": "old",
+            "revision": "AQ=="
+          }
+        ],
+        "pendingChanges": [],
+        "stagedOperations": [],
+        "headless": false,
+        "dropPendingChangesOnSnapshot": false,
+        "contentGenerationVersion": 7
+      },
+      "reply": {
+        "revision": "bmV3AP8=",
+        "contents": {
+          "pos": 0,
+          "truncated": false
+        },
+        "appliedLenses": {}
+      },
+      "replyWireHex": "0a056e657700ff2a0408001000b20100",
+      "expected": {
+        "applied": true,
+        "revision": "bmV3AP8=",
+        "revisionLenses": [],
+        "pendingChanges": [],
+        "stagedOperations": [],
+        "headless": false,
+        "dropPendingChangesOnSnapshot": false,
+        "contentGenerationVersion": 7,
+        "suppliedDependencyCalls": [
+          "notify-batch",
+          "managed-begin",
+          "reset-rows",
+          "owner-username",
+          "created-at",
+          "timestamp",
+          "abuse-reporting",
+          "effective-lenses",
+          "attributes",
+          "rows",
+          "signals",
+          "managed-end",
+          "notify-batch"
+        ]
+      }
+    },
+    {
+      "name": "revision lenses retain input order duplicate identifiers and HTTP410 states",
+      "current": {
+        "revision": "b2xk",
+        "revisionLenses": [
+          {
+            "identifier": "old",
+            "revision": "AQ=="
+          }
+        ],
+        "pendingChanges": [],
+        "stagedOperations": [],
+        "headless": false,
+        "dropPendingChangesOnSnapshot": false,
+        "contentGenerationVersion": 7
+      },
+      "reply": {
+        "revision": "bmV3AP8=",
+        "contents": {
+          "pos": 0,
+          "truncated": false
+        },
+        "appliedLenses": {
+          "states": [
+            {
+              "identifier": "lens",
+              "status": {
+                "httpCode": 410
+              }
+            },
+            {
+              "identifier": "lens",
+              "revision": "AP8="
+            }
+          ]
+        }
+      },
+      "replyWireHex": "0a056e657700ff2a0408001000b201190a0b0a046c656e731a03089a030a0a0a046c656e73120200ff",
+      "expected": {
+        "applied": true,
+        "revision": "bmV3AP8=",
+        "revisionLenses": [
+          {
+            "identifier": "lens",
+            "status": {
+              "httpCode": 410
+            }
+          },
+          {
+            "identifier": "lens",
+            "revision": "AP8="
+          }
+        ],
+        "pendingChanges": [],
+        "stagedOperations": [],
+        "headless": false,
+        "dropPendingChangesOnSnapshot": false,
+        "contentGenerationVersion": 7,
+        "suppliedDependencyCalls": [
+          "notify-batch",
+          "managed-begin",
+          "reset-rows",
+          "owner-username",
+          "created-at",
+          "timestamp",
+          "abuse-reporting",
+          "effective-lenses",
+          "attributes",
+          "rows",
+          "signals",
+          "managed-end",
+          "notify-batch"
+        ]
+      }
+    },
+    {
+      "name": "metadata-only snapshot uses exact root marker and clears revision lenses",
+      "current": {
+        "revision": "b2xk",
+        "revisionLenses": [
+          {
+            "identifier": "old",
+            "revision": "AQ=="
+          }
+        ],
+        "pendingChanges": [],
+        "stagedOperations": [],
+        "headless": false,
+        "dropPendingChangesOnSnapshot": false,
+        "contentGenerationVersion": 7
+      },
+      "reply": {
+        "revision": "bmV3",
+        "appliedLenses": {
+          "states": [
+            {
+              "identifier": "ignored"
+            }
+          ]
+        }
+      },
+      "replyWireHex": "0a036e6577b2010b0a090a0769676e6f726564",
+      "expected": {
+        "applied": true,
+        "revision": "AAAAAHJvb3Q=",
+        "revisionLenses": [],
+        "pendingChanges": [],
+        "stagedOperations": [],
+        "headless": false,
+        "dropPendingChangesOnSnapshot": false,
+        "contentGenerationVersion": 7,
+        "suppliedDependencyCalls": [
+          "notify-batch",
+          "managed-begin",
+          "reset-rows",
+          "owner-username",
+          "created-at",
+          "timestamp",
+          "abuse-reporting",
+          "effective-lenses",
+          "attributes",
+          "managed-end",
+          "notify-batch"
+        ]
+      }
+    },
+    {
+      "name": "explicit zero content version overwrites existing version",
+      "current": {
+        "revision": "b2xk",
+        "revisionLenses": [
+          {
+            "identifier": "old",
+            "revision": "AQ=="
+          }
+        ],
+        "pendingChanges": [],
+        "stagedOperations": [],
+        "headless": false,
+        "dropPendingChangesOnSnapshot": false,
+        "contentGenerationVersion": 7
+      },
+      "reply": {
+        "revision": "bmV3AP8=",
+        "contents": {
+          "pos": 0,
+          "truncated": false
+        }
+      },
+      "contentGenerationVersion": 0,
+      "replyWireHex": "0a056e657700ff2a0408001000",
+      "expected": {
+        "applied": true,
+        "revision": "bmV3AP8=",
+        "revisionLenses": [
+          {
+            "identifier": "old",
+            "revision": "AQ=="
+          }
+        ],
+        "pendingChanges": [],
+        "stagedOperations": [],
+        "headless": false,
+        "dropPendingChangesOnSnapshot": false,
+        "contentGenerationVersion": 0,
+        "suppliedDependencyCalls": [
+          "notify-batch",
+          "managed-begin",
+          "reset-rows",
+          "owner-username",
+          "created-at",
+          "timestamp",
+          "abuse-reporting",
+          "effective-lenses",
+          "attributes",
+          "rows",
+          "signals",
+          "managed-end",
+          "notify-batch"
+        ]
+      }
+    },
+    {
+      "name": "content version retains all native uint32 bits",
+      "current": {
+        "revision": "b2xk",
+        "revisionLenses": [
+          {
+            "identifier": "old",
+            "revision": "AQ=="
+          }
+        ],
+        "pendingChanges": [],
+        "stagedOperations": [],
+        "headless": false,
+        "dropPendingChangesOnSnapshot": false,
+        "contentGenerationVersion": 7
+      },
+      "reply": {
+        "revision": "bmV3AP8=",
+        "contents": {
+          "pos": 0,
+          "truncated": false
+        }
+      },
+      "contentGenerationVersion": -1,
+      "replyWireHex": "0a056e657700ff2a0408001000",
+      "expected": {
+        "applied": true,
+        "revision": "bmV3AP8=",
+        "revisionLenses": [
+          {
+            "identifier": "old",
+            "revision": "AQ=="
+          }
+        ],
+        "pendingChanges": [],
+        "stagedOperations": [],
+        "headless": false,
+        "dropPendingChangesOnSnapshot": false,
+        "contentGenerationVersion": 4294967295,
+        "suppliedDependencyCalls": [
+          "notify-batch",
+          "managed-begin",
+          "reset-rows",
+          "owner-username",
+          "created-at",
+          "timestamp",
+          "abuse-reporting",
+          "effective-lenses",
+          "attributes",
+          "rows",
+          "signals",
+          "managed-end",
+          "notify-batch"
+        ]
+      }
+    },
+    {
+      "name": "force snapshot drops pending deltas and staged operations",
+      "current": {
+        "revision": "b2xk",
+        "revisionLenses": [
+          {
+            "identifier": "old",
+            "revision": "AQ=="
+          }
+        ],
+        "pendingChanges": [
+          {
+            "baseVersion": "AQ=="
+          }
+        ],
+        "stagedOperations": [
+          {
+            "kind": 0
+          },
+          {
+            "kind": 2
+          }
+        ],
+        "headless": false,
+        "dropPendingChangesOnSnapshot": true,
+        "contentGenerationVersion": 7
+      },
+      "reply": {
+        "revision": "bmV3AP8=",
+        "contents": {
+          "pos": 0,
+          "truncated": false
+        }
+      },
+      "replyWireHex": "0a056e657700ff2a0408001000",
+      "expected": {
+        "applied": true,
+        "revision": "bmV3AP8=",
+        "revisionLenses": [
+          {
+            "identifier": "old",
+            "revision": "AQ=="
+          }
+        ],
+        "pendingChanges": [],
+        "stagedOperations": [],
+        "headless": false,
+        "dropPendingChangesOnSnapshot": false,
+        "contentGenerationVersion": 7,
+        "suppliedDependencyCalls": [
+          "notify-batch",
+          "managed-begin",
+          "reset-rows",
+          "owner-username",
+          "created-at",
+          "timestamp",
+          "abuse-reporting",
+          "effective-lenses",
+          "attributes",
+          "rows",
+          "signals",
+          "managed-end",
+          "notify-batch",
+          "notify-batch"
+        ]
+      }
+    },
+    {
+      "name": "ordinary snapshot preserves both pending queues",
+      "current": {
+        "revision": "b2xk",
+        "revisionLenses": [
+          {
+            "identifier": "old",
+            "revision": "AQ=="
+          }
+        ],
+        "pendingChanges": [
+          {
+            "baseVersion": "AQ=="
+          }
+        ],
+        "stagedOperations": [
+          {
+            "kind": 2
+          }
+        ],
+        "headless": false,
+        "dropPendingChangesOnSnapshot": false,
+        "contentGenerationVersion": 7
+      },
+      "reply": {
+        "revision": "bmV3AP8=",
+        "contents": {
+          "pos": 0,
+          "truncated": false
+        }
+      },
+      "replyWireHex": "0a056e657700ff2a0408001000",
+      "expected": {
+        "applied": true,
+        "revision": "bmV3AP8=",
+        "revisionLenses": [
+          {
+            "identifier": "old",
+            "revision": "AQ=="
+          }
+        ],
+        "pendingChanges": [
+          {
+            "baseVersion": "AQ=="
+          }
+        ],
+        "stagedOperations": [
+          {
+            "kind": 2
+          }
+        ],
+        "headless": false,
+        "dropPendingChangesOnSnapshot": false,
+        "contentGenerationVersion": 7,
+        "suppliedDependencyCalls": [
+          "notify-batch",
+          "managed-begin",
+          "reset-rows",
+          "owner-username",
+          "created-at",
+          "timestamp",
+          "abuse-reporting",
+          "effective-lenses",
+          "attributes",
+          "rows",
+          "signals",
+          "managed-end",
+          "notify-batch"
+        ]
+      }
+    },
+    {
+      "name": "empty queues leave headless and arm next force snapshot",
+      "current": {
+        "revision": "b2xk",
+        "revisionLenses": [
+          {
+            "identifier": "old",
+            "revision": "AQ=="
+          }
+        ],
+        "pendingChanges": [],
+        "stagedOperations": [],
+        "headless": true,
+        "dropPendingChangesOnSnapshot": false,
+        "contentGenerationVersion": 7
+      },
+      "reply": {
+        "revision": "bmV3AP8=",
+        "contents": {
+          "pos": 0,
+          "truncated": false
+        }
+      },
+      "replyWireHex": "0a056e657700ff2a0408001000",
+      "expected": {
+        "applied": true,
+        "revision": "bmV3AP8=",
+        "revisionLenses": [
+          {
+            "identifier": "old",
+            "revision": "AQ=="
+          }
+        ],
+        "pendingChanges": [],
+        "stagedOperations": [],
+        "headless": false,
+        "dropPendingChangesOnSnapshot": true,
+        "contentGenerationVersion": 7,
+        "suppliedDependencyCalls": [
+          "notify-batch",
+          "managed-begin",
+          "reset-rows",
+          "owner-username",
+          "created-at",
+          "timestamp",
+          "abuse-reporting",
+          "effective-lenses",
+          "attributes",
+          "rows",
+          "signals",
+          "managed-end",
+          "notify-batch",
+          "notify-batch",
+          "notify-state"
+        ]
+      }
+    },
+    {
+      "name": "pending deltas keep headless",
+      "current": {
+        "revision": "b2xk",
+        "revisionLenses": [
+          {
+            "identifier": "old",
+            "revision": "AQ=="
+          }
+        ],
+        "pendingChanges": [
+          {
+            "baseVersion": "AQ=="
+          }
+        ],
+        "stagedOperations": [],
+        "headless": true,
+        "dropPendingChangesOnSnapshot": false,
+        "contentGenerationVersion": 7
+      },
+      "reply": {
+        "revision": "bmV3AP8=",
+        "contents": {
+          "pos": 0,
+          "truncated": false
+        }
+      },
+      "replyWireHex": "0a056e657700ff2a0408001000",
+      "expected": {
+        "applied": true,
+        "revision": "bmV3AP8=",
+        "revisionLenses": [
+          {
+            "identifier": "old",
+            "revision": "AQ=="
+          }
+        ],
+        "pendingChanges": [
+          {
+            "baseVersion": "AQ=="
+          }
+        ],
+        "stagedOperations": [],
+        "headless": true,
+        "dropPendingChangesOnSnapshot": false,
+        "contentGenerationVersion": 7,
+        "suppliedDependencyCalls": [
+          "notify-batch",
+          "managed-begin",
+          "reset-rows",
+          "owner-username",
+          "created-at",
+          "timestamp",
+          "abuse-reporting",
+          "effective-lenses",
+          "attributes",
+          "rows",
+          "signals",
+          "managed-end",
+          "notify-batch"
+        ]
+      }
+    },
+    {
+      "name": "staged operations keep headless",
+      "current": {
+        "revision": "b2xk",
+        "revisionLenses": [
+          {
+            "identifier": "old",
+            "revision": "AQ=="
+          }
+        ],
+        "pendingChanges": [],
+        "stagedOperations": [
+          {
+            "kind": 2
+          }
+        ],
+        "headless": true,
+        "dropPendingChangesOnSnapshot": false,
+        "contentGenerationVersion": 7
+      },
+      "reply": {
+        "revision": "bmV3AP8=",
+        "contents": {
+          "pos": 0,
+          "truncated": false
+        }
+      },
+      "replyWireHex": "0a056e657700ff2a0408001000",
+      "expected": {
+        "applied": true,
+        "revision": "bmV3AP8=",
+        "revisionLenses": [
+          {
+            "identifier": "old",
+            "revision": "AQ=="
+          }
+        ],
+        "pendingChanges": [],
+        "stagedOperations": [
+          {
+            "kind": 2
+          }
+        ],
+        "headless": true,
+        "dropPendingChangesOnSnapshot": false,
+        "contentGenerationVersion": 7,
+        "suppliedDependencyCalls": [
+          "notify-batch",
+          "managed-begin",
+          "reset-rows",
+          "owner-username",
+          "created-at",
+          "timestamp",
+          "abuse-reporting",
+          "effective-lenses",
+          "attributes",
+          "rows",
+          "signals",
+          "managed-end",
+          "notify-batch"
+        ]
+      }
+    },
+    {
+      "name": "forced queue reset leaves headless and rearms force flag",
+      "current": {
+        "revision": "b2xk",
+        "revisionLenses": [
+          {
+            "identifier": "old",
+            "revision": "AQ=="
+          }
+        ],
+        "pendingChanges": [
+          {}
+        ],
+        "stagedOperations": [
+          {
+            "kind": 2
+          }
+        ],
+        "headless": true,
+        "dropPendingChangesOnSnapshot": true,
+        "contentGenerationVersion": 7
+      },
+      "reply": {
+        "revision": "bmV3AP8=",
+        "contents": {
+          "pos": 0,
+          "truncated": false
+        }
+      },
+      "replyWireHex": "0a056e657700ff2a0408001000",
+      "expected": {
+        "applied": true,
+        "revision": "bmV3AP8=",
+        "revisionLenses": [
+          {
+            "identifier": "old",
+            "revision": "AQ=="
+          }
+        ],
+        "pendingChanges": [],
+        "stagedOperations": [],
+        "headless": false,
+        "dropPendingChangesOnSnapshot": true,
+        "contentGenerationVersion": 7,
+        "suppliedDependencyCalls": [
+          "notify-batch",
+          "managed-begin",
+          "reset-rows",
+          "owner-username",
+          "created-at",
+          "timestamp",
+          "abuse-reporting",
+          "effective-lenses",
+          "attributes",
+          "rows",
+          "signals",
+          "managed-end",
+          "notify-batch",
+          "notify-batch",
+          "notify-batch",
+          "notify-state"
+        ]
+      }
+    },
+    {
+      "name": "long revisions use native heap string path",
+      "current": {
+        "revision": "b2xkLW9sZC1vbGQtb2xkLW9sZC1vbGQtb2xkLW9sZC1vbGQtb2xkLW9sZC1vbGQtb2xkLW9sZC1vbGQtb2xkLW9sZC1vbGQtb2xkLW9sZC0=",
+        "revisionLenses": [
+          {
+            "identifier": "old",
+            "revision": "AQ=="
+          }
+        ],
+        "pendingChanges": [],
+        "stagedOperations": [],
+        "headless": false,
+        "dropPendingChangesOnSnapshot": false,
+        "contentGenerationVersion": 7
+      },
+      "reply": {
+        "revision": "bmV3LW5ldy1uZXctbmV3LW5ldy1uZXctbmV3LW5ldy1uZXctbmV3LW5ldy1uZXctbmV3LW5ldy1uZXctbmV3LW5ldy1uZXctbmV3LW5ldy0=",
+        "contents": {
+          "pos": 0,
+          "truncated": false
+        }
+      },
+      "replyWireHex": "0a506e65772d6e65772d6e65772d6e65772d6e65772d6e65772d6e65772d6e65772d6e65772d6e65772d6e65772d6e65772d6e65772d6e65772d6e65772d6e65772d6e65772d6e65772d6e65772d6e65772d2a0408001000",
+      "expected": {
+        "applied": true,
+        "revision": "bmV3LW5ldy1uZXctbmV3LW5ldy1uZXctbmV3LW5ldy1uZXctbmV3LW5ldy1uZXctbmV3LW5ldy1uZXctbmV3LW5ldy1uZXctbmV3LW5ldy0=",
+        "revisionLenses": [
+          {
+            "identifier": "old",
+            "revision": "AQ=="
+          }
+        ],
+        "pendingChanges": [],
+        "stagedOperations": [],
+        "headless": false,
+        "dropPendingChangesOnSnapshot": false,
+        "contentGenerationVersion": 7,
+        "suppliedDependencyCalls": [
+          "notify-batch",
+          "managed-begin",
+          "reset-rows",
+          "owner-username",
+          "created-at",
+          "timestamp",
+          "abuse-reporting",
+          "effective-lenses",
+          "attributes",
+          "rows",
+          "signals",
+          "managed-end",
+          "notify-batch"
+        ]
+      }
+    }
+  ]
+}

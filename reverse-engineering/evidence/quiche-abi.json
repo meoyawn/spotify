@@ -1,0 +1,16 @@
+{
+  "source": "tools/quiche_abi.c compiled with Apple clang against pinned upstream quiche.h",
+  "target": "macos_arm64",
+  "layout": {
+    "sockaddr": 16,
+    "sockaddr_storage": 128,
+    "timespec": 16,
+    "recv_info": 32,
+    "send_info": 288,
+    "h3_header": 32,
+    "h3_event_type": 4,
+    "shutdown": 4,
+    "recv_to_offset": 16,
+    "send_to_offset": 136
+  }
+}

@@ -1,0 +1,557 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "originalProcedure": "0x10141d1a8",
+  "executedOriginalRegion": {
+    "startInclusive": "0x10141d63c",
+    "endExclusive": "0x10141d79c",
+    "sha256": "7665f6292776adf530499365ba766229dde5adb517c960dcce6ee5ff2fc7a689"
+  },
+  "originalInputEvidence": {
+    "path": "reverse-engineering/evidence/native-pusher-request-fields.json",
+    "sha256": "14352a4e0848f230a892074e4904c0362938b4cfb47404b5a8951e7721f153b4"
+  },
+  "tools": [
+    {
+      "path": "reverse-engineering/tools/foundation_websocket_peer.py",
+      "sha256": "a58cb13ab82fffe8b52ba0e6a70ae980b337aa38ee4ff7d238b96ec66d1aba9e"
+    },
+    {
+      "path": "reverse-engineering/tools/foundation_websocket_harness.swift",
+      "sha256": "ad4a4b6a22f809f10c01e3e296aa2b0712a21454f23fe644e92f6f7b2492424c"
+    },
+    {
+      "path": "reverse-engineering/tools/compare_foundation_websocket_capture.py",
+      "sha256": "d38c218be0662a749e088c421643b99f1d7dd5cd803e66eac33ca6777af921b7"
+    }
+  ],
+  "method": "Independently executed original oracle header additions supplied directly to standard Foundation APIs; only scheme/authority replaced by IPv4 ws loopback",
+  "limits": [
+    "Complete proprietary wrapper is not executed; original field-producing region execution is separately pinned by the input evidence.",
+    "Plain HTTP/1.1 loopback: no TLS/ALPN fingerprint, HTTP/2, original profile/cookie absence or remote endpoint behavior is proved.",
+    "Cookie policy remains Foundation default; no original app/profile/cookie enumeration or account access occurs.",
+    "Reference-repeat comparison normalizes only the independently random 16-byte Sec-WebSocket-Key; all remaining request/header bytes are exact.",
+    "These are standalone standard-provider reference captures; no real Flutter bridge execution is claimed here."
+  ],
+  "harnessRuns": [
+    {
+      "privateReport": {
+        "path": ".local/validation/foundation-websocket-loopback/original-api-harness.json",
+        "sha256": "4f09334228fecda27111fe7cd08a946d010063720fc547f6093a6968b2683c06"
+      },
+      "result": {
+        "cases": [
+          {
+            "addedRequestHeaders": [
+              [
+                "Authorization",
+                "Bearer synthetic.Token/+-="
+              ],
+              [
+                "User-Agent",
+                "music/1.3.6.1921.g7086c071a617 macos/26.4.0"
+              ]
+            ],
+            "closeCode": 1000,
+            "didOpen": true,
+            "originalOracleCase": 0,
+            "originalUrl": "wss://dealer.test:443",
+            "receivedText": "{\"type\":\"message\",\"uri\":\"hm://fixture/foundation-loopback\",\"headers\":{\"Spotify-Connection-Id\":\"synthetic-foundation-loopback-cid\"},\"payloads\":[]}",
+            "substitutedUrl": "ws://127.0.0.1:61021"
+          },
+          {
+            "addedRequestHeaders": [
+              [
+                "User-Agent",
+                "music/synthetic-version macos/13.2.1"
+              ]
+            ],
+            "closeCode": 1000,
+            "didOpen": true,
+            "originalOracleCase": 1,
+            "originalUrl": "wss://dealer.test:444/path?seed=a%2Fb",
+            "receivedText": "{\"type\":\"message\",\"uri\":\"hm://fixture/foundation-loopback\",\"headers\":{\"Spotify-Connection-Id\":\"synthetic-foundation-loopback-cid\"},\"payloads\":[]}",
+            "substitutedUrl": "ws://127.0.0.1:61021/path?seed=a%2Fb"
+          }
+        ],
+        "executedOriginalRegion": {
+          "endExclusive": "0x10141d79c",
+          "sha256": "7665f6292776adf530499365ba766229dde5adb517c960dcce6ee5ff2fc7a689",
+          "startInclusive": "0x10141d63c"
+        },
+        "oraclePath": "reverse-engineering/evidence/native-pusher-request-fields.json",
+        "oracleSha256": "14352a4e0848f230a892074e4904c0362938b4cfb47404b5a8951e7721f153b4",
+        "originalProcedure": "0x10141d1a8",
+        "osVersion": "Version 26.4 (Build 25E246)",
+        "scope": "Original oracle additions through standard Foundation over plain HTTP/1.1 IPv4 loopback only",
+        "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+        "standardAPIs": [
+          "NSMutableURLRequest(url:)",
+          "addValue(_:forHTTPHeaderField:)",
+          "URLSessionConfiguration.default",
+          "OperationQueue()",
+          "URLSession(configuration:delegate:delegateQueue:)",
+          "URLSession.webSocketTask(with:)",
+          "URLSessionWebSocketTask.resume()"
+        ]
+      }
+    },
+    {
+      "privateReport": {
+        "path": ".local/validation/foundation-websocket-loopback/original-api-harness-repeat.json",
+        "sha256": "4f09334228fecda27111fe7cd08a946d010063720fc547f6093a6968b2683c06"
+      },
+      "result": {
+        "cases": [
+          {
+            "addedRequestHeaders": [
+              [
+                "Authorization",
+                "Bearer synthetic.Token/+-="
+              ],
+              [
+                "User-Agent",
+                "music/1.3.6.1921.g7086c071a617 macos/26.4.0"
+              ]
+            ],
+            "closeCode": 1000,
+            "didOpen": true,
+            "originalOracleCase": 0,
+            "originalUrl": "wss://dealer.test:443",
+            "receivedText": "{\"type\":\"message\",\"uri\":\"hm://fixture/foundation-loopback\",\"headers\":{\"Spotify-Connection-Id\":\"synthetic-foundation-loopback-cid\"},\"payloads\":[]}",
+            "substitutedUrl": "ws://127.0.0.1:61021"
+          },
+          {
+            "addedRequestHeaders": [
+              [
+                "User-Agent",
+                "music/synthetic-version macos/13.2.1"
+              ]
+            ],
+            "closeCode": 1000,
+            "didOpen": true,
+            "originalOracleCase": 1,
+            "originalUrl": "wss://dealer.test:444/path?seed=a%2Fb",
+            "receivedText": "{\"type\":\"message\",\"uri\":\"hm://fixture/foundation-loopback\",\"headers\":{\"Spotify-Connection-Id\":\"synthetic-foundation-loopback-cid\"},\"payloads\":[]}",
+            "substitutedUrl": "ws://127.0.0.1:61021/path?seed=a%2Fb"
+          }
+        ],
+        "executedOriginalRegion": {
+          "endExclusive": "0x10141d79c",
+          "sha256": "7665f6292776adf530499365ba766229dde5adb517c960dcce6ee5ff2fc7a689",
+          "startInclusive": "0x10141d63c"
+        },
+        "oraclePath": "reverse-engineering/evidence/native-pusher-request-fields.json",
+        "oracleSha256": "14352a4e0848f230a892074e4904c0362938b4cfb47404b5a8951e7721f153b4",
+        "originalProcedure": "0x10141d1a8",
+        "osVersion": "Version 26.4 (Build 25E246)",
+        "scope": "Original oracle additions through standard Foundation over plain HTTP/1.1 IPv4 loopback only",
+        "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+        "standardAPIs": [
+          "NSMutableURLRequest(url:)",
+          "addValue(_:forHTTPHeaderField:)",
+          "URLSessionConfiguration.default",
+          "OperationQueue()",
+          "URLSession(configuration:delegate:delegateQueue:)",
+          "URLSession.webSocketTask(with:)",
+          "URLSessionWebSocketTask.resume()"
+        ]
+      }
+    }
+  ],
+  "captures": [
+    {
+      "originalOracleCase": 0,
+      "harnessPass": 1,
+      "privateCapture": {
+        "path": ".local/validation/foundation-websocket-loopback/20261028T070504Z-97497-capture-0001.json",
+        "sha256": "bbe0407755706d0adcdf37efadd81b9185750aad5a0600a71dfd8f91972064f7"
+      },
+      "result": {
+        "number": 1,
+        "receivedAt": "2026-10-28T07:05:10.455960+00:00",
+        "remoteHost": "127.0.0.1",
+        "controlFrames": [
+          {
+            "opcode": 8,
+            "masked": true,
+            "payloadLength": 2,
+            "final": true
+          }
+        ],
+        "sentText": "{\"type\":\"message\",\"uri\":\"hm://fixture/foundation-loopback\",\"headers\":{\"Spotify-Connection-Id\":\"synthetic-foundation-loopback-cid\"},\"payloads\":[]}",
+        "requestLine": "GET / HTTP/1.1",
+        "orderedHeaderLines": [
+          "Host: 127.0.0.1:61021",
+          "Accept-Language: en-US,en;q=0.9",
+          "Accept-Encoding: gzip, deflate",
+          "Sec-WebSocket-Version: 13",
+          "Sec-WebSocket-Key: 0K9HFoZRj0MdjAWwP5YwIA==",
+          "Upgrade: websocket",
+          "Accept: */*",
+          "User-Agent: music/1.3.6.1921.g7086c071a617 macos/26.4.0",
+          "Authorization: Bearer synthetic.Token/+-=",
+          "Sec-WebSocket-Extensions: permessage-deflate",
+          "Connection: Upgrade"
+        ],
+        "orderedHeaders": [
+          [
+            "Host",
+            "127.0.0.1:61021"
+          ],
+          [
+            "Accept-Language",
+            "en-US,en;q=0.9"
+          ],
+          [
+            "Accept-Encoding",
+            "gzip, deflate"
+          ],
+          [
+            "Sec-WebSocket-Version",
+            "13"
+          ],
+          [
+            "Sec-WebSocket-Key",
+            "0K9HFoZRj0MdjAWwP5YwIA=="
+          ],
+          [
+            "Upgrade",
+            "websocket"
+          ],
+          [
+            "Accept",
+            "*/*"
+          ],
+          [
+            "User-Agent",
+            "music/1.3.6.1921.g7086c071a617 macos/26.4.0"
+          ],
+          [
+            "Authorization",
+            "Bearer synthetic.Token/+-="
+          ],
+          [
+            "Sec-WebSocket-Extensions",
+            "permessage-deflate"
+          ],
+          [
+            "Connection",
+            "Upgrade"
+          ]
+        ],
+        "capturedHeaderBytesBase64": "R0VUIC8gSFRUUC8xLjENCkhvc3Q6IDEyNy4wLjAuMTo2MTAyMQ0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlDQpTZWMtV2ViU29ja2V0LVZlcnNpb246IDEzDQpTZWMtV2ViU29ja2V0LUtleTogMEs5SEZvWlJqME1kakFXd1A1WXdJQT09DQpVcGdyYWRlOiB3ZWJzb2NrZXQNCkFjY2VwdDogKi8qDQpVc2VyLUFnZW50OiBtdXNpYy8xLjMuNi4xOTIxLmc3MDg2YzA3MWE2MTcgbWFjb3MvMjYuNC4wDQpBdXRob3JpemF0aW9uOiBCZWFyZXIgc3ludGhldGljLlRva2VuLystPQ0KU2VjLVdlYlNvY2tldC1FeHRlbnNpb25zOiBwZXJtZXNzYWdlLWRlZmxhdGUNCkNvbm5lY3Rpb246IFVwZ3JhZGUNCg0K",
+        "observedHeaderByteLength": 378,
+        "redactedHeaderNames": [],
+        "requestTargetRedacted": false,
+        "capturedBytesAreRedacted": false,
+        "handshakeAccepted": true,
+        "keyDecodedByteLength": 16,
+        "responseHeaderBytesBase64": "SFRUUC8xLjEgMTAxIFN3aXRjaGluZyBQcm90b2NvbHMNClVwZ3JhZGU6IHdlYnNvY2tldA0KQ29ubmVjdGlvbjogVXBncmFkZQ0KU2VjLVdlYlNvY2tldC1BY2NlcHQ6IE04Nno5NzF4TWxuTGs0ZVhUKzVyMUZobVhzcz0NCg0K",
+        "closeCode": 1000,
+        "finishedAt": "2026-10-28T07:05:10.460502+00:00"
+      }
+    },
+    {
+      "originalOracleCase": 1,
+      "harnessPass": 1,
+      "privateCapture": {
+        "path": ".local/validation/foundation-websocket-loopback/20261028T070504Z-97497-capture-0002.json",
+        "sha256": "d2663b674e9c51fd9c024c98c005ee62ce2da399e73794e6c8e9f7918b454e74"
+      },
+      "result": {
+        "number": 2,
+        "receivedAt": "2026-10-28T07:05:10.461850+00:00",
+        "remoteHost": "127.0.0.1",
+        "controlFrames": [
+          {
+            "opcode": 8,
+            "masked": true,
+            "payloadLength": 2,
+            "final": true
+          }
+        ],
+        "sentText": "{\"type\":\"message\",\"uri\":\"hm://fixture/foundation-loopback\",\"headers\":{\"Spotify-Connection-Id\":\"synthetic-foundation-loopback-cid\"},\"payloads\":[]}",
+        "requestLine": "GET /path?seed=a%2Fb HTTP/1.1",
+        "orderedHeaderLines": [
+          "Host: 127.0.0.1:61021",
+          "Accept-Encoding: gzip, deflate",
+          "Sec-WebSocket-Version: 13",
+          "Sec-WebSocket-Key: WHn45bBh80Ho7+qOTd82nA==",
+          "Upgrade: websocket",
+          "Accept: */*",
+          "User-Agent: music/synthetic-version macos/13.2.1",
+          "Sec-WebSocket-Extensions: permessage-deflate",
+          "Accept-Language: en-US,en;q=0.9",
+          "Connection: Upgrade"
+        ],
+        "orderedHeaders": [
+          [
+            "Host",
+            "127.0.0.1:61021"
+          ],
+          [
+            "Accept-Encoding",
+            "gzip, deflate"
+          ],
+          [
+            "Sec-WebSocket-Version",
+            "13"
+          ],
+          [
+            "Sec-WebSocket-Key",
+            "WHn45bBh80Ho7+qOTd82nA=="
+          ],
+          [
+            "Upgrade",
+            "websocket"
+          ],
+          [
+            "Accept",
+            "*/*"
+          ],
+          [
+            "User-Agent",
+            "music/synthetic-version macos/13.2.1"
+          ],
+          [
+            "Sec-WebSocket-Extensions",
+            "permessage-deflate"
+          ],
+          [
+            "Accept-Language",
+            "en-US,en;q=0.9"
+          ],
+          [
+            "Connection",
+            "Upgrade"
+          ]
+        ],
+        "capturedHeaderBytesBase64": "R0VUIC9wYXRoP3NlZWQ9YSUyRmIgSFRUUC8xLjENCkhvc3Q6IDEyNy4wLjAuMTo2MTAyMQ0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlDQpTZWMtV2ViU29ja2V0LVZlcnNpb246IDEzDQpTZWMtV2ViU29ja2V0LUtleTogV0huNDViQmg4MEhvNytxT1RkODJuQT09DQpVcGdyYWRlOiB3ZWJzb2NrZXQNCkFjY2VwdDogKi8qDQpVc2VyLUFnZW50OiBtdXNpYy9zeW50aGV0aWMtdmVyc2lvbiBtYWNvcy8xMy4yLjENClNlYy1XZWJTb2NrZXQtRXh0ZW5zaW9uczogcGVybWVzc2FnZS1kZWZsYXRlDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpDb25uZWN0aW9uOiBVcGdyYWRlDQoNCg==",
+        "observedHeaderByteLength": 343,
+        "redactedHeaderNames": [],
+        "requestTargetRedacted": false,
+        "capturedBytesAreRedacted": false,
+        "handshakeAccepted": true,
+        "keyDecodedByteLength": 16,
+        "responseHeaderBytesBase64": "SFRUUC8xLjEgMTAxIFN3aXRjaGluZyBQcm90b2NvbHMNClVwZ3JhZGU6IHdlYnNvY2tldA0KQ29ubmVjdGlvbjogVXBncmFkZQ0KU2VjLVdlYlNvY2tldC1BY2NlcHQ6IHVpL0ZQd1dpU0p6WWt1NHROMnVmaFhCR1RXST0NCg0K",
+        "closeCode": 1000,
+        "finishedAt": "2026-10-28T07:05:10.462583+00:00"
+      }
+    },
+    {
+      "originalOracleCase": 0,
+      "harnessPass": 2,
+      "privateCapture": {
+        "path": ".local/validation/foundation-websocket-loopback/20261028T070504Z-97497-capture-0003.json",
+        "sha256": "0da762b264984fa4d7c739597d8c7d04fe19ae7d9822e58d6a65eee81159fc80"
+      },
+      "result": {
+        "number": 3,
+        "receivedAt": "2026-10-28T07:06:00.159913+00:00",
+        "remoteHost": "127.0.0.1",
+        "controlFrames": [
+          {
+            "opcode": 8,
+            "masked": true,
+            "payloadLength": 2,
+            "final": true
+          }
+        ],
+        "sentText": "{\"type\":\"message\",\"uri\":\"hm://fixture/foundation-loopback\",\"headers\":{\"Spotify-Connection-Id\":\"synthetic-foundation-loopback-cid\"},\"payloads\":[]}",
+        "requestLine": "GET / HTTP/1.1",
+        "orderedHeaderLines": [
+          "Host: 127.0.0.1:61021",
+          "Accept-Language: en-US,en;q=0.9",
+          "Accept-Encoding: gzip, deflate",
+          "Sec-WebSocket-Version: 13",
+          "Sec-WebSocket-Key: 5vlSMrjMPrOJNYywp+kNGg==",
+          "Upgrade: websocket",
+          "Accept: */*",
+          "User-Agent: music/1.3.6.1921.g7086c071a617 macos/26.4.0",
+          "Authorization: Bearer synthetic.Token/+-=",
+          "Sec-WebSocket-Extensions: permessage-deflate",
+          "Connection: Upgrade"
+        ],
+        "orderedHeaders": [
+          [
+            "Host",
+            "127.0.0.1:61021"
+          ],
+          [
+            "Accept-Language",
+            "en-US,en;q=0.9"
+          ],
+          [
+            "Accept-Encoding",
+            "gzip, deflate"
+          ],
+          [
+            "Sec-WebSocket-Version",
+            "13"
+          ],
+          [
+            "Sec-WebSocket-Key",
+            "5vlSMrjMPrOJNYywp+kNGg=="
+          ],
+          [
+            "Upgrade",
+            "websocket"
+          ],
+          [
+            "Accept",
+            "*/*"
+          ],
+          [
+            "User-Agent",
+            "music/1.3.6.1921.g7086c071a617 macos/26.4.0"
+          ],
+          [
+            "Authorization",
+            "Bearer synthetic.Token/+-="
+          ],
+          [
+            "Sec-WebSocket-Extensions",
+            "permessage-deflate"
+          ],
+          [
+            "Connection",
+            "Upgrade"
+          ]
+        ],
+        "capturedHeaderBytesBase64": "R0VUIC8gSFRUUC8xLjENCkhvc3Q6IDEyNy4wLjAuMTo2MTAyMQ0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlDQpTZWMtV2ViU29ja2V0LVZlcnNpb246IDEzDQpTZWMtV2ViU29ja2V0LUtleTogNXZsU01yak1Qck9KTll5d3Ara05HZz09DQpVcGdyYWRlOiB3ZWJzb2NrZXQNCkFjY2VwdDogKi8qDQpVc2VyLUFnZW50OiBtdXNpYy8xLjMuNi4xOTIxLmc3MDg2YzA3MWE2MTcgbWFjb3MvMjYuNC4wDQpBdXRob3JpemF0aW9uOiBCZWFyZXIgc3ludGhldGljLlRva2VuLystPQ0KU2VjLVdlYlNvY2tldC1FeHRlbnNpb25zOiBwZXJtZXNzYWdlLWRlZmxhdGUNCkNvbm5lY3Rpb246IFVwZ3JhZGUNCg0K",
+        "observedHeaderByteLength": 378,
+        "redactedHeaderNames": [],
+        "requestTargetRedacted": false,
+        "capturedBytesAreRedacted": false,
+        "handshakeAccepted": true,
+        "keyDecodedByteLength": 16,
+        "responseHeaderBytesBase64": "SFRUUC8xLjEgMTAxIFN3aXRjaGluZyBQcm90b2NvbHMNClVwZ3JhZGU6IHdlYnNvY2tldA0KQ29ubmVjdGlvbjogVXBncmFkZQ0KU2VjLVdlYlNvY2tldC1BY2NlcHQ6IFRoVWVJSzR2cnVrY3FOclhDVHZRL1BtSEdGaz0NCg0K",
+        "closeCode": 1000,
+        "finishedAt": "2026-10-28T07:06:00.162216+00:00"
+      }
+    },
+    {
+      "originalOracleCase": 1,
+      "harnessPass": 2,
+      "privateCapture": {
+        "path": ".local/validation/foundation-websocket-loopback/20261028T070504Z-97497-capture-0004.json",
+        "sha256": "1f9a706d28d68e582d3a80a8825302f0213dec6de452060d6f8971a03743d178"
+      },
+      "result": {
+        "number": 4,
+        "receivedAt": "2026-10-28T07:06:00.163636+00:00",
+        "remoteHost": "127.0.0.1",
+        "controlFrames": [
+          {
+            "opcode": 8,
+            "masked": true,
+            "payloadLength": 2,
+            "final": true
+          }
+        ],
+        "sentText": "{\"type\":\"message\",\"uri\":\"hm://fixture/foundation-loopback\",\"headers\":{\"Spotify-Connection-Id\":\"synthetic-foundation-loopback-cid\"},\"payloads\":[]}",
+        "requestLine": "GET /path?seed=a%2Fb HTTP/1.1",
+        "orderedHeaderLines": [
+          "Host: 127.0.0.1:61021",
+          "Accept-Encoding: gzip, deflate",
+          "Sec-WebSocket-Version: 13",
+          "Sec-WebSocket-Key: jsqAsMPLRYz0DB4PPa9edw==",
+          "Upgrade: websocket",
+          "Accept: */*",
+          "User-Agent: music/synthetic-version macos/13.2.1",
+          "Sec-WebSocket-Extensions: permessage-deflate",
+          "Accept-Language: en-US,en;q=0.9",
+          "Connection: Upgrade"
+        ],
+        "orderedHeaders": [
+          [
+            "Host",
+            "127.0.0.1:61021"
+          ],
+          [
+            "Accept-Encoding",
+            "gzip, deflate"
+          ],
+          [
+            "Sec-WebSocket-Version",
+            "13"
+          ],
+          [
+            "Sec-WebSocket-Key",
+            "jsqAsMPLRYz0DB4PPa9edw=="
+          ],
+          [
+            "Upgrade",
+            "websocket"
+          ],
+          [
+            "Accept",
+            "*/*"
+          ],
+          [
+            "User-Agent",
+            "music/synthetic-version macos/13.2.1"
+          ],
+          [
+            "Sec-WebSocket-Extensions",
+            "permessage-deflate"
+          ],
+          [
+            "Accept-Language",
+            "en-US,en;q=0.9"
+          ],
+          [
+            "Connection",
+            "Upgrade"
+          ]
+        ],
+        "capturedHeaderBytesBase64": "R0VUIC9wYXRoP3NlZWQ9YSUyRmIgSFRUUC8xLjENCkhvc3Q6IDEyNy4wLjAuMTo2MTAyMQ0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlDQpTZWMtV2ViU29ja2V0LVZlcnNpb246IDEzDQpTZWMtV2ViU29ja2V0LUtleToganNxQXNNUExSWXowREI0UFBhOWVkdz09DQpVcGdyYWRlOiB3ZWJzb2NrZXQNCkFjY2VwdDogKi8qDQpVc2VyLUFnZW50OiBtdXNpYy9zeW50aGV0aWMtdmVyc2lvbiBtYWNvcy8xMy4yLjENClNlYy1XZWJTb2NrZXQtRXh0ZW5zaW9uczogcGVybWVzc2FnZS1kZWZsYXRlDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpDb25uZWN0aW9uOiBVcGdyYWRlDQoNCg==",
+        "observedHeaderByteLength": 343,
+        "redactedHeaderNames": [],
+        "requestTargetRedacted": false,
+        "capturedBytesAreRedacted": false,
+        "handshakeAccepted": true,
+        "keyDecodedByteLength": 16,
+        "responseHeaderBytesBase64": "SFRUUC8xLjEgMTAxIFN3aXRjaGluZyBQcm90b2NvbHMNClVwZ3JhZGU6IHdlYnNvY2tldA0KQ29ubmVjdGlvbjogVXBncmFkZQ0KU2VjLVdlYlNvY2tldC1BY2NlcHQ6IGY3RFVBNzFHREpQYlkrc1NmMXFFOGF2N0w1UT0NCg0K",
+        "closeCode": 1000,
+        "finishedAt": "2026-10-28T07:06:00.164292+00:00"
+      }
+    }
+  ],
+  "repeatComparisons": [
+    {
+      "expectedCapture": ".local/validation/foundation-websocket-loopback/20261028T070504Z-97497-capture-0001.json",
+      "actualCapture": ".local/validation/foundation-websocket-loopback/20261028T070504Z-97497-capture-0003.json",
+      "scope": "Plain HTTP/1.1 IPv4 loopback; only the valid 16-byte WebSocket nonce is normalized",
+      "completeAndUnredacted": true,
+      "requestLineMatches": true,
+      "fieldNamesAndValuesMatchExceptNonce": true,
+      "headerOrderAndSpellingMatches": true,
+      "requestHeaderBytesMatchExceptNonce": true,
+      "expectedNonceDecodedByteLength": 16,
+      "actualNonceDecodedByteLength": 16,
+      "limits": [
+        "No TLS, HTTP/2, native profile/cookie-absence, remote endpoint or complete proprietary wrapper claim.",
+        "This checks captured outgoing request bytes; it does not prove the app consumed the response fixture."
+      ],
+      "matches": true
+    },
+    {
+      "expectedCapture": ".local/validation/foundation-websocket-loopback/20261028T070504Z-97497-capture-0002.json",
+      "actualCapture": ".local/validation/foundation-websocket-loopback/20261028T070504Z-97497-capture-0004.json",
+      "scope": "Plain HTTP/1.1 IPv4 loopback; only the valid 16-byte WebSocket nonce is normalized",
+      "completeAndUnredacted": true,
+      "requestLineMatches": true,
+      "fieldNamesAndValuesMatchExceptNonce": true,
+      "headerOrderAndSpellingMatches": true,
+      "requestHeaderBytesMatchExceptNonce": true,
+      "expectedNonceDecodedByteLength": 16,
+      "actualNonceDecodedByteLength": 16,
+      "limits": [
+        "No TLS, HTTP/2, native profile/cookie-absence, remote endpoint or complete proprietary wrapper claim.",
+        "This checks captured outgoing request bytes; it does not prove the app consumed the response fixture."
+      ],
+      "matches": true
+    }
+  ]
+}

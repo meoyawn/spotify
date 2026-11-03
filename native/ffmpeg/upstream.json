@@ -1,0 +1,8 @@
+{
+  "version": "9.0.2",
+  "archive": "https://ffmpeg.org/releases/ffmpeg-9.0.2.tar.xz",
+  "archiveSha256": "8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e",
+  "sourceRepository": "https://github.com/FFmpeg/FFmpeg",
+  "sourceTag": "n9.0.2",
+  "scope": "Standard file demuxing, audio decoding/resampling, PCM WAV container output only; no network, executable, player or session implementation."
+}

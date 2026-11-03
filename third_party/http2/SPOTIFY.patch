@@ -1,0 +1,265 @@
+diff --git a/lib/src/connection.dart b/lib/src/connection.dart
+--- a/lib/src/connection.dart
++++ b/lib/src/connection.dart
+@@ -164,6 +164,14 @@
+     StreamSink<List<int>> outgoing,
+     Settings settingsObject,
+   ) {
++    // Receive limits apply as soon as our SETTINGS can reach the peer,
++    // including streams created before its acknowledgement arrives.
++    if (settingsObject.streamWindowSize != null) {
++      acknowledgedSettings.initialWindowSize = settingsObject.streamWindowSize!;
++    }
++    if (settingsObject is ClientSettings && settingsObject.headerTableSize != null) {
++      _hpackContext.decoder.updateMaxReceivingHeaderTableSize(settingsObject.headerTableSize!);
++    }
+     // Setup frame reading.
+     var incomingFrames =
+         FrameReader(incoming, acknowledgedSettings).startDecoding();
+@@ -212,6 +220,16 @@
+       );
+     });
+ 
++    if (settingsObject is ClientSettings && settingsObject.connectionWindowSize != null) {
++      final size = settingsObject.connectionWindowSize!;
++      if (size < 65535 || size > Window.MAX_WINDOW_SIZE) {
++        throw RangeError.range(size, 65535, Window.MAX_WINDOW_SIZE, 'connectionWindowSize');
++      }
++      final increment = size - _localWindow.size;
++      _localWindow.modify(increment);
++      if (increment != 0) _frameWriter.writeWindowUpdate(increment);
++    }
++
+     _settingsHandler.onInitialWindowSizeChange.listen((int difference) {
+       _catchProtocolErrors(() {
+         _streams.processInitialWindowSizeSettingChange(difference);
+@@ -286,6 +304,15 @@
+       // By default the server is allowed to do server pushes.
+       if (!settings.allowServerPushes) {
+         settingsList.add(Setting(Setting.SETTINGS_ENABLE_PUSH, 0));
++      }
++      if (settings.headerTableSize != null) {
++        settingsList.add(Setting(Setting.SETTINGS_HEADER_TABLE_SIZE, settings.headerTableSize!));
++      }
++      if (settings.maxHeaderListSize != null) {
++        settingsList.add(Setting(Setting.SETTINGS_MAX_HEADER_LIST_SIZE, settings.maxHeaderListSize!));
++      }
++      if (settings.headerTableSize != null || settings.maxHeaderListSize != null) {
++        settingsList.sort((left, right) => left.identifier.compareTo(right.identifier));
+       }
+     } else if (settings is ServerSettings) {
+       // No special server settings at the moment.
+@@ -521,6 +548,7 @@
+   ClientTransportStream makeRequest(
+     List<Header> headers, {
+     bool endStream = false,
++    HeadersPriority? priority,
+   }) {
+     if (_state.isFinishing) {
+       throw StateError(
+@@ -533,7 +561,7 @@
+         'used to make new streams.',
+       );
+     }
+-    var hStream = _streams.newStream(headers, endStream: endStream);
++    var hStream = _streams.newStream(headers, endStream: endStream, priority: priority);
+     if (_streams.ranOutOfStreamIds) {
+       _finishing(active: true, message: 'Ran out of stream ids');
+     }
+diff --git a/lib/src/flowcontrol/connection_queues.dart b/lib/src/flowcontrol/connection_queues.dart
+--- a/lib/src/flowcontrol/connection_queues.dart
++++ b/lib/src/flowcontrol/connection_queues.dart
+@@ -116,6 +116,7 @@
+         message.streamId,
+         message.headers,
+         endStream: message.endStream,
++        priority: message.priority,
+       );
+     } else if (message is PushPromiseMessage) {
+       _messages.removeFirst();
+diff --git a/lib/src/flowcontrol/queue_messages.dart b/lib/src/flowcontrol/queue_messages.dart
+--- a/lib/src/flowcontrol/queue_messages.dart
++++ b/lib/src/flowcontrol/queue_messages.dart
+@@ -18,8 +18,9 @@
+ 
+ class HeadersMessage extends Message {
+   final List<Header> headers;
++  final HeadersPriority? priority;
+ 
+-  HeadersMessage(int streamId, this.headers, bool endStream)
++  HeadersMessage(int streamId, this.headers, bool endStream, {this.priority})
+     : super(streamId, endStream);
+ 
+   @override
+diff --git a/lib/src/streams/stream_handler.dart b/lib/src/streams/stream_handler.dart
+--- a/lib/src/streams/stream_handler.dart
++++ b/lib/src/streams/stream_handler.dart
+@@ -265,10 +265,11 @@
+     return !isLocalStream;
+   }
+ 
+-  Http2StreamImpl newStream(List<Header> headers, {bool endStream = false}) {
++  Http2StreamImpl newStream(List<Header> headers,
++      {bool endStream = false, HeadersPriority? priority}) {
+     return ensureNotTerminatedSync(() {
+       var stream = newLocalStream();
+-      _sendHeaders(stream, headers, endStream: endStream);
++      _sendHeaders(stream, headers, endStream: endStream, priority: priority);
+       return stream;
+     });
+   }
+@@ -825,6 +826,7 @@
+     Http2StreamImpl stream,
+     List<Header> headers, {
+     bool endStream = false,
++    HeadersPriority? priority,
+   }) {
+     if (stream.state != StreamState.Idle &&
+         stream.state != StreamState.Open &&
+@@ -833,7 +835,7 @@
+     }
+ 
+     stream.outgoingQueue.enqueueMessage(
+-      HeadersMessage(stream.id, headers, endStream),
++      HeadersMessage(stream.id, headers, endStream, priority: priority),
+     );
+ 
+     if (stream.state == StreamState.Idle) {
+diff --git a/lib/src/frames/frame_writer.dart b/lib/src/frames/frame_writer.dart
+--- a/lib/src/frames/frame_writer.dart
++++ b/lib/src/frames/frame_writer.dart
+@@ -5,7 +5,6 @@
+ part of 'frames.dart';
+ 
+ // TODO: No support for writing padded information.
+-// TODO: No support for stream priorities.
+ class FrameWriter {
+   /// The HPack compression context.
+   final HPackEncoder _hpackEncoder;
+@@ -65,17 +64,18 @@
+     int streamId,
+     List<Header> headers, {
+     bool endStream = true,
++    HeadersPriority? priority,
+   }) {
+     var fragment = _hpackEncoder.encode(headers);
+     var maxSize =
+         _peerSettings.maxFrameSize - HeadersFrame.MAX_CONSTANT_PAYLOAD;
+ 
+     if (fragment.length < maxSize) {
+-      _writeHeadersFrameNoFragment(streamId, fragment, true, endStream);
++      _writeHeadersFrameNoFragment(streamId, fragment, true, endStream, priority);
+     } else {
+       var chunk = fragment.sublist(0, maxSize);
+       fragment = fragment.sublist(maxSize);
+-      _writeHeadersFrameNoFragment(streamId, chunk, false, endStream);
++      _writeHeadersFrameNoFragment(streamId, chunk, false, endStream, priority);
+       while (fragment.length > _peerSettings.maxFrameSize) {
+         var chunk = fragment.sublist(0, _peerSettings.maxFrameSize);
+         fragment = fragment.sublist(_peerSettings.maxFrameSize);
+@@ -90,18 +90,28 @@
+     List<int> fragment,
+     bool endHeaders,
+     bool endStream,
++    HeadersPriority? priority,
+   ) {
+     var type = FrameType.HEADERS;
+     var flags = 0;
+     if (endHeaders) flags |= HeadersFrame.FLAG_END_HEADERS;
+     if (endStream) flags |= HeadersFrame.FLAG_END_STREAM;
+-
+-    var buffer = Uint8List(FRAME_HEADER_SIZE + fragment.length);
+-    var offset = 0;
+-
+-    _setFrameHeader(buffer, offset, type, flags, streamId, fragment.length);
+-    offset += FRAME_HEADER_SIZE;
+-
++    if (priority != null) flags |= HeadersFrame.FLAG_PRIORITY;
++
++    var length = fragment.length + (priority == null ? 0 : 5);
++    var buffer = Uint8List(FRAME_HEADER_SIZE + length);
++    var offset = 0;
++
++    _setFrameHeader(buffer, offset, type, flags, streamId, length);
++    offset += FRAME_HEADER_SIZE;
++
++    if (priority != null) {
++      assert(priority.streamDependency != streamId);
++      setInt32(buffer, offset,
++          priority.streamDependency | (priority.exclusive ? 1 << 31 : 0));
++      buffer[offset + 4] = priority.weight - 1;
++      offset += 5;
++    }
+     buffer.setRange(offset, buffer.length, fragment);
+ 
+     _writeData(buffer);
+diff --git a/lib/src/frames/frame_types.dart b/lib/src/frames/frame_types.dart
+--- a/lib/src/frames/frame_types.dart
++++ b/lib/src/frames/frame_types.dart
+@@ -85,6 +85,20 @@
+       });
+ }
+ 
++/// Optional RFC 7540 priority section on an outgoing HEADERS frame.
++/// [weight] is the semantic weight (1..256), not the encoded byte (0..255).
++/// This metadata does not change the local stream scheduler.
++class HeadersPriority {
++  final int streamDependency;
++  final int weight;
++  final bool exclusive;
++
++  const HeadersPriority({required this.streamDependency, required this.weight,
++      this.exclusive = false})
++      : assert(streamDependency >= 0 && streamDependency <= 0x7fffffff),
++        assert(weight >= 1 && weight <= 256);
++}
++
+ class HeadersFrame extends Frame {
+   static const int FLAG_END_STREAM = 0x1;
+   static const int FLAG_END_HEADERS = 0x4;
+diff --git a/lib/transport.dart b/lib/transport.dart
+--- a/lib/transport.dart
++++ b/lib/transport.dart
+@@ -6,9 +6,10 @@
+ import 'dart:io';
+ 
+ import 'src/connection.dart';
++import 'src/frames/frames.dart' show HeadersPriority;
+ import 'src/hpack/hpack.dart' show Header;
+ 
+-export 'src/frames/frames.dart' show ErrorCode;
++export 'src/frames/frames.dart' show ErrorCode, HeadersPriority;
+ export 'src/hpack/hpack.dart' show Header;
+ 
+ typedef ActiveStateHandler = void Function(bool isActive);
+@@ -36,10 +37,22 @@
+   /// Whether the client allows pushes from the server (defaults to false).
+   final bool allowServerPushes;
+ 
++  /// Maximum dynamic table size accepted by the HPACK decoder.
++  final int? headerTableSize;
++
++  /// Advisory maximum uncompressed response header-list size.
++  final int? maxHeaderListSize;
++
++  /// Initial connection receive window, at least the standard 65535 bytes.
++  final int? connectionWindowSize;
++
+   const ClientSettings({
+     super.concurrentStreamLimit,
+     super.streamWindowSize,
+     this.allowServerPushes = false,
++    this.headerTableSize,
++    this.maxHeaderListSize,
++    this.connectionWindowSize,
+   });
+ }
+ 
+@@ -109,6 +122,7 @@
+   ClientTransportStream makeRequest(
+     List<Header> headers, {
+     bool endStream = false,
++    HeadersPriority? priority,
+   });
+ }
+ 

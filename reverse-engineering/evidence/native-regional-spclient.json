@@ -1,0 +1,48 @@
+{
+  "source": ".local/original-reference-streaming-netlog.json",
+  "sourceSha256": "644660b4da3948c6f0e0e21479b34de444f295ba3e94684257e2c53dc9587489",
+  "resolver": {
+    "sourceId": 172,
+    "spclient": {
+      "global": [
+        "spclient.wg.spotify.com:443"
+      ],
+      "regional": [
+        "guc3-spclient.spotify.com:443",
+        "gae2-spclient.spotify.com:443",
+        "gew1-spclient.spotify.com:443",
+        "gew4-spclient.spotify.com:443"
+      ]
+    }
+  },
+  "requests": [
+    {
+      "sourceId": 3404,
+      "method": "POST",
+      "authority": "guc3-spclient.spotify.com",
+      "route": "/playplay/v1/key/<file-id-40hex>",
+      "protocol": "h3"
+    },
+    {
+      "sourceId": 3422,
+      "method": "GET",
+      "authority": "guc3-spclient.spotify.com",
+      "route": "/storage-resolve/v2/files/audio/interactive/1/<file-id-40hex>?product=0",
+      "protocol": "h3"
+    },
+    {
+      "sourceId": 3715,
+      "method": "POST",
+      "authority": "guc3-spclient.spotify.com",
+      "route": "/playplay/v1/key/<file-id-40hex>",
+      "protocol": "h3"
+    }
+  ],
+  "observedOrigin": "https://guc3-spclient.spotify.com",
+  "scope": "Both endpoint families are present; the two actual music POSTs and storage GET use the first regional endpoint, not the global endpoint.",
+  "limits": [
+    "Captured endpoint selection only, not a general global/regional failover algorithm.",
+    "No fallback when regional endpoints are absent is established.",
+    "Only public hostnames and request route templates retained. No new network operation."
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "schema": {
+    "file": "es_prefs.proto",
+    "offset": 35451572,
+    "length": 1457,
+    "sha256": "cd11ffbe6adabe4187e51fbb1f64aef74c7784d03cc4dc868ea40f81ef576c79"
+  },
+  "service": {
+    "literal": "0x1023e4bb6",
+    "baseConstructor": "0x1008492b8",
+    "concreteConstructor": "0x10084800c",
+    "vtable": "0x10258c558",
+    "dispatch": "0x1008492e4",
+    "Get": "0x10084803c",
+    "Sub": "0x1008480a4",
+    "GetAll": "0x1008482c8",
+    "SubAll": "0x10084831c",
+    "Set": "0x10084851c",
+    "Create": "0x1008487d0"
+  },
+  "registry": {
+    "projectValue": "0x100847af0",
+    "projectKey": "0x100847c94",
+    "writeValue": "0x100847f08",
+    "defaultRegistration": "0x101f3fbd8",
+    "effectiveSelector": "0x101f3fbb4",
+    "desktopDefaults": "0x1014b7ad8",
+    "autostartString": "0x101ee99cc",
+    "zoomDefault": "0x1014b8048",
+    "listenerRegistration": "0x101f40d74",
+    "listenerFilter": "0x101f426c0",
+    "keyCallback": "0x100848d50",
+    "allCallback": "0x100848ec8"
+  },
+  "instructionRanges": [
+    {
+      "start": "0x100847af0",
+      "endExclusive": "0x100847c94",
+      "fileOffset": 8682224,
+      "sha256": "3d8c3cce785a10ddacf200124c4a83c8ffebf59f342d3ef6a95234fe730e108d"
+    },
+    {
+      "start": "0x100847f08",
+      "endExclusive": "0x10084800c",
+      "fileOffset": 8683272,
+      "sha256": "f59ab2232a3b0c69697cd93ce04a4cfa9df71b1222a91ef70cacfe4e0020bdb7"
+    },
+    {
+      "start": "0x101f426c0",
+      "endExclusive": "0x101f42764",
+      "fileOffset": 32777920,
+      "sha256": "32b848beee98a40ac824b44d7a6ac25f314cc1fed1c49cbe7f3ca875bf289cfa"
+    }
+  ],
+  "oracleScenarios": 39,
+  "limits": [
+    "Synthetic registry/default/override values only; no original profile is opened",
+    "Standard memory/string/protobuf construction and registry lookup use inert hooks",
+    "Proprietary type conversion, existing default registration, override/event decisions and filter predicates execute",
+    "Multi-key protobuf map iteration order is not an established byte-order contract",
+    "Native disk codec, scope-to-file mapping, flush scheduling and I/O failure policy remain separate evidence boundaries"
+  ]
+}

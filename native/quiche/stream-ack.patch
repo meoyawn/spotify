@@ -1,0 +1,27 @@
+--- a/quiche/src/ffi.rs
++++ b/quiche/src/ffi.rs
+@@ -1039,6 +1039,24 @@
+         Ok(v) => v as ssize_t,
+ 
+         Err(e) => e.to_c(),
++    }
++}
++
++// Local read-only bridge for HTTP/3 ownership above the QUIC transport.
++// Expose genuine peer acknowledgements; do not equate queued data with ACKs.
++#[no_mangle]
++pub extern "C" fn quiche_conn_stream_acked_offset(
++    conn: &Connection, stream_id: u64, offset: *mut u64,
++) -> bool {
++    if offset.is_null() {
++        return false;
++    }
++    match conn.streams.get(stream_id) {
++        Some(stream) => {
++            unsafe { *offset = stream.send.ack_off() };
++            true
++        },
++        None => false,
+     }
+ }
+ 

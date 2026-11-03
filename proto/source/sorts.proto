@@ -1,0 +1,40 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: a50b17461b1e7d6c97f21904b3efc2569433e8d62a7b072c5cd0811e990c4a22
+
+syntax = "proto3";
+
+package spotify.list.v1.model.attributes;
+
+option optimize_for = SPEED;
+
+message SortDefinition {
+  oneof sort_kind {
+    .spotify.list.v1.model.attributes.ProvidedSortKind provided = 1;
+  }
+}
+
+message ProvidedSortKind {
+  optional int32 sort_id = 1;
+
+  optional string name = 2;
+
+  optional string internal_id = 3;
+
+  optional bool descending = 4;
+
+  optional bool reversible = 5;
+}
+
+message SortManifest {
+  repeated .spotify.list.v1.model.attributes.SortDefinition sorts = 1;
+}
+
+message SortValues {
+  repeated .spotify.list.v1.model.attributes.SortValue values = 1;
+}
+
+message SortValue {
+  optional int32 sort_id = 1;
+
+  optional int32 index = 2;
+}

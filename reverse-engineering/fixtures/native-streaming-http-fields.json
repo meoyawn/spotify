@@ -1,0 +1,71 @@
+{
+  "capture": {
+    "path": ".local/original-reference-streaming-netlog.json",
+    "sha256": "644660b4da3948c6f0e0e21479b34de444f295ba3e94684257e2c53dc9587489",
+    "eventCount": 82703,
+    "provenance": "Supervisor reports unmodified original Spotify played Riders On The Storm - Fredwreck Remix for 8 seconds, paused, then owned original process terminated; finalized NetLog captured Everything.",
+    "trackLabelLimit": "UI-observed track label is supervisor context; HTTP records expose file flow, not an independently recovered track title."
+  },
+  "substitutions": [
+    "Original file IDs replaced with synthetic original music-request-oracle file identity.",
+    "Authorization/client-token replaced with explicit fixture credentials; ephemeral peer authority/own-origin substituted at send.",
+    "PlayPlay body comes from independent original native-playplay-body oracle with synthetic clock/cache/interactivity, not this live account."
+  ],
+  "cases": [
+    {
+      "name": "music-key",
+      "originalSourceId": 3404,
+      "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213",
+      "expectedHeaders": {
+        ":method": "POST",
+        ":authority": "guc3-spclient.spotify.com",
+        ":scheme": "https",
+        ":path": "/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "content-length": "30",
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer fixture-access-token",
+        "spotify-app-version": "130601921",
+        "time-zone": "Europe/Moscow",
+        "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+        "client-token": "fixture-client-token",
+        "content-type": "application/x-www-form-urlencoded",
+        "origin": "https://guc3-spclient.spotify.com",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "empty",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=4, i"
+      }
+    },
+    {
+      "name": "storage-resolve",
+      "originalSourceId": 3422,
+      "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213",
+      "expectedHeaders": {
+        ":method": "GET",
+        ":authority": "guc3-spclient.spotify.com",
+        ":scheme": "https",
+        ":path": "/storage-resolve/v2/files/audio/interactive/1/000102030405060708090a0b0c0d0e0f10111213?product=0",
+        "pragma": "no-cache",
+        "cache-control": "no-cache",
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer fixture-access-token",
+        "spotify-app-version": "130601921",
+        "time-zone": "Europe/Moscow",
+        "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+        "client-token": "fixture-client-token",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "empty",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=4, i"
+      }
+    }
+  ],
+  "limits": [
+    "Actual live PlayPlay body bytes not recovered; compare synthetic-input original body producer separately.",
+    "Decoded H2 fields only for music key/storage; captured actual protocol is h3. CDN HTTP/1.1 is documented only."
+  ]
+}

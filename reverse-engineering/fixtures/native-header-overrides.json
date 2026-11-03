@@ -1,0 +1,203 @@
+{
+  "provenance": "Original explicit native header setter0x101c24924 executes on synthetic builder models. Original insertion0x101a4342c populates the initial map. Standard libc/libc++ operations are hooked. No request lifecycle, transport or network executes; map iteration order is not a wire-order claim.",
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "setterEntry": "0x101c24924",
+  "bulkInsertEntry": "0x101c249b0",
+  "cases": [
+    {
+      "name": "insert application header",
+      "headers": [],
+      "overrides": [
+        [
+          "Content-Type",
+          "application/x-www-form-urlencoded"
+        ]
+      ],
+      "result": [
+        [
+          "Content-Type",
+          "application/x-www-form-urlencoded"
+        ]
+      ]
+    },
+    {
+      "name": "replace exact application header",
+      "headers": [
+        [
+          "Content-Type",
+          "old"
+        ]
+      ],
+      "overrides": [
+        [
+          "Content-Type",
+          "application/x-www-form-urlencoded"
+        ]
+      ],
+      "result": [
+        [
+          "Content-Type",
+          "application/x-www-form-urlencoded"
+        ]
+      ]
+    },
+    {
+      "name": "replace case variant and retain first spelling",
+      "headers": [
+        [
+          "content-type",
+          "old"
+        ]
+      ],
+      "overrides": [
+        [
+          "Content-Type",
+          "application/x-www-form-urlencoded"
+        ]
+      ],
+      "result": [
+        [
+          "content-type",
+          "application/x-www-form-urlencoded"
+        ]
+      ]
+    },
+    {
+      "name": "replace existing proof including empty",
+      "headers": [
+        [
+          "DPOP",
+          "old-proof"
+        ]
+      ],
+      "overrides": [
+        [
+          "dpop",
+          ""
+        ]
+      ],
+      "result": [
+        [
+          "DPOP",
+          ""
+        ]
+      ]
+    },
+    {
+      "name": "successive updates and distinct header",
+      "headers": [
+        [
+          "X-Fixture",
+          "first"
+        ]
+      ],
+      "overrides": [
+        [
+          "x-fixture",
+          "second"
+        ],
+        [
+          "X-FIXTURE",
+          "third"
+        ],
+        [
+          "dpop",
+          "proof+/="
+        ]
+      ],
+      "result": [
+        [
+          "dpop",
+          "proof+/="
+        ],
+        [
+          "X-Fixture",
+          "third"
+        ]
+      ]
+    },
+    {
+      "name": "length bearing Unicode and NUL values",
+      "headers": [],
+      "overrides": [
+        [
+          "X-Fixture",
+          "UTF-8 caf\u00e9\u0000suffix"
+        ]
+      ],
+      "result": [
+        [
+          "X-Fixture",
+          "UTF-8 caf\u00e9\u0000suffix"
+        ]
+      ]
+    },
+    {
+      "name": "bulk adds absent proof",
+      "headers": [
+        [
+          "Content-Type",
+          "form"
+        ]
+      ],
+      "insertions": [
+        [
+          "dpop",
+          "proof"
+        ]
+      ],
+      "result": [
+        [
+          "dpop",
+          "proof"
+        ],
+        [
+          "Content-Type",
+          "form"
+        ]
+      ]
+    },
+    {
+      "name": "bulk retains case variant proof",
+      "headers": [
+        [
+          "DPOP",
+          "inherited"
+        ]
+      ],
+      "insertions": [
+        [
+          "dpop",
+          "replacement"
+        ]
+      ],
+      "result": [
+        [
+          "DPOP",
+          "inherited"
+        ]
+      ]
+    },
+    {
+      "name": "bulk retains empty proof",
+      "headers": [
+        [
+          "dpop",
+          ""
+        ]
+      ],
+      "insertions": [
+        [
+          "DPOP",
+          "replacement"
+        ]
+      ],
+      "result": [
+        [
+          "dpop",
+          ""
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "layoutSources": [
+    {
+      "path": ".local/native-scripts/3b5c5b13b81ec984fcc9e00cffc9063b1d94bcf1b6603f0dadce3958531026bd.js",
+      "sha256": "3b5c5b13b81ec984fcc9e00cffc9063b1d94bcf1b6603f0dadce3958531026bd",
+      "role": "Album route module 28839: cover, type, title, creators, release/count/duration, play actions, track list",
+      "sourceOffsetBytes": 21041,
+      "snippet": "rY=({uri:e,album:r,prereleaseUri:t})=>{var n;let h=(0,o.zy)(),{SpecProvider:x}=function(e){let{data:{uri:r}}=e,t=(0,a.useMemo)(()=>(0,ry.E)({data:{uri:r}}),[r]),i=(0,rU.m)(t,\"desktop-album\");return{spec:t,SpecProvider:i}}({data:{uri:e}}),j=r.moreAlbumsByArtist,p=(0,a.useMemo)(()=>j?.filter(e=>e.uri!==r.uri)??[],[j,r.uri]),b=parseInt(new URLSearchParams((0,o.zy)().search).get(\"index\")||\"0\",10),{playUri:f,playOptions:v}=(0,rR.J)(e),{usePlayContextItem:y,togglePlay:U,isPlaying:E,isActive:M}=(0,rT.P)({uri:f},{featureIdentifier:\"album\"},v),{isOpen:w,openModal:Y,closeModal:G}=(0,ro.W)(),Q=(0,a.useCallback)(()=>new URLSearchParams(h.search.slice(1)).get(\"highlight\")||\"\",[h.search]),ee=r.uri,er=r.name,et=r.albumType,ei=function(e){switch(e){case ra._.Single:return g.Ru.get(\"single\");case ra._.Ep:return g.Ru.get(\"ep\");case ra._.Compilation:return g.Ru.get(\"compilation\");case ra._.Audiobook:return g.Ru.get(\"card.tag.audiobook\");case ra._.Album:default:return g.Ru.get(\"album\")}}(et),en=r.release,es=r.release?.precision,eu=r.nrTracks,ed=r.images,ec=r.extractedColors?.colorRaw.hex,em=r.artists,eh=r.isPlayable,eg=r.isCatalogueRestricted,ej=r.copyright.items,ep=r.courtesyLine,eb=r.duration.durationMs,ef=r.duration.isEstimate,ev=Q(),ey=(0,l.d4)(rD.Ht),eU=ey.overrides?.locale??g.Ru.getLocaleForTranslation(),eE=(0,rL.d)({uri:e,type:\"locale\"}),eN=(n=r.release,(0,a.useMemo)(()=>{if(!n?.isoString)return null;if(n.precision===rt.by.Day){let e=new Date(n.isoString),r=new Date().getTime()-e.getTime();if(r<0)return null;let t=r%315576e5;return t<3024e5||t>312552e5?Math.round(r/315576e5):null}return null},[n])),{isCompactMode:eA}=(0,rC.a)(),eM=(0,O.Z)(),eS=(0,m.NC)(X.Ir2,{loadingValue:!1});(0,K.q)(r.dynamicColors,ec);let eC=(0,a.useMemo)(()=>r.preReleaseEndDateTime?.isoString?new Date(r.preReleaseEndDateTime.isoString):void 0,[r.preReleaseEndDateTime]),eR=(0,rs.c)(r.preReleaseEndDateTime?.isoString),eL=!!eC&&!eR,eD=eL&&eS,eP=eL?(0,i.jsx)(r$,{albumUri:r.uri,artistUri:r.artists?.[0]?.uri}):(0,i.jsx)(A.h,{uri:r.uri,artistUri:r.artists?.[0]?.uri,sharingInfo:r.sharingInfo}),eI=(0,eo.y)(),eT=eL&&(eI===el.E.SMALL||eI===el.E.XSMALL),ew=new Intl.DateTimeFormat().resolvedOptions().timeZone,eB=r.prereleaseDisplayTimeZone??ew,ez=(0,rw.qc)({albumName:er,albumType:et,albumArtists:em.map(e=>e.name).join(g.Ru.getSeparator()),isPrerelease:eL,shouldLocalize:eE,i18n:g.Ru});return(0,i.jsx)(x,{children:(0,i.jsxs)(\"section\",{className:\"Mkszeml2uoX5UMcqIcPn\",\"data-testid\":\"album-page\",children:[(0,i.jsx)(C.Q,{children:ez}),!ev&&(0,i.jsx)(ru.c,{prereleaseUri:t,artistOrShow:em.map(e=>e.name).join(g.Ru.getSeparator()),title:er,uri:t||e,entityType:eL?ru.p.ALBUM_PRERELEASE:ru.p.ALBUM}),null!==eN?(0,i.jsx)(a.Suspense,{fallback:null,children:(0,i.jsx)(rZ,{colorLight:r.extractedColors?.colorLight.hex,colorDark:r.extractedColors?.colorDark.hex,name:er,years:eN})}):null,(0,i.jsxs)(rI.d,{dynamicColors:r.dynamicColors,children:[eD&&eC?(0,i.jsx)(ex,{actions:(0,i.jsx)(ek,{albumUri:ee,albumName:er,artistUri:em[0]?.uri,prereleaseUri:t}),albumImages:ed,albumName:er,albumTypeLabel:ei,backgroundColor:ec,creatorMetadata:(0,i.jsx)(rV,{children:(0,i.jsx)(rH,{creators:em})}),menu:eP,onOpenCoverArt:Y,releaseDate:r.preReleaseEndDateTime,targetDate:eC,timeZone:eB,topBarPlayButton:(0,i.jsx)($.D,{size:\"medium\",onClick:(e,r)=>U({loggingParams:r}),disabled:!eh,isPlaying:E,isActive:M,uri:e,enableStandaloneUBI:!0}),uri:ee}):(0,i.jsxs)(R.z4,{backgroundColor:ec,heightProfile:eL?void 0:R.B4.STANDARD,size:eL?R.KR.XLARGE:R.KR.DEFAULT,children:[(0,i.jsxs)(P.h,{children:[(0,i.jsx)($.D,{size:\"medium\",onClick:(e,r)=>U({loggingParams:r}),disabled:!eh,isPlaying:E,isActive:M,uri:e,enableStandaloneUBI:!0}),(0,i.jsx)(k.h,{menu:eP,children:(0,i.jsx)(I.X,{text:er,dragUri:e,dragLabel:er})})]}),!eT&&(0,i.jsx)(k.h,{menu:eP,children:(0,i.jsx)(L.K,{dragUri:ee,images:ed,name:er,placeholderType:\"album\",onClick:Y,ariaLabel:g.Ru.get(\"web-player.album.open_coverart_modal\")})}),(0,i.jsxs)(D.Y,{children:[!eM&&(0,i.jsx)(q.B,{children:ei}),(0,i.jsx)(k.h,{menu:eP,children:(0,i.jsx)(W.mm,{dragUri:r.uri,dragLabel:r.name,scaleAtMinWidth:W.tw,children:er})}),(0,i.jsxs)(T.X,{children:[(0,i.jsx)(rV,{children:(0,i.jsx)(rH,{creators:em})}),(0,i.jsx)(V.J,{}),eM&&(0,i.jsxs)(i.Fragment,{children:[(0,i.jsx)(Z.q,{\"data-testid\":\"entityType\",children:ei}),(0,i.jsx)(V.J,{})]}),eL?(0,i.jsx)(F.H,{releaseDate:r.preReleaseEndDateTime,timeZone:eB}):(0,i.jsxs)(i.Fragment,{children:[(0,i.jsx)(F.H,{releaseDate:en,timeZone:ew}),(0,i.jsx)(V.J,{}),(0,i.jsxs)(z.r,{children:[(0,i.jsx)(B.G,{totalItems:eu,containsTracks:!0}),(0,i.jsx)(H.W,{}),(0,i.jsx)(_.r,{durationMs:eb,isEstimate:ef})]})]})]}),eL&&eC&&er?(0,i.jsx)(S.G,{images:eT?ed:[],imageTitle:er,targetDate:eC}):null]})]}),!eD&&(eL?(0,i.jsx)(ea,{albumUri:ee,albumName:er,artistUri:em[0]?.uri,releaseDateISOString:r.preReleaseEndDateTime?.isoString,backgroundColor:ec,prereleaseUri:t}):(0,i.jsx)(eJ,{backgroundColor:ec,uri:e,togglePlay:U,isPlaying:E,isActive:M,sharingInfo:r.sharingInfo,name:r.name,artists:r.artists,isPlayable:r.isPlayable,isSaved:r.isSaved,watchFeedEntityEntryPoint:r.watchFeedEntityEntryPoint??void 0}))]}),(0,i.jsxs)(\"div\",{className:\"contentSpacing\",children:[eg&&(0,i.jsx)(rO,{message:(0,rn.E)(et),className:\"jcMwWhWyDDMzcgMDyjqd\"}),eL&&(0,i.jsx)(u.E,{as:\"h2\",variant:\"titleSmall\",semanticColor:\"textBase\",className:s()(\"bh5ClbihCILBRt461qd8\",{RUi9tWflpo4sJkj5p2TJ:eD}),children:g.Ru.get(\"web-player.prerelease.album_tracklist_preview\")}),(0,i.jsx)(rq,{children:(0,i.jsx)(e$.F,{albumName:er,nrTracks:(0,rn.YD)(r.discs)?r.discs.totalCount+eu:eu,discs:r.discs,albumUri:ee,highlightUri:ev,scrollToIndex:b,usePlayContextItem:y,initalTracks:r.items,isCompactMode:eA})}),(0,i.jsxs)(\"div\",{className:\"xBRGNDDBEKDWFt25ZDsG\",children:[(0,i.jsxs)(\"div\",{children:[en?.isoString&&(0,i.jsx)(u.E,{as:\"p\",variant:\"bodySmall\",children:(0,rF.rh)((0,rF.ad)(en.isoString),eU,{year:\"numeric\",month:\"long\",day:\"numeric\"},(0,r_.ht)(es))}),(0,i.jsx)(rP.Z,{copyrights:ej,courtesyLine:ep})]}),r.releases.items.length>0&&(0,i.jsx)(N.t,{menu:(0,i.jsx)(eQ,{releases:r.releases.items}),children:(e,t,a)=>(0,i.jsxs)(\"button\",{ref:a,className:\"LzC1gGiNix93pp0bkqoS\",type:\"button\",onClick:t,children:[(0,i.j"
+    },
+    {
+      "path": ".local/native-scripts/d838996df5ffaec89014614c6af891e3d1166fe562a7a9d691b1391a2c9064ff.js",
+      "sha256": "d838996df5ffaec89014614c6af891e3d1166fe562a7a9d691b1391a2c9064ff",
+      "role": "Album table: disc rows, linked URI selection, display row index, paging limit 300",
+      "sourceOffsetBytes": 11596,
+      "snippet": "L=(0,a.useCallback)(e=>({uri:e.type===D.c.TRACK?e.linkedUri??e.uri:\"\"}),[]),U=(0,a.useCallback)((t,i)=>{if(\"AlbumDisc\"===t.type)return(0,n.jsx)(R,{discNumber:t.discNumber,albumUri:d},`${i}-${t.discNumber}`);let a=t.linkedUri??t.uri,l=t.playcount?parseInt(t.playcount,10):0,r=!y.current&&!!c&&(c===t.uri||c===a);r&&(y.current=!0);let u=t.hasAssociatedVideo;return(0,n.jsxs)(\"div\",{children:[c===t.uri&&(0,n.jsx)(P.c,{artistOrShow:t.artists.map(e=>e.name).join(s.Ru.getSeparator()),title:t.name,uri:a,entityType:P.p.TRACK}),(0,n.jsx)(o.d,{index:i,trackNumber:t.trackNumber,contextUri:d,uri:a,uid:t.uid,albumName:e,duration_ms:t.duration.milliseconds,name:t.name,isPlayable:t.isPlayable,artists:t.artists,isExplicit:t.isExplicit,isMOGEFRestricted:t.is19PlusOnly,playcount:l,shouldHighLight:r,usePlayContextItem:m,isCompactMode:p,hasAssociatedVideo:u&&g,isReleased:t.isPlayable})]},i+t.uri)},[c,e,d,m,p,g]);return(0,n.jsx)(A.S4,{ariaLabel:e,hasHeaderRow:x,rowPlaceholder:r.Bz,columns:M,renderRow:U,resolveItem:L,nrTracks:t,fetchTracks:E,limit:300,outerRef:w,tracks:h,isCompactMode:p,columnPersistenceKey:"
+    },
+    {
+      "path": ".local/native-scripts/606b3262ad12de1bb98f5f26211c2d66b530b562344b488a1854c7ecc0631a30.js",
+      "sha256": "606b3262ad12de1bb98f5f26211c2d66b530b562344b488a1854c7ecc0631a30",
+      "role": "Playlist provider: GetContents offset and limit are forwarded to native owner",
+      "sourceOffsetBytes": 11688,
+      "snippet": "async(e,r)=>{let i=await p.getContents(a.metadata.uri,{...m,offset:e,limit:r});return{...i,totalLength:Math.min(i.totalLength,t??i.totalLength)}},[p,m,a.metadata.uri,t]),g=(0,l.E)({nrItems:Math.min(a.contents.totalLength,t??a.contents.totalLength),fetch:h,limit:50,initialItems:a.contents.items});return(0,u.H)(a.metadata.uri,g.invalidateCache),(0,i.useLayoutEffect)(()=>{x(g.nrValidItems)},[g.nrValidItems,x]),(0,r.jsx)(c.Provider,{value:g,children:e})}function m(){let e=(0,i.useContext)(c);if(null===e)throw Error(\"Trying to use 'ListPlatformItemsContext' without 'ListPlatformItemsProvider'!\");return e}a.d(t,{K_:()=>m,ll:()=>d})},69914(e,t,a){a.d(t,{},{D:e=>({...e,isCollaborative:(e.nrCollabora"
+    }
+  ],
+  "stylesheets": [
+    {
+      "path": "build/rea/xpui/xpui-routes-album.css",
+      "sha256": "9641fbd556521b5ad8c3b3f32df050e9e1889a4b4e33bbed84fce20d617dca7d",
+      "rules": [
+        {
+          "sourceOffsetBytes": 7025,
+          "precedingContext": "2px}.ufNKHzguEXzd0yAalJkz{cursor:pointer;background-color:#0000;border:0;width:100%;height:100%;padding:0;display:block}",
+          "rule": ".zUE2tctcqtaeYuAuAcOY{align-self:flex-end;width:192px;min-width:192px;height:192px;margin-inline-end:24px}"
+        },
+        {
+          "sourceOffsetBytes": 7154,
+          "precedingContext": "qtaeYuAuAcOY{align-self:flex-end;width:192px;min-width:192px;height:192px;margin-inline-end:24px}@media (width>=1280px){",
+          "rule": ".zUE2tctcqtaeYuAuAcOY{width:232px;min-width:232px;height:232px}"
+        },
+        {
+          "sourceOffsetBytes": 290,
+          "precedingContext": "subdued,#ffffffb3);white-space:nowrap}.Mkszeml2uoX5UMcqIcPn{padding-bottom:var(--encore-spacing-base);position:relative}",
+          "rule": ".ZusAEenTL_1ScpeAHmys{background-color:#0000001a}"
+        }
+      ]
+    },
+    {
+      "path": "build/rea/xpui/xpui-routes-playlist.css",
+      "sha256": "261471f4e5abfa0c0ec829e500f310dfda9c8f37bb591ce2653fc96839e8265f",
+      "rules": [
+        {
+          "sourceOffsetBytes": 1787,
+          "precedingContext": "gyGYRhYJ7vjMG9SLH,.j2iikX5Mk1OopMwHkmyf,.MosFc2CtXuHECGqk4Fxs{margin-inline-start:-8px}.cyB8PhzhF2aAP1S9fMn9{color:#fff}",
+          "rule": ".TWkInCf6btRjDDpJKaQA{border-radius:4px;justify-content:space-between;align-items:center;min-height:56px;max-height:64px;padding:0 16px;display:flex}"
+        }
+      ]
+    }
+  ],
+  "sharedTheme": "reverse-engineering/evidence/app-shell-css.json",
+  "limits": "Static hierarchy and selected CSS only. Flutter responsive thresholds, neutral fallback palette and table adaptation are local choices; no pixel-equivalence or original runtime screenshot is claimed."
+}

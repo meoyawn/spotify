@@ -1,0 +1,1015 @@
+{
+  "apiVersion": 999999,
+  "apiHash": "27759c0a4b5b85c632e775838eb599b65129b798",
+  "versionInfo": [
+    151,
+    3,
+    18,
+    3578,
+    151,
+    0,
+    7922,
+    138
+  ],
+  "cases": [
+    {
+      "method": "GET",
+      "url": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+      "headers": [],
+      "bodyBase64": "",
+      "adapterUserAgent": "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)",
+      "adapterOption80": 0,
+      "name": "empty native headers still seed adapter User-Agent",
+      "adapterFields": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "GET",
+        "urlInput": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+        "headers": [
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+          ]
+        ]
+      },
+      "result": {
+        "method": "GET",
+        "url": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+        "flags": 208,
+        "headers": [
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+          ]
+        ],
+        "bodyElementsBase64": []
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+      "headers": [],
+      "bodyBase64": "",
+      "adapterUserAgent": "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)",
+      "adapterOption80": 1,
+      "name": "nonzero option byte one",
+      "adapterFields": {
+        "bodyElementsBase64": [],
+        "flags": 80,
+        "method": "GET",
+        "urlInput": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+        "headers": [
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+          ]
+        ]
+      },
+      "result": {
+        "method": "GET",
+        "url": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+        "flags": 80,
+        "headers": [
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+          ]
+        ],
+        "bodyElementsBase64": []
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+      "headers": [],
+      "bodyBase64": "",
+      "adapterUserAgent": "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)",
+      "adapterOption80": 255,
+      "name": "nonzero option byte 255",
+      "adapterFields": {
+        "bodyElementsBase64": [],
+        "flags": 80,
+        "method": "GET",
+        "urlInput": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+        "headers": [
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+          ]
+        ]
+      },
+      "result": {
+        "method": "GET",
+        "url": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+        "flags": 80,
+        "headers": [
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+          ]
+        ],
+        "bodyElementsBase64": []
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+      "headers": [
+        [
+          "User-Agent",
+          "explicit UA"
+        ]
+      ],
+      "bodyBase64": "",
+      "adapterUserAgent": "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)",
+      "adapterOption80": 0,
+      "name": "explicit same spelling User-Agent remains duplicate",
+      "adapterFields": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "GET",
+        "urlInput": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+        "headers": [
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+          ],
+          [
+            "User-Agent",
+            "explicit UA"
+          ]
+        ]
+      },
+      "result": {
+        "method": "GET",
+        "url": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+        "flags": 208,
+        "headers": [
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+          ],
+          [
+            "User-Agent",
+            "explicit UA"
+          ]
+        ],
+        "bodyElementsBase64": []
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+      "headers": [
+        [
+          "user-agent",
+          "lowercase UA"
+        ]
+      ],
+      "bodyBase64": "",
+      "adapterUserAgent": "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)",
+      "adapterOption80": 0,
+      "name": "lowercase User-Agent remains a distinct multimap key",
+      "adapterFields": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "GET",
+        "urlInput": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+        "headers": [
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+          ],
+          [
+            "user-agent",
+            "lowercase UA"
+          ]
+        ]
+      },
+      "result": {
+        "method": "GET",
+        "url": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+        "flags": 208,
+        "headers": [
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+          ],
+          [
+            "user-agent",
+            "lowercase UA"
+          ]
+        ],
+        "bodyElementsBase64": []
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+      "headers": [
+        [
+          "User-Agent",
+          ""
+        ]
+      ],
+      "bodyBase64": "",
+      "adapterUserAgent": "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)",
+      "adapterOption80": 0,
+      "name": "empty explicit User-Agent retains duplicate and presence",
+      "adapterFields": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "GET",
+        "urlInput": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+        "headers": [
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+          ],
+          [
+            "User-Agent",
+            ""
+          ]
+        ]
+      },
+      "result": {
+        "method": "GET",
+        "url": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+        "flags": 208,
+        "headers": [
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+          ],
+          [
+            "User-Agent",
+            ""
+          ]
+        ],
+        "bodyElementsBase64": []
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+      "headers": [
+        [
+          "z-last",
+          "z"
+        ],
+        [
+          "Accept",
+          "application/protobuf"
+        ],
+        [
+          "X-empty",
+          ""
+        ],
+        [
+          "a-first",
+          "a"
+        ]
+      ],
+      "bodyBase64": "",
+      "adapterUserAgent": "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)",
+      "adapterOption80": 0,
+      "name": "case-sensitive header ordering retains values",
+      "adapterFields": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "GET",
+        "urlInput": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+        "headers": [
+          [
+            "Accept",
+            "application/protobuf"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+          ],
+          [
+            "X-empty",
+            ""
+          ],
+          [
+            "a-first",
+            "a"
+          ],
+          [
+            "z-last",
+            "z"
+          ]
+        ]
+      },
+      "result": {
+        "method": "GET",
+        "url": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+        "flags": 208,
+        "headers": [
+          [
+            "Accept",
+            "application/protobuf"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+          ],
+          [
+            "X-empty",
+            ""
+          ],
+          [
+            "a-first",
+            "a"
+          ],
+          [
+            "z-last",
+            "z"
+          ]
+        ],
+        "bodyElementsBase64": []
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+      "headers": [
+        [
+          "Referer",
+          "https://referrer.invalid/a"
+        ]
+      ],
+      "bodyBase64": "",
+      "adapterUserAgent": "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)",
+      "adapterOption80": 0,
+      "name": "Referer is still an adapter input",
+      "adapterFields": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "GET",
+        "urlInput": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+        "headers": [
+          [
+            "Referer",
+            "https://referrer.invalid/a"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+          ]
+        ]
+      },
+      "result": {
+        "method": "GET",
+        "url": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+        "flags": 208,
+        "headers": [
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+          ]
+        ],
+        "bodyElementsBase64": []
+      }
+    },
+    {
+      "method": "POST",
+      "url": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+      "headers": [],
+      "bodyBase64": "AID/DQoA",
+      "adapterUserAgent": "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)",
+      "adapterOption80": 0,
+      "name": "POST binary body becomes one byte element",
+      "adapterFields": {
+        "bodyElementsBase64": [
+          "AID/DQoA"
+        ],
+        "flags": 208,
+        "method": "POST",
+        "urlInput": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+        "headers": [
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+          ]
+        ]
+      },
+      "result": {
+        "method": "POST",
+        "url": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+        "flags": 208,
+        "headers": [
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+          ]
+        ],
+        "bodyElementsBase64": [
+          "AID/DQoA"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+      "headers": [],
+      "bodyBase64": "YQ==",
+      "adapterUserAgent": "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)",
+      "adapterOption80": 0,
+      "name": "GET nonempty body is also attached",
+      "adapterFields": {
+        "bodyElementsBase64": [
+          "YQ=="
+        ],
+        "flags": 208,
+        "method": "GET",
+        "urlInput": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+        "headers": [
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+          ]
+        ]
+      },
+      "result": {
+        "method": "GET",
+        "url": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+        "flags": 208,
+        "headers": [
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+          ]
+        ],
+        "bodyElementsBase64": [
+          "YQ=="
+        ]
+      }
+    },
+    {
+      "method": "",
+      "url": "",
+      "headers": [],
+      "bodyBase64": "",
+      "adapterUserAgent": "",
+      "adapterOption80": 0,
+      "name": "empty method URL and UA remain empty",
+      "adapterFields": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "",
+        "urlInput": "",
+        "headers": [
+          [
+            "User-Agent",
+            ""
+          ]
+        ]
+      },
+      "result": {
+        "method": "",
+        "url": "",
+        "flags": 208,
+        "headers": [
+          [
+            "User-Agent",
+            ""
+          ]
+        ],
+        "bodyElementsBase64": []
+      }
+    },
+    {
+      "method": "P\u0000OST",
+      "url": "https://fixture.invalid/\u96ea\u0000tail?raw=%2f",
+      "headers": [
+        [
+          "X-\u96ea",
+          "\u5024\u0000tail"
+        ],
+        [
+          "X-a",
+          " spaced \t"
+        ]
+      ],
+      "bodyBase64": "",
+      "adapterUserAgent": "UA \u96ea\u0000tail",
+      "adapterOption80": 0,
+      "name": "length-bearing UTF8 and embedded NUL preserved",
+      "adapterFields": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "P\u0000OST",
+        "urlInput": "https://fixture.invalid/\u96ea\u0000tail?raw=%2f",
+        "headers": [
+          [
+            "User-Agent",
+            "UA \u96ea\u0000tail"
+          ],
+          [
+            "X-a",
+            " spaced \t"
+          ],
+          [
+            "X-\u96ea",
+            "\u5024\u0000tail"
+          ]
+        ]
+      },
+      "result": {
+        "method": "P\u0000OST",
+        "url": "https://fixture.invalid/%E9%9B%AA%00tail?raw=%2f",
+        "flags": 208,
+        "headers": [
+          [
+            "User-Agent",
+            "UA \u96ea\u0000tail"
+          ],
+          [
+            "X-a",
+            " spaced \t"
+          ],
+          [
+            "X-\u96ea",
+            "\u5024\u0000tail"
+          ]
+        ],
+        "bodyElementsBase64": []
+      }
+    },
+    {
+      "name": "URL HTTPS://FIXTURE.INVALID:443/a/../b?x=%2f+%2F",
+      "method": "GET",
+      "url": "HTTPS://FIXTURE.INVALID:443/a/../b?x=%2f+%2F",
+      "headers": [
+        [
+          "rEfErEr",
+          "https://referrer.invalid/"
+        ]
+      ],
+      "adapterUserAgent": "fixture",
+      "adapterOption80": 0,
+      "bodyBase64": "",
+      "adapterFields": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "GET",
+        "urlInput": "HTTPS://FIXTURE.INVALID:443/a/../b?x=%2f+%2F",
+        "headers": [
+          [
+            "User-Agent",
+            "fixture"
+          ],
+          [
+            "rEfErEr",
+            "https://referrer.invalid/"
+          ]
+        ]
+      },
+      "result": {
+        "method": "GET",
+        "url": "https://fixture.invalid/b?x=%2f+%2F",
+        "flags": 208,
+        "headers": [
+          [
+            "User-Agent",
+            "fixture"
+          ]
+        ],
+        "bodyElementsBase64": []
+      }
+    },
+    {
+      "name": "URL https://fixture.invalid",
+      "method": "GET",
+      "url": "https://fixture.invalid",
+      "headers": [
+        [
+          "rEfErEr",
+          "https://referrer.invalid/"
+        ]
+      ],
+      "adapterUserAgent": "fixture",
+      "adapterOption80": 0,
+      "bodyBase64": "",
+      "adapterFields": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "GET",
+        "urlInput": "https://fixture.invalid",
+        "headers": [
+          [
+            "User-Agent",
+            "fixture"
+          ],
+          [
+            "rEfErEr",
+            "https://referrer.invalid/"
+          ]
+        ]
+      },
+      "result": {
+        "method": "GET",
+        "url": "https://fixture.invalid/",
+        "flags": 208,
+        "headers": [
+          [
+            "User-Agent",
+            "fixture"
+          ]
+        ],
+        "bodyElementsBase64": []
+      }
+    },
+    {
+      "name": "URL https://fixture.invalid?x=%7E",
+      "method": "GET",
+      "url": "https://fixture.invalid?x=%7E",
+      "headers": [
+        [
+          "rEfErEr",
+          "https://referrer.invalid/"
+        ]
+      ],
+      "adapterUserAgent": "fixture",
+      "adapterOption80": 0,
+      "bodyBase64": "",
+      "adapterFields": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "GET",
+        "urlInput": "https://fixture.invalid?x=%7E",
+        "headers": [
+          [
+            "User-Agent",
+            "fixture"
+          ],
+          [
+            "rEfErEr",
+            "https://referrer.invalid/"
+          ]
+        ]
+      },
+      "result": {
+        "method": "GET",
+        "url": "https://fixture.invalid/?x=%7E",
+        "flags": 208,
+        "headers": [
+          [
+            "User-Agent",
+            "fixture"
+          ]
+        ],
+        "bodyElementsBase64": []
+      }
+    },
+    {
+      "name": "URL https://fixture.invalid/a/./b/../c",
+      "method": "GET",
+      "url": "https://fixture.invalid/a/./b/../c",
+      "headers": [
+        [
+          "rEfErEr",
+          "https://referrer.invalid/"
+        ]
+      ],
+      "adapterUserAgent": "fixture",
+      "adapterOption80": 0,
+      "bodyBase64": "",
+      "adapterFields": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "GET",
+        "urlInput": "https://fixture.invalid/a/./b/../c",
+        "headers": [
+          [
+            "User-Agent",
+            "fixture"
+          ],
+          [
+            "rEfErEr",
+            "https://referrer.invalid/"
+          ]
+        ]
+      },
+      "result": {
+        "method": "GET",
+        "url": "https://fixture.invalid/a/c",
+        "flags": 208,
+        "headers": [
+          [
+            "User-Agent",
+            "fixture"
+          ]
+        ],
+        "bodyElementsBase64": []
+      }
+    },
+    {
+      "name": "URL https://fixture.invalid/a/%2e%2e/c?dot=%2e",
+      "method": "GET",
+      "url": "https://fixture.invalid/a/%2e%2e/c?dot=%2e",
+      "headers": [
+        [
+          "rEfErEr",
+          "https://referrer.invalid/"
+        ]
+      ],
+      "adapterUserAgent": "fixture",
+      "adapterOption80": 0,
+      "bodyBase64": "",
+      "adapterFields": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "GET",
+        "urlInput": "https://fixture.invalid/a/%2e%2e/c?dot=%2e",
+        "headers": [
+          [
+            "User-Agent",
+            "fixture"
+          ],
+          [
+            "rEfErEr",
+            "https://referrer.invalid/"
+          ]
+        ]
+      },
+      "result": {
+        "method": "GET",
+        "url": "https://fixture.invalid/c?dot=%2e",
+        "flags": 208,
+        "headers": [
+          [
+            "User-Agent",
+            "fixture"
+          ]
+        ],
+        "bodyElementsBase64": []
+      }
+    },
+    {
+      "name": "URL https://fixture.invalid/\u96ea?q=\u96ea",
+      "method": "GET",
+      "url": "https://fixture.invalid/\u96ea?q=\u96ea",
+      "headers": [
+        [
+          "rEfErEr",
+          "https://referrer.invalid/"
+        ]
+      ],
+      "adapterUserAgent": "fixture",
+      "adapterOption80": 0,
+      "bodyBase64": "",
+      "adapterFields": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "GET",
+        "urlInput": "https://fixture.invalid/\u96ea?q=\u96ea",
+        "headers": [
+          [
+            "User-Agent",
+            "fixture"
+          ],
+          [
+            "rEfErEr",
+            "https://referrer.invalid/"
+          ]
+        ]
+      },
+      "result": {
+        "method": "GET",
+        "url": "https://fixture.invalid/%E9%9B%AA?q=%E9%9B%AA",
+        "flags": 208,
+        "headers": [
+          [
+            "User-Agent",
+            "fixture"
+          ]
+        ],
+        "bodyElementsBase64": []
+      }
+    },
+    {
+      "name": "URL https://fixture.invalid/path%2f%2F?raw=%2f%2F&x=%7E",
+      "method": "GET",
+      "url": "https://fixture.invalid/path%2f%2F?raw=%2f%2F&x=%7E",
+      "headers": [
+        [
+          "rEfErEr",
+          "https://referrer.invalid/"
+        ]
+      ],
+      "adapterUserAgent": "fixture",
+      "adapterOption80": 0,
+      "bodyBase64": "",
+      "adapterFields": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "GET",
+        "urlInput": "https://fixture.invalid/path%2f%2F?raw=%2f%2F&x=%7E",
+        "headers": [
+          [
+            "User-Agent",
+            "fixture"
+          ],
+          [
+            "rEfErEr",
+            "https://referrer.invalid/"
+          ]
+        ]
+      },
+      "result": {
+        "method": "GET",
+        "url": "https://fixture.invalid/path%2f%2F?raw=%2f%2F&x=%7E",
+        "flags": 208,
+        "headers": [
+          [
+            "User-Agent",
+            "fixture"
+          ]
+        ],
+        "bodyElementsBase64": []
+      }
+    },
+    {
+      "name": "URL https://fixture.invalid/path#fragment",
+      "method": "GET",
+      "url": "https://fixture.invalid/path#fragment",
+      "headers": [
+        [
+          "rEfErEr",
+          "https://referrer.invalid/"
+        ]
+      ],
+      "adapterUserAgent": "fixture",
+      "adapterOption80": 0,
+      "bodyBase64": "",
+      "adapterFields": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "GET",
+        "urlInput": "https://fixture.invalid/path#fragment",
+        "headers": [
+          [
+            "User-Agent",
+            "fixture"
+          ],
+          [
+            "rEfErEr",
+            "https://referrer.invalid/"
+          ]
+        ]
+      },
+      "result": {
+        "method": "GET",
+        "url": "https://fixture.invalid/path#fragment",
+        "flags": 208,
+        "headers": [
+          [
+            "User-Agent",
+            "fixture"
+          ]
+        ],
+        "bodyElementsBase64": []
+      }
+    },
+    {
+      "name": "URL https://fixture.invalid/a<>\"`{}|^[]'?q=<>\"`{}|^[]'",
+      "method": "GET",
+      "url": "https://fixture.invalid/a<>\"`{}|^[]'?q=<>\"`{}|^[]'",
+      "headers": [
+        [
+          "rEfErEr",
+          "https://referrer.invalid/"
+        ]
+      ],
+      "adapterUserAgent": "fixture",
+      "adapterOption80": 0,
+      "bodyBase64": "",
+      "adapterFields": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "GET",
+        "urlInput": "https://fixture.invalid/a<>\"`{}|^[]'?q=<>\"`{}|^[]'",
+        "headers": [
+          [
+            "User-Agent",
+            "fixture"
+          ],
+          [
+            "rEfErEr",
+            "https://referrer.invalid/"
+          ]
+        ]
+      },
+      "result": {
+        "method": "GET",
+        "url": "https://fixture.invalid/a%3C%3E%22%60%7B%7D%7C%5E[]'?q=%3C%3E%22`{}|^[]%27",
+        "flags": 208,
+        "headers": [
+          [
+            "User-Agent",
+            "fixture"
+          ]
+        ],
+        "bodyElementsBase64": []
+      }
+    },
+    {
+      "name": "URL https://fixture.invalid:00444/a//b/../c/",
+      "method": "GET",
+      "url": "https://fixture.invalid:00444/a//b/../c/",
+      "headers": [
+        [
+          "rEfErEr",
+          "https://referrer.invalid/"
+        ]
+      ],
+      "adapterUserAgent": "fixture",
+      "adapterOption80": 0,
+      "bodyBase64": "",
+      "adapterFields": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "GET",
+        "urlInput": "https://fixture.invalid:00444/a//b/../c/",
+        "headers": [
+          [
+            "User-Agent",
+            "fixture"
+          ],
+          [
+            "rEfErEr",
+            "https://referrer.invalid/"
+          ]
+        ]
+      },
+      "result": {
+        "method": "GET",
+        "url": "https://fixture.invalid:444/a//c/",
+        "flags": 208,
+        "headers": [
+          [
+            "User-Agent",
+            "fixture"
+          ]
+        ],
+        "bodyElementsBase64": []
+      }
+    },
+    {
+      "name": "URL https://fixture.invalid/a/../../c/.",
+      "method": "GET",
+      "url": "https://fixture.invalid/a/../../c/.",
+      "headers": [
+        [
+          "rEfErEr",
+          "https://referrer.invalid/"
+        ]
+      ],
+      "adapterUserAgent": "fixture",
+      "adapterOption80": 0,
+      "bodyBase64": "",
+      "adapterFields": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "GET",
+        "urlInput": "https://fixture.invalid/a/../../c/.",
+        "headers": [
+          [
+            "User-Agent",
+            "fixture"
+          ],
+          [
+            "rEfErEr",
+            "https://referrer.invalid/"
+          ]
+        ]
+      },
+      "result": {
+        "method": "GET",
+        "url": "https://fixture.invalid/c/",
+        "flags": 208,
+        "headers": [
+          [
+            "User-Agent",
+            "fixture"
+          ]
+        ],
+        "bodyElementsBase64": []
+      }
+    }
+  ],
+  "sourceLibrarySha256": "ea7338318fe19b147a03707fe598af0b6680e8760885db3b14f132a95d04e618",
+  "publicSourceRevision": "beff58dbc4d0fd12b3eafea8f5314ce22e649078",
+  "originalAdapterExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "generatedCapiHeaderSha256": "f500189c6a6833bd17c0988e996e087e0c61524352a15d75bab99413dc7388a7",
+  "captureStage": "Public CefRequest getters before browser URL request / network service",
+  "sandbox": "(version 1)(allow default)(deny network*)(deny file-read* (subpath \"<HOME>/Library\"))(deny file-write* (subpath \"<HOME>/Library\"))",
+  "method": "Capture the shipped standard CefRequest object's outgoing HTTP fields.\n\nThis deliberately never calls cef_initialize, creates a browser/request context\nor issues a URL request. A worker loads only the shipped standard CEF library\nunder a macOS sandbox denying all networking and all reads/writes in the user's\nLibrary directory. Public request/string/post-data C APIs supply the outputs.\n",
+  "limitations": [
+    "No URL request, browser initialization or loopback/wire capture.",
+    "GET/HEAD body-to-POST conversion, final HTTP header replacement, transport defaults and wire output are later stages."
+  ]
+}

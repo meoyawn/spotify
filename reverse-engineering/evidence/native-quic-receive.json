@@ -1,0 +1,168 @@
+{
+  "authority": "Pinned public source only; no original packet captures, packet injection, app launches or account requests.",
+  "chromiumVersion": "151.0.7922.138",
+  "googleQuicheRevision": "4729ceb221725bb52c6f4d48229d9c3ba059c36e",
+  "cloudflareQuicheRevision": "ae612cf03e8ac708751efa759d3c780bbd6251e1",
+  "sources": [
+    {
+      "name": "chromiumDeps",
+      "path": ".local/cef-source/chromium-DEPS-151.0.7922.138",
+      "url": "https://raw.githubusercontent.com/chromium/chromium/151.0.7922.138/DEPS",
+      "sha256": "020af99baae3892b9fc0e37f79c95fb2882dcbbf1c789c3e6c56bf0dc3c3f335"
+    },
+    {
+      "name": "googleConnection",
+      "path": ".local/cef-source/google-quiche-4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/quic/core/quic_connection.cc",
+      "url": "https://raw.githubusercontent.com/google/quiche/4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/quic/core/quic_connection.cc",
+      "sha256": "1e7a13105748b3cd53128a233614c8e9dd253313940d661942336c0df3a16e42"
+    },
+    {
+      "name": "googleFramer",
+      "path": ".local/cef-source/google-quiche-4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/quic/core/quic_framer.cc",
+      "url": "https://raw.githubusercontent.com/google/quiche/4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/quic/core/quic_framer.cc",
+      "sha256": "2888a56b1cea6ad80fc2a61c2249e0a521be064cdc607808cfcd5c6f5d9a2e05"
+    },
+    {
+      "name": "cloudflareConnection",
+      "path": ".local/cef-source/cloudflare-quiche-ae612cf03e8ac708751efa759d3c780bbd6251e1/quiche/src/lib.rs",
+      "url": "https://raw.githubusercontent.com/cloudflare/quiche/ae612cf03e8ac708751efa759d3c780bbd6251e1/quiche/src/lib.rs",
+      "sha256": "1933094c1213c69e5a1571b414202500eda5597fb57acd4fe69f4874dc8ee1ed"
+    },
+    {
+      "name": "cloudflareFfi",
+      "path": ".local/cef-source/cloudflare-quiche-ae612cf03e8ac708751efa759d3c780bbd6251e1/quiche/src/ffi.rs",
+      "url": "https://raw.githubusercontent.com/cloudflare/quiche/ae612cf03e8ac708751efa759d3c780bbd6251e1/quiche/src/ffi.rs",
+      "sha256": "eb8dff5907acbe0db9888d362994c80dbaccbd80255e17c62405705faae57adb"
+    },
+    {
+      "name": "cloudflareErrors",
+      "path": ".local/cef-source/cloudflare-quiche-ae612cf03e8ac708751efa759d3c780bbd6251e1/quiche/src/error.rs",
+      "url": "https://raw.githubusercontent.com/cloudflare/quiche/ae612cf03e8ac708751efa759d3c780bbd6251e1/quiche/src/error.rs",
+      "sha256": "414812b6415d2fe06b90c2193c52807f8e2858d69acb3761dfc021ac8795bff2"
+    },
+    {
+      "name": "cloudflareExample",
+      "path": ".local/cef-source/cloudflare-quiche-ae612cf03e8ac708751efa759d3c780bbd6251e1/quiche/examples/client.c",
+      "url": "https://raw.githubusercontent.com/cloudflare/quiche/ae612cf03e8ac708751efa759d3c780bbd6251e1/quiche/examples/client.c",
+      "sha256": "d6e8b95410fd6a24bad624ed93ddab3abda3886416e043b6df614320fda593e9"
+    }
+  ],
+  "checkedAnchors": {
+    "googleConnection": [
+      {
+        "anchor": "void QuicConnection::OnError(",
+        "line": 823
+      },
+      {
+        "anchor": "if (!connected_ || !last_received_packet_info_.decrypted)",
+        "line": 826
+      },
+      {
+        "anchor": "void QuicConnection::OnUndecryptablePacket(",
+        "line": 2744
+      },
+      {
+        "anchor": "QUIC_AEAD_LIMIT_REACHED",
+        "line": 2787
+      }
+    ],
+    "googleFramer": [
+      {
+        "anchor": "visitor_->OnUndecryptablePacket(",
+        "line": 1851
+      },
+      {
+        "anchor": "return RaiseError(QUIC_DECRYPTION_FAILURE);",
+        "line": 1859
+      }
+    ],
+    "cloudflareConnection": [
+      {
+        "anchor": "pub fn recv(&mut self, buf: &mut [u8], info: RecvInfo)",
+        "line": 2859
+      },
+      {
+        "anchor": "self.close(false, e.to_wire(), b\"\").ok();",
+        "line": 2924
+      },
+      {
+        "anchor": "fn drop_pkt_on_err(",
+        "line": 9480
+      },
+      {
+        "anchor": "if is_server && recv_count == 0",
+        "line": 9486
+      },
+      {
+        "anchor": "trace!(\"{} ignored duplicate packet {}\", self.trace_id, pn);",
+        "line": 3363
+      },
+      {
+        "anchor": "pub fn local_error(&self)",
+        "line": 7922
+      },
+      {
+        "anchor": "pub fn is_closed(&self)",
+        "line": 7890
+      }
+    ],
+    "cloudflareFfi": [
+      {
+        "anchor": "pub extern \"C\" fn quiche_conn_recv(",
+        "line": 875
+      },
+      {
+        "anchor": "Err(e) => e.to_c(),",
+        "line": 620
+      }
+    ],
+    "cloudflareErrors": [
+      {
+        "anchor": "Error::Done => -1,",
+        "line": 207
+      },
+      {
+        "anchor": "Error::BufferTooShort => -2,",
+        "line": 208
+      }
+    ],
+    "cloudflareExample": [
+      {
+        "anchor": "ssize_t done = quiche_conn_recv(",
+        "line": 134
+      },
+      {
+        "anchor": "if (done < 0)",
+        "line": 136
+      },
+      {
+        "anchor": "if (quiche_conn_is_closed(conn_io->conn))",
+        "line": 146
+      }
+    ]
+  },
+  "googlePolicy": {
+    "framerError": "quic_connection.cc:823-831 drops errors while disconnected or while the last packet has not been decrypted; an authenticated framer error closes the connection.",
+    "decryptFailure": "quic_framer.cc:1906-1927 reports an undecryptable packet before raising QUIC_DECRYPTION_FAILURE; the connection policy above does not close for that ordinary unauthenticated failure.",
+    "integrityLimitException": "quic_connection.cc:2744-2789 counts authentication failures when a decryption key exists and closes at the AEAD integrity limit. Ordinary drop policy does not imply unlimited authentication failures."
+  },
+  "cloudflarePolicy": {
+    "ffi": "ffi.rs:875-888 converts Connection::recv Ok(bytes) directly to bytes and Err(error) through Error::to_c; Done=-1 and BufferTooShort=-2 in error.rs:205-209.",
+    "ordinaryMalformedOrDecryptFailure": "lib.rs:3022-3031 and 3351-3360 route header parsing and payload decryption failures through drop_pkt_on_err. Lines9463-9494 explicitly limit that mapper to errors before authentication. On a client it maps these failures to Done even when recv_count is zero.",
+    "doneIsConsumed": "lib.rs:2910-2937 consumes recv_single Done as the remaining datagram length; it first checks for stateless reset, which can mark the connection closed. Thus an ordinary discarded malformed/decrypt-failed packet returns a nonnegative consumed length from public recv.",
+    "duplicate": "lib.rs:3362-3365 returns Done for an already received packet number; the same consumed/drop rule applies.",
+    "fatal": "lib.rs:2931-2937 closes with the transport wire error before returning any other recv_single error. Authenticated protocol errors must not be blanket-ignored by a wrapper.",
+    "zeroLengthException": "lib.rs:2862-2864 returns BufferTooShort before close for an empty buffer. Reachability through the Dart UDP layer was not investigated; this audit does not establish a production mismatch.",
+    "closingVersusClosed": "lib.rs:7623-7666 requires normal recv/send/timeout handling until is_closed after close, except immediate close if no packet was successfully processed. Lines7890-7924 distinguish terminal is_closed from local_error, whose presence neither implies closed nor proves transmission to the peer.",
+    "exampleLimit": "client.c:134-149 continues after a negative recv return and later checks is_closed. That event-loop strategy permits shutdown processing; it does not prove the core leaves a negative-error connection usable for HTTP requests."
+  },
+  "conclusion": {
+    "reachableMalformedPacketMismatchProved": false,
+    "recommendation": "Preserve the current Dart negative-below-Done error handling for this scope. Do not blanket-ignore negative recv results based on the C example. The core already discards ordinary unauthenticated bad packets. No production repair is justified by this source audit.",
+    "limits": [
+      "This compares public library control flow, not independently executed original Spotify behavior or actual outgoing bytes.",
+      "No error-return frequency, empty-datagram reachability, packet-capture equality or end-to-end shutdown equivalence is claimed.",
+      "No changes to pacing, connection shutdown/draining, error classification, Dart production code or tests are included."
+    ]
+  }
+}

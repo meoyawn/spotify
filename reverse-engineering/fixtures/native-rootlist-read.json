@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "scope": "Capture rootlist request fields and execute its original producer offline.\n\nNo response metadata, source username, playlist IDs or credential material is\nexported. The actual HTTP/2 capture supplies inherited fields; original native\nquery/URI/headers/reason/Base64 code supplies synthetic username/range cases.\nThe username accessor and explicit DSA property are synthetic; the final HTTP\ntask is captured without executing it. Standard containers, allocation/string\noperations and protobuf serialization reuse the existing bounded oracle.",
+  "source": {
+    "path": ".local/original-reference-streaming-netlog.json",
+    "sha256": "644660b4da3948c6f0e0e21479b34de444f295ba3e94684257e2c53dc9587489",
+    "sourceId": 575,
+    "eventIndex": 10939,
+    "event": "HTTP_TRANSACTION_HTTP2_SEND_REQUEST_HEADERS"
+  },
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "originalProducer": "0x101aac180",
+  "originalUsernamePath": "0x101aaca54",
+  "policy": {
+    "caller": 5,
+    "prioritized": false,
+    "dsaMode": false,
+    "listPlayerEnabled": true
+  },
+  "substitutions": [
+    "Source username replaced with fixture-user; no source username retained",
+    "Authorization/client-token replaced with explicit fixture values; original credentials/hashes not retained",
+    "Synthetic native username getter and DSA property provider; inert final HTTP task",
+    "Original reason assignments/Base64 execute; standard protoc encodes its exact schema"
+  ],
+  "limits": [
+    "Fresh RELOGIN read only; no revision, mutation, permission, lens or cached-content policy",
+    "Second target is original native execution plus inherited captured fields, not a live pagination capture",
+    "Decoded final HTTP fields/body; not HPACK/TLS serialization or response/UI proof"
+  ],
+  "cases": [
+    {
+      "name": "Captured fresh rootlist",
+      "username": "fixture-user",
+      "from": 0,
+      "length": 120,
+      "baseUrl": "https://guc3-spclient.spotify.com",
+      "applicationHeaders": {
+        "locale": "en",
+        "timeZone": "Europe/Moscow",
+        "userAgent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+      },
+      "originalPlan": {
+        "path": "playlist/v2/user/fixture-user/rootlist?decorate=revision%2Cattributes%2Clength%2Cowner%2Ccapabilities%2Cstatus_code%2Ctimestamp&from=0&length=120",
+        "method": "GET",
+        "headers": {
+          "Cache-Control": "no-cache, no-store",
+          "spotify-accept-geoblock": "dummy",
+          "spotify-playlist-sync-reason": "CAU=",
+          "spotify-dsa-mode-enabled": "false",
+          "spotify-list-player-enabled": "true"
+        }
+      },
+      "expected": {
+        "headers": {
+          ":method": "GET",
+          ":authority": "guc3-spclient.spotify.com",
+          ":scheme": "https",
+          ":path": "/playlist/v2/user/fixture-user/rootlist?decorate=revision%2Cattributes%2Clength%2Cowner%2Ccapabilities%2Cstatus_code%2Ctimestamp&from=0&length=120",
+          "pragma": "no-cache",
+          "cache-control": "no-cache, no-store",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "authorization": "Bearer fixture-access-token",
+          "spotify-app-version": "130601921",
+          "time-zone": "Europe/Moscow",
+          "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+          "client-token": "fixture-client-token",
+          "spotify-accept-geoblock": "dummy",
+          "spotify-dsa-mode-enabled": "false",
+          "spotify-list-player-enabled": "true",
+          "spotify-playlist-sync-reason": "CAU=",
+          "sec-fetch-site": "same-origin",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-dest": "empty",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=4, i"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "Original synthetic username escaping and next range",
+      "username": "Fixture + 雪/%?:name!~*'()_-.",
+      "from": 120,
+      "length": 120,
+      "baseUrl": "https://guc3-spclient.spotify.com",
+      "applicationHeaders": {
+        "locale": "en",
+        "timeZone": "Europe/Moscow",
+        "userAgent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+      },
+      "originalPlan": {
+        "path": "playlist/v2/user/Fixture%20%2B%20%E9%9B%AA%2F%25%3F%3Aname%21~%2A%27%28%29_-./rootlist?decorate=revision%2Cattributes%2Clength%2Cowner%2Ccapabilities%2Cstatus_code%2Ctimestamp&from=120&length=120",
+        "method": "GET",
+        "headers": {
+          "Cache-Control": "no-cache, no-store",
+          "spotify-accept-geoblock": "dummy",
+          "spotify-playlist-sync-reason": "CAU=",
+          "spotify-dsa-mode-enabled": "false",
+          "spotify-list-player-enabled": "true"
+        }
+      },
+      "expected": {
+        "headers": {
+          ":method": "GET",
+          ":authority": "guc3-spclient.spotify.com",
+          ":scheme": "https",
+          ":path": "/playlist/v2/user/Fixture%20%2B%20%E9%9B%AA%2F%25%3F%3Aname%21~%2A%27%28%29_-./rootlist?decorate=revision%2Cattributes%2Clength%2Cowner%2Ccapabilities%2Cstatus_code%2Ctimestamp&from=120&length=120",
+          "pragma": "no-cache",
+          "cache-control": "no-cache, no-store",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "authorization": "Bearer fixture-access-token",
+          "spotify-app-version": "130601921",
+          "time-zone": "Europe/Moscow",
+          "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+          "client-token": "fixture-client-token",
+          "spotify-accept-geoblock": "dummy",
+          "spotify-dsa-mode-enabled": "false",
+          "spotify-list-player-enabled": "true",
+          "spotify-playlist-sync-reason": "CAU=",
+          "sec-fetch-site": "same-origin",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-dest": "empty",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=4, i"
+        },
+        "bodyBase64": ""
+      }
+    }
+  ]
+}

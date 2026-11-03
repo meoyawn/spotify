@@ -1,0 +1,92 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: 9fb40611ad207f16d8dcbc6f5c0bf61cf16c39ef22fee39ca6676cc182937f85
+
+syntax = "proto3";
+
+package spotify.your_library.proto;
+
+import "your_library_config.proto";
+
+option java_multiple_files = true;
+
+option java_package = "spotify.your_library.esperanto.proto";
+
+option optimize_for = CODE_SIZE;
+
+message YourLibraryTagFilter {
+  string tag_uri = 1;
+}
+
+message CuratedItems {
+  repeated string items = 1;
+
+  .spotify.your_library.proto.CuratedItems.CuratedItemsFilter filter = 2;
+
+  enum CuratedItemsFilter {
+    NONE = 0;
+
+    GROUP_BY = 1;
+
+    ONLY_CURATED = 2;
+
+    ONLY_NOT_CURATED = 3;
+  }
+}
+
+message YourLibraryRequestHeader {
+  bool remaining_entities = 9;
+
+  bool total_count = 18;
+
+  string lower_bound = 10;
+
+  string upper_bound = 37;
+
+  int32 skip = 11;
+
+  int32 length = 12;
+
+  string text_filter = 13;
+
+  .spotify.your_library.proto.YourLibraryFilters filters = 14;
+
+  .spotify.your_library.proto.YourLibrarySortOrder sort_order = 15;
+
+  oneof maybe_folder_id {
+    int64 folder_id = 16;
+  }
+
+  bool all_playlists = 17;
+
+  repeated int64 fill_folders = 34;
+
+  bool separate_pinned_items = 22;
+
+  oneof maybe_tag_filter {
+    .spotify.your_library.proto.YourLibraryTagFilter tag_filter = 24;
+  }
+
+  bool num_link_types_in_playlists = 25;
+
+  bool ignore_pinning = 26;
+
+  .spotify.your_library.proto.CuratedItems curated_items = 29;
+
+  bool include_events = 30;
+
+  bool include_venues = 35;
+
+  bool include_prereleases = 31;
+
+  bool include_authors = 33;
+
+  bool include_concert_campaigns = 36;
+}
+
+message YourLibraryRequest {
+  .spotify.your_library.proto.YourLibraryRequestHeader header = 1;
+
+  .spotify.your_library.proto.YourLibraryPredefinedPlaylistConfigs predefined_playlist_configs = 4;
+
+  int32 update_throttling = 5;
+}

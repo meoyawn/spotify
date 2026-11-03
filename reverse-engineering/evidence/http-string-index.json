@@ -1,0 +1,32 @@
+[
+  {
+    "path": "5000.js",
+    "bytes": 712758,
+    "matches": {
+      "Authorization": 3
+    }
+  },
+  {
+    "path": "pip-mini-player-snapshot.js",
+    "bytes": 492900,
+    "matches": {
+      "api-partner": 1,
+      "Authorization": 2,
+      "authorization": 1
+    }
+  },
+  {
+    "path": "xpui-debug-window-contents.js",
+    "bytes": 154270,
+    "matches": {
+      "Authorization": 2
+    }
+  },
+  {
+    "path": "home-ads-container.js",
+    "bytes": 23237,
+    "matches": {
+      "Authorization": 1
+    }
+  }
+]

@@ -1,0 +1,40 @@
+{
+  "provenance": "Original arm64 loop executed by Unicorn; standard SHA-1 and clock calls hooked. No network or original application process.",
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "entry": "0x1017cd170",
+  "instructionSha256": "2cb78a34fa6144e37f73adbfa6d83ded7a6c413eaa138d85909f315d19c1496a",
+  "cases": [
+    {
+      "name": "zero difficulty",
+      "contextHex": "",
+      "prefixHex": "",
+      "difficulty": 0,
+      "suffixHex": "95601890AFD807090000000000000000",
+      "trials": 1
+    },
+    {
+      "name": "client token challenge",
+      "contextHex": "",
+      "prefixHex": "00112233445566778899aabbccddeeff",
+      "difficulty": 8,
+      "suffixHex": "95601890AFD807310000000000000028",
+      "trials": 41
+    },
+    {
+      "name": "context and counter carry",
+      "contextHex": "666978747572652d636f6e74657874",
+      "prefixHex": "ffeeddccbbaa99887766554433221100",
+      "difficulty": 12,
+      "suffixHex": "046A9B00BF70718A0000000000000852",
+      "trials": 2131
+    },
+    {
+      "name": "native 32-bit shift mask",
+      "contextHex": "",
+      "prefixHex": "deadbeef",
+      "difficulty": 32,
+      "suffixHex": "95601890AFD807090000000000000000",
+      "trials": 1
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "method": "Record an original H3/H2 connection race without dispatching requests.\n\nAn H3 advertisement admits an alternative connection job, not unconditional\nrequest dispatch over H3. The retained default original trace proves H2 can\nwin while QUIC continues, and a later request can reuse that QUIC connection.\n",
+  "toolSha256": "bc76f6f91c41216ebb9350880e01517a19cb68d4f6e54f506d2bb2f2dcda298b",
+  "capture": {
+    "path": ".local/original-license-rejection-reference-netlog.json",
+    "sha256": "6d8e8c9f4d71bd0e39ecff3282e86438540cf22987a33b2340d79658d4ec6d50",
+    "hasExplicitQuicForceOrDisableFlag": false
+  },
+  "publicSource": [
+    {
+      "path": ".local/cef-source/http_stream_factory_job_controller-151.0.7922.138.cc",
+      "sha256": "e7e9fdcec60542107a92931cc61d932b66dd74d1806040c86acf5a01fdd0b2cb",
+      "url": "https://github.com/chromium/chromium/blob/151.0.7922.138/net/http/http_stream_factory_job_controller.cc"
+    },
+    {
+      "path": ".local/cef-source/quic_session_pool-151.0.7922.138.cc",
+      "sha256": "f249ba36f476714d11853378889c89aea5adfd85121a97a8dd03e0c36d0483b9",
+      "url": "https://github.com/chromium/chromium/blob/151.0.7922.138/net/quic/quic_session_pool.cc"
+    },
+    {
+      "path": ".local/cef-source/features-151.0.7922.138.cc",
+      "sha256": "78d0d0113fc7e83d63e8c2614927acd29fd4e552c4c3b365d05b3fa6773928a1",
+      "url": "https://github.com/chromium/chromium/blob/151.0.7922.138/net/base/features.cc"
+    },
+    {
+      "path": ".local/cef-source/http_stream_factory-151.0.7922.138.cc",
+      "sha256": "1a598ed0c5ce61d6fb2ac635b7ff799ff8ef846e232410bb6b8eecac57e0a3af",
+      "url": "https://github.com/chromium/chromium/blob/151.0.7922.138/net/http/http_stream_factory.cc"
+    }
+  ],
+  "requests": [
+    {
+      "requestSourceId": 3987,
+      "controllerSourceId": 3996,
+      "mainJobSourceId": 3997,
+      "alternativeJobSourceId": 3998,
+      "advertisedH3Unbroken": [
+        false,
+        false
+      ],
+      "mainDelayMilliseconds": 444,
+      "delayed": {
+        "eventIndex": 87101,
+        "sourceId": 3996,
+        "event": "HTTP_STREAM_JOB_DELAYED",
+        "millisecondsFromFirstController": 1
+      },
+      "resumed": {
+        "eventIndex": 88913,
+        "sourceId": 3997,
+        "event": "HTTP_STREAM_JOB_RESUMED",
+        "millisecondsFromFirstController": 451
+      },
+      "alternativeOrphaned": {
+        "eventIndex": 88943,
+        "sourceId": 3998,
+        "event": "HTTP_STREAM_JOB_ORPHANED",
+        "millisecondsFromFirstController": 451
+      },
+      "outgoing": {
+        "eventIndex": 88952,
+        "sourceId": 3987,
+        "event": "HTTP_TRANSACTION_HTTP2_SEND_REQUEST_HEADERS",
+        "millisecondsFromFirstController": 451
+      },
+      "outgoingH2Sends": 1,
+      "outgoingH3Sends": 0
+    },
+    {
+      "requestSourceId": 4020,
+      "controllerSourceId": 4026,
+      "mainJobSourceId": 4027,
+      "alternativeJobSourceId": 4028,
+      "advertisedH3Unbroken": [
+        false,
+        false
+      ],
+      "mainDelayMilliseconds": 444,
+      "delayed": {
+        "eventIndex": 87460,
+        "sourceId": 4026,
+        "event": "HTTP_STREAM_JOB_DELAYED",
+        "millisecondsFromFirstController": 31
+      },
+      "resumed": {
+        "eventIndex": 89045,
+        "sourceId": 4027,
+        "event": "HTTP_STREAM_JOB_RESUMED",
+        "millisecondsFromFirstController": 476
+      },
+      "alternativeOrphaned": {
+        "eventIndex": 89052,
+        "sourceId": 4028,
+        "event": "HTTP_STREAM_JOB_ORPHANED",
+        "millisecondsFromFirstController": 476
+      },
+      "outgoing": {
+        "eventIndex": 89061,
+        "sourceId": 4020,
+        "event": "HTTP_TRANSACTION_HTTP2_SEND_REQUEST_HEADERS",
+        "millisecondsFromFirstController": 476
+      },
+      "outgoingH2Sends": 1,
+      "outgoingH3Sends": 0
+    }
+  ],
+  "quicSessionSourceId": 4003,
+  "quicHandshakeComplete": {
+    "eventIndex": 89155,
+    "sourceId": 4003,
+    "event": "QUIC_SESSION_CRYPTO_HANDSHAKE_COMPLETE",
+    "millisecondsFromFirstController": 483
+  },
+  "laterExistingQuicUse": {
+    "eventIndex": 92303,
+    "sourceId": 4131,
+    "event": "QUIC_SESSION_POOL_USE_EXISTING_SESSION",
+    "millisecondsFromFirstController": 2360
+  },
+  "laterH3Send": {
+    "eventIndex": 92326,
+    "sourceId": 4128,
+    "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+    "millisecondsFromFirstController": 2360
+  },
+  "limits": [
+    "This is one pinned default renderer connection-race observation, not a universal delay value or a proprietary request producer.",
+    "The444ms logged delay is not hardcoded into Dart. Public Chromium computes delay from network QUIC history, recently-broken state, server SRTT and feature inputs, capped by the controller.",
+    "The public source is read, not decompiled. Its exact active feature/network-history/SRTT inputs are not recovered by this artifact.",
+    "One H2 send per request is observed before QUIC handshake completion; the still-opening alternative is not a replay of the HTTP body.",
+    "No original session/profile import, application, account or network runs. Request headers/body, credentials and account/device/content identifiers are not exported; protocol source IDs remain explicit.",
+    "Dart now races transport preparation before request dispatch. The local peer proves H2 winners, later H3 use and no duplicate HTTP request; it does not reproduce these exact original network-history/SRTT inputs.",
+    "Dart uses pinned public macOS defaults: no extra feature delay, no delay with an available H2 session, otherwise1.5*SRTT or300ms fallback capped at3s after observed QUIC success. Persisted network history, active feature overrides, network-change detection and complete broken-alternative backoff remain unproved."
+  ]
+}

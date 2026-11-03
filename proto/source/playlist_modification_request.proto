@@ -1,0 +1,30 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: 80641db0d9d41c18b3377eca0800e27989f3b8ace935d7ab2af765b401acdde4
+
+syntax = "proto3";
+
+package spotify.playlist_esperanto.proto;
+
+import "modification_request.proto";
+
+import "response_status.proto";
+
+option java_multiple_files = true;
+
+option java_package = "spotify.playlist.esperanto.proto";
+
+option objc_class_prefix = "ESP";
+
+option optimize_for = CODE_SIZE;
+
+message PlaylistModificationRequest {
+  string uri = 1;
+
+  .spotify.playlist.cosmos.proto.ModificationRequest request = 2;
+}
+
+message PlaylistModificationResponse {
+  .spotify.playlist_esperanto.proto.ResponseStatus status = 1;
+
+  repeated string added_row_ids = 2;
+}

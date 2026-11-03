@@ -1,0 +1,79 @@
+{
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "httpCategory": {
+    "address": "0x10278f260",
+    "name": "http",
+    "nameGetter": "0x101c5285c",
+    "nameAddress": "0x1023b163a"
+  },
+  "message": {
+    "name": "spotify.playlist4.proto.SelectedListContent",
+    "constructor": "0x101bf07d4",
+    "vtable": "0x102669048",
+    "classData": "0x1027805e8",
+    "table": "0x102780650",
+    "nameAddress": "0x1027809d8"
+  },
+  "exports": [
+    {
+      "label": "playlist_sync_success_callback",
+      "sha256": "28a5b37e37983a0c9095737523b0a21a9969bc18cfc8bc4453b645d715aa0027",
+      "evidenceId": "ev_cbcf6a6120862cf920e0fc088d02413a8eeb87ec15da63b201806c67481fbe96"
+    },
+    {
+      "label": "playlist_sync_failure_callback",
+      "sha256": "e73552fed8ed4d274f412ae6ffe7e41015b8d75d904ea09cf85b02165193c265",
+      "evidenceId": "ev_85bf8508584cc619375dd6143db2e978a56949924fb7b3a9789658daa34655e6"
+    },
+    {
+      "label": "playlist_reply_status_classification",
+      "sha256": "dce5634469edd666033b2eb565b21da42b6f857d50d849af8ce68a8a16a4a485",
+      "evidenceId": "ev_87ef10cb65d39f35e7983bdba8ce02c660bda73f61a829afbc2c0a4f1ecf087b"
+    },
+    {
+      "label": "playlist_reply_error_category_a",
+      "sha256": "d4564d99b5e5bacd2a5d1fd31429899ef1eddc69cb2e0cfc45d49e3a7248c77f",
+      "evidenceId": "ev_fcaafa4a7ddcda30bc04a7fcbe6e1bb1e1253c7beadd212310559d23ad6d806d"
+    },
+    {
+      "label": "playlist_reply_error_category_b",
+      "sha256": "ed1fbab1b45f50ae4b08c6eb2a8852095dc0320b6c6314301acb640a76036897",
+      "evidenceId": "ev_4e369a1338313b6f2dff049d8922150c0ce69e0b56556675350b0e194e0ca6de"
+    },
+    {
+      "label": "playlist_reply_status_accessor",
+      "sha256": "207ceb78de00590d5535f30497c080fe9a678bbb3372a2bd5c7e312c94f32cc8",
+      "evidenceId": "ev_0c7e4ef021f7a188535923f9f7caebb1c1abe1390be1d4948df602a7788342c4"
+    },
+    {
+      "label": "playlist_reply_headers_accessor",
+      "sha256": "079d0a17165fedc3449eb7289620397c06419e09e93c358d7b49884c0e3afef9",
+      "evidenceId": "ev_4ecaa499ca7e7c91a556383a12a0f4d6fc3b653883165b137587734262e1a251"
+    },
+    {
+      "label": "playlist_reply_body_accessor",
+      "sha256": "37007a5dd63b3fe2ecee50fbff8e498333c6fbddb087b7e9d4816aa10e105d5b",
+      "evidenceId": "ev_e75f9d4336f3e4ba16725898ec5ad38ea8bfbfae47b7e7ae8e6bd4628a1a719a"
+    },
+    {
+      "label": "playlist_reply_fallback_type",
+      "sha256": "4964de2447a392e80c31f7e4791a6bc832efcb9d2e184b5508189d6f2499dc46",
+      "evidenceId": "ev_f8058e8d94e4bc005e5e3b0550924e5ff05317dc1ed914a38dac943ca67cfda8"
+    }
+  ],
+  "cppProtobufVersion": "36.2.0",
+  "codecSourceSha256": "3d1f49dc45b199260f85382748bfb125288a5846f99d4ab35e276bbdf0d9a7b7",
+  "executedInstructionCount": 226,
+  "executedInstructionSha256": "cd0e59f90a72bd9d35edb00e920363394908fbcb46eba9c1904874b02b661cd3",
+  "standardDependencies": [
+    "libc++ shared-pointer mutex and category singleton",
+    "unordered_map insertion/move",
+    "protobuf36.2 DynamicMessage ParseFromArray with exact portable descriptors",
+    "message-pool return storage adapter"
+  ],
+  "limits": [
+    "No HTTP, original process, account or storage",
+    "Dart does not emulate native allocation failure18",
+    "Dart string projection replaces malformed proto2 UTF8; original response bytes remain authoritative"
+  ]
+}

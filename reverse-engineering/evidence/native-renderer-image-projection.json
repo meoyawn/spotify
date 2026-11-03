@@ -1,0 +1,3541 @@
+{
+  "sourceBundle": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+  "sourceBundleSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+  "modules": [
+    {
+      "module": 27744,
+      "offsetBytes": 4187757,
+      "lengthBytes": 3833,
+      "sha256": "b8b0c0191efb4ff29db22f1d5a12e4a72386de677b1b77af2488e0e81a765342"
+    },
+    {
+      "module": 44628,
+      "offsetBytes": 4790448,
+      "lengthBytes": 96,
+      "sha256": "d2ef1e7781f1438eb082195ced11ad812bd44bf4df5d95dc72690877e9a72f7d"
+    },
+    {
+      "module": 43575,
+      "offsetBytes": 4191591,
+      "lengthBytes": 2417,
+      "sha256": "747c4bd98c34794e383e70afc1ebeac23208f6789d4d062750790e0f90ab2680"
+    },
+    {
+      "module": 50242,
+      "offsetBytes": 4799535,
+      "lengthBytes": 478,
+      "sha256": "3fef46ea782aa7ee342fdb622f19be7407ee297b9d272cc830ac60b830a551e3"
+    },
+    {
+      "module": 42870,
+      "offsetBytes": 7680030,
+      "lengthBytes": 1085,
+      "sha256": "52cdf570afc3c1b0b85bee4ff516f3c936f961d637a4cad98866267c14ce8b83"
+    }
+  ],
+  "method": "Unchanged original modules27744/43575/50242 execute under V8. Original enum membership and equality dependencies44628/42870 execute unchanged.",
+  "substitutions": [
+    "Webpack export registration, inert React memo/callback/context and JSX providers.",
+    "Explicit configuration inputs for enabled collections, platform rewrite and provider enablement; actual current remote assignments are not inferred.",
+    "Standard browser devicePixelRatio and navigator.connection.saveData are explicit inputs."
+  ],
+  "limits": [
+    "Image URL/sources selection only. No HTTP, account, key, native projection-map load or original cache is accessed.",
+    "Hostname and unmatched URL data are preserved. No native CDN-failover policy or TLS behavior is established.",
+    "Dart UI supplies measured layout and display ratio; platform URI rewriting stays disabled."
+  ],
+  "cases": [
+    {
+      "name": "ab67616d default-format conversion",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67616d0000485100112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616d000011eb00112233445566778899aabb"
+    },
+    {
+      "name": "ab67616d 48x48 DPR1",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67616d0000485100112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616d000011eb00112233445566778899aabb"
+    },
+    {
+      "name": "ab67616d 48x48 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67616d0000485100112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616d0000e1a300112233445566778899aabb"
+    },
+    {
+      "name": "ab67616d 232x232 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67616d0000485100112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616d0000e1a300112233445566778899aabb"
+    },
+    {
+      "name": "ab67616d 360x360 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67616d0000485100112233445566778899aabb",
+        "width": 360,
+        "height": 360,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616d0000aa5400112233445566778899aabb"
+    },
+    {
+      "name": "ab67616d 640x640 DPR3",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67616d0000485100112233445566778899aabb",
+        "width": 640,
+        "height": 640,
+        "devicePixelRatio": 3,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616d0000aa5400112233445566778899aabb"
+    },
+    {
+      "name": "ab67616d save-data",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67616d0000485100112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 3,
+        "saveData": true,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616d0000e1a300112233445566778899aabb"
+    },
+    {
+      "name": "ab67616d excluded collection",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67616d0000485100112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": []
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616d0000485100112233445566778899aabb"
+    },
+    {
+      "name": "ab67616d low DPR",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67616d0000485100112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 0.5,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616d000011eb00112233445566778899aabb"
+    },
+    {
+      "name": "ab67616d existing webp",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67616d000011eb00112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616d000011eb00112233445566778899aabb"
+    },
+    {
+      "name": "ab67706c default-format conversion",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706c00006c1100112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000dec500112233445566778899aabb"
+    },
+    {
+      "name": "ab67706c 48x48 DPR1",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706c00006c1100112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000dec500112233445566778899aabb"
+    },
+    {
+      "name": "ab67706c 48x48 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706c00006c1100112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000d72c00112233445566778899aabb"
+    },
+    {
+      "name": "ab67706c 232x232 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706c00006c1100112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000d72c00112233445566778899aabb"
+    },
+    {
+      "name": "ab67706c 360x360 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706c00006c1100112233445566778899aabb",
+        "width": 360,
+        "height": 360,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67706c000097ac00112233445566778899aabb"
+    },
+    {
+      "name": "ab67706c 640x640 DPR3",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706c00006c1100112233445566778899aabb",
+        "width": 640,
+        "height": 640,
+        "devicePixelRatio": 3,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67706c000097ac00112233445566778899aabb"
+    },
+    {
+      "name": "ab67706c save-data",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706c00006c1100112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 3,
+        "saveData": true,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000d72c00112233445566778899aabb"
+    },
+    {
+      "name": "ab67706c excluded collection",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706c00006c1100112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": []
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67706c00006c1100112233445566778899aabb"
+    },
+    {
+      "name": "ab67706c low DPR",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706c00006c1100112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 0.5,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000dec500112233445566778899aabb"
+    },
+    {
+      "name": "ab67706c existing webp",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000dec500112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000dec500112233445566778899aabb"
+    },
+    {
+      "name": "ab676161 default-format conversion",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000f17800112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000101f00112233445566778899aabb"
+    },
+    {
+      "name": "ab676161 48x48 DPR1",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000f17800112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000101f00112233445566778899aabb"
+    },
+    {
+      "name": "ab676161 48x48 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000f17800112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000101f00112233445566778899aabb"
+    },
+    {
+      "name": "ab676161 232x232 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000f17800112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000939b00112233445566778899aabb"
+    },
+    {
+      "name": "ab676161 360x360 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000f17800112233445566778899aabb",
+        "width": 360,
+        "height": 360,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000086f700112233445566778899aabb"
+    },
+    {
+      "name": "ab676161 640x640 DPR3",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000f17800112233445566778899aabb",
+        "width": 640,
+        "height": 640,
+        "devicePixelRatio": 3,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000086f700112233445566778899aabb"
+    },
+    {
+      "name": "ab676161 save-data",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000f17800112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 3,
+        "saveData": true,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000939b00112233445566778899aabb"
+    },
+    {
+      "name": "ab676161 excluded collection",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000f17800112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": []
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000f17800112233445566778899aabb"
+    },
+    {
+      "name": "ab676161 low DPR",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000f17800112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 0.5,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000101f00112233445566778899aabb"
+    },
+    {
+      "name": "ab676161 existing webp",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000101f00112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000101f00112233445566778899aabb"
+    },
+    {
+      "name": "ab676563 default-format conversion",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6765630000f68d00112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6765630000955f00112233445566778899aabb"
+    },
+    {
+      "name": "ab676563 48x48 DPR1",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6765630000f68d00112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6765630000955f00112233445566778899aabb"
+    },
+    {
+      "name": "ab676563 48x48 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6765630000f68d00112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6765630000bdcf00112233445566778899aabb"
+    },
+    {
+      "name": "ab676563 232x232 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6765630000f68d00112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6765630000bdcf00112233445566778899aabb"
+    },
+    {
+      "name": "ab676563 360x360 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6765630000f68d00112233445566778899aabb",
+        "width": 360,
+        "height": 360,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6765630000eeee00112233445566778899aabb"
+    },
+    {
+      "name": "ab676563 640x640 DPR3",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6765630000f68d00112233445566778899aabb",
+        "width": 640,
+        "height": 640,
+        "devicePixelRatio": 3,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6765630000eeee00112233445566778899aabb"
+    },
+    {
+      "name": "ab676563 save-data",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6765630000f68d00112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 3,
+        "saveData": true,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6765630000bdcf00112233445566778899aabb"
+    },
+    {
+      "name": "ab676563 excluded collection",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6765630000f68d00112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": []
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6765630000f68d00112233445566778899aabb"
+    },
+    {
+      "name": "ab676563 low DPR",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6765630000f68d00112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 0.5,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6765630000955f00112233445566778899aabb"
+    },
+    {
+      "name": "ab676563 existing webp",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6765630000955f00112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6765630000955f00112233445566778899aabb"
+    },
+    {
+      "name": "ab676663 default-format conversion",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6766630000703b00112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67666300000c3500112233445566778899aabb"
+    },
+    {
+      "name": "ab676663 48x48 DPR1",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6766630000703b00112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67666300000c3500112233445566778899aabb"
+    },
+    {
+      "name": "ab676663 48x48 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6766630000703b00112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676663000076bd00112233445566778899aabb"
+    },
+    {
+      "name": "ab676663 232x232 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6766630000703b00112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676663000076bd00112233445566778899aabb"
+    },
+    {
+      "name": "ab676663 360x360 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6766630000703b00112233445566778899aabb",
+        "width": 360,
+        "height": 360,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6766630000382d00112233445566778899aabb"
+    },
+    {
+      "name": "ab676663 640x640 DPR3",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6766630000703b00112233445566778899aabb",
+        "width": 640,
+        "height": 640,
+        "devicePixelRatio": 3,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6766630000382d00112233445566778899aabb"
+    },
+    {
+      "name": "ab676663 save-data",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6766630000703b00112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 3,
+        "saveData": true,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676663000076bd00112233445566778899aabb"
+    },
+    {
+      "name": "ab676663 excluded collection",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6766630000703b00112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": []
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6766630000703b00112233445566778899aabb"
+    },
+    {
+      "name": "ab676663 low DPR",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6766630000703b00112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 0.5,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67666300000c3500112233445566778899aabb"
+    },
+    {
+      "name": "ab676663 existing webp",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67666300000c3500112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67666300000c3500112233445566778899aabb"
+    },
+    {
+      "name": "ab671e2d default-format conversion",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab671e2d0000d75e00112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab671e2d00003de900112233445566778899aabb"
+    },
+    {
+      "name": "ab671e2d 48x48 DPR1",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab671e2d0000d75e00112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab671e2d00003de900112233445566778899aabb"
+    },
+    {
+      "name": "ab671e2d 48x48 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab671e2d0000d75e00112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab671e2d00003de900112233445566778899aabb"
+    },
+    {
+      "name": "ab671e2d 232x232 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab671e2d0000d75e00112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab671e2d0000150100112233445566778899aabb"
+    },
+    {
+      "name": "ab671e2d 360x360 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab671e2d0000d75e00112233445566778899aabb",
+        "width": 360,
+        "height": 360,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab671e2d00002efc00112233445566778899aabb"
+    },
+    {
+      "name": "ab671e2d 640x640 DPR3",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab671e2d0000d75e00112233445566778899aabb",
+        "width": 640,
+        "height": 640,
+        "devicePixelRatio": 3,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab671e2d00002efc00112233445566778899aabb"
+    },
+    {
+      "name": "ab671e2d save-data",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab671e2d0000d75e00112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 3,
+        "saveData": true,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab671e2d0000150100112233445566778899aabb"
+    },
+    {
+      "name": "ab671e2d excluded collection",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab671e2d0000d75e00112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": []
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab671e2d0000d75e00112233445566778899aabb"
+    },
+    {
+      "name": "ab671e2d low DPR",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab671e2d0000d75e00112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 0.5,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab671e2d00003de900112233445566778899aabb"
+    },
+    {
+      "name": "ab671e2d existing webp",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab671e2d00003de900112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab671e2d00003de900112233445566778899aabb"
+    },
+    {
+      "name": "ab676167 default-format conversion",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761670000e30a00112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676167000081f900112233445566778899aabb"
+    },
+    {
+      "name": "ab676167 48x48 DPR1",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761670000e30a00112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676167000081f900112233445566778899aabb"
+    },
+    {
+      "name": "ab676167 48x48 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761670000e30a00112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761670000ea3600112233445566778899aabb"
+    },
+    {
+      "name": "ab676167 232x232 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761670000e30a00112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761670000de4a00112233445566778899aabb"
+    },
+    {
+      "name": "ab676167 360x360 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761670000e30a00112233445566778899aabb",
+        "width": 360,
+        "height": 360,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761670000de4a00112233445566778899aabb"
+    },
+    {
+      "name": "ab676167 640x640 DPR3",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761670000e30a00112233445566778899aabb",
+        "width": 640,
+        "height": 640,
+        "devicePixelRatio": 3,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761670000605400112233445566778899aabb"
+    },
+    {
+      "name": "ab676167 save-data",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761670000e30a00112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 3,
+        "saveData": true,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761670000de4a00112233445566778899aabb"
+    },
+    {
+      "name": "ab676167 excluded collection",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761670000e30a00112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": []
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761670000e30a00112233445566778899aabb"
+    },
+    {
+      "name": "ab676167 low DPR",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761670000e30a00112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 0.5,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676167000081f900112233445566778899aabb"
+    },
+    {
+      "name": "ab676167 existing webp",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab676167000081f900112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676167000081f900112233445566778899aabb"
+    },
+    {
+      "name": "ab677570 default-format conversion",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67757000003b8200112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6775700000b8a800112233445566778899aabb"
+    },
+    {
+      "name": "ab677570 48x48 DPR1",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67757000003b8200112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6775700000b8a800112233445566778899aabb"
+    },
+    {
+      "name": "ab677570 48x48 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67757000003b8200112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67757000004cf800112233445566778899aabb"
+    },
+    {
+      "name": "ab677570 232x232 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67757000003b8200112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67757000004cf800112233445566778899aabb"
+    },
+    {
+      "name": "ab677570 360x360 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67757000003b8200112233445566778899aabb",
+        "width": 360,
+        "height": 360,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67757000004cf800112233445566778899aabb"
+    },
+    {
+      "name": "ab677570 640x640 DPR3",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67757000003b8200112233445566778899aabb",
+        "width": 640,
+        "height": 640,
+        "devicePixelRatio": 3,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67757000004cf800112233445566778899aabb"
+    },
+    {
+      "name": "ab677570 save-data",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67757000003b8200112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 3,
+        "saveData": true,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67757000004cf800112233445566778899aabb"
+    },
+    {
+      "name": "ab677570 excluded collection",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67757000003b8200112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": []
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67757000003b8200112233445566778899aabb"
+    },
+    {
+      "name": "ab677570 low DPR",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67757000003b8200112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 0.5,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6775700000b8a800112233445566778899aabb"
+    },
+    {
+      "name": "ab677570 existing webp",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6775700000b8a800112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6775700000b8a800112233445566778899aabb"
+    },
+    {
+      "name": "ab67706f default-format conversion",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706f0000000100112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67706f00009e8c00112233445566778899aabb"
+    },
+    {
+      "name": "ab67706f 48x48 DPR1",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706f0000000100112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67706f00009e8c00112233445566778899aabb"
+    },
+    {
+      "name": "ab67706f 48x48 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706f0000000100112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67706f000036f300112233445566778899aabb"
+    },
+    {
+      "name": "ab67706f 232x232 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706f0000000100112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67706f000036f300112233445566778899aabb"
+    },
+    {
+      "name": "ab67706f 360x360 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706f0000000100112233445566778899aabb",
+        "width": 360,
+        "height": 360,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67706f0000031100112233445566778899aabb"
+    },
+    {
+      "name": "ab67706f 640x640 DPR3",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706f0000000100112233445566778899aabb",
+        "width": 640,
+        "height": 640,
+        "devicePixelRatio": 3,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67706f0000f14700112233445566778899aabb"
+    },
+    {
+      "name": "ab67706f save-data",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706f0000000100112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 3,
+        "saveData": true,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67706f000036f300112233445566778899aabb"
+    },
+    {
+      "name": "ab67706f excluded collection",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706f0000000100112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": []
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67706f0000000100112233445566778899aabb"
+    },
+    {
+      "name": "ab67706f low DPR",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706f0000000100112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 0.5,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67706f00009e8c00112233445566778899aabb"
+    },
+    {
+      "name": "ab67706f existing webp",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706f00009e8c00112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67706f00009e8c00112233445566778899aabb"
+    },
+    {
+      "name": "ab677269 default-format conversion",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67726900008f7400112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6772690000aaf100112233445566778899aabb"
+    },
+    {
+      "name": "ab677269 48x48 DPR1",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67726900008f7400112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6772690000aaf100112233445566778899aabb"
+    },
+    {
+      "name": "ab677269 48x48 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67726900008f7400112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab677269000081d100112233445566778899aabb"
+    },
+    {
+      "name": "ab677269 232x232 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67726900008f7400112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67726900002b0d00112233445566778899aabb"
+    },
+    {
+      "name": "ab677269 360x360 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67726900008f7400112233445566778899aabb",
+        "width": 360,
+        "height": 360,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67726900002b0d00112233445566778899aabb"
+    },
+    {
+      "name": "ab677269 640x640 DPR3",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67726900008f7400112233445566778899aabb",
+        "width": 640,
+        "height": 640,
+        "devicePixelRatio": 3,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6772690000184300112233445566778899aabb"
+    },
+    {
+      "name": "ab677269 save-data",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67726900008f7400112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 3,
+        "saveData": true,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67726900002b0d00112233445566778899aabb"
+    },
+    {
+      "name": "ab677269 excluded collection",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67726900008f7400112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": []
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67726900008f7400112233445566778899aabb"
+    },
+    {
+      "name": "ab677269 low DPR",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67726900008f7400112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 0.5,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6772690000aaf100112233445566778899aabb"
+    },
+    {
+      "name": "ab677269 existing webp",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6772690000aaf100112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6772690000aaf100112233445566778899aabb"
+    },
+    {
+      "name": "ab67ba69 default-format conversion",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67ba6900002e9f00112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67ba6900001d9600112233445566778899aabb"
+    },
+    {
+      "name": "ab67ba69 48x48 DPR1",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67ba6900002e9f00112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67ba690000db9e00112233445566778899aabb"
+    },
+    {
+      "name": "ab67ba69 48x48 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67ba6900002e9f00112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67ba690000db9e00112233445566778899aabb"
+    },
+    {
+      "name": "ab67ba69 232x232 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67ba6900002e9f00112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67ba6900001d9600112233445566778899aabb"
+    },
+    {
+      "name": "ab67ba69 360x360 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67ba6900002e9f00112233445566778899aabb",
+        "width": 360,
+        "height": 360,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67ba6900001d9600112233445566778899aabb"
+    },
+    {
+      "name": "ab67ba69 640x640 DPR3",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67ba6900002e9f00112233445566778899aabb",
+        "width": 640,
+        "height": 640,
+        "devicePixelRatio": 3,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67ba6900002b6000112233445566778899aabb"
+    },
+    {
+      "name": "ab67ba69 save-data",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67ba6900002e9f00112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 3,
+        "saveData": true,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67ba6900001d9600112233445566778899aabb"
+    },
+    {
+      "name": "ab67ba69 excluded collection",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67ba6900002e9f00112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": []
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67ba6900002e9f00112233445566778899aabb"
+    },
+    {
+      "name": "ab67ba69 low DPR",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67ba6900002e9f00112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 0.5,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67ba690000db9e00112233445566778899aabb"
+    },
+    {
+      "name": "ab67ba69 existing webp",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67ba6900001d9600112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67ba6900001d9600112233445566778899aabb"
+    },
+    {
+      "name": "ab6742d3 default-format conversion",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6742d3000053b700112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6742d3000053b500112233445566778899aabb"
+    },
+    {
+      "name": "ab6742d3 48x48 DPR1",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6742d3000053b700112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6742d3000052b500112233445566778899aabb"
+    },
+    {
+      "name": "ab6742d3 48x48 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6742d3000053b700112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6742d3000052b500112233445566778899aabb"
+    },
+    {
+      "name": "ab6742d3 232x232 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6742d3000053b700112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6742d3000052b500112233445566778899aabb"
+    },
+    {
+      "name": "ab6742d3 360x360 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6742d3000053b700112233445566778899aabb",
+        "width": 360,
+        "height": 360,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6742d3000053b500112233445566778899aabb"
+    },
+    {
+      "name": "ab6742d3 640x640 DPR3",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6742d3000053b700112233445566778899aabb",
+        "width": 640,
+        "height": 640,
+        "devicePixelRatio": 3,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6742d3000053b500112233445566778899aabb"
+    },
+    {
+      "name": "ab6742d3 save-data",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6742d3000053b700112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 3,
+        "saveData": true,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6742d3000052b500112233445566778899aabb"
+    },
+    {
+      "name": "ab6742d3 excluded collection",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6742d3000053b700112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": []
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6742d3000053b700112233445566778899aabb"
+    },
+    {
+      "name": "ab6742d3 low DPR",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6742d3000053b700112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 0.5,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6742d3000052b500112233445566778899aabb"
+    },
+    {
+      "name": "ab6742d3 existing webp",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6742d3000053b500112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6742d3000053b500112233445566778899aabb"
+    },
+    {
+      "name": "ab676d63 default-format conversion",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab676d630000ea6800112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676d63000024d300112233445566778899aabb"
+    },
+    {
+      "name": "ab676d63 48x48 DPR1",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab676d630000ea6800112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676d63000024d300112233445566778899aabb"
+    },
+    {
+      "name": "ab676d63 48x48 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab676d630000ea6800112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676d630000caee00112233445566778899aabb"
+    },
+    {
+      "name": "ab676d63 232x232 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab676d630000ea6800112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676d630000caee00112233445566778899aabb"
+    },
+    {
+      "name": "ab676d63 360x360 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab676d630000ea6800112233445566778899aabb",
+        "width": 360,
+        "height": 360,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676d630000172600112233445566778899aabb"
+    },
+    {
+      "name": "ab676d63 640x640 DPR3",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab676d630000ea6800112233445566778899aabb",
+        "width": 640,
+        "height": 640,
+        "devicePixelRatio": 3,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676d630000667700112233445566778899aabb"
+    },
+    {
+      "name": "ab676d63 save-data",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab676d630000ea6800112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 3,
+        "saveData": true,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676d630000caee00112233445566778899aabb"
+    },
+    {
+      "name": "ab676d63 excluded collection",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab676d630000ea6800112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": []
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676d630000ea6800112233445566778899aabb"
+    },
+    {
+      "name": "ab676d63 low DPR",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab676d630000ea6800112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 0.5,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676d63000024d300112233445566778899aabb"
+    },
+    {
+      "name": "ab676d63 existing webp",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab676d63000024d300112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676d63000024d300112233445566778899aabb"
+    },
+    {
+      "name": "ab676186 default-format conversion",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761860000660e00112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761860000019400112233445566778899aabb"
+    },
+    {
+      "name": "ab676186 48x48 DPR1",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761860000660e00112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761860000019400112233445566778899aabb"
+    },
+    {
+      "name": "ab676186 48x48 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761860000660e00112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761860000019400112233445566778899aabb"
+    },
+    {
+      "name": "ab676186 232x232 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761860000660e00112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761860000019400112233445566778899aabb"
+    },
+    {
+      "name": "ab676186 360x360 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761860000660e00112233445566778899aabb",
+        "width": 360,
+        "height": 360,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761860000019400112233445566778899aabb"
+    },
+    {
+      "name": "ab676186 640x640 DPR3",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761860000660e00112233445566778899aabb",
+        "width": 640,
+        "height": 640,
+        "devicePixelRatio": 3,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761860000eab100112233445566778899aabb"
+    },
+    {
+      "name": "ab676186 save-data",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761860000660e00112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 3,
+        "saveData": true,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761860000019400112233445566778899aabb"
+    },
+    {
+      "name": "ab676186 excluded collection",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761860000660e00112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": []
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761860000660e00112233445566778899aabb"
+    },
+    {
+      "name": "ab676186 low DPR",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761860000660e00112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 0.5,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761860000019400112233445566778899aabb"
+    },
+    {
+      "name": "ab676186 existing webp",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761860000019400112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761860000019400112233445566778899aabb"
+    },
+    {
+      "name": "ab67fb82 default-format conversion",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67fb8200005caf00112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67fb8200005caf00112233445566778899aabb"
+    },
+    {
+      "name": "ab67fb82 48x48 DPR1",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67fb8200005caf00112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67fb8200005caf00112233445566778899aabb"
+    },
+    {
+      "name": "ab67fb82 48x48 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67fb8200005caf00112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67fb8200005caf00112233445566778899aabb"
+    },
+    {
+      "name": "ab67fb82 232x232 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67fb8200005caf00112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67fb8200005caf00112233445566778899aabb"
+    },
+    {
+      "name": "ab67fb82 360x360 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67fb8200005caf00112233445566778899aabb",
+        "width": 360,
+        "height": 360,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67fb8200008e2c00112233445566778899aabb"
+    },
+    {
+      "name": "ab67fb82 640x640 DPR3",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67fb8200005caf00112233445566778899aabb",
+        "width": 640,
+        "height": 640,
+        "devicePixelRatio": 3,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67fb8200008e2c00112233445566778899aabb"
+    },
+    {
+      "name": "ab67fb82 save-data",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67fb8200005caf00112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 3,
+        "saveData": true,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67fb8200005caf00112233445566778899aabb"
+    },
+    {
+      "name": "ab67fb82 excluded collection",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67fb8200005caf00112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": []
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67fb8200005caf00112233445566778899aabb"
+    },
+    {
+      "name": "ab67fb82 low DPR",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67fb8200005caf00112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 0.5,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67fb8200005caf00112233445566778899aabb"
+    },
+    {
+      "name": "ab6772ab default-format conversion",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6772ab0000169200112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6772ab000030ae00112233445566778899aabb"
+    },
+    {
+      "name": "ab6772ab 48x48 DPR1",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6772ab0000169200112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6772ab0000e0e700112233445566778899aabb"
+    },
+    {
+      "name": "ab6772ab 48x48 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6772ab0000169200112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6772ab0000e0e700112233445566778899aabb"
+    },
+    {
+      "name": "ab6772ab 232x232 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6772ab0000169200112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6772ab0000e0e700112233445566778899aabb"
+    },
+    {
+      "name": "ab6772ab 360x360 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6772ab0000169200112233445566778899aabb",
+        "width": 360,
+        "height": 360,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6772ab000030ae00112233445566778899aabb"
+    },
+    {
+      "name": "ab6772ab 640x640 DPR3",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6772ab0000169200112233445566778899aabb",
+        "width": 640,
+        "height": 640,
+        "devicePixelRatio": 3,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6772ab000030ae00112233445566778899aabb"
+    },
+    {
+      "name": "ab6772ab save-data",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6772ab0000169200112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 3,
+        "saveData": true,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6772ab0000e0e700112233445566778899aabb"
+    },
+    {
+      "name": "ab6772ab excluded collection",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6772ab0000169200112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": []
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6772ab0000169200112233445566778899aabb"
+    },
+    {
+      "name": "ab6772ab low DPR",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6772ab0000169200112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 0.5,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6772ab0000e0e700112233445566778899aabb"
+    },
+    {
+      "name": "ab6772ab existing webp",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6772ab000030ae00112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6772ab000030ae00112233445566778899aabb"
+    },
+    {
+      "name": "ab676168 default-format conversion",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67616800001e0700112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616800005d4000112233445566778899aabb"
+    },
+    {
+      "name": "ab676168 48x48 DPR1",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67616800001e0700112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616800005d4000112233445566778899aabb"
+    },
+    {
+      "name": "ab676168 48x48 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67616800001e0700112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616800005d4000112233445566778899aabb"
+    },
+    {
+      "name": "ab676168 232x232 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67616800001e0700112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616800005d4000112233445566778899aabb"
+    },
+    {
+      "name": "ab676168 360x360 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67616800001e0700112233445566778899aabb",
+        "width": 360,
+        "height": 360,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616800005d4000112233445566778899aabb"
+    },
+    {
+      "name": "ab676168 640x640 DPR3",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67616800001e0700112233445566778899aabb",
+        "width": 640,
+        "height": 640,
+        "devicePixelRatio": 3,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616800005d4000112233445566778899aabb"
+    },
+    {
+      "name": "ab676168 save-data",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67616800001e0700112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 3,
+        "saveData": true,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616800005d4000112233445566778899aabb"
+    },
+    {
+      "name": "ab676168 excluded collection",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67616800001e0700112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": []
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616800001e0700112233445566778899aabb"
+    },
+    {
+      "name": "ab676168 low DPR",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67616800001e0700112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 0.5,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616800005d4000112233445566778899aabb"
+    },
+    {
+      "name": "ab676168 existing webp",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67616800005d4000112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616800005d4000112233445566778899aabb"
+    },
+    {
+      "name": "ab6785ec default-format conversion",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6785ec000033fc00112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6785ec00002cda00112233445566778899aabb"
+    },
+    {
+      "name": "ab6785ec 48x48 DPR1",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6785ec000033fc00112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6785ec000011bc00112233445566778899aabb"
+    },
+    {
+      "name": "ab6785ec 48x48 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6785ec000033fc00112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6785ec000011bc00112233445566778899aabb"
+    },
+    {
+      "name": "ab6785ec 232x232 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6785ec000033fc00112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6785ec0000b2e200112233445566778899aabb"
+    },
+    {
+      "name": "ab6785ec 360x360 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6785ec000033fc00112233445566778899aabb",
+        "width": 360,
+        "height": 360,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6785ec0000b2e200112233445566778899aabb"
+    },
+    {
+      "name": "ab6785ec 640x640 DPR3",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6785ec000033fc00112233445566778899aabb",
+        "width": 640,
+        "height": 640,
+        "devicePixelRatio": 3,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6785ec00002cda00112233445566778899aabb"
+    },
+    {
+      "name": "ab6785ec save-data",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6785ec000033fc00112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 3,
+        "saveData": true,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6785ec0000152a00112233445566778899aabb"
+    },
+    {
+      "name": "ab6785ec excluded collection",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6785ec000033fc00112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": []
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6785ec000033fc00112233445566778899aabb"
+    },
+    {
+      "name": "ab6785ec low DPR",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6785ec000033fc00112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 0.5,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6785ec000011bc00112233445566778899aabb"
+    },
+    {
+      "name": "ab6785ec existing webp",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6785ec00002cda00112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6785ec00002cda00112233445566778899aabb"
+    },
+    {
+      "name": "ab676170 default-format conversion",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761700000c52c00112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761700000591000112233445566778899aabb"
+    },
+    {
+      "name": "ab676170 48x48 DPR1",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761700000c52c00112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761700000591000112233445566778899aabb"
+    },
+    {
+      "name": "ab676170 48x48 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761700000c52c00112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761700000591000112233445566778899aabb"
+    },
+    {
+      "name": "ab676170 232x232 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761700000c52c00112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761700000591000112233445566778899aabb"
+    },
+    {
+      "name": "ab676170 360x360 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761700000c52c00112233445566778899aabb",
+        "width": 360,
+        "height": 360,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761700000591000112233445566778899aabb"
+    },
+    {
+      "name": "ab676170 640x640 DPR3",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761700000c52c00112233445566778899aabb",
+        "width": 640,
+        "height": 640,
+        "devicePixelRatio": 3,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761700000591000112233445566778899aabb"
+    },
+    {
+      "name": "ab676170 save-data",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761700000c52c00112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 3,
+        "saveData": true,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761700000591000112233445566778899aabb"
+    },
+    {
+      "name": "ab676170 excluded collection",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761700000c52c00112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": []
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761700000c52c00112233445566778899aabb"
+    },
+    {
+      "name": "ab676170 low DPR",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761700000c52c00112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 0.5,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761700000591000112233445566778899aabb"
+    },
+    {
+      "name": "ab676170 existing webp",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761700000591000112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761700000591000112233445566778899aabb"
+    },
+    {
+      "name": "ab679c11 default-format conversion",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab679c110000f78500112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab679c110000dbdb00112233445566778899aabb"
+    },
+    {
+      "name": "ab679c11 48x48 DPR1",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab679c110000f78500112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab679c110000dbdb00112233445566778899aabb"
+    },
+    {
+      "name": "ab679c11 48x48 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab679c110000f78500112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab679c110000dbdb00112233445566778899aabb"
+    },
+    {
+      "name": "ab679c11 232x232 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab679c110000f78500112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab679c110000dbdb00112233445566778899aabb"
+    },
+    {
+      "name": "ab679c11 360x360 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab679c110000f78500112233445566778899aabb",
+        "width": 360,
+        "height": 360,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab679c110000b66100112233445566778899aabb"
+    },
+    {
+      "name": "ab679c11 640x640 DPR3",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab679c110000f78500112233445566778899aabb",
+        "width": 640,
+        "height": 640,
+        "devicePixelRatio": 3,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab679c110000b66100112233445566778899aabb"
+    },
+    {
+      "name": "ab679c11 save-data",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab679c110000f78500112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 3,
+        "saveData": true,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab679c110000dbdb00112233445566778899aabb"
+    },
+    {
+      "name": "ab679c11 excluded collection",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab679c110000f78500112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": []
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab679c110000f78500112233445566778899aabb"
+    },
+    {
+      "name": "ab679c11 low DPR",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab679c110000f78500112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 0.5,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab679c110000dbdb00112233445566778899aabb"
+    },
+    {
+      "name": "ab679c11 existing webp",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab679c110000dbdb00112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab679c110000dbdb00112233445566778899aabb"
+    },
+    {
+      "name": "ab672888 default-format conversion",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6728880000dcf300112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6728880000b8b600112233445566778899aabb"
+    },
+    {
+      "name": "ab672888 48x48 DPR1",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6728880000dcf300112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6728880000b8b600112233445566778899aabb"
+    },
+    {
+      "name": "ab672888 48x48 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6728880000dcf300112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6728880000b8b600112233445566778899aabb"
+    },
+    {
+      "name": "ab672888 232x232 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6728880000dcf300112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6728880000b8b600112233445566778899aabb"
+    },
+    {
+      "name": "ab672888 360x360 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6728880000dcf300112233445566778899aabb",
+        "width": 360,
+        "height": 360,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6728880000b8b600112233445566778899aabb"
+    },
+    {
+      "name": "ab672888 640x640 DPR3",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6728880000dcf300112233445566778899aabb",
+        "width": 640,
+        "height": 640,
+        "devicePixelRatio": 3,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6728880000141100112233445566778899aabb"
+    },
+    {
+      "name": "ab672888 save-data",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6728880000dcf300112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 3,
+        "saveData": true,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6728880000b8b600112233445566778899aabb"
+    },
+    {
+      "name": "ab672888 excluded collection",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6728880000dcf300112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": []
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6728880000dcf300112233445566778899aabb"
+    },
+    {
+      "name": "ab672888 low DPR",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6728880000dcf300112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 0.5,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6728880000b8b600112233445566778899aabb"
+    },
+    {
+      "name": "ab672888 existing webp",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6728880000b8b600112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6728880000b8b600112233445566778899aabb"
+    },
+    {
+      "name": "ab67883a default-format conversion",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67883a000054b700112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67883a000054b500112233445566778899aabb"
+    },
+    {
+      "name": "ab67883a 48x48 DPR1",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67883a000054b700112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67883a000054b500112233445566778899aabb"
+    },
+    {
+      "name": "ab67883a 48x48 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67883a000054b700112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67883a000054b500112233445566778899aabb"
+    },
+    {
+      "name": "ab67883a 232x232 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67883a000054b700112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67883a000054b500112233445566778899aabb"
+    },
+    {
+      "name": "ab67883a 360x360 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67883a000054b700112233445566778899aabb",
+        "width": 360,
+        "height": 360,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67883a000054b500112233445566778899aabb"
+    },
+    {
+      "name": "ab67883a 640x640 DPR3",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67883a000054b700112233445566778899aabb",
+        "width": 640,
+        "height": 640,
+        "devicePixelRatio": 3,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67883a000054b500112233445566778899aabb"
+    },
+    {
+      "name": "ab67883a save-data",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67883a000054b700112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 3,
+        "saveData": true,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67883a000054b500112233445566778899aabb"
+    },
+    {
+      "name": "ab67883a excluded collection",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67883a000054b700112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": []
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67883a000054b700112233445566778899aabb"
+    },
+    {
+      "name": "ab67883a low DPR",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67883a000054b700112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 0.5,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67883a000054b500112233445566778899aabb"
+    },
+    {
+      "name": "ab67883a existing webp",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67883a000054b500112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67883a000054b500112233445566778899aabb"
+    },
+    {
+      "name": "ab676864 default-format conversion",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6768640000fe8900112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67686400002f7f00112233445566778899aabb"
+    },
+    {
+      "name": "ab676864 48x48 DPR1",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6768640000fe8900112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67686400002f7f00112233445566778899aabb"
+    },
+    {
+      "name": "ab676864 48x48 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6768640000fe8900112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67686400002f7f00112233445566778899aabb"
+    },
+    {
+      "name": "ab676864 232x232 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6768640000fe8900112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67686400002f7f00112233445566778899aabb"
+    },
+    {
+      "name": "ab676864 360x360 DPR2",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6768640000fe8900112233445566778899aabb",
+        "width": 360,
+        "height": 360,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67686400002f7f00112233445566778899aabb"
+    },
+    {
+      "name": "ab676864 640x640 DPR3",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6768640000fe8900112233445566778899aabb",
+        "width": 640,
+        "height": 640,
+        "devicePixelRatio": 3,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67686400002f7f00112233445566778899aabb"
+    },
+    {
+      "name": "ab676864 save-data",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6768640000fe8900112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 3,
+        "saveData": true,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67686400002f7f00112233445566778899aabb"
+    },
+    {
+      "name": "ab676864 excluded collection",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6768640000fe8900112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": []
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6768640000fe8900112233445566778899aabb"
+    },
+    {
+      "name": "ab676864 low DPR",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab6768640000fe8900112233445566778899aabb",
+        "width": 48,
+        "height": 48,
+        "devicePixelRatio": 0.5,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67686400002f7f00112233445566778899aabb"
+    },
+    {
+      "name": "ab676864 existing webp",
+      "input": {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67686400002f7f00112233445566778899aabb",
+        "width": null,
+        "height": null,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67686400002f7f00112233445566778899aabb"
+    },
+    {
+      "name": "URL shape and unchanged host",
+      "input": {
+        "url": "https://i.scdn.co/image/ab67616d00001e0200112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://i.scdn.co/image/ab67616d0000e1a300112233445566778899aabb"
+    },
+    {
+      "name": "Explicit platform URI rewrite",
+      "input": {
+        "url": "https://i.scdn.co/image/ab67616d00001e0200112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": true,
+        "enabledCollections": null
+      },
+      "originalUrl": "spotify:image:ab67616d0000e1a300112233445566778899aabb"
+    },
+    {
+      "name": "URL shape and unchanged host",
+      "input": {
+        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e0200112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616d0000e1a300112233445566778899aabb"
+    },
+    {
+      "name": "Explicit platform URI rewrite",
+      "input": {
+        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e0200112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": true,
+        "enabledCollections": null
+      },
+      "originalUrl": "spotify:image:ab67616d0000e1a300112233445566778899aabb"
+    },
+    {
+      "name": "URL shape and unchanged host",
+      "input": {
+        "url": "spotify:image:ab67616d00001e0200112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "spotify:image:ab67616d0000e1a300112233445566778899aabb"
+    },
+    {
+      "name": "Explicit platform URI rewrite",
+      "input": {
+        "url": "spotify:image:ab67616d00001e0200112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": true,
+        "enabledCollections": null
+      },
+      "originalUrl": "spotify:image:ab67616d0000e1a300112233445566778899aabb"
+    },
+    {
+      "name": "URL shape and unchanged host",
+      "input": {
+        "url": "https://i.scdn.co/image/ffffffff00001e0200112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://i.scdn.co/image/ffffffff00001e0200112233445566778899aabb"
+    },
+    {
+      "name": "Explicit platform URI rewrite",
+      "input": {
+        "url": "https://i.scdn.co/image/ffffffff00001e0200112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": true,
+        "enabledCollections": null
+      },
+      "originalUrl": "spotify:image:ffffffff00001e0200112233445566778899aabb"
+    },
+    {
+      "name": "URL shape and unchanged host",
+      "input": {
+        "url": "https://i.scdn.co/image/ab67616dffffffff00112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://i.scdn.co/image/ab67616dffffffff00112233445566778899aabb"
+    },
+    {
+      "name": "Explicit platform URI rewrite",
+      "input": {
+        "url": "https://i.scdn.co/image/ab67616dffffffff00112233445566778899aabb",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": true,
+        "enabledCollections": null
+      },
+      "originalUrl": "spotify:image:ab67616dffffffff00112233445566778899aabb"
+    },
+    {
+      "name": "URL shape and unchanged host",
+      "input": {
+        "url": "https://example.test/unrelated-image",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://example.test/unrelated-image"
+    },
+    {
+      "name": "Explicit platform URI rewrite",
+      "input": {
+        "url": "https://example.test/unrelated-image",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 1,
+        "saveData": false,
+        "rewrite": true,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://example.test/unrelated-image"
+    },
+    {
+      "name": "Pickasso generated cover discover weekly cover",
+      "input": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/dw/cover/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/dw/cover/en"
+    },
+    {
+      "name": "Pickasso generated cover discover weekly desktop header",
+      "input": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/dw/desktop/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/dw/desktop/en"
+    },
+    {
+      "name": "Pickasso generated cover discover weekly mobile header",
+      "input": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/dw/mobile/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/dw/mobile/en"
+    },
+    {
+      "name": "Pickasso generated cover release radar desktop header",
+      "input": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/release-radar-header/desktop",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/release-radar-header/desktop"
+    },
+    {
+      "name": "Pickasso generated cover release radar mobile header",
+      "input": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/release-radar-header/mobile",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/release-radar-header/mobile"
+    },
+    {
+      "name": "Pickasso generated cover release radar",
+      "input": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000bada/dt/v1/img/release-radar-v4/0000000000000000000001/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000bada/dt/v1/img/release-radar-v4/0000000000000000000001/en"
+    },
+    {
+      "name": "Pickasso generated cover daily album image",
+      "input": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/daily/2/ab67616d0000b27300112233445566778899aabb/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/daily/2/ab67616d0000b27300112233445566778899aabb/en"
+    },
+    {
+      "name": "Pickasso generated cover daily artist image",
+      "input": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/daily/3/ab6761610000e5eb00112233445566778899aabb/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/daily/3/ab6761610000e5eb00112233445566778899aabb/en"
+    },
+    {
+      "name": "Pickasso generated cover daily context id",
+      "input": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/daily/1/0000000000000000000002/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/daily/1/0000000000000000000002/en"
+    },
+    {
+      "name": "Pickasso generated cover artist radio",
+      "input": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/0000000000000000000001/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/0000000000000000000001/en"
+    },
+    {
+      "name": "Pickasso generated cover topic metal",
+      "input": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/metal/0000000000000000000001/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/metal/0000000000000000000001/en"
+    },
+    {
+      "name": "Pickasso generated cover topic techno",
+      "input": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/techno/0000000000000000000001/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/techno/0000000000000000000001/en"
+    },
+    {
+      "name": "Pickasso generated cover topic rock",
+      "input": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/rock/0000000000000000000001/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/rock/0000000000000000000001/en"
+    },
+    {
+      "name": "Pickasso generated cover topic chill",
+      "input": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/chill/0000000000000000000001/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/chill/0000000000000000000001/en"
+    },
+    {
+      "name": "Pickasso generated cover topic twenty_twenties",
+      "input": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/twenty_twenties/0000000000000000000001/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/twenty_twenties/0000000000000000000001/en"
+    },
+    {
+      "name": "Pickasso generated cover topic twenty_tens",
+      "input": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/twenty_tens/0000000000000000000001/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/twenty_tens/0000000000000000000001/en"
+    },
+    {
+      "name": "Pickasso generated cover topic focus",
+      "input": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/focus/0000000000000000000001/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/focus/0000000000000000000001/en"
+    },
+    {
+      "name": "Pickasso generated cover topic seventies",
+      "input": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/seventies/0000000000000000000001/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/seventies/0000000000000000000001/en"
+    },
+    {
+      "name": "Pickasso generated cover topic eighties",
+      "input": {
+        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/eighties/0000000000000000000001/en",
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/eighties/0000000000000000000001/en"
+    }
+  ],
+  "selections": [
+    {
+      "name": "empty sources",
+      "input": {
+        "name": "empty sources",
+        "images": [],
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalSources": []
+    },
+    {
+      "name": "first server-provided projection",
+      "input": {
+        "name": "first server-provided projection",
+        "images": [
+          {
+            "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000d72c00112233445566778899aabb",
+            "width": 56,
+            "height": 56
+          },
+          {
+            "url": "https://i.scdn.co/image/ab67706c0000bebb00112233445566778899aabb",
+            "width": 640,
+            "height": 640
+          }
+        ],
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalSources": [
+        {
+          "url": "https://i.scdn.co/image/ab67706c0000bebb00112233445566778899aabb",
+          "width": 640,
+          "height": 640
+        }
+      ]
+    },
+    {
+      "name": "unknown URLs choose nearest area",
+      "input": {
+        "name": "unknown URLs choose nearest area",
+        "images": [
+          {
+            "url": "https://example.test/image-64",
+            "width": 64,
+            "height": 64
+          },
+          {
+            "url": "https://example.test/image-300",
+            "width": 300,
+            "height": 300
+          },
+          {
+            "url": "https://example.test/image-640",
+            "width": 640,
+            "height": 640
+          }
+        ],
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalSources": [
+        {
+          "url": "https://example.test/image-300",
+          "width": 300,
+          "height": 300
+        }
+      ]
+    },
+    {
+      "name": "missing source dimensions",
+      "input": {
+        "name": "missing source dimensions",
+        "images": [
+          {
+            "url": "https://example.test/no-size"
+          },
+          {
+            "url": "https://example.test/sized",
+            "width": 300,
+            "height": 300
+          }
+        ],
+        "width": 232,
+        "height": 232,
+        "devicePixelRatio": 2,
+        "saveData": false,
+        "rewrite": false,
+        "enabledCollections": null
+      },
+      "originalSources": [
+        {
+          "url": "https://example.test/sized",
+          "width": 300,
+          "height": 300
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,264 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "authority": "Unchanged original TTL arithmetic/admission and full normal-source cache-load plus HTTP batch-construction execution. No Dart expected values, network, account, store or process is used.",
+  "originalEntries": {
+    "successfulResponseCacheOwner": "0x10060caa0",
+    "onlineExpiryMath": "0x1005f6e04",
+    "addSeconds": "0x101d0eca0",
+    "cacheAdmission": "0x1006002f4",
+    "lookup": "0x100607ae0",
+    "contextValidation": "0x100609068",
+    "freshDelivery": "0x1005efddc",
+    "httpBatchBuilder": "0x1005f3e90",
+    "clock": "0x101d0c2a0"
+  },
+  "ranges": [
+    {
+      "start": "0x10060caa0",
+      "endExclusive": "0x10060daec",
+      "sha256": "933537bf0a2f323373a8c2e94436e27c62b47ab5b2a189d1e615a49c1d31e858"
+    },
+    {
+      "start": "0x1005f6e04",
+      "endExclusive": "0x1005f6e48",
+      "sha256": "506dd0842fa3a87f545aa47bc9d7e7948c72c533942a6ba7012a7db463c6c53a"
+    },
+    {
+      "start": "0x101d0eca0",
+      "endExclusive": "0x101d0ecb4",
+      "sha256": "e953cbd66506e9301411de0539bd984f366cb63115c074f457d4dd49e410568f"
+    },
+    {
+      "start": "0x1005f6e90",
+      "endExclusive": "0x1005f6e98",
+      "sha256": "40811be9f37947b02b5880ae47ed4de92f263de59f98ed80dfa8e16aef29f320"
+    },
+    {
+      "start": "0x1005f6e98",
+      "endExclusive": "0x1005f6ea8",
+      "sha256": "873465d3768d2d96069024c747a9fc2cdaa30d44e944f858e71ea0f60eb0f5f8"
+    },
+    {
+      "start": "0x1006002f4",
+      "endExclusive": "0x100600388",
+      "sha256": "ecee872017fd1c20e053e5ace69fe0ed341e8fd110b67590566286f0136e67b5"
+    },
+    {
+      "start": "0x100609068",
+      "endExclusive": "0x1006095c8",
+      "sha256": "abc580329e03931773e23c2c65564814a706a2affc406d43c43f881476dab41a"
+    },
+    {
+      "start": "0x100607ae0",
+      "endExclusive": "0x100607da8",
+      "sha256": "39e30a537acb0df2f947a1fca387232cd85a91f6e7763269794926569a50c6da"
+    },
+    {
+      "start": "0x1005efddc",
+      "endExclusive": "0x1005efef8",
+      "sha256": "c29227736c384fb5219d2adadb2dece684dd119e845bb2c97a09c4a970376524"
+    },
+    {
+      "start": "0x1005f09c0",
+      "endExclusive": "0x1005f0d30",
+      "sha256": "9b14be5d8bfa273f020bab077ed07ffdf62349dc3d4987fc0dd255531cd7e568"
+    },
+    {
+      "start": "0x1005f3e90",
+      "endExclusive": "0x1005f4304",
+      "sha256": "c4010770d19bdbfc300ce6a858e303d286753e19fd8103e25e919fe0f3bc8c4d"
+    },
+    {
+      "start": "0x101d0c120",
+      "endExclusive": "0x101d0c1fc",
+      "sha256": "d50ac2dc66d9ff2e17208def2ca9777008867edeecf583954650e81528c8e750"
+    },
+    {
+      "start": "0x101d0c2a0",
+      "endExclusive": "0x101d0c2d4",
+      "sha256": "8f1c500a38c301437576e1ef9b546fb584424c1eaf8258c440b4aa68a4e6be27"
+    }
+  ],
+  "sourceExports": [
+    {
+      "path": ".local/rea-session/native-audio-files-live-metadata-cache-ttl.json",
+      "sha256": "36578eea3261ff53dfe64b2b63b55bf111f4da82c151bf0bb918aac304bba89b"
+    },
+    {
+      "path": ".local/rea-session/native-audio-files-ttl-and-fresh-hit-delivery.json",
+      "sha256": "15055dd831e67df46edec5ab6c93880708e8403b83cce099de512e219a3c3315"
+    },
+    {
+      "path": ".local/rea-session/dart-native-audio-files-missing-record-interface-and-continuation.json",
+      "sha256": "b3988ce6768bdbd462220de5bed462f5ce77328c81481cc07bf75dd8a8a2bbd5"
+    },
+    {
+      "path": ".local/rea-session/dart-native-audio-files-true-missing-cache-continuation.json",
+      "sha256": "27e534c92d34ad9d84ce68fa11fbc2712497d73f0712bba0d4c5bfd6fee24ec2"
+    },
+    {
+      "path": ".local/rea-session/dart-native-audio-files-batch-dispatch-and-state-producers.json",
+      "sha256": "6d785090365b8e4d8807939e318aa2c816b829ead89726e5582b458b4a4a4ef1"
+    }
+  ],
+  "ttlMathCases": [
+    {
+      "nowMicroseconds": 1700000000123456,
+      "ttlSeconds": -1,
+      "explicitMinimumSeconds": 0,
+      "originalExpiryMicroseconds": 1700000000123456
+    },
+    {
+      "nowMicroseconds": 1700000000123456,
+      "ttlSeconds": 0,
+      "explicitMinimumSeconds": 0,
+      "originalExpiryMicroseconds": 1700000000123456
+    },
+    {
+      "nowMicroseconds": 1700000000123456,
+      "ttlSeconds": 1,
+      "explicitMinimumSeconds": 0,
+      "originalExpiryMicroseconds": 1700000001123456
+    },
+    {
+      "nowMicroseconds": 1700000000123456,
+      "ttlSeconds": 86400,
+      "explicitMinimumSeconds": 0,
+      "originalExpiryMicroseconds": 1700086400123456
+    },
+    {
+      "nowMicroseconds": 1700000000123456,
+      "ttlSeconds": 10000000,
+      "explicitMinimumSeconds": 0,
+      "originalExpiryMicroseconds": 1707776000123456
+    },
+    {
+      "nowMicroseconds": 1700000000123456,
+      "ttlSeconds": -1,
+      "explicitMinimumSeconds": 60,
+      "originalExpiryMicroseconds": 1700000060123456
+    },
+    {
+      "nowMicroseconds": 1700000000123456,
+      "ttlSeconds": 0,
+      "explicitMinimumSeconds": 60,
+      "originalExpiryMicroseconds": 1700000060123456
+    },
+    {
+      "nowMicroseconds": 1700000000123456,
+      "ttlSeconds": 1,
+      "explicitMinimumSeconds": 60,
+      "originalExpiryMicroseconds": 1700000060123456
+    },
+    {
+      "nowMicroseconds": 1700000000123456,
+      "ttlSeconds": 86400,
+      "explicitMinimumSeconds": 60,
+      "originalExpiryMicroseconds": 1700086400123456
+    },
+    {
+      "nowMicroseconds": 1700000000123456,
+      "ttlSeconds": 10000000,
+      "explicitMinimumSeconds": 60,
+      "originalExpiryMicroseconds": 1707776000123456
+    }
+  ],
+  "admissionCases": [
+    {
+      "nowMicroseconds": 1700000099999999,
+      "cacheExpirySeconds": 1700000100,
+      "offlineExpirySeconds": 1700000200,
+      "originalFresh": true,
+      "originalBeyondCacheAndOffline": false
+    },
+    {
+      "nowMicroseconds": 1700000100000000,
+      "cacheExpirySeconds": 1700000100,
+      "offlineExpirySeconds": 1700000200,
+      "originalFresh": true,
+      "originalBeyondCacheAndOffline": false
+    },
+    {
+      "nowMicroseconds": 1700000100000001,
+      "cacheExpirySeconds": 1700000100,
+      "offlineExpirySeconds": 1700000200,
+      "originalFresh": false,
+      "originalBeyondCacheAndOffline": false
+    },
+    {
+      "nowMicroseconds": 1700000200000000,
+      "cacheExpirySeconds": 1700000100,
+      "offlineExpirySeconds": 1700000200,
+      "originalFresh": false,
+      "originalBeyondCacheAndOffline": false
+    },
+    {
+      "nowMicroseconds": 1700000200000001,
+      "cacheExpirySeconds": 1700000100,
+      "offlineExpirySeconds": 1700000200,
+      "originalFresh": false,
+      "originalBeyondCacheAndOffline": true
+    }
+  ],
+  "originalOutgoingCases": [
+    {
+      "nowMicroseconds": 0,
+      "cacheExpirySeconds": 3600,
+      "cacheInfoStatus": 200,
+      "metadataKind": 5,
+      "uri": "spotify:track:0000000000000000000000",
+      "country": "ZZ",
+      "catalogue": "fixture",
+      "originalCacheReads": [
+        "info-success",
+        "body-success"
+      ],
+      "originalHttpBatchCount": 0,
+      "originalHttpMethod": null
+    },
+    {
+      "nowMicroseconds": 3600000000,
+      "cacheExpirySeconds": 3600,
+      "cacheInfoStatus": 200,
+      "metadataKind": 5,
+      "uri": "spotify:track:0000000000000000000000",
+      "country": "ZZ",
+      "catalogue": "fixture",
+      "originalCacheReads": [
+        "info-success",
+        "body-success"
+      ],
+      "originalHttpBatchCount": 0,
+      "originalHttpMethod": null
+    },
+    {
+      "nowMicroseconds": 3600000001,
+      "cacheExpirySeconds": 3600,
+      "cacheInfoStatus": 200,
+      "metadataKind": 5,
+      "uri": "spotify:track:0000000000000000000000",
+      "country": "ZZ",
+      "catalogue": "fixture",
+      "originalCacheReads": [
+        "info-success",
+        "body-success"
+      ],
+      "originalHttpBatchCount": 1,
+      "originalHttpMethod": "POST"
+    }
+  ],
+  "substitutions": [
+    "Inherited OriginalAudioFilesRequest source/context/cache database interfaces and standard allocation, strings, memory, protobuf and Darwin TLS primitives.",
+    "Explicit synthetic clock and minimum TTL inputs; the original arithmetic/admission branches are unchanged.",
+    "Abstract open cache info/body reads return a retained synthetic successful kind5 object, absolute expiry3600seconds and a syntactically valid AUDIO_FILES Any with16zero audio-ID bytes; no file is selected or playback authorized.",
+    "The cached info has no optional COUNTRY/CATALOGUE attributes (the original globally-compatible branch); request context remains explicit ZZ/fixture. Context mismatch behavior is source inspection, not part of this executable corpus.",
+    "Original native query/source/parser/lookup/fresh callback/pending-query and HTTP-batch builders execute unchanged. No cache-outcome branch or batch count is overwritten."
+  ],
+  "limits": [
+    "Positive entity TTL overrides provider TTL only when nonzero; zero falls back to provider. Native configurable minimum/default is not recovered here.",
+    "Status200/payload-valid-only caching and128-entry session LRU are explicit Dart application scope/budget choices, not claimed native defaults.",
+    "The direct helpers include negative/zero and offline expiry boundaries to identify source semantics; no offline reuse, negative caching, etag or persisted store is implemented.",
+    "Clock functor remains an injected input; the base context initializes correction milliseconds to0. Later clock-correction updates are excluded.",
+    "The outgoing corpus proves zero generated HTTP batches for fresh and equality, one for expired. It does not inspect actual server/account caches or prove other extension/configuration/bypass modes."
+  ]
+}

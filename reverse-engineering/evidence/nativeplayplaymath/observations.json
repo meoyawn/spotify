@@ -1,0 +1,197 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "entry": "0x10048de68",
+  "scope": "Observe the original PlayPlay response transform offline.\n\nThis invokes the unchanged proprietary success callback. Standard protobuf\nparsing is an explicit storage adapter for supplied bytes fields; standard\nlibc/libc++ are inherited from ResolverOracle. The final application callback\nonly records its complete 28-byte result and four-byte suffix. The result has\nrandom-dependent protection bytes; it is not established to be a plaintext AES\nkey. No application process, account, HTTP, or network runs.\n",
+  "outputLayout": {
+    "observedByteLength": 28,
+    "tailFourHexInTheseCases": "01000000",
+    "interpretation": "Random-dependent protected result, not established as a plaintext AES key"
+  },
+  "defaultConstants": "0x10219811c",
+  "decodedLocalSaltHex": "539ee01ab9491e1a64fdb2422e8659d1",
+  "cases": [
+    {
+      "inputHex": "00000000000000000000000000000000",
+      "result": {
+        "protectedResultHex": "8d76d75064feef3314731169caaf461ba32ec33a5ae29d2c01000000",
+        "preProtectionWordsHex": "d7373ae7b3f32050bc4e61820748cd9e",
+        "suffixHex": "00000000"
+      }
+    },
+    {
+      "inputHex": "000102030405060708090a0b0c0d0e0f",
+      "result": {
+        "protectedResultHex": "d6c4c86e95ae017a8ddb188a746ede6d1d2023344a5f908d01000000",
+        "preProtectionWordsHex": "ac1327a2a3f229312fe7619bd3393aee",
+        "suffixHex": "00000000"
+      }
+    },
+    {
+      "inputHex": "fffefdfcfbfaf9f8f7f6f5f4f3f2f1f0",
+      "result": {
+        "protectedResultHex": "7fd09bcf2e250f0c6843f3cde9ea88e5ab310348db23e07101000000",
+        "preProtectionWordsHex": "de0c929166282b09cf0a6ce0d3025649",
+        "suffixHex": "00000000"
+      }
+    },
+    {
+      "inputHex": "a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "result": {
+        "protectedResultHex": "a8da5ba48712a2ded411ec53353a84236adfb06dff880f7901000000",
+        "preProtectionWordsHex": "f557189b57291742876c3718a011998c",
+        "suffixHex": "00000000"
+      }
+    }
+  ],
+  "freshObserverSeedObservations": [
+    {
+      "randomDeviceInitialState": 0,
+      "inputHex": "000102030405060708090a0b0c0d0e0f",
+      "result": {
+        "protectedResultHex": "a5a2fa193c898fb90493a0be8f20f0526a7bf5b6f564709a01000000",
+        "preProtectionWordsHex": "ac1327a2a3f229312fe7619bd3393aee",
+        "suffixHex": "00000000"
+      },
+      "randomDeviceCalls": 3
+    },
+    {
+      "randomDeviceInitialState": 1,
+      "inputHex": "000102030405060708090a0b0c0d0e0f",
+      "result": {
+        "protectedResultHex": "96081c19d52557a020b8653e129f65db369706940e021b3c01000000",
+        "preProtectionWordsHex": "ac1327a2a3f229312fe7619bd3393aee",
+        "suffixHex": "00000000"
+      },
+      "randomDeviceCalls": 3
+    },
+    {
+      "randomDeviceInitialState": 305419896,
+      "inputHex": "000102030405060708090a0b0c0d0e0f",
+      "result": {
+        "protectedResultHex": "8d76d75064feef33d7421072e6f071dfd75e33f2714d1e9d01000000",
+        "preProtectionWordsHex": "ac1327a2a3f229312fe7619bd3393aee",
+        "suffixHex": "00000000"
+      },
+      "randomDeviceCalls": 3
+    },
+    {
+      "randomDeviceInitialState": 4294967295,
+      "inputHex": "000102030405060708090a0b0c0d0e0f",
+      "result": {
+        "protectedResultHex": "a8dcc119876cc8ce779160eabe3f88c9df003b7367b2d13b01000000",
+        "preProtectionWordsHex": "ac1327a2a3f229312fe7619bd3393aee",
+        "suffixHex": "00000000"
+      },
+      "randomDeviceCalls": 3
+    }
+  ],
+  "originalPrefetchSaveBoundary": {
+    "fileContext": "0x12345678",
+    "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213",
+    "forwardedResultHex": "8d76d75064feef3314731169caaf461ba32ec33a5ae29d2c01000000",
+    "saveReason": 2,
+    "callerFlag": 7
+  },
+  "executedInstructions": 3579539,
+  "distinctInstructions": 25740,
+  "executedInstructionSha256": "2731d13f33ad2f794abe25e12323d7d8e417b155348b03e26d0330cd99e0ad13",
+  "standardAdapters": [
+    "libc/libc++ allocation, memory, string and guard operations",
+    "protobuf Response field storage for explicit synthetic fields",
+    "Darwin TLV zero-initialized per-thread slots",
+    "Darwin compact-unwind index and DWARF LSDA matching for original catch landing pads",
+    "C++ exception object allocation, begin/end catch; no proprietary arithmetic replaced",
+    "std::random_device synthetic LCG sequence with initial state 0x12345678"
+  ],
+  "limits": [
+    "No HTTP, account, session or application process is used",
+    "The final callback receives 28 bytes; these are not a proven plaintext AES key",
+    "Observed pre-protection16 words are stable across supplied random-device seeds",
+    "Only exact RTTI catches are implemented; base-class matching and destructor side effects are not covered",
+    "This is an offline original-instruction observer, not an application runtime or Dart implementation"
+  ],
+  "status": "Original protected output shape observed. Complete pure Dart content-key compatibility is recorded separately in content-key-observation.json; the pre-protection16 intermediate must never be treated as the content key.",
+  "originalBoundaries": {
+    "responseSuccessCallback": "0x10048de68",
+    "lastPreProtectionWordsStored": "0x10048ef20",
+    "preProtectionObservationStop": "0x10048ef24",
+    "protectedResultWriter": "0x1004bcc64",
+    "protectedResultByteCopies": [
+      "0x1004bcdcc",
+      "0x1004bcdd0",
+      "0x1004bcdd4"
+    ],
+    "protectedResultCallbackField": "job+0x28",
+    "proprietaryVmDispatchFunction": "0x100490014",
+    "proprietaryVmDispatchTable": "0x10256baf0",
+    "defaultConstantTable": {
+      "address": "0x10219811c",
+      "observedCopyLength": 3072
+    }
+  },
+  "intentionalExceptionEventsForLastCase": [
+    {
+      "callsite": "0x10048e8e4",
+      "landing": "0x10048e8fc",
+      "selector": 7,
+      "rtti": "0x10256cb20",
+      "state": "277031f6accd8608f3761f78ae7dbbb8"
+    },
+    {
+      "callsite": "0x10048e8e4",
+      "landing": "0x10048e8fc",
+      "selector": 6,
+      "rtti": "0x10256cb30",
+      "state": "277b6d263cd266c159a9835c9acd9b1b"
+    },
+    {
+      "callsite": "0x10048e8e4",
+      "landing": "0x10048e8fc",
+      "selector": 5,
+      "rtti": "0x10256cb40",
+      "state": "2eafd039f9cb9cec59e9cdaf00404ef3"
+    },
+    {
+      "callsite": "0x10048e8e4",
+      "landing": "0x10048e8fc",
+      "selector": 4,
+      "rtti": "0x10256cb50",
+      "state": "3f421fd2f2db8b05e3fa26297a1dc1b1"
+    },
+    {
+      "callsite": "0x10048e8e4",
+      "landing": "0x10048e8fc",
+      "selector": 3,
+      "rtti": "0x10256cb60",
+      "state": "96abfdf09670638f5c6b287655f8e635"
+    },
+    {
+      "callsite": "0x10048e8bc",
+      "landing": "0x10048e8fc",
+      "selector": 2,
+      "rtti": "0x10256cb70",
+      "state": "96abfdf048f90bc3628fd5fe6996f04e"
+    },
+    {
+      "callsite": "0x10048e8bc",
+      "landing": "0x10048e8fc",
+      "selector": 2,
+      "rtti": "0x10256cb70",
+      "state": "96abfdf0ff99dd5a7a7e22a1898a7f6a"
+    },
+    {
+      "callsite": "0x10048e8bc",
+      "landing": "0x10048e8fc",
+      "selector": 2,
+      "rtti": "0x10256cb70",
+      "state": "96abfdf0531728cbdd9adb0754dcfdfd"
+    },
+    {
+      "callsite": "0x10048e898",
+      "landing": "0x10048e8fc",
+      "selector": 1,
+      "rtti": "0x10256cb80",
+      "state": "558316c7fed818a3c83986cee3f840a9"
+    }
+  ]
+}

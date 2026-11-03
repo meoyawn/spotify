@@ -1,0 +1,660 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "dispatch": "0x1018bd248",
+  "messageFunction": "0x101a4d8a4",
+  "reconstructedDescriptorSetSha256": "10fc9ef5a4b16fcb9549053681372accb8a47f3532c55d4d73cfb9d77b8d74d8",
+  "cppToolchain": "libprotoc 36.2",
+  "nativeClockMicroseconds": 123456789,
+  "category": "login5",
+  "categorySingleton": "0x102735ac0",
+  "errorMessages": {
+    "0": "success",
+    "1": "login5_aborted",
+    "2": "login5_unsupported_response",
+    "3": "login5_non_successful_response",
+    "4": "login5_http_transport_error",
+    "5": "login5_unsupported_authentication_method",
+    "6": "login5_invalid_arguments",
+    "7": "login5_hash_mishmatch",
+    "101": "login5_unknown_backend_error",
+    "102": "login5_invalid_credentials",
+    "103": "login5_bad_request",
+    "104": "login5_unsupported_login_protocol",
+    "105": "login5_timeout",
+    "106": "login5_unknown_identifier",
+    "107": "login5_too_many_attempts",
+    "108": "login5_invalid_phone_number",
+    "109": "login5_try_again_later",
+    "110": "login5_not_allowed"
+  },
+  "method": "Original proprietary dispatcher executed to category/result/challenge boundary; signup diagnostic string destination hooked, no asserted result data supplied. Original category name/factory/messages fully executed. Wire parsing/oneofs separately use pinned public protoc36.2 with reconstructed descriptor.",
+  "durationAdapter": "0x1018ccf1c",
+  "emptyChallengeContinuationEvidence": "Original request serialization from fields selected by saved final continuation mapping1018bfe70; final callback is not executed.",
+  "dispatchCases": [
+    {
+      "name": "backend error 0",
+      "fields": {
+        "2": 0
+      },
+      "nativeResult": {
+        "kind": "failure",
+        "code": 101
+      }
+    },
+    {
+      "name": "backend error 1",
+      "fields": {
+        "2": 1
+      },
+      "nativeResult": {
+        "kind": "failure",
+        "code": 102
+      }
+    },
+    {
+      "name": "backend error 2",
+      "fields": {
+        "2": 2
+      },
+      "nativeResult": {
+        "kind": "failure",
+        "code": 103
+      }
+    },
+    {
+      "name": "backend error 3",
+      "fields": {
+        "2": 3
+      },
+      "nativeResult": {
+        "kind": "failure",
+        "code": 104
+      }
+    },
+    {
+      "name": "backend error 4",
+      "fields": {
+        "2": 4
+      },
+      "nativeResult": {
+        "kind": "failure",
+        "code": 105
+      }
+    },
+    {
+      "name": "backend error 5",
+      "fields": {
+        "2": 5
+      },
+      "nativeResult": {
+        "kind": "failure",
+        "code": 106
+      }
+    },
+    {
+      "name": "backend error 6",
+      "fields": {
+        "2": 6
+      },
+      "nativeResult": {
+        "kind": "failure",
+        "code": 107
+      }
+    },
+    {
+      "name": "backend error 7",
+      "fields": {
+        "2": 7
+      },
+      "nativeResult": {
+        "kind": "failure",
+        "code": 108
+      }
+    },
+    {
+      "name": "backend error 8",
+      "fields": {
+        "2": 8
+      },
+      "nativeResult": {
+        "kind": "failure",
+        "code": 109
+      }
+    },
+    {
+      "name": "backend error 9",
+      "fields": {
+        "2": 9
+      },
+      "nativeResult": {
+        "kind": "failure",
+        "code": 110
+      }
+    },
+    {
+      "name": "backend error 10",
+      "fields": {
+        "2": 10
+      },
+      "nativeResult": {
+        "kind": "failure",
+        "code": 101
+      }
+    },
+    {
+      "name": "backend error 1234",
+      "fields": {
+        "2": 1234
+      },
+      "nativeResult": {
+        "kind": "failure",
+        "code": 101
+      }
+    },
+    {
+      "name": "backend error -1",
+      "fields": {
+        "2": -1
+      },
+      "nativeResult": {
+        "kind": "failure",
+        "code": 101
+      }
+    },
+    {
+      "name": "backend error -2147483648",
+      "fields": {
+        "2": -2147483648
+      },
+      "nativeResult": {
+        "kind": "failure",
+        "code": 101
+      }
+    },
+    {
+      "name": "unset result",
+      "fields": {},
+      "nativeResult": {
+        "kind": "failure",
+        "code": 101
+      }
+    },
+    {
+      "name": "signup identifier",
+      "fields": {
+        "2": 5,
+        "6": "synthetic-identifier"
+      },
+      "nativeResult": {
+        "kind": "signup",
+        "identifierToken": "synthetic-identifier",
+        "userInfo": {
+          "name": "",
+          "email": "",
+          "emailVerified": false,
+          "birthdate": "",
+          "gender": 0,
+          "phoneNumber": "",
+          "phoneNumberVerified": false,
+          "emailAlreadyRegistered": false
+        }
+      }
+    },
+    {
+      "name": "signup empty user info presence",
+      "fields": {
+        "2": 5,
+        "7": {}
+      },
+      "nativeResult": {
+        "kind": "signup",
+        "identifierToken": "",
+        "userInfo": {
+          "name": "",
+          "email": "",
+          "emailVerified": false,
+          "birthdate": "",
+          "gender": 0,
+          "phoneNumber": "",
+          "phoneNumberVerified": false,
+          "emailAlreadyRegistered": false
+        }
+      }
+    },
+    {
+      "name": "signup populated user info",
+      "fields": {
+        "2": 5,
+        "6": "identifier\u0000雪",
+        "7": {
+          "1": "synthetic-name",
+          "2": "fixture@example.invalid",
+          "3": 1,
+          "4": "2000-01-02",
+          "5": 1234,
+          "6": "+15555550123",
+          "7": 1,
+          "8": 1
+        }
+      },
+      "nativeResult": {
+        "kind": "signup",
+        "identifierToken": "identifier\u0000雪",
+        "userInfo": {
+          "name": "synthetic-name",
+          "email": "fixture@example.invalid",
+          "emailVerified": true,
+          "birthdate": "2000-01-02",
+          "gender": 1234,
+          "phoneNumber": "+15555550123",
+          "phoneNumberVerified": true,
+          "emailAlreadyRegistered": true
+        }
+      }
+    },
+    {
+      "name": "empty identifier without user info is failure",
+      "fields": {
+        "2": 5,
+        "6": ""
+      },
+      "nativeResult": {
+        "kind": "failure",
+        "code": 106
+      }
+    },
+    {
+      "name": "success",
+      "fields": {
+        "1": {
+          "1": "synthetic-user",
+          "2": "synthetic-access",
+          "3": {
+            "hex": "00ff80"
+          },
+          "4": 3600
+        }
+      },
+      "nativeResult": {
+        "kind": "ok",
+        "username": "synthetic-user",
+        "storedCredentialHex": "00ff80",
+        "accessToken": "synthetic-access",
+        "expiresAtMicroseconds": 3723456789,
+        "tokenType": "Bearer"
+      }
+    },
+    {
+      "name": "success empty and negative expiry",
+      "fields": {
+        "1": {
+          "1": "",
+          "2": "",
+          "3": {
+            "hex": ""
+          },
+          "4": -1
+        }
+      },
+      "nativeResult": {
+        "kind": "ok",
+        "username": "",
+        "storedCredentialHex": "",
+        "accessToken": "",
+        "expiresAtMicroseconds": 122456789,
+        "tokenType": "Bearer"
+      }
+    },
+    {
+      "name": "success unicode and NUL",
+      "fields": {
+        "1": {
+          "1": "雪\u0000user",
+          "2": "é\u0000access",
+          "3": {
+            "hex": "ff0001"
+          },
+          "4": 0
+        }
+      },
+      "nativeResult": {
+        "kind": "ok",
+        "username": "雪\u0000user",
+        "storedCredentialHex": "ff0001",
+        "accessToken": "é\u0000access",
+        "expiresAtMicroseconds": 123456789,
+        "tokenType": "Bearer"
+      }
+    },
+    {
+      "name": "empty challenges",
+      "fields": {
+        "3": {}
+      },
+      "nativeResult": {
+        "kind": "challenges"
+      }
+    },
+    {
+      "name": "phone invalid credentials uses saved challenges",
+      "fields": {
+        "2": 1
+      },
+      "savedFields": {
+        "3": {}
+      },
+      "phone": true,
+      "nativeResult": {
+        "kind": "challenges",
+        "savedResponseAttemptIncrement": 1
+      }
+    },
+    {
+      "name": "stored invalid credentials does not use saved response",
+      "fields": {
+        "2": 1
+      },
+      "savedFields": {
+        "3": {}
+      },
+      "nativeResult": {
+        "kind": "failure",
+        "code": 102,
+        "savedResponseAttemptIncrement": 0
+      }
+    },
+    {
+      "name": "phone invalid credentials without saved response",
+      "fields": {
+        "2": 1
+      },
+      "phone": true,
+      "nativeResult": {
+        "kind": "failure",
+        "code": 102
+      }
+    }
+  ],
+  "wireCases": [
+    {
+      "name": "unknown error alone",
+      "hex": "10d209",
+      "cppResult": {
+        "accepted": true,
+        "decodedText": "error: 1234\n",
+        "kind": "error",
+        "error": 1234
+      }
+    },
+    {
+      "name": "unknown error clears prior ok",
+      "hex": "0a030a017810d209",
+      "cppResult": {
+        "accepted": true,
+        "decodedText": "error: 1234\n",
+        "kind": "error",
+        "error": 1234
+      }
+    },
+    {
+      "name": "later ok starts fresh after unknown error",
+      "hex": "0a030a017810d2090a03120179",
+      "cppResult": {
+        "accepted": true,
+        "decodedText": "ok {\n  access_token: \"y\"\n}\n",
+        "kind": "ok",
+        "username": "",
+        "access_token": "y"
+      }
+    },
+    {
+      "name": "same message oneof merges",
+      "hex": "0a030a01780a03120179",
+      "cppResult": {
+        "accepted": true,
+        "decodedText": "ok {\n  username: \"x\"\n  access_token: \"y\"\n}\n",
+        "kind": "ok",
+        "username": "x",
+        "access_token": "y"
+      }
+    },
+    {
+      "name": "later challenges clears error",
+      "hex": "10d2091a00",
+      "cppResult": {
+        "accepted": true,
+        "decodedText": "challenges {\n}\n",
+        "kind": "challenges"
+      }
+    },
+    {
+      "name": "known error clears prior ok",
+      "hex": "0a030a01781001",
+      "cppResult": {
+        "accepted": true,
+        "decodedText": "error: INVALID_CREDENTIALS\n",
+        "kind": "error",
+        "error": 1
+      }
+    },
+    {
+      "name": "error zero keeps oneof presence",
+      "hex": "1000",
+      "cppResult": {
+        "accepted": true,
+        "decodedText": "error: UNKNOWN_ERROR\n",
+        "kind": "error",
+        "error": 0
+      }
+    },
+    {
+      "name": "wrong wire enum remains unknown",
+      "hex": "120178",
+      "cppResult": {
+        "accepted": true,
+        "decodedText": "2: \"x\"\n",
+        "kind": "notSet"
+      }
+    },
+    {
+      "name": "invalid UTF8 in discarded ok",
+      "hex": "0a030a01ff1001",
+      "cppResult": {
+        "accepted": false,
+        "decodedText": ""
+      }
+    },
+    {
+      "name": "truncated message",
+      "hex": "0a040a0178",
+      "cppResult": {
+        "accepted": false,
+        "decodedText": ""
+      }
+    },
+    {
+      "name": "unmatched group",
+      "hex": "4c",
+      "cppResult": {
+        "accepted": false,
+        "decodedText": ""
+      }
+    },
+    {
+      "name": "unknown group opaque UTF8",
+      "hex": "4b0a01ff4c0a00",
+      "cppResult": {
+        "accepted": true,
+        "decodedText": "ok {\n}\n9 {\n  1: \"\\377\"\n}\n",
+        "kind": "ok",
+        "username": "",
+        "access_token": ""
+      }
+    },
+    {
+      "name": "empty protobuf",
+      "hex": "",
+      "cppResult": {
+        "accepted": true,
+        "decodedText": "",
+        "kind": "notSet"
+      }
+    },
+    {
+      "name": "unknown user info gender overwrites known",
+      "hex": "10053a05280128d209",
+      "cppResult": {
+        "accepted": true,
+        "decodedText": "error: UNKNOWN_IDENTIFIER\nuser_info {\n  gender: 1234\n}\n",
+        "kind": "error",
+        "error": 5,
+        "userInfoGender": 1234
+      }
+    },
+    {
+      "name": "wrong wire user info gender remains unknown",
+      "hex": "10053a032a0178",
+      "cppResult": {
+        "accepted": true,
+        "decodedText": "error: UNKNOWN_IDENTIFIER\nuser_info {\n  5: \"x\"\n}\n",
+        "kind": "error",
+        "error": 5
+      }
+    },
+    {
+      "name": "wrong wire code method remains unknown",
+      "hex": "1a070a0512030a0178",
+      "cppResult": {
+        "accepted": true,
+        "decodedText": "challenges {\n  challenges {\n    code {\n      1: \"x\"\n    }\n  }\n}\n",
+        "kind": "challenges"
+      }
+    },
+    {
+      "name": "signed unknown backend enum -1",
+      "hex": "10ffffffffffffffffff01",
+      "cppResult": {
+        "accepted": true,
+        "decodedText": "error: -1\n",
+        "kind": "error",
+        "error": -1
+      }
+    },
+    {
+      "name": "signed unknown backend enum -2147483648",
+      "hex": "1080808080f8ffffffff01",
+      "cppResult": {
+        "accepted": true,
+        "decodedText": "error: -2147483648\n",
+        "kind": "error",
+        "error": -2147483648
+      }
+    }
+  ],
+  "durationCases": [
+    {
+      "elapsedNanoseconds": 0,
+      "suffixHex": "000102030405060708090a0b0c0d0e0f",
+      "seconds": 0,
+      "nanos": 0,
+      "solution": {
+        "size": 22,
+        "hex": "0a140a10000102030405060708090a0b0c0d0e0f1200",
+        "sizeProcedure": "0x1018d3c1c",
+        "serializeProcedure": "0x1018d3b50"
+      }
+    },
+    {
+      "elapsedNanoseconds": 1,
+      "suffixHex": "000102030405060708090a0b0c0d0e0f",
+      "seconds": 0,
+      "nanos": 1,
+      "solution": {
+        "size": 24,
+        "hex": "0a160a10000102030405060708090a0b0c0d0e0f12021001",
+        "sizeProcedure": "0x1018d3c1c",
+        "serializeProcedure": "0x1018d3b50"
+      }
+    },
+    {
+      "elapsedNanoseconds": 999999999,
+      "suffixHex": "000102030405060708090a0b0c0d0e0f",
+      "seconds": 0,
+      "nanos": 999999999,
+      "solution": {
+        "size": 28,
+        "hex": "0a1a0a10000102030405060708090a0b0c0d0e0f120610ff93ebdc03",
+        "sizeProcedure": "0x1018d3c1c",
+        "serializeProcedure": "0x1018d3b50"
+      }
+    },
+    {
+      "elapsedNanoseconds": 1000000000,
+      "suffixHex": "000102030405060708090a0b0c0d0e0f",
+      "seconds": 1,
+      "nanos": 0,
+      "solution": {
+        "size": 24,
+        "hex": "0a160a10000102030405060708090a0b0c0d0e0f12020801",
+        "sizeProcedure": "0x1018d3c1c",
+        "serializeProcedure": "0x1018d3b50"
+      }
+    },
+    {
+      "elapsedNanoseconds": 1234567891,
+      "suffixHex": "000102030405060708090a0b0c0d0e0f",
+      "seconds": 1,
+      "nanos": 234567891,
+      "solution": {
+        "size": 29,
+        "hex": "0a1b0a10000102030405060708090a0b0c0d0e0f1207080110d3f1ec6f",
+        "sizeProcedure": "0x1018d3c1c",
+        "serializeProcedure": "0x1018d3b50"
+      }
+    },
+    {
+      "elapsedNanoseconds": -1,
+      "suffixHex": "000102030405060708090a0b0c0d0e0f",
+      "seconds": 0,
+      "nanos": -1,
+      "solution": {
+        "size": 33,
+        "hex": "0a1f0a10000102030405060708090a0b0c0d0e0f120b10ffffffffffffffffff01",
+        "sizeProcedure": "0x1018d3c1c",
+        "serializeProcedure": "0x1018d3b50"
+      }
+    },
+    {
+      "elapsedNanoseconds": -1234567891,
+      "suffixHex": "000102030405060708090a0b0c0d0e0f",
+      "seconds": -1,
+      "nanos": -234567891,
+      "solution": {
+        "size": 44,
+        "hex": "0a2a0a10000102030405060708090a0b0c0d0e0f121608ffffffffffffffffff0110ad8e9390ffffffffff01",
+        "sizeProcedure": "0x1018d3c1c",
+        "serializeProcedure": "0x1018d3b50"
+      }
+    }
+  ],
+  "emptyChallengeContinuationCases": [
+    {
+      "loginContextHex": "",
+      "result": {
+        "size": 60,
+        "hex": "0a240a1073796e7468657469632d636c69656e74121073796e7468657469632d646576696365a206130a0e73796e7468657469632d75736572120100",
+        "sizeProcedure": "0x1018d4480",
+        "serializeProcedure": "0x1018d42b4"
+      }
+    },
+    {
+      "loginContextHex": "00ff636f6e74657874",
+      "result": {
+        "size": 71,
+        "hex": "0a240a1073796e7468657469632d636c69656e74121073796e7468657469632d646576696365120900ff636f6e74657874a206130a0e73796e7468657469632d75736572120100",
+        "sizeProcedure": "0x1018d4480",
+        "serializeProcedure": "0x1018d42b4"
+      }
+    }
+  ]
+}

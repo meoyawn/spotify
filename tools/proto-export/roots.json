@@ -1,0 +1,54 @@
+{
+  "protocol": [
+    "es_desktop_login.proto",
+    "es_auth_blob.proto",
+    "es_auth_storage_result.proto",
+    "es_stored_user_info.proto",
+    "pending_event_entity.proto",
+    "es_client_token.proto",
+    "client_token.proto",
+    "spotify/client_token/v0/client_token_http.proto",
+    "es_connectivity_policy.proto",
+    "es_desktop_platform_info.proto",
+    "es_desktop_version.proto",
+    "es_prefs.proto"
+  ],
+  "playback": [
+    "connect.proto",
+    "connect-service.proto",
+    "player.proto",
+    "storage-resolve.proto",
+    "extended_metadata.proto",
+    "audio_files_extension.proto",
+    "metadata.proto",
+    "es_play.proto",
+    "es_pause.proto",
+    "es_resume.proto",
+    "es_skip_next.proto",
+    "es_skip_prev.proto",
+    "es_seek_to.proto",
+    "es_set_options.proto",
+    "es_set_shuffling_context.proto",
+    "es_response_with_reasons.proto",
+    "es_get_state_request.proto",
+    "es_context_player_state.proto",
+    "es_get_error_request.proto",
+    "es_context_player_error.proto"
+  ],
+  "library": [
+    "your_library_request.proto",
+    "your_library_response.proto",
+    "collection_add_remove_items_request.proto",
+    "collection_contains_request.proto",
+    "collection2v2.proto",
+    "playlist_modification_request.proto"
+  ],
+  "entities": [
+    "recently_played_backend.proto",
+    "image_resolve.proto",
+    "playlist_get_request.proto",
+    "playlist_sync_reason.proto",
+    "playlist_api.proto",
+    "playlist_cache.proto"
+  ]
+}

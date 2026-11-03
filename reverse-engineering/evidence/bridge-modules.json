@@ -1,0 +1,47 @@
+[
+  {
+    "module": "68213",
+    "source_offset": 4078833,
+    "length": 4079
+  },
+  {
+    "module": "83873",
+    "source_offset": 4083866,
+    "length": 1671
+  },
+  {
+    "module": "41332",
+    "source_offset": 4114772,
+    "length": 4953
+  },
+  {
+    "module": "87337",
+    "source_offset": 4119726,
+    "length": 1395
+  },
+  {
+    "module": "50937",
+    "source_offset": 4138635,
+    "length": 1014
+  },
+  {
+    "module": "1508",
+    "source_offset": 4139650,
+    "length": 1243
+  },
+  {
+    "module": "31120",
+    "source_offset": 4140894,
+    "length": 565
+  },
+  {
+    "module": "85418",
+    "source_offset": 4160624,
+    "length": 175
+  },
+  {
+    "module": "92464",
+    "source_offset": 4160800,
+    "length": 1531
+  }
+]

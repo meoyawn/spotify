@@ -1,0 +1,310 @@
+{
+  "provenance": "Unchanged original gP/gL/gk branch helpers, CollectionService and PlaylistService unary clients/codecs; synthetic URIs, explicitly supplied feature values and synthetic encoded replies; no HTTP capability.",
+  "features": {
+    "enableLikedSongsListPlatform": {
+      "name": "enableLikedSongsListPlatform",
+      "description": "Enables Liked Songs on list platform",
+      "default": true
+    },
+    "enableLikedSongsAsPlaylist": {
+      "name": "enableLikedSongsAsPlaylist",
+      "description": "Enables Liked Songs on list platform with playlist uri",
+      "default": true
+    }
+  },
+  "likedSongsAsPlaylistUri": "spotify:playlist:37i9dQZF1F5p3rmiWPIYgZ",
+  "scenarios": [
+    {
+      "name": "contains reads positional native membership",
+      "action": "contains",
+      "uris": [
+        "spotify:track:0123456789ABCDEFGHIJKL",
+        "spotify:track:abcdefghijklmnopqrstuv"
+      ],
+      "listPlatform": true,
+      "response": {
+        "status": {
+          "code": 200
+        },
+        "found": [
+          true,
+          false
+        ]
+      },
+      "responseHex": "0a0308c801120201001a00",
+      "likedSongsUri": "spotify:playlist:37i9dQZF1F5p3rmiWPIYgZ",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.collection_esperanto.proto.CollectionService",
+            "method": "Contains",
+            "payloadHex": "122473706f746966793a747261636b3a303132333435363738394142434445464748494a4b4c122473706f746966793a747261636b3a6162636465666768696a6b6c6d6e6f70717273747576"
+          }
+        ],
+        "result": [
+          true,
+          false
+        ],
+        "membership": {
+          "spotify:track:0123456789ABCDEFGHIJKL": true,
+          "spotify:track:abcdefghijklmnopqrstuv": false
+        }
+      }
+    },
+    {
+      "name": "contains preserves missing membership positions",
+      "action": "contains",
+      "uris": [
+        "spotify:track:0123456789ABCDEFGHIJKL",
+        "spotify:track:abcdefghijklmnopqrstuv"
+      ],
+      "listPlatform": false,
+      "response": {
+        "found": [
+          true
+        ]
+      },
+      "responseHex": "1201011a00",
+      "likedSongsUri": "spotify:playlist:37i9dQZF1F5p3rmiWPIYgZ",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.collection_esperanto.proto.CollectionService",
+            "method": "Contains",
+            "payloadHex": "122473706f746966793a747261636b3a303132333435363738394142434445464748494a4b4c122473706f746966793a747261636b3a6162636465666768696a6b6c6d6e6f70717273747576"
+          }
+        ],
+        "result": [
+          true
+        ],
+        "membership": {
+          "spotify:track:0123456789ABCDEFGHIJKL": true,
+          "spotify:track:abcdefghijklmnopqrstuv": false
+        }
+      }
+    },
+    {
+      "name": "collection add has only URI list when save source absent",
+      "action": "add",
+      "uris": [
+        "spotify:track:0123456789ABCDEFGHIJKL"
+      ],
+      "listPlatform": false,
+      "response": {
+        "status": {
+          "code": 200
+        }
+      },
+      "responseHex": "0a0308c801",
+      "likedSongsUri": "spotify:playlist:37i9dQZF1F5p3rmiWPIYgZ",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.collection_esperanto.proto.CollectionService",
+            "method": "Add",
+            "payloadHex": "0a2473706f746966793a747261636b3a303132333435363738394142434445464748494a4b4c"
+          }
+        ],
+        "result": null
+      }
+    },
+    {
+      "name": "collection remove has only URI list when save source absent",
+      "action": "remove",
+      "uris": [
+        "spotify:track:0123456789ABCDEFGHIJKL"
+      ],
+      "listPlatform": false,
+      "response": {
+        "status": {
+          "code": 200
+        }
+      },
+      "responseHex": "0a0308c801",
+      "likedSongsUri": "spotify:playlist:37i9dQZF1F5p3rmiWPIYgZ",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.collection_esperanto.proto.CollectionService",
+            "method": "Remove",
+            "payloadHex": "0a2473706f746966793a747261636b3a303132333435363738394142434445464748494a4b4c"
+          }
+        ],
+        "result": null
+      }
+    },
+    {
+      "name": "collection add uses item data for explicit save source",
+      "action": "add",
+      "uris": [
+        "spotify:track:0123456789ABCDEFGHIJKL"
+      ],
+      "listPlatform": false,
+      "saveSource": {
+        "originalUri": "spotify:album:0123456789ABCDEFGHIJKL",
+        "interactionId": "synthetic-interaction",
+        "sourceTool": 1
+      },
+      "response": {
+        "status": {
+          "code": 200
+        }
+      },
+      "responseHex": "0a0308c801",
+      "likedSongsUri": "spotify:playlist:37i9dQZF1F5p3rmiWPIYgZ",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.collection_esperanto.proto.CollectionService",
+            "method": "Add",
+            "payloadHex": "12670a2473706f746966793a747261636b3a303132333435363738394142434445464748494a4b4c123f0a3d0a2473706f746966793a616c62756d3a303132333435363738394142434445464748494a4b4c121573796e7468657469632d696e746572616374696f6e"
+          }
+        ],
+        "result": null
+      }
+    },
+    {
+      "name": "collection remove uses item data for explicit save source",
+      "action": "remove",
+      "uris": [
+        "spotify:track:0123456789ABCDEFGHIJKL"
+      ],
+      "listPlatform": false,
+      "saveSource": {
+        "originalUri": "spotify:album:0123456789ABCDEFGHIJKL",
+        "interactionId": "synthetic-interaction",
+        "sourceTool": 1
+      },
+      "response": {
+        "status": {
+          "code": 200
+        }
+      },
+      "responseHex": "0a0308c801",
+      "likedSongsUri": "spotify:playlist:37i9dQZF1F5p3rmiWPIYgZ",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.collection_esperanto.proto.CollectionService",
+            "method": "Remove",
+            "payloadHex": "12670a2473706f746966793a747261636b3a303132333435363738394142434445464748494a4b4c123f0a3d0a2473706f746966793a616c62756d3a303132333435363738394142434445464748494a4b4c121573796e7468657469632d696e746572616374696f6e"
+          }
+        ],
+        "result": null
+      }
+    },
+    {
+      "name": "default list platform adds to installed liked playlist URI",
+      "action": "add",
+      "uris": [
+        "spotify:track:0123456789ABCDEFGHIJKL"
+      ],
+      "listPlatform": true,
+      "response": {
+        "status": {
+          "statusCode": 200
+        },
+        "addedRowIds": [
+          "synthetic-row"
+        ]
+      },
+      "responseHex": "0a0308c801120d73796e7468657469632d726f77",
+      "likedSongsUri": "spotify:playlist:37i9dQZF1F5p3rmiWPIYgZ",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.playlist_esperanto.proto.PlaylistService",
+            "method": "Modify",
+            "payloadHex": "0a2773706f746966793a706c61796c6973743a3337693964515a463146357033726d6957504959675a122d0a036164643a2473706f746966793a747261636b3a303132333435363738394142434445464748494a4b4c5a00"
+          }
+        ],
+        "result": null
+      }
+    },
+    {
+      "name": "default list platform removes from installed liked playlist URI",
+      "action": "remove",
+      "uris": [
+        "spotify:track:0123456789ABCDEFGHIJKL"
+      ],
+      "listPlatform": true,
+      "response": {
+        "status": {
+          "statusCode": 200
+        }
+      },
+      "responseHex": "0a0308c801",
+      "likedSongsUri": "spotify:playlist:37i9dQZF1F5p3rmiWPIYgZ",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.playlist_esperanto.proto.PlaylistService",
+            "method": "Modify",
+            "payloadHex": "0a2773706f746966793a706c61796c6973743a3337693964515a463146357033726d6957504959675a12300a0672656d6f76653a2473706f746966793a747261636b3a303132333435363738394142434445464748494a4b4c5a00"
+          }
+        ],
+        "result": null
+      }
+    },
+    {
+      "name": "list platform uses only original and interaction URI save source fields",
+      "action": "add",
+      "uris": [
+        "spotify:track:0123456789ABCDEFGHIJKL"
+      ],
+      "listPlatform": true,
+      "saveSource": {
+        "originalUri": "spotify:album:0123456789ABCDEFGHIJKL",
+        "interactionId": "synthetic-interaction",
+        "sourceTool": 1
+      },
+      "response": {
+        "status": {
+          "statusCode": 200
+        }
+      },
+      "responseHex": "0a0308c801",
+      "likedSongsUri": "spotify:playlist:37i9dQZF1F5p3rmiWPIYgZ",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.playlist_esperanto.proto.PlaylistService",
+            "method": "Modify",
+            "payloadHex": "0a2773706f746966793a706c61796c6973743a3337693964515a463146357033726d6957504959675a126c0a036164643a2473706f746966793a747261636b3a303132333435363738394142434445464748494a4b4c5a006a3d0a2473706f746966793a616c62756d3a303132333435363738394142434445464748494a4b4c121573796e7468657469632d696e746572616374696f6e"
+          }
+        ],
+        "result": null
+      }
+    },
+    {
+      "name": "list platform removes from explicit user collection URI",
+      "action": "remove",
+      "uris": [
+        "spotify:track:0123456789ABCDEFGHIJKL"
+      ],
+      "listPlatform": true,
+      "likedSongsUri": "spotify:user:synthetic:collection",
+      "saveSource": {
+        "originalUri": "spotify:album:0123456789ABCDEFGHIJKL",
+        "interactionId": "synthetic-interaction",
+        "sourceTool": 1
+      },
+      "response": {
+        "status": {
+          "statusCode": 200
+        }
+      },
+      "responseHex": "0a0308c801",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.playlist_esperanto.proto.PlaylistService",
+            "method": "Modify",
+            "payloadHex": "0a2173706f746966793a757365723a73796e7468657469633a636f6c6c656374696f6e126f0a0672656d6f76653a2473706f746966793a747261636b3a303132333435363738394142434445464748494a4b4c5a006a3d0a2473706f746966793a616c62756d3a303132333435363738394142434445464748494a4b4c121573796e7468657469632d696e746572616374696f6e"
+          }
+        ],
+        "result": null
+      }
+    }
+  ]
+}

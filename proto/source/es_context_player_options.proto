@@ -1,0 +1,38 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: 21fa5a278a8d03ca6511350a7d675f0d9260f627ee3bbd8ffc1f08e2afbed03a
+
+syntax = "proto3";
+
+package spotify.player.esperanto.proto;
+
+import "es_optional.proto";
+
+option java_package = "com.spotify.player.esperanto.proto";
+
+option objc_class_prefix = "ESP";
+
+option optimize_for = CODE_SIZE;
+
+message ContextPlayerOptions {
+  bool shuffling_context = 1;
+
+  bool repeating_context = 2;
+
+  bool repeating_track = 3;
+
+  optional float playback_speed = 4;
+
+  map<string, string> modes = 5;
+}
+
+message ContextPlayerOptionOverrides {
+  .spotify.player.esperanto.proto.OptionalBoolean shuffling_context = 1;
+
+  .spotify.player.esperanto.proto.OptionalBoolean repeating_context = 2;
+
+  .spotify.player.esperanto.proto.OptionalBoolean repeating_track = 3;
+
+  optional float playback_speed = 4;
+
+  map<string, string> modes = 5;
+}

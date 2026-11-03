@@ -1,0 +1,566 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "originalProtobufFieldLayouts": {
+    "descriptor": {
+      "file": "metadata.proto",
+      "offset": 36892756,
+      "length": 9268,
+      "sha256": "9cf8b85b4a637e95051bd1ecf074f5cd489b6a80a17d00d6f6421b8413f0e6d0"
+    },
+    "messages": {
+      "Album": {
+        "fullName": "spotify.metadata.Album",
+        "tableAddress": "0x1027b2fb0",
+        "hasBitsOffset": 16,
+        "fields": [
+          {
+            "number": 1,
+            "name": "gid",
+            "memoryOffset": 264,
+            "hasIndex": 128,
+            "typeCard": "0x815"
+          },
+          {
+            "number": 2,
+            "name": "name",
+            "memoryOffset": 272,
+            "hasIndex": 129,
+            "typeCard": "0xa15"
+          },
+          {
+            "number": 3,
+            "name": "artist",
+            "memoryOffset": 24,
+            "hasIndex": -1,
+            "typeCard": "0x426",
+            "nativeSubmessageTable": "0x1027b2b88"
+          },
+          {
+            "number": 4,
+            "name": "type",
+            "memoryOffset": 348,
+            "hasIndex": 139,
+            "typeCard": "0x1e91"
+          },
+          {
+            "number": 5,
+            "name": "label",
+            "memoryOffset": 280,
+            "hasIndex": 130,
+            "typeCard": "0xa15"
+          },
+          {
+            "number": 6,
+            "name": "date",
+            "memoryOffset": 312,
+            "hasIndex": 134,
+            "typeCard": "0x416",
+            "nativeSubmessageTable": "0x1027b4928"
+          },
+          {
+            "number": 7,
+            "name": "popularity",
+            "memoryOffset": 344,
+            "hasIndex": 138,
+            "typeCard": "0x1291"
+          },
+          {
+            "number": 9,
+            "name": "cover",
+            "memoryOffset": 48,
+            "hasIndex": -1,
+            "typeCard": "0x426",
+            "nativeSubmessageTable": "0x1027b4a90"
+          },
+          {
+            "number": 10,
+            "name": "external_id",
+            "memoryOffset": 72,
+            "hasIndex": -1,
+            "typeCard": "0x426",
+            "nativeSubmessageTable": "0x1027b5678"
+          },
+          {
+            "number": 11,
+            "name": "disc",
+            "memoryOffset": 96,
+            "hasIndex": -1,
+            "typeCard": "0x426",
+            "nativeSubmessageTable": "0x1027b4dc8"
+          },
+          {
+            "number": 12,
+            "name": "review",
+            "memoryOffset": 120,
+            "hasIndex": -1,
+            "typeCard": "0xb25"
+          },
+          {
+            "number": 13,
+            "name": "copyright",
+            "memoryOffset": 144,
+            "hasIndex": -1,
+            "typeCard": "0x426",
+            "nativeSubmessageTable": "0x1027b4f00"
+          },
+          {
+            "number": 14,
+            "name": "restriction",
+            "memoryOffset": 168,
+            "hasIndex": -1,
+            "typeCard": "0x426",
+            "nativeSubmessageTable": "0x1027b5010"
+          },
+          {
+            "number": 15,
+            "name": "related",
+            "memoryOffset": 192,
+            "hasIndex": -1,
+            "typeCard": "0x426",
+            "nativeSubmessageTable": "0x1027b2fb0"
+          },
+          {
+            "number": 16,
+            "name": "sale_period",
+            "memoryOffset": 216,
+            "hasIndex": -1,
+            "typeCard": "0x426",
+            "nativeSubmessageTable": "0x1027b5550"
+          },
+          {
+            "number": 17,
+            "name": "cover_group",
+            "memoryOffset": 320,
+            "hasIndex": 135,
+            "typeCard": "0x416",
+            "nativeSubmessageTable": "0x1027b4bb8"
+          },
+          {
+            "number": 18,
+            "name": "original_title",
+            "memoryOffset": 288,
+            "hasIndex": 131,
+            "typeCard": "0xa15"
+          },
+          {
+            "number": 19,
+            "name": "version_title",
+            "memoryOffset": 296,
+            "hasIndex": 132,
+            "typeCard": "0xa15"
+          },
+          {
+            "number": 20,
+            "name": "type_str",
+            "memoryOffset": 304,
+            "hasIndex": 133,
+            "typeCard": "0xa15"
+          },
+          {
+            "number": 23,
+            "name": "availability",
+            "memoryOffset": 240,
+            "hasIndex": -1,
+            "typeCard": "0x426",
+            "nativeSubmessageTable": "0x1027b51d8"
+          },
+          {
+            "number": 42,
+            "name": "prerelease_end_date",
+            "memoryOffset": 336,
+            "hasIndex": 137,
+            "typeCard": "0x10d1"
+          },
+          {
+            "number": 44,
+            "name": "content_access_status",
+            "memoryOffset": 328,
+            "hasIndex": 136,
+            "typeCard": "0x416",
+            "nativeSubmessageTable": "0x1027b52f8"
+          }
+        ],
+        "tableMetadataSha256": "dd25fb4129eb657449e7b8a0a105f7d4e7997942589504cc7e17cd37538cca6b"
+      },
+      "ImageGroup": {
+        "fullName": "spotify.metadata.ImageGroup",
+        "tableAddress": "0x1027b4bb8",
+        "hasBitsOffset": 0,
+        "fields": [
+          {
+            "number": 1,
+            "name": "image",
+            "memoryOffset": 16,
+            "hasIndex": 0,
+            "typeCard": "0x426",
+            "nativeSubmessageTable": "0x1027b4a90"
+          }
+        ],
+        "tableMetadataSha256": "d72d89c2b0971551cdfa7a56f0988d7794e68803c125bbeb428f45b6a481580a"
+      },
+      "Image": {
+        "fullName": "spotify.metadata.Image",
+        "tableAddress": "0x1027b4a90",
+        "hasBitsOffset": 16,
+        "fields": [
+          {
+            "number": 1,
+            "name": "file_id",
+            "memoryOffset": 24,
+            "hasIndex": 128,
+            "typeCard": "0x815"
+          },
+          {
+            "number": 2,
+            "name": "size",
+            "memoryOffset": 32,
+            "hasIndex": 129,
+            "typeCard": "0x1e91"
+          },
+          {
+            "number": 3,
+            "name": "width",
+            "memoryOffset": 36,
+            "hasIndex": 130,
+            "typeCard": "0x1291"
+          },
+          {
+            "number": 4,
+            "name": "height",
+            "memoryOffset": 40,
+            "hasIndex": 131,
+            "typeCard": "0x1291"
+          }
+        ],
+        "tableMetadataSha256": "c9f74e1baa3f9d66b845db0e1fb42d74b3a879a47e0acce4632994a4cd6b39a8"
+      }
+    },
+    "standardLayoutReference": "https://github.com/protocolbuffers/protobuf/blob/v33.0/src/google/protobuf/generated_message_tctable_decl.h"
+  },
+  "entryPoints": {
+    "selector": "0x101b8ed6c",
+    "mosaicUriWriter": "0x101f4ef08",
+    "imageUriParser": "0x101f4476c",
+    "albumImageProvider": "0x101d051bc",
+    "imageGroupSelector": "0x101d08ec4",
+    "packedRankZeroReader": "0x101cb4c5c",
+    "packedDefaultSlotWriterSlice": [
+      "0x101cdf8a4",
+      "0x101cdf8c4"
+    ]
+  },
+  "codeRanges": [
+    {
+      "start": "0x101b8ed6c",
+      "endExclusive": "0x101b8edc4",
+      "sha256": "7f2b4295dce37fccabca03779d6911c07f8fce75b152486d7a253f0569f2feba"
+    },
+    {
+      "start": "0x101f45ff4",
+      "endExclusive": "0x101f46150",
+      "sha256": "43e14de2e4710b2dfdeac0738fd6e6b20402813eeb12543d251b93ef01592700"
+    },
+    {
+      "start": "0x101f4ef08",
+      "endExclusive": "0x101f4efe4",
+      "sha256": "692dfb909243c0b34ce017a399803a483f2fb5db7bec918f87ccb2642e99bd44"
+    },
+    {
+      "start": "0x101d051bc",
+      "endExclusive": "0x101d05210",
+      "sha256": "2811d152b018163a419ee63bc061ccc25dfccc96535443224dccef918dfc1617"
+    },
+    {
+      "start": "0x101d08ec4",
+      "endExclusive": "0x101d08f38",
+      "sha256": "8609157ae5e6e1c96fa8bface73ee8c0dafb638aafcbed309e0c5deca39a1190"
+    },
+    {
+      "start": "0x101cdf8a4",
+      "endExclusive": "0x101cdf8c4",
+      "sha256": "9e80ce5b8942497500f81c17d622b4073aa7fabc7178a579abc0df427e229a26"
+    },
+    {
+      "start": "0x101cb4c5c",
+      "endExclusive": "0x101cb4d3c",
+      "sha256": "d225dbbc6fd5cb677e20f913e62d230a0ef8be3efa082d20fdd03abb36cd59e5"
+    }
+  ],
+  "standardSubstitutions": [
+    "Existing ResolverOracle standard allocation, memory, libc++ string and static guard providers.",
+    "Original standard snprintf format/varargs are forwarded to system libc snprintf; no proprietary selection or URI formatting branch is substituted.",
+    "Collector cases supply explicit already-selected URI values through the original image provider virtual+0x18. Original rank order, URI equality deduplication, readiness and finalizer execute unchanged.",
+    "Default-image cases supply standard native protobuf ImageGroup/Image and Album-view storage. Original Album provider and size matching execute unchanged, then the exact original URI-to-packed-default-slot slice and original packed rank-zero URI reader execute. No Dart algorithm supplies expected IDs/URIs."
+  ],
+  "observedPrintfFormats": [
+    "%s",
+    ":%s",
+    "spotify:image:%s"
+  ],
+  "limits": [
+    "Inputs are synthetic already-admitted, ordered image components; playlist source admission, source order, visual trait policy and metadata acquisition remain explicit caller context.",
+    "Track normal image path reads Album.cover_group only; first matching effective Image.size0 must have exactly20-bytefile_id. Legacy cover-only and nonnormal source strategies are not inferred.",
+    "Original playlist caller uses grid dimension2 and stops at4 distinct admitted image URIs; selector cases above4 characterize the helper only.",
+    "No HTTP, app/profile/cache access, original identities or image payloads are involved."
+  ],
+  "cases": [
+    {
+      "componentIdsHex": [],
+      "originalUri": ""
+    },
+    {
+      "componentIdsHex": [
+        "0000000000000000000000000000000000000001"
+      ],
+      "originalUri": "spotify:image:0000000000000000000000000000000000000001"
+    },
+    {
+      "componentIdsHex": [
+        "0000000000000000000000000000000000000001",
+        "0000000000000000000000000000000000000002"
+      ],
+      "originalUri": "spotify:image:0000000000000000000000000000000000000001"
+    },
+    {
+      "componentIdsHex": [
+        "0000000000000000000000000000000000000001",
+        "0000000000000000000000000000000000000002",
+        "0000000000000000000000000000000000000003"
+      ],
+      "originalUri": "spotify:image:0000000000000000000000000000000000000001"
+    },
+    {
+      "componentIdsHex": [
+        "0000000000000000000000000000000000000001",
+        "0000000000000000000000000000000000000002",
+        "0000000000000000000000000000000000000003",
+        "0000000000000000000000000000000000000004"
+      ],
+      "originalUri": "spotify:mosaic:0000000000000000000000000000000000000001:0000000000000000000000000000000000000002:0000000000000000000000000000000000000003:0000000000000000000000000000000000000004"
+    },
+    {
+      "componentIdsHex": [
+        "0000000000000000000000000000000000000001",
+        "0000000000000000000000000000000000000002",
+        "0000000000000000000000000000000000000003",
+        "0000000000000000000000000000000000000004",
+        "0000000000000000000000000000000000000005"
+      ],
+      "originalUri": "spotify:mosaic:0000000000000000000000000000000000000001:0000000000000000000000000000000000000002:0000000000000000000000000000000000000003:0000000000000000000000000000000000000004"
+    },
+    {
+      "componentIdsHex": [
+        "0000000000000000000000000000000000000001",
+        "0000000000000000000000000000000000000002",
+        "0000000000000000000000000000000000000003",
+        "0000000000000000000000000000000000000004",
+        "0000000000000000000000000000000000000005",
+        "0000000000000000000000000000000000000006",
+        "0000000000000000000000000000000000000007",
+        "0000000000000000000000000000000000000008"
+      ],
+      "originalUri": "spotify:mosaic:0000000000000000000000000000000000000001:0000000000000000000000000000000000000002:0000000000000000000000000000000000000003:0000000000000000000000000000000000000004"
+    },
+    {
+      "componentIdsHex": [
+        "0000000000000000000000000000000000000001",
+        "0000000000000000000000000000000000000002",
+        "0000000000000000000000000000000000000003",
+        "0000000000000000000000000000000000000004",
+        "0000000000000000000000000000000000000005",
+        "0000000000000000000000000000000000000006",
+        "0000000000000000000000000000000000000007",
+        "0000000000000000000000000000000000000008",
+        "0000000000000000000000000000000000000009"
+      ],
+      "originalUri": "spotify:mosaic:0000000000000000000000000000000000000001:0000000000000000000000000000000000000002:0000000000000000000000000000000000000003:0000000000000000000000000000000000000004:0000000000000000000000000000000000000005:0000000000000000000000000000000000000006:0000000000000000000000000000000000000007:0000000000000000000000000000000000000008:0000000000000000000000000000000000000009"
+    }
+  ],
+  "collectorCases": [
+    {
+      "orderedSelectedIdsHex": [],
+      "originalUri": "",
+      "visitedSourceCount": 0,
+      "requestedProviderRanks": []
+    },
+    {
+      "orderedSelectedIdsHex": [
+        "0000000000000000000000000000000000000001"
+      ],
+      "originalUri": "spotify:image:0000000000000000000000000000000000000001",
+      "visitedSourceCount": 1,
+      "requestedProviderRanks": [
+        0
+      ]
+    },
+    {
+      "orderedSelectedIdsHex": [
+        "0000000000000000000000000000000000000001",
+        "0000000000000000000000000000000000000002"
+      ],
+      "originalUri": "spotify:image:0000000000000000000000000000000000000001",
+      "visitedSourceCount": 2,
+      "requestedProviderRanks": [
+        0,
+        0
+      ]
+    },
+    {
+      "orderedSelectedIdsHex": [
+        "0000000000000000000000000000000000000001",
+        "0000000000000000000000000000000000000002",
+        "0000000000000000000000000000000000000003"
+      ],
+      "originalUri": "spotify:image:0000000000000000000000000000000000000001",
+      "visitedSourceCount": 3,
+      "requestedProviderRanks": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "orderedSelectedIdsHex": [
+        "0000000000000000000000000000000000000001",
+        "0000000000000000000000000000000000000002",
+        "0000000000000000000000000000000000000003",
+        "0000000000000000000000000000000000000004",
+        "0000000000000000000000000000000000000005"
+      ],
+      "originalUri": "spotify:mosaic:0000000000000000000000000000000000000001:0000000000000000000000000000000000000002:0000000000000000000000000000000000000003:0000000000000000000000000000000000000004",
+      "visitedSourceCount": 4,
+      "requestedProviderRanks": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "orderedSelectedIdsHex": [
+        "0000000000000000000000000000000000000001",
+        "0000000000000000000000000000000000000002",
+        "0000000000000000000000000000000000000001",
+        "0000000000000000000000000000000000000003",
+        "0000000000000000000000000000000000000004",
+        "0000000000000000000000000000000000000005"
+      ],
+      "originalUri": "spotify:mosaic:0000000000000000000000000000000000000001:0000000000000000000000000000000000000002:0000000000000000000000000000000000000003:0000000000000000000000000000000000000004",
+      "visitedSourceCount": 5,
+      "requestedProviderRanks": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "defaultImageCases": [
+    {
+      "name": "absent group",
+      "coverGroupPresent": false,
+      "images": [
+        {
+          "rawSize": 0,
+          "fileIdHex": "0101010101010101010101010101010101010101"
+        }
+      ],
+      "originalRankZeroUri": ""
+    },
+    {
+      "name": "empty group",
+      "coverGroupPresent": true,
+      "images": [],
+      "originalRankZeroUri": ""
+    },
+    {
+      "name": "only default",
+      "coverGroupPresent": true,
+      "images": [
+        {
+          "rawSize": 0,
+          "fileIdHex": "0101010101010101010101010101010101010101"
+        }
+      ],
+      "originalRankZeroUri": "spotify:image:0101010101010101010101010101010101010101"
+    },
+    {
+      "name": "small before default",
+      "coverGroupPresent": true,
+      "images": [
+        {
+          "rawSize": 1,
+          "fileIdHex": "0202020202020202020202020202020202020202"
+        },
+        {
+          "rawSize": 0,
+          "fileIdHex": "0101010101010101010101010101010101010101"
+        }
+      ],
+      "originalRankZeroUri": "spotify:image:0101010101010101010101010101010101010101"
+    },
+    {
+      "name": "large only has no rank-zero fallback",
+      "coverGroupPresent": true,
+      "images": [
+        {
+          "rawSize": 2,
+          "fileIdHex": "0303030303030303030303030303030303030303"
+        }
+      ],
+      "originalRankZeroUri": ""
+    },
+    {
+      "name": "first default retained",
+      "coverGroupPresent": true,
+      "images": [
+        {
+          "rawSize": 0,
+          "fileIdHex": "0101010101010101010101010101010101010101"
+        },
+        {
+          "rawSize": 0,
+          "fileIdHex": "0404040404040404040404040404040404040404"
+        }
+      ],
+      "originalRankZeroUri": "spotify:image:0101010101010101010101010101010101010101"
+    },
+    {
+      "name": "first malformed default stops",
+      "coverGroupPresent": true,
+      "images": [
+        {
+          "rawSize": 0,
+          "fileIdHex": "05050505050505050505050505050505050505"
+        },
+        {
+          "rawSize": 0,
+          "fileIdHex": "0101010101010101010101010101010101010101"
+        }
+      ],
+      "originalRankZeroUri": ""
+    },
+    {
+      "name": "all-zero default is absent after packed reader",
+      "coverGroupPresent": true,
+      "images": [
+        {
+          "rawSize": 0,
+          "fileIdHex": "0000000000000000000000000000000000000000"
+        }
+      ],
+      "originalRankZeroUri": ""
+    },
+    {
+      "name": "absent size uses proto2 default zero",
+      "coverGroupPresent": true,
+      "images": [
+        {
+          "fileIdHex": "0606060606060606060606060606060606060606"
+        }
+      ],
+      "originalRankZeroUri": "spotify:image:0606060606060606060606060606060606060606"
+    }
+  ]
+}

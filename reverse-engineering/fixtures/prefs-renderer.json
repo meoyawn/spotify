@@ -1,0 +1,266 @@
+{
+  "provenance": "Selected original renderer Prefs factory executed with inert transport. Synthetic values only; no original app or user prefs read.",
+  "bundleSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+  "responseHex": "0a1c0a086c616e677561676512101a0e666978747572652d6c6f63616c650a0b0a076d697373696e6712000a0a0a047a65726f120208000a0e0a0864697361626c6564120210000a0b0a05656d70747912021a00",
+  "scenarios": [
+    {
+      "name": "get language",
+      "method": "get",
+      "input": {
+        "key": "language"
+      },
+      "response": {
+        "entries": {
+          "language": {
+            "string": "fixture-locale"
+          },
+          "missing": {},
+          "zero": {
+            "number": "0"
+          },
+          "disabled": {
+            "bool": false
+          },
+          "empty": {
+            "string": ""
+          }
+        }
+      },
+      "calls": [
+        {
+          "service": "spotify.prefs.esperanto.proto.Prefs",
+          "method": "Get",
+          "payloadHex": "0a086c616e6775616765"
+        }
+      ]
+    },
+    {
+      "name": "get empty key uses empty protobuf",
+      "method": "get",
+      "input": {
+        "key": ""
+      },
+      "response": {
+        "entries": {
+          "language": {
+            "string": "fixture-locale"
+          },
+          "missing": {},
+          "zero": {
+            "number": "0"
+          },
+          "disabled": {
+            "bool": false
+          },
+          "empty": {
+            "string": ""
+          }
+        }
+      },
+      "calls": [
+        {
+          "service": "spotify.prefs.esperanto.proto.Prefs",
+          "method": "Get",
+          "payloadHex": ""
+        }
+      ]
+    },
+    {
+      "name": "subscribe key forwards cancellation",
+      "method": "sub",
+      "input": {
+        "key": "ui.minimize_to_tray"
+      },
+      "events": [
+        {
+          "entries": {
+            "language": {
+              "string": "fixture-locale"
+            },
+            "missing": {},
+            "zero": {
+              "number": "0"
+            },
+            "disabled": {
+              "bool": false
+            },
+            "empty": {
+              "string": ""
+            }
+          }
+        }
+      ],
+      "cancellationCount": 1,
+      "calls": [
+        {
+          "service": "spotify.prefs.esperanto.proto.Prefs",
+          "method": "Sub",
+          "payloadHex": "0a1375692e6d696e696d697a655f746f5f74726179"
+        }
+      ]
+    },
+    {
+      "name": "get all",
+      "method": "getAll",
+      "input": {},
+      "response": {
+        "entries": {
+          "language": {
+            "string": "fixture-locale"
+          },
+          "missing": {},
+          "zero": {
+            "number": "0"
+          },
+          "disabled": {
+            "bool": false
+          },
+          "empty": {
+            "string": ""
+          }
+        }
+      },
+      "calls": [
+        {
+          "service": "spotify.prefs.esperanto.proto.Prefs",
+          "method": "GetAll",
+          "payloadHex": ""
+        }
+      ]
+    },
+    {
+      "name": "subscribe all forwards cancellation",
+      "method": "subAll",
+      "input": {},
+      "events": [
+        {
+          "entries": {
+            "language": {
+              "string": "fixture-locale"
+            },
+            "missing": {},
+            "zero": {
+              "number": "0"
+            },
+            "disabled": {
+              "bool": false
+            },
+            "empty": {
+              "string": ""
+            }
+          }
+        }
+      ],
+      "cancellationCount": 1,
+      "calls": [
+        {
+          "service": "spotify.prefs.esperanto.proto.Prefs",
+          "method": "SubAll",
+          "payloadHex": ""
+        }
+      ]
+    },
+    {
+      "name": "set preserves zero and empty oneof values",
+      "method": "set",
+      "input": {
+        "entries": {
+          "zero": {
+            "number": "0"
+          },
+          "disabled": {
+            "bool": false
+          },
+          "empty": {
+            "string": ""
+          },
+          "minimum": {
+            "number": "-9223372036854775808"
+          },
+          "maximum": {
+            "number": "9223372036854775807"
+          },
+          "absent": {}
+        }
+      },
+      "response": {
+        "entries": {
+          "language": {
+            "string": "fixture-locale"
+          },
+          "missing": {},
+          "zero": {
+            "number": "0"
+          },
+          "disabled": {
+            "bool": false
+          },
+          "empty": {
+            "string": ""
+          }
+        }
+      },
+      "calls": [
+        {
+          "service": "spotify.prefs.esperanto.proto.Prefs",
+          "method": "Set",
+          "payloadHex": "0a0a0a047a65726f120208000a0e0a0864697361626c6564120210000a0b0a05656d70747912021a000a160a076d696e696d756d120b08808080808080808080010a150a076d6178696d756d120a08ffffffffffffffff7f0a0a0a06616273656e741200"
+        }
+      ]
+    },
+    {
+      "name": "create startup settings",
+      "method": "create",
+      "input": {
+        "entries": {
+          "app.autostart-mode": {
+            "string": "off"
+          },
+          "ui.minimize_to_tray": {
+            "bool": true
+          },
+          "app.enable-launcher": {
+            "bool": false
+          }
+        }
+      },
+      "response": {
+        "entries": {
+          "language": {
+            "string": "fixture-locale"
+          },
+          "missing": {},
+          "zero": {
+            "number": "0"
+          },
+          "disabled": {
+            "bool": false
+          },
+          "empty": {
+            "string": ""
+          }
+        }
+      },
+      "calls": [
+        {
+          "service": "spotify.prefs.esperanto.proto.Prefs",
+          "method": "Create",
+          "payloadHex": "0a1b0a126170702e6175746f73746172742d6d6f646512051a036f66660a190a1375692e6d696e696d697a655f746f5f74726179120210010a190a136170702e656e61626c652d6c61756e6368657212021000"
+        }
+      ]
+    },
+    {
+      "name": "numbers outside signed int64 fail before transport",
+      "method": "set",
+      "input": {
+        "entries": {
+          "tooLarge": {
+            "number": "9223372036854775808"
+          }
+        }
+      },
+      "errorMessage": "value provided for field message.number of type int64 too large",
+      "calls": []
+    }
+  ]
+}

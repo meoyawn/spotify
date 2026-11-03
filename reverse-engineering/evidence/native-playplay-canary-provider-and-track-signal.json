@@ -1,0 +1,166 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "authority": "Static proprietary original instructions, original vtable data and retained original REA pseudocode. No application/scheduler execution or outgoing request.",
+  "retainedExports": [
+    {
+      "path": ".local/rea-session/native-component-registry-shared-setup-frame.json",
+      "sha256": "f26c2f6af1a9c57126f1d285e66f9c9a860905a1893bee9e1ad51c96422c4499"
+    },
+    {
+      "path": ".local/rea-session/native-core-component-manager-dependency-frame.json",
+      "sha256": "c0108ca54815650c479d9ee0351cd6b9079770fa1d19f8ae8304b72db5dae3d8"
+    },
+    {
+      "path": ".local/rea-session/native-http-auth-provider-install-and-monolith-boundary.json",
+      "sha256": "945f9d139a9c3c78a3c519bc50e4502d6c3851a4e30514a5fc63dc6a5e93e17c"
+    },
+    {
+      "path": ".local/rea-session/native-http-monolith-auth-interface-concrete-input.json",
+      "sha256": "f21281e8898505935d85da58feb2b5777fd0b179a0de7a373baac850583434ad"
+    },
+    {
+      "path": ".local/rea-session/native-http-authorization-desktop-root-concrete-session.json",
+      "sha256": "789ef891b501d9c0a100798008ca9ffc21f8a20c292914183fbd046e633fc86d"
+    },
+    {
+      "path": ".local/rea-session/dart-native-product-state-source-and-quality-context.json",
+      "sha256": "892a12f997ac1f785bbdbfbaa10a4bbc1a8de51e6e0da72d04bcc09606a64361"
+    },
+    {
+      "path": ".local/rea-session/native-http-login-state-real-session-context-caller.json",
+      "sha256": "09dccbced882f11c8891e2cb9191db34d4ad255262af2b823dfd6d238b1764e5"
+    }
+  ],
+  "rawAssembly": {
+    "path": ".local/rea-session/native-canary-provider-and-track-signal-lineage.asm",
+    "sha256": "49b532b0ddef8d1bb7c53e70c9c99d6b40db051c1a7a103929f0949dba62974d"
+  },
+  "codeRanges": [
+    {
+      "start": "0x100063dec",
+      "endExclusive": "0x100063e4c",
+      "sha256": "5756a254d47ee197d5c9309f5e1739693f154ad73e48c95d56008228d2cdadbb"
+    },
+    {
+      "start": "0x100072aa4",
+      "endExclusive": "0x100072b50",
+      "sha256": "b039e93ab3f152d8fc540c1dba1f7b80cbb27a72c498476aa212677968b0cb74"
+    },
+    {
+      "start": "0x100af625c",
+      "endExclusive": "0x100af629c",
+      "sha256": "4f8bf12e4b19ce9c139f96a2390dc4447f1dada2c32fdde973cf2ce92ed8a654"
+    },
+    {
+      "start": "0x100af7478",
+      "endExclusive": "0x100af7528",
+      "sha256": "121632f4da466290b8ee2b545ae6124dd71ec0fbb794fdad9613438ea6cf2abc"
+    },
+    {
+      "start": "0x100af76c4",
+      "endExclusive": "0x100af776c",
+      "sha256": "4d4c8a20f1445ea290fce74d68fb14fc7b24def0e8fcd74107fcd6a9c3de822b"
+    },
+    {
+      "start": "0x1010b95ac",
+      "endExclusive": "0x1010b95d4",
+      "sha256": "2a1e15cfa2def3d1b3ce63bae5691ed8474656d269e290adb2f5d66a95750c6a"
+    },
+    {
+      "start": "0x1010b98c8",
+      "endExclusive": "0x1010b98e0",
+      "sha256": "b6285d1266cbb98f4316489cd41bb5de13aead401875ed1675627cc81427470f"
+    },
+    {
+      "start": "0x1010bbd7c",
+      "endExclusive": "0x1010bbd84",
+      "sha256": "e49d723757a27dfbd7d070c170b9b4dd52389a089158ee08e5b69641210ae3f3"
+    },
+    {
+      "start": "0x1010c6858",
+      "endExclusive": "0x1010c68e0",
+      "sha256": "17f1101cb81d887a9717462112b99db49b821285af019689e3bb01d1c93336cb"
+    },
+    {
+      "start": "0x1010c79b8",
+      "endExclusive": "0x1010c7b1c",
+      "sha256": "2f279a9cdc9dee6172a549d41870c3d83a407e329e4ee83466885f7d562148c8"
+    },
+    {
+      "start": "0x1010c9978",
+      "endExclusive": "0x1010c99c0",
+      "sha256": "b7117f9eb226fa5fda550a2310be2616b8355c4bb7a6fca8d257d6d96562f82a"
+    },
+    {
+      "start": "0x1010ca6e4",
+      "endExclusive": "0x1010ca730",
+      "sha256": "b21bcd9d5bf98a1c3880c2196f39ed5db21c96476b6677bb0c79852f95bfe4aa"
+    },
+    {
+      "start": "0x1010cfd5c",
+      "endExclusive": "0x1010cfd6c",
+      "sha256": "9d4dd394441d4031f2a5cebf44c578c29af8e72e1f28f68e9329362e00a6d881"
+    }
+  ],
+  "propertyProvider": {
+    "consumer": "AppIntegrityLoggerSetupImpl factory10048593c config+0x60 ->100485c0c ->100486130 ->100485d7c owner+0x10",
+    "sharedSetup": "100af609c passes authenticated owner+0xa8 (plVar1+0x15) as shared component config to1012a42e4; its config+0x60 equals owner+0x108.",
+    "assignment": "100af6274 loads x1 from FP+0x30;100af628c stores x1 to authenticated owner+0x108. Retained decompiler parameter13 agrees with this argument position.",
+    "constructorBacktrace": [
+      "100af609c argument13 <-100af758c entry stack+0x18 (raw758c forwarder;609c call100af7768)",
+      "100af758c entry stack+0x18 <-100af7478 entry stack+0x10 (call100af7524)",
+      "100af7478 argument11 <-100af3924 argument11",
+      "100af3924 argument11 <-100af2e20 argument11",
+      "100af2e20 argument11 <-100af40f0 argument11 <-100af4428 argument11 <-100433de4 argument11",
+      "100433de4 argument11 is100432e68 argument4",
+      "100432e68 argument4 <-100072b50 argument4 <-desktop factory100072aa4 physical x3",
+      "desktop100065b84 virtualslot9 invokes100072aa4 with its property-provider argument2 as physical x3"
+    ],
+    "desktopFactoryVtableBinding": {
+      "desktopVtable": "0x10253c790",
+      "slot": "0x48",
+      "pointerAddress": "0x10253c7d8",
+      "entry": "0x100072aa4"
+    },
+    "desktopInput": "100065b84 argument2 is forwarded unchanged from logged-in callback10006f30c argument2.",
+    "desktopSubscription": "100063dec loads desktop app+0x658;100063e00 binds callback10006f30c with app capture;100063e2c registers through app+0x658 vtable+0x88.",
+    "provedIdentity": "The same property-provider handle delivered to desktop logged-in callback is injected into the shared authenticated setup frame and AppIntegrity. AppIntegrity creates no separate property map.",
+    "missingTypeProof": "Concrete class/vtable and producer of callback argument2 at the app+0x658 event source are not recovered by this bounded trace; equality to the AP ProductInfo projected map is not established.",
+    "warning": "Known key names or observed values are not used to substitute an AP map or infer concrete type."
+  },
+  "audioActivation": {
+    "setupService": {
+      "id": 14,
+      "name": "AudioTrackPlayerSetupImpl",
+      "factory": "0x1010b5ac0",
+      "ownerConstructor": "0x1010b6440",
+      "ownerVtable": "0x1025cf200",
+      "slot0x40PointerAddress": "0x1025cf240",
+      "slot0x40Entry": "0x1010bbd7c",
+      "slot0x40Behavior": "1010bbd7c returns service owner+0xd8."
+    },
+    "concreteEventOwner": {
+      "constructor": "0x1010c6fc0 ->0x1010c6858",
+      "initializationCall": "0x1010b95d0",
+      "serviceOwnerAssignment": "0x1010b98cc stores the initialized event owner into service owner+0xd8.",
+      "vtable": "0x1025d00d0",
+      "slot0x40PointerAddress": "0x1025d0110",
+      "slot0x40Entry": "0x1010ca6e4"
+    },
+    "canarySubscription": "AppIntegrity100485fbc..100485fc4 subscribes100487ee4 through concrete event owner virtual+0x40;1010ca6e4 registers that callback on event owner+0x2a8 via101f6745c.",
+    "trackSubscription": "1010c9978..1010c99bc binds callback1010cfd5c capturing event owner and current track pointer. It registers through current track object's vtable+0x20. The current track pointer is event owner+0x778.",
+    "callback": "1010cfd5c converts callback payload to argument3 and calls1010c79b8(owner,capturedTrack,payload).",
+    "emission": "1010c7a40..1010c7a54 compares capturedTrack to current owner+0x778. Only equality emits owner+0x2a8 via1010c7b1c; that invokes the AppIntegrity subscription, which posts its existing cadence check.",
+    "preNotifyBranch": "1010c79e8..1010c7a3c cancels/clears owner timers950/960 and pending fields970/978; if capturedTrack is nonnull, flag8f8 is set and its virtual+0x158 returns an object whose virtual+0x38 is null, it invokes track virtual+0x198(owner+0x8d8), then applies the same current-track equality gate.",
+    "cadenceContinuation": "100487ee4 ->1004862c4 ->posted100487f70 ->100487f78; existing sentinel/elapsed/pending-timer gates still apply before delayed100488158 ->100488160.",
+    "provedEvent": "A callback from the current track object's specific vtable+0x20 event, forwarded through a concrete track-player signal. It is not merely a service-name or weak-job-removal inference.",
+    "missingSemanticProof": "Concrete track object's vtable+0x20 event producer/type/name has not been recovered. Calling it license200, key-completion, decoded-ready, playback-start or track-ended would exceed this evidence."
+  },
+  "limits": [
+    "No original application/profile/account/network, live canary admission or runtime edits.",
+    "Static call/registration bindings do not establish actual runtime event order or frequency.",
+    "Selector13/TimelineConductor optional path remains separate and is not expanded here.",
+    "No use of10048f214 weak-job-vector removal to infer completion.",
+    "Concrete server-product-state equality and exact current-track event semantics remain explicit upstream gaps."
+  ]
+}

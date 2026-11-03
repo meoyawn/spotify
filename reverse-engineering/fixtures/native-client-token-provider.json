@@ -1,0 +1,263 @@
+{
+  "provenance": "Original client-token hash, cache admission, category and Esperanto mapping.\n\nSynthetic inputs only. Standard allocation/string/protobuf operations and clock\nare hooked. Original proprietary hash-field visitors and cache/mapper decisions\nexecute unchanged. SHA-1 uses hashlib; the unmodified standard native digest\ndependency is also invoked once to verify its 40-hex-plus-NUL output format,\nwithout disassembling/decompiling that dependency. No app, account or network.",
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "hashEntry": "0x1017c73bc",
+  "cacheEntry": "0x1017c9ce8",
+  "mapperEntry": "0x101939d88",
+  "hashCases": [
+    {
+      "clientId": "client-fixture",
+      "clientVersion": "version-fixture",
+      "deviceId": "device-fixture",
+      "systemVersionString": "Version 15.4 (Build fixture)",
+      "majorVersion": 15,
+      "minorVersion": 4,
+      "patchVersion": 0,
+      "hardwareModel": "MacFixture1,1",
+      "cpuType": 16777228,
+      "cpuSubtype": 2,
+      "name": "Mac client data",
+      "hashInputHex": "636c69656e742d6669787475726576657273696f6e2d666978747572656465766963652d6669787475726556657273696f6e2031352e3420284275696c642066697874757265290f00000000000000040000000000000000000000000000004d616346697874757265312c310c0000010200000061726d3634",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000"
+    },
+    {
+      "clientId": "café\u0000client",
+      "clientVersion": "version-fixture",
+      "deviceId": "device-雪",
+      "systemVersionString": "Version 15.4 (Build fixture)",
+      "majorVersion": 15,
+      "minorVersion": 4,
+      "patchVersion": 0,
+      "hardwareModel": "MacFixture1,1",
+      "cpuType": 16777228,
+      "cpuSubtype": 2,
+      "name": "opaque UTF-8 and key",
+      "developerApiKey": "key+/=~",
+      "hashInputHex": "636166c3a900636c69656e7476657273696f6e2d666978747572656465766963652de99baa56657273696f6e2031352e3420284275696c642066697874757265290f00000000000000040000000000000000000000000000004d616346697874757265312c310c0000010200000061726d36346b65792b2f3d7e",
+      "clientDataHash": "9b146aef639f6bb909916df89fd63cb3439db86d\u0000"
+    },
+    {
+      "clientId": "client-fixture",
+      "clientVersion": "version-fixture",
+      "deviceId": "device-fixture",
+      "systemVersionString": "",
+      "majorVersion": 0,
+      "minorVersion": 0,
+      "patchVersion": 0,
+      "hardwareModel": "",
+      "cpuType": -1,
+      "cpuSubtype": -2,
+      "name": "zero and signed facts",
+      "hashInputHex": "636c69656e742d6669787475726576657273696f6e2d666978747572656465766963652d66697874757265000000000000000000000000000000000000000000000000fffffffffeffffff61726d3634",
+      "clientDataHash": "f458aa263d3940d2dbc73a4a287bd16b8eba46cc\u0000"
+    },
+    {
+      "clientId": "client-client-client-client-client-client-client-client-client-",
+      "clientVersion": "version-version-version-version-version-version-version-",
+      "deviceId": "device-fixture",
+      "systemVersionString": "Version 15.4 (Build fixture)",
+      "majorVersion": 15,
+      "minorVersion": 4,
+      "patchVersion": 0,
+      "hardwareModel": "MacFixture1,1",
+      "cpuType": 16777228,
+      "cpuSubtype": 2,
+      "name": "long identity",
+      "hashInputHex": "636c69656e742d636c69656e742d636c69656e742d636c69656e742d636c69656e742d636c69656e742d636c69656e742d636c69656e742d636c69656e742d76657273696f6e2d76657273696f6e2d76657273696f6e2d76657273696f6e2d76657273696f6e2d76657273696f6e2d76657273696f6e2d6465766963652d6669787475726556657273696f6e2031352e3420284275696c642066697874757265290f00000000000000040000000000000000000000000000004d616346697874757265312c310c0000010200000061726d3634",
+      "clientDataHash": "80a930575197609364b9434a69ef81ff1b23fb35\u0000"
+    }
+  ],
+  "cacheCases": [
+    {
+      "name": "fresh",
+      "present": true,
+      "enabled": true,
+      "closed": false,
+      "hashMatches": true,
+      "nowMicroseconds": 100,
+      "refreshAtMicroseconds": 101,
+      "expiresAtMicroseconds": 200,
+      "returnsToken": true
+    },
+    {
+      "name": "equal refresh",
+      "present": true,
+      "enabled": true,
+      "closed": false,
+      "hashMatches": true,
+      "nowMicroseconds": 100,
+      "refreshAtMicroseconds": 100,
+      "expiresAtMicroseconds": 200,
+      "returnsToken": true
+    },
+    {
+      "name": "past refresh",
+      "present": true,
+      "enabled": true,
+      "closed": false,
+      "hashMatches": true,
+      "nowMicroseconds": 100,
+      "refreshAtMicroseconds": 99,
+      "expiresAtMicroseconds": 200,
+      "returnsToken": false
+    },
+    {
+      "name": "expiry is not admission",
+      "present": true,
+      "enabled": true,
+      "closed": false,
+      "hashMatches": true,
+      "nowMicroseconds": 100,
+      "refreshAtMicroseconds": 101,
+      "expiresAtMicroseconds": 1,
+      "returnsToken": true
+    },
+    {
+      "name": "missing hash NUL",
+      "present": true,
+      "enabled": true,
+      "closed": false,
+      "hashMatches": false,
+      "nowMicroseconds": 100,
+      "refreshAtMicroseconds": 101,
+      "expiresAtMicroseconds": 200,
+      "returnsToken": false
+    },
+    {
+      "name": "absent",
+      "present": false,
+      "enabled": true,
+      "closed": false,
+      "hashMatches": true,
+      "nowMicroseconds": 100,
+      "refreshAtMicroseconds": 101,
+      "expiresAtMicroseconds": 200,
+      "returnsToken": false
+    },
+    {
+      "name": "disabled",
+      "present": true,
+      "enabled": false,
+      "closed": false,
+      "hashMatches": true,
+      "nowMicroseconds": 100,
+      "refreshAtMicroseconds": 101,
+      "expiresAtMicroseconds": 200,
+      "returnsToken": false
+    },
+    {
+      "name": "closed",
+      "present": true,
+      "enabled": true,
+      "closed": true,
+      "hashMatches": true,
+      "nowMicroseconds": 100,
+      "refreshAtMicroseconds": 101,
+      "expiresAtMicroseconds": 200,
+      "returnsToken": false
+    }
+  ],
+  "errorCases": [
+    {
+      "code": 1,
+      "message": "client_token_aborted"
+    },
+    {
+      "code": 2,
+      "message": "client_token_invalid_arguments"
+    },
+    {
+      "code": 3,
+      "message": "client_token_disabled"
+    },
+    {
+      "code": 101,
+      "message": "client_token_unknown_backend_error"
+    },
+    {
+      "code": 102,
+      "message": "client_token_invalid_token_backend_error"
+    },
+    {
+      "code": 103,
+      "message": "client_token_missing_client_backend_error"
+    },
+    {
+      "code": 104,
+      "message": "client_token_invalid_client_backend_error"
+    }
+  ],
+  "serviceCases": [
+    {
+      "token": "opaque+/=",
+      "expiresAtMicroseconds": 3600000199,
+      "refreshAtMicroseconds": 1800000199,
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "clientDataCase": 0,
+      "domains": [
+        "fixture.invalid",
+        "",
+        "fixture.invalid"
+      ],
+      "esperanto": {
+        "token": "opaque+/=",
+        "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+        "expiresAtTimestamp": 3600000,
+        "refreshAtTimestamp": 1800000,
+        "domains": [
+          "fixture.invalid",
+          "",
+          "fixture.invalid"
+        ]
+      }
+    },
+    {
+      "token": "",
+      "expiresAtMicroseconds": -1999,
+      "refreshAtMicroseconds": -999,
+      "clientDataHash": "9b146aef639f6bb909916df89fd63cb3439db86d\u0000",
+      "clientDataCase": 1,
+      "domains": [],
+      "esperanto": {
+        "token": "",
+        "clientDataHash": "9b146aef639f6bb909916df89fd63cb3439db86d\u0000",
+        "expiresAtTimestamp": -1,
+        "refreshAtTimestamp": 0,
+        "domains": []
+      }
+    },
+    {
+      "token": "UTF-8 雪\u0000suffix",
+      "expiresAtMicroseconds": 9223372036854775807,
+      "refreshAtMicroseconds": -9223372036854775808,
+      "clientDataHash": "f458aa263d3940d2dbc73a4a287bd16b8eba46cc\u0000",
+      "clientDataCase": 2,
+      "domains": [
+        "spotify.com",
+        "SpOtIfY.com",
+        ".spotify.com"
+      ],
+      "esperanto": {
+        "token": "UTF-8 雪\u0000suffix",
+        "clientDataHash": "f458aa263d3940d2dbc73a4a287bd16b8eba46cc\u0000",
+        "expiresAtTimestamp": 9223372036854775,
+        "refreshAtTimestamp": -9223372036854775,
+        "domains": [
+          "spotify.com",
+          "SpOtIfY.com",
+          ".spotify.com"
+        ]
+      }
+    }
+  ],
+  "methodCases": [
+    {
+      "method": "getToken",
+      "nativeDispatchHash": "0xaee5237c"
+    },
+    {
+      "method": "getEncryptedToken",
+      "nativeDispatchHash": "0x5df78adf"
+    }
+  ]
+}

@@ -1,0 +1,1147 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "method": "Execute original capacity/expiry selection offline with supplied cache entries.\n\nThe selector, policy callbacks, per-realm accounting, candidate ordering and\nreason selection execute unchanged. Only standard memory/allocation, libc++\nprime lookup and system calendar/chrono imports are supplied. No profile,\ncache file, account, transport, filesystem deletion or network is accessed.\n",
+  "selector": "0x10189b330",
+  "expiryLeaf": "0x10189b1e8",
+  "policyFunctor": "0x1018a8a2c",
+  "sizeFunctor": "0x1018a8ad4",
+  "resultABI": "Hidden aggregate result in x8; vector, clock, configuration, policy, size functor and headroom in x0..x5.",
+  "codeRanges": [
+    {
+      "start": "0x10189b330",
+      "endExclusive": "0x10189bf74",
+      "boundary": "original LC_FUNCTION_STARTS",
+      "sha256": "f8eb34b0a444031415322930026a6dede94ad2476dd4e6d35e349b0c4579e90e"
+    },
+    {
+      "start": "0x1018a8a2c",
+      "endExclusive": "0x1018a8a6c",
+      "boundary": "original LC_FUNCTION_STARTS",
+      "sha256": "6a5e1b3c21493c570f16e8ef211e534f459cc138cd0a8fd23d2c5f253da4e235"
+    },
+    {
+      "start": "0x1018a8ad4",
+      "endExclusive": "0x1018a8b28",
+      "boundary": "original LC_FUNCTION_STARTS",
+      "sha256": "473e7a1d6b092f7dc3cb64cd8f9482ff6dcde0351385ccbfd195502230baf9f2"
+    },
+    {
+      "start": "0x1018a6a98",
+      "endExclusive": "0x1018a6d98",
+      "boundary": "original LC_FUNCTION_STARTS",
+      "sha256": "3f7351146577b510617d2a2e227df857c895b59d12a8ad1c8f2d13e2531c452a"
+    },
+    {
+      "start": "0x101f63edc",
+      "endExclusive": "0x101f63fe4",
+      "boundary": "original LC_FUNCTION_STARTS",
+      "sha256": "669a08fa8260e7cf2b33ca82dd4a056b936867d3d0b3d823a7cc8b7a61305138"
+    },
+    {
+      "start": "0x101f64018",
+      "endExclusive": "0x101f640f0",
+      "boundary": "original LC_FUNCTION_STARTS",
+      "sha256": "2053dd182b9ef579e59daf9a3395feb7a337f6cf7636a527b1621d4788b21584"
+    },
+    {
+      "start": "0x10189c3a4",
+      "endExclusive": "0x10189c3fc",
+      "boundary": "original LC_FUNCTION_STARTS",
+      "sha256": "fe0b3db7ab6f1ce346548413eacb2dce2f6b68d1a88866dc3ddfca8a898a3cda"
+    }
+  ],
+  "compiledPolicies": [
+    {
+      "realm": 0,
+      "weightFloat32": 0.0,
+      "originalPolicyWords": [
+        1,
+        6480000,
+        604800,
+        0,
+        129600,
+        3600
+      ]
+    },
+    {
+      "realm": 7,
+      "weightFloat32": 0.10000000149011612,
+      "originalPolicyWords": [
+        4453159312402939905,
+        2592000,
+        86400,
+        0,
+        0,
+        3600
+      ]
+    }
+  ],
+  "retainedREAExport": {
+    "path": ".local/rea-session/stream-cache-prune-selector.json",
+    "sha256": "6f409704b289a679eae6f6c3738452ba8826cde8bee52d170103b7852d917a57",
+    "evidenceId": "ev_da7a71026783196fb9cfc50eba91628b043aac0603608e71a9a0fa74acec1be7"
+  },
+  "hostCalendar": {
+    "timeZoneNames": [
+      "MSK",
+      "MSK"
+    ],
+    "standardOffsetSecondsWest": -10800
+  },
+  "cases": [
+    {
+      "name": "empty index",
+      "input": {
+        "entries": [],
+        "pruningBudgetBytes": 1000,
+        "headroomTargetBytes": 0,
+        "availableHeadroomBytes": 0,
+        "nowMicroseconds": 1700000000000000,
+        "sizeByRealm": {}
+      },
+      "original": {
+        "selected": [],
+        "calendarMidnightSeconds": [
+          1699995600
+        ]
+      }
+    },
+    {
+      "name": "within supplied budget",
+      "input": {
+        "entries": [
+          {
+            "name": "old"
+          },
+          {
+            "name": "newer",
+            "timestamp30": 1699994000
+          }
+        ],
+        "pruningBudgetBytes": 1000,
+        "headroomTargetBytes": 0,
+        "availableHeadroomBytes": 0,
+        "nowMicroseconds": 1700000000000000,
+        "sizeByRealm": {
+          "0": 200
+        }
+      },
+      "original": {
+        "selected": [],
+        "calendarMidnightSeconds": [
+          1699995600
+        ]
+      }
+    },
+    {
+      "name": "over supplied budget",
+      "input": {
+        "entries": [
+          {
+            "name": "newer",
+            "timestamp30": 1699994000
+          },
+          {
+            "name": "older"
+          }
+        ],
+        "pruningBudgetBytes": 150,
+        "headroomTargetBytes": 0,
+        "availableHeadroomBytes": 0,
+        "nowMicroseconds": 1700000000000000,
+        "sizeByRealm": {
+          "0": 200
+        }
+      },
+      "original": {
+        "selected": [
+          {
+            "entry": "older",
+            "rawReason": 2
+          }
+        ],
+        "calendarMidnightSeconds": [
+          1699995600
+        ]
+      }
+    },
+    {
+      "name": "retained handle excludes entry",
+      "input": {
+        "entries": [
+          {
+            "name": "retained",
+            "retainedHandle": 1
+          }
+        ],
+        "pruningBudgetBytes": 1,
+        "headroomTargetBytes": 0,
+        "availableHeadroomBytes": 0,
+        "nowMicroseconds": 1700000000000000,
+        "sizeByRealm": {
+          "0": 100
+        }
+      },
+      "original": {
+        "selected": [],
+        "calendarMidnightSeconds": [
+          1699995600
+        ]
+      }
+    },
+    {
+      "name": "protected flag excludes entry",
+      "input": {
+        "entries": [
+          {
+            "name": "protected",
+            "flag51": 1
+          }
+        ],
+        "pruningBudgetBytes": 1,
+        "headroomTargetBytes": 0,
+        "availableHeadroomBytes": 0,
+        "nowMicroseconds": 1700000000000000,
+        "sizeByRealm": {
+          "0": 100
+        }
+      },
+      "original": {
+        "selected": [],
+        "calendarMidnightSeconds": [
+          1699995600
+        ]
+      }
+    },
+    {
+      "name": "young entry survives pressure",
+      "input": {
+        "entries": [
+          {
+            "name": "young",
+            "timestamp30": 1699998200
+          }
+        ],
+        "pruningBudgetBytes": 1,
+        "headroomTargetBytes": 0,
+        "availableHeadroomBytes": 0,
+        "nowMicroseconds": 1700000000000000,
+        "sizeByRealm": {
+          "0": 100
+        }
+      },
+      "original": {
+        "selected": [],
+        "calendarMidnightSeconds": [
+          1699995600
+        ]
+      }
+    },
+    {
+      "name": "minimum age equality",
+      "input": {
+        "entries": [
+          {
+            "name": "equality",
+            "timestamp30": 1699996400
+          }
+        ],
+        "pruningBudgetBytes": 1,
+        "headroomTargetBytes": 0,
+        "availableHeadroomBytes": 0,
+        "nowMicroseconds": 1700000000000000,
+        "sizeByRealm": {
+          "0": 100
+        }
+      },
+      "original": {
+        "selected": [],
+        "calendarMidnightSeconds": [
+          1699995600
+        ]
+      }
+    },
+    {
+      "name": "beyond minimum age",
+      "input": {
+        "entries": [
+          {
+            "name": "older",
+            "timestamp30": 1699996399
+          }
+        ],
+        "pruningBudgetBytes": 1,
+        "headroomTargetBytes": 0,
+        "availableHeadroomBytes": 0,
+        "nowMicroseconds": 1700000000000000,
+        "sizeByRealm": {
+          "0": 100
+        }
+      },
+      "original": {
+        "selected": [
+          {
+            "entry": "older",
+            "rawReason": 2
+          }
+        ],
+        "calendarMidnightSeconds": [
+          1699995600
+        ]
+      }
+    },
+    {
+      "name": "expired unread music",
+      "input": {
+        "entries": [
+          {
+            "name": "expired",
+            "timestamp30": 1699200000
+          }
+        ],
+        "pruningBudgetBytes": 1000,
+        "headroomTargetBytes": 0,
+        "availableHeadroomBytes": 0,
+        "nowMicroseconds": 1700000000000000,
+        "sizeByRealm": {
+          "0": 100
+        }
+      },
+      "original": {
+        "selected": [
+          {
+            "entry": "expired",
+            "rawReason": 1
+          }
+        ],
+        "calendarMidnightSeconds": [
+          1699995600
+        ]
+      }
+    },
+    {
+      "name": "expired previously read music",
+      "input": {
+        "entries": [
+          {
+            "name": "expired",
+            "timestamp34": 1693000000
+          }
+        ],
+        "pruningBudgetBytes": 1000,
+        "headroomTargetBytes": 0,
+        "availableHeadroomBytes": 0,
+        "nowMicroseconds": 1700000000000000,
+        "sizeByRealm": {
+          "0": 100
+        }
+      },
+      "original": {
+        "selected": [
+          {
+            "entry": "expired",
+            "rawReason": 0
+          }
+        ],
+        "calendarMidnightSeconds": [
+          1699995600
+        ]
+      }
+    },
+    {
+      "name": "expired retained music",
+      "input": {
+        "entries": [
+          {
+            "name": "retained",
+            "timestamp30": 1693000000,
+            "retainedHandle": 1
+          }
+        ],
+        "pruningBudgetBytes": 1000,
+        "headroomTargetBytes": 0,
+        "availableHeadroomBytes": 0,
+        "nowMicroseconds": 1700000000000000,
+        "sizeByRealm": {
+          "0": 100
+        }
+      },
+      "original": {
+        "selected": [],
+        "calendarMidnightSeconds": [
+          1699995600
+        ]
+      }
+    },
+    {
+      "name": "unread head file",
+      "input": {
+        "entries": [
+          {
+            "name": "head",
+            "realm": 7
+          }
+        ],
+        "pruningBudgetBytes": 1000,
+        "headroomTargetBytes": 0,
+        "availableHeadroomBytes": 0,
+        "nowMicroseconds": 1700000000000000,
+        "sizeByRealm": {
+          "7": 100
+        }
+      },
+      "original": {
+        "selected": [],
+        "calendarMidnightSeconds": [
+          1699995600
+        ]
+      }
+    },
+    {
+      "name": "expired unread head file",
+      "input": {
+        "entries": [
+          {
+            "name": "head",
+            "realm": 7,
+            "timestamp30": 1699800000
+          }
+        ],
+        "pruningBudgetBytes": 1000,
+        "headroomTargetBytes": 0,
+        "availableHeadroomBytes": 0,
+        "nowMicroseconds": 1700000000000000,
+        "sizeByRealm": {
+          "7": 100
+        }
+      },
+      "original": {
+        "selected": [
+          {
+            "entry": "head",
+            "rawReason": 1
+          }
+        ],
+        "calendarMidnightSeconds": [
+          1699995600
+        ]
+      }
+    },
+    {
+      "name": "headroom pressure",
+      "input": {
+        "entries": [
+          {
+            "name": "newer",
+            "timestamp30": 1699994000
+          },
+          {
+            "name": "older"
+          }
+        ],
+        "pruningBudgetBytes": 1000,
+        "headroomTargetBytes": 100,
+        "availableHeadroomBytes": 0,
+        "nowMicroseconds": 1700000000000000,
+        "sizeByRealm": {
+          "0": 200
+        }
+      },
+      "original": {
+        "selected": [
+          {
+            "entry": "older",
+            "rawReason": 4
+          }
+        ],
+        "calendarMidnightSeconds": [
+          1699995600
+        ]
+      }
+    },
+    {
+      "name": "sufficient headroom",
+      "input": {
+        "entries": [
+          {
+            "name": "old"
+          }
+        ],
+        "pruningBudgetBytes": 1000,
+        "headroomTargetBytes": 100,
+        "availableHeadroomBytes": 100,
+        "nowMicroseconds": 1700000000000000,
+        "sizeByRealm": {
+          "0": 100
+        }
+      },
+      "original": {
+        "selected": [],
+        "calendarMidnightSeconds": [
+          1699995600
+        ]
+      }
+    },
+    {
+      "name": "protected bytes excluded from pressure",
+      "input": {
+        "entries": [
+          {
+            "name": "protected",
+            "bytes": 1000,
+            "flag51": 1
+          },
+          {
+            "name": "ordinary"
+          }
+        ],
+        "pruningBudgetBytes": 150,
+        "headroomTargetBytes": 0,
+        "availableHeadroomBytes": 0,
+        "nowMicroseconds": 1700000000000000,
+        "sizeByRealm": {
+          "0": 1100
+        }
+      },
+      "original": {
+        "selected": [],
+        "calendarMidnightSeconds": [
+          1699995600
+        ]
+      }
+    },
+    {
+      "name": "unsupported realm",
+      "input": {
+        "entries": [
+          {
+            "name": "unknown",
+            "realm": 2
+          }
+        ],
+        "pruningBudgetBytes": 1,
+        "headroomTargetBytes": 0,
+        "availableHeadroomBytes": 0,
+        "nowMicroseconds": 1700000000000000,
+        "sizeByRealm": {
+          "2": 100
+        }
+      },
+      "original": {
+        "selected": [],
+        "calendarMidnightSeconds": [
+          1699995600
+        ]
+      }
+    },
+    {
+      "name": "head quota at limit",
+      "input": {
+        "entries": [
+          {
+            "name": "head",
+            "realm": 7,
+            "bytes": 100
+          }
+        ],
+        "pruningBudgetBytes": 1000,
+        "headroomTargetBytes": 0,
+        "availableHeadroomBytes": 0,
+        "nowMicroseconds": 1700000000000000,
+        "sizeByRealm": {
+          "7": 100
+        }
+      },
+      "original": {
+        "selected": [],
+        "calendarMidnightSeconds": [
+          1699995600
+        ]
+      }
+    },
+    {
+      "name": "head quota above limit",
+      "input": {
+        "entries": [
+          {
+            "name": "head",
+            "realm": 7,
+            "bytes": 101
+          }
+        ],
+        "pruningBudgetBytes": 1000,
+        "headroomTargetBytes": 0,
+        "availableHeadroomBytes": 0,
+        "nowMicroseconds": 1700000000000000,
+        "sizeByRealm": {
+          "7": 101
+        }
+      },
+      "original": {
+        "selected": [
+          {
+            "entry": "head",
+            "rawReason": 3
+          }
+        ],
+        "calendarMidnightSeconds": [
+          1699995600
+        ]
+      }
+    },
+    {
+      "name": "head quota below global capacity",
+      "input": {
+        "entries": [
+          {
+            "name": "head",
+            "realm": 7
+          }
+        ],
+        "pruningBudgetBytes": 500,
+        "headroomTargetBytes": 0,
+        "availableHeadroomBytes": 0,
+        "nowMicroseconds": 1700000000000000,
+        "sizeByRealm": {
+          "7": 100
+        }
+      },
+      "original": {
+        "selected": [
+          {
+            "entry": "head",
+            "rawReason": 3
+          }
+        ],
+        "calendarMidnightSeconds": [
+          1699995600
+        ]
+      }
+    },
+    {
+      "name": "protected head bytes excluded from quota",
+      "input": {
+        "entries": [
+          {
+            "name": "head",
+            "realm": 7,
+            "flag51": 1
+          }
+        ],
+        "pruningBudgetBytes": 500,
+        "headroomTargetBytes": 0,
+        "availableHeadroomBytes": 0,
+        "nowMicroseconds": 1700000000000000,
+        "sizeByRealm": {
+          "7": 100
+        }
+      },
+      "original": {
+        "selected": [],
+        "calendarMidnightSeconds": [
+          1699995600
+        ]
+      }
+    },
+    {
+      "name": "retained head excludes quota deletion",
+      "input": {
+        "entries": [
+          {
+            "name": "head",
+            "realm": 7,
+            "retainedHandle": 1
+          }
+        ],
+        "pruningBudgetBytes": 500,
+        "headroomTargetBytes": 0,
+        "availableHeadroomBytes": 0,
+        "nowMicroseconds": 1700000000000000,
+        "sizeByRealm": {
+          "7": 100
+        }
+      },
+      "original": {
+        "selected": [],
+        "calendarMidnightSeconds": [
+          1699995600
+        ]
+      }
+    },
+    {
+      "name": "head quota selects earlier deadline",
+      "input": {
+        "entries": [
+          {
+            "name": "newer-head",
+            "realm": 7,
+            "timestamp30": 1699994000
+          },
+          {
+            "name": "older-head",
+            "realm": 7
+          }
+        ],
+        "pruningBudgetBytes": 1000,
+        "headroomTargetBytes": 0,
+        "availableHeadroomBytes": 0,
+        "nowMicroseconds": 1700000000000000,
+        "sizeByRealm": {
+          "7": 200
+        }
+      },
+      "original": {
+        "selected": [
+          {
+            "entry": "older-head",
+            "rawReason": 3
+          }
+        ],
+        "calendarMidnightSeconds": [
+          1699995600
+        ]
+      }
+    },
+    {
+      "name": "unread deadline just before calendar midnight",
+      "input": {
+        "entries": [
+          {
+            "name": "unread",
+            "timestamp30": 1699390799
+          }
+        ],
+        "pruningBudgetBytes": 1000,
+        "headroomTargetBytes": 0,
+        "availableHeadroomBytes": 0,
+        "nowMicroseconds": 1700000000000000,
+        "sizeByRealm": {
+          "0": 100
+        }
+      },
+      "original": {
+        "selected": [
+          {
+            "entry": "unread",
+            "rawReason": 1
+          }
+        ],
+        "calendarMidnightSeconds": [
+          1699995600
+        ]
+      }
+    },
+    {
+      "name": "unread deadline equals calendar midnight",
+      "input": {
+        "entries": [
+          {
+            "name": "unread",
+            "timestamp30": 1699390800
+          }
+        ],
+        "pruningBudgetBytes": 1000,
+        "headroomTargetBytes": 0,
+        "availableHeadroomBytes": 0,
+        "nowMicroseconds": 1700000000000000,
+        "sizeByRealm": {
+          "0": 100
+        }
+      },
+      "original": {
+        "selected": [],
+        "calendarMidnightSeconds": [
+          1699995600
+        ]
+      }
+    },
+    {
+      "name": "unread deadline after midnight before now",
+      "input": {
+        "entries": [
+          {
+            "name": "unread",
+            "timestamp30": 1699390801
+          }
+        ],
+        "pruningBudgetBytes": 1000,
+        "headroomTargetBytes": 0,
+        "availableHeadroomBytes": 0,
+        "nowMicroseconds": 1700000000000000,
+        "sizeByRealm": {
+          "0": 100
+        }
+      },
+      "original": {
+        "selected": [],
+        "calendarMidnightSeconds": [
+          1699995600
+        ]
+      }
+    },
+    {
+      "name": "expiry satisfies capacity pressure",
+      "input": {
+        "entries": [
+          {
+            "name": "ordinary"
+          },
+          {
+            "name": "expired",
+            "timestamp30": 1699200000
+          }
+        ],
+        "pruningBudgetBytes": 150,
+        "headroomTargetBytes": 0,
+        "availableHeadroomBytes": 0,
+        "nowMicroseconds": 1700000000000000,
+        "sizeByRealm": {
+          "0": 200
+        }
+      },
+      "original": {
+        "selected": [
+          {
+            "entry": "expired",
+            "rawReason": 1
+          }
+        ],
+        "calendarMidnightSeconds": [
+          1699995600
+        ]
+      }
+    },
+    {
+      "name": "expiry precedes remaining headroom pressure",
+      "input": {
+        "entries": [
+          {
+            "name": "ordinary"
+          },
+          {
+            "name": "expired",
+            "timestamp30": 1699200000
+          }
+        ],
+        "pruningBudgetBytes": 1000,
+        "headroomTargetBytes": 150,
+        "availableHeadroomBytes": 0,
+        "nowMicroseconds": 1700000000000000,
+        "sizeByRealm": {
+          "0": 200
+        }
+      },
+      "original": {
+        "selected": [
+          {
+            "entry": "expired",
+            "rawReason": 1
+          },
+          {
+            "entry": "ordinary",
+            "rawReason": 4
+          }
+        ],
+        "calendarMidnightSeconds": [
+          1699995600
+        ]
+      }
+    },
+    {
+      "name": "deadline order differs from last-read order",
+      "input": {
+        "entries": [
+          {
+            "name": "older-read",
+            "timestamp30": 1699000000,
+            "timestamp34": 1699900000
+          },
+          {
+            "name": "unread"
+          }
+        ],
+        "pruningBudgetBytes": 100,
+        "headroomTargetBytes": 0,
+        "availableHeadroomBytes": 0,
+        "nowMicroseconds": 1700000000000000,
+        "sizeByRealm": {
+          "0": 200
+        }
+      },
+      "original": {
+        "selected": [
+          {
+            "entry": "unread",
+            "rawReason": 2
+          }
+        ],
+        "calendarMidnightSeconds": [
+          1699995600
+        ]
+      }
+    },
+    {
+      "name": "zero creation timestamp excludes pressure",
+      "input": {
+        "entries": [
+          {
+            "name": "zero",
+            "timestamp30": 0
+          }
+        ],
+        "pruningBudgetBytes": 1,
+        "headroomTargetBytes": 0,
+        "availableHeadroomBytes": 0,
+        "nowMicroseconds": 1700000000000000,
+        "sizeByRealm": {
+          "0": 100
+        }
+      },
+      "original": {
+        "selected": [],
+        "calendarMidnightSeconds": [
+          1699995600
+        ]
+      }
+    },
+    {
+      "name": "zero clock excludes selection",
+      "input": {
+        "entries": [
+          {
+            "name": "old",
+            "timestamp30": 100
+          }
+        ],
+        "pruningBudgetBytes": 1,
+        "headroomTargetBytes": 0,
+        "availableHeadroomBytes": 0,
+        "nowMicroseconds": 0,
+        "sizeByRealm": {
+          "0": 100
+        }
+      },
+      "original": {
+        "selected": [],
+        "calendarMidnightSeconds": []
+      }
+    }
+  ],
+  "capacityCalculation": {
+    "leaf": "0x10189c3a4",
+    "compiledInitializerSlice": {
+      "start": "0x1018a8c48",
+      "stopBefore": "0x1018a8c70",
+      "sha256": "405c0154e23509523cdef8fddb057dd54956ba4b715e4105b0e4d1b359994a53"
+    },
+    "compiledDefaults": {
+      "cacheMaximumBytes": 10737418240,
+      "cacheDiskFractionFloat32": 0.8999999761581421,
+      "headroomDiskFractionFloat32": 0.029999999329447746,
+      "headroomMaximumBytes": 524288000,
+      "rawHex": "00000080020000006666663f8fc2f53c0000401f00000000"
+    },
+    "cases": [
+      {
+        "input": {
+          "diskBytes": 0,
+          "diskPresent": false
+        },
+        "original": {
+          "pruningBudgetBytes": 10737418240,
+          "headroomTargetBytes": 524288000,
+          "secondaryBoundsBytes": [
+            104857600,
+            10737418240
+          ]
+        }
+      },
+      {
+        "input": {
+          "diskBytes": 1099511627776,
+          "diskPresent": false
+        },
+        "original": {
+          "pruningBudgetBytes": 10737418240,
+          "headroomTargetBytes": 524288000,
+          "secondaryBoundsBytes": [
+            104857600,
+            10737418240
+          ]
+        }
+      },
+      {
+        "input": {
+          "diskBytes": 0,
+          "diskPresent": true
+        },
+        "original": {
+          "pruningBudgetBytes": 0,
+          "headroomTargetBytes": 0,
+          "secondaryBoundsBytes": [
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "input": {
+          "diskBytes": 1,
+          "diskPresent": true
+        },
+        "original": {
+          "pruningBudgetBytes": 0,
+          "headroomTargetBytes": 0,
+          "secondaryBoundsBytes": [
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "input": {
+          "diskBytes": 104857600,
+          "diskPresent": true
+        },
+        "original": {
+          "pruningBudgetBytes": 94371840,
+          "headroomTargetBytes": 3145728,
+          "secondaryBoundsBytes": [
+            104857600,
+            104857600
+          ]
+        }
+      },
+      {
+        "input": {
+          "diskBytes": 536870912,
+          "diskPresent": true
+        },
+        "original": {
+          "pruningBudgetBytes": 483183808,
+          "headroomTargetBytes": 16106127,
+          "secondaryBoundsBytes": [
+            104857600,
+            536870912
+          ]
+        }
+      },
+      {
+        "input": {
+          "diskBytes": 1073741824,
+          "diskPresent": true
+        },
+        "original": {
+          "pruningBudgetBytes": 966367616,
+          "headroomTargetBytes": 32212254,
+          "secondaryBoundsBytes": [
+            104857600,
+            1073741824
+          ]
+        }
+      },
+      {
+        "input": {
+          "diskBytes": 10737418240,
+          "diskPresent": true
+        },
+        "original": {
+          "pruningBudgetBytes": 9663676416,
+          "headroomTargetBytes": 322122528,
+          "secondaryBoundsBytes": [
+            104857600,
+            10737418240
+          ]
+        }
+      },
+      {
+        "input": {
+          "diskBytes": 21474836480,
+          "diskPresent": true
+        },
+        "original": {
+          "pruningBudgetBytes": 10737418240,
+          "headroomTargetBytes": 524288000,
+          "secondaryBoundsBytes": [
+            104857600,
+            21474836480
+          ]
+        }
+      },
+      {
+        "input": {
+          "diskBytes": 53687091200,
+          "diskPresent": true
+        },
+        "original": {
+          "pruningBudgetBytes": 10737418240,
+          "headroomTargetBytes": 524288000,
+          "secondaryBoundsBytes": [
+            104857600,
+            53687091200
+          ]
+        }
+      },
+      {
+        "input": {
+          "diskBytes": 1099511627776,
+          "diskPresent": true
+        },
+        "original": {
+          "pruningBudgetBytes": 10737418240,
+          "headroomTargetBytes": 524288000,
+          "secondaryBoundsBytes": [
+            104857600,
+            53687091200
+          ]
+        }
+      },
+      {
+        "input": {
+          "diskBytes": 1125899906842624,
+          "diskPresent": true
+        },
+        "original": {
+          "pruningBudgetBytes": 10737418240,
+          "headroomTargetBytes": 524288000,
+          "secondaryBoundsBytes": [
+            104857600,
+            53687091200
+          ]
+        }
+      }
+    ],
+    "retainedREAExports": [
+      {
+        "path": ".local/rea-session/cache-capacity-math.json",
+        "sha256": "8a5a24e6931f31a8f8f9035da568317a76de277322c576109566bb320e4faef1",
+        "evidenceId": "ev_592c1e09055edef9d61627397b8b6002334dcec6e5d2894ed21d1a344d144c3c"
+      },
+      {
+        "path": ".local/rea-session/cache-capacity-default-init.json",
+        "sha256": "3deff13235dbd4bb1c5a83441722f8500bb57bb80bc62da8b6499a8bd0ee2502",
+        "evidenceId": "ev_7ecb22154c0fe2120b5cc09aeae76900770f26ea02dcca655634e16d4a8b0621"
+      },
+      {
+        "path": ".local/rea-session/cache-capacity-effective.json",
+        "sha256": "22559eec32b8708457c4b15fb6b22948bea0c24adea8d02c367962f9306b34fc",
+        "evidenceId": "ev_3dfd0df1b61ad1bfaeed3999adaaf4098927161e5a74b01408de2bdd732eeafd"
+      },
+      {
+        "path": ".local/rea-session/cache-capacity-registration.json",
+        "sha256": "2721e3369dbb23a1571b4a288d4bfce468ad3a28ca2dc7c0ac3ec07d5d4be737",
+        "evidenceId": "ev_48ac6adc1a09b370e422b136ee28f9bd8d8331fa685b090b36c42f7b4645f92a"
+      }
+    ]
+  },
+  "substitutions": [
+    "Explicit synthetic root, descriptors, timestamps, capacity record, free-headroom value and size map inputs.",
+    "Standard allocation/memory and host libc++ next_prime; actual map insertion/lookup and ordering execute.",
+    "Standard chrono conversions and host libc localtime_r/mktime; original calendar adapter and midnight truncation execute."
+  ],
+  "limits": [
+    "No index persistence, real directory enumeration, file deletion, profile or account access.",
+    "Compiled capacity defaults and pure capacity arithmetic are executed separately; live disk-stat inputs, overrides and full AUDIO_FILES/index binding are not established.",
+    "Calendar observations use the recorded host timezone; other timezone and DST cases are not established."
+  ]
+}

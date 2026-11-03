@@ -1,0 +1,61 @@
+{
+  "bundleSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+  "module": 71646,
+  "sourceOffsetBytes": 4802140,
+  "sourceLengthBytes": 478,
+  "factorySha256": "5e8f420f75d3e9b52d8136e1fbce541772abec852b91d29e3a3ab7421fa65b36",
+  "imageElementSource": {
+    "module": 99526,
+    "offsetBytes": 8135002,
+    "lengthBytes": 1141,
+    "sha256": "14f01a745b5a3616a07a583b29124dbf46f140aff09c7077335d39e6f1aff38f"
+  },
+  "imageElements": [
+    {
+      "src": "https://mosaic.scdn.co/300/0000000000000000000000000000000000000001000000000000000000000000000000000000000200000000000000000000000000000000000000030000000000000000000000000000000000000004",
+      "crossOrigin": null,
+      "referrerPolicy": null
+    },
+    {
+      "src": "https://mosaic.scdn.co/60/0000000000000000000000000000000000000001000000000000000000000000000000000000000200000000000000000000000000000000000000030000000000000000000000000000000000000004",
+      "crossOrigin": null,
+      "referrerPolicy": null
+    }
+  ],
+  "standardSubstitutions": [
+    "Webpack export-property registration",
+    "Unused reverse-URL/URI dependency47136 is inert; forward export m never reads it",
+    "Original image element99526 executes with inert React hooks/createElement and styling providers, without a DOM or fetch implementation"
+  ],
+  "limits": [
+    "Forward supplied image/mosaic URI to URL only; no HTTP, account or image response is exercised",
+    "Image/component identity and optional mosaic size are explicit inputs; this does not determine playlist item admission, source order or component selection"
+  ],
+  "cases": [
+    {
+      "input": "",
+      "originalUrl": ""
+    },
+    {
+      "input": "spotify:image:000102030405060708090a0b0c0d0e0f10111213",
+      "originalUrl": "https://i.scdn.co/image/000102030405060708090a0b0c0d0e0f10111213"
+    },
+    {
+      "input": "spotify:image:ff00112233445566778899aabbccddeeff00fe80",
+      "originalUrl": "https://i.scdn.co/image/ff00112233445566778899aabbccddeeff00fe80"
+    },
+    {
+      "input": "https://i.scdn.co/image/000102030405060708090a0b0c0d0e0f10111213",
+      "originalUrl": "https://i.scdn.co/image/000102030405060708090a0b0c0d0e0f10111213"
+    },
+    {
+      "input": "spotify:mosaic:0000000000000000000000000000000000000001:0000000000000000000000000000000000000002:0000000000000000000000000000000000000003:0000000000000000000000000000000000000004",
+      "originalUrl": "https://mosaic.scdn.co/300/0000000000000000000000000000000000000001000000000000000000000000000000000000000200000000000000000000000000000000000000030000000000000000000000000000000000000004"
+    },
+    {
+      "input": "spotify:mosaic:0000000000000000000000000000000000000001:0000000000000000000000000000000000000002:0000000000000000000000000000000000000003:0000000000000000000000000000000000000004",
+      "desiredMosaicSize": 60,
+      "originalUrl": "https://mosaic.scdn.co/60/0000000000000000000000000000000000000001000000000000000000000000000000000000000200000000000000000000000000000000000000030000000000000000000000000000000000000004"
+    }
+  ]
+}

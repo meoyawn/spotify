@@ -1,0 +1,52 @@
+// RECONSTRUCTED Login5 schema; not an extracted original descriptor.
+// Native wire facts: docs/evidence/login5-lite-tables.json.
+// Per-field provenance: proto/reconstructed/login5/manifest.json.
+// Original filenames/source options/optional declarations remain unestablished.
+
+syntax = "proto3";
+
+package spotify.login5.v4.challenges;
+
+import "google/protobuf/duration.proto";
+
+message AuthnPlatformChallenge {
+  bytes field_1 = 1;
+}
+
+message AuthnPlatformSolution {
+  bytes field_1 = 1;
+}
+
+message CodeSolution {
+  string code = 1;
+}
+
+message HashcashChallenge {
+  bytes prefix = 1;
+
+  int32 length = 2;
+}
+
+message HashcashSolution {
+  bytes suffix = 1;
+
+  .google.protobuf.Duration duration = 2;
+}
+
+message InteractionChallenge {
+  .spotify.login5.v4.challenges.Redirect field_1 = 1;
+
+  .spotify.login5.v4.challenges.Finish field_10 = 10;
+}
+
+message Redirect {
+  string interaction_url = 1;
+}
+
+message Finish {
+  string nonce = 1;
+}
+
+message InteractionSolution {
+  string interact_ref = 1;
+}

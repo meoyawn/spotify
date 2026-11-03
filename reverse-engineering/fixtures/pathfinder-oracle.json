@@ -1,0 +1,1108 @@
+{
+  "provenance": "Synthetic inputs executed through installed original factories in an isolated VM with inert transport. No Spotify or other network calls.",
+  "bundleSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+  "operation": {
+    "name": "fixtureOperation",
+    "operation": "query",
+    "sha256Hash": "fixture-sha256",
+    "value": "query fixtureOperation($term: String!) { fixture(term: $term) }\n"
+  },
+  "variables": {
+    "term": "fixture 雪",
+    "count": 1
+  },
+  "scenarios": [
+    {
+      "name": "persisted query defaults",
+      "responses": [
+        {
+          "body": {
+            "data": {
+              "synthetic": true
+            }
+          }
+        }
+      ],
+      "expected": {
+        "requests": [
+          {
+            "envelope": {
+              "method": "POST",
+              "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+              "headers": {
+                "Accept-Language": "en-US",
+                "Authorization": "Bearer fixture-access-token",
+                "Accept": "application/json",
+                "App-Platform": "fixture-platform",
+                "Spotify-App-Version": "1.3.6.1921",
+                "Content-Type": "application/json;charset=UTF-8"
+              },
+              "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidGVybSI6ImZpeHR1cmUg6ZuqIiwiY291bnQiOjF9LCJvcGVyYXRpb25OYW1lIjoiZml4dHVyZU9wZXJhdGlvbiIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6ImZpeHR1cmUtc2hhMjU2In19fQ==",
+              "authorize": true,
+              "includeCredentials": false,
+              "responseType": "json"
+            },
+            "endpointIdentifier": "/query/fixtureOperation",
+            "abortSignal": null
+          }
+        ],
+        "cacheCalls": [],
+        "result": {
+          "data": {
+            "synthetic": true
+          }
+        }
+      }
+    },
+    {
+      "name": "query order, unicode, per-request headers and cancellation",
+      "query": {
+        "z": "a b+~*雪/?!",
+        "market": "GB",
+        "flag": false
+      },
+      "headers": {
+        "Accept": "fixture/custom",
+        "App-Platform": "per-request",
+        "X-Fixture": "fixture-value"
+      },
+      "abortSignal": "fixture-abort",
+      "responses": [
+        {
+          "body": {
+            "data": {
+              "synthetic": true
+            }
+          }
+        }
+      ],
+      "expected": {
+        "requests": [
+          {
+            "envelope": {
+              "method": "POST",
+              "url": "https://api-partner.spotify.com/pathfinder/v2/query?z=a+b%2B%7E*%E9%9B%AA%2F%3F%21&market=GB&flag=false",
+              "headers": {
+                "Accept-Language": "en-US",
+                "Authorization": "Bearer fixture-access-token",
+                "Accept": "fixture/custom",
+                "App-Platform": "per-request",
+                "Spotify-App-Version": "1.3.6.1921",
+                "X-Fixture": "fixture-value",
+                "Content-Type": "application/json;charset=UTF-8"
+              },
+              "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidGVybSI6ImZpeHR1cmUg6ZuqIiwiY291bnQiOjF9LCJvcGVyYXRpb25OYW1lIjoiZml4dHVyZU9wZXJhdGlvbiIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6ImZpeHR1cmUtc2hhMjU2In19fQ==",
+              "authorize": true,
+              "includeCredentials": false,
+              "responseType": "json"
+            },
+            "endpointIdentifier": "/query/fixtureOperation",
+            "abortSignal": "fixture-abort"
+          }
+        ],
+        "cacheCalls": [],
+        "result": {
+          "data": {
+            "synthetic": true
+          }
+        }
+      }
+    },
+    {
+      "name": "GraphQL miss falls back to v1 and drops per-request headers and signal",
+      "query": {
+        "market": "GB",
+        "q": "a b+雪"
+      },
+      "headers": {
+        "Accept": "fixture/custom",
+        "Authorization": "fixture-override",
+        "X-Fixture": "fixture-value"
+      },
+      "abortSignal": "fixture-abort",
+      "responses": [
+        {
+          "body": {
+            "data": null,
+            "errors": [
+              {
+                "message": "OtherError"
+              },
+              {
+                "message": "PersistedQueryNotFound"
+              }
+            ]
+          }
+        },
+        {
+          "body": {
+            "data": {
+              "synthetic": true
+            }
+          }
+        }
+      ],
+      "expected": {
+        "requests": [
+          {
+            "envelope": {
+              "method": "POST",
+              "url": "https://api-partner.spotify.com/pathfinder/v2/query?market=GB&q=a+b%2B%E9%9B%AA",
+              "headers": {
+                "Accept-Language": "en-US",
+                "Authorization": "fixture-override",
+                "Accept": "fixture/custom",
+                "App-Platform": "fixture-platform",
+                "Spotify-App-Version": "1.3.6.1921",
+                "X-Fixture": "fixture-value",
+                "Content-Type": "application/json;charset=UTF-8"
+              },
+              "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidGVybSI6ImZpeHR1cmUg6ZuqIiwiY291bnQiOjF9LCJvcGVyYXRpb25OYW1lIjoiZml4dHVyZU9wZXJhdGlvbiIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6ImZpeHR1cmUtc2hhMjU2In19fQ==",
+              "authorize": true,
+              "includeCredentials": false,
+              "responseType": "json"
+            },
+            "endpointIdentifier": "/query/fixtureOperation",
+            "abortSignal": "fixture-abort"
+          },
+          {
+            "envelope": {
+              "method": "POST",
+              "url": "https://api-partner.spotify.com/pathfinder/v1/query?market=GB&q=a+b%2B%E9%9B%AA",
+              "headers": {
+                "Accept-Language": "en-US",
+                "Authorization": "Bearer fixture-access-token",
+                "Accept": "application/json",
+                "App-Platform": "fixture-platform",
+                "Spotify-App-Version": "1.3.6.1921",
+                "Content-Type": "application/json;charset=UTF-8"
+              },
+              "bodyBase64": "eyJvcGVyYXRpb25OYW1lIjoiZml4dHVyZU9wZXJhdGlvbiIsInZhcmlhYmxlcyI6eyJ0ZXJtIjoiZml4dHVyZSDpm6oiLCJjb3VudCI6MX0sInF1ZXJ5IjoicXVlcnkgZml4dHVyZU9wZXJhdGlvbigkdGVybTogU3RyaW5nISkgeyBmaXh0dXJlKHRlcm06ICR0ZXJtKSB9XG4iLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiJmaXh0dXJlLXNoYTI1NiJ9fX0=",
+              "authorize": true,
+              "includeCredentials": false,
+              "responseType": "json"
+            },
+            "endpointIdentifier": "/query/fixtureOperation",
+            "abortSignal": null
+          }
+        ],
+        "cacheCalls": [],
+        "result": {
+          "data": {
+            "synthetic": true
+          }
+        }
+      }
+    },
+    {
+      "name": "branded 405 triggers method-not-allowed fallback",
+      "responses": [
+        {
+          "error": "http",
+          "status": 405
+        },
+        {
+          "body": {
+            "data": {
+              "synthetic": true
+            }
+          }
+        }
+      ],
+      "expected": {
+        "requests": [
+          {
+            "envelope": {
+              "method": "POST",
+              "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+              "headers": {
+                "Accept-Language": "en-US",
+                "Authorization": "Bearer fixture-access-token",
+                "Accept": "application/json",
+                "App-Platform": "fixture-platform",
+                "Spotify-App-Version": "1.3.6.1921",
+                "Content-Type": "application/json;charset=UTF-8"
+              },
+              "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidGVybSI6ImZpeHR1cmUg6ZuqIiwiY291bnQiOjF9LCJvcGVyYXRpb25OYW1lIjoiZml4dHVyZU9wZXJhdGlvbiIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6ImZpeHR1cmUtc2hhMjU2In19fQ==",
+              "authorize": true,
+              "includeCredentials": false,
+              "responseType": "json"
+            },
+            "endpointIdentifier": "/query/fixtureOperation",
+            "abortSignal": null
+          },
+          {
+            "envelope": {
+              "method": "POST",
+              "url": "https://api-partner.spotify.com/pathfinder/v1/query",
+              "headers": {
+                "Accept-Language": "en-US",
+                "Authorization": "Bearer fixture-access-token",
+                "Accept": "application/json",
+                "App-Platform": "fixture-platform",
+                "Spotify-App-Version": "1.3.6.1921",
+                "Content-Type": "application/json;charset=UTF-8"
+              },
+              "bodyBase64": "eyJvcGVyYXRpb25OYW1lIjoiZml4dHVyZU9wZXJhdGlvbiIsInZhcmlhYmxlcyI6eyJ0ZXJtIjoiZml4dHVyZSDpm6oiLCJjb3VudCI6MX0sInF1ZXJ5IjoicXVlcnkgZml4dHVyZU9wZXJhdGlvbigkdGVybTogU3RyaW5nISkgeyBmaXh0dXJlKHRlcm06ICR0ZXJtKSB9XG4iLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiJmaXh0dXJlLXNoYTI1NiJ9fX0=",
+              "authorize": true,
+              "includeCredentials": false,
+              "responseType": "json"
+            },
+            "endpointIdentifier": "/query/fixtureOperation",
+            "abortSignal": null
+          }
+        ],
+        "cacheCalls": [],
+        "result": {
+          "data": {
+            "synthetic": true
+          }
+        }
+      }
+    },
+    {
+      "name": "branded 412 triggers precondition-failed fallback",
+      "responses": [
+        {
+          "error": "http",
+          "status": 412
+        },
+        {
+          "body": {
+            "data": {
+              "synthetic": true
+            }
+          }
+        }
+      ],
+      "expected": {
+        "requests": [
+          {
+            "envelope": {
+              "method": "POST",
+              "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+              "headers": {
+                "Accept-Language": "en-US",
+                "Authorization": "Bearer fixture-access-token",
+                "Accept": "application/json",
+                "App-Platform": "fixture-platform",
+                "Spotify-App-Version": "1.3.6.1921",
+                "Content-Type": "application/json;charset=UTF-8"
+              },
+              "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidGVybSI6ImZpeHR1cmUg6ZuqIiwiY291bnQiOjF9LCJvcGVyYXRpb25OYW1lIjoiZml4dHVyZU9wZXJhdGlvbiIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6ImZpeHR1cmUtc2hhMjU2In19fQ==",
+              "authorize": true,
+              "includeCredentials": false,
+              "responseType": "json"
+            },
+            "endpointIdentifier": "/query/fixtureOperation",
+            "abortSignal": null
+          },
+          {
+            "envelope": {
+              "method": "POST",
+              "url": "https://api-partner.spotify.com/pathfinder/v1/query",
+              "headers": {
+                "Accept-Language": "en-US",
+                "Authorization": "Bearer fixture-access-token",
+                "Accept": "application/json",
+                "App-Platform": "fixture-platform",
+                "Spotify-App-Version": "1.3.6.1921",
+                "Content-Type": "application/json;charset=UTF-8"
+              },
+              "bodyBase64": "eyJvcGVyYXRpb25OYW1lIjoiZml4dHVyZU9wZXJhdGlvbiIsInZhcmlhYmxlcyI6eyJ0ZXJtIjoiZml4dHVyZSDpm6oiLCJjb3VudCI6MX0sInF1ZXJ5IjoicXVlcnkgZml4dHVyZU9wZXJhdGlvbigkdGVybTogU3RyaW5nISkgeyBmaXh0dXJlKHRlcm06ICR0ZXJtKSB9XG4iLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiJmaXh0dXJlLXNoYTI1NiJ9fX0=",
+              "authorize": true,
+              "includeCredentials": false,
+              "responseType": "json"
+            },
+            "endpointIdentifier": "/query/fixtureOperation",
+            "abortSignal": null
+          }
+        ],
+        "cacheCalls": [],
+        "result": {
+          "data": {
+            "synthetic": true
+          }
+        }
+      }
+    },
+    {
+      "name": "other HTTP status propagates unchanged",
+      "responses": [
+        {
+          "error": "http",
+          "status": 403
+        }
+      ],
+      "expected": {
+        "requests": [
+          {
+            "envelope": {
+              "method": "POST",
+              "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+              "headers": {
+                "Accept-Language": "en-US",
+                "Authorization": "Bearer fixture-access-token",
+                "Accept": "application/json",
+                "App-Platform": "fixture-platform",
+                "Spotify-App-Version": "1.3.6.1921",
+                "Content-Type": "application/json;charset=UTF-8"
+              },
+              "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidGVybSI6ImZpeHR1cmUg6ZuqIiwiY291bnQiOjF9LCJvcGVyYXRpb25OYW1lIjoiZml4dHVyZU9wZXJhdGlvbiIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6ImZpeHR1cmUtc2hhMjU2In19fQ==",
+              "authorize": true,
+              "includeCredentials": false,
+              "responseType": "json"
+            },
+            "endpointIdentifier": "/query/fixtureOperation",
+            "abortSignal": null
+          }
+        ],
+        "cacheCalls": [],
+        "error": {
+          "name": "HttpResponseError",
+          "message": "synthetic failure",
+          "status": 403
+        },
+        "sameThrownError": true
+      }
+    },
+    {
+      "name": "unbranded error with 405 status propagates unchanged",
+      "responses": [
+        {
+          "error": "ordinary",
+          "status": 405
+        }
+      ],
+      "expected": {
+        "requests": [
+          {
+            "envelope": {
+              "method": "POST",
+              "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+              "headers": {
+                "Accept-Language": "en-US",
+                "Authorization": "Bearer fixture-access-token",
+                "Accept": "application/json",
+                "App-Platform": "fixture-platform",
+                "Spotify-App-Version": "1.3.6.1921",
+                "Content-Type": "application/json;charset=UTF-8"
+              },
+              "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidGVybSI6ImZpeHR1cmUg6ZuqIiwiY291bnQiOjF9LCJvcGVyYXRpb25OYW1lIjoiZml4dHVyZU9wZXJhdGlvbiIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6ImZpeHR1cmUtc2hhMjU2In19fQ==",
+              "authorize": true,
+              "includeCredentials": false,
+              "responseType": "json"
+            },
+            "endpointIdentifier": "/query/fixtureOperation",
+            "abortSignal": null
+          }
+        ],
+        "cacheCalls": [],
+        "error": {
+          "name": "Error",
+          "message": "synthetic failure",
+          "status": 405
+        },
+        "sameThrownError": true
+      }
+    },
+    {
+      "name": "unrelated GraphQL errors return their original body",
+      "responses": [
+        {
+          "body": {
+            "errors": [
+              {
+                "message": "persistedquerynotfound"
+              },
+              {
+                "message": "PersistedQueryNotSupported"
+              }
+            ]
+          }
+        }
+      ],
+      "expected": {
+        "requests": [
+          {
+            "envelope": {
+              "method": "POST",
+              "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+              "headers": {
+                "Accept-Language": "en-US",
+                "Authorization": "Bearer fixture-access-token",
+                "Accept": "application/json",
+                "App-Platform": "fixture-platform",
+                "Spotify-App-Version": "1.3.6.1921",
+                "Content-Type": "application/json;charset=UTF-8"
+              },
+              "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidGVybSI6ImZpeHR1cmUg6ZuqIiwiY291bnQiOjF9LCJvcGVyYXRpb25OYW1lIjoiZml4dHVyZU9wZXJhdGlvbiIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6ImZpeHR1cmUtc2hhMjU2In19fQ==",
+              "authorize": true,
+              "includeCredentials": false,
+              "responseType": "json"
+            },
+            "endpointIdentifier": "/query/fixtureOperation",
+            "abortSignal": null
+          }
+        ],
+        "cacheCalls": [],
+        "result": {
+          "errors": [
+            {
+              "message": "persistedquerynotfound"
+            },
+            {
+              "message": "PersistedQueryNotSupported"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "null response body is returned",
+      "responses": [
+        {
+          "body": null
+        }
+      ],
+      "expected": {
+        "requests": [
+          {
+            "envelope": {
+              "method": "POST",
+              "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+              "headers": {
+                "Accept-Language": "en-US",
+                "Authorization": "Bearer fixture-access-token",
+                "Accept": "application/json",
+                "App-Platform": "fixture-platform",
+                "Spotify-App-Version": "1.3.6.1921",
+                "Content-Type": "application/json;charset=UTF-8"
+              },
+              "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidGVybSI6ImZpeHR1cmUg6ZuqIiwiY291bnQiOjF9LCJvcGVyYXRpb25OYW1lIjoiZml4dHVyZU9wZXJhdGlvbiIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6ImZpeHR1cmUtc2hhMjU2In19fQ==",
+              "authorize": true,
+              "includeCredentials": false,
+              "responseType": "json"
+            },
+            "endpointIdentifier": "/query/fixtureOperation",
+            "abortSignal": null
+          }
+        ],
+        "cacheCalls": [],
+        "result": null
+      }
+    },
+    {
+      "name": "unavailable fallback after persisted-query miss",
+      "value": null,
+      "responses": [
+        {
+          "body": {
+            "data": null,
+            "errors": [
+              {
+                "message": "OtherError"
+              },
+              {
+                "message": "PersistedQueryNotFound"
+              }
+            ]
+          }
+        }
+      ],
+      "expected": {
+        "requests": [
+          {
+            "envelope": {
+              "method": "POST",
+              "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+              "headers": {
+                "Accept-Language": "en-US",
+                "Authorization": "Bearer fixture-access-token",
+                "Accept": "application/json",
+                "App-Platform": "fixture-platform",
+                "Spotify-App-Version": "1.3.6.1921",
+                "Content-Type": "application/json;charset=UTF-8"
+              },
+              "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidGVybSI6ImZpeHR1cmUg6ZuqIiwiY291bnQiOjF9LCJvcGVyYXRpb25OYW1lIjoiZml4dHVyZU9wZXJhdGlvbiIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6ImZpeHR1cmUtc2hhMjU2In19fQ==",
+              "authorize": true,
+              "includeCredentials": false,
+              "responseType": "json"
+            },
+            "endpointIdentifier": "/query/fixtureOperation",
+            "abortSignal": null
+          }
+        ],
+        "cacheCalls": [],
+        "error": {
+          "name": "GraphQLFallbackUnavailableError",
+          "message": "Fallback query for \"fixtureOperation\" is not available!",
+          "reason": "persisted-query-not-found"
+        },
+        "sameThrownError": false
+      }
+    },
+    {
+      "name": "unavailable fallback after 405",
+      "value": null,
+      "responses": [
+        {
+          "error": "http",
+          "status": 405
+        }
+      ],
+      "expected": {
+        "requests": [
+          {
+            "envelope": {
+              "method": "POST",
+              "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+              "headers": {
+                "Accept-Language": "en-US",
+                "Authorization": "Bearer fixture-access-token",
+                "Accept": "application/json",
+                "App-Platform": "fixture-platform",
+                "Spotify-App-Version": "1.3.6.1921",
+                "Content-Type": "application/json;charset=UTF-8"
+              },
+              "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidGVybSI6ImZpeHR1cmUg6ZuqIiwiY291bnQiOjF9LCJvcGVyYXRpb25OYW1lIjoiZml4dHVyZU9wZXJhdGlvbiIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6ImZpeHR1cmUtc2hhMjU2In19fQ==",
+              "authorize": true,
+              "includeCredentials": false,
+              "responseType": "json"
+            },
+            "endpointIdentifier": "/query/fixtureOperation",
+            "abortSignal": null
+          }
+        ],
+        "cacheCalls": [],
+        "error": {
+          "name": "GraphQLFallbackUnavailableError",
+          "message": "Fallback query for \"fixtureOperation\" is not available!",
+          "reason": "method-not-allowed"
+        },
+        "sameThrownError": false
+      }
+    },
+    {
+      "name": "unavailable fallback after 412",
+      "value": null,
+      "responses": [
+        {
+          "error": "http",
+          "status": 412
+        }
+      ],
+      "expected": {
+        "requests": [
+          {
+            "envelope": {
+              "method": "POST",
+              "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+              "headers": {
+                "Accept-Language": "en-US",
+                "Authorization": "Bearer fixture-access-token",
+                "Accept": "application/json",
+                "App-Platform": "fixture-platform",
+                "Spotify-App-Version": "1.3.6.1921",
+                "Content-Type": "application/json;charset=UTF-8"
+              },
+              "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidGVybSI6ImZpeHR1cmUg6ZuqIiwiY291bnQiOjF9LCJvcGVyYXRpb25OYW1lIjoiZml4dHVyZU9wZXJhdGlvbiIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6ImZpeHR1cmUtc2hhMjU2In19fQ==",
+              "authorize": true,
+              "includeCredentials": false,
+              "responseType": "json"
+            },
+            "endpointIdentifier": "/query/fixtureOperation",
+            "abortSignal": null
+          }
+        ],
+        "cacheCalls": [],
+        "error": {
+          "name": "GraphQLFallbackUnavailableError",
+          "message": "Fallback query for \"fixtureOperation\" is not available!",
+          "reason": "precondition-failed"
+        },
+        "sameThrownError": false
+      }
+    },
+    {
+      "name": "fallback GraphQL miss is returned without a third request",
+      "responses": [
+        {
+          "body": {
+            "data": null,
+            "errors": [
+              {
+                "message": "OtherError"
+              },
+              {
+                "message": "PersistedQueryNotFound"
+              }
+            ]
+          }
+        },
+        {
+          "body": {
+            "data": null,
+            "errors": [
+              {
+                "message": "OtherError"
+              },
+              {
+                "message": "PersistedQueryNotFound"
+              }
+            ]
+          }
+        }
+      ],
+      "expected": {
+        "requests": [
+          {
+            "envelope": {
+              "method": "POST",
+              "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+              "headers": {
+                "Accept-Language": "en-US",
+                "Authorization": "Bearer fixture-access-token",
+                "Accept": "application/json",
+                "App-Platform": "fixture-platform",
+                "Spotify-App-Version": "1.3.6.1921",
+                "Content-Type": "application/json;charset=UTF-8"
+              },
+              "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidGVybSI6ImZpeHR1cmUg6ZuqIiwiY291bnQiOjF9LCJvcGVyYXRpb25OYW1lIjoiZml4dHVyZU9wZXJhdGlvbiIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6ImZpeHR1cmUtc2hhMjU2In19fQ==",
+              "authorize": true,
+              "includeCredentials": false,
+              "responseType": "json"
+            },
+            "endpointIdentifier": "/query/fixtureOperation",
+            "abortSignal": null
+          },
+          {
+            "envelope": {
+              "method": "POST",
+              "url": "https://api-partner.spotify.com/pathfinder/v1/query",
+              "headers": {
+                "Accept-Language": "en-US",
+                "Authorization": "Bearer fixture-access-token",
+                "Accept": "application/json",
+                "App-Platform": "fixture-platform",
+                "Spotify-App-Version": "1.3.6.1921",
+                "Content-Type": "application/json;charset=UTF-8"
+              },
+              "bodyBase64": "eyJvcGVyYXRpb25OYW1lIjoiZml4dHVyZU9wZXJhdGlvbiIsInZhcmlhYmxlcyI6eyJ0ZXJtIjoiZml4dHVyZSDpm6oiLCJjb3VudCI6MX0sInF1ZXJ5IjoicXVlcnkgZml4dHVyZU9wZXJhdGlvbigkdGVybTogU3RyaW5nISkgeyBmaXh0dXJlKHRlcm06ICR0ZXJtKSB9XG4iLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiJmaXh0dXJlLXNoYTI1NiJ9fX0=",
+              "authorize": true,
+              "includeCredentials": false,
+              "responseType": "json"
+            },
+            "endpointIdentifier": "/query/fixtureOperation",
+            "abortSignal": null
+          }
+        ],
+        "cacheCalls": [],
+        "result": {
+          "data": null,
+          "errors": [
+            {
+              "message": "OtherError"
+            },
+            {
+              "message": "PersistedQueryNotFound"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "fallback 405 propagates without recursive fallback",
+      "responses": [
+        {
+          "body": {
+            "data": null,
+            "errors": [
+              {
+                "message": "OtherError"
+              },
+              {
+                "message": "PersistedQueryNotFound"
+              }
+            ]
+          }
+        },
+        {
+          "error": "http",
+          "status": 405
+        }
+      ],
+      "expected": {
+        "requests": [
+          {
+            "envelope": {
+              "method": "POST",
+              "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+              "headers": {
+                "Accept-Language": "en-US",
+                "Authorization": "Bearer fixture-access-token",
+                "Accept": "application/json",
+                "App-Platform": "fixture-platform",
+                "Spotify-App-Version": "1.3.6.1921",
+                "Content-Type": "application/json;charset=UTF-8"
+              },
+              "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidGVybSI6ImZpeHR1cmUg6ZuqIiwiY291bnQiOjF9LCJvcGVyYXRpb25OYW1lIjoiZml4dHVyZU9wZXJhdGlvbiIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6ImZpeHR1cmUtc2hhMjU2In19fQ==",
+              "authorize": true,
+              "includeCredentials": false,
+              "responseType": "json"
+            },
+            "endpointIdentifier": "/query/fixtureOperation",
+            "abortSignal": null
+          },
+          {
+            "envelope": {
+              "method": "POST",
+              "url": "https://api-partner.spotify.com/pathfinder/v1/query",
+              "headers": {
+                "Accept-Language": "en-US",
+                "Authorization": "Bearer fixture-access-token",
+                "Accept": "application/json",
+                "App-Platform": "fixture-platform",
+                "Spotify-App-Version": "1.3.6.1921",
+                "Content-Type": "application/json;charset=UTF-8"
+              },
+              "bodyBase64": "eyJvcGVyYXRpb25OYW1lIjoiZml4dHVyZU9wZXJhdGlvbiIsInZhcmlhYmxlcyI6eyJ0ZXJtIjoiZml4dHVyZSDpm6oiLCJjb3VudCI6MX0sInF1ZXJ5IjoicXVlcnkgZml4dHVyZU9wZXJhdGlvbigkdGVybTogU3RyaW5nISkgeyBmaXh0dXJlKHRlcm06ICR0ZXJtKSB9XG4iLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiJmaXh0dXJlLXNoYTI1NiJ9fX0=",
+              "authorize": true,
+              "includeCredentials": false,
+              "responseType": "json"
+            },
+            "endpointIdentifier": "/query/fixtureOperation",
+            "abortSignal": null
+          }
+        ],
+        "cacheCalls": [],
+        "error": {
+          "name": "HttpResponseError",
+          "message": "synthetic failure",
+          "status": 405
+        },
+        "sameThrownError": true
+      }
+    },
+    {
+      "name": "empty fallback text is available",
+      "value": "",
+      "responses": [
+        {
+          "body": {
+            "data": null,
+            "errors": [
+              {
+                "message": "OtherError"
+              },
+              {
+                "message": "PersistedQueryNotFound"
+              }
+            ]
+          }
+        },
+        {
+          "body": {
+            "data": {
+              "synthetic": true
+            }
+          }
+        }
+      ],
+      "expected": {
+        "requests": [
+          {
+            "envelope": {
+              "method": "POST",
+              "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+              "headers": {
+                "Accept-Language": "en-US",
+                "Authorization": "Bearer fixture-access-token",
+                "Accept": "application/json",
+                "App-Platform": "fixture-platform",
+                "Spotify-App-Version": "1.3.6.1921",
+                "Content-Type": "application/json;charset=UTF-8"
+              },
+              "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidGVybSI6ImZpeHR1cmUg6ZuqIiwiY291bnQiOjF9LCJvcGVyYXRpb25OYW1lIjoiZml4dHVyZU9wZXJhdGlvbiIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6ImZpeHR1cmUtc2hhMjU2In19fQ==",
+              "authorize": true,
+              "includeCredentials": false,
+              "responseType": "json"
+            },
+            "endpointIdentifier": "/query/fixtureOperation",
+            "abortSignal": null
+          },
+          {
+            "envelope": {
+              "method": "POST",
+              "url": "https://api-partner.spotify.com/pathfinder/v1/query",
+              "headers": {
+                "Accept-Language": "en-US",
+                "Authorization": "Bearer fixture-access-token",
+                "Accept": "application/json",
+                "App-Platform": "fixture-platform",
+                "Spotify-App-Version": "1.3.6.1921",
+                "Content-Type": "application/json;charset=UTF-8"
+              },
+              "bodyBase64": "eyJvcGVyYXRpb25OYW1lIjoiZml4dHVyZU9wZXJhdGlvbiIsInZhcmlhYmxlcyI6eyJ0ZXJtIjoiZml4dHVyZSDpm6oiLCJjb3VudCI6MX0sInF1ZXJ5IjoiIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiZml4dHVyZS1zaGEyNTYifX19",
+              "authorize": true,
+              "includeCredentials": false,
+              "responseType": "json"
+            },
+            "endpointIdentifier": "/query/fixtureOperation",
+            "abortSignal": null
+          }
+        ],
+        "cacheCalls": [],
+        "result": {
+          "data": {
+            "synthetic": true
+          }
+        }
+      }
+    },
+    {
+      "name": "internal persisted query uses curiosity",
+      "isInternalRequest": true,
+      "responses": [
+        {
+          "body": {
+            "data": {
+              "synthetic": true
+            }
+          }
+        }
+      ],
+      "expected": {
+        "requests": [
+          {
+            "envelope": {
+              "method": "POST",
+              "url": "https://wgint.spotify.net/curiosity/v1/query",
+              "headers": {
+                "Accept-Language": "en-US",
+                "Authorization": "Bearer fixture-access-token",
+                "Accept": "application/json",
+                "App-Platform": "fixture-platform",
+                "Spotify-App-Version": "1.3.6.1921",
+                "Content-Type": "application/json;charset=UTF-8"
+              },
+              "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidGVybSI6ImZpeHR1cmUg6ZuqIiwiY291bnQiOjF9LCJvcGVyYXRpb25OYW1lIjoiZml4dHVyZU9wZXJhdGlvbiIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6ImZpeHR1cmUtc2hhMjU2In19fQ==",
+              "authorize": true,
+              "includeCredentials": false,
+              "responseType": "json"
+            },
+            "endpointIdentifier": "/query/fixtureOperation",
+            "abortSignal": null
+          }
+        ],
+        "cacheCalls": [],
+        "result": {
+          "data": {
+            "synthetic": true
+          }
+        }
+      }
+    },
+    {
+      "name": "internal fallback stays on curiosity",
+      "isInternalRequest": true,
+      "responses": [
+        {
+          "body": {
+            "data": null,
+            "errors": [
+              {
+                "message": "OtherError"
+              },
+              {
+                "message": "PersistedQueryNotFound"
+              }
+            ]
+          }
+        },
+        {
+          "body": {
+            "data": {
+              "synthetic": true
+            }
+          }
+        }
+      ],
+      "expected": {
+        "requests": [
+          {
+            "envelope": {
+              "method": "POST",
+              "url": "https://wgint.spotify.net/curiosity/v1/query",
+              "headers": {
+                "Accept-Language": "en-US",
+                "Authorization": "Bearer fixture-access-token",
+                "Accept": "application/json",
+                "App-Platform": "fixture-platform",
+                "Spotify-App-Version": "1.3.6.1921",
+                "Content-Type": "application/json;charset=UTF-8"
+              },
+              "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidGVybSI6ImZpeHR1cmUg6ZuqIiwiY291bnQiOjF9LCJvcGVyYXRpb25OYW1lIjoiZml4dHVyZU9wZXJhdGlvbiIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6ImZpeHR1cmUtc2hhMjU2In19fQ==",
+              "authorize": true,
+              "includeCredentials": false,
+              "responseType": "json"
+            },
+            "endpointIdentifier": "/query/fixtureOperation",
+            "abortSignal": null
+          },
+          {
+            "envelope": {
+              "method": "POST",
+              "url": "https://wgint.spotify.net/curiosity/v1/query",
+              "headers": {
+                "Accept-Language": "en-US",
+                "Authorization": "Bearer fixture-access-token",
+                "Accept": "application/json",
+                "App-Platform": "fixture-platform",
+                "Spotify-App-Version": "1.3.6.1921",
+                "Content-Type": "application/json;charset=UTF-8"
+              },
+              "bodyBase64": "eyJvcGVyYXRpb25OYW1lIjoiZml4dHVyZU9wZXJhdGlvbiIsInZhcmlhYmxlcyI6eyJ0ZXJtIjoiZml4dHVyZSDpm6oiLCJjb3VudCI6MX0sInF1ZXJ5IjoicXVlcnkgZml4dHVyZU9wZXJhdGlvbigkdGVybTogU3RyaW5nISkgeyBmaXh0dXJlKHRlcm06ICR0ZXJtKSB9XG4iLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiJmaXh0dXJlLXNoYTI1NiJ9fX0=",
+              "authorize": true,
+              "includeCredentials": false,
+              "responseType": "json"
+            },
+            "endpointIdentifier": "/query/fixtureOperation",
+            "abortSignal": null
+          }
+        ],
+        "cacheCalls": [],
+        "result": {
+          "data": {
+            "synthetic": true
+          }
+        }
+      }
+    },
+    {
+      "name": "cache hit delegates inputs and sends no request",
+      "cache": "hit",
+      "cacheSeconds": 37,
+      "query": {
+        "fixture": 1
+      },
+      "headers": {
+        "X-Fixture": "cache-input"
+      },
+      "responses": [],
+      "expected": {
+        "requests": [],
+        "cacheCalls": [
+          {
+            "sameBuilder": true,
+            "sameOperation": true,
+            "variables": {
+              "term": "fixture 雪",
+              "count": 1
+            },
+            "query": {
+              "fixture": 1
+            },
+            "headers": {
+              "X-Fixture": "cache-input"
+            },
+            "cacheSeconds": 37
+          }
+        ],
+        "result": {
+          "cached": true
+        }
+      }
+    },
+    {
+      "name": "cache miss fetches the complete fallback chain",
+      "cache": "miss",
+      "cacheSeconds": 0,
+      "abortSignal": "fixture-abort",
+      "responses": [
+        {
+          "body": {
+            "data": null,
+            "errors": [
+              {
+                "message": "OtherError"
+              },
+              {
+                "message": "PersistedQueryNotFound"
+              }
+            ]
+          }
+        },
+        {
+          "body": {
+            "data": {
+              "synthetic": true
+            }
+          }
+        }
+      ],
+      "expected": {
+        "requests": [
+          {
+            "envelope": {
+              "method": "POST",
+              "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+              "headers": {
+                "Accept-Language": "en-US",
+                "Authorization": "Bearer fixture-access-token",
+                "Accept": "application/json",
+                "App-Platform": "fixture-platform",
+                "Spotify-App-Version": "1.3.6.1921",
+                "Content-Type": "application/json;charset=UTF-8"
+              },
+              "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidGVybSI6ImZpeHR1cmUg6ZuqIiwiY291bnQiOjF9LCJvcGVyYXRpb25OYW1lIjoiZml4dHVyZU9wZXJhdGlvbiIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6ImZpeHR1cmUtc2hhMjU2In19fQ==",
+              "authorize": true,
+              "includeCredentials": false,
+              "responseType": "json"
+            },
+            "endpointIdentifier": "/query/fixtureOperation",
+            "abortSignal": "fixture-abort"
+          },
+          {
+            "envelope": {
+              "method": "POST",
+              "url": "https://api-partner.spotify.com/pathfinder/v1/query",
+              "headers": {
+                "Accept-Language": "en-US",
+                "Authorization": "Bearer fixture-access-token",
+                "Accept": "application/json",
+                "App-Platform": "fixture-platform",
+                "Spotify-App-Version": "1.3.6.1921",
+                "Content-Type": "application/json;charset=UTF-8"
+              },
+              "bodyBase64": "eyJvcGVyYXRpb25OYW1lIjoiZml4dHVyZU9wZXJhdGlvbiIsInZhcmlhYmxlcyI6eyJ0ZXJtIjoiZml4dHVyZSDpm6oiLCJjb3VudCI6MX0sInF1ZXJ5IjoicXVlcnkgZml4dHVyZU9wZXJhdGlvbigkdGVybTogU3RyaW5nISkgeyBmaXh0dXJlKHRlcm06ICR0ZXJtKSB9XG4iLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiJmaXh0dXJlLXNoYTI1NiJ9fX0=",
+              "authorize": true,
+              "includeCredentials": false,
+              "responseType": "json"
+            },
+            "endpointIdentifier": "/query/fixtureOperation",
+            "abortSignal": null
+          }
+        ],
+        "cacheCalls": [
+          {
+            "sameBuilder": true,
+            "sameOperation": true,
+            "variables": {
+              "term": "fixture 雪",
+              "count": 1
+            },
+            "query": {},
+            "headers": {},
+            "cacheSeconds": 0
+          }
+        ],
+        "result": {
+          "data": {
+            "synthetic": true
+          }
+        }
+      }
+    }
+  ]
+}

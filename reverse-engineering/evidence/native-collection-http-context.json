@@ -1,0 +1,1468 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "method": "Execute original PAGE/DELTA envelopes against one synthetic owner/context.\n\nOriginal proprietary owners, protobuf constructors, string assignments and wire\nserializer execute unchanged. Opaque HTTP interfaces capture their arguments;\nDELTA's backend sync-token getter returns an explicit synthetic string. Each\nowner stops after its original native-context wrapper returns, before callbacks\nor dispatch. No Dart encoder, application, profile, account or network is used.\n",
+  "inputs": [
+    {
+      "path": "reverse-engineering/fixtures/native-collection-page.json",
+      "sha256": "0cacd1c20971a6aebb6c16b96e21304948dc1bb2a9f7e70cfae0854122683b37"
+    },
+    {
+      "path": ".local/rea-session/native-collection-server-page-delta-write-builders.json",
+      "sha256": "b29eff9c56440322c1a72f1942cc047356ee1557b27f55effa00799f4f2374e5"
+    }
+  ],
+  "oracleSources": [
+    {
+      "path": "reverse-engineering/tools/native_collection_http_context_oracle.py",
+      "sha256": "52ab997aa58a555f714832638c38c3e7c587d67d3ab25a58b33a035a805119ac"
+    },
+    {
+      "path": "reverse-engineering/tools/native_collection_page_oracle.py",
+      "sha256": "468deccb7acac485fed6e60cb6cf2af40fa953c6428bfe41b2494f8a52c4dfc2"
+    },
+    {
+      "path": "reverse-engineering/tools/native_audio_files_request_oracle.py",
+      "sha256": "869e112d6884c2c1d4e12c14396c0c4c3c91a7e2e0e7bd6675bf844edb78ddc6"
+    },
+    {
+      "path": "reverse-engineering/tools/native_audio_files_query_oracle.py",
+      "sha256": "33bd2c42eba5a5c0e7c093ab3493b3e235dbceb2e4335a4f85292b6ef84ce934"
+    },
+    {
+      "path": "reverse-engineering/tools/native_audio_selection_oracle.py",
+      "sha256": "e0c44f0cc68a724b4fac500f71da855120eda50ef119e27d1a7319c3d98627cb"
+    },
+    {
+      "path": "reverse-engineering/tools/native_cdn_request_oracle.py",
+      "sha256": "da0ae0243babcfca1e8b92476d2c719bab576db4fea50335ffa91c03be5793fc"
+    },
+    {
+      "path": "reverse-engineering/tools/native_login5_oracle.py",
+      "sha256": "99d483968e38ae3abf2d7bda0fe835ba5e5ed1c3707b17e9ef3e5aa6c0a2e2b0"
+    }
+  ],
+  "ranges": [
+    {
+      "start": "0x101b3afdc",
+      "endExclusive": "0x101b3b40c",
+      "sha256": "d153a532174a6077d5e6507edaedb514c49564ccd4e1827f855f6cf9fcb014ef",
+      "execution": "static only"
+    },
+    {
+      "start": "0x101b3cf5c",
+      "endExclusive": "0x101b3d694",
+      "sha256": "9508fcf4782451ab63475067365b7748dfa7ddec0378c5501492c21a3096d2f2",
+      "execution": "executed original; owner stops at context-return boundary"
+    },
+    {
+      "start": "0x101b3d694",
+      "endExclusive": "0x101b3dd9c",
+      "sha256": "8ff395703ae4401e376fd0b4ddfdd6e48da61ef97e079c4c5a76ea892a45700a",
+      "execution": "executed original; owner stops at context-return boundary"
+    },
+    {
+      "start": "0x101b7e060",
+      "endExclusive": "0x101b7e084",
+      "sha256": "e45e980ec36e1254811d8c4043548acb66ab72557c479ffe82622399cdbaf6ca",
+      "execution": "executed original; owner stops at context-return boundary"
+    },
+    {
+      "start": "0x101b7e2f0",
+      "endExclusive": "0x101b7e314",
+      "sha256": "1ecff2bb33f8640220b5f3900b1369465cf6bc84621bc0c649782926fd7c7147",
+      "execution": "executed original; owner stops at context-return boundary"
+    },
+    {
+      "start": "0x101e66b18",
+      "endExclusive": "0x101e66d48",
+      "sha256": "e1bbd94d972c0bbaef9b8e2cfcbe3e3fe107b8d7a832df4280a491d2dd9531ad",
+      "execution": "executed original; owner stops at context-return boundary"
+    },
+    {
+      "start": "0x101e66d48",
+      "endExclusive": "0x101e66df4",
+      "sha256": "c8273db7b9c26a47d5512791603762eaae8deb90562473c85e53370b877f173e",
+      "execution": "executed original; owner stops at context-return boundary"
+    },
+    {
+      "start": "0x101c1fc50",
+      "endExclusive": "0x101c1fd00",
+      "sha256": "7d7542be7d72cb93d9eb98de37214fcb5e27e3df0b10abafe137e832f39776fc",
+      "execution": "executed original; owner stops at context-return boundary"
+    },
+    {
+      "start": "0x101c20210",
+      "endExclusive": "0x101c20240",
+      "sha256": "047e5ddfdcce85cbcb3826a3a6474f31cae151565a1ad3cdca9f386d0fc1c878",
+      "execution": "executed original; owner stops at context-return boundary"
+    },
+    {
+      "start": "0x101e8f9a4",
+      "endExclusive": "0x101e8fa18",
+      "sha256": "94be80e5318692b6e8289032609b2f184461dc460f1a26800683fc95e6fef92c",
+      "execution": "executed original; owner stops at context-return boundary"
+    }
+  ],
+  "staticConstructionBindings": {
+    "constructor": "0x101b3afdc",
+    "executedInThisOracle": false,
+    "context": {
+      "source": "param3",
+      "destination": "owner+0x68",
+      "store": "0x101b3b0e4"
+    },
+    "template": {
+      "source": "param4",
+      "destination": "owner+0x78",
+      "cloneCall": "0x101b3b0f0",
+      "cloneEntry": "0x101c1f844"
+    },
+    "source": ".local/rea-session/native-collection-server-page-delta-write-builders.json"
+  },
+  "proved": [
+    "Each pair executes PAGE and DELTA on exactly the same synthetic owner, template slot and native-context value.",
+    "Both original envelopes clone owner+0x78, retain inherited sentinel header values/origin, set POST, set Accept and Content-Type to the identical CollectionV2 MIME, set regional_routing=true and forward owner+0x68 through the original context wrapper.",
+    "The explicit envelope differences before the stop are PAGE vs DELTA path and original serialized body. DELTA obtains field3 from backend virtual+0x18; PAGE obtains its page token from owner+0xd0 and supplies limit300.",
+    "All five PAGE bodies also match the retained independently executed original PAGE byte fixture exactly. DELTA bodyHex is produced by the original constructor/assignments/serializer, not any substitute wire encoder."
+  ],
+  "substitutedInterfaces": [
+    "HTTP template clone captures explicit synthetic inherited fields.",
+    "Relative path, method, opaque body and header setters capture original arguments.",
+    "Request-inner virtual+0x58 captures original regional_routing property strings; the original 0x101c1fc50 wrapper executes unchanged.",
+    "Request-inner virtual+0xc8 captures explicit native-context input; original 0x101c20210 executes unchanged.",
+    "DELTA owner+0x50 virtual+0x18 returns an explicit synthetic libc++ sync-token string through hidden result x8; its admission/storage/provider provenance is not inferred.",
+    "PAGE and DELTA stop at101b3d230 and101b3d9b0 respectively, immediately after original101c20210 returns, before callback construction or send."
+  ],
+  "standardProviders": [
+    "Inherited OriginalAudioFilesRequest pinned allocation, libc/libc++ string and memory imports.",
+    "One-thread libc++ shared-pointer mutex imports retain the real null-shared-pointer branch.",
+    "Darwin TLV bootstrap uses a synthetic thread; original protobuf constructor, runtime and wire serializer execute unchanged."
+  ],
+  "limits": [
+    "Constructor101b3afdc parameter-to-owner bindings are retained static original-source/instruction evidence; this oracle injects the shaped owner instead of executing the full service constructor.",
+    "HTTP template clone/setters and request-inner interfaces are capture providers; concrete HTTP backend/provider construction, final header normalization/order, auth population, origin selection and transport execution are not exercised.",
+    "The shared service envelope is executed, closing only that part of the PAGE/DELTA composition boundary. No actual H3 PAGE send, H3 selection/timing, QPACK behavior or server acceptance is established.",
+    "Synthetic inherited Cache-Control is preserved as an arbitrary sentinel; this does not make it an original production cache default. Ordered builder observations are not decoded H3 header order.",
+    "Empty username/set/sync-token inputs prove serialization only. The enclosing original admission branches, managed stores, sync scheduling, retries, callbacks and responses are excluded.",
+    "PAGE and DELTA also update owner flags at+0x101/+0x102, retained per-stage; no claim that the full service state machines are identical.",
+    "No Dart, remote sender, original process/profile/account access or network is used."
+  ],
+  "cases": [
+    {
+      "name": "initial page, absent empty token",
+      "username": "synthetic-user",
+      "collectionSet": "fixture-set",
+      "paginationToken": "",
+      "backendSyncToken": "synthetic-sync-token",
+      "injectedTemplate": {
+        "method": "GET",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "x-template-field": "preserved"
+        },
+        "bodyHex": "74656d706c6174652d626f6479"
+      },
+      "injectedNativeContext": "0x12345678",
+      "sameOwnerAndTemplateSlot": true,
+      "sameNativeContextValue": true,
+      "sharedTemplateAndContextRemainUnchanged": true,
+      "differingEnvelopeFields": [
+        "bodyHex",
+        "rawUrl",
+        "relativePath"
+      ],
+      "stages": {
+        "PAGE": {
+          "entry": "0x101b3cf5c",
+          "stop": "0x101b3d230",
+          "executedOriginalCalls": [
+            {
+              "entry": "0x101b7e060",
+              "returnSite": "0x101b3cfa8"
+            },
+            {
+              "entry": "0x101e8f9a4",
+              "returnSite": "0x101b3d148"
+            }
+          ],
+          "messageMethods": {
+            "vtable": "0x10265c3e0",
+            "byteSizeLong": "0x101e47624",
+            "internalSerialize": "0x101e47620"
+          },
+          "operations": [
+            {
+              "operation": "cloneTemplate",
+              "entry": "0x101c1f844",
+              "returnSite": "0x101b3d0b0",
+              "ownerAddress": "0x30012000",
+              "templateSlotAddress": "0x30012078",
+              "templateIdentity": "0x30012270"
+            },
+            {
+              "operation": "relativePath",
+              "entry": "0x101c1fbd8",
+              "returnSite": "0x101b3d0f4",
+              "value": "collection/v2/paging"
+            },
+            {
+              "operation": "requestInnerProperty",
+              "originalWrapper": "0x101c1fc50",
+              "virtualSlot": "0x58",
+              "name": "regional_routing",
+              "value": "true"
+            },
+            {
+              "operation": "method",
+              "entry": "0x101c1fae8",
+              "returnSite": "0x101b3d138",
+              "value": "POST"
+            },
+            {
+              "operation": "body",
+              "entry": "0x101c1fea8",
+              "returnSite": "0x101b3d154",
+              "bodyHex": "0a0e73796e7468657469632d75736572120b666978747572652d73657420ac02"
+            },
+            {
+              "operation": "header",
+              "entry": "0x101c1fd00",
+              "returnSite": "0x101b3d1c8",
+              "name": "Accept",
+              "value": "application/vnd.collection-v2.spotify.proto"
+            },
+            {
+              "operation": "header",
+              "entry": "0x101c1fd00",
+              "returnSite": "0x101b3d228",
+              "name": "Content-Type",
+              "value": "application/vnd.collection-v2.spotify.proto"
+            },
+            {
+              "operation": "nativeContextWrapper",
+              "entry": "0x101c20210",
+              "returnSite": "0x101b3d230",
+              "ownerOffset": "0x68",
+              "value": "0x12345678"
+            },
+            {
+              "operation": "requestInnerNativeContext",
+              "originalWrapper": "0x101c20210",
+              "virtualSlot": "0xc8",
+              "value": "0x12345678"
+            }
+          ],
+          "envelope": {
+            "method": "POST",
+            "url": "https://spclient.example.test:443/",
+            "headers": {
+              "User-Agent": "Spotify/independent-offline-fixture",
+              "x-template-field": "preserved",
+              "Accept": "application/vnd.collection-v2.spotify.proto",
+              "Content-Type": "application/vnd.collection-v2.spotify.proto"
+            },
+            "bodyHex": "0a0e73796e7468657469632d75736572120b666978747572652d73657420ac02",
+            "relativePath": "collection/v2/paging",
+            "properties": [
+              [
+                "regional_routing",
+                "true"
+              ]
+            ],
+            "headerMutations": [
+              [
+                "Accept",
+                "application/vnd.collection-v2.spotify.proto"
+              ],
+              [
+                "Content-Type",
+                "application/vnd.collection-v2.spotify.proto"
+              ]
+            ],
+            "options": {
+              "opaqueContext": "0x12345678"
+            },
+            "rawUrl": "https://spclient.example.test:443/collection/v2/paging"
+          },
+          "ownerFlags101And102AfterHex": "0001"
+        },
+        "DELTA": {
+          "entry": "0x101b3d694",
+          "stop": "0x101b3d9b0",
+          "executedOriginalCalls": [
+            {
+              "entry": "0x101b7e2f0",
+              "returnSite": "0x101b3d6f0"
+            },
+            {
+              "entry": "0x101e8f9a4",
+              "returnSite": "0x101b3d8c8"
+            }
+          ],
+          "messageMethods": {
+            "vtable": "0x10265c4a0",
+            "byteSizeLong": "0x101e47624",
+            "internalSerialize": "0x101e47620"
+          },
+          "operations": [
+            {
+              "operation": "backendSyncToken",
+              "interface": "owner+0x50 virtual+0x18",
+              "returnSite": "0x101b3d74c"
+            },
+            {
+              "operation": "cloneTemplate",
+              "entry": "0x101c1f844",
+              "returnSite": "0x101b3d810",
+              "ownerAddress": "0x30012000",
+              "templateSlotAddress": "0x30012078",
+              "templateIdentity": "0x30012270"
+            },
+            {
+              "operation": "relativePath",
+              "entry": "0x101c1fbd8",
+              "returnSite": "0x101b3d858",
+              "value": "collection/v2/delta"
+            },
+            {
+              "operation": "requestInnerProperty",
+              "originalWrapper": "0x101c1fc50",
+              "virtualSlot": "0x58",
+              "name": "regional_routing",
+              "value": "true"
+            },
+            {
+              "operation": "method",
+              "entry": "0x101c1fae8",
+              "returnSite": "0x101b3d8b8",
+              "value": "POST"
+            },
+            {
+              "operation": "body",
+              "entry": "0x101c1fea8",
+              "returnSite": "0x101b3d8d4",
+              "bodyHex": "0a0e73796e7468657469632d75736572120b666978747572652d7365741a1473796e7468657469632d73796e632d746f6b656e"
+            },
+            {
+              "operation": "header",
+              "entry": "0x101c1fd00",
+              "returnSite": "0x101b3d948",
+              "name": "Accept",
+              "value": "application/vnd.collection-v2.spotify.proto"
+            },
+            {
+              "operation": "header",
+              "entry": "0x101c1fd00",
+              "returnSite": "0x101b3d9a8",
+              "name": "Content-Type",
+              "value": "application/vnd.collection-v2.spotify.proto"
+            },
+            {
+              "operation": "nativeContextWrapper",
+              "entry": "0x101c20210",
+              "returnSite": "0x101b3d9b0",
+              "ownerOffset": "0x68",
+              "value": "0x12345678"
+            },
+            {
+              "operation": "requestInnerNativeContext",
+              "originalWrapper": "0x101c20210",
+              "virtualSlot": "0xc8",
+              "value": "0x12345678"
+            }
+          ],
+          "envelope": {
+            "method": "POST",
+            "url": "https://spclient.example.test:443/",
+            "headers": {
+              "User-Agent": "Spotify/independent-offline-fixture",
+              "x-template-field": "preserved",
+              "Accept": "application/vnd.collection-v2.spotify.proto",
+              "Content-Type": "application/vnd.collection-v2.spotify.proto"
+            },
+            "bodyHex": "0a0e73796e7468657469632d75736572120b666978747572652d7365741a1473796e7468657469632d73796e632d746f6b656e",
+            "relativePath": "collection/v2/delta",
+            "properties": [
+              [
+                "regional_routing",
+                "true"
+              ]
+            ],
+            "headerMutations": [
+              [
+                "Accept",
+                "application/vnd.collection-v2.spotify.proto"
+              ],
+              [
+                "Content-Type",
+                "application/vnd.collection-v2.spotify.proto"
+              ]
+            ],
+            "options": {
+              "opaqueContext": "0x12345678"
+            },
+            "rawUrl": "https://spclient.example.test:443/collection/v2/delta"
+          },
+          "ownerFlags101And102AfterHex": "0001"
+        }
+      }
+    },
+    {
+      "name": "next page, short token",
+      "username": "synthetic-user",
+      "collectionSet": "fixture-set",
+      "paginationToken": "page-2",
+      "backendSyncToken": "",
+      "injectedTemplate": {
+        "method": "HEAD",
+        "url": "https://alternate.example.test:8443/",
+        "headers": {
+          "User-Agent": "Synthetic/alternate-context",
+          "x-template-field": "alternate sentinel",
+          "Authorization": "Bearer fixture-context-token",
+          "Accept": "application/synthetic-old",
+          "Content-Type": "application/synthetic-old",
+          "Cache-Control": "synthetic-preserved-cache-field"
+        },
+        "bodyHex": "000102"
+      },
+      "injectedNativeContext": "0x23456789",
+      "sameOwnerAndTemplateSlot": true,
+      "sameNativeContextValue": true,
+      "sharedTemplateAndContextRemainUnchanged": true,
+      "differingEnvelopeFields": [
+        "bodyHex",
+        "rawUrl",
+        "relativePath"
+      ],
+      "stages": {
+        "PAGE": {
+          "entry": "0x101b3cf5c",
+          "stop": "0x101b3d230",
+          "executedOriginalCalls": [
+            {
+              "entry": "0x101b7e060",
+              "returnSite": "0x101b3cfa8"
+            },
+            {
+              "entry": "0x101e8f9a4",
+              "returnSite": "0x101b3d148"
+            }
+          ],
+          "messageMethods": {
+            "vtable": "0x10265c3e0",
+            "byteSizeLong": "0x101e47624",
+            "internalSerialize": "0x101e47620"
+          },
+          "operations": [
+            {
+              "operation": "cloneTemplate",
+              "entry": "0x101c1f844",
+              "returnSite": "0x101b3d0b0",
+              "ownerAddress": "0x3007d060",
+              "templateSlotAddress": "0x3007d0d8",
+              "templateIdentity": "0x3007d2d0"
+            },
+            {
+              "operation": "relativePath",
+              "entry": "0x101c1fbd8",
+              "returnSite": "0x101b3d0f4",
+              "value": "collection/v2/paging"
+            },
+            {
+              "operation": "requestInnerProperty",
+              "originalWrapper": "0x101c1fc50",
+              "virtualSlot": "0x58",
+              "name": "regional_routing",
+              "value": "true"
+            },
+            {
+              "operation": "method",
+              "entry": "0x101c1fae8",
+              "returnSite": "0x101b3d138",
+              "value": "POST"
+            },
+            {
+              "operation": "body",
+              "entry": "0x101c1fea8",
+              "returnSite": "0x101b3d154",
+              "bodyHex": "0a0e73796e7468657469632d75736572120b666978747572652d7365741a06706167652d3220ac02"
+            },
+            {
+              "operation": "header",
+              "entry": "0x101c1fd00",
+              "returnSite": "0x101b3d1c8",
+              "name": "Accept",
+              "value": "application/vnd.collection-v2.spotify.proto"
+            },
+            {
+              "operation": "header",
+              "entry": "0x101c1fd00",
+              "returnSite": "0x101b3d228",
+              "name": "Content-Type",
+              "value": "application/vnd.collection-v2.spotify.proto"
+            },
+            {
+              "operation": "nativeContextWrapper",
+              "entry": "0x101c20210",
+              "returnSite": "0x101b3d230",
+              "ownerOffset": "0x68",
+              "value": "0x23456789"
+            },
+            {
+              "operation": "requestInnerNativeContext",
+              "originalWrapper": "0x101c20210",
+              "virtualSlot": "0xc8",
+              "value": "0x23456789"
+            }
+          ],
+          "envelope": {
+            "method": "POST",
+            "url": "https://alternate.example.test:8443/",
+            "headers": {
+              "User-Agent": "Synthetic/alternate-context",
+              "x-template-field": "alternate sentinel",
+              "Authorization": "Bearer fixture-context-token",
+              "Accept": "application/vnd.collection-v2.spotify.proto",
+              "Content-Type": "application/vnd.collection-v2.spotify.proto",
+              "Cache-Control": "synthetic-preserved-cache-field"
+            },
+            "bodyHex": "0a0e73796e7468657469632d75736572120b666978747572652d7365741a06706167652d3220ac02",
+            "relativePath": "collection/v2/paging",
+            "properties": [
+              [
+                "regional_routing",
+                "true"
+              ]
+            ],
+            "headerMutations": [
+              [
+                "Accept",
+                "application/vnd.collection-v2.spotify.proto"
+              ],
+              [
+                "Content-Type",
+                "application/vnd.collection-v2.spotify.proto"
+              ]
+            ],
+            "options": {
+              "opaqueContext": "0x23456789"
+            },
+            "rawUrl": "https://alternate.example.test:8443/collection/v2/paging"
+          },
+          "ownerFlags101And102AfterHex": "0001"
+        },
+        "DELTA": {
+          "entry": "0x101b3d694",
+          "stop": "0x101b3d9b0",
+          "executedOriginalCalls": [
+            {
+              "entry": "0x101b7e2f0",
+              "returnSite": "0x101b3d6f0"
+            },
+            {
+              "entry": "0x101e8f9a4",
+              "returnSite": "0x101b3d8c8"
+            }
+          ],
+          "messageMethods": {
+            "vtable": "0x10265c4a0",
+            "byteSizeLong": "0x101e47624",
+            "internalSerialize": "0x101e47620"
+          },
+          "operations": [
+            {
+              "operation": "backendSyncToken",
+              "interface": "owner+0x50 virtual+0x18",
+              "returnSite": "0x101b3d74c"
+            },
+            {
+              "operation": "cloneTemplate",
+              "entry": "0x101c1f844",
+              "returnSite": "0x101b3d810",
+              "ownerAddress": "0x3007d060",
+              "templateSlotAddress": "0x3007d0d8",
+              "templateIdentity": "0x3007d2d0"
+            },
+            {
+              "operation": "relativePath",
+              "entry": "0x101c1fbd8",
+              "returnSite": "0x101b3d858",
+              "value": "collection/v2/delta"
+            },
+            {
+              "operation": "requestInnerProperty",
+              "originalWrapper": "0x101c1fc50",
+              "virtualSlot": "0x58",
+              "name": "regional_routing",
+              "value": "true"
+            },
+            {
+              "operation": "method",
+              "entry": "0x101c1fae8",
+              "returnSite": "0x101b3d8b8",
+              "value": "POST"
+            },
+            {
+              "operation": "body",
+              "entry": "0x101c1fea8",
+              "returnSite": "0x101b3d8d4",
+              "bodyHex": "0a0e73796e7468657469632d75736572120b666978747572652d736574"
+            },
+            {
+              "operation": "header",
+              "entry": "0x101c1fd00",
+              "returnSite": "0x101b3d948",
+              "name": "Accept",
+              "value": "application/vnd.collection-v2.spotify.proto"
+            },
+            {
+              "operation": "header",
+              "entry": "0x101c1fd00",
+              "returnSite": "0x101b3d9a8",
+              "name": "Content-Type",
+              "value": "application/vnd.collection-v2.spotify.proto"
+            },
+            {
+              "operation": "nativeContextWrapper",
+              "entry": "0x101c20210",
+              "returnSite": "0x101b3d9b0",
+              "ownerOffset": "0x68",
+              "value": "0x23456789"
+            },
+            {
+              "operation": "requestInnerNativeContext",
+              "originalWrapper": "0x101c20210",
+              "virtualSlot": "0xc8",
+              "value": "0x23456789"
+            }
+          ],
+          "envelope": {
+            "method": "POST",
+            "url": "https://alternate.example.test:8443/",
+            "headers": {
+              "User-Agent": "Synthetic/alternate-context",
+              "x-template-field": "alternate sentinel",
+              "Authorization": "Bearer fixture-context-token",
+              "Accept": "application/vnd.collection-v2.spotify.proto",
+              "Content-Type": "application/vnd.collection-v2.spotify.proto",
+              "Cache-Control": "synthetic-preserved-cache-field"
+            },
+            "bodyHex": "0a0e73796e7468657469632d75736572120b666978747572652d736574",
+            "relativePath": "collection/v2/delta",
+            "properties": [
+              [
+                "regional_routing",
+                "true"
+              ]
+            ],
+            "headerMutations": [
+              [
+                "Accept",
+                "application/vnd.collection-v2.spotify.proto"
+              ],
+              [
+                "Content-Type",
+                "application/vnd.collection-v2.spotify.proto"
+              ]
+            ],
+            "options": {
+              "opaqueContext": "0x23456789"
+            },
+            "rawUrl": "https://alternate.example.test:8443/collection/v2/delta"
+          },
+          "ownerFlags101And102AfterHex": "0001"
+        }
+      }
+    },
+    {
+      "name": "next page, heap strings and embedded NUL token",
+      "username": "synthetic-user-with-long-name",
+      "collectionSet": "synthetic-set-with-long-name",
+      "paginationToken": "synthetic-long-pagination-token\u0000tail",
+      "backendSyncToken": "synthetic-long-sync-token\u0000tail",
+      "injectedTemplate": {
+        "method": "GET",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "x-template-field": "preserved"
+        },
+        "bodyHex": "74656d706c6174652d626f6479"
+      },
+      "injectedNativeContext": "0x12345678",
+      "sameOwnerAndTemplateSlot": true,
+      "sameNativeContextValue": true,
+      "sharedTemplateAndContextRemainUnchanged": true,
+      "differingEnvelopeFields": [
+        "bodyHex",
+        "rawUrl",
+        "relativePath"
+      ],
+      "stages": {
+        "PAGE": {
+          "entry": "0x101b3cf5c",
+          "stop": "0x101b3d230",
+          "executedOriginalCalls": [
+            {
+              "entry": "0x101b7e060",
+              "returnSite": "0x101b3cfa8"
+            },
+            {
+              "entry": "0x101e8f9a4",
+              "returnSite": "0x101b3d148"
+            }
+          ],
+          "messageMethods": {
+            "vtable": "0x10265c3e0",
+            "byteSizeLong": "0x101e47624",
+            "internalSerialize": "0x101e47620"
+          },
+          "operations": [
+            {
+              "operation": "cloneTemplate",
+              "entry": "0x101c1f844",
+              "returnSite": "0x101b3d0b0",
+              "ownerAddress": "0x3007d720",
+              "templateSlotAddress": "0x3007d798",
+              "templateIdentity": "0x3007da00"
+            },
+            {
+              "operation": "relativePath",
+              "entry": "0x101c1fbd8",
+              "returnSite": "0x101b3d0f4",
+              "value": "collection/v2/paging"
+            },
+            {
+              "operation": "requestInnerProperty",
+              "originalWrapper": "0x101c1fc50",
+              "virtualSlot": "0x58",
+              "name": "regional_routing",
+              "value": "true"
+            },
+            {
+              "operation": "method",
+              "entry": "0x101c1fae8",
+              "returnSite": "0x101b3d138",
+              "value": "POST"
+            },
+            {
+              "operation": "body",
+              "entry": "0x101c1fea8",
+              "returnSite": "0x101b3d154",
+              "bodyHex": "0a1d73796e7468657469632d757365722d776974682d6c6f6e672d6e616d65121c73796e7468657469632d7365742d776974682d6c6f6e672d6e616d651a2473796e7468657469632d6c6f6e672d706167696e6174696f6e2d746f6b656e007461696c20ac02"
+            },
+            {
+              "operation": "header",
+              "entry": "0x101c1fd00",
+              "returnSite": "0x101b3d1c8",
+              "name": "Accept",
+              "value": "application/vnd.collection-v2.spotify.proto"
+            },
+            {
+              "operation": "header",
+              "entry": "0x101c1fd00",
+              "returnSite": "0x101b3d228",
+              "name": "Content-Type",
+              "value": "application/vnd.collection-v2.spotify.proto"
+            },
+            {
+              "operation": "nativeContextWrapper",
+              "entry": "0x101c20210",
+              "returnSite": "0x101b3d230",
+              "ownerOffset": "0x68",
+              "value": "0x12345678"
+            },
+            {
+              "operation": "requestInnerNativeContext",
+              "originalWrapper": "0x101c20210",
+              "virtualSlot": "0xc8",
+              "value": "0x12345678"
+            }
+          ],
+          "envelope": {
+            "method": "POST",
+            "url": "https://spclient.example.test:443/",
+            "headers": {
+              "User-Agent": "Spotify/independent-offline-fixture",
+              "x-template-field": "preserved",
+              "Accept": "application/vnd.collection-v2.spotify.proto",
+              "Content-Type": "application/vnd.collection-v2.spotify.proto"
+            },
+            "bodyHex": "0a1d73796e7468657469632d757365722d776974682d6c6f6e672d6e616d65121c73796e7468657469632d7365742d776974682d6c6f6e672d6e616d651a2473796e7468657469632d6c6f6e672d706167696e6174696f6e2d746f6b656e007461696c20ac02",
+            "relativePath": "collection/v2/paging",
+            "properties": [
+              [
+                "regional_routing",
+                "true"
+              ]
+            ],
+            "headerMutations": [
+              [
+                "Accept",
+                "application/vnd.collection-v2.spotify.proto"
+              ],
+              [
+                "Content-Type",
+                "application/vnd.collection-v2.spotify.proto"
+              ]
+            ],
+            "options": {
+              "opaqueContext": "0x12345678"
+            },
+            "rawUrl": "https://spclient.example.test:443/collection/v2/paging"
+          },
+          "ownerFlags101And102AfterHex": "0001"
+        },
+        "DELTA": {
+          "entry": "0x101b3d694",
+          "stop": "0x101b3d9b0",
+          "executedOriginalCalls": [
+            {
+              "entry": "0x101b7e2f0",
+              "returnSite": "0x101b3d6f0"
+            },
+            {
+              "entry": "0x101e8f9a4",
+              "returnSite": "0x101b3d8c8"
+            }
+          ],
+          "messageMethods": {
+            "vtable": "0x10265c4a0",
+            "byteSizeLong": "0x101e47624",
+            "internalSerialize": "0x101e47620"
+          },
+          "operations": [
+            {
+              "operation": "backendSyncToken",
+              "interface": "owner+0x50 virtual+0x18",
+              "returnSite": "0x101b3d74c"
+            },
+            {
+              "operation": "cloneTemplate",
+              "entry": "0x101c1f844",
+              "returnSite": "0x101b3d810",
+              "ownerAddress": "0x3007d720",
+              "templateSlotAddress": "0x3007d798",
+              "templateIdentity": "0x3007da00"
+            },
+            {
+              "operation": "relativePath",
+              "entry": "0x101c1fbd8",
+              "returnSite": "0x101b3d858",
+              "value": "collection/v2/delta"
+            },
+            {
+              "operation": "requestInnerProperty",
+              "originalWrapper": "0x101c1fc50",
+              "virtualSlot": "0x58",
+              "name": "regional_routing",
+              "value": "true"
+            },
+            {
+              "operation": "method",
+              "entry": "0x101c1fae8",
+              "returnSite": "0x101b3d8b8",
+              "value": "POST"
+            },
+            {
+              "operation": "body",
+              "entry": "0x101c1fea8",
+              "returnSite": "0x101b3d8d4",
+              "bodyHex": "0a1d73796e7468657469632d757365722d776974682d6c6f6e672d6e616d65121c73796e7468657469632d7365742d776974682d6c6f6e672d6e616d651a1e73796e7468657469632d6c6f6e672d73796e632d746f6b656e007461696c"
+            },
+            {
+              "operation": "header",
+              "entry": "0x101c1fd00",
+              "returnSite": "0x101b3d948",
+              "name": "Accept",
+              "value": "application/vnd.collection-v2.spotify.proto"
+            },
+            {
+              "operation": "header",
+              "entry": "0x101c1fd00",
+              "returnSite": "0x101b3d9a8",
+              "name": "Content-Type",
+              "value": "application/vnd.collection-v2.spotify.proto"
+            },
+            {
+              "operation": "nativeContextWrapper",
+              "entry": "0x101c20210",
+              "returnSite": "0x101b3d9b0",
+              "ownerOffset": "0x68",
+              "value": "0x12345678"
+            },
+            {
+              "operation": "requestInnerNativeContext",
+              "originalWrapper": "0x101c20210",
+              "virtualSlot": "0xc8",
+              "value": "0x12345678"
+            }
+          ],
+          "envelope": {
+            "method": "POST",
+            "url": "https://spclient.example.test:443/",
+            "headers": {
+              "User-Agent": "Spotify/independent-offline-fixture",
+              "x-template-field": "preserved",
+              "Accept": "application/vnd.collection-v2.spotify.proto",
+              "Content-Type": "application/vnd.collection-v2.spotify.proto"
+            },
+            "bodyHex": "0a1d73796e7468657469632d757365722d776974682d6c6f6e672d6e616d65121c73796e7468657469632d7365742d776974682d6c6f6e672d6e616d651a1e73796e7468657469632d6c6f6e672d73796e632d746f6b656e007461696c",
+            "relativePath": "collection/v2/delta",
+            "properties": [
+              [
+                "regional_routing",
+                "true"
+              ]
+            ],
+            "headerMutations": [
+              [
+                "Accept",
+                "application/vnd.collection-v2.spotify.proto"
+              ],
+              [
+                "Content-Type",
+                "application/vnd.collection-v2.spotify.proto"
+              ]
+            ],
+            "options": {
+              "opaqueContext": "0x12345678"
+            },
+            "rawUrl": "https://spclient.example.test:443/collection/v2/delta"
+          },
+          "ownerFlags101And102AfterHex": "0001"
+        }
+      }
+    },
+    {
+      "name": "UTF-8 username and set with explicit empty token",
+      "username": "fixture-雪",
+      "collectionSet": "set-☃",
+      "paginationToken": "",
+      "backendSyncToken": "同步-☃",
+      "injectedTemplate": {
+        "method": "HEAD",
+        "url": "https://alternate.example.test:8443/",
+        "headers": {
+          "User-Agent": "Synthetic/alternate-context",
+          "x-template-field": "alternate sentinel",
+          "Authorization": "Bearer fixture-context-token",
+          "Accept": "application/synthetic-old",
+          "Content-Type": "application/synthetic-old",
+          "Cache-Control": "synthetic-preserved-cache-field"
+        },
+        "bodyHex": "000102"
+      },
+      "injectedNativeContext": "0x23456789",
+      "sameOwnerAndTemplateSlot": true,
+      "sameNativeContextValue": true,
+      "sharedTemplateAndContextRemainUnchanged": true,
+      "differingEnvelopeFields": [
+        "bodyHex",
+        "rawUrl",
+        "relativePath"
+      ],
+      "stages": {
+        "PAGE": {
+          "entry": "0x101b3cf5c",
+          "stop": "0x101b3d230",
+          "executedOriginalCalls": [
+            {
+              "entry": "0x101b7e060",
+              "returnSite": "0x101b3cfa8"
+            },
+            {
+              "entry": "0x101e8f9a4",
+              "returnSite": "0x101b3d148"
+            }
+          ],
+          "messageMethods": {
+            "vtable": "0x10265c3e0",
+            "byteSizeLong": "0x101e47624",
+            "internalSerialize": "0x101e47620"
+          },
+          "operations": [
+            {
+              "operation": "cloneTemplate",
+              "entry": "0x101c1f844",
+              "returnSite": "0x101b3d0b0",
+              "ownerAddress": "0x3007dfa0",
+              "templateSlotAddress": "0x3007e018",
+              "templateIdentity": "0x3007e210"
+            },
+            {
+              "operation": "relativePath",
+              "entry": "0x101c1fbd8",
+              "returnSite": "0x101b3d0f4",
+              "value": "collection/v2/paging"
+            },
+            {
+              "operation": "requestInnerProperty",
+              "originalWrapper": "0x101c1fc50",
+              "virtualSlot": "0x58",
+              "name": "regional_routing",
+              "value": "true"
+            },
+            {
+              "operation": "method",
+              "entry": "0x101c1fae8",
+              "returnSite": "0x101b3d138",
+              "value": "POST"
+            },
+            {
+              "operation": "body",
+              "entry": "0x101c1fea8",
+              "returnSite": "0x101b3d154",
+              "bodyHex": "0a0b666978747572652de99baa12077365742de2988320ac02"
+            },
+            {
+              "operation": "header",
+              "entry": "0x101c1fd00",
+              "returnSite": "0x101b3d1c8",
+              "name": "Accept",
+              "value": "application/vnd.collection-v2.spotify.proto"
+            },
+            {
+              "operation": "header",
+              "entry": "0x101c1fd00",
+              "returnSite": "0x101b3d228",
+              "name": "Content-Type",
+              "value": "application/vnd.collection-v2.spotify.proto"
+            },
+            {
+              "operation": "nativeContextWrapper",
+              "entry": "0x101c20210",
+              "returnSite": "0x101b3d230",
+              "ownerOffset": "0x68",
+              "value": "0x23456789"
+            },
+            {
+              "operation": "requestInnerNativeContext",
+              "originalWrapper": "0x101c20210",
+              "virtualSlot": "0xc8",
+              "value": "0x23456789"
+            }
+          ],
+          "envelope": {
+            "method": "POST",
+            "url": "https://alternate.example.test:8443/",
+            "headers": {
+              "User-Agent": "Synthetic/alternate-context",
+              "x-template-field": "alternate sentinel",
+              "Authorization": "Bearer fixture-context-token",
+              "Accept": "application/vnd.collection-v2.spotify.proto",
+              "Content-Type": "application/vnd.collection-v2.spotify.proto",
+              "Cache-Control": "synthetic-preserved-cache-field"
+            },
+            "bodyHex": "0a0b666978747572652de99baa12077365742de2988320ac02",
+            "relativePath": "collection/v2/paging",
+            "properties": [
+              [
+                "regional_routing",
+                "true"
+              ]
+            ],
+            "headerMutations": [
+              [
+                "Accept",
+                "application/vnd.collection-v2.spotify.proto"
+              ],
+              [
+                "Content-Type",
+                "application/vnd.collection-v2.spotify.proto"
+              ]
+            ],
+            "options": {
+              "opaqueContext": "0x23456789"
+            },
+            "rawUrl": "https://alternate.example.test:8443/collection/v2/paging"
+          },
+          "ownerFlags101And102AfterHex": "0001"
+        },
+        "DELTA": {
+          "entry": "0x101b3d694",
+          "stop": "0x101b3d9b0",
+          "executedOriginalCalls": [
+            {
+              "entry": "0x101b7e2f0",
+              "returnSite": "0x101b3d6f0"
+            },
+            {
+              "entry": "0x101e8f9a4",
+              "returnSite": "0x101b3d8c8"
+            }
+          ],
+          "messageMethods": {
+            "vtable": "0x10265c4a0",
+            "byteSizeLong": "0x101e47624",
+            "internalSerialize": "0x101e47620"
+          },
+          "operations": [
+            {
+              "operation": "backendSyncToken",
+              "interface": "owner+0x50 virtual+0x18",
+              "returnSite": "0x101b3d74c"
+            },
+            {
+              "operation": "cloneTemplate",
+              "entry": "0x101c1f844",
+              "returnSite": "0x101b3d810",
+              "ownerAddress": "0x3007dfa0",
+              "templateSlotAddress": "0x3007e018",
+              "templateIdentity": "0x3007e210"
+            },
+            {
+              "operation": "relativePath",
+              "entry": "0x101c1fbd8",
+              "returnSite": "0x101b3d858",
+              "value": "collection/v2/delta"
+            },
+            {
+              "operation": "requestInnerProperty",
+              "originalWrapper": "0x101c1fc50",
+              "virtualSlot": "0x58",
+              "name": "regional_routing",
+              "value": "true"
+            },
+            {
+              "operation": "method",
+              "entry": "0x101c1fae8",
+              "returnSite": "0x101b3d8b8",
+              "value": "POST"
+            },
+            {
+              "operation": "body",
+              "entry": "0x101c1fea8",
+              "returnSite": "0x101b3d8d4",
+              "bodyHex": "0a0b666978747572652de99baa12077365742de298831a0ae5908ce6ada52de29883"
+            },
+            {
+              "operation": "header",
+              "entry": "0x101c1fd00",
+              "returnSite": "0x101b3d948",
+              "name": "Accept",
+              "value": "application/vnd.collection-v2.spotify.proto"
+            },
+            {
+              "operation": "header",
+              "entry": "0x101c1fd00",
+              "returnSite": "0x101b3d9a8",
+              "name": "Content-Type",
+              "value": "application/vnd.collection-v2.spotify.proto"
+            },
+            {
+              "operation": "nativeContextWrapper",
+              "entry": "0x101c20210",
+              "returnSite": "0x101b3d9b0",
+              "ownerOffset": "0x68",
+              "value": "0x23456789"
+            },
+            {
+              "operation": "requestInnerNativeContext",
+              "originalWrapper": "0x101c20210",
+              "virtualSlot": "0xc8",
+              "value": "0x23456789"
+            }
+          ],
+          "envelope": {
+            "method": "POST",
+            "url": "https://alternate.example.test:8443/",
+            "headers": {
+              "User-Agent": "Synthetic/alternate-context",
+              "x-template-field": "alternate sentinel",
+              "Authorization": "Bearer fixture-context-token",
+              "Accept": "application/vnd.collection-v2.spotify.proto",
+              "Content-Type": "application/vnd.collection-v2.spotify.proto",
+              "Cache-Control": "synthetic-preserved-cache-field"
+            },
+            "bodyHex": "0a0b666978747572652de99baa12077365742de298831a0ae5908ce6ada52de29883",
+            "relativePath": "collection/v2/delta",
+            "properties": [
+              [
+                "regional_routing",
+                "true"
+              ]
+            ],
+            "headerMutations": [
+              [
+                "Accept",
+                "application/vnd.collection-v2.spotify.proto"
+              ],
+              [
+                "Content-Type",
+                "application/vnd.collection-v2.spotify.proto"
+              ]
+            ],
+            "options": {
+              "opaqueContext": "0x23456789"
+            },
+            "rawUrl": "https://alternate.example.test:8443/collection/v2/delta"
+          },
+          "ownerFlags101And102AfterHex": "0001"
+        }
+      }
+    },
+    {
+      "name": "empty username and set, absence is not admission policy",
+      "username": "",
+      "collectionSet": "",
+      "paginationToken": "",
+      "backendSyncToken": "",
+      "injectedTemplate": {
+        "method": "GET",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "x-template-field": "preserved"
+        },
+        "bodyHex": "74656d706c6174652d626f6479"
+      },
+      "injectedNativeContext": "0x12345678",
+      "sameOwnerAndTemplateSlot": true,
+      "sameNativeContextValue": true,
+      "sharedTemplateAndContextRemainUnchanged": true,
+      "differingEnvelopeFields": [
+        "bodyHex",
+        "rawUrl",
+        "relativePath"
+      ],
+      "stages": {
+        "PAGE": {
+          "entry": "0x101b3cf5c",
+          "stop": "0x101b3d230",
+          "executedOriginalCalls": [
+            {
+              "entry": "0x101b7e060",
+              "returnSite": "0x101b3cfa8"
+            },
+            {
+              "entry": "0x101e8f9a4",
+              "returnSite": "0x101b3d148"
+            }
+          ],
+          "messageMethods": {
+            "vtable": "0x10265c3e0",
+            "byteSizeLong": "0x101e47624",
+            "internalSerialize": "0x101e47620"
+          },
+          "operations": [
+            {
+              "operation": "cloneTemplate",
+              "entry": "0x101c1f844",
+              "returnSite": "0x101b3d0b0",
+              "ownerAddress": "0x3007e640",
+              "templateSlotAddress": "0x3007e6b8",
+              "templateIdentity": "0x3007e8b0"
+            },
+            {
+              "operation": "relativePath",
+              "entry": "0x101c1fbd8",
+              "returnSite": "0x101b3d0f4",
+              "value": "collection/v2/paging"
+            },
+            {
+              "operation": "requestInnerProperty",
+              "originalWrapper": "0x101c1fc50",
+              "virtualSlot": "0x58",
+              "name": "regional_routing",
+              "value": "true"
+            },
+            {
+              "operation": "method",
+              "entry": "0x101c1fae8",
+              "returnSite": "0x101b3d138",
+              "value": "POST"
+            },
+            {
+              "operation": "body",
+              "entry": "0x101c1fea8",
+              "returnSite": "0x101b3d154",
+              "bodyHex": "20ac02"
+            },
+            {
+              "operation": "header",
+              "entry": "0x101c1fd00",
+              "returnSite": "0x101b3d1c8",
+              "name": "Accept",
+              "value": "application/vnd.collection-v2.spotify.proto"
+            },
+            {
+              "operation": "header",
+              "entry": "0x101c1fd00",
+              "returnSite": "0x101b3d228",
+              "name": "Content-Type",
+              "value": "application/vnd.collection-v2.spotify.proto"
+            },
+            {
+              "operation": "nativeContextWrapper",
+              "entry": "0x101c20210",
+              "returnSite": "0x101b3d230",
+              "ownerOffset": "0x68",
+              "value": "0x12345678"
+            },
+            {
+              "operation": "requestInnerNativeContext",
+              "originalWrapper": "0x101c20210",
+              "virtualSlot": "0xc8",
+              "value": "0x12345678"
+            }
+          ],
+          "envelope": {
+            "method": "POST",
+            "url": "https://spclient.example.test:443/",
+            "headers": {
+              "User-Agent": "Spotify/independent-offline-fixture",
+              "x-template-field": "preserved",
+              "Accept": "application/vnd.collection-v2.spotify.proto",
+              "Content-Type": "application/vnd.collection-v2.spotify.proto"
+            },
+            "bodyHex": "20ac02",
+            "relativePath": "collection/v2/paging",
+            "properties": [
+              [
+                "regional_routing",
+                "true"
+              ]
+            ],
+            "headerMutations": [
+              [
+                "Accept",
+                "application/vnd.collection-v2.spotify.proto"
+              ],
+              [
+                "Content-Type",
+                "application/vnd.collection-v2.spotify.proto"
+              ]
+            ],
+            "options": {
+              "opaqueContext": "0x12345678"
+            },
+            "rawUrl": "https://spclient.example.test:443/collection/v2/paging"
+          },
+          "ownerFlags101And102AfterHex": "0001"
+        },
+        "DELTA": {
+          "entry": "0x101b3d694",
+          "stop": "0x101b3d9b0",
+          "executedOriginalCalls": [
+            {
+              "entry": "0x101b7e2f0",
+              "returnSite": "0x101b3d6f0"
+            },
+            {
+              "entry": "0x101e8f9a4",
+              "returnSite": "0x101b3d8c8"
+            }
+          ],
+          "messageMethods": {
+            "vtable": "0x10265c4a0",
+            "byteSizeLong": "0x101e47624",
+            "internalSerialize": "0x101e47620"
+          },
+          "operations": [
+            {
+              "operation": "backendSyncToken",
+              "interface": "owner+0x50 virtual+0x18",
+              "returnSite": "0x101b3d74c"
+            },
+            {
+              "operation": "cloneTemplate",
+              "entry": "0x101c1f844",
+              "returnSite": "0x101b3d810",
+              "ownerAddress": "0x3007e640",
+              "templateSlotAddress": "0x3007e6b8",
+              "templateIdentity": "0x3007e8b0"
+            },
+            {
+              "operation": "relativePath",
+              "entry": "0x101c1fbd8",
+              "returnSite": "0x101b3d858",
+              "value": "collection/v2/delta"
+            },
+            {
+              "operation": "requestInnerProperty",
+              "originalWrapper": "0x101c1fc50",
+              "virtualSlot": "0x58",
+              "name": "regional_routing",
+              "value": "true"
+            },
+            {
+              "operation": "method",
+              "entry": "0x101c1fae8",
+              "returnSite": "0x101b3d8b8",
+              "value": "POST"
+            },
+            {
+              "operation": "body",
+              "entry": "0x101c1fea8",
+              "returnSite": "0x101b3d8d4",
+              "bodyHex": ""
+            },
+            {
+              "operation": "header",
+              "entry": "0x101c1fd00",
+              "returnSite": "0x101b3d948",
+              "name": "Accept",
+              "value": "application/vnd.collection-v2.spotify.proto"
+            },
+            {
+              "operation": "header",
+              "entry": "0x101c1fd00",
+              "returnSite": "0x101b3d9a8",
+              "name": "Content-Type",
+              "value": "application/vnd.collection-v2.spotify.proto"
+            },
+            {
+              "operation": "nativeContextWrapper",
+              "entry": "0x101c20210",
+              "returnSite": "0x101b3d9b0",
+              "ownerOffset": "0x68",
+              "value": "0x12345678"
+            },
+            {
+              "operation": "requestInnerNativeContext",
+              "originalWrapper": "0x101c20210",
+              "virtualSlot": "0xc8",
+              "value": "0x12345678"
+            }
+          ],
+          "envelope": {
+            "method": "POST",
+            "url": "https://spclient.example.test:443/",
+            "headers": {
+              "User-Agent": "Spotify/independent-offline-fixture",
+              "x-template-field": "preserved",
+              "Accept": "application/vnd.collection-v2.spotify.proto",
+              "Content-Type": "application/vnd.collection-v2.spotify.proto"
+            },
+            "bodyHex": "",
+            "relativePath": "collection/v2/delta",
+            "properties": [
+              [
+                "regional_routing",
+                "true"
+              ]
+            ],
+            "headerMutations": [
+              [
+                "Accept",
+                "application/vnd.collection-v2.spotify.proto"
+              ],
+              [
+                "Content-Type",
+                "application/vnd.collection-v2.spotify.proto"
+              ]
+            ],
+            "options": {
+              "opaqueContext": "0x12345678"
+            },
+            "rawUrl": "https://spclient.example.test:443/collection/v2/delta"
+          },
+          "ownerFlags101And102AfterHex": "0001"
+        }
+      }
+    }
+  ]
+}

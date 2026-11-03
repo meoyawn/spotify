@@ -1,0 +1,36 @@
+{
+  "package": "cancellation_token",
+  "version": "2.0.1",
+  "repository": "https://github.com/jonathanpetercole/dart-cancellation-token",
+  "publishedArchiveSha256": "ad95acf9d4b2f3563e25dc937f63587e46a70ce534e910b65d10e115490f1027",
+  "upstreamFileSha256": {
+    "CHANGELOG.md": "68c81a19c9f6423db3e551873cc35240132e3dacad10d3beec51732e54800eb3",
+    "LICENSE": "e64ef28255fb39b40554d96b702bca30d76ea3aadd523aa1835ebd3de548bbe5",
+    "README.md": "d7343096cf7ee99395a2b216a541ffe2e79300b8e87706c048b597fe8b1f688c",
+    "lib/cancellation_token.dart": "8c807bd0510e382ddf4e41cb3e83e853fe90771fb9f0970f8b6d025a96892224",
+    "lib/src/cancellables/cancellable.dart": "6109b73efb1388cdf483de401fe9e33b5d20033c856e96740f0275e05b7bdf8c",
+    "lib/src/cancellables/cancellable_completer.dart": "f1026df43db7b541cccebbfaac4f3278d9dabe0f9f967e9a813db08ba8812a89",
+    "lib/src/cancellables/cancellable_compute.dart": "94b8cf1b9146ece295d02145103f6586e7164180a99a0c3413a7053eea105830",
+    "lib/src/cancellables/cancellable_future.dart": "c0182839d3668568f483ddc00a55eb234fd0ef9a0e1faf166e448a3044ad59f2",
+    "lib/src/cancellables/cancellable_future_or.dart": "7dd1736457c11de481e24feed1ef57dc6b91984dd0e3731f792d488bbb067101",
+    "lib/src/cancellables/cancellable_isolate/cancellable_isolate_io.dart": "d65660f21a1e21c32a3d8cd845438b3debd21b0e7911b63459239e55710a832f",
+    "lib/src/cancellables/cancellable_isolate/cancellable_isolate_stub.dart": "7e8ef46e7ae6528e064e0a05aa8c232988b8b03f6c5ea002976ba9bdfda88a76",
+    "lib/src/cancellables/cancellable_isolate/cancellable_isolate_web.dart": "af63d44e013a43535b629b98d4789b46293525abfe47c84bc5bbc3ce1e13f077",
+    "lib/src/cancellables/cancellable_isolate.dart": "f53e35a9dec7aa9ff1d1cf52f28fe4578875f61b690a5f09ddc9d83bc81f25c4",
+    "lib/src/exceptions/cancelled_exception.dart": "317b66196a9e762588bb25c26935079178b962bb05b45f7f3f68ced9ebd916c7",
+    "lib/src/tokens/cancellation_token.dart": "45931d0a0ca15ea99b0744f3f00c72ef8fb42398864c70cb3615d752db6dbd6a",
+    "lib/src/tokens/merged_cancellation_token.dart": "6aecda2d4e90d33e9edbf017dfc9e830d64de30a2571362c1d2f7de611ae3e79",
+    "lib/src/tokens/timeout_cancellation_token.dart": "af86cc577b7e8779c4757a27be46ca4ff616efb843bf0237c35bb74e4a1a9d38",
+    "lib/src/types.dart": "328a8b2cc489f953b542ea9803e8ec0a191f852f87781bf2de2604c1bfde76eb",
+    "lib/src/utils/extensions.dart": "261c295d8e920bb2ebfb569b01ff3a0954a790694151b2b264facd7f95e1ae3b",
+    "lib/src/utils/ignore_cancellation.dart": "ac6af68a512905521d0a2083cd62ab8b30782e41ce5226918f0d6bcdfe313a15",
+    "pubspec.yaml": "5b6d4fd6831f7cf5dd34daad9abb75bdfc45a0c0cd4695a08bbfb44a97373996"
+  },
+  "localChanges": [
+    {
+      "path": "lib/src/tokens/merged_cancellation_token.dart",
+      "upstreamSha256": "6aecda2d4e90d33e9edbf017dfc9e830d64de30a2571362c1d2f7de611ae3e79",
+      "localSha256": "f9bc981536afba4ccaf7b6796202ca1577513809dd2f93525d2e8f4f8369dc42"
+    }
+  ]
+}

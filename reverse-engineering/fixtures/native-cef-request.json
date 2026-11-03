@@ -1,0 +1,369 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "adapter": "0x1017d876c",
+  "method": "Observe original proprietary CEF conversion without a request or network.\n\nThe unchanged adapter, header-pair conversion and multimap insertion execute\nagainst synthetic native requests. Public CEF string conversion/comparison and\ninert CefRequest/PostData interfaces supply standard primitives only. Capture\nthe API input fields before CEF SetHeaderMap filtering and network conversion.\n",
+  "exports": [
+    {
+      "path": ".local/rea-session/native_http_cef_request_adapter.json",
+      "sha256": "06062327ea5a11fb5ec8ee6a08cc92fb69298b430e5b4d19fe392e22f2f38ae1"
+    },
+    {
+      "path": ".local/rea-session/native_cef_user_agent_pair_conversion.json",
+      "sha256": "c5c095ae4a67e87e4904cd726df92d362423091f875b4f13a9b9a5a79797008a"
+    },
+    {
+      "path": ".local/rea-session/native_cef_header_pair_conversion.json",
+      "sha256": "1e9ede55d5175b71ba04fbf61a8b9b8de6a8eecedf20c036c5448dadba0ad723"
+    }
+  ],
+  "standardSource": "https://github.com/chromiumembedded/cef/blob/beff58dbc4d0fd12b3eafea8f5314ce22e649078/libcef/common/string_types_impl.cc",
+  "limitations": [
+    "CefRequest API inputs only, before standard SetHeaderMap filtering or network serialization.",
+    "Synthetic native header traversal order; actual unordered-map order is not inferred.",
+    "Valid UTF8 input strings only; no CEF/Chromium implementation executes."
+  ],
+  "cases": [
+    {
+      "method": "GET",
+      "url": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+      "headers": [],
+      "bodyBase64": "",
+      "adapterUserAgent": "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)",
+      "adapterOption80": 0,
+      "name": "empty native headers still seed adapter User-Agent",
+      "result": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "GET",
+        "urlInput": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+        "headers": [
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+          ]
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+      "headers": [],
+      "bodyBase64": "",
+      "adapterUserAgent": "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)",
+      "adapterOption80": 1,
+      "name": "nonzero option byte one",
+      "result": {
+        "bodyElementsBase64": [],
+        "flags": 80,
+        "method": "GET",
+        "urlInput": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+        "headers": [
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+          ]
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+      "headers": [],
+      "bodyBase64": "",
+      "adapterUserAgent": "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)",
+      "adapterOption80": 255,
+      "name": "nonzero option byte 255",
+      "result": {
+        "bodyElementsBase64": [],
+        "flags": 80,
+        "method": "GET",
+        "urlInput": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+        "headers": [
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+          ]
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+      "headers": [
+        [
+          "User-Agent",
+          "explicit UA"
+        ]
+      ],
+      "bodyBase64": "",
+      "adapterUserAgent": "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)",
+      "adapterOption80": 0,
+      "name": "explicit same spelling User-Agent remains duplicate",
+      "result": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "GET",
+        "urlInput": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+        "headers": [
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+          ],
+          [
+            "User-Agent",
+            "explicit UA"
+          ]
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+      "headers": [
+        [
+          "user-agent",
+          "lowercase UA"
+        ]
+      ],
+      "bodyBase64": "",
+      "adapterUserAgent": "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)",
+      "adapterOption80": 0,
+      "name": "lowercase User-Agent remains a distinct multimap key",
+      "result": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "GET",
+        "urlInput": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+        "headers": [
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+          ],
+          [
+            "user-agent",
+            "lowercase UA"
+          ]
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+      "headers": [
+        [
+          "User-Agent",
+          ""
+        ]
+      ],
+      "bodyBase64": "",
+      "adapterUserAgent": "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)",
+      "adapterOption80": 0,
+      "name": "empty explicit User-Agent retains duplicate and presence",
+      "result": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "GET",
+        "urlInput": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+        "headers": [
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+          ],
+          [
+            "User-Agent",
+            ""
+          ]
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+      "headers": [
+        [
+          "z-last",
+          "z"
+        ],
+        [
+          "Accept",
+          "application/protobuf"
+        ],
+        [
+          "X-empty",
+          ""
+        ],
+        [
+          "a-first",
+          "a"
+        ]
+      ],
+      "bodyBase64": "",
+      "adapterUserAgent": "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)",
+      "adapterOption80": 0,
+      "name": "case-sensitive header ordering retains values",
+      "result": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "GET",
+        "urlInput": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+        "headers": [
+          [
+            "Accept",
+            "application/protobuf"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+          ],
+          [
+            "X-empty",
+            ""
+          ],
+          [
+            "a-first",
+            "a"
+          ],
+          [
+            "z-last",
+            "z"
+          ]
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+      "headers": [
+        [
+          "Referer",
+          "https://referrer.invalid/a"
+        ]
+      ],
+      "bodyBase64": "",
+      "adapterUserAgent": "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)",
+      "adapterOption80": 0,
+      "name": "Referer is still an adapter input",
+      "result": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "GET",
+        "urlInput": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+        "headers": [
+          [
+            "Referer",
+            "https://referrer.invalid/a"
+          ],
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+          ]
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "url": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+      "headers": [],
+      "bodyBase64": "AID/DQoA",
+      "adapterUserAgent": "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)",
+      "adapterOption80": 0,
+      "name": "POST binary body becomes one byte element",
+      "result": {
+        "bodyElementsBase64": [
+          "AID/DQoA"
+        ],
+        "flags": 208,
+        "method": "POST",
+        "urlInput": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+        "headers": [
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+          ]
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+      "headers": [],
+      "bodyBase64": "YQ==",
+      "adapterUserAgent": "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)",
+      "adapterOption80": 0,
+      "name": "GET nonempty body is also attached",
+      "result": {
+        "bodyElementsBase64": [
+          "YQ=="
+        ],
+        "flags": 208,
+        "method": "GET",
+        "urlInput": "https://fixture.invalid/path?raw=%2f%2F&x=a+b&x=%7E",
+        "headers": [
+          [
+            "User-Agent",
+            "Spotify/130601921 OSX_ARM64/0 (Fixture1,1)"
+          ]
+        ]
+      }
+    },
+    {
+      "method": "",
+      "url": "",
+      "headers": [],
+      "bodyBase64": "",
+      "adapterUserAgent": "",
+      "adapterOption80": 0,
+      "name": "empty method URL and UA remain empty",
+      "result": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "",
+        "urlInput": "",
+        "headers": [
+          [
+            "User-Agent",
+            ""
+          ]
+        ]
+      }
+    },
+    {
+      "method": "P\u0000OST",
+      "url": "https://fixture.invalid/\u96ea\u0000tail?raw=%2f",
+      "headers": [
+        [
+          "X-\u96ea",
+          "\u5024\u0000tail"
+        ],
+        [
+          "X-a",
+          " spaced \t"
+        ]
+      ],
+      "bodyBase64": "",
+      "adapterUserAgent": "UA \u96ea\u0000tail",
+      "adapterOption80": 0,
+      "name": "length-bearing UTF8 and embedded NUL preserved",
+      "result": {
+        "bodyElementsBase64": [],
+        "flags": 208,
+        "method": "P\u0000OST",
+        "urlInput": "https://fixture.invalid/\u96ea\u0000tail?raw=%2f",
+        "headers": [
+          [
+            "User-Agent",
+            "UA \u96ea\u0000tail"
+          ],
+          [
+            "X-a",
+            " spaced \t"
+          ],
+          [
+            "X-\u96ea",
+            "\u5024\u0000tail"
+          ]
+        ]
+      }
+    }
+  ]
+}

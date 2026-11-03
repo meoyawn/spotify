@@ -1,0 +1,388 @@
+{
+  "bundlePath": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+  "bundleSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+  "fragmentsAndFactories": [
+    {
+      "kind": "factory",
+      "name": "79142",
+      "sourceOffsetUtf16": 6971621,
+      "sourceOffsetBytes": 6972202,
+      "lengthBytes": 171854,
+      "sha256": "0b5d4f3ddc9dcd2ae11dadead1ce7e9629d11ba8cd9c4d992d88b6be99628f14"
+    },
+    {
+      "kind": "factory",
+      "name": "37185",
+      "sourceOffsetUtf16": 962052,
+      "sourceOffsetBytes": 962067,
+      "lengthBytes": 45,
+      "sha256": "0f34565d2b963705b1c5b77518a461ebda849e717b8800d29525995072de9f8c"
+    },
+    {
+      "kind": "factory",
+      "name": "63945",
+      "sourceOffsetUtf16": 962098,
+      "sourceOffsetBytes": 962113,
+      "lengthBytes": 299,
+      "sha256": "9ea15809d9a7bceaf13cf1ff0549d298320fb8a9ed5fac3387301ca54a337a34"
+    },
+    {
+      "kind": "factory",
+      "name": "59532",
+      "sourceOffsetUtf16": 973320,
+      "sourceOffsetBytes": 973335,
+      "lengthBytes": 3131,
+      "sha256": "0288195d40d61c02e53e860854d0aed7956e793dbb2aa3cf5fdfcf4c31651ddb"
+    },
+    {
+      "kind": "factory",
+      "name": "26627",
+      "sourceOffsetUtf16": 969842,
+      "sourceOffsetBytes": 969857,
+      "lengthBytes": 3477,
+      "sha256": "f0d6a0bef93a94c8cb5052a7f71706afab3ef8235700c6623569190feef347b0"
+    },
+    {
+      "kind": "factory",
+      "name": "74548",
+      "sourceOffsetUtf16": 43653,
+      "sourceOffsetBytes": 43653,
+      "lengthBytes": 353,
+      "sha256": "0eafa8398e92b60f2c4d646bd7d64abde4d74d4821200b9c48a6add0d5b46348"
+    },
+    {
+      "kind": "factory",
+      "name": "94300",
+      "sourceOffsetUtf16": 44007,
+      "sourceOffsetBytes": 44007,
+      "lengthBytes": 1159,
+      "sha256": "9af57b751d9c24285dad4da417ab15ab26008884ae87b47b4723b0d4e5ce82a7"
+    },
+    {
+      "kind": "factory",
+      "name": "45085",
+      "sourceOffsetUtf16": 45167,
+      "sourceOffsetBytes": 45167,
+      "lengthBytes": 614,
+      "sha256": "10d0e7743ae4dcfccab652526ee9e8d3eac9a05cd37835a6b6f1c9fdeba2e1e9"
+    },
+    {
+      "kind": "factory",
+      "name": "35943",
+      "sourceOffsetUtf16": 45782,
+      "sourceOffsetBytes": 45782,
+      "lengthBytes": 2987,
+      "sha256": "ad74a5428498aa8ec67582d92a399942fc535d429ec3537821043617cd4cde63"
+    },
+    {
+      "kind": "factory",
+      "name": "27501",
+      "sourceOffsetUtf16": 48966,
+      "sourceOffsetBytes": 48966,
+      "lengthBytes": 1017,
+      "sha256": "897ce6a1dfbd52fb10deb7b40809f35dde5683a64a5830f7dd2ee2c0265bded5"
+    },
+    {
+      "kind": "factory",
+      "name": "62874",
+      "sourceOffsetUtf16": 48770,
+      "sourceOffsetBytes": 48770,
+      "lengthBytes": 195,
+      "sha256": "2bb43c35d4ff58ba7d248c8e6fca64986aab79001955166d32cb7d7a246fa09d"
+    },
+    {
+      "kind": "factory",
+      "name": "84808",
+      "sourceOffsetUtf16": 968053,
+      "sourceOffsetBytes": 968068,
+      "lengthBytes": 1788,
+      "sha256": "f3d8abf19154ae1428597163e922f3c715ee9c1bcb2834d82a04e6005e876243"
+    },
+    {
+      "kind": "factory",
+      "name": "42826",
+      "sourceOffsetUtf16": 4880508,
+      "sourceOffsetBytes": 4881089,
+      "lengthBytes": 10744,
+      "sha256": "969e53dc1c04ed796a382cda4977ac2876abd9a9d24e9f1592892bb2da9b63ea"
+    },
+    {
+      "kind": "factory",
+      "name": "80109",
+      "sourceOffsetUtf16": 976452,
+      "sourceOffsetBytes": 976467,
+      "lengthBytes": 809,
+      "sha256": "2f02c048b62d4a6d942519617ac653e5393681e30b509aac22c2f6f2a09302b6"
+    },
+    {
+      "kind": "factory",
+      "name": "52736",
+      "sourceOffsetUtf16": 962398,
+      "sourceOffsetBytes": 962413,
+      "lengthBytes": 4035,
+      "sha256": "aa8e5b5df54d2104c89143dcf76d074585981972007051c3cf50ab150cab1561"
+    },
+    {
+      "kind": "factory",
+      "name": "44705",
+      "sourceOffsetUtf16": 966434,
+      "sourceOffsetBytes": 966449,
+      "lengthBytes": 468,
+      "sha256": "a7f38b1bffa1c1530e459e61d4d5954ff93dbdc1e086866c52aa37fc752d8322"
+    },
+    {
+      "kind": "factory",
+      "name": "17904",
+      "sourceOffsetUtf16": 966956,
+      "sourceOffsetBytes": 966971,
+      "lengthBytes": 45,
+      "sha256": "06eddfee77e7a4b070f5b6264a637b25f509c4b1fc014f64854b085838eed7b8"
+    },
+    {
+      "kind": "factory",
+      "name": "16908",
+      "sourceOffsetUtf16": 967002,
+      "sourceOffsetBytes": 967017,
+      "lengthBytes": 1050,
+      "sha256": "7410f14c6bae05e108c53bd2412e42638a56b5b847bf222cae468b6e28f028cb"
+    },
+    {
+      "kind": "factory",
+      "name": "56522",
+      "sourceOffsetUtf16": 966903,
+      "sourceOffsetBytes": 966918,
+      "lengthBytes": 52,
+      "sha256": "f5805ce47ab32e4d9546fc1e931d825c72d78158d4a452f42b437b94c6a68b97"
+    },
+    {
+      "kind": "factory",
+      "name": "65661",
+      "sourceOffsetUtf16": 922015,
+      "sourceOffsetBytes": 922030,
+      "lengthBytes": 9077,
+      "sha256": "b98b8dfc983bbc429a9c646190803dae8076a29ee14d9abf2a6875eea41356b3"
+    },
+    {
+      "kind": "factory",
+      "name": "44459",
+      "sourceOffsetUtf16": 4413256,
+      "sourceOffsetBytes": 4413496,
+      "lengthBytes": 167,
+      "sha256": "b0ec90c102576f90464c38e6fdbad370246655ab01b102af305119fc4ea7193c"
+    },
+    {
+      "kind": "factory",
+      "name": "47136",
+      "sourceOffsetUtf16": 724682,
+      "sourceOffsetBytes": 724697,
+      "lengthBytes": 30601,
+      "sha256": "69d9c484a0f66974f784f9b31a70e1260d8cc3cdb1aa0299e5f8aabae1470266"
+    },
+    {
+      "kind": "factory",
+      "name": "69449",
+      "sourceOffsetUtf16": 7888271,
+      "sourceOffsetBytes": 7889734,
+      "lengthBytes": 11029,
+      "sha256": "512123b971df696e5269b0cebcaf671482bd607acd58f800425c57c484e2d333"
+    },
+    {
+      "kind": "factory",
+      "name": "78277",
+      "sourceOffsetUtf16": 4787855,
+      "sourceOffsetBytes": 4788431,
+      "lengthBytes": 929,
+      "sha256": "70681093cdf3c2000ff22bda711517dee801347742a128ba4f8a4bbcd6e72fd3"
+    },
+    {
+      "kind": "player-core-fragment",
+      "name": "context and command construction",
+      "sourceOffsetUtf16": 3696148,
+      "sourceOffsetBytes": 3696388,
+      "lengthBytes": 5647,
+      "sha256": "01ba1c01f0e696bb6239e1786ffd6574428761b3c1c8394f5129d8b1ca3a9aee"
+    },
+    {
+      "kind": "factory",
+      "name": "26845",
+      "sourceOffsetUtf16": 819073,
+      "sourceOffsetBytes": 819088,
+      "lengthBytes": 24371,
+      "sha256": "c8afd330c1ac8a2d85ab16d9b3772242baac4189b7b888e9661643c9226297b1"
+    },
+    {
+      "kind": "factory",
+      "name": "79181",
+      "sourceOffsetUtf16": 781484,
+      "sourceOffsetBytes": 781499,
+      "lengthBytes": 1252,
+      "sha256": "bcdeabbacb7fd11861fe8d1a32e2f71ba8e3ad517f93789806fa5360649b0ae0"
+    },
+    {
+      "kind": "factory",
+      "name": "84200",
+      "sourceOffsetUtf16": 904567,
+      "sourceOffsetBytes": 904582,
+      "lengthBytes": 868,
+      "sha256": "6b0006c1117af83f345d7865c328d4a1d7d2779f03491f93211804e5302f198c"
+    },
+    {
+      "kind": "factory",
+      "name": "83611",
+      "sourceOffsetUtf16": 4413424,
+      "sourceOffsetBytes": 4413664,
+      "lengthBytes": 355,
+      "sha256": "48ab59cbc2ae8dff7ffa35e22bdde55e19c05d4fd139971f7cf656250b34cedc"
+    },
+    {
+      "kind": "factory",
+      "name": "69970",
+      "sourceOffsetUtf16": 4398628,
+      "sourceOffsetBytes": 4398868,
+      "lengthBytes": 1751,
+      "sha256": "e495b49393e46bc85171a63a73856ce8f60cd2998b466850452e8e62de2dc21f"
+    },
+    {
+      "kind": "factory",
+      "name": "16245",
+      "sourceOffsetUtf16": 4154559,
+      "sourceOffsetBytes": 4154799,
+      "lengthBytes": 583,
+      "sha256": "67bca695f98013f1c94711223def41024b7183c69b91475ee8411d0fd30e9cbb"
+    },
+    {
+      "kind": "factory",
+      "name": "19126",
+      "sourceOffsetUtf16": 68231,
+      "sourceOffsetBytes": 68237,
+      "lengthBytes": 4863,
+      "sha256": "eaf7b5e0deea68129368d59f2b0a27f6ec414959f2bd21a72d7eff509f01ba52"
+    },
+    {
+      "kind": "factory",
+      "name": "44628",
+      "sourceOffsetUtf16": 4789872,
+      "sourceOffsetBytes": 4790448,
+      "lengthBytes": 96,
+      "sha256": "d2ef1e7781f1438eb082195ced11ad812bd44bf4df5d95dc72690877e9a72f7d"
+    },
+    {
+      "kind": "factory",
+      "name": "65093",
+      "sourceOffsetUtf16": 4412274,
+      "sourceOffsetBytes": 4412514,
+      "lengthBytes": 308,
+      "sha256": "c7cbee2a7d7fe06d214aad771c17d1281fc26ebc4fde9e69688a9a0c15e11c33"
+    },
+    {
+      "kind": "player-core-fragment",
+      "name": "state projection and event subscription",
+      "sourceOffsetUtf16": 3702411,
+      "sourceOffsetBytes": 3702651,
+      "lengthBytes": 14668,
+      "sha256": "00a427cc31f5f768c0a35a0ab4b91c7a02c8728d8dd390467ce99f13c925881c"
+    },
+    {
+      "kind": "factory",
+      "name": "5173",
+      "sourceOffsetUtf16": 4412583,
+      "sourceOffsetBytes": 4412823,
+      "lengthBytes": 532,
+      "sha256": "1587cb4ecd0c65a4e7fc292b0a986ddff63a942f06629c25faa7b64cef35779d"
+    },
+    {
+      "kind": "factory",
+      "name": "73581",
+      "sourceOffsetUtf16": 4791569,
+      "sourceOffsetBytes": 4792145,
+      "lengthBytes": 776,
+      "sha256": "4d761448492679fb111a0e67e1ba97d20cb6976437c7d465a72437870288db27"
+    },
+    {
+      "kind": "factory",
+      "name": "49603",
+      "sourceOffsetUtf16": 4415067,
+      "sourceOffsetBytes": 4415307,
+      "lengthBytes": 3700,
+      "sha256": "85731db726c933249d2894773a1aeda1a9cffd6946363ad38e9392554ead2915"
+    },
+    {
+      "kind": "factory",
+      "name": "7389",
+      "sourceOffsetUtf16": 4411493,
+      "sourceOffsetBytes": 4411733,
+      "lengthBytes": 780,
+      "sha256": "5afc0256ad3391f5ccd0e57e7d083d2e4826c1e5d8023c7e5a1eda1dac383332"
+    },
+    {
+      "kind": "factory",
+      "name": "40719",
+      "sourceOffsetUtf16": 4413780,
+      "sourceOffsetBytes": 4414020,
+      "lengthBytes": 96,
+      "sha256": "58a5b40204f130afa1cb4e049c831b0d5be92e32d942be8b54273e23c269428f"
+    },
+    {
+      "kind": "factory",
+      "name": "50877",
+      "sourceOffsetUtf16": 4413979,
+      "sourceOffsetBytes": 4414219,
+      "lengthBytes": 101,
+      "sha256": "de8a1fe3fded062bb3b5fbcf353e254f9f2cb32a3ee3bab749796229aa295a32"
+    },
+    {
+      "kind": "factory",
+      "name": "89539",
+      "sourceOffsetUtf16": 4414292,
+      "sourceOffsetBytes": 4414532,
+      "lengthBytes": 99,
+      "sha256": "25766f734d3540ad7e544ab927e015a00e85d3b5ddf46b0d9def24e5647890d3"
+    },
+    {
+      "kind": "factory",
+      "name": "91645",
+      "sourceOffsetUtf16": 4413116,
+      "sourceOffsetBytes": 4413356,
+      "lengthBytes": 139,
+      "sha256": "7fa1a6104896d40776bcd77081dbd7415213383e4058945d067c2583bd0d5742"
+    },
+    {
+      "kind": "factory",
+      "name": "19901",
+      "sourceOffsetUtf16": 4789969,
+      "sourceOffsetBytes": 4790545,
+      "lengthBytes": 233,
+      "sha256": "e3589bace8fa1ff9b5801d4047c785b6454fc616e3066b4be1b0a9db17ed5396"
+    },
+    {
+      "kind": "factory",
+      "name": "68846",
+      "sourceOffsetUtf16": 4197434,
+      "sourceOffsetBytes": 4197674,
+      "lengthBytes": 733,
+      "sha256": "1385764af983a1b3755c77285792c586395def2f79ab53b2d4f30f9027e0c676"
+    },
+    {
+      "kind": "factory",
+      "name": "32691",
+      "sourceOffsetUtf16": 4414182,
+      "sourceOffsetBytes": 4414422,
+      "lengthBytes": 109,
+      "sha256": "7403e066d68495880fa5499a50cede755cec4f28741b0ad459df82b1696346a4"
+    },
+    {
+      "kind": "factory",
+      "name": "35641",
+      "sourceOffsetUtf16": 4394274,
+      "sourceOffsetBytes": 4394514,
+      "lengthBytes": 4353,
+      "sha256": "e17a5fc6ff66f441d6d1642982e4301d6fba055e6aaf6048e244b80fdf820353"
+    }
+  ],
+  "inertDependencies": [
+    "self is an empty object",
+    "Date.now fixed to synthetic timestamp",
+    "ContextPlayer transport captures request payload and returns synthetic ResponseWithReasons bytes"
+  ],
+  "network": "VM has no fetch, socket, http, process, require, or original-app capability."
+}

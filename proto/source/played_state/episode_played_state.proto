@@ -1,0 +1,26 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: 45e8471225ed329ad1d1bec64424f9c87e0e02f94b267da7663c8ef935953a6e
+
+syntax = "proto2";
+
+package spotify.cosmos_util.proto;
+
+import "played_state/playability_restriction.proto";
+
+option java_multiple_files = true;
+
+option java_package = "com.spotify.cosmos.util.proto";
+
+option optimize_for = CODE_SIZE;
+
+message EpisodePlayState {
+  optional uint32 time_left = 1;
+
+  optional bool is_playable = 2;
+
+  optional bool is_played = 3;
+
+  optional uint32 last_played_at = 4;
+
+  optional .spotify.cosmos_util.proto.PlayabilityRestriction playability_restriction = 5 [default = UNKNOWN];
+}

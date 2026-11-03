@@ -1,0 +1,57 @@
+{
+  "provenance": "Original module 76148 executed with an inert native callback. No original-app call or network.",
+  "sourceSha256": "a6e0c1dc22b1a5564c82b634987da49f41690485b32ed03dc69eb188dfce5203",
+  "scenarios": [
+    {
+      "name": "empty protobuf request",
+      "service": "spotify.desktop.login_esperanto.proto.DesktopLogin",
+      "method": "GetSessionState",
+      "payload": [],
+      "streaming": false,
+      "expected": {
+        "frameHex": "0000003273706f746966792e6465736b746f702e6c6f67696e5f6573706572616e746f2e70726f746f2e4465736b746f704c6f67696e0000000f47657453657373696f6e537461746500000000",
+        "persistent": false
+      },
+      "cancelledIds": []
+    },
+    {
+      "name": "preference request",
+      "service": "spotify.prefs.esperanto.proto.Prefs",
+      "method": "Get",
+      "payload": [
+        10,
+        5,
+        97,
+        117,
+        100,
+        105,
+        111
+      ],
+      "streaming": false,
+      "expected": {
+        "frameHex": "0000002373706f746966792e70726566732e6573706572616e746f2e70726f746f2e507265667300000003476574000000070a05617564696f",
+        "persistent": false
+      },
+      "cancelledIds": []
+    },
+    {
+      "name": "stream and UTF-8 lengths",
+      "service": "test.雪",
+      "method": "Sub",
+      "payload": [
+        0,
+        127,
+        128,
+        255
+      ],
+      "streaming": true,
+      "expected": {
+        "frameHex": "00000008746573742ee99baa0000000353756200000004007f80ff",
+        "persistent": true
+      },
+      "cancelledIds": [
+        42
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: f5406cc7fa39b9f8a36e476af577c946e07d9fd706519288f36c57496a3c4a17
+
+syntax = "proto3";
+
+package spotify.collection.proto.v2;
+
+import "collection_itemdata.proto";
+
+option java_package = "com.spotify.collection2.v2.proto";
+
+option optimize_for = CODE_SIZE;
+
+message PageRequest {
+  string username = 1;
+
+  string set = 2;
+
+  string pagination_token = 3;
+
+  int32 limit = 4;
+}
+
+message CollectionItem {
+  string uri = 1;
+
+  int64 added_at = 2;
+
+  bool is_removed = 3;
+
+  optional string context_uri = 4;
+
+  optional .spotify.collection.itemdata.ItemData item_data = 5;
+}
+
+message PageResponse {
+  repeated .spotify.collection.proto.v2.CollectionItem items = 1;
+
+  string next_page_token = 2;
+
+  string sync_token = 3;
+}
+
+message DeltaRequest {
+  string username = 1;
+
+  string set = 2;
+
+  string last_sync_token = 3;
+}
+
+message DeltaResponse {
+  bool delta_update_possible = 1;
+
+  repeated .spotify.collection.proto.v2.CollectionItem items = 2;
+
+  string sync_token = 3;
+}
+
+message WriteRequest {
+  string username = 1;
+
+  string set = 2;
+
+  repeated .spotify.collection.proto.v2.CollectionItem items = 3;
+
+  string client_update_id = 4;
+}
+
+message InitializedRequest {
+  string username = 1;
+
+  string set = 2;
+}
+
+message InitializedResponse {
+  bool initialized = 1;
+}

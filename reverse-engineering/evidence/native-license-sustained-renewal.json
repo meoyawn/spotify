@@ -1,0 +1,73 @@
+{
+  "kind": "bounded-live-application-observation",
+  "date": "2026-10-30",
+  "mode": "debug",
+  "pid": 1776,
+  "accountType": "free",
+  "startedUtc": "2026-10-30 11:21:43 UTC",
+  "selection": "Normal album selection at row7, from its beginning, with the original album order",
+  "interveningPlaybackCommands": "None until the paused bookmark was restored after the third-track observation",
+  "observations": [
+    {
+      "queueIndex": 7,
+      "positionMilliseconds": 26430,
+      "durationMilliseconds": 100266,
+      "paused": false,
+      "buffering": false,
+      "followingSourceReady": true,
+      "outputMatchesCurrent": true,
+      "abandonedLoads": 0
+    },
+    {
+      "sameBatchClockUtc": "2026-10-30 11:24:06 UTC",
+      "queueIndex": 8,
+      "positionMilliseconds": 40294,
+      "durationMilliseconds": 189960,
+      "paused": false,
+      "buffering": false
+    },
+    {
+      "sameBatchClockUtc": "2026-10-30 11:27:14 UTC",
+      "queueIndex": 9,
+      "positionMilliseconds": 38213,
+      "durationMilliseconds": 222120,
+      "paused": false,
+      "buffering": false,
+      "followingSourceReady": true,
+      "outputMatchesCurrent": true,
+      "abandonedLoads": 0
+    }
+  ],
+  "contentKeyCounters": {
+    "before": 8,
+    "after": 12,
+    "afterStatusCounts": {"200": 12},
+    "newResponses": [
+      {"request_id": 155, "time": "2026-10-30T11:21:45.232747Z", "status": 200, "headers_ms": 197, "transport": "h2"},
+      {"request_id": 162, "time": "2026-10-30T11:21:46.523418Z", "status": 200, "headers_ms": 193, "transport": "h3"},
+      {"request_id": 171, "time": "2026-10-30T11:23:26.840618Z", "status": 200, "headers_ms": 194, "transport": "h2"},
+      {"request_id": 181, "time": "2026-10-30T11:26:36.851849Z", "status": 200, "headers_ms": 213, "transport": "h2"}
+    ]
+  },
+  "automaticAccountsRenewal": {
+    "request_id": 175,
+    "time": "2026-10-30T11:25:43.206292Z",
+    "method": "POST",
+    "host": "accounts.spotify.com",
+    "path": "/api/token",
+    "status": 200,
+    "headers_ms": 993
+  },
+  "canary": {"requestsBefore": 3, "requestsAfter": 3, "lastStatus": 200},
+  "restoredBookmark": {"paused": true, "ready": true, "positionMilliseconds": 111836, "outputMatchesCurrent": true, "abandonedLoads": 0},
+  "sources": [
+    "Current and rotated debug/http.jsonl records, correlated by pid/request_id",
+    "Live Dart ContextPlayerBackend, DartAudioEngine and NativeDesktopRuntime observations"
+  ],
+  "limits": [
+    "Two complete tracks and two natural output transitions, followed by a bounded third-track sample; no seek or skip was used between them.",
+    "The UTC stamps accompany tool batches, not precise click-to-DAC or gapless measurements.",
+    "No forced token renewal, diagnostic key request, fake playback event, ad creative or completion was introduced.",
+    "This current-grant observation does not explain older grants'429 responses or establish arbitrary long queues, memory stability or every session."
+  ]
+}

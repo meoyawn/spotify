@@ -1,0 +1,26 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: 81591c4cc7dd103902d24cec0077910247267dab3daf0199520d59b1d0ea941a
+
+syntax = "proto3";
+
+package spotify.player.esperanto.proto;
+
+import "es_optional.proto";
+
+option java_package = "com.spotify.player.esperanto.proto";
+
+option objc_class_prefix = "ESP";
+
+option optimize_for = CODE_SIZE;
+
+message SkipToTrack {
+  string page_url = 1;
+
+  .spotify.player.esperanto.proto.OptionalInt64 page_index = 2;
+
+  string track_uid = 3;
+
+  string track_uri = 4;
+
+  .spotify.player.esperanto.proto.OptionalInt64 track_index = 5;
+}

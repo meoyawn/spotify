@@ -1,0 +1,79 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "fixture": {
+    "path": "reverse-engineering/fixtures/native-login5-challenges.json",
+    "sha256": "356588a980c11ea1a45019587346e4cae772c4b93306d9badd1e2e9b7634acff",
+    "caseCount": 17
+  },
+  "proprietaryExports": [
+    {
+      "path": ".local/rea-session/login5_v3_challenge_task.c",
+      "address": "0x1018bdc5c",
+      "sha256": "ba2f2cc42836d96bef8d80613741ebf6e5bc5db084454bf30ccb1352a0533a7e"
+    },
+    {
+      "path": ".local/rea-session/login5_v3_challenge_worker.c",
+      "address": "0x1018bdec0",
+      "sha256": "3592ebb0183cd761da070b8048364e00711b8f4092955bb28f6ab14a8e039698"
+    },
+    {
+      "path": ".local/rea-session/login5_sms_solution_callback_owner_a.c",
+      "address": "0x1018be610",
+      "sha256": "cda601939dd870ae6f894735ad6fdc81962e5e5f48cf59ff65e0abd6691c6419"
+    },
+    {
+      "path": ".local/rea-session/login5_sms_solution_callback_owner_b.c",
+      "address": "0x1018be7d8",
+      "sha256": "36764dc7c6e6478235ff829d09edcfac442d767838f6f205b716c695a168758a"
+    },
+    {
+      "path": ".local/rea-session/login5_sms_solution_success_invoke.c",
+      "address": "0x1018befbc",
+      "sha256": "706821a22dab9d84f366dfc03da619b3e1539c77eb074d26c481b8fe653cb39c"
+    },
+    {
+      "path": ".local/rea-session/login5_sms_solution_failure_invoke.c",
+      "address": "0x1018bf664",
+      "sha256": "2a36c32a5a94bd88134a6ea5e1a5e3d6cee4049c27799a34696ed243fb8e3777"
+    },
+    {
+      "path": ".local/rea-session/login5_sms_solution_success_actual.c",
+      "address": "0x1018bf13c",
+      "sha256": "9b5ff4a1b9d071c84d0c5852a43c5ee58583e3d85770b1d1072c86443ef9b00f"
+    },
+    {
+      "path": ".local/rea-session/login5_sms_solution_failure_body.c",
+      "address": "0x1018bf7d4",
+      "sha256": "bada99abf0172da3d6c6c7eb61e9cb5899275e57ad111610fc9674e01525156a"
+    },
+    {
+      "path": ".local/rea-session/login5_final_challenge_continuation.c",
+      "address": "0x1018bfe70",
+      "sha256": "cc9d44b54449e8820f019a9d9c87c1ab78f4a5e9a5a8c8e98d0a361a630471d7"
+    },
+    {
+      "path": ".local/rea-session/login5_v3_challenge_callback_30.c",
+      "address": "0x1018bfb18",
+      "sha256": "27d4b76174d54a0866a5079135b68ef8d0f38e526cc3a79fe9f0ce03221fc03c"
+    },
+    {
+      "path": ".local/rea-session/login5_hashcash_solver_wrapper.c",
+      "address": "0x1018cc57c",
+      "sha256": "79951a30d914a4c334aece4d2388336f057e8411586e62264adde3675b77c0b2"
+    }
+  ],
+  "schemaInventorySha256": "d58330abfd43717a402b8dc5904eef546d02d291ca36a1d2a3cadfe8133d8d74",
+  "standardBoundaryProviders": {
+    "SHA1": "Python hashlib, original native suffix/counter loop unchanged",
+    "call_once": "Serialized nonthrowing once path; original callback invokes read/share its actual native gate",
+    "weakLock": "Synthetic standard shared-owner count expiration, no abort acknowledgement",
+    "SMSObserver": "Original callback clones retained through their actual clone procedures",
+    "HTTPsend": "Observer stops before 0x1018bc39c after original final context copy"
+  },
+  "limits": [
+    "Standard call_once provider covers serialized nonthrowing callbacks, not reentrant throws or thread contention",
+    "Weak-control provider models expiration; it does not claim native solver/UI abort acknowledgement",
+    "Original captures and SMS callback clones execute before the synthetic observer retains them",
+    "All response/request objects, clocks, UI answers and owner-release actions are synthetic"
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "scope": "Startup improvements to Dart-owned Spotify playback. These observations do not prove original-client latency or complete HTTP/TLS fingerprint parity.",
+  "original": {
+    "source": ".local/original-reference-streaming-netlog.json",
+    "sha256": "644660b4da3948c6f0e0e21479b34de444f295ba3e94684257e2c53dc9587489",
+    "metadata": {
+      "event": "HTTP2_SESSION_SEND_HEADERS",
+      "sessionSourceId": 844,
+      "distinctMetadataStreams": 66
+    },
+    "cdn": [
+      {
+        "requestSourceId": 3550,
+        "streamJobSourceId": 3552,
+        "socketSourceId": 3573
+      },
+      {
+        "requestSourceId": 3728,
+        "streamJobSourceId": 3730,
+        "socketSourceId": 3573,
+        "reusedExistingSocket": true
+      },
+      {
+        "requestSourceId": 3752,
+        "streamJobSourceId": 3754,
+        "socketSourceId": 3573,
+        "reusedExistingSocket": true
+      }
+    ],
+    "limits": [
+      "Read-only retained original capture, not a new account experiment.",
+      "The capture establishes shared connections for these requests; it does not establish every original pool limit, idle timeout or next-decoder admission."
+    ]
+  },
+  "changes": [
+    "Session-owned standard http2 ClientPool preserves the verified pseudoheader/header writer and owns TLS/H2 connection reuse.",
+    "Session-owned standard HttpClient pool leases bodyless GET clients exclusively and resets the exact HTTP/1.1 field plan per request.",
+    "Adapters cancel their own requests. Session retirement closes shared pools. Failed/partial HTTP/1.1 bodies are not returned to the idle pool.",
+    "Bounded CPU-only synthetic warm-up before the first playback key. Generated arithmetic and real-key output behavior remain unchanged.",
+    "A successful parsed license reply admits the unchanged CDN request before local key calculation finishes; encrypted input pauses after its first delivered chunk until decryption is ready.",
+    "Newly installed songs do not wait for previous decoded-file cache retirement. Abandoned loads are checked before metadata resolution."
+  ],
+  "outgoingProof": {
+    "commands": [
+      "flutter test --no-pub test/native_cef_http2_transport_test.dart --plain-name 'Dart H2 sends original CEF and native app fields target and body'",
+      "flutter test --no-pub test/native_cef_http_request_test.dart --plain-name 'native CEF context and HTTPS outgoing fields match original producers and shipped peer captures'",
+      "flutter test --no-pub test/native_cdn_recovery_test.dart --plain-name 'Source early-header-close failover preserves original A-to-B outgoing requests'"
+    ],
+    "result": "passed",
+    "http1": "All12 original captured request shapes retain complete raw HTTP/1.1 bytes after only loopback authority/Origin substitution. Six bodyless GETs use one independently observed TLS socket while per-request adapters are replaced.",
+    "http2": "Existing independent shipped-CEF/native fixtures check decoded header order/values, raw target and body bytes.",
+    "limits": "No general UI, lifecycle, component or full-suite tests were added or run. No HTTP/2 HPACK or TLS/QUIC bit identity claim."
+  },
+  "live": {
+    "tool": "global Dart MCP",
+    "appPid": 4854,
+    "pipelinedColdNetworkSource": {
+      "observation": "Read-only inspection of a real foreground source after hot reload. No inspection-selected song or app/session restart. Uncached audio metadata, key and PCM; a real CDN range was sent.",
+      "timing": {
+        "track_info_ms": 232,
+        "audio_info_credentials_ms": 0,
+        "audio_info_response_headers_ms": 190,
+        "cached_audio_info": false,
+        "audio_info_ms": 194,
+        "storage_credentials_ms": 2,
+        "storage_response_headers_ms": 775,
+        "license_ms": 807,
+        "license_admitted_ms": 1002,
+        "cdn_started_ms": 1004,
+        "cdn_credentials_ms": 0,
+        "unwrap_ms": 661,
+        "cached_key": false,
+        "key_ms": 1468,
+        "key_ready_ms": 1663,
+        "cdn_response_headers_ms": 820,
+        "container_ms": 1642,
+        "first_pcm_ms": 1837,
+        "progressive_pcm": true,
+        "cached_pcm": false,
+        "result": "ready",
+        "total_ms": 2070
+      },
+      "clockDomains": "total_ms and track_info_ms start at source resolution; other *_started/admitted/ready_ms boundaries and first_pcm_ms start after track relinking. Header, license and unwrap fields are operation durations.",
+      "originalAdmissionEvidence": "reverse-engineering/evidence/native-streaming-admission-order.json",
+      "outgoingRegression": {
+        "baseline": "Old serial source with the new observation assertion failed: expected2 CDN envelopes while key computation remained pending, actual0.",
+        "repaired": "Passed canonical original A-to-B outgoing request comparison, including zero CDN dispatches before successful license admission and both exact outgoing envelopes before local key readiness.",
+        "command": "flutter test --no-pub test/native_cdn_recovery_test.dart --plain-name 'Source early-header-close failover preserves original A-to-B outgoing requests'"
+      },
+      "limits": "One live source-readiness observation, not measured click-to-audible latency or a matched original comparison. HTTP429 remains observed on other license jobs. No complete TLS/QUIC identity or server-admission claim."
+    },
+    "validCachedReplay": {
+      "firstPlayingEventMs": 76,
+      "sourceReadyMs": 7,
+      "licenseAttemptsBefore": 5,
+      "licenseAttemptsAfter": 5
+    },
+    "laterCachedReplay": {
+      "firstPlayingEventMs": 137,
+      "sourceReadyMs": 12,
+      "licenseAttemptsBefore": 19,
+      "licenseAttemptsAfter": 19
+    },
+    "firstAfterH2Change": {
+      "firstPlayingEventMs": 6021,
+      "sourceReadyMs": 5918,
+      "audioInfoMs": 2637,
+      "licenseMs": 1898,
+      "unwrapMs": 249,
+      "description": "Cold credentials/connections; not an improvement claim."
+    },
+    "preparedNextAfterH2Change": {
+      "sourceReadyMs": 1629,
+      "audioInfoMs": 221,
+      "licenseMs": 217,
+      "unwrapMs": 168,
+      "description": "Ordinary automatic next preparation, not audible-start timing."
+    },
+    "networkBufferWithCachedKeyAndMetadata": {
+      "firstPlayingEventMs": 1948,
+      "sourceReadyMs": 1838,
+      "storageHeadersMs": 755,
+      "cdnHeadersMs": 1039,
+      "newLicenseRequests": 0
+    },
+    "poolUse": {
+      "ready": true,
+      "licenses": 39,
+      "active_h2": 0,
+      "active_h3": 0,
+      "h2_opened": 4,
+      "h2_reused": 10,
+      "cdn_opened": 3,
+      "cdn_reused": 7
+    },
+    "audioDeviceReset": {
+      "observedMicroseconds": 779,
+      "description": "Read-only timeline span during buffered-song restoration. No native queue rewrite was justified."
+    },
+    "invalidProbe": "A later row-index probe ran after the visible playlist changed. It is excluded from latency evidence. The still-buffered previous song was restored only while the exact probe load34 remained current and unready; probe next preparation was withdrawn. Further playback-driving probes stopped."
+  },
+  "remaining": [
+    "License429 responses remain unresolved; later foreground responses also included429, so earlier foreground200-only observations are not a general claim.",
+    "Original ordinary key batch raw0 and gated future-key Prefetch raw2 are separately proved. The complete upstream binding/timing for the ordinary next decoder is still missing; no near-end constant or speculative interactivity change was introduced.",
+    "Cached results and server-reported restrictions remain authoritative. No original Spotify cache/profile was imported or moved."
+  ]
+}

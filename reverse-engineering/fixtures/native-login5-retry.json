@@ -1,0 +1,159 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "read": "0x1018ccf5c",
+  "reset": "0x1018ccfe8",
+  "recordFailure": "0x1018cd03c",
+  "intervalMilliseconds": 900,
+  "method": "Unmodified original counter functions; synthetic callback clock and standard mutex import hooks only.",
+  "scenarios": [
+    {
+      "name": "strict nanosecond expiry and read does not extend",
+      "initialCount": 0,
+      "steps": [
+        {
+          "action": "read",
+          "nowNanoseconds": 0,
+          "countAfter": 0,
+          "timestampAfter": 0,
+          "returnedCount": 0
+        },
+        {
+          "action": "failure",
+          "nowNanoseconds": 100,
+          "countAfter": 1,
+          "timestampAfter": 100
+        },
+        {
+          "action": "read",
+          "nowNanoseconds": 900000099,
+          "countAfter": 1,
+          "timestampAfter": 100,
+          "returnedCount": 1
+        },
+        {
+          "action": "read",
+          "nowNanoseconds": 900000100,
+          "countAfter": 1,
+          "timestampAfter": 100,
+          "returnedCount": 1
+        },
+        {
+          "action": "read",
+          "nowNanoseconds": 900000101,
+          "countAfter": 0,
+          "timestampAfter": 900000101,
+          "returnedCount": 0
+        },
+        {
+          "action": "read",
+          "nowNanoseconds": 1800000200,
+          "countAfter": 0,
+          "timestampAfter": 900000101,
+          "returnedCount": 0
+        }
+      ]
+    },
+    {
+      "name": "each failure refreshes timestamp and reset records clock",
+      "initialCount": 0,
+      "steps": [
+        {
+          "action": "failure",
+          "nowNanoseconds": 100,
+          "countAfter": 1,
+          "timestampAfter": 100
+        },
+        {
+          "action": "failure",
+          "nowNanoseconds": 900000100,
+          "countAfter": 2,
+          "timestampAfter": 900000100
+        },
+        {
+          "action": "read",
+          "nowNanoseconds": 1800000100,
+          "countAfter": 2,
+          "timestampAfter": 900000100,
+          "returnedCount": 2
+        },
+        {
+          "action": "reset",
+          "nowNanoseconds": 1800000101,
+          "countAfter": 0,
+          "timestampAfter": 1800000101
+        },
+        {
+          "action": "read",
+          "nowNanoseconds": 2700000102,
+          "countAfter": 0,
+          "timestampAfter": 1800000101,
+          "returnedCount": 0
+        },
+        {
+          "action": "failure",
+          "nowNanoseconds": 2700000103,
+          "countAfter": 1,
+          "timestampAfter": 2700000103
+        },
+        {
+          "action": "read",
+          "nowNanoseconds": 2700000103,
+          "countAfter": 1,
+          "timestampAfter": 2700000103,
+          "returnedCount": 1
+        }
+      ]
+    },
+    {
+      "name": "reader sees unsigned high bit",
+      "initialCount": 2147483647,
+      "steps": [
+        {
+          "action": "failure",
+          "nowNanoseconds": 10,
+          "countAfter": 2147483648,
+          "timestampAfter": 10
+        },
+        {
+          "action": "read",
+          "nowNanoseconds": 10,
+          "countAfter": 2147483648,
+          "timestampAfter": 10,
+          "returnedCount": 2147483648
+        }
+      ]
+    },
+    {
+      "name": "failure wraps uint32 without saturation",
+      "initialCount": 4294967295,
+      "steps": [
+        {
+          "action": "failure",
+          "nowNanoseconds": 10,
+          "countAfter": 0,
+          "timestampAfter": 10
+        },
+        {
+          "action": "read",
+          "nowNanoseconds": 10,
+          "countAfter": 0,
+          "timestampAfter": 10,
+          "returnedCount": 0
+        },
+        {
+          "action": "failure",
+          "nowNanoseconds": 11,
+          "countAfter": 1,
+          "timestampAfter": 11
+        },
+        {
+          "action": "read",
+          "nowNanoseconds": 11,
+          "countAfter": 1,
+          "timestampAfter": 11,
+          "returnedCount": 1
+        }
+      ]
+    }
+  ]
+}

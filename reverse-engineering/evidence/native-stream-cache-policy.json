@@ -1,0 +1,1139 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "method": "Execute original storage filename, key and expiry leaves without cache IO.\n\nExplicit synthetic namespace/key/realm/descriptor16 and root-provider inputs enter\nunchanged proprietary routines. SHA-1, allocation and formatting are standard\nsubstitutions; no Spotify account, profile, cache file or HTTP is accessed.\n",
+  "filenameEntry": "0x1018a1740",
+  "defaultPolicyEntry": "0x10189c314",
+  "namespaceSlice": {
+    "start": "0x10189cae4",
+    "stopBefore": "0x10189cb5c",
+    "constructor": "0x10189c580",
+    "outputOffset": "0x2b8",
+    "rule": "SHA1(01_hex || SHA1(supplied_seed_bytes))",
+    "digestExecution": "Original one-shot and incremental digest routines execute unchanged, with standard memory primitives.",
+    "retainedREAExport": ".local/rea-session/stream-cache-concrete-constructor.json"
+  },
+  "standardDigestAuthority": {
+    "path": "reverse-engineering/evidence/native-playplay-canary-identity.json",
+    "sha256": "313fdc373582680f9f3e50c783fa162cfe4c9574dc0a9d2f4670b235d9d6c0c4",
+    "scope": "The four recorded inputs prove the wrapper correspondence needed here; no standard primitive is decompiled or reimplemented."
+  },
+  "ranges": [
+    {
+      "start": "0x1018a1740",
+      "endExclusive": "0x1018a18c0",
+      "sha256": "5f4358b6a1184404d1510f4c6bb8666c19ab0a6955583c6a18be65c67db9683d"
+    },
+    {
+      "start": "0x10189c314",
+      "endExclusive": "0x10189c364",
+      "sha256": "f99c7573d6eaf66b35fc5fe0634ecb8018e00578fa4f7fd6fe6bdfdd6501324d"
+    },
+    {
+      "start": "0x10189cae4",
+      "endExclusive": "0x10189cb5c",
+      "sha256": "e1ca1ce28a6c375a674a08d4b077ce703ebb699533363969c3d915d493786d52"
+    },
+    {
+      "start": "0x10189a4f0",
+      "endExclusive": "0x10189a610",
+      "sha256": "56d9255e655c65a63651ce47104f3019387939ceec0416e0e7f0ab9673eb2c61"
+    },
+    {
+      "start": "0x10189b1e8",
+      "endExclusive": "0x10189b330",
+      "sha256": "8cd04f311965c267c502a4b374ab6a9826cc3333546f2080e23a7178633d2861"
+    },
+    {
+      "start": "0x1007593a0",
+      "endExclusive": "0x100759608",
+      "sha256": "b761a10af968f0d993b607541fcd008ddaa7570f59ea06715b03b420548ef3a1"
+    },
+    {
+      "start": "0x101c18ef8",
+      "endExclusive": "0x101c18f1c",
+      "sha256": "76083c524539e734df6b4828670dc8ea33a88dc9bdd13996b576d72f68ce7c61"
+    },
+    {
+      "start": "0x1005b4de0",
+      "endExclusive": "0x1005b4df4",
+      "sha256": "db9e779379f94e12deb54e6cd7af7fdee69d0b61431db670dd9d4eda27fb0177"
+    },
+    {
+      "start": "0x1018a1988",
+      "endExclusive": "0x1018a1d34",
+      "sha256": "35418fbedbc257c94e5201de1665aadd6a8c42541061bc0ee3ae024925de532f"
+    },
+    {
+      "start": "0x1018a1d38",
+      "endExclusive": "0x1018a1d40",
+      "sha256": "59f390d43f081f3d709b004b811bee7293a715b53e8eadbdb1ce207a59bd9ff5"
+    },
+    {
+      "start": "0x1018a1d44",
+      "endExclusive": "0x1018a1d48",
+      "sha256": "8d2ae0ea19236c4e9cc0452118fb76aa978fdcc772525d3afdaac7e6f807deeb"
+    }
+  ],
+  "cases": [
+    {
+      "realm": 0,
+      "descriptor16": 0,
+      "flags": 0,
+      "mode": 0,
+      "suppliedRoot": "/override/",
+      "suppliedNamespaceHex": "000102030405060708090a0b0c0d0e0f10111213",
+      "suppliedKeyHex": "404142434445464748494a4b4c4d4e4f50515253",
+      "format": "%s%.2x/%s.file",
+      "root": "/provider/",
+      "shard": 189,
+      "hexIdentity": "bd56f9ee31e214e45fe916d72369a62f56556199",
+      "sha1InputHex": "000102030405060708090a0b0c0d0e0f10111213404142434445464748494a4b4c4d4e4f5051525300000000"
+    },
+    {
+      "realm": 7,
+      "descriptor16": 0,
+      "flags": 0,
+      "mode": 0,
+      "suppliedRoot": "/override/",
+      "suppliedNamespaceHex": "000102030405060708090a0b0c0d0e0f10111213",
+      "suppliedKeyHex": "404142434445464748494a4b4c4d4e4f50515253",
+      "format": "%s%.2x/%s.file",
+      "root": "/provider/",
+      "shard": 57,
+      "hexIdentity": "391829965d53df9e1c5f9dcb24f6befc65aac83b",
+      "sha1InputHex": "000102030405060708090a0b0c0d0e0f10111213404142434445464748494a4b4c4d4e4f5051525307000000"
+    },
+    {
+      "realm": 0,
+      "descriptor16": 4660,
+      "flags": 0,
+      "mode": 0,
+      "suppliedRoot": "/override/",
+      "suppliedNamespaceHex": "000102030405060708090a0b0c0d0e0f10111213",
+      "suppliedKeyHex": "404142434445464748494a4b4c4d4e4f50515253",
+      "format": "%s%.2x/%s.file",
+      "root": "/provider/",
+      "shard": 39,
+      "hexIdentity": "27a4ce2d79b1fc81a4ea18294b8ae3e185cf60cf",
+      "sha1InputHex": "000102030405060708090a0b0c0d0e0f10111213404142434445464748494a4b4c4d4e4f5051525300003412"
+    },
+    {
+      "realm": 0,
+      "descriptor16": 0,
+      "flags": 4,
+      "mode": 0,
+      "suppliedRoot": "/override/",
+      "suppliedNamespaceHex": "000102030405060708090a0b0c0d0e0f10111213",
+      "suppliedKeyHex": "404142434445464748494a4b4c4d4e4f50515253",
+      "format": "%s%.2x/%s.file",
+      "root": "/override/",
+      "shard": 189,
+      "hexIdentity": "bd56f9ee31e214e45fe916d72369a62f56556199",
+      "sha1InputHex": "000102030405060708090a0b0c0d0e0f10111213404142434445464748494a4b4c4d4e4f5051525300000000"
+    },
+    {
+      "realm": 0,
+      "descriptor16": 0,
+      "flags": 4,
+      "mode": 0,
+      "suppliedRoot": "",
+      "suppliedNamespaceHex": "000102030405060708090a0b0c0d0e0f10111213",
+      "suppliedKeyHex": "404142434445464748494a4b4c4d4e4f50515253",
+      "format": "%s%.2x/%s.file",
+      "root": "/provider/",
+      "shard": 189,
+      "hexIdentity": "bd56f9ee31e214e45fe916d72369a62f56556199",
+      "sha1InputHex": "000102030405060708090a0b0c0d0e0f10111213404142434445464748494a4b4c4d4e4f5051525300000000"
+    },
+    {
+      "realm": 0,
+      "descriptor16": 0,
+      "flags": 0,
+      "mode": 3,
+      "suppliedRoot": "/override/",
+      "suppliedNamespaceHex": "000102030405060708090a0b0c0d0e0f10111213",
+      "suppliedKeyHex": "404142434445464748494a4b4c4d4e4f50515253",
+      "format": "%s%.2x/%s.file",
+      "root": "/override/",
+      "shard": 189,
+      "hexIdentity": "bd56f9ee31e214e45fe916d72369a62f56556199",
+      "sha1InputHex": "000102030405060708090a0b0c0d0e0f10111213404142434445464748494a4b4c4d4e4f5051525300000000"
+    }
+  ],
+  "namespaces": [
+    {
+      "suppliedSeedHex": "",
+      "originalNamespaceHex": "2642b83de8516dcc4e96d23e65356afc93d7598f",
+      "originalSeedConsumers": [
+        {
+          "slot": "first",
+          "bytesHex": "da39a3ee5e6b4b0d3255bfef95601890"
+        },
+        {
+          "slot": "second",
+          "bytesHex": "da39a3ee5e6b4b0d3255bfef95601890"
+        }
+      ]
+    },
+    {
+      "suppliedSeedHex": "616263",
+      "originalNamespaceHex": "e2008e35135d45c083e57b91b1f5415ba5f0a255",
+      "originalSeedConsumers": [
+        {
+          "slot": "first",
+          "bytesHex": "a9993e364706816aba3e25717850c26c"
+        },
+        {
+          "slot": "second",
+          "bytesHex": "a9993e364706816aba3e25717850c26c"
+        }
+      ]
+    },
+    {
+      "suppliedSeedHex": "63616368652d736565642d3031",
+      "originalNamespaceHex": "99bd261a79078a556221281b2c86aab93e98f4ad",
+      "originalSeedConsumers": [
+        {
+          "slot": "first",
+          "bytesHex": "e787032fd930854a521761e93440cdfb"
+        },
+        {
+          "slot": "second",
+          "bytesHex": "e787032fd930854a521761e93440cdfb"
+        }
+      ]
+    },
+    {
+      "suppliedSeedHex": "610062",
+      "originalNamespaceHex": "2cc44586368ba007b733148f9623728728626243",
+      "originalSeedConsumers": [
+        {
+          "slot": "first",
+          "bytesHex": "4a3dec2d1f8245280855c42db0ee4239"
+        },
+        {
+          "slot": "second",
+          "bytesHex": "4a3dec2d1f8245280855c42db0ee4239"
+        }
+      ]
+    },
+    {
+      "suppliedSeedHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "originalNamespaceHex": "1f2e0b36517a5e01284e3b15dcf8989507b1d7cf",
+      "originalSeedConsumers": [
+        {
+          "slot": "first",
+          "bytesHex": "ae5bd8efea5322c4d9986d06680a7813"
+        },
+        {
+          "slot": "second",
+          "bytesHex": "ae5bd8efea5322c4d9986d06680a7813"
+        }
+      ]
+    }
+  ],
+  "composedNamespaceFilenames": [
+    {
+      "realm": 0,
+      "descriptor16": 0,
+      "flags": 0,
+      "mode": 0,
+      "suppliedRoot": "",
+      "suppliedNamespaceHex": "2642b83de8516dcc4e96d23e65356afc93d7598f",
+      "suppliedKeyHex": "404142434445464748494a4b4c4d4e4f50515253",
+      "format": "%s%.2x/%s.file",
+      "root": "/provider/",
+      "shard": 171,
+      "hexIdentity": "ab643ba74fd358a111432662f676f1f2c28fcded",
+      "sha1InputHex": "2642b83de8516dcc4e96d23e65356afc93d7598f404142434445464748494a4b4c4d4e4f5051525300000000"
+    },
+    {
+      "realm": 0,
+      "descriptor16": 0,
+      "flags": 0,
+      "mode": 0,
+      "suppliedRoot": "",
+      "suppliedNamespaceHex": "e2008e35135d45c083e57b91b1f5415ba5f0a255",
+      "suppliedKeyHex": "404142434445464748494a4b4c4d4e4f50515253",
+      "format": "%s%.2x/%s.file",
+      "root": "/provider/",
+      "shard": 209,
+      "hexIdentity": "d1668b8e5e14e94b5c1066faa6fdb1b0a3ff8f8f",
+      "sha1InputHex": "e2008e35135d45c083e57b91b1f5415ba5f0a255404142434445464748494a4b4c4d4e4f5051525300000000"
+    },
+    {
+      "realm": 0,
+      "descriptor16": 0,
+      "flags": 0,
+      "mode": 0,
+      "suppliedRoot": "",
+      "suppliedNamespaceHex": "99bd261a79078a556221281b2c86aab93e98f4ad",
+      "suppliedKeyHex": "404142434445464748494a4b4c4d4e4f50515253",
+      "format": "%s%.2x/%s.file",
+      "root": "/provider/",
+      "shard": 15,
+      "hexIdentity": "0f339d3422e9edeaae25dd3e4209fc1bf0474020",
+      "sha1InputHex": "99bd261a79078a556221281b2c86aab93e98f4ad404142434445464748494a4b4c4d4e4f5051525300000000"
+    },
+    {
+      "realm": 0,
+      "descriptor16": 0,
+      "flags": 0,
+      "mode": 0,
+      "suppliedRoot": "",
+      "suppliedNamespaceHex": "2cc44586368ba007b733148f9623728728626243",
+      "suppliedKeyHex": "404142434445464748494a4b4c4d4e4f50515253",
+      "format": "%s%.2x/%s.file",
+      "root": "/provider/",
+      "shard": 190,
+      "hexIdentity": "be7559eeb5430a38187fbcf0d7ce1508524a1957",
+      "sha1InputHex": "2cc44586368ba007b733148f9623728728626243404142434445464748494a4b4c4d4e4f5051525300000000"
+    },
+    {
+      "realm": 0,
+      "descriptor16": 0,
+      "flags": 0,
+      "mode": 0,
+      "suppliedRoot": "",
+      "suppliedNamespaceHex": "1f2e0b36517a5e01284e3b15dcf8989507b1d7cf",
+      "suppliedKeyHex": "404142434445464748494a4b4c4d4e4f50515253",
+      "format": "%s%.2x/%s.file",
+      "root": "/provider/",
+      "shard": 164,
+      "hexIdentity": "a4d3b951e083b270129fd1772b87129a4c87a7b7",
+      "sha1InputHex": "1f2e0b36517a5e01284e3b15dcf8989507b1d7cf404142434445464748494a4b4c4d4e4f5051525300000000"
+    }
+  ],
+  "bufferedStorage": {
+    "constructor": "0x1007593a0",
+    "realmConverter": "0x101c18ef8",
+    "identityVariant0Getter": "0x1005b4de0",
+    "actualStorageOpen": "0x102643550 +10hex ->0x1018a1988",
+    "fileHandleBoundary": "0x101895260",
+    "keyCases": [
+      {
+        "resourceKind": 0,
+        "identityVariant": 0,
+        "formatWord": 0,
+        "suppliedKeyHex": "0102030405060708090a0b0c0d0e0f1011121314",
+        "originalOpen": {
+          "realm": 0,
+          "keyHex": "0102030405060708090a0b0c0d0e0f1011121314",
+          "mode": 1
+        },
+        "suppliedNamespaceHex": null,
+        "suppliedIndexReady": null,
+        "suppliedClockMicroseconds": null,
+        "suppliedRandomWord": null,
+        "originalRandomBound": null,
+        "originalNewEntry": null
+      },
+      {
+        "resourceKind": 0,
+        "identityVariant": 0,
+        "formatWord": 17,
+        "suppliedKeyHex": "0102030405060708090a0b0c0d0e0f1011121314",
+        "originalOpen": {
+          "realm": 0,
+          "keyHex": "0102030405060708090a0b0c0d0e0f1011121314",
+          "mode": 1
+        },
+        "suppliedNamespaceHex": null,
+        "suppliedIndexReady": null,
+        "suppliedClockMicroseconds": null,
+        "suppliedRandomWord": null,
+        "originalRandomBound": null,
+        "originalNewEntry": null
+      },
+      {
+        "resourceKind": 0,
+        "identityVariant": 0,
+        "formatWord": 0,
+        "suppliedKeyHex": "0000000000000000000000000000000000000000",
+        "originalOpen": null,
+        "suppliedNamespaceHex": null,
+        "suppliedIndexReady": null,
+        "suppliedClockMicroseconds": null,
+        "suppliedRandomWord": null,
+        "originalRandomBound": null,
+        "originalNewEntry": null
+      },
+      {
+        "resourceKind": 0,
+        "identityVariant": 0,
+        "formatWord": 0,
+        "suppliedKeyHex": "0000000000000000000000000000000000000001",
+        "originalOpen": {
+          "realm": 0,
+          "keyHex": "0000000000000000000000000000000000000001",
+          "mode": 1
+        },
+        "suppliedNamespaceHex": null,
+        "suppliedIndexReady": null,
+        "suppliedClockMicroseconds": null,
+        "suppliedRandomWord": null,
+        "originalRandomBound": null,
+        "originalNewEntry": null
+      }
+    ],
+    "newEntryCases": [
+      {
+        "resourceKind": 0,
+        "identityVariant": 0,
+        "formatWord": 0,
+        "suppliedKeyHex": "0102030405060708090a0b0c0d0e0f1011121314",
+        "originalOpen": {
+          "realm": 0,
+          "keyHex": "0102030405060708090a0b0c0d0e0f1011121314",
+          "mode": 1
+        },
+        "suppliedNamespaceHex": "000102030405060708090a0b0c0d0e0f10111213",
+        "suppliedIndexReady": 1,
+        "suppliedClockMicroseconds": 1700000000000000,
+        "suppliedRandomWord": 0,
+        "originalRandomBound": 65536,
+        "originalNewEntry": {
+          "keyHex": "0102030405060708090a0b0c0d0e0f1011121314",
+          "realm": 0,
+          "descriptor16": 0,
+          "flags": 2,
+          "timestamp30": 1700000000
+        }
+      },
+      {
+        "resourceKind": 0,
+        "identityVariant": 0,
+        "formatWord": 0,
+        "suppliedKeyHex": "0102030405060708090a0b0c0d0e0f1011121314",
+        "originalOpen": {
+          "realm": 0,
+          "keyHex": "0102030405060708090a0b0c0d0e0f1011121314",
+          "mode": 1
+        },
+        "suppliedNamespaceHex": "000102030405060708090a0b0c0d0e0f10111213",
+        "suppliedIndexReady": 1,
+        "suppliedClockMicroseconds": 1700000000000000,
+        "suppliedRandomWord": 4660,
+        "originalRandomBound": 65536,
+        "originalNewEntry": {
+          "keyHex": "0102030405060708090a0b0c0d0e0f1011121314",
+          "realm": 0,
+          "descriptor16": 4660,
+          "flags": 2,
+          "timestamp30": 1700000000
+        }
+      },
+      {
+        "resourceKind": 0,
+        "identityVariant": 0,
+        "formatWord": 0,
+        "suppliedKeyHex": "0102030405060708090a0b0c0d0e0f1011121314",
+        "originalOpen": {
+          "realm": 0,
+          "keyHex": "0102030405060708090a0b0c0d0e0f1011121314",
+          "mode": 1
+        },
+        "suppliedNamespaceHex": "000102030405060708090a0b0c0d0e0f10111213",
+        "suppliedIndexReady": 1,
+        "suppliedClockMicroseconds": 1700000000000000,
+        "suppliedRandomWord": 65535,
+        "originalRandomBound": 65536,
+        "originalNewEntry": {
+          "keyHex": "0102030405060708090a0b0c0d0e0f1011121314",
+          "realm": 0,
+          "descriptor16": 65535,
+          "flags": 2,
+          "timestamp30": 1700000000
+        }
+      }
+    ],
+    "composedNewEntryFilenames": [
+      {
+        "realm": 0,
+        "descriptor16": 0,
+        "flags": 2,
+        "mode": 0,
+        "suppliedRoot": "",
+        "suppliedNamespaceHex": "000102030405060708090a0b0c0d0e0f10111213",
+        "suppliedKeyHex": "0102030405060708090a0b0c0d0e0f1011121314",
+        "format": "%s%.2x/%s.file",
+        "root": "/provider/",
+        "shard": 140,
+        "hexIdentity": "8c3a7224b222c0edb27d2be380ca9556fba23634",
+        "sha1InputHex": "000102030405060708090a0b0c0d0e0f101112130102030405060708090a0b0c0d0e0f101112131400000000"
+      },
+      {
+        "realm": 0,
+        "descriptor16": 4660,
+        "flags": 2,
+        "mode": 0,
+        "suppliedRoot": "",
+        "suppliedNamespaceHex": "000102030405060708090a0b0c0d0e0f10111213",
+        "suppliedKeyHex": "0102030405060708090a0b0c0d0e0f1011121314",
+        "format": "%s%.2x/%s.file",
+        "root": "/provider/",
+        "shard": 197,
+        "hexIdentity": "c5ffe464a135ff9a60df19e601ddb71ff3be3b4f",
+        "sha1InputHex": "000102030405060708090a0b0c0d0e0f101112130102030405060708090a0b0c0d0e0f101112131400003412"
+      },
+      {
+        "realm": 0,
+        "descriptor16": 65535,
+        "flags": 2,
+        "mode": 0,
+        "suppliedRoot": "",
+        "suppliedNamespaceHex": "000102030405060708090a0b0c0d0e0f10111213",
+        "suppliedKeyHex": "0102030405060708090a0b0c0d0e0f1011121314",
+        "format": "%s%.2x/%s.file",
+        "root": "/provider/",
+        "shard": 20,
+        "hexIdentity": "14b1888caaf9e7c34adf0375752f63984fc78e90",
+        "sha1InputHex": "000102030405060708090a0b0c0d0e0f101112130102030405060708090a0b0c0d0e0f10111213140000ffff"
+      }
+    ]
+  },
+  "entryExpiry": {
+    "originalEntry": "0x10189b1e8",
+    "actualExpiryFunctor": "0x102643250 +30hex ->0x10189a4f0",
+    "cases": [
+      {
+        "name": "music without timestamp34",
+        "realm": 0,
+        "timestampFieldsSeconds": {
+          "30": 1700000000,
+          "34": 0,
+          "38": 0
+        },
+        "retainedHandleWord": 0,
+        "flag51": 0,
+        "forceMode": 0,
+        "suppliedOverrides": {},
+        "originalResult": {
+          "eligible": true,
+          "deadlineMicroseconds": 1700604800000000
+        }
+      },
+      {
+        "name": "music with timestamp34",
+        "realm": 0,
+        "timestampFieldsSeconds": {
+          "30": 1700000000,
+          "34": 1700000060,
+          "38": 0
+        },
+        "retainedHandleWord": 0,
+        "flag51": 0,
+        "forceMode": 0,
+        "suppliedOverrides": {},
+        "originalResult": {
+          "eligible": true,
+          "deadlineMicroseconds": 1706480060000000
+        }
+      },
+      {
+        "name": "music grace extends unread deadline",
+        "realm": 0,
+        "timestampFieldsSeconds": {
+          "30": 1700000000,
+          "34": 0,
+          "38": 1700604800
+        },
+        "retainedHandleWord": 0,
+        "flag51": 0,
+        "forceMode": 0,
+        "suppliedOverrides": {},
+        "originalResult": {
+          "eligible": true,
+          "deadlineMicroseconds": 1700734400000000
+        }
+      },
+      {
+        "name": "music ordinary deadline dominates grace",
+        "realm": 0,
+        "timestampFieldsSeconds": {
+          "30": 1700000000,
+          "34": 1700000060,
+          "38": 1700000070
+        },
+        "retainedHandleWord": 0,
+        "flag51": 0,
+        "forceMode": 0,
+        "suppliedOverrides": {},
+        "originalResult": {
+          "eligible": true,
+          "deadlineMicroseconds": 1706480060000000
+        }
+      },
+      {
+        "name": "head file without timestamp34",
+        "realm": 7,
+        "timestampFieldsSeconds": {
+          "30": 1700000000,
+          "34": 0,
+          "38": 0
+        },
+        "retainedHandleWord": 0,
+        "flag51": 0,
+        "forceMode": 0,
+        "suppliedOverrides": {},
+        "originalResult": {
+          "eligible": true,
+          "deadlineMicroseconds": 1700086400000000
+        }
+      },
+      {
+        "name": "head file with timestamp34",
+        "realm": 7,
+        "timestampFieldsSeconds": {
+          "30": 1700000000,
+          "34": 1700000060,
+          "38": 0
+        },
+        "retainedHandleWord": 0,
+        "flag51": 0,
+        "forceMode": 0,
+        "suppliedOverrides": {},
+        "originalResult": {
+          "eligible": true,
+          "deadlineMicroseconds": 1702592060000000
+        }
+      },
+      {
+        "name": "head file has no unlock grace",
+        "realm": 7,
+        "timestampFieldsSeconds": {
+          "30": 1700000000,
+          "34": 0,
+          "38": 1700090000
+        },
+        "retainedHandleWord": 0,
+        "flag51": 0,
+        "forceMode": 0,
+        "suppliedOverrides": {},
+        "originalResult": {
+          "eligible": true,
+          "deadlineMicroseconds": 1700086400000000
+        }
+      },
+      {
+        "name": "retained entry excluded",
+        "realm": 0,
+        "timestampFieldsSeconds": {
+          "30": 1700000000,
+          "34": 0,
+          "38": 0
+        },
+        "retainedHandleWord": 1,
+        "flag51": 0,
+        "forceMode": 0,
+        "suppliedOverrides": {},
+        "originalResult": {
+          "eligible": false,
+          "deadlineMicroseconds": 0
+        }
+      },
+      {
+        "name": "explicit force admits retained entry",
+        "realm": 0,
+        "timestampFieldsSeconds": {
+          "30": 1700000000,
+          "34": 0,
+          "38": 0
+        },
+        "retainedHandleWord": 1,
+        "flag51": 0,
+        "forceMode": 1,
+        "suppliedOverrides": {},
+        "originalResult": {
+          "eligible": true,
+          "deadlineMicroseconds": 1700604800000000
+        }
+      },
+      {
+        "name": "flag51 excludes entry",
+        "realm": 0,
+        "timestampFieldsSeconds": {
+          "30": 1700000000,
+          "34": 0,
+          "38": 0
+        },
+        "retainedHandleWord": 0,
+        "flag51": 1,
+        "forceMode": 1,
+        "suppliedOverrides": {},
+        "originalResult": {
+          "eligible": false,
+          "deadlineMicroseconds": 0
+        }
+      },
+      {
+        "name": "missing timestamp30 excludes entry",
+        "realm": 0,
+        "timestampFieldsSeconds": {
+          "30": 0,
+          "34": 1700000060,
+          "38": 0
+        },
+        "retainedHandleWord": 0,
+        "flag51": 0,
+        "forceMode": 0,
+        "suppliedOverrides": {},
+        "originalResult": {
+          "eligible": false,
+          "deadlineMicroseconds": 0
+        }
+      },
+      {
+        "name": "unsupported realm excludes entry",
+        "realm": 2,
+        "timestampFieldsSeconds": {
+          "30": 1700000000,
+          "34": 0,
+          "38": 0
+        },
+        "retainedHandleWord": 0,
+        "flag51": 0,
+        "forceMode": 0,
+        "suppliedOverrides": {},
+        "originalResult": {
+          "eligible": false,
+          "deadlineMicroseconds": 0
+        }
+      },
+      {
+        "name": "realm5 later timestamp38 applies three-second limit",
+        "realm": 5,
+        "timestampFieldsSeconds": {
+          "30": 1700000000,
+          "34": 1700000060,
+          "38": 1700000070
+        },
+        "retainedHandleWord": 0,
+        "flag51": 0,
+        "forceMode": 0,
+        "suppliedOverrides": {},
+        "originalResult": {
+          "eligible": true,
+          "deadlineMicroseconds": 1700000073000000
+        }
+      },
+      {
+        "name": "realm5 earlier timestamp38 retains ordinary deadline",
+        "realm": 5,
+        "timestampFieldsSeconds": {
+          "30": 1700000000,
+          "34": 1700000060,
+          "38": 1700000050
+        },
+        "retainedHandleWord": 0,
+        "flag51": 0,
+        "forceMode": 0,
+        "suppliedOverrides": {},
+        "originalResult": {
+          "eligible": true,
+          "deadlineMicroseconds": 1700604860000000
+        }
+      },
+      {
+        "name": "music ordinary override",
+        "realm": 0,
+        "timestampFieldsSeconds": {
+          "30": 1700000000,
+          "34": 1700000060,
+          "38": 0
+        },
+        "retainedHandleWord": 0,
+        "flag51": 0,
+        "forceMode": 0,
+        "suppliedOverrides": {
+          "ordinary": 123
+        },
+        "originalResult": {
+          "eligible": true,
+          "deadlineMicroseconds": 1700000183000000
+        }
+      },
+      {
+        "name": "music unread override",
+        "realm": 0,
+        "timestampFieldsSeconds": {
+          "30": 1700000000,
+          "34": 0,
+          "38": 0
+        },
+        "retainedHandleWord": 0,
+        "flag51": 0,
+        "forceMode": 0,
+        "suppliedOverrides": {
+          "unread": 456
+        },
+        "originalResult": {
+          "eligible": true,
+          "deadlineMicroseconds": 1700000456000000
+        }
+      },
+      {
+        "name": "music grace override",
+        "realm": 0,
+        "timestampFieldsSeconds": {
+          "30": 1700000000,
+          "34": 1700000060,
+          "38": 1700000070
+        },
+        "retainedHandleWord": 0,
+        "flag51": 0,
+        "forceMode": 0,
+        "suppliedOverrides": {
+          "ordinary": 123,
+          "grace": 789
+        },
+        "originalResult": {
+          "eligible": true,
+          "deadlineMicroseconds": 1700000859000000
+        }
+      },
+      {
+        "name": "zero ordinary policy excludes expiry calculation",
+        "realm": 0,
+        "timestampFieldsSeconds": {
+          "30": 1700000000,
+          "34": 0,
+          "38": 0
+        },
+        "retainedHandleWord": 0,
+        "flag51": 0,
+        "forceMode": 0,
+        "suppliedOverrides": {
+          "ordinary": 0,
+          "unread": 100
+        },
+        "originalResult": {
+          "eligible": false,
+          "deadlineMicroseconds": 0
+        }
+      }
+    ]
+  },
+  "defaults": [
+    {
+      "realm": 0,
+      "present": true,
+      "rawWords": [
+        1,
+        6480000,
+        604800,
+        0,
+        129600,
+        3600
+      ],
+      "ordinaryExpiryRaw": 6480000,
+      "unreadExpiryRaw": 604800,
+      "unlockGraceRaw": 129600
+    },
+    {
+      "realm": 1,
+      "present": true,
+      "rawWords": [
+        4438747794454347776,
+        1209600,
+        1209600,
+        0,
+        0,
+        3600
+      ],
+      "ordinaryExpiryRaw": 1209600,
+      "unreadExpiryRaw": 1209600,
+      "unlockGraceRaw": 0
+    },
+    {
+      "realm": 2,
+      "present": false,
+      "rawWords": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "ordinaryExpiryRaw": 0,
+      "unreadExpiryRaw": 0,
+      "unlockGraceRaw": 0
+    },
+    {
+      "realm": 3,
+      "present": false,
+      "rawWords": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "ordinaryExpiryRaw": 0,
+      "unreadExpiryRaw": 0,
+      "unlockGraceRaw": 0
+    },
+    {
+      "realm": 4,
+      "present": true,
+      "rawWords": [
+        4453159312402939904,
+        0,
+        0,
+        0,
+        0,
+        3600
+      ],
+      "ordinaryExpiryRaw": 0,
+      "unreadExpiryRaw": 0,
+      "unlockGraceRaw": 0
+    },
+    {
+      "realm": 5,
+      "present": true,
+      "rawWords": [
+        4453159312402939905,
+        604800,
+        604800,
+        3,
+        0,
+        3600
+      ],
+      "ordinaryExpiryRaw": 604800,
+      "unreadExpiryRaw": 604800,
+      "unlockGraceRaw": 0
+    },
+    {
+      "realm": 6,
+      "present": false,
+      "rawWords": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "ordinaryExpiryRaw": 0,
+      "unreadExpiryRaw": 0,
+      "unlockGraceRaw": 0
+    },
+    {
+      "realm": 7,
+      "present": true,
+      "rawWords": [
+        4453159312402939905,
+        2592000,
+        86400,
+        0,
+        0,
+        3600
+      ],
+      "ordinaryExpiryRaw": 2592000,
+      "unreadExpiryRaw": 86400,
+      "unlockGraceRaw": 0
+    },
+    {
+      "realm": 8,
+      "present": true,
+      "rawWords": [
+        4453159312402939905,
+        604800,
+        604800,
+        3,
+        0,
+        3600
+      ],
+      "ordinaryExpiryRaw": 604800,
+      "unreadExpiryRaw": 604800,
+      "unlockGraceRaw": 0
+    },
+    {
+      "realm": 9,
+      "present": true,
+      "rawWords": [
+        1,
+        108000,
+        604800,
+        0,
+        0,
+        3600
+      ],
+      "ordinaryExpiryRaw": 108000,
+      "unreadExpiryRaw": 604800,
+      "unlockGraceRaw": 0
+    },
+    {
+      "realm": 10,
+      "present": true,
+      "rawWords": [
+        4453159312402939905,
+        604800,
+        604800,
+        3,
+        0,
+        3600
+      ],
+      "ordinaryExpiryRaw": 604800,
+      "unreadExpiryRaw": 604800,
+      "unlockGraceRaw": 0
+    },
+    {
+      "realm": 11,
+      "present": true,
+      "rawWords": [
+        4417130515383975937,
+        86400,
+        86400,
+        3,
+        0,
+        600
+      ],
+      "ordinaryExpiryRaw": 86400,
+      "unreadExpiryRaw": 86400,
+      "unlockGraceRaw": 0
+    },
+    {
+      "realm": 12,
+      "present": true,
+      "rawWords": [
+        4453159312402939904,
+        604800,
+        604800,
+        3,
+        0,
+        3600
+      ],
+      "ordinaryExpiryRaw": 604800,
+      "unreadExpiryRaw": 604800,
+      "unlockGraceRaw": 0
+    },
+    {
+      "realm": 13,
+      "present": true,
+      "rawWords": [
+        4453159312402939904,
+        604800,
+        604800,
+        3,
+        0,
+        3600
+      ],
+      "ordinaryExpiryRaw": 604800,
+      "unreadExpiryRaw": 604800,
+      "unlockGraceRaw": 0
+    },
+    {
+      "realm": 14,
+      "present": true,
+      "rawWords": [
+        4453159312402939904,
+        72000,
+        72000,
+        0,
+        0,
+        3600
+      ],
+      "ordinaryExpiryRaw": 72000,
+      "unreadExpiryRaw": 72000,
+      "unlockGraceRaw": 0
+    },
+    {
+      "realm": 15,
+      "present": true,
+      "rawWords": [
+        1,
+        6480000,
+        604800,
+        0,
+        129600,
+        3600
+      ],
+      "ordinaryExpiryRaw": 6480000,
+      "unreadExpiryRaw": 604800,
+      "unlockGraceRaw": 129600
+    },
+    {
+      "realm": 16,
+      "present": true,
+      "rawWords": [
+        4453159312402939905,
+        604800,
+        604800,
+        3,
+        0,
+        3600
+      ],
+      "ordinaryExpiryRaw": 604800,
+      "unreadExpiryRaw": 604800,
+      "unlockGraceRaw": 0
+    }
+  ],
+  "overrides": [
+    {
+      "realm": 0,
+      "suppliedOverrideRealm": 0,
+      "suppliedOrdinaryUnreadGrace": [
+        123,
+        456,
+        789
+      ],
+      "present": true,
+      "ordinaryUnreadGraceRaw": [
+        123,
+        456,
+        789
+      ]
+    },
+    {
+      "realm": 7,
+      "suppliedOverrideRealm": 0,
+      "suppliedOrdinaryUnreadGrace": [
+        123,
+        456,
+        789
+      ],
+      "present": true,
+      "ordinaryUnreadGraceRaw": [
+        2592000,
+        86400,
+        0
+      ]
+    },
+    {
+      "realm": 7,
+      "suppliedOverrideRealm": 7,
+      "suppliedOrdinaryUnreadGrace": [
+        123,
+        456,
+        789
+      ],
+      "present": true,
+      "ordinaryUnreadGraceRaw": [
+        123,
+        456,
+        789
+      ]
+    }
+  ],
+  "substitutions": [
+    "Explicit synthetic20-byte namespace and20-byte key, realm byte, uint16 descriptor field and flags.",
+    "Standard hashlib SHA-1 implements original wrapper101c89d60; original frame construction and hex encoding execute.",
+    "Namespace constructor slice supplies synthetic seed bytes and two opaque seed consumers; original digest and namespace assignments execute, stopping before constructor IO.",
+    "An opaque root-provider supplies /provider/; standard formatter arguments are captured without executing filesystem IO.",
+    "Three valid single-node std::map inputs supply explicit per-realm expiry overrides; original lookup and default selection execute.",
+    "Synthetic entry timestamp fields, retained-handle word and flag51 enter the actual original expiry leaf/functor; no eligibility or deadline decision is substituted.",
+    "BufferedStorage receives explicit resource-kind0/identity-variant0 descriptors. The full constructor executes to storage open; new-entry cases continue through original index lookup, descriptor allocation and its hash tables to the file-handle boundary.",
+    "New-entry cases inject a ready index and system clock, standard uncontended mutex lock/libc++ next_prime and explicit random draws at the original bounded RNG interface. The original bound65536 and descriptor assignment execute.",
+    "Inherited standard memory/allocation/string primitives; no cache-decision branch is replaced."
+  ],
+  "limits": [
+    "Proves namespace and filename leaves, supplied resource-kind0/identity-variant0 admission and new-entry assignment. The full live music source binding and seed provenance remain unproved.",
+    "The entry-expiry leaf establishes seconds-to-microseconds arithmetic and eligibility for supplied entries. Timestamp-field provenance, full pruning selection and live configuration still need binding.",
+    "Original storage retention is not license lifetime or a grant to reuse a content key.",
+    "Supplied source descriptors and empty ready index do not establish complete live AUDIO_FILES binding, existing-file index reopening or profile seed provenance. No file-handle operation executes.",
+    "Does not import, read, move or adopt an original Spotify cache or make an HTTP request."
+  ]
+}

@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "classification": "offline-proprietary-route-and-option-observations",
+  "flag": {
+    "address": "0x1027f5674",
+    "section": {
+      "segment": "__DATA",
+      "name": "__bss",
+      "address": "0x1027ea800",
+      "size": 103903,
+      "file_offset": 0,
+      "alignment": 64,
+      "flags": [
+        "1"
+      ]
+    },
+    "loaderInitialValue": 0,
+    "runtimeValueObserved": false
+  },
+  "selector": "0x1017d23d8",
+  "routeCases": [
+    {
+      "suppliedFlag": null,
+      "effectiveFlag": 0,
+      "backendConstructor": "Foundation",
+      "stopBeforeConstructor": "0x1017db064"
+    },
+    {
+      "suppliedFlag": 1,
+      "effectiveFlag": 1,
+      "backendConstructor": "CEF",
+      "stopBeforeConstructor": "0x1017d2288"
+    },
+    {
+      "suppliedFlag": 2,
+      "effectiveFlag": 2,
+      "backendConstructor": "Foundation",
+      "stopBeforeConstructor": "0x1017db064"
+    },
+    {
+      "suppliedFlag": 3,
+      "effectiveFlag": 3,
+      "backendConstructor": "CEF",
+      "stopBeforeConstructor": "0x1017d2288"
+    }
+  ],
+  "executionValueCase": {
+    "bridge": "0x101c20240",
+    "suppliedValue": 1,
+    "originalVirtualTargets": [
+      "0x101c25834"
+    ],
+    "builderField18": 1
+  },
+  "builderOptionCases": [
+    {
+      "bridge": "0x101c20378",
+      "suppliedRawValue": 30000,
+      "originalVirtualTargets": [
+        "0x101c258e0"
+      ],
+      "builderField1e8": 30000,
+      "builderField1f0": 10000
+    },
+    {
+      "bridge": "0x101c203a8",
+      "suppliedRawValue": 30000,
+      "originalVirtualTargets": [
+        "0x101c258e8"
+      ],
+      "builderField1e8": 10000,
+      "builderField1f0": 30000
+    }
+  ],
+  "inputMemory": [
+    {
+      "name": "rebased-dataconst",
+      "evidenceId": "ev_58296ff02c1c3a44074899018f132a2f0fd9c501460243ea10a7aef856b2d0c9",
+      "sha256": "c9d2f54c4a846da22c96ce185865f306c6aef603f40558e72d08de46670af75e"
+    },
+    {
+      "name": "rebased-data",
+      "evidenceId": "ev_8c506d77a8da88cbb4f83fb8e95a42860282477c1b4423500b1d429b94994bf5",
+      "sha256": "0a55780f366acdd1c9306c542ac7986b2af614e4a41ed94f8866334ba1a94e9e"
+    }
+  ],
+  "publicLayoutSources": [
+    {
+      "path": ".local/reference/native-http-routing/generated_message_reflection.h",
+      "url": "https://raw.githubusercontent.com/protocolbuffers/protobuf/v33.0/src/google/protobuf/generated_message_reflection.h",
+      "sha256": "ecf11d23ed440aaa441bd6951b67835958911d7e03ece49266aa054f7e7dd44d"
+    },
+    {
+      "path": ".local/reference/native-http-routing/protobuf-MODULE.bazel",
+      "url": "https://raw.githubusercontent.com/protocolbuffers/protobuf/v33.0/MODULE.bazel",
+      "sha256": "c5270efb4aad37a2f893536076518793f409ea7df07a06df995d848d1690f21c"
+    },
+    {
+      "path": ".local/reference/native-http-routing/call_once.h",
+      "url": "https://raw.githubusercontent.com/abseil/abseil-cpp/20250512.1/absl/base/call_once.h",
+      "sha256": "9f65cf0aa3632a53eb3c162ebe1badc89b86d3d33fab3bc05da93853fa911e4f"
+    }
+  ],
+  "proprietaryExports": [
+    {
+      "path": ".local/rea-session/native_http_default_external_executor_factory.json",
+      "sha256": "92e76c3d74c0084de53a9eae7475750bbd69b72dd9d7e5f7a5b87d36d88e65cf"
+    },
+    {
+      "path": ".local/rea-session/native_http_executor_factory_a.c",
+      "sha256": "bd606c73a34c5cef0e653fccf279e38d5c2b143ad415161626cfad3f6e798394"
+    },
+    {
+      "path": ".local/rea-session/native_http_executor_factory_b.c",
+      "sha256": "e7d8d1882e8739b31063fa52ad16ddf1639a0dbfbbb1cba9c31e977ba99cf9ff"
+    },
+    {
+      "path": ".local/rea-session/native_http_builder_option_f8_setter.c",
+      "sha256": "f0b870c2a24e892179577d8fc1f33a885eb38c385ea79fc96cb0172218572385"
+    },
+    {
+      "path": ".local/rea-session/native_http_builder_option_100_setter.c",
+      "sha256": "9e84868e4526f164285495f73f9bdcc9c5466dcde99fda4161c91f12f3e6e121"
+    },
+    {
+      "path": ".local/rea-session/native_http_builder_options_constructor.c",
+      "sha256": "eff4373f6c150f30a2b510c54277e373a72e40c480ea667e06e878d4857f81da"
+    },
+    {
+      "path": ".local/rea-session/native_http_factory_execute_request.c",
+      "sha256": "242b5388115924a372a4c8658dee197076417f32e773a1e954a1fe00930fd733"
+    },
+    {
+      "path": ".local/rea-session/native_http_scope_options_owner.c",
+      "sha256": "24b6f01bc9526ebf5b4cd1683bf0bd312afec12b2710d4278a69964c13607ff8"
+    },
+    {
+      "path": ".local/rea-session/client_token_connectivity_scope_current.c",
+      "sha256": "3d2b6f93c465c780b1967f4e09d02a8c02a757cb13c55bc32e96130a349b336b"
+    },
+    {
+      "path": ".local/rea-session/native-http-factory-object.c",
+      "sha256": "4af54c9b1190ddef44cb128de7e4eba7fa7b0eadfd673508d1dfb7ed858a5e81"
+    },
+    {
+      "path": ".local/rea-session/native_http_scope_options_forwarder.json",
+      "sha256": "27905372836994fca43551361ad889c58f0c00ee5732fa2bd4af4bc06d05c2a0"
+    },
+    {
+      "path": ".local/rea-session/native_http_runtime_flag_refs.json",
+      "sha256": "4f0275a9821e8446324d79207f7fcc599cdf064f73d662945496c07f5f619616"
+    },
+    {
+      "path": ".local/rea-session/native_http_flag_base_1027f5670.json",
+      "sha256": "c51da7dc827cc4ebef2af83253fbba084ac914e16033489cbfcf102f1547a042"
+    },
+    {
+      "path": ".local/rea-session/native_http_flag_base_1027f5668.json",
+      "sha256": "9c84167cbe7a6f296fb5b33c7743d0fcca912f682288b892083efc84761bba84"
+    },
+    {
+      "path": ".local/rea-session/native_http_flag_base_1027f5660.json",
+      "sha256": "21a4d445606ed91b6cef5bbea619945712e9eef8489d17120f1c8763c77236bf"
+    }
+  ],
+  "knownNeighbor": {
+    "descriptorTable": "0x102722eb8",
+    "oncePointerField": "0x102722ed0",
+    "oncePointer": "0x1027f5670",
+    "descriptorFilename": "spotify/client_token/v0/client_token_http.proto",
+    "descriptorSize": 3213,
+    "descriptorSha256": "5f8892ceeb08d8700b50a1dc90c91b9f5029a61c2a3c4e450929e9748fefe3eb",
+    "note": "Published matching DescriptorTable uses absl::once_flag* at+24; its atomic<uint32_t> state precedes the separate selector byte. No feature/config registration is inferred."
+  },
+  "factoryInputs": {
+    "callerInjectedExecutor": "Connectivity scope uses param3[6]/param3[7] when supplied, otherwise invokes the default external selector",
+    "scopeExecutionOverride": "Raw scope options+0x108 is forwarded into factory+0x130; engaged byte at factory+0x134 controls override selection",
+    "runtimeScopeOverrideEstablished": false,
+    "forwardingChain": [
+      "0x101653b44",
+      "0x101652194",
+      "0x1017bf0b0"
+    ],
+    "limitation": "Saved owners forward caller options rather than establish the SDK options+0x108 default"
+  },
+  "timingOptionFacts": {
+    "builderInitialField1e8": 10000,
+    "builderInitialField1f0": 10000,
+    "login5Templates": "Both v3/v4 set 0x101c20378(30000) and 0x101c203a8(30000)",
+    "clientTokenTemplate": "Sets 0x101c20378(30000); no 0x101c203a8 override in this template",
+    "field1f0DownstreamMeaningEstablished": false
+  },
+  "limitations": [
+    "Loader-zero default and synthetic branch cases do not observe a running client",
+    "Caller-supplied external executor and factory execution override remain independent inputs",
+    "No CEF/Foundation constructor or platform API executes; observers stop before those entries",
+    "Raw option 0x203a8 is distinct from request timeout 0x20378; downstream timing semantics are not inferred from a raw store",
+    "Published metadata layout versions do not identify the executable's protobuf/Abseil runtime versions",
+    "No original process, account, profile, network request or standard-runtime decompilation"
+  ]
+}

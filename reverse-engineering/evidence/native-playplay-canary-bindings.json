@@ -1,0 +1,145 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "authority": "Original immutable executable instructions and retained rebased vtable bytes; no scheduler or application execution.",
+  "rawAssemblyPath": ".local/rea-session/native-playplay-canary-construction-and-registration.asm",
+  "rawAssemblySha256": "bc9d6e1a536af2a9aad78a51ccf473ba4bab4333c8c0bdd8eee24826a5571b71",
+  "codeRanges": [
+    {
+      "start": "0x100485914",
+      "endExclusive": "0x100485a58",
+      "sha256": "f9dbf5fab55741a3ba76aa287845e2b2fba0b80c818b7499aa244ab55f782f5e"
+    },
+    {
+      "start": "0x100485c0c",
+      "endExclusive": "0x100485cac",
+      "sha256": "53bac60eda5b4baed613654bd91a7c793dd13f3c0d433b12d4b924293bbcfff8"
+    },
+    {
+      "start": "0x100485d7c",
+      "endExclusive": "0x1004860d8",
+      "sha256": "817335d0faa2ed9a3c1af892322a1e5465a3db71b70424d695bc9936ce00efa6"
+    },
+    {
+      "start": "0x1004862c0",
+      "endExclusive": "0x100486408",
+      "sha256": "2417506a64e3f8ceca94ee90fed6d7fe927cdd2a8db4394bd2fab7b7d6184ffa"
+    },
+    {
+      "start": "0x100487cbc",
+      "endExclusive": "0x100487ef0",
+      "sha256": "374002e3bf6c120903df83d66583b800e34a3d9688d3e0a0390cbc2a5aec7719"
+    },
+    {
+      "start": "0x100487f70",
+      "endExclusive": "0x100488160",
+      "sha256": "1f52044efc36978a65781d5927b2388067376e56a0c153cfbe4b9123725f9d91"
+    },
+    {
+      "start": "0x1010b5a98",
+      "endExclusive": "0x1010b5ab0",
+      "sha256": "91ca58b60afdc07b30c2a7a01872870e5a1445daa12a7804cf8519db6ecf8c25"
+    },
+    {
+      "start": "0x100fc871c",
+      "endExclusive": "0x100fc8734",
+      "sha256": "4d91aff59f420c5ecd2fbcb05cd5e5ff37f6aa209793b60846af55475be1cc66"
+    }
+  ],
+  "component": {
+    "factory": "0x10048593c",
+    "factoryVtable": "0x102569b68",
+    "numericServiceIdGetter": "0x100485914 ->10",
+    "nameGetter": "0x10048591c",
+    "name": "AppIntegrityLoggerSetupImpl",
+    "templateLabel": "cpp-app_integrity-app_integrity_logger_setup_impl",
+    "timerLabel": "app_integrity_delayed_request",
+    "factoryRegistration": "0x100441d80..0x100441dc4 creates factory object with vptr102569b68 and inserts it into factory vector."
+  },
+  "construction": {
+    "chain": [
+      "0x10048593c",
+      "0x100485c0c",
+      "0x100486130",
+      "0x100485d7c"
+    ],
+    "ownerBytes": 168,
+    "provider": "Factory x1 config+0x60 -> argumentx1 -> ctorx1 -> owner+0x10; unchanged pointer.",
+    "otherInputs": {
+      "owner+0x18": "factory config+0x20, ctorx2 report sink",
+      "owner+0x20": "factory config+0x80, ctorx3 executor",
+      "owner+0x28": "HTTP template from factory config+0x68 provider using fixed component label",
+      "ctorx5": "registry service14 from100479608, then virtualslot0x40 result",
+      "ctorx6": "registry service189 from100485a8c, then virtualslot0x28 result"
+    },
+    "initialization": "Ctor writes INT64_MIN to owner+0xa0 and calls100486408 report, then100485f0c registrations. No direct canary cadence invocation in ctor."
+  },
+  "registrations": [
+    {
+      "source": "0x100485f40..0x100485f6c",
+      "target": "0x100487cbc",
+      "registration": "Property change callback through owner+0x10 provider wrapper101d63334; subscription stored owner+0x48.",
+      "callbackBehavior": "Only changed property names ads or type call100486408 report; this callback does not post cadence."
+    },
+    {
+      "source": "0x100485f90..0x100485fc4",
+      "target": "0x100487ee4",
+      "registration": "Ctorx5 vtable+0x40 registers wrapper capturing owner; subscription stored owner+0x58.",
+      "callbackBehavior": "100487ee4 dereferences captured owner then jumps1004862c4 cadence poster."
+    },
+    {
+      "source": "0x100485ff8..0x100486014",
+      "registration": "If ctorx6 is nonnull, invokes its vtable+0xc8 with owner+8 observer, numericselector13 and empty map; returned handle stored owner+0x68.",
+      "callbackBehavior": "Observer secondary vtable102569c18+0x30 points100486400; adjusts this\u22128 and jumps1004862c4.",
+      "unknown": "Selector13 semantics and exact notifier emission site are not proved."
+    }
+  ],
+  "vtableBindings": [
+    {
+      "table": "primary102569be8",
+      "slot": "0x18",
+      "pointerAddress": "0x102569c00",
+      "entry": "0x1004862c0",
+      "route": "1004862c0 ->1004862c4"
+    },
+    {
+      "table": "secondary102569c18 at owner+8",
+      "slot": "0x30",
+      "pointerAddress": "0x102569c48",
+      "entry": "0x100486400",
+      "route": "100486400(this\u22128) ->1004862c4"
+    }
+  ],
+  "cadence": {
+    "poster": "0x1004862c4",
+    "postCall": "0x10048636c ->101f42cb8 using owner+0x20 executor",
+    "capturedCallbackEntry": "0x100487f70 ->100487f78",
+    "callbackRegistration": "0x100486344..0x10048635c stores manager100487f3c / invoke100487f70 with owner and weak lifetime handle.",
+    "eligibility": "100487f78 requires live weak owner; last attempt sentinel or elapsed>=1800000000000ns; no active owner+0x90 timer.",
+    "delayedCallbackRegistration": "0x100488068..0x100488098 registers100488158 ->100488160 with original delay argument250 and trailing0 at101f431cc.",
+    "unitsLimit": "Delay argument250 is exact. Its units are not re-established by this artifact; no invented near-end or polling interval.",
+    "initializationLimit": "No periodic self-rearming or initial direct cadence call is established in constructor; cadence is entered through registered events/virtual interface."
+  },
+  "serviceNames": [
+    {
+      "numericId": 14,
+      "idGetter": "0x1010b5a98",
+      "followingNameGetter": "0x1010b5aa0",
+      "fixedName": "AudioTrackPlayerSetupImpl",
+      "namePointer": "0x1023f7609"
+    },
+    {
+      "numericId": 189,
+      "idGetter": "0x100fc871c",
+      "followingNameGetter": "0x100fc8724",
+      "fixedName": "TimelineConductorSetupImpl",
+      "namePointer": "0x1023f3742"
+    }
+  ],
+  "limits": [
+    "No application, network, profile/account or live timer execution.",
+    "The real factory config+0x60 producer is not followed, so equality to original AP server ProductState owner is unproved.",
+    "The AudioTrackPlayer service's returned object's subscribed event semantics, and TimelineConductor selector13 notifier, remain unproved.",
+    "10048f214 weak-job-vector removal is not used to claim a music-completion/canary binding.",
+    "No Dart changes or live canary admission; source identity/body proof remains separate in native-playplay-canary-identity.json."
+  ]
+}

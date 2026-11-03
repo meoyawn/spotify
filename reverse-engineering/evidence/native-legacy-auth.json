@@ -1,0 +1,1177 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "scope": "Synthetic original legacy-auth encoding/decoding, compact parser, JSON writes and direct AuthStorageClient branch selection; no database/session/profile/HTTP",
+  "protobufIdentities": [
+    {
+      "constructor": "0x1017ac014",
+      "vtable": "0x10264a1c8",
+      "classDataGetter": "0x101938528",
+      "classData": "0x102729398",
+      "descriptorTable": "0x102729340",
+      "defaultInstanceIndex": 0,
+      "file": "es_auth_blob.proto",
+      "message": "spotify.connectivity.auth.common.esperanto.proto.AuthBlob",
+      "descriptorSha256": "e95b4898fff2ebe972481d41e0f08a10f290125eda4982f40b2527a92a2d474c",
+      "layout": [
+        {
+          "number": 1,
+          "name": "storedCredentials",
+          "offset": 32
+        },
+        {
+          "number": 2,
+          "name": "unencryptedStoredCredentials",
+          "offset": 24
+        }
+      ]
+    },
+    {
+      "constructor": "0x1019379e4",
+      "vtable": "0x10264a220",
+      "classDataGetter": "0x101938754",
+      "classData": "0x102729508",
+      "descriptorTable": "0x1027294b0",
+      "defaultInstanceIndex": 0,
+      "file": "es_encrypted_stored_credentials.proto",
+      "message": "spotify.connectivity.auth.common.esperanto.proto.EncryptedStoredCredentials",
+      "descriptorSha256": "cec26f308b972d6ccac278af35f37cb02269c26ada0a61aaf139ac51f17a3fae",
+      "layout": [
+        {
+          "number": 1,
+          "name": "username",
+          "offset": 24
+        },
+        {
+          "number": 2,
+          "name": "auth_blob",
+          "offset": 32
+        },
+        {
+          "number": 3,
+          "name": "device_id",
+          "offset": 40
+        }
+      ]
+    },
+    {
+      "constructor": "0x1017ac05c",
+      "vtable": "0x10264a268",
+      "classDataGetter": "0x1019388b0",
+      "classData": "0x1027296f8",
+      "descriptorTable": "0x1027296a0",
+      "defaultInstanceIndex": 0,
+      "file": "es_unencrypted_stored_credentials.proto",
+      "message": "spotify.connectivity.auth.common.esperanto.proto.UnencryptedStoredCredentials",
+      "descriptorSha256": "4a58ccbf63076ff6d7edac2649212003827ea343b649a935d0c1498a249cff41",
+      "layout": [
+        {
+          "number": 1,
+          "name": "username",
+          "offset": 24
+        },
+        {
+          "number": 2,
+          "name": "storedCredentials",
+          "offset": 32
+        }
+      ]
+    },
+    {
+      "constructor": "0x10193799c",
+      "vtable": "0x10264a128",
+      "classDataGetter": "0x1019381c4",
+      "classData": "0x1027290f0",
+      "descriptorTable": "0x102729098",
+      "defaultInstanceIndex": 0,
+      "file": "es_stored_user_info.proto",
+      "message": "spotify.connectivity.auth.storage.esperanto.proto.StoredUserInfo",
+      "descriptorSha256": "58c9e3a9e8c1ab95a053bd7512d78e5a5b8739d3072fe47431f0a4bf1bb7183d",
+      "layout": [
+        {
+          "number": 1,
+          "name": "username",
+          "offset": 24
+        },
+        {
+          "number": 2,
+          "name": "auth_blob",
+          "offset": 32
+        }
+      ]
+    },
+    {
+      "constructor": "0x1019382b0",
+      "vtable": "0x10264a168",
+      "classDataGetter": "0x101938344",
+      "classData": "0x102729230",
+      "descriptorTable": "0x102729098",
+      "defaultInstanceIndex": 1,
+      "file": "es_stored_user_info.proto",
+      "message": "spotify.connectivity.auth.storage.esperanto.proto.NullableStoredUserInfo",
+      "descriptorSha256": "58c9e3a9e8c1ab95a053bd7512d78e5a5b8739d3072fe47431f0a4bf1bb7183d",
+      "layout": [
+        {
+          "number": 1,
+          "name": "stored_user_info",
+          "offset": 16
+        },
+        {
+          "number": 2,
+          "name": "null",
+          "offset": 16
+        }
+      ]
+    }
+  ],
+  "encodeCases": [
+    {
+      "name": "binary",
+      "input": {
+        "username": "synthetic-user",
+        "credentialHex": "00ff63726564656e7469616c",
+        "deviceId": "synthetic-device",
+        "kind": 1
+      },
+      "encoded": {
+        "username": "synthetic-user",
+        "blobHex": "6e7a61713632623867316e76532f4e6146675041635157534a6130516e6d645063466e45495a453349564c6f6a554448426959654f62455574443276374f6843",
+        "deviceId": "synthetic-device",
+        "plaintextHex": "490e73796e7468657469632d757365725001510c00ff63726564656e7469616c"
+      },
+      "decoded": {
+        "accepted": true,
+        "username": "synthetic-user",
+        "kind": 1,
+        "credentialHex": "00ff63726564656e7469616c"
+      }
+    },
+    {
+      "name": "empty credential",
+      "input": {
+        "username": "synthetic-user",
+        "credentialHex": "",
+        "deviceId": "synthetic-device",
+        "kind": 1
+      },
+      "encoded": {
+        "username": "synthetic-user",
+        "blobHex": "6e7a61713632623867316e76532f4e6146675041635768567a796d4a4b342b71533537646e477a697453593d",
+        "deviceId": "synthetic-device",
+        "plaintextHex": "490e73796e7468657469632d7573657250015100"
+      },
+      "decoded": {
+        "accepted": false
+      }
+    },
+    {
+      "name": "empty username",
+      "input": {
+        "username": "",
+        "credentialHex": "6f7061717565",
+        "deviceId": "synthetic-device",
+        "kind": 1
+      },
+      "encoded": {
+        "username": "",
+        "blobHex": "",
+        "deviceId": "",
+        "plaintextHex": null
+      },
+      "decoded": {
+        "accepted": false
+      }
+    },
+    {
+      "name": "empty device",
+      "input": {
+        "username": "synthetic-user",
+        "credentialHex": "6f7061717565",
+        "deviceId": "",
+        "kind": 1
+      },
+      "encoded": {
+        "username": "synthetic-user",
+        "blobHex": "792b5851393338796f564e4c48685154496c4367682f3630313171786468364b5843414b794c45764f33413d",
+        "deviceId": "",
+        "plaintextHex": "490e73796e7468657469632d75736572500151066f7061717565"
+      },
+      "decoded": {
+        "accepted": true,
+        "username": "synthetic-user",
+        "kind": 1,
+        "credentialHex": "6f7061717565"
+      }
+    },
+    {
+      "name": "UTF-8 and embedded NUL",
+      "input": {
+        "username": "user-雪\u0000tail",
+        "credentialHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e",
+        "deviceId": "device-雪\u0000tail",
+        "kind": 1
+      },
+      "encoded": {
+        "username": "user-雪\u0000tail",
+        "blobHex": "4e37304147536c2f4547494939526447582b38744d31366f7a6239624b3374494c2f6474304d30513357676d78636c3335564964554f6b43554e56555267577a302b6b65453368753556776e5857565a4135543646513d3d",
+        "deviceId": "device-雪\u0000tail",
+        "plaintextHex": "490d757365722de99baa007461696c5001511f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e"
+      },
+      "decoded": {
+        "accepted": true,
+        "username": "user-雪\u0000tail",
+        "kind": 1,
+        "credentialHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e"
+      }
+    },
+    {
+      "name": "long fields",
+      "input": {
+        "username": "synthetic-usersynthetic-usersynthetic-usersynthetic-user",
+        "credentialHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff6f70617175656f70617175656f70617175656f70617175656f70617175656f70617175656f70617175656f70617175656f70617175656f70617175656f70617175656f7061717565",
+        "deviceId": "synthetic-devicesynthetic-devicesynthetic-device",
+        "kind": 1
+      },
+      "encoded": {
+        "username": "synthetic-usersynthetic-usersynthetic-usersynthetic-user",
+        "blobHex": "7832764153673633504a427430614875534e442b59363458467146456c6974634a6f6779735a53596246546345693255674c346161763177304a7a7348716d34567332455139747561614f673638394d62445745526468576c73534b4e5452614d4836624c586e3166504a4e33415574614e587277792f2f523367443347564164772f417a2b51345259455966396d352f6f6e6274654730517150644d6d3761476e4949344331624132746b6763716f79326634436e7376744d38676e74787a3636396c307750726c445a456e674d6c3273696c4564794d3744723845507a4d514d3138674d53556e346e777a67644d4f6a58445a472b44693247722f464762725561317849554b326445554f6b58327a7a525a6c4673793444546a794f774e57677a6a5152656762544466644b4e486f486a4538746c46446b5a78374c55417730685a4c515a49763373396d6e686161554d5a43326b6a4977776a643031545a7a48647343735a624c643157426955366b58664e753761754d534d6551644f49727142422f353555595764494154643070766a50384d436b6550327549487a324a716176577869683045614c4e384661564b6a37445148566150436a4676544f4f4b5970366f4a7263703178534862354e6e69535a625a4c70674b64464852714d646f316b62397859595956455631615a6d6d49363442504d766c6735657a516f7433353458647a536f4e47712b315558503733773d3d",
+        "deviceId": "synthetic-devicesynthetic-devicesynthetic-device",
+        "plaintextHex": "493873796e7468657469632d7573657273796e7468657469632d7573657273796e7468657469632d7573657273796e7468657469632d75736572500151c802000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff6f70617175656f70617175656f70617175656f70617175656f70617175656f70617175656f70617175656f70617175656f70617175656f70617175656f70617175656f7061717565"
+      },
+      "decoded": {
+        "accepted": true,
+        "username": "synthetic-usersynthetic-usersynthetic-usersynthetic-user",
+        "kind": 1,
+        "credentialHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff6f70617175656f70617175656f70617175656f70617175656f70617175656f70617175656f70617175656f70617175656f70617175656f70617175656f70617175656f7061717565"
+      }
+    },
+    {
+      "name": "password kind0 rejected",
+      "input": {
+        "username": "synthetic-user",
+        "credentialHex": "6f7061717565",
+        "deviceId": "synthetic-device",
+        "kind": 0
+      },
+      "encoded": {
+        "username": "",
+        "blobHex": "",
+        "deviceId": "",
+        "plaintextHex": null
+      },
+      "decoded": {
+        "accepted": false
+      }
+    },
+    {
+      "name": "password kind8 rejected",
+      "input": {
+        "username": "synthetic-user",
+        "credentialHex": "6f7061717565",
+        "deviceId": "synthetic-device",
+        "kind": 8
+      },
+      "encoded": {
+        "username": "",
+        "blobHex": "",
+        "deviceId": "",
+        "plaintextHex": null
+      },
+      "decoded": {
+        "accepted": false
+      }
+    },
+    {
+      "name": "other kind",
+      "input": {
+        "username": "synthetic-user",
+        "credentialHex": "6f7061717565",
+        "deviceId": "synthetic-device",
+        "kind": 17
+      },
+      "encoded": {
+        "username": "synthetic-user",
+        "blobHex": "6e7a61713632623867316e76532f4e6146675041636345513665776d416c644f33596e6a536151536642593d",
+        "deviceId": "synthetic-device",
+        "plaintextHex": "490e73796e7468657469632d75736572501151066f7061717565"
+      },
+      "decoded": {
+        "accepted": true,
+        "username": "synthetic-user",
+        "kind": 17,
+        "credentialHex": "6f7061717565"
+      }
+    },
+    {
+      "name": "negative kind",
+      "input": {
+        "username": "synthetic-user",
+        "credentialHex": "6f7061717565",
+        "deviceId": "synthetic-device",
+        "kind": -2
+      },
+      "encoded": {
+        "username": "synthetic-user",
+        "blobHex": "6e7a61713632623867316e76532f4e6146675041635832572f476e7247353431446c6f6a4a52362b32345a477570316b496c4d55627a74545348586f75647030",
+        "deviceId": "synthetic-device",
+        "plaintextHex": "490e73796e7468657469632d7573657250feffffffffffffffff51066f7061717565"
+      },
+      "decoded": {
+        "accepted": true,
+        "username": "synthetic-user",
+        "kind": -2,
+        "credentialHex": "6f7061717565"
+      }
+    },
+    {
+      "name": "raw sentinel kind retains data",
+      "input": {
+        "username": "synthetic-user",
+        "credentialHex": "6f7061717565",
+        "deviceId": "synthetic-device",
+        "kind": -1
+      },
+      "encoded": {
+        "username": "synthetic-user",
+        "blobHex": "6e7a61713632623867316e76532f4e61466750416351524f344a65485762337a756578514359304234554e6a316d76706e6f4c734f6937543570377774427937",
+        "deviceId": "synthetic-device",
+        "plaintextHex": "490e73796e7468657469632d7573657250ffffffffffffffffff51066f7061717565"
+      },
+      "decoded": {
+        "accepted": true,
+        "username": "synthetic-user",
+        "kind": -1,
+        "credentialHex": "6f7061717565"
+      }
+    }
+  ],
+  "parseCases": [
+    {
+      "name": "canonical",
+      "plaintextHex": "4901785001510179",
+      "result": {
+        "accepted": true,
+        "usernameHex": "78",
+        "kind": 1,
+        "credentialHex": "79"
+      },
+      "blobHex": "70454633742f624d42676e512f514275676e44626a413d3d",
+      "decoded": {
+        "accepted": true,
+        "username": "x",
+        "kind": 1,
+        "credentialHex": "79"
+      }
+    },
+    {
+      "name": "required only",
+      "plaintextHex": "a00101",
+      "result": {
+        "accepted": true,
+        "usernameHex": "",
+        "kind": 1,
+        "credentialHex": ""
+      },
+      "blobHex": "4664412b64323478546c2f32466e363842576f3743413d3d",
+      "decoded": {
+        "accepted": false
+      }
+    },
+    {
+      "name": "missing kind",
+      "plaintextHex": "490178f1010179",
+      "result": {
+        "accepted": false
+      },
+      "blobHex": "546978456b6e66374857484e7473725244512b3247513d3d",
+      "decoded": {
+        "accepted": false
+      }
+    },
+    {
+      "name": "kind zero",
+      "plaintextHex": "4901785000510179",
+      "result": {
+        "accepted": true,
+        "usernameHex": "78",
+        "kind": 0,
+        "credentialHex": "79"
+      },
+      "blobHex": "722f505432317744326a435251764238316f466251773d3d",
+      "decoded": {
+        "accepted": true,
+        "username": "x",
+        "kind": 0,
+        "credentialHex": "79"
+      }
+    },
+    {
+      "name": "missing data",
+      "plaintextHex": "4901785001",
+      "result": {
+        "accepted": true,
+        "usernameHex": "78",
+        "kind": 1,
+        "credentialHex": ""
+      },
+      "blobHex": "51365a476a435235525155697a5476776859336c69773d3d",
+      "decoded": {
+        "accepted": false
+      }
+    },
+    {
+      "name": "empty data",
+      "plaintextHex": "49017850015100",
+      "result": {
+        "accepted": true,
+        "usernameHex": "78",
+        "kind": 1,
+        "credentialHex": ""
+      },
+      "blobHex": "5150365a2f6a547650395a63654b5952496f5a376d673d3d",
+      "decoded": {
+        "accepted": false
+      }
+    },
+    {
+      "name": "duplicate username",
+      "plaintextHex": "49017801017a5001510179",
+      "result": {
+        "accepted": true,
+        "usernameHex": "7a",
+        "kind": 1,
+        "credentialHex": "79"
+      },
+      "blobHex": "6e314f4178574677647a485a482f2f614765725466413d3d",
+      "decoded": {
+        "accepted": false
+      }
+    },
+    {
+      "name": "wrong username wire",
+      "plaintextHex": "487b5001510179",
+      "result": {
+        "accepted": true,
+        "usernameHex": "",
+        "kind": 1,
+        "credentialHex": "79"
+      },
+      "blobHex": "4d7a49784978362f5731537548544b516a77414265673d3d",
+      "decoded": {
+        "accepted": false
+      }
+    },
+    {
+      "name": "wrong kind wire",
+      "plaintextHex": "490178510101510179",
+      "result": {
+        "accepted": false
+      },
+      "blobHex": "78497a455a35554a367630776e4a2b6330514a7344673d3d",
+      "decoded": {
+        "accepted": false
+      }
+    },
+    {
+      "name": "wrong data wire",
+      "plaintextHex": "49017850015009",
+      "result": {
+        "accepted": true,
+        "usernameHex": "78",
+        "kind": 1,
+        "credentialHex": ""
+      },
+      "blobHex": "43617152706b464655685a74563047507347765445413d3d",
+      "decoded": {
+        "accepted": false
+      }
+    },
+    {
+      "name": "unknown varint",
+      "plaintextHex": "4901785001510179087b",
+      "result": {
+        "accepted": true,
+        "usernameHex": "78",
+        "kind": 1,
+        "credentialHex": "79"
+      },
+      "blobHex": "6575507a524c347145675556776c4b796632556447513d3d",
+      "decoded": {
+        "accepted": true,
+        "username": "x",
+        "kind": 1,
+        "credentialHex": "79"
+      }
+    },
+    {
+      "name": "unknown fixed32",
+      "plaintextHex": "49017850015101790a01020304",
+      "result": {
+        "accepted": true,
+        "usernameHex": "78",
+        "kind": 1,
+        "credentialHex": "79"
+      },
+      "blobHex": "762f5939426b736f7350484d7454334334716e3768413d3d",
+      "decoded": {
+        "accepted": true,
+        "username": "x",
+        "kind": 1,
+        "credentialHex": "79"
+      }
+    },
+    {
+      "name": "unknown fixed64",
+      "plaintextHex": "49017850015101790b0102030405060708",
+      "result": {
+        "accepted": true,
+        "usernameHex": "78",
+        "kind": 1,
+        "credentialHex": "79"
+      },
+      "blobHex": "7a69307a5739324530782f5662674c67755173646565496c31636d4a744a69726331535553795476676e453d",
+      "decoded": {
+        "accepted": true,
+        "username": "x",
+        "kind": 1,
+        "credentialHex": "79"
+      }
+    },
+    {
+      "name": "unknown bytes",
+      "plaintextHex": "49017850015101790903616263",
+      "result": {
+        "accepted": true,
+        "usernameHex": "78",
+        "kind": 1,
+        "credentialHex": "79"
+      },
+      "blobHex": "5457433642377176722b3145787739374267456654773d3d",
+      "decoded": {
+        "accepted": true,
+        "username": "x",
+        "kind": 1,
+        "credentialHex": "79"
+      }
+    },
+    {
+      "name": "unknown nested",
+      "plaintextHex": "49017850015101790c080178",
+      "result": {
+        "accepted": true,
+        "usernameHex": "78",
+        "kind": 1,
+        "credentialHex": "79"
+      },
+      "blobHex": "3639776f656137724a5145764e4839383242695569673d3d",
+      "decoded": {
+        "accepted": true,
+        "username": "x",
+        "kind": 1,
+        "credentialHex": "79"
+      }
+    },
+    {
+      "name": "unterminated nested",
+      "plaintextHex": "49017850015101790c0801",
+      "result": {
+        "accepted": false
+      },
+      "blobHex": "737a457a596669786757446b5874586a4a4f384447513d3d",
+      "decoded": {
+        "accepted": false
+      }
+    },
+    {
+      "name": "unknown packed",
+      "plaintextHex": "49017850015101790d100304",
+      "result": {
+        "accepted": true,
+        "usernameHex": "78",
+        "kind": 1,
+        "credentialHex": "79"
+      },
+      "blobHex": "4765314e533274476874773246754b75626d463242773d3d",
+      "decoded": {
+        "accepted": true,
+        "username": "x",
+        "kind": 1,
+        "credentialHex": "79"
+      }
+    },
+    {
+      "name": "packed kind",
+      "plaintextHex": "490178550801510179",
+      "result": {
+        "accepted": true,
+        "usernameHex": "78",
+        "kind": 1,
+        "credentialHex": "79"
+      },
+      "blobHex": "46314f7934445439365332504a2b65715a506b5937413d3d",
+      "decoded": {
+        "accepted": true,
+        "username": "x",
+        "kind": 1,
+        "credentialHex": "79"
+      }
+    },
+    {
+      "name": "two packed kinds",
+      "plaintextHex": "49017855100304510179",
+      "result": {
+        "accepted": true,
+        "usernameHex": "78",
+        "kind": 4,
+        "credentialHex": "79"
+      },
+      "blobHex": "2f4a6a526853456d656274794844313753322f6c36413d3d",
+      "decoded": {
+        "accepted": true,
+        "username": "x",
+        "kind": 4,
+        "credentialHex": "79"
+      }
+    },
+    {
+      "name": "packed username",
+      "plaintextHex": "4d0901785001510179",
+      "result": {
+        "accepted": true,
+        "usernameHex": "78",
+        "kind": 1,
+        "credentialHex": "79"
+      },
+      "blobHex": "2f734a6b58714e595367624570726b32734e526b71413d3d",
+      "decoded": {
+        "accepted": true,
+        "username": "x",
+        "kind": 1,
+        "credentialHex": "79"
+      }
+    },
+    {
+      "name": "two packed usernames",
+      "plaintextHex": "4d110178017a5001510179",
+      "result": {
+        "accepted": false
+      },
+      "blobHex": "715a362b38522b394565397767336e767a634c464d413d3d",
+      "decoded": {
+        "accepted": false
+      }
+    },
+    {
+      "name": "wrong after valid kind",
+      "plaintextHex": "4901785001010178510179",
+      "result": {
+        "accepted": true,
+        "usernameHex": "78",
+        "kind": 1,
+        "credentialHex": "79"
+      },
+      "blobHex": "31396a4676504647384e6c2f6a4b4737355a704576513d3d",
+      "decoded": {
+        "accepted": true,
+        "username": "x",
+        "kind": 1,
+        "credentialHex": "79"
+      }
+    },
+    {
+      "name": "wrong after valid data",
+      "plaintextHex": "49017850015101790001",
+      "result": {
+        "accepted": true,
+        "usernameHex": "78",
+        "kind": 1,
+        "credentialHex": "79"
+      },
+      "blobHex": "3477544635394d727944595042535852674c6a337a413d3d",
+      "decoded": {
+        "accepted": true,
+        "username": "x",
+        "kind": 1,
+        "credentialHex": "79"
+      }
+    },
+    {
+      "name": "trailing zero",
+      "plaintextHex": "490178500151017900",
+      "result": {
+        "accepted": false
+      },
+      "blobHex": "6a75583154396678785a6a6d2f676e77396b6f4936673d3d",
+      "decoded": {
+        "accepted": false
+      }
+    },
+    {
+      "name": "trailing end control",
+      "plaintextHex": "490178500151017978",
+      "result": {
+        "accepted": false
+      },
+      "blobHex": "6d41796d544c4e7034764a562f33616a7743387676413d3d",
+      "decoded": {
+        "accepted": false
+      }
+    },
+    {
+      "name": "trailing control one",
+      "plaintextHex": "490178500151017979",
+      "result": {
+        "accepted": true,
+        "usernameHex": "78",
+        "kind": 1,
+        "credentialHex": "79"
+      },
+      "blobHex": "5979655370645758337845666e7954614742475a70773d3d",
+      "decoded": {
+        "accepted": true,
+        "username": "x",
+        "kind": 1,
+        "credentialHex": "79"
+      }
+    },
+    {
+      "name": "absolute reordered",
+      "plaintextHex": "a00101d1000178f1010179",
+      "result": {
+        "accepted": true,
+        "usernameHex": "78",
+        "kind": 1,
+        "credentialHex": "79"
+      },
+      "blobHex": "55432f576e4e5a2f556d4f57474c6b74585a522f54773d3d",
+      "decoded": {
+        "accepted": true,
+        "username": "x",
+        "kind": 1,
+        "credentialHex": "79"
+      }
+    },
+    {
+      "name": "six-byte absolute",
+      "plaintextHex": "d180808080000178a00101f1010179",
+      "result": {
+        "accepted": true,
+        "usernameHex": "78",
+        "kind": 1,
+        "credentialHex": "79"
+      },
+      "blobHex": "706e73772b4f744c754a6561397166652b45325a73513d3d",
+      "decoded": {
+        "accepted": true,
+        "username": "x",
+        "kind": 1,
+        "credentialHex": "79"
+      }
+    },
+    {
+      "name": "truncated string",
+      "plaintextHex": "490578",
+      "result": {
+        "accepted": false
+      },
+      "blobHex": "706f333336765a616c3661686f6d75385050374263773d3d",
+      "decoded": {
+        "accepted": false
+      }
+    },
+    {
+      "name": "truncated varint",
+      "plaintextHex": "4901785080",
+      "result": {
+        "accepted": false
+      },
+      "blobHex": "544246464258414f52414b6147684951457a79484d773d3d",
+      "decoded": {
+        "accepted": false
+      }
+    },
+    {
+      "name": "invalid wire6",
+      "plaintextHex": "49017850015101790e",
+      "result": {
+        "accepted": false
+      },
+      "blobHex": "7a72477a54542f58326d70656a617839472f4e5a5a773d3d",
+      "decoded": {
+        "accepted": false
+      }
+    },
+    {
+      "name": "invalid wire7",
+      "plaintextHex": "49017850015101790f",
+      "result": {
+        "accepted": false
+      },
+      "blobHex": "2b69442b4d58364a2f677036354444412b43506571513d3d",
+      "decoded": {
+        "accepted": false
+      }
+    }
+  ],
+  "decodeCases": [
+    {
+      "name": "non-ASCII bytes after padding",
+      "username": "x",
+      "blobHex": "70454633742f624d42676e512f514275676e44626a413d3dff80",
+      "deviceId": "synthetic-device",
+      "decoded": {
+        "accepted": true,
+        "username": "x",
+        "kind": 1,
+        "credentialHex": "79"
+      }
+    },
+    {
+      "name": "non-ASCII prefix",
+      "username": "x",
+      "blobHex": "ff70454633742f624d42676e512f514275676e44626a413d3d",
+      "deviceId": "synthetic-device",
+      "decoded": {
+        "accepted": false
+      }
+    },
+    {
+      "name": "NUL after padding",
+      "username": "x",
+      "blobHex": "70454633742f624d42676e512f514275676e44626a413d3d007461696c",
+      "deviceId": "synthetic-device",
+      "decoded": {
+        "accepted": true,
+        "username": "x",
+        "kind": 1,
+        "credentialHex": "79"
+      }
+    },
+    {
+      "name": "empty blob",
+      "username": "x",
+      "blobHex": "",
+      "deviceId": "synthetic-device",
+      "decoded": {
+        "accepted": false
+      }
+    },
+    {
+      "name": "non-block ciphertext",
+      "username": "x",
+      "blobHex": "4141414141414141414141414141414141414141",
+      "deviceId": "synthetic-device",
+      "decoded": {
+        "accepted": false
+      }
+    },
+    {
+      "name": "padding count over16",
+      "username": "x",
+      "blobHex": "49514d697061386e436c534e4f5a4546346a6a75464a454777565463797577383177617670534c7a7530553d",
+      "deviceId": "synthetic-device",
+      "decoded": {
+        "accepted": true,
+        "username": "x",
+        "kind": 1,
+        "credentialHex": "79"
+      }
+    },
+    {
+      "name": "unchecked padding contents",
+      "username": "x",
+      "blobHex": "364e425448363847346e6676466e4e4764315243636838684759676444474e45654b355453794c33466c383d",
+      "deviceId": "synthetic-device",
+      "decoded": {
+        "accepted": true,
+        "username": "x",
+        "kind": 1,
+        "credentialHex": "79"
+      }
+    },
+    {
+      "name": "zero padding count",
+      "username": "x",
+      "blobHex": "6d66394341476a6c474a304470324b52374655376a356e2f5167426f35526964413664696b6578564f34383d",
+      "deviceId": "synthetic-device",
+      "decoded": {
+        "accepted": true,
+        "username": "x",
+        "kind": 1,
+        "credentialHex": "79"
+      }
+    },
+    {
+      "name": "padding count beyond buffer",
+      "username": "x",
+      "blobHex": "49514d697061386e436c534e4f5a4546346a6a754644552b765a2f78496c644c67324d2f7644624f4775303d",
+      "deviceId": "synthetic-device",
+      "decoded": {
+        "accepted": false
+      }
+    },
+    {
+      "name": "source username must match plaintext",
+      "username": "other",
+      "blobHex": "774e416e3445743531385568574f2f386b72776c78413d3d",
+      "deviceId": "synthetic-device",
+      "decoded": {
+        "accepted": false
+      }
+    }
+  ],
+  "jsonWrites": [
+    {
+      "name": "empty key is no-op",
+      "saved": "{}",
+      "canonicalUsername": "",
+      "username": "user",
+      "blob": "blob",
+      "writes": []
+    },
+    {
+      "name": "absent source",
+      "saved": "",
+      "canonicalUsername": "canonical",
+      "username": "user",
+      "blob": "blob",
+      "writes": [
+        {
+          "key": "autologin.saved_credentials",
+          "value": "{\"canonical\":[\"user\",\"blob\"]}"
+        }
+      ]
+    },
+    {
+      "name": "invalid source",
+      "saved": "not-json",
+      "canonicalUsername": "canonical",
+      "username": "user",
+      "blob": "blob",
+      "writes": [
+        {
+          "key": "autologin.saved_credentials",
+          "value": "{\"canonical\":[\"user\",\"blob\"]}"
+        }
+      ]
+    },
+    {
+      "name": "non-object source",
+      "saved": "[]",
+      "canonicalUsername": "canonical",
+      "username": "user",
+      "blob": "blob",
+      "writes": [
+        {
+          "key": "autologin.saved_credentials",
+          "value": "{\"canonical\":[\"user\",\"blob\"]}"
+        }
+      ]
+    },
+    {
+      "name": "sorted keys",
+      "saved": "{\"z\":[\"old\",\"blob\"],\"a\":[\"other\",\"blob\"]}",
+      "canonicalUsername": "middle",
+      "username": "user",
+      "blob": "blob",
+      "writes": [
+        {
+          "key": "autologin.saved_credentials",
+          "value": "{\"a\":[\"other\",\"blob\"],\"middle\":[\"user\",\"blob\"],\"z\":[\"old\",\"blob\"]}"
+        }
+      ]
+    },
+    {
+      "name": "replace existing",
+      "saved": "{\"canonical\":[\"old\",\"oldblob\"],\"z\":[\"other\",\"blob\"]}",
+      "canonicalUsername": "canonical",
+      "username": "new",
+      "blob": "newblob",
+      "writes": [
+        {
+          "key": "autologin.saved_credentials",
+          "value": "{\"canonical\":[\"new\",\"newblob\"],\"z\":[\"other\",\"blob\"]}"
+        }
+      ]
+    },
+    {
+      "name": "controls and escapes",
+      "saved": "{}",
+      "canonicalUsername": "canonical",
+      "username": "user/\\\"\b\f\n\r\t",
+      "blob": "blob/+=",
+      "writes": [
+        {
+          "key": "autologin.saved_credentials",
+          "value": "{\"canonical\":[\"user/\\\\\\\"\\u0008\\u000c\\u000a\\u000d\\u0009\",\"blob/+=\"]}"
+        }
+      ]
+    },
+    {
+      "name": "NUL values",
+      "saved": "{}",
+      "canonicalUsername": "canonical",
+      "username": "before\u0000after",
+      "blob": "blob\u0000tail",
+      "writes": [
+        {
+          "key": "autologin.saved_credentials",
+          "value": "{\"canonical\":[\"before\",\"blob\"]}"
+        }
+      ]
+    },
+    {
+      "name": "UTF-8",
+      "saved": "{}",
+      "canonicalUsername": "key-雪",
+      "username": "user-雪  ",
+      "blob": "blob",
+      "writes": [
+        {
+          "key": "autologin.saved_credentials",
+          "value": "{\"key-雪\":[\"user-雪  \",\"blob\"]}"
+        }
+      ]
+    },
+    {
+      "name": "UTF-8 key ordering",
+      "saved": "{\"\": [\"bmp\", \"blob\"], \"𐀀\": [\"astral\", \"blob\"]}",
+      "canonicalUsername": "middle",
+      "username": "user",
+      "blob": "blob",
+      "writes": [
+        {
+          "key": "autologin.saved_credentials",
+          "value": "{\"middle\":[\"user\",\"blob\"],\"\":[\"bmp\",\"blob\"],\"𐀀\":[\"astral\",\"blob\"]}"
+        }
+      ]
+    },
+    {
+      "name": "NUL key",
+      "saved": "{}",
+      "canonicalUsername": "key\u0000tail",
+      "username": "user",
+      "blob": "blob",
+      "writes": [
+        {
+          "key": "autologin.saved_credentials",
+          "value": "{\"key\":[\"user\",\"blob\"]}"
+        }
+      ]
+    },
+    {
+      "name": "unrelated typed values",
+      "saved": "{\"z\":[1,2.0,0.000001,1e21,true,null]}",
+      "canonicalUsername": "canonical",
+      "username": "user",
+      "blob": "blob",
+      "writes": [
+        {
+          "key": "autologin.saved_credentials",
+          "value": "{\"canonical\":[\"user\",\"blob\"],\"z\":[1,2,1e-06,1e+21,true,null]}"
+        }
+      ]
+    }
+  ],
+  "authBlobSelections": [
+    {
+      "name": "no fields",
+      "ownerDevice": "owner-device",
+      "outerUsername": "outer-user",
+      "unencrypted": null,
+      "encrypted": null,
+      "storedUserInfo": null,
+      "authBlobUpdate": null
+    },
+    {
+      "name": "encrypted only",
+      "ownerDevice": "owner-device",
+      "outerUsername": "outer-user",
+      "unencrypted": null,
+      "encrypted": {
+        "username": "ignored-inner",
+        "blobHex": "616263",
+        "deviceId": "message-device"
+      },
+      "storedUserInfo": {
+        "username": "outer-user",
+        "blobHex": "616263",
+        "deviceId": "message-device"
+      },
+      "authBlobUpdate": {
+        "blobHex": "616263",
+        "deviceId": "message-device"
+      }
+    },
+    {
+      "name": "unencrypted only",
+      "ownerDevice": "owner-device",
+      "outerUsername": "outer-user",
+      "unencrypted": {
+        "username": "inner-user",
+        "dataHex": "00ff01"
+      },
+      "encrypted": null,
+      "storedUserInfo": {
+        "username": "outer-user",
+        "blobHex": "63585a38737967546f772b516a71312f4f524773584d35764b6d714f4e36444c457959674b336b734968413d",
+        "deviceId": "owner-device"
+      },
+      "authBlobUpdate": {
+        "blobHex": "7a484c36704c2f333938356e502f4f2f7173466c3567696a4f6f435a4d61475050685868544d63734d704d3d",
+        "deviceId": "owner-device"
+      }
+    },
+    {
+      "name": "both fields",
+      "ownerDevice": "owner-device",
+      "outerUsername": "outer-user",
+      "unencrypted": {
+        "username": "inner-user",
+        "dataHex": "00ff01"
+      },
+      "encrypted": {
+        "username": "ignored-inner",
+        "blobHex": "616263",
+        "deviceId": "message-device"
+      },
+      "storedUserInfo": {
+        "username": "outer-user",
+        "blobHex": "63585a38737967546f772b516a71312f4f524773584d35764b6d714f4e36444c457959674b336b734968413d",
+        "deviceId": "owner-device"
+      },
+      "authBlobUpdate": {
+        "blobHex": "7a484c36704c2f333938356e502f4f2f7173466c3567696a4f6f435a4d61475050685868544d63734d704d3d",
+        "deviceId": "owner-device"
+      }
+    },
+    {
+      "name": "empty unencrypted wins",
+      "ownerDevice": "owner-device",
+      "outerUsername": "outer-user",
+      "unencrypted": {
+        "username": "",
+        "dataHex": ""
+      },
+      "encrypted": {
+        "username": "ignored-inner",
+        "blobHex": "616263",
+        "deviceId": "message-device"
+      },
+      "storedUserInfo": {
+        "username": "outer-user",
+        "blobHex": "547a6b68346457505751317871747a536a38634d534a415734596a74574e6763756458744757566e552b633d",
+        "deviceId": "owner-device"
+      },
+      "authBlobUpdate": {
+        "blobHex": "",
+        "deviceId": "owner-device"
+      }
+    }
+  ],
+  "publicReference": "https://github.com/librespot-org/librespot/blob/dev/core/src/authentication.rs",
+  "limitations": [
+    "Unchanged proprietary compact stream and standard crypto/JSON execute; only standard memory/string, uncontended mutex, diagnostic-text and explicit preference/backend boundaries are inert; numeric C-library parsing/formatting delegates to host libc",
+    "The compact legacy stream is not standard protobuf and has no fabricated exact descriptor",
+    "Branch probes stop at the injected backend boundary; backend persistence and public.ldb format are not inferred"
+  ]
+}

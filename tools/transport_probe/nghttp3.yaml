@@ -1,0 +1,33 @@
+name: Nghttp3Bindings
+description: Direct C API bindings for pinned standard nghttp3 HTTP/3 and QPACK, macOS arm64.
+output: ../../lib/transport/nghttp3/bindings.dart
+headers:
+  entry-points:
+    - ../../.local/vendor/nghttp3/lib/includes/nghttp3/nghttp3.h
+    - ../../native/nghttp3/additional_settings.h
+  include-directives:
+    - '**/nghttp3.h'
+    - '**/additional_settings.h'
+    - '**/nghttp3/version.h'
+compiler-opts:
+  - '-I../../.local/vendor/nghttp3/lib/includes'
+  - '-I../../.local/native-build/nghttp3/lib/includes'
+functions:
+  include:
+    - 'nghttp3_.*'
+structs:
+  include:
+    - 'nghttp3_.*'
+unions:
+  include:
+    - 'nghttp3_.*'
+enums:
+  include:
+    - 'nghttp3_.*'
+macros:
+  include:
+    - 'NGHTTP3_.*'
+preamble: |
+  // Generated from the upstream C header; do not edit by hand.
+  // Native ABI: macOS arm64. See native/nghttp3/upstream.json.
+  // ignore_for_file: unused_field

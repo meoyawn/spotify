@@ -1,0 +1,63 @@
+{
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "schema": {
+    "file": "es_desktop_platform_info.proto",
+    "offset": 35103504,
+    "sha256": "28eb460456aa242bf0c0cda823ee40d0a653ea8661850d883217378e656ccffc"
+  },
+  "provider": "0x10007aba8",
+  "constructor": "0x10007aa10",
+  "response": "0x1000f352c",
+  "rtlPredicate": "0x10042cbd4",
+  "capabilities": "0x101eeab2c",
+  "appPlatform": "0x101ee9ca8",
+  "foundationVersion": "0x101eeab34",
+  "legacyDisplay": "0x101a4c9ec",
+  "developerModeGetter": "0x101437e28",
+  "inertResponseBoundary": "0x101c98834",
+  "serialization": "Standard Google protoc with the original descriptor",
+  "instructionRanges": [
+    {
+      "start": "0x10007aa10",
+      "endExclusive": "0x10007aba8",
+      "fileOffset": 502288,
+      "sha256": "f5945eb071b8db91b83bcefb1204c8cd54bc43aebc586ff8a330a5fc000bd37e"
+    },
+    {
+      "start": "0x10007aba8",
+      "endExclusive": "0x10007b084",
+      "fileOffset": 502696,
+      "sha256": "d5f610c9ff158831814bff9a1c5c6403ae9a00d531489e816a8ecc98c305f4dd"
+    },
+    {
+      "start": "0x1000f352c",
+      "endExclusive": "0x1000f395c",
+      "fileOffset": 996652,
+      "sha256": "4d0914a7fd52afa674f1c91a4ca8d967a41ba00b5bbd3212e306f7aec179b3c4"
+    }
+  ],
+  "sourceSemantics": {
+    "locale": "configuration(language), read on each request",
+    "rtl": "case-sensitive proprietary whitelist at 0x10042cbd4",
+    "loadConnectModal": "snapshot-provider constructor boolean at +0xf8",
+    "appPlatform": "compiled literal OSX_ARM64",
+    "osVersion": "Foundation operatingSystemVersion, numeric major.minor.patch",
+    "platformString": "Gestalt(sys1/sys2/sys3), then HOST_BASIC_INFO CPU family/subtype",
+    "isDeveloperMode": "global byte read on each request through 0x101437e28",
+    "eventSenderContextInformation": "distinct constructor fields; no public-facts substitution",
+    "clientVersionInt": "constructor uint32 zero-extended into protobuf int64"
+  },
+  "renderer": {
+    "clientFactoryModule": 17113,
+    "clientFactoryByteOffset": 6736956,
+    "eventProjectionFactoryModule": 74960,
+    "eventProjectionByteOffset": 3333536,
+    "note": "Renderer consumes native fields; it does not establish native field acquisition sources"
+  },
+  "limits": [
+    "Snapshot configuration and all identity values are synthetic",
+    "No original app, hardware ID, account/profile/credential source or remote API is read",
+    "Native protobuf field assignment executes; standard allocation/string helpers are inert",
+    "Original native protobuf serialization and bridge delivery are not executed"
+  ]
+}

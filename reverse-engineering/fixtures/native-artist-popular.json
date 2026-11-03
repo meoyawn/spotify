@@ -1,0 +1,193 @@
+{
+  "source": {
+    "path": ".local/artist-recovery-20261029/netlog.json",
+    "sha256": "ac67b8905db2d5555227e7108571e6c10ea56713931ca11482f37c47e07115c9",
+    "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca"
+  },
+  "substitutions": [
+    "Bearer/client token and artist ID replaced with explicit fixtures. Other decoded fields, order, method and empty body come from the original request."
+  ],
+  "limits": [
+    "Original native SYNC_POLICY GET only. The corresponding response is HTTP200 protobuf; response bodies, decoration, mutation, cache and compression fingerprints are not proved by this request capture."
+  ],
+  "cases": [
+    {
+      "name": "Native artist popular tracks SYNC_POLICY",
+      "canonicalUri": "spotify:list:popular-release-segments-main-roles:artist_0000000000000000000001",
+      "baseUrl": "https://guc3-spclient.spotify.com",
+      "policy": {
+        "caller": 12,
+        "prioritized": true,
+        "acceptListItems": true,
+        "dsaMode": false,
+        "listPlayerEnabled": true,
+        "applyAutoLens": true
+      },
+      "applicationHeaders": {
+        "locale": "en",
+        "timeZone": "Europe/Moscow",
+        "userAgent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+      },
+      "expected": {
+        "headers": {
+          ":method": "GET",
+          ":authority": "guc3-spclient.spotify.com",
+          ":scheme": "https",
+          ":path": "/playlist/v2/list/popular-release-segments-main-roles/artist_0000000000000000000001",
+          "pragma": "no-cache",
+          "cache-control": "no-cache, no-store",
+          "accept-language": "en",
+          "app-platform": "OSX_ARM64",
+          "authorization": "Bearer fixture-access-token",
+          "spotify-app-version": "130601921",
+          "time-zone": "Europe/Moscow",
+          "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+          "client-token": "fixture-client-token",
+          "spotify-accept-geoblock": "dummy",
+          "spotify-apply-lenses": "auto",
+          "spotify-dsa-mode-enabled": "false",
+          "spotify-list-player-enabled": "true",
+          "spotify-playlist-sync-reason": "CAwQAQ==",
+          "x-accept-list-items": "audio-track, audio-episode, video-episode, audiobook",
+          "sec-fetch-site": "same-origin",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-dest": "empty",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "priority": "u=4, i"
+        },
+        "bodyBase64": ""
+      },
+      "expectedHeaders": {
+        ":method": "GET",
+        ":authority": "guc3-spclient.spotify.com",
+        ":scheme": "https",
+        ":path": "/playlist/v2/list/popular-release-segments-main-roles/artist_0000000000000000000001",
+        "pragma": "no-cache",
+        "cache-control": "no-cache, no-store",
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer fixture-access-token",
+        "spotify-app-version": "130601921",
+        "time-zone": "Europe/Moscow",
+        "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+        "client-token": "fixture-client-token",
+        "spotify-accept-geoblock": "dummy",
+        "spotify-apply-lenses": "auto",
+        "spotify-dsa-mode-enabled": "false",
+        "spotify-list-player-enabled": "true",
+        "spotify-playlist-sync-reason": "CAwQAQ==",
+        "x-accept-list-items": "audio-track, audio-episode, video-episode, audiobook",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "empty",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=4, i"
+      },
+      "expectedHeaderSequence": [
+        [
+          ":method",
+          "GET"
+        ],
+        [
+          ":authority",
+          "guc3-spclient.spotify.com"
+        ],
+        [
+          ":scheme",
+          "https"
+        ],
+        [
+          ":path",
+          "/playlist/v2/list/popular-release-segments-main-roles/artist_0000000000000000000001"
+        ],
+        [
+          "pragma",
+          "no-cache"
+        ],
+        [
+          "cache-control",
+          "no-cache, no-store"
+        ],
+        [
+          "accept-language",
+          "en"
+        ],
+        [
+          "app-platform",
+          "OSX_ARM64"
+        ],
+        [
+          "authorization",
+          "Bearer fixture-access-token"
+        ],
+        [
+          "spotify-app-version",
+          "130601921"
+        ],
+        [
+          "time-zone",
+          "Europe/Moscow"
+        ],
+        [
+          "user-agent",
+          "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]"
+        ],
+        [
+          "client-token",
+          "fixture-client-token"
+        ],
+        [
+          "spotify-accept-geoblock",
+          "dummy"
+        ],
+        [
+          "spotify-apply-lenses",
+          "auto"
+        ],
+        [
+          "spotify-dsa-mode-enabled",
+          "false"
+        ],
+        [
+          "spotify-list-player-enabled",
+          "true"
+        ],
+        [
+          "spotify-playlist-sync-reason",
+          "CAwQAQ=="
+        ],
+        [
+          "x-accept-list-items",
+          "audio-track, audio-episode, video-episode, audiobook"
+        ],
+        [
+          "sec-fetch-site",
+          "same-origin"
+        ],
+        [
+          "sec-fetch-mode",
+          "no-cors"
+        ],
+        [
+          "sec-fetch-dest",
+          "empty"
+        ],
+        [
+          "accept-encoding",
+          "gzip, deflate, br, zstd"
+        ],
+        [
+          "priority",
+          "u=4, i"
+        ]
+      ],
+      "expectedProtocol": "h3",
+      "bodyHex": "",
+      "originalSource": {
+        "eventIndex": 133222,
+        "sourceId": 5153,
+        "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS"
+      }
+    }
+  ]
+}

@@ -1,0 +1,340 @@
+{
+  "bundlePath": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+  "bundleSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+  "modules": [
+    {
+      "module": 92464,
+      "sourceOffsetUtf16": 4160816,
+      "sourceOffsetBytes": 4161056,
+      "lengthBytes": 1531,
+      "sha256": "ea26df91582f9fa4917addc583b3587174795a9214c591d368f6962222610292"
+    },
+    {
+      "module": 83873,
+      "sourceOffsetUtf16": 4083882,
+      "sourceOffsetBytes": 4084122,
+      "lengthBytes": 1671,
+      "sha256": "1aeaa740a4a3f533e78b5c4268c6aa3203950362f5c7066bf0275640e82bee8d"
+    },
+    {
+      "module": 85418,
+      "sourceOffsetUtf16": 4160640,
+      "sourceOffsetBytes": 4160880,
+      "lengthBytes": 175,
+      "sha256": "6c0bd05958a0723942a6e91b1cb681c9f40e719af9cbc023e30c08b5889f4165"
+    },
+    {
+      "module": 1940,
+      "sourceOffsetUtf16": 4113254,
+      "sourceOffsetBytes": 4113494,
+      "lengthBytes": 624,
+      "sha256": "528ddb8b6adce775f64c3ee0371d007d51e65e564bf9b804229d9857a9985923"
+    },
+    {
+      "module": 41332,
+      "sourceOffsetUtf16": 4114788,
+      "sourceOffsetBytes": 4115028,
+      "lengthBytes": 4953,
+      "sha256": "9daaca5dd00fa6605ddd0eeb379cb5fc5c08e51a161d22a94315c4aa40e4b005"
+    },
+    {
+      "module": 87337,
+      "sourceOffsetUtf16": 4119742,
+      "sourceOffsetBytes": 4119982,
+      "lengthBytes": 1395,
+      "sha256": "e90ffc2f49b22726bf37dfc1560fc8fcc35315291a30dd20628a151b2bb198b5"
+    },
+    {
+      "module": 65505,
+      "sourceOffsetUtf16": 2252368,
+      "sourceOffsetBytes": 2252473,
+      "lengthBytes": 2724,
+      "sha256": "6f73a586682d57fc8f4140409aeb2892b9707a122e6634c20919655f7b8f5411"
+    },
+    {
+      "module": 53737,
+      "sourceOffsetUtf16": 2244546,
+      "sourceOffsetBytes": 2244651,
+      "lengthBytes": 1349,
+      "sha256": "0b4fa90bcd1f90ddc6b0d5a7e3f2b11658c05b64c60ace38579a812ce8a857d0"
+    },
+    {
+      "module": 43867,
+      "sourceOffsetUtf16": 2245896,
+      "sourceOffsetBytes": 2246001,
+      "lengthBytes": 665,
+      "sha256": "33cb789076a11a0baa1027074e0fe9b77c922b763fb5d5db4c35af930b6544bd"
+    },
+    {
+      "module": 72591,
+      "sourceOffsetUtf16": 2248074,
+      "sourceOffsetBytes": 2248179,
+      "lengthBytes": 1438,
+      "sha256": "0e6e80c8072653a3c44e2d0a0c71fafb5a411eb3864314e7dba7a442bf8e4012"
+    },
+    {
+      "module": 86749,
+      "sourceOffsetUtf16": 2249787,
+      "sourceOffsetBytes": 2249892,
+      "lengthBytes": 463,
+      "sha256": "9bc75764166da7a781759eb98574344d7aad7bb8d790e5ce57151906e066011c"
+    },
+    {
+      "module": 39692,
+      "sourceOffsetUtf16": 2250251,
+      "sourceOffsetBytes": 2250356,
+      "lengthBytes": 837,
+      "sha256": "736ffa96ed708d782fe2756a44d0366cb584262cafa33823b8a13c041663d904"
+    },
+    {
+      "module": 77145,
+      "sourceOffsetUtf16": 2255093,
+      "sourceOffsetBytes": 2255198,
+      "lengthBytes": 1584,
+      "sha256": "89014a2902b2edc2522993dfdb8b5cc83e9f2cf06ea35141c3602460d0fb1b49"
+    },
+    {
+      "module": 66039,
+      "sourceOffsetUtf16": 2256678,
+      "sourceOffsetBytes": 2256783,
+      "lengthBytes": 407,
+      "sha256": "372bcc5831a1e9bc71998a4af82b24fe49f64ec537a143e477c26d924b960cf9"
+    },
+    {
+      "module": 27868,
+      "sourceOffsetUtf16": 2251089,
+      "sourceOffsetBytes": 2251194,
+      "lengthBytes": 632,
+      "sha256": "bb3a560254b1ca0b38baa2ea68cb71c6bbfff60094a00b67c05acb697fb6c7db"
+    },
+    {
+      "module": 43327,
+      "sourceOffsetUtf16": 2251722,
+      "sourceOffsetBytes": 2251827,
+      "lengthBytes": 645,
+      "sha256": "37a01bcd03eae2237ee26b99d46dd8666d717c63feec957c34847e4179c090c2"
+    },
+    {
+      "module": 42475,
+      "sourceOffsetUtf16": 2247651,
+      "sourceOffsetBytes": 2247756,
+      "lengthBytes": 422,
+      "sha256": "e130f7639c08afb48cebcbad38c8b4874ee4db05c2c2dd1cc870ce4850768b06"
+    },
+    {
+      "module": 31673,
+      "sourceOffsetUtf16": 2246562,
+      "sourceOffsetBytes": 2246667,
+      "lengthBytes": 1088,
+      "sha256": "cc0cf3ff26ea50f6b955221d339e59e469fba471a38992b51c0100f6f97afc42"
+    },
+    {
+      "module": 59314,
+      "sourceOffsetUtf16": 2249513,
+      "sourceOffsetBytes": 2249618,
+      "lengthBytes": 273,
+      "sha256": "b4608aa42a26a135073b7bdfbe9ff63bda73d46cf62d3cd91b1838934ab62a28"
+    },
+    {
+      "module": 25500,
+      "sourceOffsetUtf16": 4197074,
+      "sourceOffsetBytes": 4197314,
+      "lengthBytes": 171,
+      "sha256": "7d668c2d4e2c9259047dd84071db795053e99685983e2689930133cd28b35bbe"
+    },
+    {
+      "module": 56209,
+      "sourceOffsetUtf16": 3901710,
+      "sourceOffsetBytes": 3901950,
+      "lengthBytes": 566,
+      "sha256": "e046995b12971098d5364934b4726b5d1365ed4c47553bb7e6bfb1317219ee0a"
+    },
+    {
+      "module": 68846,
+      "sourceOffsetUtf16": 4197434,
+      "sourceOffsetBytes": 4197674,
+      "lengthBytes": 733,
+      "sha256": "1385764af983a1b3755c77285792c586395def2f79ab53b2d4f30f9027e0c676"
+    },
+    {
+      "module": 47136,
+      "sourceOffsetUtf16": 724682,
+      "sourceOffsetBytes": 724697,
+      "lengthBytes": 30601,
+      "sha256": "69d9c484a0f66974f784f9b31a70e1260d8cc3cdb1aa0299e5f8aabae1470266"
+    },
+    {
+      "module": 69449,
+      "sourceOffsetUtf16": 7888271,
+      "sourceOffsetBytes": 7889734,
+      "lengthBytes": 11029,
+      "sha256": "512123b971df696e5269b0cebcaf671482bd607acd58f800425c57c484e2d333"
+    },
+    {
+      "module": 45514,
+      "sourceOffsetUtf16": 2257086,
+      "sourceOffsetBytes": 2257191,
+      "lengthBytes": 148,
+      "sha256": "0e2a20b8d662aa6f10dcc2eca3c21ab4185ce5da33791d083d5ae9861ec5ac9f"
+    },
+    {
+      "module": 1602,
+      "sourceOffsetUtf16": 2257235,
+      "sourceOffsetBytes": 2257340,
+      "lengthBytes": 648,
+      "sha256": "00c06486a208deadd745eab1cedf12b150699b99d15eeb73e6abfa6a0c74da70"
+    },
+    {
+      "module": 98235,
+      "sourceOffsetUtf16": 4132746,
+      "sourceOffsetBytes": 4132986,
+      "lengthBytes": 109,
+      "sha256": "a0ca7a97587f2eb30ff20fd844e2e867b8b112e6d18a720aa82e38b82f2c2810"
+    },
+    {
+      "module": 78277,
+      "sourceOffsetUtf16": 4787855,
+      "sourceOffsetBytes": 4788431,
+      "lengthBytes": 929,
+      "sha256": "70681093cdf3c2000ff22bda711517dee801347742a128ba4f8a4bbcd6e72fd3"
+    },
+    {
+      "module": 87801,
+      "sourceOffsetUtf16": 4789798,
+      "sourceOffsetBytes": 4790374,
+      "lengthBytes": 73,
+      "sha256": "2ca5498abc072e7bc96c646c6eeea5d835cf3ef9440d0ff34ddb57e0113ea9de"
+    },
+    {
+      "module": 28451,
+      "sourceOffsetUtf16": 4759377,
+      "sourceOffsetBytes": 4759953,
+      "lengthBytes": 18056,
+      "sha256": "56feedb773a36b2d4260c8498c6fd33b5bd6eb5af8682e11ac98d084d2160f7e"
+    },
+    {
+      "module": 92819,
+      "sourceOffsetUtf16": 1852047,
+      "sourceOffsetBytes": 1852088,
+      "lengthBytes": 127,
+      "sha256": "ef8c165629f5a663fc89003f2dffbee8ad8ddc10625cabf33211ccd77fa23fad"
+    },
+    {
+      "module": 41780,
+      "sourceOffsetUtf16": 1816527,
+      "sourceOffsetBytes": 1816564,
+      "lengthBytes": 100,
+      "sha256": "8aff9cd122df8575dadbebeffbb5d555042c5c78f1279147af3974a58ab8a65c"
+    },
+    {
+      "module": 85010,
+      "sourceOffsetUtf16": 2421767,
+      "sourceOffsetBytes": 2421995,
+      "lengthBytes": 401,
+      "sha256": "f91e883c6517db3979b988b2f1d949e25e12a163286126eef4d4a0e32d010178"
+    },
+    {
+      "module": 48153,
+      "sourceOffsetUtf16": 4777553,
+      "sourceOffsetBytes": 4778129,
+      "lengthBytes": 330,
+      "sha256": "338e3923ba008d63d69c87937ea181c1711c3c5d75ba1e2d8352e4a6b8fec334"
+    },
+    {
+      "module": 86999,
+      "sourceOffsetUtf16": 4315001,
+      "sourceOffsetBytes": 4315241,
+      "lengthBytes": 770,
+      "sha256": "c3930567cf82cfee419798c6cc901ab10365b6acfac8900d373fc0f33fc9b99d"
+    },
+    {
+      "module": 67825,
+      "sourceOffsetUtf16": 4778311,
+      "sourceOffsetBytes": 4778887,
+      "lengthBytes": 853,
+      "sha256": "e85bb4bafa436070e44ff1afdf2794f35c820d18ee7bf299749a4c534678f0e1"
+    },
+    {
+      "module": 88795,
+      "sourceOffsetUtf16": 4779329,
+      "sourceOffsetBytes": 4779905,
+      "lengthBytes": 266,
+      "sha256": "a8c8f7247fbb35ec368dfc36cec17ccdcaaf3cb9aea9134419a338000600a9f7"
+    },
+    {
+      "module": 64767,
+      "sourceOffsetUtf16": 4777884,
+      "sourceOffsetBytes": 4778460,
+      "lengthBytes": 426,
+      "sha256": "c6db1419e30f80c15ebffbd3a9fe628427ad62e22f9ac9dee885d817686ff75a"
+    },
+    {
+      "module": 53211,
+      "sourceOffsetUtf16": 4789099,
+      "sourceOffsetBytes": 4789675,
+      "lengthBytes": 149,
+      "sha256": "84275e24a61dff086b273924d72988a74bd12f526ff85542695c83a29f18a2dc"
+    },
+    {
+      "module": 92469,
+      "sourceOffsetUtf16": 4788785,
+      "sourceOffsetBytes": 4789361,
+      "lengthBytes": 313,
+      "sha256": "4d4d8254952cd89c06abb32738936c11c812fb3ef61f840d7131af34a52727d1"
+    },
+    {
+      "module": 98642,
+      "sourceOffsetUtf16": 4779165,
+      "sourceOffsetBytes": 4779741,
+      "lengthBytes": 163,
+      "sha256": "16e04c7a1ee5f2ffeefe0d2f4643f5157f9fb70607c22083cdfcaf59138f1419"
+    },
+    {
+      "module": 80149,
+      "sourceOffsetUtf16": 4366928,
+      "sourceOffsetBytes": 4367168,
+      "lengthBytes": 1685,
+      "sha256": "e52a913fa70cd3c20abd34406ac86bb03fe0bafeb28b5f1b0e5e6ed8bbd575e7"
+    },
+    {
+      "module": 19901,
+      "sourceOffsetUtf16": 4789969,
+      "sourceOffsetBytes": 4790545,
+      "lengthBytes": 233,
+      "sha256": "e3589bace8fa1ff9b5801d4047c785b6454fc616e3066b4be1b0a9db17ed5396"
+    },
+    {
+      "module": 92693,
+      "sourceOffsetUtf16": 4162472,
+      "sourceOffsetBytes": 4162712,
+      "lengthBytes": 511,
+      "sha256": "d48b0dd13a19421b6cbfec2f3600ab80bfc8280389119dc6364156dfdeec67d1"
+    },
+    {
+      "module": 29864,
+      "sourceOffsetUtf16": 4842333,
+      "sourceOffsetBytes": 4842909,
+      "lengthBytes": 2769,
+      "sha256": "7289de87ca49c94daa16c6dfa5a73a7d31ef4358b053d16414e7a464fd224f93"
+    }
+  ],
+  "suggestionsHook": {
+    "sourceOffsetUtf16": 2760404,
+    "sourceOffsetBytes": 2760640,
+    "lengthBytes": 1786,
+    "sha256": "07b979c5108abc48c87e4a2573279fd59f76486b6d48146c93348797683d1f55"
+  },
+  "inertDependencies": [
+    "React useMemo/useCallback/useRef",
+    "query hook 31773.I records descriptor/variables and returns synthetic data",
+    "feature flag hooks 93887/16230 and O.NC",
+    "recent mutation hook returns an inert mutate field",
+    "platform getGraphQLLoader returns null (unused by read hook)",
+    "logger",
+    "English liked-songs localization",
+    "protobuf readers 43381/37185 (decode functions never invoked)",
+    "display hook debounce returns input immediately; a separate original module 29864 execution uses a synthetic clock and timers",
+    "SERP UUID creator returns a synthetic constant"
+  ],
+  "projection": "Expected items retain display fields from actual original mapper outputs; no production Dart mapper is called."
+}

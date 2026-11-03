@@ -1,0 +1,49 @@
+{
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "factory": "0x101a806e4",
+  "converter": "0x1017c4288",
+  "initialBuilder": "0x1017c35a4",
+  "inertSendBoundary": "0x1017c3930",
+  "instructionRanges": [
+    {
+      "start": "0x101a806e4",
+      "endExclusive": "0x101a80a48",
+      "sha256": "d5b67d02217416338d02b748ded6fe38b069f0dc62d02359f1f096d504f40327"
+    },
+    {
+      "start": "0x1017c4288",
+      "endExclusive": "0x1017c43c4",
+      "sha256": "0003ed79893bf3be8477bb595599d0db82eee513ccdc16675929d6103c90253f"
+    },
+    {
+      "start": "0x1017c35a4",
+      "endExclusive": "0x1017c3930",
+      "sha256": "39f89ecb319b6da9c71a14446efacb8b1b15864dc1bc152724070f631c9c6c06"
+    }
+  ],
+  "standardProviders": [
+    "NSProcessInfo.processInfo",
+    "operatingSystemVersionString",
+    "operatingSystemVersion",
+    "sysctlbyname(hw.model)",
+    "mach_host_self",
+    "host_info(HOST_BASIC_INFO)"
+  ],
+  "schemaRoots": [
+    "connectivity.proto",
+    "spotify/client_token/v0/client_token_http.proto"
+  ],
+  "identitySources": {
+    "clientId": "root configuration copied through 0x1017c0c1c",
+    "clientVersion": "full-version root configuration copied by 0x1017c0918",
+    "deviceId": "root configuration field built by 0x100084304; supplied explicitly to Dart factory",
+    "installationId": "distinct DesktopPlatformInfo field; never substituted for deviceId"
+  },
+  "limits": [
+    "Synthetic standard OS outputs, configuration strings and cached tokens only",
+    "Protobuf allocations and ArenaStringPtr assignment use inert standard-runtime hooks",
+    "Observes native assigned values; standard protoc serializes them from original proto3 descriptors",
+    "Original native SerializeToString is not executed; no final HTTP-body or live-traffic equivalence claim",
+    "No original process, account/profile/credential store, hardware UUID, serial or remote API is read"
+  ]
+}

@@ -1,0 +1,284 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "method": "Join fresh native manager defaults to original outgoing AP authentication.\n\nUnchanged manager constructor, credential-entry, language setter, connection\nconfiguration assembly/copy and whole authentication builder execute offline.\nSynthetic credentials, device/model/language and OS facts are inputs. The full\nversion comes from the original root's immutable literal. Standard allocation,\nmemory, strings, uncontended mutexes and crypto reuse the existing providers.\nAsio timer initialization and executor posting are inert; proxy/retry/IO factory\ninterfaces reuse the documented hello-profile oracle boundaries. No original\nprocess, profile, credentials, account, keychain, socket or network is accessed.\n",
+  "entries": [
+    "0x1018f73dc",
+    "0x1018fda04",
+    "0x1018fbcc4",
+    "0x1018fc904",
+    "0x1018f5c80",
+    "0x101902fa8"
+  ],
+  "evidence": [
+    {
+      "path": ".local/rea-session/dart-native-ap-config-mapping-and-manager-constructor.json",
+      "sha256": "cc4453a45099cf6c041610b767117954e0282b1a5244ba6d34c98ce7fb5483bf",
+      "evidenceId": "ev_a3b157d99921a04b36629218758017c241ab310f234624528a7869c092389636"
+    },
+    {
+      "path": ".local/rea-session/dart-native-ap-credential-routing.json",
+      "sha256": "840381fa1ed667235f5ac98b4f61770e838cf89f96ba062ad9afd2cf786c2511",
+      "evidenceId": "ev_85bb0505171c8e455887501f1e0cef2fec11e7bfcb57d9602e951976b036f595"
+    },
+    {
+      "path": ".local/rea-session/dart-native-ap-native-hello-config-assembly.json",
+      "sha256": "746224836ba40f300c60c49dee3b0ab649970e299f8e0c9bb085b048809d79e3",
+      "evidenceId": "ev_3b7cfa4a570d101f0b355493528dc853d3a6bf83dd5cc2ffe4f06ca3ce7f257f"
+    },
+    {
+      "path": ".local/rea-session/dart-native-ap-connect-config-installation.json",
+      "sha256": "4b9585831e7a3882772bb83f3ddb6588d0d7a30abb541c913f05392b0dc47c2c",
+      "evidenceId": "ev_6e9cc5e9e9833340f9a485a14355d2a1a25b141b7e5c576b24f8eeb80e427150"
+    }
+  ],
+  "limits": [
+    "Fresh manager only, before any external/runtime mutation; no restored/modified manager profile is inferred.",
+    "Synthetic caller-owned device/model/language and credential inputs; no account or device identifier is read.",
+    "No real resolver, event loop, IO backend, handshake signature or server acceptance; stops at the outgoing message bytes.",
+    "Whole native root/startup is not executed; the proven intermediate mapping supplies explicit context fields."
+  ],
+  "sourceDependencies": [
+    {
+      "path": "reverse-engineering/tools/native_ap_authentication_oracle.py",
+      "sha256": "7c999e126550bc1f04540a9e4213d277d24745a4854025e37eef921ca0201ff4"
+    },
+    {
+      "path": "reverse-engineering/tools/native_ap_hello_profile_oracle.py",
+      "sha256": "ffb33d0fe58cea30a38242e92861b54ca1c985f1e158fadb832b919b3870102e"
+    },
+    {
+      "path": "reverse-engineering/tools/native_ap_system_info_oracle.py",
+      "sha256": "3f673947f260247b6ab1ad62fde88e3de7c92082e589b1caadf77c402d3c4745"
+    },
+    {
+      "path": "reverse-engineering/tools/native_login5_oracle.py",
+      "sha256": "99d483968e38ae3abf2d7bda0fe835ba5e5ed1c3707b17e9ef3e5aa6c0a2e2b0"
+    }
+  ],
+  "oracleSha256": "d59bbdad01b378a8b4370b6d2901763e1e6c78eb57cd523375b076d4c2a4f1c3",
+  "cases": [
+    {
+      "name": "fresh stored credential and constructor language",
+      "freshDesktopProfile": true,
+      "profileConstruction": {
+        "constructorDefaults": {
+          "nativeField11": "",
+          "nativeField5": "",
+          "language": "en"
+        },
+        "languageConfiguration": null,
+        "timerAndExecutorBoundaries": [
+          "Injected IO factory closure clone: retained synthetic owner",
+          "Asio timer initialization: inert",
+          "Asio timer initialization: inert",
+          "Asio timer initialization: inert",
+          "Manager executor posting: stopped before event loop"
+        ],
+        "connectionBoundaries": [
+          "retry counter: zero",
+          "retry counter: zero",
+          "retry counter: zero",
+          "retry transition: ignored",
+          "proxy selection: ignored",
+          "IO factory: inert",
+          "proxy provider: absent",
+          "IO connect: capture only; no transport"
+        ],
+        "profile": {
+          "nativeField11": "",
+          "versionString": "1.3.6.1921.g7086c071a617",
+          "deviceId": "fixture-device",
+          "platformModel": "MacFixture1,1",
+          "language": "en",
+          "nativeField5": ""
+        },
+        "versionLiteral": {
+          "address": "0x1023b279e",
+          "bytesHex": "312e332e362e313932312e67373038366330373161363137"
+        }
+      },
+      "credential": {
+        "username": "synthetic-user",
+        "authenticationType": 1,
+        "dataHex": "00ff63726564656e7469616c"
+      },
+      "profile": {
+        "nativeField11": "",
+        "versionString": "1.3.6.1921.g7086c071a617",
+        "deviceId": "fixture-device",
+        "platformModel": "MacFixture1,1",
+        "language": "en",
+        "nativeField5": ""
+      },
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 16777228,
+        "cpuSubtype": 0,
+        "gestaltFailureAt": null
+      },
+      "nonceKeyHex": "000102030405060708090a0b0c0d0e0f",
+      "dhHmacHex": "f7a384c1df6862eeceb1e47399ce75b178c1df78",
+      "plainFrameHex": "00000026521852165214f7a384c1df6862eeceb1e47399ce75b178c1df78a20100f201025200",
+      "encryptedHex": "5222520e73796e7468657469632d75736572a00101f2010c00ff63726564656e7469616c5a00a0010192033e5005a00100f00100c00200900300e00302b00408800500d205134f5320582032362e342e30205b61726d20305da2060e666978747572652d646576696365e2030d4d616346697874757265312c31b20418312e332e362e313932312e67373038366330373161363137d2050808001a02656e2a00",
+      "randomDraws": [
+        ""
+      ],
+      "standardLegacyAesCalls": [],
+      "clientFrameHex": "0004000000a8520f5000a00100f00109c002f8acd19101a00100f00100c0020092036752655260000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5fa00101e20310c6a13b37878f5b826f4f8162a1c8d879b20403ff007f8205020801",
+      "serverFrameHex": "00000194528d0352ec0252e9025260000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a00101f201800200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a20100f20100c20202520092031000000000000000000000000000000000"
+    },
+    {
+      "name": "fresh password with configured language",
+      "freshDesktopProfile": true,
+      "profileConstruction": {
+        "constructorDefaults": {
+          "nativeField11": "",
+          "nativeField5": "",
+          "language": "en"
+        },
+        "languageConfiguration": "de",
+        "timerAndExecutorBoundaries": [
+          "Injected IO factory closure clone: retained synthetic owner",
+          "Asio timer initialization: inert",
+          "Asio timer initialization: inert",
+          "Asio timer initialization: inert",
+          "Manager executor posting: stopped before event loop"
+        ],
+        "connectionBoundaries": [
+          "retry counter: zero",
+          "retry counter: zero",
+          "retry counter: zero",
+          "retry transition: ignored",
+          "proxy selection: ignored",
+          "IO factory: inert",
+          "proxy provider: absent",
+          "IO connect: capture only; no transport"
+        ],
+        "profile": {
+          "nativeField11": "",
+          "versionString": "1.3.6.1921.g7086c071a617",
+          "deviceId": "fixture-device-2",
+          "platformModel": "MacFixture2,2",
+          "language": "de",
+          "nativeField5": ""
+        },
+        "versionLiteral": {
+          "address": "0x1023b279e",
+          "bytesHex": "312e332e362e313932312e67373038366330373161363137"
+        }
+      },
+      "credential": {
+        "username": "synthetic-user",
+        "authenticationType": 0,
+        "dataHex": "666978747572652d70617373776f7264"
+      },
+      "profile": {
+        "nativeField11": "",
+        "versionString": "1.3.6.1921.g7086c071a617",
+        "deviceId": "fixture-device-2",
+        "platformModel": "MacFixture2,2",
+        "language": "de",
+        "nativeField5": ""
+      },
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 16777228,
+        "cpuSubtype": 0,
+        "gestaltFailureAt": null
+      },
+      "nonceKeyHex": "000102030405060708090a0b0c0d0e0f",
+      "dhHmacHex": "f7a384c1df6862eeceb1e47399ce75b178c1df78",
+      "plainFrameHex": "00000026521852165214f7a384c1df6862eeceb1e47399ce75b178c1df78a20100f201025200",
+      "encryptedHex": "5239520e73796e7468657469632d75736572a00100f20110666978747572652d70617373776f7264c20210a0a1a2a3a4a5a6a7a8a9aaabacadaeaf5a00a001019203405005a00100f00100c00200900300e00302b00408800500d205134f5320582032362e342e30205b61726d20305da20610666978747572652d6465766963652d32e2030d4d616346697874757265322c32b20418312e332e362e313932312e67373038366330373161363137d2050808001a0264652a00",
+      "randomDraws": [
+        "a0a1a2a3a4a5a6a7a8a9aaabacadaeaf",
+        ""
+      ],
+      "standardLegacyAesCalls": [],
+      "clientFrameHex": "0004000000a8520f5000a00100f00109c002f8acd19101a00100f00100c0020092036752655260000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5fa00101e20310c6a13b37878f5b826f4f8162a1c8d879b20403ff007f8205020801",
+      "serverFrameHex": "00000194528d0352ec0252e9025260000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a00101f201800200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a20100f20100c20202520092031000000000000000000000000000000000"
+    },
+    {
+      "name": "fresh token with explicit empty language",
+      "freshDesktopProfile": true,
+      "profileConstruction": {
+        "constructorDefaults": {
+          "nativeField11": "",
+          "nativeField5": "",
+          "language": "en"
+        },
+        "languageConfiguration": "",
+        "timerAndExecutorBoundaries": [
+          "Injected IO factory closure clone: retained synthetic owner",
+          "Asio timer initialization: inert",
+          "Asio timer initialization: inert",
+          "Asio timer initialization: inert",
+          "Manager executor posting: stopped before event loop"
+        ],
+        "connectionBoundaries": [
+          "retry counter: zero",
+          "retry counter: zero",
+          "retry counter: zero",
+          "retry transition: ignored",
+          "proxy selection: ignored",
+          "IO factory: inert",
+          "proxy provider: absent",
+          "IO connect: capture only; no transport"
+        ],
+        "profile": {
+          "nativeField11": "",
+          "versionString": "1.3.6.1921.g7086c071a617",
+          "deviceId": "fixture-device-3",
+          "platformModel": "MacFixture3,3",
+          "language": "",
+          "nativeField5": ""
+        },
+        "versionLiteral": {
+          "address": "0x1023b279e",
+          "bytesHex": "312e332e362e313932312e67373038366330373161363137"
+        }
+      },
+      "credential": {
+        "username": "",
+        "authenticationType": 3,
+        "dataHex": "666978747572652d746f6b656e"
+      },
+      "profile": {
+        "nativeField11": "",
+        "versionString": "1.3.6.1921.g7086c071a617",
+        "deviceId": "fixture-device-3",
+        "platformModel": "MacFixture3,3",
+        "language": "",
+        "nativeField5": ""
+      },
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 16777228,
+        "cpuSubtype": 0,
+        "gestaltFailureAt": null
+      },
+      "nonceKeyHex": "000102030405060708090a0b0c0d0e0f",
+      "dhHmacHex": "f7a384c1df6862eeceb1e47399ce75b178c1df78",
+      "plainFrameHex": "00000026521852165214f7a384c1df6862eeceb1e47399ce75b178c1df78a20100f201025200",
+      "encryptedHex": "5225521061306131613261336134613561366137a00103f2010d666978747572652d746f6b656e5a00a001019203405005a00100f00100c00200900300e00302b00408800500d205134f5320582032362e342e30205b61726d20305da20610666978747572652d6465766963652d33e2030d4d616346697874757265332c33b20418312e332e362e313932312e67373038366330373161363137d2050608001a002a00",
+      "randomDraws": [
+        "a0a1a2a3a4a5a6a7"
+      ],
+      "standardLegacyAesCalls": [],
+      "clientFrameHex": "0004000000a8520f5000a00100f00109c002f8acd19101a00100f00100c0020092036752655260000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5fa00101e20310c6a13b37878f5b826f4f8162a1c8d879b20403ff007f8205020801",
+      "serverFrameHex": "00000194528d0352ec0252e9025260000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a00101f201800200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a20100f20100c20202520092031000000000000000000000000000000000"
+    }
+  ]
+}

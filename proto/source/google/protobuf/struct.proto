@@ -1,0 +1,48 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: fb5b28220303058d1bfffc4138d45c47790dd80d3030efcec70e792b245330aa
+
+syntax = "proto3";
+
+package google.protobuf;
+
+option cc_enable_arenas = true;
+
+option csharp_namespace = "Google.Protobuf.WellKnownTypes";
+
+option go_package = "google.golang.org/protobuf/types/known/structpb";
+
+option java_multiple_files = true;
+
+option java_outer_classname = "StructProto";
+
+option java_package = "com.google.protobuf";
+
+option objc_class_prefix = "GPB";
+
+message Struct {
+  map<string, .google.protobuf.Value> fields = 1;
+}
+
+message Value {
+  oneof kind {
+    .google.protobuf.NullValue null_value = 1;
+
+    double number_value = 2;
+
+    string string_value = 3;
+
+    bool bool_value = 4;
+
+    .google.protobuf.Struct struct_value = 5;
+
+    .google.protobuf.ListValue list_value = 6;
+  }
+}
+
+message ListValue {
+  repeated .google.protobuf.Value values = 1;
+}
+
+enum NullValue {
+  NULL_VALUE = 0;
+}

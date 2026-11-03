@@ -1,0 +1,4600 @@
+{
+  "provenance": "Original album query/row/disc factories and native PlaylistAPI policy, Get client and response mappers with synthetic payloads and inert transports only.",
+  "playlistFeatures": {
+    "watchFeed": false,
+    "authors": false,
+    "ageAssurance": false
+  },
+  "albumScenarios": [
+    {
+      "name": "album optional release watch metadata and raw item denominator remain original",
+      "kind": "open",
+      "uri": "spotify:album:0000000000000000000002",
+      "locale": "",
+      "body": {
+        "data": {
+          "albumUnion": {
+            "__typename": "Album",
+            "uri": "spotify:album:0000000000000000000002",
+            "name": "Synthetic album",
+            "artists": {
+              "items": [
+                {
+                  "__typename": "Artist",
+                  "uri": "spotify:artist:0000000000000000000001",
+                  "id": "0000000000000000000001",
+                  "profile": {
+                    "name": "Synthetic artist"
+                  },
+                  "visuals": {
+                    "avatarImage": {
+                      "sources": [
+                        {
+                          "url": "https://fixture.invalid/artist",
+                          "width": 64,
+                          "height": 64
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            "coverArt": {
+              "sources": [
+                {
+                  "url": "https://fixture.invalid/album",
+                  "width": "300",
+                  "height": 0
+                }
+              ]
+            },
+            "tracksV2": {
+              "totalCount": 8,
+              "items": [
+                {
+                  "uid": "album-uid-1-1",
+                  "track": {
+                    "__typename": "Track",
+                    "uri": "spotify:track:0000000000000000000001",
+                    "name": "Synthetic track 1.1",
+                    "artists": {
+                      "items": [
+                        {
+                          "__typename": "Artist",
+                          "uri": "spotify:artist:0000000000000000000001",
+                          "id": "0000000000000000000001",
+                          "profile": {
+                            "name": "Synthetic artist"
+                          },
+                          "visuals": {
+                            "avatarImage": {
+                              "sources": [
+                                {
+                                  "url": "https://fixture.invalid/artist",
+                                  "width": 64,
+                                  "height": 64
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "duration": {
+                      "totalMilliseconds": 123456
+                    },
+                    "discNumber": 1,
+                    "trackNumber": 1,
+                    "playability": {
+                      "playable": true
+                    },
+                    "contentRating": {
+                      "label": "NINETEEN_PLUS"
+                    },
+                    "saved": true,
+                    "playcount": null,
+                    "associationsV3": {
+                      "videoAssociations": {
+                        "totalCount": 2
+                      }
+                    }
+                  }
+                },
+                {
+                  "__typename": "NotFound"
+                }
+              ]
+            },
+            "discs": {
+              "totalCount": 1,
+              "items": [
+                {
+                  "number": 1,
+                  "tracks": {
+                    "totalCount": 8
+                  }
+                }
+              ]
+            },
+            "playability": {
+              "reason": "CATALOGUE_RESTRICTED"
+            },
+            "saved": true,
+            "type": "ALBUM",
+            "date": null,
+            "releases": {
+              "totalCount": 0,
+              "items": []
+            },
+            "copyright": {
+              "totalCount": 1,
+              "items": [
+                {
+                  "type": "C",
+                  "text": "Synthetic copyright"
+                }
+              ]
+            },
+            "watchFeedEntrypoint": {
+              "entrypointUri": "spotify:internal:fixture-feed",
+              "video": {
+                "fileId": "fixture-manifest",
+                "videoType": "MANIFEST_ID",
+                "startTime": 4,
+                "endTime": 8
+              },
+              "thumbnailImage": {
+                "data": {
+                  "__typename": "ImageV2",
+                  "imageId": "https://fixture.invalid/thumb"
+                }
+              }
+            },
+            "moreAlbumsByArtist": {
+              "items": [
+                {
+                  "discography": {
+                    "popularReleasesAlbums": {
+                      "items": [
+                        {
+                          "uri": "spotify:album:0000000000000000000009",
+                          "name": "Synthetic related release",
+                          "type": "SINGLE",
+                          "coverArt": {
+                            "sources": []
+                          },
+                          "sharingInfo": {
+                            "shareUrl": "https://fixture.invalid/album"
+                          },
+                          "date": {
+                            "year": 2025
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "meV2": {
+            "ianaTimezoneId": "Etc/UTC"
+          }
+        }
+      },
+      "expected": {
+        "requests": [
+          {
+            "method": "POST",
+            "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+            "headers": {
+              "Accept-Language": "en",
+              "Accept": "application/json",
+              "App-Platform": "fixture-platform",
+              "Spotify-App-Version": "1.3.6.1921",
+              "spotify-app-version": "896000000",
+              "Content-Type": "application/json;charset=UTF-8"
+            },
+            "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphbGJ1bTowMDAwMDAwMDAwMDAwMDAwMDAwMDAyIiwibG9jYWxlIjoiIiwib2Zmc2V0IjowLCJsaW1pdCI6NTB9LCJvcGVyYXRpb25OYW1lIjoiZ2V0QWxidW0iLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiIxMWM5Y2FkOWNiMjRjNGY5ZTI1ZWY5NDU2ZjY4NjIxY2ZkNjAwNmE5MGY2NzllNzI5YzFkMmYyZmQ3MGRmZTE2In19fQ==",
+            "authorize": true,
+            "includeCredentials": false,
+            "responseType": "json"
+          }
+        ],
+        "metadata": {
+          "type": "album",
+          "uri": "spotify:album:0000000000000000000002",
+          "name": "Synthetic album",
+          "artists": [
+            {
+              "type": "artist",
+              "name": "Synthetic artist",
+              "images": [
+                {
+                  "url": "https://fixture.invalid/artist",
+                  "width": 64,
+                  "height": 64
+                }
+              ],
+              "uri": "spotify:artist:0000000000000000000001",
+              "id": "0000000000000000000001"
+            }
+          ],
+          "images": [
+            {
+              "url": "https://fixture.invalid/album",
+              "width": "300"
+            }
+          ],
+          "moreAlbumsByArtist": [
+            {
+              "type": "album",
+              "uri": "spotify:album:0000000000000000000009",
+              "albumType": "SINGLE",
+              "name": "Synthetic related release",
+              "images": [],
+              "artists": [],
+              "sharingInfo": {
+                "shareUrl": "https://fixture.invalid/album"
+              },
+              "year": 2025
+            }
+          ],
+          "nrTracks": 8,
+          "isPlayable": true,
+          "isSaved": true,
+          "isCatalogueRestricted": true,
+          "discs": {
+            "totalCount": 1,
+            "items": [
+              {
+                "type": "AlbumDisc",
+                "discNumber": 1,
+                "nrTracks": 8
+              }
+            ]
+          },
+          "copyright": {
+            "totalCount": 1,
+            "items": [
+              {
+                "type": "C",
+                "text": "Synthetic copyright"
+              }
+            ]
+          },
+          "albumType": "ALBUM",
+          "duration": {
+            "durationMs": 493824,
+            "isEstimate": true
+          },
+          "releases": {
+            "totalCount": 0,
+            "items": []
+          },
+          "extractedColors": null,
+          "courtesyLine": null,
+          "sharingInfo": null,
+          "dynamicColors": null,
+          "watchFeedEntityEntryPoint": {
+            "feedUri": "spotify:internal:fixture-feed",
+            "video": {
+              "urlOrFileId": "fixture-manifest",
+              "type": "MANIFEST_ID",
+              "startTime": 4,
+              "endTime": 8
+            },
+            "thumbnail": {
+              "url": "https://fixture.invalid/thumb"
+            }
+          },
+          "preReleaseEndDateTime": null,
+          "prereleaseDisplayTimeZone": "Etc/UTC"
+        },
+        "tracks": {
+          "items": [
+            {
+              "type": "track",
+              "uid": "album-uid-1-1",
+              "uri": "spotify:track:0000000000000000000001",
+              "name": "Synthetic track 1.1",
+              "artists": [
+                {
+                  "uri": "spotify:artist:0000000000000000000001",
+                  "name": "Synthetic artist"
+                }
+              ],
+              "duration": {
+                "milliseconds": 123456
+              },
+              "album": null,
+              "discNumber": 1,
+              "trackNumber": 1,
+              "isPlayable": true,
+              "isLocal": false,
+              "isExplicit": false,
+              "is19PlusOnly": true,
+              "isSaved": true,
+              "playcount": "",
+              "linkedUri": null,
+              "hasAssociatedVideo": true,
+              "isBanned": false
+            }
+          ],
+          "offset": 0,
+          "limit": 50,
+          "totalLength": 8
+        }
+      }
+    },
+    {
+      "name": "album opens with original version header and first fifty",
+      "kind": "open",
+      "uri": "spotify:album:0000000000000000000002",
+      "locale": "",
+      "body": {
+        "data": {
+          "albumUnion": {
+            "__typename": "Album",
+            "uri": "spotify:album:0000000000000000000002",
+            "name": "Synthetic album",
+            "artists": {
+              "items": [
+                {
+                  "__typename": "Artist",
+                  "uri": "spotify:artist:0000000000000000000001",
+                  "id": "0000000000000000000001",
+                  "profile": {
+                    "name": "Synthetic artist"
+                  },
+                  "visuals": {
+                    "avatarImage": {
+                      "sources": [
+                        {
+                          "url": "https://fixture.invalid/artist",
+                          "width": 64,
+                          "height": 64
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            "coverArt": {
+              "sources": [
+                {
+                  "url": "https://fixture.invalid/album",
+                  "width": "300",
+                  "height": 0
+                }
+              ]
+            },
+            "tracksV2": {
+              "totalCount": 75,
+              "items": [
+                {
+                  "uid": "album-uid-1-1",
+                  "track": {
+                    "__typename": "Track",
+                    "uri": "spotify:track:0000000000000000000001",
+                    "name": "Synthetic track 1.1",
+                    "artists": {
+                      "items": [
+                        {
+                          "__typename": "Artist",
+                          "uri": "spotify:artist:0000000000000000000001",
+                          "id": "0000000000000000000001",
+                          "profile": {
+                            "name": "Synthetic artist"
+                          },
+                          "visuals": {
+                            "avatarImage": {
+                              "sources": [
+                                {
+                                  "url": "https://fixture.invalid/artist",
+                                  "width": 64,
+                                  "height": 64
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "duration": {
+                      "totalMilliseconds": 123456
+                    },
+                    "discNumber": 1,
+                    "trackNumber": 1,
+                    "playability": {
+                      "playable": true
+                    },
+                    "contentRating": {
+                      "label": "EXPLICIT"
+                    },
+                    "saved": true,
+                    "playcount": "123",
+                    "associationsV3": {
+                      "videoAssociations": {
+                        "totalCount": 0
+                      }
+                    }
+                  }
+                },
+                {
+                  "uid": "album-uid-1-2",
+                  "track": {
+                    "__typename": "Track",
+                    "uri": "spotify:track:0000000000000000000002",
+                    "name": "Synthetic track 1.2",
+                    "artists": {
+                      "items": [
+                        {
+                          "__typename": "Artist",
+                          "uri": "spotify:artist:0000000000000000000001",
+                          "id": "0000000000000000000001",
+                          "profile": {
+                            "name": "Synthetic artist"
+                          },
+                          "visuals": {
+                            "avatarImage": {
+                              "sources": [
+                                {
+                                  "url": "https://fixture.invalid/artist",
+                                  "width": 64,
+                                  "height": 64
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "duration": {
+                      "totalMilliseconds": 123456
+                    },
+                    "discNumber": 1,
+                    "trackNumber": 2,
+                    "playability": {
+                      "playable": false
+                    },
+                    "contentRating": {
+                      "label": "NONE"
+                    },
+                    "saved": true,
+                    "playcount": "123",
+                    "associationsV3": {
+                      "videoAssociations": {
+                        "totalCount": 0
+                      }
+                    },
+                    "relinkingInformation": {
+                      "linkedTrack": {
+                        "__typename": "Track",
+                        "uri": "spotify:track:relinked"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "discs": {
+              "totalCount": 1,
+              "items": [
+                {
+                  "number": 1,
+                  "tracks": {
+                    "totalCount": 75
+                  }
+                }
+              ]
+            },
+            "playability": {
+              "reason": ""
+            },
+            "saved": true,
+            "type": "ALBUM",
+            "date": {
+              "isoString": "2026-01-02",
+              "precision": "DAY"
+            },
+            "releases": {
+              "totalCount": 0,
+              "items": []
+            },
+            "copyright": {
+              "totalCount": 1,
+              "items": [
+                {
+                  "type": "C",
+                  "text": "Synthetic copyright"
+                }
+              ]
+            },
+            "watchFeedEntrypoint": null
+          },
+          "meV2": {
+            "ianaTimezoneId": "Etc/UTC"
+          }
+        }
+      },
+      "expected": {
+        "requests": [
+          {
+            "method": "POST",
+            "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+            "headers": {
+              "Accept-Language": "en",
+              "Accept": "application/json",
+              "App-Platform": "fixture-platform",
+              "Spotify-App-Version": "1.3.6.1921",
+              "spotify-app-version": "896000000",
+              "Content-Type": "application/json;charset=UTF-8"
+            },
+            "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphbGJ1bTowMDAwMDAwMDAwMDAwMDAwMDAwMDAyIiwibG9jYWxlIjoiIiwib2Zmc2V0IjowLCJsaW1pdCI6NTB9LCJvcGVyYXRpb25OYW1lIjoiZ2V0QWxidW0iLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiIxMWM5Y2FkOWNiMjRjNGY5ZTI1ZWY5NDU2ZjY4NjIxY2ZkNjAwNmE5MGY2NzllNzI5YzFkMmYyZmQ3MGRmZTE2In19fQ==",
+            "authorize": true,
+            "includeCredentials": false,
+            "responseType": "json"
+          }
+        ],
+        "metadata": {
+          "type": "album",
+          "uri": "spotify:album:0000000000000000000002",
+          "name": "Synthetic album",
+          "artists": [
+            {
+              "type": "artist",
+              "name": "Synthetic artist",
+              "images": [
+                {
+                  "url": "https://fixture.invalid/artist",
+                  "width": 64,
+                  "height": 64
+                }
+              ],
+              "uri": "spotify:artist:0000000000000000000001",
+              "id": "0000000000000000000001"
+            }
+          ],
+          "images": [
+            {
+              "url": "https://fixture.invalid/album",
+              "width": "300"
+            }
+          ],
+          "moreAlbumsByArtist": [],
+          "nrTracks": 75,
+          "isPlayable": true,
+          "isSaved": true,
+          "isCatalogueRestricted": false,
+          "discs": {
+            "totalCount": 1,
+            "items": [
+              {
+                "type": "AlbumDisc",
+                "discNumber": 1,
+                "nrTracks": 75
+              }
+            ]
+          },
+          "copyright": {
+            "totalCount": 1,
+            "items": [
+              {
+                "type": "C",
+                "text": "Synthetic copyright"
+              }
+            ]
+          },
+          "albumType": "ALBUM",
+          "duration": {
+            "durationMs": 9259200,
+            "isEstimate": true
+          },
+          "releases": {
+            "totalCount": 0,
+            "items": []
+          },
+          "extractedColors": null,
+          "courtesyLine": null,
+          "sharingInfo": null,
+          "release": {
+            "isoString": "2026-01-02",
+            "precision": "DAY"
+          },
+          "dynamicColors": null,
+          "watchFeedEntityEntryPoint": null,
+          "preReleaseEndDateTime": null,
+          "prereleaseDisplayTimeZone": "Etc/UTC"
+        },
+        "tracks": {
+          "items": [
+            {
+              "type": "track",
+              "uid": "album-uid-1-1",
+              "uri": "spotify:track:0000000000000000000001",
+              "name": "Synthetic track 1.1",
+              "artists": [
+                {
+                  "uri": "spotify:artist:0000000000000000000001",
+                  "name": "Synthetic artist"
+                }
+              ],
+              "duration": {
+                "milliseconds": 123456
+              },
+              "album": null,
+              "discNumber": 1,
+              "trackNumber": 1,
+              "isPlayable": true,
+              "isLocal": false,
+              "isExplicit": true,
+              "is19PlusOnly": false,
+              "isSaved": true,
+              "playcount": "123",
+              "linkedUri": null,
+              "hasAssociatedVideo": false,
+              "isBanned": false
+            },
+            {
+              "type": "track",
+              "uid": "album-uid-1-2",
+              "uri": "spotify:track:0000000000000000000002",
+              "name": "Synthetic track 1.2",
+              "artists": [
+                {
+                  "uri": "spotify:artist:0000000000000000000001",
+                  "name": "Synthetic artist"
+                }
+              ],
+              "duration": {
+                "milliseconds": 123456
+              },
+              "album": null,
+              "discNumber": 1,
+              "trackNumber": 2,
+              "isPlayable": false,
+              "isLocal": false,
+              "isExplicit": false,
+              "is19PlusOnly": false,
+              "isSaved": true,
+              "playcount": "123",
+              "linkedUri": "spotify:track:relinked",
+              "hasAssociatedVideo": false,
+              "isBanned": false
+            }
+          ],
+          "offset": 0,
+          "limit": 50,
+          "totalLength": 75
+        }
+      }
+    },
+    {
+      "name": "album locale remains explicitly supplied",
+      "kind": "open",
+      "uri": "spotify:album:0000000000000000000002",
+      "locale": "intl-en",
+      "body": {
+        "data": {
+          "albumUnion": {
+            "__typename": "Album",
+            "uri": "spotify:album:0000000000000000000002",
+            "name": "Synthetic album",
+            "artists": {
+              "items": [
+                {
+                  "__typename": "Artist",
+                  "uri": "spotify:artist:0000000000000000000001",
+                  "id": "0000000000000000000001",
+                  "profile": {
+                    "name": "Synthetic artist"
+                  },
+                  "visuals": {
+                    "avatarImage": {
+                      "sources": [
+                        {
+                          "url": "https://fixture.invalid/artist",
+                          "width": 64,
+                          "height": 64
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            "coverArt": {
+              "sources": [
+                {
+                  "url": "https://fixture.invalid/album",
+                  "width": "300",
+                  "height": 0
+                }
+              ]
+            },
+            "tracksV2": {
+              "totalCount": 0,
+              "items": []
+            },
+            "discs": {
+              "totalCount": 1,
+              "items": [
+                {
+                  "number": 1,
+                  "tracks": {
+                    "totalCount": 0
+                  }
+                }
+              ]
+            },
+            "playability": {
+              "reason": ""
+            },
+            "saved": true,
+            "type": "ALBUM",
+            "date": {
+              "isoString": "2026-01-02",
+              "precision": "DAY"
+            },
+            "releases": {
+              "totalCount": 0,
+              "items": []
+            },
+            "copyright": {
+              "totalCount": 1,
+              "items": [
+                {
+                  "type": "C",
+                  "text": "Synthetic copyright"
+                }
+              ]
+            },
+            "watchFeedEntrypoint": null
+          },
+          "meV2": {
+            "ianaTimezoneId": "Etc/UTC"
+          }
+        }
+      },
+      "expected": {
+        "requests": [
+          {
+            "method": "POST",
+            "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+            "headers": {
+              "Accept-Language": "en",
+              "Accept": "application/json",
+              "App-Platform": "fixture-platform",
+              "Spotify-App-Version": "1.3.6.1921",
+              "spotify-app-version": "896000000",
+              "Content-Type": "application/json;charset=UTF-8"
+            },
+            "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphbGJ1bTowMDAwMDAwMDAwMDAwMDAwMDAwMDAyIiwibG9jYWxlIjoiaW50bC1lbiIsIm9mZnNldCI6MCwibGltaXQiOjUwfSwib3BlcmF0aW9uTmFtZSI6ImdldEFsYnVtIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiMTFjOWNhZDljYjI0YzRmOWUyNWVmOTQ1NmY2ODYyMWNmZDYwMDZhOTBmNjc5ZTcyOWMxZDJmMmZkNzBkZmUxNiJ9fX0=",
+            "authorize": true,
+            "includeCredentials": false,
+            "responseType": "json"
+          }
+        ],
+        "metadata": {
+          "type": "album",
+          "uri": "spotify:album:0000000000000000000002",
+          "name": "Synthetic album",
+          "artists": [
+            {
+              "type": "artist",
+              "name": "Synthetic artist",
+              "images": [
+                {
+                  "url": "https://fixture.invalid/artist",
+                  "width": 64,
+                  "height": 64
+                }
+              ],
+              "uri": "spotify:artist:0000000000000000000001",
+              "id": "0000000000000000000001"
+            }
+          ],
+          "images": [
+            {
+              "url": "https://fixture.invalid/album",
+              "width": "300"
+            }
+          ],
+          "moreAlbumsByArtist": [],
+          "nrTracks": 0,
+          "isPlayable": false,
+          "isSaved": true,
+          "isCatalogueRestricted": false,
+          "discs": {
+            "totalCount": 1,
+            "items": [
+              {
+                "type": "AlbumDisc",
+                "discNumber": 1,
+                "nrTracks": 0
+              }
+            ]
+          },
+          "copyright": {
+            "totalCount": 1,
+            "items": [
+              {
+                "type": "C",
+                "text": "Synthetic copyright"
+              }
+            ]
+          },
+          "albumType": "ALBUM",
+          "duration": {
+            "durationMs": 0,
+            "isEstimate": false
+          },
+          "releases": {
+            "totalCount": 0,
+            "items": []
+          },
+          "extractedColors": null,
+          "courtesyLine": null,
+          "sharingInfo": null,
+          "release": {
+            "isoString": "2026-01-02",
+            "precision": "DAY"
+          },
+          "dynamicColors": null,
+          "watchFeedEntityEntryPoint": null,
+          "preReleaseEndDateTime": null,
+          "prereleaseDisplayTimeZone": "Etc/UTC"
+        },
+        "tracks": {
+          "items": [],
+          "offset": 0,
+          "limit": 50,
+          "totalLength": 0
+        }
+      }
+    },
+    {
+      "name": "multi disc initial rows include recovered separator rows",
+      "kind": "open",
+      "uri": "spotify:album:0000000000000000000002",
+      "locale": "",
+      "body": {
+        "data": {
+          "albumUnion": {
+            "__typename": "Album",
+            "uri": "spotify:album:0000000000000000000002",
+            "name": "Synthetic album",
+            "artists": {
+              "items": [
+                {
+                  "__typename": "Artist",
+                  "uri": "spotify:artist:0000000000000000000001",
+                  "id": "0000000000000000000001",
+                  "profile": {
+                    "name": "Synthetic artist"
+                  },
+                  "visuals": {
+                    "avatarImage": {
+                      "sources": [
+                        {
+                          "url": "https://fixture.invalid/artist",
+                          "width": 64,
+                          "height": 64
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            "coverArt": {
+              "sources": [
+                {
+                  "url": "https://fixture.invalid/album",
+                  "width": "300",
+                  "height": 0
+                }
+              ]
+            },
+            "tracksV2": {
+              "totalCount": 4,
+              "items": [
+                {
+                  "uid": "album-uid-1-1",
+                  "track": {
+                    "__typename": "Track",
+                    "uri": "spotify:track:0000000000000000000001",
+                    "name": "Synthetic track 1.1",
+                    "artists": {
+                      "items": [
+                        {
+                          "__typename": "Artist",
+                          "uri": "spotify:artist:0000000000000000000001",
+                          "id": "0000000000000000000001",
+                          "profile": {
+                            "name": "Synthetic artist"
+                          },
+                          "visuals": {
+                            "avatarImage": {
+                              "sources": [
+                                {
+                                  "url": "https://fixture.invalid/artist",
+                                  "width": 64,
+                                  "height": 64
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "duration": {
+                      "totalMilliseconds": 123456
+                    },
+                    "discNumber": 1,
+                    "trackNumber": 1,
+                    "playability": {
+                      "playable": true
+                    },
+                    "contentRating": {
+                      "label": "EXPLICIT"
+                    },
+                    "saved": true,
+                    "playcount": "123",
+                    "associationsV3": {
+                      "videoAssociations": {
+                        "totalCount": 0
+                      }
+                    }
+                  }
+                },
+                {
+                  "uid": "album-uid-1-2",
+                  "track": {
+                    "__typename": "Track",
+                    "uri": "spotify:track:0000000000000000000002",
+                    "name": "Synthetic track 1.2",
+                    "artists": {
+                      "items": [
+                        {
+                          "__typename": "Artist",
+                          "uri": "spotify:artist:0000000000000000000001",
+                          "id": "0000000000000000000001",
+                          "profile": {
+                            "name": "Synthetic artist"
+                          },
+                          "visuals": {
+                            "avatarImage": {
+                              "sources": [
+                                {
+                                  "url": "https://fixture.invalid/artist",
+                                  "width": 64,
+                                  "height": 64
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "duration": {
+                      "totalMilliseconds": 123456
+                    },
+                    "discNumber": 1,
+                    "trackNumber": 2,
+                    "playability": {
+                      "playable": true
+                    },
+                    "contentRating": {
+                      "label": "EXPLICIT"
+                    },
+                    "saved": true,
+                    "playcount": "123",
+                    "associationsV3": {
+                      "videoAssociations": {
+                        "totalCount": 0
+                      }
+                    }
+                  }
+                },
+                {
+                  "uid": "album-uid-2-1",
+                  "track": {
+                    "__typename": "Track",
+                    "uri": "spotify:track:0000000000000000000001",
+                    "name": "Synthetic track 2.1",
+                    "artists": {
+                      "items": [
+                        {
+                          "__typename": "Artist",
+                          "uri": "spotify:artist:0000000000000000000001",
+                          "id": "0000000000000000000001",
+                          "profile": {
+                            "name": "Synthetic artist"
+                          },
+                          "visuals": {
+                            "avatarImage": {
+                              "sources": [
+                                {
+                                  "url": "https://fixture.invalid/artist",
+                                  "width": 64,
+                                  "height": 64
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "duration": {
+                      "totalMilliseconds": 123456
+                    },
+                    "discNumber": 2,
+                    "trackNumber": 1,
+                    "playability": {
+                      "playable": true
+                    },
+                    "contentRating": {
+                      "label": "EXPLICIT"
+                    },
+                    "saved": true,
+                    "playcount": "123",
+                    "associationsV3": {
+                      "videoAssociations": {
+                        "totalCount": 0
+                      }
+                    }
+                  }
+                },
+                {
+                  "uid": "album-uid-2-2",
+                  "track": {
+                    "__typename": "Track",
+                    "uri": "spotify:track:0000000000000000000002",
+                    "name": "Synthetic track 2.2",
+                    "artists": {
+                      "items": [
+                        {
+                          "__typename": "Artist",
+                          "uri": "spotify:artist:0000000000000000000001",
+                          "id": "0000000000000000000001",
+                          "profile": {
+                            "name": "Synthetic artist"
+                          },
+                          "visuals": {
+                            "avatarImage": {
+                              "sources": [
+                                {
+                                  "url": "https://fixture.invalid/artist",
+                                  "width": 64,
+                                  "height": 64
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "duration": {
+                      "totalMilliseconds": 123456
+                    },
+                    "discNumber": 2,
+                    "trackNumber": 2,
+                    "playability": {
+                      "playable": true
+                    },
+                    "contentRating": {
+                      "label": "EXPLICIT"
+                    },
+                    "saved": true,
+                    "playcount": "123",
+                    "associationsV3": {
+                      "videoAssociations": {
+                        "totalCount": 0
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "discs": {
+              "totalCount": 2,
+              "items": [
+                {
+                  "number": 1,
+                  "tracks": {
+                    "totalCount": 2
+                  }
+                },
+                {
+                  "number": 2,
+                  "tracks": {
+                    "totalCount": 2
+                  }
+                }
+              ]
+            },
+            "playability": {
+              "reason": ""
+            },
+            "saved": true,
+            "type": "ALBUM",
+            "date": {
+              "isoString": "2026-01-02",
+              "precision": "DAY"
+            },
+            "releases": {
+              "totalCount": 0,
+              "items": []
+            },
+            "copyright": {
+              "totalCount": 1,
+              "items": [
+                {
+                  "type": "C",
+                  "text": "Synthetic copyright"
+                }
+              ]
+            },
+            "watchFeedEntrypoint": null
+          },
+          "meV2": {
+            "ianaTimezoneId": "Etc/UTC"
+          }
+        }
+      },
+      "expected": {
+        "requests": [
+          {
+            "method": "POST",
+            "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+            "headers": {
+              "Accept-Language": "en",
+              "Accept": "application/json",
+              "App-Platform": "fixture-platform",
+              "Spotify-App-Version": "1.3.6.1921",
+              "spotify-app-version": "896000000",
+              "Content-Type": "application/json;charset=UTF-8"
+            },
+            "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphbGJ1bTowMDAwMDAwMDAwMDAwMDAwMDAwMDAyIiwibG9jYWxlIjoiIiwib2Zmc2V0IjowLCJsaW1pdCI6NTB9LCJvcGVyYXRpb25OYW1lIjoiZ2V0QWxidW0iLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiIxMWM5Y2FkOWNiMjRjNGY5ZTI1ZWY5NDU2ZjY4NjIxY2ZkNjAwNmE5MGY2NzllNzI5YzFkMmYyZmQ3MGRmZTE2In19fQ==",
+            "authorize": true,
+            "includeCredentials": false,
+            "responseType": "json"
+          }
+        ],
+        "metadata": {
+          "type": "album",
+          "uri": "spotify:album:0000000000000000000002",
+          "name": "Synthetic album",
+          "artists": [
+            {
+              "type": "artist",
+              "name": "Synthetic artist",
+              "images": [
+                {
+                  "url": "https://fixture.invalid/artist",
+                  "width": 64,
+                  "height": 64
+                }
+              ],
+              "uri": "spotify:artist:0000000000000000000001",
+              "id": "0000000000000000000001"
+            }
+          ],
+          "images": [
+            {
+              "url": "https://fixture.invalid/album",
+              "width": "300"
+            }
+          ],
+          "moreAlbumsByArtist": [],
+          "nrTracks": 4,
+          "isPlayable": true,
+          "isSaved": true,
+          "isCatalogueRestricted": false,
+          "discs": {
+            "totalCount": 2,
+            "items": [
+              {
+                "type": "AlbumDisc",
+                "discNumber": 1,
+                "nrTracks": 2
+              },
+              {
+                "type": "AlbumDisc",
+                "discNumber": 2,
+                "nrTracks": 2
+              }
+            ]
+          },
+          "copyright": {
+            "totalCount": 1,
+            "items": [
+              {
+                "type": "C",
+                "text": "Synthetic copyright"
+              }
+            ]
+          },
+          "albumType": "ALBUM",
+          "duration": {
+            "durationMs": 493824,
+            "isEstimate": false
+          },
+          "releases": {
+            "totalCount": 0,
+            "items": []
+          },
+          "extractedColors": null,
+          "courtesyLine": null,
+          "sharingInfo": null,
+          "release": {
+            "isoString": "2026-01-02",
+            "precision": "DAY"
+          },
+          "dynamicColors": null,
+          "watchFeedEntityEntryPoint": null,
+          "preReleaseEndDateTime": null,
+          "prereleaseDisplayTimeZone": "Etc/UTC"
+        },
+        "tracks": {
+          "items": [
+            {
+              "type": "AlbumDisc",
+              "discNumber": 1,
+              "nrTracks": null
+            },
+            {
+              "type": "track",
+              "uid": "album-uid-1-1",
+              "uri": "spotify:track:0000000000000000000001",
+              "name": "Synthetic track 1.1",
+              "artists": [
+                {
+                  "uri": "spotify:artist:0000000000000000000001",
+                  "name": "Synthetic artist"
+                }
+              ],
+              "duration": {
+                "milliseconds": 123456
+              },
+              "album": null,
+              "discNumber": 1,
+              "trackNumber": 1,
+              "isPlayable": true,
+              "isLocal": false,
+              "isExplicit": true,
+              "is19PlusOnly": false,
+              "isSaved": true,
+              "playcount": "123",
+              "linkedUri": null,
+              "hasAssociatedVideo": false,
+              "isBanned": false
+            },
+            {
+              "type": "track",
+              "uid": "album-uid-1-2",
+              "uri": "spotify:track:0000000000000000000002",
+              "name": "Synthetic track 1.2",
+              "artists": [
+                {
+                  "uri": "spotify:artist:0000000000000000000001",
+                  "name": "Synthetic artist"
+                }
+              ],
+              "duration": {
+                "milliseconds": 123456
+              },
+              "album": null,
+              "discNumber": 1,
+              "trackNumber": 2,
+              "isPlayable": true,
+              "isLocal": false,
+              "isExplicit": true,
+              "is19PlusOnly": false,
+              "isSaved": true,
+              "playcount": "123",
+              "linkedUri": null,
+              "hasAssociatedVideo": false,
+              "isBanned": false
+            },
+            {
+              "type": "AlbumDisc",
+              "discNumber": 2,
+              "nrTracks": null
+            },
+            {
+              "type": "track",
+              "uid": "album-uid-2-1",
+              "uri": "spotify:track:0000000000000000000001",
+              "name": "Synthetic track 2.1",
+              "artists": [
+                {
+                  "uri": "spotify:artist:0000000000000000000001",
+                  "name": "Synthetic artist"
+                }
+              ],
+              "duration": {
+                "milliseconds": 123456
+              },
+              "album": null,
+              "discNumber": 2,
+              "trackNumber": 1,
+              "isPlayable": true,
+              "isLocal": false,
+              "isExplicit": true,
+              "is19PlusOnly": false,
+              "isSaved": true,
+              "playcount": "123",
+              "linkedUri": null,
+              "hasAssociatedVideo": false,
+              "isBanned": false
+            },
+            {
+              "type": "track",
+              "uid": "album-uid-2-2",
+              "uri": "spotify:track:0000000000000000000002",
+              "name": "Synthetic track 2.2",
+              "artists": [
+                {
+                  "uri": "spotify:artist:0000000000000000000001",
+                  "name": "Synthetic artist"
+                }
+              ],
+              "duration": {
+                "milliseconds": 123456
+              },
+              "album": null,
+              "discNumber": 2,
+              "trackNumber": 2,
+              "isPlayable": true,
+              "isLocal": false,
+              "isExplicit": true,
+              "is19PlusOnly": false,
+              "isSaved": true,
+              "playcount": "123",
+              "linkedUri": null,
+              "hasAssociatedVideo": false,
+              "isBanned": false
+            }
+          ],
+          "offset": 0,
+          "limit": 50,
+          "totalLength": 6
+        }
+      }
+    },
+    {
+      "name": "album paging converts display offset before query and restores separators",
+      "kind": "tracks",
+      "uri": "spotify:album:0000000000000000000002",
+      "offset": 3,
+      "limit": 300,
+      "discs": {
+        "totalCount": 2,
+        "items": [
+          {
+            "type": "AlbumDisc",
+            "discNumber": 1,
+            "nrTracks": 2
+          },
+          {
+            "type": "AlbumDisc",
+            "discNumber": 2,
+            "nrTracks": 2
+          }
+        ]
+      },
+      "body": {
+        "data": {
+          "albumUnion": {
+            "__typename": "Album",
+            "uri": "spotify:album:0000000000000000000002",
+            "name": "Synthetic album",
+            "artists": {
+              "items": [
+                {
+                  "__typename": "Artist",
+                  "uri": "spotify:artist:0000000000000000000001",
+                  "id": "0000000000000000000001",
+                  "profile": {
+                    "name": "Synthetic artist"
+                  },
+                  "visuals": {
+                    "avatarImage": {
+                      "sources": [
+                        {
+                          "url": "https://fixture.invalid/artist",
+                          "width": 64,
+                          "height": 64
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            "coverArt": {
+              "sources": [
+                {
+                  "url": "https://fixture.invalid/album",
+                  "width": "300",
+                  "height": 0
+                }
+              ]
+            },
+            "tracksV2": {
+              "totalCount": 4,
+              "items": [
+                {
+                  "uid": "album-uid-2-1",
+                  "track": {
+                    "__typename": "Track",
+                    "uri": "spotify:track:0000000000000000000001",
+                    "name": "Synthetic track 2.1",
+                    "artists": {
+                      "items": [
+                        {
+                          "__typename": "Artist",
+                          "uri": "spotify:artist:0000000000000000000001",
+                          "id": "0000000000000000000001",
+                          "profile": {
+                            "name": "Synthetic artist"
+                          },
+                          "visuals": {
+                            "avatarImage": {
+                              "sources": [
+                                {
+                                  "url": "https://fixture.invalid/artist",
+                                  "width": 64,
+                                  "height": 64
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "duration": {
+                      "totalMilliseconds": 123456
+                    },
+                    "discNumber": 2,
+                    "trackNumber": 1,
+                    "playability": {
+                      "playable": true
+                    },
+                    "contentRating": {
+                      "label": "EXPLICIT"
+                    },
+                    "saved": true,
+                    "playcount": "123",
+                    "associationsV3": {
+                      "videoAssociations": {
+                        "totalCount": 0
+                      }
+                    }
+                  }
+                },
+                {
+                  "uid": "album-uid-2-2",
+                  "track": {
+                    "__typename": "Track",
+                    "uri": "spotify:track:0000000000000000000002",
+                    "name": "Synthetic track 2.2",
+                    "artists": {
+                      "items": [
+                        {
+                          "__typename": "Artist",
+                          "uri": "spotify:artist:0000000000000000000001",
+                          "id": "0000000000000000000001",
+                          "profile": {
+                            "name": "Synthetic artist"
+                          },
+                          "visuals": {
+                            "avatarImage": {
+                              "sources": [
+                                {
+                                  "url": "https://fixture.invalid/artist",
+                                  "width": 64,
+                                  "height": 64
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "duration": {
+                      "totalMilliseconds": 123456
+                    },
+                    "discNumber": 2,
+                    "trackNumber": 2,
+                    "playability": {
+                      "playable": true
+                    },
+                    "contentRating": {
+                      "label": "EXPLICIT"
+                    },
+                    "saved": true,
+                    "playcount": "123",
+                    "associationsV3": {
+                      "videoAssociations": {
+                        "totalCount": 0
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "discs": {
+              "totalCount": 1,
+              "items": [
+                {
+                  "number": 1,
+                  "tracks": {
+                    "totalCount": 4
+                  }
+                }
+              ]
+            },
+            "playability": {
+              "reason": ""
+            },
+            "saved": true,
+            "type": "ALBUM",
+            "date": {
+              "isoString": "2026-01-02",
+              "precision": "DAY"
+            },
+            "releases": {
+              "totalCount": 0,
+              "items": []
+            },
+            "copyright": {
+              "totalCount": 1,
+              "items": [
+                {
+                  "type": "C",
+                  "text": "Synthetic copyright"
+                }
+              ]
+            },
+            "watchFeedEntrypoint": null
+          },
+          "meV2": {
+            "ianaTimezoneId": "Etc/UTC"
+          }
+        }
+      },
+      "expected": {
+        "requests": [
+          {
+            "method": "POST",
+            "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+            "headers": {
+              "Accept-Language": "en",
+              "Accept": "application/json",
+              "App-Platform": "fixture-platform",
+              "Spotify-App-Version": "1.3.6.1921",
+              "Content-Type": "application/json;charset=UTF-8"
+            },
+            "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphbGJ1bTowMDAwMDAwMDAwMDAwMDAwMDAwMDAyIiwib2Zmc2V0IjoyLCJsaW1pdCI6MzAwfSwib3BlcmF0aW9uTmFtZSI6InF1ZXJ5QWxidW1UcmFja3MiLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiIxMWM5Y2FkOWNiMjRjNGY5ZTI1ZWY5NDU2ZjY4NjIxY2ZkNjAwNmE5MGY2NzllNzI5YzFkMmYyZmQ3MGRmZTE2In19fQ==",
+            "authorize": true,
+            "includeCredentials": false,
+            "responseType": "json"
+          }
+        ],
+        "tracks": {
+          "items": [
+            {
+              "type": "AlbumDisc",
+              "discNumber": 2,
+              "nrTracks": null
+            },
+            {
+              "type": "track",
+              "uid": "album-uid-2-1",
+              "uri": "spotify:track:0000000000000000000001",
+              "name": "Synthetic track 2.1",
+              "artists": [
+                {
+                  "uri": "spotify:artist:0000000000000000000001",
+                  "name": "Synthetic artist"
+                }
+              ],
+              "duration": {
+                "milliseconds": 123456
+              },
+              "album": null,
+              "discNumber": 2,
+              "trackNumber": 1,
+              "isPlayable": true,
+              "isLocal": false,
+              "isExplicit": true,
+              "is19PlusOnly": false,
+              "isSaved": true,
+              "playcount": "123",
+              "linkedUri": null,
+              "hasAssociatedVideo": false,
+              "isBanned": false
+            },
+            {
+              "type": "track",
+              "uid": "album-uid-2-2",
+              "uri": "spotify:track:0000000000000000000002",
+              "name": "Synthetic track 2.2",
+              "artists": [
+                {
+                  "uri": "spotify:artist:0000000000000000000001",
+                  "name": "Synthetic artist"
+                }
+              ],
+              "duration": {
+                "milliseconds": 123456
+              },
+              "album": null,
+              "discNumber": 2,
+              "trackNumber": 2,
+              "isPlayable": true,
+              "isLocal": false,
+              "isExplicit": true,
+              "is19PlusOnly": false,
+              "isSaved": true,
+              "playcount": "123",
+              "linkedUri": null,
+              "hasAssociatedVideo": false,
+              "isBanned": false
+            }
+          ],
+          "totalLength": 6,
+          "offset": 3,
+          "limit": 300
+        }
+      }
+    },
+    {
+      "name": "mid disc pages retain track numbering without fabricating a separator",
+      "kind": "tracks",
+      "uri": "spotify:album:0000000000000000000002",
+      "offset": 1,
+      "limit": 300,
+      "discs": {
+        "totalCount": 1,
+        "items": [
+          {
+            "type": "AlbumDisc",
+            "discNumber": 1,
+            "nrTracks": 75
+          }
+        ]
+      },
+      "body": {
+        "data": {
+          "albumUnion": {
+            "__typename": "Album",
+            "uri": "spotify:album:0000000000000000000002",
+            "name": "Synthetic album",
+            "artists": {
+              "items": [
+                {
+                  "__typename": "Artist",
+                  "uri": "spotify:artist:0000000000000000000001",
+                  "id": "0000000000000000000001",
+                  "profile": {
+                    "name": "Synthetic artist"
+                  },
+                  "visuals": {
+                    "avatarImage": {
+                      "sources": [
+                        {
+                          "url": "https://fixture.invalid/artist",
+                          "width": 64,
+                          "height": 64
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            "coverArt": {
+              "sources": [
+                {
+                  "url": "https://fixture.invalid/album",
+                  "width": "300",
+                  "height": 0
+                }
+              ]
+            },
+            "tracksV2": {
+              "totalCount": 75,
+              "items": [
+                {
+                  "uid": "album-uid-1-2",
+                  "track": {
+                    "__typename": "Track",
+                    "uri": "spotify:track:0000000000000000000002",
+                    "name": "Synthetic track 1.2",
+                    "artists": {
+                      "items": [
+                        {
+                          "__typename": "Artist",
+                          "uri": "spotify:artist:0000000000000000000001",
+                          "id": "0000000000000000000001",
+                          "profile": {
+                            "name": "Synthetic artist"
+                          },
+                          "visuals": {
+                            "avatarImage": {
+                              "sources": [
+                                {
+                                  "url": "https://fixture.invalid/artist",
+                                  "width": 64,
+                                  "height": 64
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "duration": {
+                      "totalMilliseconds": 123456
+                    },
+                    "discNumber": 1,
+                    "trackNumber": 2,
+                    "playability": {
+                      "playable": true
+                    },
+                    "contentRating": {
+                      "label": "EXPLICIT"
+                    },
+                    "saved": true,
+                    "playcount": "123",
+                    "associationsV3": {
+                      "videoAssociations": {
+                        "totalCount": 0
+                      }
+                    }
+                  }
+                },
+                {
+                  "__typename": "NotFound"
+                }
+              ]
+            },
+            "discs": {
+              "totalCount": 1,
+              "items": [
+                {
+                  "number": 1,
+                  "tracks": {
+                    "totalCount": 75
+                  }
+                }
+              ]
+            },
+            "playability": {
+              "reason": ""
+            },
+            "saved": true,
+            "type": "ALBUM",
+            "date": {
+              "isoString": "2026-01-02",
+              "precision": "DAY"
+            },
+            "releases": {
+              "totalCount": 0,
+              "items": []
+            },
+            "copyright": {
+              "totalCount": 1,
+              "items": [
+                {
+                  "type": "C",
+                  "text": "Synthetic copyright"
+                }
+              ]
+            },
+            "watchFeedEntrypoint": null
+          },
+          "meV2": {
+            "ianaTimezoneId": "Etc/UTC"
+          }
+        }
+      },
+      "expected": {
+        "requests": [
+          {
+            "method": "POST",
+            "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+            "headers": {
+              "Accept-Language": "en",
+              "Accept": "application/json",
+              "App-Platform": "fixture-platform",
+              "Spotify-App-Version": "1.3.6.1921",
+              "Content-Type": "application/json;charset=UTF-8"
+            },
+            "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphbGJ1bTowMDAwMDAwMDAwMDAwMDAwMDAwMDAyIiwib2Zmc2V0IjoxLCJsaW1pdCI6MzAwfSwib3BlcmF0aW9uTmFtZSI6InF1ZXJ5QWxidW1UcmFja3MiLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiIxMWM5Y2FkOWNiMjRjNGY5ZTI1ZWY5NDU2ZjY4NjIxY2ZkNjAwNmE5MGY2NzllNzI5YzFkMmYyZmQ3MGRmZTE2In19fQ==",
+            "authorize": true,
+            "includeCredentials": false,
+            "responseType": "json"
+          }
+        ],
+        "tracks": {
+          "items": [
+            {
+              "type": "track",
+              "uid": "album-uid-1-2",
+              "uri": "spotify:track:0000000000000000000002",
+              "name": "Synthetic track 1.2",
+              "artists": [
+                {
+                  "uri": "spotify:artist:0000000000000000000001",
+                  "name": "Synthetic artist"
+                }
+              ],
+              "duration": {
+                "milliseconds": 123456
+              },
+              "album": null,
+              "discNumber": 1,
+              "trackNumber": 2,
+              "isPlayable": true,
+              "isLocal": false,
+              "isExplicit": true,
+              "is19PlusOnly": false,
+              "isSaved": true,
+              "playcount": "123",
+              "linkedUri": null,
+              "hasAssociatedVideo": false,
+              "isBanned": false
+            }
+          ],
+          "totalLength": 75,
+          "offset": 1,
+          "limit": 300
+        }
+      }
+    },
+    {
+      "name": "not found album rejects as original query does",
+      "kind": "open",
+      "uri": "spotify:album:0000000000000000000002",
+      "locale": "",
+      "body": {
+        "data": {
+          "albumUnion": {
+            "__typename": "NotFound"
+          }
+        }
+      },
+      "expected": {
+        "requests": [
+          {
+            "method": "POST",
+            "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+            "headers": {
+              "Accept-Language": "en",
+              "Accept": "application/json",
+              "App-Platform": "fixture-platform",
+              "Spotify-App-Version": "1.3.6.1921",
+              "spotify-app-version": "896000000",
+              "Content-Type": "application/json;charset=UTF-8"
+            },
+            "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphbGJ1bTowMDAwMDAwMDAwMDAwMDAwMDAwMDAyIiwibG9jYWxlIjoiIiwib2Zmc2V0IjowLCJsaW1pdCI6NTB9LCJvcGVyYXRpb25OYW1lIjoiZ2V0QWxidW0iLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiIxMWM5Y2FkOWNiMjRjNGY5ZTI1ZWY5NDU2ZjY4NjIxY2ZkNjAwNmE5MGY2NzllNzI5YzFkMmYyZmQ3MGRmZTE2In19fQ==",
+            "authorize": true,
+            "includeCredentials": false,
+            "responseType": "json"
+          }
+        ],
+        "error": {
+          "message": ""
+        }
+      }
+    },
+    {
+      "name": "unknown album union has no invented metadata",
+      "kind": "open",
+      "uri": "spotify:album:0000000000000000000002",
+      "locale": "",
+      "body": {
+        "data": {
+          "albumUnion": {
+            "__typename": "FutureUnion"
+          }
+        }
+      },
+      "expected": {
+        "requests": [
+          {
+            "method": "POST",
+            "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+            "headers": {
+              "Accept-Language": "en",
+              "Accept": "application/json",
+              "App-Platform": "fixture-platform",
+              "Spotify-App-Version": "1.3.6.1921",
+              "spotify-app-version": "896000000",
+              "Content-Type": "application/json;charset=UTF-8"
+            },
+            "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphbGJ1bTowMDAwMDAwMDAwMDAwMDAwMDAwMDAyIiwibG9jYWxlIjoiIiwib2Zmc2V0IjowLCJsaW1pdCI6NTB9LCJvcGVyYXRpb25OYW1lIjoiZ2V0QWxidW0iLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiIxMWM5Y2FkOWNiMjRjNGY5ZTI1ZWY5NDU2ZjY4NjIxY2ZkNjAwNmE5MGY2NzllNzI5YzFkMmYyZmQ3MGRmZTE2In19fQ==",
+            "authorize": true,
+            "includeCredentials": false,
+            "responseType": "json"
+          }
+        ],
+        "metadata": null
+      }
+    },
+    {
+      "name": "album GraphQL errors reject partial data",
+      "kind": "open",
+      "uri": "spotify:album:0000000000000000000002",
+      "locale": "",
+      "body": {
+        "data": {
+          "albumUnion": {
+            "__typename": "Album",
+            "uri": "spotify:album:0000000000000000000002",
+            "name": "Synthetic album",
+            "artists": {
+              "items": [
+                {
+                  "__typename": "Artist",
+                  "uri": "spotify:artist:0000000000000000000001",
+                  "id": "0000000000000000000001",
+                  "profile": {
+                    "name": "Synthetic artist"
+                  },
+                  "visuals": {
+                    "avatarImage": {
+                      "sources": [
+                        {
+                          "url": "https://fixture.invalid/artist",
+                          "width": 64,
+                          "height": 64
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            "coverArt": {
+              "sources": [
+                {
+                  "url": "https://fixture.invalid/album",
+                  "width": "300",
+                  "height": 0
+                }
+              ]
+            },
+            "tracksV2": {
+              "totalCount": 1,
+              "items": [
+                {
+                  "uid": "album-uid-1-1",
+                  "track": {
+                    "__typename": "Track",
+                    "uri": "spotify:track:0000000000000000000001",
+                    "name": "Synthetic track 1.1",
+                    "artists": {
+                      "items": [
+                        {
+                          "__typename": "Artist",
+                          "uri": "spotify:artist:0000000000000000000001",
+                          "id": "0000000000000000000001",
+                          "profile": {
+                            "name": "Synthetic artist"
+                          },
+                          "visuals": {
+                            "avatarImage": {
+                              "sources": [
+                                {
+                                  "url": "https://fixture.invalid/artist",
+                                  "width": 64,
+                                  "height": 64
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "duration": {
+                      "totalMilliseconds": 123456
+                    },
+                    "discNumber": 1,
+                    "trackNumber": 1,
+                    "playability": {
+                      "playable": true
+                    },
+                    "contentRating": {
+                      "label": "EXPLICIT"
+                    },
+                    "saved": true,
+                    "playcount": "123",
+                    "associationsV3": {
+                      "videoAssociations": {
+                        "totalCount": 0
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "discs": {
+              "totalCount": 1,
+              "items": [
+                {
+                  "number": 1,
+                  "tracks": {
+                    "totalCount": 1
+                  }
+                }
+              ]
+            },
+            "playability": {
+              "reason": ""
+            },
+            "saved": true,
+            "type": "ALBUM",
+            "date": {
+              "isoString": "2026-01-02",
+              "precision": "DAY"
+            },
+            "releases": {
+              "totalCount": 0,
+              "items": []
+            },
+            "copyright": {
+              "totalCount": 1,
+              "items": [
+                {
+                  "type": "C",
+                  "text": "Synthetic copyright"
+                }
+              ]
+            },
+            "watchFeedEntrypoint": null
+          },
+          "meV2": {
+            "ianaTimezoneId": "Etc/UTC"
+          }
+        },
+        "errors": [
+          {
+            "message": "Synthetic failure"
+          }
+        ]
+      },
+      "expected": {
+        "requests": [
+          {
+            "method": "POST",
+            "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+            "headers": {
+              "Accept-Language": "en",
+              "Accept": "application/json",
+              "App-Platform": "fixture-platform",
+              "Spotify-App-Version": "1.3.6.1921",
+              "spotify-app-version": "896000000",
+              "Content-Type": "application/json;charset=UTF-8"
+            },
+            "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphbGJ1bTowMDAwMDAwMDAwMDAwMDAwMDAwMDAyIiwibG9jYWxlIjoiIiwib2Zmc2V0IjowLCJsaW1pdCI6NTB9LCJvcGVyYXRpb25OYW1lIjoiZ2V0QWxidW0iLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiIxMWM5Y2FkOWNiMjRjNGY5ZTI1ZWY5NDU2ZjY4NjIxY2ZkNjAwNmE5MGY2NzllNzI5YzFkMmYyZmQ3MGRmZTE2In19fQ==",
+            "authorize": true,
+            "includeCredentials": false,
+            "responseType": "json"
+          }
+        ],
+        "error": [
+          {
+            "message": "Synthetic failure"
+          }
+        ]
+      }
+    },
+    {
+      "name": "paging nonalbum payload is an empty original page",
+      "kind": "tracks",
+      "uri": "spotify:album:0000000000000000000002",
+      "offset": 50,
+      "limit": 300,
+      "discs": {
+        "totalCount": 1,
+        "items": []
+      },
+      "body": {
+        "data": {
+          "albumUnion": {
+            "__typename": "NotFound"
+          }
+        }
+      },
+      "expected": {
+        "requests": [
+          {
+            "method": "POST",
+            "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+            "headers": {
+              "Accept-Language": "en",
+              "Accept": "application/json",
+              "App-Platform": "fixture-platform",
+              "Spotify-App-Version": "1.3.6.1921",
+              "Content-Type": "application/json;charset=UTF-8"
+            },
+            "bodyBase64": "eyJ2YXJpYWJsZXMiOnsidXJpIjoic3BvdGlmeTphbGJ1bTowMDAwMDAwMDAwMDAwMDAwMDAwMDAyIiwib2Zmc2V0Ijo1MCwibGltaXQiOjMwMH0sIm9wZXJhdGlvbk5hbWUiOiJxdWVyeUFsYnVtVHJhY2tzIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiMTFjOWNhZDljYjI0YzRmOWUyNWVmOTQ1NmY2ODYyMWNmZDYwMDZhOTBmNjc5ZTcyOWMxZDJmMmZkNzBkZmUxNiJ9fX0=",
+            "authorize": true,
+            "includeCredentials": false,
+            "responseType": "json"
+          }
+        ],
+        "tracks": {
+          "items": [],
+          "totalLength": 0,
+          "offset": 50,
+          "limit": 300
+        }
+      }
+    }
+  ],
+  "playlistScenarios": [
+    {
+      "name": "playlist episode rows preserve progress publication and show metadata",
+      "kind": "open",
+      "uri": "spotify:playlist:0000000000000000000003",
+      "offset": 0,
+      "limit": 50,
+      "response": {
+        "data": {
+          "playlist": {
+            "playlistMetadata": {
+              "link": "spotify:playlist:0000000000000000000003",
+              "name": "Synthetic playlist",
+              "description": "Synthetic description",
+              "pictures": {
+                "standardLink": "https://fixture.invalid/playlist"
+              },
+              "owner": {
+                "link": "spotify:user:fixture",
+                "username": "fixture",
+                "displayName": "Synthetic owner"
+              },
+              "extension": [],
+              "formatListAttributes": [],
+              "isLoaded": true,
+              "lengthIgnoringTextFilter": 1
+            },
+            "lenses": {
+              "appliedLenses": []
+            }
+          },
+          "item": [
+            {
+              "uri": "spotify:episode:0000000000000000000005",
+              "rowId": "playlist-episode",
+              "addTime": 0,
+              "episodeMetadata": {
+                "link": "spotify:episode:0000000000000000000005",
+                "name": "Synthetic episode",
+                "description": "Synthetic episode description",
+                "length": 3600,
+                "publishDate": "1700000000",
+                "language": "en",
+                "mediaTypeEnum": 1,
+                "isExplicit": true,
+                "covers": {
+                  "standardLink": "https://fixture.invalid/episode"
+                },
+                "show": {
+                  "link": "spotify:show:0000000000000000000006",
+                  "name": "Synthetic show",
+                  "publisher": "Synthetic publisher"
+                },
+                "extension": []
+              },
+              "episodePlayState": {
+                "isPlayable": true,
+                "timeLeft": 1800
+              },
+              "extension": [],
+              "formatListAttributes": [],
+              "availableSignals": []
+            }
+          ],
+          "unrangedLength": 1,
+          "playable": true,
+          "numFollowers": 42,
+          "duration": "123",
+          "containsSpotifyTracks": true,
+          "userCapabilities": {
+            "canView": true,
+            "canEditItems": false
+          },
+          "availableSignals": []
+        }
+      },
+      "responseHex": "12ec030aa0023a10706c61796c6973742d657069736f646552db010a4a0a2373706f746966793a73686f773a30303030303030303030303030303030303030303036120e53796e7468657469632073686f771a1353796e746865746963207075626c6973686572122673706f746966793a657069736f64653a303030303030303030303030303030303030303030351a1153796e74686574696320657069736f646520901c2a210a1f68747470733a2f2f666978747572652e696e76616c69642f657069736f64653a1d53796e74686574696320657069736f6465206465736372697074696f6e4080e2cfaa065202656e60018001016a0508880e100192012673706f746966793a657069736f64653a3030303030303030303030303030303030303030303512b5010ab0010a2773706f746966793a706c61796c6973743a30303030303030303030303030303030303030303033121253796e74686574696320706c61796c6973741a300a1473706f746966793a757365723a666978747572651207666978747572651a0f53796e746865746963206f776e65723a1553796e746865746963206465736372697074696f6e42220a2068747470733a2f2f666978747572652e696e76616c69642f706c61796c697374880101b001011a002001287b402a48016001c2010408011a00",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.playlist_esperanto.proto.PlaylistDataService",
+            "method": "Get",
+            "payloadHex": "0a2773706f746966793a706c61796c6973743a30303030303030303030303030303030303030303033120f0a01072202103240015a043e64605c1adf030a960110011801280148015001580160016801800101880101900101980101b00101c00101c80101d80101e00101e801018a020c08011001180120012801300192020c0801100118012001280130019a020408011001a00201a80201c2021c080110051a160a0c0801100118012001280130011001180120012801c80201d00201da02069501b301aa01e00201e80201f00201f80201880301125f0a330801100118012001280130013801400148015001580160016801700178018001018801019001019a0109b201636255b601b701100118015001620c0801100118012001280130016a0e0a060801100120011204080110017204080110011a600a2e08011001180138014001480168017001800101880101aa010c16a401b301b201dc01f90150b00101b80101c001011001180120013a06080110011801420c0801100118012001280130014a0e08011001280140018201008801015001580122800108011204083e101f1204083e104f1204083e10341204083e104e1204083e100b1204083e10361204083e10251204083e10531205086410b2011205086410b3011205086410b6011205086010b2011205086010b3011205086010b6011205086010b7011204086010161205085c10b2011205085c10b3011205085c10b6012001"
+          }
+        ],
+        "metadata": {
+          "type": "playlist",
+          "uri": "spotify:playlist:0000000000000000000003",
+          "name": "Synthetic playlist",
+          "description": "Synthetic description",
+          "images": [
+            {
+              "url": "https://fixture.invalid/playlist",
+              "label": "standard"
+            }
+          ],
+          "dynamicColors": null,
+          "madeFor": null,
+          "owner": {
+            "type": "user",
+            "uri": "spotify:user:fixture",
+            "username": "fixture",
+            "displayName": "Synthetic owner",
+            "images": []
+          },
+          "totalLength": 1,
+          "unfilteredTotalLength": 1,
+          "totalLikes": 42,
+          "duration": {
+            "milliseconds": 123000,
+            "isEstimate": false
+          },
+          "isLoaded": true,
+          "isOwnedBySelf": false,
+          "isPublished": false,
+          "isRootlistable": true,
+          "isSaved": false,
+          "hasEpisodes": false,
+          "hasSpotifyTracks": true,
+          "hasSpotifyAudiobooks": false,
+          "hasPodcastChapters": false,
+          "canAdd": false,
+          "canRemove": false,
+          "canEditMetadata": false,
+          "canEditItems": false,
+          "canPlay": true,
+          "canMixPlaylist": false,
+          "formatListData": {
+            "type": "",
+            "attributes": {}
+          },
+          "canReportAnnotationAbuse": false,
+          "hasDateAdded": true,
+          "permissions": {
+            "canView": true,
+            "canAdministratePermissions": false,
+            "canCancelMembership": false,
+            "isPrivate": false,
+            "canDelete": false
+          },
+          "collaborators": {
+            "count": 0,
+            "items": []
+          },
+          "appliedLenses": [],
+          "availableSignals": []
+        },
+        "tracks": {
+          "items": [
+            {
+              "uid": "playlist-episode",
+              "playIndex": null,
+              "addedAt": "1970-01-01T00:00:00.000Z",
+              "addedBy": null,
+              "formatListAttributes": {},
+              "availableSignals": [],
+              "type": "episode",
+              "uri": "spotify:episode:0000000000000000000005",
+              "name": "Synthetic episode",
+              "description": "Synthetic episode description",
+              "duration": {
+                "milliseconds": 3600000
+              },
+              "playedState": {
+                "timeLeft": {
+                  "milliseconds": 1800000
+                },
+                "state": "IN_PROGRESS"
+              },
+              "images": [
+                {
+                  "url": "https://fixture.invalid/episode",
+                  "label": "standard"
+                }
+              ],
+              "isExplicit": true,
+              "is19PlusOnly": false,
+              "contentRatings": [],
+              "isPlayable": true,
+              "languages": [
+                "en"
+              ],
+              "release": {
+                "isoString": "2023-11-14T22:13:20.000Z",
+                "precision": "DAY"
+              },
+              "show": {
+                "type": "show",
+                "uri": "spotify:show:0000000000000000000006",
+                "name": "Synthetic show",
+                "publisher": "Synthetic publisher",
+                "images": [],
+                "mediaType": 1
+              },
+              "podcastSubscription": {
+                "isPaywalled": false,
+                "isUserSubscribed": false
+              },
+              "isShareable": false,
+              "dynamicColors": null,
+              "sixteenByNineCoverImages": null,
+              "mediaType": [
+                "AUDIO"
+              ],
+              "typeLabel": null
+            }
+          ],
+          "offset": 0,
+          "limit": 1,
+          "totalLength": 1
+        }
+      },
+      "request": {
+        "uri": "spotify:playlist:0000000000000000000003",
+        "query": {
+          "boolPredicates": [
+            "NOT_RECOMMENDATION"
+          ],
+          "range": {
+            "length": 50
+          },
+          "showUnavailable": true,
+          "supportedPlaceholderTypes": [
+            "SHOW",
+            "KALLAX",
+            "PODCAST_CHAPTER",
+            "CLIP"
+          ]
+        },
+        "policy": {
+          "playlist": {
+            "link": true,
+            "name": true,
+            "loaded": true,
+            "totalLength": true,
+            "duration": true,
+            "description": true,
+            "picture": true,
+            "playable": true,
+            "canReportAnnotationAbuse": true,
+            "followed": true,
+            "followers": true,
+            "ownedBySelf": true,
+            "published": true,
+            "formatListType": true,
+            "formatListAttributes": true,
+            "containsSpotifyTracks": true,
+            "containsTracks": true,
+            "containsEpisodes": true,
+            "owner": {
+              "username": true,
+              "link": true,
+              "name": true,
+              "image": true,
+              "thumbnail": true,
+              "color": true
+            },
+            "madeFor": {
+              "username": true,
+              "link": true,
+              "name": true,
+              "image": true,
+              "thumbnail": true,
+              "color": true
+            },
+            "allows": {
+              "insert": true,
+              "remove": true
+            },
+            "numberOfEpisodes": true,
+            "numberOfTracks": true,
+            "collaboratingUsers": {
+              "count": true,
+              "limit": 5,
+              "collaborator": {
+                "user": {
+                  "username": true,
+                  "link": true,
+                  "name": true,
+                  "image": true,
+                  "thumbnail": true,
+                  "color": true
+                },
+                "numberOfItems": true,
+                "numberOfTracks": true,
+                "numberOfEpisodes": true,
+                "isOwner": true
+              }
+            },
+            "basePermission": true,
+            "userCapabilities": true,
+            "extension": [
+              "ROOTLISTABILITY_TRAIT",
+              "VISUAL_IDENTITY_TRAIT",
+              "AUTO_LENS"
+            ],
+            "lenses": true,
+            "lengthIgnoringTextFilter": true,
+            "numberOfItemsPerLinkType": true,
+            "availableSignals": true,
+            "unrangedLength": true
+          },
+          "track": {
+            "track": {
+              "hasLyrics": true,
+              "link": true,
+              "name": true,
+              "length": true,
+              "playable": true,
+              "isAvailableInMetadataCatalogue": true,
+              "locallyPlayable": true,
+              "playableLocalTrack": true,
+              "discNumber": true,
+              "trackNumber": true,
+              "isExplicit": true,
+              "previewId": true,
+              "isLocal": true,
+              "isPremiumOnly": true,
+              "playableTrackLink": true,
+              "popularity": true,
+              "is19PlusOnly": true,
+              "trackDescriptors": true,
+              "extension": [
+                "IDENTITY_TRAIT",
+                "VIDEO_ASSOCIATIONS",
+                "AUDIO_ASSOCIATIONS",
+                "ORIGINAL_VIDEO",
+                "CONSUMPTION_EXPERIENCE_TRAIT",
+                "PUBLISHING_METADATA_TRAIT"
+              ]
+            },
+            "rowId": true,
+            "addTime": true,
+            "formatListAttributes": true,
+            "addedBy": {
+              "username": true,
+              "link": true,
+              "name": true,
+              "image": true,
+              "thumbnail": true,
+              "color": true
+            },
+            "album": {
+              "album": {
+                "link": true,
+                "name": true,
+                "covers": true
+              },
+              "artist": {
+                "link": true,
+                "name": true
+              }
+            },
+            "artist": {
+              "link": true,
+              "name": true
+            }
+          },
+          "episode": {
+            "episode": {
+              "link": true,
+              "length": true,
+              "name": true,
+              "description": true,
+              "publishDate": true,
+              "covers": true,
+              "mediaTypeEnum": true,
+              "number": true,
+              "isExplicit": true,
+              "type": true,
+              "extension": [
+                "PODCAST_SUBSCRIPTIONS",
+                "GATED_ENTITY_RELATIONS",
+                "VISUAL_IDENTITY_TRAIT",
+                "IDENTITY_TRAIT",
+                "ENTITY_TYPE_TRAIT",
+                "CONTENT_EXPERIENCE_TRAIT",
+                "SHARE_TRAIT"
+              ],
+              "is19PlusOnly": true,
+              "isBookChapter": true,
+              "isPodcastShort": true
+            },
+            "rowId": true,
+            "addTime": true,
+            "formatListAttributes": true,
+            "playedState": {
+              "timeLeft": true,
+              "isPlayed": true,
+              "playable": true
+            },
+            "addedBy": {
+              "username": true,
+              "link": true,
+              "name": true,
+              "image": true,
+              "thumbnail": true,
+              "color": true
+            },
+            "show": {
+              "link": true,
+              "name": true,
+              "publisher": true,
+              "covers": true,
+              "isBook": true
+            },
+            "signals": true,
+            "isRecommendation": true
+          },
+          "item": {
+            "uri": true,
+            "extensionPolicy": [
+              {
+                "linkType": "SHOW",
+                "extension": "SHOW_ACCESS"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "COVER_IMAGE"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "AUDIOBOOK_SPECIFICS"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "PLAYABILITY"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "SHOW_V4"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "HTML_DESCRIPTION"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "PODCAST_RATING"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "AUDIOBOOK_GENRE"
+              },
+              {
+                "linkType": "KALLAX",
+                "extension": "IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "KALLAX",
+                "extension": "VISUAL_IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "KALLAX",
+                "extension": "CONSUMPTION_EXPERIENCE_TRAIT"
+              },
+              {
+                "linkType": "PODCAST_CHAPTER",
+                "extension": "IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "PODCAST_CHAPTER",
+                "extension": "VISUAL_IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "PODCAST_CHAPTER",
+                "extension": "CONSUMPTION_EXPERIENCE_TRAIT"
+              },
+              {
+                "linkType": "PODCAST_CHAPTER",
+                "extension": "PUBLISHING_METADATA_TRAIT"
+              },
+              {
+                "linkType": "PODCAST_CHAPTER",
+                "extension": "PODCAST_SUBSCRIPTIONS"
+              },
+              {
+                "linkType": "CLIP",
+                "extension": "IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "CLIP",
+                "extension": "VISUAL_IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "CLIP",
+                "extension": "CONSUMPTION_EXPERIENCE_TRAIT"
+              }
+            ],
+            "collectionState": true
+          }
+        }
+      }
+    },
+    {
+      "name": "playlist metadata and track rows use original native Get policy",
+      "kind": "open",
+      "uri": "spotify:playlist:0000000000000000000003",
+      "offset": 0,
+      "limit": 50,
+      "response": {
+        "data": {
+          "playlist": {
+            "playlistMetadata": {
+              "link": "spotify:playlist:0000000000000000000003",
+              "name": "Synthetic playlist",
+              "description": "Synthetic description",
+              "pictures": {
+                "standardLink": "https://fixture.invalid/playlist"
+              },
+              "owner": {
+                "link": "spotify:user:fixture",
+                "username": "fixture",
+                "displayName": "Synthetic owner"
+              },
+              "extension": [],
+              "formatListAttributes": [],
+              "isLoaded": true,
+              "lengthIgnoringTextFilter": 75
+            },
+            "lenses": {
+              "appliedLenses": []
+            }
+          },
+          "item": [
+            {
+              "uri": "spotify:track:0000000000000000000004",
+              "rowId": "playlist-row-a",
+              "addTime": 1700000000,
+              "addedBy": {
+                "link": "spotify:user:fixture",
+                "username": "fixture",
+                "displayName": "Synthetic user"
+              },
+              "trackMetadata": {
+                "link": "spotify:track:0000000000000000000004",
+                "name": "Synthetic playlist track",
+                "length": 123,
+                "artist": [
+                  {
+                    "link": "spotify:artist:0000000000000000000001",
+                    "name": "Synthetic artist"
+                  }
+                ],
+                "album": {
+                  "link": "spotify:album:0000000000000000000002",
+                  "name": "Synthetic album",
+                  "artist": {
+                    "link": "spotify:artist:0000000000000000000001",
+                    "name": "Synthetic artist"
+                  },
+                  "covers": {
+                    "standardLink": "https://fixture.invalid/cover"
+                  }
+                },
+                "discNumber": 1,
+                "trackNumber": 2,
+                "isExplicit": true,
+                "extension": []
+              },
+              "trackPlayState": {
+                "isPlayable": true
+              },
+              "extension": [],
+              "formatListAttributes": [
+                {
+                  "key": "fixture",
+                  "value": "雪"
+                }
+              ],
+              "availableSignals": []
+            },
+            {
+              "uri": "spotify:episode:unsupported",
+              "rowId": "unavailable",
+              "extension": [],
+              "availableSignals": []
+            }
+          ],
+          "unrangedLength": 75,
+          "playable": true,
+          "numFollowers": 42,
+          "duration": "123",
+          "containsSpotifyTracks": true,
+          "userCapabilities": {
+            "canView": true,
+            "canEditItems": false
+          },
+          "availableSignals": []
+        }
+      },
+      "responseHex": "1297050a9e031080e2cfaa061a2f0a1473706f746966793a757365723a666978747572651207666978747572651a0e53796e74686574696320757365722299020a93010a390a2573706f746966793a6172746973743a30303030303030303030303030303030303030303031121053796e74686574696320617274697374122473706f746966793a616c62756d3a303030303030303030303030303030303030303030321a0f53796e74686574696320616c62756d221f0a1d68747470733a2f2f666978747572652e696e76616c69642f636f76657212390a2573706f746966793a6172746973743a30303030303030303030303030303030303030303031121053796e746865746963206172746973741a2473706f746966793a747261636b3a30303030303030303030303030303030303030303034221853796e74686574696320706c61796c69737420747261636b287b3801400248013a0e706c61796c6973742d726f772d61420208014a0e0a07666978747572651203e99baa92012473706f746966793a747261636b3a303030303030303030303030303030303030303030340a2b3a0b756e617661696c61626c6592011b73706f746966793a657069736f64653a756e737570706f7274656412b5010ab0010a2773706f746966793a706c61796c6973743a30303030303030303030303030303030303030303033121253796e74686574696320706c61796c6973741a300a1473706f746966793a757365723a666978747572651207666978747572651a0f53796e746865746963206f776e65723a1553796e746865746963206465736372697074696f6e42220a2068747470733a2f2f666978747572652e696e76616c69642f706c61796c697374880101b0014b1a00204b287b402a48016001c2010408011a00",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.playlist_esperanto.proto.PlaylistDataService",
+            "method": "Get",
+            "payloadHex": "0a2773706f746966793a706c61796c6973743a30303030303030303030303030303030303030303033120f0a01072202103240015a043e64605c1adf030a960110011801280148015001580160016801800101880101900101980101b00101c00101c80101d80101e00101e801018a020c08011001180120012801300192020c0801100118012001280130019a020408011001a00201a80201c2021c080110051a160a0c0801100118012001280130011001180120012801c80201d00201da02069501b301aa01e00201e80201f00201f80201880301125f0a330801100118012001280130013801400148015001580160016801700178018001018801019001019a0109b201636255b601b701100118015001620c0801100118012001280130016a0e0a060801100120011204080110017204080110011a600a2e08011001180138014001480168017001800101880101aa010c16a401b301b201dc01f90150b00101b80101c001011001180120013a06080110011801420c0801100118012001280130014a0e08011001280140018201008801015001580122800108011204083e101f1204083e104f1204083e10341204083e104e1204083e100b1204083e10361204083e10251204083e10531205086410b2011205086410b3011205086410b6011205086010b2011205086010b3011205086010b6011205086010b7011204086010161205085c10b2011205085c10b3011205085c10b6012001"
+          }
+        ],
+        "metadata": {
+          "type": "playlist",
+          "uri": "spotify:playlist:0000000000000000000003",
+          "name": "Synthetic playlist",
+          "description": "Synthetic description",
+          "images": [
+            {
+              "url": "https://fixture.invalid/playlist",
+              "label": "standard"
+            }
+          ],
+          "dynamicColors": null,
+          "madeFor": null,
+          "owner": {
+            "type": "user",
+            "uri": "spotify:user:fixture",
+            "username": "fixture",
+            "displayName": "Synthetic owner",
+            "images": []
+          },
+          "totalLength": 75,
+          "unfilteredTotalLength": 75,
+          "totalLikes": 42,
+          "duration": {
+            "milliseconds": 123000,
+            "isEstimate": false
+          },
+          "isLoaded": true,
+          "isOwnedBySelf": false,
+          "isPublished": false,
+          "isRootlistable": true,
+          "isSaved": false,
+          "hasEpisodes": false,
+          "hasSpotifyTracks": true,
+          "hasSpotifyAudiobooks": false,
+          "hasPodcastChapters": false,
+          "canAdd": false,
+          "canRemove": false,
+          "canEditMetadata": false,
+          "canEditItems": false,
+          "canPlay": true,
+          "canMixPlaylist": false,
+          "formatListData": {
+            "type": "",
+            "attributes": {}
+          },
+          "canReportAnnotationAbuse": false,
+          "hasDateAdded": true,
+          "permissions": {
+            "canView": true,
+            "canAdministratePermissions": false,
+            "canCancelMembership": false,
+            "isPrivate": false,
+            "canDelete": false
+          },
+          "collaborators": {
+            "count": 0,
+            "items": []
+          },
+          "appliedLenses": [],
+          "availableSignals": []
+        },
+        "tracks": {
+          "items": [
+            {
+              "uid": "playlist-row-a",
+              "playIndex": null,
+              "addedAt": "2023-11-14T22:13:20.000Z",
+              "addedBy": {
+                "type": "user",
+                "uri": "spotify:user:fixture",
+                "username": "fixture",
+                "displayName": "Synthetic user",
+                "images": []
+              },
+              "formatListAttributes": {
+                "fixture": "雪"
+              },
+              "availableSignals": [],
+              "type": "track",
+              "uri": "spotify:track:0000000000000000000004",
+              "name": "Synthetic playlist track",
+              "album": {
+                "type": "album",
+                "uri": "spotify:album:0000000000000000000002",
+                "name": "Synthetic album",
+                "artist": {
+                  "type": "artist",
+                  "uri": "spotify:artist:0000000000000000000001",
+                  "name": "Synthetic artist"
+                },
+                "images": [
+                  {
+                    "url": "https://fixture.invalid/cover",
+                    "label": "standard"
+                  }
+                ]
+              },
+              "artists": [
+                {
+                  "type": "artist",
+                  "uri": "spotify:artist:0000000000000000000001",
+                  "name": "Synthetic artist"
+                }
+              ],
+              "discNumber": 1,
+              "trackNumber": 2,
+              "duration": {
+                "milliseconds": 123000
+              },
+              "isExplicit": true,
+              "isLocal": false,
+              "isPlayable": true,
+              "is19PlusOnly": false,
+              "hasAssociatedVideo": false,
+              "hasAssociatedAudio": false,
+              "isBanned": false
+            },
+            null
+          ],
+          "offset": 0,
+          "limit": 2,
+          "totalLength": 75
+        }
+      },
+      "request": {
+        "uri": "spotify:playlist:0000000000000000000003",
+        "query": {
+          "boolPredicates": [
+            "NOT_RECOMMENDATION"
+          ],
+          "range": {
+            "length": 50
+          },
+          "showUnavailable": true,
+          "supportedPlaceholderTypes": [
+            "SHOW",
+            "KALLAX",
+            "PODCAST_CHAPTER",
+            "CLIP"
+          ]
+        },
+        "policy": {
+          "playlist": {
+            "link": true,
+            "name": true,
+            "loaded": true,
+            "totalLength": true,
+            "duration": true,
+            "description": true,
+            "picture": true,
+            "playable": true,
+            "canReportAnnotationAbuse": true,
+            "followed": true,
+            "followers": true,
+            "ownedBySelf": true,
+            "published": true,
+            "formatListType": true,
+            "formatListAttributes": true,
+            "containsSpotifyTracks": true,
+            "containsTracks": true,
+            "containsEpisodes": true,
+            "owner": {
+              "username": true,
+              "link": true,
+              "name": true,
+              "image": true,
+              "thumbnail": true,
+              "color": true
+            },
+            "madeFor": {
+              "username": true,
+              "link": true,
+              "name": true,
+              "image": true,
+              "thumbnail": true,
+              "color": true
+            },
+            "allows": {
+              "insert": true,
+              "remove": true
+            },
+            "numberOfEpisodes": true,
+            "numberOfTracks": true,
+            "collaboratingUsers": {
+              "count": true,
+              "limit": 5,
+              "collaborator": {
+                "user": {
+                  "username": true,
+                  "link": true,
+                  "name": true,
+                  "image": true,
+                  "thumbnail": true,
+                  "color": true
+                },
+                "numberOfItems": true,
+                "numberOfTracks": true,
+                "numberOfEpisodes": true,
+                "isOwner": true
+              }
+            },
+            "basePermission": true,
+            "userCapabilities": true,
+            "extension": [
+              "ROOTLISTABILITY_TRAIT",
+              "VISUAL_IDENTITY_TRAIT",
+              "AUTO_LENS"
+            ],
+            "lenses": true,
+            "lengthIgnoringTextFilter": true,
+            "numberOfItemsPerLinkType": true,
+            "availableSignals": true,
+            "unrangedLength": true
+          },
+          "track": {
+            "track": {
+              "hasLyrics": true,
+              "link": true,
+              "name": true,
+              "length": true,
+              "playable": true,
+              "isAvailableInMetadataCatalogue": true,
+              "locallyPlayable": true,
+              "playableLocalTrack": true,
+              "discNumber": true,
+              "trackNumber": true,
+              "isExplicit": true,
+              "previewId": true,
+              "isLocal": true,
+              "isPremiumOnly": true,
+              "playableTrackLink": true,
+              "popularity": true,
+              "is19PlusOnly": true,
+              "trackDescriptors": true,
+              "extension": [
+                "IDENTITY_TRAIT",
+                "VIDEO_ASSOCIATIONS",
+                "AUDIO_ASSOCIATIONS",
+                "ORIGINAL_VIDEO",
+                "CONSUMPTION_EXPERIENCE_TRAIT",
+                "PUBLISHING_METADATA_TRAIT"
+              ]
+            },
+            "rowId": true,
+            "addTime": true,
+            "formatListAttributes": true,
+            "addedBy": {
+              "username": true,
+              "link": true,
+              "name": true,
+              "image": true,
+              "thumbnail": true,
+              "color": true
+            },
+            "album": {
+              "album": {
+                "link": true,
+                "name": true,
+                "covers": true
+              },
+              "artist": {
+                "link": true,
+                "name": true
+              }
+            },
+            "artist": {
+              "link": true,
+              "name": true
+            }
+          },
+          "episode": {
+            "episode": {
+              "link": true,
+              "length": true,
+              "name": true,
+              "description": true,
+              "publishDate": true,
+              "covers": true,
+              "mediaTypeEnum": true,
+              "number": true,
+              "isExplicit": true,
+              "type": true,
+              "extension": [
+                "PODCAST_SUBSCRIPTIONS",
+                "GATED_ENTITY_RELATIONS",
+                "VISUAL_IDENTITY_TRAIT",
+                "IDENTITY_TRAIT",
+                "ENTITY_TYPE_TRAIT",
+                "CONTENT_EXPERIENCE_TRAIT",
+                "SHARE_TRAIT"
+              ],
+              "is19PlusOnly": true,
+              "isBookChapter": true,
+              "isPodcastShort": true
+            },
+            "rowId": true,
+            "addTime": true,
+            "formatListAttributes": true,
+            "playedState": {
+              "timeLeft": true,
+              "isPlayed": true,
+              "playable": true
+            },
+            "addedBy": {
+              "username": true,
+              "link": true,
+              "name": true,
+              "image": true,
+              "thumbnail": true,
+              "color": true
+            },
+            "show": {
+              "link": true,
+              "name": true,
+              "publisher": true,
+              "covers": true,
+              "isBook": true
+            },
+            "signals": true,
+            "isRecommendation": true
+          },
+          "item": {
+            "uri": true,
+            "extensionPolicy": [
+              {
+                "linkType": "SHOW",
+                "extension": "SHOW_ACCESS"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "COVER_IMAGE"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "AUDIOBOOK_SPECIFICS"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "PLAYABILITY"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "SHOW_V4"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "HTML_DESCRIPTION"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "PODCAST_RATING"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "AUDIOBOOK_GENRE"
+              },
+              {
+                "linkType": "KALLAX",
+                "extension": "IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "KALLAX",
+                "extension": "VISUAL_IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "KALLAX",
+                "extension": "CONSUMPTION_EXPERIENCE_TRAIT"
+              },
+              {
+                "linkType": "PODCAST_CHAPTER",
+                "extension": "IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "PODCAST_CHAPTER",
+                "extension": "VISUAL_IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "PODCAST_CHAPTER",
+                "extension": "CONSUMPTION_EXPERIENCE_TRAIT"
+              },
+              {
+                "linkType": "PODCAST_CHAPTER",
+                "extension": "PUBLISHING_METADATA_TRAIT"
+              },
+              {
+                "linkType": "PODCAST_CHAPTER",
+                "extension": "PODCAST_SUBSCRIPTIONS"
+              },
+              {
+                "linkType": "CLIP",
+                "extension": "IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "CLIP",
+                "extension": "VISUAL_IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "CLIP",
+                "extension": "CONSUMPTION_EXPERIENCE_TRAIT"
+              }
+            ],
+            "collectionState": true
+          }
+        }
+      }
+    },
+    {
+      "name": "playlist paging uses the smaller playlist decoration policy",
+      "kind": "tracks",
+      "uri": "spotify:playlist:0000000000000000000003",
+      "offset": 50,
+      "limit": 50,
+      "response": {
+        "data": {
+          "playlist": {
+            "playlistMetadata": {
+              "link": "spotify:playlist:0000000000000000000003",
+              "name": "Synthetic playlist",
+              "description": "Synthetic description",
+              "pictures": {
+                "standardLink": "https://fixture.invalid/playlist"
+              },
+              "owner": {
+                "link": "spotify:user:fixture",
+                "username": "fixture",
+                "displayName": "Synthetic owner"
+              },
+              "extension": [],
+              "formatListAttributes": [],
+              "isLoaded": true,
+              "lengthIgnoringTextFilter": 75
+            },
+            "lenses": {
+              "appliedLenses": []
+            }
+          },
+          "item": [
+            {
+              "uri": "spotify:track:0000000000000000000004",
+              "rowId": "playlist-row-b",
+              "addTime": 1700000000,
+              "addedBy": {
+                "link": "spotify:user:fixture",
+                "username": "fixture",
+                "displayName": "Synthetic user"
+              },
+              "trackMetadata": {
+                "link": "spotify:track:0000000000000000000004",
+                "name": "Synthetic playlist track",
+                "length": 123,
+                "artist": [
+                  {
+                    "link": "spotify:artist:0000000000000000000001",
+                    "name": "Synthetic artist"
+                  }
+                ],
+                "album": {
+                  "link": "spotify:album:0000000000000000000002",
+                  "name": "Synthetic album",
+                  "artist": {
+                    "link": "spotify:artist:0000000000000000000001",
+                    "name": "Synthetic artist"
+                  },
+                  "covers": {
+                    "standardLink": "https://fixture.invalid/cover"
+                  }
+                },
+                "discNumber": 1,
+                "trackNumber": 2,
+                "isExplicit": true,
+                "extension": []
+              },
+              "trackPlayState": {
+                "isPlayable": false
+              },
+              "extension": [],
+              "formatListAttributes": [
+                {
+                  "key": "fixture",
+                  "value": "雪"
+                }
+              ],
+              "availableSignals": []
+            }
+          ],
+          "unrangedLength": 75,
+          "playable": true,
+          "numFollowers": 42,
+          "duration": "123",
+          "containsSpotifyTracks": true,
+          "userCapabilities": {
+            "canView": true,
+            "canEditItems": false
+          },
+          "availableSignals": []
+        }
+      },
+      "responseHex": "12e8040a9c031080e2cfaa061a2f0a1473706f746966793a757365723a666978747572651207666978747572651a0e53796e74686574696320757365722299020a93010a390a2573706f746966793a6172746973743a30303030303030303030303030303030303030303031121053796e74686574696320617274697374122473706f746966793a616c62756d3a303030303030303030303030303030303030303030321a0f53796e74686574696320616c62756d221f0a1d68747470733a2f2f666978747572652e696e76616c69642f636f76657212390a2573706f746966793a6172746973743a30303030303030303030303030303030303030303031121053796e746865746963206172746973741a2473706f746966793a747261636b3a30303030303030303030303030303030303030303034221853796e74686574696320706c61796c69737420747261636b287b3801400248013a0e706c61796c6973742d726f772d6242004a0e0a07666978747572651203e99baa92012473706f746966793a747261636b3a3030303030303030303030303030303030303030303412b5010ab0010a2773706f746966793a706c61796c6973743a30303030303030303030303030303030303030303033121253796e74686574696320706c61796c6973741a300a1473706f746966793a757365723a666978747572651207666978747572651a0f53796e746865746963206f776e65723a1553796e746865746963206465736372697074696f6e42220a2068747470733a2f2f666978747572652e696e76616c69642f706c61796c697374880101b0014b1a00204b287b402a48016001c2010408011a00",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.playlist_esperanto.proto.PlaylistDataService",
+            "method": "Get",
+            "payloadHex": "0a2773706f746966793a706c61796c6973743a3030303030303030303030303030303030303030303312110a010722040832103240015a043e64605c1ad0020a08da0202aa01880301125f0a330801100118012001280130013801400148015001580160016801700178018001018801019001019a0109b201636255b601b701100118015001620c0801100118012001280130016a0e0a060801100120011204080110017204080110011a600a2e08011001180138014001480168017001800101880101aa010c16a401b301b201dc01f90150b00101b80101c001011001180120013a06080110011801420c0801100118012001280130014a0e08011001280140018201008801015001580122800108011204083e101f1204083e104f1204083e10341204083e104e1204083e100b1204083e10361204083e10251204083e10531205086410b2011205086410b3011205086410b6011205086010b2011205086010b3011205086010b6011205086010b7011204086010161205085c10b2011205085c10b3011205085c10b6012001"
+          }
+        ],
+        "tracks": {
+          "items": [
+            {
+              "uid": "playlist-row-b",
+              "playIndex": null,
+              "addedAt": "2023-11-14T22:13:20.000Z",
+              "addedBy": {
+                "type": "user",
+                "uri": "spotify:user:fixture",
+                "username": "fixture",
+                "displayName": "Synthetic user",
+                "images": []
+              },
+              "formatListAttributes": {
+                "fixture": "雪"
+              },
+              "availableSignals": [],
+              "type": "track",
+              "uri": "spotify:track:0000000000000000000004",
+              "name": "Synthetic playlist track",
+              "album": {
+                "type": "album",
+                "uri": "spotify:album:0000000000000000000002",
+                "name": "Synthetic album",
+                "artist": {
+                  "type": "artist",
+                  "uri": "spotify:artist:0000000000000000000001",
+                  "name": "Synthetic artist"
+                },
+                "images": [
+                  {
+                    "url": "https://fixture.invalid/cover",
+                    "label": "standard"
+                  }
+                ]
+              },
+              "artists": [
+                {
+                  "type": "artist",
+                  "uri": "spotify:artist:0000000000000000000001",
+                  "name": "Synthetic artist"
+                }
+              ],
+              "discNumber": 1,
+              "trackNumber": 2,
+              "duration": {
+                "milliseconds": 123000
+              },
+              "isExplicit": true,
+              "isLocal": false,
+              "isPlayable": false,
+              "is19PlusOnly": false,
+              "hasAssociatedVideo": false,
+              "hasAssociatedAudio": false,
+              "isBanned": false
+            }
+          ],
+          "offset": 0,
+          "limit": 1,
+          "totalLength": 75
+        }
+      },
+      "request": {
+        "uri": "spotify:playlist:0000000000000000000003",
+        "query": {
+          "boolPredicates": [
+            "NOT_RECOMMENDATION"
+          ],
+          "range": {
+            "start": 50,
+            "length": 50
+          },
+          "showUnavailable": true,
+          "supportedPlaceholderTypes": [
+            "SHOW",
+            "KALLAX",
+            "PODCAST_CHAPTER",
+            "CLIP"
+          ]
+        },
+        "policy": {
+          "playlist": {
+            "extension": [
+              "AUTO_LENS"
+            ],
+            "unrangedLength": true
+          },
+          "track": {
+            "track": {
+              "hasLyrics": true,
+              "link": true,
+              "name": true,
+              "length": true,
+              "playable": true,
+              "isAvailableInMetadataCatalogue": true,
+              "locallyPlayable": true,
+              "playableLocalTrack": true,
+              "discNumber": true,
+              "trackNumber": true,
+              "isExplicit": true,
+              "previewId": true,
+              "isLocal": true,
+              "isPremiumOnly": true,
+              "playableTrackLink": true,
+              "popularity": true,
+              "is19PlusOnly": true,
+              "trackDescriptors": true,
+              "extension": [
+                "IDENTITY_TRAIT",
+                "VIDEO_ASSOCIATIONS",
+                "AUDIO_ASSOCIATIONS",
+                "ORIGINAL_VIDEO",
+                "CONSUMPTION_EXPERIENCE_TRAIT",
+                "PUBLISHING_METADATA_TRAIT"
+              ]
+            },
+            "rowId": true,
+            "addTime": true,
+            "formatListAttributes": true,
+            "addedBy": {
+              "username": true,
+              "link": true,
+              "name": true,
+              "image": true,
+              "thumbnail": true,
+              "color": true
+            },
+            "album": {
+              "album": {
+                "link": true,
+                "name": true,
+                "covers": true
+              },
+              "artist": {
+                "link": true,
+                "name": true
+              }
+            },
+            "artist": {
+              "link": true,
+              "name": true
+            }
+          },
+          "episode": {
+            "episode": {
+              "link": true,
+              "length": true,
+              "name": true,
+              "description": true,
+              "publishDate": true,
+              "covers": true,
+              "mediaTypeEnum": true,
+              "number": true,
+              "isExplicit": true,
+              "type": true,
+              "extension": [
+                "PODCAST_SUBSCRIPTIONS",
+                "GATED_ENTITY_RELATIONS",
+                "VISUAL_IDENTITY_TRAIT",
+                "IDENTITY_TRAIT",
+                "ENTITY_TYPE_TRAIT",
+                "CONTENT_EXPERIENCE_TRAIT",
+                "SHARE_TRAIT"
+              ],
+              "is19PlusOnly": true,
+              "isBookChapter": true,
+              "isPodcastShort": true
+            },
+            "rowId": true,
+            "addTime": true,
+            "formatListAttributes": true,
+            "playedState": {
+              "timeLeft": true,
+              "isPlayed": true,
+              "playable": true
+            },
+            "addedBy": {
+              "username": true,
+              "link": true,
+              "name": true,
+              "image": true,
+              "thumbnail": true,
+              "color": true
+            },
+            "show": {
+              "link": true,
+              "name": true,
+              "publisher": true,
+              "covers": true,
+              "isBook": true
+            },
+            "signals": true,
+            "isRecommendation": true
+          },
+          "item": {
+            "uri": true,
+            "extensionPolicy": [
+              {
+                "linkType": "SHOW",
+                "extension": "SHOW_ACCESS"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "COVER_IMAGE"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "AUDIOBOOK_SPECIFICS"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "PLAYABILITY"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "SHOW_V4"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "HTML_DESCRIPTION"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "PODCAST_RATING"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "AUDIOBOOK_GENRE"
+              },
+              {
+                "linkType": "KALLAX",
+                "extension": "IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "KALLAX",
+                "extension": "VISUAL_IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "KALLAX",
+                "extension": "CONSUMPTION_EXPERIENCE_TRAIT"
+              },
+              {
+                "linkType": "PODCAST_CHAPTER",
+                "extension": "IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "PODCAST_CHAPTER",
+                "extension": "VISUAL_IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "PODCAST_CHAPTER",
+                "extension": "CONSUMPTION_EXPERIENCE_TRAIT"
+              },
+              {
+                "linkType": "PODCAST_CHAPTER",
+                "extension": "PUBLISHING_METADATA_TRAIT"
+              },
+              {
+                "linkType": "PODCAST_CHAPTER",
+                "extension": "PODCAST_SUBSCRIPTIONS"
+              },
+              {
+                "linkType": "CLIP",
+                "extension": "IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "CLIP",
+                "extension": "VISUAL_IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "CLIP",
+                "extension": "CONSUMPTION_EXPERIENCE_TRAIT"
+              }
+            ],
+            "collectionState": true
+          }
+        }
+      }
+    },
+    {
+      "name": "playlist policies preserve explicitly injected feature fields",
+      "kind": "open",
+      "uri": "spotify:playlist:0000000000000000000003",
+      "offset": 0,
+      "limit": 50,
+      "features": {
+        "watchFeed": true,
+        "authors": true,
+        "ageAssurance": true
+      },
+      "response": {
+        "data": {
+          "playlist": {
+            "playlistMetadata": {
+              "link": "spotify:playlist:0000000000000000000003",
+              "name": "Synthetic playlist",
+              "description": "Synthetic description",
+              "pictures": {
+                "standardLink": "https://fixture.invalid/playlist"
+              },
+              "owner": {
+                "link": "spotify:user:fixture",
+                "username": "fixture",
+                "displayName": "Synthetic owner"
+              },
+              "extension": [],
+              "formatListAttributes": [],
+              "isLoaded": true,
+              "lengthIgnoringTextFilter": 0
+            },
+            "lenses": {
+              "appliedLenses": []
+            }
+          },
+          "item": [],
+          "unrangedLength": 0,
+          "playable": true,
+          "numFollowers": 42,
+          "duration": "123",
+          "containsSpotifyTracks": true,
+          "userCapabilities": {
+            "canView": true,
+            "canEditItems": false
+          },
+          "availableSignals": []
+        }
+      },
+      "responseHex": "12c40112b2010aad010a2773706f746966793a706c61796c6973743a30303030303030303030303030303030303030303033121253796e74686574696320706c61796c6973741a300a1473706f746966793a757365723a666978747572651207666978747572651a0f53796e746865746963206f776e65723a1553796e746865746963206465736372697074696f6e42220a2068747470733a2f2f666978747572652e696e76616c69642f706c61796c6973748801011a00287b402a48016001c2010408011a00",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.playlist_esperanto.proto.PlaylistDataService",
+            "method": "Get",
+            "payloadHex": "0a2773706f746966793a706c61796c6973743a30303030303030303030303030303030303030303033120f0a01072202103240015a043e64605c1ae9030a970110011801280148015001580160016801800101880101900101980101b00101c00101c80101d80101e00101e801018a020c08011001180120012801300192020c0801100118012001280130019a020408011001a00201a80201c2021c080110051a160a0c0801100118012001280130011001180120012801c80201d00201da02079501b301aa0172e00201e80201f00201f80201880301125f0a330801100118012001280130013801400148015001580160016801700178018001018801019001019a0109b201636255b601b701100118015001620c0801100118012001280130016a0e0a060801100120011204080110017204080110011a620a3008011001180138014001480168017001800101880101aa010e16a401b301b201dc01f90150b601b00101b80101c001011001180120013a06080110011801420c0801100118012001280130014a0e08011001280140018201008801015001580122870108011204083e101f1204083e104f1204083e10341204083e104e1204083e100b1204083e10361204083e10251204083e10531205086410b2011205086410b3011205086410b6011205086010b2011205086010b3011205086010b6011205086010b7011204086010161205085c10b2011205085c10b3011205085c10b6011205083e10b2012001"
+          }
+        ],
+        "metadata": {
+          "type": "playlist",
+          "uri": "spotify:playlist:0000000000000000000003",
+          "name": "Synthetic playlist",
+          "description": "Synthetic description",
+          "images": [
+            {
+              "url": "https://fixture.invalid/playlist",
+              "label": "standard"
+            }
+          ],
+          "dynamicColors": null,
+          "madeFor": null,
+          "owner": {
+            "type": "user",
+            "uri": "spotify:user:fixture",
+            "username": "fixture",
+            "displayName": "Synthetic owner",
+            "images": []
+          },
+          "totalLength": 0,
+          "unfilteredTotalLength": 0,
+          "totalLikes": 42,
+          "duration": {
+            "milliseconds": 123000,
+            "isEstimate": false
+          },
+          "isLoaded": true,
+          "isOwnedBySelf": false,
+          "isPublished": false,
+          "isRootlistable": true,
+          "isSaved": false,
+          "hasEpisodes": false,
+          "hasSpotifyTracks": true,
+          "hasSpotifyAudiobooks": false,
+          "hasPodcastChapters": false,
+          "canAdd": false,
+          "canRemove": false,
+          "canEditMetadata": false,
+          "canEditItems": false,
+          "canPlay": true,
+          "canMixPlaylist": false,
+          "formatListData": {
+            "type": "",
+            "attributes": {}
+          },
+          "canReportAnnotationAbuse": false,
+          "hasDateAdded": true,
+          "permissions": {
+            "canView": true,
+            "canAdministratePermissions": false,
+            "canCancelMembership": false,
+            "isPrivate": false,
+            "canDelete": false
+          },
+          "collaborators": {
+            "count": 0,
+            "items": []
+          },
+          "appliedLenses": [],
+          "availableSignals": []
+        },
+        "tracks": {
+          "items": [],
+          "offset": 0,
+          "limit": 0,
+          "totalLength": 0
+        }
+      },
+      "request": {
+        "uri": "spotify:playlist:0000000000000000000003",
+        "query": {
+          "boolPredicates": [
+            "NOT_RECOMMENDATION"
+          ],
+          "range": {
+            "length": 50
+          },
+          "showUnavailable": true,
+          "supportedPlaceholderTypes": [
+            "SHOW",
+            "KALLAX",
+            "PODCAST_CHAPTER",
+            "CLIP"
+          ]
+        },
+        "policy": {
+          "playlist": {
+            "link": true,
+            "name": true,
+            "loaded": true,
+            "totalLength": true,
+            "duration": true,
+            "description": true,
+            "picture": true,
+            "playable": true,
+            "canReportAnnotationAbuse": true,
+            "followed": true,
+            "followers": true,
+            "ownedBySelf": true,
+            "published": true,
+            "formatListType": true,
+            "formatListAttributes": true,
+            "containsSpotifyTracks": true,
+            "containsTracks": true,
+            "containsEpisodes": true,
+            "owner": {
+              "username": true,
+              "link": true,
+              "name": true,
+              "image": true,
+              "thumbnail": true,
+              "color": true
+            },
+            "madeFor": {
+              "username": true,
+              "link": true,
+              "name": true,
+              "image": true,
+              "thumbnail": true,
+              "color": true
+            },
+            "allows": {
+              "insert": true,
+              "remove": true
+            },
+            "numberOfEpisodes": true,
+            "numberOfTracks": true,
+            "collaboratingUsers": {
+              "count": true,
+              "limit": 5,
+              "collaborator": {
+                "user": {
+                  "username": true,
+                  "link": true,
+                  "name": true,
+                  "image": true,
+                  "thumbnail": true,
+                  "color": true
+                },
+                "numberOfItems": true,
+                "numberOfTracks": true,
+                "numberOfEpisodes": true,
+                "isOwner": true
+              }
+            },
+            "basePermission": true,
+            "userCapabilities": true,
+            "extension": [
+              "ROOTLISTABILITY_TRAIT",
+              "VISUAL_IDENTITY_TRAIT",
+              "AUTO_LENS",
+              "WATCH_FEED_ENTITY_EXPLORER"
+            ],
+            "lenses": true,
+            "lengthIgnoringTextFilter": true,
+            "numberOfItemsPerLinkType": true,
+            "availableSignals": true,
+            "unrangedLength": true
+          },
+          "track": {
+            "track": {
+              "hasLyrics": true,
+              "link": true,
+              "name": true,
+              "length": true,
+              "playable": true,
+              "isAvailableInMetadataCatalogue": true,
+              "locallyPlayable": true,
+              "playableLocalTrack": true,
+              "discNumber": true,
+              "trackNumber": true,
+              "isExplicit": true,
+              "previewId": true,
+              "isLocal": true,
+              "isPremiumOnly": true,
+              "playableTrackLink": true,
+              "popularity": true,
+              "is19PlusOnly": true,
+              "trackDescriptors": true,
+              "extension": [
+                "IDENTITY_TRAIT",
+                "VIDEO_ASSOCIATIONS",
+                "AUDIO_ASSOCIATIONS",
+                "ORIGINAL_VIDEO",
+                "CONSUMPTION_EXPERIENCE_TRAIT",
+                "PUBLISHING_METADATA_TRAIT"
+              ]
+            },
+            "rowId": true,
+            "addTime": true,
+            "formatListAttributes": true,
+            "addedBy": {
+              "username": true,
+              "link": true,
+              "name": true,
+              "image": true,
+              "thumbnail": true,
+              "color": true
+            },
+            "album": {
+              "album": {
+                "link": true,
+                "name": true,
+                "covers": true
+              },
+              "artist": {
+                "link": true,
+                "name": true
+              }
+            },
+            "artist": {
+              "link": true,
+              "name": true
+            }
+          },
+          "episode": {
+            "episode": {
+              "link": true,
+              "length": true,
+              "name": true,
+              "description": true,
+              "publishDate": true,
+              "covers": true,
+              "mediaTypeEnum": true,
+              "number": true,
+              "isExplicit": true,
+              "type": true,
+              "extension": [
+                "PODCAST_SUBSCRIPTIONS",
+                "GATED_ENTITY_RELATIONS",
+                "VISUAL_IDENTITY_TRAIT",
+                "IDENTITY_TRAIT",
+                "ENTITY_TYPE_TRAIT",
+                "CONTENT_EXPERIENCE_TRAIT",
+                "SHARE_TRAIT",
+                "CONSUMPTION_EXPERIENCE_TRAIT"
+              ],
+              "is19PlusOnly": true,
+              "isBookChapter": true,
+              "isPodcastShort": true
+            },
+            "rowId": true,
+            "addTime": true,
+            "formatListAttributes": true,
+            "playedState": {
+              "timeLeft": true,
+              "isPlayed": true,
+              "playable": true
+            },
+            "addedBy": {
+              "username": true,
+              "link": true,
+              "name": true,
+              "image": true,
+              "thumbnail": true,
+              "color": true
+            },
+            "show": {
+              "link": true,
+              "name": true,
+              "publisher": true,
+              "covers": true,
+              "isBook": true
+            },
+            "signals": true,
+            "isRecommendation": true
+          },
+          "item": {
+            "uri": true,
+            "extensionPolicy": [
+              {
+                "linkType": "SHOW",
+                "extension": "SHOW_ACCESS"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "COVER_IMAGE"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "AUDIOBOOK_SPECIFICS"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "PLAYABILITY"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "SHOW_V4"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "HTML_DESCRIPTION"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "PODCAST_RATING"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "AUDIOBOOK_GENRE"
+              },
+              {
+                "linkType": "KALLAX",
+                "extension": "IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "KALLAX",
+                "extension": "VISUAL_IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "KALLAX",
+                "extension": "CONSUMPTION_EXPERIENCE_TRAIT"
+              },
+              {
+                "linkType": "PODCAST_CHAPTER",
+                "extension": "IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "PODCAST_CHAPTER",
+                "extension": "VISUAL_IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "PODCAST_CHAPTER",
+                "extension": "CONSUMPTION_EXPERIENCE_TRAIT"
+              },
+              {
+                "linkType": "PODCAST_CHAPTER",
+                "extension": "PUBLISHING_METADATA_TRAIT"
+              },
+              {
+                "linkType": "PODCAST_CHAPTER",
+                "extension": "PODCAST_SUBSCRIPTIONS"
+              },
+              {
+                "linkType": "CLIP",
+                "extension": "IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "CLIP",
+                "extension": "VISUAL_IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "CLIP",
+                "extension": "CONSUMPTION_EXPERIENCE_TRAIT"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "IDENTITY_TRAIT"
+              }
+            ],
+            "collectionState": true
+          }
+        }
+      }
+    },
+    {
+      "name": "forbidden playlist returns the original inaccessible metadata",
+      "kind": "open",
+      "uri": "spotify:playlist:0000000000000000000003",
+      "offset": 0,
+      "limit": 50,
+      "response": {
+        "status": {
+          "statusCode": 403
+        }
+      },
+      "responseHex": "0a03089303",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.playlist_esperanto.proto.PlaylistDataService",
+            "method": "Get",
+            "payloadHex": "0a2773706f746966793a706c61796c6973743a30303030303030303030303030303030303030303033120f0a01072202103240015a043e64605c1adf030a960110011801280148015001580160016801800101880101900101980101b00101c00101c80101d80101e00101e801018a020c08011001180120012801300192020c0801100118012001280130019a020408011001a00201a80201c2021c080110051a160a0c0801100118012001280130011001180120012801c80201d00201da02069501b301aa01e00201e80201f00201f80201880301125f0a330801100118012001280130013801400148015001580160016801700178018001018801019001019a0109b201636255b601b701100118015001620c0801100118012001280130016a0e0a060801100120011204080110017204080110011a600a2e08011001180138014001480168017001800101880101aa010c16a401b301b201dc01f90150b00101b80101c001011001180120013a06080110011801420c0801100118012001280130014a0e08011001280140018201008801015001580122800108011204083e101f1204083e104f1204083e10341204083e104e1204083e100b1204083e10361204083e10251204083e10531205086410b2011205086410b3011205086410b6011205086010b2011205086010b3011205086010b6011205086010b7011204086010161205085c10b2011205085c10b3011205085c10b6012001"
+          }
+        ],
+        "metadata": {
+          "type": "playlist",
+          "uri": "spotify:playlist:0000000000000000000003",
+          "name": "",
+          "description": "",
+          "images": [],
+          "dynamicColors": null,
+          "madeFor": null,
+          "owner": {
+            "type": "user",
+            "uri": "",
+            "username": "",
+            "displayName": "",
+            "images": []
+          },
+          "totalLength": 0,
+          "unfilteredTotalLength": 0,
+          "totalLikes": null,
+          "duration": null,
+          "isLoaded": false,
+          "isOwnedBySelf": false,
+          "isPublished": false,
+          "isRootlistable": false,
+          "hasEpisodes": null,
+          "hasSpotifyTracks": null,
+          "hasSpotifyAudiobooks": null,
+          "canAdd": false,
+          "canRemove": false,
+          "canEditMetadata": false,
+          "canEditItems": false,
+          "canPlay": null,
+          "canMixPlaylist": false,
+          "formatListData": null,
+          "canReportAnnotationAbuse": false,
+          "hasDateAdded": false,
+          "permissions": {
+            "isPrivate": false,
+            "canView": false,
+            "canAdministratePermissions": false,
+            "canCancelMembership": false
+          },
+          "collaborators": null
+        },
+        "tracks": {
+          "totalLength": 0,
+          "offset": 0,
+          "limit": 0,
+          "items": []
+        }
+      },
+      "request": {
+        "uri": "spotify:playlist:0000000000000000000003",
+        "query": {
+          "boolPredicates": [
+            "NOT_RECOMMENDATION"
+          ],
+          "range": {
+            "length": 50
+          },
+          "showUnavailable": true,
+          "supportedPlaceholderTypes": [
+            "SHOW",
+            "KALLAX",
+            "PODCAST_CHAPTER",
+            "CLIP"
+          ]
+        },
+        "policy": {
+          "playlist": {
+            "link": true,
+            "name": true,
+            "loaded": true,
+            "totalLength": true,
+            "duration": true,
+            "description": true,
+            "picture": true,
+            "playable": true,
+            "canReportAnnotationAbuse": true,
+            "followed": true,
+            "followers": true,
+            "ownedBySelf": true,
+            "published": true,
+            "formatListType": true,
+            "formatListAttributes": true,
+            "containsSpotifyTracks": true,
+            "containsTracks": true,
+            "containsEpisodes": true,
+            "owner": {
+              "username": true,
+              "link": true,
+              "name": true,
+              "image": true,
+              "thumbnail": true,
+              "color": true
+            },
+            "madeFor": {
+              "username": true,
+              "link": true,
+              "name": true,
+              "image": true,
+              "thumbnail": true,
+              "color": true
+            },
+            "allows": {
+              "insert": true,
+              "remove": true
+            },
+            "numberOfEpisodes": true,
+            "numberOfTracks": true,
+            "collaboratingUsers": {
+              "count": true,
+              "limit": 5,
+              "collaborator": {
+                "user": {
+                  "username": true,
+                  "link": true,
+                  "name": true,
+                  "image": true,
+                  "thumbnail": true,
+                  "color": true
+                },
+                "numberOfItems": true,
+                "numberOfTracks": true,
+                "numberOfEpisodes": true,
+                "isOwner": true
+              }
+            },
+            "basePermission": true,
+            "userCapabilities": true,
+            "extension": [
+              "ROOTLISTABILITY_TRAIT",
+              "VISUAL_IDENTITY_TRAIT",
+              "AUTO_LENS"
+            ],
+            "lenses": true,
+            "lengthIgnoringTextFilter": true,
+            "numberOfItemsPerLinkType": true,
+            "availableSignals": true,
+            "unrangedLength": true
+          },
+          "track": {
+            "track": {
+              "hasLyrics": true,
+              "link": true,
+              "name": true,
+              "length": true,
+              "playable": true,
+              "isAvailableInMetadataCatalogue": true,
+              "locallyPlayable": true,
+              "playableLocalTrack": true,
+              "discNumber": true,
+              "trackNumber": true,
+              "isExplicit": true,
+              "previewId": true,
+              "isLocal": true,
+              "isPremiumOnly": true,
+              "playableTrackLink": true,
+              "popularity": true,
+              "is19PlusOnly": true,
+              "trackDescriptors": true,
+              "extension": [
+                "IDENTITY_TRAIT",
+                "VIDEO_ASSOCIATIONS",
+                "AUDIO_ASSOCIATIONS",
+                "ORIGINAL_VIDEO",
+                "CONSUMPTION_EXPERIENCE_TRAIT",
+                "PUBLISHING_METADATA_TRAIT"
+              ]
+            },
+            "rowId": true,
+            "addTime": true,
+            "formatListAttributes": true,
+            "addedBy": {
+              "username": true,
+              "link": true,
+              "name": true,
+              "image": true,
+              "thumbnail": true,
+              "color": true
+            },
+            "album": {
+              "album": {
+                "link": true,
+                "name": true,
+                "covers": true
+              },
+              "artist": {
+                "link": true,
+                "name": true
+              }
+            },
+            "artist": {
+              "link": true,
+              "name": true
+            }
+          },
+          "episode": {
+            "episode": {
+              "link": true,
+              "length": true,
+              "name": true,
+              "description": true,
+              "publishDate": true,
+              "covers": true,
+              "mediaTypeEnum": true,
+              "number": true,
+              "isExplicit": true,
+              "type": true,
+              "extension": [
+                "PODCAST_SUBSCRIPTIONS",
+                "GATED_ENTITY_RELATIONS",
+                "VISUAL_IDENTITY_TRAIT",
+                "IDENTITY_TRAIT",
+                "ENTITY_TYPE_TRAIT",
+                "CONTENT_EXPERIENCE_TRAIT",
+                "SHARE_TRAIT"
+              ],
+              "is19PlusOnly": true,
+              "isBookChapter": true,
+              "isPodcastShort": true
+            },
+            "rowId": true,
+            "addTime": true,
+            "formatListAttributes": true,
+            "playedState": {
+              "timeLeft": true,
+              "isPlayed": true,
+              "playable": true
+            },
+            "addedBy": {
+              "username": true,
+              "link": true,
+              "name": true,
+              "image": true,
+              "thumbnail": true,
+              "color": true
+            },
+            "show": {
+              "link": true,
+              "name": true,
+              "publisher": true,
+              "covers": true,
+              "isBook": true
+            },
+            "signals": true,
+            "isRecommendation": true
+          },
+          "item": {
+            "uri": true,
+            "extensionPolicy": [
+              {
+                "linkType": "SHOW",
+                "extension": "SHOW_ACCESS"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "COVER_IMAGE"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "AUDIOBOOK_SPECIFICS"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "PLAYABILITY"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "SHOW_V4"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "HTML_DESCRIPTION"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "PODCAST_RATING"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "AUDIOBOOK_GENRE"
+              },
+              {
+                "linkType": "KALLAX",
+                "extension": "IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "KALLAX",
+                "extension": "VISUAL_IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "KALLAX",
+                "extension": "CONSUMPTION_EXPERIENCE_TRAIT"
+              },
+              {
+                "linkType": "PODCAST_CHAPTER",
+                "extension": "IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "PODCAST_CHAPTER",
+                "extension": "VISUAL_IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "PODCAST_CHAPTER",
+                "extension": "CONSUMPTION_EXPERIENCE_TRAIT"
+              },
+              {
+                "linkType": "PODCAST_CHAPTER",
+                "extension": "PUBLISHING_METADATA_TRAIT"
+              },
+              {
+                "linkType": "PODCAST_CHAPTER",
+                "extension": "PODCAST_SUBSCRIPTIONS"
+              },
+              {
+                "linkType": "CLIP",
+                "extension": "IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "CLIP",
+                "extension": "VISUAL_IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "CLIP",
+                "extension": "CONSUMPTION_EXPERIENCE_TRAIT"
+              }
+            ],
+            "collectionState": true
+          }
+        }
+      }
+    },
+    {
+      "name": "missing playlist payload rejects",
+      "kind": "open",
+      "uri": "spotify:playlist:0000000000000000000003",
+      "offset": 0,
+      "limit": 50,
+      "response": {},
+      "responseHex": "",
+      "expected": {
+        "calls": [
+          {
+            "service": "spotify.playlist_esperanto.proto.PlaylistDataService",
+            "method": "Get",
+            "payloadHex": "0a2773706f746966793a706c61796c6973743a30303030303030303030303030303030303030303033120f0a01072202103240015a043e64605c1adf030a960110011801280148015001580160016801800101880101900101980101b00101c00101c80101d80101e00101e801018a020c08011001180120012801300192020c0801100118012001280130019a020408011001a00201a80201c2021c080110051a160a0c0801100118012001280130011001180120012801c80201d00201da02069501b301aa01e00201e80201f00201f80201880301125f0a330801100118012001280130013801400148015001580160016801700178018001018801019001019a0109b201636255b601b701100118015001620c0801100118012001280130016a0e0a060801100120011204080110017204080110011a600a2e08011001180138014001480168017001800101880101aa010c16a401b301b201dc01f90150b00101b80101c001011001180120013a06080110011801420c0801100118012001280130014a0e08011001280140018201008801015001580122800108011204083e101f1204083e104f1204083e10341204083e104e1204083e100b1204083e10361204083e10251204083e10531205086410b2011205086410b3011205086410b6011205086010b2011205086010b3011205086010b6011205086010b7011204086010161205085c10b2011205085c10b3011205085c10b6012001"
+          }
+        ],
+        "error": {
+          "message": "Invalid playlist or members response!"
+        }
+      },
+      "request": {
+        "uri": "spotify:playlist:0000000000000000000003",
+        "query": {
+          "boolPredicates": [
+            "NOT_RECOMMENDATION"
+          ],
+          "range": {
+            "length": 50
+          },
+          "showUnavailable": true,
+          "supportedPlaceholderTypes": [
+            "SHOW",
+            "KALLAX",
+            "PODCAST_CHAPTER",
+            "CLIP"
+          ]
+        },
+        "policy": {
+          "playlist": {
+            "link": true,
+            "name": true,
+            "loaded": true,
+            "totalLength": true,
+            "duration": true,
+            "description": true,
+            "picture": true,
+            "playable": true,
+            "canReportAnnotationAbuse": true,
+            "followed": true,
+            "followers": true,
+            "ownedBySelf": true,
+            "published": true,
+            "formatListType": true,
+            "formatListAttributes": true,
+            "containsSpotifyTracks": true,
+            "containsTracks": true,
+            "containsEpisodes": true,
+            "owner": {
+              "username": true,
+              "link": true,
+              "name": true,
+              "image": true,
+              "thumbnail": true,
+              "color": true
+            },
+            "madeFor": {
+              "username": true,
+              "link": true,
+              "name": true,
+              "image": true,
+              "thumbnail": true,
+              "color": true
+            },
+            "allows": {
+              "insert": true,
+              "remove": true
+            },
+            "numberOfEpisodes": true,
+            "numberOfTracks": true,
+            "collaboratingUsers": {
+              "count": true,
+              "limit": 5,
+              "collaborator": {
+                "user": {
+                  "username": true,
+                  "link": true,
+                  "name": true,
+                  "image": true,
+                  "thumbnail": true,
+                  "color": true
+                },
+                "numberOfItems": true,
+                "numberOfTracks": true,
+                "numberOfEpisodes": true,
+                "isOwner": true
+              }
+            },
+            "basePermission": true,
+            "userCapabilities": true,
+            "extension": [
+              "ROOTLISTABILITY_TRAIT",
+              "VISUAL_IDENTITY_TRAIT",
+              "AUTO_LENS"
+            ],
+            "lenses": true,
+            "lengthIgnoringTextFilter": true,
+            "numberOfItemsPerLinkType": true,
+            "availableSignals": true,
+            "unrangedLength": true
+          },
+          "track": {
+            "track": {
+              "hasLyrics": true,
+              "link": true,
+              "name": true,
+              "length": true,
+              "playable": true,
+              "isAvailableInMetadataCatalogue": true,
+              "locallyPlayable": true,
+              "playableLocalTrack": true,
+              "discNumber": true,
+              "trackNumber": true,
+              "isExplicit": true,
+              "previewId": true,
+              "isLocal": true,
+              "isPremiumOnly": true,
+              "playableTrackLink": true,
+              "popularity": true,
+              "is19PlusOnly": true,
+              "trackDescriptors": true,
+              "extension": [
+                "IDENTITY_TRAIT",
+                "VIDEO_ASSOCIATIONS",
+                "AUDIO_ASSOCIATIONS",
+                "ORIGINAL_VIDEO",
+                "CONSUMPTION_EXPERIENCE_TRAIT",
+                "PUBLISHING_METADATA_TRAIT"
+              ]
+            },
+            "rowId": true,
+            "addTime": true,
+            "formatListAttributes": true,
+            "addedBy": {
+              "username": true,
+              "link": true,
+              "name": true,
+              "image": true,
+              "thumbnail": true,
+              "color": true
+            },
+            "album": {
+              "album": {
+                "link": true,
+                "name": true,
+                "covers": true
+              },
+              "artist": {
+                "link": true,
+                "name": true
+              }
+            },
+            "artist": {
+              "link": true,
+              "name": true
+            }
+          },
+          "episode": {
+            "episode": {
+              "link": true,
+              "length": true,
+              "name": true,
+              "description": true,
+              "publishDate": true,
+              "covers": true,
+              "mediaTypeEnum": true,
+              "number": true,
+              "isExplicit": true,
+              "type": true,
+              "extension": [
+                "PODCAST_SUBSCRIPTIONS",
+                "GATED_ENTITY_RELATIONS",
+                "VISUAL_IDENTITY_TRAIT",
+                "IDENTITY_TRAIT",
+                "ENTITY_TYPE_TRAIT",
+                "CONTENT_EXPERIENCE_TRAIT",
+                "SHARE_TRAIT"
+              ],
+              "is19PlusOnly": true,
+              "isBookChapter": true,
+              "isPodcastShort": true
+            },
+            "rowId": true,
+            "addTime": true,
+            "formatListAttributes": true,
+            "playedState": {
+              "timeLeft": true,
+              "isPlayed": true,
+              "playable": true
+            },
+            "addedBy": {
+              "username": true,
+              "link": true,
+              "name": true,
+              "image": true,
+              "thumbnail": true,
+              "color": true
+            },
+            "show": {
+              "link": true,
+              "name": true,
+              "publisher": true,
+              "covers": true,
+              "isBook": true
+            },
+            "signals": true,
+            "isRecommendation": true
+          },
+          "item": {
+            "uri": true,
+            "extensionPolicy": [
+              {
+                "linkType": "SHOW",
+                "extension": "SHOW_ACCESS"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "COVER_IMAGE"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "AUDIOBOOK_SPECIFICS"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "PLAYABILITY"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "SHOW_V4"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "HTML_DESCRIPTION"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "PODCAST_RATING"
+              },
+              {
+                "linkType": "SHOW",
+                "extension": "AUDIOBOOK_GENRE"
+              },
+              {
+                "linkType": "KALLAX",
+                "extension": "IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "KALLAX",
+                "extension": "VISUAL_IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "KALLAX",
+                "extension": "CONSUMPTION_EXPERIENCE_TRAIT"
+              },
+              {
+                "linkType": "PODCAST_CHAPTER",
+                "extension": "IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "PODCAST_CHAPTER",
+                "extension": "VISUAL_IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "PODCAST_CHAPTER",
+                "extension": "CONSUMPTION_EXPERIENCE_TRAIT"
+              },
+              {
+                "linkType": "PODCAST_CHAPTER",
+                "extension": "PUBLISHING_METADATA_TRAIT"
+              },
+              {
+                "linkType": "PODCAST_CHAPTER",
+                "extension": "PODCAST_SUBSCRIPTIONS"
+              },
+              {
+                "linkType": "CLIP",
+                "extension": "IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "CLIP",
+                "extension": "VISUAL_IDENTITY_TRAIT"
+              },
+              {
+                "linkType": "CLIP",
+                "extension": "CONSUMPTION_EXPERIENCE_TRAIT"
+              }
+            ],
+            "collectionState": true
+          }
+        }
+      }
+    }
+  ]
+}

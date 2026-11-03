@@ -1,0 +1,237 @@
+{
+  "sourceExecutable": {
+    "path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "sha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+    "installedVersion": "1.3.6.1921 arm64"
+  },
+  "authority": "Bounded static inspection of proprietary original instructions and retained REA exports; standard CEF semantics come from pinned public source. No original app, account, profile or network is used.",
+  "originalInstructionRanges": [
+    {
+      "purpose": "authenticated template installs client then access response decorators",
+      "entry": "0x101a497c0",
+      "endExclusive": "0x101a49c2c",
+      "sha256": "08b36712f4d95f6e065155c90e2f9b40a5a97db3f118070866de76b63529cee9"
+    },
+    {
+      "purpose": "response installation bridge",
+      "entry": "0x101c2002c",
+      "endExclusive": "0x101c2005c",
+      "sha256": "4bbda431695540d43d5e4aacb53d30cabbeeec866cfbe15c096fce4be246685c"
+    },
+    {
+      "purpose": "append response decorator",
+      "entry": "0x101c24d14",
+      "endExclusive": "0x101c24e74",
+      "sha256": "1eaabc0653676cc668a7be25e84d9c6374acafe32347b379dca158d47326c5b1"
+    },
+    {
+      "purpose": "final builder",
+      "entry": "0x101c25994",
+      "endExclusive": "0x101c274fc",
+      "sha256": "afae154f7e8ac269b6d317d380ed0a804edbb56f203f53c5dd24c3ac9f6a93f4"
+    },
+    {
+      "purpose": "copy response deque",
+      "entry": "0x101c2e06c",
+      "endExclusive": "0x101c2e7ac",
+      "sha256": "be873096fd2d6141d5e797bc87478807a637a2d2997327ba728215e0e7cde382"
+    },
+    {
+      "purpose": "copy request job closure",
+      "entry": "0x101c330e0",
+      "endExclusive": "0x101c332b8",
+      "sha256": "9912e527e8f56509fd9e78fd31f3d9302288e3c1caf0fad71055ddd1aaebe161"
+    },
+    {
+      "purpose": "create request job",
+      "entry": "0x101c334ec",
+      "endExclusive": "0x101c338f8",
+      "sha256": "bb655c82f16ae139ee0640626dae1fb8661a1f51aa560ebe6aa592ed6f9601fc"
+    },
+    {
+      "purpose": "response front driver",
+      "entry": "0x101c35938",
+      "endExclusive": "0x101c366f0",
+      "sha256": "482a7b684c5dbdcafb55ddc5e83d61d046ac8f8d07be16d4d4e2fafea9fb94e5"
+    },
+    {
+      "purpose": "success continuation",
+      "entry": "0x101c36d20",
+      "endExclusive": "0x101c37004",
+      "sha256": "acda99a7efc8748d049675a3d21c55be442e65dc606d4c761381d35c4b251e11"
+    },
+    {
+      "purpose": "error continuation",
+      "entry": "0x101c375d4",
+      "endExclusive": "0x101c37954",
+      "sha256": "1675b6536499aba31a8816f4c30a597fd1ab2891a4a4ce54fae540b303287138"
+    },
+    {
+      "purpose": "CEF response converter",
+      "entry": "0x1017d82b4",
+      "endExclusive": "0x1017d8688",
+      "sha256": "644bfa2b5b17c2d003c9a0e96b5d2a1d22ba43e2156f14ce75cc9f6398ddd9fb"
+    },
+    {
+      "purpose": "CEF response conversion caller",
+      "entry": "0x1017d4580",
+      "endExclusive": "0x1017d4654",
+      "sha256": "bfec29b9204ed52acdf4409910f53fdcadd2629b34a5a53d5749fac0f99e5a76"
+    },
+    {
+      "purpose": "Foundation response converter",
+      "entry": "0x1017e0718",
+      "endExclusive": "0x1017e0b84",
+      "sha256": "4ae7ffe455bafe4fa4b012691d4602a92b3e80b2274155d868b7ccef7140ef6a"
+    },
+    {
+      "purpose": "response value constructor",
+      "entry": "0x101c4d320",
+      "endExclusive": "0x101c4d444",
+      "sha256": "d8731e09e70ac25fb74affcb3035ed94ce58a00c87370eec391f7268f380d944"
+    },
+    {
+      "purpose": "response URL getter",
+      "entry": "0x101c4d87c",
+      "endExclusive": "0x101c4d884",
+      "sha256": "16e21e8466298640b30a77c6d532a726afc0cf074bb54d17bfaed901b400f570"
+    },
+    {
+      "purpose": "response mutable URL getter",
+      "entry": "0x101c4d898",
+      "endExclusive": "0x101c4d8a0",
+      "sha256": "16e21e8466298640b30a77c6d532a726afc0cf074bb54d17bfaed901b400f570"
+    },
+    {
+      "purpose": "cancel notify bridge",
+      "entry": "0x101c341cc",
+      "endExclusive": "0x101c341d4",
+      "sha256": "bce4fc7f60d2bbad63f1ab16d14584f623d8983bb50f9532c69dd4985f9191b7"
+    },
+    {
+      "purpose": "cancel silent bridge",
+      "entry": "0x101c341d4",
+      "endExclusive": "0x101c341dc",
+      "sha256": "0bc2b221cf41e835b6c477b589c92b79a8cf6e09f7db10838564ff6980608d25"
+    },
+    {
+      "purpose": "shared cancellation owner",
+      "entry": "0x101c3aab4",
+      "endExclusive": "0x101c3b0cc",
+      "sha256": "ef43199b7a4589c390c9c9581d4deffa70a2af71b2a16febbe2b6104a999f8ec"
+    },
+    {
+      "purpose": "notifying cancellation closure",
+      "entry": "0x101c3b19c",
+      "endExclusive": "0x101c3b2b0",
+      "sha256": "534cc710824b95162ad5c6b2c85785253b2884d2a26cbf5ffc36e5cc07b90267"
+    }
+  ],
+  "retainedExports": [
+    {
+      "path": ".local/rea-session/native-authenticated-template-and-rootlist-uri-producers.json",
+      "sha256": "4eae98101d9207ff66be5511731be74bcd0809a771ec953c96aec40930f2da04"
+    },
+    {
+      "path": ".local/rea-session/native_request_builder_plan.json",
+      "sha256": "c49ef6500e266ab99885b1ebad648cb65c7db210ac60f903f1402c7b0d34d355"
+    },
+    {
+      "path": ".local/rea-session/native-liked-sync-queue-and-token-response-binding.json",
+      "sha256": "62e1ed0180ffdcedd3ec68f59f31bafdbf71f38302cb2c4be7aee42cadeba212"
+    },
+    {
+      "path": ".local/rea-session/native-liked-enqueue-and-http-response-decorators.json",
+      "sha256": "c68f3638e45c2251490b1b84e000df22af524101be81b11abcecc4dad30fc94c"
+    },
+    {
+      "path": ".local/rea-session/native_http_builder_method_table.json",
+      "sha256": "aa445b26a3ee0ac13d34555221ddccbec6188e21014bbeb69ed6a9da8cc3bdde"
+    }
+  ],
+  "responseChain": {
+    "installation": [
+      "client_token_response_decorator:101a4f200 / entry101a4f3f0",
+      "access response101a437bc / entry101a452ac"
+    ],
+    "registrationBridge": "101c2002c virtual+70 ->101c24d14",
+    "append": "101c24d30 appends at deque(start+size), then increments size at deque+28; deque is builder+158",
+    "builderTransfer": "101c25994 moves builder+158 deque into final functor10266ca08+0xa8",
+    "jobTransfer": "101c2e06c copies the deque forward through101c29410;101c330e0/101c334ec move it into job base+108 = interface+f0",
+    "front": "101c35938 selects front from interface+f8 map and +110 index, requires nonzero +118 size",
+    "pop": "101c35c04..101c35c10 increments index and decrements size before invoking the extracted decorator",
+    "success": "vtable10266cd48 entry101c36d20; direct success path calls response driver101c35938 at101c36dd4",
+    "error": "vtable10266cd90 entry101c375d4; distinct error processing101c37a64/scheduled error closure, with no HTTP response driver call in that entry",
+    "order": "Installation order: client-token response first, access-token response second.",
+    "conditionalConsequence": "When the client-token decorator invokes only its error continuation, its HTTP response is not forwarded into access-token401 invalidation. A client-token branch invoking neither callback is not equivalent to forwarding.",
+    "installationOwner": "101a497c0 installs both client and access response decorators in the stated order."
+  },
+  "responseUrl": {
+    "storage": "Response+8 is a length-bearing full URL string, not a host-only field;101c4d87c returns its address.",
+    "CEF": {
+      "entry": "1017d82b4",
+      "caller": "1017d4580 calls it at1017d45f4",
+      "getURL": "CefResponse virtual+a8 at1017d8330; GetStatus+48 and GetHeaderMap+98 corroborate the public interface layout",
+      "copy": "100016cec converts CefString to std::string;1017d8344 calls mutable getter101c4d898 and copies the full converted value into response+8",
+      "publicMeaning": "CefResponse.GetURL is the resolved URL after redirects or HSTS. Public browser URL request source sets it from redirect_info.new_url.spec(), final_url.spec(), and loader.GetFinalURL().spec()."
+    },
+    "Foundation": {
+      "entry": "1017e0718",
+      "URLSelector": {
+        "stub": "101fd3200",
+        "selectorReference": "102697598",
+        "selectorString": "102460a39",
+        "text": "URL"
+      },
+      "absoluteStringSelector": {
+        "stub": "101fd3580",
+        "selectorReference": "102697678",
+        "selectorString": "102464380",
+        "text": "absoluteString"
+      },
+      "copy": "NSHTTPURLResponse.URL.absoluteString -> UTF8String -> std::string passed in X2 at1017e0a84 to101c4d444 ->101c4d320, which copies it at response+8."
+    }
+  },
+  "publicCEFSource": {
+    "revision": "beff58dbc4d0fd12b3eafea8f5314ce22e649078",
+    "ChromiumVersion": "151.0.7922.138",
+    "files": [
+      {
+        "localPath": ".local/cef-source/full-beff58d/include/cef_response.h",
+        "repositoryPath": "include/cef_response.h",
+        "sha256": "f5e9b6e79c67c98579bf30fcd14133d1e5d1d9d3dc082d6407005e9ab012b142",
+        "sourceURL": "https://github.com/chromiumembedded/cef/blob/beff58dbc4d0fd12b3eafea8f5314ce22e649078/include/cef_response.h"
+      },
+      {
+        "localPath": ".local/cef-source/beff58d/libcef/browser/net_service/browser_urlrequest_impl.cc",
+        "repositoryPath": "libcef/browser/net_service/browser_urlrequest_impl.cc",
+        "sha256": "4ebcd2b1b2397c7df3f01dc995c872a31516fc3fd93fed633161fc8b772b9501",
+        "sourceURL": "https://github.com/chromiumembedded/cef/blob/beff58dbc4d0fd12b3eafea8f5314ce22e649078/libcef/browser/net_service/browser_urlrequest_impl.cc"
+      }
+    ]
+  },
+  "standardSubstitutions": [],
+  "provedScope": [
+    "Named original decorator installation order and actual front-consumption/success/error source flow.",
+    "Proprietary full-response-URL producer for both CEF and Foundation and public CEF final/resolved URL semantics.",
+    "No conversion to host-only text occurs at the named response URL storage/getter boundary.",
+    "Explicit notifying/silent cancellation entry points remain available for the outstanding request owner; the notifying closure produces native http_error_aborted."
+  ],
+  "limits": [
+    "This artifact is source/control-flow evidence; separate original execution owns individual client/access response branch outcomes.",
+    "No claim that every client-token-error/status combination invokes a callback; nonmatching nonempty header paths can finish without either callback.",
+    "No default deadline covering response postprocessing has yet been established.",
+    "No whole request scheduler, cancellation/lifetime execution, transport fingerprint, live token refresh or server behavior is asserted.",
+    "Cancellation source was inspected statically; scheduler execution, callback timing, stored callback availability and automatic response-postprocessing timeout were not independently executed here."
+  ],
+  "cancellationAndTimeout": {
+    "notifyingCancel": "Job interface vtable10266cc30+18 is101c341cc ->101c3aab4(this,1).",
+    "silentCancel": "Job interface vtable10266cc30+20 is101c341d4 ->101c3aab4(this,0).",
+    "sharedFlow": "101c3aab4 checks completed byte+320, then sets it and atomic cancellation byte+321. It releases active operation handles from+308/+310, and calls notifying abort101c43b48 or silent detach101c43be8 according to the supplied bool.",
+    "notification": "For notifying cancellation with the retained callback present, closure101c3b19c constructs native http-category error10 via101c52838 at101c3b1d4 and invokes the retained error callback at101c3b204. Existing native-http.md identifies error10 as http_error_aborted. This is a proved terminal error path, not forwarding of the withheld HTTP response.",
+    "suppressedResponse": "The nonempty response-decorator branch removes the current decorator before invocation. A handler invoking neither continuation does not enter remaining response decorators or the terminal response/error path. Its outstanding owner can still be cancelled.",
+    "automaticDeadline": "Not established. The known builder timing fields+1e8/+1f0 and Foundation request timeout conversion do not prove a deadline covering response-decorator postprocessing. No automatic postprocessing timer is asserted by this bounded investigation.",
+    "DartOwnershipGuidance": "Inference for integration: retain an explicit suppressed-response outcome under the request owner, do not forward the401 or run later access invalidation, and release it through owner cancellation. Any additional whole-operation timeout must be identified as Dart lifecycle policy until an original postprocessing timer is independently established.",
+    "templateLimit": "The inspected authenticated template101a497c0 installs the connection-ID/client/auth/identity/language/time-zone request decorators and client/auth response decorators. This source join supplies no explicit response-postprocessing deadline; it does not exclude scheduling or owner timers outside the inspected scope."
+  }
+}

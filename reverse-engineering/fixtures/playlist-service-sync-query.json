@@ -1,0 +1,48 @@
+{
+  "provenance": "Original query split/escaping/join instructions0x101f52f44/0x101f53500/0x101f537a8 execute. Only standard string/vector/ostringstream/classic-ctype operations are inert.",
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "scenarios": [
+    {
+      "uri": "playlist/v2/playlist/id",
+      "values": [
+        [
+          "a b",
+          "雪/*~!'()\u0000"
+        ],
+        [
+          "empty",
+          ""
+        ],
+        [
+          "",
+          "value"
+        ]
+      ],
+      "expected": "playlist/v2/playlist/id?a%20b=%E9%9B%AA%2F%2A~%21%27%28%29%00&empty=&=value"
+    },
+    {
+      "uri": "playlist/v2/playlist/id?old=%2f+raw&dup=one",
+      "values": [
+        [
+          "dup",
+          "two"
+        ],
+        [
+          "dup",
+          "three"
+        ]
+      ],
+      "expected": "playlist/v2/playlist/id?old=%2f+raw&dup=one&dup=two&dup=three"
+    },
+    {
+      "uri": "playlist/v2/playlist/id?",
+      "values": [],
+      "expected": "playlist/v2/playlist/id"
+    },
+    {
+      "uri": "playlist/v2/playlist/id?old=%2f+raw",
+      "values": [],
+      "expected": "playlist/v2/playlist/id?old=%2f+raw"
+    }
+  ]
+}

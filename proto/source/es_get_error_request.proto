@@ -1,0 +1,15 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: 0931cf5f8eeaeb3b47f47224d88c0e7709c3e42796ba1e9f0f4626a1719babd4
+
+syntax = "proto3";
+
+package spotify.player.esperanto.proto;
+
+option java_package = "com.spotify.player.esperanto.proto";
+
+option objc_class_prefix = "ESP";
+
+option optimize_for = CODE_SIZE;
+
+message GetErrorRequest {
+}

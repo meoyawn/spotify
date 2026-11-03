@@ -1,0 +1,4 @@
+[submodule "native/librespot/upstream"]
+	path = native/librespot/upstream
+	url = https://github.com/meoyawn/librespot.git
+	branch = flutter-player

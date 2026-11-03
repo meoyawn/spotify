@@ -1,0 +1,70 @@
+{
+  "provenance": "Original header/payload JSON serializers and Base64URL encoder executed under Unicorn, with static REA-relocated data and standard libc/libc++ hooks. Models are synthetic. No signature, key creation, clock, UUID, account state, process, or network is exercised.",
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "headerEntry": "0x1017a2410",
+  "payloadEntry": "0x1017a28f4",
+  "cases": [
+    {
+      "name": "nonce absent",
+      "claims": {
+        "htu": "https://fixture.invalid/token",
+        "htm": "POST",
+        "jti": "fixture-jti",
+        "iat": 1793059000
+      },
+      "header": {
+        "alg": "ES256",
+        "typ": "dpop+jwt",
+        "jwk": {
+          "crv": "P-256",
+          "kty": "EC",
+          "x": "X-fixture",
+          "y": "Y_fixture"
+        }
+      },
+      "signingInput": "eyJhbGciOiJFUzI1NiIsInR5cCI6ImRwb3Arand0IiwiandrIjp7ImNydiI6IlAtMjU2Iiwia3R5IjoiRUMiLCJ4IjoiWC1maXh0dXJlIiwieSI6IllfZml4dHVyZSJ9fQ.eyJodHUiOiJodHRwczovL2ZpeHR1cmUuaW52YWxpZC90b2tlbiIsImh0bSI6IlBPU1QiLCJqdGkiOiJmaXh0dXJlLWp0aSIsImlhdCI6MTc5MzA1OTAwMH0"
+    },
+    {
+      "name": "nonce present but empty",
+      "claims": {
+        "htu": "https://fixture.invalid/token?x=~+",
+        "htm": "POST",
+        "jti": "jti-2",
+        "iat": 0,
+        "nonce": ""
+      },
+      "header": {
+        "alg": "ES256",
+        "typ": "dpop+jwt",
+        "jwk": {
+          "crv": "P-256",
+          "kty": "EC",
+          "x": "X-fixture",
+          "y": "Y_fixture"
+        }
+      },
+      "signingInput": "eyJhbGciOiJFUzI1NiIsInR5cCI6ImRwb3Arand0IiwiandrIjp7ImNydiI6IlAtMjU2Iiwia3R5IjoiRUMiLCJ4IjoiWC1maXh0dXJlIiwieSI6IllfZml4dHVyZSJ9fQ.eyJodHUiOiJodHRwczovL2ZpeHR1cmUuaW52YWxpZC90b2tlbj94PX4rIiwiaHRtIjoiUE9TVCIsImp0aSI6Imp0aS0yIiwiaWF0IjowLCJub25jZSI6IiJ9"
+    },
+    {
+      "name": "opaque UTF-8 and JSON escaping",
+      "claims": {
+        "htu": "https://fixture.invalid/token",
+        "htm": "POST",
+        "jti": "jti-3",
+        "iat": 1793059001,
+        "nonce": "nonce+/=🧪\n\t\"\\\u000f literal\\u000f"
+      },
+      "header": {
+        "alg": "ES256",
+        "typ": "dpop+jwt",
+        "jwk": {
+          "crv": "P-256",
+          "kty": "EC",
+          "x": "X-fixture",
+          "y": "Y_fixture"
+        }
+      },
+      "signingInput": "eyJhbGciOiJFUzI1NiIsInR5cCI6ImRwb3Arand0IiwiandrIjp7ImNydiI6IlAtMjU2Iiwia3R5IjoiRUMiLCJ4IjoiWC1maXh0dXJlIiwieSI6IllfZml4dHVyZSJ9fQ.eyJodHUiOiJodHRwczovL2ZpeHR1cmUuaW52YWxpZC90b2tlbiIsImh0bSI6IlBPU1QiLCJqdGkiOiJqdGktMyIsImlhdCI6MTc5MzA1OTAwMSwibm9uY2UiOiJub25jZSsvPfCfp6pcblx0XCJcXFx1MDAwRiBsaXRlcmFsXFx1MDAwZiJ9"
+    }
+  ]
+}

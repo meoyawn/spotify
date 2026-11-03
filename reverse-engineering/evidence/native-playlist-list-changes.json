@@ -1,0 +1,326 @@
+{
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "descriptorFileSha256": "4203124978629c882fff40081706103f99722ffc36527982341b47040dd7080e",
+  "authority": "Capture original Add/Rem, staged Delta and final ListChanges field choices.\n\nUnchanged proprietary ARM64 instructions run offline. Standard protobuf36.2\nencodes their observed message fields using extracted original descriptors.\nRows, username, revision, prior nonce and clock are explicit synthetic inputs;\nno managed store, account, network request or remote write is involved.",
+  "cases": [
+    {
+      "name": "add first to populated liked list",
+      "inputs": {
+        "uri": "spotify:track:0000000000000000000001",
+        "username": "synthetic-user",
+        "revision": "cmV2AP8=",
+        "priorNonce": 7,
+        "clockMicroseconds": 1700000000123456,
+        "kind": "add",
+        "previousLength": 10396,
+        "freshRowAlgorithm": 0,
+        "freshRowEntropyHex": "0001020304050607"
+      },
+      "originalFields": {
+        "baseRevision": "cmV2AP8=",
+        "deltas": [
+          {
+            "ops": [
+              {
+                "kind": 2,
+                "add": {
+                  "items": [
+                    {
+                      "uri": "spotify:track:0000000000000000000001",
+                      "attributes": {
+                        "timestamp": "1700000000123",
+                        "itemId": "AAECAwQFBgc="
+                      }
+                    }
+                  ],
+                  "addFirst": true
+                }
+              }
+            ],
+            "info": {
+              "user": "synthetic-user",
+              "timestamp": "1700000000000"
+            }
+          }
+        ],
+        "wantResultingRevisions": true,
+        "wantSyncResult": true,
+        "nonces": [
+          "8"
+        ]
+      },
+      "bodyHex": "0a0572657600ff125c12410802123d12390a2473706f746966793a747261636b3a30303030303030303030303030303030303030303031121110fbd095ffbc3162080001020304050607280122170a0e73796e7468657469632d757365721080d095ffbc31180120013008"
+    },
+    {
+      "name": "add to empty liked list uses last",
+      "inputs": {
+        "uri": "spotify:track:0000000000000000000001",
+        "username": "synthetic-user",
+        "revision": "cmV2AP8=",
+        "priorNonce": 7,
+        "clockMicroseconds": 1700000000123456,
+        "kind": "add",
+        "previousLength": 0,
+        "attributes": {}
+      },
+      "originalFields": {
+        "baseRevision": "cmV2AP8=",
+        "deltas": [
+          {
+            "ops": [
+              {
+                "kind": 2,
+                "add": {
+                  "items": [
+                    {
+                      "uri": "spotify:track:0000000000000000000001",
+                      "attributes": {}
+                    }
+                  ],
+                  "addLast": true
+                }
+              }
+            ],
+            "info": {
+              "user": "synthetic-user",
+              "timestamp": "1700000000000"
+            }
+          }
+        ],
+        "wantResultingRevisions": true,
+        "wantSyncResult": true,
+        "nonces": [
+          "8"
+        ]
+      },
+      "bodyHex": "0a0572657600ff124b12300802122c12280a2473706f746966793a747261636b3a303030303030303030303030303030303030303030311200200122170a0e73796e7468657469632d757365721080d095ffbc31180120013008"
+    },
+    {
+      "name": "remove keyed actual row",
+      "inputs": {
+        "uri": "spotify:track:0000000000000000000001",
+        "username": "synthetic-user",
+        "revision": "cmV2AP8=",
+        "priorNonce": 7,
+        "clockMicroseconds": 1700000000123456,
+        "kind": "remove",
+        "index": 5,
+        "itemId": "AAECAwQFBgc="
+      },
+      "originalFields": {
+        "baseRevision": "cmV2AP8=",
+        "deltas": [
+          {
+            "ops": [
+              {
+                "kind": 3,
+                "rem": {
+                  "items": [
+                    {
+                      "uri": "spotify:track:0000000000000000000001",
+                      "attributes": {
+                        "itemId": "AAECAwQFBgc="
+                      }
+                    }
+                  ],
+                  "itemsAsKey": true
+                }
+              }
+            ],
+            "info": {
+              "user": "synthetic-user",
+              "timestamp": "1700000000000"
+            }
+          }
+        ],
+        "wantResultingRevisions": true,
+        "wantSyncResult": true,
+        "nonces": [
+          "8"
+        ]
+      },
+      "bodyHex": "0a0572657600ff1255123a08031a361a320a2473706f746966793a747261636b3a30303030303030303030303030303030303030303031120a62080001020304050607380122170a0e73796e7468657469632d757365721080d095ffbc31180120013008"
+    },
+    {
+      "name": "remove unkeyed actual row retains index",
+      "inputs": {
+        "uri": "spotify:track:0000000000000000000001",
+        "username": "synthetic-user",
+        "revision": "cmV2AP8=",
+        "priorNonce": 7,
+        "clockMicroseconds": 1700000000123456,
+        "kind": "remove",
+        "index": 9,
+        "itemId": ""
+      },
+      "originalFields": {
+        "baseRevision": "cmV2AP8=",
+        "deltas": [
+          {
+            "ops": [
+              {
+                "kind": 3,
+                "rem": {
+                  "fromIndex": 9,
+                  "length": 1,
+                  "items": [
+                    {
+                      "uri": "spotify:track:0000000000000000000001"
+                    }
+                  ]
+                }
+              }
+            ],
+            "info": {
+              "user": "synthetic-user",
+              "timestamp": "1700000000000"
+            }
+          }
+        ],
+        "wantResultingRevisions": true,
+        "wantSyncResult": true,
+        "nonces": [
+          "8"
+        ]
+      },
+      "bodyHex": "0a0572657600ff124b123008031a2c080910011a260a2473706f746966793a747261636b3a3030303030303030303030303030303030303030303122170a0e73796e7468657469632d757365721080d095ffbc31180120013008"
+    },
+    {
+      "name": "configured URI-derived item ID keeps first10 SHA1bytes",
+      "inputs": {
+        "uri": "spotify:track:0000000000000000000001",
+        "username": "synthetic-user",
+        "revision": "cmV2AP8=",
+        "priorNonce": 7,
+        "clockMicroseconds": 1700000000123456,
+        "kind": "add",
+        "previousLength": 10396,
+        "freshRowAlgorithm": 1
+      },
+      "originalFields": {
+        "baseRevision": "cmV2AP8=",
+        "deltas": [
+          {
+            "ops": [
+              {
+                "kind": 2,
+                "add": {
+                  "items": [
+                    {
+                      "uri": "spotify:track:0000000000000000000001",
+                      "attributes": {
+                        "timestamp": "1700000000123",
+                        "itemId": "XWgT21EoHLT/sw=="
+                      }
+                    }
+                  ],
+                  "addFirst": true
+                }
+              }
+            ],
+            "info": {
+              "user": "synthetic-user",
+              "timestamp": "1700000000000"
+            }
+          }
+        ],
+        "wantResultingRevisions": true,
+        "wantSyncResult": true,
+        "nonces": [
+          "8"
+        ]
+      },
+      "bodyHex": "0a0572657600ff125e12430802123f123b0a2473706f746966793a747261636b3a30303030303030303030303030303030303030303031121310fbd095ffbc31620a5d6813db51281cb4ffb3280122170a0e73796e7468657469632d757365721080d095ffbc31180120013008"
+    }
+  ],
+  "standardCppProtobufVersion": "36.2.0",
+  "codecSourceSha256": "3d1f49dc45b199260f85382748bfb125288a5846f99d4ab35e276bbdf0d9a7b7",
+  "standardSubstitutions": [
+    "Inert allocation and libc++ strings",
+    "Public protobuf ClassData/TcParseTable layouts and standard message allocation/copy/repeated-container operations",
+    "Explicit clock value and standard system_clock::to_time_t integer conversion",
+    "Original row constructor requests exactly8bytes at known standard entropy boundary101d021f8; supplied synthetic entropy is unchanged",
+    "Canonical URI getter returns the explicit synthetic row URI"
+  ],
+  "sourceExports": [
+    {
+      "path": ".local/rea-session/native-liked-songs-add-rem-delta-and-sync-enqueue.json",
+      "sha256": "2a40510957046365a8ad65673b896458d6cecab739df04300461f52092c8bf5a"
+    },
+    {
+      "path": ".local/rea-session/native-liked-songs-delta-ops-and-collection-pages.json",
+      "sha256": "8c6cda2fd02091f536a2dbd631a9d392951e3a78e79fd434add9ab8ece22f2dd"
+    },
+    {
+      "path": ".local/rea-session/native-liked-list-changes-body-and-key-source-callers.json",
+      "sha256": "c8d58514a7e30ca6081a5c4e0a0416d5df52e60bf16a8ac58b60c755e36f9971"
+    },
+    {
+      "path": ".local/rea-session/native-liked-list-changes-inputs-and-row-attributes.json",
+      "sha256": "9532c0e5810fc9213ae6ebe0720dade3ad6fbd6a5310596113e7970bc9b82a34"
+    },
+    {
+      "path": ".local/rea-session/native-liked-add-row-construction.json",
+      "sha256": "c77ff1f90360ebcef35b7207c55ef73d6d244fec8710a6e9eaeef9723a73308b"
+    }
+  ],
+  "executedInstructionCount": 591,
+  "executedInstructionSha256": "ac79ea036fd7a95524dbb3e0aad37da096c50442853dd254ad13b682b19022a4",
+  "originalCode": [
+    {
+      "entry": "0x101ad2c20",
+      "endExclusive": "0x101ad2f88",
+      "sha256": "dad4be3a7805e7560b1c5d46abd5e6ba80aca94e8fca7fa11c251b676b14b1ed"
+    },
+    {
+      "entry": "0x101ad2a5c",
+      "endExclusive": "0x101ad2c20",
+      "sha256": "fb2cf8ea03141cd8d092c88731f435d7f57aba4b7794349022338632af0a8a15"
+    },
+    {
+      "entry": "0x101ad2f88",
+      "endExclusive": "0x101ad3250",
+      "sha256": "aac61e128295b508dec7ff4edc4d71352705e12f07729a85366c354377161579"
+    },
+    {
+      "entry": "0x101aba948",
+      "endExclusive": "0x101abaa00",
+      "sha256": "da190af32eb26bcc613127ecb70512c44c00188ec6e4f686e67bc6919ff4cfea"
+    },
+    {
+      "entry": "0x101abdeb8",
+      "endExclusive": "0x101abdfc8",
+      "sha256": "17b45f6e6e348a926392ed49a5f41a901e6c10908afc4864e299f83c76d22253"
+    },
+    {
+      "entry": "0x101addc64",
+      "endExclusive": "0x101adde6c",
+      "sha256": "27c20d3d731d14f64e74fb140c81deef06cae73f995b90e6ec97b88e50bb308f"
+    },
+    {
+      "entry": "0x101b1504c",
+      "endExclusive": "0x101b15234",
+      "sha256": "69ce1387a0707c33aa5cf403354c3149831cae1a966b687af2a99a9a1e61752f"
+    },
+    {
+      "entry": "0x101b15238",
+      "endExclusive": "0x101b1548c",
+      "sha256": "bfefbdab769dc951ac846ce96cc9380ec3e4b8a237bd1e36333a2f382c0f4808"
+    },
+    {
+      "entry": "0x101b17c50",
+      "endExclusive": "0x101b17d6c",
+      "sha256": "5adefcc7056f5ffa0487467cf052d4a9035fb830c2d3d6dcabb1a57626726034"
+    },
+    {
+      "entry": "0x101bcbdf4",
+      "endExclusive": "0x101bcbe80",
+      "sha256": "87cf6ce92940d5eb93b62b7e9abb39c9cb8cd04baa048db61500c0689278a9de"
+    }
+  ],
+  "limits": [
+    "Fresh Add row captures random8byte and configured truncatedSHA1 constructors; optional SaveSource is separate.",
+    "Staging entry begins after original gating decisions; optional CreationInfo absent.",
+    "No force path, source lens, multiple row removal grouping, network/default headers or remote acknowledgement is asserted."
+  ]
+}

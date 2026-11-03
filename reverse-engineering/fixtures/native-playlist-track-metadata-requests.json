@@ -1,0 +1,1278 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "method": "Offline original playlist_tracks_loader fresh base-track request capture.\n\nThe loader executes against explicit synthetic list/cache/service interfaces.\nNo host profile, process, HTTP sender or network is accessed. This capture is\nbounded to ordinary Track URIs and empty optional extension maps.\n",
+  "loader": "0x1015cd8bc",
+  "trackQueryProducer": "0x101cd5f0c",
+  "batchBuilder": "0x1005f3e90",
+  "httpEnvelope": "0x10061230c",
+  "ranges": [
+    {
+      "start": "0x1015cf8d8",
+      "endExclusive": "0x1015cfad0",
+      "sha256": "1eafe50da14265f26f25f47571d5aaa6845be6c8599d49de8c3f41394488723a"
+    },
+    {
+      "start": "0x1015cd384",
+      "endExclusive": "0x1015cd3d0",
+      "sha256": "e5aeff18c4b427943d0a277bf611d67f13744fc8ae82dc35de7d6ee89122a228"
+    },
+    {
+      "start": "0x1015cd8bc",
+      "endExclusive": "0x1015ce5d4",
+      "sha256": "53dd2642e20578dd85b2e1e1a0b97f06be76d09dd28b37cc22306bf014fb884c"
+    },
+    {
+      "start": "0x101ccd5e0",
+      "endExclusive": "0x101ccdbb8",
+      "sha256": "f3938e26341254dac0031316ea6e27832c13e3f52a4a9294b5b82f66d823e60a"
+    },
+    {
+      "start": "0x101cd58b4",
+      "endExclusive": "0x101cd5b54",
+      "sha256": "d104e7d8215ea7fd91134e85de2118121ef9d9b9cd8cfe238b853c8c95e83e4d"
+    },
+    {
+      "start": "0x101cd5f0c",
+      "endExclusive": "0x101cd642c",
+      "sha256": "eb07eecfa46665667a86f3956e1793fda55720e2dc9da8d26e20fdec3347ae66"
+    },
+    {
+      "start": "0x100601d64",
+      "endExclusive": "0x100601dd4",
+      "sha256": "041267ba195f3a609f260c9413c1ce0d41de1ab243235eb14f120bc2134c0d45"
+    },
+    {
+      "start": "0x100607ae0",
+      "endExclusive": "0x100607da8",
+      "sha256": "39e30a537acb0df2f947a1fca387232cd85a91f6e7763269794926569a50c6da"
+    },
+    {
+      "start": "0x1005f3e90",
+      "endExclusive": "0x1005f4304",
+      "sha256": "c4010770d19bdbfc300ce6a858e303d286753e19fd8103e25e919fe0f3bc8c4d"
+    },
+    {
+      "start": "0x100611ecc",
+      "endExclusive": "0x100612308",
+      "sha256": "db90081a7ffc30f7aaa6b014e14ba0b11afafaa18362e524cddd23d7275b9f59"
+    },
+    {
+      "start": "0x10061230c",
+      "endExclusive": "0x100612664",
+      "sha256": "6fc93a7227bf87602f0831a09975f69bd4f8cdaa6f37fa53cda22fad673db1fe"
+    }
+  ],
+  "injectedTemplate": {
+    "method": "GET",
+    "headers": {
+      "User-Agent": "Spotify/independent-offline-fixture"
+    },
+    "bodyHex": ""
+  },
+  "substitutedInterfaces": [
+    "List busy=false and original parsed playlist link; explicit ordinary Track vector, base metadata enabled, optional sidecar maps empty.",
+    "Typed-track cache provider supplies status2/no payload; original101ccd5e0 interprets it and original1015cd8bc selects missing tracks.",
+    "Original1015cd384 registers an inert completion observer; original native work-readiness guard is unchanged.",
+    "The full original loader emits typed URI vector and operation; this exact vector feeds unchanged original state constructor101cd58b4 and query producer101cd5f0c.",
+    "Original concrete wrapper101cc99d4/101cd5804 is identified but not executed: its scheduler/RNG/observer composition is outside the outgoing query contract.",
+    "Job context contains deterministic opaque16-byte identity, valid retained weak self, inert executor virtual68 and explicit country/catalogue context getter.",
+    "Native audio_files_prefetch_critical=true and fetch_associations_with_track_v4_enabled=false match separately recovered config fallback inputs, not account permissions.",
+    "The generic missing-cache, iterator, batching and HTTP-envelope interfaces/providers are inherited unchanged from OriginalAudioFilesRequest.",
+    "Batch configuration is explicit50 entities/100 queries. Database open=true/cache-info status1/no record; no cache/etag values are fabricated.",
+    "Opaque HTTP builders record inherited template and all mutations; execution stops before sender. Synthetic HTTPS origin is joined outside relative-path owner."
+  ],
+  "standardProviders": [
+    "Inherited native AudioFiles libc/libc++ memory, strings, protobuf bootstrap and single-thread TLS providers.",
+    "Host libc snprintf supplies only observed spotify:track:%s%s formatting over original arguments.",
+    "Public libc++ string grow/replace, uncontended shared-pointer locks and positive-count weak lock; fixture allocations/weak storage are retained.",
+    "Standard aligned C++ array allocation and one-thread errno storage.",
+    "Original compiled Google protobuf and bundled standard zlib compression execute unchanged; no replacement wire encoder or compressor."
+  ],
+  "limits": [
+    "Fresh ordinary unique Track identities1..50, no sidecars or TrackV4 associations, no cached records/etags or offline paths.",
+    "No account admission, source-side account defaults, UI policy, credentials, route or final transport/default-header authority.",
+    "Five-entity native gzip threshold, non-sorted URI input,24-track and50-track batches are executed; no single-track request loop is used.",
+    "All fixtures are synthetic and contain no account/profile data."
+  ],
+  "cases": [
+    {
+      "name": "1 fresh Tracks, country='ZZ', catalogue='fixture'",
+      "uris": [
+        "spotify:track:0000000000000000000000"
+      ],
+      "country": "ZZ",
+      "catalogue": "fixture",
+      "fetchAssociationsWithTrackV4Enabled": false,
+      "typedTrackCacheReadKinds": [
+        10
+      ],
+      "baseSubmissionOperation": "playlist_tracks_loader",
+      "baseSubmissionCount": 1,
+      "queryInsertions": [
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000000"
+        }
+      ],
+      "cacheInfoReads": [
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        }
+      ],
+      "submissionOperation": "playlist_tracks_loader",
+      "rawSubmissionMode": 1,
+      "request": {
+        "method": "POST",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Content-Type": "application/protobuf",
+          "Accept": "application/protobuf",
+          "client-feature-id": "playlist_tracks_loader"
+        },
+        "bodyHex": "0a0d0a025a5a120766697874757265122a0a2473706f746966793a747261636b3a303030303030303030303030303030303030303030301202080a",
+        "requestName": "cpp-extended_metadata-extended_metadata_impl.playlist_tracks_loader",
+        "rawUrl": "https://spclient.example.test:443/extended-metadata/v0/extended-metadata",
+        "orderedHeaders": [
+          [
+            "User-Agent",
+            "Spotify/independent-offline-fixture"
+          ],
+          [
+            "Content-Type",
+            "application/protobuf"
+          ],
+          [
+            "Accept",
+            "application/protobuf"
+          ],
+          [
+            "client-feature-id",
+            "playlist_tracks_loader"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "4 fresh Tracks, country='', catalogue=''",
+      "uris": [
+        "spotify:track:0000000000000000000003",
+        "spotify:track:0000000000000000000000",
+        "spotify:track:0000000000000000000002",
+        "spotify:track:0000000000000000000001"
+      ],
+      "country": "",
+      "catalogue": "",
+      "fetchAssociationsWithTrackV4Enabled": false,
+      "typedTrackCacheReadKinds": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "baseSubmissionOperation": "playlist_tracks_loader",
+      "baseSubmissionCount": 4,
+      "queryInsertions": [
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000003"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000002"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000001"
+        }
+      ],
+      "cacheInfoReads": [
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000003",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000002",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000001",
+          "status": 1
+        }
+      ],
+      "submissionOperation": "playlist_tracks_loader",
+      "rawSubmissionMode": 1,
+      "request": {
+        "method": "POST",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Content-Type": "application/protobuf",
+          "Accept": "application/protobuf",
+          "client-feature-id": "playlist_tracks_loader"
+        },
+        "bodyHex": "0a00122a0a2473706f746966793a747261636b3a303030303030303030303030303030303030303030331202080a122a0a2473706f746966793a747261636b3a303030303030303030303030303030303030303030301202080a122a0a2473706f746966793a747261636b3a303030303030303030303030303030303030303030321202080a122a0a2473706f746966793a747261636b3a303030303030303030303030303030303030303030311202080a",
+        "requestName": "cpp-extended_metadata-extended_metadata_impl.playlist_tracks_loader",
+        "rawUrl": "https://spclient.example.test:443/extended-metadata/v0/extended-metadata",
+        "orderedHeaders": [
+          [
+            "User-Agent",
+            "Spotify/independent-offline-fixture"
+          ],
+          [
+            "Content-Type",
+            "application/protobuf"
+          ],
+          [
+            "Accept",
+            "application/protobuf"
+          ],
+          [
+            "client-feature-id",
+            "playlist_tracks_loader"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "5 fresh Tracks, country='ZZ', catalogue='fixture'",
+      "uris": [
+        "spotify:track:0000000000000000000000",
+        "spotify:track:0000000000000000000001",
+        "spotify:track:0000000000000000000002",
+        "spotify:track:0000000000000000000003",
+        "spotify:track:0000000000000000000004"
+      ],
+      "country": "ZZ",
+      "catalogue": "fixture",
+      "fetchAssociationsWithTrackV4Enabled": false,
+      "typedTrackCacheReadKinds": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "baseSubmissionOperation": "playlist_tracks_loader",
+      "baseSubmissionCount": 5,
+      "queryInsertions": [
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000001"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000002"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000003"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000004"
+        }
+      ],
+      "cacheInfoReads": [
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000001",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000002",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000003",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000004",
+          "status": 1
+        }
+      ],
+      "submissionOperation": "playlist_tracks_loader",
+      "rawSubmissionMode": 1,
+      "request": {
+        "method": "POST",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Content-Type": "application/protobuf",
+          "Accept": "application/protobuf",
+          "client-feature-id": "playlist_tracks_loader",
+          "Content-Encoding": "gzip"
+        },
+        "bodyHex": "1f8b0800000000000013e3e2e5628a8a12624fcbac28292d4a15d2e252292ec82fc94cabb42a294a4cceb632c00a849838b888546b48825a2312d41a93a0d604a416008c5dd1e7eb000000",
+        "requestName": "cpp-extended_metadata-extended_metadata_impl.playlist_tracks_loader",
+        "rawUrl": "https://spclient.example.test:443/extended-metadata/v0/extended-metadata",
+        "orderedHeaders": [
+          [
+            "User-Agent",
+            "Spotify/independent-offline-fixture"
+          ],
+          [
+            "Content-Type",
+            "application/protobuf"
+          ],
+          [
+            "Accept",
+            "application/protobuf"
+          ],
+          [
+            "client-feature-id",
+            "playlist_tracks_loader"
+          ],
+          [
+            "Content-Encoding",
+            "gzip"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "24 fresh Tracks, country='ZZ', catalogue='free'",
+      "uris": [
+        "spotify:track:0000000000000000000023",
+        "spotify:track:0000000000000000000022",
+        "spotify:track:0000000000000000000021",
+        "spotify:track:0000000000000000000020",
+        "spotify:track:0000000000000000000019",
+        "spotify:track:0000000000000000000018",
+        "spotify:track:0000000000000000000017",
+        "spotify:track:0000000000000000000016",
+        "spotify:track:0000000000000000000015",
+        "spotify:track:0000000000000000000014",
+        "spotify:track:0000000000000000000013",
+        "spotify:track:0000000000000000000012",
+        "spotify:track:0000000000000000000011",
+        "spotify:track:0000000000000000000010",
+        "spotify:track:0000000000000000000009",
+        "spotify:track:0000000000000000000008",
+        "spotify:track:0000000000000000000007",
+        "spotify:track:0000000000000000000006",
+        "spotify:track:0000000000000000000005",
+        "spotify:track:0000000000000000000004",
+        "spotify:track:0000000000000000000003",
+        "spotify:track:0000000000000000000002",
+        "spotify:track:0000000000000000000001",
+        "spotify:track:0000000000000000000000"
+      ],
+      "country": "ZZ",
+      "catalogue": "free",
+      "fetchAssociationsWithTrackV4Enabled": false,
+      "typedTrackCacheReadKinds": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "baseSubmissionOperation": "playlist_tracks_loader",
+      "baseSubmissionCount": 24,
+      "queryInsertions": [
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000023"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000022"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000021"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000020"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000019"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000018"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000017"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000016"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000015"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000014"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000013"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000012"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000011"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000010"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000009"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000008"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000007"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000006"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000005"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000004"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000003"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000002"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000001"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000000"
+        }
+      ],
+      "cacheInfoReads": [
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000023",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000022",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000021",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000020",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000019",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000018",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000017",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000016",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000015",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000014",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000013",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000012",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000011",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000010",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000009",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000008",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000007",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000006",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000005",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000004",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000003",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000002",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000001",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        }
+      ],
+      "submissionOperation": "playlist_tracks_loader",
+      "rawSubmissionMode": 1,
+      "request": {
+        "method": "POST",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Content-Type": "application/protobuf",
+          "Accept": "application/protobuf",
+          "client-feature-id": "playlist_tracks_loader",
+          "Content-Encoding": "gzip"
+        },
+        "bodyHex": "1f8b080000000000001395d13b0a83401446619014e196b306ab54ff1d353e9662273242b0483036ee5eb0b69873ead37d66568c63782c5b4ae165e5fff7dd3fcb31ecdb34af836e8a55289e96f946f03a7895ff7a0fde0ebc2d78dfe06dc05b8317b8397073e0e6c04dc04dc04dc04dc04dc04dc04dc04dc04dc04d97db0977575f6c2c040000",
+        "requestName": "cpp-extended_metadata-extended_metadata_impl.playlist_tracks_loader",
+        "rawUrl": "https://spclient.example.test:443/extended-metadata/v0/extended-metadata",
+        "orderedHeaders": [
+          [
+            "User-Agent",
+            "Spotify/independent-offline-fixture"
+          ],
+          [
+            "Content-Type",
+            "application/protobuf"
+          ],
+          [
+            "Accept",
+            "application/protobuf"
+          ],
+          [
+            "client-feature-id",
+            "playlist_tracks_loader"
+          ],
+          [
+            "Content-Encoding",
+            "gzip"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "50 fresh Tracks, country='', catalogue=''",
+      "uris": [
+        "spotify:track:0000000000000000000000",
+        "spotify:track:0000000000000000000001",
+        "spotify:track:0000000000000000000002",
+        "spotify:track:0000000000000000000003",
+        "spotify:track:0000000000000000000004",
+        "spotify:track:0000000000000000000005",
+        "spotify:track:0000000000000000000006",
+        "spotify:track:0000000000000000000007",
+        "spotify:track:0000000000000000000008",
+        "spotify:track:0000000000000000000009",
+        "spotify:track:0000000000000000000010",
+        "spotify:track:0000000000000000000011",
+        "spotify:track:0000000000000000000012",
+        "spotify:track:0000000000000000000013",
+        "spotify:track:0000000000000000000014",
+        "spotify:track:0000000000000000000015",
+        "spotify:track:0000000000000000000016",
+        "spotify:track:0000000000000000000017",
+        "spotify:track:0000000000000000000018",
+        "spotify:track:0000000000000000000019",
+        "spotify:track:0000000000000000000020",
+        "spotify:track:0000000000000000000021",
+        "spotify:track:0000000000000000000022",
+        "spotify:track:0000000000000000000023",
+        "spotify:track:0000000000000000000024",
+        "spotify:track:0000000000000000000025",
+        "spotify:track:0000000000000000000026",
+        "spotify:track:0000000000000000000027",
+        "spotify:track:0000000000000000000028",
+        "spotify:track:0000000000000000000029",
+        "spotify:track:0000000000000000000030",
+        "spotify:track:0000000000000000000031",
+        "spotify:track:0000000000000000000032",
+        "spotify:track:0000000000000000000033",
+        "spotify:track:0000000000000000000034",
+        "spotify:track:0000000000000000000035",
+        "spotify:track:0000000000000000000036",
+        "spotify:track:0000000000000000000037",
+        "spotify:track:0000000000000000000038",
+        "spotify:track:0000000000000000000039",
+        "spotify:track:0000000000000000000040",
+        "spotify:track:0000000000000000000041",
+        "spotify:track:0000000000000000000042",
+        "spotify:track:0000000000000000000043",
+        "spotify:track:0000000000000000000044",
+        "spotify:track:0000000000000000000045",
+        "spotify:track:0000000000000000000046",
+        "spotify:track:0000000000000000000047",
+        "spotify:track:0000000000000000000048",
+        "spotify:track:0000000000000000000049"
+      ],
+      "country": "",
+      "catalogue": "",
+      "fetchAssociationsWithTrackV4Enabled": false,
+      "typedTrackCacheReadKinds": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "baseSubmissionOperation": "playlist_tracks_loader",
+      "baseSubmissionCount": 50,
+      "queryInsertions": [
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000000"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000001"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000002"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000003"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000004"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000005"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000006"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000007"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000008"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000009"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000010"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000011"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000012"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000013"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000014"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000015"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000016"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000017"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000018"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000019"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000020"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000021"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000022"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000023"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000024"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000025"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000026"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000027"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000028"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000029"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000030"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000031"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000032"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000033"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000034"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000035"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000036"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000037"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000038"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000039"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000040"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000041"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000042"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000043"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000044"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000045"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000046"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000047"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000048"
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000049"
+        }
+      ],
+      "cacheInfoReads": [
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000000",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000001",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000002",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000003",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000004",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000005",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000006",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000007",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000008",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000009",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000010",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000011",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000012",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000013",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000014",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000015",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000016",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000017",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000018",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000019",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000020",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000021",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000022",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000023",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000024",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000025",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000026",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000027",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000028",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000029",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000030",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000031",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000032",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000033",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000034",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000035",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000036",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000037",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000038",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000039",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000040",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000041",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000042",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000043",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000044",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000045",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000046",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000047",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000048",
+          "status": 1
+        },
+        {
+          "kind": 10,
+          "uri": "spotify:track:0000000000000000000049",
+          "status": 1
+        }
+      ],
+      "submissionOperation": "playlist_tracks_loader",
+      "rawSubmissionMode": 1,
+      "request": {
+        "method": "POST",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Content-Type": "application/protobuf",
+          "Accept": "application/protobuf",
+          "client-feature-id": "playlist_tracks_loader",
+          "Content-Encoding": "gzip"
+        },
+        "bodyHex": "1f8b080000000000001395d13b0e010114405151c994b30695cafbf8cd6e442211054163f712b5c2b9f5edce301b57c3f279bfbd2ee7f7f47a1c4fd769fdb371be18fe7c03de84b7e06d7837f06ee1ddc1bb87f7f0ff1be016e016e016e016e016e016e016e016e016e096e096e096e096e096e096e096e096e096e096e056e056e056e056e056e056e056e056e056e056e0d6e0d6e0d6e0d6e0d6e0d6e0d6e0d6e0d6e0d65fb70f3ad205119a080000",
+        "requestName": "cpp-extended_metadata-extended_metadata_impl.playlist_tracks_loader",
+        "rawUrl": "https://spclient.example.test:443/extended-metadata/v0/extended-metadata",
+        "orderedHeaders": [
+          [
+            "User-Agent",
+            "Spotify/independent-offline-fixture"
+          ],
+          [
+            "Content-Type",
+            "application/protobuf"
+          ],
+          [
+            "Accept",
+            "application/protobuf"
+          ],
+          [
+            "client-feature-id",
+            "playlist_tracks_loader"
+          ],
+          [
+            "Content-Encoding",
+            "gzip"
+          ]
+        ]
+      }
+    }
+  ]
+}

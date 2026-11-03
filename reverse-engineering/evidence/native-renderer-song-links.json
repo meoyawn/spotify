@@ -1,0 +1,167 @@
+{
+  "source": {
+    "application": "Spotify",
+    "version": "1.3.6.1921",
+    "archive": "/Applications/Spotify.app/Contents/Resources/Apps/xpui.spa",
+    "archiveSha256": "20038c2af5d9bb785c3181c3e9a04073b43eb501a72950b19d1a2a085b9a18df",
+    "path": "build/rea/xpui/xpui-routes-track-v2.js",
+    "sha256": "c62d23012e673341120b83ec9b47f209f5496e52f0a028bb629cccfb8fbd0b37"
+  },
+  "ranges": [
+    {
+      "name": "creator name and link",
+      "path": "build/rea/xpui/xpui-routes-track-v2.js",
+      "offsetBytes": 1666,
+      "lengthBytes": 512,
+      "sha256": "a1089a6694f93e260f80f3c081ff3749109b67110d7f00054a983ec72a4f6b87"
+    },
+    {
+      "name": "individual creator list",
+      "path": "build/rea/xpui/xpui-routes-track-v2.js",
+      "offsetBytes": 4213,
+      "lengthBytes": 217,
+      "sha256": "5d4465e4a8b7f3b816716fdbc67d9e2879a9fe16aa7bf2f32488fc2a8e6598a6"
+    },
+    {
+      "name": "song header",
+      "path": "build/rea/xpui/xpui-routes-track-v2.js",
+      "offsetBytes": 42650,
+      "lengthBytes": 1666,
+      "sha256": "0560218ec29ab25e0dfe479e4583cb20bdd4069f324d03546f2be159c1355a84"
+    }
+  ],
+  "cases": [
+    {
+      "name": "two artists and album",
+      "artists": [
+        {
+          "uri": "spotify:artist:0000000000000000000001",
+          "name": "First artist",
+          "id": "1",
+          "images": []
+        },
+        {
+          "uri": "spotify:artist:0000000000000000000002",
+          "name": "Second artist",
+          "id": "2",
+          "images": []
+        }
+      ],
+      "album": {
+        "uri": "spotify:album:0000000000000000000001",
+        "name": "Album"
+      },
+      "links": [
+        {
+          "uri": "spotify:artist:0000000000000000000001",
+          "name": "First artist"
+        },
+        {
+          "uri": "spotify:artist:0000000000000000000002",
+          "name": "Second artist"
+        },
+        {
+          "uri": "spotify:album:0000000000000000000001",
+          "name": "Album"
+        }
+      ],
+      "localNavigationEvents": [
+        {
+          "type": "hitUiNavigate",
+          "destination": "spotify:artist:0000000000000000000001"
+        },
+        {
+          "type": "hitUiNavigate",
+          "destination": "spotify:artist:0000000000000000000002"
+        },
+        {
+          "type": "hitUiNavigate",
+          "destination": "spotify:album:0000000000000000000001"
+        }
+      ]
+    },
+    {
+      "name": "single artist and album",
+      "artists": [
+        {
+          "uri": "spotify:artist:0000000000000000000001",
+          "name": "First artist",
+          "id": "1",
+          "images": []
+        }
+      ],
+      "album": {
+        "uri": "spotify:album:0000000000000000000001",
+        "name": "Album"
+      },
+      "links": [
+        {
+          "uri": "spotify:artist:0000000000000000000001",
+          "name": "First artist"
+        },
+        {
+          "uri": "spotify:album:0000000000000000000001",
+          "name": "Album"
+        }
+      ],
+      "localNavigationEvents": [
+        {
+          "type": "hitUiNavigate",
+          "destination": "spotify:artist:0000000000000000000001"
+        },
+        {
+          "type": "hitUiNavigate",
+          "destination": "spotify:album:0000000000000000000001"
+        }
+      ]
+    },
+    {
+      "name": "album absent",
+      "artists": [
+        {
+          "uri": "spotify:artist:0000000000000000000001",
+          "name": "First artist",
+          "id": "1",
+          "images": []
+        },
+        {
+          "uri": "spotify:artist:0000000000000000000002",
+          "name": "Second artist",
+          "id": "2",
+          "images": []
+        }
+      ],
+      "album": null,
+      "links": [
+        {
+          "uri": "spotify:artist:0000000000000000000001",
+          "name": "First artist"
+        },
+        {
+          "uri": "spotify:artist:0000000000000000000002",
+          "name": "Second artist"
+        }
+      ],
+      "localNavigationEvents": [
+        {
+          "type": "hitUiNavigate",
+          "destination": "spotify:artist:0000000000000000000001"
+        },
+        {
+          "type": "hitUiNavigate",
+          "destination": "spotify:artist:0000000000000000000002"
+        }
+      ]
+    }
+  ],
+  "scope": "Original song header composition, individual supplied creator targets and optional album target, in visual order. Click callbacks execute against an inert local logger. No network or playback work.",
+  "substitutions": [
+    "React hooks run synchronously; JSX records element trees.",
+    "Design-system components and router Link are inert labels.",
+    "Creator URI classification accepts the supplied artist inputs; the known anonymous-artist predicate is substituted.",
+    "The header event logger records locally and never uploads."
+  ],
+  "limitations": [
+    "No claim about track query/session/transport behavior, routing internals, experiments, or additional song sections."
+  ]
+}

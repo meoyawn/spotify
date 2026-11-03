@@ -1,0 +1,151 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "capture": {
+    "path": ".local/lastfm/original-netlog.json",
+    "sha256": "e111977a99d9a2030e431ba52f6109aa3038eb1982dbc7fa0eb5d765a6eb5fbc",
+    "bytes": 80016020,
+    "events": 110842,
+    "transportSubstitution": "--disable-quic"
+  },
+  "implementation": {
+    "path": "lib/playback/native_connect_state_publisher.dart",
+    "loadedSourceSha256": "ef75dd2b8a63b8b5a207a2ae8ea96407744c43cd5f1ac43682e405a3d78919a5"
+  },
+  "originalEntryPoints": [
+    "0x101330548",
+    "0x101331f9c",
+    "0x1013257e4",
+    "0x10130f0a4"
+  ],
+  "cases": [
+    {
+      "source": 1214,
+      "compressedBytes": 459,
+      "originalPlayerBytes": 17,
+      "hasTrack": false,
+      "paused": false,
+      "buffering": false,
+      "previousTracks": 0,
+      "nextTracks": 0,
+      "actualPlayerBytes": 17,
+      "exactBytes": true
+    },
+    {
+      "source": 1449,
+      "compressedBytes": 460,
+      "originalPlayerBytes": 17,
+      "hasTrack": false,
+      "paused": false,
+      "buffering": false,
+      "previousTracks": 0,
+      "nextTracks": 0,
+      "actualPlayerBytes": 17,
+      "exactBytes": true
+    },
+    {
+      "source": 3706,
+      "compressedBytes": 1700,
+      "originalPlayerBytes": 1272,
+      "hasTrack": true,
+      "paused": false,
+      "buffering": false,
+      "previousTracks": 0,
+      "nextTracks": 0,
+      "actualPlayerBytes": 1272,
+      "exactBytes": true
+    },
+    {
+      "source": 3741,
+      "compressedBytes": 1710,
+      "originalPlayerBytes": 1274,
+      "hasTrack": true,
+      "paused": false,
+      "buffering": false,
+      "previousTracks": 0,
+      "nextTracks": 0,
+      "actualPlayerBytes": 1274,
+      "exactBytes": true
+    },
+    {
+      "source": 3858,
+      "compressedBytes": 1697,
+      "originalPlayerBytes": 1277,
+      "hasTrack": true,
+      "paused": true,
+      "buffering": false,
+      "previousTracks": 0,
+      "nextTracks": 0,
+      "actualPlayerBytes": 1277,
+      "exactBytes": true
+    },
+    {
+      "source": 3868,
+      "compressedBytes": 1708,
+      "originalPlayerBytes": 1280,
+      "hasTrack": true,
+      "paused": false,
+      "buffering": false,
+      "previousTracks": 0,
+      "nextTracks": 0,
+      "actualPlayerBytes": 1280,
+      "exactBytes": true
+    },
+    {
+      "source": 3871,
+      "compressedBytes": 1707,
+      "originalPlayerBytes": 1277,
+      "hasTrack": true,
+      "paused": true,
+      "buffering": false,
+      "previousTracks": 0,
+      "nextTracks": 0,
+      "actualPlayerBytes": 1277,
+      "exactBytes": true
+    },
+    {
+      "source": 4013,
+      "compressedBytes": 1719,
+      "originalPlayerBytes": 1280,
+      "hasTrack": true,
+      "paused": false,
+      "buffering": false,
+      "previousTracks": 0,
+      "nextTracks": 0,
+      "actualPlayerBytes": 1280,
+      "exactBytes": true
+    },
+    {
+      "source": 4069,
+      "compressedBytes": 1699,
+      "originalPlayerBytes": 1278,
+      "hasTrack": true,
+      "paused": true,
+      "buffering": false,
+      "previousTracks": 0,
+      "nextTracks": 0,
+      "actualPlayerBytes": 1278,
+      "exactBytes": true
+    },
+    {
+      "source": 4380,
+      "compressedBytes": 1711,
+      "originalPlayerBytes": 1281,
+      "hasTrack": true,
+      "paused": false,
+      "buffering": false,
+      "previousTracks": 0,
+      "nextTracks": 0,
+      "actualPlayerBytes": 1281,
+      "exactBytes": true
+    }
+  ],
+  "limits": [
+    "Expected bytes are unchanged original uploads, never produced by Dart.",
+    "Original embedded schema identities supply equivalent ES inputs to the actual running Dart owner.",
+    "VM evaluation constructs the real request plan offline; it sends no request or scrobble.",
+    "Public hyperframe/gzip/protobuf parsing substitutes standard primitives; no Chromium decompilation.",
+    "Proves captured PlayerState serialization, not full live-session/capability policy or scheduling equivalence.",
+    "No queued tracks occur in these ten captures; remote commands, transfer and reconnect policy remain separate work.",
+    "Private bodies, account/device/session/connection/media IDs and metadata values are not exported."
+  ]
+}

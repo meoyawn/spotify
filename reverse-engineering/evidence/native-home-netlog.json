@@ -1,0 +1,538 @@
+{
+  "scope": "Bounded offline Pathfinder field extraction; exports no account credentials.\n\nThese original h3 NetLogs do not identify Home upload bodies. They independently\nestablish the renderer's common final HTTP fields; original Home factories own\nthe separate operation/body proof. A length match is not an operation identity.\n",
+  "sources": [
+    {
+      "path": ".local/original-playback-netlog.json",
+      "sha256": "fd7239adbef628625faa665ed75199ef34429ed46944409378caeb01ba2c9655",
+      "eventCount": 92420,
+      "pathfinderPostCount": 12,
+      "pathfinderPosts": [
+        {
+          "sourceId": 1525,
+          "sourceType": 1,
+          "eventIndex": 31496,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 40,
+          "contentLength": 227
+        },
+        {
+          "sourceId": 1500,
+          "sourceType": 1,
+          "eventIndex": 31550,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 44,
+          "contentLength": 267
+        },
+        {
+          "sourceId": 1541,
+          "sourceType": 1,
+          "eventIndex": 31831,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 48,
+          "contentLength": 928
+        },
+        {
+          "sourceId": 1535,
+          "sourceType": 1,
+          "eventIndex": 31885,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 52,
+          "contentLength": 357
+        },
+        {
+          "sourceId": 1533,
+          "sourceType": 1,
+          "eventIndex": 31939,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 56,
+          "contentLength": 1015
+        },
+        {
+          "sourceId": 1553,
+          "sourceType": 1,
+          "eventIndex": 32032,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 60,
+          "contentLength": 263
+        },
+        {
+          "sourceId": 2360,
+          "sourceType": 1,
+          "eventIndex": 45609,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 64,
+          "contentLength": 1012
+        },
+        {
+          "sourceId": 2889,
+          "sourceType": 1,
+          "eventIndex": 58826,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 68,
+          "contentLength": 263
+        },
+        {
+          "sourceId": 2915,
+          "sourceType": 1,
+          "eventIndex": 59234,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 72,
+          "contentLength": 264
+        },
+        {
+          "sourceId": 2923,
+          "sourceType": 1,
+          "eventIndex": 59509,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 76,
+          "contentLength": 265
+        },
+        {
+          "sourceId": 2953,
+          "sourceType": 1,
+          "eventIndex": 60653,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 80,
+          "contentLength": 266
+        },
+        {
+          "sourceId": 2958,
+          "sourceType": 1,
+          "eventIndex": 60885,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 84,
+          "contentLength": 267
+        }
+      ],
+      "length357CandidatesNotIdentifiedAsHome": [
+        {
+          "sourceId": 1535,
+          "sourceType": 1,
+          "eventIndex": 31885,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 52,
+          "contentLength": 357
+        }
+      ],
+      "bodyObservations": {
+        "literalOperationNameOccurrences": 0,
+        "literalHomeVariableOccurrences": 0,
+        "sslPlaintextHomeBodyHits": 0,
+        "uploadEventParameterKeys": [
+          "current_position",
+          "is_chunked",
+          "net_error",
+          "total_size"
+        ],
+        "quicSentStreamFrameParameterKeys": [
+          "fin",
+          "length",
+          "offset",
+          "stream_id"
+        ]
+      }
+    },
+    {
+      "path": ".local/original-playback-key-netlog.json",
+      "sha256": "9a58d8b2ce592e8614f795cb85712a2c598b09f0a427962648dc8f2475755467",
+      "eventCount": 80489,
+      "pathfinderPostCount": 42,
+      "pathfinderPosts": [
+        {
+          "sourceId": 1015,
+          "sourceType": 1,
+          "eventIndex": 22339,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 32,
+          "contentLength": 928
+        },
+        {
+          "sourceId": 1013,
+          "sourceType": 1,
+          "eventIndex": 22419,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 36,
+          "contentLength": 357
+        },
+        {
+          "sourceId": 1011,
+          "sourceType": 1,
+          "eventIndex": 22473,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 40,
+          "contentLength": 1012
+        },
+        {
+          "sourceId": 1009,
+          "sourceType": 1,
+          "eventIndex": 22527,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 44,
+          "contentLength": 227
+        },
+        {
+          "sourceId": 1241,
+          "sourceType": 1,
+          "eventIndex": 24066,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 48,
+          "contentLength": 263
+        },
+        {
+          "sourceId": 1780,
+          "sourceType": 1,
+          "eventIndex": 33356,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 52,
+          "contentLength": 1012
+        },
+        {
+          "sourceId": 2532,
+          "sourceType": 1,
+          "eventIndex": 56172,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 0,
+          "contentLength": 245
+        },
+        {
+          "sourceId": 2533,
+          "sourceType": 1,
+          "eventIndex": 56209,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 4,
+          "contentLength": 345
+        },
+        {
+          "sourceId": 2786,
+          "sourceType": 1,
+          "eventIndex": 61994,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 8,
+          "contentLength": 263
+        },
+        {
+          "sourceId": 2791,
+          "sourceType": 1,
+          "eventIndex": 62146,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 12,
+          "contentLength": 264
+        },
+        {
+          "sourceId": 2802,
+          "sourceType": 1,
+          "eventIndex": 62347,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 16,
+          "contentLength": 265
+        },
+        {
+          "sourceId": 2807,
+          "sourceType": 1,
+          "eventIndex": 62414,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 20,
+          "contentLength": 266
+        },
+        {
+          "sourceId": 2818,
+          "sourceType": 1,
+          "eventIndex": 62625,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 24,
+          "contentLength": 267
+        },
+        {
+          "sourceId": 2824,
+          "sourceType": 1,
+          "eventIndex": 62770,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 28,
+          "contentLength": 268
+        },
+        {
+          "sourceId": 2835,
+          "sourceType": 1,
+          "eventIndex": 62963,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 32,
+          "contentLength": 269
+        },
+        {
+          "sourceId": 2844,
+          "sourceType": 1,
+          "eventIndex": 63168,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 36,
+          "contentLength": 270
+        },
+        {
+          "sourceId": 2860,
+          "sourceType": 1,
+          "eventIndex": 63460,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 40,
+          "contentLength": 271
+        },
+        {
+          "sourceId": 2880,
+          "sourceType": 1,
+          "eventIndex": 63919,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 44,
+          "contentLength": 272
+        },
+        {
+          "sourceId": 2892,
+          "sourceType": 1,
+          "eventIndex": 64263,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 48,
+          "contentLength": 273
+        },
+        {
+          "sourceId": 3029,
+          "sourceType": 1,
+          "eventIndex": 67325,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 52,
+          "contentLength": 263
+        },
+        {
+          "sourceId": 3036,
+          "sourceType": 1,
+          "eventIndex": 67549,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 56,
+          "contentLength": 264
+        },
+        {
+          "sourceId": 3041,
+          "sourceType": 1,
+          "eventIndex": 67806,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 60,
+          "contentLength": 265
+        },
+        {
+          "sourceId": 3051,
+          "sourceType": 1,
+          "eventIndex": 68322,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 64,
+          "contentLength": 266
+        },
+        {
+          "sourceId": 3056,
+          "sourceType": 1,
+          "eventIndex": 68425,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 68,
+          "contentLength": 267
+        },
+        {
+          "sourceId": 3103,
+          "sourceType": 1,
+          "eventIndex": 69517,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 72,
+          "contentLength": 268
+        },
+        {
+          "sourceId": 3111,
+          "sourceType": 1,
+          "eventIndex": 69779,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 76,
+          "contentLength": 269
+        },
+        {
+          "sourceId": 3117,
+          "sourceType": 1,
+          "eventIndex": 69919,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 80,
+          "contentLength": 270
+        },
+        {
+          "sourceId": 3122,
+          "sourceType": 1,
+          "eventIndex": 70021,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 84,
+          "contentLength": 271
+        },
+        {
+          "sourceId": 3131,
+          "sourceType": 1,
+          "eventIndex": 70236,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 88,
+          "contentLength": 272
+        },
+        {
+          "sourceId": 3136,
+          "sourceType": 1,
+          "eventIndex": 70309,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 92,
+          "contentLength": 273
+        },
+        {
+          "sourceId": 3194,
+          "sourceType": 1,
+          "eventIndex": 71188,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 96,
+          "contentLength": 274
+        },
+        {
+          "sourceId": 3200,
+          "sourceType": 1,
+          "eventIndex": 71339,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 100,
+          "contentLength": 275
+        },
+        {
+          "sourceId": 3385,
+          "sourceType": 1,
+          "eventIndex": 78430,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 104,
+          "contentLength": 263
+        },
+        {
+          "sourceId": 3392,
+          "sourceType": 1,
+          "eventIndex": 78571,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 108,
+          "contentLength": 264
+        },
+        {
+          "sourceId": 3397,
+          "sourceType": 1,
+          "eventIndex": 78691,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 112,
+          "contentLength": 265
+        },
+        {
+          "sourceId": 3402,
+          "sourceType": 1,
+          "eventIndex": 78797,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 116,
+          "contentLength": 266
+        },
+        {
+          "sourceId": 3407,
+          "sourceType": 1,
+          "eventIndex": 78908,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 120,
+          "contentLength": 267
+        },
+        {
+          "sourceId": 3412,
+          "sourceType": 1,
+          "eventIndex": 78992,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 124,
+          "contentLength": 268
+        },
+        {
+          "sourceId": 3418,
+          "sourceType": 1,
+          "eventIndex": 79127,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 128,
+          "contentLength": 269
+        },
+        {
+          "sourceId": 3423,
+          "sourceType": 1,
+          "eventIndex": 79202,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 132,
+          "contentLength": 270
+        },
+        {
+          "sourceId": 3429,
+          "sourceType": 1,
+          "eventIndex": 79335,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 136,
+          "contentLength": 271
+        },
+        {
+          "sourceId": 3436,
+          "sourceType": 1,
+          "eventIndex": 79553,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 140,
+          "contentLength": 272
+        }
+      ],
+      "length357CandidatesNotIdentifiedAsHome": [
+        {
+          "sourceId": 1013,
+          "sourceType": 1,
+          "eventIndex": 22419,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "quicStreamId": 36,
+          "contentLength": 357
+        }
+      ],
+      "bodyObservations": {
+        "literalOperationNameOccurrences": 0,
+        "literalHomeVariableOccurrences": 0,
+        "sslPlaintextHomeBodyHits": 0,
+        "uploadEventParameterKeys": [
+          "current_position",
+          "is_chunked",
+          "net_error",
+          "total_size"
+        ],
+        "quicSentStreamFrameParameterKeys": [
+          "fin",
+          "length",
+          "offset",
+          "stream_id"
+        ]
+      }
+    }
+  ],
+  "commonOriginalPathfinderPostHeaders": {
+    ":method": "POST",
+    ":authority": "api-partner.spotify.com",
+    ":scheme": "https",
+    ":path": "/pathfinder/v2/query",
+    "origin": "https://xpui.app.spotify.com",
+    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+    "accept": "application/json",
+    "accept-language": "en",
+    "app-platform": "OSX_ARM64",
+    "content-type": "application/json;charset=UTF-8",
+    "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"macOS\"",
+    "spotify-app-version": "1.3.6.1921",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "https://xpui.app.spotify.com/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "priority": "u=1, i",
+    "authorization": "REDACTED_AUTHORIZATION",
+    "client-token": "REDACTED_CLIENT_TOKEN"
+  },
+  "comparison": "Every noncredential/nonlength field and complete field-name set matches retained original Search ExtraInfo.",
+  "limits": [
+    "No Home upload plaintext/operation identity is recoverable from these logged QUIC frame metadata.",
+    "The 357-byte candidate is not called Home. Home body proof must come from independent original producer execution.",
+    "Credentials are explicitly replaced; no original credential, cookie, user identity or credential hash is exported.",
+    "Decoded field presence/values only; serialization/QUIC/TLS fingerprint parity not inferred."
+  ]
+}

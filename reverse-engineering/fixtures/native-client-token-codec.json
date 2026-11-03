@@ -1,0 +1,567 @@
+{
+  "provenance": "Offline client-token framing oracle with synthetic keys, plaintext and IVs.\n\nOriginal proprietary framing code and its unmodified standard crypto dependency\nexecute in Unicorn. Entropy, standard allocation/string imports, and protobuf\nobject/setter/serialization boundaries are controlled. Original storage field\nassignment is captured and serialized by pinned Google protoc using the exact\nrecovered descriptor; CODE_SIZE reflection initialization is not reconstructed.\nNo crypto primitive is decompiled, translated or replaced. No application,\nprofile, account or network is accessed.",
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "encryptEntry": "0x101c6ee2c",
+  "decryptEntry": "0x101c6f224",
+  "standardModeMatches": [
+    "CTR"
+  ],
+  "frameCases": [
+    {
+      "name": "empty",
+      "keyHex": "666978747572652d6861736800",
+      "plaintextHex": "",
+      "ivHex": "000102030405060708090a0b0c0d0e0f",
+      "frameHex": "000102030405060708090a0b0c0d0e0f46abdcc6fbaba8241c51a4ffba55c58420795017",
+      "base64": "AAECAwQFBgcICQoLDA0OD0ar3Mb7q6gkHFGk/7pVxYQgeVAX"
+    },
+    {
+      "name": "unaligned",
+      "keyHex": "666978747572652d6861736800",
+      "plaintextHex": "000102030405060708090a0b0c0d0e0f10",
+      "ivHex": "000102030405060708090a0b0c0d0e0f",
+      "frameHex": "000102030405060708090a0b0c0d0e0fd47abe2e8a0c57d4b585e82a267106b70420dcba35a577186bbb156a356f08aeda1779e4e4",
+      "base64": "AAECAwQFBgcICQoLDA0OD9R6vi6KDFfUtYXoKiZxBrcEINy6NaV3GGu7FWo1bwiu2hd55OQ="
+    },
+    {
+      "name": "multiple blocks",
+      "keyHex": "686173682d686173682d686173682d686173682d686173682d686173682d686173682d686173682d00",
+      "plaintextHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f40",
+      "ivHex": "000102030405060708090a0b0c0d0e0f",
+      "frameHex": "000102030405060708090a0b0c0d0e0f45cfd0923180bf66b790378aa29d7a0fd9cf583a570a11e8e53cea977ef7d746312de61ea1a70b5d68d68afdde4c7e229e6e1ca26a2290360b653e541f1a6d8be8e32e28d3408fea03a268e8bd4baa5a3bbd42acde",
+      "base64": "AAECAwQFBgcICQoLDA0OD0XP0JIxgL9mt5A3iqKdeg/Zz1g6VwoR6OU86pd+99dGMS3mHqGnC11o1or93kx+Ip5uHKJqIpA2C2U+VB8abYvo4y4o00CP6gOiaOi9S6paO71CrN4="
+    },
+    {
+      "name": "counter carry",
+      "keyHex": "666978747572652d6861736800",
+      "plaintextHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f40",
+      "ivHex": "ffffffffffffffffffffffffffffffff",
+      "frameHex": "ffffffffffffffffffffffffffffffff56903bc80af6c71716be44a1aea5a71366febba3898134dfc39d98bfa49440392c65ff4297f6c1a85be7af63351b46bede833cdfeff57415f1016c0a7b1f7b220db85b91582b3638aa07384aa43ba2f538f6750ede",
+      "base64": "/////////////////////1aQO8gK9scXFr5Eoa6lpxNm/rujiYE038OdmL+klEA5LGX/Qpf2wahb569jNRtGvt6DPN/v9XQV8QFsCnsfeyINuFuRWCs2OKoHOEqkO6L1OPZ1Dt4="
+    }
+  ],
+  "storageSerializationBoundary": "Original ccb10 assignment captured; pinned Google protoc uses exact recovered descriptor. Original CODE_SIZE reflection initialization is not reconstructed.",
+  "storageCases": [
+    {
+      "fields": {
+        "token": "",
+        "expiresAtMicroseconds": 0,
+        "refreshAtMicroseconds": 0,
+        "domains": []
+      },
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "ivHex": "000102030405060708090a0b0c0d0e0f",
+      "plaintextHex": "",
+      "encoded": "AAECAwQFBgcICQoLDA0ODzLLurj/7ZgAkx5hAN0bx9kiG/zW"
+    },
+    {
+      "fields": {
+        "token": "synthetic-token",
+        "expiresAtMicroseconds": 3600000199,
+        "refreshAtMicroseconds": 1800000199,
+        "domains": [
+          "spotify.com",
+          "api.fixture.invalid"
+        ]
+      },
+      "clientDataHash": "9b146aef639f6bb909916df89fd63cb3439db86d\u0000",
+      "ivHex": "000102030405060708090a0b0c0d0e0f",
+      "plaintextHex": "0a0f73796e7468657469632d746f6b656e10c7c9ceb40d18c7a5a7da06220d0a0b73706f746966792e636f6d22150a136170692e666978747572652e696e76616c6964",
+      "encoded": "AAECAwQFBgcICQoLDA0OD30it7laAj2HCNc3ucNmOuymgjLr+fVWODlHZkTAsVhfWVrC1MXmHcTJum7Od+aL5fK7XmS4MS6Kr1euH8zpzwEudQM8hWkCzaNVMZgu8IUya05WnEGYGg=="
+    },
+    {
+      "fields": {
+        "token": "opaque+/=\u0000雪",
+        "expiresAtMicroseconds": -1001,
+        "refreshAtMicroseconds": -999,
+        "domains": [
+          "",
+          "SpOtIfY.com",
+          ".spotify.com",
+          ""
+        ]
+      },
+      "clientDataHash": "f458aa263d3940d2dbc73a4a287bd16b8eba46cc\u0000",
+      "ivHex": "ffffffffffffffffffffffffffffffff",
+      "plaintextHex": "0a0d6f70617175652b2f3d00e99baa1097f8ffffffffffffff011899f8ffffffffffffff012200220d0a0b53704f744966592e636f6d220e0a0c2e73706f746966792e636f6d2200",
+      "encoded": "/////////////////////76HoZyVZ+yka+epLYlpCOtil2yNvRYsRMcBZXsF7URjFxMgPYrdAOW2YpRedV3kGuFZ7irL0zttOd/loWG59Wrv5t9ZVqiYpDbHc+azvwRI1uRWXxUNT+FGA506"
+    },
+    {
+      "fields": {
+        "token": "long-tokenlong-tokenlong-tokenlong-tokenlong-tokenlong-tokenlong-tokenlong-tokenlong-tokenlong-tokenlong-tokenlong-token",
+        "expiresAtMicroseconds": 9223372036854775807,
+        "refreshAtMicroseconds": -9223372036854775808,
+        "domains": [
+          "first.invalidfirst.invalidfirst.invalid",
+          "",
+          "repeat",
+          "repeat"
+        ]
+      },
+      "clientDataHash": "80a930575197609364b9434a69ef81ff1b23fb35\u0000",
+      "ivHex": "000102030405060708090a0b0c0d0e0f",
+      "plaintextHex": "0a786c6f6e672d746f6b656e6c6f6e672d746f6b656e6c6f6e672d746f6b656e6c6f6e672d746f6b656e6c6f6e672d746f6b656e6c6f6e672d746f6b656e6c6f6e672d746f6b656e6c6f6e672d746f6b656e6c6f6e672d746f6b656e6c6f6e672d746f6b656e6c6f6e672d746f6b656e6c6f6e672d746f6b656e10ffffffffffffffff7f188080808080808080800122290a2766697273742e696e76616c696466697273742e696e76616c696466697273742e696e76616c6964220022080a0672657065617422080a06726570656174",
+      "encoded": "AAECAwQFBgcICQoLDA0ODyQC2Z47f9AAz1gS5OrvC+18IY/8YiwVtBUjqTt7i3xlc2YiTWW+m7UT13Qz3n0zztLpNwY3PUkjNcOEjPLc4MRBH+oNO6wEKGJiAxyz4M9IXQiofgLJtgg/OGpHF9tvSohmJohigaR30qCZKaQg26CvOi1WYPZ1Xk4ZW2rwnlzEHQp1isvWWsP3S7RzVTXyvp1QRFjfmxQKwP5OzNVASlZvQfcwDNWI7Pe3IOmCOd4U6+jLMLrNzB80wJlXyHvhktNFJbm7a8UGvjEQktdiuAfwEP407eTsIgdHt+wc4kiVRTyYIw=="
+    },
+    {
+      "fields": {
+        "token": "ab",
+        "expiresAtMicroseconds": 0,
+        "refreshAtMicroseconds": 0,
+        "domains": []
+      },
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "ivHex": "000102030405060708090a0b0c0d0e0f",
+      "plaintextHex": "0a026162",
+      "encoded": "AAECAwQFBgcICQoLDA0OD5sStG3ZBBbhpoX7NP3GI9REv3Qb2UYOZA=="
+    }
+  ],
+  "decodeCases": [
+    {
+      "name": "canonical padding",
+      "encoded": "AAECAwQFBgcICQoLDA0OD5sStG3ZBBbhpoX7NP3GI9REv3Qb2UYOZA==",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": true,
+      "standardProtobufAccepted": true,
+      "accepted": true,
+      "fields": {
+        "token": "ab",
+        "expiresAtMicroseconds": 0,
+        "refreshAtMicroseconds": 0,
+        "domains": []
+      }
+    },
+    {
+      "name": "one padding marker",
+      "encoded": "AAECAwQFBgcICQoLDA0OD5sStG3ZBBbhpoX7NP3GI9REv3Qb2UYOZA=",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": true,
+      "standardProtobufAccepted": true,
+      "accepted": true,
+      "fields": {
+        "token": "ab",
+        "expiresAtMicroseconds": 0,
+        "refreshAtMicroseconds": 0,
+        "domains": []
+      }
+    },
+    {
+      "name": "required padding missing",
+      "encoded": "AAECAwQFBgcICQoLDA0OD5sStG3ZBBbhpoX7NP3GI9REv3Qb2UYOZA",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": false,
+      "nativeFrameAccepted": false,
+      "standardProtobufAccepted": false,
+      "accepted": false
+    },
+    {
+      "name": "leading whitespace",
+      "encoded": " AAECAwQFBgcICQoLDA0OD5sStG3ZBBbhpoX7NP3GI9REv3Qb2UYOZA==",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": false,
+      "nativeFrameAccepted": false,
+      "standardProtobufAccepted": false,
+      "accepted": false
+    },
+    {
+      "name": "interior newline",
+      "encoded": "AAEC\nAwQFBgcICQoLDA0OD5sStG3ZBBbhpoX7NP3GI9REv3Qb2UYOZA==",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": false,
+      "nativeFrameAccepted": false,
+      "standardProtobufAccepted": false,
+      "accepted": false
+    },
+    {
+      "name": "trailing data after padding",
+      "encoded": "AAECAwQFBgcICQoLDA0OD5sStG3ZBBbhpoX7NP3GI9REv3Qb2UYOZA==ignored!",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": true,
+      "standardProtobufAccepted": true,
+      "accepted": true,
+      "fields": {
+        "token": "ab",
+        "expiresAtMicroseconds": 0,
+        "refreshAtMicroseconds": 0,
+        "domains": []
+      }
+    },
+    {
+      "name": "trailing NUL and Unicode after padding",
+      "encoded": "AAECAwQFBgcICQoLDA0OD5sStG3ZBBbhpoX7NP3GI9REv3Qb2UYOZA==\u0000ignored-雪",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": true,
+      "standardProtobufAccepted": true,
+      "accepted": true,
+      "fields": {
+        "token": "ab",
+        "expiresAtMicroseconds": 0,
+        "refreshAtMicroseconds": 0,
+        "domains": []
+      }
+    },
+    {
+      "name": "excess padding",
+      "encoded": "AAECAwQFBgcICQoLDA0OD5sStG3ZBBbhpoX7NP3GI9REv3Qb2UYOZA======",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": true,
+      "standardProtobufAccepted": true,
+      "accepted": true,
+      "fields": {
+        "token": "ab",
+        "expiresAtMicroseconds": 0,
+        "refreshAtMicroseconds": 0,
+        "domains": []
+      }
+    },
+    {
+      "name": "percent-escaped padding",
+      "encoded": "AAECAwQFBgcICQoLDA0OD5sStG3ZBBbhpoX7NP3GI9REv3Qb2UYOZA%3D%3D",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": false,
+      "nativeFrameAccepted": false,
+      "standardProtobufAccepted": false,
+      "accepted": false
+    },
+    {
+      "name": "nonzero unused tail bits",
+      "encoded": "AAECAwQFBgcICQoLDA0OD5sStG3ZBBbhpoX7NP3GI9REv3Qb2UYOZB==",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": true,
+      "standardProtobufAccepted": true,
+      "accepted": true,
+      "fields": {
+        "token": "ab",
+        "expiresAtMicroseconds": 0,
+        "refreshAtMicroseconds": 0,
+        "domains": []
+      }
+    },
+    {
+      "name": "URL-safe alphabet rejected",
+      "encoded": "AAECAwQFBgcICQoLDA0ODzLLurj_7ZgAkx5hAN0bx9kiG_zW",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": false,
+      "nativeFrameAccepted": false,
+      "standardProtobufAccepted": false,
+      "accepted": false
+    },
+    {
+      "name": "complete unpadded quartets",
+      "encoded": "AAECAwQFBgcICQoLDA0ODzLLurj/7ZgAkx5hAN0bx9kiG/zW",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": true,
+      "standardProtobufAccepted": true,
+      "accepted": true,
+      "fields": {
+        "token": "",
+        "expiresAtMicroseconds": 0,
+        "refreshAtMicroseconds": 0,
+        "domains": []
+      }
+    },
+    {
+      "name": "padding after complete quartets rejected",
+      "encoded": "AAECAwQFBgcICQoLDA0ODzLLurj/7ZgAkx5hAN0bx9kiG/zW=",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": false,
+      "nativeFrameAccepted": false,
+      "standardProtobufAccepted": false,
+      "accepted": false
+    },
+    {
+      "name": "newline after unpadded quartets rejected",
+      "encoded": "AAECAwQFBgcICQoLDA0ODzLLurj/7ZgAkx5hAN0bx9kiG/zW\n",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": false,
+      "nativeFrameAccepted": false,
+      "standardProtobufAccepted": false,
+      "accepted": false
+    },
+    {
+      "name": "wrong key",
+      "encoded": "AAECAwQFBgcICQoLDA0OD5sStG3ZBBbhpoX7NP3GI9REv3Qb2UYOZA==",
+      "clientDataHash": "wrong-13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": false,
+      "standardProtobufAccepted": false,
+      "accepted": false
+    },
+    {
+      "name": "HMAC zero-padded key equivalence",
+      "encoded": "AAECAwQFBgcICQoLDA0OD5sStG3ZBBbhpoX7NP3GI9REv3Qb2UYOZA==",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": true,
+      "standardProtobufAccepted": true,
+      "accepted": true,
+      "fields": {
+        "token": "ab",
+        "expiresAtMicroseconds": 0,
+        "refreshAtMicroseconds": 0,
+        "domains": []
+      }
+    },
+    {
+      "name": "first MAC byte differs",
+      "encoded": "AAECAwQFBgcICQoLDA0OD5sStG3YBBbhpoX7NP3GI9REv3Qb2UYOZA==",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": false,
+      "standardProtobufAccepted": false,
+      "accepted": false
+    },
+    {
+      "name": "last MAC byte differs",
+      "encoded": "AAECAwQFBgcICQoLDA0OD5sStG3ZBBbhpoX7NP3GI9REv3Qb2UYOZQ==",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": false,
+      "standardProtobufAccepted": false,
+      "accepted": false
+    },
+    {
+      "name": "ciphertext differs",
+      "encoded": "AAECAwQFBgcICQoLDA0OD5oStG3ZBBbhpoX7NP3GI9REv3Qb2UYOZA==",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": false,
+      "standardProtobufAccepted": false,
+      "accepted": false
+    },
+    {
+      "name": "IV excluded from MAC for empty payload",
+      "encoded": "AQECAwQFBgcICQoLDA0ODzLLurj/7ZgAkx5hAN0bx9kiG/zW",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": true,
+      "standardProtobufAccepted": true,
+      "accepted": true,
+      "fields": {
+        "token": "",
+        "expiresAtMicroseconds": 0,
+        "refreshAtMicroseconds": 0,
+        "domains": []
+      }
+    },
+    {
+      "name": "frame shorter than minimum 0",
+      "encoded": "",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": false,
+      "standardProtobufAccepted": false,
+      "accepted": false
+    },
+    {
+      "name": "frame shorter than minimum 1",
+      "encoded": "AA==",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": false,
+      "standardProtobufAccepted": false,
+      "accepted": false
+    },
+    {
+      "name": "frame shorter than minimum 15",
+      "encoded": "AAAAAAAAAAAAAAAAAAAA",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": false,
+      "standardProtobufAccepted": false,
+      "accepted": false
+    },
+    {
+      "name": "frame shorter than minimum 16",
+      "encoded": "AAAAAAAAAAAAAAAAAAAAAA==",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": false,
+      "standardProtobufAccepted": false,
+      "accepted": false
+    },
+    {
+      "name": "frame shorter than minimum 20",
+      "encoded": "AAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": false,
+      "standardProtobufAccepted": false,
+      "accepted": false
+    },
+    {
+      "name": "frame shorter than minimum 35",
+      "encoded": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": false,
+      "standardProtobufAccepted": false,
+      "accepted": false
+    },
+    {
+      "name": "explicit empty token field",
+      "encoded": "AAECAwQFBgcICQoLDA0OD5sQpS5hRR6gWRjK1Q6QEVjiYbKptVo=",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": true,
+      "standardProtobufAccepted": true,
+      "accepted": true,
+      "fields": {
+        "token": "",
+        "expiresAtMicroseconds": 0,
+        "refreshAtMicroseconds": 0,
+        "domains": []
+      }
+    },
+    {
+      "name": "unknown field retained by parser",
+      "encoded": "AAECAwQFBgcICQoLDA0OD2kX1C4l5LzfCETPj2dD3z++H8u2Whae",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": true,
+      "standardProtobufAccepted": true,
+      "accepted": true,
+      "fields": {
+        "token": "",
+        "expiresAtMicroseconds": 0,
+        "refreshAtMicroseconds": 0,
+        "domains": []
+      }
+    },
+    {
+      "name": "duplicate scalar uses last value",
+      "encoded": "AAECAwQFBgcICQoLDA0OD5sRtAUI4MY0nOdxoZEqRel0FUZc/ovXzMim",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": true,
+      "standardProtobufAccepted": true,
+      "accepted": true,
+      "fields": {
+        "token": "b",
+        "expiresAtMicroseconds": 0,
+        "refreshAtMicroseconds": 0,
+        "domains": []
+      }
+    },
+    {
+      "name": "truncated string",
+      "encoded": "AAECAwQFBgcICQoLDA0OD5sStCQUImLu8uZydk/EfGMC+6Fss5cT",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": true,
+      "standardProtobufAccepted": false,
+      "accepted": false
+    },
+    {
+      "name": "invalid UTF-8 token",
+      "encoded": "AAECAwQFBgcICQoLDA0OD5sRKmYS2Fdq0vVNNxUSP/XPngHzUfvh",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": true,
+      "standardProtobufAccepted": false,
+      "accepted": false
+    },
+    {
+      "name": "invalid UTF-8 domain",
+      "encoded": "AAECAwQFBgcICQoLDA0OD7MT3w72Mr/3W1emHE7C8P0nYeLO/on67lo=",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": true,
+      "standardProtobufAccepted": false,
+      "accepted": false
+    },
+    {
+      "name": "invalid earlier duplicate string",
+      "encoded": "AAECAwQFBgcICQoLDA0OD5sRKgUI41I8AULpe+KU4QbF0rnpkMBNBEo/",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": true,
+      "standardProtobufAccepted": false,
+      "accepted": false
+    },
+    {
+      "name": "unknown opaque bytes are not strings",
+      "encoded": "AAECAwQFBgcICQoLDA0OD7sRKnd2kp4Wrvo1/CbE5SacxyYACcoG",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": true,
+      "standardProtobufAccepted": true,
+      "accepted": true,
+      "fields": {
+        "token": "",
+        "expiresAtMicroseconds": 0,
+        "refreshAtMicroseconds": 0,
+        "domains": []
+      }
+    },
+    {
+      "name": "zero protobuf tag",
+      "encoded": "AAECAwQFBgcICQoLDA0OD5EobS1deD0KUVPbOTvgXFm443QoIA==",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": true,
+      "standardProtobufAccepted": false,
+      "accepted": false
+    },
+    {
+      "name": "unterminated varint",
+      "encoded": "AAECAwQFBgcICQoLDA0OD4GQ8NeQA39JPUy7evJgCZf2IY376/w=",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": true,
+      "standardProtobufAccepted": false,
+      "accepted": false
+    },
+    {
+      "name": "negative int32 string length",
+      "encoded": "AAECAwQFBgcICQoLDA0OD5vvKvD2jQv9+Y6c1YGZv3SuA/HZiIGQBWIp",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": true,
+      "standardProtobufAccepted": false,
+      "accepted": false
+    },
+    {
+      "name": "known field with unknown wire type",
+      "encoded": "AAECAwQFBgcICQoLDA0OD4QQ1Q8JQZBbIEabxhVo9mEwD9AeofEWWq4=",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": true,
+      "standardProtobufAccepted": true,
+      "accepted": true,
+      "fields": {
+        "token": "",
+        "expiresAtMicroseconds": 0,
+        "refreshAtMicroseconds": 0,
+        "domains": []
+      }
+    },
+    {
+      "name": "nonminimal varint",
+      "encoded": "AAECAwQFBgcICQoLDA0OD4GR1W8NWvIRyKa76TzmVkLHIaPJ8rd3",
+      "clientDataHash": "13d5ffdf117dc1b553d7072ca80f4f26313a387d\u0000",
+      "nativeBase64Accepted": true,
+      "nativeFrameAccepted": true,
+      "standardProtobufAccepted": true,
+      "accepted": true,
+      "fields": {
+        "token": "",
+        "expiresAtMicroseconds": 1,
+        "refreshAtMicroseconds": 0,
+        "domains": []
+      }
+    }
+  ],
+  "descriptorSetSha256": "d261430beef085bb54610996ed1260dc457b8ee33ababb99a2bdde0a7e41836e",
+  "protobufToolchain": {
+    "protocVersion": "36.2",
+    "protocPluginVersion": "25.1.0"
+  }
+}

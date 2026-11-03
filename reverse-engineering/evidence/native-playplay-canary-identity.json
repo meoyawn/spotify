@@ -1,0 +1,474 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "method": "Recover original canary identity and predicate inputs without sending a request.\n\nOriginal proprietary literals, predicate arithmetic, digest wrapper, hex writer\nand canary protobuf producer execute unchanged. Synthetic optional properties\nand detector results stop at explicit owner boundaries. The retained original\nupload is read only to compare its outgoing path/body; private paths, headers,\nresponse bytes, account/profile data and content keys are never exported.\n",
+  "capture": {
+    "path": ".local/original-license-upload-http2-netlog.json",
+    "sha256": "7ad17ebaf96eda74ecd2c0cd822370287f4aed26310a49faa930cdda92fd64fa"
+  },
+  "retainedOriginalExports": [
+    ".local/rea-session/native-playplay-encoded-endpoint-constructors.json",
+    ".local/rea-session/native-playplay-canary-owner-inputs.json",
+    ".local/rea-session/native-playplay-canary-enable-and-response-boundaries.json",
+    ".local/rea-session/native-playplay-canary-cadence-and-music-completion-owner.json"
+  ],
+  "owner": "0x100488160",
+  "executedIdentitySlice": {
+    "start": "0x10048822c",
+    "stopAtOriginalPathSetter": "0x101c1fbd8",
+    "originalSetterCall": "0x100488618",
+    "sha256ThroughSetterCall": "c8d94a4bf128f51122afa9bc17e74182d5b2a2f1a647f0dbd544126dde77e43b"
+  },
+  "literalInitializer": "0x101d84a4c",
+  "literalDecoder": "0x101d84a58",
+  "decodedLiterals": [
+    {
+      "cipherPointer": "0x10218aa26",
+      "seed": "9d76122c",
+      "originalDecoded": "playplay/v1/key/"
+    },
+    {
+      "cipherPointer": "0x10218aa3c",
+      "seed": "f765cf3e",
+      "originalDecoded": "mod"
+    },
+    {
+      "cipherPointer": "0x10218a9dd",
+      "seed": "219b3cf7",
+      "originalDecoded": "fdks-engange"
+    }
+  ],
+  "digest": {
+    "originalEntry": "0x101c89d60",
+    "execution": "Entire original digest entry and dependencies execute; no digest substitution.",
+    "standardIdentity": "SHA-1; unchanged original output matches Python standard hashlib.sha1 on the recorded inputs.",
+    "scope": "The four recorded inputs prove the wrapper correspondence needed here; no standard primitive is decompiled or reimplemented.",
+    "originalFirst256BytesSha256": "608d48cafe439bad97d794f6d38806d94873156bb7050eeb2afeb3502c6a373f",
+    "cases": [
+      {
+        "inputAscii": "",
+        "matchesPublicSHA1": true
+      },
+      {
+        "inputAscii": "abc",
+        "matchesPublicSHA1": true
+      },
+      {
+        "inputAscii": "ok1793168016",
+        "matchesPublicSHA1": true
+      },
+      {
+        "inputAscii": "mod1793168016",
+        "matchesPublicSHA1": true
+      }
+    ]
+  },
+  "identityRule": "lowercase_hex_20(SHA1((predicate != 0 && (passive & 1) == 0 ? ASCII ok : decoded mod) + signed_decimal(unix_seconds)))",
+  "identityCases": [
+    {
+      "sourceId": 2204,
+      "timestampSeconds": 1793168014,
+      "injectedPredicateResult": 0,
+      "injectedPassiveResult": 0,
+      "originalDigestInputs": [
+        "mod1793168014"
+      ],
+      "privateCapturedPathMatches": false
+    },
+    {
+      "sourceId": 2204,
+      "timestampSeconds": 1793168014,
+      "injectedPredicateResult": 1,
+      "injectedPassiveResult": 0,
+      "originalDigestInputs": [
+        "ok1793168014"
+      ],
+      "privateCapturedPathMatches": false
+    },
+    {
+      "sourceId": 2204,
+      "timestampSeconds": 1793168014,
+      "injectedPredicateResult": 1,
+      "injectedPassiveResult": 1,
+      "originalDigestInputs": [
+        "mod1793168014"
+      ],
+      "privateCapturedPathMatches": false
+    },
+    {
+      "sourceId": 2442,
+      "timestampSeconds": 1793168016,
+      "injectedPredicateResult": 0,
+      "injectedPassiveResult": 0,
+      "originalDigestInputs": [
+        "mod1793168016"
+      ],
+      "privateCapturedPathMatches": false
+    },
+    {
+      "sourceId": 2442,
+      "timestampSeconds": 1793168016,
+      "injectedPredicateResult": 1,
+      "injectedPassiveResult": 0,
+      "originalDigestInputs": [
+        "ok1793168016"
+      ],
+      "privateCapturedPathMatches": true
+    },
+    {
+      "sourceId": 2442,
+      "timestampSeconds": 1793168016,
+      "injectedPredicateResult": 1,
+      "injectedPassiveResult": 1,
+      "originalDigestInputs": [
+        "mod1793168016"
+      ],
+      "privateCapturedPathMatches": false
+    }
+  ],
+  "canaryBody": {
+    "entry": "0x100488d98",
+    "timestampSeconds": 1793168016,
+    "sizeProcedure": "0x1004d7164",
+    "serializeProcedure": "0x1004d6d40",
+    "length": 30,
+    "sha256": "17275c20205f936098cef86c25a9a42c8187bb212c9c2a7a16b1682fac5ae2e4",
+    "completePrivateCaptured2442BodyMatches": true
+  },
+  "predicate": {
+    "entry": "0x100486f34",
+    "propertyDefaultHelper": "0x100486e3c",
+    "propertyProviderDispatch": "0x101d63344 -> **owner provider vtable slot0x18",
+    "rule": "Empty strider-key succeeds. Otherwise compare the complete key with min(key byte length,40) prefix of lowercase SHA1(ads + type + (key byte length == 11 ? player-license : empty) + feature-set-id-masked).",
+    "cases": [
+      {
+        "properties": {},
+        "originalResult": 1,
+        "propertyReads": [
+          "ads",
+          "type",
+          "player-license",
+          "feature-set-id-masked",
+          "strider-key"
+        ],
+        "defaults": [
+          {
+            "key": "ads",
+            "default": "1"
+          },
+          {
+            "key": "type",
+            "default": ""
+          },
+          {
+            "key": "player-license",
+            "default": ""
+          },
+          {
+            "key": "feature-set-id-masked",
+            "default": ""
+          },
+          {
+            "key": "strider-key",
+            "default": ""
+          }
+        ],
+        "originalDigestInputs": [
+          "1"
+        ]
+      },
+      {
+        "properties": {
+          "ads": "A",
+          "type": "T",
+          "player-license": "L",
+          "feature-set-id-masked": "F"
+        },
+        "originalResult": 1,
+        "propertyReads": [
+          "ads",
+          "type",
+          "player-license",
+          "feature-set-id-masked",
+          "strider-key"
+        ],
+        "defaults": [
+          {
+            "key": "ads",
+            "default": "1"
+          },
+          {
+            "key": "type",
+            "default": ""
+          },
+          {
+            "key": "player-license",
+            "default": ""
+          },
+          {
+            "key": "feature-set-id-masked",
+            "default": ""
+          },
+          {
+            "key": "strider-key",
+            "default": ""
+          }
+        ],
+        "originalDigestInputs": [
+          "ATF"
+        ]
+      },
+      {
+        "properties": {
+          "ads": "A",
+          "type": "T",
+          "player-license": "L",
+          "feature-set-id-masked": "F",
+          "strider-key": "02f3473c112"
+        },
+        "originalResult": 1,
+        "propertyReads": [
+          "ads",
+          "type",
+          "player-license",
+          "feature-set-id-masked",
+          "strider-key"
+        ],
+        "defaults": [
+          {
+            "key": "ads",
+            "default": "1"
+          },
+          {
+            "key": "type",
+            "default": ""
+          },
+          {
+            "key": "player-license",
+            "default": ""
+          },
+          {
+            "key": "feature-set-id-masked",
+            "default": ""
+          },
+          {
+            "key": "strider-key",
+            "default": ""
+          }
+        ],
+        "originalDigestInputs": [
+          "ATLF"
+        ]
+      },
+      {
+        "properties": {
+          "ads": "A",
+          "type": "T",
+          "player-license": "L",
+          "feature-set-id-masked": "F",
+          "strider-key": "00000000000"
+        },
+        "originalResult": 0,
+        "propertyReads": [
+          "ads",
+          "type",
+          "player-license",
+          "feature-set-id-masked",
+          "strider-key"
+        ],
+        "defaults": [
+          {
+            "key": "ads",
+            "default": "1"
+          },
+          {
+            "key": "type",
+            "default": ""
+          },
+          {
+            "key": "player-license",
+            "default": ""
+          },
+          {
+            "key": "feature-set-id-masked",
+            "default": ""
+          },
+          {
+            "key": "strider-key",
+            "default": ""
+          }
+        ],
+        "originalDigestInputs": [
+          "ATLF"
+        ]
+      },
+      {
+        "properties": {
+          "ads": "A",
+          "type": "T",
+          "player-license": "L",
+          "feature-set-id-masked": "F",
+          "strider-key": "e1a5aa204669da7b70f14e825a5b78a4663c8490"
+        },
+        "originalResult": 1,
+        "propertyReads": [
+          "ads",
+          "type",
+          "player-license",
+          "feature-set-id-masked",
+          "strider-key"
+        ],
+        "defaults": [
+          {
+            "key": "ads",
+            "default": "1"
+          },
+          {
+            "key": "type",
+            "default": ""
+          },
+          {
+            "key": "player-license",
+            "default": ""
+          },
+          {
+            "key": "feature-set-id-masked",
+            "default": ""
+          },
+          {
+            "key": "strider-key",
+            "default": ""
+          }
+        ],
+        "originalDigestInputs": [
+          "ATF"
+        ]
+      },
+      {
+        "properties": {
+          "ads": "A",
+          "type": "T",
+          "player-license": "L",
+          "feature-set-id-masked": "F",
+          "strider-key": "e1a5aa204669da7b70f14e825a5b78a4663c8490x"
+        },
+        "originalResult": 0,
+        "propertyReads": [
+          "ads",
+          "type",
+          "player-license",
+          "feature-set-id-masked",
+          "strider-key"
+        ],
+        "defaults": [
+          {
+            "key": "ads",
+            "default": "1"
+          },
+          {
+            "key": "type",
+            "default": ""
+          },
+          {
+            "key": "player-license",
+            "default": ""
+          },
+          {
+            "key": "feature-set-id-masked",
+            "default": ""
+          },
+          {
+            "key": "strider-key",
+            "default": ""
+          }
+        ],
+        "originalDigestInputs": [
+          "ATF"
+        ]
+      }
+    ]
+  },
+  "passive": {
+    "entry": "0x100487b48",
+    "propertyBooleanHelper": "0x1000698f0",
+    "property": "fdks-engange",
+    "absentDefault": false,
+    "probeInputs": {
+      "0x1004d7b5c": "Original dyld image names/count; no host images read.",
+      "0x1004d7eb8": "Original mach_vm_region_recurse records; no host memory scan executed.",
+      "0x1004d7f78": "Original task_threads/pthread names; no host thread scan executed."
+    },
+    "cachedProbeResults": "0x1026b53a0, 0x1026b53a4; initialized to synthetic zero for each recorded case.",
+    "sourceObservation": "This installed debug build returns0 on every ordinary return, including its fixed passive-detection diagnostic path; detectors are not enforced here.",
+    "cases": [
+      {
+        "properties": {},
+        "injectedProbeResults": {
+          "0x1004d7b5c": 1,
+          "0x1004d7eb8": 1,
+          "0x1004d7f78": 1
+        },
+        "originalResult": 0,
+        "propertyReads": [
+          "fdks-engange"
+        ],
+        "actualProbeCalls": [
+          "0x1004d7b5c",
+          "0x1004d7eb8",
+          "0x1004d7f78"
+        ],
+        "diagnostic": null
+      },
+      {
+        "properties": {
+          "fdks-engange": "1"
+        },
+        "injectedProbeResults": {
+          "0x1004d7b5c": 1,
+          "0x1004d7eb8": 1,
+          "0x1004d7f78": 1
+        },
+        "originalResult": 0,
+        "propertyReads": [
+          "fdks-engange"
+        ],
+        "actualProbeCalls": [],
+        "diagnostic": null
+      },
+      {
+        "properties": {},
+        "injectedProbeResults": {
+          "0x1004d7b5c": 2,
+          "0x1004d7eb8": 1,
+          "0x1004d7f78": 1
+        },
+        "originalResult": 0,
+        "propertyReads": [
+          "fdks-engange"
+        ],
+        "actualProbeCalls": [
+          "0x1004d7b5c",
+          "0x1004d7f78"
+        ],
+        "diagnostic": "frida_detect: passive detection triggered (debug build, not enforced)"
+      }
+    ]
+  },
+  "standardSubstitutions": [
+    "Pinned ResolverOracle libc/libc++ allocation, memory, strings and signed decimal to_string; no sender.",
+    "Public protobuf ArenaStringPtr storage; original canary assignments, version/token getters, schema size/writer execute.",
+    "Diagnostic fwrite captures fixed literal instead of writing host stderr."
+  ],
+  "explicitOwnerSubstitutions": [
+    "Identity slice injects predicate return values, not their live inputs.",
+    "Predicate/passive owners receive synthetic optional-property results at101d63344.",
+    "Passive cases inject the three detector results; they do not inspect this machine."
+  ],
+  "limits": [
+    "No live request, canary admission, runtime integration, account/profile read or app process.",
+    "Original captured source2442 matches canary path and complete body; no captured caller stack or scheduling trace exists.",
+    "Captured matching ok branch constrains predicate outcomes, not exact captured property values.",
+    "Real property-provider provenance/updates and live detector inputs remain upstream responsibilities.",
+    "The selected identity slice supplies saved Unix seconds; clock acquisition, cadence and owner lifecycle are retained source facts, not exercised scheduling.",
+    "Private captured paths, headers, tokens and response/content-key bytes are not exported."
+  ]
+}

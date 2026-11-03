@@ -1,0 +1,24 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: 2c8dc874fc607a791b0350c4359461f941208fa8a783065f0c64882d16140edd
+
+syntax = "proto3";
+
+package spotify.download.proto;
+
+option optimize_for = CODE_SIZE;
+
+message StorageResolveResponse {
+  .spotify.download.proto.StorageResolveResponse.Result result = 1;
+
+  repeated string cdnurl = 2;
+
+  bytes fileid = 4;
+
+  enum Result {
+    CDN = 0;
+
+    STORAGE = 1;
+
+    RESTRICTED = 3;
+  }
+}

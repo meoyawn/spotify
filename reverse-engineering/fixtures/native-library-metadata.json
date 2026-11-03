@@ -1,0 +1,576 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "method": "Execute original album/artist base metadata request production offline.\n\nExplicit URI vectors feed original 0x101cd58b4 and 0x101cd5f0c. The original\nURI-kind dispatch, query collection, cache-miss iterator, batch builder,\nprotobuf serializer, gzip and HTTP envelope execute unchanged. Abstract cache,\nexecutor and sender interfaces are inert. No profile or live request is used.\n",
+  "sourceCapture": {
+    "path": ".local/artist-recovery-20261029/netlog.json",
+    "sha256": "ac67b8905db2d5555227e7108571e6c10ea56713931ca11482f37c47e07115c9",
+    "originalRequestFields": {
+      "eventIndex": 22315,
+      "sourceId": 1207,
+      "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+      "method": "POST",
+      "path": "/extended-metadata/v0/extended-metadata",
+      "client-feature-id": "your_library",
+      "content-type": "application/protobuf",
+      "accept": "application/protobuf"
+    }
+  },
+  "originalRequestHeaders": {
+    ":method": "POST",
+    ":authority": "guc3-spclient.spotify.com",
+    ":scheme": "https",
+    ":path": "/extended-metadata/v0/extended-metadata",
+    "content-length": "1418",
+    "accept": "application/protobuf",
+    "accept-language": "en",
+    "app-platform": "OSX_ARM64",
+    "authorization": "Bearer fixture-access-token",
+    "content-encoding": "gzip",
+    "content-type": "application/protobuf",
+    "spotify-app-version": "130601921",
+    "time-zone": "Europe/Moscow",
+    "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+    "client-feature-id": "your_library",
+    "client-token": "fixture-client-token",
+    "origin": "https://guc3-spclient.spotify.com",
+    "sec-fetch-site": "same-origin",
+    "sec-fetch-mode": "no-cors",
+    "sec-fetch-dest": "empty",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "priority": "u=4, i"
+  },
+  "ranges": [
+    {
+      "start": "0x101cd58b4",
+      "endExclusive": "0x101cd5f0c",
+      "sha256": "afd45aa4b2481e48a0545b69c3a067eb69f70378fdfe60713831cb6e7445b58a"
+    },
+    {
+      "start": "0x101cd5f0c",
+      "endExclusive": "0x101cd64a8",
+      "sha256": "e003e3258b35c1feaa8b02241f95f126e473243b185321039d845c2920fe959b"
+    },
+    {
+      "start": "0x10061230c",
+      "endExclusive": "0x100612664",
+      "sha256": "6fc93a7227bf87602f0831a09975f69bd4f8cdaa6f37fa53cda22fad673db1fe"
+    }
+  ],
+  "substitutedInterfaces": [
+    "Explicit unique parsed album/artist vector, your_library operation, country/catalogue and association flag false feed the unchanged original base metadata state constructor.",
+    "Inherited original missing-cache iterator, batching, HTTP builders and inert executor/weak-self interfaces from the playlist metadata oracle.",
+    "The captured live original request independently establishes your_library as the actual native metadata feature owner."
+  ],
+  "standardProviders": [
+    "Inherited pinned libc/libc++ memory, strings, decimal conversion, one-thread mutexes/TLS and protobuf bootstrap.",
+    "Host libc snprintf over original album/artist format and arguments; original URI-kind dispatch and codecs execute unchanged.",
+    "Original compiled protobuf serialization and bundled standard zlib compression execute unchanged."
+  ],
+  "limits": [
+    "Fresh base album/artist metadata, one batch of 1..50 identities, absent matching cache, explicit country/catalogue only.",
+    "No complete native YourLibrary scheduling, decoration traits, filters, ordering, live invalidation, entitlement or sidecar policy is inferred.",
+    "Synthetic owner template and explicit origin; final authenticated application headers and transport remain independently verified boundaries."
+  ],
+  "cases": [
+    {
+      "uris": [
+        "spotify:album:0000000000000000000000"
+      ],
+      "country": "ZZ",
+      "catalogue": "free",
+      "queryInsertions": [
+        {
+          "kind": 9,
+          "uri": "spotify:album:0000000000000000000000"
+        }
+      ],
+      "submissionOperation": "your_library",
+      "request": {
+        "method": "POST",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Content-Type": "application/protobuf",
+          "Accept": "application/protobuf",
+          "client-feature-id": "your_library"
+        },
+        "bodyHex": "0a0a0a025a5a120466726565122a0a2473706f746966793a616c62756d3a3030303030303030303030303030303030303030303012020809",
+        "requestName": "cpp-extended_metadata-extended_metadata_impl.your_library",
+        "rawUrl": "https://spclient.example.test:443/extended-metadata/v0/extended-metadata",
+        "orderedHeaders": [
+          [
+            "User-Agent",
+            "Spotify/independent-offline-fixture"
+          ],
+          [
+            "Content-Type",
+            "application/protobuf"
+          ],
+          [
+            "Accept",
+            "application/protobuf"
+          ],
+          [
+            "client-feature-id",
+            "your_library"
+          ]
+        ]
+      }
+    },
+    {
+      "uris": [
+        "spotify:artist:0000000000000000000000"
+      ],
+      "country": "",
+      "catalogue": "",
+      "queryInsertions": [
+        {
+          "kind": 8,
+          "uri": "spotify:artist:0000000000000000000000"
+        }
+      ],
+      "submissionOperation": "your_library",
+      "request": {
+        "method": "POST",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Content-Type": "application/protobuf",
+          "Accept": "application/protobuf",
+          "client-feature-id": "your_library"
+        },
+        "bodyHex": "0a00122b0a2573706f746966793a6172746973743a3030303030303030303030303030303030303030303012020808",
+        "requestName": "cpp-extended_metadata-extended_metadata_impl.your_library",
+        "rawUrl": "https://spclient.example.test:443/extended-metadata/v0/extended-metadata",
+        "orderedHeaders": [
+          [
+            "User-Agent",
+            "Spotify/independent-offline-fixture"
+          ],
+          [
+            "Content-Type",
+            "application/protobuf"
+          ],
+          [
+            "Accept",
+            "application/protobuf"
+          ],
+          [
+            "client-feature-id",
+            "your_library"
+          ]
+        ]
+      }
+    },
+    {
+      "uris": [
+        "spotify:artist:0000000000000000000000",
+        "spotify:album:0000000000000000000001"
+      ],
+      "country": "ZZ",
+      "catalogue": "free",
+      "queryInsertions": [
+        {
+          "kind": 8,
+          "uri": "spotify:artist:0000000000000000000000"
+        },
+        {
+          "kind": 9,
+          "uri": "spotify:album:0000000000000000000001"
+        }
+      ],
+      "submissionOperation": "your_library",
+      "request": {
+        "method": "POST",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Content-Type": "application/protobuf",
+          "Accept": "application/protobuf",
+          "client-feature-id": "your_library"
+        },
+        "bodyHex": "0a0a0a025a5a120466726565122b0a2573706f746966793a6172746973743a3030303030303030303030303030303030303030303012020808122a0a2473706f746966793a616c62756d3a3030303030303030303030303030303030303030303112020809",
+        "requestName": "cpp-extended_metadata-extended_metadata_impl.your_library",
+        "rawUrl": "https://spclient.example.test:443/extended-metadata/v0/extended-metadata",
+        "orderedHeaders": [
+          [
+            "User-Agent",
+            "Spotify/independent-offline-fixture"
+          ],
+          [
+            "Content-Type",
+            "application/protobuf"
+          ],
+          [
+            "Accept",
+            "application/protobuf"
+          ],
+          [
+            "client-feature-id",
+            "your_library"
+          ]
+        ]
+      }
+    },
+    {
+      "uris": [
+        "spotify:album:0000000000000000000000",
+        "spotify:artist:0000000000000000000001",
+        "spotify:album:0000000000000000000002",
+        "spotify:artist:0000000000000000000003",
+        "spotify:album:0000000000000000000004"
+      ],
+      "country": "ZZ",
+      "catalogue": "free",
+      "queryInsertions": [
+        {
+          "kind": 9,
+          "uri": "spotify:album:0000000000000000000000"
+        },
+        {
+          "kind": 8,
+          "uri": "spotify:artist:0000000000000000000001"
+        },
+        {
+          "kind": 9,
+          "uri": "spotify:album:0000000000000000000002"
+        },
+        {
+          "kind": 8,
+          "uri": "spotify:artist:0000000000000000000003"
+        },
+        {
+          "kind": 9,
+          "uri": "spotify:album:0000000000000000000004"
+        }
+      ],
+      "submissionOperation": "your_library",
+      "request": {
+        "method": "POST",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Content-Type": "application/protobuf",
+          "Accept": "application/protobuf",
+          "client-feature-id": "your_library",
+          "Content-Encoding": "gzip"
+        },
+        "bodyHex": "1f8b0800000000000013e3e2e2628a8a1262492b4a4d15d2e6522d2ec82fc94cabb44a2c2ac92c2eb132c0060c8598383888556c0c56acc5a502579c93549a8b5dad01502d27916a8d48506b02520b00683ae545ea000000",
+        "requestName": "cpp-extended_metadata-extended_metadata_impl.your_library",
+        "rawUrl": "https://spclient.example.test:443/extended-metadata/v0/extended-metadata",
+        "orderedHeaders": [
+          [
+            "User-Agent",
+            "Spotify/independent-offline-fixture"
+          ],
+          [
+            "Content-Type",
+            "application/protobuf"
+          ],
+          [
+            "Accept",
+            "application/protobuf"
+          ],
+          [
+            "client-feature-id",
+            "your_library"
+          ],
+          [
+            "Content-Encoding",
+            "gzip"
+          ]
+        ]
+      }
+    },
+    {
+      "uris": [
+        "spotify:album:0000000000000000000000",
+        "spotify:artist:0000000000000000000001",
+        "spotify:album:0000000000000000000002",
+        "spotify:artist:0000000000000000000003",
+        "spotify:album:0000000000000000000004",
+        "spotify:artist:0000000000000000000005",
+        "spotify:album:0000000000000000000006",
+        "spotify:artist:0000000000000000000007",
+        "spotify:album:0000000000000000000008",
+        "spotify:artist:0000000000000000000009",
+        "spotify:album:0000000000000000000010",
+        "spotify:artist:0000000000000000000011",
+        "spotify:album:0000000000000000000012",
+        "spotify:artist:0000000000000000000013",
+        "spotify:album:0000000000000000000014",
+        "spotify:artist:0000000000000000000015",
+        "spotify:album:0000000000000000000016",
+        "spotify:artist:0000000000000000000017",
+        "spotify:album:0000000000000000000018",
+        "spotify:artist:0000000000000000000019",
+        "spotify:album:0000000000000000000020",
+        "spotify:artist:0000000000000000000021",
+        "spotify:album:0000000000000000000022",
+        "spotify:artist:0000000000000000000023",
+        "spotify:album:0000000000000000000024",
+        "spotify:artist:0000000000000000000025",
+        "spotify:album:0000000000000000000026",
+        "spotify:artist:0000000000000000000027",
+        "spotify:album:0000000000000000000028",
+        "spotify:artist:0000000000000000000029",
+        "spotify:album:0000000000000000000030",
+        "spotify:artist:0000000000000000000031",
+        "spotify:album:0000000000000000000032",
+        "spotify:artist:0000000000000000000033",
+        "spotify:album:0000000000000000000034",
+        "spotify:artist:0000000000000000000035",
+        "spotify:album:0000000000000000000036",
+        "spotify:artist:0000000000000000000037",
+        "spotify:album:0000000000000000000038",
+        "spotify:artist:0000000000000000000039",
+        "spotify:album:0000000000000000000040",
+        "spotify:artist:0000000000000000000041",
+        "spotify:album:0000000000000000000042",
+        "spotify:artist:0000000000000000000043",
+        "spotify:album:0000000000000000000044",
+        "spotify:artist:0000000000000000000045",
+        "spotify:album:0000000000000000000046",
+        "spotify:artist:0000000000000000000047",
+        "spotify:album:0000000000000000000048",
+        "spotify:artist:0000000000000000000049"
+      ],
+      "country": "ZZ",
+      "catalogue": "free",
+      "queryInsertions": [
+        {
+          "kind": 9,
+          "uri": "spotify:album:0000000000000000000000"
+        },
+        {
+          "kind": 8,
+          "uri": "spotify:artist:0000000000000000000001"
+        },
+        {
+          "kind": 9,
+          "uri": "spotify:album:0000000000000000000002"
+        },
+        {
+          "kind": 8,
+          "uri": "spotify:artist:0000000000000000000003"
+        },
+        {
+          "kind": 9,
+          "uri": "spotify:album:0000000000000000000004"
+        },
+        {
+          "kind": 8,
+          "uri": "spotify:artist:0000000000000000000005"
+        },
+        {
+          "kind": 9,
+          "uri": "spotify:album:0000000000000000000006"
+        },
+        {
+          "kind": 8,
+          "uri": "spotify:artist:0000000000000000000007"
+        },
+        {
+          "kind": 9,
+          "uri": "spotify:album:0000000000000000000008"
+        },
+        {
+          "kind": 8,
+          "uri": "spotify:artist:0000000000000000000009"
+        },
+        {
+          "kind": 9,
+          "uri": "spotify:album:0000000000000000000010"
+        },
+        {
+          "kind": 8,
+          "uri": "spotify:artist:0000000000000000000011"
+        },
+        {
+          "kind": 9,
+          "uri": "spotify:album:0000000000000000000012"
+        },
+        {
+          "kind": 8,
+          "uri": "spotify:artist:0000000000000000000013"
+        },
+        {
+          "kind": 9,
+          "uri": "spotify:album:0000000000000000000014"
+        },
+        {
+          "kind": 8,
+          "uri": "spotify:artist:0000000000000000000015"
+        },
+        {
+          "kind": 9,
+          "uri": "spotify:album:0000000000000000000016"
+        },
+        {
+          "kind": 8,
+          "uri": "spotify:artist:0000000000000000000017"
+        },
+        {
+          "kind": 9,
+          "uri": "spotify:album:0000000000000000000018"
+        },
+        {
+          "kind": 8,
+          "uri": "spotify:artist:0000000000000000000019"
+        },
+        {
+          "kind": 9,
+          "uri": "spotify:album:0000000000000000000020"
+        },
+        {
+          "kind": 8,
+          "uri": "spotify:artist:0000000000000000000021"
+        },
+        {
+          "kind": 9,
+          "uri": "spotify:album:0000000000000000000022"
+        },
+        {
+          "kind": 8,
+          "uri": "spotify:artist:0000000000000000000023"
+        },
+        {
+          "kind": 9,
+          "uri": "spotify:album:0000000000000000000024"
+        },
+        {
+          "kind": 8,
+          "uri": "spotify:artist:0000000000000000000025"
+        },
+        {
+          "kind": 9,
+          "uri": "spotify:album:0000000000000000000026"
+        },
+        {
+          "kind": 8,
+          "uri": "spotify:artist:0000000000000000000027"
+        },
+        {
+          "kind": 9,
+          "uri": "spotify:album:0000000000000000000028"
+        },
+        {
+          "kind": 8,
+          "uri": "spotify:artist:0000000000000000000029"
+        },
+        {
+          "kind": 9,
+          "uri": "spotify:album:0000000000000000000030"
+        },
+        {
+          "kind": 8,
+          "uri": "spotify:artist:0000000000000000000031"
+        },
+        {
+          "kind": 9,
+          "uri": "spotify:album:0000000000000000000032"
+        },
+        {
+          "kind": 8,
+          "uri": "spotify:artist:0000000000000000000033"
+        },
+        {
+          "kind": 9,
+          "uri": "spotify:album:0000000000000000000034"
+        },
+        {
+          "kind": 8,
+          "uri": "spotify:artist:0000000000000000000035"
+        },
+        {
+          "kind": 9,
+          "uri": "spotify:album:0000000000000000000036"
+        },
+        {
+          "kind": 8,
+          "uri": "spotify:artist:0000000000000000000037"
+        },
+        {
+          "kind": 9,
+          "uri": "spotify:album:0000000000000000000038"
+        },
+        {
+          "kind": 8,
+          "uri": "spotify:artist:0000000000000000000039"
+        },
+        {
+          "kind": 9,
+          "uri": "spotify:album:0000000000000000000040"
+        },
+        {
+          "kind": 8,
+          "uri": "spotify:artist:0000000000000000000041"
+        },
+        {
+          "kind": 9,
+          "uri": "spotify:album:0000000000000000000042"
+        },
+        {
+          "kind": 8,
+          "uri": "spotify:artist:0000000000000000000043"
+        },
+        {
+          "kind": 9,
+          "uri": "spotify:album:0000000000000000000044"
+        },
+        {
+          "kind": 8,
+          "uri": "spotify:artist:0000000000000000000045"
+        },
+        {
+          "kind": 9,
+          "uri": "spotify:album:0000000000000000000046"
+        },
+        {
+          "kind": 8,
+          "uri": "spotify:artist:0000000000000000000047"
+        },
+        {
+          "kind": 9,
+          "uri": "spotify:album:0000000000000000000048"
+        },
+        {
+          "kind": 8,
+          "uri": "spotify:artist:0000000000000000000049"
+        }
+      ],
+      "submissionOperation": "your_library",
+      "request": {
+        "method": "POST",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Content-Type": "application/protobuf",
+          "Accept": "application/protobuf",
+          "client-feature-id": "your_library",
+          "Content-Encoding": "gzip"
+        },
+        "bodyHex": "1f8b080000000000001395d33b0ac240184561081671ca598369b4c9ff306a96924e218180a22463e1ee1505ab14736e7d9aafb82184a2ebe26a98fa3eee42353fee691c5eed794ae39cda7a69128bb2cc8d8dc47b121f487c02b110a010a010a010a010a012a012a012a012a012a011a011a011a011a011a013a013a013a013a0ff80dbb0f9c7d7cbf3b6fcd7fad3ae335b05ad83b601ed31bf1560136013601360136053605360536053605360336033603360336033607360736073607360f3afed0d40e6a890bd080000",
+        "requestName": "cpp-extended_metadata-extended_metadata_impl.your_library",
+        "rawUrl": "https://spclient.example.test:443/extended-metadata/v0/extended-metadata",
+        "orderedHeaders": [
+          [
+            "User-Agent",
+            "Spotify/independent-offline-fixture"
+          ],
+          [
+            "Content-Type",
+            "application/protobuf"
+          ],
+          [
+            "Accept",
+            "application/protobuf"
+          ],
+          [
+            "client-feature-id",
+            "your_library"
+          ],
+          [
+            "Content-Encoding",
+            "gzip"
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,644 @@
+{
+  "originalCaptures": [
+    {
+      "path": ".local/original-http.json",
+      "sha256": "74cc460f251e87000ed5becc18fba7d2a12034d0dc01a0fef5d3f0f4ec27b1ff"
+    },
+    {
+      "path": ".local/original-license-rejection-reference-netlog.json",
+      "sha256": "6d8e8c9f4d71bd0e39ecff3282e86438540cf22987a33b2340d79658d4ec6d50"
+    },
+    {
+      "path": ".local/original-playback-netlog.json",
+      "sha256": "fd7239adbef628625faa665ed75199ef34429ed46944409378caeb01ba2c9655"
+    },
+    {
+      "path": ".local/original-playback-key-netlog.json",
+      "sha256": "9a58d8b2ce592e8614f795cb85712a2c598b09f0a427962648dc8f2475755467"
+    }
+  ],
+  "matchingUnconditional200Records": {
+    "seed mix encoded genre": 9,
+    "pickasso topic/ambient": 1,
+    "seed mix genre": 3,
+    "pickasso artistmix": 1,
+    "mosaic 60": 2,
+    "pickasso thisisv3": 1,
+    "pickasso radio/track": 2,
+    "pickasso topic/nineties": 1
+  },
+  "originalImageElement": "Original module99526 img component preserves src and has no default crossOrigin/referrerPolicy; pinned and independently executed in native-image-request.json.",
+  "substitutions": [
+    "Pickasso public content IDs and mosaic image IDs replaced explicitly with synthetic same-shape IDs; headers are original capture values.",
+    "Only ephemeral loopback authority/Host replaces original authority during the outgoing check."
+  ],
+  "limits": [
+    "H2 decoded-field proof only; CDP/NetLog do not prove ordering/HPACK/TLS fingerprints.",
+    "Mosaic uses separately observed HTTP/1.1 with no Priority header; no H2 equivalence is assumed.",
+    "Seed small/large/xlarge paths come from original server metadata; their fields reuse the captured same-host default image profile, not fresh variant HTTP captures.",
+    "Mosaic640 route is captured with browser cache validation; its fresh-client fields reuse unconditional same-host mosaic60 profile without a cache validator. No cached640 revalidation is claimed.",
+    "Mosaic300 URL and default image-element fetch inputs are independently executed original modules71646/99526; headers reuse the actual unconditional same-host Mosaic60 profile. A fresh original300 network capture is not claimed.",
+    "Conditional browser cache revalidation is excluded; original unconditional200 image GET profiles are retained.",
+    "No query, cookies, credentials, origin header, request body, redirects or host fallback."
+  ],
+  "cases": [
+    {
+      "name": "seed mix encoded genre i",
+      "originalSource": {
+        "path": ".local/original-http.json",
+        "sourceId": "73062.1038",
+        "sendEventIndex": 18,
+        "status": 200
+      },
+      "rawUrl": "https://seed-mix-image.spotifycdn.com/v6/img/desc/Ambient%20Techno/en/default",
+      "rawTarget": "/v6/img/desc/Ambient%20Techno/en/default",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":authority": "seed-mix-image.spotifycdn.com",
+          ":method": "GET",
+          ":path": "/v6/img/desc/Ambient%20Techno/en/default",
+          ":scheme": "https",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "image",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-storage-access": "active",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "pickasso topic/ambient i",
+      "originalSource": {
+        "path": ".local/original-http.json",
+        "sourceId": "73062.1053",
+        "sendEventIndex": 33,
+        "status": 200
+      },
+      "rawUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/ambient/0000000000000000000002/en",
+      "rawTarget": "/image/ab67c0de0000deef/dt/v1/img/topic/ambient/0000000000000000000002/en",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":authority": "pickasso.spotifycdn.com",
+          ":method": "GET",
+          ":path": "/image/ab67c0de0000deef/dt/v1/img/topic/ambient/0000000000000000000002/en",
+          ":scheme": "https",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "image",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-storage-access": "active",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "seed mix genre i",
+      "originalSource": {
+        "path": ".local/original-http.json",
+        "sourceId": "73062.1094",
+        "sendEventIndex": 331,
+        "status": 200
+      },
+      "rawUrl": "https://seed-mix-image.spotifycdn.com/v6/img/desc/Amapiano/en/default",
+      "rawTarget": "/v6/img/desc/Amapiano/en/default",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":authority": "seed-mix-image.spotifycdn.com",
+          ":method": "GET",
+          ":path": "/v6/img/desc/Amapiano/en/default",
+          ":scheme": "https",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "image",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-storage-access": "active",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "pickasso artistmix i",
+      "originalSource": {
+        "path": ".local/original-license-rejection-reference-netlog.json",
+        "sourceId": 1705,
+        "sendEventIndex": 63870,
+        "status": 200
+      },
+      "rawUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/artistmix/0000000000000000000004/en",
+      "rawTarget": "/image/ab67c0de0000deef/dt/v1/img/artistmix/0000000000000000000004/en",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":method": "GET",
+          ":authority": "pickasso.spotifycdn.com",
+          ":scheme": "https",
+          ":path": "/image/ab67c0de0000deef/dt/v1/img/artistmix/0000000000000000000004/en",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-dest": "image",
+          "sec-fetch-storage-access": "active",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "mosaic 60 H1",
+      "originalSource": {
+        "path": ".local/original-license-rejection-reference-netlog.json",
+        "sourceId": 3600,
+        "sendEventIndex": 81904,
+        "status": 200
+      },
+      "rawUrl": "https://mosaic.scdn.co/60/0000000000000000000000000000000000000001000000000000000000000000000000000000000200000000000000000000000000000000000000030000000000000000000000000000000000000004",
+      "rawTarget": "/60/0000000000000000000000000000000000000001000000000000000000000000000000000000000200000000000000000000000000000000000000030000000000000000000000000000000000000004",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "expected": {
+        "protocol": "http/1.1",
+        "headers": {
+          "host": "mosaic.scdn.co",
+          "connection": "keep-alive",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-dest": "image",
+          "sec-fetch-storage-access": "active",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "seed mix genre u=1, i",
+      "originalSource": {
+        "path": ".local/original-license-rejection-reference-netlog.json",
+        "sourceId": 3604,
+        "sendEventIndex": 82289,
+        "status": 200
+      },
+      "rawUrl": "https://seed-mix-image.spotifycdn.com/v6/img/desc/Amapiano/en/default",
+      "rawTarget": "/v6/img/desc/Amapiano/en/default",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "promoted",
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":method": "GET",
+          ":authority": "seed-mix-image.spotifycdn.com",
+          ":scheme": "https",
+          ":path": "/v6/img/desc/Amapiano/en/default",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-dest": "image",
+          "sec-fetch-storage-access": "active",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "u=1, i"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "pickasso thisisv3 i",
+      "originalSource": {
+        "path": ".local/original-license-rejection-reference-netlog.json",
+        "sourceId": 3664,
+        "sendEventIndex": 83028,
+        "status": 200
+      },
+      "rawUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/thisisv3/0000000000000000000007/en",
+      "rawTarget": "/image/ab67c0de0000deef/dt/v1/img/thisisv3/0000000000000000000007/en",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":method": "GET",
+          ":authority": "pickasso.spotifycdn.com",
+          ":scheme": "https",
+          ":path": "/image/ab67c0de0000deef/dt/v1/img/thisisv3/0000000000000000000007/en",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-dest": "image",
+          "sec-fetch-storage-access": "active",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "pickasso radio/track i",
+      "originalSource": {
+        "path": ".local/original-playback-netlog.json",
+        "sourceId": 2374,
+        "sendEventIndex": 57343,
+        "status": 200
+      },
+      "rawUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/track/0000000000000000000008/en",
+      "rawTarget": "/image/ab67c0de0000deef/dt/v1/img/radio/track/0000000000000000000008/en",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":method": "GET",
+          ":authority": "pickasso.spotifycdn.com",
+          ":scheme": "https",
+          ":path": "/image/ab67c0de0000deef/dt/v1/img/radio/track/0000000000000000000008/en",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-dest": "image",
+          "sec-fetch-storage-access": "active",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "pickasso radio/track u=1, i",
+      "originalSource": {
+        "path": ".local/original-playback-netlog.json",
+        "sourceId": 3082,
+        "sendEventIndex": 65624,
+        "status": 200
+      },
+      "rawUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/track/0000000000000000000009/en",
+      "rawTarget": "/image/ab67c0de0000deef/dt/v1/img/radio/track/0000000000000000000009/en",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "promoted",
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":method": "GET",
+          ":authority": "pickasso.spotifycdn.com",
+          ":scheme": "https",
+          ":path": "/image/ab67c0de0000deef/dt/v1/img/radio/track/0000000000000000000009/en",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-dest": "image",
+          "sec-fetch-storage-access": "active",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "u=1, i"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "pickasso topic/nineties i",
+      "originalSource": {
+        "path": ".local/original-playback-key-netlog.json",
+        "sourceId": 1786,
+        "sendEventIndex": 40737,
+        "status": 200
+      },
+      "rawUrl": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/topic/nineties/0000000000000000000010/en",
+      "rawTarget": "/image/ab67c0de0000deef/dt/v1/img/topic/nineties/0000000000000000000010/en",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":method": "GET",
+          ":authority": "pickasso.spotifycdn.com",
+          ":scheme": "https",
+          ":path": "/image/ab67c0de0000deef/dt/v1/img/topic/nineties/0000000000000000000010/en",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-dest": "image",
+          "sec-fetch-storage-access": "active",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "seed mix encoded genre u=1, i",
+      "originalSource": {
+        "path": ".local/original-playback-key-netlog.json",
+        "sourceId": 3088,
+        "sendEventIndex": 71697,
+        "status": 200
+      },
+      "rawUrl": "https://seed-mix-image.spotifycdn.com/v6/img/desc/Underground%20Hip%20Hop/en/default",
+      "rawTarget": "/v6/img/desc/Underground%20Hip%20Hop/en/default",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "promoted",
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":method": "GET",
+          ":authority": "seed-mix-image.spotifycdn.com",
+          ":scheme": "https",
+          ":path": "/v6/img/desc/Underground%20Hip%20Hop/en/default",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-dest": "image",
+          "sec-fetch-storage-access": "active",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "u=1, i"
+        },
+        "bodyBase64": ""
+      }
+    },
+    {
+      "name": "seed mix original metadata small",
+      "originalSource": {
+        "metadataPath": ".local/validation/original-rootlist-seed-image-urls.json",
+        "metadataSha256": "0ec0fd067f165acad4ea3f392c5fdf90ef7ef8ea4a55eac9cfe19a46be66f516",
+        "sourceId": 575,
+        "sourceSha256": "644660b4da3948c6f0e0e21479b34de444f295ba3e94684257e2c53dc9587489"
+      },
+      "rawUrl": "https://seed-mix-image.spotifycdn.com/v6/img/desc/Amapiano/en/small",
+      "rawTarget": "/v6/img/desc/Amapiano/en/small",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":authority": "seed-mix-image.spotifycdn.com",
+          ":method": "GET",
+          ":path": "/v6/img/desc/Amapiano/en/small",
+          ":scheme": "https",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "image",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-storage-access": "active",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": ""
+      },
+      "fieldProfileSource": {
+        "path": ".local/original-http.json",
+        "sourceId": "73062.1094",
+        "sendEventIndex": 331,
+        "status": 200
+      }
+    },
+    {
+      "name": "seed mix original metadata large",
+      "originalSource": {
+        "metadataPath": ".local/validation/original-rootlist-seed-image-urls.json",
+        "metadataSha256": "0ec0fd067f165acad4ea3f392c5fdf90ef7ef8ea4a55eac9cfe19a46be66f516",
+        "sourceId": 575,
+        "sourceSha256": "644660b4da3948c6f0e0e21479b34de444f295ba3e94684257e2c53dc9587489"
+      },
+      "rawUrl": "https://seed-mix-image.spotifycdn.com/v6/img/desc/Amapiano/en/large",
+      "rawTarget": "/v6/img/desc/Amapiano/en/large",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":authority": "seed-mix-image.spotifycdn.com",
+          ":method": "GET",
+          ":path": "/v6/img/desc/Amapiano/en/large",
+          ":scheme": "https",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "image",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-storage-access": "active",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": ""
+      },
+      "fieldProfileSource": {
+        "path": ".local/original-http.json",
+        "sourceId": "73062.1094",
+        "sendEventIndex": 331,
+        "status": 200
+      }
+    },
+    {
+      "name": "seed mix original metadata xlarge",
+      "originalSource": {
+        "metadataPath": ".local/validation/original-rootlist-seed-image-urls.json",
+        "metadataSha256": "0ec0fd067f165acad4ea3f392c5fdf90ef7ef8ea4a55eac9cfe19a46be66f516",
+        "sourceId": 575,
+        "sourceSha256": "644660b4da3948c6f0e0e21479b34de444f295ba3e94684257e2c53dc9587489"
+      },
+      "rawUrl": "https://seed-mix-image.spotifycdn.com/v6/img/desc/Amapiano/en/xlarge",
+      "rawTarget": "/v6/img/desc/Amapiano/en/xlarge",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "expected": {
+        "protocol": "h2",
+        "headers": {
+          ":authority": "seed-mix-image.spotifycdn.com",
+          ":method": "GET",
+          ":path": "/v6/img/desc/Amapiano/en/xlarge",
+          ":scheme": "https",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "priority": "i",
+          "referer": "https://xpui.app.spotify.com/",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "image",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-storage-access": "active",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36"
+        },
+        "bodyBase64": ""
+      },
+      "fieldProfileSource": {
+        "path": ".local/original-http.json",
+        "sourceId": "73062.1094",
+        "sendEventIndex": 331,
+        "status": 200
+      }
+    },
+    {
+      "name": "mosaic 640 fresh profile from original same-host baseline",
+      "originalSource": {
+        "path": ".local/original-playback-key-netlog.json",
+        "sourceId": 3213,
+        "sendEventIndex": 74030,
+        "status": 304,
+        "conditionalHeaderPresent": true
+      },
+      "rawUrl": "https://mosaic.scdn.co/640/0000000000000000000000000000000000000001000000000000000000000000000000000000000200000000000000000000000000000000000000030000000000000000000000000000000000000004",
+      "rawTarget": "/640/0000000000000000000000000000000000000001000000000000000000000000000000000000000200000000000000000000000000000000000000030000000000000000000000000000000000000004",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "expected": {
+        "protocol": "http/1.1",
+        "headers": {
+          "host": "mosaic.scdn.co",
+          "connection": "keep-alive",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-dest": "image",
+          "sec-fetch-storage-access": "active",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9"
+        },
+        "bodyBase64": ""
+      },
+      "fieldProfileSource": {
+        "path": ".local/original-license-rejection-reference-netlog.json",
+        "sourceId": 3600,
+        "sendEventIndex": 81904,
+        "status": 200
+      }
+    },
+    {
+      "name": "mosaic 300 original default URL and image element",
+      "originalSource": {
+        "urlProducerPath": "reverse-engineering/evidence/native-image-uri.json",
+        "urlProducerSha256": "450fa1b6c63ad83bac76bb32370aee94731cd19d715dae8dd3e04cef74df9285",
+        "module": 71646,
+        "imageElementModule": 99526
+      },
+      "rawUrl": "https://mosaic.scdn.co/300/0000000000000000000000000000000000000001000000000000000000000000000000000000000200000000000000000000000000000000000000030000000000000000000000000000000000000004",
+      "rawTarget": "/300/0000000000000000000000000000000000000001000000000000000000000000000000000000000200000000000000000000000000000000000000030000000000000000000000000000000000000004",
+      "acceptLanguage": "en-US,en;q=0.9",
+      "priority": "normal",
+      "expected": {
+        "protocol": "http/1.1",
+        "headers": {
+          "host": "mosaic.scdn.co",
+          "connection": "keep-alive",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+          "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-dest": "image",
+          "sec-fetch-storage-access": "active",
+          "referer": "https://xpui.app.spotify.com/",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9"
+        },
+        "bodyBase64": ""
+      },
+      "fieldProfileSource": {
+        "path": ".local/original-license-rejection-reference-netlog.json",
+        "sourceId": 3600,
+        "sendEventIndex": 81904,
+        "status": 200
+      }
+    }
+  ]
+}

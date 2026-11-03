@@ -1,0 +1,146 @@
+{
+  "evidence_id": "ev_5d9b2aeffa1b871e9a365f90a746bb7ba1ebd4cf449429a8498eeb36b8143b0c",
+  "subject": {
+    "name": "Spotify",
+    "digest": {
+      "sha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca"
+    },
+    "local_path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "format": "mach-o",
+    "architecture": "arm64"
+  },
+  "provider": {
+    "id": "rea-workflow",
+    "name": "REA composed investigation workflow",
+    "version": "1"
+  },
+  "analysis_profile": {
+    "provider": {
+      "id": "rea-workflow",
+      "name": "REA composed investigation workflow",
+      "version": "1"
+    },
+    "parameters": {
+      "upstream_analysis_profile": {
+        "provider": {
+          "id": "ghidra",
+          "name": "Ghidra",
+          "version": "12.1.4"
+        },
+        "parameters": {
+          "target_kind": "executable",
+          "target_format": "mach-o",
+          "architecture": "arm64",
+          "available_architectures": [
+            "arm64"
+          ],
+          "import_mode": "ephemeral-source-immutable",
+          "annotation_policy": "atomic-function-entry-metadata-v1",
+          "load_image_observations": "source-mappings-entry-context-v2",
+          "function_body_evidence": "complete-inclusive-ranges-v1",
+          "function_references": "complete-body-and-entry-reference-manager-v2",
+          "call_relationship_coverage": "function-body-call-coverage-v5",
+          "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+          "string_inventory_evidence": "defined-data-coverage-v1",
+          "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+          "procedure_file_offset_resolution": "address-first-unique-target-source-mapping-v2",
+          "instruction_flow_evidence": "decoded-return-pcode-v1",
+          "instruction_references": "exact-address-incoming-without-synthetic-entry-v2",
+          "function_boundary_observations": "ghidra-function-boundary-limitations-v4",
+          "no_return_repair": "returning-imports-decoded-return-v2",
+          "process_launch": "inspected-jvm-launch-support-v1",
+          "jump_table_evidence": "typed-case-default-blocks-v1",
+          "decompiler_jump_loads": true,
+          "loader": "auto-from-header",
+          "language_id": "auto-from-header",
+          "compiler_spec_id": "auto-default",
+          "analyzer_preset": "ghidra-default+disabled:Objective-C Message Analyzer",
+          "analysis_options": {
+            "disabled_analyzers": [
+              "Objective-C Message Analyzer"
+            ]
+          },
+          "function_coordinate_context": {
+            "kind": "native-function-coordinate-context-v1",
+            "selected_image": null,
+            "mapping_sha256": "55a7964dc0bcdf067484a281c658e6ca8457a49405e0ea9dbd080366ee4c3198"
+          }
+        },
+        "digest": "ba096b816914b61d76ef9218a09adb50b36933c578e73986f5071ca4531196a1"
+      },
+      "source_limitations": "provider-operation-caveats-v1",
+      "workflow_revision": 3
+    },
+    "digest": "173c2d47d85a25c3e363e1b4dad6e742804c54e29919a145d0cb784ad775d94e"
+  },
+  "limitations": [
+    "Derived by an REA composed workflow.",
+    "Ghidra (ghidra 12.1.4) address_name, procedure_address, procedure_pseudo_code: Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+    "Ghidra (ghidra 12.1.4) address_name, procedure_address, procedure_pseudo_code: Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+    "Ghidra (ghidra 12.1.4) address_name, procedure_address, procedure_pseudo_code: The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+    "Ghidra (ghidra 12.1.4) address_name, procedure_address, procedure_pseudo_code: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+    "Ghidra (ghidra 12.1.4) address_name, procedure_address, procedure_pseudo_code: macOS sessions require a matching executable Ghidra native decompiler; REA checks for it but does not build native components or change Gatekeeper quarantine state.",
+    "Ghidra (ghidra 12.1.4) procedure_address: External functions and local thunks are distinct; procedure metadata identifies both and preserves a thunk target when Ghidra resolves one.",
+    "Ghidra (ghidra 12.1.4) procedure_pseudo_code: External functions and functions without an analyzable body return null; other decompiler failures remain explicit.",
+    "Ghidra (ghidra 12.1.4) procedure_pseudo_code: Ghidra Listing reports a terminal call at 0x100781120 to 0x100013608 FUN_100013608 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+    "Ghidra (ghidra 12.1.4) procedure_pseudo_code: Ghidra Listing reports a terminal call at 0x100781124 to 0x10000b594 FUN_10000b594 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+    "Ghidra (ghidra 12.1.4) procedure_pseudo_code: Ghidra Listing reports a terminal call at 0x10078112c to 0x101fd1e34 ___stack_chk_fail (external=false, thunk=true, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+    "Ghidra (ghidra 12.1.4) procedure_pseudo_code: Ghidra Listing reports a terminal call at 0x100781130 to 0x10000b594 FUN_10000b594 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+    "Ghidra (ghidra 12.1.4) procedure_pseudo_code: Ghidra Listing reports a terminal call at 0x100781138 to 0x10000b594 FUN_10000b594 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+    "Ghidra (ghidra 12.1.4) procedure_pseudo_code: Ghidra Listing reports a terminal call at 0x100781140 to 0x10000b594 FUN_10000b594 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+    "Ghidra (ghidra 12.1.4) procedure_pseudo_code: Ghidra Listing reports a terminal call at 0x100781148 to 0x10000b594 FUN_10000b594 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+    "Ghidra (ghidra 12.1.4) procedure_pseudo_code: Ghidra Listing reports a terminal call at 0x100781150 to 0x10000b594 FUN_10000b594 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+    "Ghidra (ghidra 12.1.4) procedure_pseudo_code: Ghidra Listing reports a terminal call at 0x100781158 to 0x10000b594 FUN_10000b594 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+    "Ghidra (ghidra 12.1.4) procedure_pseudo_code: Ghidra Listing reports a terminal call at 0x100781160 to 0x10000b594 FUN_10000b594 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+    "Ghidra (ghidra 12.1.4) procedure_pseudo_code: Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output."
+  ],
+  "findings": {
+    "metadata": {
+      "owner": "0x100611ecc",
+      "paths": [
+        "extended-metadata/v0/extended-metadata",
+        "extended-metadata/v3/extensions/batch-get"
+      ],
+      "method": "POST",
+      "headers": {
+        "Content-Type": "application/protobuf",
+        "Accept": "application/protobuf"
+      }
+    },
+    "storage": {
+      "owner": "0x100780440",
+      "modeOwner": "0x100762a5c",
+      "path": "storage-resolve/v2/files/audio/{mode}/{signed_int32_audio_format}/{file_id_hex_40}",
+      "query": "product=0",
+      "optionalPartner": "&partner={raw_partner}",
+      "headers": {
+        "cache-control": "no-cache"
+      },
+      "modes": {
+        "1": "offline",
+        "2": "interactive_prefetch",
+        "other": "interactive"
+      },
+      "fileIdHexProbe": {
+        "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+        "entry": "0x101f63618",
+        "boundary": "40-byte inline hex buffer, not a libc++ string object",
+        "inputHex": "abcdef0123456789fedcba9876543210abcd1234",
+        "observedHexText": "abcdef0123456789fedcba9876543210abcd1234"
+      }
+    },
+    "templateInputs": {
+      "callerContextBridge": "0x101c20210",
+      "originalSetter": "0x101c2582c",
+      "storedAtBuilderOffset": "0x60",
+      "interpretation": "Caller-supplied value; not established as bearer/client-token by these builders",
+      "headerBridge": "0x101c1fd00",
+      "originalHeaderSetter": "0x101c24924",
+      "headerPolicy": "Explicit native overwrite retaining first spelling, established independently by native-header instruction fixtures",
+      "executionBridge": "0x101c20240",
+      "executionValue": 1,
+      "runtimeRoute": "Conditional; see native-http-routing.md"
+    }
+  },
+  "scope": "Static proprietary application-field construction. Inherited authentication headers, runtime template selection, v2 schema, CDN headers, native wire transport and account behavior are not established by these two builders."
+}

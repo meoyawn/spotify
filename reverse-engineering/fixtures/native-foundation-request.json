@@ -1,0 +1,580 @@
+{
+  "provenance": "Observe Spotify's original Foundation request adapter without networking.\n\nUnicorn runs 0x1017e03c4 and the proprietary cache-policy predicate/tokenizer.\nStandard Foundation calls are inert observers, never Apple implementation code.\nStandard containers/strings/memory use bounded synthetic storage. Captured URL\nand header values are API inputs, before Foundation/CFNetwork normalization.",
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "entry": "0x1017e03c4",
+  "cachePredicate": "0x101c4dbf4",
+  "cacheTokens": "0x101c50260",
+  "foundationSelectors": {
+    "0x101fdcac0": "stringWithUTF8String:",
+    "0x101fd3460": "URLWithString:",
+    "0x101fd94e0": "requestWithURL:cachePolicy:timeoutInterval:",
+    "0x101fd6940": "initWithBytes:length:encoding:",
+    "0x101fdab00": "setHTTPMethod:",
+    "0x101fd5460": "dataWithBytes:length:",
+    "0x101fdaae0": "setHTTPBody:",
+    "0x101fdb320": "setNetworkServiceType:",
+    "0x101fdc060": "setValue:forHTTPHeaderField:"
+  },
+  "cases": [
+    {
+      "method": "POST",
+      "url": "https://fixture.invalid/path?opaque=%7e+%2f",
+      "bodyBase64": "",
+      "headers": [],
+      "trafficClass": 1,
+      "timeoutMilliseconds": 30000,
+      "cachePolicyOverride": 0,
+      "name": "default",
+      "result": {
+        "headers": [],
+        "bodyBase64": null,
+        "networkServiceType": null,
+        "urlInput": "https://fixture.invalid/path?opaque=%7e+%2f",
+        "cachePolicy": 0,
+        "timeoutSeconds": 30.0,
+        "method": "POST"
+      }
+    },
+    {
+      "method": "POST",
+      "url": "https://fixture.invalid/path?opaque=%7e+%2f",
+      "bodyBase64": "",
+      "headers": [
+        [
+          "Cache-Control",
+          "only-if-cached"
+        ],
+        [
+          "Range",
+          "bytes=0-3"
+        ]
+      ],
+      "trafficClass": 1,
+      "timeoutMilliseconds": 30000,
+      "cachePolicyOverride": 1,
+      "name": "explicit cache policy 1",
+      "result": {
+        "headers": [
+          [
+            "Cache-Control",
+            "only-if-cached"
+          ],
+          [
+            "Range",
+            "bytes=0-3"
+          ]
+        ],
+        "bodyBase64": null,
+        "networkServiceType": null,
+        "urlInput": "https://fixture.invalid/path?opaque=%7e+%2f",
+        "cachePolicy": 1,
+        "timeoutSeconds": 30.0,
+        "method": "POST"
+      }
+    },
+    {
+      "method": "POST",
+      "url": "https://fixture.invalid/path?opaque=%7e+%2f",
+      "bodyBase64": "",
+      "headers": [
+        [
+          "Cache-Control",
+          "only-if-cached"
+        ],
+        [
+          "Range",
+          "bytes=0-3"
+        ]
+      ],
+      "trafficClass": 1,
+      "timeoutMilliseconds": 30000,
+      "cachePolicyOverride": 2,
+      "name": "explicit cache policy 2",
+      "result": {
+        "headers": [
+          [
+            "Cache-Control",
+            "only-if-cached"
+          ],
+          [
+            "Range",
+            "bytes=0-3"
+          ]
+        ],
+        "bodyBase64": null,
+        "networkServiceType": null,
+        "urlInput": "https://fixture.invalid/path?opaque=%7e+%2f",
+        "cachePolicy": 5,
+        "timeoutSeconds": 30.0,
+        "method": "POST"
+      }
+    },
+    {
+      "method": "POST",
+      "url": "https://fixture.invalid/path?opaque=%7e+%2f",
+      "bodyBase64": "",
+      "headers": [
+        [
+          "Cache-Control",
+          "only-if-cached"
+        ],
+        [
+          "Range",
+          "bytes=0-3"
+        ]
+      ],
+      "trafficClass": 1,
+      "timeoutMilliseconds": 30000,
+      "cachePolicyOverride": 3,
+      "name": "explicit cache policy 3",
+      "result": {
+        "headers": [
+          [
+            "Cache-Control",
+            "only-if-cached"
+          ],
+          [
+            "Range",
+            "bytes=0-3"
+          ]
+        ],
+        "bodyBase64": null,
+        "networkServiceType": null,
+        "urlInput": "https://fixture.invalid/path?opaque=%7e+%2f",
+        "cachePolicy": 2,
+        "timeoutSeconds": 30.0,
+        "method": "POST"
+      }
+    },
+    {
+      "method": "POST",
+      "url": "https://fixture.invalid/path?opaque=%7e+%2f",
+      "bodyBase64": "",
+      "headers": [
+        [
+          "Cache-Control",
+          "only-if-cached"
+        ],
+        [
+          "Range",
+          "bytes=0-3"
+        ]
+      ],
+      "trafficClass": 1,
+      "timeoutMilliseconds": 30000,
+      "cachePolicyOverride": 4,
+      "name": "explicit cache policy 4",
+      "result": {
+        "headers": [
+          [
+            "Cache-Control",
+            "only-if-cached"
+          ],
+          [
+            "Range",
+            "bytes=0-3"
+          ]
+        ],
+        "bodyBase64": null,
+        "networkServiceType": null,
+        "urlInput": "https://fixture.invalid/path?opaque=%7e+%2f",
+        "cachePolicy": 3,
+        "timeoutSeconds": 30.0,
+        "method": "POST"
+      }
+    },
+    {
+      "method": "POST",
+      "url": "https://fixture.invalid/path?opaque=%7e+%2f",
+      "bodyBase64": "",
+      "headers": [
+        [
+          "cache-control",
+          "only-if-cached"
+        ]
+      ],
+      "trafficClass": 1,
+      "timeoutMilliseconds": 30000,
+      "cachePolicyOverride": 0,
+      "name": "cache directive 0",
+      "result": {
+        "headers": [
+          [
+            "cache-control",
+            "only-if-cached"
+          ]
+        ],
+        "bodyBase64": null,
+        "networkServiceType": null,
+        "urlInput": "https://fixture.invalid/path?opaque=%7e+%2f",
+        "cachePolicy": 3,
+        "timeoutSeconds": 30.0,
+        "method": "POST"
+      }
+    },
+    {
+      "method": "POST",
+      "url": "https://fixture.invalid/path?opaque=%7e+%2f",
+      "bodyBase64": "",
+      "headers": [
+        [
+          "cache-control",
+          "ONLY-IF-CACHED"
+        ]
+      ],
+      "trafficClass": 1,
+      "timeoutMilliseconds": 30000,
+      "cachePolicyOverride": 0,
+      "name": "cache directive 1",
+      "result": {
+        "headers": [
+          [
+            "cache-control",
+            "ONLY-IF-CACHED"
+          ]
+        ],
+        "bodyBase64": null,
+        "networkServiceType": null,
+        "urlInput": "https://fixture.invalid/path?opaque=%7e+%2f",
+        "cachePolicy": 3,
+        "timeoutSeconds": 30.0,
+        "method": "POST"
+      }
+    },
+    {
+      "method": "POST",
+      "url": "https://fixture.invalid/path?opaque=%7e+%2f",
+      "bodyBase64": "",
+      "headers": [
+        [
+          "cache-control",
+          "max-age=0, only-if-cached"
+        ]
+      ],
+      "trafficClass": 1,
+      "timeoutMilliseconds": 30000,
+      "cachePolicyOverride": 0,
+      "name": "cache directive 2",
+      "result": {
+        "headers": [
+          [
+            "cache-control",
+            "max-age=0, only-if-cached"
+          ]
+        ],
+        "bodyBase64": null,
+        "networkServiceType": null,
+        "urlInput": "https://fixture.invalid/path?opaque=%7e+%2f",
+        "cachePolicy": 3,
+        "timeoutSeconds": 30.0,
+        "method": "POST"
+      }
+    },
+    {
+      "method": "POST",
+      "url": "https://fixture.invalid/path?opaque=%7e+%2f",
+      "bodyBase64": "",
+      "headers": [
+        [
+          "cache-control",
+          " \ronly-if-cached\n "
+        ]
+      ],
+      "trafficClass": 1,
+      "timeoutMilliseconds": 30000,
+      "cachePolicyOverride": 0,
+      "name": "cache directive 3",
+      "result": {
+        "headers": [
+          [
+            "cache-control",
+            " \ronly-if-cached\n "
+          ]
+        ],
+        "bodyBase64": null,
+        "networkServiceType": null,
+        "urlInput": "https://fixture.invalid/path?opaque=%7e+%2f",
+        "cachePolicy": 3,
+        "timeoutSeconds": 30.0,
+        "method": "POST"
+      }
+    },
+    {
+      "method": "POST",
+      "url": "https://fixture.invalid/path?opaque=%7e+%2f",
+      "bodyBase64": "",
+      "headers": [
+        [
+          "cache-control",
+          "\tonly-if-cached\t"
+        ]
+      ],
+      "trafficClass": 1,
+      "timeoutMilliseconds": 30000,
+      "cachePolicyOverride": 0,
+      "name": "cache directive 4",
+      "result": {
+        "headers": [
+          [
+            "cache-control",
+            "\tonly-if-cached\t"
+          ]
+        ],
+        "bodyBase64": null,
+        "networkServiceType": null,
+        "urlInput": "https://fixture.invalid/path?opaque=%7e+%2f",
+        "cachePolicy": 0,
+        "timeoutSeconds": 30.0,
+        "method": "POST"
+      }
+    },
+    {
+      "method": "POST",
+      "url": "https://fixture.invalid/path?opaque=%7e+%2f",
+      "bodyBase64": "",
+      "headers": [
+        [
+          "cache-control",
+          "only-if-cached=1"
+        ]
+      ],
+      "trafficClass": 1,
+      "timeoutMilliseconds": 30000,
+      "cachePolicyOverride": 0,
+      "name": "cache directive 5",
+      "result": {
+        "headers": [
+          [
+            "cache-control",
+            "only-if-cached=1"
+          ]
+        ],
+        "bodyBase64": null,
+        "networkServiceType": null,
+        "urlInput": "https://fixture.invalid/path?opaque=%7e+%2f",
+        "cachePolicy": 0,
+        "timeoutSeconds": 30.0,
+        "method": "POST"
+      }
+    },
+    {
+      "method": "POST",
+      "url": "https://fixture.invalid/path?opaque=%7e+%2f",
+      "bodyBase64": "",
+      "headers": [
+        [
+          "cache-control",
+          "\"only-if-cached\""
+        ]
+      ],
+      "trafficClass": 1,
+      "timeoutMilliseconds": 30000,
+      "cachePolicyOverride": 0,
+      "name": "cache directive 6",
+      "result": {
+        "headers": [
+          [
+            "cache-control",
+            "\"only-if-cached\""
+          ]
+        ],
+        "bodyBase64": null,
+        "networkServiceType": null,
+        "urlInput": "https://fixture.invalid/path?opaque=%7e+%2f",
+        "cachePolicy": 0,
+        "timeoutSeconds": 30.0,
+        "method": "POST"
+      }
+    },
+    {
+      "method": "POST",
+      "url": "https://fixture.invalid/path?opaque=%7e+%2f",
+      "bodyBase64": "",
+      "headers": [
+        [
+          "cache-control",
+          "no-cache, no-store, max-age=0"
+        ]
+      ],
+      "trafficClass": 1,
+      "timeoutMilliseconds": 30000,
+      "cachePolicyOverride": 0,
+      "name": "cache directive 7",
+      "result": {
+        "headers": [
+          [
+            "cache-control",
+            "no-cache, no-store, max-age=0"
+          ]
+        ],
+        "bodyBase64": null,
+        "networkServiceType": null,
+        "urlInput": "https://fixture.invalid/path?opaque=%7e+%2f",
+        "cachePolicy": 0,
+        "timeoutSeconds": 30.0,
+        "method": "POST"
+      }
+    },
+    {
+      "method": "POST",
+      "url": "https://fixture.invalid/path?opaque=%7e+%2f",
+      "bodyBase64": "",
+      "headers": [
+        [
+          "cache-control",
+          "only-if-cached\u0000tail"
+        ]
+      ],
+      "trafficClass": 1,
+      "timeoutMilliseconds": 30000,
+      "cachePolicyOverride": 0,
+      "name": "cache directive 8",
+      "result": {
+        "headers": [
+          [
+            "cache-control",
+            "only-if-cached"
+          ]
+        ],
+        "bodyBase64": null,
+        "networkServiceType": null,
+        "urlInput": "https://fixture.invalid/path?opaque=%7e+%2f",
+        "cachePolicy": 0,
+        "timeoutSeconds": 30.0,
+        "method": "POST"
+      }
+    },
+    {
+      "method": "POST",
+      "url": "https://fixture.invalid/path?opaque=%7e+%2f",
+      "bodyBase64": "",
+      "headers": [
+        [
+          "Cache-Control",
+          "only-if-cached"
+        ],
+        [
+          "Range",
+          "bytes=0-"
+        ]
+      ],
+      "trafficClass": 1,
+      "timeoutMilliseconds": 30000,
+      "cachePolicyOverride": 0,
+      "name": "cache only precedes range",
+      "result": {
+        "headers": [
+          [
+            "Cache-Control",
+            "only-if-cached"
+          ],
+          [
+            "Range",
+            "bytes=0-"
+          ]
+        ],
+        "bodyBase64": null,
+        "networkServiceType": null,
+        "urlInput": "https://fixture.invalid/path?opaque=%7e+%2f",
+        "cachePolicy": 3,
+        "timeoutSeconds": 30.0,
+        "method": "POST"
+      }
+    },
+    {
+      "method": "POST",
+      "url": "https://fixture.invalid/path?opaque=%7e+%2f",
+      "bodyBase64": "",
+      "headers": [
+        [
+          "rAnGe",
+          ""
+        ]
+      ],
+      "trafficClass": 0,
+      "timeoutMilliseconds": 1501,
+      "cachePolicyOverride": 0,
+      "name": "range and background",
+      "result": {
+        "headers": [
+          [
+            "rAnGe",
+            ""
+          ]
+        ],
+        "bodyBase64": null,
+        "networkServiceType": 3,
+        "urlInput": "https://fixture.invalid/path?opaque=%7e+%2f",
+        "cachePolicy": 1,
+        "timeoutSeconds": 1.501,
+        "method": "POST"
+      }
+    },
+    {
+      "method": "PO\u0000ST",
+      "url": "https://fixture.invalid/\u0000ignored",
+      "bodyBase64": "AID/AA==",
+      "headers": [
+        [
+          "X-Fixture\u0000suffix",
+          "before\u0000after"
+        ],
+        [
+          "User-Agent",
+          "native/1 caf\u00e9"
+        ]
+      ],
+      "trafficClass": 1,
+      "timeoutMilliseconds": 30000,
+      "cachePolicyOverride": 0,
+      "name": "binary body and NUL conversion",
+      "result": {
+        "headers": [
+          [
+            "X-Fixture",
+            "before"
+          ],
+          [
+            "User-Agent",
+            "native/1 caf\u00e9"
+          ]
+        ],
+        "bodyBase64": "AID/AA==",
+        "networkServiceType": null,
+        "urlInput": "https://fixture.invalid/",
+        "cachePolicy": 0,
+        "timeoutSeconds": 30.0,
+        "method": "PO\u0000ST"
+      }
+    },
+    {
+      "method": "POST",
+      "url": "https://fixture.invalid/path?opaque=%7e+%2f",
+      "bodyBase64": "",
+      "headers": [
+        [
+          "Range",
+          "bytes=0-"
+        ]
+      ],
+      "trafficClass": 1,
+      "timeoutMilliseconds": 30000,
+      "cachePolicyOverride": 255,
+      "name": "invalid cache override falls back",
+      "result": {
+        "headers": [
+          [
+            "Range",
+            "bytes=0-"
+          ]
+        ],
+        "bodyBase64": null,
+        "networkServiceType": null,
+        "urlInput": "https://fixture.invalid/path?opaque=%7e+%2f",
+        "cachePolicy": 1,
+        "timeoutSeconds": 30.0,
+        "method": "POST"
+      }
+    }
+  ]
+}

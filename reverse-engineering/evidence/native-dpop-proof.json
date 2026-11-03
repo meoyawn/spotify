@@ -1,0 +1,39 @@
+{
+  "provenance": "Original native proof generator, default model callback, JTI construction, serializers and Base64URL execute offline under Unicorn. Only standard OS entropy/time, libc/libc++, SHA-1, SHA-256 and injected P-256 crypto-provider operations are hooked. The crypto provider uses a public fixture key and deterministic standard ECDSA plus low-S for reproducibility. The separate signature-normalization cases execute original wrapper 0x10167d4d0 with standard BN/EC hooks. Native PEM/key/session management is not executed.",
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "proofEntry": "0x1017a49f0",
+  "modelEntry": "0x1017a4704",
+  "jtiEntry": "0x1017a3fd4",
+  "signatureNormalizationEntry": "0x10167d4d0",
+  "signatureNormalization": [
+    {
+      "rHex": "0000000000000000000000000000000000000000000000000000000000000011",
+      "sHex": "0000000000000000000000000000000000000000000000000000000000000001",
+      "normalizedRHex": "0000000000000000000000000000000000000000000000000000000000000011",
+      "normalizedSHex": "0000000000000000000000000000000000000000000000000000000000000001"
+    },
+    {
+      "rHex": "0000000000000000000000000000000000000000000000000000000000000011",
+      "sHex": "7fffffff800000007fffffffffffffffde737d56d38bcf4279dce5617e3192a8",
+      "normalizedRHex": "0000000000000000000000000000000000000000000000000000000000000011",
+      "normalizedSHex": "7fffffff800000007fffffffffffffffde737d56d38bcf4279dce5617e3192a8"
+    },
+    {
+      "rHex": "0000000000000000000000000000000000000000000000000000000000000011",
+      "sHex": "7fffffff800000007fffffffffffffffde737d56d38bcf4279dce5617e3192a9",
+      "normalizedRHex": "0000000000000000000000000000000000000000000000000000000000000011",
+      "normalizedSHex": "7fffffff800000007fffffffffffffffde737d56d38bcf4279dce5617e3192a8"
+    },
+    {
+      "rHex": "0000000000000000000000000000000000000000000000000000000000000011",
+      "sHex": "ffffffff00000000ffffffffffffffffbce6faada7179e84f3b9cac2fc632550",
+      "normalizedRHex": "0000000000000000000000000000000000000000000000000000000000000011",
+      "normalizedSHex": "0000000000000000000000000000000000000000000000000000000000000001"
+    }
+  ],
+  "caseCount": 3,
+  "standardLibraries": {
+    "mt19937": "0.1.0",
+    "pointycastle": "4.0.0"
+  }
+}

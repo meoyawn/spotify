@@ -1,0 +1,9 @@
+{
+  "repository": "https://github.com/meoyawn/librespot.git",
+  "branch": "flutter-player",
+  "commit": "4c0b431ce26a957eb5214eb0311a151432b603f0",
+  "path": "native/librespot/upstream",
+  "upstreamRepository": "https://github.com/librespot-org/librespot.git",
+  "upstreamBaseCommit": "99b6088bf3ea028f90192676ac1a337fa4b2ed12",
+  "license": "MIT"
+}

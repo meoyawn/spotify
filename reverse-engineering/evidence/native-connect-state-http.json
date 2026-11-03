@@ -1,0 +1,1103 @@
+{
+  "capture": {
+    "path": ".local/original-license-rejection-reference-netlog.json",
+    "sha256": "6d8e8c9f4d71bd0e39ecff3282e86438540cf22987a33b2340d79658d4ec6d50",
+    "eventCount": 96525,
+    "provenance": "Supervisor reports original played I Am Weightless for 8 seconds. Track label is UI context, not inferred from Connect body."
+  },
+  "profiles": [
+    {
+      "profileId": 1,
+      "headers": {
+        ":method": "PUT",
+        ":authority": "guc3-spclient.spotify.com",
+        ":scheme": "https",
+        ":path": "/connect-state/v1/devices/<redacted-device-id-40hex>",
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer <redacted>",
+        "content-encoding": "gzip",
+        "content-type": "application/protobuf",
+        "spotify-app-version": "130601921",
+        "time-zone": "Europe/Moscow",
+        "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+        "x-spotify-connection-id": "<redacted-x-spotify-connection-id>",
+        "client-token": "<redacted-client-token>",
+        "origin": "https://guc3-spclient.spotify.com",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "empty",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=4, i"
+      }
+    },
+    {
+      "profileId": 2,
+      "headers": {
+        ":method": "OPTIONS",
+        ":authority": "guc3-spclient.spotify.com",
+        ":scheme": "https",
+        ":path": "/connect-state/v1/cluster",
+        "accept": "*/*",
+        "access-control-request-method": "GET",
+        "access-control-request-headers": "app-platform,authorization,client-token,spotify-app-version,x-cache-hint",
+        "origin": "https://xpui.app.spotify.com",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "same-site",
+        "sec-fetch-dest": "empty",
+        "referer": "https://xpui.app.spotify.com/",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "accept-language": "en-US,en;q=0.9",
+        "priority": "u=1, i"
+      }
+    },
+    {
+      "profileId": 3,
+      "headers": {
+        ":method": "GET",
+        ":authority": "guc3-spclient.spotify.com",
+        ":scheme": "https",
+        ":path": "/connect-state/v1/cluster",
+        "accept": "*/*",
+        "origin": "https://xpui.app.spotify.com",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.138 Spotify/1.3.6.1921 Safari/537.36",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer <redacted>",
+        "client-token": "<redacted-client-token>",
+        "sec-ch-ua": "\"Chromium\";v=\"151\", \"Not=A?Brand\";v=\"99\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "spotify-app-version": "1.3.6.1921",
+        "x-cache-hint": "<redacted-x-cache-hint>",
+        "sec-fetch-site": "same-site",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-dest": "empty",
+        "referer": "https://xpui.app.spotify.com/",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "accept-language": "en-US,en;q=0.9",
+        "priority": "u=1, i"
+      }
+    }
+  ],
+  "requests": [
+    {
+      "sourceId": 829,
+      "eventIndex": 16171,
+      "profileId": 1,
+      "method": "PUT",
+      "protocol": "h2",
+      "uploadBytes": 459,
+      "spotifyConnectionId": {
+        "present": true,
+        "empty": false,
+        "characterCount": 200
+      },
+      "response": {
+        "status": 200,
+        "eventIndex": 18685,
+        "headers": {
+          "content-length": "3635",
+          "content-encoding": "br",
+          "cache-control": "private, max-age=0"
+        },
+        "filteredBodyBytes": 14557,
+        "bodyPresentInCapture": true,
+        "schemaFieldPresence": [
+          {
+            "number": 1,
+            "wire": 0,
+            "name": "changed_timestamp_ms"
+          },
+          {
+            "number": 3,
+            "wire": 2,
+            "name": "player_state",
+            "byteLength": 6798
+          },
+          {
+            "number": 4,
+            "wire": 2,
+            "name": "device",
+            "byteLength": 626
+          },
+          {
+            "number": 5,
+            "wire": 2,
+            "name": "transfer_data",
+            "byteLength": 7097
+          },
+          {
+            "number": 6,
+            "wire": 0,
+            "name": "transfer_data_timestamp"
+          },
+          {
+            "number": 8,
+            "wire": 0,
+            "name": "need_full_player_state",
+            "boolean": true
+          },
+          {
+            "number": 9,
+            "wire": 0,
+            "name": "server_timestamp_ms"
+          },
+          {
+            "number": 10,
+            "wire": 0,
+            "name": "needs_state_updates",
+            "boolean": true
+          },
+          {
+            "number": 13,
+            "wire": 0,
+            "name": "needs_local_devices",
+            "boolean": false
+          }
+        ]
+      },
+      "cancelled": false,
+      "relativeMilliseconds": 0
+    },
+    {
+      "sourceId": 836,
+      "eventIndex": 16249,
+      "profileId": 1,
+      "method": "PUT",
+      "protocol": "h2",
+      "uploadBytes": 459,
+      "spotifyConnectionId": {
+        "present": true,
+        "empty": false,
+        "characterCount": 200
+      },
+      "response": {
+        "status": 200,
+        "eventIndex": 17562,
+        "headers": {
+          "content-length": "3635",
+          "content-encoding": "br",
+          "cache-control": "private, max-age=0"
+        },
+        "filteredBodyBytes": 14557,
+        "bodyPresentInCapture": true,
+        "schemaFieldPresence": [
+          {
+            "number": 1,
+            "wire": 0,
+            "name": "changed_timestamp_ms"
+          },
+          {
+            "number": 3,
+            "wire": 2,
+            "name": "player_state",
+            "byteLength": 6798
+          },
+          {
+            "number": 4,
+            "wire": 2,
+            "name": "device",
+            "byteLength": 626
+          },
+          {
+            "number": 5,
+            "wire": 2,
+            "name": "transfer_data",
+            "byteLength": 7097
+          },
+          {
+            "number": 6,
+            "wire": 0,
+            "name": "transfer_data_timestamp"
+          },
+          {
+            "number": 8,
+            "wire": 0,
+            "name": "need_full_player_state",
+            "boolean": true
+          },
+          {
+            "number": 9,
+            "wire": 0,
+            "name": "server_timestamp_ms"
+          },
+          {
+            "number": 10,
+            "wire": 0,
+            "name": "needs_state_updates",
+            "boolean": true
+          },
+          {
+            "number": 13,
+            "wire": 0,
+            "name": "needs_local_devices",
+            "boolean": false
+          }
+        ]
+      },
+      "cancelled": false,
+      "relativeMilliseconds": 0
+    },
+    {
+      "sourceId": 4054,
+      "eventIndex": 88190,
+      "profileId": 1,
+      "method": "PUT",
+      "protocol": "h3",
+      "uploadBytes": 1625,
+      "spotifyConnectionId": {
+        "present": true,
+        "empty": false,
+        "characterCount": 200
+      },
+      "response": {
+        "status": 200,
+        "eventIndex": 88623,
+        "headers": {
+          "content-length": "1625",
+          "content-encoding": "br",
+          "cache-control": "private, max-age=0"
+        },
+        "filteredBodyBytes": 3959,
+        "bodyPresentInCapture": true,
+        "schemaFieldPresence": [
+          {
+            "number": 1,
+            "wire": 0,
+            "name": "changed_timestamp_ms"
+          },
+          {
+            "number": 2,
+            "wire": 2,
+            "name": "active_device_id",
+            "byteLength": 40
+          },
+          {
+            "number": 3,
+            "wire": 2,
+            "name": "player_state",
+            "byteLength": 1191
+          },
+          {
+            "number": 4,
+            "wire": 2,
+            "name": "device",
+            "byteLength": 640
+          },
+          {
+            "number": 5,
+            "wire": 2,
+            "name": "transfer_data",
+            "byteLength": 2043
+          },
+          {
+            "number": 6,
+            "wire": 0,
+            "name": "transfer_data_timestamp"
+          },
+          {
+            "number": 8,
+            "wire": 0,
+            "name": "need_full_player_state",
+            "boolean": true
+          },
+          {
+            "number": 9,
+            "wire": 0,
+            "name": "server_timestamp_ms"
+          },
+          {
+            "number": 10,
+            "wire": 0,
+            "name": "needs_state_updates",
+            "boolean": true
+          },
+          {
+            "number": 11,
+            "wire": 0,
+            "name": "started_playing_at_timestamp"
+          },
+          {
+            "number": 13,
+            "wire": 0,
+            "name": "needs_local_devices",
+            "boolean": false
+          }
+        ]
+      },
+      "cancelled": false,
+      "relativeMilliseconds": 80856
+    },
+    {
+      "sourceId": 4072,
+      "eventIndex": 89020,
+      "profileId": 1,
+      "method": "PUT",
+      "protocol": "h3",
+      "uploadBytes": 1670,
+      "spotifyConnectionId": {
+        "present": true,
+        "empty": false,
+        "characterCount": 200
+      },
+      "response": {
+        "status": 200,
+        "eventIndex": 89590,
+        "headers": {
+          "content-length": "1656",
+          "content-encoding": "br",
+          "cache-control": "private, max-age=0"
+        },
+        "filteredBodyBytes": 4046,
+        "bodyPresentInCapture": true,
+        "schemaFieldPresence": [
+          {
+            "number": 1,
+            "wire": 0,
+            "name": "changed_timestamp_ms"
+          },
+          {
+            "number": 2,
+            "wire": 2,
+            "name": "active_device_id",
+            "byteLength": 40
+          },
+          {
+            "number": 3,
+            "wire": 2,
+            "name": "player_state",
+            "byteLength": 1241
+          },
+          {
+            "number": 4,
+            "wire": 2,
+            "name": "device",
+            "byteLength": 640
+          },
+          {
+            "number": 5,
+            "wire": 2,
+            "name": "transfer_data",
+            "byteLength": 2080
+          },
+          {
+            "number": 6,
+            "wire": 0,
+            "name": "transfer_data_timestamp"
+          },
+          {
+            "number": 8,
+            "wire": 0,
+            "name": "need_full_player_state",
+            "boolean": true
+          },
+          {
+            "number": 9,
+            "wire": 0,
+            "name": "server_timestamp_ms"
+          },
+          {
+            "number": 10,
+            "wire": 0,
+            "name": "needs_state_updates",
+            "boolean": true
+          },
+          {
+            "number": 11,
+            "wire": 0,
+            "name": "started_playing_at_timestamp"
+          },
+          {
+            "number": 13,
+            "wire": 0,
+            "name": "needs_local_devices",
+            "boolean": false
+          }
+        ]
+      },
+      "cancelled": false,
+      "relativeMilliseconds": 81198
+    },
+    {
+      "sourceId": 4089,
+      "eventIndex": 90301,
+      "profileId": 1,
+      "method": "PUT",
+      "protocol": "h3",
+      "uploadBytes": 1710,
+      "spotifyConnectionId": {
+        "present": true,
+        "empty": false,
+        "characterCount": 200
+      },
+      "response": null,
+      "cancelled": true,
+      "relativeMilliseconds": 81824
+    },
+    {
+      "sourceId": 4104,
+      "eventIndex": 90532,
+      "profileId": 1,
+      "method": "PUT",
+      "protocol": "h3",
+      "uploadBytes": 1694,
+      "spotifyConnectionId": {
+        "present": true,
+        "empty": false,
+        "characterCount": 200
+      },
+      "response": {
+        "status": 200,
+        "eventIndex": 90804,
+        "headers": {
+          "content-length": "1679",
+          "content-encoding": "br",
+          "cache-control": "private, max-age=0"
+        },
+        "filteredBodyBytes": 4119,
+        "bodyPresentInCapture": true,
+        "schemaFieldPresence": [
+          {
+            "number": 1,
+            "wire": 0,
+            "name": "changed_timestamp_ms"
+          },
+          {
+            "number": 2,
+            "wire": 2,
+            "name": "active_device_id",
+            "byteLength": 40
+          },
+          {
+            "number": 3,
+            "wire": 2,
+            "name": "player_state",
+            "byteLength": 1274
+          },
+          {
+            "number": 4,
+            "wire": 2,
+            "name": "device",
+            "byteLength": 640
+          },
+          {
+            "number": 5,
+            "wire": 2,
+            "name": "transfer_data",
+            "byteLength": 2120
+          },
+          {
+            "number": 6,
+            "wire": 0,
+            "name": "transfer_data_timestamp"
+          },
+          {
+            "number": 8,
+            "wire": 0,
+            "name": "need_full_player_state",
+            "boolean": true
+          },
+          {
+            "number": 9,
+            "wire": 0,
+            "name": "server_timestamp_ms"
+          },
+          {
+            "number": 10,
+            "wire": 0,
+            "name": "needs_state_updates",
+            "boolean": true
+          },
+          {
+            "number": 11,
+            "wire": 0,
+            "name": "started_playing_at_timestamp"
+          },
+          {
+            "number": 13,
+            "wire": 0,
+            "name": "needs_local_devices",
+            "boolean": false
+          }
+        ]
+      },
+      "cancelled": false,
+      "relativeMilliseconds": 81927
+    },
+    {
+      "sourceId": 4259,
+      "eventIndex": 94637,
+      "profileId": 1,
+      "method": "PUT",
+      "protocol": "h3",
+      "uploadBytes": 1704,
+      "spotifyConnectionId": {
+        "present": true,
+        "empty": false,
+        "characterCount": 200
+      },
+      "response": {
+        "status": 200,
+        "eventIndex": 94676,
+        "headers": {
+          "content-length": "1682",
+          "content-encoding": "br",
+          "cache-control": "private, max-age=0"
+        },
+        "filteredBodyBytes": 4133,
+        "bodyPresentInCapture": true,
+        "schemaFieldPresence": [
+          {
+            "number": 1,
+            "wire": 0,
+            "name": "changed_timestamp_ms"
+          },
+          {
+            "number": 2,
+            "wire": 2,
+            "name": "active_device_id",
+            "byteLength": 40
+          },
+          {
+            "number": 3,
+            "wire": 2,
+            "name": "player_state",
+            "byteLength": 1275
+          },
+          {
+            "number": 4,
+            "wire": 2,
+            "name": "device",
+            "byteLength": 640
+          },
+          {
+            "number": 5,
+            "wire": 2,
+            "name": "transfer_data",
+            "byteLength": 2126
+          },
+          {
+            "number": 6,
+            "wire": 0,
+            "name": "transfer_data_timestamp"
+          },
+          {
+            "number": 7,
+            "wire": 0,
+            "name": "<unknown-field>"
+          },
+          {
+            "number": 8,
+            "wire": 0,
+            "name": "need_full_player_state",
+            "boolean": true
+          },
+          {
+            "number": 9,
+            "wire": 0,
+            "name": "server_timestamp_ms"
+          },
+          {
+            "number": 10,
+            "wire": 0,
+            "name": "needs_state_updates",
+            "boolean": true
+          },
+          {
+            "number": 11,
+            "wire": 0,
+            "name": "started_playing_at_timestamp"
+          },
+          {
+            "number": 13,
+            "wire": 0,
+            "name": "needs_local_devices",
+            "boolean": false
+          }
+        ]
+      },
+      "cancelled": false,
+      "relativeMilliseconds": 88794
+    },
+    {
+      "sourceId": 4281,
+      "eventIndex": 95113,
+      "profileId": 2,
+      "method": "OPTIONS",
+      "protocol": "h3",
+      "uploadBytes": 0,
+      "spotifyConnectionId": null,
+      "response": {
+        "status": 200,
+        "eventIndex": 95141,
+        "headers": {
+          "content-length": "0"
+        },
+        "filteredBodyBytes": 0,
+        "bodyPresentInCapture": false
+      },
+      "cancelled": false,
+      "relativeMilliseconds": 107638
+    },
+    {
+      "sourceId": 4280,
+      "eventIndex": 95225,
+      "profileId": 3,
+      "method": "GET",
+      "protocol": "h3",
+      "uploadBytes": 0,
+      "spotifyConnectionId": null,
+      "response": {
+        "status": 200,
+        "eventIndex": 95257,
+        "headers": {
+          "content-length": "1866",
+          "content-encoding": "br",
+          "cache-control": "private, max-age=0"
+        },
+        "filteredBodyBytes": 5267,
+        "bodyPresentInCapture": true,
+        "jsonKeys": [
+          "timestamp",
+          "active_device_id",
+          "player_state",
+          "devices",
+          "transfer_data_timestamp",
+          "<unknown-key>",
+          "need_full_player_state",
+          "server_timestamp_ms",
+          "needs_state_updates",
+          "started_playing_at",
+          "needs_local_devices"
+        ]
+      },
+      "cancelled": false,
+      "relativeMilliseconds": 107984
+    }
+  ],
+  "musicSequenceAnchors": [
+    {
+      "sourceId": 3897,
+      "eventIndex": 85915,
+      "kind": "music-key",
+      "method": "POST",
+      "relativeMilliseconds": 80568
+    },
+    {
+      "sourceId": 4109,
+      "eventIndex": 90758,
+      "kind": "music-key",
+      "method": "POST",
+      "relativeMilliseconds": 82089
+    }
+  ],
+  "aggregateIdentityFacts": {
+    "deviceIdCount": 1,
+    "spotifyConnectionIdCount": 1,
+    "allSpotifyConnectionIdsNonempty": true,
+    "spotifyConnectionIdCharacterCounts": [
+      200
+    ],
+    "allSevenSpotifyConnectionIdsEqual": true
+  },
+  "startupUploads": [
+    {
+      "sourceId": 829,
+      "http2SessionSourceId": 1018,
+      "tlsSocketSourceId": 921,
+      "streamId": 1,
+      "compressedBytes": 459,
+      "protobufBytes": 603,
+      "privateGzipPath": ".local/connect-state-evidence/source-829-request.gz",
+      "privateProtobufPath": ".local/connect-state-evidence/source-829-request.pb",
+      "schemaFieldPresence": [
+        {
+          "number": 2,
+          "wire": 2,
+          "name": "device",
+          "byteLength": 596
+        },
+        {
+          "number": 3,
+          "wire": 0,
+          "name": "member_type",
+          "enum": "CONNECT_STATE"
+        },
+        {
+          "number": 5,
+          "wire": 0,
+          "name": "put_state_reason",
+          "enum": "AUDIO_DRIVER_INFO_CHANGED"
+        }
+      ],
+      "deviceFieldPresence": [
+        {
+          "number": 1,
+          "wire": 2,
+          "name": "device_info",
+          "byteLength": 551
+        },
+        {
+          "number": 2,
+          "wire": 2,
+          "name": "player_state",
+          "byteLength": 17
+        },
+        {
+          "number": 3,
+          "wire": 2,
+          "name": "private_device_info",
+          "byteLength": 21
+        }
+      ],
+      "deviceInfoFieldPresence": [
+        {
+          "number": 1,
+          "wire": 0,
+          "name": "can_play",
+          "boolean": true
+        },
+        {
+          "number": 2,
+          "wire": 0,
+          "name": "volume"
+        },
+        {
+          "number": 3,
+          "wire": 2,
+          "name": "name",
+          "byteLength": 24
+        },
+        {
+          "number": 4,
+          "wire": 2,
+          "name": "capabilities",
+          "byteLength": 296
+        },
+        {
+          "number": 6,
+          "wire": 2,
+          "name": "device_software_version",
+          "byteLength": 24
+        },
+        {
+          "number": 7,
+          "wire": 0,
+          "name": "device_type",
+          "enum": "<unresolved-enum-value>"
+        },
+        {
+          "number": 9,
+          "wire": 2,
+          "name": "spirc_version",
+          "byteLength": 5
+        },
+        {
+          "number": 10,
+          "wire": 2,
+          "name": "device_id",
+          "byteLength": 40
+        },
+        {
+          "number": 13,
+          "wire": 2,
+          "name": "client_id",
+          "byteLength": 32
+        },
+        {
+          "number": 14,
+          "wire": 2,
+          "name": "brand",
+          "byteLength": 5
+        },
+        {
+          "number": 15,
+          "wire": 2,
+          "name": "model",
+          "byteLength": 14
+        },
+        {
+          "number": 16,
+          "wire": 2,
+          "name": "metadata_map",
+          "byteLength": 35
+        },
+        {
+          "number": 16,
+          "wire": 2,
+          "name": "metadata_map",
+          "byteLength": 16
+        },
+        {
+          "number": 24,
+          "wire": 2,
+          "name": "audio_output_device_info",
+          "byteLength": 26
+        }
+      ],
+      "playerStateFieldPresence": [
+        {
+          "number": 4,
+          "wire": 2,
+          "name": "context_restrictions",
+          "byteLength": 0
+        },
+        {
+          "number": 5,
+          "wire": 2,
+          "name": "play_origin",
+          "byteLength": 0
+        },
+        {
+          "number": 16,
+          "wire": 2,
+          "name": "options",
+          "byteLength": 0
+        },
+        {
+          "number": 17,
+          "wire": 2,
+          "name": "restrictions",
+          "byteLength": 0
+        },
+        {
+          "number": 18,
+          "wire": 2,
+          "name": "suppressions",
+          "byteLength": 0
+        },
+        {
+          "number": 24,
+          "wire": 2,
+          "name": "queue_revision",
+          "byteLength": 1
+        }
+      ]
+    },
+    {
+      "sourceId": 836,
+      "http2SessionSourceId": 1018,
+      "tlsSocketSourceId": 921,
+      "streamId": 13,
+      "compressedBytes": 459,
+      "protobufBytes": 603,
+      "privateGzipPath": ".local/connect-state-evidence/source-836-request.gz",
+      "privateProtobufPath": ".local/connect-state-evidence/source-836-request.pb",
+      "schemaFieldPresence": [
+        {
+          "number": 2,
+          "wire": 2,
+          "name": "device",
+          "byteLength": 596
+        },
+        {
+          "number": 3,
+          "wire": 0,
+          "name": "member_type",
+          "enum": "CONNECT_STATE"
+        },
+        {
+          "number": 5,
+          "wire": 0,
+          "name": "put_state_reason",
+          "enum": "NEW_CONNECTION"
+        }
+      ],
+      "deviceFieldPresence": [
+        {
+          "number": 1,
+          "wire": 2,
+          "name": "device_info",
+          "byteLength": 551
+        },
+        {
+          "number": 2,
+          "wire": 2,
+          "name": "player_state",
+          "byteLength": 17
+        },
+        {
+          "number": 3,
+          "wire": 2,
+          "name": "private_device_info",
+          "byteLength": 21
+        }
+      ],
+      "deviceInfoFieldPresence": [
+        {
+          "number": 1,
+          "wire": 0,
+          "name": "can_play",
+          "boolean": true
+        },
+        {
+          "number": 2,
+          "wire": 0,
+          "name": "volume"
+        },
+        {
+          "number": 3,
+          "wire": 2,
+          "name": "name",
+          "byteLength": 24
+        },
+        {
+          "number": 4,
+          "wire": 2,
+          "name": "capabilities",
+          "byteLength": 296
+        },
+        {
+          "number": 6,
+          "wire": 2,
+          "name": "device_software_version",
+          "byteLength": 24
+        },
+        {
+          "number": 7,
+          "wire": 0,
+          "name": "device_type",
+          "enum": "<unresolved-enum-value>"
+        },
+        {
+          "number": 9,
+          "wire": 2,
+          "name": "spirc_version",
+          "byteLength": 5
+        },
+        {
+          "number": 10,
+          "wire": 2,
+          "name": "device_id",
+          "byteLength": 40
+        },
+        {
+          "number": 13,
+          "wire": 2,
+          "name": "client_id",
+          "byteLength": 32
+        },
+        {
+          "number": 14,
+          "wire": 2,
+          "name": "brand",
+          "byteLength": 5
+        },
+        {
+          "number": 15,
+          "wire": 2,
+          "name": "model",
+          "byteLength": 14
+        },
+        {
+          "number": 16,
+          "wire": 2,
+          "name": "metadata_map",
+          "byteLength": 16
+        },
+        {
+          "number": 16,
+          "wire": 2,
+          "name": "metadata_map",
+          "byteLength": 35
+        },
+        {
+          "number": 24,
+          "wire": 2,
+          "name": "audio_output_device_info",
+          "byteLength": 26
+        }
+      ],
+      "playerStateFieldPresence": [
+        {
+          "number": 4,
+          "wire": 2,
+          "name": "context_restrictions",
+          "byteLength": 0
+        },
+        {
+          "number": 5,
+          "wire": 2,
+          "name": "play_origin",
+          "byteLength": 0
+        },
+        {
+          "number": 16,
+          "wire": 2,
+          "name": "options",
+          "byteLength": 0
+        },
+        {
+          "number": 17,
+          "wire": 2,
+          "name": "restrictions",
+          "byteLength": 0
+        },
+        {
+          "number": 18,
+          "wire": 2,
+          "name": "suppressions",
+          "byteLength": 0
+        },
+        {
+          "number": 24,
+          "wire": 2,
+          "name": "queue_revision",
+          "byteLength": 1
+        }
+      ]
+    }
+  ],
+  "originalSchema": {
+    "file": "connect.proto",
+    "package": "spotify.connectstate",
+    "offset": 36366920,
+    "length": 13685,
+    "sha256": "a1d89b84ddb2c6966fb2073ce9cab8267b8e808c96adb484cec886a1ac7fbe6e",
+    "dependencies": [
+      "player.proto",
+      "devices.proto",
+      "media.proto"
+    ]
+  },
+  "originalPlayerSchema": {
+    "file": "player.proto",
+    "package": "spotify.connectstate",
+    "offset": 36383692,
+    "length": 8619,
+    "sha256": "374dcce7e32e532567f63e3cfb307c1c57c8b65d13d12da5c11257947fa0f6f6",
+    "dependencies": []
+  },
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "exports": [
+    {
+      "path": ".local/rea-session/native-connect-state-http-producers.json",
+      "sha256": "9fd03c3e2067d92c153162f30061da13174a0af994e6b784719c9757db9d432c"
+    },
+    {
+      "path": ".local/rea-session/native-connect-state-device-and-header-inputs.json",
+      "sha256": "2bf5c2bfdfa51c0c5eadcc66f00388a2557c838a3df0bcc17eac72896560f9d4"
+    },
+    {
+      "path": ".local/rea-session/native-connect-state-connection-id-header-provider.json",
+      "sha256": "bf2836d09315e61d486d385547125054af3aa62df076e01fe4f36f662713dc09"
+    },
+    {
+      "path": ".local/rea-session/native-connect-state-connection-id-continuation-callers.json",
+      "sha256": "65b240ea32fea271404911bc911da3d848dcd94e5d4c8c130cc0a6a4043b15a8"
+    },
+    {
+      "path": ".local/rea-session/native-connect-state-connection-id-acquisition-callbacks.json",
+      "sha256": "c1199d3799307734fd2f37b879c856a48c9503d11ea80a1657cf60adcdb04d8b"
+    }
+  ],
+  "limits": [
+    "Native device PUT and renderer cluster GET/OPTIONS are distinct profiles and producers.",
+    "Seven PUT sends: six200, one cancelled/no response. One actual clusterGET200 and itsOPTIONS200, not twoGETs.",
+    "Only first two startup H2 upload bodies recovered; later music-related H3 uploads expose lengths, not plaintext.",
+    "Private uploads and account/device/connection IDs, metadata values and complete state are not exported.",
+    "Original schema/body presence is not a proof of Dart state construction, Dealer lifecycle, acknowledgements or admission.",
+    "No causation between Connect state and key rejection/acceptance is inferred; no sender or runtime admission is changed."
+  ]
+}

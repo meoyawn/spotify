@@ -1,0 +1,514 @@
+[
+  {
+    "offset": 35097493,
+    "value": "client-token"
+  },
+  {
+    "offset": 35097506,
+    "value": "client-token-error"
+  },
+  {
+    "offset": 36328061,
+    "value": "$spotify.clienttoken.serialization.v0\"%"
+  },
+  {
+    "offset": 36328292,
+    "value": "21.spotify.clienttoken.serialization.v0.TokenDomainR"
+  },
+  {
+    "offset": 36328355,
+    "value": "$spotify.clienttoken.serialization.v0H"
+  },
+  {
+    "offset": 36329158,
+    "value": "spotify.clienttoken.data.v0\""
+  },
+  {
+    "offset": 36329241,
+    "value": "21.spotify.clienttoken.data.v0.PlatformSpecificDataR"
+  },
+  {
+    "offset": 36329378,
+    "value": "24.spotify.clienttoken.data.v0.ApplicationSpecificDataR"
+  },
+  {
+    "offset": 36329570,
+    "value": "2..spotify.clienttoken.data.v0.NativeAndroidDataH"
+  },
+  {
+    "offset": 36329642,
+    "value": "2*.spotify.clienttoken.data.v0.NativeIOSDataH"
+  },
+  {
+    "offset": 36329706,
+    "value": "23.spotify.clienttoken.data.v0.NativeDesktopMacOSDataH"
+  },
+  {
+    "offset": 36329779,
+    "value": "25.spotify.clienttoken.data.v0.NativeDesktopWindowsDataH"
+  },
+  {
+    "offset": 36329856,
+    "value": "23.spotify.clienttoken.data.v0.NativeDesktopLinuxDataH"
+  },
+  {
+    "offset": 36329932,
+    "value": "2+.spotify.clienttoken.data.v0.NativeTVOSDataH"
+  },
+  {
+    "offset": 36330002,
+    "value": "2..spotify.clienttoken.data.v0.NativeWatchOSDataH"
+  },
+  {
+    "offset": 36330118,
+    "value": "22.spotify.clienttoken.data.v0.NativeCoreSpeakerDataH"
+  },
+  {
+    "offset": 36330242,
+    "value": "2*.spotify.clienttoken.data.v0.AndroidScreenR"
+  },
+  {
+    "offset": 36333080,
+    "value": "spotify.clienttoken.data.v0H"
+  },
+  {
+    "offset": 36333811,
+    "value": "spotify.clienttoken.http.v0"
+  },
+  {
+    "offset": 36333903,
+    "value": "23.spotify.clienttoken.http.v0.ClientTokenRequestTypeR"
+  },
+  {
+    "offset": 36333990,
+    "value": "2..spotify.clienttoken.http.v0.ClientDataRequestH"
+  },
+  {
+    "offset": 36334079,
+    "value": "24.spotify.clienttoken.http.v0.ChallengeAnswersRequestH"
+  },
+  {
+    "offset": 36334414,
+    "value": "20.spotify.clienttoken.data.v0.ConnectivitySdkDataH"
+  },
+  {
+    "offset": 36334672,
+    "value": "2,.spotify.clienttoken.http.v0.ChallengeAnswerR"
+  },
+  {
+    "offset": 36334774,
+    "value": "24.spotify.clienttoken.http.v0.ClientTokenResponseTypeR"
+  },
+  {
+    "offset": 36334865,
+    "value": "21.spotify.clienttoken.http.v0.GrantedTokenResponseH"
+  },
+  {
+    "offset": 36334952,
+    "value": "2/.spotify.clienttoken.http.v0.ChallengesResponseH"
+  },
+  {
+    "offset": 36335234,
+    "value": "2(.spotify.clienttoken.http.v0.TokenDomainR"
+  },
+  {
+    "offset": 36335349,
+    "value": "2&.spotify.clienttoken.http.v0.ChallengeR"
+  },
+  {
+    "offset": 36335619,
+    "value": "2*.spotify.clienttoken.http.v0.ChallengeTypeR"
+  },
+  {
+    "offset": 36335703,
+    "value": "23.spotify.clienttoken.http.v0.ClientSecretParametersH"
+  },
+  {
+    "offset": 36335814,
+    "value": "21.spotify.clienttoken.http.v0.EvaluateJSParametersH"
+  },
+  {
+    "offset": 36335927,
+    "value": "2/.spotify.clienttoken.http.v0.HashCashParametersH"
+  },
+  {
+    "offset": 36336195,
+    "value": "2*.spotify.clienttoken.http.v0.ChallengeTypeR"
+  },
+  {
+    "offset": 36336277,
+    "value": "23.spotify.clienttoken.http.v0.ClientSecretHMACAnswerH"
+  },
+  {
+    "offset": 36336367,
+    "value": "2-.spotify.clienttoken.http.v0.EvaluateJSAnswerH"
+  },
+  {
+    "offset": 36336447,
+    "value": "2+.spotify.clienttoken.http.v0.HashCashAnswerH"
+  },
+  {
+    "offset": 36336934,
+    "value": "spotify.clienttoken.http.v0H"
+  },
+  {
+    "offset": 36345053,
+    "value": "9com.spotify.connectivity.auth.clienttoken.esperanto.protoH"
+  },
+  {
+    "offset": 36395957,
+    "value": "client-token"
+  },
+  {
+    "offset": 36411792,
+    "value": "hm://playlist/"
+  },
+  {
+    "offset": 36711288,
+    "value": "User-Agent"
+  },
+  {
+    "offset": 37432548,
+    "value": "user-agent-product"
+  },
+  {
+    "offset": 37435694,
+    "value": "sp://desktop/v1/browse_for_folder"
+  },
+  {
+    "offset": 37435728,
+    "value": "sp://desktop/v1/clipboard"
+  },
+  {
+    "offset": 37461427,
+    "value": "hm://campfire/v1/hierarchy-message-changed"
+  },
+  {
+    "offset": 37484951,
+    "value": "User-Agent"
+  },
+  {
+    "offset": 37485134,
+    "value": "X-Device-User-Agent"
+  },
+  {
+    "offset": 37574387,
+    "value": "hm://event-service/v1/events"
+  },
+  {
+    "offset": 37595941,
+    "value": "hm://common-capping/update"
+  },
+  {
+    "offset": 37603009,
+    "value": "hm://show-access/update/proto"
+  },
+  {
+    "offset": 37616354,
+    "value": "hm://offline/"
+  },
+  {
+    "offset": 37631712,
+    "value": "hm://context-resolve/v1/autoplay"
+  },
+  {
+    "offset": 37631745,
+    "value": "hm://context-resolve/v1/autopodcast"
+  },
+  {
+    "offset": 37641442,
+    "value": "hm://herodotus/uri/"
+  },
+  {
+    "offset": 37641462,
+    "value": "hm://herodotus/batch"
+  },
+  {
+    "offset": 37650511,
+    "value": "hm://library-import-service/v1/import/progress"
+  },
+  {
+    "offset": 37676821,
+    "value": "hm://speech_visualization/v1/generate/x-dj/"
+  },
+  {
+    "offset": 37687167,
+    "value": "sp://videoplayer/v1"
+  },
+  {
+    "offset": 37708870,
+    "value": "sp://videoplayer/v1/advance"
+  },
+  {
+    "offset": 37708898,
+    "value": "sp://videoplayer/v1/state"
+  },
+  {
+    "offset": 37708924,
+    "value": "sp://videoplayer/v1/event"
+  },
+  {
+    "offset": 37708950,
+    "value": "sp://videoplayer/v1/error"
+  },
+  {
+    "offset": 37708976,
+    "value": "sp://videoplayer/v1/commands"
+  },
+  {
+    "offset": 37744561,
+    "value": "hm://connect-group/v1/group-data-event"
+  },
+  {
+    "offset": 37744600,
+    "value": "hm://connect-group/v1/group-device-volume-event"
+  },
+  {
+    "offset": 37765205,
+    "value": "hm://connect-state/v1/cluster"
+  },
+  {
+    "offset": 37765235,
+    "value": "hm://connect-state/v1/connect/volume"
+  },
+  {
+    "offset": 37765272,
+    "value": "hm://connect-state/v1/connect/logout"
+  },
+  {
+    "offset": 37765309,
+    "value": "hm://connect-state/v1/connect/set_backend_metadata"
+  },
+  {
+    "offset": 37765360,
+    "value": "hm://connect-state/v1/group/add-device"
+  },
+  {
+    "offset": 37765399,
+    "value": "hm://connect-state/v1/group/remove-device"
+  },
+  {
+    "offset": 37765441,
+    "value": "hm://connect-state/v1/group/delete"
+  },
+  {
+    "offset": 37765476,
+    "value": "hm://connect-state/v1/group/resync"
+  },
+  {
+    "offset": 37765511,
+    "value": "hm://connect-state/v1/player/command"
+  },
+  {
+    "offset": 37765548,
+    "value": "hm://connect-state/v1/ping"
+  },
+  {
+    "offset": 37765575,
+    "value": "hm://connect-state/v1/connect/proxy_transfer"
+  },
+  {
+    "offset": 37765620,
+    "value": "hm://connect-state/v1/connect/proxy_wake"
+  },
+  {
+    "offset": 37815829,
+    "value": "sp://logging/v1/*"
+  },
+  {
+    "offset": 37815847,
+    "value": "sp://logging/v2/*"
+  },
+  {
+    "offset": 37815865,
+    "value": "sp://logging/v3/*"
+  },
+  {
+    "offset": 37816610,
+    "value": "sp://desktop/v1/shutdown"
+  },
+  {
+    "offset": 37816635,
+    "value": "sp://event_sender_test/v1/sent_events"
+  },
+  {
+    "offset": 37816863,
+    "value": "sp://event_sender_test/v1/event"
+  },
+  {
+    "offset": 37816895,
+    "value": "sp://event_sender_test/v1/sending_interval"
+  },
+  {
+    "offset": 37816955,
+    "value": "sp://internal/v1/force_crash"
+  },
+  {
+    "offset": 37816984,
+    "value": "sp://messages/v1/container/control"
+  },
+  {
+    "offset": 37824744,
+    "value": "sp://internal/v1/latest_messages"
+  },
+  {
+    "offset": 37838988,
+    "value": "hm://audio-attributes/v1/audio-analysis/"
+  },
+  {
+    "offset": 37975434,
+    "value": "client-token: Forbidden"
+  },
+  {
+    "offset": 37975458,
+    "value": "client-token: non-succesful HTTP status code returned: %d"
+  },
+  {
+    "offset": 37975516,
+    "value": "client-token: empty response"
+  },
+  {
+    "offset": 37975545,
+    "value": "client-token: unparsable proto response"
+  },
+  {
+    "offset": 37975585,
+    "value": "client-token: unexpected response from the backend"
+  },
+  {
+    "offset": 37975636,
+    "value": "client-token: cannot fulfill a request: category: %s, value: %d, msg: %s"
+  },
+  {
+    "offset": 37975709,
+    "value": "client-token: cannot parse the prefix"
+  },
+  {
+    "offset": 37975747,
+    "value": "client-token: unsupported operation requested"
+  },
+  {
+    "offset": 37975793,
+    "value": "client-token: network request error: category: %s, value: %d, msg: %s"
+  },
+  {
+    "offset": 37975863,
+    "value": "https://clienttoken.spotify.com/v1/clienttoken"
+  },
+  {
+    "offset": 38003491,
+    "value": "sp://esperanto/**"
+  },
+  {
+    "offset": 38003598,
+    "value": "sp://esperanto/([a-z0-9._]+)/([a-z0-9._]+)/*"
+  },
+  {
+    "offset": 38007066,
+    "value": "hm://affinity/v1/"
+  },
+  {
+    "offset": 38024240,
+    "value": "client-token-error"
+  },
+  {
+    "offset": 38034849,
+    "value": "hm://collection/%s/"
+  },
+  {
+    "offset": 38054189,
+    "value": "sp://_routes"
+  },
+  {
+    "offset": 41030168,
+    "value": "spotify.clienttoken.serialization.v0.TokenDomaindomain"
+  },
+  {
+    "offset": 41030520,
+    "value": "spotify.clienttoken.serialization.v0.ClientTokentoken"
+  },
+  {
+    "offset": 41031712,
+    "value": "spotify.clienttoken.data.v0.ConnectivitySdkDatadevice_iddeveloper_api_key"
+  },
+  {
+    "offset": 41032904,
+    "value": "spotify.clienttoken.data.v0.NativeAndroidDataos_versionnamemodelbrandmanufacturerdevice_data_extinstaller_name"
+  },
+  {
+    "offset": 41033748,
+    "value": "spotify.clienttoken.data.v0.NativeIOSDatahw_machinesystem_versionsimulator_model_identifierdevice_data_ext"
+  },
+  {
+    "offset": 41034260,
+    "value": "spotify.clienttoken.data.v0.NativeDesktopMacOSDatasystem_versionhw_modelcompiled_cpu_type"
+  },
+  {
+    "offset": 41034956,
+    "value": "spotify.clienttoken.data.v0.NativeDesktopWindowsDatawine_version"
+  },
+  {
+    "offset": 41035308,
+    "value": "spotify.clienttoken.data.v0.NativeDesktopLinuxDatasystem_namesystem_releasesystem_versionhardware"
+  },
+  {
+    "offset": 41035768,
+    "value": "spotify.clienttoken.data.v0.NativeTVOSDatahw_machinesystem_versionsimulator_model_identifier"
+  },
+  {
+    "offset": 41036148,
+    "value": "spotify.clienttoken.data.v0.NativeWatchOSDatahw_machinesystem_versionsimulator_model_identifier"
+  },
+  {
+    "offset": 41036620,
+    "value": "spotify.clienttoken.data.v0.NativeCoreSpeakerDatabrand_namemodel_namedevice_manufacturerplatform_namesystems_integratorsdk_version"
+  },
+  {
+    "offset": 41038264,
+    "value": "spotify.clienttoken.http.v0.ClientDataRequestclient_versionclient_idcurrent_token"
+  },
+  {
+    "offset": 41038592,
+    "value": "spotify.clienttoken.http.v0.ChallengeAnswersRequeststate"
+  },
+  {
+    "offset": 41039096,
+    "value": "spotify.clienttoken.http.v0.TokenDomaindomain"
+  },
+  {
+    "offset": 41039440,
+    "value": "spotify.clienttoken.http.v0.GrantedTokenResponsetoken"
+  },
+  {
+    "offset": 41039736,
+    "value": "spotify.clienttoken.http.v0.ChallengesResponsestate"
+  },
+  {
+    "offset": 41039992,
+    "value": "spotify.clienttoken.http.v0.ClientSecretParameterssalt"
+  },
+  {
+    "offset": 41040276,
+    "value": "spotify.clienttoken.http.v0.EvaluateJSParameterscodelibraries"
+  },
+  {
+    "offset": 41040572,
+    "value": "spotify.clienttoken.http.v0.HashCashParametersprefix"
+  },
+  {
+    "offset": 41041096,
+    "value": "spotify.clienttoken.http.v0.ClientSecretHMACAnswerhmac"
+  },
+  {
+    "offset": 41041352,
+    "value": "spotify.clienttoken.http.v0.EvaluateJSAnswerresult"
+  },
+  {
+    "offset": 41041608,
+    "value": "spotify.clienttoken.http.v0.HashCashAnswersuffix"
+  },
+  {
+    "offset": 41042128,
+    "value": "spotify.clienttoken.http.v0.ClientTokenBadRequestmessage"
+  }
+]

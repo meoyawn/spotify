@@ -1,0 +1,280 @@
+{
+  "provenance": "Execute the original proprietary prefs parser and entry writer offline.\n\nSynthetic file bytes and registry entries only. Standard streams, memory and\nstring primitives use inert storage; integer parsing delegates to Darwin libc\nstrtol. The proprietary grammar, escapes and byte writer execute unchanged.",
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "parser": "0x101b8f67c",
+  "writerEntry": "0x101b8ffa0",
+  "parseCases": [
+    {
+      "name": "ordinary values and no final LF",
+      "inputHex": "626f6f6c3d747275650a6e756d6265723d2d34320a737472696e673d226669787475726522",
+      "entries": [
+        {
+          "keyHex": "626f6f6c",
+          "bool": true
+        },
+        {
+          "keyHex": "6e756d626572",
+          "number": -42
+        },
+        {
+          "keyHex": "737472696e67",
+          "stringHex": "66697874757265"
+        }
+      ]
+    },
+    {
+      "name": "ASCII trim and first equals",
+      "inputHex": "2009206b6579200d3d200922613d6222200d0a656d7074793d0a3d34320a6e6f657175616c730a",
+      "entries": [
+        {
+          "keyHex": "6b6579",
+          "stringHex": "613d62"
+        }
+      ]
+    },
+    {
+      "name": "native control escapes",
+      "inputHex": "733d22615c6a625c6b635c6e645c783030655c783766665c22675c5c68220a",
+      "entries": [
+        {
+          "keyHex": "73",
+          "stringHex": "6109620a630d6400657f6622675c68"
+        }
+      ]
+    },
+    {
+      "name": "non-native escapes and trailing quote bytes rejected",
+      "inputHex": "613d225c74220a623d225c72220a633d225c6e220a643d226f6b22747261696c696e670a653d22756e7465726d696e617465640a663d2272617701220a",
+      "entries": [
+        {
+          "keyHex": "63",
+          "stringHex": "0d"
+        }
+      ]
+    },
+    {
+      "name": "base zero signed conversion",
+      "inputHex": "613d307831300a623d3031300a633d2d3031300a643d30380a653d2b320a663d2d307832300a673d306231310a683d323134373438333634380a693d2d323134373438333634390a",
+      "entries": [
+        {
+          "keyHex": "61",
+          "number": 16
+        },
+        {
+          "keyHex": "62",
+          "number": 8
+        },
+        {
+          "keyHex": "63",
+          "number": -8
+        },
+        {
+          "keyHex": "66",
+          "number": -32
+        },
+        {
+          "keyHex": "68",
+          "number": -2147483648
+        },
+        {
+          "keyHex": "69",
+          "number": 2147483647
+        }
+      ]
+    },
+    {
+      "name": "long overflow saturates before int32 truncation",
+      "inputHex": "613d393232333337323033363835343737353830370a623d393232333337323033363835343737353830380a633d2d393232333337323033363835343737353830380a643d2d393232333337323033363835343737353830390a",
+      "entries": [
+        {
+          "keyHex": "61",
+          "number": -1
+        },
+        {
+          "keyHex": "62",
+          "number": -1
+        },
+        {
+          "keyHex": "63",
+          "number": 0
+        },
+        {
+          "keyHex": "64",
+          "number": 0
+        }
+      ]
+    },
+    {
+      "name": "case sensitive bool and numeric trailing bytes",
+      "inputHex": "613d545255450a623d46616c73650a633d74727565780a643d31326a756e6b0a653d30780a663d2d0a673d66616c73650a",
+      "entries": [
+        {
+          "keyHex": "67",
+          "bool": false
+        }
+      ]
+    },
+    {
+      "name": "duplicates retain input registration order",
+      "inputHex": "613d310a613d320a613d226368616e6765642d74797065220a",
+      "entries": [
+        {
+          "keyHex": "61",
+          "number": 1
+        },
+        {
+          "keyHex": "61",
+          "number": 2
+        },
+        {
+          "keyHex": "61",
+          "stringHex": "6368616e6765642d74797065"
+        }
+      ]
+    },
+    {
+      "name": "raw bytes and escaped hex case",
+      "inputHex": "7261773d22ff5c7841625c583030220a676f6f643d225c784666220a",
+      "entries": [
+        {
+          "keyHex": "676f6f64",
+          "stringHex": "ff"
+        }
+      ]
+    },
+    {
+      "name": "empty quoted strings and whitespace-only lines",
+      "inputHex": "0a2009200d0a656d7074793d22220a",
+      "entries": [
+        {
+          "keyHex": "656d707479",
+          "stringHex": ""
+        }
+      ]
+    }
+  ],
+  "writeCases": [
+    {
+      "input": {
+        "keyHex": "626f6f6c2e74727565",
+        "bool": true
+      },
+      "outputHex": "626f6f6c2e747275653d747275650a"
+    },
+    {
+      "input": {
+        "keyHex": "626f6f6c2e66616c7365",
+        "bool": false
+      },
+      "outputHex": "626f6f6c2e66616c73653d66616c73650a"
+    },
+    {
+      "input": {
+        "keyHex": "6d696e",
+        "number": -2147483648
+      },
+      "outputHex": "6d696e3d2d323134373438333634380a"
+    },
+    {
+      "input": {
+        "keyHex": "6d6178",
+        "number": 2147483647
+      },
+      "outputHex": "6d61783d323134373438333634370a"
+    },
+    {
+      "input": {
+        "keyHex": "656d707479",
+        "stringHex": ""
+      },
+      "outputHex": "656d7074793d22220a"
+    },
+    {
+      "input": {
+        "keyHex": "6279746573",
+        "stringHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff"
+      },
+      "outputHex": "62797465733d225c7830305c7830315c7830325c7830335c7830345c7830355c7830365c7830375c7830385c6a5c6b5c7830625c7830635c6e5c7830655c7830665c7831305c7831315c7831325c7831335c7831345c7831355c7831365c7831375c7831385c7831395c7831615c7831625c7831635c7831645c7831655c78316620215c22232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e5c783766808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff220a"
+    },
+    {
+      "input": {
+        "keyHex": "756e69636f6465",
+        "stringHex": "73796e74686574696320e99baa203d2022205c"
+      },
+      "outputHex": "756e69636f64653d2273796e74686574696320e99baa203d205c22205c5c220a"
+    },
+    {
+      "input": {
+        "keyHex": "64656661756c742e6f6e6c79",
+        "stringHex": "756e7772697474656e",
+        "flags": 512
+      },
+      "outputHex": ""
+    }
+  ],
+  "flushPolicy": {
+    "steps": [
+      {
+        "operation": "change"
+      },
+      {
+        "operation": "change"
+      },
+      {
+        "operation": "change"
+      },
+      {
+        "operation": "flush",
+        "success": false
+      },
+      {
+        "operation": "change"
+      },
+      {
+        "operation": "flush",
+        "success": true
+      },
+      {
+        "operation": "flush",
+        "success": true
+      }
+    ],
+    "observations": [
+      {
+        "dirty": true,
+        "scheduled": 1,
+        "writeAttempts": 0
+      },
+      {
+        "dirty": true,
+        "scheduled": 1,
+        "writeAttempts": 0
+      },
+      {
+        "dirty": true,
+        "scheduled": 1,
+        "writeAttempts": 0
+      },
+      {
+        "dirty": true,
+        "scheduled": 1,
+        "writeAttempts": 1
+      },
+      {
+        "dirty": true,
+        "scheduled": 2,
+        "writeAttempts": 1
+      },
+      {
+        "dirty": false,
+        "scheduled": 2,
+        "writeAttempts": 2
+      },
+      {
+        "dirty": false,
+        "scheduled": 2,
+        "writeAttempts": 2
+      }
+    ]
+  }
+}

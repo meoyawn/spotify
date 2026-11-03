@@ -1,0 +1,26 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: ff6d8c366ca0e33d663a5d2153fa6ff831689dce54b19bed739631cf00ab9486
+
+syntax = "proto3";
+
+package spotify.clienttoken.serialization.v0;
+
+option java_multiple_files = true;
+
+option java_package = "spotify.clienttoken.serialization.v0";
+
+option optimize_for = CODE_SIZE;
+
+message TokenDomain {
+  string domain = 1;
+}
+
+message ClientToken {
+  string token = 1;
+
+  int64 expires_at_timestamp = 2;
+
+  int64 refresh_at_timestamp = 3;
+
+  repeated .spotify.clienttoken.serialization.v0.TokenDomain domains = 4;
+}

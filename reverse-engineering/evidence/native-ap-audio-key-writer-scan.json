@@ -1,0 +1,32 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "method": "Bounded immutable instruction-literal search in requested native AP region; no emulation, live process, profile or network. No standard cryptography/runtime implementation is analyzed.",
+  "range": {
+    "start": "0x1018e0000",
+    "endExclusive": "0x101920000",
+    "sha256": "ac0f3512a12b2b2f38d75b62d32cadd75264416ff4d2df02368d6b8b87c9aa3b"
+  },
+  "movW0OrW1Immediate12": [
+    {
+      "address": "0x1019197e8",
+      "register": "w1",
+      "classification": "protobuf field12 passed to direct call101cf8ee0, not an abstract APpacket writer"
+    }
+  ],
+  "knownNativeWriter": {
+    "entry": "0x1018f8d6c",
+    "commandLoad": "0x1018f8dd0",
+    "command": 15,
+    "send": "0x1018f8dd4 abstract sender virtual+0x18"
+  },
+  "initialKeyRegionReferences": {
+    "zeroStorage": "0x1018f7690 owner+0x4b3",
+    "packetStore": "0x1018f9070 owner+0x4b3",
+    "pendingFlag": "owner+0x4b2, readiness1018f9814"
+  },
+  "limits": [
+    "No MOVW0/W1 immediate12 APwriter was found in this region. This does not prove none exists elsewhere or through a nonliteral opcode producer.",
+    "No native body writer appending the initial key/token to legacy42-byteAP0c request was found. Such a request must not be synthesized from this scan.",
+    "An outside or aliased reader of initial-key state remains possible; this region-only offset scan does not exclude one."
+  ]
+}

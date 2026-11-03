@@ -1,0 +1,1404 @@
+{
+  "provenance": "Original desktop search hook, recent-searches hook, entity mappers, and Pathfinder factories executed with synthetic responses and inert transport. No network.",
+  "bundleSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+  "flags": {
+    "includeAuthors": true,
+    "includeAlbumPreReleases": false,
+    "includeEpisodeContentRatingsV2": true
+  },
+  "debounce": {
+    "wait": 200,
+    "options": {
+      "leading": true,
+      "trailing": true,
+      "maxWait": 200
+    },
+    "input": [
+      "old",
+      "skipped",
+      "new"
+    ],
+    "emitted": [
+      {
+        "query": "old",
+        "afterMilliseconds": 0
+      },
+      {
+        "query": "new",
+        "afterMilliseconds": 200
+      }
+    ]
+  },
+  "scenarios": [
+    {
+      "name": "suggestions preserve mixed result order and filter unsupported wrappers",
+      "kind": "suggestions",
+      "query": "ambient 雪",
+      "body": {
+        "data": {
+          "searchV2": {
+            "query": "ambient 雪",
+            "topResultsV2": {
+              "itemsV2": [
+                {
+                  "item": {
+                    "__typename": "TrackResponseWrapper",
+                    "data": {
+                      "__typename": "Track",
+                      "uri": "spotify:track:fixture",
+                      "name": "Synthetic track",
+                      "albumOfTrack": {
+                        "__typename": "Album",
+                        "uri": "spotify:album:fixture",
+                        "name": "Synthetic album",
+                        "artists": {
+                          "items": [
+                            {
+                              "__typename": "Artist",
+                              "uri": "spotify:artist:fixture",
+                              "profile": {
+                                "name": "Synthetic artist"
+                              },
+                              "visuals": {
+                                "avatarImage": {
+                                  "sources": [
+                                    {
+                                      "url": "https://fixture.invalid/cover",
+                                      "width": "120",
+                                      "height": 0
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        "coverArt": {
+                          "sources": [
+                            {
+                              "url": "https://fixture.invalid/cover",
+                              "width": "120",
+                              "height": 0
+                            }
+                          ]
+                        },
+                        "playability": {
+                          "playable": true
+                        },
+                        "type": "ALBUM"
+                      },
+                      "artists": {
+                        "items": [
+                          {
+                            "__typename": "Artist",
+                            "uri": "spotify:artist:fixture",
+                            "profile": {
+                              "name": "Synthetic artist"
+                            },
+                            "visuals": {
+                              "avatarImage": {
+                                "sources": [
+                                  {
+                                    "url": "https://fixture.invalid/cover",
+                                    "width": "120",
+                                    "height": 0
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      "duration": {
+                        "totalMilliseconds": 123456
+                      },
+                      "playability": {
+                        "playable": false
+                      },
+                      "contentRating": {
+                        "label": "EXPLICIT"
+                      },
+                      "trackMediaType": "AUDIO",
+                      "associationsV3": {
+                        "videoAssociations": {
+                          "totalCount": 0
+                        },
+                        "audioAssociations": {
+                          "totalCount": 0
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "item": {
+                    "__typename": "AlbumResponseWrapper",
+                    "data": {
+                      "__typename": "Album",
+                      "uri": "spotify:album:fixture",
+                      "name": "Synthetic album",
+                      "artists": {
+                        "items": [
+                          {
+                            "__typename": "Artist",
+                            "uri": "spotify:artist:fixture",
+                            "profile": {
+                              "name": "Synthetic artist"
+                            },
+                            "visuals": {
+                              "avatarImage": {
+                                "sources": [
+                                  {
+                                    "url": "https://fixture.invalid/cover",
+                                    "width": "120",
+                                    "height": 0
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      "coverArt": {
+                        "sources": [
+                          {
+                            "url": "https://fixture.invalid/cover",
+                            "width": "120",
+                            "height": 0
+                          }
+                        ]
+                      },
+                      "playability": {
+                        "playable": true
+                      },
+                      "type": "ALBUM"
+                    }
+                  }
+                },
+                {
+                  "item": {
+                    "__typename": "ArtistResponseWrapper",
+                    "data": {
+                      "__typename": "Artist",
+                      "uri": "spotify:artist:fixture",
+                      "profile": {
+                        "name": "Synthetic artist"
+                      },
+                      "visuals": {
+                        "avatarImage": {
+                          "sources": [
+                            {
+                              "url": "https://fixture.invalid/cover",
+                              "width": "120",
+                              "height": 0
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "item": {
+                    "__typename": "PlaylistResponseWrapper",
+                    "data": {
+                      "__typename": "Playlist",
+                      "uri": "spotify:playlist:fixture",
+                      "name": "Synthetic playlist",
+                      "images": {
+                        "items": [
+                          {
+                            "sources": [
+                              {
+                                "url": "https://fixture.invalid/cover",
+                                "width": "120",
+                                "height": 0
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      "ownerV2": {
+                        "data": {
+                          "__typename": "User",
+                          "uri": "spotify:user:fixture",
+                          "name": "Synthetic owner",
+                          "username": "fixture"
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "item": {
+                    "__typename": "PodcastResponseWrapper",
+                    "data": {
+                      "__typename": "Podcast",
+                      "uri": "spotify:show:fixture",
+                      "name": "Synthetic podcast",
+                      "coverArt": {
+                        "sources": [
+                          {
+                            "url": "https://fixture.invalid/cover",
+                            "width": "120",
+                            "height": 0
+                          }
+                        ]
+                      },
+                      "publisher": {
+                        "name": "Synthetic publisher"
+                      },
+                      "topics": {
+                        "items": []
+                      },
+                      "mediaType": "AUDIO"
+                    }
+                  }
+                },
+                {
+                  "item": {
+                    "__typename": "EpisodeResponseWrapper",
+                    "data": {
+                      "__typename": "Episode",
+                      "uri": "spotify:episode:fixture",
+                      "name": "Synthetic episode",
+                      "coverArt": {
+                        "sources": [
+                          {
+                            "url": "https://fixture.invalid/cover",
+                            "width": "120",
+                            "height": 0
+                          }
+                        ]
+                      },
+                      "podcastV2": {
+                        "data": {
+                          "__typename": "Podcast",
+                          "uri": "spotify:show:fixture",
+                          "name": "Synthetic podcast",
+                          "coverArt": {
+                            "sources": [
+                              {
+                                "url": "https://fixture.invalid/cover",
+                                "width": "120",
+                                "height": 0
+                              }
+                            ]
+                          },
+                          "publisher": {
+                            "name": "Synthetic publisher"
+                          },
+                          "topics": {
+                            "items": []
+                          },
+                          "mediaType": "AUDIO"
+                        }
+                      },
+                      "duration": {
+                        "totalMilliseconds": 42000
+                      },
+                      "playedState": {
+                        "state": "NOT_STARTED",
+                        "playPositionMilliseconds": 0
+                      },
+                      "restrictions": {},
+                      "playability": {},
+                      "releaseDate": {
+                        "isoString": "2026-01-02T00:00:00Z",
+                        "precision": "DAY"
+                      }
+                    }
+                  }
+                },
+                {
+                  "item": {
+                    "__typename": "AudiobookResponseWrapper",
+                    "data": {
+                      "__typename": "Audiobook",
+                      "uri": "spotify:audiobook:fixture",
+                      "name": "Synthetic book",
+                      "coverArt": {
+                        "sources": [
+                          {
+                            "url": "https://fixture.invalid/cover",
+                            "width": "120",
+                            "height": 0
+                          }
+                        ]
+                      },
+                      "authorsV2": [
+                        {
+                          "name": "Synthetic author"
+                        }
+                      ],
+                      "topics": {
+                        "items": []
+                      }
+                    }
+                  }
+                },
+                {
+                  "item": {
+                    "__typename": "UserResponseWrapper",
+                    "data": {
+                      "__typename": "User",
+                      "uri": "spotify:user:fixture",
+                      "displayName": "",
+                      "username": "fixture-username",
+                      "avatar": {
+                        "sources": [
+                          {
+                            "url": "https://fixture.invalid/cover",
+                            "width": "120",
+                            "height": 0
+                          }
+                        ]
+                      }
+                    }
+                  }
+                },
+                {
+                  "item": {
+                    "__typename": "GenreResponseWrapper",
+                    "data": {
+                      "__typename": "Genre",
+                      "uri": "fixturegenre",
+                      "name": "Synthetic genre",
+                      "image": {
+                        "sources": [
+                          {
+                            "url": "https://fixture.invalid/cover",
+                            "width": "120",
+                            "height": 0
+                          }
+                        ]
+                      }
+                    }
+                  }
+                },
+                {
+                  "item": {
+                    "__typename": "AuthorResponseWrapper",
+                    "data": {
+                      "__typename": "AuthorV2",
+                      "uri": "spotify:author:fixture",
+                      "name": "Synthetic author",
+                      "visualIdentity": {
+                        "squareCoverImage": {
+                          "image": {
+                            "data": {
+                              "__typename": "ImageV2",
+                              "sources": [
+                                {
+                                  "url": "https://fixture.invalid/cover",
+                                  "width": "120",
+                                  "height": 0
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "item": {
+                    "__typename": "PreReleaseResponseWrapper",
+                    "data": {
+                      "__typename": "PreRelease",
+                      "uri": "spotify:prerelease:fixture",
+                      "preReleaseContent": {
+                        "name": "Synthetic prerelease",
+                        "coverArt": {
+                          "sources": [
+                            {
+                              "url": "https://fixture.invalid/cover",
+                              "width": "120",
+                              "height": 0
+                            }
+                          ]
+                        },
+                        "artists": {
+                          "items": [
+                            {
+                              "data": {
+                                "__typename": "Artist",
+                                "uri": "spotify:artist:fixture",
+                                "profile": {
+                                  "name": "Synthetic artist"
+                                },
+                                "visuals": {
+                                  "avatarImage": {
+                                    "sources": [
+                                      {
+                                        "url": "https://fixture.invalid/cover",
+                                        "width": "120",
+                                        "height": 0
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "data": {
+                                "__typename": "NotFound"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "releaseDate": {
+                        "isoString": "2026-11-01T00:00:00Z",
+                        "precision": "DAY"
+                      }
+                    }
+                  }
+                },
+                {
+                  "item": {
+                    "__typename": "UnknownTypeWrapper",
+                    "_uri": "spotify:collection:tracks"
+                  }
+                },
+                {
+                  "item": {
+                    "__typename": "UnknownTypeWrapper",
+                    "_uri": "spotify:collection:albums"
+                  }
+                },
+                {
+                  "item": {
+                    "__typename": "TrackResponseWrapper",
+                    "data": {
+                      "__typename": "NotFound"
+                    }
+                  }
+                },
+                {
+                  "item": {
+                    "__typename": "SearchAutoCompleteEntity",
+                    "data": {
+                      "uri": "spotify:search:synthetic",
+                      "text": "synthetic completion"
+                    }
+                  }
+                },
+                {
+                  "item": {
+                    "__typename": "EntityResponseWrapper"
+                  }
+                },
+                {
+                  "item": {
+                    "__typename": "SearchSectionEntity"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "expected": {
+        "requests": [
+          {
+            "method": "POST",
+            "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+            "headers": {
+              "Accept-Language": "en",
+              "Accept": "application/json",
+              "App-Platform": "fixture-platform",
+              "Spotify-App-Version": "1.3.6.1921",
+              "Content-Type": "application/json;charset=UTF-8"
+            },
+            "bodyBase64": "eyJ2YXJpYWJsZXMiOnsicXVlcnkiOiJhbWJpZW50IOmbqiIsImxpbWl0IjozMCwibnVtYmVyT2ZUb3BSZXN1bHRzIjozMCwib2Zmc2V0IjowLCJpbmNsdWRlQXV0aG9ycyI6dHJ1ZSwiaW5jbHVkZUFsYnVtUHJlUmVsZWFzZXMiOmZhbHNlLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoic2VhcmNoU3VnZ2VzdGlvbnMiLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiJmMjQ0MjU0Yjk0YzBlODI0ZDQ1OGFjMjE2ZTBmODQwNmE3M2YyZjY5YTlmZjUyODMxYTJmNzhmYTc3NGZmNmNlIn19fQ==",
+            "authorize": true,
+            "includeCredentials": false,
+            "responseType": "json"
+          }
+        ],
+        "query": "ambient 雪",
+        "items": [
+          {
+            "type": "track",
+            "uri": "spotify:track:fixture",
+            "name": "Synthetic track",
+            "images": [
+              {
+                "url": "https://fixture.invalid/cover",
+                "width": 120,
+                "height": 56
+              }
+            ],
+            "contributors": [
+              "Synthetic artist"
+            ],
+            "durationMs": 123456,
+            "isPlayable": false,
+            "isExplicit": true,
+            "searchTerm": null
+          },
+          {
+            "type": "album",
+            "uri": "spotify:album:fixture",
+            "name": "Synthetic album",
+            "images": [
+              {
+                "url": "https://fixture.invalid/cover",
+                "width": 120,
+                "height": 56
+              }
+            ],
+            "contributors": [
+              "Synthetic artist"
+            ],
+            "durationMs": null,
+            "isPlayable": true,
+            "isExplicit": false,
+            "searchTerm": null
+          },
+          {
+            "type": "artist",
+            "uri": "spotify:artist:fixture",
+            "name": "Synthetic artist",
+            "images": [
+              {
+                "url": "https://fixture.invalid/cover",
+                "width": 120,
+                "height": 56
+              }
+            ],
+            "contributors": [],
+            "durationMs": null,
+            "isPlayable": null,
+            "isExplicit": false,
+            "searchTerm": null
+          },
+          {
+            "type": "playlist",
+            "uri": "spotify:playlist:fixture",
+            "name": "Synthetic playlist",
+            "images": [
+              {
+                "url": "https://fixture.invalid/cover",
+                "width": 120,
+                "height": 56
+              }
+            ],
+            "contributors": [
+              "Synthetic owner"
+            ],
+            "durationMs": null,
+            "isPlayable": null,
+            "isExplicit": false,
+            "searchTerm": null
+          },
+          {
+            "type": "show",
+            "uri": "spotify:show:fixture",
+            "name": "Synthetic podcast",
+            "images": [
+              {
+                "url": "https://fixture.invalid/cover",
+                "width": 120,
+                "height": 56
+              }
+            ],
+            "contributors": [
+              "Synthetic publisher"
+            ],
+            "durationMs": null,
+            "isPlayable": null,
+            "isExplicit": false,
+            "searchTerm": null
+          },
+          {
+            "type": "episode",
+            "uri": "spotify:episode:fixture",
+            "name": "Synthetic episode",
+            "images": [
+              {
+                "url": "https://fixture.invalid/cover",
+                "width": 120,
+                "height": 56
+              }
+            ],
+            "contributors": [
+              "Synthetic podcast"
+            ],
+            "durationMs": 42000,
+            "isPlayable": null,
+            "isExplicit": false,
+            "searchTerm": null
+          },
+          {
+            "type": "audiobook",
+            "uri": "spotify:audiobook:fixture",
+            "name": "Synthetic book",
+            "images": [
+              {
+                "url": "https://fixture.invalid/cover",
+                "width": 120,
+                "height": 56
+              }
+            ],
+            "contributors": [
+              "Synthetic author"
+            ],
+            "durationMs": null,
+            "isPlayable": false,
+            "isExplicit": false,
+            "searchTerm": null
+          },
+          {
+            "type": "user",
+            "uri": "spotify:user:fixture",
+            "name": "fixture-username",
+            "images": [
+              {
+                "url": "https://fixture.invalid/cover",
+                "width": 120,
+                "height": 56
+              }
+            ],
+            "contributors": [],
+            "durationMs": null,
+            "isPlayable": null,
+            "isExplicit": false,
+            "searchTerm": null
+          },
+          {
+            "type": "genre",
+            "uri": "spotify:genre:fixturegenre",
+            "name": "Synthetic genre",
+            "images": [
+              {
+                "url": "https://fixture.invalid/cover",
+                "width": 120,
+                "height": 56
+              }
+            ],
+            "contributors": [],
+            "durationMs": null,
+            "isPlayable": null,
+            "isExplicit": false,
+            "searchTerm": null
+          },
+          {
+            "type": "author",
+            "uri": "spotify:author:fixture",
+            "name": "Synthetic author",
+            "images": [
+              {
+                "url": "https://fixture.invalid/cover",
+                "width": 120,
+                "height": 56
+              }
+            ],
+            "contributors": [],
+            "durationMs": null,
+            "isPlayable": null,
+            "isExplicit": false,
+            "searchTerm": null
+          },
+          {
+            "type": "pre-release-album",
+            "uri": "spotify:prerelease:fixture",
+            "name": "Synthetic prerelease",
+            "images": [
+              {
+                "url": "https://fixture.invalid/cover",
+                "width": 120,
+                "height": 56
+              }
+            ],
+            "contributors": [
+              "Synthetic artist"
+            ],
+            "durationMs": null,
+            "isPlayable": null,
+            "isExplicit": false,
+            "searchTerm": null
+          },
+          {
+            "type": "liked-songs",
+            "uri": "spotify:collection:tracks",
+            "name": "Liked Songs",
+            "images": [
+              {
+                "url": "https://misc.scdn.co/liked-songs/liked-songs-64.jpg",
+                "width": 64,
+                "height": 64
+              },
+              {
+                "url": "https://misc.scdn.co/liked-songs/liked-songs-300.jpg",
+                "width": 300,
+                "height": 300
+              },
+              {
+                "url": "https://misc.scdn.co/liked-songs/liked-songs-640.jpg",
+                "width": 640,
+                "height": 640
+              }
+            ],
+            "contributors": [],
+            "durationMs": null,
+            "isPlayable": null,
+            "isExplicit": false,
+            "searchTerm": null
+          },
+          {
+            "type": "autocomplete",
+            "uri": "spotify:search:synthetic",
+            "name": "synthetic completion",
+            "images": [],
+            "contributors": [],
+            "durationMs": null,
+            "isPlayable": null,
+            "isExplicit": false,
+            "searchTerm": "ambient 雪"
+          }
+        ]
+      }
+    },
+    {
+      "name": "missing suggestions are empty",
+      "kind": "suggestions",
+      "query": "empty",
+      "body": {
+        "data": {}
+      },
+      "expected": {
+        "requests": [
+          {
+            "method": "POST",
+            "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+            "headers": {
+              "Accept-Language": "en",
+              "Accept": "application/json",
+              "App-Platform": "fixture-platform",
+              "Spotify-App-Version": "1.3.6.1921",
+              "Content-Type": "application/json;charset=UTF-8"
+            },
+            "bodyBase64": "eyJ2YXJpYWJsZXMiOnsicXVlcnkiOiJlbXB0eSIsImxpbWl0IjozMCwibnVtYmVyT2ZUb3BSZXN1bHRzIjozMCwib2Zmc2V0IjowLCJpbmNsdWRlQXV0aG9ycyI6dHJ1ZSwiaW5jbHVkZUFsYnVtUHJlUmVsZWFzZXMiOmZhbHNlLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoic2VhcmNoU3VnZ2VzdGlvbnMiLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiJmMjQ0MjU0Yjk0YzBlODI0ZDQ1OGFjMjE2ZTBmODQwNmE3M2YyZjY5YTlmZjUyODMxYTJmNzhmYTc3NGZmNmNlIn19fQ==",
+            "authorize": true,
+            "includeCredentials": false,
+            "responseType": "json"
+          }
+        ],
+        "query": "",
+        "items": []
+      }
+    },
+    {
+      "name": "whitespace query remains enabled",
+      "kind": "suggestions",
+      "query": "  ",
+      "body": {
+        "data": {}
+      },
+      "expected": {
+        "requests": [
+          {
+            "method": "POST",
+            "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+            "headers": {
+              "Accept-Language": "en",
+              "Accept": "application/json",
+              "App-Platform": "fixture-platform",
+              "Spotify-App-Version": "1.3.6.1921",
+              "Content-Type": "application/json;charset=UTF-8"
+            },
+            "bodyBase64": "eyJ2YXJpYWJsZXMiOnsicXVlcnkiOiIgICIsImxpbWl0IjozMCwibnVtYmVyT2ZUb3BSZXN1bHRzIjozMCwib2Zmc2V0IjowLCJpbmNsdWRlQXV0aG9ycyI6dHJ1ZSwiaW5jbHVkZUFsYnVtUHJlUmVsZWFzZXMiOmZhbHNlLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOnRydWV9LCJvcGVyYXRpb25OYW1lIjoic2VhcmNoU3VnZ2VzdGlvbnMiLCJleHRlbnNpb25zIjp7InBlcnNpc3RlZFF1ZXJ5Ijp7InZlcnNpb24iOjEsInNoYTI1Nkhhc2giOiJmMjQ0MjU0Yjk0YzBlODI0ZDQ1OGFjMjE2ZTBmODQwNmE3M2YyZjY5YTlmZjUyODMxYTJmNzhmYTc3NGZmNmNlIn19fQ==",
+            "authorize": true,
+            "includeCredentials": false,
+            "responseType": "json"
+          }
+        ],
+        "query": "",
+        "items": []
+      }
+    },
+    {
+      "name": "feature flags are supplied in original variable order",
+      "kind": "suggestions",
+      "query": "flags",
+      "flags": {
+        "includeAuthors": false,
+        "includeAlbumPreReleases": true,
+        "includeEpisodeContentRatingsV2": false
+      },
+      "body": {
+        "data": {}
+      },
+      "expected": {
+        "requests": [
+          {
+            "method": "POST",
+            "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+            "headers": {
+              "Accept-Language": "en",
+              "Accept": "application/json",
+              "App-Platform": "fixture-platform",
+              "Spotify-App-Version": "1.3.6.1921",
+              "Content-Type": "application/json;charset=UTF-8"
+            },
+            "bodyBase64": "eyJ2YXJpYWJsZXMiOnsicXVlcnkiOiJmbGFncyIsImxpbWl0IjozMCwibnVtYmVyT2ZUb3BSZXN1bHRzIjozMCwib2Zmc2V0IjowLCJpbmNsdWRlQXV0aG9ycyI6ZmFsc2UsImluY2x1ZGVBbGJ1bVByZVJlbGVhc2VzIjp0cnVlLCJpbmNsdWRlRXBpc29kZUNvbnRlbnRSYXRpbmdzVjIiOmZhbHNlfSwib3BlcmF0aW9uTmFtZSI6InNlYXJjaFN1Z2dlc3Rpb25zIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiZjI0NDI1NGI5NGMwZTgyNGQ0NThhYzIxNmUwZjg0MDZhNzNmMmY2OWE5ZmY1MjgzMWEyZjc4ZmE3NzRmZjZjZSJ9fX0=",
+            "authorize": true,
+            "includeCredentials": false,
+            "responseType": "json"
+          }
+        ],
+        "query": "",
+        "items": []
+      }
+    },
+    {
+      "name": "empty query is disabled",
+      "kind": "suggestions",
+      "query": "",
+      "body": {
+        "data": {}
+      },
+      "expected": {
+        "requests": [],
+        "query": "",
+        "items": []
+      }
+    },
+    {
+      "name": "recent searches use recent union and default limit",
+      "kind": "recent",
+      "body": {
+        "data": {
+          "recentSearches": {
+            "__typename": "RecentSearchesResult",
+            "recentSearchesItems": {
+              "items": [
+                {
+                  "__typename": "TrackResponseWrapper",
+                  "data": {
+                    "__typename": "Track",
+                    "uri": "spotify:track:fixture",
+                    "name": "Synthetic track",
+                    "albumOfTrack": {
+                      "__typename": "Album",
+                      "uri": "spotify:album:fixture",
+                      "name": "Synthetic album",
+                      "artists": {
+                        "items": [
+                          {
+                            "__typename": "Artist",
+                            "uri": "spotify:artist:fixture",
+                            "profile": {
+                              "name": "Synthetic artist"
+                            },
+                            "visuals": {
+                              "avatarImage": {
+                                "sources": [
+                                  {
+                                    "url": "https://fixture.invalid/cover",
+                                    "width": "120",
+                                    "height": 0
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      "coverArt": {
+                        "sources": [
+                          {
+                            "url": "https://fixture.invalid/cover",
+                            "width": "120",
+                            "height": 0
+                          }
+                        ]
+                      },
+                      "playability": {
+                        "playable": true
+                      },
+                      "type": "ALBUM"
+                    },
+                    "artists": {
+                      "items": [
+                        {
+                          "__typename": "Artist",
+                          "uri": "spotify:artist:fixture",
+                          "profile": {
+                            "name": "Synthetic artist"
+                          },
+                          "visuals": {
+                            "avatarImage": {
+                              "sources": [
+                                {
+                                  "url": "https://fixture.invalid/cover",
+                                  "width": "120",
+                                  "height": 0
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "duration": {
+                      "totalMilliseconds": 123456
+                    },
+                    "playability": {
+                      "playable": false
+                    },
+                    "contentRating": {
+                      "label": "EXPLICIT"
+                    },
+                    "trackMediaType": "AUDIO",
+                    "associationsV3": {
+                      "videoAssociations": {
+                        "totalCount": 0
+                      },
+                      "audioAssociations": {
+                        "totalCount": 0
+                      }
+                    }
+                  }
+                },
+                {
+                  "__typename": "ArtistResponseWrapper",
+                  "data": {
+                    "__typename": "Artist",
+                    "uri": "spotify:artist:fixture",
+                    "profile": {
+                      "name": "Synthetic artist"
+                    },
+                    "visuals": {
+                      "avatarImage": {
+                        "sources": [
+                          {
+                            "url": "https://fixture.invalid/cover",
+                            "width": "120",
+                            "height": 0
+                          }
+                        ]
+                      }
+                    }
+                  }
+                },
+                {
+                  "__typename": "PodcastOrAudiobookResponseWrapper",
+                  "data": {
+                    "__typename": "Podcast",
+                    "uri": "spotify:show:fixture",
+                    "name": "Synthetic podcast",
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://fixture.invalid/cover",
+                          "width": "120",
+                          "height": 0
+                        }
+                      ]
+                    },
+                    "publisher": {
+                      "name": "Synthetic publisher"
+                    },
+                    "topics": {
+                      "items": []
+                    },
+                    "mediaType": "AUDIO"
+                  }
+                },
+                {
+                  "__typename": "PodcastOrAudiobookResponseWrapper",
+                  "data": {
+                    "__typename": "Audiobook",
+                    "uri": "spotify:audiobook:fixture",
+                    "name": "Synthetic book",
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://fixture.invalid/cover",
+                          "width": "120",
+                          "height": 0
+                        }
+                      ]
+                    },
+                    "authorsV2": [
+                      {
+                        "name": "Synthetic author"
+                      }
+                    ],
+                    "topics": {
+                      "items": []
+                    }
+                  }
+                },
+                {
+                  "__typename": "UnknownTypeWrapper",
+                  "_uri": "spotify:collection:tracks"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "expected": {
+        "requests": [
+          {
+            "method": "POST",
+            "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+            "headers": {
+              "Accept-Language": "en",
+              "Accept": "application/json",
+              "App-Platform": "fixture-platform",
+              "Spotify-App-Version": "1.3.6.1921",
+              "Content-Type": "application/json;charset=UTF-8"
+            },
+            "bodyBase64": "eyJ2YXJpYWJsZXMiOnsibGltaXQiOjUwLCJpbmNsdWRlQXV0aG9ycyI6dHJ1ZSwiaW5jbHVkZUVwaXNvZGVDb250ZW50UmF0aW5nc1YyIjp0cnVlfSwib3BlcmF0aW9uTmFtZSI6InJlY2VudFNlYXJjaGVzIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiZWNlOTZkN2I4MmM4MjBmYjk5MzhkZDFkZjUwZGVlM2U1MzczN2Q4MDhjMzg4M2UzZDAxYzQ2N2M0MjM2MDFiMCJ9fX0=",
+            "authorize": true,
+            "includeCredentials": false,
+            "responseType": "json"
+          }
+        ],
+        "query": "",
+        "items": [
+          {
+            "type": "track",
+            "uri": "spotify:track:fixture",
+            "name": "Synthetic track",
+            "images": [
+              {
+                "url": "https://fixture.invalid/cover",
+                "width": 120,
+                "height": 56
+              }
+            ],
+            "contributors": [
+              "Synthetic artist"
+            ],
+            "durationMs": 123456,
+            "isPlayable": false,
+            "isExplicit": true,
+            "searchTerm": null
+          },
+          {
+            "type": "artist",
+            "uri": "spotify:artist:fixture",
+            "name": "Synthetic artist",
+            "images": [
+              {
+                "url": "https://fixture.invalid/cover",
+                "width": 120,
+                "height": 56
+              }
+            ],
+            "contributors": [],
+            "durationMs": null,
+            "isPlayable": null,
+            "isExplicit": false,
+            "searchTerm": null
+          },
+          {
+            "type": "show",
+            "uri": "spotify:show:fixture",
+            "name": "Synthetic podcast",
+            "images": [
+              {
+                "url": "https://fixture.invalid/cover",
+                "width": 120,
+                "height": 56
+              }
+            ],
+            "contributors": [
+              "Synthetic publisher"
+            ],
+            "durationMs": null,
+            "isPlayable": null,
+            "isExplicit": false,
+            "searchTerm": null
+          },
+          {
+            "type": "audiobook",
+            "uri": "spotify:audiobook:fixture",
+            "name": "Synthetic book",
+            "images": [
+              {
+                "url": "https://fixture.invalid/cover",
+                "width": 120,
+                "height": 56
+              }
+            ],
+            "contributors": [
+              "Synthetic author"
+            ],
+            "durationMs": null,
+            "isPlayable": false,
+            "isExplicit": false,
+            "searchTerm": null
+          },
+          {
+            "type": "liked-songs",
+            "uri": "spotify:collection:tracks",
+            "name": "Liked Songs",
+            "images": [
+              {
+                "url": "https://misc.scdn.co/liked-songs/liked-songs-64.jpg",
+                "width": 64,
+                "height": 64
+              },
+              {
+                "url": "https://misc.scdn.co/liked-songs/liked-songs-300.jpg",
+                "width": 300,
+                "height": 300
+              },
+              {
+                "url": "https://misc.scdn.co/liked-songs/liked-songs-640.jpg",
+                "width": 640,
+                "height": 640
+              }
+            ],
+            "contributors": [],
+            "durationMs": null,
+            "isPlayable": null,
+            "isExplicit": false,
+            "searchTerm": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "recent union error returns empty history",
+      "kind": "recent",
+      "body": {
+        "data": {
+          "recentSearches": {
+            "__typename": "GenericError",
+            "message": "synthetic error"
+          }
+        }
+      },
+      "expected": {
+        "requests": [
+          {
+            "method": "POST",
+            "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+            "headers": {
+              "Accept-Language": "en",
+              "Accept": "application/json",
+              "App-Platform": "fixture-platform",
+              "Spotify-App-Version": "1.3.6.1921",
+              "Content-Type": "application/json;charset=UTF-8"
+            },
+            "bodyBase64": "eyJ2YXJpYWJsZXMiOnsibGltaXQiOjUwLCJpbmNsdWRlQXV0aG9ycyI6dHJ1ZSwiaW5jbHVkZUVwaXNvZGVDb250ZW50UmF0aW5nc1YyIjp0cnVlfSwib3BlcmF0aW9uTmFtZSI6InJlY2VudFNlYXJjaGVzIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiZWNlOTZkN2I4MmM4MjBmYjk5MzhkZDFkZjUwZGVlM2U1MzczN2Q4MDhjMzg4M2UzZDAxYzQ2N2M0MjM2MDFiMCJ9fX0=",
+            "authorize": true,
+            "includeCredentials": false,
+            "responseType": "json"
+          }
+        ],
+        "query": "",
+        "items": []
+      }
+    },
+    {
+      "name": "GraphQL errors reject partial search data",
+      "kind": "suggestions",
+      "query": "partial",
+      "body": {
+        "data": {
+          "searchV2": {
+            "query": "partial",
+            "topResultsV2": {
+              "itemsV2": [
+                {
+                  "item": {
+                    "__typename": "TrackResponseWrapper",
+                    "data": {
+                      "__typename": "Track",
+                      "uri": "spotify:track:fixture",
+                      "name": "Synthetic track",
+                      "albumOfTrack": {
+                        "__typename": "Album",
+                        "uri": "spotify:album:fixture",
+                        "name": "Synthetic album",
+                        "artists": {
+                          "items": [
+                            {
+                              "__typename": "Artist",
+                              "uri": "spotify:artist:fixture",
+                              "profile": {
+                                "name": "Synthetic artist"
+                              },
+                              "visuals": {
+                                "avatarImage": {
+                                  "sources": [
+                                    {
+                                      "url": "https://fixture.invalid/cover",
+                                      "width": "120",
+                                      "height": 0
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        "coverArt": {
+                          "sources": [
+                            {
+                              "url": "https://fixture.invalid/cover",
+                              "width": "120",
+                              "height": 0
+                            }
+                          ]
+                        },
+                        "playability": {
+                          "playable": true
+                        },
+                        "type": "ALBUM"
+                      },
+                      "artists": {
+                        "items": [
+                          {
+                            "__typename": "Artist",
+                            "uri": "spotify:artist:fixture",
+                            "profile": {
+                              "name": "Synthetic artist"
+                            },
+                            "visuals": {
+                              "avatarImage": {
+                                "sources": [
+                                  {
+                                    "url": "https://fixture.invalid/cover",
+                                    "width": "120",
+                                    "height": 0
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      "duration": {
+                        "totalMilliseconds": 123456
+                      },
+                      "playability": {
+                        "playable": false
+                      },
+                      "contentRating": {
+                        "label": "EXPLICIT"
+                      },
+                      "trackMediaType": "AUDIO",
+                      "associationsV3": {
+                        "videoAssociations": {
+                          "totalCount": 0
+                        },
+                        "audioAssociations": {
+                          "totalCount": 0
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "errors": [
+          {
+            "message": "synthetic GraphQL failure"
+          }
+        ]
+      },
+      "expected": {
+        "requests": [
+          {
+            "method": "POST",
+            "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+            "headers": {
+              "Accept-Language": "en",
+              "Accept": "application/json",
+              "App-Platform": "fixture-platform",
+              "Spotify-App-Version": "1.3.6.1921",
+              "Content-Type": "application/json;charset=UTF-8"
+            },
+            "bodyBase64": "eyJ2YXJpYWJsZXMiOnsicXVlcnkiOiJwYXJ0aWFsIiwibGltaXQiOjMwLCJudW1iZXJPZlRvcFJlc3VsdHMiOjMwLCJvZmZzZXQiOjAsImluY2x1ZGVBdXRob3JzIjp0cnVlLCJpbmNsdWRlQWxidW1QcmVSZWxlYXNlcyI6ZmFsc2UsImluY2x1ZGVFcGlzb2RlQ29udGVudFJhdGluZ3NWMiI6dHJ1ZX0sIm9wZXJhdGlvbk5hbWUiOiJzZWFyY2hTdWdnZXN0aW9ucyIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6ImYyNDQyNTRiOTRjMGU4MjRkNDU4YWMyMTZlMGY4NDA2YTczZjJmNjlhOWZmNTI4MzFhMmY3OGZhNzc0ZmY2Y2UifX19",
+            "authorize": true,
+            "includeCredentials": false,
+            "responseType": "json"
+          }
+        ],
+        "query": "",
+        "items": [],
+        "error": [
+          {
+            "message": "synthetic GraphQL failure"
+          }
+        ]
+      }
+    },
+    {
+      "name": "an empty GraphQL errors array still rejects",
+      "kind": "suggestions",
+      "query": "errors",
+      "body": {
+        "errors": []
+      },
+      "expected": {
+        "requests": [
+          {
+            "method": "POST",
+            "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+            "headers": {
+              "Accept-Language": "en",
+              "Accept": "application/json",
+              "App-Platform": "fixture-platform",
+              "Spotify-App-Version": "1.3.6.1921",
+              "Content-Type": "application/json;charset=UTF-8"
+            },
+            "bodyBase64": "eyJ2YXJpYWJsZXMiOnsicXVlcnkiOiJlcnJvcnMiLCJsaW1pdCI6MzAsIm51bWJlck9mVG9wUmVzdWx0cyI6MzAsIm9mZnNldCI6MCwiaW5jbHVkZUF1dGhvcnMiOnRydWUsImluY2x1ZGVBbGJ1bVByZVJlbGVhc2VzIjpmYWxzZSwiaW5jbHVkZUVwaXNvZGVDb250ZW50UmF0aW5nc1YyIjp0cnVlfSwib3BlcmF0aW9uTmFtZSI6InNlYXJjaFN1Z2dlc3Rpb25zIiwiZXh0ZW5zaW9ucyI6eyJwZXJzaXN0ZWRRdWVyeSI6eyJ2ZXJzaW9uIjoxLCJzaGEyNTZIYXNoIjoiZjI0NDI1NGI5NGMwZTgyNGQ0NThhYzIxNmUwZjg0MDZhNzNmMmY2OWE5ZmY1MjgzMWEyZjc4ZmE3NzRmZjZjZSJ9fX0=",
+            "authorize": true,
+            "includeCredentials": false,
+            "responseType": "json"
+          }
+        ],
+        "query": "",
+        "items": [],
+        "error": []
+      }
+    },
+    {
+      "name": "HTTP failure is wrapped as a GraphQL message list",
+      "kind": "suggestions",
+      "query": "http-error",
+      "httpStatus": 403,
+      "body": null,
+      "expected": {
+        "requests": [
+          {
+            "method": "POST",
+            "url": "https://api-partner.spotify.com/pathfinder/v2/query",
+            "headers": {
+              "Accept-Language": "en",
+              "Accept": "application/json",
+              "App-Platform": "fixture-platform",
+              "Spotify-App-Version": "1.3.6.1921",
+              "Content-Type": "application/json;charset=UTF-8"
+            },
+            "bodyBase64": "eyJ2YXJpYWJsZXMiOnsicXVlcnkiOiJodHRwLWVycm9yIiwibGltaXQiOjMwLCJudW1iZXJPZlRvcFJlc3VsdHMiOjMwLCJvZmZzZXQiOjAsImluY2x1ZGVBdXRob3JzIjp0cnVlLCJpbmNsdWRlQWxidW1QcmVSZWxlYXNlcyI6ZmFsc2UsImluY2x1ZGVFcGlzb2RlQ29udGVudFJhdGluZ3NWMiI6dHJ1ZX0sIm9wZXJhdGlvbk5hbWUiOiJzZWFyY2hTdWdnZXN0aW9ucyIsImV4dGVuc2lvbnMiOnsicGVyc2lzdGVkUXVlcnkiOnsidmVyc2lvbiI6MSwic2hhMjU2SGFzaCI6ImYyNDQyNTRiOTRjMGU4MjRkNDU4YWMyMTZlMGY4NDA2YTczZjJmNjlhOWZmNTI4MzFhMmY3OGZhNzc0ZmY2Y2UifX19",
+            "authorize": true,
+            "includeCredentials": false,
+            "responseType": "json"
+          }
+        ],
+        "query": "",
+        "items": [],
+        "error": [
+          {
+            "message": "synthetic failure"
+          }
+        ]
+      }
+    }
+  ]
+}

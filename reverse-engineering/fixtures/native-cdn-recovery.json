@@ -1,0 +1,120 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "exports": [
+    {
+      "file": "native-cdn-filestreamer-recovery-switch.json",
+      "sha256": "2da86f80e00542b7cd800dbe8f2bef028d146d66897a4f325fdc66976d2df737",
+      "evidenceId": "ev_ed8981112289f47dccba5e0194181824a6454a386f2c82344092c97647230dd9"
+    },
+    {
+      "file": "native-cdn-resource-rotation-and-buffered-storage-callback.json",
+      "sha256": "65758b523adda0e5687a485de548c99d2d9f31bbba1bb44f425c5b8c22c7cedd",
+      "evidenceId": "ev_a1e2ff4063a70d059a5427ec73c6f10d7463015e2021ebd935e2bbdd07c247e0"
+    },
+    {
+      "file": "native-cdn-early-close-recovery-and-url-resume.json",
+      "sha256": "c229c4e71209fe5b61acd265302b96a1baeb45bcb89a9447bb2319aca2c76e39",
+      "evidenceId": "ev_c55eba030b0e0d49b4e2d0374f676a78b35148d08073f768f84cebd6c3d60807"
+    },
+    {
+      "file": "dart-native-cdn-range-request-owner.json",
+      "sha256": "3114eac7f7022e63c05b0c62dd2d6c0fa16e613fe9f671028c8aa2050b887d15",
+      "evidenceId": "ev_e3610737596e7b3c8fae9e377820d3b07618880952f7dfa4bd321d11e9bcbcd1"
+    }
+  ],
+  "executed": [
+    "0x100768c84",
+    "0x100760848",
+    "0x100760850",
+    "0x100760860",
+    "0x10075cff8",
+    "0x10075ca34",
+    "0x101c507c4",
+    "0x101c50b30"
+  ],
+  "standardProviders": "Inherited NativeLogin5Oracle/OriginalCdnRequest allocation, memory/string, ASCII case folding, signed decimal conversion and uncontended mutex providers. Original recovery branch, selector arithmetic, URL bytes, hexadecimal/range construction and header fields execute unchanged.",
+  "method": "Capture original transient CDN resource order and outgoing range requests.\n\nUnchanged original FileStreamer outcome1 dispatch and its circular selector run\nwith synthetic resources. Cache-metadata side effects and per-host accounting\nare opaque capture boundaries; source scheduling stops before any transport.\nThe selected resource enters the independently executed original request owner.\nNo account, actual signed URL, installed profile, decoder, or network is used.\n",
+  "suppliedUrls": [
+    "https://audio-a.example.test/audio/file?verify=A-%2f%2F&x=a+b&x=%7E",
+    "https://audio-b.example.test/audio/file?verify=B-%2F%2f&x=%7e&x=a+b"
+  ],
+  "initialIndex": 0,
+  "nativeOutcome": 1,
+  "hostRecord": {
+    "success": 0,
+    "permanent": 0
+  },
+  "candidateOrder": [
+    {
+      "index": 1,
+      "url": "https://audio-b.example.test/audio/file?verify=B-%2F%2f&x=%7e&x=a+b"
+    },
+    {
+      "index": 0,
+      "url": "https://audio-a.example.test/audio/file?verify=A-%2f%2F&x=a+b&x=%7E"
+    }
+  ],
+  "firstByte": 65543,
+  "lastByte": 131085,
+  "requests": [
+    {
+      "bodyHex": "",
+      "method": "GET",
+      "url": "https://audio-a.example.test/audio/file?verify=A-%2f%2F&x=a+b&x=%7E",
+      "headers": {
+        "Cache-Control": "no-cache, no-store",
+        "Accept-Encoding": "",
+        "Range": "bytes=65543-131085"
+      }
+    },
+    {
+      "bodyHex": "",
+      "method": "GET",
+      "url": "https://audio-b.example.test/audio/file?verify=B-%2F%2f&x=%7e&x=a+b",
+      "headers": {
+        "Cache-Control": "no-cache, no-store",
+        "Accept-Encoding": "",
+        "Range": "bytes=65543-131085"
+      }
+    }
+  ],
+  "initialRange": {
+    "rangeBytes": 3145728,
+    "firstByte": 0,
+    "lastByte": 3145727,
+    "nativeEndExclusive": 3145728,
+    "playbackIdHex": "000102030405060708090a0b0c0d0e0f",
+    "requests": [
+      {
+        "bodyHex": "",
+        "method": "GET",
+        "url": "https://audio-a.example.test/audio/file?verify=A-%2f%2F&x=a+b&x=%7E",
+        "headers": {
+          "Cache-Control": "no-cache, no-store",
+          "Accept-Encoding": "",
+          "x-playback-id": "000102030405060708090a0b0c0d0e0f",
+          "Range": "bytes=0-3145727"
+        }
+      },
+      {
+        "bodyHex": "",
+        "method": "GET",
+        "url": "https://audio-b.example.test/audio/file?verify=B-%2F%2f&x=%7e&x=a+b",
+        "headers": {
+          "Cache-Control": "no-cache, no-store",
+          "Accept-Encoding": "",
+          "x-playback-id": "000102030405060708090a0b0c0d0e0f",
+          "Range": "bytes=0-3145727"
+        }
+      }
+    ]
+  },
+  "limits": [
+    "Synthetic early-header-close result1 has no admitted body bytes; no partial-body resume is proved.",
+    "Buffered-storage metadata mutations and per-host accounting are opaque boundaries; native scheduler stops at0x1007681e8.",
+    "Choosing the first eligible candidate assumes both supplied resources are eligible; no native backoff, attempt limit or host eligibility is inferred.",
+    "Native error mapping from a Dart exception is not executed; the transport owner must classify only its established connection-close case.",
+    "Outgoing request template has empty headers/body; the existing shared User-Agent policy is separate.",
+    "No live request, original process, credential, media byte or actual signed URL is used."
+  ]
+}

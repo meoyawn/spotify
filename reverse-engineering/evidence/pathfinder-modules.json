@@ -1,0 +1,56 @@
+{
+  "bundlePath": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+  "bundleSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+  "modules": [
+    {
+      "module": 92464,
+      "sourceOffsetUtf16": 4160816,
+      "sourceOffsetBytes": 4161056,
+      "lengthBytes": 1531,
+      "factorySha256": "ea26df91582f9fa4917addc583b3587174795a9214c591d368f6962222610292"
+    },
+    {
+      "module": 83873,
+      "sourceOffsetUtf16": 4083882,
+      "sourceOffsetBytes": 4084122,
+      "lengthBytes": 1671,
+      "factorySha256": "1aeaa740a4a3f533e78b5c4268c6aa3203950362f5c7066bf0275640e82bee8d"
+    },
+    {
+      "module": 85418,
+      "sourceOffsetUtf16": 4160640,
+      "sourceOffsetBytes": 4160880,
+      "lengthBytes": 175,
+      "factorySha256": "6c0bd05958a0723942a6e91b1cb681c9f40e719af9cbc023e30c08b5889f4165"
+    },
+    {
+      "module": 1940,
+      "sourceOffsetUtf16": 4113254,
+      "sourceOffsetBytes": 4113494,
+      "lengthBytes": 624,
+      "factorySha256": "528ddb8b6adce775f64c3ee0371d007d51e65e564bf9b804229d9857a9985923"
+    },
+    {
+      "module": 41332,
+      "sourceOffsetUtf16": 4114788,
+      "sourceOffsetBytes": 4115028,
+      "lengthBytes": 4953,
+      "factorySha256": "9daaca5dd00fa6605ddd0eeb379cb5fc5c08e51a161d22a94315c4aa40e4b005"
+    },
+    {
+      "module": 87337,
+      "sourceOffsetUtf16": 4119742,
+      "sourceOffsetBytes": 4119982,
+      "lengthBytes": 1395,
+      "factorySha256": "e90ffc2f49b22726bf37dfc1560fc8fcc35315291a30dd20628a151b2bb198b5"
+    }
+  ],
+  "inertDependencies": [
+    {
+      "module": 25371,
+      "purpose": "Logger factory returns its input name"
+    }
+  ],
+  "runtimeInstrumentation": "Wrap only RequestBuilder.build().withEndpointIdentifier to record metadata; all request and loader behavior executes original factories.",
+  "network": "No fetch, socket, http, process, or require capability is provided to original modules."
+}

@@ -1,0 +1,425 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "descriptorSet": {
+    "path": "reverse-engineering/protobuf/original.pbdesc",
+    "sha256": "8d6910583ad931941fdf0b6abb98703a6ca5b517e15c64593b3ddfddff306225"
+  },
+  "protocVersion": "libprotoc 36.2",
+  "handlers": {
+    "GetSessionState": "0x100101724",
+    "GetStoredAccounts": "0x1001017f8",
+    "SetSwitchTarget": "0x100101b20",
+    "GetSwitchTarget": "0x100101b90",
+    "ClearSwitchTarget": "0x100101c44",
+    "SaveCurrentCredentials": "0x100101a38",
+    "ClearAllStoredCredentials": "0x100101ab8",
+    "RemoveStoredAccount": "0x100101cac"
+  },
+  "method": "Whole original handlers/constructors/setters/repeated fields execute unchanged; injected accessors and pre-serialization Esperanto boundary only; pinned C++ protoc encodes captured fields with exact descriptors",
+  "scenarios": [
+    {
+      "name": "no session",
+      "username": "",
+      "accounts": [],
+      "initialSwitchTarget": "",
+      "saveSucceeds": false,
+      "operations": [
+        {
+          "method": "GetSessionState",
+          "value": "",
+          "requestHex": "",
+          "responseHex": "",
+          "nativeFields": {
+            "username": "",
+            "hasActiveSession": false
+          }
+        }
+      ],
+      "nativeAccessorEvents": [
+        "currentUsername"
+      ],
+      "nativeRemovalArguments": []
+    },
+    {
+      "name": "whitespace username",
+      "username": " ",
+      "accounts": [],
+      "initialSwitchTarget": "",
+      "saveSucceeds": false,
+      "operations": [
+        {
+          "method": "GetSessionState",
+          "value": "",
+          "requestHex": "",
+          "responseHex": "0801120120",
+          "nativeFields": {
+            "username": " ",
+            "hasActiveSession": true
+          }
+        }
+      ],
+      "nativeAccessorEvents": [
+        "currentUsername"
+      ],
+      "nativeRemovalArguments": []
+    },
+    {
+      "name": "username beginning with NUL",
+      "username": "\u0000tail",
+      "accounts": [],
+      "initialSwitchTarget": "",
+      "saveSucceeds": false,
+      "operations": [
+        {
+          "method": "GetSessionState",
+          "value": "",
+          "requestHex": "",
+          "responseHex": "08011205007461696c",
+          "nativeFields": {
+            "username": "\u0000tail",
+            "hasActiveSession": true
+          }
+        }
+      ],
+      "nativeAccessorEvents": [
+        "currentUsername"
+      ],
+      "nativeRemovalArguments": []
+    },
+    {
+      "name": "long Unicode username",
+      "username": "synthetic 雪synthetic 雪synthetic 雪synthetic 雪synthetic 雪synthetic 雪synthetic 雪synthetic 雪\u0000tail",
+      "accounts": [],
+      "initialSwitchTarget": "",
+      "saveSucceeds": false,
+      "operations": [
+        {
+          "method": "GetSessionState",
+          "value": "",
+          "requestHex": "",
+          "responseHex": "0801126d73796e74686574696320e99baa73796e74686574696320e99baa73796e74686574696320e99baa73796e74686574696320e99baa73796e74686574696320e99baa73796e74686574696320e99baa73796e74686574696320e99baa73796e74686574696320e99baa007461696c",
+          "nativeFields": {
+            "username": "synthetic 雪synthetic 雪synthetic 雪synthetic 雪synthetic 雪synthetic 雪synthetic 雪synthetic 雪\u0000tail",
+            "hasActiveSession": true
+          }
+        }
+      ],
+      "nativeAccessorEvents": [
+        "currentUsername"
+      ],
+      "nativeRemovalArguments": []
+    },
+    {
+      "name": "no stored accounts",
+      "username": "",
+      "accounts": [],
+      "initialSwitchTarget": "",
+      "saveSucceeds": false,
+      "operations": [
+        {
+          "method": "GetStoredAccounts",
+          "value": "",
+          "requestHex": "",
+          "responseHex": "",
+          "nativeFields": {
+            "accounts": []
+          }
+        }
+      ],
+      "nativeAccessorEvents": [
+        "storedAccounts"
+      ],
+      "nativeRemovalArguments": []
+    },
+    {
+      "name": "stored pair order, duplicates and empty display names",
+      "username": "",
+      "accounts": [
+        {
+          "canonicalUsername": "canonical-one",
+          "username": "Display One"
+        },
+        {
+          "canonicalUsername": "canonical-two",
+          "username": ""
+        },
+        {
+          "canonicalUsername": "canonical-one",
+          "username": "second 雪\u0000display"
+        },
+        {
+          "canonicalUsername": "",
+          "username": ""
+        }
+      ],
+      "initialSwitchTarget": "",
+      "saveSucceeds": false,
+      "operations": [
+        {
+          "method": "GetStoredAccounts",
+          "value": "",
+          "requestHex": "",
+          "responseHex": "0a1c0a0b446973706c6179204f6e65120d63616e6f6e6963616c2d6f6e650a0f120d63616e6f6e6963616c2d74776f0a230a127365636f6e6420e99baa00646973706c6179120d63616e6f6e6963616c2d6f6e650a00",
+          "nativeFields": {
+            "accounts": [
+              {
+                "username": "Display One",
+                "canonicalUsername": "canonical-one"
+              },
+              {
+                "username": "",
+                "canonicalUsername": "canonical-two"
+              },
+              {
+                "username": "second 雪\u0000display",
+                "canonicalUsername": "canonical-one"
+              },
+              {
+                "username": "",
+                "canonicalUsername": ""
+              }
+            ]
+          }
+        }
+      ],
+      "nativeAccessorEvents": [
+        "storedAccounts"
+      ],
+      "nativeRemovalArguments": []
+    },
+    {
+      "name": "switch target is passed verbatim and cleared",
+      "username": "",
+      "accounts": [],
+      "initialSwitchTarget": "initial",
+      "saveSucceeds": false,
+      "operations": [
+        {
+          "method": "GetSwitchTarget",
+          "value": "",
+          "requestHex": "",
+          "responseHex": "0a07696e697469616c",
+          "nativeFields": {
+            "canonicalUsername": "initial"
+          }
+        },
+        {
+          "method": "SetSwitchTarget",
+          "value": " next 雪\u0000tail ",
+          "requestHex": "0a0f206e65787420e99baa007461696c20",
+          "responseHex": "",
+          "nativeFields": {}
+        },
+        {
+          "method": "GetSwitchTarget",
+          "value": "",
+          "requestHex": "",
+          "responseHex": "0a0f206e65787420e99baa007461696c20",
+          "nativeFields": {
+            "canonicalUsername": " next 雪\u0000tail "
+          }
+        },
+        {
+          "method": "SetSwitchTarget",
+          "value": "",
+          "requestHex": "",
+          "responseHex": "",
+          "nativeFields": {}
+        },
+        {
+          "method": "GetSwitchTarget",
+          "value": "",
+          "requestHex": "",
+          "responseHex": "",
+          "nativeFields": {
+            "canonicalUsername": ""
+          }
+        },
+        {
+          "method": "SetSwitchTarget",
+          "value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+          "requestHex": "0a507878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878",
+          "responseHex": "",
+          "nativeFields": {}
+        },
+        {
+          "method": "GetSwitchTarget",
+          "value": "",
+          "requestHex": "",
+          "responseHex": "0a507878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878",
+          "nativeFields": {
+            "canonicalUsername": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+          }
+        },
+        {
+          "method": "ClearSwitchTarget",
+          "value": "",
+          "requestHex": "",
+          "responseHex": "",
+          "nativeFields": {}
+        },
+        {
+          "method": "GetSwitchTarget",
+          "value": "",
+          "requestHex": "",
+          "responseHex": "",
+          "nativeFields": {
+            "canonicalUsername": ""
+          }
+        },
+        {
+          "method": "ClearSwitchTarget",
+          "value": "",
+          "requestHex": "",
+          "responseHex": "",
+          "nativeFields": {}
+        },
+        {
+          "method": "GetSwitchTarget",
+          "value": "",
+          "requestHex": "",
+          "responseHex": "",
+          "nativeFields": {
+            "canonicalUsername": ""
+          }
+        }
+      ],
+      "nativeAccessorEvents": [
+        "switchTarget",
+        "setSwitchTarget",
+        "switchTarget",
+        "setSwitchTarget",
+        "switchTarget",
+        "setSwitchTarget",
+        "switchTarget",
+        "clearSwitchTarget",
+        "switchTarget",
+        "clearSwitchTarget",
+        "switchTarget"
+      ],
+      "nativeRemovalArguments": []
+    },
+    {
+      "name": "save result false",
+      "username": "",
+      "accounts": [],
+      "initialSwitchTarget": "",
+      "saveSucceeds": false,
+      "operations": [
+        {
+          "method": "SaveCurrentCredentials",
+          "value": "",
+          "requestHex": "",
+          "responseHex": "",
+          "nativeFields": {
+            "success": false
+          }
+        }
+      ],
+      "nativeAccessorEvents": [
+        "saveCurrentCredentials"
+      ],
+      "nativeRemovalArguments": []
+    },
+    {
+      "name": "save result true",
+      "username": "",
+      "accounts": [],
+      "initialSwitchTarget": "",
+      "saveSucceeds": true,
+      "operations": [
+        {
+          "method": "SaveCurrentCredentials",
+          "value": "",
+          "requestHex": "",
+          "responseHex": "0801",
+          "nativeFields": {
+            "success": true
+          }
+        }
+      ],
+      "nativeAccessorEvents": [
+        "saveCurrentCredentials"
+      ],
+      "nativeRemovalArguments": []
+    },
+    {
+      "name": "clear and remove commands preserve arguments and order",
+      "username": "",
+      "accounts": [],
+      "initialSwitchTarget": "",
+      "saveSucceeds": false,
+      "operations": [
+        {
+          "method": "RemoveStoredAccount",
+          "value": "",
+          "requestHex": "",
+          "responseHex": "",
+          "nativeFields": {}
+        },
+        {
+          "method": "RemoveStoredAccount",
+          "value": " canonical 雪\u0000tail ",
+          "requestHex": "0a142063616e6f6e6963616c20e99baa007461696c20",
+          "responseHex": "",
+          "nativeFields": {}
+        },
+        {
+          "method": "ClearAllStoredCredentials",
+          "value": "",
+          "requestHex": "",
+          "responseHex": "",
+          "nativeFields": {}
+        },
+        {
+          "method": "RemoveStoredAccount",
+          "value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+          "requestHex": "0a507878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878",
+          "responseHex": "",
+          "nativeFields": {}
+        },
+        {
+          "method": "ClearAllStoredCredentials",
+          "value": "",
+          "requestHex": "",
+          "responseHex": "",
+          "nativeFields": {}
+        }
+      ],
+      "nativeAccessorEvents": [
+        "removeStoredAccount",
+        "removeStoredAccount",
+        "clearAllStoredCredentials",
+        "removeStoredAccount",
+        "clearAllStoredCredentials"
+      ],
+      "nativeRemovalArguments": [
+        "",
+        " canonical 雪\u0000tail ",
+        "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      ]
+    }
+  ],
+  "rejectedRequests": [
+    {
+      "name": "truncated string",
+      "method": "SetSwitchTarget",
+      "requestHex": "0a01"
+    },
+    {
+      "name": "invalid string UTF8",
+      "method": "SetSwitchTarget",
+      "requestHex": "0a01ff"
+    },
+    {
+      "name": "truncated string",
+      "method": "RemoveStoredAccount",
+      "requestHex": "0a01"
+    },
+    {
+      "name": "invalid string UTF8",
+      "method": "RemoveStoredAccount",
+      "requestHex": "0a01ff"
+    }
+  ]
+}

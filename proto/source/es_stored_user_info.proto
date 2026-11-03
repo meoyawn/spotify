@@ -1,0 +1,28 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: 58c9e3a9e8c1ab95a053bd7512d78e5a5b8739d3072fe47431f0a4bf1bb7183d
+
+syntax = "proto3";
+
+package spotify.connectivity.auth.storage.esperanto.proto;
+
+import "google/protobuf/struct.proto";
+
+import "es_auth_blob.proto";
+
+option java_package = "com.spotify.connectivity.auth.storage.esperanto.proto";
+
+option optimize_for = CODE_SIZE;
+
+message StoredUserInfo {
+  string username = 1;
+
+  .spotify.connectivity.auth.common.esperanto.proto.AuthBlob auth_blob = 2;
+}
+
+message NullableStoredUserInfo {
+  oneof user_info {
+    .spotify.connectivity.auth.storage.esperanto.proto.StoredUserInfo stored_user_info = 1;
+
+    .google.protobuf.NullValue null = 2;
+  }
+}

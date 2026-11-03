@@ -1,0 +1,375 @@
+{
+  "provenance": "Execute original desktop platform snapshot and response mapping offline.\n\nThe original provider/constructor, RTL predicate, capabilities and platform\nhelpers execute under Unicorn. Only synthetic public OS/configuration/identity\nvalues are supplied. Standard protobuf allocation and libc operations are\ninert. Standard Google protoc encodes the observed native response fields;\nnative SerializeToString, original-app IPC and networking are not executed.",
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "snapshotConstructor": "0x10007aa10",
+  "snapshotProvider": "0x10007aba8",
+  "responseConstructor": "0x1000f352c",
+  "cases": [
+    {
+      "name": "desktop metadata uses independent event context and public OS sources",
+      "providers": {
+        "systemVersionString": "Version 26.4 (Build fixture-build)",
+        "majorVersion": 26,
+        "minorVersion": 4,
+        "patchVersion": 0,
+        "hardwareModel": "Synthetic Public Model",
+        "cpuType": 16777228,
+        "cpuSubtype": 2,
+        "gestaltVersion": [
+          26,
+          4,
+          0
+        ],
+        "locale": "en",
+        "loadConnectModal": false,
+        "isDeveloperMode": false,
+        "eventContext": {
+          "deviceId": "synthetic-device",
+          "deviceManufacturer": "Synthetic Manufacturer",
+          "deviceModel": "Event-only Model",
+          "osVersion": "Event-only OS",
+          "platformType": "synthetic-platform",
+          "clientId": "synthetic-event-client",
+          "installationId": "synthetic-installation",
+          "clientVersionString": "synthetic-context-version",
+          "clientVersionInt": 130601921
+        },
+        "name": "desktop metadata uses independent event context and public OS sources"
+      },
+      "providerCalls": [
+        "configuration(language)",
+        "NSProcessInfo.processInfo",
+        "operatingSystemVersion",
+        "Gestalt(sys1)",
+        "Gestalt(sys2)",
+        "Gestalt(sys3)",
+        "host_info(HOST_BASIC_INFO)"
+      ],
+      "responseFields": {
+        "locale": "en",
+        "appPlatform": "OSX_ARM64",
+        "osVersion": "26.4.0",
+        "clientVersion": "1.3.6.1921.g7086c071a617",
+        "platformString": "OS X 26.4.0 [arm 2]",
+        "clientVariant": "",
+        "localizationIsRtl": false,
+        "loadConnectModal": false,
+        "isDeveloperMode": false,
+        "capabilities": {
+          "canAutostart": true,
+          "canRestart": true,
+          "canMinimizeOrExitOnClose": false,
+          "canShowSystemMediaControls": false
+        },
+        "eventSenderContextInformation": {
+          "deviceId": "synthetic-device",
+          "deviceManufacturer": "Synthetic Manufacturer",
+          "deviceModel": "Event-only Model",
+          "osVersion": "Event-only OS",
+          "platformType": "synthetic-platform",
+          "clientId": "synthetic-event-client",
+          "clientVersionString": "synthetic-context-version",
+          "installationId": "synthetic-installation",
+          "clientVersionInt": "130601921"
+        }
+      },
+      "canonicalWireHex": "0a02656e22094f53585f41524d36342a0632362e342e3032af010a1073796e7468657469632d646576696365121653796e746865746963204d616e7566616374757265721a104576656e742d6f6e6c79204d6f64656c220d4576656e742d6f6e6c79204f532a1273796e7468657469632d706c6174666f726d321673796e7468657469632d6576656e742d636c69656e743a1973796e7468657469632d636f6e746578742d76657273696f6e40c1a7a33e4a1673796e7468657469632d696e7374616c6c6174696f6e4204080110014a18312e332e362e313932312e6737303836633037316136313752134f5320582032362e342e30205b61726d20325d"
+    },
+    {
+      "name": "locale and developer mode are read on every request",
+      "providers": {
+        "systemVersionString": "Version 26.4 (Build fixture-build)",
+        "majorVersion": 26,
+        "minorVersion": 4,
+        "patchVersion": 0,
+        "hardwareModel": "Synthetic Public Model",
+        "cpuType": 16777228,
+        "cpuSubtype": 2,
+        "gestaltVersion": [
+          26,
+          4,
+          0
+        ],
+        "locale": "ar-SA",
+        "loadConnectModal": false,
+        "isDeveloperMode": true,
+        "eventContext": {
+          "deviceId": "synthetic-device",
+          "deviceManufacturer": "Synthetic Manufacturer",
+          "deviceModel": "Event-only Model",
+          "osVersion": "Event-only OS",
+          "platformType": "synthetic-platform",
+          "clientId": "synthetic-event-client",
+          "installationId": "synthetic-installation",
+          "clientVersionString": "synthetic-context-version",
+          "clientVersionInt": 130601921
+        },
+        "name": "locale and developer mode are read on every request"
+      },
+      "providerCalls": [
+        "configuration(language)",
+        "NSProcessInfo.processInfo",
+        "operatingSystemVersion",
+        "Gestalt(sys1)",
+        "Gestalt(sys2)",
+        "Gestalt(sys3)",
+        "host_info(HOST_BASIC_INFO)"
+      ],
+      "responseFields": {
+        "locale": "ar-SA",
+        "appPlatform": "OSX_ARM64",
+        "osVersion": "26.4.0",
+        "clientVersion": "1.3.6.1921.g7086c071a617",
+        "platformString": "OS X 26.4.0 [arm 2]",
+        "clientVariant": "",
+        "localizationIsRtl": true,
+        "loadConnectModal": false,
+        "isDeveloperMode": true,
+        "capabilities": {
+          "canAutostart": true,
+          "canRestart": true,
+          "canMinimizeOrExitOnClose": false,
+          "canShowSystemMediaControls": false
+        },
+        "eventSenderContextInformation": {
+          "deviceId": "synthetic-device",
+          "deviceManufacturer": "Synthetic Manufacturer",
+          "deviceModel": "Event-only Model",
+          "osVersion": "Event-only OS",
+          "platformType": "synthetic-platform",
+          "clientId": "synthetic-event-client",
+          "clientVersionString": "synthetic-context-version",
+          "installationId": "synthetic-installation",
+          "clientVersionInt": "130601921"
+        }
+      },
+      "canonicalWireHex": "0a0561722d5341100122094f53585f41524d36342a0632362e342e3032af010a1073796e7468657469632d646576696365121653796e746865746963204d616e7566616374757265721a104576656e742d6f6e6c79204d6f64656c220d4576656e742d6f6e6c79204f532a1273796e7468657469632d706c6174666f726d321673796e7468657469632d6576656e742d636c69656e743a1973796e7468657469632d636f6e746578742d76657273696f6e40c1a7a33e4a1673796e7468657469632d696e7374616c6c6174696f6e38014204080110014a18312e332e362e313932312e6737303836633037316136313752134f5320582032362e342e30205b61726d20325d"
+    },
+    {
+      "name": "optional context absent and Gestalt failure preserves separate Foundation version",
+      "providers": {
+        "systemVersionString": "Version 26.4 (Build fixture-build)",
+        "majorVersion": 26,
+        "minorVersion": 4,
+        "patchVersion": 0,
+        "hardwareModel": "Synthetic Public Model",
+        "cpuType": 16777228,
+        "cpuSubtype": 2,
+        "gestaltVersion": [
+          10,
+          16,
+          9
+        ],
+        "locale": "ar-AE",
+        "loadConnectModal": true,
+        "isDeveloperMode": false,
+        "eventContext": {
+          "platformType": "",
+          "clientId": "",
+          "installationId": "",
+          "clientVersionString": "",
+          "clientVersionInt": -1
+        },
+        "name": "optional context absent and Gestalt failure preserves separate Foundation version",
+        "gestaltFailureAt": 1
+      },
+      "providerCalls": [
+        "configuration(language)",
+        "NSProcessInfo.processInfo",
+        "operatingSystemVersion",
+        "Gestalt(sys1)",
+        "Gestalt(sys2)",
+        "host_info(HOST_BASIC_INFO)"
+      ],
+      "responseFields": {
+        "locale": "ar-AE",
+        "appPlatform": "OSX_ARM64",
+        "osVersion": "26.4.0",
+        "clientVersion": "1.3.6.1921.g7086c071a617",
+        "platformString": "OS X 0.0.0 [arm 2]",
+        "clientVariant": "",
+        "localizationIsRtl": false,
+        "loadConnectModal": true,
+        "isDeveloperMode": false,
+        "capabilities": {
+          "canAutostart": true,
+          "canRestart": true,
+          "canMinimizeOrExitOnClose": false,
+          "canShowSystemMediaControls": false
+        },
+        "eventSenderContextInformation": {
+          "deviceId": "",
+          "deviceManufacturer": "",
+          "deviceModel": "",
+          "osVersion": "",
+          "platformType": "",
+          "clientId": "",
+          "clientVersionString": "",
+          "installationId": "",
+          "clientVersionInt": "4294967295"
+        }
+      },
+      "canonicalWireHex": "0a0561722d4145180122094f53585f41524d36342a0632362e342e30320640ffffffff0f4204080110014a18312e332e362e313932312e6737303836633037316136313752124f53205820302e302e30205b61726d20325d"
+    },
+    {
+      "name": "legacy display source differs from Foundation and preserves CPU subtype",
+      "providers": {
+        "systemVersionString": "Version 26.4 (Build fixture-build)",
+        "majorVersion": 30,
+        "minorVersion": 12,
+        "patchVersion": 1,
+        "hardwareModel": "Synthetic Public Model",
+        "cpuType": 7,
+        "cpuSubtype": -5,
+        "gestaltVersion": [
+          10,
+          16,
+          0
+        ],
+        "locale": "arc",
+        "loadConnectModal": false,
+        "isDeveloperMode": false,
+        "eventContext": {
+          "deviceId": "synthetic-device-雪-longer-than-SSO",
+          "deviceManufacturer": "",
+          "deviceModel": null,
+          "osVersion": "Event-only OS",
+          "platformType": "synthetic-platform",
+          "clientId": "synthetic-event-client",
+          "installationId": "synthetic-installation",
+          "clientVersionString": "synthetic-context-version",
+          "clientVersionInt": 0
+        },
+        "name": "legacy display source differs from Foundation and preserves CPU subtype"
+      },
+      "providerCalls": [
+        "configuration(language)",
+        "NSProcessInfo.processInfo",
+        "operatingSystemVersion",
+        "Gestalt(sys1)",
+        "Gestalt(sys2)",
+        "Gestalt(sys3)",
+        "host_info(HOST_BASIC_INFO)"
+      ],
+      "responseFields": {
+        "locale": "arc",
+        "appPlatform": "OSX_ARM64",
+        "osVersion": "30.12.1",
+        "clientVersion": "1.3.6.1921.g7086c071a617",
+        "platformString": "OS X 10.16.0 [x86 -5]",
+        "clientVariant": "",
+        "localizationIsRtl": true,
+        "loadConnectModal": false,
+        "isDeveloperMode": false,
+        "capabilities": {
+          "canAutostart": true,
+          "canRestart": true,
+          "canMinimizeOrExitOnClose": false,
+          "canShowSystemMediaControls": false
+        },
+        "eventSenderContextInformation": {
+          "deviceId": "synthetic-device-雪-longer-than-SSO",
+          "deviceManufacturer": "",
+          "deviceModel": "",
+          "osVersion": "Event-only OS",
+          "platformType": "synthetic-platform",
+          "clientId": "synthetic-event-client",
+          "clientVersionString": "synthetic-context-version",
+          "installationId": "synthetic-installation",
+          "clientVersionInt": "0"
+        }
+      },
+      "canonicalWireHex": "0a03617263100122094f53585f41524d36342a0733302e31322e313294010a2473796e7468657469632d6465766963652de99baa2d6c6f6e6765722d7468616e2d53534f220d4576656e742d6f6e6c79204f532a1273796e7468657469632d706c6174666f726d321673796e7468657469632d6576656e742d636c69656e743a1973796e7468657469632d636f6e746578742d76657273696f6e4a1673796e7468657469632d696e7374616c6c6174696f6e4204080110014a18312e332e362e313932312e6737303836633037316136313752154f5320582031302e31362e30205b783836202d355d"
+    }
+  ],
+  "localeScenarios": [
+    {
+      "locale": "ar",
+      "isRtl": true
+    },
+    {
+      "locale": "dv",
+      "isRtl": true
+    },
+    {
+      "locale": "fa",
+      "isRtl": true
+    },
+    {
+      "locale": "ha",
+      "isRtl": true
+    },
+    {
+      "locale": "he",
+      "isRtl": true
+    },
+    {
+      "locale": "ks",
+      "isRtl": true
+    },
+    {
+      "locale": "ku",
+      "isRtl": true
+    },
+    {
+      "locale": "ps",
+      "isRtl": true
+    },
+    {
+      "locale": "ur",
+      "isRtl": true
+    },
+    {
+      "locale": "yi",
+      "isRtl": true
+    },
+    {
+      "locale": "arc",
+      "isRtl": true
+    },
+    {
+      "locale": "khw",
+      "isRtl": true
+    },
+    {
+      "locale": "ar-EG",
+      "isRtl": true
+    },
+    {
+      "locale": "ar-MA",
+      "isRtl": true
+    },
+    {
+      "locale": "ar-SA",
+      "isRtl": true
+    },
+    {
+      "locale": "en",
+      "isRtl": false
+    },
+    {
+      "locale": "ar-AE",
+      "isRtl": false
+    },
+    {
+      "locale": "AR",
+      "isRtl": false
+    },
+    {
+      "locale": "he-IL",
+      "isRtl": false
+    },
+    {
+      "locale": "ar ",
+      "isRtl": false
+    },
+    {
+      "locale": "iw",
+      "isRtl": false
+    },
+    {
+      "locale": "",
+      "isRtl": false
+    }
+  ]
+}

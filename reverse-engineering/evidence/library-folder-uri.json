@@ -1,0 +1,456 @@
+{
+  "source": {
+    "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+    "sha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f"
+  },
+  "ranges": [
+    {
+      "kind": "expression",
+      "name": "sidebar options",
+      "source": ".local/native-scripts/faaa00efb5b0e600660e8ad1980fdf7c6a171efae1468a48a89e93c0a9a041db.js",
+      "sourceOffsetBytes": 133896,
+      "lengthBytes": 329,
+      "sha256": "8439c27d3427192aca42965e56298d030da08ccd77884b697e285e910afaa444"
+    },
+    {
+      "kind": "configuration",
+      "name": "sidebar pagination",
+      "source": ".local/native-scripts/faaa00efb5b0e600660e8ad1980fdf7c6a171efae1468a48a89e93c0a9a041db.js",
+      "sourceOffsetBytes": 135309,
+      "lengthBytes": 118,
+      "sha256": "eedf54cea03b5386ea2ed93a99562b34b71327fa680b6335cddc8bad9d569a52"
+    },
+    {
+      "kind": "expression",
+      "name": "sort state transitions",
+      "source": ".local/native-scripts/faaa00efb5b0e600660e8ad1980fdf7c6a171efae1468a48a89e93c0a9a041db.js",
+      "sourceOffsetBytes": 128122,
+      "lengthBytes": 963,
+      "sha256": "36c796ad39df0a9ed267deeaae97c7215912b8978421d0e9fd32dfaa7a00f368"
+    },
+    {
+      "kind": "layout",
+      "name": "row height",
+      "source": ".local/native-scripts/faaa00efb5b0e600660e8ad1980fdf7c6a171efae1468a48a89e93c0a9a041db.js",
+      "sourceOffsetBytes": 114728,
+      "lengthBytes": 101,
+      "sha256": "22b9fa73c973916de75eea2d5bc72cb27dd87426a1e1e09f637bb651dc2ffaba"
+    },
+    {
+      "kind": "expression",
+      "name": "row type labels",
+      "source": ".local/native-scripts/faaa00efb5b0e600660e8ad1980fdf7c6a171efae1468a48a89e93c0a9a041db.js",
+      "sourceOffsetBytes": 25993,
+      "lengthBytes": 1392,
+      "sha256": "cae8c4af4d35d06012b81df3002c39d04b6e0ddb9809f81e5067f2cc861936c6"
+    },
+    {
+      "kind": "factory",
+      "name": "13005",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 6614794,
+      "lengthBytes": 116193,
+      "sha256": "3bc7324fdb2e223fb266796867357fd3ed906f5d8affcfe80cab5034730129ee"
+    },
+    {
+      "kind": "factory",
+      "name": "37185",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 962067,
+      "lengthBytes": 45,
+      "sha256": "0f34565d2b963705b1c5b77518a461ebda849e717b8800d29525995072de9f8c"
+    },
+    {
+      "kind": "factory",
+      "name": "63945",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 962113,
+      "lengthBytes": 299,
+      "sha256": "9ea15809d9a7bceaf13cf1ff0549d298320fb8a9ed5fac3387301ca54a337a34"
+    },
+    {
+      "kind": "factory",
+      "name": "59532",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 973335,
+      "lengthBytes": 3131,
+      "sha256": "0288195d40d61c02e53e860854d0aed7956e793dbb2aa3cf5fdfcf4c31651ddb"
+    },
+    {
+      "kind": "factory",
+      "name": "26627",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 969857,
+      "lengthBytes": 3477,
+      "sha256": "f0d6a0bef93a94c8cb5052a7f71706afab3ef8235700c6623569190feef347b0"
+    },
+    {
+      "kind": "factory",
+      "name": "74548",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 43653,
+      "lengthBytes": 353,
+      "sha256": "0eafa8398e92b60f2c4d646bd7d64abde4d74d4821200b9c48a6add0d5b46348"
+    },
+    {
+      "kind": "factory",
+      "name": "94300",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 44007,
+      "lengthBytes": 1159,
+      "sha256": "9af57b751d9c24285dad4da417ab15ab26008884ae87b47b4723b0d4e5ce82a7"
+    },
+    {
+      "kind": "factory",
+      "name": "45085",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 45167,
+      "lengthBytes": 614,
+      "sha256": "10d0e7743ae4dcfccab652526ee9e8d3eac9a05cd37835a6b6f1c9fdeba2e1e9"
+    },
+    {
+      "kind": "factory",
+      "name": "35943",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 45782,
+      "lengthBytes": 2987,
+      "sha256": "ad74a5428498aa8ec67582d92a399942fc535d429ec3537821043617cd4cde63"
+    },
+    {
+      "kind": "factory",
+      "name": "27501",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 48966,
+      "lengthBytes": 1017,
+      "sha256": "897ce6a1dfbd52fb10deb7b40809f35dde5683a64a5830f7dd2ee2c0265bded5"
+    },
+    {
+      "kind": "factory",
+      "name": "62874",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 48770,
+      "lengthBytes": 195,
+      "sha256": "2bb43c35d4ff58ba7d248c8e6fca64986aab79001955166d32cb7d7a246fa09d"
+    },
+    {
+      "kind": "factory",
+      "name": "84808",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 968068,
+      "lengthBytes": 1788,
+      "sha256": "f3d8abf19154ae1428597163e922f3c715ee9c1bcb2834d82a04e6005e876243"
+    },
+    {
+      "kind": "factory",
+      "name": "42826",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 4881089,
+      "lengthBytes": 10744,
+      "sha256": "969e53dc1c04ed796a382cda4977ac2876abd9a9d24e9f1592892bb2da9b63ea"
+    },
+    {
+      "kind": "factory",
+      "name": "80109",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 976467,
+      "lengthBytes": 809,
+      "sha256": "2f02c048b62d4a6d942519617ac653e5393681e30b509aac22c2f6f2a09302b6"
+    },
+    {
+      "kind": "factory",
+      "name": "52736",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 962413,
+      "lengthBytes": 4035,
+      "sha256": "aa8e5b5df54d2104c89143dcf76d074585981972007051c3cf50ab150cab1561"
+    },
+    {
+      "kind": "factory",
+      "name": "44705",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 966449,
+      "lengthBytes": 468,
+      "sha256": "a7f38b1bffa1c1530e459e61d4d5954ff93dbdc1e086866c52aa37fc752d8322"
+    },
+    {
+      "kind": "factory",
+      "name": "17904",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 966971,
+      "lengthBytes": 45,
+      "sha256": "06eddfee77e7a4b070f5b6264a637b25f509c4b1fc014f64854b085838eed7b8"
+    },
+    {
+      "kind": "factory",
+      "name": "16908",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 967017,
+      "lengthBytes": 1050,
+      "sha256": "7410f14c6bae05e108c53bd2412e42638a56b5b847bf222cae468b6e28f028cb"
+    },
+    {
+      "kind": "factory",
+      "name": "56522",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 966918,
+      "lengthBytes": 52,
+      "sha256": "f5805ce47ab32e4d9546fc1e931d825c72d78158d4a452f42b437b94c6a68b97"
+    },
+    {
+      "kind": "factory",
+      "name": "83433",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 7763114,
+      "lengthBytes": 10456,
+      "sha256": "be0210d33271980b5054438346282c5d681d4ab88f84f04d90c54e940ca29164"
+    },
+    {
+      "kind": "factory",
+      "name": "38631",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 4194329,
+      "lengthBytes": 1183,
+      "sha256": "983d687d0349481d8b56fd5b358cd5c52b0304a87c7493a41d285977868e5626"
+    },
+    {
+      "kind": "factory",
+      "name": "78277",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 4788431,
+      "lengthBytes": 929,
+      "sha256": "70681093cdf3c2000ff22bda711517dee801347742a128ba4f8a4bbcd6e72fd3"
+    },
+    {
+      "kind": "factory",
+      "name": "68846",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 4197674,
+      "lengthBytes": 733,
+      "sha256": "1385764af983a1b3755c77285792c586395def2f79ab53b2d4f30f9027e0c676"
+    },
+    {
+      "kind": "factory",
+      "name": "47136",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 724697,
+      "lengthBytes": 30601,
+      "sha256": "69d9c484a0f66974f784f9b31a70e1260d8cc3cdb1aa0299e5f8aabae1470266"
+    },
+    {
+      "kind": "factory",
+      "name": "69449",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 7889734,
+      "lengthBytes": 11029,
+      "sha256": "512123b971df696e5269b0cebcaf671482bd607acd58f800425c57c484e2d333"
+    },
+    {
+      "kind": "factory",
+      "name": "44628",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 4790448,
+      "lengthBytes": 96,
+      "sha256": "d2ef1e7781f1438eb082195ced11ad812bd44bf4df5d95dc72690877e9a72f7d"
+    },
+    {
+      "kind": "factory",
+      "name": "7967",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 7144057,
+      "lengthBytes": 408302,
+      "sha256": "29aa2aaa552b38958e170c3a9a65f7ba25a69a9194c03ddabe04591446238c60"
+    },
+    {
+      "kind": "factory",
+      "name": "65661",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 922030,
+      "lengthBytes": 9077,
+      "sha256": "b98b8dfc983bbc429a9c646190803dae8076a29ee14d9abf2a6875eea41356b3"
+    },
+    {
+      "kind": "factory",
+      "name": "54461",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 3996851,
+      "lengthBytes": 1390,
+      "sha256": "d0f716ea1ed911c577617af08224abcb46f7b077adf34f165605324dad031881"
+    },
+    {
+      "kind": "factory",
+      "name": "94783",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 3996305,
+      "lengthBytes": 327,
+      "sha256": "7b0ffb2d36a3e723578f6fdcf712d411f92379e3d433f2b7d19d0a0421eba0e6"
+    },
+    {
+      "kind": "expression",
+      "name": "filter sort configs and item projection",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 3553625,
+      "lengthBytes": 15629,
+      "sha256": "746b01f64e082cde042dc4894d50b066704955542e4da04fa0eef1b73ee5ff82"
+    },
+    {
+      "kind": "factory",
+      "name": "96807",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 4196867,
+      "lengthBytes": 446,
+      "sha256": "b574bc09f8aab564addcb7cc948ec348c8aaca5204f16b3b0992580350aead7c"
+    },
+    {
+      "kind": "factory",
+      "name": "85909",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 4196158,
+      "lengthBytes": 381,
+      "sha256": "7eedf396258c9d9ab89ed949a4a080192401ef6e0ad35ceedd4ed42338bd819d"
+    },
+    {
+      "kind": "factory",
+      "name": "25691",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 4202882,
+      "lengthBytes": 396,
+      "sha256": "bef10e0dea8abc4fee42da7d91a4ee13c8b46663f997fef70e8b6f3fa628bc79"
+    },
+    {
+      "kind": "factory",
+      "name": "57199",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 4788166,
+      "lengthBytes": 164,
+      "sha256": "efc5e0a8fcbe783b314f6d0bc7445b1f3c49d40673525b004d5d34201df9ad4f"
+    },
+    {
+      "kind": "expression",
+      "name": "tag filter predicates",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 3619512,
+      "lengthBytes": 70,
+      "sha256": "7833a33ccdee5b4eec1179044b76bd3930c73bef5297e9c1013acfc8670b58b5"
+    },
+    {
+      "kind": "expression",
+      "name": "LibraryAPI.getContents",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 3624959,
+      "lengthBytes": 3993,
+      "sha256": "31a782219c14822ec1e800faa37ff8afdb15f88411e2fafbbb49aa91d88c3749"
+    },
+    {
+      "kind": "feature definition",
+      "name": "enableCoursesChipYlx",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 3959072,
+      "lengthBytes": 92,
+      "sha256": "7b6fba2451faa2145648c6600ff80c428c3750d72221d4038d6ffe46ab6d5023"
+    },
+    {
+      "kind": "feature definition",
+      "name": "enableAuthorPage",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 3958906,
+      "lengthBytes": 69,
+      "sha256": "562e4cb871c39821347f83a09df7f7e14c732019b21c67472a6b1309acfd9026"
+    },
+    {
+      "kind": "feature definition",
+      "name": "enableVenuesInYourLibrary",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 3972664,
+      "lengthBytes": 90,
+      "sha256": "d6b9f580a1e98f73e5907c817290138d2109b934119d9c9a6a48ded6f4a5203c"
+    },
+    {
+      "kind": "feature definition",
+      "name": "enableConcertCampaignsInYourLibrary",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 3972768,
+      "lengthBytes": 111,
+      "sha256": "ec86e10c14643dc35a235492d99705839802a813f85f90be3cfe7a2bb6b76c3b"
+    },
+    {
+      "kind": "feature definition",
+      "name": "enableYlxRecentsSortOrder",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 3957236,
+      "lengthBytes": 184,
+      "sha256": "b33d848c18bef9b36e467b8c906afde9ad33d0f0bdb0923869cb3745d94baa40"
+    },
+    {
+      "kind": "feature definition",
+      "name": "enableArtistRecentlyUpdatedSort",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 3957434,
+      "lengthBytes": 147,
+      "sha256": "cc19f43790e325e053b08663e8dd3d19315ea166117eeb47108b788d327f5511"
+    },
+    {
+      "kind": "feature definition",
+      "name": "enableYlxCustomFilterOrder",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sourceOffsetBytes": 3972893,
+      "lengthBytes": 153,
+      "sha256": "8a6ceec7960ba766cc485e756676eefcb65aacc47dafeff7414523de18b627c4"
+    }
+  ],
+  "cases": [
+    {
+      "input": "spotify:user:fixture:folder:0000001a",
+      "original": {
+        "type": "folder",
+        "hasBase62Id": true,
+        "id": "0000001a",
+        "username": "fixture"
+      },
+      "canonical": "spotify:user:fixture:folder:0000001a"
+    },
+    {
+      "input": "spotify:user:fixture:folder:000000000000001a",
+      "original": {
+        "type": "folder",
+        "hasBase62Id": true,
+        "id": "000000000000001a",
+        "username": "fixture"
+      },
+      "canonical": "spotify:user:fixture:folder:000000000000001a"
+    },
+    {
+      "input": "spotify:user:fixture:folder:123456789abcdef0",
+      "original": {
+        "type": "folder",
+        "hasBase62Id": true,
+        "id": "123456789abcdef0",
+        "username": "fixture"
+      },
+      "canonical": "spotify:user:fixture:folder:123456789abcdef0"
+    },
+    {
+      "input": "spotify:user:fixture:folder:ffffffffffffffff",
+      "original": {
+        "type": "folder",
+        "hasBase62Id": true,
+        "id": "ffffffffffffffff",
+        "username": "fixture"
+      },
+      "canonical": "spotify:user:fixture:folder:ffffffffffffffff"
+    },
+    {
+      "input": "spotify:user:fixture:folder:0000000000000000",
+      "original": {
+        "type": "folder",
+        "hasBase62Id": true,
+        "id": "0000000000000000",
+        "username": "fixture"
+      },
+      "canonical": "spotify:user:fixture:folder:0000000000000000"
+    }
+  ],
+  "scope": "Unchanged original renderer URI parser and canonical formatter. No application, account, HTTP or folder mutation.",
+  "limits": [
+    "Explicit synthetic username and folder identifiers. Native rootlist marker IDs/names have separate original instruction evidence."
+  ]
+}

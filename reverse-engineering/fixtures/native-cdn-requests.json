@@ -1,0 +1,197 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "exports": [
+    {
+      "file": "dart-native-cdn-range-request-owner.json",
+      "sha256": "3114eac7f7022e63c05b0c62dd2d6c0fa16e613fe9f671028c8aa2050b887d15",
+      "evidenceId": "ev_e3610737596e7b3c8fae9e377820d3b07618880952f7dfa4bd321d11e9bcbcd1",
+      "procedures": [
+        "0x10075cff8",
+        "0x101c507c4"
+      ]
+    },
+    {
+      "file": "dart-native-cdn-base-and-range-pair.json",
+      "sha256": "21a2a5b499f9221d7a134f995bad24a142ee2f545bfeae0b64fb6e84e8d8fef3",
+      "evidenceId": "ev_9b76f22827732e7aae3113c9996e67fa01e45f5f6a110ee2b05b2197372057a5",
+      "procedures": [
+        "0x10075ca34",
+        "0x101c50b30"
+      ]
+    }
+  ],
+  "owner": "0x10075cff8",
+  "baseRequest": "0x10075ca34",
+  "rangeFormatter": "0x101c507c4",
+  "intervalFormatter": "0x101c50b30",
+  "method": "Unchanged native CDN owner, base-request branch, cache/encoding header construction, hex helper and range formatters execute with synthetic owner storage. Opaque HTTP builder methods capture arguments; execution stops at 0x101c204d4 before plan/send. Standard allocation, memory/string, ASCII case-folding, decimal conversion and uncontended mutex providers only.",
+  "injectedTemplate": {
+    "method": "GET",
+    "headers": {},
+    "bodyHex": ""
+  },
+  "limitations": [
+    "No original request-template auth/UA population, route, transport, retries or response policy proved.",
+    "Ordinary signed HTTPS GET path only; POST/head-file and alternate template paths excluded.",
+    "Playback ID and timestamp supplied synthetically; their real caller ownership is separate."
+  ],
+  "cases": [
+    {
+      "name": "signed URL and interval",
+      "signedUrl": "https://audio-cf.example.test/audio/file?verify=123-%2f%2F&x=a+b&x=%7E",
+      "firstByte": 7,
+      "lastByte": 65542,
+      "nativeEndExclusive": 65543,
+      "playbackIdHex": null,
+      "segmentTimestampMilliseconds": null,
+      "request": {
+        "bodyHex": "",
+        "method": "GET",
+        "url": "https://audio-cf.example.test/audio/file?verify=123-%2f%2F&x=a+b&x=%7E",
+        "headers": {
+          "Cache-Control": "no-cache, no-store",
+          "Accept-Encoding": "",
+          "Range": "bytes=7-65542"
+        }
+      }
+    },
+    {
+      "name": "single first byte",
+      "signedUrl": "https://audio-cf.example.test/audio/file?verify=123-%2f%2F&x=a+b&x=%7E",
+      "firstByte": 0,
+      "lastByte": 0,
+      "nativeEndExclusive": 1,
+      "playbackIdHex": null,
+      "segmentTimestampMilliseconds": null,
+      "request": {
+        "bodyHex": "",
+        "method": "GET",
+        "url": "https://audio-cf.example.test/audio/file?verify=123-%2f%2F&x=a+b&x=%7E",
+        "headers": {
+          "Cache-Control": "no-cache, no-store",
+          "Accept-Encoding": "",
+          "Range": "bytes=0-0"
+        }
+      }
+    },
+    {
+      "name": "whole file cutoff still ranged",
+      "signedUrl": "https://audio-cf.example.test/audio/file?verify=123-%2f%2F&x=a+b&x=%7E",
+      "firstByte": 0,
+      "lastByte": 2147467261,
+      "nativeEndExclusive": 2147467262,
+      "playbackIdHex": null,
+      "segmentTimestampMilliseconds": null,
+      "request": {
+        "bodyHex": "",
+        "method": "GET",
+        "url": "https://audio-cf.example.test/audio/file?verify=123-%2f%2F&x=a+b&x=%7E",
+        "headers": {
+          "Cache-Control": "no-cache, no-store",
+          "Accept-Encoding": "",
+          "Range": "bytes=0-2147467261"
+        }
+      }
+    },
+    {
+      "name": "whole file cutoff omits range",
+      "signedUrl": "https://audio-cf.example.test/audio/file?verify=123-%2f%2F&x=a+b&x=%7E",
+      "firstByte": 0,
+      "lastByte": 2147467262,
+      "nativeEndExclusive": 2147467263,
+      "playbackIdHex": null,
+      "segmentTimestampMilliseconds": null,
+      "request": {
+        "bodyHex": "",
+        "method": "GET",
+        "url": "https://audio-cf.example.test/audio/file?verify=123-%2f%2F&x=a+b&x=%7E",
+        "headers": {
+          "Cache-Control": "no-cache, no-store",
+          "Accept-Encoding": ""
+        }
+      }
+    },
+    {
+      "name": "nonzero start stays ranged above cutoff",
+      "signedUrl": "https://audio-cf.example.test/audio/file?verify=123-%2f%2F&x=a+b&x=%7E",
+      "firstByte": 7,
+      "lastByte": 2147483646,
+      "nativeEndExclusive": 2147483647,
+      "playbackIdHex": null,
+      "segmentTimestampMilliseconds": null,
+      "request": {
+        "bodyHex": "",
+        "method": "GET",
+        "url": "https://audio-cf.example.test/audio/file?verify=123-%2f%2F&x=a+b&x=%7E",
+        "headers": {
+          "Cache-Control": "no-cache, no-store",
+          "Accept-Encoding": "",
+          "Range": "bytes=7-2147483646"
+        }
+      }
+    },
+    {
+      "name": "playback ID and negative segment timestamp",
+      "signedUrl": "https://audio-cf.example.test/audio/file?verify=123-%2f%2F&x=a+b&x=%7E",
+      "firstByte": 0,
+      "lastByte": 16383,
+      "nativeEndExclusive": 16384,
+      "playbackIdHex": "000102030405060708090a0b0c0d0e0f",
+      "segmentTimestampMilliseconds": -123,
+      "request": {
+        "bodyHex": "",
+        "method": "GET",
+        "url": "https://audio-cf.example.test/audio/file?verify=123-%2f%2F&x=a+b&x=%7E",
+        "headers": {
+          "Cache-Control": "no-cache, no-store",
+          "Accept-Encoding": "",
+          "x-playback-id": "000102030405060708090a0b0c0d0e0f",
+          "x-segment-timestamp-ms": "-123",
+          "Range": "bytes=0-16383"
+        }
+      }
+    },
+    {
+      "name": "zero ID and zero timestamp retain presence",
+      "signedUrl": "https://audio-cf.example.test/audio/file?verify=123-%2f%2F&x=a+b&x=%7E",
+      "firstByte": 3,
+      "lastByte": 3,
+      "nativeEndExclusive": 4,
+      "playbackIdHex": "00000000000000000000000000000000",
+      "segmentTimestampMilliseconds": 0,
+      "request": {
+        "bodyHex": "",
+        "method": "GET",
+        "url": "https://audio-cf.example.test/audio/file?verify=123-%2f%2F&x=a+b&x=%7E",
+        "headers": {
+          "Cache-Control": "no-cache, no-store",
+          "Accept-Encoding": "",
+          "x-playback-id": "00000000000000000000000000000000",
+          "x-segment-timestamp-ms": "0",
+          "Range": "bytes=3-3"
+        }
+      }
+    },
+    {
+      "name": "signed int64 segment timestamp",
+      "signedUrl": "https://audio-cf.example.test/audio/file?verify=123-%2f%2F&x=a+b&x=%7E",
+      "firstByte": 42,
+      "lastByte": 42,
+      "nativeEndExclusive": 43,
+      "playbackIdHex": "fffefdfcfbfaf9f8f7f6f5f4f3f2f1f0",
+      "segmentTimestampMilliseconds": 9223372036854775807,
+      "request": {
+        "bodyHex": "",
+        "method": "GET",
+        "url": "https://audio-cf.example.test/audio/file?verify=123-%2f%2F&x=a+b&x=%7E",
+        "headers": {
+          "Cache-Control": "no-cache, no-store",
+          "Accept-Encoding": "",
+          "x-playback-id": "fffefdfcfbfaf9f8f7f6f5f4f3f2f1f0",
+          "x-segment-timestamp-ms": "9223372036854775807",
+          "Range": "bytes=42-42"
+        }
+      }
+    }
+  ]
+}

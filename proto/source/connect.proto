@@ -1,0 +1,663 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: a1d89b84ddb2c6966fb2073ce9cab8267b8e808c96adb484cec886a1ac7fbe6e
+
+syntax = "proto3";
+
+package spotify.connectstate;
+
+import "player.proto";
+
+import "devices.proto";
+
+import "media.proto";
+
+option java_package = "com.spotify.connectstate.model";
+
+option optimize_for = CODE_SIZE;
+
+message ClusterUpdate {
+  .spotify.connectstate.Cluster cluster = 1;
+
+  .spotify.connectstate.ClusterUpdateReason update_reason = 2 [json_name = "update_reason"];
+
+  string ack_id = 3 [json_name = "ack_id"];
+
+  repeated string devices_that_changed = 4 [json_name = "devices_that_changed"];
+}
+
+message Device {
+  .spotify.connectstate.DeviceInfo device_info = 1 [json_name = "device_info"];
+
+  .spotify.connectstate.PlayerState player_state = 2 [json_name = "player_state"];
+
+  .spotify.connectstate.PrivateDeviceInfo private_device_info = 3 [json_name = "private_device_info"];
+
+  bytes transfer_data = 4 [json_name = "transfer_data"];
+}
+
+message Cluster {
+  reserved 7;
+
+  int64 changed_timestamp_ms = 1 [json_name = "timestamp"];
+
+  string active_device_id = 2 [json_name = "active_device_id"];
+
+  .spotify.connectstate.PlayerState player_state = 3 [json_name = "player_state"];
+
+  map<string, .spotify.connectstate.DeviceInfo> device = 4 [json_name = "devices"];
+
+  bytes transfer_data = 5 [json_name = "transfer_data"];
+
+  uint64 transfer_data_timestamp = 6 [json_name = "transfer_data_timestamp"];
+
+  bool need_full_player_state = 8 [json_name = "need_full_player_state"];
+
+  int64 server_timestamp_ms = 9 [json_name = "server_timestamp_ms"];
+
+  optional bool needs_state_updates = 10 [json_name = "needs_state_updates"];
+
+  optional uint64 started_playing_at_timestamp = 11 [json_name = "started_playing_at"];
+
+  repeated .spotify.connectstate.DodoDeviceInfo dodo_devices = 12;
+
+  optional bool needs_local_devices = 13 [json_name = "needs_local_devices"];
+}
+
+message DodoDeviceInfo {
+  string cs_id = 1;
+
+  .spotify.connectstate.DodoDeviceType dodo_device_type = 2;
+
+  optional .spotify.connectstate.DodoDeviceInfo.PlayerStateSummary player_state_summary = 3;
+
+  optional uint64 started_playing_at_timestamp = 4;
+
+  message PlayerStateSummary {
+    bool is_playing = 1;
+
+    bool is_paused = 2;
+
+    bool disallow_pausing = 3;
+
+    bool disallow_resuming = 4;
+
+    bool disallow_skipping_prev = 5;
+
+    bool disallow_skipping_next = 6;
+  }
+}
+
+message PutStateRequest {
+  string callback_url = 1 [json_name = "callback_url"];
+
+  .spotify.connectstate.Device device = 2;
+
+  .spotify.connectstate.MemberType member_type = 3 [json_name = "member_type"];
+
+  bool is_active = 4 [json_name = "is_active"];
+
+  .spotify.connectstate.PutStateReason put_state_reason = 5 [json_name = "put_state_reason"];
+
+  uint32 message_id = 6 [json_name = "message_id"];
+
+  string last_command_sent_by_device_id = 7 [json_name = "last_command_sent_by_device_id"];
+
+  uint32 last_command_message_id = 8 [json_name = "last_command_message_id"];
+
+  uint64 started_playing_at = 9 [json_name = "started_playing_at"];
+
+  uint64 has_been_playing_for_ms = 11 [json_name = "has_been_playing_for_ms"];
+
+  uint64 client_side_timestamp = 12 [json_name = "client_side_timestamp"];
+
+  bool only_write_player_state = 13 [json_name = "only_write_player_state"];
+}
+
+message PrivateDeviceInfo {
+  string platform = 1;
+}
+
+message DeviceInfo {
+  reserved 5, 30;
+
+  bool can_play = 1 [json_name = "can_play"];
+
+  uint32 volume = 2;
+
+  string name = 3;
+
+  .spotify.connectstate.Capabilities capabilities = 4;
+
+  string device_software_version = 6 [json_name = "device_software_version"];
+
+  .spotify.connectstate.devices.DeviceType device_type = 7 [json_name = "device_type"];
+
+  string spirc_version = 9 [json_name = "spirc_version"];
+
+  string device_id = 10 [json_name = "device_id"];
+
+  bool is_private_session = 11 [json_name = "is_private_session"];
+
+  bool is_social_connect = 12 [json_name = "is_social_connect"];
+
+  string client_id = 13 [json_name = "client_id"];
+
+  string brand = 14;
+
+  string model = 15;
+
+  map<string, string> metadata_map = 16 [json_name = "metadata_map"];
+
+  string product_id = 17 [json_name = "product_id"];
+
+  string deduplication_id = 18 [json_name = "deduplication_id"];
+
+  uint32 selected_alias_id = 19 [json_name = "selected_alias_id"];
+
+  map<uint32, .spotify.connectstate.devices.DeviceAlias> device_aliases = 20 [json_name = "device_aliases"];
+
+  bool is_offline = 21 [json_name = "is_offline"];
+
+  string public_ip = 22 [json_name = "public_ip"];
+
+  string license = 23;
+
+  optional .spotify.connectstate.AudioOutputDeviceInfo audio_output_device_info = 24 [json_name = "audio_output_device_info"];
+
+  bool is_group = 25 [json_name = "is_group"];
+
+  bool is_dynamic_device = 26 [json_name = "is_dynamic_device"];
+
+  repeated string disallow_playback_reasons = 27 [json_name = "disallow_playback_reasons"];
+
+  repeated string disallow_transfer_reasons = 28 [json_name = "disallow_transfer_reasons"];
+
+  bool is_locally_discovered = 29 [json_name = "is_locally_discovered"];
+
+  optional string group_instance = 31 [json_name = "group_instance"];
+
+  bool is_public = 32 [json_name = "is_public"];
+
+  optional bool is_wol_capable = 34 [json_name = "is_wol_capable"];
+}
+
+message AudioOutputDeviceInfo {
+  optional .spotify.connectstate.AudioOutputDeviceType audio_output_device_type = 1 [json_name = "audio_output_device_type"];
+
+  optional string device_name = 2 [json_name = "device_name"];
+
+  optional string brand = 3;
+
+  optional string model = 4;
+
+  optional .spotify.connectstate.AudioOutputCategory category = 5;
+}
+
+message Capabilities {
+  reserved 1, 4, 24, 31, 32;
+
+  reserved "supported_contexts", "supports_lossless_audio", "supports_playback_speed", "play_token_lost_behavior";
+
+  bool can_be_player = 2 [json_name = "can_be_player"];
+
+  bool restrict_to_local = 3 [json_name = "restrict_to_local"];
+
+  bool gaia_eq_connect_id = 5 [json_name = "gaia_eq_connect_id"];
+
+  bool supports_logout = 6 [json_name = "supports_logout"];
+
+  bool is_observable = 7 [json_name = "is_observable"];
+
+  int32 volume_steps = 8 [json_name = "volume_steps"];
+
+  repeated string supported_types = 9 [json_name = "supported_types"];
+
+  bool command_acks = 10 [json_name = "command_acks"];
+
+  bool supports_rename = 11 [json_name = "supports_rename"];
+
+  bool hidden = 12;
+
+  bool disable_volume = 13 [json_name = "disable_volume"];
+
+  bool connect_disabled = 14 [json_name = "connect_disabled"];
+
+  bool supports_playlist_v2 = 15 [json_name = "supports_playlist_v2"];
+
+  bool is_controllable = 16 [json_name = "is_controllable"];
+
+  bool supports_external_episodes = 17 [json_name = "supports_external_episodes"];
+
+  bool supports_set_backend_metadata = 18 [json_name = "supports_set_backend_metadata"];
+
+  bool supports_transfer_command = 19 [json_name = "supports_transfer_command"];
+
+  bool supports_command_request = 20 [json_name = "supports_command_request"];
+
+  bool is_voice_enabled = 21 [json_name = "is_voice_enabled"];
+
+  bool needs_full_player_state = 22 [json_name = "needs_full_player_state"];
+
+  bool supports_gzip_pushes = 23 [json_name = "supports_gzip_pushes"];
+
+  bool supports_set_options_command = 25 [json_name = "supports_set_options_command"];
+
+  .spotify.connectstate.CapabilitySupportDetails supports_hifi = 26 [json_name = "supports_hifi"];
+
+  string connect_capabilities = 27 [json_name = "connect_capabilities"];
+
+  bool supports_rooms = 28 [json_name = "supports_rooms"];
+
+  bool supports_dj = 29 [json_name = "supports_dj"];
+
+  .spotify.common.media.AudioQuality supported_audio_quality = 30 [json_name = "supported_audio_quality"];
+
+  bool supports_smart_shuffle_mode = 33 [json_name = "supports_smart_shuffle_mode"];
+
+  bool supports_remote_sleep_timer = 34 [json_name = "supports_remote_sleep_timer"];
+
+  bool supports_ping_request = 35 [json_name = "supports_ping_request"];
+
+  bool supports_playlist_mixing = 36 [json_name = "supports_playlist_mixing"];
+
+  bool supports_remote_audio_quality_control = 37 [
+    json_name = "supports_remote_audio_quality_control"
+  ];
+
+  bool supports_zephyr = 38 [json_name = "supports_music_speed"];
+
+  bool supports_gapless = 39 [json_name = "supports_gapless"];
+
+  bool supports_crossfade = 40 [json_name = "supports_crossfade"];
+
+  bool supports_remote_equalizer = 41 [json_name = "supports_remote_equalizer"];
+}
+
+message CapabilitySupportDetails {
+  bool fully_supported = 1 [json_name = "fully_supported"];
+
+  bool user_eligible = 2 [json_name = "user_eligible"];
+
+  bool device_supported = 3 [json_name = "device_supported"];
+}
+
+message ConnectCommandOptions {
+  reserved 4;
+
+  int32 message_id = 1 [json_name = "message_id"];
+
+  uint32 target_alias_id = 3 [json_name = "target_alias_id"];
+}
+
+message ConnectLoggingParams {
+  repeated string interaction_ids = 1;
+
+  repeated string page_instance_ids = 2;
+}
+
+message LogoutCommand {
+  .spotify.connectstate.ConnectCommandOptions command_options = 1;
+}
+
+message SetVolumeCommand {
+  int32 volume = 1;
+
+  .spotify.connectstate.ConnectCommandOptions command_options = 2;
+
+  .spotify.connectstate.ConnectLoggingParams logging_params = 3;
+
+  string connection_type = 4;
+
+  string sent_by_device_id = 5;
+
+  optional string group_device_identifier = 6;
+
+  optional string group_instance = 7;
+}
+
+message RenameCommand {
+  string rename_to = 1;
+
+  .spotify.connectstate.ConnectCommandOptions command_options = 2;
+}
+
+message ProxyTransferCommand {
+  string player_command_json = 1 [json_name = "player_command_json"];
+
+  .spotify.connectstate.ConnectCommandOptions command_options = 2 [json_name = "command_options"];
+
+  string target_device_id = 3 [json_name = "target_device_id"];
+
+  .spotify.connectstate.ConnectLoggingParams logging_params = 4 [json_name = "logging_params"];
+
+  string command_id = 5 [json_name = "command_id"];
+
+  optional .spotify.connectstate.WakeOnLanInfo wol_info = 6 [json_name = "wol_info"];
+}
+
+message ProxyWakeCommand {
+  string target_device_id = 1 [json_name = "target_device_id"];
+
+  .spotify.connectstate.WakeOnLanInfo wol_info = 2 [json_name = "wol_info"];
+
+  .spotify.connectstate.ConnectLoggingParams logging_params = 3 [json_name = "logging_params"];
+
+  string command_id = 4 [json_name = "command_id"];
+}
+
+message SetBackendMetadataCommand {
+  map<string, string> metadata = 1;
+}
+
+message LocalDevice {
+  string device_id = 1 [json_name = "device_id"];
+
+  string device_name = 2 [json_name = "device_name"];
+
+  .spotify.connectstate.devices.DeviceType device_type = 3 [json_name = "device_type"];
+
+  string client_id = 4 [json_name = "client_id"];
+
+  string product_id = 5 [json_name = "product_id"];
+
+  string brand = 6;
+
+  string model = 7;
+
+  string local_ip = 8 [json_name = "local_ip"];
+
+  optional uint32 alias_id = 9 [json_name = "alias_id"];
+
+  repeated string supported_media_types = 11 [json_name = "supported_media_types"];
+
+  bool supports_dj = 12 [json_name = "supports_dj"];
+
+  bool supports_on_demand = 13 [json_name = "supports_on_demand"];
+
+  bool is_voice_enabled = 14 [json_name = "is_voice_enabled"];
+
+  string license = 15;
+
+  .spotify.connectstate.CapabilitySupportDetails supports_hifi = 16 [json_name = "supports_hifi"];
+
+  repeated string disallow_reasons = 17 [json_name = "disallow_reasons"];
+
+  optional string connect_capabilities = 18 [json_name = "connect_capabilities"];
+
+  bool supports_external_episodes = 19 [json_name = "supports_external_episodes"];
+
+  optional .spotify.connectstate.WakeOnLanInfo wol_info = 20 [json_name = "wol_info"];
+}
+
+message WakeOnLanInfo {
+  bytes mac_address = 1 [json_name = "mac_address"];
+
+  uint32 port = 2;
+
+  uint32 retries = 3;
+
+  uint32 delay_ms = 4 [json_name = "delay_ms"];
+
+  bool broadcast_on_all_interfaces = 5 [json_name = "broadcast_on_all_interfaces"];
+}
+
+message AddDeviceToGroupCommand {
+  string group_device_identifier = 1 [json_name = "group_device_identifier"];
+
+  .spotify.connectstate.ConnectCommandOptions command_options = 2 [json_name = "command_options"];
+
+  .spotify.connectstate.ConnectLoggingParams logging_params = 3 [json_name = "logging_params"];
+
+  string group_instance = 4 [json_name = "group_instance"];
+
+  optional string command_id = 5 [json_name = "command_id"];
+}
+
+message AddDeviceToGroupCommandResponse {
+  bool success = 1;
+
+  optional .spotify.connectstate.AddDeviceToGroupCommandResponse.Error error = 2;
+
+  enum Error {
+    UNKNOWN_ERROR = 0;
+
+    TIMEOUT = 1;
+
+    DEVICE_NOT_GROUPABLE = 3;
+
+    MAX_NUMBER_OF_DEVICES_REACHED = 4;
+
+    NOT_IMPLEMENTED = 6;
+
+    NOT_SUPPORTED = 7;
+
+    INTEGRATION_ERROR = 8;
+
+    SDK_ERROR = 9;
+
+    CONNECT_ERROR = 10;
+
+    GROUP_NOT_FOUND = 11;
+
+    INVALID_GROUP = 12;
+
+    BUSY = 13;
+
+    reserved 2, 5;
+  }
+}
+
+message RemoveDeviceFromGroupCommand {
+  string group_device_identifier = 1 [json_name = "group_device_identifier"];
+
+  .spotify.connectstate.ConnectCommandOptions command_options = 2 [json_name = "command_options"];
+
+  .spotify.connectstate.ConnectLoggingParams logging_params = 3 [json_name = "logging_params"];
+
+  string group_instance = 4 [json_name = "group_instance"];
+
+  optional string command_id = 5 [json_name = "command_id"];
+}
+
+message RemoveDeviceFromGroupCommandResponse {
+  bool success = 1;
+
+  optional .spotify.connectstate.RemoveDeviceFromGroupCommandResponse.Error error = 2;
+
+  enum Error {
+    UNKNOWN_ERROR = 0;
+
+    TIMEOUT = 1;
+
+    DEVICE_NOT_REMOVABLE = 3;
+
+    NOT_IMPLEMENTED = 5;
+
+    NOT_SUPPORTED = 6;
+
+    INTEGRATION_ERROR = 7;
+
+    SDK_ERROR = 8;
+
+    CONNECT_ERROR = 9;
+
+    GROUP_NOT_FOUND = 10;
+
+    INVALID_GROUP = 11;
+
+    BUSY = 12;
+
+    reserved 2, 4;
+  }
+}
+
+message DeleteGroupCommand {
+  .spotify.connectstate.ConnectCommandOptions command_options = 1 [json_name = "command_options"];
+
+  .spotify.connectstate.ConnectLoggingParams logging_params = 2 [json_name = "logging_params"];
+
+  string group_instance = 3 [json_name = "group_instance"];
+
+  optional string command_id = 4 [json_name = "command_id"];
+}
+
+message DeleteGroupCommandResponse {
+  bool success = 1;
+
+  optional .spotify.connectstate.DeleteGroupCommandResponse.Error error = 2;
+
+  enum Error {
+    UNKNOWN_ERROR = 0;
+
+    TIMEOUT = 1;
+
+    NOT_IMPLEMENTED = 4;
+
+    NOT_SUPPORTED = 5;
+
+    INTEGRATION_ERROR = 6;
+
+    SDK_ERROR = 7;
+
+    CONNECT_ERROR = 8;
+
+    GROUP_NOT_FOUND = 9;
+
+    INVALID_GROUP = 10;
+
+    BUSY = 11;
+
+    reserved 2, 3;
+  }
+}
+
+message ResyncGroupDataCommand {
+}
+
+message ResyncGroupDataCommandResponse {
+  bool success = 1;
+
+  optional .spotify.connectstate.ResyncGroupDataCommandResponse.Error error = 2;
+
+  enum Error {
+    UNKNOWN_ERROR = 0;
+
+    TIMEOUT = 1;
+
+    NOT_IMPLEMENTED = 2;
+
+    SDK_ERROR = 3;
+
+    CONNECT_ERROR = 4;
+  }
+}
+
+enum DodoDeviceType {
+  UNKNOWN_DODO_DEVICE_TYPE = 0;
+
+  DODO1 = 1;
+
+  DODO2 = 2;
+}
+
+enum AudioOutputDeviceType {
+  UNKNOWN_AUDIO_OUTPUT_DEVICE_TYPE = 0;
+
+  BUILT_IN_SPEAKER = 1;
+
+  LINE_OUT = 2;
+
+  BLUETOOTH = 3;
+
+  AIRPLAY = 4;
+
+  AUTOMOTIVE = 5 [deprecated = true];
+
+  CAR_PROJECTED = 6;
+}
+
+enum AudioOutputCategory {
+  AUDIO_OUTPUT_CATEGORY_UNKNOWN = 0;
+
+  AUDIO_OUTPUT_CATEGORY_CAR = 1;
+
+  AUDIO_OUTPUT_CATEGORY_HEADPHONES = 2;
+
+  AUDIO_OUTPUT_CATEGORY_SPEAKER = 3;
+
+  AUDIO_OUTPUT_CATEGORY_WEARABLE = 4;
+
+  AUDIO_OUTPUT_CATEGORY_GLASSES = 5;
+
+  AUDIO_OUTPUT_CATEGORY_APP = 6;
+}
+
+enum PutStateReason {
+  UNKNOWN_PUT_STATE_REASON = 0;
+
+  SPIRC_HELLO = 1;
+
+  SPIRC_NOTIFY = 2;
+
+  NEW_DEVICE = 3;
+
+  PLAYER_STATE_CHANGED = 4;
+
+  VOLUME_CHANGED = 5;
+
+  PICKER_OPENED = 6;
+
+  BECAME_INACTIVE = 7;
+
+  ALIAS_CHANGED = 8;
+
+  NEW_CONNECTION = 9;
+
+  PULL_PLAYBACK = 10;
+
+  AUDIO_DRIVER_INFO_CHANGED = 11;
+
+  PUT_STATE_RATE_LIMITED = 12;
+
+  BACKEND_METADATA_APPLIED = 13;
+
+  LOCAL_DEVICES_CHANGED = 14;
+
+  GROUP_STATE_CHANGED = 15;
+
+  PRIVATE_SESSION_CHANGED = 16;
+}
+
+enum MemberType {
+  SPIRC_V2 = 0;
+
+  SPIRC_V3 = 1;
+
+  CONNECT_STATE = 2;
+
+  CONNECT_STATE_EXTENDED = 5;
+
+  ACTIVE_DEVICE_TRACKER = 6;
+
+  PLAY_TOKEN = 7;
+
+  reserved 3, 4;
+
+  reserved "DEVICE_AND_PLAYER_STATE_OBSERVER", "CONNECT_STATE_WITH_SPIRC_COMMANDS";
+}
+
+enum ClusterUpdateReason {
+  UNKNOWN_CLUSTER_UPDATE_REASON = 0;
+
+  DEVICES_DISAPPEARED = 1;
+
+  DEVICE_STATE_CHANGED = 2;
+
+  NEW_DEVICE_APPEARED = 3;
+
+  DEVICE_VOLUME_CHANGED = 4;
+
+  DEVICE_ALIAS_CHANGED = 5;
+
+  DEVICE_NEW_CONNECTION = 6;
+}

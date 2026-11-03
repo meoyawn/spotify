@@ -1,0 +1,93 @@
+{
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "parser": "0x101b8f67c",
+  "writerEntry": "0x101b8ffa0",
+  "fileRead": "0x101d02d60",
+  "fileReplace": "0x101d02fa0",
+  "changeCallback": "0x101b8f3c8",
+  "flushTask": "0x101b8f4a8",
+  "destructorFlush": "0x101b8f340",
+  "scopeEnumeration": "0x101f40b28",
+  "scopeObserver": "0x101f427f8",
+  "scheduler": {
+    "ownerConstructor": "0x101f4305c",
+    "enqueue": "0x101f431cc",
+    "pending": "0x101f434ac",
+    "contract": "Explicit injected asynchronous task ownership and pending/coalescing decisions; native wall-clock timing is unestablished"
+  },
+  "format": {
+    "lineDelimiter": "LF",
+    "separator": "first equals",
+    "trimBytes": [
+      9,
+      10,
+      11,
+      12,
+      13,
+      32
+    ],
+    "controlEscapes": {
+      "j": 9,
+      "k": 10,
+      "n": 13
+    },
+    "integerParser": "Darwin libc strtol(base 0), full-token check, signed int32 truncation",
+    "strings": "Raw bytes; literal control bytes/DEL rejected, quote/backslash and xHH escapes supported"
+  },
+  "io": {
+    "maximumReadBytesExclusive": 1048576,
+    "temporarySuffix": ".tmp",
+    "writeSequence": [
+      "write temporary",
+      "close",
+      "rename over destination",
+      "optional best-effort final-file fsync"
+    ],
+    "dirty": "Cleared only on main write/rename success; failure retains dirty; clean flush does not write"
+  },
+  "instructionRanges": [
+    {
+      "start": "0x101b8f67c",
+      "endExclusive": "0x101b8ff30",
+      "fileOffset": 28898940,
+      "sha256": "57677ff5fe86be72153b8c4a82bc277d0ddaef73ee153eec9e14bdd1dbd9e604"
+    },
+    {
+      "start": "0x101b8ffa0",
+      "endExclusive": "0x101b90520",
+      "fileOffset": 28901280,
+      "sha256": "5cef7f676da695c95d6cdaf5dd3daed5d5b10b8e5ec950f09eb2b49e6f1a5315"
+    },
+    {
+      "start": "0x101b8f3c8",
+      "endExclusive": "0x101b8f48c",
+      "fileOffset": 28898248,
+      "sha256": "29769e6d8c35149ab9c61a2b5dbca3aacb68528b5200e93e545a34be284ddec0"
+    },
+    {
+      "start": "0x101b8f4a8",
+      "endExclusive": "0x101b8f4fc",
+      "fileOffset": 28898472,
+      "sha256": "393edae1cd358e07eedbf0ed4fe9bbac1a82dc4819bec8cdbb034f4393bf428b"
+    }
+  ],
+  "oracle": {
+    "parseCases": 10,
+    "writeCases": 8,
+    "flushSteps": 7,
+    "inertDependencies": [
+      "file bytes",
+      "standard string/stream/memory operations",
+      "task pending/enqueue boundary",
+      "flush write result"
+    ],
+    "standardIntegerParsing": "Delegated to host Darwin libc, not reimplemented in the oracle"
+  },
+  "limits": [
+    "No installed Spotify prefs/profile or account data read",
+    "Raw byte codec is independent from the strict UTF-8/protobuf bridge",
+    "Owned UTF-8 bridge load failures preserve the supplied store; this is an explicit Dart representation boundary",
+    "Multi-key registry iteration order and native wall-clock scheduling delay are not byte/timing guarantees",
+    "No account-tier checks, live HTTP or runtime sidecar"
+  ]
+}

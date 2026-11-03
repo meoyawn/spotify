@@ -1,0 +1,445 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "method": "Execute original collection-kind bindings and PageRequest producers offline.\n\nThe original URI parser, complete Contains subscription owner, collection set\nname function and PAGE producer execute unchanged. Abstract subscription\ninterfaces record requested buckets and return empty handles, without starting\nsync or using an account. No Dart output supplies expected request bytes.\n",
+  "entries": {
+    "contains": "0x1005492dc",
+    "setName": "0x101b7a618",
+    "page": "0x101b3cf5c",
+    "pageStop": "0x101b3d230"
+  },
+  "ranges": [
+    {
+      "start": "0x1005492dc",
+      "endExclusive": "0x1005498fc",
+      "sha256": "0aae5185dbcb8439d90d5357f68ee4510cf37e40f244838b298ca0eeebb9a7a3"
+    },
+    {
+      "start": "0x101b7a618",
+      "endExclusive": "0x101b7a860",
+      "sha256": "2b1a3be2d8ec81e011aaad2ca4f4d3dae320863638fc2065e6ccab3b3b6bd407"
+    }
+  ],
+  "substitutedInterfaces": [
+    "Inert original service observer interfaces return empty cancellation handles.",
+    "The collection bucket provider records the original numeric argument and returns a null collection handle, so no sync starts.",
+    "Original PAGE producer uses explicit synthetic username, template and pagination token with the set name returned by unchanged original code."
+  ],
+  "standardProviders": [
+    "Inherited original URI parser and public libc/libc++ memory, string, mutex, weak-pointer and callback primitives.",
+    "Aligned delete[] retains synthetic storage. Original callback construction/destruction and cancellation-cell assignment run unchanged.",
+    "Original compiled Google protobuf PAGE constructor/serializer, inherited from the PAGE oracle."
+  ],
+  "limits": [
+    "Contains bucket selection and PAGE outgoing construction only; no account contents, synchronization policy, mutations, response projection or native YourLibrary ordering.",
+    "Membership of albums and tracks shares collection; artist membership uses artist and show membership uses show.",
+    "Synthetic template does not prove final authentication, routing, HTTP codec or TLS/QUIC fingerprints."
+  ],
+  "cases": [
+    {
+      "uri": "spotify:track:0000000000000000000001",
+      "originalLinkKind": 4,
+      "originalBuckets": [
+        0
+      ],
+      "originalSets": [
+        "collection"
+      ]
+    },
+    {
+      "uri": "spotify:album:0000000000000000000001",
+      "originalLinkKind": 2,
+      "originalBuckets": [
+        0
+      ],
+      "originalSets": [
+        "collection"
+      ]
+    },
+    {
+      "uri": "spotify:artist:0000000000000000000001",
+      "originalLinkKind": 1,
+      "originalBuckets": [
+        3
+      ],
+      "originalSets": [
+        "artist"
+      ]
+    },
+    {
+      "uri": "spotify:show:0000000000000000000001",
+      "originalLinkKind": 62,
+      "originalBuckets": [
+        1
+      ],
+      "originalSets": [
+        "show"
+      ]
+    },
+    {
+      "uri": "spotify:episode:0000000000000000000001",
+      "originalLinkKind": 63,
+      "originalBuckets": [
+        0
+      ],
+      "originalSets": [
+        "collection"
+      ]
+    }
+  ],
+  "requests": [
+    {
+      "username": "synthetic-user",
+      "set": "collection",
+      "paginationToken": "",
+      "originalCalls": [
+        "0x101b7e060",
+        "0x101e8f9a4"
+      ],
+      "pageRequestMethods": {
+        "vtable": "0x10265c3e0",
+        "byteSizeLong": "0x101e47624",
+        "internalSerialize": "0x101e47620"
+      },
+      "original": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Accept": "application/vnd.collection-v2.spotify.proto",
+          "Content-Type": "application/vnd.collection-v2.spotify.proto"
+        },
+        "bodyHex": "0a0e73796e7468657469632d75736572120a636f6c6c656374696f6e20ac02",
+        "relativePath": "collection/v2/paging",
+        "properties": [
+          [
+            "regional_routing",
+            "true"
+          ]
+        ],
+        "headerMutations": [
+          [
+            "Accept",
+            "application/vnd.collection-v2.spotify.proto"
+          ],
+          [
+            "Content-Type",
+            "application/vnd.collection-v2.spotify.proto"
+          ]
+        ],
+        "options": {
+          "opaqueContext": "0x12345678"
+        },
+        "rawUrl": "https://spclient.example.test:443/collection/v2/paging",
+        "orderedHeaders": [
+          [
+            "User-Agent",
+            "Spotify/independent-offline-fixture"
+          ],
+          [
+            "Accept",
+            "application/vnd.collection-v2.spotify.proto"
+          ],
+          [
+            "Content-Type",
+            "application/vnd.collection-v2.spotify.proto"
+          ]
+        ]
+      }
+    },
+    {
+      "username": "synthetic-user",
+      "set": "collection",
+      "paginationToken": "page-2",
+      "originalCalls": [
+        "0x101b7e060",
+        "0x101e8f9a4"
+      ],
+      "pageRequestMethods": {
+        "vtable": "0x10265c3e0",
+        "byteSizeLong": "0x101e47624",
+        "internalSerialize": "0x101e47620"
+      },
+      "original": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Accept": "application/vnd.collection-v2.spotify.proto",
+          "Content-Type": "application/vnd.collection-v2.spotify.proto"
+        },
+        "bodyHex": "0a0e73796e7468657469632d75736572120a636f6c6c656374696f6e1a06706167652d3220ac02",
+        "relativePath": "collection/v2/paging",
+        "properties": [
+          [
+            "regional_routing",
+            "true"
+          ]
+        ],
+        "headerMutations": [
+          [
+            "Accept",
+            "application/vnd.collection-v2.spotify.proto"
+          ],
+          [
+            "Content-Type",
+            "application/vnd.collection-v2.spotify.proto"
+          ]
+        ],
+        "options": {
+          "opaqueContext": "0x12345678"
+        },
+        "rawUrl": "https://spclient.example.test:443/collection/v2/paging",
+        "orderedHeaders": [
+          [
+            "User-Agent",
+            "Spotify/independent-offline-fixture"
+          ],
+          [
+            "Accept",
+            "application/vnd.collection-v2.spotify.proto"
+          ],
+          [
+            "Content-Type",
+            "application/vnd.collection-v2.spotify.proto"
+          ]
+        ]
+      }
+    },
+    {
+      "username": "synthetic-user",
+      "set": "artist",
+      "paginationToken": "",
+      "originalCalls": [
+        "0x101b7e060",
+        "0x101e8f9a4"
+      ],
+      "pageRequestMethods": {
+        "vtable": "0x10265c3e0",
+        "byteSizeLong": "0x101e47624",
+        "internalSerialize": "0x101e47620"
+      },
+      "original": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Accept": "application/vnd.collection-v2.spotify.proto",
+          "Content-Type": "application/vnd.collection-v2.spotify.proto"
+        },
+        "bodyHex": "0a0e73796e7468657469632d75736572120661727469737420ac02",
+        "relativePath": "collection/v2/paging",
+        "properties": [
+          [
+            "regional_routing",
+            "true"
+          ]
+        ],
+        "headerMutations": [
+          [
+            "Accept",
+            "application/vnd.collection-v2.spotify.proto"
+          ],
+          [
+            "Content-Type",
+            "application/vnd.collection-v2.spotify.proto"
+          ]
+        ],
+        "options": {
+          "opaqueContext": "0x12345678"
+        },
+        "rawUrl": "https://spclient.example.test:443/collection/v2/paging",
+        "orderedHeaders": [
+          [
+            "User-Agent",
+            "Spotify/independent-offline-fixture"
+          ],
+          [
+            "Accept",
+            "application/vnd.collection-v2.spotify.proto"
+          ],
+          [
+            "Content-Type",
+            "application/vnd.collection-v2.spotify.proto"
+          ]
+        ]
+      }
+    },
+    {
+      "username": "synthetic-user",
+      "set": "artist",
+      "paginationToken": "page-2",
+      "originalCalls": [
+        "0x101b7e060",
+        "0x101e8f9a4"
+      ],
+      "pageRequestMethods": {
+        "vtable": "0x10265c3e0",
+        "byteSizeLong": "0x101e47624",
+        "internalSerialize": "0x101e47620"
+      },
+      "original": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Accept": "application/vnd.collection-v2.spotify.proto",
+          "Content-Type": "application/vnd.collection-v2.spotify.proto"
+        },
+        "bodyHex": "0a0e73796e7468657469632d7573657212066172746973741a06706167652d3220ac02",
+        "relativePath": "collection/v2/paging",
+        "properties": [
+          [
+            "regional_routing",
+            "true"
+          ]
+        ],
+        "headerMutations": [
+          [
+            "Accept",
+            "application/vnd.collection-v2.spotify.proto"
+          ],
+          [
+            "Content-Type",
+            "application/vnd.collection-v2.spotify.proto"
+          ]
+        ],
+        "options": {
+          "opaqueContext": "0x12345678"
+        },
+        "rawUrl": "https://spclient.example.test:443/collection/v2/paging",
+        "orderedHeaders": [
+          [
+            "User-Agent",
+            "Spotify/independent-offline-fixture"
+          ],
+          [
+            "Accept",
+            "application/vnd.collection-v2.spotify.proto"
+          ],
+          [
+            "Content-Type",
+            "application/vnd.collection-v2.spotify.proto"
+          ]
+        ]
+      }
+    },
+    {
+      "username": "synthetic-user",
+      "set": "show",
+      "paginationToken": "",
+      "originalCalls": [
+        "0x101b7e060",
+        "0x101e8f9a4"
+      ],
+      "pageRequestMethods": {
+        "vtable": "0x10265c3e0",
+        "byteSizeLong": "0x101e47624",
+        "internalSerialize": "0x101e47620"
+      },
+      "original": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Accept": "application/vnd.collection-v2.spotify.proto",
+          "Content-Type": "application/vnd.collection-v2.spotify.proto"
+        },
+        "bodyHex": "0a0e73796e7468657469632d75736572120473686f7720ac02",
+        "relativePath": "collection/v2/paging",
+        "properties": [
+          [
+            "regional_routing",
+            "true"
+          ]
+        ],
+        "headerMutations": [
+          [
+            "Accept",
+            "application/vnd.collection-v2.spotify.proto"
+          ],
+          [
+            "Content-Type",
+            "application/vnd.collection-v2.spotify.proto"
+          ]
+        ],
+        "options": {
+          "opaqueContext": "0x12345678"
+        },
+        "rawUrl": "https://spclient.example.test:443/collection/v2/paging",
+        "orderedHeaders": [
+          [
+            "User-Agent",
+            "Spotify/independent-offline-fixture"
+          ],
+          [
+            "Accept",
+            "application/vnd.collection-v2.spotify.proto"
+          ],
+          [
+            "Content-Type",
+            "application/vnd.collection-v2.spotify.proto"
+          ]
+        ]
+      }
+    },
+    {
+      "username": "synthetic-user",
+      "set": "show",
+      "paginationToken": "page-2",
+      "originalCalls": [
+        "0x101b7e060",
+        "0x101e8f9a4"
+      ],
+      "pageRequestMethods": {
+        "vtable": "0x10265c3e0",
+        "byteSizeLong": "0x101e47624",
+        "internalSerialize": "0x101e47620"
+      },
+      "original": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Accept": "application/vnd.collection-v2.spotify.proto",
+          "Content-Type": "application/vnd.collection-v2.spotify.proto"
+        },
+        "bodyHex": "0a0e73796e7468657469632d75736572120473686f771a06706167652d3220ac02",
+        "relativePath": "collection/v2/paging",
+        "properties": [
+          [
+            "regional_routing",
+            "true"
+          ]
+        ],
+        "headerMutations": [
+          [
+            "Accept",
+            "application/vnd.collection-v2.spotify.proto"
+          ],
+          [
+            "Content-Type",
+            "application/vnd.collection-v2.spotify.proto"
+          ]
+        ],
+        "options": {
+          "opaqueContext": "0x12345678"
+        },
+        "rawUrl": "https://spclient.example.test:443/collection/v2/paging",
+        "orderedHeaders": [
+          [
+            "User-Agent",
+            "Spotify/independent-offline-fixture"
+          ],
+          [
+            "Accept",
+            "application/vnd.collection-v2.spotify.proto"
+          ],
+          [
+            "Content-Type",
+            "application/vnd.collection-v2.spotify.proto"
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: c157f9afea203473b40f3edb84d9d8163e0bb4664ef517692b7865790951eacb
+
+syntax = "proto3";
+
+package spotify.player.esperanto.proto;
+
+import "es_command_options.proto";
+
+import "es_logging_params.proto";
+
+import "es_pauseresume_origin.proto";
+
+option java_package = "com.spotify.player.esperanto.proto";
+
+option objc_class_prefix = "ESP";
+
+option optimize_for = CODE_SIZE;
+
+message ResumeRequest {
+  .spotify.player.esperanto.proto.CommandOptions options = 1;
+
+  .spotify.player.esperanto.proto.LoggingParams logging_params = 2;
+
+  .spotify.player.esperanto.proto.PauseResumeOrigin resume_origin = 3;
+}

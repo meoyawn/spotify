@@ -1,0 +1,153 @@
+{
+  "provenance": "Original ordered-map form serializer, refresh signed-int64 expiry decoder and request-template configuration fragment; native parse-error entry and fluent builder APIs intercepted; synthetic inputs only.",
+  "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "numericEntry": "0x10163a1fc",
+  "parseErrorEntry": "0x101ed7e20",
+  "formCases": [
+    {
+      "name": "refresh token",
+      "clientId": "client-fixture",
+      "refreshToken": "refresh-fixture",
+      "body": "client_id=client-fixture&grant_type=refresh_token&refresh_token=refresh-fixture"
+    },
+    {
+      "name": "opaque token",
+      "clientId": "client+/= ~*",
+      "refreshToken": "opaque+/= ~*?&🎧",
+      "body": "client_id=client%2B%2F%3D+~%2A&grant_type=refresh_token&refresh_token=opaque%2B%2F%3D+~%2A%3F%26%F0%9F%8E%A7"
+    },
+    {
+      "name": "empty token",
+      "clientId": "client-fixture",
+      "refreshToken": "",
+      "body": "client_id=client-fixture&grant_type=refresh_token&refresh_token="
+    }
+  ],
+  "numericCases": [
+    {
+      "token": "0",
+      "value": 0
+    },
+    {
+      "token": "3600",
+      "value": 3600
+    },
+    {
+      "token": "-1",
+      "value": -1
+    },
+    {
+      "token": "1.5",
+      "value": 1
+    },
+    {
+      "token": "-1.5",
+      "value": -1
+    },
+    {
+      "token": "2147483648",
+      "value": 2147483648
+    },
+    {
+      "token": "9223372036854775807",
+      "value": 9223372036854775807
+    },
+    {
+      "token": "9223372036854775808",
+      "error": "Integer overflow"
+    },
+    {
+      "token": "-9223372036854775808",
+      "value": -9223372036854775808
+    },
+    {
+      "token": "-9223372036854775809",
+      "error": "Integer overflow"
+    },
+    {
+      "token": "9.223372036854775807e18",
+      "value": 9223372036854775807
+    },
+    {
+      "token": "-9.223372036854775808e18",
+      "value": -9223372036854775808
+    },
+    {
+      "token": "9223372036854775807.9999999999999999",
+      "value": 9223372036854775807
+    },
+    {
+      "token": "-9223372036854775808.99999999999999",
+      "value": -9223372036854775808
+    },
+    {
+      "token": "9223372036854775808.0001",
+      "error": "Integer overflow"
+    },
+    {
+      "token": "1e3",
+      "value": 1000
+    },
+    {
+      "token": "1e-1",
+      "value": 0
+    },
+    {
+      "token": "1e20",
+      "error": "Integer overflow"
+    },
+    {
+      "token": "1e-400",
+      "value": 0
+    },
+    {
+      "token": "0e400",
+      "value": 0
+    },
+    {
+      "token": "999999999999999999999999999e-40",
+      "value": 0
+    }
+  ],
+  "template": {
+    "constructor": "0x101637f80",
+    "fragment": [
+      "0x101638020",
+      "0x10163817c"
+    ],
+    "scopeInput": 42,
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "steps": [
+      {
+        "setter": "0x101c1fae8",
+        "value": "POST"
+      },
+      {
+        "setter": "0x101c1fb60",
+        "value": "https://accounts.spotify.com/api/token"
+      },
+      {
+        "setter": "0x101c1fd00",
+        "name": "Content-Type",
+        "value": "application/x-www-form-urlencoded"
+      },
+      {
+        "setter": "0x101c20210",
+        "value": 42
+      },
+      {
+        "setter": "0x101c20240",
+        "value": 1
+      },
+      {
+        "setter": "0x101c20378",
+        "value": 30000
+      }
+    ],
+    "method": "POST",
+    "url": "https://accounts.spotify.com/api/token",
+    "nativeTimeoutMilliseconds": 30000
+  }
+}

@@ -1,0 +1,276 @@
+{
+  "schemaVersion": 1,
+  "classification": "original-instruction-wire-evidence-not-exact-descriptors",
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "authority": "Unchanged original schema-specific constructors and serializer execute offline over synthetic objects. No app runtime/profile/account/network.",
+  "genericSerializer": "0x101cfee5c",
+  "referenceSchemaSha256": "ee3ee52dddcc848443224a7bcf31d0164edd5edce061a4ffc18e76a8298cbb6f",
+  "referenceProtoc": "libprotoc 36.2",
+  "referenceHelloHex": "520f5000a00100f00109c002f8acd19101a00100f00100c0020092036752655260000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5fa00101e20310000102030405060708090a0b0c0d0e0fb20403ff007f8205020801",
+  "nativeKnownFieldsHelloHex": "520f5000a00100f00109c002f8acd19101a00100f00100c0020092036752655260000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5fa00101e20310000102030405060708090a0b0c0d0e0fb20403ff007f8205020801",
+  "nativeExtendedHelloHex": "520f5000a00100f00109c002f8acd19101a00100f00100c0020092036752655260000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5fa00101e20310000102030405060708090a0b0c0d0e0fb20403ff007f82050a08011a0220012a020800",
+  "knownSubsetByteIdentical": true,
+  "nativeFullFeatureSetHelloHex": "520f5000a00100f00109c002f8acd19101a00100f00100c0020092036752655260000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5fa00101e20310000102030405060708090a0b0c0d0e0fb20403ff007f820514080110001a08080010011800200120012a020800",
+  "nativeFullFeatureSetHex": "080110001a08080010011800200120012a020800",
+  "nativeFeatureSetGraphHex": "08011a0220012a020800",
+  "nativeFeatureSetRawDecode": "1: 1\n3 {\n  4: 1\n}\n5 {\n  1: 0\n}\n",
+  "nativeExtendedHelloRawDecode": "10 {\n  10: 0\n  20: 0\n  30: 9\n  40: 305419896\n}\n20: 0\n30: 0\n40: 0\n50 {\n  10 {\n    10: \"\\000\\001\\002\\003\\004\\005\\006\\007\\010\\t\\n\\013\\014\\r\\016\\017\\020\\021\\022\\023\\024\\025\\026\\027\\030\\031\\032\\033\\034\\035\\036\\037 !\\\"#$%&\\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\\\]^_\"\n    20: 1\n  }\n}\n60: \"\\000\\001\\002\\003\\004\\005\\006\\007\\010\\t\\n\\013\\014\\r\\016\\017\"\n70: \"\\377\\000\\177\"\n80 {\n  1: 1\n  3 {\n    4: 1\n  }\n  5 {\n    1: 0\n  }\n}\n",
+  "sourceOfAssignments": [
+    ".local/validation/ap-0x101904024.c"
+  ],
+  "limitations": [
+    "No exact original file descriptor/name recovery; native_field aliases are not original names",
+    "Synthetic caller values, not original profile/device/account data",
+    "Selected field graph only; original enum declarations and source required/optional labels unproved",
+    "String versus bytes declarations for unknown length-delimited fields follow caller text/opaque-data roles, not an extracted descriptor",
+    "Fixed byte-array parser widths are recorded here but are not expressible by ordinary protobuf bytes declarations"
+  ],
+  "authenticationSlices": {
+    "LoginCredentialsWithPadding": {
+      "wireHex": "520e73796e7468657469632d75736572a00103f2010c00ff63726564656e7469616cc20209aa0070616464696e67",
+      "rawDecode": "10: \"synthetic-user\"\n20: 3\n30: \"\\000\\377credential\"\n40: \"\\252\\000padding\"\n"
+    },
+    "ClientResponseEncryptedExtraString": {
+      "wireHex": "5a0f73796e7468657469632d6578747261",
+      "rawDecode": "11: \"synthetic-extra\"\n"
+    },
+    "ClientInfoWithExtraString": {
+      "wireHex": "08001a1273796e7468657469632d6c616e6775616765221b73796e7468657469632d636c69656e742d6669656c642d666f75722a1673796e7468657469632d636c69656e742d6578747261",
+      "rawDecode": "1: 0\n3: \"synthetic-language\"\n4: \"synthetic-client-field-four\"\n5: \"synthetic-client-extra\"\n"
+    },
+    "SystemInfo": {
+      "wireHex": "5002a00103f00104c00200900305e00302b00406800507d2051073796e7468657469632d73797374656da2061073796e7468657469632d646576696365",
+      "rawDecode": "10: 2\n20: 3\n30: 4\n40: 0\n50: 5\n60: 2\n70: 6\n80: 7\n90: \"synthetic-system\"\n100: \"synthetic-device\"\n"
+    }
+  },
+  "systemInfoReferenceByteIdentical": true,
+  "nativeAuthenticationHex": "522e520e73796e7468657469632d75736572a00103f2010c00ff63726564656e7469616cc20209aa0070616464696e675a0f73796e7468657469632d6578747261a0010192033d5002a00103f00104c00200900305e00302b00406800507d2051073796e7468657469632d73797374656da2061073796e7468657469632d646576696365d2054b08001a1273796e7468657469632d6c616e6775616765221b73796e7468657469632d636c69656e742d6669656c642d666f75722a1673796e7468657469632d636c69656e742d6578747261",
+  "authenticationTypeParserSamples": [
+    {
+      "numeric": 0,
+      "inputHex": "a00100",
+      "accepted": true,
+      "hasType": true,
+      "storedValue": 0
+    },
+    {
+      "numeric": 1,
+      "inputHex": "a00101",
+      "accepted": true,
+      "hasType": true,
+      "storedValue": 1
+    },
+    {
+      "numeric": 2,
+      "inputHex": "a00102",
+      "accepted": true,
+      "hasType": true,
+      "storedValue": 2
+    },
+    {
+      "numeric": 3,
+      "inputHex": "a00103",
+      "accepted": true,
+      "hasType": true,
+      "storedValue": 3
+    },
+    {
+      "numeric": 4,
+      "inputHex": "a00104",
+      "accepted": true,
+      "hasType": true,
+      "storedValue": 4
+    },
+    {
+      "numeric": 5,
+      "inputHex": "a00105",
+      "accepted": true,
+      "hasType": true,
+      "storedValue": 5
+    },
+    {
+      "numeric": 6,
+      "inputHex": "a00106",
+      "accepted": true,
+      "hasType": true,
+      "storedValue": 6
+    },
+    {
+      "numeric": 7,
+      "inputHex": "a00107",
+      "accepted": true,
+      "hasType": true,
+      "storedValue": 7
+    },
+    {
+      "numeric": 8,
+      "inputHex": "a00108",
+      "accepted": true,
+      "hasType": true,
+      "storedValue": 8
+    },
+    {
+      "numeric": 9,
+      "inputHex": "a00109",
+      "accepted": true,
+      "hasType": true,
+      "storedValue": 9
+    },
+    {
+      "numeric": 10,
+      "inputHex": "a0010a",
+      "accepted": true,
+      "hasType": true,
+      "storedValue": 10
+    },
+    {
+      "numeric": 255,
+      "inputHex": "a001ff01",
+      "accepted": true,
+      "hasType": true,
+      "storedValue": 255
+    }
+  ],
+  "nativeParserReferenceCases": [
+    {
+      "referenceType": "APWelcome",
+      "constructor": "0x1019153e8",
+      "inputHex": "520e73796e7468657469632d75736572a00100c80100f00101c2020c00ff63726564656e7469616c92030d73796e7468657469632d6c6673",
+      "accepted": false,
+      "serializedHex": "520e73796e7468657469632d75736572a00100c80100f00101c2020c00ff63726564656e7469616c",
+      "byteIdentical": false
+    },
+    {
+      "referenceType": "APLoginFailed",
+      "constructor": "0x101916050",
+      "inputHex": "500ba00105f00109c2021073796e7468657469632064656e69616c",
+      "accepted": true,
+      "serializedHex": "500ba00105f00109c2021073796e7468657469632064656e69616c",
+      "byteIdentical": true
+    },
+    {
+      "referenceType": "APResponseMessage",
+      "constructor": "0x10190a9fc",
+      "inputHex": "f2011c500ca00105f00109c2021173796e746865746963206661696c757265",
+      "accepted": true,
+      "serializedHex": "f2011c500ca00105f00109c2021173796e746865746963206661696c757265",
+      "byteIdentical": true
+    },
+    {
+      "referenceType": "APResponseMessage",
+      "constructor": "0x10190a9fc",
+      "inputHex": "52930252ec0152e9015260000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5fa00101f2018001000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7fa20100f20100c202025200920310000102030405060708090a0b0c0d0e0fe20303ff007f",
+      "accepted": false,
+      "serializedHex": "5269526752655260000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5fa00101",
+      "byteIdentical": false
+    },
+    {
+      "referenceType": "APWelcome",
+      "constructor": "0x1019153e8",
+      "inputHex": "520e73796e7468657469632d75736572a00100c80100f00101c2020c00ff63726564656e7469616c",
+      "accepted": true,
+      "serializedHex": "520e73796e7468657469632d75736572a00100c80100f00101c2020c00ff63726564656e7469616c",
+      "byteIdentical": true
+    },
+    {
+      "referenceType": "APWelcome",
+      "constructor": "0x1019153e8",
+      "inputHex": "520e73796e7468657469632d75736572a00100c80100f00101c2020c00ff63726564656e7469616c920310000102030405060708090a0b0c0d0e0f",
+      "accepted": false,
+      "serializedHex": "520e73796e7468657469632d75736572a00100c80100f00101c2020c00ff63726564656e7469616c",
+      "byteIdentical": false
+    },
+    {
+      "referenceType": "APWelcome",
+      "constructor": "0x1019153e8",
+      "inputHex": "520e73796e7468657469632d75736572a00100c80100f00101c2020c00ff63726564656e7469616c920314000102030405060708090a0b0c0d0e0f10111213",
+      "accepted": true,
+      "serializedHex": "520e73796e7468657469632d75736572a00100c80100f00101c2020c00ff63726564656e7469616c920314000102030405060708090a0b0c0d0e0f10111213",
+      "byteIdentical": true
+    },
+    {
+      "referenceType": "APWelcome",
+      "constructor": "0x1019153e8",
+      "inputHex": "520e73796e7468657469632d75736572a00100c80100f00101c2020c00ff63726564656e7469616c920320000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "accepted": false,
+      "serializedHex": "520e73796e7468657469632d75736572a00100c80100f00101c2020c00ff63726564656e7469616c",
+      "byteIdentical": false
+    },
+    {
+      "referenceType": "APResponseMessage",
+      "constructor": "0x10190a9fc",
+      "inputHex": "52930352ec0252e9025260000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5fa00101f2018002000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeffa20100f20100c202025200920310000102030405060708090a0b0c0d0e0fe20303ff007f",
+      "accepted": true,
+      "serializedHex": "52930352ec0252e9025260000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5fa00101f2018002000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeffa20100f20100c202025200920310000102030405060708090a0b0c0d0e0fe20303ff007f",
+      "byteIdentical": true
+    }
+  ],
+  "referenceSources": [
+    {
+      "file": "keyexchange.proto",
+      "sha256": "ee3ee52dddcc848443224a7bcf31d0164edd5edce061a4ffc18e76a8298cbb6f"
+    },
+    {
+      "file": "authentication.proto",
+      "sha256": "4e43976ad853701a1d2ceaa9010a4b7a445ca1eb01bcfe6a7f28a2824a7a2cc2"
+    }
+  ],
+  "writerEvidence": [
+    {
+      "path": ".local/rea-session/dart-native-ap-hello-schema-writers.json",
+      "sha256": "b83f5d2777729793008bfd7ba8d22df5b8989c774c3390570f83b77ea8e5ded6",
+      "evidenceId": "ev_0f7132c65e6aa0404836b405301cac412df9fa57b54b22907a3fd484e5f4f596",
+      "procedures": [
+        {
+          "address": "0x101909bdc",
+          "pseudocodeSha256": "7fbe824864f77c23cb7b010b9a6feefd2c38aeb6bc326334a5ff54d15fc176dc"
+        },
+        {
+          "address": "0x101909fec",
+          "pseudocodeSha256": "4a4bcc80283c3dbf9b7ac5abf08ad0f30145fffbbe6b43be12699e83723f2409"
+        },
+        {
+          "address": "0x10190a8e8",
+          "pseudocodeSha256": "49aa24c153b12bc9f5d367ec5942c405fe23e03fd948008990c8f6eaa2e8c757"
+        },
+        {
+          "address": "0x10190a620",
+          "pseudocodeSha256": "cc7c9cf6ecd4cc2c9391e8b75b203e5a58fb82e92c226ecae2e94efe69d39d05"
+        },
+        {
+          "address": "0x10190a39c",
+          "pseudocodeSha256": "3764cdc2fc010b33c5f0fc660d522edd46de2ade2023a94a9b6c1d2378765c3a"
+        }
+      ]
+    },
+    {
+      "path": ".local/rea-session/dart-native-ap-login-schema-writers.json",
+      "sha256": "0922c40f693b1eceb4fa8f0ee35f1deef93aed6eefafe2c83678d9dc5bf06294",
+      "evidenceId": "ev_900d9480fe4f34abaafc958ec13cfd1b2672b5fc2fe00b09bbcb2b45657be57f",
+      "procedures": [
+        {
+          "address": "0x101910dc4",
+          "pseudocodeSha256": "071e4d5150674eb1f5bcb2dbe7f9eaf6720da899b939b58397a5e959e7579c71"
+        },
+        {
+          "address": "0x101913bd0",
+          "pseudocodeSha256": "49bfb8345bc73cfb9a51c91cfafc7d9f816861629c1c9ef92cfce56a8372dd53"
+        },
+        {
+          "address": "0x10190e6c4",
+          "pseudocodeSha256": "8373c4164556e373433d284c94f296c22b4d2cc59864244e47eadbba339d3325"
+        },
+        {
+          "address": "0x101912958",
+          "pseudocodeSha256": "394c2a67e8d104805e28d5b4d21433decd990b4c90bb09208eb0ad98eba633c0"
+        }
+      ]
+    }
+  ],
+  "oracle": {
+    "path": "reverse-engineering/tools/native_ap_schema_oracle.py",
+    "sha256": "3ac1af014fb98b85120579639cd93786ea091cf08c8c248a02008402685db5a4",
+    "sharedOraclePath": "reverse-engineering/tools/native_login5_oracle.py",
+    "sharedOracleSha256": "99d483968e38ae3abf2d7bda0fe835ba5e5ed1c3707b17e9ef3e5aa6c0a2e2b0"
+  }
+}

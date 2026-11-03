@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "classification": "reference-derived-with-native-wire-verified-additions",
+  "sourcePin": "native/librespot/upstream.json",
+  "repository": "https://github.com/meoyawn/librespot.git",
+  "upstreamRepository": "https://github.com/librespot-org/librespot.git",
+  "commit": "4c0b431ce26a957eb5214eb0311a151432b603f0",
+  "schemaRoot": "protocol/proto",
+  "license": {
+    "spdx": "MIT",
+    "file": "LICENSE",
+    "sha256": "b6e979ad38c429c5811e9eb6930040a984619786f55ebc60660db05df5325ed6"
+  },
+  "roots": [
+    "keyexchange.proto",
+    "authentication.proto"
+  ],
+  "files": [
+    {
+      "file": "keyexchange.proto",
+      "sha256": "ee3ee52dddcc848443224a7bcf31d0164edd5edce061a4ffc18e76a8298cbb6f"
+    },
+    {
+      "file": "authentication.proto",
+      "sha256": "4e43976ad853701a1d2ceaa9010a4b7a445ca1eb01bcfe6a7f28a2824a7a2cc2"
+    }
+  ],
+  "standardImports": [],
+  "overlay": {
+    "root": "proto/reconstructed/ap",
+    "license": {
+      "file": "LICENSE",
+      "sha256": "b6e979ad38c429c5811e9eb6930040a984619786f55ebc60660db05df5325ed6"
+    },
+    "files": [
+      {
+        "file": "keyexchange.proto",
+        "sha256": "0a7a46fd7b960ccad4565463808112f1f326a6139e876e178b25a0dad37acffd"
+      },
+      {
+        "file": "authentication.proto",
+        "sha256": "a92da410d3848420d6c78ebb0d6b47b1d6a26fc5294b97cba5f72a84e21c9cba"
+      }
+    ],
+    "nativeEvidence": {
+      "file": "reverse-engineering/fixtures/native-ap-schemas.json",
+      "sha256": "97e2c8d6209830366ca52e3a80f7c318b7891e8f406265d366fdf6ed3295a775",
+      "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+      "oracle": {
+        "path": "reverse-engineering/tools/native_ap_schema_oracle.py",
+        "sha256": "3ac1af014fb98b85120579639cd93786ea091cf08c8c248a02008402685db5a4",
+        "sharedOraclePath": "reverse-engineering/tools/native_login5_oracle.py",
+        "sharedOracleSha256": "99d483968e38ae3abf2d7bda0fe835ba5e5ed1c3707b17e9ef3e5aa6c0a2e2b0"
+      }
+    },
+    "additions": [
+      {
+        "message": "FeatureSet",
+        "fields": [
+          3,
+          4,
+          5
+        ],
+        "writer": "0x10190a8e8"
+      },
+      {
+        "message": "NativeFeatureSetField3",
+        "fields": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "writer": "0x10190a39c"
+      },
+      {
+        "message": "NativeFeatureSetField5",
+        "fields": [
+          1
+        ],
+        "writer": "0x10190a620"
+      },
+      {
+        "message": "ClientResponseEncrypted",
+        "fields": [
+          11
+        ],
+        "writer": "0x101913bd0"
+      },
+      {
+        "message": "LoginCredentials",
+        "fields": [
+          40
+        ],
+        "writer": "0x10190e6c4"
+      },
+      {
+        "message": "ClientInfo",
+        "fields": [
+          4,
+          5
+        ],
+        "writer": "0x101912958"
+      }
+    ],
+    "limitations": [
+      "Original descriptors and unknown field names are not recovered; explicit native_field aliases retain proved wire numbers and presence.",
+      "Reference enum labels are retained without adding invented native labels. Native parser samples include typed values10 and255, so0..9 is not a proved range.",
+      "Ordinary bytes schemas do not enforce native parser byte-array lengths: selected evidence requires20-byte lfs_secret when present and256-byte DH server signature.",
+      "Unknown length-delimited declarations use string aliases for caller text and bytes aliases for opaque padding; this is reference-derived modeling, not original type declaration recovery."
+    ]
+  }
+}

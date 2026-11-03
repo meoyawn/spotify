@@ -1,0 +1,85 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "source": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+  "authority": "shipped-artifact; static string occurrences only, not proof of routing or request behavior",
+  "strings": [
+    {
+      "literal": "spotify.playlist_esperanto.proto.PlaylistDataService",
+      "fileOffset": 37516956,
+      "address": "0x1023c769c",
+      "containingCString": "spotify.playlist_esperanto.proto.PlaylistDataService"
+    },
+    {
+      "literal": "hm://playlist/",
+      "fileOffset": 36411792,
+      "address": "0x1022b9990",
+      "containingCString": "hm://playlist/"
+    },
+    {
+      "literal": "data.playlist.get",
+      "fileOffset": 37828035,
+      "address": "0x1024135c3",
+      "containingCString": "data.playlist.get"
+    },
+    {
+      "literal": "data.playlist.decorate_get",
+      "fileOffset": 37833852,
+      "address": "0x102414c7c",
+      "containingCString": "data.playlist.decorate_get"
+    },
+    {
+      "literal": "PlaylistEsperantoDataSvcSetup",
+      "fileOffset": 37815638,
+      "address": "0x102410556",
+      "containingCString": "PlaylistEsperantoDataSvcSetup"
+    },
+    {
+      "literal": "/v2/playlist/",
+      "fileOffset": 37464199,
+      "address": "0x1023ba887",
+      "containingCString": "https://spclient.wg.spotify.com/playlist/v2/playlist/"
+    },
+    {
+      "literal": "/v2/playlist/",
+      "fileOffset": 37836584,
+      "address": "0x102415728",
+      "containingCString": "/v2/playlist/"
+    },
+    {
+      "literal": "playlist/v2/",
+      "fileOffset": 37464191,
+      "address": "0x1023ba87f",
+      "containingCString": "https://spclient.wg.spotify.com/playlist/v2/playlist/"
+    },
+    {
+      "literal": "playlist/v2/",
+      "fileOffset": 38029363,
+      "address": "0x102444833",
+      "containingCString": "playlist/v2/"
+    },
+    {
+      "literal": "playlist/v2/",
+      "fileOffset": 38029376,
+      "address": "0x102444840",
+      "containingCString": "playlist/v2/user/"
+    },
+    {
+      "literal": "playlist_tracks_loader",
+      "fileOffset": 37836213,
+      "address": "0x1024155b5",
+      "containingCString": "playlist_tracks_loader"
+    },
+    {
+      "literal": "playlist_load",
+      "fileOffset": 37834422,
+      "address": "0x102414eb6",
+      "containingCString": "playlist_load"
+    },
+    {
+      "literal": "playlist/spotify.list.v1.ListReadService/GetLists",
+      "fileOffset": 37635388,
+      "address": "0x1023e453c",
+      "containingCString": "playlist/spotify.list.v1.ListReadService/GetLists"
+    }
+  ]
+}

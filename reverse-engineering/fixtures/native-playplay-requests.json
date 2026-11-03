@@ -1,0 +1,120 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "method": "Capture the complete original music PlayPlay POST owner offline.\n\nUnchanged proprietary 0x10048cbcc executes with synthetic owner/job storage,\nthe original encrypted-path initializer/decoder and original hex formatter.\nOnly opaque HTTP-template/builder/callback interfaces capture supplied fields;\nexecution stops at 0x101c20464 before any sender. The serialized request body\nis an explicit opaque input, not produced or authorized by this oracle.\n",
+  "owner": "0x10048cbcc",
+  "stopBeforeSend": "0x101c20464",
+  "ownerCodeRange": {
+    "start": "0x10048cbcc",
+    "endExclusive": "0x10048d954",
+    "sha256": "890afe846e0f35a02e827594fdd39dd853aac753b09388421db39eeb842172c6"
+  },
+  "pathRecord": {
+    "address": "0x1027ebdb8",
+    "cipherPointer": "0x102198e1c",
+    "seed": "6d4b250f",
+    "originalInitializerCall": "0x1004bf6f8",
+    "initializer": "0x101d84a4c",
+    "decoder": "0x101d84a58"
+  },
+  "identityFormatter": "0x101f63618 (original20-byte lowercase hex formatter)",
+  "injectedTemplate": {
+    "method": "GET",
+    "url": "https://spclient.example.test:443/",
+    "headers": {
+      "User-Agent": "Spotify/independent-offline-fixture",
+      "Authorization": "Bearer synthetic-input-token",
+      "x-template-field": "preserved",
+      "cOnTent-TyPe": "explicit/template-value"
+    },
+    "bodyHex": "74656d706c6174652d626f6479"
+  },
+  "substitutedInterfaces": [
+    "Opaque HTTP template clone and builder setters capture original supplied arguments.",
+    "Callback/weak-executor setters preserve the synthetic null observer branch; no callback executes.",
+    "Template origin is an explicit synthetic input; raw URL join is recorded outside the relative-path owner."
+  ],
+  "standardProviders": "ResolverOracle pinned libc/libc++ allocation, memory and string providers; original path decode and ID hex formatter are not replaced.",
+  "limits": [
+    "Music POST-key mode0/kind0 only; video identity and GET-playable modes are excluded.",
+    "Headers are explicitly inherited fixture-template inputs, not a recovered real template producer. This owner sets no Content-Type or other header.",
+    "Opaque body bytes are caller inputs; serialization, version/token, entitlement and reply decryption are separate owners.",
+    "No HTTP backend, transport, retry policy, account or live request is exercised."
+  ],
+  "cases": [
+    {
+      "name": "zero music file ID and empty opaque body",
+      "nativeMode": 0,
+      "nativeIdentityKind": 0,
+      "fileIdHex": "0000000000000000000000000000000000000000",
+      "opaqueBodyHex": "",
+      "original": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token",
+          "x-template-field": "preserved",
+          "cOnTent-TyPe": "explicit/template-value"
+        },
+        "bodyHex": "",
+        "relativePath": "playplay/v1/key/0000000000000000000000000000000000000000",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/0000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "name": "mixed music file ID and ASCII opaque body",
+      "nativeMode": 0,
+      "nativeIdentityKind": 0,
+      "fileIdHex": "000102030405060708090a0b0c0d0e0f10111213",
+      "opaqueBodyHex": "6f7061717565206669787475726520626f6479",
+      "original": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token",
+          "x-template-field": "preserved",
+          "cOnTent-TyPe": "explicit/template-value"
+        },
+        "bodyHex": "6f7061717565206669787475726520626f6479",
+        "relativePath": "playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/000102030405060708090a0b0c0d0e0f10111213"
+      }
+    },
+    {
+      "name": "high-bit music file ID and embedded NUL opaque body",
+      "nativeMode": 0,
+      "nativeIdentityKind": 0,
+      "fileIdHex": "ff00112233445566778899aabbccddeeff00fe80",
+      "opaqueBodyHex": "0001ff007b007d00",
+      "original": {
+        "method": "POST",
+        "url": "https://spclient.example.test:443/",
+        "headers": {
+          "User-Agent": "Spotify/independent-offline-fixture",
+          "Authorization": "Bearer synthetic-input-token",
+          "x-template-field": "preserved",
+          "cOnTent-TyPe": "explicit/template-value"
+        },
+        "bodyHex": "0001ff007b007d00",
+        "relativePath": "playplay/v1/key/ff00112233445566778899aabbccddeeff00fe80",
+        "options": {
+          "opaqueContext": "0x12345678",
+          "value101c20240": 1
+        },
+        "headerMutations": [],
+        "rawUrl": "https://spclient.example.test:443/playplay/v1/key/ff00112233445566778899aabbccddeeff00fe80"
+      }
+    }
+  ]
+}

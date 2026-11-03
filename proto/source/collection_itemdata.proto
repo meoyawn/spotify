@@ -1,0 +1,124 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: 0589aa277f9144e2c2ca05ae502585b2ddf1db17bd19e317fe726504cdb6b19f
+
+syntax = "proto3";
+
+package spotify.collection.itemdata;
+
+import "google/protobuf/timestamp.proto";
+
+import "google/protobuf/duration.proto";
+
+import "save_source.proto";
+
+option java_package = "com.spotify.collection2.itemdata.proto";
+
+option optimize_for = CODE_SIZE;
+
+message ItemData {
+  oneof data {
+    .spotify.collection.itemdata.PlayContextBansItemData play_context_bans_item_data = 1001;
+
+    .spotify.collection.itemdata.BanItemData ban_item_data = 1002;
+
+    .spotify.collection.itemdata.ArtistBanItemData artistban_item_data = 1003;
+
+    .spotify.collection.itemdata.BanIntentItemData ban_intent_item_data = 1004;
+
+    .spotify.collection.itemdata.SnoozedRecsItemData snoozedrecs_item_data = 1005;
+
+    .spotify.collection.itemdata.RatingItemData rating_item_data = 1006;
+
+    .spotify.collection.itemdata.PageMatchItemData page_match_item_data = 1007;
+
+    .spotify.collection.itemdata.HiddenFromHomeItemData hidden_from_home_item_data = 1008;
+
+    .spotify.collection.itemdata.IsbnScanItemData isbn_scan_item_data = 1009;
+
+    .spotify.collection.itemdata.YlFilterItemData yl_filter_item_data = 1011;
+  }
+
+  optional .spotify.list_collection.save_source.proto.SaveSource save_source = 1;
+}
+
+message PlayContextBansItemData {
+  .spotify.collection.itemdata.PlayContextBansItemData.ItemProvider item_provider = 1;
+
+  enum ItemProvider {
+    PROVIDER_UNSPECIFIED = 0;
+
+    PROVIDER_CONTEXT = 1;
+
+    PROVIDER_AUTOPLAY = 2;
+
+    PROVIDER_ENHANCE = 3;
+  }
+}
+
+message BanItemData {
+  bool banned_for_managed_account = 1;
+}
+
+message ArtistBanItemData {
+  bool banned_for_managed_account = 1;
+}
+
+message BanIntentItemData {
+  bool banned_for_managed_account = 1;
+}
+
+message SnoozedRecsItemData {
+  .google.protobuf.Timestamp expires_at = 1;
+
+  optional string snooze_context_uri = 2;
+}
+
+message RatingItemData {
+  .spotify.collection.itemdata.RatingItemData.RatingValue rating_value = 1;
+
+  enum RatingValue {
+    UNSET = 0;
+
+    RATING_1 = 1;
+
+    RATING_2 = 2;
+
+    RATING_3 = 3;
+
+    RATING_4 = 4;
+
+    RATING_5 = 5;
+  }
+}
+
+message PageMatchItemData {
+  .google.protobuf.Duration page_match_offset = 1;
+}
+
+message HiddenFromHomeItemData {
+  repeated .spotify.collection.itemdata.HiddenFromHomeItemData.HiddenFromSection hidden_from_section = 1;
+
+  message HiddenFromSection {
+    string section_name = 1;
+
+    .google.protobuf.Timestamp updated_at = 2;
+  }
+}
+
+message IsbnScanItemData {
+  string latest_isbn = 1;
+
+  .spotify.collection.itemdata.IsbnScanItemData.ScanStatus scan_status = 2;
+
+  enum ScanStatus {
+    UNKNOWN = 0;
+
+    SCAN_PRESENT = 1;
+
+    SCAN_SKIPPED = 2;
+  }
+}
+
+message YlFilterItemData {
+  int64 position = 1;
+}

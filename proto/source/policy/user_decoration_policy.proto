@@ -1,0 +1,46 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: d845b7f6cb7ae419516af59df0a42b0a8fb6aa42ca863280893245c1472fa8a1
+
+syntax = "proto3";
+
+package spotify.playlist.cosmos.proto;
+
+option java_multiple_files = true;
+
+option java_package = "com.spotify.playlist.policy.proto";
+
+option optimize_for = CODE_SIZE;
+
+message UserDecorationPolicy {
+  bool username = 1;
+
+  bool link = 2;
+
+  bool name = 3;
+
+  bool image = 4;
+
+  bool thumbnail = 5;
+
+  bool color = 6;
+}
+
+message CollaboratorPolicy {
+  .spotify.playlist.cosmos.proto.UserDecorationPolicy user = 1;
+
+  bool number_of_items = 2;
+
+  bool number_of_tracks = 3;
+
+  bool number_of_episodes = 4;
+
+  bool is_owner = 5;
+}
+
+message CollaboratingUsersDecorationPolicy {
+  bool count = 1;
+
+  int32 limit = 2;
+
+  .spotify.playlist.cosmos.proto.CollaboratorPolicy collaborator = 3;
+}

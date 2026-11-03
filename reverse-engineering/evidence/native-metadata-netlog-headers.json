@@ -1,0 +1,537 @@
+{
+  "sources": [
+    {
+      "path": ".local/original-playback-netlog.json",
+      "sha256": "fd7239adbef628625faa665ed75199ef34429ed46944409378caeb01ba2c9655",
+      "playlistCounts": {
+        "allPrimaryGetRecords": 84,
+        "hasRevisionOrOtherQuery": 77,
+        "freshNoQueryRecords": 7
+      },
+      "freshOriginalSources": [
+        {
+          "path": ".local/original-playback-netlog.json",
+          "sourceId": 2836,
+          "eventIndex": 57790,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "caller": 1
+        },
+        {
+          "path": ".local/original-playback-netlog.json",
+          "sourceId": 3227,
+          "eventIndex": 69774,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "caller": 6
+        },
+        {
+          "path": ".local/original-playback-netlog.json",
+          "sourceId": 3275,
+          "eventIndex": 70926,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "caller": 1
+        },
+        {
+          "path": ".local/original-playback-netlog.json",
+          "sourceId": 3505,
+          "eventIndex": 88861,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "caller": 6
+        },
+        {
+          "path": ".local/original-playback-netlog.json",
+          "sourceId": 3540,
+          "eventIndex": 89633,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "caller": 1
+        },
+        {
+          "path": ".local/original-playback-netlog.json",
+          "sourceId": 3592,
+          "eventIndex": 90971,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "caller": 6
+        },
+        {
+          "path": ".local/original-playback-netlog.json",
+          "sourceId": 3613,
+          "eventIndex": 91264,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "caller": 1
+        }
+      ],
+      "metadataPostCount": 109
+    },
+    {
+      "path": ".local/original-playback-key-netlog.json",
+      "sha256": "9a58d8b2ce592e8614f795cb85712a2c598b09f0a427962648dc8f2475755467",
+      "playlistCounts": {
+        "allPrimaryGetRecords": 55,
+        "hasRevisionOrOtherQuery": 51,
+        "freshNoQueryRecords": 4
+      },
+      "freshOriginalSources": [
+        {
+          "path": ".local/original-playback-key-netlog.json",
+          "sourceId": 1688,
+          "eventIndex": 31939,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "caller": 6
+        },
+        {
+          "path": ".local/original-playback-key-netlog.json",
+          "sourceId": 1869,
+          "eventIndex": 37953,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "caller": 6
+        },
+        {
+          "path": ".local/original-playback-key-netlog.json",
+          "sourceId": 2767,
+          "eventIndex": 61679,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "caller": 6
+        },
+        {
+          "path": ".local/original-playback-key-netlog.json",
+          "sourceId": 3046,
+          "eventIndex": 68228,
+          "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+          "caller": 6
+        }
+      ],
+      "metadataPostCount": 61
+    }
+  ],
+  "scope": "Actual native extended-metadata final fields; body bytes not exported.",
+  "profiles": [
+    {
+      "count": 2,
+      "headers": {
+        ":method": "POST",
+        ":authority": "guc3-spclient.spotify.com",
+        ":scheme": "https",
+        ":path": "/extended-metadata/v0/extended-metadata",
+        "accept": "application/protobuf",
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer fixture-access-token",
+        "content-encoding": "gzip",
+        "content-type": "application/protobuf",
+        "spotify-app-version": "130601921",
+        "time-zone": "Europe/Moscow",
+        "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+        "client-feature-id": "played_state",
+        "client-token": "fixture-client-token",
+        "origin": "https://guc3-spclient.spotify.com",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "empty",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=4, i"
+      },
+      "firstSource": {
+        "path": ".local/original-playback-netlog.json",
+        "sourceId": 722,
+        "eventIndex": 10378,
+        "event": "HTTP_TRANSACTION_HTTP2_SEND_REQUEST_HEADERS",
+        "contentLength": 1474
+      }
+    },
+    {
+      "count": 30,
+      "headers": {
+        ":method": "POST",
+        ":authority": "guc3-spclient.spotify.com",
+        ":scheme": "https",
+        ":path": "/extended-metadata/v0/extended-metadata",
+        "accept": "application/protobuf",
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer fixture-access-token",
+        "content-type": "application/protobuf",
+        "spotify-app-version": "130601921",
+        "time-zone": "Europe/Moscow",
+        "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+        "client-feature-id": "track_metadata_loader",
+        "client-token": "fixture-client-token",
+        "origin": "https://guc3-spclient.spotify.com",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "empty",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=4, i"
+      },
+      "firstSource": {
+        "path": ".local/original-playback-netlog.json",
+        "sourceId": 717,
+        "eventIndex": 10441,
+        "event": "HTTP_TRANSACTION_HTTP2_SEND_REQUEST_HEADERS",
+        "contentLength": 438
+      }
+    },
+    {
+      "count": 18,
+      "headers": {
+        ":method": "POST",
+        ":authority": "guc3-spclient.spotify.com",
+        ":scheme": "https",
+        ":path": "/extended-metadata/v0/extended-metadata",
+        "accept": "application/protobuf",
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer fixture-access-token",
+        "content-encoding": "gzip",
+        "content-type": "application/protobuf",
+        "spotify-app-version": "130601921",
+        "time-zone": "Europe/Moscow",
+        "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+        "client-feature-id": "your_library",
+        "client-token": "fixture-client-token",
+        "origin": "https://guc3-spclient.spotify.com",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "empty",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=4, i"
+      },
+      "firstSource": {
+        "path": ".local/original-playback-netlog.json",
+        "sourceId": 775,
+        "eventIndex": 10491,
+        "event": "HTTP_TRANSACTION_HTTP2_SEND_REQUEST_HEADERS",
+        "contentLength": 1046
+      }
+    },
+    {
+      "count": 2,
+      "headers": {
+        ":method": "POST",
+        ":authority": "guc3-spclient.spotify.com",
+        ":scheme": "https",
+        ":path": "/extended-metadata/v0/extended-metadata",
+        "accept": "application/protobuf",
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer fixture-access-token",
+        "content-type": "application/protobuf",
+        "spotify-app-version": "130601921",
+        "time-zone": "Europe/Moscow",
+        "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+        "client-feature-id": "playlist",
+        "client-token": "fixture-client-token",
+        "origin": "https://guc3-spclient.spotify.com",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "empty",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=4, i"
+      },
+      "firstSource": {
+        "path": ".local/original-playback-netlog.json",
+        "sourceId": 1015,
+        "eventIndex": 17328,
+        "event": "HTTP_TRANSACTION_HTTP2_SEND_REQUEST_HEADERS",
+        "contentLength": 101
+      }
+    },
+    {
+      "count": 7,
+      "headers": {
+        ":method": "POST",
+        ":authority": "guc3-spclient.spotify.com",
+        ":scheme": "https",
+        ":path": "/extended-metadata/v0/extended-metadata",
+        "accept": "application/protobuf",
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer fixture-access-token",
+        "content-encoding": "gzip",
+        "content-type": "application/protobuf",
+        "spotify-app-version": "130601921",
+        "time-zone": "Europe/Moscow",
+        "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+        "client-feature-id": "track_metadata_loader",
+        "client-token": "fixture-client-token",
+        "origin": "https://guc3-spclient.spotify.com",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "empty",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=4, i"
+      },
+      "firstSource": {
+        "path": ".local/original-playback-netlog.json",
+        "sourceId": 1080,
+        "eventIndex": 18144,
+        "event": "HTTP_TRANSACTION_HTTP2_SEND_REQUEST_HEADERS",
+        "contentLength": 238
+      }
+    },
+    {
+      "count": 88,
+      "headers": {
+        ":method": "POST",
+        ":authority": "guc3-spclient.spotify.com",
+        ":scheme": "https",
+        ":path": "/extended-metadata/v0/extended-metadata",
+        "accept": "application/protobuf",
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer fixture-access-token",
+        "content-type": "application/protobuf",
+        "spotify-app-version": "130601921",
+        "time-zone": "Europe/Moscow",
+        "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+        "client-feature-id": "",
+        "client-token": "fixture-client-token",
+        "origin": "https://guc3-spclient.spotify.com",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "empty",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=4, i"
+      },
+      "firstSource": {
+        "path": ".local/original-playback-netlog.json",
+        "sourceId": 1130,
+        "eventIndex": 18801,
+        "event": "HTTP_TRANSACTION_HTTP2_SEND_REQUEST_HEADERS",
+        "contentLength": 96
+      }
+    },
+    {
+      "count": 3,
+      "headers": {
+        ":method": "POST",
+        ":authority": "guc3-spclient.spotify.com",
+        ":scheme": "https",
+        ":path": "/extended-metadata/v0/extended-metadata",
+        "accept": "application/protobuf",
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer fixture-access-token",
+        "content-encoding": "gzip",
+        "content-type": "application/protobuf",
+        "spotify-app-version": "130601921",
+        "time-zone": "Europe/Moscow",
+        "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+        "client-feature-id": "playlist_tracks_loader",
+        "client-token": "fixture-client-token",
+        "origin": "https://guc3-spclient.spotify.com",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "empty",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=4, i"
+      },
+      "firstSource": {
+        "path": ".local/original-playback-netlog.json",
+        "sourceId": 2037,
+        "eventIndex": 37652,
+        "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+        "contentLength": 2786
+      }
+    },
+    {
+      "count": 2,
+      "headers": {
+        ":method": "POST",
+        ":authority": "guc3-spclient.spotify.com",
+        ":scheme": "https",
+        ":path": "/extended-metadata/v0/extended-metadata",
+        "accept": "application/protobuf",
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer fixture-access-token",
+        "content-type": "application/protobuf",
+        "spotify-app-version": "130601921",
+        "time-zone": "Europe/Moscow",
+        "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+        "client-feature-id": "playlist_tracks_loader",
+        "client-token": "fixture-client-token",
+        "origin": "https://guc3-spclient.spotify.com",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "empty",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=4, i"
+      },
+      "firstSource": {
+        "path": ".local/original-playback-netlog.json",
+        "sourceId": 2042,
+        "eventIndex": 37716,
+        "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+        "contentLength": 82
+      }
+    },
+    {
+      "count": 5,
+      "headers": {
+        ":method": "POST",
+        ":authority": "guc3-spclient.spotify.com",
+        ":scheme": "https",
+        ":path": "/extended-metadata/v0/extended-metadata",
+        "accept": "application/protobuf",
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer fixture-access-token",
+        "content-type": "application/protobuf",
+        "spotify-app-version": "130601921",
+        "time-zone": "Europe/Moscow",
+        "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+        "client-feature-id": "grizzly",
+        "client-token": "fixture-client-token",
+        "origin": "https://guc3-spclient.spotify.com",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "empty",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=4, i"
+      },
+      "firstSource": {
+        "path": ".local/original-playback-netlog.json",
+        "sourceId": 2102,
+        "eventIndex": 38462,
+        "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+        "contentLength": 125
+      }
+    },
+    {
+      "count": 1,
+      "headers": {
+        ":method": "POST",
+        ":authority": "guc3-spclient.spotify.com",
+        ":scheme": "https",
+        ":path": "/extended-metadata/v0/extended-metadata",
+        "accept": "application/protobuf",
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer fixture-access-token",
+        "content-encoding": "gzip",
+        "content-type": "application/protobuf",
+        "spotify-app-version": "130601921",
+        "time-zone": "Europe/Moscow",
+        "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+        "client-feature-id": "collection",
+        "client-token": "fixture-client-token",
+        "origin": "https://guc3-spclient.spotify.com",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "empty",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=4, i"
+      },
+      "firstSource": {
+        "path": ".local/original-playback-netlog.json",
+        "sourceId": 3337,
+        "eventIndex": 73806,
+        "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+        "contentLength": 4967
+      }
+    },
+    {
+      "count": 2,
+      "headers": {
+        ":method": "POST",
+        ":authority": "guc3-spclient.spotify.com",
+        ":scheme": "https",
+        ":path": "/extended-metadata/v0/extended-metadata",
+        "accept": "application/protobuf",
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer fixture-access-token",
+        "content-type": "application/protobuf",
+        "spotify-app-version": "130601921",
+        "time-zone": "Europe/Moscow",
+        "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+        "client-feature-id": "collection",
+        "client-token": "fixture-client-token",
+        "origin": "https://guc3-spclient.spotify.com",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "empty",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=4, i"
+      },
+      "firstSource": {
+        "path": ".local/original-playback-netlog.json",
+        "sourceId": 3346,
+        "eventIndex": 73855,
+        "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+        "contentLength": 87
+      }
+    },
+    {
+      "count": 9,
+      "headers": {
+        ":method": "POST",
+        ":authority": "guc3-spclient.spotify.com",
+        ":scheme": "https",
+        ":path": "/extended-metadata/v0/extended-metadata",
+        "accept": "application/protobuf",
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer fixture-access-token",
+        "content-encoding": "gzip",
+        "content-type": "application/protobuf",
+        "spotify-app-version": "130601921",
+        "time-zone": "Europe/Moscow",
+        "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+        "client-feature-id": "list_metadata_prefetcher",
+        "client-token": "fixture-client-token",
+        "origin": "https://guc3-spclient.spotify.com",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "empty",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=4, i"
+      },
+      "firstSource": {
+        "path": ".local/original-playback-netlog.json",
+        "sourceId": 3426,
+        "eventIndex": 76239,
+        "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+        "contentLength": 5419
+      }
+    },
+    {
+      "count": 1,
+      "headers": {
+        ":method": "POST",
+        ":authority": "guc3-spclient.spotify.com",
+        ":scheme": "https",
+        ":path": "/extended-metadata/v0/extended-metadata",
+        "accept": "application/protobuf",
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer fixture-access-token",
+        "content-encoding": "gzip",
+        "content-type": "application/protobuf",
+        "spotify-app-version": "130601921",
+        "time-zone": "Europe/Moscow",
+        "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+        "client-feature-id": "grizzly",
+        "client-token": "fixture-client-token",
+        "origin": "https://guc3-spclient.spotify.com",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "empty",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=4, i"
+      },
+      "firstSource": {
+        "path": ".local/original-playback-key-netlog.json",
+        "sourceId": 2636,
+        "eventIndex": 57377,
+        "event": "HTTP_TRANSACTION_QUIC_SEND_REQUEST_HEADERS",
+        "contentLength": 310
+      }
+    }
+  ],
+  "prefetchCallerObserved": false,
+  "limits": [
+    "No prefetch live record observed; its separate original producer remains caller/body authority.",
+    "Content-Encoding gzip is present only on some original bodies. This does not infer compression choice for another body.",
+    "Application headers here must not be generalized to Accounts/AP or all native request templates."
+  ]
+}

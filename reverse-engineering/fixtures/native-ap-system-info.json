@@ -1,0 +1,1095 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "procedures": {
+    "scalars": "0x101a4c860",
+    "description": "0x101a4c9ec",
+    "systemInfoConstructor": "0x101910ea8",
+    "systemInfoWriter": "0x101911674",
+    "serializeToVector": "0x101cfee5c"
+  },
+  "cpuFamilyTableAddress": "0x1022b5908",
+  "cpuFamilyTableHex": "000102030405",
+  "limits": [
+    "Synthetic OS facts only; no original application/account/profile/network",
+    "Platform projection and SystemInfo serializer run unchanged; standard OS/libc/allocation imports are injected",
+    "The outer AP builder is not executed; SystemInfo object values/presence reproduce its observed assignments at 0x101902fa8",
+    "Only this observed SystemInfo field assignment/presence is covered, not AP authentication or transport",
+    "No original enum declaration/range reconstruction is claimed"
+  ],
+  "cases": [
+    {
+      "name": "x86",
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 7,
+        "cpuSubtype": 3,
+        "gestaltFailureAt": null
+      },
+      "descriptionFacts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 7,
+        "cpuSubtype": 3,
+        "gestaltFailureAt": null
+      },
+      "deviceId": "synthetic-雪\u0000device",
+      "original": {
+        "fields": {
+          "cpuFamily": 1,
+          "cpuSubtype": 3,
+          "cpuExt": 0,
+          "brand": 0,
+          "brandFlags": 0,
+          "os": 2,
+          "osVersion": 8,
+          "osExt": 0,
+          "systemInformationString": "OS X 26.4.0 [x86 3]"
+        },
+        "wireHex": "5001a00103f00100c00200900300e00302b00408800500d205134f5320582032362e342e30205b78383620335da2061473796e7468657469632de99baa00646576696365",
+        "packedBytesHex": "01030000020800000000000000000000",
+        "scalarProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "descriptionProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "printfArguments": {
+          "major": 26,
+          "minor": 4,
+          "patch": 0,
+          "label": "x86",
+          "subtype": 3
+        }
+      }
+    },
+    {
+      "name": "x86-64 signed capabilities",
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 16777223,
+        "cpuSubtype": -2147483645,
+        "gestaltFailureAt": null
+      },
+      "descriptionFacts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 16777223,
+        "cpuSubtype": -2147483645,
+        "gestaltFailureAt": null
+      },
+      "deviceId": "synthetic-雪\u0000device",
+      "original": {
+        "fields": {
+          "cpuFamily": 2,
+          "cpuSubtype": 3,
+          "cpuExt": 0,
+          "brand": 0,
+          "brandFlags": 0,
+          "os": 2,
+          "osVersion": 8,
+          "osExt": 0,
+          "systemInformationString": "OS X 26.4.0 [x86-64 -2147483645]"
+        },
+        "wireHex": "5002a00103f00100c00200900300e00302b00408800500d205204f5320582032362e342e30205b7838362d3634202d323134373438333634355da2061473796e7468657469632de99baa00646576696365",
+        "packedBytesHex": "02030000020800000000000000000000",
+        "scalarProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "descriptionProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "printfArguments": {
+          "major": 26,
+          "minor": 4,
+          "patch": 0,
+          "label": "x86-64",
+          "subtype": -2147483645
+        }
+      }
+    },
+    {
+      "name": "arm32",
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 12,
+        "cpuSubtype": 9,
+        "gestaltFailureAt": null
+      },
+      "descriptionFacts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 12,
+        "cpuSubtype": 9,
+        "gestaltFailureAt": null
+      },
+      "deviceId": "synthetic-雪\u0000device",
+      "original": {
+        "fields": {
+          "cpuFamily": 5,
+          "cpuSubtype": 9,
+          "cpuExt": 0,
+          "brand": 0,
+          "brandFlags": 0,
+          "os": 2,
+          "osVersion": 8,
+          "osExt": 0,
+          "systemInformationString": "OS X 26.4.0 [arm 9]"
+        },
+        "wireHex": "5005a00109f00100c00200900300e00302b00408800500d205134f5320582032362e342e30205b61726d20395da2061473796e7468657469632de99baa00646576696365",
+        "packedBytesHex": "05090000020800000000000000000000",
+        "scalarProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "descriptionProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "printfArguments": {
+          "major": 26,
+          "minor": 4,
+          "patch": 0,
+          "label": "arm",
+          "subtype": 9
+        }
+      }
+    },
+    {
+      "name": "arm64",
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 16777228,
+        "cpuSubtype": 2,
+        "gestaltFailureAt": null
+      },
+      "descriptionFacts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 16777228,
+        "cpuSubtype": 2,
+        "gestaltFailureAt": null
+      },
+      "deviceId": "synthetic-雪\u0000device",
+      "original": {
+        "fields": {
+          "cpuFamily": 5,
+          "cpuSubtype": 2,
+          "cpuExt": 0,
+          "brand": 0,
+          "brandFlags": 0,
+          "os": 2,
+          "osVersion": 8,
+          "osExt": 0,
+          "systemInformationString": "OS X 26.4.0 [arm 2]"
+        },
+        "wireHex": "5005a00102f00100c00200900300e00302b00408800500d205134f5320582032362e342e30205b61726d20325da2061473796e7468657469632de99baa00646576696365",
+        "packedBytesHex": "05020000020800000000000000000000",
+        "scalarProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "descriptionProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "printfArguments": {
+          "major": 26,
+          "minor": 4,
+          "patch": 0,
+          "label": "arm",
+          "subtype": 2
+        }
+      }
+    },
+    {
+      "name": "arm64-32",
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 33554444,
+        "cpuSubtype": -16777212,
+        "gestaltFailureAt": null
+      },
+      "descriptionFacts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 33554444,
+        "cpuSubtype": -16777212,
+        "gestaltFailureAt": null
+      },
+      "deviceId": "synthetic-雪\u0000device",
+      "original": {
+        "fields": {
+          "cpuFamily": 5,
+          "cpuSubtype": 4,
+          "cpuExt": 0,
+          "brand": 0,
+          "brandFlags": 0,
+          "os": 2,
+          "osVersion": 8,
+          "osExt": 0,
+          "systemInformationString": "OS X 26.4.0 [arm -16777212]"
+        },
+        "wireHex": "5005a00104f00100c00200900300e00302b00408800500d2051b4f5320582032362e342e30205b61726d202d31363737373231325da2061473796e7468657469632de99baa00646576696365",
+        "packedBytesHex": "05040000020800000000000000000000",
+        "scalarProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "descriptionProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "printfArguments": {
+          "major": 26,
+          "minor": 4,
+          "patch": 0,
+          "label": "arm",
+          "subtype": -16777212
+        }
+      }
+    },
+    {
+      "name": "ppc",
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 18,
+        "cpuSubtype": -5,
+        "gestaltFailureAt": null
+      },
+      "descriptionFacts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 18,
+        "cpuSubtype": -5,
+        "gestaltFailureAt": null
+      },
+      "deviceId": "synthetic-雪\u0000device",
+      "original": {
+        "fields": {
+          "cpuFamily": 3,
+          "cpuSubtype": 251,
+          "cpuExt": 0,
+          "brand": 0,
+          "brandFlags": 0,
+          "os": 2,
+          "osVersion": 8,
+          "osExt": 0,
+          "systemInformationString": "OS X 26.4.0 [ppc -5]"
+        },
+        "wireHex": "5003a001fb01f00100c00200900300e00302b00408800500d205144f5320582032362e342e30205b707063202d355da2061473796e7468657469632de99baa00646576696365",
+        "packedBytesHex": "03fb0000020800000000000000000000",
+        "scalarProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "descriptionProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "printfArguments": {
+          "major": 26,
+          "minor": 4,
+          "patch": 0,
+          "label": "ppc",
+          "subtype": -5
+        }
+      }
+    },
+    {
+      "name": "ppc64",
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 16777234,
+        "cpuSubtype": 10,
+        "gestaltFailureAt": null
+      },
+      "descriptionFacts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 16777234,
+        "cpuSubtype": 10,
+        "gestaltFailureAt": null
+      },
+      "deviceId": "synthetic-雪\u0000device",
+      "original": {
+        "fields": {
+          "cpuFamily": 4,
+          "cpuSubtype": 10,
+          "cpuExt": 0,
+          "brand": 0,
+          "brandFlags": 0,
+          "os": 2,
+          "osVersion": 8,
+          "osExt": 0,
+          "systemInformationString": "OS X 26.4.0 [ppc-64 10]"
+        },
+        "wireHex": "5004a0010af00100c00200900300e00302b00408800500d205174f5320582032362e342e30205b7070632d36342031305da2061473796e7468657469632de99baa00646576696365",
+        "packedBytesHex": "040a0000020800000000000000000000",
+        "scalarProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "descriptionProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "printfArguments": {
+          "major": 26,
+          "minor": 4,
+          "patch": 0,
+          "label": "ppc-64",
+          "subtype": 10
+        }
+      }
+    },
+    {
+      "name": "unknown zero",
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 0,
+        "cpuSubtype": 0,
+        "gestaltFailureAt": null
+      },
+      "descriptionFacts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 0,
+        "cpuSubtype": 0,
+        "gestaltFailureAt": null
+      },
+      "deviceId": "synthetic-雪\u0000device",
+      "original": {
+        "fields": {
+          "cpuFamily": 0,
+          "cpuSubtype": 0,
+          "cpuExt": 0,
+          "brand": 0,
+          "brandFlags": 0,
+          "os": 2,
+          "osVersion": 8,
+          "osExt": 0,
+          "systemInformationString": "OS X 26.4.0 [unknown 0]"
+        },
+        "wireHex": "5000a00100f00100c00200900300e00302b00408800500d205174f5320582032362e342e30205b756e6b6e6f776e20305da2061473796e7468657469632de99baa00646576696365",
+        "packedBytesHex": "00000000020800000000000000000000",
+        "scalarProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "descriptionProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "printfArguments": {
+          "major": 26,
+          "minor": 4,
+          "patch": 0,
+          "label": "unknown",
+          "subtype": 0
+        }
+      }
+    },
+    {
+      "name": "unknown negative",
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": -1,
+        "cpuSubtype": -2147483648,
+        "gestaltFailureAt": null
+      },
+      "descriptionFacts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": -1,
+        "cpuSubtype": -2147483648,
+        "gestaltFailureAt": null
+      },
+      "deviceId": "synthetic-雪\u0000device",
+      "original": {
+        "fields": {
+          "cpuFamily": 0,
+          "cpuSubtype": 0,
+          "cpuExt": 0,
+          "brand": 0,
+          "brandFlags": 0,
+          "os": 2,
+          "osVersion": 8,
+          "osExt": 0,
+          "systemInformationString": "OS X 26.4.0 [unknown -2147483648]"
+        },
+        "wireHex": "5000a00100f00100c00200900300e00302b00408800500d205214f5320582032362e342e30205b756e6b6e6f776e202d323134373438333634385da2061473796e7468657469632de99baa00646576696365",
+        "packedBytesHex": "00000000020800000000000000000000",
+        "scalarProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "descriptionProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "printfArguments": {
+          "major": 26,
+          "minor": 4,
+          "patch": 0,
+          "label": "unknown",
+          "subtype": -2147483648
+        }
+      }
+    },
+    {
+      "name": "unknown64",
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 33554439,
+        "cpuSubtype": 255,
+        "gestaltFailureAt": null
+      },
+      "descriptionFacts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 33554439,
+        "cpuSubtype": 255,
+        "gestaltFailureAt": null
+      },
+      "deviceId": "synthetic-雪\u0000device",
+      "original": {
+        "fields": {
+          "cpuFamily": 0,
+          "cpuSubtype": 255,
+          "cpuExt": 0,
+          "brand": 0,
+          "brandFlags": 0,
+          "os": 2,
+          "osVersion": 8,
+          "osExt": 0,
+          "systemInformationString": "OS X 26.4.0 [unknown 255]"
+        },
+        "wireHex": "5000a001ff01f00100c00200900300e00302b00408800500d205194f5320582032362e342e30205b756e6b6e6f776e203235355da2061473796e7468657469632de99baa00646576696365",
+        "packedBytesHex": "00ff0000020800000000000000000000",
+        "scalarProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "descriptionProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "printfArguments": {
+          "major": 26,
+          "minor": 4,
+          "patch": 0,
+          "label": "unknown",
+          "subtype": 255
+        }
+      }
+    },
+    {
+      "name": "Gestalt sys1 failure resets all versions",
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 16777228,
+        "cpuSubtype": 2,
+        "gestaltFailureAt": 0
+      },
+      "descriptionFacts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 16777228,
+        "cpuSubtype": 2,
+        "gestaltFailureAt": 0
+      },
+      "deviceId": "synthetic-雪\u0000device",
+      "original": {
+        "fields": {
+          "cpuFamily": 5,
+          "cpuSubtype": 2,
+          "cpuExt": 0,
+          "brand": 0,
+          "brandFlags": 0,
+          "os": 2,
+          "osVersion": 0,
+          "osExt": 0,
+          "systemInformationString": "OS X 0.0.0 [arm 2]"
+        },
+        "wireHex": "5005a00102f00100c00200900300e00302b00400800500d205124f53205820302e302e30205b61726d20325da2061473796e7468657469632de99baa00646576696365",
+        "packedBytesHex": "05020000020000000000000000000000",
+        "scalarProviderCalls": [
+          "Gestalt(sys1)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "descriptionProviderCalls": [
+          "Gestalt(sys1)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "printfArguments": {
+          "major": 0,
+          "minor": 0,
+          "patch": 0,
+          "label": "arm",
+          "subtype": 2
+        }
+      }
+    },
+    {
+      "name": "Gestalt sys2 failure resets all versions",
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 16777228,
+        "cpuSubtype": 2,
+        "gestaltFailureAt": 1
+      },
+      "descriptionFacts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 16777228,
+        "cpuSubtype": 2,
+        "gestaltFailureAt": 1
+      },
+      "deviceId": "synthetic-雪\u0000device",
+      "original": {
+        "fields": {
+          "cpuFamily": 5,
+          "cpuSubtype": 2,
+          "cpuExt": 0,
+          "brand": 0,
+          "brandFlags": 0,
+          "os": 2,
+          "osVersion": 0,
+          "osExt": 0,
+          "systemInformationString": "OS X 0.0.0 [arm 2]"
+        },
+        "wireHex": "5005a00102f00100c00200900300e00302b00400800500d205124f53205820302e302e30205b61726d20325da2061473796e7468657469632de99baa00646576696365",
+        "packedBytesHex": "05020000020000000000000000000000",
+        "scalarProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "descriptionProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "printfArguments": {
+          "major": 0,
+          "minor": 0,
+          "patch": 0,
+          "label": "arm",
+          "subtype": 2
+        }
+      }
+    },
+    {
+      "name": "Gestalt sys3 failure resets all versions",
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 16777228,
+        "cpuSubtype": 2,
+        "gestaltFailureAt": 2
+      },
+      "descriptionFacts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 16777228,
+        "cpuSubtype": 2,
+        "gestaltFailureAt": 2
+      },
+      "deviceId": "synthetic-雪\u0000device",
+      "original": {
+        "fields": {
+          "cpuFamily": 5,
+          "cpuSubtype": 2,
+          "cpuExt": 0,
+          "brand": 0,
+          "brandFlags": 0,
+          "os": 2,
+          "osVersion": 0,
+          "osExt": 0,
+          "systemInformationString": "OS X 0.0.0 [arm 2]"
+        },
+        "wireHex": "5005a00102f00100c00200900300e00302b00400800500d205124f53205820302e302e30205b61726d20325da2061473796e7468657469632de99baa00646576696365",
+        "packedBytesHex": "05020000020000000000000000000000",
+        "scalarProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "descriptionProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "printfArguments": {
+          "major": 0,
+          "minor": 0,
+          "patch": 0,
+          "label": "arm",
+          "subtype": 2
+        }
+      }
+    },
+    {
+      "name": "packed version byte wrap",
+      "facts": {
+        "version": [
+          26,
+          300,
+          512
+        ],
+        "cpuType": 16777228,
+        "cpuSubtype": 258,
+        "gestaltFailureAt": null
+      },
+      "descriptionFacts": {
+        "version": [
+          26,
+          300,
+          512
+        ],
+        "cpuType": 16777228,
+        "cpuSubtype": 258,
+        "gestaltFailureAt": null
+      },
+      "deviceId": "synthetic-雪\u0000device",
+      "original": {
+        "fields": {
+          "cpuFamily": 5,
+          "cpuSubtype": 2,
+          "cpuExt": 0,
+          "brand": 0,
+          "brandFlags": 0,
+          "os": 2,
+          "osVersion": 48,
+          "osExt": 0,
+          "systemInformationString": "OS X 26.300.512 [arm 258]"
+        },
+        "wireHex": "5005a00102f00100c00200900300e00302b00430800500d205194f5320582032362e3330302e353132205b61726d203235385da2061473796e7468657469632de99baa00646576696365",
+        "packedBytesHex": "05020000023000000000000000000000",
+        "scalarProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "descriptionProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "printfArguments": {
+          "major": 26,
+          "minor": 300,
+          "patch": 512,
+          "label": "arm",
+          "subtype": 258
+        }
+      }
+    },
+    {
+      "name": "signed OS version and subtype",
+      "facts": {
+        "version": [
+          -1,
+          -17,
+          -255
+        ],
+        "cpuType": 7,
+        "cpuSubtype": -1,
+        "gestaltFailureAt": null
+      },
+      "descriptionFacts": {
+        "version": [
+          -1,
+          -17,
+          -255
+        ],
+        "cpuType": 7,
+        "cpuSubtype": -1,
+        "gestaltFailureAt": null
+      },
+      "deviceId": "synthetic-雪\u0000device",
+      "original": {
+        "fields": {
+          "cpuFamily": 1,
+          "cpuSubtype": 255,
+          "cpuExt": 0,
+          "brand": 0,
+          "brandFlags": 0,
+          "os": 2,
+          "osVersion": 229,
+          "osExt": 1,
+          "systemInformationString": "OS X -1.-17.-255 [x86 -1]"
+        },
+        "wireHex": "5001a001ff01f00100c00200900300e00302b004e501800501d205194f532058202d312e2d31372e2d323535205b783836202d315da2061473796e7468657469632de99baa00646576696365",
+        "packedBytesHex": "01ff000002e501000000000000000000",
+        "scalarProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "descriptionProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "printfArguments": {
+          "major": -1,
+          "minor": -17,
+          "patch": -255,
+          "label": "x86",
+          "subtype": -1
+        }
+      }
+    },
+    {
+      "name": "signed32 OS extremes",
+      "facts": {
+        "version": [
+          2147483647,
+          -2147483648,
+          -2147483648
+        ],
+        "cpuType": 16777223,
+        "cpuSubtype": 2147483647,
+        "gestaltFailureAt": null
+      },
+      "descriptionFacts": {
+        "version": [
+          2147483647,
+          -2147483648,
+          -2147483648
+        ],
+        "cpuType": 16777223,
+        "cpuSubtype": 2147483647,
+        "gestaltFailureAt": null
+      },
+      "deviceId": "synthetic-雪\u0000device",
+      "original": {
+        "fields": {
+          "cpuFamily": 2,
+          "cpuSubtype": 255,
+          "cpuExt": 0,
+          "brand": 0,
+          "brandFlags": 0,
+          "os": 2,
+          "osVersion": 246,
+          "osExt": 0,
+          "systemInformationString": "OS X 2147483647.-2147483648.-2147483648 [x86-64 2147483647]"
+        },
+        "wireHex": "5002a001ff01f00100c00200900300e00302b004f601800500d2053b4f53205820323134373438333634372e2d323134373438333634382e2d32313437343833363438205b7838362d363420323134373438333634375da2061473796e7468657469632de99baa00646576696365",
+        "packedBytesHex": "02ff000002f600000000000000000000",
+        "scalarProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "descriptionProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "printfArguments": {
+          "major": 2147483647,
+          "minor": -2147483648,
+          "patch": -2147483648,
+          "label": "x86-64",
+          "subtype": 2147483647
+        }
+      }
+    },
+    {
+      "name": "separate native provider snapshots",
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 16777228,
+        "cpuSubtype": 2,
+        "gestaltFailureAt": null
+      },
+      "descriptionFacts": {
+        "version": [
+          10,
+          16,
+          7
+        ],
+        "cpuType": 7,
+        "cpuSubtype": -5,
+        "gestaltFailureAt": null
+      },
+      "deviceId": "synthetic-雪\u0000device",
+      "original": {
+        "fields": {
+          "cpuFamily": 5,
+          "cpuSubtype": 2,
+          "cpuExt": 0,
+          "brand": 0,
+          "brandFlags": 0,
+          "os": 2,
+          "osVersion": 8,
+          "osExt": 0,
+          "systemInformationString": "OS X 10.16.7 [x86 -5]"
+        },
+        "wireHex": "5005a00102f00100c00200900300e00302b00408800500d205154f5320582031302e31362e37205b783836202d355da2061473796e7468657469632de99baa00646576696365",
+        "packedBytesHex": "05020000020800000000000000000000",
+        "scalarProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "descriptionProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "printfArguments": {
+          "major": 10,
+          "minor": 16,
+          "patch": 7,
+          "label": "x86",
+          "subtype": -5
+        }
+      }
+    },
+    {
+      "name": "explicit empty device and zero scalar values",
+      "facts": {
+        "version": [
+          0,
+          0,
+          0
+        ],
+        "cpuType": 0,
+        "cpuSubtype": 0,
+        "gestaltFailureAt": null
+      },
+      "descriptionFacts": {
+        "version": [
+          0,
+          0,
+          0
+        ],
+        "cpuType": 0,
+        "cpuSubtype": 0,
+        "gestaltFailureAt": null
+      },
+      "deviceId": "",
+      "original": {
+        "fields": {
+          "cpuFamily": 0,
+          "cpuSubtype": 0,
+          "cpuExt": 0,
+          "brand": 0,
+          "brandFlags": 0,
+          "os": 2,
+          "osVersion": 0,
+          "osExt": 0,
+          "systemInformationString": "OS X 0.0.0 [unknown 0]"
+        },
+        "wireHex": "5000a00100f00100c00200900300e00302b00400800500d205164f53205820302e302e30205b756e6b6e6f776e20305da20600",
+        "packedBytesHex": "00000000020000000000000000000000",
+        "scalarProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "descriptionProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ],
+        "printfArguments": {
+          "major": 0,
+          "minor": 0,
+          "patch": 0,
+          "label": "unknown",
+          "subtype": 0
+        }
+      }
+    }
+  ]
+}

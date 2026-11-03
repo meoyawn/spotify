@@ -1,0 +1,243 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "owner": "0x10191b1b0",
+  "branch": {
+    "start": "0x10191b280",
+    "stop": "0x10191b374",
+    "platformDefault": "0x101a4c850",
+    "productDefault": "0x101a4c858",
+    "systemInfo": "0x101a4c860",
+    "osExtraction": "x0 bits32..39"
+  },
+  "limits": [
+    "Original branch fragment with synthetic owner/frame and standard OS inputs",
+    "Does not execute the whole credential owner or establish the desktop version source",
+    "URL/site/vector construction is outside this scalar projection; the separate resolver oracle owns query bytes",
+    "The original reads SystemInfo once even when OS is overridden; the pure Dart factory performs no OS IO"
+  ],
+  "cases": [
+    {
+      "versionValue": 130601921,
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 16777228,
+        "cpuSubtype": 2,
+        "gestaltFailureAt": null
+      },
+      "name": "native scalar defaults",
+      "original": {
+        "versionValue": 130601921,
+        "byte4": 43,
+        "value8": 0,
+        "byte12": 2,
+        "systemProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ]
+      }
+    },
+    {
+      "versionValue": 130601921,
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 16777228,
+        "cpuSubtype": 2,
+        "gestaltFailureAt": null
+      },
+      "name": "explicit zero overrides",
+      "platform": 0,
+      "product": 0,
+      "os": 0,
+      "original": {
+        "versionValue": 130601921,
+        "byte4": 0,
+        "value8": 0,
+        "byte12": 0,
+        "systemProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ]
+      }
+    },
+    {
+      "versionValue": 4294967295,
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 16777228,
+        "cpuSubtype": 2,
+        "gestaltFailureAt": null
+      },
+      "name": "unsigned override limits",
+      "platform": 255,
+      "product": 4294967295,
+      "os": 255,
+      "original": {
+        "versionValue": 4294967295,
+        "byte4": 255,
+        "value8": 4294967295,
+        "byte12": 255,
+        "systemProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ]
+      }
+    },
+    {
+      "versionValue": 130601921,
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 16777228,
+        "cpuSubtype": 2,
+        "gestaltFailureAt": null
+      },
+      "name": "platform override only",
+      "platform": 17,
+      "original": {
+        "versionValue": 130601921,
+        "byte4": 17,
+        "value8": 0,
+        "byte12": 2,
+        "systemProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ]
+      }
+    },
+    {
+      "versionValue": 130601921,
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 16777228,
+        "cpuSubtype": 2,
+        "gestaltFailureAt": null
+      },
+      "name": "product override only",
+      "product": 4000000000,
+      "original": {
+        "versionValue": 130601921,
+        "byte4": 43,
+        "value8": 4000000000,
+        "byte12": 2,
+        "systemProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ]
+      }
+    },
+    {
+      "versionValue": 130601921,
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 16777228,
+        "cpuSubtype": 2,
+        "gestaltFailureAt": null
+      },
+      "name": "OS override only",
+      "os": 255,
+      "original": {
+        "versionValue": 130601921,
+        "byte4": 43,
+        "value8": 0,
+        "byte12": 255,
+        "systemProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ]
+      }
+    },
+    {
+      "versionValue": 130601921,
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 7,
+        "cpuSubtype": 3,
+        "gestaltFailureAt": null
+      },
+      "name": "x86 facts do not substitute CPU family for platform",
+      "original": {
+        "versionValue": 130601921,
+        "byte4": 43,
+        "value8": 0,
+        "byte12": 2,
+        "systemProviderCalls": [
+          "Gestalt(sys1)",
+          "Gestalt(sys2)",
+          "Gestalt(sys3)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ]
+      }
+    },
+    {
+      "versionValue": 130601921,
+      "facts": {
+        "version": [
+          26,
+          4,
+          0
+        ],
+        "cpuType": 16777228,
+        "cpuSubtype": 2,
+        "gestaltFailureAt": 0
+      },
+      "name": "Gestalt failure still uses native OS constant",
+      "original": {
+        "versionValue": 130601921,
+        "byte4": 43,
+        "value8": 0,
+        "byte12": 2,
+        "systemProviderCalls": [
+          "Gestalt(sys1)",
+          "mach_host_self",
+          "host_info(HOST_BASIC_INFO)"
+        ]
+      }
+    }
+  ]
+}

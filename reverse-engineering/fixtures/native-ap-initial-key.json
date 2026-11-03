@@ -1,0 +1,27 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "entry": "0x1018f8d6c",
+  "entryCodeSha256": "f9bc54a5eadcdf8f001bcd61fe8e4bf6ceec13e4775836faa2581538de6b84e7",
+  "caller": "0x1018fa62c (zeroes16-byte identifier and4-byte sequence before calling)",
+  "scope": "Complete original outgoing AP opcode/body before Shannon framing; abstract writer only is intercepted",
+  "cases": [
+    {
+      "name": "native Welcome initializes both inputs to zero",
+      "identifierHex": "00000000000000000000000000000000",
+      "sequenceHex": "00000000",
+      "original": {
+        "command": 15,
+        "bodyHex": "0000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "name": "opaque identifier and raw sequence input",
+      "identifierHex": "000102030405060708090a0b0c0d0e0f",
+      "sequenceHex": "12345678",
+      "original": {
+        "command": 15,
+        "bodyHex": "000102030405060708090a0b0c0d0e0f12345678"
+      }
+    }
+  ]
+}

@@ -1,0 +1,371 @@
+{
+  "scope": "Retain HTTP/3 GREASE policy without copying original random protocol data.\n\nAuthority is pinned public Chromium/GoogleQUICHE source and the original's\ncaptured SETTINGS events. The subsequent control-frame policy is public-source\nonly. Output contains source identities, algorithm constants, aggregate\npredicates and counts. No original random IDs, values, payloads or their hashes,\ncredentials, URLs, connection IDs or tokens are exported.\n",
+  "toolSha256": "a016a29474ea97cd22dfe4bdd4681f3e68b8a3c47401570e34be6b40b66ecc0d",
+  "chromiumVersion": "151.0.7922.138",
+  "googleQuicheRevision": "4729ceb221725bb52c6f4d48229d9c3ba059c36e",
+  "publicSources": [
+    {
+      "path": ".local/cef-source/chromium-DEPS-151.0.7922.138",
+      "url": "https://raw.githubusercontent.com/chromium/chromium/151.0.7922.138/DEPS",
+      "sha256": "020af99baae3892b9fc0e37f79c95fb2882dcbbf1c789c3e6c56bf0dc3c3f335",
+      "proof": "Pins the GoogleQUICHE revision used by this Chromium release."
+    },
+    {
+      "path": ".local/cef-source/quic_http3_logger-151.0.7922.138.cc",
+      "url": "https://raw.githubusercontent.com/chromium/chromium/151.0.7922.138/net/quic/quic_http3_logger.cc",
+      "sha256": "fc41ee11125c595e76dd86d4ac28d8a1338d3a16c380d754e79a10fef8bb5572",
+      "proof": "NetLogSettingsParams lines25-33 casts the setting value to int; OnSettingsFrameSent lines253-257 logs the named map."
+    },
+    {
+      "path": ".local/cef-source/google-quiche-4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/quic/core/http/quic_send_control_stream.cc",
+      "url": "https://raw.githubusercontent.com/google/quiche/4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/quic/core/http/quic_send_control_stream.cc",
+      "sha256": "ad2ea052196e8fd86362c113079555a7c53dd0fab4cca043e76e888ccd523b2b",
+      "proof": "Constructor lines26-36 and MaybeSendSettingsFrame lines47-86 establish the two uint32 draws and once-per-control-stream guard."
+    },
+    {
+      "path": ".local/cef-source/google-quiche-4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/quic/core/http/quic_send_control_stream.h",
+      "url": "https://raw.githubusercontent.com/google/quiche/4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/quic/core/http/quic_send_control_stream.h",
+      "sha256": "47749b4a9b152a28d342c30d2aee8218b4a361dc8afece7be58d2b0c26fd1a6a",
+      "proof": "Control stream owns settings_sent_ and the immutable base SettingsFrame."
+    },
+    {
+      "path": ".local/cef-source/google-quiche-4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/quic/core/http/http_encoder.cc",
+      "url": "https://raw.githubusercontent.com/google/quiche/4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/quic/core/http/http_encoder.cc",
+      "sha256": "1bf378c35bca0eee3375fd8a00daadfa83c93b47091c2b6001d54ef00e4e868a",
+      "proof": "SerializeSettingsFrame lines85-117 sorts pairs before writing varints; SerializeGreasingFrame lines229-269 supplies the subsequent random control-frame policy."
+    },
+    {
+      "path": ".local/cef-source/google-quiche-4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/quic/core/http/http_frames.h",
+      "url": "https://raw.githubusercontent.com/google/quiche/4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/quic/core/http/http_frames.h",
+      "sha256": "66f76c4ecaed1c2fdccdab8a76b088238229b0c045846587656ecd41c11fb9ef",
+      "proof": "Lines64-67 define SettingsMap as a flat hash map; its iteration order alone is not wire-order authority."
+    },
+    {
+      "path": ".local/cef-source/google-quiche-4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/quic/core/http/quic_spdy_session.cc",
+      "url": "https://raw.githubusercontent.com/google/quiche/4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/quic/core/http/quic_spdy_session.cc",
+      "sha256": "9857e3e11ff514dc10c7bb7a41be135dff43bfe919d052f99f49c6ddb7fa359f",
+      "proof": "MaybeInitializeHttp3UnidirectionalStreams lines1624-1634 creates the send control stream only when no such stream exists."
+    },
+    {
+      "path": ".local/cef-source/google-quiche-4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/common/quiche_protocol_flags_list.h",
+      "url": "https://raw.githubusercontent.com/google/quiche/4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/common/quiche_protocol_flags_list.h",
+      "sha256": "7005f7822d3eb90951f3a667af8dbb55fb608c711069c6079744752377a707e6",
+      "proof": "Lines113-115 give the public quic_enable_http3_grease_randomness default true."
+    },
+    {
+      "path": ".local/cef-source/google-quiche-4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/common/quiche_random.cc",
+      "url": "https://raw.githubusercontent.com/google/quiche/4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/common/quiche_random.cc",
+      "sha256": "21880ad8cc1eb618e880436419207840ebb094f965fdb3e3dda522c828333078",
+      "proof": "DefaultQuicheRandom::RandBytes lines58-60 delegates to RAND_bytes; GetInstance lines89-92 supplies that default owner."
+    },
+    {
+      "path": ".local/cef-source/google-quiche-4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/quic/core/crypto/quic_random.h",
+      "url": "https://raw.githubusercontent.com/google/quiche/4729ceb221725bb52c6f4d48229d9c3ba059c36e/quiche/quic/core/crypto/quic_random.h",
+      "sha256": "1dcd21d98fcbc7f75ecb3ccd11fcce21ffbf081933313ceee670d3fac257e442",
+      "proof": "The QuicRandom API is an alias of QuicheRandom."
+    }
+  ],
+  "generator": {
+    "flag": "quic_enable_http3_grease_randomness",
+    "publicFlagDefault": true,
+    "draws": {
+      "count": 2,
+      "bytesEach": 4,
+      "type": "uint32_t",
+      "order": [
+        "identifierIndex",
+        "value"
+      ],
+      "publicDefaultRandom": "RandBytes delegates to RAND_bytes"
+    },
+    "identifier": {
+      "formula": "31 * identifierIndex + 33",
+      "indexMinimum": 0,
+      "indexMaximum": 4294967295,
+      "minimum": 33,
+      "maximum": 133143986178
+    },
+    "value": {
+      "minimum": 0,
+      "maximum": 4294967295
+    },
+    "disabledFlagBranch": {
+      "identifier": 64,
+      "value": 20
+    },
+    "lifetime": "The first MaybeSendSettingsFrame call draws into a local copy of base settings, queues its serialized bytes, then sets settings_sent_. Subsequent calls do not redraw. QuicSpdySession creates one such send control stream per HTTP3 session.",
+    "serializationOrder": "SerializeSettingsFrame copies the unordered map into a vector, sorts its pairs, and writes varints in ascending numeric setting identifier order, including GREASE.",
+    "knownSettingIds": [
+      1,
+      6,
+      7,
+      51
+    ],
+    "orderingBoundary": "identifierIndex=0 yields GREASE identifier33 between7 and51; larger indices place it after51."
+  },
+  "controlFramePublicSourceOnly": {
+    "authority": "Pinned public GoogleQUICHE source only; no outgoing HTTP3 GREASE-frame bytes are present in these original captures.",
+    "caller": "QuicSendControlStream::MaybeSendSettingsFrame lines83-87 calls WriteOrBufferData(HttpEncoder::SerializeGreasingFrame(), false, nullptr) after queuing SETTINGS and setting settings_sent_.",
+    "encoder": "HttpEncoder::SerializeGreasingFrame lines229-269 in the already pinned http_encoder.cc.",
+    "enabledFlagBranch": {
+      "additionalIndexDraw": {
+        "type": "uint32_t",
+        "bytes": 4,
+        "minimum": 0,
+        "maximum": 4294967295
+      },
+      "frameType": {
+        "formula": "31 * frameIndex + 33",
+        "minimum": 33,
+        "maximum": 133143986178
+      },
+      "payloadLength": {
+        "formula": "frameIndex % 4",
+        "minimum": 0,
+        "maximum": 3,
+        "independentOfFrameType": false
+      },
+      "payload": "When length is nonzero, an additional RandBytes call fills exactly that many payload bytes. Zero length makes no payload draw."
+    },
+    "disabledFlagBranch": {
+      "frameType": 64,
+      "payloadLength": 1,
+      "payloadHex": "61"
+    },
+    "serialization": "WriteVarInt62(frameType), WriteVarInt62(payloadLength), then exactly payloadLength raw bytes; the control stream remains open.",
+    "startupSequence": [
+      "control-stream type prefix",
+      "sorted SETTINGS frame",
+      "GREASE control frame"
+    ],
+    "randomCallSequence": [
+      "uint32 SETTINGS identifier index",
+      "uint32 SETTINGS value",
+      "additional uint32 control-frame index",
+      "conditional control-frame payload bytes"
+    ],
+    "lifetime": "It lies inside the first-call settings_sent_ guard, so this startup GREASE frame is queued once with SETTINGS, not redrawn for each application request or retransmission.",
+    "logging": "The caller notifies OnSettingsFrameSent for SETTINGS. The subsequent SerializeGreasingFrame/WriteOrBufferData path has no outgoing unknown-frame visitor. The pinned Chromium HTTP3 logger implements OnUnknownFrameReceived, not OnUnknownFrameSent."
+  },
+  "loggingProjection": {
+    "source": "NetLogSettingsParams casts setting.second to int before insertion into the JSON dictionary.",
+    "loggedRepresentation": "signed32 on the captured target",
+    "wireValueReconstruction": "loggedValue & 0xffffffff",
+    "mapOrderIsWireOrder": false
+  },
+  "defaultAggregate": {
+    "settingsEventCount": 97,
+    "sessionCount": 97,
+    "negativeLoggedValueCount": 54,
+    "distinctIdentifierCount": 97,
+    "distinctValueCount": 97,
+    "fixedDisabledBranchPairCount": 0,
+    "quicStreamFrameSentEventCount": 5363
+  },
+  "captures": [
+    {
+      "path": ".local/original-reference-streaming-netlog.json",
+      "sha256": "644660b4da3948c6f0e0e21479b34de444f295ba3e94684257e2c53dc9587489",
+      "safeLaunchFlags": {
+        "commandLinePresent": true,
+        "disableQuic": false,
+        "enableQuic": false,
+        "disableHttp2": false,
+        "forceQuicOrigin": false,
+        "quicVersionOverride": false,
+        "hasUserDataDirOption": false,
+        "hasLogNetLogOption": true,
+        "hasNetLogCaptureModeOption": true
+      },
+      "settingsEventCount": 27,
+      "sessionCount": 27,
+      "eventsPerSessionHistogram": {
+        "1": 27
+      },
+      "oneReservedSettingPerEvent": true,
+      "allIdsFollowUint32Formula": true,
+      "allLoggedValuesFitSignedInt32": true,
+      "allReinterpretedValuesFitUint32": true,
+      "negativeLoggedValueCount": 13,
+      "distinctIdentifierCount": 27,
+      "distinctValueCount": 27,
+      "fixedDisabledBranchPairCount": 0,
+      "controlFrameCaptureCoverage": {
+        "unknownFrameSentEventTypePresent": false,
+        "unknownFrameReceivedEventTypePresent": true,
+        "quicStreamFrameSentEventCount": 1269,
+        "quicStreamFrameSentParameterNames": [
+          "fin",
+          "length",
+          "offset",
+          "stream_id"
+        ],
+        "payloadBytesRecordedByTheseStreamFrameEvents": false
+      }
+    },
+    {
+      "path": ".local/original-license-upload-http2-netlog.json",
+      "sha256": "7ad17ebaf96eda74ecd2c0cd822370287f4aed26310a49faa930cdda92fd64fa",
+      "safeLaunchFlags": {
+        "commandLinePresent": true,
+        "disableQuic": true,
+        "enableQuic": false,
+        "disableHttp2": false,
+        "forceQuicOrigin": false,
+        "quicVersionOverride": false,
+        "hasUserDataDirOption": false,
+        "hasLogNetLogOption": true,
+        "hasNetLogCaptureModeOption": true
+      },
+      "settingsEventCount": 0,
+      "sessionCount": 0,
+      "eventsPerSessionHistogram": {},
+      "oneReservedSettingPerEvent": true,
+      "allIdsFollowUint32Formula": true,
+      "allLoggedValuesFitSignedInt32": true,
+      "allReinterpretedValuesFitUint32": true,
+      "negativeLoggedValueCount": 0,
+      "distinctIdentifierCount": 0,
+      "distinctValueCount": 0,
+      "fixedDisabledBranchPairCount": 0,
+      "controlFrameCaptureCoverage": {
+        "unknownFrameSentEventTypePresent": false,
+        "unknownFrameReceivedEventTypePresent": true,
+        "quicStreamFrameSentEventCount": 0,
+        "quicStreamFrameSentParameterNames": [],
+        "payloadBytesRecordedByTheseStreamFrameEvents": false
+      }
+    },
+    {
+      "path": ".local/original-license-rejection-reference-netlog.json",
+      "sha256": "6d8e8c9f4d71bd0e39ecff3282e86438540cf22987a33b2340d79658d4ec6d50",
+      "safeLaunchFlags": {
+        "commandLinePresent": true,
+        "disableQuic": false,
+        "enableQuic": false,
+        "disableHttp2": false,
+        "forceQuicOrigin": false,
+        "quicVersionOverride": false,
+        "hasUserDataDirOption": false,
+        "hasLogNetLogOption": true,
+        "hasNetLogCaptureModeOption": true
+      },
+      "settingsEventCount": 27,
+      "sessionCount": 27,
+      "eventsPerSessionHistogram": {
+        "1": 27
+      },
+      "oneReservedSettingPerEvent": true,
+      "allIdsFollowUint32Formula": true,
+      "allLoggedValuesFitSignedInt32": true,
+      "allReinterpretedValuesFitUint32": true,
+      "negativeLoggedValueCount": 15,
+      "distinctIdentifierCount": 27,
+      "distinctValueCount": 27,
+      "fixedDisabledBranchPairCount": 0,
+      "controlFrameCaptureCoverage": {
+        "unknownFrameSentEventTypePresent": false,
+        "unknownFrameReceivedEventTypePresent": true,
+        "quicStreamFrameSentEventCount": 1525,
+        "quicStreamFrameSentParameterNames": [
+          "fin",
+          "length",
+          "offset",
+          "stream_id"
+        ],
+        "payloadBytesRecordedByTheseStreamFrameEvents": false
+      }
+    },
+    {
+      "path": ".local/original-playback-netlog.json",
+      "sha256": "fd7239adbef628625faa665ed75199ef34429ed46944409378caeb01ba2c9655",
+      "safeLaunchFlags": {
+        "commandLinePresent": true,
+        "disableQuic": false,
+        "enableQuic": false,
+        "disableHttp2": false,
+        "forceQuicOrigin": false,
+        "quicVersionOverride": false,
+        "hasUserDataDirOption": false,
+        "hasLogNetLogOption": true,
+        "hasNetLogCaptureModeOption": true
+      },
+      "settingsEventCount": 23,
+      "sessionCount": 23,
+      "eventsPerSessionHistogram": {
+        "1": 23
+      },
+      "oneReservedSettingPerEvent": true,
+      "allIdsFollowUint32Formula": true,
+      "allLoggedValuesFitSignedInt32": true,
+      "allReinterpretedValuesFitUint32": true,
+      "negativeLoggedValueCount": 13,
+      "distinctIdentifierCount": 23,
+      "distinctValueCount": 23,
+      "fixedDisabledBranchPairCount": 0,
+      "controlFrameCaptureCoverage": {
+        "unknownFrameSentEventTypePresent": false,
+        "unknownFrameReceivedEventTypePresent": true,
+        "quicStreamFrameSentEventCount": 1410,
+        "quicStreamFrameSentParameterNames": [
+          "fin",
+          "length",
+          "offset",
+          "stream_id"
+        ],
+        "payloadBytesRecordedByTheseStreamFrameEvents": false
+      }
+    },
+    {
+      "path": ".local/original-playback-key-netlog.json",
+      "sha256": "9a58d8b2ce592e8614f795cb85712a2c598b09f0a427962648dc8f2475755467",
+      "safeLaunchFlags": {
+        "commandLinePresent": true,
+        "disableQuic": false,
+        "enableQuic": false,
+        "disableHttp2": false,
+        "forceQuicOrigin": false,
+        "quicVersionOverride": false,
+        "hasUserDataDirOption": false,
+        "hasLogNetLogOption": true,
+        "hasNetLogCaptureModeOption": true
+      },
+      "settingsEventCount": 20,
+      "sessionCount": 20,
+      "eventsPerSessionHistogram": {
+        "1": 20
+      },
+      "oneReservedSettingPerEvent": true,
+      "allIdsFollowUint32Formula": true,
+      "allLoggedValuesFitSignedInt32": true,
+      "allReinterpretedValuesFitUint32": true,
+      "negativeLoggedValueCount": 13,
+      "distinctIdentifierCount": 20,
+      "distinctValueCount": 20,
+      "fixedDisabledBranchPairCount": 0,
+      "controlFrameCaptureCoverage": {
+        "unknownFrameSentEventTypePresent": false,
+        "unknownFrameReceivedEventTypePresent": true,
+        "quicStreamFrameSentEventCount": 1159,
+        "quicStreamFrameSentParameterNames": [
+          "fin",
+          "length",
+          "offset",
+          "stream_id"
+        ],
+        "payloadBytesRecordedByTheseStreamFrameEvents": false
+      }
+    }
+  ],
+  "limits": [
+    "SETTINGS generator, ordering and lifetime are pinned public-source facts. Aggregate original capture predicates corroborate its SETTINGS range/logging and once-per-session behavior; this tool does not execute Chromium or decompile it.",
+    "Original NetLog JSON dictionary order is not wire-order evidence. Ascending serialization order comes separately from the pinned public encoder.",
+    "Observed range/congruence, signed logging, uniqueness and once-per-session counts corroborate this source path but do not prove RNG entropy or independence statistically.",
+    "The pinned Chromium DEPS establishes the public GoogleQUICHE association; undocumented Spotify/CEF source patches and arbitrary feature overrides are not excluded by these files alone.",
+    "SETTINGS range/congruence and logging have original capture corroboration. The subsequent control-frame generator, payload-length correlation, sequence and lifetime are public-source-only facts; no capture observation of its actual frame or payload bytes is claimed.",
+    "The capture catalog has only an unknown-frame RECEIVED event. Outgoing QUIC stream-frame metadata supplies offsets/lengths/FIN, not payload bytes or HTTP3 frame boundaries; no GREASE-frame values or packetization are inferred from it.",
+    "Other QUIC/TLS GREASE, packetization and connection fingerprints remain separate.",
+    "No current Dart implementation supplies expected values. No app, account, profile, debugger or process is used; optional downloads contact only pinned public source URLs.",
+    "Actual original random protocol identifiers/values and their hashes are deliberately omitted, including observed minima/maxima."
+  ]
+}

@@ -1,0 +1,3513 @@
+{
+  "provenance": "Synthetic inputs through original ContextPlayer protobuf/client factories and original PlayerCore fragments in isolated VM. No app bootstrap, native IPC, credentials, live API, or network.",
+  "bundleSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+  "nowMilliseconds": 1800000000123,
+  "commandScenarios": [
+    {
+      "name": "pause with origin",
+      "expression": "Ib(client, {featureIdentifier:\"fixture\",viewURI:\"spotify:fixture\"})",
+      "result": {},
+      "calls": [
+        {
+          "service": "spotify.player.esperanto.proto.ContextPlayer",
+          "method": "Pause",
+          "payloadHex": "12090a0708fba0f1c2b1341a090a0766697874757265"
+        }
+      ]
+    },
+    {
+      "name": "resume without origin",
+      "expression": "IO(client)",
+      "result": {},
+      "calls": [
+        {
+          "service": "spotify.player.esperanto.proto.ContextPlayer",
+          "method": "Resume",
+          "payloadHex": "12090a0708fba0f1c2b134"
+        }
+      ]
+    },
+    {
+      "name": "skip previous permits seeking",
+      "expression": "IC(client)",
+      "result": {},
+      "calls": [
+        {
+          "service": "spotify.player.esperanto.proto.ContextPlayer",
+          "method": "SkipPrev",
+          "payloadHex": "10011a090a0708fba0f1c2b134"
+        }
+      ]
+    },
+    {
+      "name": "skip next without a specific track",
+      "expression": "IR(client, null)",
+      "result": {},
+      "calls": [
+        {
+          "service": "spotify.player.esperanto.proto.ContextPlayer",
+          "method": "SkipNext",
+          "payloadHex": "12090a0708fba0f1c2b134"
+        }
+      ]
+    },
+    {
+      "name": "skip next uses matching queued track metadata",
+      "expression": "IR(client, {nextTracks:[{contextTrack:{uri:\"spotify:track:fixture\",uid:\"uid-2\",metadata:{title:\"雪\"}}}]}, {uri:\"spotify:track:fixture\",uid:\"uid-2\"})",
+      "result": {},
+      "calls": [
+        {
+          "service": "spotify.player.esperanto.proto.ContextPlayer",
+          "method": "SkipNext",
+          "payloadHex": "12090a0708fba0f1c2b1341a2c0a1573706f746966793a747261636b3a6669787475726512057569642d321a0c0a057469746c651203e99baa"
+        }
+      ]
+    },
+    {
+      "name": "skip next missing queue match omits track",
+      "expression": "IR(client, {nextTracks:[]}, {uri:\"spotify:track:missing\"})",
+      "result": {},
+      "calls": [
+        {
+          "service": "spotify.player.esperanto.proto.ContextPlayer",
+          "method": "SkipNext",
+          "payloadHex": "12090a0708fba0f1c2b134"
+        }
+      ]
+    },
+    {
+      "name": "seek floors positive milliseconds and binds playback id",
+      "expression": "IP(client, 1234.9, Uint8Array.from([0,127,255]))",
+      "result": {},
+      "calls": [
+        {
+          "service": "spotify.player.esperanto.proto.ContextPlayer",
+          "method": "SeekTo",
+          "payloadHex": "0a052203007fff12090a0708fba0f1c2b13418d209"
+        }
+      ]
+    },
+    {
+      "name": "seek zero restarts the reported playback",
+      "expression": "IP(client, 0, Uint8Array.from([0,127,255]))",
+      "result": {},
+      "calls": [
+        {
+          "service": "spotify.player.esperanto.proto.ContextPlayer",
+          "method": "SeekTo",
+          "payloadHex": "0a052203007fff12090a0708fba0f1c2b134"
+        }
+      ]
+    },
+    {
+      "name": "relative seek floors negative milliseconds",
+      "expression": "IL(client, -1234.1)",
+      "result": {},
+      "calls": [
+        {
+          "service": "spotify.player.esperanto.proto.ContextPlayer",
+          "method": "SeekTo",
+          "payloadHex": "0a0012090a0708fba0f1c2b13418adf6ffffffffffffff012002"
+        }
+      ]
+    },
+    {
+      "name": "shuffle false omits the scalar and retains logging",
+      "expression": "Ik(client, false)",
+      "result": {},
+      "calls": [
+        {
+          "service": "spotify.player.esperanto.proto.ContextPlayer",
+          "method": "SetShufflingContext",
+          "payloadHex": "1a090a0708fba0f1c2b134"
+        }
+      ]
+    },
+    {
+      "name": "shuffle true",
+      "expression": "Ik(client, true)",
+      "result": {},
+      "calls": [
+        {
+          "service": "spotify.player.esperanto.proto.ContextPlayer",
+          "method": "SetShufflingContext",
+          "payloadHex": "08011a090a0708fba0f1c2b134"
+        }
+      ]
+    },
+    {
+      "name": "repeat none includes false wrappers",
+      "expression": "Iw(client, 0)",
+      "result": {},
+      "calls": [
+        {
+          "service": "spotify.player.esperanto.proto.ContextPlayer",
+          "method": "SetOptions",
+          "payloadHex": "0a0012002a090a0708fba0f1c2b134"
+        }
+      ]
+    },
+    {
+      "name": "repeat context",
+      "expression": "Iw(client, 1)",
+      "result": {},
+      "calls": [
+        {
+          "service": "spotify.player.esperanto.proto.ContextPlayer",
+          "method": "SetOptions",
+          "payloadHex": "0a00120208012a090a0708fba0f1c2b134"
+        }
+      ]
+    },
+    {
+      "name": "repeat track",
+      "expression": "Iw(client, 2)",
+      "result": {},
+      "calls": [
+        {
+          "service": "spotify.player.esperanto.proto.ContextPlayer",
+          "method": "SetOptions",
+          "payloadHex": "0a020801120208012a090a0708fba0f1c2b134"
+        }
+      ]
+    },
+    {
+      "name": "speed is a protobuf float",
+      "expression": "Ix(client, 1.25)",
+      "result": {},
+      "calls": [
+        {
+          "service": "spotify.player.esperanto.proto.ContextPlayer",
+          "method": "SetOptions",
+          "payloadHex": "2a090a0708fba0f1c2b134350000a03f"
+        }
+      ]
+    },
+    {
+      "name": "play lazy album context and origin",
+      "expression": "Iy(client, {uri:\"spotify:album:fixture\",metadata:{fixture:\"雪\"}}, {featureIdentifier:\"search\",viewURI:\"spotify:search:fixture\"}, {})",
+      "result": {},
+      "calls": [
+        {
+          "service": "spotify.player.esperanto.proto.ContextPlayer",
+          "method": "Play",
+          "payloadHex": "0a740a4c120e0a07666978747572651203e99baa1a1573706f746966793a616c62756d3a66697874757265221f636f6e746578743a2f2f73706f746966793a616c62756d3a666978747572652801320012023a001a200a067365617263681a1673706f746966793a7365617263683a6669787475726522090a0708fba0f1c2b134"
+        }
+      ]
+    },
+    {
+      "name": "play explicit pages, skip, overrides and logging",
+      "expression": "Iy(client, {uri:\"spotify:album:fixture\",pages:[{uri:\"spotify:page:fixture\",items:[{uri:\"spotify:track:fixture\",uid:\"uid-1\",metadata:{fixture:\"雪\"}}],metadata:{page:\"one\"}}]}, {featureIdentifier:\"fixture\",featureVersion:\"v1\",referrerIdentifier:\"ref\",externalReferrer:\"ext\",restrictionIdentifier:\"restriction\"}, {skipTo:{pageURL:\"page://fixture\",pageIndex:0,index:2,uid:\"uid-1\",uri:\"spotify:track:fixture\"},seekTo:33,shuffle:false,repeat:2,playbackSpeed:1.5,modes:{context_enhancement:\"NONE\"},paused:true,alwaysPlaySomething:true,sessionId:\"session-fixture\",playbackId:\"AQID\",loggingParams:{interactionId:\"interaction\",pageInstanceId:\"page-instance\",commandId:\"command\"}})",
+      "result": {},
+      "calls": [
+        {
+          "service": "spotify.player.esperanto.proto.ContextPlayer",
+          "method": "Play",
+          "payloadHex": "0a86020a580a3d0a2e0a1573706f746966793a747261636b3a6669787475726512057569642d311a0e0a07666978747572651203e99baa120b0a047061676512036f6e651a1573706f746966793a616c62756d3a6669787475726532001283010a044151494410011a340a0e706167653a2f2f6669787475726512001a057569642d31221573706f746966793a747261636b3a666978747572652a0208022202082128013a2c0a00120208011a020801250000c03f2a1b0a13636f6e746578745f656e68616e63656d656e7412044e4f4e455a0f73657373696f6e2d666978747572651a240a07666978747572651202763122036578742a03726566420b7265737472696374696f6e222e0a0708fba0f1c2b1341a0d706167652d696e7374616e6365220b696e746572616374696f6e3207636f6d6d616e64"
+        }
+      ]
+    },
+    {
+      "name": "show defaults disable shuffle and repeat while URL pages replace page_uri",
+      "expression": "Iy(client, {uri:\"spotify:show:HHHHHHHHHHHHHHHHHHHHHH\",pages:[{url:\"fixture://page\",metadata:{page_uri:\"stale\",keep:\"yes\"}}],restrictions:{disallowPausingReasons:[\"ad_disallow\"],disallowTransferringPlaybackReasons:[\"ignored\"]}}, {}, {})",
+      "result": {},
+      "calls": [
+        {
+          "service": "spotify.player.esperanto.proto.ContextPlayer",
+          "method": "Play",
+          "payloadHex": "0a630a550a1f120b0a046b65657012037965731a0e666978747572653a2f2f7061676528011a2373706f746966793a73686f773a48484848484848484848484848484848484848484848320d0a0b61645f646973616c6c6f7712083a060a0012001a001a0022090a0708fba0f1c2b134"
+        }
+      ]
+    },
+    {
+      "name": "already paused is an accepted response",
+      "expression": "Ib(client)",
+      "error": 1,
+      "reasons": "already_paused",
+      "result": {},
+      "calls": [
+        {
+          "service": "spotify.player.esperanto.proto.ContextPlayer",
+          "method": "Pause",
+          "payloadHex": "12090a0708fba0f1c2b134"
+        }
+      ]
+    },
+    {
+      "name": "other forbidden reason rejects",
+      "expression": "Ib(client)",
+      "error": 1,
+      "reasons": "not_playing_locally",
+      "errorMessage": "Command failed with code '1' and reasons 'not_playing_locally'",
+      "calls": [
+        {
+          "service": "spotify.player.esperanto.proto.ContextPlayer",
+          "method": "Pause",
+          "payloadHex": "12090a0708fba0f1c2b134"
+        }
+      ]
+    },
+    {
+      "name": "combined already paused reasons still reject",
+      "expression": "Ib(client)",
+      "error": 1,
+      "reasons": "already_paused,other",
+      "errorMessage": "Command failed with code '1' and reasons 'already_paused,other'",
+      "calls": [
+        {
+          "service": "spotify.player.esperanto.proto.ContextPlayer",
+          "method": "Pause",
+          "payloadHex": "12090a0708fba0f1c2b134"
+        }
+      ]
+    },
+    {
+      "name": "future command error codes reject",
+      "expression": "Ib(client)",
+      "error": 99,
+      "reasons": "future_reason",
+      "errorMessage": "Command failed with code '99' and reasons 'future_reason'",
+      "calls": [
+        {
+          "service": "spotify.player.esperanto.proto.ContextPlayer",
+          "method": "Pause",
+          "payloadHex": "12090a0708fba0f1c2b134"
+        }
+      ]
+    }
+  ],
+  "subscriptions": [
+    {
+      "service": "spotify.player.esperanto.proto.ContextPlayer",
+      "method": "GetState",
+      "payloadHex": "0a02080112020832"
+    },
+    {
+      "service": "spotify.player.esperanto.proto.ContextPlayer",
+      "method": "GetError",
+      "payloadHex": ""
+    }
+  ],
+  "stateScenarios": [
+    {
+      "name": "zero timestamp is deferred once",
+      "input": {},
+      "flushTimers": true,
+      "payloadHex": "",
+      "immediateEvents": [],
+      "beforeTimers": [],
+      "timerMilliseconds": [
+        500
+      ],
+      "events": [
+        {
+          "type": "update",
+          "state": {
+            "timestamp": 0,
+            "context": {
+              "uri": "",
+              "url": "",
+              "metadata": {}
+            },
+            "index": {
+              "pageURI": null,
+              "pageIndex": null,
+              "itemIndex": null
+            },
+            "item": null,
+            "shuffle": null,
+            "smartShuffle": null,
+            "repeat": null,
+            "speed": 1,
+            "speedEsperanto": 1,
+            "positionAsOfTimestamp": 0,
+            "duration": null,
+            "hasContext": false,
+            "isPaused": false,
+            "isBuffering": false,
+            "restrictions": {
+              "canPause": true,
+              "canResume": true,
+              "canSeek": true,
+              "canSkipPrevious": true,
+              "canSkipNext": true,
+              "canToggleRepeatContext": true,
+              "canToggleRepeatTrack": true,
+              "canToggleShuffle": true,
+              "canToggleSmartShuffle": true,
+              "disallowPausingReasons": [],
+              "disallowResumingReasons": [],
+              "disallowSeekingReasons": [],
+              "disallowSkippingPreviousReasons": [],
+              "disallowSkippingNextReasons": [],
+              "disallowSettingPlaybackSpeedReasons": [],
+              "disallowTogglingRepeatContextReasons": [],
+              "disallowTogglingRepeatTrackReasons": [],
+              "disallowTogglingShuffleReasons": [],
+              "disallowTransferringPlaybackReasons": [],
+              "disallowAddToQueueReasons": [],
+              "disallowSetQueueReasons": [],
+              "disallowSignals": {}
+            },
+            "previousItems": [],
+            "nextItems": [],
+            "playbackQuality": {
+              "bitrateLevel": 0,
+              "strategy": 0,
+              "targetBitrateLevel": 0,
+              "targetBitrateAvailable": false,
+              "losslessStatus": 0
+            },
+            "playbackId": null,
+            "sessionId": "",
+            "signals": [],
+            "format": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "track options, metadata and restrictions",
+      "input": {
+        "timestamp": "10000",
+        "contextUri": "spotify:album:fixture",
+        "contextUrl": "context://spotify:album:fixture",
+        "contextMetadata": {
+          "enhanced_context": "true"
+        },
+        "pageMetadata": {
+          "page_uri": "spotify:page:fixture"
+        },
+        "index": {
+          "page": "0",
+          "track": "2"
+        },
+        "positionAsOfTimestamp": {
+          "value": "333"
+        },
+        "duration": {
+          "value": "4000"
+        },
+        "isPlaying": true,
+        "isPaused": false,
+        "playbackSpeed": {
+          "value": 0
+        },
+        "playbackId": "AH//",
+        "sessionId": "session-fixture",
+        "signals": [
+          "switch-to-video"
+        ],
+        "options": {
+          "shufflingContext": true,
+          "repeatingContext": true,
+          "repeatingTrack": true,
+          "playbackSpeed": 1.5
+        },
+        "track": {
+          "provider": "context",
+          "contextTrack": {
+            "uri": "spotify:track:AAAAAAAAAAAAAAAAAAAAAA",
+            "uid": "uid-1",
+            "metadata": {
+              "title": "Synthetic 雪",
+              "duration": "004000ms",
+              "artist_name": "Artist one",
+              "artist_uri": "spotify:artist:one",
+              "artist_name:1": "Artist two",
+              "artist_uri:1": "spotify:artist:two",
+              "artist_name:3": "Ignored gap",
+              "album_uri": "spotify:album:fixture",
+              "album_title": "Album",
+              "image_url": "spotify:image:fixture",
+              "image_small_url": "",
+              "is_explicit": "TRUE",
+              "is_local": "false",
+              "video_association": "yes"
+            }
+          }
+        },
+        "nextTracks": [
+          {
+            "provider": "",
+            "contextTrack": {
+              "uri": "spotify:unknown:fixture",
+              "metadata": {}
+            }
+          }
+        ],
+        "restrictions": {
+          "disallowPausingReasons": [
+            "already_paused",
+            "future_reason"
+          ],
+          "disallowSkippingPrevReasons": [
+            "no_prev_track"
+          ],
+          "disallow_setting_modes": {
+            "context_enhancement": {
+              "values": {
+                "RECOMMENDATION": {
+                  "reasons": [
+                    "already_set"
+                  ]
+                }
+              }
+            }
+          },
+          "disallow_signals": {
+            "switch-to-video": {
+              "reasons": [
+                "age_assurance_required"
+              ]
+            },
+            "future_signal": {
+              "reasons": [
+                "unknown"
+              ]
+            }
+          }
+        }
+      },
+      "payloadHex": "08904e121573706f746966793a616c62756d3a666978747572651a1f636f6e746578743a2f2f73706f746966793a616c62756d3a66697874757265320210023ab6030aaa030a2473706f746966793a747261636b3a4141414141414141414141414141414141414141414112057569642d311a160a057469746c65120d53796e74686574696320e99baa1a140a086475726174696f6e12083030343030306d731a190a0b6172746973745f6e616d65120a417274697374206f6e651a200a0a6172746973745f757269121273706f746966793a6172746973743a6f6e651a1b0a0d6172746973745f6e616d653a31120a4172746973742074776f1a220a0c6172746973745f7572693a31121273706f746966793a6172746973743a74776f1a1c0a0d6172746973745f6e616d653a33120b49676e6f726564206761701a220a09616c62756d5f757269121573706f746966793a616c62756d3a666978747572651a140a0b616c62756d5f7469746c651205416c62756d1a220a09696d6167655f75726c121573706f746966793a696d6167653a666978747572651a110a0f696d6167655f736d616c6c5f75726c1a130a0b69735f6578706c696369741204545255451a110a0869735f6c6f63616c120566616c73651a180a11766964656f5f6173736f63696174696f6e12037965732207636f6e746578744203007fff52005a0308cd02620308a01f68018a010b080110011801250000c03f9201b4010a0e616c72656164795f7061757365640a0d6675747572655f726561736f6e320d6e6f5f707265765f747261636bca01380a13636f6e746578745f656e68616e63656d656e7412210a1f0a0e5245434f4d4d454e444154494f4e120d0a0b616c72656164795f736574d2012b0a0f7377697463682d746f2d766964656f12180a166167655f6173737572616e63655f7265717569726564d2011a0a0d6675747572655f7369676e616c12090a07756e6b6e6f776eaa011b0a190a1773706f746966793a756e6b6e6f776e3a66697874757265b201180a10656e68616e6365645f636f6e74657874120474727565ba01200a08706167655f757269121473706f746966793a706167653a66697874757265c2010f73657373696f6e2d66697874757265da010f7377697463682d746f2d766964656f",
+      "immediateEvents": [],
+      "beforeTimers": [
+        {
+          "type": "update",
+          "state": {
+            "timestamp": 10000,
+            "context": {
+              "uri": "spotify:album:fixture",
+              "url": "context://spotify:album:fixture",
+              "metadata": {
+                "enhanced_context": "true"
+              }
+            },
+            "index": {
+              "pageURI": "spotify:page:fixture",
+              "pageIndex": 0,
+              "itemIndex": 2
+            },
+            "item": {
+              "type": "track",
+              "uri": "spotify:track:AAAAAAAAAAAAAAAAAAAAAA",
+              "uid": "uid-1",
+              "name": "Synthetic 雪",
+              "mediaType": "audio",
+              "duration": {
+                "milliseconds": 4000
+              },
+              "album": {
+                "type": "album",
+                "uri": "spotify:album:fixture",
+                "name": "Album",
+                "images": [
+                  {
+                    "url": "spotify:image:fixture",
+                    "label": "standard"
+                  }
+                ]
+              },
+              "artists": [
+                {
+                  "type": "artist",
+                  "uri": "spotify:artist:one",
+                  "name": "Artist one"
+                },
+                {
+                  "type": "artist",
+                  "uri": "spotify:artist:two",
+                  "name": "Artist two"
+                }
+              ],
+              "isLocal": false,
+              "isExplicit": true,
+              "is19PlusOnly": false,
+              "hasAssociatedVideo": true,
+              "provider": "context",
+              "metadata": {
+                "title": "Synthetic 雪",
+                "duration": "004000ms",
+                "artist_name": "Artist one",
+                "artist_uri": "spotify:artist:one",
+                "artist_name:1": "Artist two",
+                "artist_uri:1": "spotify:artist:two",
+                "artist_name:3": "Ignored gap",
+                "album_uri": "spotify:album:fixture",
+                "album_title": "Album",
+                "image_url": "spotify:image:fixture",
+                "image_small_url": "",
+                "is_explicit": "TRUE",
+                "is_local": "false",
+                "video_association": "yes"
+              },
+              "images": [
+                {
+                  "url": "spotify:image:fixture",
+                  "label": "standard"
+                }
+              ]
+            },
+            "shuffle": true,
+            "smartShuffle": true,
+            "repeat": 2,
+            "speed": 1.5,
+            "speedEsperanto": 1.5,
+            "positionAsOfTimestamp": 333,
+            "duration": 4000,
+            "hasContext": true,
+            "isPaused": false,
+            "isBuffering": false,
+            "restrictions": {
+              "canPause": false,
+              "canResume": true,
+              "canSeek": true,
+              "canSkipPrevious": false,
+              "canSkipNext": true,
+              "canToggleRepeatContext": true,
+              "canToggleRepeatTrack": true,
+              "canToggleShuffle": true,
+              "canToggleSmartShuffle": true,
+              "disallowPausingReasons": [
+                "already_paused",
+                "unknown"
+              ],
+              "disallowResumingReasons": [],
+              "disallowSeekingReasons": [],
+              "disallowSkippingPreviousReasons": [
+                "no_prev_track"
+              ],
+              "disallowSkippingNextReasons": [],
+              "disallowTogglingRepeatContextReasons": [],
+              "disallowTogglingRepeatTrackReasons": [],
+              "disallowTogglingShuffleReasons": [],
+              "disallowTransferringPlaybackReasons": [],
+              "disallowAddToQueueReasons": [],
+              "disallowSetQueueReasons": [],
+              "disallowSettingPlaybackSpeedReasons": [],
+              "disallowSignals": {
+                "switch-to-video": {
+                  "reasons": [
+                    "age_assurance_required"
+                  ]
+                }
+              }
+            },
+            "previousItems": [],
+            "nextItems": [
+              {
+                "type": "unknown",
+                "uri": "spotify:unknown:fixture",
+                "uid": "",
+                "name": "",
+                "mediaType": "audio",
+                "duration": {
+                  "milliseconds": -1
+                },
+                "album": {
+                  "type": "album",
+                  "uri": "",
+                  "name": "",
+                  "images": []
+                },
+                "artists": [
+                  {
+                    "type": "artist",
+                    "uri": "",
+                    "name": ""
+                  }
+                ],
+                "provider": null,
+                "metadata": {},
+                "images": []
+              }
+            ],
+            "playbackQuality": {
+              "bitrateLevel": 0,
+              "strategy": 0,
+              "targetBitrateLevel": 0,
+              "targetBitrateAvailable": false,
+              "losslessStatus": 0
+            },
+            "playbackId": "007fff",
+            "sessionId": "session-fixture",
+            "signals": [
+              "switch-to-video"
+            ],
+            "format": null,
+            "mediaPlaybackMode": "audio"
+          }
+        }
+      ],
+      "events": [
+        {
+          "type": "update",
+          "state": {
+            "timestamp": 10000,
+            "context": {
+              "uri": "spotify:album:fixture",
+              "url": "context://spotify:album:fixture",
+              "metadata": {
+                "enhanced_context": "true"
+              }
+            },
+            "index": {
+              "pageURI": "spotify:page:fixture",
+              "pageIndex": 0,
+              "itemIndex": 2
+            },
+            "item": {
+              "type": "track",
+              "uri": "spotify:track:AAAAAAAAAAAAAAAAAAAAAA",
+              "uid": "uid-1",
+              "name": "Synthetic 雪",
+              "mediaType": "audio",
+              "duration": {
+                "milliseconds": 4000
+              },
+              "album": {
+                "type": "album",
+                "uri": "spotify:album:fixture",
+                "name": "Album",
+                "images": [
+                  {
+                    "url": "spotify:image:fixture",
+                    "label": "standard"
+                  }
+                ]
+              },
+              "artists": [
+                {
+                  "type": "artist",
+                  "uri": "spotify:artist:one",
+                  "name": "Artist one"
+                },
+                {
+                  "type": "artist",
+                  "uri": "spotify:artist:two",
+                  "name": "Artist two"
+                }
+              ],
+              "isLocal": false,
+              "isExplicit": true,
+              "is19PlusOnly": false,
+              "hasAssociatedVideo": true,
+              "provider": "context",
+              "metadata": {
+                "title": "Synthetic 雪",
+                "duration": "004000ms",
+                "artist_name": "Artist one",
+                "artist_uri": "spotify:artist:one",
+                "artist_name:1": "Artist two",
+                "artist_uri:1": "spotify:artist:two",
+                "artist_name:3": "Ignored gap",
+                "album_uri": "spotify:album:fixture",
+                "album_title": "Album",
+                "image_url": "spotify:image:fixture",
+                "image_small_url": "",
+                "is_explicit": "TRUE",
+                "is_local": "false",
+                "video_association": "yes"
+              },
+              "images": [
+                {
+                  "url": "spotify:image:fixture",
+                  "label": "standard"
+                }
+              ]
+            },
+            "shuffle": true,
+            "smartShuffle": true,
+            "repeat": 2,
+            "speed": 1.5,
+            "speedEsperanto": 1.5,
+            "positionAsOfTimestamp": 333,
+            "duration": 4000,
+            "hasContext": true,
+            "isPaused": false,
+            "isBuffering": false,
+            "restrictions": {
+              "canPause": false,
+              "canResume": true,
+              "canSeek": true,
+              "canSkipPrevious": false,
+              "canSkipNext": true,
+              "canToggleRepeatContext": true,
+              "canToggleRepeatTrack": true,
+              "canToggleShuffle": true,
+              "canToggleSmartShuffle": true,
+              "disallowPausingReasons": [
+                "already_paused",
+                "unknown"
+              ],
+              "disallowResumingReasons": [],
+              "disallowSeekingReasons": [],
+              "disallowSkippingPreviousReasons": [
+                "no_prev_track"
+              ],
+              "disallowSkippingNextReasons": [],
+              "disallowTogglingRepeatContextReasons": [],
+              "disallowTogglingRepeatTrackReasons": [],
+              "disallowTogglingShuffleReasons": [],
+              "disallowTransferringPlaybackReasons": [],
+              "disallowAddToQueueReasons": [],
+              "disallowSetQueueReasons": [],
+              "disallowSettingPlaybackSpeedReasons": [],
+              "disallowSignals": {
+                "switch-to-video": {
+                  "reasons": [
+                    "age_assurance_required"
+                  ]
+                }
+              }
+            },
+            "previousItems": [],
+            "nextItems": [
+              {
+                "type": "unknown",
+                "uri": "spotify:unknown:fixture",
+                "uid": "",
+                "name": "",
+                "mediaType": "audio",
+                "duration": {
+                  "milliseconds": -1
+                },
+                "album": {
+                  "type": "album",
+                  "uri": "",
+                  "name": "",
+                  "images": []
+                },
+                "artists": [
+                  {
+                    "type": "artist",
+                    "uri": "",
+                    "name": ""
+                  }
+                ],
+                "provider": null,
+                "metadata": {},
+                "images": []
+              }
+            ],
+            "playbackQuality": {
+              "bitrateLevel": 0,
+              "strategy": 0,
+              "targetBitrateLevel": 0,
+              "targetBitrateAvailable": false,
+              "losslessStatus": 0
+            },
+            "playbackId": "007fff",
+            "sessionId": "session-fixture",
+            "signals": [
+              "switch-to-video"
+            ],
+            "format": null,
+            "mediaPlaybackMode": "audio"
+          }
+        }
+      ]
+    },
+    {
+      "name": "episode and absent options",
+      "input": {
+        "timestamp": "10001",
+        "isPlaying": true,
+        "isPaused": true,
+        "track": {
+          "provider": "queue",
+          "contextTrack": {
+            "uri": "spotify:episode:BBBBBBBBBBBBBBBBBBBBBB",
+            "metadata": {
+              "title": "Episode",
+              "album_uri": "spotify:show:fixture",
+              "album_title": "Show",
+              "duration": "",
+              "media.type": "mixed",
+              "is_19_plus": "True"
+            }
+          }
+        }
+      },
+      "payloadHex": "08914e3ab1010aa7010a2673706f746966793a657069736f64653a424242424242424242424242424242424242424242421a100a057469746c651207457069736f64651a210a09616c62756d5f757269121473706f746966793a73686f773a666978747572651a130a0b616c62756d5f7469746c65120453686f771a0a0a086475726174696f6e1a130a0a6d656469612e7479706512056d697865641a120a0a69735f31395f706c75731204547275652205717565756568017001",
+      "immediateEvents": [],
+      "beforeTimers": [
+        {
+          "type": "update",
+          "state": {
+            "timestamp": 10001,
+            "context": {
+              "uri": "",
+              "url": "",
+              "metadata": {}
+            },
+            "index": {
+              "pageURI": null,
+              "pageIndex": null,
+              "itemIndex": null
+            },
+            "item": {
+              "type": "episode",
+              "uri": "spotify:episode:BBBBBBBBBBBBBBBBBBBBBB",
+              "uid": "",
+              "artists": [],
+              "name": "Episode",
+              "mediaType": "mixed",
+              "duration": {
+                "milliseconds": -1
+              },
+              "show": {
+                "type": "show",
+                "uri": "spotify:show:fixture",
+                "name": "Show",
+                "images": []
+              },
+              "provider": "queue",
+              "metadata": {
+                "title": "Episode",
+                "album_uri": "spotify:show:fixture",
+                "album_title": "Show",
+                "duration": "",
+                "media.type": "mixed",
+                "is_19_plus": "True"
+              },
+              "isExplicit": false,
+              "is19PlusOnly": true,
+              "images": []
+            },
+            "shuffle": null,
+            "smartShuffle": null,
+            "repeat": null,
+            "speed": 1,
+            "speedEsperanto": 1,
+            "positionAsOfTimestamp": 0,
+            "duration": null,
+            "hasContext": true,
+            "isPaused": true,
+            "isBuffering": false,
+            "restrictions": {
+              "canPause": true,
+              "canResume": true,
+              "canSeek": true,
+              "canSkipPrevious": true,
+              "canSkipNext": true,
+              "canToggleRepeatContext": true,
+              "canToggleRepeatTrack": true,
+              "canToggleShuffle": true,
+              "canToggleSmartShuffle": true,
+              "disallowPausingReasons": [],
+              "disallowResumingReasons": [],
+              "disallowSeekingReasons": [],
+              "disallowSkippingPreviousReasons": [],
+              "disallowSkippingNextReasons": [],
+              "disallowSettingPlaybackSpeedReasons": [],
+              "disallowTogglingRepeatContextReasons": [],
+              "disallowTogglingRepeatTrackReasons": [],
+              "disallowTogglingShuffleReasons": [],
+              "disallowTransferringPlaybackReasons": [],
+              "disallowAddToQueueReasons": [],
+              "disallowSetQueueReasons": [],
+              "disallowSignals": {}
+            },
+            "previousItems": [],
+            "nextItems": [],
+            "playbackQuality": {
+              "bitrateLevel": 0,
+              "strategy": 0,
+              "targetBitrateLevel": 0,
+              "targetBitrateAvailable": false,
+              "losslessStatus": 0
+            },
+            "playbackId": null,
+            "sessionId": "",
+            "signals": [],
+            "format": null
+          }
+        }
+      ],
+      "events": [
+        {
+          "type": "update",
+          "state": {
+            "timestamp": 10001,
+            "context": {
+              "uri": "",
+              "url": "",
+              "metadata": {}
+            },
+            "index": {
+              "pageURI": null,
+              "pageIndex": null,
+              "itemIndex": null
+            },
+            "item": {
+              "type": "episode",
+              "uri": "spotify:episode:BBBBBBBBBBBBBBBBBBBBBB",
+              "uid": "",
+              "artists": [],
+              "name": "Episode",
+              "mediaType": "mixed",
+              "duration": {
+                "milliseconds": -1
+              },
+              "show": {
+                "type": "show",
+                "uri": "spotify:show:fixture",
+                "name": "Show",
+                "images": []
+              },
+              "provider": "queue",
+              "metadata": {
+                "title": "Episode",
+                "album_uri": "spotify:show:fixture",
+                "album_title": "Show",
+                "duration": "",
+                "media.type": "mixed",
+                "is_19_plus": "True"
+              },
+              "isExplicit": false,
+              "is19PlusOnly": true,
+              "images": []
+            },
+            "shuffle": null,
+            "smartShuffle": null,
+            "repeat": null,
+            "speed": 1,
+            "speedEsperanto": 1,
+            "positionAsOfTimestamp": 0,
+            "duration": null,
+            "hasContext": true,
+            "isPaused": true,
+            "isBuffering": false,
+            "restrictions": {
+              "canPause": true,
+              "canResume": true,
+              "canSeek": true,
+              "canSkipPrevious": true,
+              "canSkipNext": true,
+              "canToggleRepeatContext": true,
+              "canToggleRepeatTrack": true,
+              "canToggleShuffle": true,
+              "canToggleSmartShuffle": true,
+              "disallowPausingReasons": [],
+              "disallowResumingReasons": [],
+              "disallowSeekingReasons": [],
+              "disallowSkippingPreviousReasons": [],
+              "disallowSkippingNextReasons": [],
+              "disallowSettingPlaybackSpeedReasons": [],
+              "disallowTogglingRepeatContextReasons": [],
+              "disallowTogglingRepeatTrackReasons": [],
+              "disallowTogglingShuffleReasons": [],
+              "disallowTransferringPlaybackReasons": [],
+              "disallowAddToQueueReasons": [],
+              "disallowSetQueueReasons": [],
+              "disallowSignals": {}
+            },
+            "previousItems": [],
+            "nextItems": [],
+            "playbackQuality": {
+              "bitrateLevel": 0,
+              "strategy": 0,
+              "targetBitrateLevel": 0,
+              "targetBitrateAvailable": false,
+              "losslessStatus": 0
+            },
+            "playbackId": null,
+            "sessionId": "",
+            "signals": [],
+            "format": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "audiobook chapter authors retain input indices",
+      "input": {
+        "timestamp": "10002",
+        "options": {
+          "shufflingContext": false,
+          "repeatingContext": true
+        },
+        "track": {
+          "contextTrack": {
+            "uri": "spotify:episode:CCCCCCCCCCCCCCCCCCCCCC",
+            "metadata": {
+              "is_audiobook_chapter": "true",
+              "title": "Chapter",
+              "author_name": "First",
+              "author_uri": "spotify:author:first",
+              "author_name:2": "Third",
+              "album_uri": "spotify:show:book",
+              "album_title": "Book"
+            }
+          }
+        },
+        "sleepTimer": {
+          "endOfTrack": true
+        },
+        "adBreakContext": {
+          "maxSecondsRemaining": "3",
+          "positionInCurrentAdBreak": "1",
+          "totalAdsInBreakEstimate": "2"
+        }
+      },
+      "payloadHex": "08924e3ae2010adf010a2673706f746966793a657069736f64653a434343434343434343434343434343434343434343431a1c0a1469735f617564696f626f6f6b5f636861707465721204747275651a100a057469746c651207436861707465721a140a0b617574686f725f6e616d65120546697273741a220a0a617574686f725f757269121473706f746966793a617574686f723a66697273741a160a0d617574686f725f6e616d653a32120554686972641a1e0a09616c62756d5f757269121173706f746966793a73686f773a626f6f6b1a130a0b616c62756d5f7469746c651204426f6f6b8a01021001f20106080310011802fa01021a00",
+      "immediateEvents": [],
+      "beforeTimers": [
+        {
+          "type": "update",
+          "state": {
+            "timestamp": 10002,
+            "context": {
+              "uri": "",
+              "url": "",
+              "metadata": {}
+            },
+            "index": {
+              "pageURI": null,
+              "pageIndex": null,
+              "itemIndex": null
+            },
+            "item": {
+              "type": "chapter",
+              "uri": "spotify:episode:CCCCCCCCCCCCCCCCCCCCCC",
+              "uid": "",
+              "artists": [],
+              "name": "Chapter",
+              "mediaType": "audio",
+              "duration": {
+                "milliseconds": -1
+              },
+              "book": {
+                "type": "audiobook",
+                "uri": "spotify:show:book",
+                "name": "Book",
+                "images": [],
+                "authors": [
+                  {
+                    "uri": "spotify:author:first",
+                    "name": "First"
+                  },
+                  {
+                    "uri": null,
+                    "name": "Third"
+                  }
+                ]
+              },
+              "provider": null,
+              "metadata": {
+                "is_audiobook_chapter": "true",
+                "title": "Chapter",
+                "author_name": "First",
+                "author_uri": "spotify:author:first",
+                "author_name:2": "Third",
+                "album_uri": "spotify:show:book",
+                "album_title": "Book"
+              },
+              "isExplicit": false,
+              "is19PlusOnly": false,
+              "images": []
+            },
+            "shuffle": false,
+            "smartShuffle": false,
+            "repeat": 1,
+            "speed": 1,
+            "speedEsperanto": 1,
+            "positionAsOfTimestamp": 0,
+            "duration": null,
+            "hasContext": false,
+            "isPaused": false,
+            "isBuffering": false,
+            "restrictions": {
+              "canPause": true,
+              "canResume": true,
+              "canSeek": true,
+              "canSkipPrevious": true,
+              "canSkipNext": true,
+              "canToggleRepeatContext": true,
+              "canToggleRepeatTrack": true,
+              "canToggleShuffle": true,
+              "canToggleSmartShuffle": true,
+              "disallowPausingReasons": [],
+              "disallowResumingReasons": [],
+              "disallowSeekingReasons": [],
+              "disallowSkippingPreviousReasons": [],
+              "disallowSkippingNextReasons": [],
+              "disallowSettingPlaybackSpeedReasons": [],
+              "disallowTogglingRepeatContextReasons": [],
+              "disallowTogglingRepeatTrackReasons": [],
+              "disallowTogglingShuffleReasons": [],
+              "disallowTransferringPlaybackReasons": [],
+              "disallowAddToQueueReasons": [],
+              "disallowSetQueueReasons": [],
+              "disallowSignals": {}
+            },
+            "previousItems": [],
+            "nextItems": [],
+            "playbackQuality": {
+              "bitrateLevel": 0,
+              "strategy": 0,
+              "targetBitrateLevel": 0,
+              "targetBitrateAvailable": false,
+              "losslessStatus": 0
+            },
+            "playbackId": null,
+            "sessionId": "",
+            "signals": [],
+            "format": null,
+            "adBreakContext": {
+              "maxSecondsRemaining": 3,
+              "positionInCurrentAdBreak": 1,
+              "totalAdsInBreakEstimate": 2
+            },
+            "sleepTimer": {
+              "type": 2,
+              "timestamp": null
+            }
+          }
+        }
+      ],
+      "events": [
+        {
+          "type": "update",
+          "state": {
+            "timestamp": 10002,
+            "context": {
+              "uri": "",
+              "url": "",
+              "metadata": {}
+            },
+            "index": {
+              "pageURI": null,
+              "pageIndex": null,
+              "itemIndex": null
+            },
+            "item": {
+              "type": "chapter",
+              "uri": "spotify:episode:CCCCCCCCCCCCCCCCCCCCCC",
+              "uid": "",
+              "artists": [],
+              "name": "Chapter",
+              "mediaType": "audio",
+              "duration": {
+                "milliseconds": -1
+              },
+              "book": {
+                "type": "audiobook",
+                "uri": "spotify:show:book",
+                "name": "Book",
+                "images": [],
+                "authors": [
+                  {
+                    "uri": "spotify:author:first",
+                    "name": "First"
+                  },
+                  {
+                    "uri": null,
+                    "name": "Third"
+                  }
+                ]
+              },
+              "provider": null,
+              "metadata": {
+                "is_audiobook_chapter": "true",
+                "title": "Chapter",
+                "author_name": "First",
+                "author_uri": "spotify:author:first",
+                "author_name:2": "Third",
+                "album_uri": "spotify:show:book",
+                "album_title": "Book"
+              },
+              "isExplicit": false,
+              "is19PlusOnly": false,
+              "images": []
+            },
+            "shuffle": false,
+            "smartShuffle": false,
+            "repeat": 1,
+            "speed": 1,
+            "speedEsperanto": 1,
+            "positionAsOfTimestamp": 0,
+            "duration": null,
+            "hasContext": false,
+            "isPaused": false,
+            "isBuffering": false,
+            "restrictions": {
+              "canPause": true,
+              "canResume": true,
+              "canSeek": true,
+              "canSkipPrevious": true,
+              "canSkipNext": true,
+              "canToggleRepeatContext": true,
+              "canToggleRepeatTrack": true,
+              "canToggleShuffle": true,
+              "canToggleSmartShuffle": true,
+              "disallowPausingReasons": [],
+              "disallowResumingReasons": [],
+              "disallowSeekingReasons": [],
+              "disallowSkippingPreviousReasons": [],
+              "disallowSkippingNextReasons": [],
+              "disallowSettingPlaybackSpeedReasons": [],
+              "disallowTogglingRepeatContextReasons": [],
+              "disallowTogglingRepeatTrackReasons": [],
+              "disallowTogglingShuffleReasons": [],
+              "disallowTransferringPlaybackReasons": [],
+              "disallowAddToQueueReasons": [],
+              "disallowSetQueueReasons": [],
+              "disallowSignals": {}
+            },
+            "previousItems": [],
+            "nextItems": [],
+            "playbackQuality": {
+              "bitrateLevel": 0,
+              "strategy": 0,
+              "targetBitrateLevel": 0,
+              "targetBitrateAvailable": false,
+              "losslessStatus": 0
+            },
+            "playbackId": null,
+            "sessionId": "",
+            "signals": [],
+            "format": null,
+            "adBreakContext": {
+              "maxSecondsRemaining": 3,
+              "positionInCurrentAdBreak": 1,
+              "totalAdsInBreakEstimate": 2
+            },
+            "sleepTimer": {
+              "type": 2,
+              "timestamp": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "podcast advertisement fields",
+      "input": {
+        "timestamp": "10003",
+        "isPlaying": true,
+        "isBuffering": true,
+        "track": {
+          "contextTrack": {
+            "uri": "spotify:ad:fixture",
+            "metadata": {
+              "title": "Ad",
+              "advertiser": "Synthetic advertiser",
+              "is_podcast_advertisement": "true",
+              "ad.is_skippable": "TRUE",
+              "ad.is_test": "false",
+              "click_url": "fixture://click",
+              "duration": "-9",
+              "ad.video_orientation": "portrait"
+            }
+          }
+        }
+      },
+      "payloadHex": "08934e3ae8010ae5010a1273706f746966793a61643a666978747572651a0b0a057469746c65120241641a220a0a61647665727469736572121453796e74686574696320616476657274697365721a200a1869735f706f64636173745f6164766572746973656d656e741204747275651a170a0f61642e69735f736b69707061626c651204545255451a130a0a61642e69735f74657374120566616c73651a1c0a09636c69636b5f75726c120f666978747572653a2f2f636c69636b1a0e0a086475726174696f6e12022d391a200a1461642e766964656f5f6f7269656e746174696f6e1208706f72747261697468017801",
+      "immediateEvents": [],
+      "beforeTimers": [
+        {
+          "type": "update",
+          "state": {
+            "timestamp": 10003,
+            "context": {
+              "uri": "",
+              "url": "",
+              "metadata": {}
+            },
+            "index": {
+              "pageURI": null,
+              "pageIndex": null,
+              "itemIndex": null
+            },
+            "item": {
+              "type": "ad",
+              "uri": "spotify:ad:fixture",
+              "uid": "",
+              "title": "Ad",
+              "advertiser": "Synthetic advertiser",
+              "url": "fixture://click",
+              "id": null,
+              "mediaType": "audio",
+              "duration": {
+                "milliseconds": -9
+              },
+              "images": [],
+              "videoOrientation": "portrait",
+              "isPodcastAd": true,
+              "isSkippableAd": true,
+              "isTestAd": false,
+              "provider": null,
+              "metadata": {
+                "title": "Ad",
+                "advertiser": "Synthetic advertiser",
+                "is_podcast_advertisement": "true",
+                "ad.is_skippable": "TRUE",
+                "ad.is_test": "false",
+                "click_url": "fixture://click",
+                "duration": "-9",
+                "ad.video_orientation": "portrait"
+              }
+            },
+            "shuffle": null,
+            "smartShuffle": null,
+            "repeat": null,
+            "speed": 1,
+            "speedEsperanto": 1,
+            "positionAsOfTimestamp": 0,
+            "duration": null,
+            "hasContext": true,
+            "isPaused": false,
+            "isBuffering": true,
+            "restrictions": {
+              "canPause": true,
+              "canResume": true,
+              "canSeek": true,
+              "canSkipPrevious": true,
+              "canSkipNext": true,
+              "canToggleRepeatContext": true,
+              "canToggleRepeatTrack": true,
+              "canToggleShuffle": true,
+              "canToggleSmartShuffle": true,
+              "disallowPausingReasons": [],
+              "disallowResumingReasons": [],
+              "disallowSeekingReasons": [],
+              "disallowSkippingPreviousReasons": [],
+              "disallowSkippingNextReasons": [],
+              "disallowSettingPlaybackSpeedReasons": [],
+              "disallowTogglingRepeatContextReasons": [],
+              "disallowTogglingRepeatTrackReasons": [],
+              "disallowTogglingShuffleReasons": [],
+              "disallowTransferringPlaybackReasons": [],
+              "disallowAddToQueueReasons": [],
+              "disallowSetQueueReasons": [],
+              "disallowSignals": {}
+            },
+            "previousItems": [],
+            "nextItems": [],
+            "playbackQuality": {
+              "bitrateLevel": 0,
+              "strategy": 0,
+              "targetBitrateLevel": 0,
+              "targetBitrateAvailable": false,
+              "losslessStatus": 0
+            },
+            "playbackId": null,
+            "sessionId": "",
+            "signals": [],
+            "format": null
+          }
+        }
+      ],
+      "events": [
+        {
+          "type": "update",
+          "state": {
+            "timestamp": 10003,
+            "context": {
+              "uri": "",
+              "url": "",
+              "metadata": {}
+            },
+            "index": {
+              "pageURI": null,
+              "pageIndex": null,
+              "itemIndex": null
+            },
+            "item": {
+              "type": "ad",
+              "uri": "spotify:ad:fixture",
+              "uid": "",
+              "title": "Ad",
+              "advertiser": "Synthetic advertiser",
+              "url": "fixture://click",
+              "id": null,
+              "mediaType": "audio",
+              "duration": {
+                "milliseconds": -9
+              },
+              "images": [],
+              "videoOrientation": "portrait",
+              "isPodcastAd": true,
+              "isSkippableAd": true,
+              "isTestAd": false,
+              "provider": null,
+              "metadata": {
+                "title": "Ad",
+                "advertiser": "Synthetic advertiser",
+                "is_podcast_advertisement": "true",
+                "ad.is_skippable": "TRUE",
+                "ad.is_test": "false",
+                "click_url": "fixture://click",
+                "duration": "-9",
+                "ad.video_orientation": "portrait"
+              }
+            },
+            "shuffle": null,
+            "smartShuffle": null,
+            "repeat": null,
+            "speed": 1,
+            "speedEsperanto": 1,
+            "positionAsOfTimestamp": 0,
+            "duration": null,
+            "hasContext": true,
+            "isPaused": false,
+            "isBuffering": true,
+            "restrictions": {
+              "canPause": true,
+              "canResume": true,
+              "canSeek": true,
+              "canSkipPrevious": true,
+              "canSkipNext": true,
+              "canToggleRepeatContext": true,
+              "canToggleRepeatTrack": true,
+              "canToggleShuffle": true,
+              "canToggleSmartShuffle": true,
+              "disallowPausingReasons": [],
+              "disallowResumingReasons": [],
+              "disallowSeekingReasons": [],
+              "disallowSkippingPreviousReasons": [],
+              "disallowSkippingNextReasons": [],
+              "disallowSettingPlaybackSpeedReasons": [],
+              "disallowTogglingRepeatContextReasons": [],
+              "disallowTogglingRepeatTrackReasons": [],
+              "disallowTogglingShuffleReasons": [],
+              "disallowTransferringPlaybackReasons": [],
+              "disallowAddToQueueReasons": [],
+              "disallowSetQueueReasons": [],
+              "disallowSignals": {}
+            },
+            "previousItems": [],
+            "nextItems": [],
+            "playbackQuality": {
+              "bitrateLevel": 0,
+              "strategy": 0,
+              "targetBitrateLevel": 0,
+              "targetBitrateAvailable": false,
+              "losslessStatus": 0
+            },
+            "playbackId": null,
+            "sessionId": "",
+            "signals": [],
+            "format": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "unrecognized item and sleep timestamp",
+      "input": {
+        "timestamp": "10004",
+        "playbackSpeed": {
+          "value": 2
+        },
+        "options": {
+          "shufflingContext": true,
+          "modes": {
+            "context_enhancement": "RECOMMENDATION"
+          }
+        },
+        "track": {
+          "contextTrack": {
+            "uri": "spotify:unknown:fixture",
+            "metadata": {
+              "duration": "n/a"
+            }
+          }
+        },
+        "sleepTimer": {
+          "timestamp": {
+            "timestamp": "12000"
+          }
+        },
+        "playbackQuality": {
+          "bitrateLevel": 99,
+          "strategy": 99,
+          "hifiStatus": 99
+        }
+      },
+      "payloadHex": "08944e3a2c0a2a0a1773706f746966793a756e6b6e6f776e3a666978747572651a0f0a086475726174696f6e12036e2f614a2108ffffffffffffffffff0110ffffffffffffffffff0128ffffffffffffffffff0152090900000000000000408a012908012a250a13636f6e746578745f656e68616e63656d656e74120e5245434f4d4d454e444154494f4efa0105120308e05d",
+      "immediateEvents": [],
+      "beforeTimers": [
+        {
+          "type": "update",
+          "state": {
+            "timestamp": 10004,
+            "context": {
+              "uri": "",
+              "url": "",
+              "metadata": {}
+            },
+            "index": {
+              "pageURI": null,
+              "pageIndex": null,
+              "itemIndex": null
+            },
+            "item": {
+              "type": "unknown",
+              "uri": "spotify:unknown:fixture",
+              "uid": "",
+              "name": "",
+              "mediaType": "audio",
+              "duration": {
+                "milliseconds": null
+              },
+              "album": {
+                "type": "album",
+                "uri": "",
+                "name": "",
+                "images": []
+              },
+              "artists": [
+                {
+                  "type": "artist",
+                  "uri": "",
+                  "name": ""
+                }
+              ],
+              "provider": null,
+              "metadata": {
+                "duration": "n/a"
+              },
+              "images": []
+            },
+            "shuffle": true,
+            "smartShuffle": true,
+            "repeat": 0,
+            "speed": 2,
+            "speedEsperanto": 1,
+            "positionAsOfTimestamp": 0,
+            "duration": null,
+            "hasContext": false,
+            "isPaused": false,
+            "isBuffering": false,
+            "restrictions": {
+              "canPause": true,
+              "canResume": true,
+              "canSeek": true,
+              "canSkipPrevious": true,
+              "canSkipNext": true,
+              "canToggleRepeatContext": true,
+              "canToggleRepeatTrack": true,
+              "canToggleShuffle": true,
+              "canToggleSmartShuffle": true,
+              "disallowPausingReasons": [],
+              "disallowResumingReasons": [],
+              "disallowSeekingReasons": [],
+              "disallowSkippingPreviousReasons": [],
+              "disallowSkippingNextReasons": [],
+              "disallowSettingPlaybackSpeedReasons": [],
+              "disallowTogglingRepeatContextReasons": [],
+              "disallowTogglingRepeatTrackReasons": [],
+              "disallowTogglingShuffleReasons": [],
+              "disallowTransferringPlaybackReasons": [],
+              "disallowAddToQueueReasons": [],
+              "disallowSetQueueReasons": [],
+              "disallowSignals": {}
+            },
+            "previousItems": [],
+            "nextItems": [],
+            "playbackQuality": {
+              "bitrateLevel": 0,
+              "strategy": 0,
+              "targetBitrateLevel": 0,
+              "targetBitrateAvailable": false,
+              "losslessStatus": 0
+            },
+            "playbackId": null,
+            "sessionId": "",
+            "signals": [],
+            "format": null,
+            "sleepTimer": {
+              "type": 1,
+              "timestamp": 12000
+            }
+          }
+        }
+      ],
+      "events": [
+        {
+          "type": "update",
+          "state": {
+            "timestamp": 10004,
+            "context": {
+              "uri": "",
+              "url": "",
+              "metadata": {}
+            },
+            "index": {
+              "pageURI": null,
+              "pageIndex": null,
+              "itemIndex": null
+            },
+            "item": {
+              "type": "unknown",
+              "uri": "spotify:unknown:fixture",
+              "uid": "",
+              "name": "",
+              "mediaType": "audio",
+              "duration": {
+                "milliseconds": null
+              },
+              "album": {
+                "type": "album",
+                "uri": "",
+                "name": "",
+                "images": []
+              },
+              "artists": [
+                {
+                  "type": "artist",
+                  "uri": "",
+                  "name": ""
+                }
+              ],
+              "provider": null,
+              "metadata": {
+                "duration": "n/a"
+              },
+              "images": []
+            },
+            "shuffle": true,
+            "smartShuffle": true,
+            "repeat": 0,
+            "speed": 2,
+            "speedEsperanto": 1,
+            "positionAsOfTimestamp": 0,
+            "duration": null,
+            "hasContext": false,
+            "isPaused": false,
+            "isBuffering": false,
+            "restrictions": {
+              "canPause": true,
+              "canResume": true,
+              "canSeek": true,
+              "canSkipPrevious": true,
+              "canSkipNext": true,
+              "canToggleRepeatContext": true,
+              "canToggleRepeatTrack": true,
+              "canToggleShuffle": true,
+              "canToggleSmartShuffle": true,
+              "disallowPausingReasons": [],
+              "disallowResumingReasons": [],
+              "disallowSeekingReasons": [],
+              "disallowSkippingPreviousReasons": [],
+              "disallowSkippingNextReasons": [],
+              "disallowSettingPlaybackSpeedReasons": [],
+              "disallowTogglingRepeatContextReasons": [],
+              "disallowTogglingRepeatTrackReasons": [],
+              "disallowTogglingShuffleReasons": [],
+              "disallowTransferringPlaybackReasons": [],
+              "disallowAddToQueueReasons": [],
+              "disallowSetQueueReasons": [],
+              "disallowSignals": {}
+            },
+            "previousItems": [],
+            "nextItems": [],
+            "playbackQuality": {
+              "bitrateLevel": 0,
+              "strategy": 0,
+              "targetBitrateLevel": 0,
+              "targetBitrateAvailable": false,
+              "losslessStatus": 0
+            },
+            "playbackId": null,
+            "sessionId": "",
+            "signals": [],
+            "format": null,
+            "sleepTimer": {
+              "type": 1,
+              "timestamp": 12000
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "local track URI and quality enum projection",
+      "input": {
+        "timestamp": "10005",
+        "format": "PARROT",
+        "playbackQuality": {
+          "bitrateLevel": "HIFI",
+          "strategy": "LOCAL_FILE",
+          "targetBitrateLevel": "HIFI24",
+          "targetBitrateAvailable": true,
+          "hifiStatus": "ON"
+        },
+        "track": {
+          "contextTrack": {
+            "uri": "spotify:local:Artist:Album:Title:123",
+            "metadata": {
+              "is_local": "true"
+            }
+          }
+        }
+      },
+      "payloadHex": "08954e3a3a0a380a2473706f746966793a6c6f63616c3a4172746973743a416c62756d3a5469746c653a3132331a100a0869735f6c6f63616c1204747275654a0a08051005180620012802e80102",
+      "immediateEvents": [],
+      "beforeTimers": [
+        {
+          "type": "update",
+          "state": {
+            "timestamp": 10005,
+            "context": {
+              "uri": "",
+              "url": "",
+              "metadata": {}
+            },
+            "index": {
+              "pageURI": null,
+              "pageIndex": null,
+              "itemIndex": null
+            },
+            "item": {
+              "type": "track",
+              "uri": "spotify:local:Artist:Album:Title:123",
+              "uid": "",
+              "name": "",
+              "mediaType": "audio",
+              "duration": {
+                "milliseconds": -1
+              },
+              "album": {
+                "type": "album",
+                "uri": "",
+                "name": "",
+                "images": []
+              },
+              "artists": [
+                {
+                  "type": "artist",
+                  "uri": "",
+                  "name": ""
+                }
+              ],
+              "isLocal": true,
+              "isExplicit": false,
+              "is19PlusOnly": false,
+              "hasAssociatedVideo": false,
+              "provider": null,
+              "metadata": {
+                "is_local": "true"
+              },
+              "images": []
+            },
+            "shuffle": null,
+            "smartShuffle": null,
+            "repeat": null,
+            "speed": 1,
+            "speedEsperanto": 1,
+            "positionAsOfTimestamp": 0,
+            "duration": null,
+            "hasContext": false,
+            "isPaused": false,
+            "isBuffering": false,
+            "restrictions": {
+              "canPause": true,
+              "canResume": true,
+              "canSeek": true,
+              "canSkipPrevious": true,
+              "canSkipNext": true,
+              "canToggleRepeatContext": true,
+              "canToggleRepeatTrack": true,
+              "canToggleShuffle": true,
+              "canToggleSmartShuffle": true,
+              "disallowPausingReasons": [],
+              "disallowResumingReasons": [],
+              "disallowSeekingReasons": [],
+              "disallowSkippingPreviousReasons": [],
+              "disallowSkippingNextReasons": [],
+              "disallowSettingPlaybackSpeedReasons": [],
+              "disallowTogglingRepeatContextReasons": [],
+              "disallowTogglingRepeatTrackReasons": [],
+              "disallowTogglingShuffleReasons": [],
+              "disallowTransferringPlaybackReasons": [],
+              "disallowAddToQueueReasons": [],
+              "disallowSetQueueReasons": [],
+              "disallowSignals": {}
+            },
+            "previousItems": [],
+            "nextItems": [],
+            "playbackQuality": {
+              "bitrateLevel": 5,
+              "strategy": 5,
+              "targetBitrateLevel": 6,
+              "targetBitrateAvailable": true,
+              "losslessStatus": 2
+            },
+            "playbackId": null,
+            "sessionId": "",
+            "signals": [],
+            "format": 2
+          }
+        }
+      ],
+      "events": [
+        {
+          "type": "update",
+          "state": {
+            "timestamp": 10005,
+            "context": {
+              "uri": "",
+              "url": "",
+              "metadata": {}
+            },
+            "index": {
+              "pageURI": null,
+              "pageIndex": null,
+              "itemIndex": null
+            },
+            "item": {
+              "type": "track",
+              "uri": "spotify:local:Artist:Album:Title:123",
+              "uid": "",
+              "name": "",
+              "mediaType": "audio",
+              "duration": {
+                "milliseconds": -1
+              },
+              "album": {
+                "type": "album",
+                "uri": "",
+                "name": "",
+                "images": []
+              },
+              "artists": [
+                {
+                  "type": "artist",
+                  "uri": "",
+                  "name": ""
+                }
+              ],
+              "isLocal": true,
+              "isExplicit": false,
+              "is19PlusOnly": false,
+              "hasAssociatedVideo": false,
+              "provider": null,
+              "metadata": {
+                "is_local": "true"
+              },
+              "images": []
+            },
+            "shuffle": null,
+            "smartShuffle": null,
+            "repeat": null,
+            "speed": 1,
+            "speedEsperanto": 1,
+            "positionAsOfTimestamp": 0,
+            "duration": null,
+            "hasContext": false,
+            "isPaused": false,
+            "isBuffering": false,
+            "restrictions": {
+              "canPause": true,
+              "canResume": true,
+              "canSeek": true,
+              "canSkipPrevious": true,
+              "canSkipNext": true,
+              "canToggleRepeatContext": true,
+              "canToggleRepeatTrack": true,
+              "canToggleShuffle": true,
+              "canToggleSmartShuffle": true,
+              "disallowPausingReasons": [],
+              "disallowResumingReasons": [],
+              "disallowSeekingReasons": [],
+              "disallowSkippingPreviousReasons": [],
+              "disallowSkippingNextReasons": [],
+              "disallowSettingPlaybackSpeedReasons": [],
+              "disallowTogglingRepeatContextReasons": [],
+              "disallowTogglingRepeatTrackReasons": [],
+              "disallowTogglingShuffleReasons": [],
+              "disallowTransferringPlaybackReasons": [],
+              "disallowAddToQueueReasons": [],
+              "disallowSetQueueReasons": [],
+              "disallowSignals": {}
+            },
+            "previousItems": [],
+            "nextItems": [],
+            "playbackQuality": {
+              "bitrateLevel": 5,
+              "strategy": 5,
+              "targetBitrateLevel": 6,
+              "targetBitrateAvailable": true,
+              "losslessStatus": 2
+            },
+            "playbackId": null,
+            "sessionId": "",
+            "signals": [],
+            "format": 2
+          }
+        }
+      ]
+    },
+    {
+      "name": "kallax item URI",
+      "input": {
+        "timestamp": "10006",
+        "track": {
+          "contextTrack": {
+            "uri": "spotify:kallax:EEEEEEEEEEEEEEEEEEEEEE",
+            "metadata": {
+              "title": "Kallax"
+            }
+          }
+        }
+      },
+      "payloadHex": "08964e3a3a0a380a2573706f746966793a6b616c6c61783a454545454545454545454545454545454545454545451a0f0a057469746c6512064b616c6c6178",
+      "immediateEvents": [],
+      "beforeTimers": [
+        {
+          "type": "update",
+          "state": {
+            "timestamp": 10006,
+            "context": {
+              "uri": "",
+              "url": "",
+              "metadata": {}
+            },
+            "index": {
+              "pageURI": null,
+              "pageIndex": null,
+              "itemIndex": null
+            },
+            "item": {
+              "type": "kallax",
+              "uri": "spotify:kallax:EEEEEEEEEEEEEEEEEEEEEE",
+              "uid": "",
+              "name": "Kallax",
+              "mediaType": "audio",
+              "duration": {
+                "milliseconds": -1
+              },
+              "album": {
+                "type": "album",
+                "uri": "",
+                "name": "",
+                "images": []
+              },
+              "artists": [
+                {
+                  "type": "artist",
+                  "uri": "",
+                  "name": ""
+                }
+              ],
+              "isExplicit": false,
+              "is19PlusOnly": false,
+              "hasAssociatedVideo": false,
+              "provider": null,
+              "metadata": {
+                "title": "Kallax"
+              },
+              "images": []
+            },
+            "shuffle": null,
+            "smartShuffle": null,
+            "repeat": null,
+            "speed": 1,
+            "speedEsperanto": 1,
+            "positionAsOfTimestamp": 0,
+            "duration": null,
+            "hasContext": false,
+            "isPaused": false,
+            "isBuffering": false,
+            "restrictions": {
+              "canPause": true,
+              "canResume": true,
+              "canSeek": true,
+              "canSkipPrevious": true,
+              "canSkipNext": true,
+              "canToggleRepeatContext": true,
+              "canToggleRepeatTrack": true,
+              "canToggleShuffle": true,
+              "canToggleSmartShuffle": true,
+              "disallowPausingReasons": [],
+              "disallowResumingReasons": [],
+              "disallowSeekingReasons": [],
+              "disallowSkippingPreviousReasons": [],
+              "disallowSkippingNextReasons": [],
+              "disallowSettingPlaybackSpeedReasons": [],
+              "disallowTogglingRepeatContextReasons": [],
+              "disallowTogglingRepeatTrackReasons": [],
+              "disallowTogglingShuffleReasons": [],
+              "disallowTransferringPlaybackReasons": [],
+              "disallowAddToQueueReasons": [],
+              "disallowSetQueueReasons": [],
+              "disallowSignals": {}
+            },
+            "previousItems": [],
+            "nextItems": [],
+            "playbackQuality": {
+              "bitrateLevel": 0,
+              "strategy": 0,
+              "targetBitrateLevel": 0,
+              "targetBitrateAvailable": false,
+              "losslessStatus": 0
+            },
+            "playbackId": null,
+            "sessionId": "",
+            "signals": [],
+            "format": null
+          }
+        }
+      ],
+      "events": [
+        {
+          "type": "update",
+          "state": {
+            "timestamp": 10006,
+            "context": {
+              "uri": "",
+              "url": "",
+              "metadata": {}
+            },
+            "index": {
+              "pageURI": null,
+              "pageIndex": null,
+              "itemIndex": null
+            },
+            "item": {
+              "type": "kallax",
+              "uri": "spotify:kallax:EEEEEEEEEEEEEEEEEEEEEE",
+              "uid": "",
+              "name": "Kallax",
+              "mediaType": "audio",
+              "duration": {
+                "milliseconds": -1
+              },
+              "album": {
+                "type": "album",
+                "uri": "",
+                "name": "",
+                "images": []
+              },
+              "artists": [
+                {
+                  "type": "artist",
+                  "uri": "",
+                  "name": ""
+                }
+              ],
+              "isExplicit": false,
+              "is19PlusOnly": false,
+              "hasAssociatedVideo": false,
+              "provider": null,
+              "metadata": {
+                "title": "Kallax"
+              },
+              "images": []
+            },
+            "shuffle": null,
+            "smartShuffle": null,
+            "repeat": null,
+            "speed": 1,
+            "speedEsperanto": 1,
+            "positionAsOfTimestamp": 0,
+            "duration": null,
+            "hasContext": false,
+            "isPaused": false,
+            "isBuffering": false,
+            "restrictions": {
+              "canPause": true,
+              "canResume": true,
+              "canSeek": true,
+              "canSkipPrevious": true,
+              "canSkipNext": true,
+              "canToggleRepeatContext": true,
+              "canToggleRepeatTrack": true,
+              "canToggleShuffle": true,
+              "canToggleSmartShuffle": true,
+              "disallowPausingReasons": [],
+              "disallowResumingReasons": [],
+              "disallowSeekingReasons": [],
+              "disallowSkippingPreviousReasons": [],
+              "disallowSkippingNextReasons": [],
+              "disallowSettingPlaybackSpeedReasons": [],
+              "disallowTogglingRepeatContextReasons": [],
+              "disallowTogglingRepeatTrackReasons": [],
+              "disallowTogglingShuffleReasons": [],
+              "disallowTransferringPlaybackReasons": [],
+              "disallowAddToQueueReasons": [],
+              "disallowSetQueueReasons": [],
+              "disallowSignals": {}
+            },
+            "previousItems": [],
+            "nextItems": [],
+            "playbackQuality": {
+              "bitrateLevel": 0,
+              "strategy": 0,
+              "targetBitrateLevel": 0,
+              "targetBitrateAvailable": false,
+              "losslessStatus": 0
+            },
+            "playbackId": null,
+            "sessionId": "",
+            "signals": [],
+            "format": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "podcast chapter item URI",
+      "input": {
+        "timestamp": "10007",
+        "track": {
+          "contextTrack": {
+            "uri": "spotify:podcast-chapter:FFFFFFFFFFFFFFFFFFFFFF",
+            "metadata": {
+              "title": "Podcast chapter"
+            }
+          }
+        }
+      },
+      "payloadHex": "08974e3a4c0a4a0a2e73706f746966793a706f64636173742d636861707465723a464646464646464646464646464646464646464646461a180a057469746c65120f506f64636173742063686170746572",
+      "immediateEvents": [],
+      "beforeTimers": [
+        {
+          "type": "update",
+          "state": {
+            "timestamp": 10007,
+            "context": {
+              "uri": "",
+              "url": "",
+              "metadata": {}
+            },
+            "index": {
+              "pageURI": null,
+              "pageIndex": null,
+              "itemIndex": null
+            },
+            "item": {
+              "type": "podcast-chapter",
+              "uri": "spotify:podcast-chapter:FFFFFFFFFFFFFFFFFFFFFF",
+              "uid": "",
+              "name": "Podcast chapter",
+              "mediaType": "audio",
+              "duration": {
+                "milliseconds": -1
+              },
+              "episode": {
+                "type": "episode",
+                "uri": "",
+                "name": "",
+                "images": []
+              },
+              "show": {
+                "type": "show",
+                "uri": "",
+                "name": "",
+                "images": []
+              },
+              "provider": null,
+              "metadata": {
+                "title": "Podcast chapter"
+              },
+              "isExplicit": false,
+              "is19PlusOnly": false,
+              "images": []
+            },
+            "shuffle": null,
+            "smartShuffle": null,
+            "repeat": null,
+            "speed": 1,
+            "speedEsperanto": 1,
+            "positionAsOfTimestamp": 0,
+            "duration": null,
+            "hasContext": false,
+            "isPaused": false,
+            "isBuffering": false,
+            "restrictions": {
+              "canPause": true,
+              "canResume": true,
+              "canSeek": true,
+              "canSkipPrevious": true,
+              "canSkipNext": true,
+              "canToggleRepeatContext": true,
+              "canToggleRepeatTrack": true,
+              "canToggleShuffle": true,
+              "canToggleSmartShuffle": true,
+              "disallowPausingReasons": [],
+              "disallowResumingReasons": [],
+              "disallowSeekingReasons": [],
+              "disallowSkippingPreviousReasons": [],
+              "disallowSkippingNextReasons": [],
+              "disallowSettingPlaybackSpeedReasons": [],
+              "disallowTogglingRepeatContextReasons": [],
+              "disallowTogglingRepeatTrackReasons": [],
+              "disallowTogglingShuffleReasons": [],
+              "disallowTransferringPlaybackReasons": [],
+              "disallowAddToQueueReasons": [],
+              "disallowSetQueueReasons": [],
+              "disallowSignals": {}
+            },
+            "previousItems": [],
+            "nextItems": [],
+            "playbackQuality": {
+              "bitrateLevel": 0,
+              "strategy": 0,
+              "targetBitrateLevel": 0,
+              "targetBitrateAvailable": false,
+              "losslessStatus": 0
+            },
+            "playbackId": null,
+            "sessionId": "",
+            "signals": [],
+            "format": null
+          }
+        }
+      ],
+      "events": [
+        {
+          "type": "update",
+          "state": {
+            "timestamp": 10007,
+            "context": {
+              "uri": "",
+              "url": "",
+              "metadata": {}
+            },
+            "index": {
+              "pageURI": null,
+              "pageIndex": null,
+              "itemIndex": null
+            },
+            "item": {
+              "type": "podcast-chapter",
+              "uri": "spotify:podcast-chapter:FFFFFFFFFFFFFFFFFFFFFF",
+              "uid": "",
+              "name": "Podcast chapter",
+              "mediaType": "audio",
+              "duration": {
+                "milliseconds": -1
+              },
+              "episode": {
+                "type": "episode",
+                "uri": "",
+                "name": "",
+                "images": []
+              },
+              "show": {
+                "type": "show",
+                "uri": "",
+                "name": "",
+                "images": []
+              },
+              "provider": null,
+              "metadata": {
+                "title": "Podcast chapter"
+              },
+              "isExplicit": false,
+              "is19PlusOnly": false,
+              "images": []
+            },
+            "shuffle": null,
+            "smartShuffle": null,
+            "repeat": null,
+            "speed": 1,
+            "speedEsperanto": 1,
+            "positionAsOfTimestamp": 0,
+            "duration": null,
+            "hasContext": false,
+            "isPaused": false,
+            "isBuffering": false,
+            "restrictions": {
+              "canPause": true,
+              "canResume": true,
+              "canSeek": true,
+              "canSkipPrevious": true,
+              "canSkipNext": true,
+              "canToggleRepeatContext": true,
+              "canToggleRepeatTrack": true,
+              "canToggleShuffle": true,
+              "canToggleSmartShuffle": true,
+              "disallowPausingReasons": [],
+              "disallowResumingReasons": [],
+              "disallowSeekingReasons": [],
+              "disallowSkippingPreviousReasons": [],
+              "disallowSkippingNextReasons": [],
+              "disallowSettingPlaybackSpeedReasons": [],
+              "disallowTogglingRepeatContextReasons": [],
+              "disallowTogglingRepeatTrackReasons": [],
+              "disallowTogglingShuffleReasons": [],
+              "disallowTransferringPlaybackReasons": [],
+              "disallowAddToQueueReasons": [],
+              "disallowSetQueueReasons": [],
+              "disallowSignals": {}
+            },
+            "previousItems": [],
+            "nextItems": [],
+            "playbackQuality": {
+              "bitrateLevel": 0,
+              "strategy": 0,
+              "targetBitrateLevel": 0,
+              "targetBitrateAvailable": false,
+              "losslessStatus": 0
+            },
+            "playbackId": null,
+            "sessionId": "",
+            "signals": [],
+            "format": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "clip item URI",
+      "input": {
+        "timestamp": "10008",
+        "track": {
+          "contextTrack": {
+            "uri": "spotify:clip:GGGGGGGGGGGGGGGGGGGGGG",
+            "metadata": {
+              "title": "Clip"
+            }
+          }
+        }
+      },
+      "payloadHex": "08984e3a360a340a2373706f746966793a636c69703a474747474747474747474747474747474747474747471a0d0a057469746c651204436c6970",
+      "immediateEvents": [],
+      "beforeTimers": [
+        {
+          "type": "update",
+          "state": {
+            "timestamp": 10008,
+            "context": {
+              "uri": "",
+              "url": "",
+              "metadata": {}
+            },
+            "index": {
+              "pageURI": null,
+              "pageIndex": null,
+              "itemIndex": null
+            },
+            "item": {
+              "type": "podcast-chapter",
+              "uri": "spotify:clip:GGGGGGGGGGGGGGGGGGGGGG",
+              "uid": "",
+              "name": "Clip",
+              "mediaType": "audio",
+              "duration": {
+                "milliseconds": -1
+              },
+              "episode": {
+                "type": "episode",
+                "uri": "",
+                "name": "",
+                "images": []
+              },
+              "show": {
+                "type": "show",
+                "uri": "",
+                "name": "",
+                "images": []
+              },
+              "provider": null,
+              "metadata": {
+                "title": "Clip"
+              },
+              "isExplicit": false,
+              "is19PlusOnly": false,
+              "images": []
+            },
+            "shuffle": null,
+            "smartShuffle": null,
+            "repeat": null,
+            "speed": 1,
+            "speedEsperanto": 1,
+            "positionAsOfTimestamp": 0,
+            "duration": null,
+            "hasContext": false,
+            "isPaused": false,
+            "isBuffering": false,
+            "restrictions": {
+              "canPause": true,
+              "canResume": true,
+              "canSeek": true,
+              "canSkipPrevious": true,
+              "canSkipNext": true,
+              "canToggleRepeatContext": true,
+              "canToggleRepeatTrack": true,
+              "canToggleShuffle": true,
+              "canToggleSmartShuffle": true,
+              "disallowPausingReasons": [],
+              "disallowResumingReasons": [],
+              "disallowSeekingReasons": [],
+              "disallowSkippingPreviousReasons": [],
+              "disallowSkippingNextReasons": [],
+              "disallowSettingPlaybackSpeedReasons": [],
+              "disallowTogglingRepeatContextReasons": [],
+              "disallowTogglingRepeatTrackReasons": [],
+              "disallowTogglingShuffleReasons": [],
+              "disallowTransferringPlaybackReasons": [],
+              "disallowAddToQueueReasons": [],
+              "disallowSetQueueReasons": [],
+              "disallowSignals": {}
+            },
+            "previousItems": [],
+            "nextItems": [],
+            "playbackQuality": {
+              "bitrateLevel": 0,
+              "strategy": 0,
+              "targetBitrateLevel": 0,
+              "targetBitrateAvailable": false,
+              "losslessStatus": 0
+            },
+            "playbackId": null,
+            "sessionId": "",
+            "signals": [],
+            "format": null
+          }
+        }
+      ],
+      "events": [
+        {
+          "type": "update",
+          "state": {
+            "timestamp": 10008,
+            "context": {
+              "uri": "",
+              "url": "",
+              "metadata": {}
+            },
+            "index": {
+              "pageURI": null,
+              "pageIndex": null,
+              "itemIndex": null
+            },
+            "item": {
+              "type": "podcast-chapter",
+              "uri": "spotify:clip:GGGGGGGGGGGGGGGGGGGGGG",
+              "uid": "",
+              "name": "Clip",
+              "mediaType": "audio",
+              "duration": {
+                "milliseconds": -1
+              },
+              "episode": {
+                "type": "episode",
+                "uri": "",
+                "name": "",
+                "images": []
+              },
+              "show": {
+                "type": "show",
+                "uri": "",
+                "name": "",
+                "images": []
+              },
+              "provider": null,
+              "metadata": {
+                "title": "Clip"
+              },
+              "isExplicit": false,
+              "is19PlusOnly": false,
+              "images": []
+            },
+            "shuffle": null,
+            "smartShuffle": null,
+            "repeat": null,
+            "speed": 1,
+            "speedEsperanto": 1,
+            "positionAsOfTimestamp": 0,
+            "duration": null,
+            "hasContext": false,
+            "isPaused": false,
+            "isBuffering": false,
+            "restrictions": {
+              "canPause": true,
+              "canResume": true,
+              "canSeek": true,
+              "canSkipPrevious": true,
+              "canSkipNext": true,
+              "canToggleRepeatContext": true,
+              "canToggleRepeatTrack": true,
+              "canToggleShuffle": true,
+              "canToggleSmartShuffle": true,
+              "disallowPausingReasons": [],
+              "disallowResumingReasons": [],
+              "disallowSeekingReasons": [],
+              "disallowSkippingPreviousReasons": [],
+              "disallowSkippingNextReasons": [],
+              "disallowSettingPlaybackSpeedReasons": [],
+              "disallowTogglingRepeatContextReasons": [],
+              "disallowTogglingRepeatTrackReasons": [],
+              "disallowTogglingShuffleReasons": [],
+              "disallowTransferringPlaybackReasons": [],
+              "disallowAddToQueueReasons": [],
+              "disallowSetQueueReasons": [],
+              "disallowSignals": {}
+            },
+            "previousItems": [],
+            "nextItems": [],
+            "playbackQuality": {
+              "bitrateLevel": 0,
+              "strategy": 0,
+              "targetBitrateLevel": 0,
+              "targetBitrateAvailable": false,
+              "losslessStatus": 0
+            },
+            "playbackId": null,
+            "sessionId": "",
+            "signals": [],
+            "format": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "invalid Spotify track id is an unknown item",
+      "input": {
+        "timestamp": "10009",
+        "track": {
+          "contextTrack": {
+            "uri": "spotify:track:invalid",
+            "metadata": {
+              "title": "Unknown"
+            }
+          }
+        }
+      },
+      "payloadHex": "08994e3a2b0a290a1573706f746966793a747261636b3a696e76616c69641a100a057469746c651207556e6b6e6f776e",
+      "immediateEvents": [],
+      "beforeTimers": [
+        {
+          "type": "update",
+          "state": {
+            "timestamp": 10009,
+            "context": {
+              "uri": "",
+              "url": "",
+              "metadata": {}
+            },
+            "index": {
+              "pageURI": null,
+              "pageIndex": null,
+              "itemIndex": null
+            },
+            "item": {
+              "type": "unknown",
+              "uri": "spotify:track:invalid",
+              "uid": "",
+              "name": "Unknown",
+              "mediaType": "audio",
+              "duration": {
+                "milliseconds": -1
+              },
+              "album": {
+                "type": "album",
+                "uri": "",
+                "name": "",
+                "images": []
+              },
+              "artists": [
+                {
+                  "type": "artist",
+                  "uri": "",
+                  "name": ""
+                }
+              ],
+              "provider": null,
+              "metadata": {
+                "title": "Unknown"
+              },
+              "images": []
+            },
+            "shuffle": null,
+            "smartShuffle": null,
+            "repeat": null,
+            "speed": 1,
+            "speedEsperanto": 1,
+            "positionAsOfTimestamp": 0,
+            "duration": null,
+            "hasContext": false,
+            "isPaused": false,
+            "isBuffering": false,
+            "restrictions": {
+              "canPause": true,
+              "canResume": true,
+              "canSeek": true,
+              "canSkipPrevious": true,
+              "canSkipNext": true,
+              "canToggleRepeatContext": true,
+              "canToggleRepeatTrack": true,
+              "canToggleShuffle": true,
+              "canToggleSmartShuffle": true,
+              "disallowPausingReasons": [],
+              "disallowResumingReasons": [],
+              "disallowSeekingReasons": [],
+              "disallowSkippingPreviousReasons": [],
+              "disallowSkippingNextReasons": [],
+              "disallowSettingPlaybackSpeedReasons": [],
+              "disallowTogglingRepeatContextReasons": [],
+              "disallowTogglingRepeatTrackReasons": [],
+              "disallowTogglingShuffleReasons": [],
+              "disallowTransferringPlaybackReasons": [],
+              "disallowAddToQueueReasons": [],
+              "disallowSetQueueReasons": [],
+              "disallowSignals": {}
+            },
+            "previousItems": [],
+            "nextItems": [],
+            "playbackQuality": {
+              "bitrateLevel": 0,
+              "strategy": 0,
+              "targetBitrateLevel": 0,
+              "targetBitrateAvailable": false,
+              "losslessStatus": 0
+            },
+            "playbackId": null,
+            "sessionId": "",
+            "signals": [],
+            "format": null
+          }
+        }
+      ],
+      "events": [
+        {
+          "type": "update",
+          "state": {
+            "timestamp": 10009,
+            "context": {
+              "uri": "",
+              "url": "",
+              "metadata": {}
+            },
+            "index": {
+              "pageURI": null,
+              "pageIndex": null,
+              "itemIndex": null
+            },
+            "item": {
+              "type": "unknown",
+              "uri": "spotify:track:invalid",
+              "uid": "",
+              "name": "Unknown",
+              "mediaType": "audio",
+              "duration": {
+                "milliseconds": -1
+              },
+              "album": {
+                "type": "album",
+                "uri": "",
+                "name": "",
+                "images": []
+              },
+              "artists": [
+                {
+                  "type": "artist",
+                  "uri": "",
+                  "name": ""
+                }
+              ],
+              "provider": null,
+              "metadata": {
+                "title": "Unknown"
+              },
+              "images": []
+            },
+            "shuffle": null,
+            "smartShuffle": null,
+            "repeat": null,
+            "speed": 1,
+            "speedEsperanto": 1,
+            "positionAsOfTimestamp": 0,
+            "duration": null,
+            "hasContext": false,
+            "isPaused": false,
+            "isBuffering": false,
+            "restrictions": {
+              "canPause": true,
+              "canResume": true,
+              "canSeek": true,
+              "canSkipPrevious": true,
+              "canSkipNext": true,
+              "canToggleRepeatContext": true,
+              "canToggleRepeatTrack": true,
+              "canToggleShuffle": true,
+              "canToggleSmartShuffle": true,
+              "disallowPausingReasons": [],
+              "disallowResumingReasons": [],
+              "disallowSeekingReasons": [],
+              "disallowSkippingPreviousReasons": [],
+              "disallowSkippingNextReasons": [],
+              "disallowSettingPlaybackSpeedReasons": [],
+              "disallowTogglingRepeatContextReasons": [],
+              "disallowTogglingRepeatTrackReasons": [],
+              "disallowTogglingShuffleReasons": [],
+              "disallowTransferringPlaybackReasons": [],
+              "disallowAddToQueueReasons": [],
+              "disallowSetQueueReasons": [],
+              "disallowSignals": {}
+            },
+            "previousItems": [],
+            "nextItems": [],
+            "playbackQuality": {
+              "bitrateLevel": 0,
+              "strategy": 0,
+              "targetBitrateLevel": 0,
+              "targetBitrateAvailable": false,
+              "losslessStatus": 0
+            },
+            "playbackId": null,
+            "sessionId": "",
+            "signals": [],
+            "format": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "original track metadata before a saved-track replacement",
+      "input": {
+        "timestamp": "20000",
+        "contextUri": "spotify:album:fixture",
+        "sessionId": "saved-session",
+        "playbackId": "AQ==",
+        "isPlaying": true,
+        "track": {
+          "provider": "autoplay",
+          "contextTrack": {
+            "uri": "spotify:track:AAAAAAAAAAAAAAAAAAAAAA",
+            "uid": "saved-uid",
+            "metadata": {
+              "provider": "autoplay",
+              "smart-shuffle-signals": "retained",
+              "title": "Original"
+            }
+          }
+        }
+      },
+      "payloadHex": "08a09c01121573706f746966793a616c62756d3a666978747572653a89010a7d0a2473706f746966793a747261636b3a41414141414141414141414141414141414141414141120973617665642d7569641a140a0870726f766964657212086175746f706c61791a210a15736d6172742d73687566666c652d7369676e616c73120872657461696e65641a110a057469746c6512084f726967696e616c22086175746f706c61794201016801c2010d73617665642d73657373696f6e",
+      "immediateEvents": [],
+      "beforeTimers": [
+        {
+          "type": "update",
+          "state": {
+            "timestamp": 20000,
+            "context": {
+              "uri": "spotify:album:fixture",
+              "url": "",
+              "metadata": {}
+            },
+            "index": {
+              "pageURI": null,
+              "pageIndex": null,
+              "itemIndex": null
+            },
+            "item": {
+              "type": "track",
+              "uri": "spotify:track:AAAAAAAAAAAAAAAAAAAAAA",
+              "uid": "saved-uid",
+              "name": "Original",
+              "mediaType": "audio",
+              "duration": {
+                "milliseconds": -1
+              },
+              "album": {
+                "type": "album",
+                "uri": "",
+                "name": "",
+                "images": []
+              },
+              "artists": [
+                {
+                  "type": "artist",
+                  "uri": "",
+                  "name": ""
+                }
+              ],
+              "isLocal": false,
+              "isExplicit": false,
+              "is19PlusOnly": false,
+              "hasAssociatedVideo": false,
+              "provider": "autoplay",
+              "metadata": {
+                "provider": "autoplay",
+                "smart-shuffle-signals": "retained",
+                "title": "Original"
+              },
+              "images": []
+            },
+            "shuffle": null,
+            "smartShuffle": null,
+            "repeat": null,
+            "speed": 1,
+            "speedEsperanto": 1,
+            "positionAsOfTimestamp": 0,
+            "duration": null,
+            "hasContext": true,
+            "isPaused": false,
+            "isBuffering": false,
+            "restrictions": {
+              "canPause": true,
+              "canResume": true,
+              "canSeek": true,
+              "canSkipPrevious": true,
+              "canSkipNext": true,
+              "canToggleRepeatContext": true,
+              "canToggleRepeatTrack": true,
+              "canToggleShuffle": true,
+              "canToggleSmartShuffle": true,
+              "disallowPausingReasons": [],
+              "disallowResumingReasons": [],
+              "disallowSeekingReasons": [],
+              "disallowSkippingPreviousReasons": [],
+              "disallowSkippingNextReasons": [],
+              "disallowSettingPlaybackSpeedReasons": [],
+              "disallowTogglingRepeatContextReasons": [],
+              "disallowTogglingRepeatTrackReasons": [],
+              "disallowTogglingShuffleReasons": [],
+              "disallowTransferringPlaybackReasons": [],
+              "disallowAddToQueueReasons": [],
+              "disallowSetQueueReasons": [],
+              "disallowSignals": {}
+            },
+            "previousItems": [],
+            "nextItems": [],
+            "playbackQuality": {
+              "bitrateLevel": 0,
+              "strategy": 0,
+              "targetBitrateLevel": 0,
+              "targetBitrateAvailable": false,
+              "losslessStatus": 0
+            },
+            "playbackId": "01",
+            "sessionId": "saved-session",
+            "signals": [],
+            "format": null
+          }
+        }
+      ],
+      "events": [
+        {
+          "type": "update",
+          "state": {
+            "timestamp": 20000,
+            "context": {
+              "uri": "spotify:album:fixture",
+              "url": "",
+              "metadata": {}
+            },
+            "index": {
+              "pageURI": null,
+              "pageIndex": null,
+              "itemIndex": null
+            },
+            "item": {
+              "type": "track",
+              "uri": "spotify:track:AAAAAAAAAAAAAAAAAAAAAA",
+              "uid": "saved-uid",
+              "name": "Original",
+              "mediaType": "audio",
+              "duration": {
+                "milliseconds": -1
+              },
+              "album": {
+                "type": "album",
+                "uri": "",
+                "name": "",
+                "images": []
+              },
+              "artists": [
+                {
+                  "type": "artist",
+                  "uri": "",
+                  "name": ""
+                }
+              ],
+              "isLocal": false,
+              "isExplicit": false,
+              "is19PlusOnly": false,
+              "hasAssociatedVideo": false,
+              "provider": "autoplay",
+              "metadata": {
+                "provider": "autoplay",
+                "smart-shuffle-signals": "retained",
+                "title": "Original"
+              },
+              "images": []
+            },
+            "shuffle": null,
+            "smartShuffle": null,
+            "repeat": null,
+            "speed": 1,
+            "speedEsperanto": 1,
+            "positionAsOfTimestamp": 0,
+            "duration": null,
+            "hasContext": true,
+            "isPaused": false,
+            "isBuffering": false,
+            "restrictions": {
+              "canPause": true,
+              "canResume": true,
+              "canSeek": true,
+              "canSkipPrevious": true,
+              "canSkipNext": true,
+              "canToggleRepeatContext": true,
+              "canToggleRepeatTrack": true,
+              "canToggleShuffle": true,
+              "canToggleSmartShuffle": true,
+              "disallowPausingReasons": [],
+              "disallowResumingReasons": [],
+              "disallowSeekingReasons": [],
+              "disallowSkippingPreviousReasons": [],
+              "disallowSkippingNextReasons": [],
+              "disallowSettingPlaybackSpeedReasons": [],
+              "disallowTogglingRepeatContextReasons": [],
+              "disallowTogglingRepeatTrackReasons": [],
+              "disallowTogglingShuffleReasons": [],
+              "disallowTransferringPlaybackReasons": [],
+              "disallowAddToQueueReasons": [],
+              "disallowSetQueueReasons": [],
+              "disallowSignals": {}
+            },
+            "previousItems": [],
+            "nextItems": [],
+            "playbackQuality": {
+              "bitrateLevel": 0,
+              "strategy": 0,
+              "targetBitrateLevel": 0,
+              "targetBitrateAvailable": false,
+              "losslessStatus": 0
+            },
+            "playbackId": "01",
+            "sessionId": "saved-session",
+            "signals": [],
+            "format": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "saved-track replacement retains selected old metadata",
+      "input": {
+        "timestamp": "20001",
+        "contextUri": "spotify:album:fixture",
+        "sessionId": "saved-session",
+        "playbackId": "AQ==",
+        "isPlaying": true,
+        "track": {
+          "provider": "context",
+          "contextTrack": {
+            "uri": "spotify:track:DDDDDDDDDDDDDDDDDDDDDD",
+            "uid": "saved-uid",
+            "metadata": {
+              "save_track.uri": "spotify:track:AAAAAAAAAAAAAAAAAAAAAA",
+              "title": "Saved"
+            }
+          }
+        }
+      },
+      "payloadHex": "08a19c01121573706f746966793a616c62756d3a666978747572653a84010a790a2473706f746966793a747261636b3a44444444444444444444444444444444444444444444120973617665642d7569641a360a0e736176655f747261636b2e757269122473706f746966793a747261636b3a414141414141414141414141414141414141414141411a0e0a057469746c65120553617665642207636f6e746578744201016801c2010d73617665642d73657373696f6e",
+      "immediateEvents": [],
+      "beforeTimers": [
+        {
+          "type": "update",
+          "state": {
+            "timestamp": 20001,
+            "context": {
+              "uri": "spotify:album:fixture",
+              "url": "",
+              "metadata": {}
+            },
+            "index": {
+              "pageURI": null,
+              "pageIndex": null,
+              "itemIndex": null
+            },
+            "item": {
+              "type": "track",
+              "uri": "spotify:track:DDDDDDDDDDDDDDDDDDDDDD",
+              "uid": "saved-uid",
+              "name": "Saved",
+              "mediaType": "audio",
+              "duration": {
+                "milliseconds": -1
+              },
+              "album": {
+                "type": "album",
+                "uri": "",
+                "name": "",
+                "images": []
+              },
+              "artists": [
+                {
+                  "type": "artist",
+                  "uri": "",
+                  "name": ""
+                }
+              ],
+              "isLocal": false,
+              "isExplicit": false,
+              "is19PlusOnly": false,
+              "hasAssociatedVideo": false,
+              "provider": "context",
+              "metadata": {
+                "provider": "autoplay",
+                "smart-shuffle-signals": "retained",
+                "save_track.uri": "spotify:track:AAAAAAAAAAAAAAAAAAAAAA",
+                "title": "Saved"
+              },
+              "images": []
+            },
+            "shuffle": null,
+            "smartShuffle": null,
+            "repeat": null,
+            "speed": 1,
+            "speedEsperanto": 1,
+            "positionAsOfTimestamp": 0,
+            "duration": null,
+            "hasContext": true,
+            "isPaused": false,
+            "isBuffering": false,
+            "restrictions": {
+              "canPause": true,
+              "canResume": true,
+              "canSeek": true,
+              "canSkipPrevious": true,
+              "canSkipNext": true,
+              "canToggleRepeatContext": true,
+              "canToggleRepeatTrack": true,
+              "canToggleShuffle": true,
+              "canToggleSmartShuffle": true,
+              "disallowPausingReasons": [],
+              "disallowResumingReasons": [],
+              "disallowSeekingReasons": [],
+              "disallowSkippingPreviousReasons": [],
+              "disallowSkippingNextReasons": [],
+              "disallowSettingPlaybackSpeedReasons": [],
+              "disallowTogglingRepeatContextReasons": [],
+              "disallowTogglingRepeatTrackReasons": [],
+              "disallowTogglingShuffleReasons": [],
+              "disallowTransferringPlaybackReasons": [],
+              "disallowAddToQueueReasons": [],
+              "disallowSetQueueReasons": [],
+              "disallowSignals": {}
+            },
+            "previousItems": [],
+            "nextItems": [],
+            "playbackQuality": {
+              "bitrateLevel": 0,
+              "strategy": 0,
+              "targetBitrateLevel": 0,
+              "targetBitrateAvailable": false,
+              "losslessStatus": 0
+            },
+            "playbackId": "01",
+            "sessionId": "saved-session",
+            "signals": [],
+            "format": null
+          }
+        }
+      ],
+      "events": [
+        {
+          "type": "update",
+          "state": {
+            "timestamp": 20001,
+            "context": {
+              "uri": "spotify:album:fixture",
+              "url": "",
+              "metadata": {}
+            },
+            "index": {
+              "pageURI": null,
+              "pageIndex": null,
+              "itemIndex": null
+            },
+            "item": {
+              "type": "track",
+              "uri": "spotify:track:DDDDDDDDDDDDDDDDDDDDDD",
+              "uid": "saved-uid",
+              "name": "Saved",
+              "mediaType": "audio",
+              "duration": {
+                "milliseconds": -1
+              },
+              "album": {
+                "type": "album",
+                "uri": "",
+                "name": "",
+                "images": []
+              },
+              "artists": [
+                {
+                  "type": "artist",
+                  "uri": "",
+                  "name": ""
+                }
+              ],
+              "isLocal": false,
+              "isExplicit": false,
+              "is19PlusOnly": false,
+              "hasAssociatedVideo": false,
+              "provider": "context",
+              "metadata": {
+                "provider": "autoplay",
+                "smart-shuffle-signals": "retained",
+                "save_track.uri": "spotify:track:AAAAAAAAAAAAAAAAAAAAAA",
+                "title": "Saved"
+              },
+              "images": []
+            },
+            "shuffle": null,
+            "smartShuffle": null,
+            "repeat": null,
+            "speed": 1,
+            "speedEsperanto": 1,
+            "positionAsOfTimestamp": 0,
+            "duration": null,
+            "hasContext": true,
+            "isPaused": false,
+            "isBuffering": false,
+            "restrictions": {
+              "canPause": true,
+              "canResume": true,
+              "canSeek": true,
+              "canSkipPrevious": true,
+              "canSkipNext": true,
+              "canToggleRepeatContext": true,
+              "canToggleRepeatTrack": true,
+              "canToggleShuffle": true,
+              "canToggleSmartShuffle": true,
+              "disallowPausingReasons": [],
+              "disallowResumingReasons": [],
+              "disallowSeekingReasons": [],
+              "disallowSkippingPreviousReasons": [],
+              "disallowSkippingNextReasons": [],
+              "disallowSettingPlaybackSpeedReasons": [],
+              "disallowTogglingRepeatContextReasons": [],
+              "disallowTogglingRepeatTrackReasons": [],
+              "disallowTogglingShuffleReasons": [],
+              "disallowTransferringPlaybackReasons": [],
+              "disallowAddToQueueReasons": [],
+              "disallowSetQueueReasons": [],
+              "disallowSignals": {}
+            },
+            "previousItems": [],
+            "nextItems": [],
+            "playbackQuality": {
+              "bitrateLevel": 0,
+              "strategy": 0,
+              "targetBitrateLevel": 0,
+              "targetBitrateAvailable": false,
+              "losslessStatus": 0
+            },
+            "playbackId": "01",
+            "sessionId": "saved-session",
+            "signals": [],
+            "format": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "replacement metadata overrides retained values and paused new playback wraps",
+      "input": {
+        "timestamp": "20002",
+        "contextUri": "spotify:album:fixture",
+        "sessionId": "saved-session",
+        "playbackId": "Ag==",
+        "isPlaying": true,
+        "isPaused": true,
+        "positionAsOfTimestamp": {
+          "value": "0"
+        },
+        "track": {
+          "provider": "context",
+          "contextTrack": {
+            "uri": "spotify:track:DDDDDDDDDDDDDDDDDDDDDD",
+            "uid": "saved-uid",
+            "metadata": {
+              "save_track.uri": "spotify:track:AAAAAAAAAAAAAAAAAAAAAA",
+              "provider": "own",
+              "title": "Saved"
+            }
+          }
+        }
+      },
+      "payloadHex": "08a29c01121573706f746966793a616c62756d3a666978747572653a96010a8a010a2473706f746966793a747261636b3a44444444444444444444444444444444444444444444120973617665642d7569641a360a0e736176655f747261636b2e757269122473706f746966793a747261636b3a414141414141414141414141414141414141414141411a0f0a0870726f766964657212036f776e1a0e0a057469746c65120553617665642207636f6e746578744201025a0068017001c2010d73617665642d73657373696f6e",
+      "immediateEvents": [],
+      "beforeTimers": [
+        {
+          "type": "update",
+          "state": {
+            "timestamp": 20002,
+            "context": {
+              "uri": "spotify:album:fixture",
+              "url": "",
+              "metadata": {}
+            },
+            "index": {
+              "pageURI": null,
+              "pageIndex": null,
+              "itemIndex": null
+            },
+            "item": {
+              "type": "track",
+              "uri": "spotify:track:DDDDDDDDDDDDDDDDDDDDDD",
+              "uid": "saved-uid",
+              "name": "Saved",
+              "mediaType": "audio",
+              "duration": {
+                "milliseconds": -1
+              },
+              "album": {
+                "type": "album",
+                "uri": "",
+                "name": "",
+                "images": []
+              },
+              "artists": [
+                {
+                  "type": "artist",
+                  "uri": "",
+                  "name": ""
+                }
+              ],
+              "isLocal": false,
+              "isExplicit": false,
+              "is19PlusOnly": false,
+              "hasAssociatedVideo": false,
+              "provider": "context",
+              "metadata": {
+                "provider": "own",
+                "smart-shuffle-signals": "retained",
+                "save_track.uri": "spotify:track:AAAAAAAAAAAAAAAAAAAAAA",
+                "title": "Saved"
+              },
+              "images": []
+            },
+            "shuffle": null,
+            "smartShuffle": null,
+            "repeat": null,
+            "speed": 1,
+            "speedEsperanto": 1,
+            "positionAsOfTimestamp": 0,
+            "duration": null,
+            "hasContext": true,
+            "isPaused": true,
+            "isBuffering": false,
+            "restrictions": {
+              "canPause": true,
+              "canResume": true,
+              "canSeek": true,
+              "canSkipPrevious": true,
+              "canSkipNext": true,
+              "canToggleRepeatContext": true,
+              "canToggleRepeatTrack": true,
+              "canToggleShuffle": true,
+              "canToggleSmartShuffle": true,
+              "disallowPausingReasons": [],
+              "disallowResumingReasons": [],
+              "disallowSeekingReasons": [],
+              "disallowSkippingPreviousReasons": [],
+              "disallowSkippingNextReasons": [],
+              "disallowSettingPlaybackSpeedReasons": [],
+              "disallowTogglingRepeatContextReasons": [],
+              "disallowTogglingRepeatTrackReasons": [],
+              "disallowTogglingShuffleReasons": [],
+              "disallowTransferringPlaybackReasons": [],
+              "disallowAddToQueueReasons": [],
+              "disallowSetQueueReasons": [],
+              "disallowSignals": {}
+            },
+            "previousItems": [],
+            "nextItems": [],
+            "playbackQuality": {
+              "bitrateLevel": 0,
+              "strategy": 0,
+              "targetBitrateLevel": 0,
+              "targetBitrateAvailable": false,
+              "losslessStatus": 0
+            },
+            "playbackId": "02",
+            "sessionId": "saved-session",
+            "signals": [],
+            "format": null
+          }
+        },
+        {
+          "type": "context_wraparound",
+          "data": {
+            "contextURI": "spotify:album:fixture",
+            "previousItemURI": "spotify:track:DDDDDDDDDDDDDDDDDDDDDD"
+          }
+        }
+      ],
+      "events": [
+        {
+          "type": "update",
+          "state": {
+            "timestamp": 20002,
+            "context": {
+              "uri": "spotify:album:fixture",
+              "url": "",
+              "metadata": {}
+            },
+            "index": {
+              "pageURI": null,
+              "pageIndex": null,
+              "itemIndex": null
+            },
+            "item": {
+              "type": "track",
+              "uri": "spotify:track:DDDDDDDDDDDDDDDDDDDDDD",
+              "uid": "saved-uid",
+              "name": "Saved",
+              "mediaType": "audio",
+              "duration": {
+                "milliseconds": -1
+              },
+              "album": {
+                "type": "album",
+                "uri": "",
+                "name": "",
+                "images": []
+              },
+              "artists": [
+                {
+                  "type": "artist",
+                  "uri": "",
+                  "name": ""
+                }
+              ],
+              "isLocal": false,
+              "isExplicit": false,
+              "is19PlusOnly": false,
+              "hasAssociatedVideo": false,
+              "provider": "context",
+              "metadata": {
+                "provider": "own",
+                "smart-shuffle-signals": "retained",
+                "save_track.uri": "spotify:track:AAAAAAAAAAAAAAAAAAAAAA",
+                "title": "Saved"
+              },
+              "images": []
+            },
+            "shuffle": null,
+            "smartShuffle": null,
+            "repeat": null,
+            "speed": 1,
+            "speedEsperanto": 1,
+            "positionAsOfTimestamp": 0,
+            "duration": null,
+            "hasContext": true,
+            "isPaused": true,
+            "isBuffering": false,
+            "restrictions": {
+              "canPause": true,
+              "canResume": true,
+              "canSeek": true,
+              "canSkipPrevious": true,
+              "canSkipNext": true,
+              "canToggleRepeatContext": true,
+              "canToggleRepeatTrack": true,
+              "canToggleShuffle": true,
+              "canToggleSmartShuffle": true,
+              "disallowPausingReasons": [],
+              "disallowResumingReasons": [],
+              "disallowSeekingReasons": [],
+              "disallowSkippingPreviousReasons": [],
+              "disallowSkippingNextReasons": [],
+              "disallowSettingPlaybackSpeedReasons": [],
+              "disallowTogglingRepeatContextReasons": [],
+              "disallowTogglingRepeatTrackReasons": [],
+              "disallowTogglingShuffleReasons": [],
+              "disallowTransferringPlaybackReasons": [],
+              "disallowAddToQueueReasons": [],
+              "disallowSetQueueReasons": [],
+              "disallowSignals": {}
+            },
+            "previousItems": [],
+            "nextItems": [],
+            "playbackQuality": {
+              "bitrateLevel": 0,
+              "strategy": 0,
+              "targetBitrateLevel": 0,
+              "targetBitrateAvailable": false,
+              "losslessStatus": 0
+            },
+            "playbackId": "02",
+            "sessionId": "saved-session",
+            "signals": [],
+            "format": null
+          }
+        },
+        {
+          "type": "context_wraparound",
+          "data": {
+            "contextURI": "spotify:album:fixture",
+            "previousItemURI": "spotify:track:DDDDDDDDDDDDDDDDDDDDDD"
+          }
+        }
+      ]
+    }
+  ],
+  "errorScenarios": [
+    {
+      "input": {
+        "code": "PAUSE_RESTRICTED",
+        "data": {
+          "reasons": "already_paused, future_reason"
+        }
+      },
+      "payloadHex": "08071a280a07726561736f6e73121d616c72656164795f7061757365642c206675747572655f726561736f6e",
+      "immediateEvents": [],
+      "events": [
+        {
+          "type": "error",
+          "error": {
+            "code": "pause_restricted",
+            "reasons": [
+              "already_paused",
+              " future_reason"
+            ],
+            "message": "Code 'pause_restricted' with reasons 'already_paused,  future_reason'"
+          }
+        }
+      ]
+    },
+    {
+      "input": {
+        "code": "VIDEO_GEOGRAPHICALLY_RESTRICTED"
+      },
+      "payloadHex": "0819",
+      "immediateEvents": [],
+      "events": [
+        {
+          "type": "error",
+          "error": {
+            "code": "video_georestricted",
+            "reasons": [],
+            "message": "Code 'video_georestricted'"
+          }
+        }
+      ]
+    },
+    {
+      "input": {
+        "code": 999,
+        "data": {
+          "reasons": ""
+        }
+      },
+      "payloadHex": "08ffffffffffffffffff011a090a07726561736f6e73",
+      "immediateEvents": [],
+      "events": [
+        {
+          "type": "error",
+          "error": {
+            "code": "unrecognized",
+            "reasons": [],
+            "message": "Code 'unrecognized'"
+          }
+        }
+      ]
+    }
+  ]
+}

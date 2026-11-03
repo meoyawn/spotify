@@ -1,0 +1,302 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "originalCapture": {
+    "path": ".local/license-original-comparison-netlog.json",
+    "sha256": "6fdf4f7787685aff0d3f313267a001cb892364e0869c8cea3f3707b7c0e33206",
+    "eventCount": 132040,
+    "provenance": "REA capture_process_scenario launched the unmodified original with --disable-quic and loopback CDP. The same rendered Krusher and Voodoo Beats URIs were confirmed before their Play controls were activated; each was paused after an eight-second observation. Process exit was confirmed."
+  },
+  "originalUploads": [
+    {
+      "source": 2893,
+      "title": "selected music track",
+      "format": 1,
+      "bodyBytes": 30,
+      "wireInteractivity": 1,
+      "eventIndex": 72136,
+      "bodySha256": "ea9d5167cecd965be3c7c56ca2f1544dc83c622d65f2585d0628b50c1455a36d",
+      "headers": {
+        ":method": "POST",
+        ":authority": "guc3-spclient.spotify.com",
+        ":scheme": "https",
+        ":path": "/playplay/v1/key/<redacted-file-id-40hex>",
+        "content-length": "30",
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer <redacted>",
+        "spotify-app-version": "130601921",
+        "time-zone": "Europe/Moscow",
+        "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+        "client-token": "<redacted-client-token>",
+        "content-type": "application/x-www-form-urlencoded",
+        "origin": "https://guc3-spclient.spotify.com",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "empty",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=4, i"
+      },
+      "originalProducerWholeBodyMatches": true,
+      "sameFilePresentInDartAudioMetadata": true,
+      "cacheFieldPresent": false,
+      "samePublicSoftwareConstant": true,
+      "sameBodyExceptClock": true,
+      "status": "HTTP/1.1 200",
+      "clockToHeaderMs": 761
+    },
+    {
+      "source": 3652,
+      "title": "Voodoo Beats",
+      "format": 1,
+      "bodyBytes": 30,
+      "wireInteractivity": 1,
+      "eventIndex": 91635,
+      "bodySha256": "b5900f80366f0f5072f5b72407eca08c0dd96de5d39eabae49de9133b956d0f9",
+      "headers": {
+        ":method": "POST",
+        ":authority": "guc3-spclient.spotify.com",
+        ":scheme": "https",
+        ":path": "/playplay/v1/key/<redacted-file-id-40hex>",
+        "content-length": "30",
+        "accept-language": "en",
+        "app-platform": "OSX_ARM64",
+        "authorization": "Bearer <redacted>",
+        "spotify-app-version": "130601921",
+        "time-zone": "Europe/Moscow",
+        "user-agent": "Spotify/130601921 OSX_ARM64/OS X 26.4.0 [arm 2]",
+        "client-token": "<redacted-client-token>",
+        "content-type": "application/x-www-form-urlencoded",
+        "origin": "https://guc3-spclient.spotify.com",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "empty",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "priority": "u=4, i"
+      },
+      "originalProducerWholeBodyMatches": true,
+      "sameFilePresentInDartAudioMetadata": true,
+      "cacheFieldPresent": false,
+      "samePublicSoftwareConstant": true,
+      "sameBodyExceptClock": true,
+      "status": "HTTP/1.1 200",
+      "clockToHeaderMs": 356
+    }
+  ],
+  "recovery": "Original request -> stream-job dependency -> H2 session/stream -> TLS socket plaintext; pinned public hyperframe parses outgoing DATA. Original10048c604 produces each complete upload using its observed clock.",
+  "controlledCredentialComparison": {
+    "request": "Same captured original source2893 file, immutable30-byte body, application fields, account and live Dart H2 transport/pool.",
+    "operatorInputLabels": "Probe explicitly substitutes only the indicated genuine session credentials; body, target and application fields are held constant. Credential values remain private.",
+    "responses": [
+      {
+        "inputVariant": "Dart selected Login5 access token and its client token",
+        "time": "2026-10-30T02:39:34.718934Z",
+        "request_id": 1867,
+        "transport": "h2",
+        "status": 429,
+        "headers_ms": 236
+      },
+      {
+        "inputVariant": "Dart selected Login5 access token and original client token",
+        "time": "2026-10-30T02:39:35.975Z",
+        "request_id": 1868,
+        "transport": "h2",
+        "status": 429,
+        "headers_ms": 1122
+      },
+      {
+        "inputVariant": "Original access token and Dart client token",
+        "time": "2026-10-30T02:39:58.798504Z",
+        "request_id": 1869,
+        "transport": "h2",
+        "status": 200,
+        "headers_ms": 198
+      },
+      {
+        "inputVariant": "Original access token and original client token",
+        "time": "2026-10-30T02:39:59.175745Z",
+        "request_id": 1870,
+        "transport": "h2",
+        "status": 200,
+        "headers_ms": 311
+      },
+      {
+        "inputVariant": "Same Dart session Accounts token and Dart client token",
+        "time": "2026-10-30T02:41:12.253971Z",
+        "request_id": 1871,
+        "transport": "h2",
+        "status": 200,
+        "headers_ms": 218
+      }
+    ]
+  },
+  "productionAcceptance": {
+    "privateObservationPath": ".local/license-live-verification.json",
+    "observationSha256": "b1f3adaaf976926018ac839c3e3b2fa4abcfdfeff0059e9bfa87e4c93ad5834d",
+    "method": "Same Flutter PID62354. Retire authenticated runtime state and restore its real saved Accounts grant without a token seed; preserve the AP credential for AP reconnection. Select loaded rows through the normal ContextPlayer interface. Observe actual source readiness and advancing output position, then return Krusher to its saved paused position.",
+    "contentLicenseResponses": {
+      "200": 7
+    },
+    "phases": [
+      {
+        "phase": "cold-restored-selection",
+        "ready": true,
+        "observedPositionMs": 72783,
+        "observationWindowMs": 75,
+        "totalContentLicenseAttempts": 2,
+        "newContentLicenseAttempts": 2,
+        "foregroundSourceTiming": {
+          "next": false,
+          "track_info_ms": 1329,
+          "audio_info_http_ms": 204,
+          "cached_audio_info": false,
+          "audio_info_ms": 205,
+          "storage_http_ms": 197,
+          "license_ms": 201,
+          "license_admitted_ms": 409,
+          "cdn_started_ms": 410,
+          "unwrap_ms": 97,
+          "cached_key": false,
+          "key_ms": 299,
+          "key_ready_ms": 507,
+          "cdn_response_headers_ms": 615,
+          "container_ms": 882,
+          "first_pcm_ms": 1091,
+          "progressive_pcm": true,
+          "cached_pcm": false,
+          "result": "ready",
+          "total_ms": 2422
+        }
+      },
+      {
+        "phase": "same-selection-cached",
+        "ready": true,
+        "observedPositionMs": 348,
+        "observationWindowMs": 681,
+        "totalContentLicenseAttempts": 2,
+        "newContentLicenseAttempts": 0,
+        "foregroundSourceTiming": {
+          "next": false,
+          "track_info_ms": 0,
+          "cached_pcm": true,
+          "result": "ready",
+          "total_ms": 0
+        }
+      },
+      {
+        "phase": "loaded-row-Zion",
+        "ready": true,
+        "observedPositionMs": 479,
+        "observationWindowMs": 1717,
+        "totalContentLicenseAttempts": 4,
+        "newContentLicenseAttempts": 2,
+        "foregroundSourceTiming": {
+          "next": false,
+          "track_info_ms": 0,
+          "audio_info_http_ms": 196,
+          "cached_audio_info": false,
+          "audio_info_ms": 197,
+          "storage_http_ms": 186,
+          "license_ms": 191,
+          "license_admitted_ms": 388,
+          "cdn_started_ms": 388,
+          "unwrap_ms": 134,
+          "cached_key": false,
+          "key_ms": 325,
+          "key_ready_ms": 523,
+          "cdn_response_headers_ms": 633,
+          "container_ms": 848,
+          "first_pcm_ms": 1046,
+          "progressive_pcm": true,
+          "cached_pcm": false,
+          "result": "ready",
+          "total_ms": 1047
+        }
+      },
+      {
+        "phase": "loaded-row-Inspection (Check One) - Remastered",
+        "ready": true,
+        "observedPositionMs": 371,
+        "observationWindowMs": 1609,
+        "totalContentLicenseAttempts": 5,
+        "newContentLicenseAttempts": 1,
+        "foregroundSourceTiming": {
+          "next": false,
+          "track_info_ms": 0,
+          "audio_info_http_ms": 184,
+          "cached_audio_info": false,
+          "audio_info_ms": 184,
+          "storage_http_ms": 177,
+          "license_ms": 178,
+          "license_admitted_ms": 364,
+          "cdn_started_ms": 364,
+          "unwrap_ms": 33,
+          "cached_key": false,
+          "key_ms": 211,
+          "key_ready_ms": 397,
+          "cdn_response_headers_ms": 625,
+          "container_ms": 827,
+          "first_pcm_ms": 1012,
+          "progressive_pcm": true,
+          "cached_pcm": false,
+          "result": "ready",
+          "total_ms": 1013
+        }
+      },
+      {
+        "phase": "loaded-row-Feed The Addiction",
+        "ready": true,
+        "observedPositionMs": 380,
+        "observationWindowMs": 1612,
+        "totalContentLicenseAttempts": 7,
+        "newContentLicenseAttempts": 2,
+        "foregroundSourceTiming": {
+          "next": false,
+          "track_info_ms": 0,
+          "audio_info_http_ms": 198,
+          "cached_audio_info": false,
+          "audio_info_ms": 198,
+          "storage_http_ms": 186,
+          "license_ms": 189,
+          "license_admitted_ms": 388,
+          "cdn_started_ms": 388,
+          "unwrap_ms": 32,
+          "cached_key": false,
+          "key_ms": 222,
+          "key_ready_ms": 421,
+          "cdn_response_headers_ms": 595,
+          "container_ms": 817,
+          "first_pcm_ms": 1016,
+          "progressive_pcm": true,
+          "cached_pcm": false,
+          "result": "ready",
+          "total_ms": 1017
+        }
+      },
+      {
+        "phase": "return-to-original-selection",
+        "ready": true,
+        "observedPositionMs": 386,
+        "observationWindowMs": 578,
+        "totalContentLicenseAttempts": 7,
+        "newContentLicenseAttempts": 0,
+        "foregroundSourceTiming": {
+          "next": false,
+          "track_info_ms": 0,
+          "cached_pcm": true,
+          "result": "ready",
+          "total_ms": 0
+        }
+      }
+    ]
+  },
+  "limits": [
+    "Original byte execution uses inherited standard allocation/protobuf/libc primitives and explicit captured clock/source inputs; it does not substitute a wire encoder.",
+    "Dart inventory is used only for equality of original file membership, not as expected protocol bytes.",
+    "Response200 and a Pause control alone are not claimed as original audible-output proof.",
+    "The credential matrix isolates the selected bearer input in these requests; it does not explain every possible Login5 rejection or make Login5 globally invalid.",
+    "Production uses only its own Accounts provider; captured original credentials are never installed in Flutter or saved to its session vault.",
+    "Fresh session restoration here is in the same app process; a full process restart and natural expiry are separate live-acceptance boundaries.",
+    "Source total_ms ends at prepared PCM; observationWindowMs includes VM sampling/control overhead and is not a precise click-to-DAC measurement.",
+    "No credentials, media/file/account/device identities, response/key bytes, signed URL queries, ad acknowledgements or account-rights overrides are exported."
+  ]
+}

@@ -1,0 +1,9 @@
+[cache]
+local_only = true
+local_max_size = "512MiB"
+auto_gc = true
+gc_max_age_hours = 168
+auto_clean_orphaned_targets = true
+auto_clean_idle_targets_days = 7
+auto_clean_unused_units_days = 7
+event_log_max_size = "8MiB"

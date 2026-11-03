@@ -1,0 +1,195 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: bdde4d9c9d9f251f351e35c7f6ed4ed5b1a508792fb9c97fbc1724991a26b1d4
+
+syntax = "proto3";
+
+package spotify.desktop.login_esperanto.proto;
+
+option optimize_for = CODE_SIZE;
+
+message AuthorizationRequired {
+  string verification_uri = 1;
+
+  string user_code = 2;
+}
+
+message ConfirmationRequired {
+}
+
+message LoginError {
+  int32 error_code = 1;
+
+  string error_category = 2;
+
+  string error_reference = 3;
+}
+
+message LoginSuccess {
+}
+
+message LoginWithQRCodeRequest {
+  bool use_authenticated_sessions_device_authorization = 1;
+}
+
+message LoginWithQRCodeResponse {
+  oneof entity {
+    .spotify.desktop.login_esperanto.proto.AuthorizationRequired authorization_required = 1;
+
+    .spotify.desktop.login_esperanto.proto.LoginSuccess success = 2;
+
+    bool timeout = 3;
+
+    .spotify.desktop.login_esperanto.proto.LoginError error = 4;
+  }
+}
+
+message LoginWithAccountsRequest {
+  bool enable_signup = 1;
+
+  string action_hash = 2;
+
+  bool use_dpop = 3;
+}
+
+message LoginWithAccountsResponse {
+  oneof entity {
+    .spotify.desktop.login_esperanto.proto.LoginSuccess success = 1;
+
+    .spotify.desktop.login_esperanto.proto.LoginError error = 2;
+  }
+}
+
+message LoginWithConnectRequest {
+}
+
+message LoginWithConnectResponse {
+  oneof entity {
+    .spotify.desktop.login_esperanto.proto.ConfirmationRequired confirmation_required = 1;
+
+    .spotify.desktop.login_esperanto.proto.AuthorizationRequired authorization_required = 2;
+
+    .spotify.desktop.login_esperanto.proto.LoginSuccess success = 3;
+
+    bool timeout = 4;
+
+    .spotify.desktop.login_esperanto.proto.LoginError error = 5;
+  }
+}
+
+message ApproveConnectLoginRequest {
+  bool approved = 1;
+}
+
+message ApproveConnectLoginResponse {
+}
+
+message LogoutRequest {
+  bool keep_credentials = 1;
+}
+
+message LogoutResponse {
+}
+
+message SaveCurrentCredentialsRequest {
+}
+
+message SaveCurrentCredentialsResponse {
+  bool success = 1;
+}
+
+message GetSessionStateRequest {
+}
+
+message GetSessionStateResponse {
+  bool has_active_session = 1;
+
+  string username = 2;
+}
+
+message GetStoredAccountsRequest {
+}
+
+message StoredAccountInfo {
+  string username = 1;
+
+  string canonical_username = 2;
+}
+
+message GetStoredAccountsResponse {
+  repeated .spotify.desktop.login_esperanto.proto.StoredAccountInfo accounts = 1;
+}
+
+message LoginWithStoredCredentialsRequest {
+  string canonical_username = 1;
+}
+
+message LoginWithStoredCredentialsResponse {
+  oneof result {
+    .spotify.desktop.login_esperanto.proto.LoginSuccess success = 1;
+
+    .spotify.desktop.login_esperanto.proto.LoginError error = 2;
+  }
+}
+
+message ClearAllStoredCredentialsRequest {
+}
+
+message ClearAllStoredCredentialsResponse {
+}
+
+message RemoveStoredAccountRequest {
+  string canonical_username = 1;
+}
+
+message RemoveStoredAccountResponse {
+}
+
+message SetSwitchTargetRequest {
+  string canonical_username = 1;
+}
+
+message SetSwitchTargetResponse {
+}
+
+message GetSwitchTargetRequest {
+}
+
+message GetSwitchTargetResponse {
+  string canonical_username = 1;
+}
+
+message ClearSwitchTargetRequest {
+}
+
+message ClearSwitchTargetResponse {
+}
+
+service DesktopLogin {
+  rpc LoginWithQRCode ( .spotify.desktop.login_esperanto.proto.LoginWithQRCodeRequest ) returns ( stream .spotify.desktop.login_esperanto.proto.LoginWithQRCodeResponse );
+
+  rpc LoginWithAccounts ( .spotify.desktop.login_esperanto.proto.LoginWithAccountsRequest ) returns ( .spotify.desktop.login_esperanto.proto.LoginWithAccountsResponse );
+
+  rpc LoginWithConnect ( .spotify.desktop.login_esperanto.proto.LoginWithConnectRequest ) returns ( stream .spotify.desktop.login_esperanto.proto.LoginWithConnectResponse );
+
+  rpc ApproveConnectLogin ( .spotify.desktop.login_esperanto.proto.ApproveConnectLoginRequest ) returns ( .spotify.desktop.login_esperanto.proto.ApproveConnectLoginResponse );
+
+  rpc Logout ( .spotify.desktop.login_esperanto.proto.LogoutRequest ) returns ( .spotify.desktop.login_esperanto.proto.LogoutResponse );
+
+  rpc GetSessionState ( .spotify.desktop.login_esperanto.proto.GetSessionStateRequest ) returns ( .spotify.desktop.login_esperanto.proto.GetSessionStateResponse );
+
+  rpc GetStoredAccounts ( .spotify.desktop.login_esperanto.proto.GetStoredAccountsRequest ) returns ( .spotify.desktop.login_esperanto.proto.GetStoredAccountsResponse );
+
+  rpc LoginWithStoredCredentials ( .spotify.desktop.login_esperanto.proto.LoginWithStoredCredentialsRequest ) returns ( .spotify.desktop.login_esperanto.proto.LoginWithStoredCredentialsResponse );
+
+  rpc SaveCurrentCredentials ( .spotify.desktop.login_esperanto.proto.SaveCurrentCredentialsRequest ) returns ( .spotify.desktop.login_esperanto.proto.SaveCurrentCredentialsResponse );
+
+  rpc ClearAllStoredCredentials ( .spotify.desktop.login_esperanto.proto.ClearAllStoredCredentialsRequest ) returns ( .spotify.desktop.login_esperanto.proto.ClearAllStoredCredentialsResponse );
+
+  rpc SetSwitchTarget ( .spotify.desktop.login_esperanto.proto.SetSwitchTargetRequest ) returns ( .spotify.desktop.login_esperanto.proto.SetSwitchTargetResponse );
+
+  rpc GetSwitchTarget ( .spotify.desktop.login_esperanto.proto.GetSwitchTargetRequest ) returns ( .spotify.desktop.login_esperanto.proto.GetSwitchTargetResponse );
+
+  rpc ClearSwitchTarget ( .spotify.desktop.login_esperanto.proto.ClearSwitchTargetRequest ) returns ( .spotify.desktop.login_esperanto.proto.ClearSwitchTargetResponse );
+
+  rpc RemoveStoredAccount ( .spotify.desktop.login_esperanto.proto.RemoveStoredAccountRequest ) returns ( .spotify.desktop.login_esperanto.proto.RemoveStoredAccountResponse );
+}

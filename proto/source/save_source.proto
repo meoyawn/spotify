@@ -1,0 +1,28 @@
+// Reconstructed from Spotify 1.3.6.1921 embedded descriptors.
+// Authoritative descriptor SHA-256: dbaee449b4fe513c61e4cf31edbccb5c8e8b12500fdcbb43df16d4318a718f86
+
+syntax = "proto3";
+
+package spotify.list_collection.save_source.proto;
+
+option java_multiple_files = true;
+
+option java_package = "com.spotify.list_collection.save_source.proto";
+
+option optimize_for = CODE_SIZE;
+
+message SaveSource {
+  optional string original_uri = 1;
+
+  optional string interaction_id = 2;
+
+  optional .spotify.list_collection.save_source.proto.SourceTool source_tool = 3;
+}
+
+enum SourceTool {
+  SOURCE_TOOL_UNSPECIFIED = 0;
+
+  SOURCE_TOOL_PROMPT = 1;
+
+  SOURCE_TOOL_STUDIO_AGENT = 2;
+}

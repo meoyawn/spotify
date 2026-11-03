@@ -1,0 +1,166 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "originalProcedure": "0x10141d1a8",
+  "executedRegion": {
+    "startInclusive": "0x10141d63c",
+    "endExclusive": "0x10141d79c",
+    "sha256": "7665f6292776adf530499365ba766229dde5adb517c960dcce6ee5ff2fc7a689"
+  },
+  "objectiveCImportSelectors": {
+    "0x101fdcac0": "stringWithUTF8String:",
+    "0x101fd3460": "URLWithString:",
+    "0x101fd94c0": "requestWithURL:",
+    "0x101fd3960": "addValue:forHTTPHeaderField:",
+    "0x101fd8ba0": "processInfo",
+    "0x101fd8560": "operatingSystemVersion",
+    "0x101fd4900": "clientVersion",
+    "0x101fdcaa0": "stringWithFormat:",
+    "0x101fd56c0": "defaultSessionConfiguration",
+    "0x101fd9d00": "sessionWithConfiguration:delegate:delegateQueue:",
+    "0x101fdd400": "webSocketTaskWithRequest:",
+    "0x101fd95e0": "resume",
+    "0x101fd6d20": "initWithTimerManager:clientVersion:disableSslVerification:",
+    "0x101fd4c00": "connectWithHostname:accessToken:onConnectResult:onReceivedText:onReceivedBinary:onDisconnected:"
+  },
+  "installedVersionLiteral": {
+    "address": "0x1023b279e",
+    "value": "1.3.6.1921.g7086c071a617",
+    "binding": "10006b17c copies desktop shared configuration+0x50 to core config first string; 101416780 copies it to backend config; 10141cf18 copies factory+0x10 into 10141f7e0, which calls Apple initializer clientVersion."
+  },
+  "nativeBinding": {
+    "backendFactoryVtable": "0x1025e0a80",
+    "factoryVirtual10": "0x10141cf18",
+    "appleConnectionConstructor": "0x10141f7e0",
+    "appleConnectionVtable": "0x1025e0d10",
+    "connectionVirtual10": "0x101420250",
+    "pusherAdapterConstructor": "0x101417334",
+    "pusherAdapterVirtual10": "0x10141745c"
+  },
+  "bindingCodeRanges": [
+    {
+      "startInclusive": "0x10141cf18",
+      "endExclusive": "0x10141cfb0",
+      "sha256": "3f021d4121149bf468cafaece68d4745323059dd29cc39af3f57c6b8c8e28ba1"
+    },
+    {
+      "startInclusive": "0x10141f7e0",
+      "endExclusive": "0x10141f88c",
+      "sha256": "63be6cf8f553f5c6fb12b11850c78bd56e068a037099d5830a81618f9284717c"
+    },
+    {
+      "startInclusive": "0x101420250",
+      "endExclusive": "0x10142040c",
+      "sha256": "c0cd534d787a0561f293318aae407b15c6a1ef6fcd9a17a8b566c5e9dccd61ce"
+    },
+    {
+      "startInclusive": "0x101417334",
+      "endExclusive": "0x101417384",
+      "sha256": "526afa2e31b396e37261c307655fa8f9f829cb4b7bb3fcb182e0b565fa2ba5e8"
+    }
+  ],
+  "sourceExports": [
+    {
+      "path": ".local/rea-session/native-push-apple-urlsession-websocket-request-wrapper.json",
+      "sha256": "5e4c6ade0324ec69c115954aeae9ed4f0689aaf1b704987b8b8b9c0928a25b81"
+    },
+    {
+      "path": ".local/rea-session/native-push-incoming-connection-id-extraction.json",
+      "sha256": "5bf359c8d148624a4275a97db3b58399cd4f8df75fff80f2555b496511d6cc3f"
+    },
+    {
+      "path": ".local/rea-session/native-push-connection-owner-and-default-url-inputs.json",
+      "sha256": "43b6a5b697130ac50b2f793847bbea7c0499e275dd63eea303f399437bcf9b44"
+    },
+    {
+      "path": ".local/rea-session/native-push-outgoing-owner-and-native-backend-binding.json",
+      "sha256": "d6b701f1149b50fa8720cee6deaddecfedf944ba36684fcc2d732258cbec07b0"
+    },
+    {
+      "path": ".local/rea-session/native-push-apple-backend-factory-and-core-options.json",
+      "sha256": "1d2c3891314f3e74b0ff07f442ec96da5eb5e47fc76549bcc861df1cabf965ac"
+    },
+    {
+      "path": ".local/rea-session/native-push-installed-client-version-producer.json",
+      "sha256": "15f61f9be39debda3f29222c82bd5a06d21081fd3dbd3798ca44b06d8662c5e7"
+    },
+    {
+      "path": ".local/rea-session/native-core-component-manager-dependency-frame.json",
+      "sha256": "c0108ca54815650c479d9ee0351cd6b9079770fa1d19f8ae8304b72db5dae3d8"
+    },
+    {
+      "path": ".local/rea-session/auth_native_application_scope_root.json",
+      "sha256": "baea4811856d77c1756ca5a8ac6d2e7b4dcbd77518d9eae051e8359fd4fc13ee"
+    }
+  ],
+  "incomingSourceOnlyExports": [
+    {
+      "path": ".local/rea-session/native-push-received-text-json-parser.json",
+      "sha256": "4312a3307638583d5e0a058e5ac5148011b6e12d097a113f2c68b046bcb214a3",
+      "executedByThisOracle": false
+    },
+    {
+      "path": ".local/rea-session/native-push-json-header-and-payload-projection.json",
+      "sha256": "e30b323f3d3af4ef5bcd6f34579fdf4e2fe5c1eea87a1636954a94dec83da554",
+      "executedByThisOracle": false
+    }
+  ],
+  "standardProviders": [
+    "NSString UTF8/format and retain/release observers",
+    "NSURL input-string and NSMutableURLRequest addValue observers",
+    "Explicit synthetic NSProcessInfo version tuple and clientVersion getter"
+  ],
+  "limits": [
+    "Only original request-field instructions execute; earlier callback/lifetime setup is outside this region.",
+    "Stops before NSURLSession creation: no HTTP, socket, profile, account or keychain access.",
+    "Installed full-version literal and config copy source are pinned; effective hostname and account-token ownership remain separate producer scopes.",
+    "No NSURL normalization, final Foundation automatic headers/cookies, TLS or WebSocket wire bytes are proved.",
+    "defaultSessionConfiguration is original import metadata; it is not replaced by an ephemeral profile.",
+    "No renderer access_token query/Chromium fetch profile is applied to this native wrapper."
+  ],
+  "cases": [
+    {
+      "input": {
+        "hostname": "wss://dealer.test:443",
+        "accessToken": "synthetic.Token/+-=",
+        "clientVersion": "1.3.6.1921.g7086c071a617",
+        "osVersion": [
+          26,
+          4,
+          0
+        ]
+      },
+      "urlStringPassedToNSURL": "wss://dealer.test:443",
+      "addedRequestHeaders": [
+        [
+          "Authorization",
+          "Bearer synthetic.Token/+-="
+        ],
+        [
+          "User-Agent",
+          "music/1.3.6.1921.g7086c071a617 macos/26.4.0"
+        ]
+      ],
+      "executedOriginalInstructions": 82
+    },
+    {
+      "input": {
+        "hostname": "wss://dealer.test:444/path?seed=a%2Fb",
+        "accessToken": "",
+        "clientVersion": "synthetic-version",
+        "osVersion": [
+          13,
+          2,
+          1
+        ]
+      },
+      "urlStringPassedToNSURL": "wss://dealer.test:444/path?seed=a%2Fb",
+      "addedRequestHeaders": [
+        [
+          "User-Agent",
+          "music/synthetic-version macos/13.2.1"
+        ]
+      ],
+      "executedOriginalInstructions": 62
+    }
+  ]
+}

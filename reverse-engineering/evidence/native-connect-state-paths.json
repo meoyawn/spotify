@@ -1,0 +1,44 @@
+{
+  "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+  "owner": "0x1013257e4",
+  "pathOwnerInstructions": "0x101325924..0x101325958",
+  "escapeEntry": "0x101f5538c",
+  "routeLiteral": "0x10240572c",
+  "escapeCodeSha256": "e2efc6cec8001c713de754537893f96fae9fa9c0022f9cdea48d4dd892295b22",
+  "substitutions": [
+    "Standard libc/libc++ allocation/memory/string providers",
+    "Public string::insert(0,original route literal) at original call101325954"
+  ],
+  "limits": [
+    "Synthetic identities only, never the application or original account identity.",
+    "This replays the bounded original path composition, not the full state producer or network owner.",
+    "The Dart plan admits only the independently proved unreserved-ASCII subset, including UUIDs."
+  ],
+  "cases": [
+    {
+      "deviceId": "0000000000000000000000000000000000000000",
+      "escaped": "0000000000000000000000000000000000000000",
+      "relativePath": "connect-state/v1/devices/0000000000000000000000000000000000000000"
+    },
+    {
+      "deviceId": "12345678-1234-5678-9abc-123456789abc",
+      "escaped": "12345678-1234-5678-9abc-123456789abc",
+      "relativePath": "connect-state/v1/devices/12345678-1234-5678-9abc-123456789abc"
+    },
+    {
+      "deviceId": "Az09-._~",
+      "escaped": "Az09-._~",
+      "relativePath": "connect-state/v1/devices/Az09-._~"
+    },
+    {
+      "deviceId": "a b/c?d#e%f+g",
+      "escaped": "a%20b%2Fc%3Fd%23e%25f%2Bg",
+      "relativePath": "connect-state/v1/devices/a%20b%2Fc%3Fd%23e%25f%2Bg"
+    },
+    {
+      "deviceId": "\u96ea",
+      "escaped": "%E9%9B%AA",
+      "relativePath": "connect-state/v1/devices/%E9%9B%AA"
+    }
+  ]
+}
