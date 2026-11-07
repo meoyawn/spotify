@@ -44,6 +44,7 @@ flutter:
   assets:
     - assets/protocol/native-desktop-locales.json
     - assets/app-shell/icons/tray.png
+    - assets/app-shell/images/equaliser-animated-green.gif
 
   fonts:
     - family: SpotifyMixUI

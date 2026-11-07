@@ -667,7 +667,7 @@ class _EntityTrackRowState extends State<_EntityTrackRow> {
                   onPressed: widget.onPlay, color: Colors.white,
                   icon: const Icon(SpotifyShellIcons.play, size: 14))
               : Center(child: widget.current && widget.isPlaying
-                  ? Icon(Icons.equalizer, color: green, size: 18)
+                  ? const _PlayingIndicator()
                   : Text('${widget.number}', style: _secondary.copyWith(
                       color: widget.current ? green : const Color(0xffb3b3b3))))),
             Expanded(flex: 6, child: Row(children: [
@@ -720,6 +720,40 @@ class _EntityTrackRowState extends State<_EntityTrackRow> {
               textAlign: TextAlign.right, style: _secondary)),
           ])))))));
   }
+}
+
+class _PlayingIndicator extends StatefulWidget {
+  const _PlayingIndicator();
+
+  @override
+  State<_PlayingIndicator> createState() => _PlayingIndicatorState();
+}
+
+class _PlayingIndicatorState extends State<_PlayingIndicator> {
+  late final AppLifecycleListener _lifecycle;
+
+  @override
+  void initState() {
+    super.initState();
+    _lifecycle = AppLifecycleListener(onStateChange: (_) => setState(() {}));
+  }
+
+  @override
+  void dispose() {
+    _lifecycle.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) => TickerMode(
+    enabled: WidgetsBinding.instance.lifecycleState == null ||
+      WidgetsBinding.instance.lifecycleState == AppLifecycleState.resumed,
+    // Original renderer module 3794 uses this asset at 14 px. Image also
+    // pauses its frame stream for Reduce Motion and inherited TickerMode.
+    child: RepaintBoundary(child: Image.asset(
+      'assets/app-shell/images/equaliser-animated-green.gif',
+      width: 14, height: 14, excludeFromSemantics: true)),
+  );
 }
 
 /// Original header scales down to a single line, then wraps at its minimum.

@@ -1,0 +1,173 @@
+{
+  "source": {
+    "application": "Spotify",
+    "version": "1.3.6.1921",
+    "archive": "/Applications/Spotify.app/Contents/Resources/Apps/xpui.spa",
+    "archiveSha256": "20038c2af5d9bb785c3181c3e9a04073b43eb501a72950b19d1a2a085b9a18df",
+    "rendererSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+    "rendererCapture": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js"
+  },
+  "ranges": [
+    {
+      "module": 3794,
+      "offsetBytes": 4000717,
+      "lengthBytes": 533,
+      "sha256": "70a163ddba532c2f7449e40fbb372ca8a3296b6476b3c6ee21ff90a6709463a6"
+    },
+    {
+      "module": 53146,
+      "offsetBytes": 4029912,
+      "lengthBytes": 391,
+      "sha256": "b0f78421a0cc7fb5cca8d6eb4ec3d0a770eced8302797620cbf3911996b7b4d2"
+    },
+    {
+      "module": 34492,
+      "offsetBytes": 4031325,
+      "lengthBytes": 102,
+      "sha256": "14b692e6937bda04832140c2c2e53d0e384e1123adbd41592bd7e53df2f254bd"
+    }
+  ],
+  "method": "REA static analysis of unchanged original modules; original module 3794 executed under V8 with explicit UI boundary substitutions.",
+  "substitutions": [
+    "Inert JSX evaluates function components and retains img properties.",
+    "Asset URL resolver returns original archive-relative paths.",
+    "Focus and reduced-motion hook outputs are explicit inputs; their browser/React lifecycle is not executed.",
+    "Webpack export registration exposes the unchanged original functions."
+  ],
+  "scope": [
+    "Original green asset selection, requested animation, focus/reduced-motion gates, 14 px default dimensions and decorative alt text.",
+    "The GIF is copied byte-for-byte from the identified original archive.",
+    "Flutter freezes the current GIF frame for Reduce Motion/background; the original swaps to a separate static SVG.",
+    "No playback, account, network or protocol behavior is exercised or changed."
+  ],
+  "asset": {
+    "path": "assets/app-shell/images/equaliser-animated-green.gif",
+    "archivePath": "images/equaliser-animated-green.gif",
+    "bytes": 3342,
+    "sha256": "f5eb96f2b2745164bdfb28009be62cab3e112b3239edc3eef75b511195b1cdd3"
+  },
+  "cases": [
+    {
+      "focused": true,
+      "reducedMotion": false,
+      "animated": true,
+      "result": {
+        "type": "img",
+        "width": 14,
+        "height": 14,
+        "alt": "",
+        "src": "images/equaliser-animated-green.gif"
+      }
+    },
+    {
+      "focused": true,
+      "reducedMotion": false,
+      "animated": false,
+      "result": {
+        "type": "img",
+        "width": 14,
+        "height": 14,
+        "alt": "",
+        "src": "images/equaliser-green.svg"
+      }
+    },
+    {
+      "focused": true,
+      "reducedMotion": true,
+      "animated": true,
+      "result": {
+        "type": "img",
+        "width": 14,
+        "height": 14,
+        "alt": "",
+        "src": "images/equaliser-green.svg"
+      }
+    },
+    {
+      "focused": true,
+      "reducedMotion": true,
+      "animated": false,
+      "result": {
+        "type": "img",
+        "width": 14,
+        "height": 14,
+        "alt": "",
+        "src": "images/equaliser-green.svg"
+      }
+    },
+    {
+      "focused": false,
+      "reducedMotion": false,
+      "animated": true,
+      "result": {
+        "type": "img",
+        "width": 14,
+        "height": 14,
+        "alt": "",
+        "src": "images/equaliser-green.svg"
+      }
+    },
+    {
+      "focused": false,
+      "reducedMotion": false,
+      "animated": false,
+      "result": {
+        "type": "img",
+        "width": 14,
+        "height": 14,
+        "alt": "",
+        "src": "images/equaliser-green.svg"
+      }
+    },
+    {
+      "focused": false,
+      "reducedMotion": true,
+      "animated": true,
+      "result": {
+        "type": "img",
+        "width": 14,
+        "height": 14,
+        "alt": "",
+        "src": "images/equaliser-green.svg"
+      }
+    },
+    {
+      "focused": false,
+      "reducedMotion": true,
+      "animated": false,
+      "result": {
+        "type": "img",
+        "width": 14,
+        "height": 14,
+        "alt": "",
+        "src": "images/equaliser-green.svg"
+      }
+    }
+  ],
+  "rea": {
+    "version": "6.8.0",
+    "evidenceId": "ev_38894a8060189582a8e00aabfeef14c39ff4ff4833844b2eca0830a1f761a21a",
+    "evidenceSha256": "dffc108164ef50de12952f059c27232bcbaa8eb481beadb76b45ac5dd7783b7e",
+    "scope": "Three unchanged original module bodies wrapped in a JavaScript object for standalone static inspection; no Chromium analysis."
+  },
+  "flutterVerification": {
+    "method": "Hot-reloaded macOS debug probe using the production EntityView with synthetic metadata; displayed RawImage pixels sampled 12 times per state at 70 ms intervals.",
+    "playingDistinctFrames": 12,
+    "reducedMotionDistinctFrames": 1,
+    "backgroundDistinctFrames": 1,
+    "mutedDistinctFrames": 1,
+    "resumedDistinctFrames": 11,
+    "pausedIndicators": 0,
+    "afterTrackSwitchIndicators": 1,
+    "frameDimensions": [
+      {
+        "width": 14,
+        "height": 14
+      }
+    ],
+    "existingEntityTestsPassed": 22,
+    "staticAnalysis": "No issues found.",
+    "hoveredIndicators": 0,
+    "afterHoverIndicators": 1
+  }
+}
