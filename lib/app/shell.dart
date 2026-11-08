@@ -3,7 +3,10 @@ import 'dart:developer' as developer;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show defaultTargetPlatform, kIsWeb, TargetPlatform, mapEquals;
-import 'package:flutter/gestures.dart' show kPrimaryButton;
+import 'package:flutter/gestures.dart' show kPrimaryButton, kTouchSlop,
+    PointerDeviceKind, PointerPanZoomStartEvent, PointerPanZoomUpdateEvent, PointerPanZoomEndEvent,
+    GestureBinding, GestureArenaEntry, GestureArenaMember, GestureDisposition, HitTestResult;
+import 'package:flutter/rendering.dart' show RenderViewportBase, RenderEditable;
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -89,7 +92,7 @@ class SpotifyDesktopShell extends StatefulWidget {
   State<SpotifyDesktopShell> createState() => SpotifyDesktopShellState();
 }
 
-class SpotifyDesktopShellState extends State<SpotifyDesktopShell> {
+class SpotifyDesktopShellState extends State<SpotifyDesktopShell> implements GestureArenaMember {
   static const _windowHost = MethodChannel('spotify_flutter/desktop_host');
   final _input = TextEditingController();
   final _focus = FocusNode();
@@ -114,6 +117,14 @@ class SpotifyDesktopShellState extends State<SpotifyDesktopShell> {
   Map<String, HomeDestinationController>? _homeDestinations;
   _ShellContents? _contents;
   Widget? _view;
+  int? _historyPointer;
+  DesktopRoute? _historyStartRoute;
+  Offset _historyPan = Offset.zero;
+  double _historyVerticalTravel = 0, _historyDirection = 0;
+  GestureArenaEntry? _historyArenaEntry;
+  List<ScrollPosition> _historyHorizontalScrolls = const [];
+  ValueNotifier<double>? _historyFeedback;
+  ValueNotifier<double> get _historyProgress => _historyFeedback ??= ValueNotifier(0);
   bool get _macWindow => !kIsWeb && defaultTargetPlatform == TargetPlatform.macOS;
 
   void _invalidateContents() {
@@ -179,6 +190,7 @@ class SpotifyDesktopShellState extends State<SpotifyDesktopShell> {
   @override
   void didUpdateWidget(SpotifyDesktopShell oldWidget) {
     super.didUpdateWidget(oldWidget);
+    if (_historyStartRoute != widget.navigation.route) _cancelHistoryGesture();
     _invalidateContents();
     if (oldWidget.homeController != widget.homeController) { _disposeDestinations(); }
     if (oldWidget.playbackController != widget.playbackController) { _watchPlayback(); }
@@ -313,6 +325,123 @@ class SpotifyDesktopShellState extends State<SpotifyDesktopShell> {
     widget.navigation.go(route);
   }
 
+  void _navigateHistory(bool back) {
+    if (back ? !widget.navigation.canGoBack : !widget.navigation.canGoForward) return;
+    _dismissSuggestions(unfocus: true);
+    if (back) { widget.navigation.back(); }
+    else { widget.navigation.forward(); }
+  }
+
+  void _historyGestureStart(PointerPanZoomStartEvent event) {
+    _cancelHistoryGesture();
+    if (!_macWindow || event.kind != PointerDeviceKind.trackpad ||
+        ModalRoute.of(context)?.isCurrent != true ||
+        !widget.navigation.canGoBack && !widget.navigation.canGoForward) { return; }
+    _historyPointer = event.pointer;
+    _historyStartRoute = widget.navigation.route;
+    _historyPan = Offset.zero;
+    _historyVerticalTravel = 0;
+    _historyDirection = 0;
+    final hits = HitTestResult();
+    GestureBinding.instance.hitTestInView(hits, event.position, event.viewId);
+    _historyHorizontalScrolls = [for (final hit in hits.path)
+      if (switch (hit.target) {
+        RenderViewportBase(offset: final ScrollPosition position) => position,
+        RenderEditable(offset: final ScrollPosition position) => position,
+        _ => null,
+      } case final position?)
+        if (position.hasContentDimensions && position.axis == Axis.horizontal) position];
+    _historyArenaEntry = GestureBinding.instance.gestureArena.add(event.pointer, this);
+  }
+
+  @override
+  void acceptGesture(int pointer) {
+    if (_historyPointer == pointer) _historyArenaEntry = null;
+  }
+
+  @override
+  void rejectGesture(int pointer) {
+    if (_historyPointer == pointer) {
+      _historyArenaEntry = null;
+      _cancelHistoryGesture();
+    }
+  }
+
+  void _cancelHistoryGesture() {
+    final entry = _historyArenaEntry;
+    _historyArenaEntry = null;
+    _historyPointer = null;
+    _historyStartRoute = null;
+    _historyHorizontalScrolls = const [];
+    _historyFeedback?.value = 0;
+    entry?.resolve(GestureDisposition.rejected);
+  }
+
+  void _historyGestureUpdate(PointerPanZoomUpdateEvent event) {
+    if (_historyPointer != event.pointer) return;
+    _historyPan = event.pan;
+    _historyVerticalTravel += event.panDelta.dy.abs();
+    // Flutter supplies logical scroll pixels, not Chromium's normalized touches.
+    // Keep its vertical-intent cancellation and direction lock in these units.
+    if (_historyStartRoute != widget.navigation.route || event.scale != 1 || event.rotation != 0 ||
+        _historyVerticalTravel > kTouchSlop && _historyVerticalTravel * 1.3 > _historyPan.dx.abs()) {
+      _cancelHistoryGesture();
+      return;
+    }
+    if (_historyPan.dx.abs() > kTouchSlop) {
+      if (_historyDirection == 0) {
+        final back = _historyPan.dx > 0;
+        if (back ? !widget.navigation.canGoBack : !widget.navigation.canGoForward) {
+          _cancelHistoryGesture();
+          return;
+        }
+        // Let a shelf consume the gesture when it has content in this direction.
+        for (final position in _historyHorizontalScrolls) {
+          final delta = position.axisDirection == AxisDirection.left ? _historyPan.dx : -_historyPan.dx;
+          if (delta < 0 && position.pixels > position.minScrollExtent ||
+              delta > 0 && position.pixels < position.maxScrollExtent) {
+            _cancelHistoryGesture();
+            return;
+          }
+        }
+        _historyDirection = _historyPan.dx.sign;
+        // Listener runs before pointerRouter dispatch. Claim this same update
+        // before a Scrollable can accept it, locking both axes until finger lift.
+        _historyArenaEntry?.resolve(GestureDisposition.accepted);
+      } else if (_historyDirection != _historyPan.dx.sign) {
+        _cancelHistoryGesture();
+        return;
+      }
+    }
+    if (_historyDirection != 0) {
+      _historyProgress.value = _historyDirection * (_historyDirection * _historyPan.dx / 80).clamp(0, 1);
+    }
+  }
+
+  void _historyGestureEnd(PointerPanZoomEndEvent event) {
+    if (_historyPointer != event.pointer) return;
+    // Commit once on finger lift; returning below the distance cancels the swipe.
+    final back = _historyPan.dx > 0;
+    final commit = _historyDirection != 0 && _historyPan.dx.abs() >= 80 &&
+      _historyStartRoute == widget.navigation.route && ModalRoute.of(context)?.isCurrent == true;
+    _cancelHistoryGesture();
+    if (commit) _navigateHistory(back);
+  }
+
+  bool _historyContentScrolled(ScrollNotification notification) {
+    // A shelf or page that actually moved owns this gesture, even if it reaches
+    // its edge later. A fresh outward swipe at the edge can navigate history.
+    if (_historyPointer != null && notification is ScrollUpdateNotification &&
+        notification.dragDetails != null) {
+      final metrics = notification.metrics;
+      final before = (metrics.pixels - (notification.scrollDelta ?? 0))
+        .clamp(metrics.minScrollExtent, metrics.maxScrollExtent);
+      final after = metrics.pixels.clamp(metrics.minScrollExtent, metrics.maxScrollExtent);
+      if (before != after) _cancelHistoryGesture();
+    }
+    return false;
+  }
+
   void _select(SearchItem item) {
     unawaited(widget.searchController?.remember(item));
     widget.onSelect?.call(item);
@@ -387,6 +516,8 @@ class SpotifyDesktopShellState extends State<SpotifyDesktopShell> {
 
   @override
   void dispose() {
+    _cancelHistoryGesture();
+    _historyFeedback?.dispose();
     _disposeDestinations();
     _lyrics?.dispose();
     unawaited(_playbackStates?.cancel());
@@ -402,7 +533,11 @@ class SpotifyDesktopShellState extends State<SpotifyDesktopShell> {
     final collapsedLibrary = _library(true, canExpand: true);
     final compactLibrary = _library(true, canExpand: false);
     final main = ClipRRect(borderRadius: BorderRadius.circular(8),
-      child: ColoredBox(color: const Color(0xff121212), child: _mainView()));
+      child: ColoredBox(color: const Color(0xff121212), child: Stack(fit: StackFit.expand, children: [
+        _mainView(),
+        IgnorePointer(child: RepaintBoundary(child: CustomPaint(
+          painter: _HistorySwipeIndicator(_historyProgress)))),
+      ])));
     final right = _playbackState?.item == null ? const SizedBox.shrink() : NowPlayingPanel(
       state: _playbackState!, artworkBuilder: widget.playbackArtworkBuilder,
       trackSaveButtonBuilder: widget.trackSaveButtonBuilder,
@@ -428,13 +563,18 @@ class SpotifyDesktopShellState extends State<SpotifyDesktopShell> {
     return _view = CallbackShortcuts(bindings: {
     const SingleActivator(LogicalKeyboardKey.keyK, meta: true): () => unawaited(openQuickSearch()),
     const SingleActivator(LogicalKeyboardKey.keyL, meta: true): focusSearch,
-  }, child: Focus(autofocus: true, child: Scaffold(
+  }, child: Focus(autofocus: true, child: Listener(
+    onPointerPanZoomStart: _historyGestureStart,
+    onPointerPanZoomUpdate: _historyGestureUpdate,
+    onPointerPanZoomEnd: _historyGestureEnd,
+    child: NotificationListener<ScrollNotification>(onNotification: _historyContentScrolled,
+      child: Scaffold(
     body: SafeArea(top: !_macWindow, child: LayoutBuilder(builder: (context, constraints) =>
       _desktopLayout(constraints, expandedLibrary: contents.expandedLibrary,
         collapsedLibrary: constraints.maxWidth >= 840 ? contents.collapsedLibrary : contents.compactLibrary,
         main: contents.main, right: contents.right, playback: contents.playback,
         navigation: contents.navigation))),
-  )));
+  )))));
   }
 
   Widget _desktopLayout(BoxConstraints constraints, {required Widget expandedLibrary,
@@ -534,10 +674,10 @@ class SpotifyDesktopShellState extends State<SpotifyDesktopShell> {
     final nativeInset = _macWindow ? 80.0 : 0.0;
     final back = DesktopIconButton(tooltip: 'Go back', size: 36,
       icon: const Icon(SpotifyShellIcons.back),
-      onPressed: widget.navigation.canGoBack ? () { _focus.unfocus(); widget.navigation.back(); } : null);
+      onPressed: widget.navigation.canGoBack ? () => _navigateHistory(true) : null);
     final forward = DesktopIconButton(tooltip: 'Go forward', size: 36,
       icon: const Icon(SpotifyShellIcons.forward),
-      onPressed: widget.navigation.canGoForward ? () { _focus.unfocus(); widget.navigation.forward(); } : null);
+      onPressed: widget.navigation.canGoForward ? () => _navigateHistory(false) : null);
     Widget? cached;
     int? cachedBand;
     return LayoutBuilder(builder: (context, constraints) {
@@ -827,6 +967,39 @@ class SpotifyDesktopShellState extends State<SpotifyDesktopShell> {
     _homeDestinations?.clear();
     _homeDestinationRepository = null;
   }
+}
+
+/// Chromium's edge shield: up to 70 px revealed from a 140 px oval, with a
+/// slightly taller, darker shape at the commit threshold. Only this layer paints.
+class _HistorySwipeIndicator extends CustomPainter {
+  _HistorySwipeIndicator(this.progress) : super(repaint: progress);
+  final ValueNotifier<double> progress;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final value = progress.value;
+    if (value == 0) return;
+    final back = value > 0, amount = value.abs();
+    final complete = amount >= 1;
+    final height = complete ? 150.0 : 140.0;
+    final revealed = 70 * amount;
+    final edge = back ? -140 + revealed : size.width - revealed;
+    final oval = Rect.fromLTWH(edge, (size.height - height) / 2, 140, height);
+    canvas.save();
+    canvas.clipRect(Offset.zero & size);
+    canvas.drawOval(oval, Paint()..color = Colors.black.withValues(
+      alpha: complete ? .75 : amount.clamp(.25, .65)));
+    canvas.translate(back ? oval.right - 35 : oval.left + 35, size.height / 2);
+    if (!back) canvas.scale(-1, 1);
+    canvas.drawPath(Path()..moveTo(4, -9)..lineTo(-5, 0)..lineTo(4, 9)
+      ..moveTo(-5, 0)..lineTo(14, 0), Paint()..color = Colors.white
+      ..style = PaintingStyle.stroke..strokeWidth = 2.5
+      ..strokeCap = StrokeCap.round..strokeJoin = StrokeJoin.round);
+    canvas.restore();
+  }
+
+  @override
+  bool shouldRepaint(_HistorySwipeIndicator oldDelegate) => oldDelegate.progress != progress;
 }
 
 class _LibraryRailActions extends StatefulWidget {

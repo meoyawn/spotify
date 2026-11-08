@@ -1,0 +1,42 @@
+{
+  "feature": "macOS trackpad back and forward history navigation",
+  "original": {
+    "version": "Spotify macOS arm64 1.3.6.1921",
+    "executable_sha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+    "rea_operation": "inspect_native_dispatch_metadata",
+    "rea_evidence_id": "ev_8b391502418b325d0d99915204ea2d7baf9154205e87f7c6621291378771055d",
+    "observations": [
+      "128 Objective-C classes decoded. No swipe, gesture or scrollWheel implementation appeared in the decoded proprietary dispatch entries.",
+      "SPTClientMenuHandler goBack: at 0x10008d380 and goForward: at 0x10008d45c; SPTTouchbarHelper goBackForward: at 0x1000940b0.",
+      "The captured renderer bundle 59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f updates canGoBack and canGoForward from its history index."
+    ],
+    "scope": "Static proprietary metadata and previously captured renderer source. Browser ownership of the swipe is an inference, not a captured execution of an original trackpad gesture. Chromium was not decompiled."
+  },
+  "standard_references": [
+    {
+      "source": "Chromium HistorySwiper public source",
+      "url": "https://chromium.googlesource.com/chromium/src/+/0ad8085a4ac5fd6d5220352929ff737d218e997b/chrome/browser/renderer_host/chrome_render_widget_host_view_mac_history_swiper.mm",
+      "scope": "Behavioral reference: defer to consumed content scrolling, reject vertical intent, lock direction, allow withdrawal and commit on finger lift. This revision is not asserted to match Spotify's CEF version."
+    },
+    {
+      "source": "Flutter 3.47.9 FlutterViewController.mm",
+      "path": "engine/src/flutter/shell/platform/darwin/macos/framework/Source/FlutterViewController.mm",
+      "sha256": "b4b140dfb121db287c95004aee55a13cc22ceb73b81c0ed3e3af4c7448dce1af",
+      "scope": "dispatchGestureEvent and dispatchMouseEvent translate phased scroll events into trackpad PointerPanZoom events. The engine accumulates scrolling deltas and excludes native momentum updates."
+    }
+  ],
+  "flutter_adaptation": {
+    "owner": "lib/app/shell.dart",
+    "distance": "80 logical scroll pixels; an application threshold, not Chromium's 0.08 normalized physical touch distance",
+    "behavior": "Positive pan X goes back; negative goes forward. Commit once on end. Reject short, withdrawn, reversed, vertical, pinch and rotation gestures, covered routes and history changed during the gesture.",
+    "scroll_priority": "Any drag that moves within a content scroll extent owns that gesture. Elastic movement outside the extent does not consume a fresh outward history swipe.",
+    "work": "Uses existing Flutter event delivery and history. No added package, native monitor, polling, timer, animation, request or rebuild on gesture updates.",
+    "limitations": "Flutter's pan-zoom stream does not expose raw NSTouch positions, the macOS page-swipe preference or a distinct native cancelled end phase. Exact native preference, cancellation and physical-distance parity is not claimed."
+  },
+  "verification": {
+    "method": "Hot reload and hot restart of an isolated native macOS debug window using the production shell with supplied local content; inject PointerPanZoom events through WidgetsBinding.handlePointerEvent and observe routes and actual scroll offsets.",
+    "passed": "22 live checks covering both directions, one history entry per gesture, withdrawal, reversal, vertical intent, pinch, rotation, finger lift, route changes, history bounds, shelf scrolling and shelf edges, vertical scrolling and modal blocking.",
+    "analysis": "No analyzer errors or warnings in the changed Dart file; two existing openLyrics brace style notices remain.",
+    "existing_tests": "app_shell_test.dart fails on the existing sidebar SemanticsNode increase/value assertion. The failure also reproduces in a detached checkout of baseline 8c48eda, without the gesture change."
+  }
+}
