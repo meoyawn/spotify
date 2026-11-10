@@ -50,8 +50,10 @@ class LibraryController extends ChangeNotifier {
     if (_state.phase == LibraryPhase.idle) await refresh();
   }
 
-  Future<void> refresh() {
-    if (repository case final RefreshableLibraryRepository current) current.invalidate();
+  Future<void> refresh({bool invalidate = true}) {
+    if (invalidate && repository is RefreshableLibraryRepository) {
+      (repository as RefreshableLibraryRepository).invalidate();
+    }
     return _fetch(_state.query.copyWith(offset: 0));
   }
 

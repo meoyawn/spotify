@@ -18,6 +18,7 @@ import '../home/native_recent_contexts.dart';
 import '../home/destinations_repository.dart';
 import '../library/repository.dart';
 import '../library/saved_tracks.dart';
+import '../library/saved_playlists.dart';
 import '../library/native_collection_read_client.dart';
 import '../library/native_saved_track_service.dart';
 import '../library/native_saved_tracks.dart';
@@ -1077,6 +1078,7 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
   EntityRepository _makeEntities() {
     final session = _pathfinder();
     final epoch = _epoch;
+    final playlists = libraryRepository as NativeLibraryRepository;
     return _AuthenticatedEntityRepository(DesktopEntityRepository(session.loader,
       dispatcher: EsperantoDispatcher()), session.prepare, (rows) {
         for (final row in rows) {
@@ -1090,7 +1092,8 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
             if (row.durationMs != null) 'duration_ms': row.durationMs,
             if (row.images.firstOrNull?['url'] case final String image) 'image_url': image};
         }
-      }, playlistRepository: NativePlaylistEntityRepository(
+      }, playlistLibrary: playlists, playlistRepository: NativePlaylistEntityRepository(
+        username: username, saved: playlists.containsPlaylist,
         imageUrlTemplate: _imageUrlTemplate,
         presentation: (uri) => _playlistPresentations[uri] ?? const {},
         read: (uri, {cancellationToken}) { _check(epoch); return _readPlaylist(uri, cancellationToken: cancellationToken); },
@@ -1302,6 +1305,7 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
       return request.method == 'POST' && (target == '/extended-metadata/v0/extended-metadata' ||
         target == '/collection/v2/paging' ||
         target == '/playlist/v2/playlist/37i9dQZF1F5p3rmiWPIYgZ/changes' ||
+        target == '${nativeRootlistPath(username!)}/changes' ||
         RegExp(r'^/playplay/v1/key/[0-9a-f]{40}$').hasMatch(target)) ||
         request.method == 'PUT' && target == '/connect-state/v1/devices/$deviceId' ||
         request.method == 'GET' && (RegExp(r'^/playlist/v2/playlist/[0-9A-Za-z]{22}$').hasMatch(target) ||
@@ -2194,9 +2198,14 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
   }
 }
 
-class _AuthenticatedEntityRepository implements EntityRepository {
+class _AuthenticatedEntityRepository implements EntityRepository, SavedPlaylistsRepository {
   const _AuthenticatedEntityRepository(this.repository, this.prepare, this.observe,
-    {this.playlistRepository, this.trackRepository, this.artistRepository});
+    {this.playlistRepository, this.trackRepository, this.artistRepository, required this.playlistLibrary});
+  final SavedPlaylistsRepository playlistLibrary;
+  @override Future<bool> containsPlaylist(String uri, {CancellationToken? cancellationToken}) =>
+    playlistLibrary.containsPlaylist(uri, cancellationToken: cancellationToken);
+  @override Future<void> setPlaylistSaved(String uri, bool saved, {CancellationToken? cancellationToken}) =>
+    playlistLibrary.setPlaylistSaved(uri, saved, cancellationToken: cancellationToken);
   final EntityRepository repository;
   final EntityRepository? playlistRepository, trackRepository, artistRepository;
   final Future<void> Function({CancellationToken? cancellationToken}) prepare;

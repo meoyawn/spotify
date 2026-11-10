@@ -9,6 +9,8 @@ import 'package:flutter/services.dart';
 
 import '../app/shell_icons.dart';
 import '../app/desktop_icon_button.dart';
+import '../app/snack_bar.dart';
+import '../app/song_links.dart';
 import 'controller.dart';
 import 'models.dart';
 import 'playlist_dates.dart';
@@ -287,17 +289,30 @@ class _EntityViewState extends State<EntityView> {
           icon: const Icon(SpotifyShellIcons.shuffle, size: 28),
           color: widget.shuffle ? const Color(0xff1ed760) : const Color(0xffb3b3b3),
           onPressed: widget.onToggleShuffle),
-        if (entity.data['isSaved'] is bool) ...[
+        if (entity.type == 'album' && entity.data['isSaved'] is bool) ...[
           const SizedBox(width: 16),
           Tooltip(message: entity.data['isSaved'] == true ? 'Saved to Your Library' : 'Not saved to Your Library',
             child: Icon(entity.data['isSaved'] == true ? Icons.check_circle : Icons.add_circle_outline,
               color: entity.data['isSaved'] == true ? const Color(0xff1ed760) : const Color(0xffb3b3b3), size: 32)),
         ],
       ],
+      if (widget.controller.canSave || widget.controller.saving) ...[
+        const SizedBox(width: 16),
+        DesktopIconButton(tooltip: entity.data['isSaved'] == true ? 'Remove from Your Library' : 'Save to Your Library',
+          size: 40, color: entity.data['isSaved'] == true ? const Color(0xff1ed760) : const Color(0xffb3b3b3),
+          icon: widget.controller.saving ? const SizedBox.square(dimension: 24,
+            child: CircularProgressIndicator(strokeWidth: 2, color: Color(0xffb3b3b3)))
+            : Icon(entity.data['isSaved'] == true ? Icons.check_circle : Icons.add_circle_outline, size: 32),
+          onPressed: widget.controller.saving ? null : () => unawaited(widget.controller.toggleSaved()
+            .catchError((Object _) { if (context.mounted) showSpotifySnackBar(context, 'Couldn’t update Your Library. Try again.'); }))),
+      ],
       const SizedBox(width: 16),
       PopupMenuButton<String>(tooltip: 'More options',
-        onSelected: (_) => unawaited(widget.controller.refresh()),
-        itemBuilder: (_) => [const PopupMenuItem(value: 'refresh', child: Text('Refresh'))],
+        onSelected: (value) => value == 'copy' ? unawaited(copySongLink(context, entity.uri))
+          : unawaited(widget.controller.refresh()),
+        itemBuilder: (_) => [
+          if (spotifySongLink(entity.uri) != null) const PopupMenuItem(value: 'copy', child: Text('Copy song link')),
+          const PopupMenuItem(value: 'refresh', child: Text('Refresh'))],
         child: const Padding(padding: EdgeInsets.all(8), child: Icon(Icons.more_horiz, size: 28))),
       const Spacer(),
       if (entity.type == 'album' && width >= 640) const Row(mainAxisSize: MainAxisSize.min, children: [
@@ -569,6 +584,7 @@ class _EntityViewState extends State<EntityView> {
         child: Padding(padding: EdgeInsets.only(right: 2),
           child: Tooltip(message: 'Duration', child: Icon(Icons.schedule_outlined,
             size: 18, color: Color(0xffb3b3b3)))))),
+      const SizedBox(width: 32),
     ]),
   );
 
@@ -587,7 +603,8 @@ class _EntityViewState extends State<EntityView> {
     final canPlay = widget.onPlay != null && row.canRequestPlayback;
     final play = canPlay ? () => widget.onPlay!(EntityPlaybackSelection(entity: entity,
       row: row, rowIndex: index, rows: widget.controller.state.rows)) : null;
-    return _EntityTrackRow(key: ValueKey('${row.uid ?? row.uri}:$index'), row: row,
+    return SongLinkContextMenu(key: ValueKey('${row.uid ?? row.uri}:$index'), uri: row.uri,
+      child: _EntityTrackRow(row: row,
       number: entity.type == 'album' && (row.trackNumber ?? 0) > 0 ? row.trackNumber! : index + 1,
       showArtwork: showArtwork,
       showAlbum: showAlbum, showDate: showDate, showPlays: showPlays, actionsWidth: _actionsWidth,
@@ -599,7 +616,7 @@ class _EntityViewState extends State<EntityView> {
         widget.onNavigate!(link);
       }, onPlay: play, onSelect: () {
         _selectRow(index);
-      });
+      }));
   }
 
   Widget _error(String message, VoidCallback retry) => Padding(padding: const EdgeInsets.only(bottom: 12),
@@ -616,7 +633,7 @@ class _EntityViewState extends State<EntityView> {
 }
 
 class _EntityTrackRow extends StatefulWidget {
-  const _EntityTrackRow({super.key, required this.row, required this.number,
+  const _EntityTrackRow({required this.row, required this.number,
     required this.showArtwork, required this.showAlbum, required this.showDate,
     required this.showPlays,
     required this.actionsWidth, required this.current, required this.isPlaying,
@@ -718,6 +735,7 @@ class _EntityTrackRowState extends State<_EntityTrackRow> {
               ?? (row.data['isSaved'] == true ? Icon(Icons.check_circle, color: green, size: 16) : null)),
             SizedBox(width: 56, child: Text(row.durationMs == null ? '' : _trackDuration(row.durationMs!),
               textAlign: TextAlign.right, style: _secondary)),
+            SizedBox(width: 32, child: row.type == 'track' ? SongLinkMenu(uri: row.uri, name: row.name) : null),
           ])))))));
   }
 }

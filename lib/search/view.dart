@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 
 import 'controller.dart';
 import 'models.dart';
+import '../app/song_links.dart';
 
 typedef SearchArtworkBuilder = Widget Function(BuildContext context, SearchItem item);
 
@@ -108,7 +109,7 @@ class _SearchSuggestionsDropdownState extends State<SearchSuggestionsDropdown> {
                       overflow: TextOverflow.ellipsis));
                 }
                 final item = state.items[index], autocomplete = state.items[index].type == 'autocomplete';
-                return Semantics(selected: state.selectedIndex == index, child: Material(
+                return SongLinkContextMenu(uri: item.uri, child: Semantics(selected: state.selectedIndex == index, child: Material(
                   color: state.selectedIndex == index ? const Color(0xff3e3e3e) : Colors.transparent,
                   borderRadius: BorderRadius.circular(4), child: InkWell(
                     canRequestFocus: false, borderRadius: BorderRadius.circular(4),
@@ -138,7 +139,7 @@ class _SearchSuggestionsDropdownState extends State<SearchSuggestionsDropdown> {
                           onPressed: widget.controller.isUpdatingHistory ? null
                             : () => unawaited(widget.controller.removeRecent(item.uri)),
                           icon: const Icon(Icons.close, size: 18, color: Color(0xffb3b3b3))),
-                      ]))))));
+                      ])))))));
               })),
           ])));
     });
@@ -361,7 +362,7 @@ class _SearchViewState extends State<SearchView> {
       itemBuilder: (context, index) {
         final item = state.items[index];
         final label = _typeLabel(item.type);
-        return Semantics(
+        return SongLinkContextMenu(uri: item.uri, child: Semantics(
           selected: state.selectedIndex == index,
           child: Material(
             color: state.selectedIndex == index ? const Color(0xff282828) : Colors.transparent,
@@ -393,6 +394,7 @@ class _SearchViewState extends State<SearchView> {
                         )),
                       ]),
                     ])),
+                  if (item.type == 'track') SongLinkMenu(uri: item.uri, name: item.name),
                   if (width >= 420 && item.durationMs != null)
                     Padding(padding: const EdgeInsets.only(left: 12), child: Text(
                       _duration(item.durationMs!),
@@ -402,7 +404,7 @@ class _SearchViewState extends State<SearchView> {
               ),
             ),
           ),
-        );
+        ));
       },
     );
   }

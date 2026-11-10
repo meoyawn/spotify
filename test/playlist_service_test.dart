@@ -7,12 +7,25 @@ import 'package:spotify_flutter/playlist_service/query.dart';
 import 'package:spotify_flutter/playlist_service/sync_path.dart';
 import 'package:spotify_flutter/playlist_service/sync_plan.dart';
 import 'package:spotify_flutter/playlist_service/native_write_plan.dart';
+import 'package:spotify_flutter/playlist_service/native_rootlist_changes.dart';
 import 'package:spotify_flutter/protocol/generated/playlist_api.pb.dart';
 import 'package:spotify_flutter/protocol/generated/playlist_query.pb.dart';
 import 'package:spotify_flutter/protocol/generated/playlist_sync_reason.pbenum.dart';
 import 'package:spotify_flutter/protocol/generated/policy/supported_link_types_in_playlists.pbenum.dart';
 
 void main() {
+  test('Rootlist save and removal bytes match independently captured original requests', () {
+    final fixture = jsonDecode(File('reverse-engineering/fixtures/native-playlist-save.json').readAsStringSync()) as Map;
+    for (final scenario in fixture['cases'] as List) {
+      final input = scenario['inputs'] as Map;
+      final changes = nativeRootlistChanges(revision: base64Decode(input['revision'] as String),
+        username: input['username'] as String, uri: input['uri'] as String, saved: input['saved'] as bool,
+        index: input['index'] as int, nonce: input['nonce'] as int,
+        clockMicroseconds: input['clockMicroseconds'] as int);
+      expect(changes.writeToBuffer().map((byte) => byte.toRadixString(16).padLeft(2, '0')).join(),
+        scenario['bodyHex'], reason: scenario['action'] as String);
+    }
+  });
   test('Native single-track ListChanges outgoing body matches original Add Remove staging and writer bytes', () {
     final fixture = jsonDecode(File('reverse-engineering/evidence/native-playlist-list-changes.json').readAsStringSync()) as Map;
     for (final scenario in fixture['cases'] as List) {

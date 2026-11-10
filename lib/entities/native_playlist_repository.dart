@@ -10,11 +10,13 @@ import 'repository.dart';
 /// offline indexes and decorated PlaylistDataService mutations are separate.
 class NativePlaylistEntityRepository implements EntityRepository {
   NativePlaylistEntityRepository({required this.read, required this.describeTracks,
-    required this.imageUrlTemplate, this.presentation});
+    required this.imageUrlTemplate, this.presentation, this.saved, this.username});
 
   final Future<playlist.SelectedListContent> Function(String uri, {CancellationToken? cancellationToken}) read;
   final Future<Map<String, EntityRow>> Function(List<String> uris, {CancellationToken? cancellationToken}) describeTracks;
   final String imageUrlTemplate;
+  final String? username;
+  final Future<bool> Function(String uri, {CancellationToken? cancellationToken})? saved;
   /// Already observed Home labels/colors, never an extra profile/metadata read.
   final EntityJson Function(String uri)? presentation;
   final _snapshots = <String, playlist.SelectedListContent>{};
@@ -39,6 +41,8 @@ class NativePlaylistEntityRepository implements EntityRepository {
     final madeFor = format['madeFor.username'];
     final details = EntityDetails.fromJson({
       'type': 'playlist', 'uri': uri, 'name': attributes.name,
+      if (saved != null) 'isSaved': await saved!(uri, cancellationToken: cancellationToken),
+      if (username != null) 'isOwnedBySelf': snapshot.ownerUsername == username,
       'description': attributes.description,
       'hasDateAdded': playlistHasDateAdded(attributes.format),
       'formatListData': {'type': attributes.format, 'attributes': format},

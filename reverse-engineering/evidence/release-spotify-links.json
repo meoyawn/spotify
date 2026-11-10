@@ -1,0 +1,29 @@
+{
+  "observed": {
+    "spotifySchemeDefault": {
+      "bundleId": "com.spotify.client",
+      "path": "/Applications/Spotify.app"
+    },
+    "httpsDefault": "/Applications/Google Chrome.app",
+    "installedFlutterBundleId": "dev.meoyawn.spotifyFlutter",
+    "installedRegistration": {
+      "scheme": "spotify",
+      "role": "Viewer",
+      "rank": "Alternate"
+    },
+    "explicitDelivery": "open -a /Applications/spotify_flutter.app <spotify: or HTTPS Spotify URL> reaches the app. Scheme registration alone does not select this app as the macOS default."
+  },
+  "implementation": {
+    "settings": "Spotify links → Set as default",
+    "query": "NSWorkspace.urlForApplication(toOpen: spotify:)",
+    "change": "NSWorkspace.setDefaultApplication(at: Bundle.main.bundleURL, toOpenURLsWithScheme: spotify)",
+    "consent": "Only an explicit Settings action requests the change. macOS owns any required consent dialog. Startup and installation do not take over the default handler.",
+    "https": "HTTPS Spotify links continue through the browser. An Open in app handoff using spotify: follows the selected scheme handler. No HTTP/HTTPS default browser or Spotify-owned associated domain is registered."
+  },
+  "verification": "Compiled the production Swift bridge; debug native query correctly returned false and the Settings dialog displayed Set as default. Installed and relaunched the signed release. The actual default change was left to the user’s explicit Settings action.",
+  "references": [
+    "https://developer.apple.com/documentation/appkit/nsworkspace/setdefaultapplication(at:toopenurlswithscheme:completion:)",
+    "https://developer.apple.com/documentation/xcode/supporting-universal-links-in-your-app",
+    "reverse-engineering/evidence/native-open-links.json"
+  ]
+}

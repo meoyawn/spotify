@@ -198,7 +198,8 @@ class _SpotifyDesktopAppState extends State<SpotifyDesktopApp> {
     final repository = widget.entityRepository;
     final uri = route.entityUri;
     if (repository == null || uri == null) return null;
-    return _entities.putIfAbsent(uri, () => EntityController(repository, uri: uri));
+    return _entities.putIfAbsent(uri, () => EntityController(repository, uri: uri,
+      onLibraryChanged: () { if (_library != null) unawaited(_library!.refresh(invalidate: false)); }));
   }
 
   void _disposeEntities() {

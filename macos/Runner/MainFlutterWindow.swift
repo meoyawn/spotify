@@ -59,6 +59,20 @@ class MainFlutterWindow: NSWindow {
       case "stop":
         self.linksReady = false
         result(nil)
+      case "isDefaultHandler":
+        let handler = NSWorkspace.shared.urlForApplication(toOpen: URL(string: "spotify:")!)
+        result(handler?.standardizedFileURL == Bundle.main.bundleURL.standardizedFileURL)
+      case "setDefaultHandler":
+        NSWorkspace.shared.setDefaultApplication(at: Bundle.main.bundleURL,
+          toOpenURLsWithScheme: "spotify") { error in
+          DispatchQueue.main.async {
+            if let error = error {
+              result(FlutterError(code: "default_handler_failed", message: error.localizedDescription, details: nil))
+            } else {
+              result(nil)
+            }
+          }
+        }
       default: result(FlutterMethodNotImplemented)
       }
     }

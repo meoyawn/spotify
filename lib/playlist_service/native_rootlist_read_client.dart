@@ -6,6 +6,7 @@ import '../protocol/generated/playlist_api.pb.dart';
 import '../protocol/generated/playlist_sync_reason.pb.dart';
 import '../protocol/request_builder.dart';
 import 'native_read_client.dart';
+import 'native_rootlist_changes.dart';
 import 'sync_path.dart';
 import 'sync_reply.dart';
 
@@ -22,6 +23,61 @@ class NativeRootlistReadClient {
   final String username;
   final NativePlaylistRequestHeaders headers;
   final NativePlaylistHttpSend nativeHttpSend;
+  int _nonce = 0;
+
+  /// Explicit library action. A fresh revision also resolves positional rows
+  /// beyond the first page without consulting albums, artists or media.
+  Future<void> setPlaylistSaved(String uri, bool saved, {CancellationToken? cancellationToken}) async {
+    if (!RegExp(r'^spotify:playlist:[0-9A-Za-z]{22}$').hasMatch(uri)) {
+      throw ArgumentError.value(uri, 'uri', 'Expected a canonical playlist');
+    }
+    final snapshot = await read(cancellationToken: cancellationToken);
+    if (!snapshot.hasRevision() || snapshot.revision.isEmpty || !snapshot.hasLength()) {
+      throw StateError('Spotify did not supply a rootlist revision');
+    }
+    var page = snapshot, offset = 0, index = -1;
+    while (true) {
+      cancellationToken?.throwIfCancelled();
+      final local = page.contents.items.indexWhere((item) => item.uri == uri);
+      if (local >= 0) { index = offset + local; break; }
+      offset += page.contents.items.length;
+      if (offset >= snapshot.length) break;
+      if (page.contents.items.isEmpty) throw const FormatException('Rootlist ended before its total');
+      page = await read(from: offset, cancellationToken: cancellationToken);
+      if (base64Encode(page.revision) != base64Encode(snapshot.revision) || page.length != snapshot.length) {
+        throw StateError('Your Library changed; try saving the playlist again');
+      }
+    }
+    if ((index >= 0) == saved) return;
+    _nonce = (_nonce + 1) & 0xffffffff;
+    final changes = nativeRootlistChanges(revision: snapshot.revision, username: username,
+      uri: uri, saved: saved, index: index < 0 ? 0 : index, nonce: _nonce,
+      clockMicroseconds: DateTime.now().microsecondsSinceEpoch);
+    final response = await nativeHttpSend(RequestEnvelope(method: 'POST',
+      url: '$_baseUrl${nativeRootlistPath(username)}/changes',
+      headers: {
+        'Accept-Language': headers.locale, 'app-platform': 'OSX_ARM64',
+        'spotify-app-version': '130601921', 'time-zone': headers.timeZone,
+        'User-Agent': headers.userAgent, 'Cache-Control': 'no-cache, no-store',
+        'spotify-accept-geoblock': 'dummy',
+        'spotify-playlist-sync-reason': base64Encode(PlaylistSyncReason(
+          caller: PlaylistSyncCaller.LOCAL_CHANGES).writeToBuffer()),
+        'spotify-dsa-mode-enabled': 'false', 'spotify-list-player-enabled': 'true',
+        'Content-Type': 'application/x-www-form-urlencoded',
+      }, body: changes.writeToBuffer(), responseType: 'bytes', cancellationToken: cancellationToken));
+    cancellationToken?.throwIfCancelled();
+    PlaylistSyncReply? reply;
+    final processor = PlaylistSyncReplyProcessor(onReply: (value) => reply = value);
+    try {
+      processor.receiveResponse(statusCode: response.statusCode, headers: response.headers, body: response.bodyBytes);
+    } finally { processor.close(); }
+    final result = reply;
+    if (result == null || result.error.value != 0 || response.statusCode != 200 ||
+        !result.content.nonces.any((value) => value.toInt() == _nonce) ||
+        result.content.multipleHeads || result.content.changesRequireResync) {
+      throw StateError('Spotify did not acknowledge the playlist change');
+    }
+  }
 
   Future<SelectedListContent> read({int from = 0, int length = 120, CancellationToken? cancellationToken}) async {
     final reply = await readReply(from: from, length: length, cancellationToken: cancellationToken);
@@ -51,7 +107,7 @@ class NativeRootlistReadClient {
       }
     }
     final route = PlaylistSyncRoute(method: 'GET',
-      path: 'playlist/v2/user/${_username(username)}/rootlist').withQuery([
+      path: nativeRootlistPath(username).substring(1)).withQuery([
         const MapEntry('decorate', 'revision,attributes,length,owner,capabilities,status_code,timestamp'),
         MapEntry('from', '$from'), MapEntry('length', '$length'),
       ]);
@@ -87,6 +143,8 @@ class NativeRootlistReadClient {
 String _username(String value) => Uri.encodeComponent(value)
   .replaceAll('!', '%21').replaceAll('*', '%2A').replaceAll("'", '%27')
   .replaceAll('(', '%28').replaceAll(')', '%29');
+
+String nativeRootlistPath(String username) => '/playlist/v2/user/${_username(username)}/rootlist';
 
 String _origin(String value) {
   final parsed = Uri.tryParse(value);

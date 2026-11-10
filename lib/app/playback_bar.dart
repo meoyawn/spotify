@@ -11,6 +11,7 @@ import '../playback/models.dart';
 import '../playback/requests.dart';
 import 'shell_icons.dart';
 import 'snack_bar.dart';
+import 'song_links.dart';
 
 typedef DesktopPlaybackBuilder = Widget Function(
   BuildContext context,
@@ -197,7 +198,7 @@ class _PlayerContents extends StatelessWidget {
     return contents = Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: Row(children: [
-        if (constraints.maxWidth >= 600) Expanded(flex: 3, child: Padding(
+        if (constraints.maxWidth >= 600) Expanded(flex: 3, child: SongLinkContextMenu(uri: trackUri ?? '', child: Padding(
           padding: const EdgeInsets.only(right: 16),
           child: Row(children: [
             if (metadata != null) ...[SizedBox.square(dimension: 56,
@@ -215,7 +216,7 @@ class _PlayerContents extends StatelessWidget {
               ])),
             if (saveButton != null) ...[const SizedBox(width: 8), saveButton],
           ]),
-        )),
+        ))),
         Expanded(flex: constraints.maxWidth >= 600 ? 4 : 1,
           child: Center(child: ConstrainedBox(constraints: const BoxConstraints(maxWidth: 722), child: middle))),
         if (constraints.maxWidth >= 600) Expanded(flex: 3, child: Row(

@@ -10,6 +10,7 @@ import 'native_collection_read_client.dart';
 import 'native_metadata_client.dart';
 import 'native_rootlist_repository.dart';
 import 'native_rootlist_folders.dart';
+import 'saved_playlists.dart';
 import 'native_saved_tracks.dart';
 import 'repository.dart';
 
@@ -17,7 +18,7 @@ import 'repository.dart';
 /// and base metadata reads. Query changes reuse the complete source snapshots;
 /// only a refresh invalidates them. Recents joins actual server play history;
 /// opening a page or selecting a row never counts as playing it.
-class NativeLibraryRepository implements RefreshableLibraryRepository, LibrarySearchRepository {
+class NativeLibraryRepository implements RefreshableLibraryRepository, LibrarySearchRepository, SavedPlaylistsRepository {
   NativeLibraryRepository({required this.rootlist, required this.collection,
     required this.artists, required this.metadata, this.recentContexts});
   final NativeRootlistLibraryRepository rootlist;
@@ -27,6 +28,35 @@ class NativeLibraryRepository implements RefreshableLibraryRepository, LibrarySe
   SharedTask<List<_Entry>>? _snapshot;
   SharedTask<List<_Entry>>? _rootSnapshot;
   CancellationToken _query = CancellationToken();
+  Future<void> _playlistWrites = Future.value();
+  int _queuedPlaylistWrites = 0;
+
+  @override
+  Future<bool> containsPlaylist(String uri, {CancellationToken? cancellationToken}) async =>
+    (await _rootEntries(cancellationToken ?? CancellationToken())).any((entry) => entry.uri == uri);
+
+  @override
+  Future<void> setPlaylistSaved(String uri, bool saved, {CancellationToken? cancellationToken}) async {
+    if (_queuedPlaylistWrites >= 16) throw StateError('A library change is still in progress');
+    _queuedPlaylistWrites++;
+    final token = cancellationToken ?? CancellationToken();
+    final previous = _playlistWrites;
+    final write = _playlistWrites = previous.catchError((Object _) {}).then((_) async {
+      token.throwIfCancelled();
+      try {
+        await rootlist.client.setPlaylistSaved(uri, saved, cancellationToken: token);
+      } finally {
+        _snapshot?.token.cancel(); _rootSnapshot?.token.cancel();
+        _snapshot = null; _rootSnapshot = null;
+      }
+      if (await containsPlaylist(uri, cancellationToken: token) != saved) {
+        throw StateError('Spotify has not confirmed the playlist’s library status');
+      }
+    }).whenComplete(() => _queuedPlaylistWrites--);
+    // Preserve serialization even if a queued caller leaves before its turn.
+    unawaited(write.catchError((Object _) {}));
+    await write.asCancellable(token);
+  }
 
   @override void cancelPendingRead() { _query.cancel(); _query = CancellationToken(); }
 

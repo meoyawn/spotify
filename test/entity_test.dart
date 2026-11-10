@@ -6,12 +6,14 @@ import 'dart:io';
 
 import 'package:convert/convert.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/gestures.dart' show kDoubleTapTimeout;
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:spotify_flutter/entities/controller.dart';
 import 'package:spotify_flutter/entities/models.dart';
 import 'package:spotify_flutter/entities/repository.dart';
 import 'package:spotify_flutter/entities/view.dart';
+import 'package:spotify_flutter/library/saved_playlists.dart';
 import 'package:spotify_flutter/protocol/esperanto.dart';
 import 'package:spotify_flutter/protocol/pathfinder.dart';
 import 'package:spotify_flutter/protocol/request_builder.dart';
@@ -122,6 +124,69 @@ void main() {
   });
 
   group('Entity detail interactions', () {
+    testWidgets('playlist saving waits for acknowledgement, keeps failed state and refreshes the library on success', (tester) async {
+      var receipt = Completer<void>(), writes = 0, libraryChanges = 0;
+      final page = Completer<EntityTrackPage>();
+      final repository = _SavingRepository(onOpen: (uri) async => EntityPage(
+        details: EntityDetails.fromJson({'type': 'playlist', 'uri': uri, 'name': 'Save playlist', 'isSaved': false}),
+        tracks: EntityTrackPage(rows: [_row('Music')], offset: 0, limit: 1, totalLength: 2)),
+        onTracks: (_, _) => page.future,
+        onSave: (saved) { expect(saved, isTrue); writes++; return receipt.future; });
+      final controller = EntityController(repository, uri: 'spotify:playlist:0000000000000000000001',
+        onLibraryChanged: () => libraryChanges++);
+      addTearDown(controller.dispose);
+      await tester.pumpWidget(MaterialApp(theme: ThemeData.dark(), home: Scaffold(body: EntityView(controller: controller))));
+      await tester.pumpAndSettle();
+      await tester.tap(find.byTooltip('Save to Your Library'));
+      await tester.pump();
+      await tester.tap(find.byTooltip('Save to Your Library'));
+      expect(writes, 1);
+      expect(controller.state.details!.data['isSaved'], isFalse);
+      receipt.completeError(StateError('Server rejected the write'));
+      await tester.pumpAndSettle();
+      expect(find.text('Couldn’t update Your Library. Try again.'), findsOneWidget);
+      expect(libraryChanges, 0);
+      expect(controller.state.rows.single.name, 'Music');
+      receipt = Completer<void>();
+      await tester.tap(find.byTooltip('Save to Your Library'));
+      await tester.pump();
+      final paging = controller.loadMore();
+      receipt.complete();
+      await tester.pump();
+      page.complete(EntityTrackPage(rows: [_row('Next music')], offset: 1, limit: 1, totalLength: 2));
+      await paging;
+      await tester.pumpAndSettle();
+      expect(find.byTooltip('Remove from Your Library'), findsOneWidget);
+      expect(libraryChanges, 1);
+      expect(writes, 2);
+    });
+
+    testWidgets('song menu writes the original canonical URL to the clipboard without playing', (tester) async {
+      final fixture = jsonDecode(File('reverse-engineering/fixtures/native-song-links.json').readAsStringSync()) as Map;
+      final song = (fixture['cases'] as List).first as Map;
+      final copied = <String>[];
+      tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(SystemChannels.platform, (call) async {
+        if (call.method == 'Clipboard.setData') copied.add((call.arguments as Map)['text'] as String);
+        return null;
+      });
+      addTearDown(() => tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(SystemChannels.platform, null));
+      final controller = EntityController(_Repository(onOpen: (uri) async => _page(uri, rows: [EntityRow.fromJson({
+        'type': 'track', 'uri': song['uri'], 'name': 'Share this song', 'isPlayable': true,
+        'relinkedUri': 'spotify:track:0000000000000000000002',
+      })])), uri: 'spotify:album:0000000000000000000001');
+      addTearDown(controller.dispose);
+      await tester.pumpWidget(MaterialApp(theme: ThemeData.dark(), home: Scaffold(body: EntityView(controller: controller,
+        onPlay: (_) => fail('Copying must not start playback')))));
+      await tester.pumpAndSettle();
+      await tester.tap(find.byTooltip('More options for Share this song'));
+      await tester.pump(kDoubleTapTimeout + const Duration(milliseconds: 1));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Copy song link'));
+      await tester.pumpAndSettle();
+      expect(copied, [song['originalUrl']]);
+      expect(find.text('Link copied to clipboard'), findsOneWidget);
+    });
+
     testWidgets('playlist arrows move the selected row and reveal it without playing or paging', (tester) async {
       final rows = [for (var index = 0; index < 35; index++) ...[
         if (index == 2) EntityRow.unsupported(),
@@ -313,4 +378,11 @@ class _Repository implements EntityRepository {
   Future<EntityPage> open(String uri, {CancellationToken? cancellationToken}) => onOpen(uri);
   @override
   Future<EntityTrackPage> tracks(EntityDetails details, {required int offset, int? limit, CancellationToken? cancellationToken}) => onTracks!(details, offset);
+}
+
+class _SavingRepository extends _Repository implements SavedPlaylistsRepository {
+  _SavingRepository({required super.onOpen, super.onTracks, required this.onSave});
+  final Future<void> Function(bool saved) onSave;
+  @override Future<bool> containsPlaylist(String uri, {CancellationToken? cancellationToken}) async => false;
+  @override Future<void> setPlaylistSaved(String uri, bool saved, {CancellationToken? cancellationToken}) => onSave(saved);
 }

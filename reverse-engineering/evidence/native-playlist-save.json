@@ -1,0 +1,83 @@
+{
+  "source": {
+    "application": "Spotify",
+    "version": "1.3.6.1921",
+    "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+    "rendererSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f"
+  },
+  "reaEvidenceId": "ev_9ce325bd9b793663e8898e6cc4b8db8bb8c79b806fff3e17739551670fbb85db",
+  "originalOwner": {
+    "module": 74960,
+    "type": "RootlistAPI implementation yn",
+    "sha256": "6e4e62f4bd519171aec148a105f65fd301699c24d278b21aa7e6052e1635a4d7"
+  },
+  "originalExecution": "Actual unmodified original client Save to Your Library and Remove from Your Library menu actions. Chromium was not decompiled. --disable-quic selected standard HTTP/2 solely to observe plaintext SSL socket DATA frames; a separate default-transport save capture used HTTP/3.",
+  "request": {
+    "method": "POST",
+    "path": "/playlist/v2/user/:username/rootlist/changes",
+    "headers": {
+      "Cache-Control": "no-cache, no-store",
+      "spotify-app-version": "130601921",
+      "spotify-accept-geoblock": "dummy",
+      "spotify-dsa-mode-enabled": "false",
+      "spotify-list-player-enabled": "true",
+      "spotify-playlist-sync-reason": "CAk=",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "body": "Native Playlist4 ListChanges; LOCAL_CHANGES caller=9, non-prioritized. Add has from_index=0 with URI and timestamp only. Remove has from_index/length and URI, no fabricated row IDs. Both request sync/resulting revisions and carry a per-list operation nonce."
+  },
+  "captures": [
+    {
+      "action": "add",
+      "bodySha256": "ed1eea396f6c59dd5415c2937c6a78dc234ad32303d2cbe1c47073f4c6dfafc9",
+      "status": 200,
+      "nonce": 1
+    },
+    {
+      "action": "remove",
+      "bodySha256": "bb861e96820a6969da0b2b0cb97ac93321f8a9618083754c4280df34ca23a0d4",
+      "status": 200,
+      "nonce": 2
+    }
+  ],
+  "acknowledgement": "Captured SelectedListContent responses echo the nonce, carry revision/resulting_revisions and sync_result, multiple_heads=false, changes_require_resync=false. Production additionally rereads actual rootlist membership before changing the button, then refreshes the sidebar with collection/artist caches intact.",
+  "limits": [
+    "Two actual rootlist operations prove insertion at zero and removal at zero. Generic positional removal is shared with independently executed playlist operator evidence.",
+    "Captures are authenticated live observations from one Free session, not a claim about every account or conflicting-device update.",
+    "Fixture redaction preserves original wire layout but replaces account, revision and playlist identifiers. Raw captures remain ignored locally."
+  ],
+  "verification": {
+    "live": {
+      "playlist": "Bluecoats 2015: Kinetic Noise (user supplied)",
+      "remove": {
+        "httpStatus": 200,
+        "headersMs": 132,
+        "savedAfter": false,
+        "sidebarContainsAfter": false
+      },
+      "save": {
+        "httpStatus": 200,
+        "headersMs": 154,
+        "savedAfter": true,
+        "sidebarContainsAfter": true
+      },
+      "scope": "Production repositories and controls in a macOS debug shell with the existing saved authentication path. No audio engine was attached. The verification sidebar used the raw rootlist repository, so it performed one extra rootlist read per action; the production joined Library reuses its verified root snapshot.",
+      "collectionPagingRequestsDuringMutations": 0,
+      "runtimeErrors": []
+    },
+    "hotReload": "Succeeded after the final Dart changes",
+    "focusedTests": {
+      "passed": 128,
+      "files": [
+        "playlist_service_test.dart",
+        "entity_test.dart",
+        "library_test.dart",
+        "native_saved_tracks_test.dart",
+        "search_test.dart"
+      ]
+    },
+    "paginationNegativeControl": "Removing the two current-details page-completion assignments makes the save interaction test fail at the expected Remove from Your Library control after a pending page completes. The repaired owner passes.",
+    "shellSuiteLimit": "The broader app_shell_test.dart run encounters Flutter rendering/object.dart node.built semantics assertions. The unchanged HEAD 0ca9bda reproduces the same assertion in repository replacement retires pending and cached entity pages across history; no framework workaround was added.",
+    "release": "macOS release compiled, codesign --verify --deep --strict passed, installed at /Applications/spotify_flutter.app and launched with the supplied playlist URL. Release logs show successful authenticated playlist, rootlist and metadata requests."
+  }
+}
