@@ -3,7 +3,21 @@ import FlutterMacOS
 
 class MainFlutterWindow: NSWindow {
   private var desktopChannel: FlutterMethodChannel?
+  private var linkChannel: FlutterMethodChannel?
+  private var linksReady = false
+  private var pendingOpenURL: String?
   private var foundationWebSockets: FoundationWebSockets?
+
+  func openURL(_ url: URL) {
+    if linksReady {
+      linkChannel?.invokeMethod("openUrl", arguments: url.absoluteString)
+    } else {
+      pendingOpenURL = url.absoluteString
+    }
+    if isMiniaturized { deminiaturize(nil) }
+    makeKeyAndOrderFront(nil)
+    NSApp.activate(ignoringOtherApps: true)
+  }
 
   override func close() {
     // Keep the Flutter view, Dart session and audio output attached while the
@@ -31,6 +45,24 @@ class MainFlutterWindow: NSWindow {
     self.setFrameAutosaveName(savedFrame)
 
     RegisterGeneratedPlugins(registry: flutterViewController)
+
+    let links = FlutterMethodChannel(name: "spotify_flutter/desktop_links",
+      binaryMessenger: flutterViewController.engine.binaryMessenger)
+    links.setMethodCallHandler { [weak self] call, result in
+      guard let self = self else { result(nil); return }
+      switch call.method {
+      case "takePendingUrl":
+        self.linksReady = true
+        let pending = self.pendingOpenURL
+        self.pendingOpenURL = nil
+        result(pending)
+      case "stop":
+        self.linksReady = false
+        result(nil)
+      default: result(FlutterMethodNotImplemented)
+      }
+    }
+    linkChannel = links
 
     let channel = FlutterMethodChannel(name: "spotify_flutter/desktop_host",
       binaryMessenger: flutterViewController.engine.binaryMessenger)

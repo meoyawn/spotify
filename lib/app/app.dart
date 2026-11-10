@@ -1,4 +1,8 @@
+import 'dart:async';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../entities/entities.dart';
 import '../home/home.dart';
@@ -93,6 +97,30 @@ class _SpotifyDesktopAppState extends State<SpotifyDesktopApp> {
   final _entities = <String, EntityController>{};
   late final DesktopRouter _router;
   late final PlatformRouteInformationProvider _routeInformation;
+  static const _desktopLinks = MethodChannel('spotify_flutter/desktop_links');
+  int _linkRevision = 0;
+
+  void _openLink(String input) {
+    final route = desktopRouteForLink(input);
+    if (route == null) return;
+    _linkRevision++;
+    FocusManager.instance.primaryFocus?.unfocus();
+    _router.go(route);
+  }
+
+  Future<void> _receiveDesktopLinks() async {
+    _desktopLinks.setMethodCallHandler((call) async {
+      if (call.method != 'openUrl') throw MissingPluginException();
+      if (!mounted || call.arguments is! String) return;
+      _openLink(call.arguments as String);
+    });
+    final revision = _linkRevision;
+    try {
+      final pending = await _desktopLinks.invokeMethod<String>('takePendingUrl');
+      if (mounted && revision == _linkRevision && pending != null) _openLink(pending);
+    } on MissingPluginException { /* Standalone shells can have no macOS host. */ }
+    on PlatformException catch (error) { debugPrint('Incoming links: ${error.code}'); }
+  }
 
   @override
   void initState() {
@@ -141,6 +169,7 @@ class _SpotifyDesktopAppState extends State<SpotifyDesktopApp> {
         entityRowActionsBuilder: widget.entityRowActionsBuilder,
       ),
     );
+    if (!kIsWeb && defaultTargetPlatform == TargetPlatform.macOS) unawaited(_receiveDesktopLinks());
   }
 
   @override
@@ -181,6 +210,10 @@ class _SpotifyDesktopAppState extends State<SpotifyDesktopApp> {
 
   @override
   void dispose() {
+    if (!kIsWeb && defaultTargetPlatform == TargetPlatform.macOS) {
+      _desktopLinks.setMethodCallHandler(null);
+      unawaited(_desktopLinks.invokeMethod<void>('stop').catchError((Object _) {}));
+    }
     _home?.dispose();
     _library?.dispose();
     _search?.dispose();

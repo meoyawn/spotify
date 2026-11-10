@@ -6,12 +6,68 @@ import '../home/destinations_repository.dart';
 
 enum DesktopDestination { home, search, library, item, lyrics, unavailable }
 
+/// Navigation-only projection of the original URI parser and URL normalizer.
+/// See reverse-engineering/evidence/native-open-links.json for the proved scope.
+DesktopRoute? desktopRouteForLink(String input) {
+  final uri = Uri.tryParse(input.trim());
+  if (uri == null) return null;
+  List<String> path;
+  try {
+    if (uri.scheme == 'spotify') {
+      if (uri.hasAuthority) {
+        if (uri.userInfo.isNotEmpty || uri.hasPort) return null;
+        path = [uri.host, ...uri.pathSegments];
+      } else {
+        path = uri.path.split(':').map((part) => Uri.decodeComponent(part.replaceAll('+', ' '))).toList();
+      }
+    } else if (const {'http', 'https'}.contains(uri.scheme) &&
+        const {'open.spotify.com', 'play.spotify.com'}.contains(uri.host) &&
+        uri.userInfo.isEmpty && (!uri.hasPort || uri.port == (uri.scheme == 'https' ? 443 : 80))) {
+      path = uri.pathSegments.toList();
+      if (path.isNotEmpty && RegExp(r'^intl-[A-Za-z]{2,3}(-[A-Za-z]{4})?(-([A-Za-z]{2}|[0-9]{3}))?$').hasMatch(path.first)) {
+        path.removeAt(0);
+      }
+    } else {
+      return null;
+    }
+    while (path.isNotEmpty && path.last.isEmpty) { path.removeLast(); }
+    if (path.isEmpty || path.length == 1 && path.first == 'home') return DesktopRoute.home();
+    if (path.first == 'search' && path.length <= 3) {
+      final route = DesktopRoute.fromUri(Uri(pathSegments: ['', ...path]));
+      if (route.destination == DesktopDestination.search) return route;
+    }
+    if (path.length == 1 && path.first == 'collection') {
+      return DesktopRoute.fromUri(Uri(path: '/collection'));
+    }
+    final mediaId = RegExp(r'^[0-9A-Za-z]{22}$');
+    if (path.length == 4 && path.first == 'user' && path[1].isNotEmpty &&
+        path[2] == 'playlist' && mediaId.hasMatch(path[3])) {
+      return DesktopRoute.content('spotify:user:${Uri.encodeComponent(path[1])}:playlist:${path[3]}');
+    }
+    if (path.length >= 2 && const {
+      'track', 'album', 'artist', 'playlist', 'show', 'episode', 'audiobook', 'author', 'prerelease',
+    }.contains(path.first) && mediaId.hasMatch(path[1])) {
+      return DesktopRoute.fromUri(Uri(pathSegments: ['', ...path]));
+    }
+    if (path.length == 2 && const {'user', 'genre', 'section'}.contains(path.first) &&
+        path[1].isNotEmpty && !RegExp(r'[\s:/]').hasMatch(path[1])) {
+      return DesktopRoute.fromUri(Uri(pathSegments: ['', ...path]));
+    }
+  } on FormatException { return null; }
+  // Unsupported Spotify destinations stay local, including advertising URIs.
+  return DesktopRoute.fromUri(Uri(path: '/unavailable'));
+}
+
 class DesktopRoute {
   const DesktopRoute._(this.location, this.destination, {
     this.query = '', this.title, this.subtitle,
   });
 
   factory DesktopRoute.fromUri(Uri uri) {
+    if (uri.hasScheme) {
+      return desktopRouteForLink(uri.toString()) ??
+        const DesktopRoute._('/unavailable', DesktopDestination.unavailable);
+    }
     final path = uri.pathSegments.where((segment) => segment.isNotEmpty).toList();
     if (path.isEmpty || path.length == 1 && path.first == 'home') {
       return DesktopRoute.home(facet: uri.queryParameters['facet'] ?? '');

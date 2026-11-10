@@ -19,6 +19,12 @@
       "scope": "Behavioral reference: defer to consumed content scrolling, reject vertical intent, lock direction, allow withdrawal and commit on finger lift. This revision is not asserted to match Spotify's CEF version."
     },
     {
+      "source": "Chromium HistoryOverlayController public source",
+      "url": "https://raw.githubusercontent.com/chromium/chromium/main/chrome/browser/ui/cocoa/history_overlay_controller.mm",
+      "sha256": "e1086d41c02e3a798cd3f15934280c88622bf03b38e3257d36595e726e9fce80",
+      "scope": "Behavioral reference for the edge shield: 140 px oval, up to 70 px revealed with progress, 10 px extra height and darker fill at the commit threshold. The Flutter shield is placed at the main content panel edges."
+    },
+    {
       "source": "Flutter 3.47.9 FlutterViewController.mm",
       "path": "engine/src/flutter/shell/platform/darwin/macos/framework/Source/FlutterViewController.mm",
       "sha256": "b4b140dfb121db287c95004aee55a13cc22ceb73b81c0ed3e3af4c7448dce1af",
@@ -29,13 +35,16 @@
     "owner": "lib/app/shell.dart",
     "distance": "80 logical scroll pixels; an application threshold, not Chromium's 0.08 normalized physical touch distance",
     "behavior": "Positive pan X goes back; negative goes forward. Commit once on end. Reject short, withdrawn, reversed, vertical, pinch and rotation gestures, covered routes and history changed during the gesture.",
-    "scroll_priority": "Any drag that moves within a content scroll extent owns that gesture. Elastic movement outside the extent does not consume a fresh outward history swipe.",
-    "work": "Uses existing Flutter event delivery and history. No added package, native monitor, polling, timer, animation, request or rebuild on gesture updates.",
+    "scroll_priority": "At horizontal recognition, a shelf with content in the swipe direction keeps its gesture. Otherwise history claims Flutter's gesture arena before scroll recognizers receive that update, excluding both horizontal and vertical scrolling for the remainder of the gesture, including release inertia.",
+    "feedback": "A repaint-only edge shield follows signed swipe progress before the 80 px threshold, grows and darkens when ready, and disappears on release or cancellation. The main content panel owns and clips the shield; it follows panel bounds as sidebars resize.",
+    "work": "Uses existing Flutter event delivery and history. One hit test per eligible gesture captures only the horizontal scroll positions under its origin. Only the indicator layer repaints on progress updates; no added package, native monitor, polling, timer, animation ticker, request or panel rebuild.",
     "limitations": "Flutter's pan-zoom stream does not expose raw NSTouch positions, the macOS page-swipe preference or a distinct native cancelled end phase. Exact native preference, cancellation and physical-distance parity is not claimed."
   },
   "verification": {
     "method": "Hot reload and hot restart of an isolated native macOS debug window using the production shell with supplied local content; inject PointerPanZoom events through WidgetsBinding.handlePointerEvent and observe routes and actual scroll offsets.",
     "passed": "22 live checks covering both directions, one history entry per gesture, withdrawal, reversal, vertical intent, pinch, rotation, finger lift, route changes, history bounds, shelf scrolling and shelf edges, vertical scrolling and modal blocking.",
+    "followup": "A focused production-shell widget check passes: capture rendered pixels to verify partial and ready feedback at both main panel edges, no sidebar feedback, cancellation and commit on release; inject diagonal trackpad motion and verify the vertical position stays exactly at 200 px, release produces no vertical fling, and a fresh vertical gesture scrolls normally. Semantics are disabled in this input/rendering check because of the separately reproduced baseline sidebar accessibility assertion.",
+    "followup_negative_control": "The same check fails on baseline 8c48eda for the intended vertical-lock assertion: the page moves from 200 to 227.83333333333334 px under the same diagonal trackpad sequence.",
     "analysis": "No analyzer errors or warnings in the changed Dart file; two existing openLyrics brace style notices remain.",
     "existing_tests": "app_shell_test.dart fails on the existing sidebar SemanticsNode increase/value assertion. The failure also reproduces in a detached checkout of baseline 8c48eda, without the gesture change."
   }

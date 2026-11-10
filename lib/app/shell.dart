@@ -277,6 +277,7 @@ class SpotifyDesktopShellState extends State<SpotifyDesktopShell> implements Ges
   }
 
   void _showSuggestions() {
+    if (desktopRouteForLink(_input.text) != null) return;
     if (widget.searchController != null && !_suggestionsController.isShowing) _suggestionsController.show();
   }
 
@@ -286,7 +287,12 @@ class SpotifyDesktopShellState extends State<SpotifyDesktopShell> implements Ges
   }
 
   void _queryChanged(String query) {
-    widget.searchController?.setQuery(query);
+    final link = desktopRouteForLink(query);
+    widget.searchController?.setQuery(query, fetchSuggestions: link == null);
+    if (link != null) {
+      _dismissSuggestions();
+      return;
+    }
     if (_focus.hasFocus) _showSuggestions();
   }
 
@@ -477,6 +483,11 @@ class SpotifyDesktopShellState extends State<SpotifyDesktopShell> implements Ges
   }
 
   void _submit(String query) {
+    final link = desktopRouteForLink(query);
+    if (link != null) {
+      _navigate(link);
+      return;
+    }
     final selected = _suggestionsController.isShowing ? widget.searchController?.state.selectedItem : null;
     if (selected != null) {
       _select(selected);

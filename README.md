@@ -43,6 +43,15 @@ Flutter run and exits without launching another instance. Extra Flutter argument
 can follow `--`, for example `moon run dev -- --no-pub`. Keep one desktop app
 process and the debug badge visible. Never run `dart format`.
 
+Paste an `open.spotify.com`, `play.spotify.com` or `spotify:` link into Search
+and press Enter to open its page. The macOS runner also receives `spotify:`
+URLs and HTTP links explicitly sent to it, for example
+`open -a spotify_flutter 'https://open.spotify.com/album/4uLU6hMCjMI75M1A2tKUQC'`.
+Rebuild the runner for native link delivery. This registration leaves browser
+defaults unchanged; ordinary HTTPS clicks still use the browser unless forwarded
+to the app. Opening a page does not start playback. Original-client evidence is
+recorded in [native-open-links.json](reverse-engineering/evidence/native-open-links.json).
+
 Original-backed outgoing HTTP verification:
 
 ```sh

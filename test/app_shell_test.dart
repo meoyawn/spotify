@@ -1,6 +1,8 @@
 import 'package:cancellation_token/cancellation_token.dart';
 
 import 'dart:async';
+import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart' show kDoubleTapTimeout;
@@ -17,10 +19,12 @@ import 'package:spotify_flutter/search/models.dart';
 import 'package:spotify_flutter/search/repository.dart';
 
 class _ProvidedSearch implements SearchRepository {
+  _ProvidedSearch({this.recentItems = const []});
+  final List<SearchItem> recentItems;
   final queries = <String>[];
 
   @override
-  Future<SearchPage> recent({CancellationToken? cancellationToken}) async => SearchPage(query: '', items: []);
+  Future<SearchPage> recent({CancellationToken? cancellationToken}) async => SearchPage(query: '', items: recentItems);
 
   @override
   Future<SearchPage> suggestions(String query, {CancellationToken? cancellationToken}) async {
@@ -133,6 +137,100 @@ void main() {
       await loader.load();
     }
   });
+
+  test('platform link routes match independently executed original normalization', () async {
+    final fixture = jsonDecode(File('reverse-engineering/fixtures/native-open-links.json').readAsStringSync())
+      as Map<String, dynamic>;
+    for (final entry in (fixture['cases'] as List).cast<Map<String, dynamic>>()) {
+      final route = await const DesktopRouteParser().parseRouteInformation(
+        RouteInformation(uri: Uri.parse((entry['input'] as String).trim())));
+      final path = entry['originalPath'] as String;
+      if (path.startsWith('/user/')) {
+        expect(route.entityUri, entry['originalUri'], reason: entry['input'] as String);
+      } else {
+        expect(route.location, path, reason: entry['input'] as String);
+      }
+    }
+  });
+
+  testWidgets('pasted Spotify link opens content before stale suggestions without searching or playing', (tester) async {
+    tester.view.physicalSize = const Size(1280, 800);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+    final search = _ProvidedSearch(recentItems: [SearchItem(type: 'track',
+      uri: 'spotify:track:provided', name: 'Recent result', images: [], contributors: [])]);
+    final entities = _ProvidedEntities('Linked album');
+    final plays = <String>[];
+    await tester.pumpWidget(SpotifyDesktopApp(
+      searchRepository: search, entityRepository: entities,
+      playbackBuilder: (_, _, _) => const SizedBox.shrink(),
+      onSelect: (item) => plays.add(item.uri), onEntitySelect: (row) => plays.add(row.uri)));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byType(TextField));
+    await tester.pumpAndSettle();
+    await tester.sendKeyEvent(LogicalKeyboardKey.arrowDown);
+    await tester.enterText(find.byType(TextField),
+      'https://open.spotify.com/intl-de/album/4uLU6hMCjMI75M1A2tKUQC?si=sharing');
+    await tester.pump(const Duration(milliseconds: 300));
+    expect(search.queries, isEmpty);
+    await tester.testTextInput.receiveAction(TextInputAction.search);
+    await tester.pumpAndSettle();
+    expect(_router(tester).route.location, '/album/4uLU6hMCjMI75M1A2tKUQC');
+    expect(entities.opened, ['spotify:album:4uLU6hMCjMI75M1A2tKUQC']);
+    expect(search.queries, isEmpty);
+    expect(plays, isEmpty);
+    await tester.tap(find.byTooltip('Go back'));
+    await tester.pumpAndSettle();
+    expect(_router(tester).route.location, '/');
+    expect(tester.takeException(), isNull);
+  }, semanticsEnabled: false);
+
+  for (final warmBeforeInitial in [false, true]) {
+    testWidgets('macOS ${warmBeforeInitial ? 'warm link supersedes delayed startup' : 'startup and warm links navigate once'}', (tester) async {
+      tester.view.physicalSize = const Size(1280, 800);
+      tester.view.devicePixelRatio = 1;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+      const links = MethodChannel('spotify_flutter/desktop_links');
+      const codec = StandardMethodCodec();
+      final pending = Completer<String?>();
+      final messenger = tester.binding.defaultBinaryMessenger;
+      messenger.setMockMethodCallHandler(links, (call) async =>
+        call.method == 'takePendingUrl' ? pending.future : null);
+      addTearDown(() => messenger.setMockMethodCallHandler(links, null));
+      final entities = _ProvidedEntities('Incoming content');
+      await tester.pumpWidget(SpotifyDesktopApp(entityRepository: entities,
+        playbackBuilder: (_, _, _) => const SizedBox.shrink()));
+      await tester.pumpAndSettle();
+      Future<void> deliver(String input) async {
+        tester.binding.channelBuffers.push(links.name, codec.encodeMethodCall(MethodCall('openUrl', input)),
+          (_) {});
+        await tester.pumpAndSettle();
+      }
+      const cold = 'spotify:album:4uLU6hMCjMI75M1A2tKUQC';
+      const warm = 'http://open.spotify.com/track/4uLU6hMCjMI75M1A2tKUQC?si=sharing';
+      if (warmBeforeInitial) {
+        await deliver(warm);
+      } else {
+        await deliver('https://unrelated.invalid/track/4uLU6hMCjMI75M1A2tKUQC');
+      }
+      pending.complete(cold);
+      await tester.pumpAndSettle();
+      expect(_router(tester).route.entityUri, warmBeforeInitial
+        ? 'spotify:track:4uLU6hMCjMI75M1A2tKUQC' : cold);
+      expect(entities.opened, [warmBeforeInitial ? 'spotify:track:4uLU6hMCjMI75M1A2tKUQC' : cold]);
+      if (!warmBeforeInitial) await deliver(warm);
+      final opened = List.of(entities.opened);
+      await deliver(warm);
+      await deliver('https://open.spotify.com.evil.invalid/album/4uLU6hMCjMI75M1A2tKUQC');
+      expect(_router(tester).route.entityUri, 'spotify:track:4uLU6hMCjMI75M1A2tKUQC');
+      expect(entities.opened, opened);
+      await tester.pumpWidget(const SizedBox.shrink());
+      await tester.pumpAndSettle();
+      expect(tester.takeException(), isNull);
+    }, semanticsEnabled: false, variant: TargetPlatformVariant.only(TargetPlatform.macOS));
+  }
 
   testWidgets('unconnected root keeps recovered shell dimensions and cannot imply authentication or playback', (tester) async {
     tester.view.physicalSize = const Size(1280, 800);

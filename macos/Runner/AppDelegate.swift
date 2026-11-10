@@ -5,8 +5,22 @@ import MediaPlayer
 @main
 class AppDelegate: FlutterAppDelegate {
   private var mediaControls: MacMediaControls?
+  private var pendingOpenURL: URL?
+
+  override func application(_ application: NSApplication, open urls: [URL]) {
+    guard let url = urls.last else { return }
+    if let window = mainFlutterWindow as? MainFlutterWindow {
+      window.openURL(url)
+    } else {
+      pendingOpenURL = url
+    }
+  }
 
   override func applicationDidFinishLaunching(_ notification: Notification) {
+    if let url = pendingOpenURL, let window = mainFlutterWindow as? MainFlutterWindow {
+      pendingOpenURL = nil
+      window.openURL(url)
+    }
     if let controller = mainFlutterWindow?.contentViewController as? FlutterViewController {
       mediaControls = MacMediaControls(messenger: controller.engine.binaryMessenger)
     }

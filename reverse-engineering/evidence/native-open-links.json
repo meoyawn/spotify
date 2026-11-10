@@ -1,0 +1,934 @@
+{
+  "source": {
+    "application": "Spotify",
+    "version": "1.3.6.1921",
+    "executable": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+    "archive": "/Applications/Spotify.app/Contents/Resources/Apps/xpui.spa",
+    "archiveSha256": "20038c2af5d9bb785c3181c3e9a04073b43eb501a72950b19d1a2a085b9a18df",
+    "rendererOrigin": "CDP script source with URL <embedded>, recorded in .local/script-inventory.json",
+    "rendererSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f"
+  },
+  "ranges": [
+    {
+      "module": 47136,
+      "offsetBytes": 724697,
+      "lengthBytes": 30601,
+      "sha256": "69d9c484a0f66974f784f9b31a70e1260d8cc3cdb1aa0299e5f8aabae1470266"
+    },
+    {
+      "module": 490,
+      "offsetBytes": 2550464,
+      "lengthBytes": 426547,
+      "sha256": "a5fff78fd28ce0bb443676aa3d0e9fb8e5e9dc956c47cf8452fb3a1f380d3764"
+    },
+    {
+      "module": 28033,
+      "offsetBytes": 4803249,
+      "lengthBytes": 866,
+      "sha256": "742bd6c975b0e238c5861ce978e9dde3ec019b11cfa6d5a4f8486898c758464f"
+    },
+    {
+      "module": 69449,
+      "offsetBytes": 7889734,
+      "lengthBytes": 11029,
+      "sha256": "512123b971df696e5269b0cebcaf671482bd607acd58f800425c57c484e2d333"
+    },
+    {
+      "name": "Search submit callback",
+      "module": 490,
+      "offsetBytes": 2768153,
+      "lengthBytes": 426,
+      "sha256": "80482a355554342c1d3e3798f41af1254329d82a16e86198e5a2069ac6c25093"
+    }
+  ],
+  "rea": {
+    "summaryEvidenceId": "ev_895280bbbc3687975b94849d807319a35fa1aea5176523ba053ad0ddd3248afe",
+    "parentEvidenceId": "ev_c48b0d89cd6cff17186825e354f8a3e3e7cb5f3c531560b770493eb61cf523e0",
+    "analysis": "Static REA analysis of original modules 47136, 28033 and 69449; bootstrap and Chromium were not analyzed or executed."
+  },
+  "execution": {
+    "modules": [
+      47136,
+      69449,
+      28033
+    ],
+    "substitutedStandardPrimitives": [
+      "Node WHATWG URL and URLSearchParams for browser WHATWG URL"
+    ],
+    "scope": "Original URI parser, URL normalizer and Search submit callback executed without a renderer or network; full Search React component and macOS event handler not executed."
+  },
+  "searchSubmissions": [
+    {
+      "input": "https://open.spotify.com/track/4uLU6hMCjMI75M1A2tKUQC?si=sharing",
+      "events": [
+        {
+          "type": "cancelSearch"
+        },
+        {
+          "type": "navigate",
+          "path": "/track/4uLU6hMCjMI75M1A2tKUQC?si=sharing",
+          "state": {
+            "state": {
+              "preventMoveFocus": true,
+              "redirectToHome": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "input": "http://open.spotify.com/track/4uLU6hMCjMI75M1A2tKUQC",
+      "events": [
+        {
+          "type": "cancelSearch"
+        },
+        {
+          "type": "navigate",
+          "path": "/track/4uLU6hMCjMI75M1A2tKUQC",
+          "state": {
+            "state": {
+              "preventMoveFocus": true,
+              "redirectToHome": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "input": "https://play.spotify.com/album/4uLU6hMCjMI75M1A2tKUQC",
+      "events": [
+        {
+          "type": "cancelSearch"
+        },
+        {
+          "type": "navigate",
+          "path": "/album/4uLU6hMCjMI75M1A2tKUQC",
+          "state": {
+            "state": {
+              "preventMoveFocus": true,
+              "redirectToHome": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "input": "http://play.spotify.com/artist/4uLU6hMCjMI75M1A2tKUQC",
+      "events": [
+        {
+          "type": "cancelSearch"
+        },
+        {
+          "type": "navigate",
+          "path": "/artist/4uLU6hMCjMI75M1A2tKUQC",
+          "state": {
+            "state": {
+              "preventMoveFocus": true,
+              "redirectToHome": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "input": "https://open.spotify.com/album/4uLU6hMCjMI75M1A2tKUQC",
+      "events": [
+        {
+          "type": "cancelSearch"
+        },
+        {
+          "type": "navigate",
+          "path": "/album/4uLU6hMCjMI75M1A2tKUQC",
+          "state": {
+            "state": {
+              "preventMoveFocus": true,
+              "redirectToHome": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "input": "https://open.spotify.com/artist/4uLU6hMCjMI75M1A2tKUQC",
+      "events": [
+        {
+          "type": "cancelSearch"
+        },
+        {
+          "type": "navigate",
+          "path": "/artist/4uLU6hMCjMI75M1A2tKUQC",
+          "state": {
+            "state": {
+              "preventMoveFocus": true,
+              "redirectToHome": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "input": "https://open.spotify.com/playlist/4uLU6hMCjMI75M1A2tKUQC",
+      "events": [
+        {
+          "type": "cancelSearch"
+        },
+        {
+          "type": "navigate",
+          "path": "/playlist/4uLU6hMCjMI75M1A2tKUQC",
+          "state": {
+            "state": {
+              "preventMoveFocus": true,
+              "redirectToHome": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "input": "https://open.spotify.com/show/4uLU6hMCjMI75M1A2tKUQC",
+      "events": [
+        {
+          "type": "cancelSearch"
+        },
+        {
+          "type": "navigate",
+          "path": "/show/4uLU6hMCjMI75M1A2tKUQC",
+          "state": {
+            "state": {
+              "preventMoveFocus": true,
+              "redirectToHome": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "input": "https://open.spotify.com/episode/4uLU6hMCjMI75M1A2tKUQC",
+      "events": [
+        {
+          "type": "cancelSearch"
+        },
+        {
+          "type": "navigate",
+          "path": "/episode/4uLU6hMCjMI75M1A2tKUQC",
+          "state": {
+            "state": {
+              "preventMoveFocus": true,
+              "redirectToHome": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "input": "https://open.spotify.com/audiobook/4uLU6hMCjMI75M1A2tKUQC",
+      "events": [
+        {
+          "type": "cancelSearch"
+        },
+        {
+          "type": "navigate",
+          "path": "/audiobook/4uLU6hMCjMI75M1A2tKUQC",
+          "state": {
+            "state": {
+              "preventMoveFocus": true,
+              "redirectToHome": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "input": "https://open.spotify.com/user/4uLU6hMCjMI75M1A2tKUQC",
+      "events": [
+        {
+          "type": "cancelSearch"
+        },
+        {
+          "type": "navigate",
+          "path": "/user/4uLU6hMCjMI75M1A2tKUQC",
+          "state": {
+            "state": {
+              "preventMoveFocus": true,
+              "redirectToHome": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "input": "https://open.spotify.com/genre/4uLU6hMCjMI75M1A2tKUQC",
+      "events": [
+        {
+          "type": "cancelSearch"
+        },
+        {
+          "type": "navigate",
+          "path": "/genre/4uLU6hMCjMI75M1A2tKUQC",
+          "state": {
+            "state": {
+              "preventMoveFocus": true,
+              "redirectToHome": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "input": "https://open.spotify.com/intl-de/track/4uLU6hMCjMI75M1A2tKUQC?si=sharing",
+      "events": [
+        {
+          "type": "cancelSearch"
+        },
+        {
+          "type": "navigate",
+          "path": "/track/4uLU6hMCjMI75M1A2tKUQC?si=sharing",
+          "state": {
+            "state": {
+              "preventMoveFocus": true,
+              "redirectToHome": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "input": "https://open.spotify.com/intl-pt/album/4uLU6hMCjMI75M1A2tKUQC",
+      "events": [
+        {
+          "type": "cancelSearch"
+        },
+        {
+          "type": "navigate",
+          "path": "/album/4uLU6hMCjMI75M1A2tKUQC",
+          "state": {
+            "state": {
+              "preventMoveFocus": true,
+              "redirectToHome": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "input": "https://open.spotify.com/embed/track/4uLU6hMCjMI75M1A2tKUQC",
+      "events": [
+        {
+          "type": "cancelSearch"
+        },
+        {
+          "type": "navigate",
+          "path": "/embed/track/4uLU6hMCjMI75M1A2tKUQC",
+          "state": {
+            "state": {
+              "preventMoveFocus": true,
+              "redirectToHome": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "input": "https://open.spotify.com/user/example/playlist/4uLU6hMCjMI75M1A2tKUQC?si=sharing",
+      "events": [
+        {
+          "type": "cancelSearch"
+        },
+        {
+          "type": "navigate",
+          "path": "/user/example/playlist/4uLU6hMCjMI75M1A2tKUQC?si=sharing",
+          "state": {
+            "state": {
+              "preventMoveFocus": true,
+              "redirectToHome": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "input": "spotify:track:4uLU6hMCjMI75M1A2tKUQC",
+      "events": [
+        {
+          "type": "cancelSearch"
+        },
+        {
+          "type": "navigate",
+          "path": "/track/4uLU6hMCjMI75M1A2tKUQC",
+          "state": {
+            "state": {
+              "preventMoveFocus": true,
+              "redirectToHome": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "input": "spotify:album:4uLU6hMCjMI75M1A2tKUQC?si=sharing",
+      "events": [
+        {
+          "type": "cancelSearch"
+        },
+        {
+          "type": "navigate",
+          "path": "/album/4uLU6hMCjMI75M1A2tKUQC?si=sharing",
+          "state": {
+            "state": {
+              "preventMoveFocus": true,
+              "redirectToHome": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "input": "spotify://track/4uLU6hMCjMI75M1A2tKUQC?si=sharing",
+      "events": [
+        {
+          "type": "cancelSearch"
+        },
+        {
+          "type": "navigate",
+          "path": "/track/4uLU6hMCjMI75M1A2tKUQC?si=sharing",
+          "state": {
+            "state": {
+              "preventMoveFocus": true,
+              "redirectToHome": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "input": "https://open.spotify.com/search/Daft%20Punk",
+      "events": [
+        {
+          "type": "cancelSearch"
+        },
+        {
+          "type": "navigate",
+          "path": "/search/Daft%20Punk",
+          "state": {
+            "state": {
+              "preventMoveFocus": true,
+              "redirectToHome": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "input": "https://open.spotify.com/collection/tracks",
+      "events": [
+        {
+          "type": "cancelSearch"
+        },
+        {
+          "type": "navigate",
+          "path": "/collection/tracks",
+          "state": {
+            "state": {
+              "preventMoveFocus": true,
+              "redirectToHome": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "input": "https://open.spotify.com/",
+      "events": [
+        {
+          "type": "search",
+          "value": "https://open.spotify.com/"
+        }
+      ]
+    },
+    {
+      "input": "https://open.spotify.com/track/4uLU6hMCjMI75M1A2tKUQC#fragment",
+      "events": [
+        {
+          "type": "cancelSearch"
+        },
+        {
+          "type": "navigate",
+          "path": "/track/4uLU6hMCjMI75M1A2tKUQC",
+          "state": {
+            "state": {
+              "preventMoveFocus": true,
+              "redirectToHome": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "input": "https://open.spotify.com/track/4uLU6hMCjMI75M1A2tKUQC/",
+      "events": [
+        {
+          "type": "cancelSearch"
+        },
+        {
+          "type": "navigate",
+          "path": "/track/4uLU6hMCjMI75M1A2tKUQC",
+          "state": {
+            "state": {
+              "preventMoveFocus": true,
+              "redirectToHome": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "input": "https://open.spotify.com/track/invalid",
+      "events": [
+        {
+          "type": "search",
+          "value": "https://open.spotify.com/track/invalid"
+        }
+      ]
+    },
+    {
+      "input": "https://open.spotify.com/track/4uLU6hMCjMI75M1A2tKUQC/extra",
+      "events": [
+        {
+          "type": "cancelSearch"
+        },
+        {
+          "type": "navigate",
+          "path": "/track/4uLU6hMCjMI75M1A2tKUQC",
+          "state": {
+            "state": {
+              "preventMoveFocus": true,
+              "redirectToHome": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "input": "https://open.spotify.com.evil.invalid/track/4uLU6hMCjMI75M1A2tKUQC",
+      "events": [
+        {
+          "type": "search",
+          "value": "https://open.spotify.com.evil.invalid/track/4uLU6hMCjMI75M1A2tKUQC"
+        }
+      ]
+    },
+    {
+      "input": "https://open.spotify.com@evil.invalid/track/4uLU6hMCjMI75M1A2tKUQC",
+      "events": [
+        {
+          "type": "search",
+          "value": "https://open.spotify.com@evil.invalid/track/4uLU6hMCjMI75M1A2tKUQC"
+        }
+      ]
+    },
+    {
+      "input": "https://OPEN.SPOTIFY.COM/track/4uLU6hMCjMI75M1A2tKUQC",
+      "events": [
+        {
+          "type": "search",
+          "value": "https://OPEN.SPOTIFY.COM/track/4uLU6hMCjMI75M1A2tKUQC"
+        }
+      ]
+    },
+    {
+      "input": "https://open.spotify.com:443/track/4uLU6hMCjMI75M1A2tKUQC",
+      "events": [
+        {
+          "type": "search",
+          "value": "https://open.spotify.com:443/track/4uLU6hMCjMI75M1A2tKUQC"
+        }
+      ]
+    },
+    {
+      "input": " https://open.spotify.com/track/4uLU6hMCjMI75M1A2tKUQC ",
+      "events": [
+        {
+          "type": "search",
+          "value": " https://open.spotify.com/track/4uLU6hMCjMI75M1A2tKUQC "
+        }
+      ]
+    },
+    {
+      "input": "https://open.spotify.com/intl-en/track/4uLU6hMCjMI75M1A2tKUQC?t=15",
+      "events": [
+        {
+          "type": "cancelSearch"
+        },
+        {
+          "type": "navigate",
+          "path": "/track/4uLU6hMCjMI75M1A2tKUQC?t=15",
+          "state": {
+            "state": {
+              "preventMoveFocus": true,
+              "redirectToHome": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "input": "https://open.spotify.com/track/4uLU6hMCjMI75M1A2tKUQC?uri=spotify%3Aad%3Aexample",
+      "events": [
+        {
+          "type": "cancelSearch"
+        },
+        {
+          "type": "navigate",
+          "path": "/track/4uLU6hMCjMI75M1A2tKUQC?uri=spotify%3Aad%3Aexample",
+          "state": {
+            "state": {
+              "preventMoveFocus": true,
+              "redirectToHome": false
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "originalResults": [
+    {
+      "input": "https://open.spotify.com/track/4uLU6hMCjMI75M1A2tKUQC?si=sharing",
+      "type": "track",
+      "normalized": {
+        "uri": "spotify:track:4uLU6hMCjMI75M1A2tKUQC",
+        "path": "/track/4uLU6hMCjMI75M1A2tKUQC",
+        "query": "?si=sharing"
+      }
+    },
+    {
+      "input": "http://open.spotify.com/track/4uLU6hMCjMI75M1A2tKUQC",
+      "type": "track",
+      "normalized": {
+        "uri": "spotify:track:4uLU6hMCjMI75M1A2tKUQC",
+        "path": "/track/4uLU6hMCjMI75M1A2tKUQC",
+        "query": ""
+      }
+    },
+    {
+      "input": "https://play.spotify.com/album/4uLU6hMCjMI75M1A2tKUQC",
+      "type": "album",
+      "normalized": {
+        "uri": "spotify:album:4uLU6hMCjMI75M1A2tKUQC",
+        "path": "/album/4uLU6hMCjMI75M1A2tKUQC",
+        "query": ""
+      }
+    },
+    {
+      "input": "http://play.spotify.com/artist/4uLU6hMCjMI75M1A2tKUQC",
+      "type": "artist",
+      "normalized": {
+        "uri": "spotify:artist:4uLU6hMCjMI75M1A2tKUQC",
+        "path": "/artist/4uLU6hMCjMI75M1A2tKUQC",
+        "query": ""
+      }
+    },
+    {
+      "input": "https://open.spotify.com/album/4uLU6hMCjMI75M1A2tKUQC",
+      "type": "album",
+      "normalized": {
+        "uri": "spotify:album:4uLU6hMCjMI75M1A2tKUQC",
+        "path": "/album/4uLU6hMCjMI75M1A2tKUQC",
+        "query": ""
+      }
+    },
+    {
+      "input": "https://open.spotify.com/artist/4uLU6hMCjMI75M1A2tKUQC",
+      "type": "artist",
+      "normalized": {
+        "uri": "spotify:artist:4uLU6hMCjMI75M1A2tKUQC",
+        "path": "/artist/4uLU6hMCjMI75M1A2tKUQC",
+        "query": ""
+      }
+    },
+    {
+      "input": "https://open.spotify.com/playlist/4uLU6hMCjMI75M1A2tKUQC",
+      "type": "playlist-v2",
+      "normalized": {
+        "uri": "spotify:playlist:4uLU6hMCjMI75M1A2tKUQC",
+        "path": "/playlist/4uLU6hMCjMI75M1A2tKUQC",
+        "query": ""
+      }
+    },
+    {
+      "input": "https://open.spotify.com/show/4uLU6hMCjMI75M1A2tKUQC",
+      "type": "show",
+      "normalized": {
+        "uri": "spotify:show:4uLU6hMCjMI75M1A2tKUQC",
+        "path": "/show/4uLU6hMCjMI75M1A2tKUQC",
+        "query": ""
+      }
+    },
+    {
+      "input": "https://open.spotify.com/episode/4uLU6hMCjMI75M1A2tKUQC",
+      "type": "episode",
+      "normalized": {
+        "uri": "spotify:episode:4uLU6hMCjMI75M1A2tKUQC",
+        "path": "/episode/4uLU6hMCjMI75M1A2tKUQC",
+        "query": ""
+      }
+    },
+    {
+      "input": "https://open.spotify.com/audiobook/4uLU6hMCjMI75M1A2tKUQC",
+      "type": "unknown",
+      "normalized": {
+        "uri": "spotify:audiobook:4uLU6hMCjMI75M1A2tKUQC",
+        "path": "/audiobook/4uLU6hMCjMI75M1A2tKUQC",
+        "query": ""
+      }
+    },
+    {
+      "input": "https://open.spotify.com/user/4uLU6hMCjMI75M1A2tKUQC",
+      "type": "profile",
+      "normalized": {
+        "uri": "spotify:user:4uLU6hMCjMI75M1A2tKUQC",
+        "path": "/user/4uLU6hMCjMI75M1A2tKUQC",
+        "query": ""
+      }
+    },
+    {
+      "input": "https://open.spotify.com/genre/4uLU6hMCjMI75M1A2tKUQC",
+      "type": "genre",
+      "normalized": {
+        "uri": "spotify:genre:4uLU6hMCjMI75M1A2tKUQC",
+        "path": "/genre/4uLU6hMCjMI75M1A2tKUQC",
+        "query": ""
+      }
+    },
+    {
+      "input": "https://open.spotify.com/intl-de/track/4uLU6hMCjMI75M1A2tKUQC?si=sharing",
+      "type": "track",
+      "normalized": {
+        "uri": "spotify:track:4uLU6hMCjMI75M1A2tKUQC",
+        "path": "/track/4uLU6hMCjMI75M1A2tKUQC",
+        "query": "?si=sharing"
+      }
+    },
+    {
+      "input": "https://open.spotify.com/intl-pt/album/4uLU6hMCjMI75M1A2tKUQC",
+      "type": "album",
+      "normalized": {
+        "uri": "spotify:album:4uLU6hMCjMI75M1A2tKUQC",
+        "path": "/album/4uLU6hMCjMI75M1A2tKUQC",
+        "query": ""
+      }
+    },
+    {
+      "input": "https://open.spotify.com/embed/track/4uLU6hMCjMI75M1A2tKUQC",
+      "type": "unknown",
+      "normalized": {
+        "uri": "spotify:embed:track:4uLU6hMCjMI75M1A2tKUQC",
+        "path": "/embed/track/4uLU6hMCjMI75M1A2tKUQC",
+        "query": ""
+      }
+    },
+    {
+      "input": "https://open.spotify.com/user/example/playlist/4uLU6hMCjMI75M1A2tKUQC?si=sharing",
+      "type": "playlist",
+      "normalized": {
+        "uri": "spotify:user:example:playlist:4uLU6hMCjMI75M1A2tKUQC",
+        "path": "/user/example/playlist/4uLU6hMCjMI75M1A2tKUQC",
+        "query": "?si=sharing"
+      }
+    },
+    {
+      "input": "spotify:track:4uLU6hMCjMI75M1A2tKUQC",
+      "type": "track",
+      "normalized": {
+        "uri": "spotify:track:4uLU6hMCjMI75M1A2tKUQC",
+        "path": "/track/4uLU6hMCjMI75M1A2tKUQC",
+        "query": ""
+      }
+    },
+    {
+      "input": "spotify:album:4uLU6hMCjMI75M1A2tKUQC?si=sharing",
+      "type": "album",
+      "normalized": {
+        "uri": "spotify:album:4uLU6hMCjMI75M1A2tKUQC",
+        "path": "/album/4uLU6hMCjMI75M1A2tKUQC",
+        "query": "?si=sharing"
+      }
+    },
+    {
+      "input": "spotify://track/4uLU6hMCjMI75M1A2tKUQC?si=sharing",
+      "type": "unknown",
+      "normalized": {
+        "uri": "spotify:track:4uLU6hMCjMI75M1A2tKUQC",
+        "path": "/track/4uLU6hMCjMI75M1A2tKUQC",
+        "query": "?si=sharing"
+      }
+    },
+    {
+      "input": "https://open.spotify.com/search/Daft%20Punk",
+      "type": "search",
+      "normalized": {
+        "uri": "spotify:search:Daft+Punk",
+        "path": "/search/Daft%20Punk",
+        "query": ""
+      }
+    },
+    {
+      "input": "https://open.spotify.com/collection/tracks",
+      "type": "collection",
+      "normalized": {
+        "uri": "spotify:collection:tracks",
+        "path": "/collection/tracks",
+        "query": ""
+      }
+    },
+    {
+      "input": "https://open.spotify.com/",
+      "type": null,
+      "normalized": null
+    },
+    {
+      "input": "https://open.spotify.com/track/4uLU6hMCjMI75M1A2tKUQC#fragment",
+      "type": "track",
+      "normalized": {
+        "uri": "spotify:track:4uLU6hMCjMI75M1A2tKUQC#fragment",
+        "path": "/track/4uLU6hMCjMI75M1A2tKUQC",
+        "query": ""
+      }
+    },
+    {
+      "input": "https://open.spotify.com/track/4uLU6hMCjMI75M1A2tKUQC/",
+      "type": "track",
+      "normalized": {
+        "uri": "spotify:track:4uLU6hMCjMI75M1A2tKUQC",
+        "path": "/track/4uLU6hMCjMI75M1A2tKUQC",
+        "query": ""
+      }
+    },
+    {
+      "input": "https://open.spotify.com/track/invalid",
+      "type": null,
+      "normalized": null
+    },
+    {
+      "input": "https://open.spotify.com/track/4uLU6hMCjMI75M1A2tKUQC/extra",
+      "type": "track",
+      "normalized": {
+        "uri": "spotify:track:4uLU6hMCjMI75M1A2tKUQC#extra",
+        "path": "/track/4uLU6hMCjMI75M1A2tKUQC",
+        "query": ""
+      }
+    },
+    {
+      "input": "https://open.spotify.com.evil.invalid/track/4uLU6hMCjMI75M1A2tKUQC",
+      "type": null,
+      "normalized": null
+    },
+    {
+      "input": "https://open.spotify.com@evil.invalid/track/4uLU6hMCjMI75M1A2tKUQC",
+      "type": null,
+      "normalized": null
+    },
+    {
+      "input": "https://OPEN.SPOTIFY.COM/track/4uLU6hMCjMI75M1A2tKUQC",
+      "type": null,
+      "normalized": {
+        "uri": "spotify:track:4uLU6hMCjMI75M1A2tKUQC",
+        "path": "/track/4uLU6hMCjMI75M1A2tKUQC",
+        "query": ""
+      }
+    },
+    {
+      "input": "https://open.spotify.com:443/track/4uLU6hMCjMI75M1A2tKUQC",
+      "type": null,
+      "normalized": {
+        "uri": "spotify:track:4uLU6hMCjMI75M1A2tKUQC",
+        "path": "/track/4uLU6hMCjMI75M1A2tKUQC",
+        "query": ""
+      }
+    },
+    {
+      "input": " https://open.spotify.com/track/4uLU6hMCjMI75M1A2tKUQC ",
+      "type": null,
+      "normalized": {
+        "uri": "spotify:track:4uLU6hMCjMI75M1A2tKUQC",
+        "path": "/track/4uLU6hMCjMI75M1A2tKUQC",
+        "query": ""
+      }
+    },
+    {
+      "input": "https://open.spotify.com/intl-en/track/4uLU6hMCjMI75M1A2tKUQC?t=15",
+      "type": "track",
+      "normalized": {
+        "uri": "spotify:track:4uLU6hMCjMI75M1A2tKUQC",
+        "path": "/track/4uLU6hMCjMI75M1A2tKUQC",
+        "query": "?t=15"
+      }
+    },
+    {
+      "input": "https://open.spotify.com/track/4uLU6hMCjMI75M1A2tKUQC?uri=spotify%3Aad%3Aexample",
+      "type": "track",
+      "normalized": {
+        "uri": "spotify:track:4uLU6hMCjMI75M1A2tKUQC",
+        "path": "/track/4uLU6hMCjMI75M1A2tKUQC",
+        "query": "?uri=spotify%3Aad%3Aexample"
+      }
+    }
+  ],
+  "nativeRegistration": {
+    "source": "/Applications/Spotify.app/Contents/Info.plist",
+    "CFBundleURLSchemes": [
+      "spotify"
+    ],
+    "CFBundleTypeRole": "Viewer"
+  },
+  "applicationPolicy": [
+    "Shared navigation-only projection for Search submissions, platform routes and macOS URL events. Opening a link does not start playback.",
+    "Recognized link input cancels suggestion work; Enter takes precedence over a stale selected suggestion.",
+    "Sharing/query parameters and fragments do not alter content selection or cause extra requests. Unsupported Spotify destinations, including ads, remain unavailable locally.",
+    "The latest macOS URL is buffered before Flutter registers. A warm event supersedes a delayed initial-link response. Explicit HTTP/HTTPS delivery and spotify: scheme registration do not claim Spotify-owned universal links or change browser defaults."
+  ],
+  "verification": {
+    "build": "macOS debug runner compiled with the production AppDelegate, MainFlutterWindow, router and shell. A local probe injected metadata/search repositories without account or playback providers; standard native embedding used an ignored Dart equivalent during this build, then the Xcode project was restored.",
+    "nativeDelivery": "open -a /Users/meoyawn/Developer/spotify/build/macos/Build/Products/Debug/spotify_flutter.app <url>",
+    "beforeListener": {
+      "delivered": [
+        "https://open.spotify.com/intl-de/album/4uLU6hMCjMI75M1A2tKUQC?si=sharing",
+        "https://open.spotify.com/playlist/4uLU6hMCjMI75M1A2tKUQC?si=latest"
+      ],
+      "openedAfterListener": [
+        "spotify:playlist:4uLU6hMCjMI75M1A2tKUQC"
+      ]
+    },
+    "warm": [
+      {
+        "input": "http://play.spotify.com/artist/4uLU6hMCjMI75M1A2tKUQC",
+        "route": "/artist/4uLU6hMCjMI75M1A2tKUQC"
+      },
+      {
+        "input": "spotify:track:4uLU6hMCjMI75M1A2tKUQC",
+        "route": "/track/4uLU6hMCjMI75M1A2tKUQC"
+      }
+    ],
+    "hotReload": "Succeeded through flutter attach after the native build; subsequent navigation retained the receiver.",
+    "pasted": {
+      "input": "https://open.spotify.com/intl-de/album/4uLU6hMCjMI75M1A2tKUQC?si=sharing",
+      "beforeSubmit": "/track/4uLU6hMCjMI75M1A2tKUQC",
+      "afterSubmit": "/album/4uLU6hMCjMI75M1A2tKUQC",
+      "searchQueries": [],
+      "playbackProvider": false
+    },
+    "runtimeErrors": [],
+    "tests": {
+      "command": "flutter test --no-pub test/app_shell_test.dart --name 'platform link routes|pasted Spotify link|macOS .*link'",
+      "passed": 4,
+      "originalFixtureCases": 21,
+      "baseline": "The original-normalization and pasted-link regressions failed against HEAD before the repair: locale prefix retained; URL sent as a search suggestion query.",
+      "scope": "Routing, content lookup ownership and native-message lifecycle only; new widget cases disable semantics and inject a playback builder. This does not verify accessibility or live metadata/playback."
+    }
+  },
+  "limits": [
+    "Only the recorded original parser, normalizer and Search submit callback ran independently. Callback dependencies are recorders for navigation, search cancellation, focus and UI events. No service request, playback or native Spotify Apple-event routine was executed.",
+    "The fixture checks the supported navigation subset against the original normalized path, with legacy playlist paths projected into the existing internal route. This is not complete Spotify URI parser parity.",
+    "The normalizer accepts host case/default-port/whitespace and spotify:// forms beyond the raw Search parser gate; the app accepts those normalized forms. Embed, short-link resolution and unsupported destinations are outside this implementation."
+  ]
+}
