@@ -1,29 +1,87 @@
 {
-  "observed": {
-    "spotifySchemeDefault": {
-      "bundleId": "com.spotify.client",
-      "path": "/Applications/Spotify.app"
+  "observedOn": "2026-11-10",
+  "environment": {
+    "macOS": "26.4 (25E246)",
+    "chrome": "157.0.8103.39",
+    "flutterBundleId": "dev.meoyawn.spotifyFlutter",
+    "installedRelease": "/Applications/spotify_flutter.app",
+    "releaseExecutableSha256": "f311a238d59cb11631a2d47ddfadb97ab745b1530a1461376fd18ca967f8869d",
+    "releaseHelperSha256": "f954c6365d15d4ae927d5f72c7c89b44fc84e42de828b1663173bacf99d4b1db"
+  },
+  "failures": {
+    "sandbox": {
+      "callerPid": 27401,
+      "diagnostic": "lsd: Unentitled request to set default handler for URL scheme <private> by pid 27401",
+      "cause": "The sandboxed player called NSWorkspace.setDefaultApplication directly. Registering the spotify scheme in Info.plist did not grant permission to change its default handler."
     },
-    "httpsDefault": "/Applications/Google Chrome.app",
-    "installedFlutterBundleId": "dev.meoyawn.spotifyFlutter",
-    "installedRegistration": {
-      "scheme": "spotify",
-      "role": "Viewer",
-      "rank": "Alternate"
-    },
-    "explicitDelivery": "open -a /Applications/spotify_flutter.app <spotify: or HTTPS Spotify URL> reaches the app. Scheme registration alone does not select this app as the macOS default."
+    "status": "After a successful native request, Launch Services resolved the installed copy of this bundle instead of the running debug copy. Comparing application paths falsely reported failure; compare the handler's bundle identifier with this app's identifier."
   },
   "implementation": {
     "settings": "Spotify links → Set as default",
-    "query": "NSWorkspace.urlForApplication(toOpen: spotify:)",
-    "change": "NSWorkspace.setDefaultApplication(at: Bundle.main.bundleURL, toOpenURLsWithScheme: spotify)",
-    "consent": "Only an explicit Settings action requests the change. macOS owns any required consent dialog. Startup and installation do not take over the default handler.",
-    "https": "HTTPS Spotify links continue through the browser. An Open in app handoff using spotify: follows the selected scheme handler. No HTTP/HTTPS default browser or Spotify-owned associated domain is registered."
+    "query": "NSWorkspace.urlForApplication(toOpen: spotify:) followed by bundle-identifier comparison",
+    "change": "The sandboxed player opens its embedded SpotifyLinkSettings.xpc service. That service calls the public NSWorkspace.setDefaultApplication API outside the App Sandbox.",
+    "helperScope": "Only the spotify scheme and the helper's enclosing dev.meoyawn.spotifyFlutter application are accepted. The method takes no scheme, application, file or command from the caller.",
+    "lifetime": "One connection belongs to an explicit Settings action. Completion, failure or dialog disposal invalidates it; the helper exits on invalidation. No resident agent, polling, startup registration or browser router is added.",
+    "consent": "macOS owns any required default-application confirmation. The player preserves native error domain/code and checks the actual handler after completion.",
+    "https": "HTTPS Spotify links open in the user's browser. Spotify's Open in Desktop app action hands a spotify URI to the selected native handler. HTTP and HTTPS defaults remain Chrome; no extension or Spotify-owned associated-domain registration is required."
   },
-  "verification": "Compiled the production Swift bridge; debug native query correctly returned false and the Settings dialog displayed Set as default. Installed and relaunched the signed release. The actual default change was left to the user’s explicit Settings action.",
+  "verification": {
+    "nativeBoundary": {
+      "control": "While the sandboxed settings probe was running, selected /Applications/Spotify.app as the spotify handler using the public API. The production channel returned false and the actual Settings button was enabled.",
+      "action": "Invoked the actual Set as default button callback in the production Settings dialog, using the production sandboxed macOS runner and embedded service.",
+      "launchServices": "2026-11-10 23:51:42.647: lsd recorded helper pid 51901 setting handler for scheme spotify, status 0.",
+      "result": "The native query returned true. The rendered widget tree contained Default app for Spotify links, including after Settings was disposed and reopened. The helper was absent from the process list after completion.",
+      "flutter": "Hot reload succeeded and the live probe reported no runtime errors. flutter analyze --no-pub lib/app/settings_dialog.dart reported no issues."
+    },
+    "installedRelease": {
+      "package": "Built the release and debug bundles. Verified the installed release with codesign --verify --deep --strict and compared its App.framework binary with the release build. The player retains its App Sandbox; the embedded helper has no app-sandbox entitlement.",
+      "coldLaunch": "With both Flutter processes stopped and the verified release installed, clicked Open in Desktop app on the real HTTPS Spotify playlist page in Chrome. Chrome reported Launched external handler for spotify:playlist:<id>; the installed release started as pid 52964.",
+      "requests": "The new release fetched /playlist/v2/playlist/:id. At the verification snapshot its HTTP log contained 59 requests, 59 responses with status 200, no pending requests and no transport errors. Playback was not started by this check.",
+      "defaultsAfterLaunch": {
+        "spotify": "/Applications/spotify_flutter.app",
+        "https": "/Applications/Google Chrome.app",
+        "http": "/Applications/Google Chrome.app"
+      }
+    }
+  },
+  "httpsFollowUp": {
+    "observedOn": "2026-11-11",
+    "reportedFailure": "Opening the plain HTTPS playlist link does not automatically prompt to open Spotify Flutter. The earlier explicit Open in Desktop app click did not verify this requirement.",
+    "actualNativeDefault": "/Applications/spotify_flutter.app (dev.meoyawn.spotifyFlutter)",
+    "actualBrowserDefault": "/Applications/Google Chrome.app",
+    "debugCopy": "At investigation time the running Flutter application was the installed release, pid 66625. The native spotify handler also resolved to that installed release, not a build directory.",
+    "rememberedBrowserDecision": "Before the targeted reset, the existing Chrome profile had protocol_handler.allowed_origin_protocol_pairs[https://open.spotify.com].spotify = true. This remembers permission for the origin and scheme, not the path of a debug or release application. A handoff from that origin can therefore launch without another confirmation.",
+    "pageObservation": "Opened the exact HTTPS playlist in a separate browser context. The playlist rendered and remained in the browser; there was no external-handler launch message in the captured console. This isolated context does not reproduce the existing profile's cookies or permission state.",
+    "constraint": "The macOS spotify handler only selects an application after a spotify URI is opened. It cannot make arbitrary HTTPS navigations trigger that request. Native universal links also require the Spotify-owned website to authorize this app in its association file. Automatic handoff from a plain HTTPS link needs browser-side handling or cooperation from Spotify's website.",
+    "manualVerification": "In the existing Chrome profile, opened the exact playlist, clicked its More options menu and Open in Desktop app. Chrome recorded Launched external handler for spotify:playlist:<id>. The selected native handler was the installed /Applications/spotify_flutter.app release.",
+    "navigationFollowUp": "The user subsequently reported that Flutter remained on the Overseer artist page while the HTTPS playlist opened in Chrome. Chrome's launch message and successful HTTP requests do not independently establish that the visible Flutter page changed. A full-production-root debug probe received an explicitly targeted native Spotify URI and exposed the requested playlist's ready EntityView with six rows. Native accessibility inspection did not expose the installed release's Flutter content sufficiently to verify its visible destination. The exact distinction between opening the HTTPS URL and clicking the website's Open in Desktop app action still requires clarification.",
+    "chromeControls": "The remembered Chrome permission selects an origin and scheme, not a debug-app path. Chrome web-app protocol registration and install/open-in-app controls are distinct from selecting a native macOS handler. The crossed-eye icon in the supplied address-bar screenshot is a cookie control.",
+    "chromeResetFollowUp": {
+      "reset": "The user ran the targeted reset with Chrome stopped and restarted Chrome. Its private profile backup exists, and the reopened Default/Preferences no longer contains the Spotify origin's remembered permission.",
+      "overrides": "No other origin has a remembered spotify launch permission. No Spotify AutoLaunchProtocolsFromOrigins or URLAllowlist entry was found in the Chrome preferences or macOS Chrome UserDefaults policy values. The native handler still resolves to the installed Flutter release.",
+      "postResetAction": "Opened the exact playlist in the existing Chrome profile, clicked its More options menu and Open in Desktop app. Unlike the earlier remembered-allow test, the immediate console snapshot did not report Launched external handler. No external-protocol denial was present in that snapshot either.",
+      "result": "The user confirmed the native confirmation was visible and supplied a screenshot showing Open spotify_flutter? with open.spotify.com as the requesting origin. This verifies the reset and the explicit website handoff, rather than inferring a visible dialog from a successful page click.",
+      "limit": "The targeted preference reset does not make plain HTTPS navigation initiate a native handoff. The user's subsequent failure report still needs to distinguish that automatic-opening expectation from failure after explicitly accepting the desktop-app launch."
+    },
+    "websiteHandoffSource": {
+      "url": "https://open.spotifycdn.com/cdn/build/web-player/web-player.5169f0af.js",
+      "bundleSha256": "48a56a5bcd5e374d1faed4f7ea1acc85ce2a0dc47f918121d835e5515e73dbeb",
+      "module": 9957,
+      "byteOffset": 1000134,
+      "byteLength": 878,
+      "moduleSha256": "fe5d27a4bd716fe32d124197e00cbaeb377b66ae08e9b7ef4125c8e9baaaad63",
+      "reaEvidenceId": "ev_6e1b16a80b50e33bbced24e10b4e706fc0172e986579ddc638e901106c6b4d5a",
+      "behavior": "The Open in Desktop app menu's onClick callback appends optional context to the entity URI and calls window.open with that URI. Remembered Chrome permission is not an automatic-navigation setting in this callback.",
+      "scope": "REA statically analyzed the exact original webpack module body, wrapped as an anonymous exported function for inert parsing. This analysis did not execute React, telemetry, the bundle bootstrap or window.open. The actual original website action and native confirmation were separately observed live. No standard primitives were substituted in that live observation. This module alone does not establish absence of every possible Spotify website experiment or preference."
+    },
+    "status": "The user explicitly chose to keep the manual website action. Browser-to-native dispatch is verified; the reported visible-navigation problem remains unconfirmed. Automatic prompting from ordinary HTTPS navigation is not part of the selected behavior."
+  },
+  "scope": "The sandbox denial, successful default change and explicit Chrome-to-installed-release launch were observed live using public macOS APIs and the original Spotify web page. No Apple or Chromium code was decompiled and no standard primitives were replaced. Opening a plain HTTPS link was not established as an automatic app handoff. Original Spotify URI parsing is independently executed in native-open-links.json.",
   "references": [
     "https://developer.apple.com/documentation/appkit/nsworkspace/setdefaultapplication(at:toopenurlswithscheme:completion:)",
-    "https://developer.apple.com/documentation/xcode/supporting-universal-links-in-your-app",
+    "https://developer.apple.com/forums/thread/767612",
+    "https://developer.apple.com/documentation/xcode/supporting-associated-domains",
+    "https://github.com/chromium/chromium/blob/main/chrome/browser/external_protocol/external_protocol_handler.cc",
     "reverse-engineering/evidence/native-open-links.json"
   ]
 }

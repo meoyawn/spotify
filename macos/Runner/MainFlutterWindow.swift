@@ -7,6 +7,80 @@ class MainFlutterWindow: NSWindow {
   private var linksReady = false
   private var pendingOpenURL: String?
   private var foundationWebSockets: FoundationWebSockets?
+  private var linkSettingsConnection: NSXPCConnection?
+  private var linkSettingsReply: FlutterResult?
+
+  private func isDefaultSpotifyHandler() -> Bool {
+    let handler = NSWorkspace.shared.urlForApplication(toOpen: URL(string: "spotify:")!)
+    guard let handler = handler, let identifier = Bundle.main.bundleIdentifier else { return false }
+    return Bundle(url: handler)?.bundleIdentifier == identifier
+  }
+
+  private func finishLinkSettings(_ connection: NSXPCConnection, error: NSError?) {
+    guard linkSettingsConnection === connection else { return }
+    let reply = linkSettingsReply
+    linkSettingsConnection = nil
+    linkSettingsReply = nil
+    connection.invalidate()
+    if let error = error {
+      let underlying = error.userInfo[NSUnderlyingErrorKey] as? NSError
+      NSLog("Spotify link settings failed: %@ %ld (underlying %@ %ld)",
+        error.domain, error.code, underlying?.domain ?? "", underlying?.code ?? 0)
+      reply?(FlutterError(code: "default_handler_failed", message: error.localizedDescription,
+        details: ["domain": error.domain, "code": error.code,
+          "underlyingDomain": underlying?.domain ?? "", "underlyingCode": underlying?.code ?? 0]))
+    } else if isDefaultSpotifyHandler() {
+      reply?(nil)
+    } else {
+      reply?(FlutterError(code: "default_handler_unchanged",
+        message: "Spotify wasn’t selected as the default app.", details: nil))
+    }
+  }
+
+  private func setDefaultSpotifyHandler(_ result: @escaping FlutterResult) {
+    guard linkSettingsConnection == nil else {
+      result(FlutterError(code: "default_handler_busy", message: "A macOS confirmation is already open.", details: nil))
+      return
+    }
+    let service = "dev.meoyawn.spotifyFlutter.LinkSettings"
+    let url = Bundle.main.bundleURL.appendingPathComponent("Contents/XPCServices/SpotifyLinkSettings.xpc")
+    guard Bundle(url: url)?.bundleIdentifier == service else {
+      result(FlutterError(code: "default_handler_helper_missing", message: "Link settings are missing from this build.", details: nil))
+      return
+    }
+    let connection = NSXPCConnection(serviceName: service)
+    linkSettingsConnection = connection
+    linkSettingsReply = result
+    connection.remoteObjectInterface = NSXPCInterface(with: SpotifyLinkSettingsProtocol.self)
+    connection.interruptionHandler = { [weak self, weak connection] in
+      DispatchQueue.main.async {
+        guard let connection = connection else { return }
+        self?.finishLinkSettings(connection, error: NSError(domain: NSCocoaErrorDomain, code: NSXPCConnectionInterrupted))
+      }
+    }
+    connection.invalidationHandler = { [weak self, weak connection] in
+      DispatchQueue.main.async {
+        guard let connection = connection else { return }
+        self?.finishLinkSettings(connection, error: NSError(domain: NSCocoaErrorDomain, code: NSXPCConnectionInvalid))
+      }
+    }
+    connection.resume()
+    guard let remote = connection.remoteObjectProxyWithErrorHandler({ [weak self, weak connection] error in
+      DispatchQueue.main.async {
+        guard let connection = connection else { return }
+        self?.finishLinkSettings(connection, error: error as NSError)
+      }
+    }) as? SpotifyLinkSettingsProtocol else {
+      finishLinkSettings(connection, error: NSError(domain: NSCocoaErrorDomain, code: NSXPCConnectionInvalid))
+      return
+    }
+    remote.setDefaultSpotifyHandler { [weak self, weak connection] error in
+      DispatchQueue.main.async {
+        guard let connection = connection else { return }
+        self?.finishLinkSettings(connection, error: error)
+      }
+    }
+  }
 
   func openURL(_ url: URL) {
     if linksReady {
@@ -60,19 +134,14 @@ class MainFlutterWindow: NSWindow {
         self.linksReady = false
         result(nil)
       case "isDefaultHandler":
-        let handler = NSWorkspace.shared.urlForApplication(toOpen: URL(string: "spotify:")!)
-        result(handler?.standardizedFileURL == Bundle.main.bundleURL.standardizedFileURL)
+        result(self.isDefaultSpotifyHandler())
       case "setDefaultHandler":
-        NSWorkspace.shared.setDefaultApplication(at: Bundle.main.bundleURL,
-          toOpenURLsWithScheme: "spotify") { error in
-          DispatchQueue.main.async {
-            if let error = error {
-              result(FlutterError(code: "default_handler_failed", message: error.localizedDescription, details: nil))
-            } else {
-              result(nil)
-            }
-          }
+        self.setDefaultSpotifyHandler(result)
+      case "cancelDefaultHandlerRequest":
+        if let connection = self.linkSettingsConnection {
+          self.finishLinkSettings(connection, error: NSError(domain: NSCocoaErrorDomain, code: NSUserCancelledError))
         }
+        result(nil)
       default: result(FlutterMethodNotImplemented)
       }
     }

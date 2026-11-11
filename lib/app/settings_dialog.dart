@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:cancellation_token/cancellation_token.dart';
 
 class DesktopSettingsDialog extends StatefulWidget {
   const DesktopSettingsDialog({super.key, required this.volume, required this.streamingQuality,
@@ -20,6 +21,7 @@ class DesktopSettingsDialog extends StatefulWidget {
 
 class _DesktopSettingsDialogState extends State<DesktopSettingsDialog> {
   static const _links = MethodChannel('spotify_flutter/desktop_links');
+  final _linkRequests = CancellationToken();
   bool? _defaultLinks;
   bool _changingLinks = false;
   String? _linkError;
@@ -33,8 +35,10 @@ class _DesktopSettingsDialogState extends State<DesktopSettingsDialog> {
 
   Future<void> _readLinkHandler() async {
     try {
-      final current = await _links.invokeMethod<bool>('isDefaultHandler');
+      final current = await _links.invokeMethod<bool>('isDefaultHandler').asCancellable(_linkRequests);
       if (mounted) setState(() => _defaultLinks = current);
+    } on CancelledException {
+      return;
     } on MissingPluginException { /* This shell has no macOS link host. */ }
     on PlatformException { if (mounted) setState(() => _linkError = 'Couldn’t read the default app.'); }
   }
@@ -43,13 +47,27 @@ class _DesktopSettingsDialogState extends State<DesktopSettingsDialog> {
     if (_changingLinks) return;
     setState(() { _changingLinks = true; _linkError = null; });
     try {
-      await _links.invokeMethod<void>('setDefaultHandler');
+      await _links.invokeMethod<void>('setDefaultHandler').asCancellable(_linkRequests,
+        onCancel: () => unawaited(_links.invokeMethod<void>('cancelDefaultHandlerRequest').catchError((Object _) {})));
       await _readLinkHandler();
-    } on PlatformException {
-      if (mounted) setState(() => _linkError = 'The default app wasn’t changed. Try again.');
+    } on CancelledException {
+      return;
+    } on PlatformException catch (error) {
+      if (mounted) {
+        setState(() => _linkError = switch (error.code) {
+          'default_handler_helper_missing' => 'Link settings are unavailable in this build. Reinstall the app.',
+          'default_handler_unchanged' => 'Spotify wasn’t selected as the default app.',
+          _ => 'The default app wasn’t changed.',
+        });
+      }
     } finally {
       if (mounted) setState(() => _changingLinks = false);
     }
+  }
+
+  @override void dispose() {
+    _linkRequests.cancel();
+    super.dispose();
   }
 
   Widget _qualityChoice(String label, int selected, ValueChanged<int> change) => Padding(
@@ -106,7 +124,7 @@ class _DesktopSettingsDialogState extends State<DesktopSettingsDialog> {
             style: TextStyle(color: Color(0xffb3b3b3))),
           const SizedBox(height: 12),
           TextButton(onPressed: _defaultLinks == null || _defaultLinks == true || _changingLinks ? null : _setLinkHandler,
-            child: Text(_changingLinks ? 'Changing default app…' : _defaultLinks == true ? 'Default app for Spotify links' : 'Set as default')),
+            child: Text(_changingLinks ? 'Waiting for macOS…' : _defaultLinks == true ? 'Default app for Spotify links' : 'Set as default')),
           if (_linkError != null) Text(_linkError!, style: const TextStyle(color: Color(0xffb3b3b3))),
         ],
         const SizedBox(height: 28),

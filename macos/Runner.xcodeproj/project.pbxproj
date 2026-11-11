@@ -21,6 +21,10 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		A7D110000000000000000006 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D110000000000000000004 /* main.swift */; };
+		A7D110000000000000000007 /* SpotifyLinkSettingsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D110000000000000000005 /* SpotifyLinkSettingsProtocol.swift */; };
+		A7D110000000000000000008 /* SpotifyLinkSettingsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D110000000000000000005 /* SpotifyLinkSettingsProtocol.swift */; };
+		A7D110000000000000000009 /* SpotifyLinkSettings.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = A7D110000000000000000002 /* SpotifyLinkSettings.xpc */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		331C80D8294CF71000263BE5 /* RunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C80D7294CF71000263BE5 /* RunnerTests.swift */; };
 		335BBD1B22A9A15E00E9071D /* GeneratedPluginRegistrant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335BBD1A22A9A15E00E9071D /* GeneratedPluginRegistrant.swift */; };
 		33CC10F12044A3C60003C045 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CC10F02044A3C60003C045 /* AppDelegate.swift */; };
@@ -33,6 +37,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A7D110000000000000000013 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33CC10E52044A3C60003C045 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A7D110000000000000000001;
+			remoteInfo = SpotifyLinkSettings;
+		};
 		331C80D9294CF71000263BE5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 33CC10E52044A3C60003C045 /* Project object */;
@@ -50,6 +61,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		A7D110000000000000000011 /* Embed XPC Services */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (A7D110000000000000000009 /* SpotifyLinkSettings.xpc in Embed XPC Services */, );
+			name = "Embed XPC Services";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		33CC110E2044A8840003C045 /* Bundle Framework */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -63,6 +83,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A7D110000000000000000002 /* SpotifyLinkSettings.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = SpotifyLinkSettings.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7D110000000000000000004 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		A7D110000000000000000005 /* SpotifyLinkSettingsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyLinkSettingsProtocol.swift; sourceTree = "<group>"; };
+		A7D110000000000000000014 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CF42F5E3966A56BD4A14C85 /* Pods-RunnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.debug.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2FD28C9FD334985F1AF99744 /* Pods_Runner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		331C80D5294CF71000263BE5 /* RunnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +117,12 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A7D11000000000000000000B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = ();
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		331C80D2294CF70F00263BE5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -113,6 +143,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A7D110000000000000000003 /* LinkSettings */ = {
+			isa = PBXGroup;
+			children = (
+				A7D110000000000000000004 /* main.swift */,
+				A7D110000000000000000005 /* SpotifyLinkSettingsProtocol.swift */,
+				A7D110000000000000000014 /* Info.plist */,
+			);
+			path = LinkSettings;
+			sourceTree = "<group>";
+		};
 		331C80D6294CF71000263BE5 /* RunnerTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				33FAB671232836740065AC1E /* Runner */,
+				A7D110000000000000000003 /* LinkSettings */,
 				33CEB47122A05771004F2AC0 /* Flutter */,
 				331C80D6294CF71000263BE5 /* RunnerTests */,
 				33CC10EE2044A3C60003C045 /* Products */,
@@ -148,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				33CC10ED2044A3C60003C045 /* spotify_flutter.app */,
+				A7D110000000000000000002 /* SpotifyLinkSettings.xpc */,
 				331C80D5294CF71000263BE5 /* RunnerTests.xctest */,
 			);
 			name = Products;
@@ -215,6 +257,21 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A7D110000000000000000001 /* SpotifyLinkSettings */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7D11000000000000000000D /* Build configuration list for PBXNativeTarget "SpotifyLinkSettings" */;
+			buildPhases = (
+				A7D11000000000000000000A /* Sources */,
+				A7D11000000000000000000B /* Frameworks */,
+				A7D11000000000000000000C /* Resources */,
+			);
+			buildRules = ();
+			dependencies = ();
+			name = SpotifyLinkSettings;
+			productName = SpotifyLinkSettings;
+			productReference = A7D110000000000000000002 /* SpotifyLinkSettings.xpc */;
+			productType = "com.apple.product-type.xpc-service";
+		};
 		331C80D4294CF70F00263BE5 /* RunnerTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 331C80DE294CF71000263BE5 /* Build configuration list for PBXNativeTarget "RunnerTests" */;
@@ -243,6 +300,7 @@
 				33CC10EA2044A3C60003C045 /* Frameworks */,
 				33CC10EB2044A3C60003C045 /* Resources */,
 				33CC110E2044A8840003C045 /* Bundle Framework */,
+				A7D110000000000000000011 /* Embed XPC Services */,
 				3399D490228B24CF009A79C7 /* ShellScript */,
 				514549434845000000000001 /* ShellScript */,
 				9995CBB2C56CA3010F521343 /* [CP] Embed Pods Frameworks */,
@@ -251,6 +309,7 @@
 			);
 			dependencies = (
 				33CC11202044C79F0003C045 /* PBXTargetDependency */,
+				A7D110000000000000000012 /* PBXTargetDependency */,
 			);
 			name = Runner;
 			packageProductDependencies = (
@@ -308,6 +367,7 @@
 			projectRoot = "";
 			targets = (
 				33CC10EC2044A3C60003C045 /* Runner */,
+				A7D110000000000000000001 /* SpotifyLinkSettings */,
 				331C80D4294CF70F00263BE5 /* RunnerTests */,
 				33CC111A2044C6BA0003C045 /* Flutter Assemble */,
 			);
@@ -315,6 +375,12 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A7D11000000000000000000C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = ();
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		331C80D3294CF70F00263BE5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -458,6 +524,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A7D11000000000000000000A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7D110000000000000000006 /* main.swift in Sources */,
+				A7D110000000000000000008 /* SpotifyLinkSettingsProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		331C80D1294CF70F00263BE5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -471,6 +546,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33CC11132044BFA00003C045 /* MainFlutterWindow.swift in Sources */,
+				A7D110000000000000000007 /* SpotifyLinkSettingsProtocol.swift in Sources */,
 				33CC10F12044A3C60003C045 /* AppDelegate.swift in Sources */,
 				335BBD1B22A9A15E00E9071D /* GeneratedPluginRegistrant.swift in Sources */,
 			);
@@ -479,6 +555,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A7D110000000000000000012 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A7D110000000000000000001 /* SpotifyLinkSettings */;
+			targetProxy = A7D110000000000000000013 /* PBXContainerItemProxy */;
+		};
 		331C80DA294CF71000263BE5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 33CC10EC2044A3C60003C045 /* Runner */;
@@ -504,6 +585,51 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A7D11000000000000000000E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_APP_SANDBOX = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = LinkSettings/Info.plist;
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = dev.meoyawn.spotifyFlutter.LinkSettings;
+				PRODUCT_NAME = SpotifyLinkSettings;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A7D11000000000000000000F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_APP_SANDBOX = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = LinkSettings/Info.plist;
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = dev.meoyawn.spotifyFlutter.LinkSettings;
+				PRODUCT_NAME = SpotifyLinkSettings;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		A7D110000000000000000010 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_APP_SANDBOX = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = LinkSettings/Info.plist;
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = dev.meoyawn.spotifyFlutter.LinkSettings;
+				PRODUCT_NAME = SpotifyLinkSettings;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Profile;
+		};
 		331C80DB294CF71000263BE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1CF42F5E3966A56BD4A14C85 /* Pods-RunnerTests.debug.xcconfig */;
@@ -788,6 +914,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A7D11000000000000000000D /* Build configuration list for PBXNativeTarget "SpotifyLinkSettings" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7D11000000000000000000E /* Debug */,
+				A7D11000000000000000000F /* Release */,
+				A7D110000000000000000010 /* Profile */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		331C80DE294CF71000263BE5 /* Build configuration list for PBXNativeTarget "RunnerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
