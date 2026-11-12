@@ -99,7 +99,8 @@ class _SidebarResizeHandleState extends State<SidebarResizeHandle> {
           widget.onDragState(true);
         },
         onHorizontalDragUpdate: !_enabled ? null : (details) => _resize(
-          _originWidth + (details.globalPosition.dx - _originX) * (widget.growsRight ? 1 : -1)),
+          _originWidth + (details.globalPosition.dx - _originX) * (widget.growsRight ? 1 : -1) *
+            View.of(context).devicePixelRatio / MediaQuery.devicePixelRatioOf(context)),
         onHorizontalDragEnd: !_enabled ? null : (_) => _finish(),
         onHorizontalDragCancel: !_enabled ? null : _finish,
         onDoubleTap: !_enabled ? null : _doubleClick,

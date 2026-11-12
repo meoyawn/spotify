@@ -64,7 +64,8 @@ independent local peers, without contacting a Spotify account.
 Build with `moonx release`; build and reinstall with `moonx release-reinstall`.
 Reinstall stops the installed release if it is running and confirms its process
 exited before replacing the app. It never launches the release; an active debug
-app is left running. `moonx reinstall-release` remains an alias.
+app is left running and does not block installation. Only processes running the
+destination bundle's executable are stopped. `moonx reinstall-release` remains an alias.
 Native dependency versions and source hashes are pinned under `native/`.
 
 Moon caches each native library using its builder, source manifest, patches,

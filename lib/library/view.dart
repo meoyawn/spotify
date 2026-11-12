@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 
 import '../app/shell_icons.dart';
 import '../app/desktop_icon_button.dart';
+import '../app/share_links.dart';
 import 'controller.dart';
 import 'models.dart';
 import 'selection_viewport.dart';
@@ -244,7 +245,7 @@ class _LibraryViewState extends State<LibraryView> {
         final item = state.items[index];
         if (!item.isSupported) return const Center(child: Text('Content is currently unavailable.', style: _secondary));
         final selected = libraryUriMatches(item.uri, widget.activeUri);
-        return Semantics(selected: selected, child: Material(
+        return SpotifyLinkContextMenu(uri: item.uri, child: Semantics(selected: selected, child: Material(
           color: selected ? const Color(0xff333333) : Colors.transparent,
           borderRadius: BorderRadius.circular(4), clipBehavior: Clip.antiAlias,
           child: InkWell(onTap: () => _activate(item), child: Padding(
@@ -273,7 +274,7 @@ class _LibraryViewState extends State<LibraryView> {
                 icon: Icon(state.query.expandedFolders.contains(item.uri) ? Icons.expand_less : Icons.expand_more, size: 18)),
               if (widget.actionsBuilder != null) widget.actionsBuilder!(context, item),
             ]),
-          ))));
+          )))));
       },
     ));
   }
@@ -298,7 +299,7 @@ class _LibraryViewState extends State<LibraryView> {
         if (index == state.items.length) return _more(state);
         final item = state.items[index];
         final selected = libraryUriMatches(item.uri, widget.activeUri);
-        return Semantics(selected: selected, child: Material(
+        return SpotifyLinkContextMenu(uri: item.uri, child: Semantics(selected: selected, child: Material(
           color: selected ? const Color(0xff333333) : Colors.transparent,
           borderRadius: BorderRadius.circular(6), clipBehavior: Clip.antiAlias,
           child: InkWell(onTap: item.isSupported ? () => _activate(item) : null,
@@ -316,7 +317,7 @@ class _LibraryViewState extends State<LibraryView> {
                   overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 14)),
                 if (!compact) Text(_subtitle(item, state.page?.primaryFilter), maxLines: 1, overflow: TextOverflow.ellipsis, style: _secondary),
               ])),
-          )));
+          ))));
       },
       ));
     });

@@ -10,7 +10,7 @@ import 'package:flutter/services.dart';
 import '../app/shell_icons.dart';
 import '../app/desktop_icon_button.dart';
 import '../app/snack_bar.dart';
-import '../app/song_links.dart';
+import '../app/share_links.dart';
 import 'controller.dart';
 import 'models.dart';
 import 'playlist_dates.dart';
@@ -198,7 +198,8 @@ class _EntityViewState extends State<EntityView> {
         if (header == null || headerLayout != nextHeaderLayout) {
           headerLayout = nextHeaderLayout;
           header = SliverToBoxAdapter(child: RepaintBoundary(
-            child: _header(context, entity, state, width, inset, color, bannerHeight)));
+            child: SpotifyLinkContextMenu(uri: entity.uri,
+              child: _header(context, entity, state, width, inset, color, bannerHeight))));
         }
         if (trackSliver == null || trackLayout != nextLayout) {
           trackLayout = nextLayout;
@@ -308,10 +309,11 @@ class _EntityViewState extends State<EntityView> {
       ],
       const SizedBox(width: 16),
       PopupMenuButton<String>(tooltip: 'More options',
-        onSelected: (value) => value == 'copy' ? unawaited(copySongLink(context, entity.uri))
+        onSelected: (value) => value == 'copy' ? unawaited(copySpotifyLink(context, entity.uri))
           : unawaited(widget.controller.refresh()),
         itemBuilder: (_) => [
-          if (spotifySongLink(entity.uri) != null) const PopupMenuItem(value: 'copy', child: Text('Copy song link')),
+          if (spotifyShareLink(entity.uri) != null)
+            PopupMenuItem(value: 'copy', child: Text(spotifyCopyLinkLabel(entity.uri))),
           const PopupMenuItem(value: 'refresh', child: Text('Refresh'))],
         child: const Padding(padding: EdgeInsets.all(8), child: Icon(Icons.more_horiz, size: 28))),
       const Spacer(),
@@ -519,7 +521,8 @@ class _EntityViewState extends State<EntityView> {
   Widget _artistCard(EntityJson data) {
     final card = EntityDetails.fromJson(data), type = data['type'] as String? ?? '';
     final link = EntityLink.fromJson(data, type: type);
-    return Material(color: const Color(0xff181818), borderRadius: BorderRadius.circular(6), clipBehavior: Clip.antiAlias,
+    return SpotifyLinkContextMenu(uri: card.uri,
+      child: Material(color: const Color(0xff181818), borderRadius: BorderRadius.circular(6), clipBehavior: Clip.antiAlias,
       child: InkWell(onTap: link != null && widget.onNavigate != null ? () => widget.onNavigate!(link) : null,
         child: Padding(padding: const EdgeInsets.all(12), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           ClipRRect(borderRadius: BorderRadius.circular(type == 'artist' ? 100 : 4),
@@ -529,7 +532,7 @@ class _EntityViewState extends State<EntityView> {
             style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
           const SizedBox(height: 4), Text(data['subtitle'] as String? ?? '',
             maxLines: 2, overflow: TextOverflow.ellipsis, style: _secondary),
-        ]))));
+        ])))));
   }
 
   Widget _artistSectionPage(EntityDetails entity, EntityState state) => LayoutBuilder(builder: (context, bounds) {
@@ -603,7 +606,7 @@ class _EntityViewState extends State<EntityView> {
     final canPlay = widget.onPlay != null && row.canRequestPlayback;
     final play = canPlay ? () => widget.onPlay!(EntityPlaybackSelection(entity: entity,
       row: row, rowIndex: index, rows: widget.controller.state.rows)) : null;
-    return SongLinkContextMenu(key: ValueKey('${row.uid ?? row.uri}:$index'), uri: row.uri,
+    return SpotifyLinkContextMenu(key: ValueKey('${row.uid ?? row.uri}:$index'), uri: row.uri,
       child: _EntityTrackRow(row: row,
       number: entity.type == 'album' && (row.trackNumber ?? 0) > 0 ? row.trackNumber! : index + 1,
       showArtwork: showArtwork,
@@ -735,7 +738,7 @@ class _EntityTrackRowState extends State<_EntityTrackRow> {
               ?? (row.data['isSaved'] == true ? Icon(Icons.check_circle, color: green, size: 16) : null)),
             SizedBox(width: 56, child: Text(row.durationMs == null ? '' : _trackDuration(row.durationMs!),
               textAlign: TextAlign.right, style: _secondary)),
-            SizedBox(width: 32, child: row.type == 'track' ? SongLinkMenu(uri: row.uri, name: row.name) : null),
+            SizedBox(width: 32, child: row.type == 'track' ? SpotifyLinkMenu(uri: row.uri, name: row.name) : null),
           ])))))));
   }
 }
@@ -826,7 +829,7 @@ class _EntityTextLinkState extends State<_EntityTextLink> {
     if (!enabled) return text;
     // Text links need hover/focus and activation, without a separate material
     // ink animation subtree for every title and album cell in every row.
-    return Semantics(link: true, child: FocusableActionDetector(
+    return SpotifyLinkContextMenu(uri: link.uri, child: Semantics(link: true, child: FocusableActionDetector(
       mouseCursor: SystemMouseCursors.click,
       onShowHoverHighlight: (value) => setState(() => _hovered = value),
       onShowFocusHighlight: (value) => setState(() => _focused = value),
@@ -836,7 +839,7 @@ class _EntityTextLinkState extends State<_EntityTextLink> {
       })},
       child: GestureDetector(behavior: HitTestBehavior.opaque,
         onTap: () => widget.onNavigate!(link), onDoubleTap: widget.onDoubleTap,
-        child: text)));
+        child: text))));
   }
 }
 
@@ -874,7 +877,10 @@ class _EntityArtistLinksState extends State<_EntityArtistLinks> {
     final enabled = link != null && widget.onNavigate != null;
     final recognizer = _recognizers.putIfAbsent(index, () => TapGestureRecognizer());
     recognizer.onTap = enabled ? () => widget.onNavigate!(link) : null;
-    return TextSpan(text: artist['name'] as String, recognizer: enabled ? recognizer : null,
+    final shareable = spotifyShareLink(link?.uri ?? '') != null;
+    recognizer.onSecondaryTapUp = shareable
+      ? (details) => unawaited(showSpotifyLinkContextMenu(context, link!.uri, details.globalPosition)) : null;
+    return TextSpan(text: artist['name'] as String, recognizer: enabled || shareable ? recognizer : null,
       mouseCursor: enabled ? SystemMouseCursors.click : SystemMouseCursors.basic,
       onEnter: enabled ? (_) { if (mounted) setState(() => _hovered = index); } : null,
       onExit: enabled ? (_) { if (mounted && _hovered == index) setState(() => _hovered = null); } : null,

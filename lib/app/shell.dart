@@ -35,6 +35,7 @@ import 'shell_icons.dart';
 import 'sidebar_resize_handle.dart';
 import 'desktop_icon_button.dart';
 import 'snack_bar.dart';
+import 'share_links.dart';
 
 typedef _ShellContents = ({Widget expandedLibrary, Widget collapsedLibrary,
   Widget compactLibrary, Widget main, Widget right, Widget playback, Widget navigation});
@@ -682,7 +683,10 @@ class SpotifyDesktopShellState extends State<SpotifyDesktopShell> implements Ges
             gradient: LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight,
               colors: [Color(0xff63c8ce), Color(0xff617ce7), Color(0xff8658eb)]))))));
     final search = _searchInput();
-    final nativeInset = _macWindow ? 80.0 : 0.0;
+    // macOS window buttons stay at their native size when Flutter zooms.
+    final nativeInset = _macWindow ? Builder(builder: (context) => SizedBox(
+      width: 80 * View.of(context).devicePixelRatio / MediaQuery.devicePixelRatioOf(context)))
+      : const SizedBox.shrink();
     final back = DesktopIconButton(tooltip: 'Go back', size: 36,
       icon: const Icon(SpotifyShellIcons.back),
       onPressed: widget.navigation.canGoBack ? () => _navigateHistory(true) : null);
@@ -700,7 +704,7 @@ class SpotifyDesktopShellState extends State<SpotifyDesktopShell> implements Ges
     Widget contents;
     if (width < 600) {
       contents = Padding(padding: const EdgeInsets.symmetric(horizontal: 8), child: Row(children: [
-        SizedBox(width: nativeInset),
+        nativeInset,
         SizedBox(width: 40, height: 48, child: home),
         const SizedBox(width: 8),
         Expanded(child: search),
@@ -714,12 +718,12 @@ class SpotifyDesktopShellState extends State<SpotifyDesktopShell> implements Ges
         const SizedBox(width: 8), Expanded(child: search)]);
       if (width < 1000) {
         contents = Padding(padding: const EdgeInsets.symmetric(horizontal: 8), child: Row(children: [
-          SizedBox(width: nativeInset), history, const SizedBox(width: 8), Expanded(child: center),
+          nativeInset, history, const SizedBox(width: 8), Expanded(child: center),
           const SizedBox(width: 16), profile,
         ]));
       } else {
         contents = Padding(padding: const EdgeInsets.symmetric(horizontal: 8), child: Stack(children: [
-          Row(children: [SizedBox(width: nativeInset), history, const Spacer(), profile]),
+          Row(children: [nativeInset, history, const Spacer(), profile]),
           Center(child: LayoutBuilder(builder: (context, bounds) =>
             SizedBox(width: (bounds.maxWidth * 0.5).clamp(350, 546), height: 48, child: center))),
         ]));
@@ -854,7 +858,7 @@ class SpotifyDesktopShellState extends State<SpotifyDesktopShell> implements Ges
         }
         final item = controller.state.items[index];
         final selected = libraryUriMatches(item.uri, widget.route.entityUri);
-        return Semantics(selected: selected, child: Container(
+        return SpotifyLinkContextMenu(uri: item.uri, child: Semantics(selected: selected, child: Container(
           padding: const EdgeInsets.all(4),
           decoration: BoxDecoration(color: selected ? const Color(0xff333333) : null,
             borderRadius: BorderRadius.circular(4)), child: Tooltip(
@@ -871,7 +875,7 @@ class SpotifyDesktopShellState extends State<SpotifyDesktopShell> implements Ges
                   item: item, actionsBuilder: widget.libraryItemActionsBuilder!)),
             ]),
           )),
-        )));
+        ))));
       },
       ));
     },

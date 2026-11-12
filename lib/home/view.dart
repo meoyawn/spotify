@@ -3,6 +3,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
+import '../app/share_links.dart';
 import '../content/advertising.dart';
 
 import 'controller.dart';
@@ -184,7 +185,8 @@ class _HomeViewState extends State<HomeView> {
       itemCount: section.items.length,
       itemBuilder: (context, index) {
         final item = section.items[index];
-        return Material(color: const Color(0xff292929), borderRadius: BorderRadius.circular(4),
+        return SpotifyLinkContextMenu(uri: item.uri,
+          child: Material(color: const Color(0xff292929), borderRadius: BorderRadius.circular(4),
           clipBehavior: Clip.antiAlias, child: InkWell(
             onTap: () => widget.onSelect(item),
             child: Row(children: [
@@ -193,7 +195,7 @@ class _HomeViewState extends State<HomeView> {
                 child: Text(item.name, maxLines: 2, overflow: TextOverflow.ellipsis,
                   style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w700)))),
             ]),
-          ));
+          )));
       },
       ),
     ]);
@@ -208,7 +210,8 @@ class _HomeViewState extends State<HomeView> {
       itemCount: section.items.length,
       itemBuilder: (context, index) {
         final item = section.items[index];
-        return Padding(padding: EdgeInsets.only(right: feed ? 16 : 0), child: Material(
+        return Padding(padding: EdgeInsets.only(right: feed ? 16 : 0),
+          child: SpotifyLinkContextMenu(uri: item.uri, child: Material(
           color: feed ? const Color(0xff181818) : Colors.transparent,
           borderRadius: BorderRadius.circular(8), clipBehavior: Clip.antiAlias,
           child: Semantics(label: item.showTitle || feed ? null : item.name,
@@ -245,7 +248,7 @@ class _HomeViewState extends State<HomeView> {
                 ])),
             ]),
           ))),
-        ));
+        )));
       },
     ));
   }

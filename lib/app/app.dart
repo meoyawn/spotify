@@ -14,6 +14,7 @@ import '../search/models.dart';
 import '../search/repository.dart';
 import '../search/view.dart';
 import 'navigation.dart';
+import 'app_scale.dart';
 import 'playback_bar.dart';
 import 'shell.dart';
 
@@ -50,6 +51,7 @@ class SpotifyDesktopApp extends StatefulWidget {
     this.initialLocation = '/',
     this.navigatorKey,
     this.shellKey,
+    this.scaleKey,
     this.playbackArtworkBuilder,
     this.trackSaveButtonBuilder,
   });
@@ -82,6 +84,7 @@ class SpotifyDesktopApp extends StatefulWidget {
   final String initialLocation;
   final GlobalKey<NavigatorState>? navigatorKey;
   final GlobalKey<SpotifyDesktopShellState>? shellKey;
+  final GlobalKey<DesktopAppScaleState>? scaleKey;
   final PlaybackArtworkBuilder? playbackArtworkBuilder;
   final TrackSaveButtonBuilder? trackSaveButtonBuilder;
   final VoidCallback? onLogOut;
@@ -228,6 +231,8 @@ class _SpotifyDesktopAppState extends State<SpotifyDesktopApp> {
   Widget build(BuildContext context) => MaterialApp.router(
     title: 'Spotify',
     debugShowCheckedModeBanner: false,
+    builder: (context, child) => DesktopAppScale(key: widget.scaleKey,
+      child: child ?? const SizedBox.shrink()),
     theme: ThemeData(
       brightness: Brightness.dark,
       useMaterial3: true,

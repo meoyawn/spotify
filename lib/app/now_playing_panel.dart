@@ -5,7 +5,7 @@ import '../entities/models.dart';
 import '../lyrics/controller.dart';
 import '../lyrics/view.dart';
 import 'playback_bar.dart';
-import 'song_links.dart';
+import 'share_links.dart';
 import 'desktop_icon_button.dart';
 import 'shell_icons.dart';
 
@@ -37,13 +37,14 @@ class NowPlayingPanel extends StatelessWidget {
         child: Text(item.name, maxLines: 2, overflow: TextOverflow.ellipsis,
           style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w700, height: 1.15)))),
         if (saveButton != null) ...[const SizedBox(width: 8), saveButton],
-        if (spotifySongLink(saveUri) != null) SongLinkMenu(uri: saveUri, name: item.name)]),
+        if (spotifyShareLink(saveUri) != null) SpotifyLinkMenu(uri: saveUri, name: item.name)]),
       if (artists.isNotEmpty) ...[const SizedBox(height: 6),
         Wrap(spacing: 6, children: [for (final (index, artist) in artists.indexed)
-          InkWell(onTap: EntityLink.fromJson(artist, type: 'artist') == null || onNavigate == null ? null
+          SpotifyLinkContextMenu(uri: artist['uri'] as String? ?? '',
+            child: InkWell(onTap: EntityLink.fromJson(artist, type: 'artist') == null || onNavigate == null ? null
             : () => onNavigate!(EntityLink.fromJson(artist, type: 'artist')!),
             child: Text('${artist['name']}${index < artists.length - 1 ? ',' : ''}',
-              style: const TextStyle(fontSize: 14, color: Colors.white)))])],
+              style: const TextStyle(fontSize: 14, color: Colors.white))))])],
     ]);
     return Material(color: const Color(0xff121212), borderRadius: BorderRadius.circular(8),
       clipBehavior: Clip.antiAlias, child: SingleChildScrollView(
@@ -63,7 +64,7 @@ class NowPlayingPanel extends StatelessWidget {
                 begin: Alignment.topCenter, end: Alignment.bottomCenter,
                 colors: [Color(0x00000000), Color(0x33000000), Color(0xff121212)], stops: [0, 0.45, 1]))),
               Positioned(left: 16, right: 16, bottom: 16,
-                child: SongLinkContextMenu(uri: saveUri, child: details)),
+                child: SpotifyLinkContextMenu(uri: saveUri, child: details)),
             ]))),
           if (lyricsController != null && item.type == 'track') ...[
             Padding(padding: const EdgeInsets.fromLTRB(16, 0, 16, 0), child: ClipRRect(borderRadius: BorderRadius.circular(8),

@@ -143,7 +143,7 @@ tasks:
 
   release:
     description: Prepare optimized native dependencies and build the macOS Flutter release.
-    command: uv run --project tools/oracles --locked python tools/release_macos.py build
+    command: dart run tools/release_macos.dart build
     deps:
       - '~:native'
     preset: utility
@@ -156,7 +156,7 @@ tasks:
 
   release-reinstall:
     description: Build/install the release, stopping the installed release before replacement without launching it.
-    command: uv run --project tools/oracles --locked python tools/release_macos.py install
+    command: dart run tools/release_macos.dart install
     deps:
       - '~:release'
     preset: utility

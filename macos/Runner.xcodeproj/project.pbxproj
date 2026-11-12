@@ -480,7 +480,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/bin/python3 \"$PROJECT_DIR/../tools/embed_quiche.py\"\n/usr/bin/python3 \"$PROJECT_DIR/../tools/embed_ffmpeg.py\"\n";
+			shellScript = "\"$FLUTTER_ROOT/bin/cache/dart-sdk/bin/dart\" \"$PROJECT_DIR/../tools/embed_native.dart\"\n";
 		};
 		6ED7D0E02495AD811BB895F3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

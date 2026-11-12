@@ -3,6 +3,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
+import '../app/share_links.dart';
 import 'controller.dart';
 import 'destinations_controller.dart';
 import 'models.dart';
@@ -144,7 +145,8 @@ class _HomeDestinationViewState extends State<HomeDestinationView> {
           ]);
         }))));
     }
-    return Material(color: Colors.transparent, borderRadius: BorderRadius.circular(8), clipBehavior: Clip.antiAlias,
+    return SpotifyLinkContextMenu(uri: item.uri,
+      child: Material(color: Colors.transparent, borderRadius: BorderRadius.circular(8), clipBehavior: Clip.antiAlias,
       child: Semantics(label: item.showTitle ? null : item.name,
         child: InkWell(onTap: () => widget.onSelect(item), child: Padding(padding: const EdgeInsets.all(12),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -155,7 +157,7 @@ class _HomeDestinationViewState extends State<HomeDestinationView> {
             style: const TextStyle(fontSize: 16)),
           if (item.cardSubtitle.isNotEmpty) Padding(padding: const EdgeInsets.only(top: 4),
             child: Text(item.cardSubtitle, maxLines: 2, overflow: TextOverflow.ellipsis, style: _secondary)),
-        ])))));
+        ]))))));
   }
 
   Widget _status(String title, VoidCallback retry) => Center(child: Padding(padding: const EdgeInsets.all(24),

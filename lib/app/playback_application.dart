@@ -32,6 +32,7 @@ import '../protocol/native_renderer_image.dart';
 import '../protocol/generated/es_prefs.pb.dart' as prefs;
 import '../search/models.dart';
 import 'app.dart';
+import 'app_scale.dart';
 import 'artwork.dart';
 import 'app_runtime.dart';
 import 'desktop_media_controls.dart';
@@ -62,6 +63,7 @@ class SpotifyPlaybackApplication extends StatefulWidget {
 class _SpotifyPlaybackApplicationState extends State<SpotifyPlaybackApplication> {
   final _shell = GlobalKey<SpotifyDesktopShellState>();
   final _navigator = GlobalKey<NavigatorState>();
+  final _scale = GlobalKey<DesktopAppScaleState>();
   ContextPlayerBackend? _backend;
   PlaybackController? _controller;
   StreamSubscription<Object>? _errors;
@@ -854,8 +856,18 @@ class _SpotifyPlaybackApplicationState extends State<SpotifyPlaybackApplication>
           onSelectedIntent: SelectAllTextIntent(SelectionChangedCause.keyboard)),
       ]),
     ]),
-    const PlatformMenu(label: 'View', menus: [
-      PlatformProvidedMenuItem(type: PlatformProvidedMenuItemType.toggleFullScreen),
+    PlatformMenu(label: 'View', menus: [
+      PlatformMenuItemGroup(members: [
+        PlatformMenuItem(label: 'Actual Size',
+          shortcut: const SingleActivator(LogicalKeyboardKey.digit0, meta: true),
+          onSelected: () => _scale.currentState?.reset()),
+        PlatformMenuItem(label: 'Zoom In', shortcut: const CharacterActivator('+', meta: true),
+          onSelected: () => _scale.currentState?.zoomIn()),
+        PlatformMenuItem(label: 'Zoom Out',
+          shortcut: const SingleActivator(LogicalKeyboardKey.minus, meta: true),
+          onSelected: () => _scale.currentState?.zoomOut()),
+      ]),
+      const PlatformProvidedMenuItem(type: PlatformProvidedMenuItemType.toggleFullScreen),
     ]),
     PlatformMenu(label: 'Search', menus: [
       PlatformMenuItem(label: 'Focus Search',
@@ -877,7 +889,8 @@ class _SpotifyPlaybackApplicationState extends State<SpotifyPlaybackApplication>
       ]),
       PlatformProvidedMenuItem(type: PlatformProvidedMenuItemType.arrangeWindowsInFront),
     ]),
-  ], child: SpotifyDesktopApp(navigatorKey: _navigator, shellKey: _shell, playbackController: _controller,
+  ], child: SpotifyDesktopApp(navigatorKey: _navigator, shellKey: _shell, scaleKey: _scale,
+    playbackController: _controller,
     playbackArtworkBuilder: _runtime == null ? null : (context, item) => _artwork(item.uri, item.images),
     searchRepository: _runtime?.searchRepository,
     homeRepository: _runtime?.homeRepository,

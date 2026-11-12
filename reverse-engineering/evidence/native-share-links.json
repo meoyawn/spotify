@@ -1,0 +1,95 @@
+{
+  "source": {
+    "application": "Spotify",
+    "version": "1.3.6.1921",
+    "executable": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+    "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+    "archive": "/Applications/Spotify.app/Contents/Resources/Apps/xpui.spa",
+    "archiveSha256": "20038c2af5d9bb785c3181c3e9a04073b43eb501a72950b19d1a2a085b9a18df",
+    "rendererOrigin": "CDP script source with URL <embedded>, recorded in .local/script-inventory.json",
+    "rendererSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f"
+  },
+  "sourceHashes": [
+    {
+      "module": 47136,
+      "path": ".local/open-links-original/module-47136.js",
+      "sha256": "7df9041b9c3167a16025354d2273b096ec6f2d51d388f69c50e699f325ec1e16"
+    },
+    {
+      "module": 69449,
+      "path": ".local/open-links-original/module-69449.js",
+      "sha256": "894bba6d3e0919ff79259441391a79627b30a3a7f0ce5d7804d68946e56ecdc0"
+    }
+  ],
+  "originalOwners": [
+    47136,
+    69449,
+    31979,
+    80249
+  ],
+  "rea": {
+    "summaryEvidenceId": "ev_4c629a7026c3d1601c654ff8e197f1e478c83249c50292ea1461c3ee8cced1e8",
+    "parentEvidenceId": "ev_b81dea3fdd2261ad940fb59efbe7a9da23262d1efeddcf9871caf9bb0c678c21",
+    "analysis": "Static REA analysis of original Spotify URI modules 47136 and 69449; sharing owners 31979 and 80249 are recorded in native-song-links.json. Chromium was not analyzed or executed."
+  },
+  "execution": "Unmodified original module 47136 parser and URI.toURL executed with its original module 69449 dependency in Node vm; no Dart formatter used.",
+  "substitutedStandardPrimitives": [
+    "Node WHATWG URL and URLSearchParams"
+  ],
+  "cases": [
+    {
+      "uri": "spotify:album:0000000000000000000001",
+      "originalUrl": "https://open.spotify.com/album/0000000000000000000001"
+    },
+    {
+      "uri": "spotify:album:4uLU6hMCjMI75M1A2tKUQC",
+      "originalUrl": "https://open.spotify.com/album/4uLU6hMCjMI75M1A2tKUQC"
+    },
+    {
+      "uri": "spotify:artist:0000000000000000000001",
+      "originalUrl": "https://open.spotify.com/artist/0000000000000000000001"
+    },
+    {
+      "uri": "spotify:artist:4uLU6hMCjMI75M1A2tKUQC",
+      "originalUrl": "https://open.spotify.com/artist/4uLU6hMCjMI75M1A2tKUQC"
+    },
+    {
+      "uri": "spotify:track:0000000000000000000001",
+      "originalUrl": "https://open.spotify.com/track/0000000000000000000001"
+    },
+    {
+      "uri": "spotify:track:4uLU6hMCjMI75M1A2tKUQC",
+      "originalUrl": "https://open.spotify.com/track/4uLU6hMCjMI75M1A2tKUQC"
+    }
+  ],
+  "scope": "Canonical HTTPS album, artist and song URL formatting from original URI.toURL(). Expected URLs came only from independently executing the original modules.",
+  "applicationPolicy": "Copy canonical HTTPS URLs through the Flutter Clipboard platform channel. Use the selected entity URI. No network, sharing IDs, short links or telemetry are needed.",
+  "limits": [
+    "No claim about the complete original share dialog, modifier-key URI copying, experiments, playlist permissions or short-link service.",
+    "Flutter owns clipboard writes and menu rendering; original React components and macOS clipboard calls were not executed."
+  ],
+  "sourceRanges": [
+    {
+      "module": 47136,
+      "offsetBytes": 724697,
+      "lengthBytes": 30601,
+      "sha256": "69d9c484a0f66974f784f9b31a70e1260d8cc3cdb1aa0299e5f8aabae1470266"
+    },
+    {
+      "module": 69449,
+      "offsetBytes": 7889734,
+      "lengthBytes": 11029,
+      "sha256": "512123b971df696e5269b0cebcaf671482bd607acd58f800425c57c484e2d333"
+    }
+  ],
+  "verification": {
+    "command": "flutter test --no-pub test/entity_test.dart test/home_test.dart test/library_test.dart test/search_test.dart --reporter expanded",
+    "passed": 83,
+    "regression": "All three share menu cases fail against unchanged HEAD with missing Copy album link or Copy artist link menu items, and pass after the change.",
+    "native": "A separate macOS debug preview exercised the production EntityView and shared menu widgets. Album and artist page menus, an individual artist span inside a song row, and a song context menu wrote the original canonical HTTPS URLs to the real macOS pasteboard. Playback, navigation and row selection counters stayed zero.",
+    "previewLimits": "The native preview started hidden alongside the running release. Only the local probe advanced its lifecycle to resumed to render frames; no production lifecycle behavior changed. Synthetic metadata was supplied without a live session or network.",
+    "hotReload": "Succeeded after the final Dart changes.",
+    "runtimeErrors": [],
+    "separateShellFailure": "The app_shell_test.dart supplied Home survives navigation case hits the same SemanticsNode increase/value assertion on unchanged HEAD and the changed checkout. This existing failure is outside link copying."
+  }
+}

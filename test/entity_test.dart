@@ -6,7 +6,7 @@ import 'dart:io';
 
 import 'package:convert/convert.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart' show kDoubleTapTimeout;
+import 'package:flutter/gestures.dart' show kDoubleTapTimeout, kSecondaryMouseButton, PointerDeviceKind;
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:spotify_flutter/entities/controller.dart';
@@ -161,31 +161,55 @@ void main() {
       expect(writes, 2);
     });
 
-    testWidgets('song menu writes the original canonical URL to the clipboard without playing', (tester) async {
-      final fixture = jsonDecode(File('reverse-engineering/fixtures/native-song-links.json').readAsStringSync()) as Map;
-      final song = (fixture['cases'] as List).first as Map;
-      final copied = <String>[];
-      tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(SystemChannels.platform, (call) async {
-        if (call.method == 'Clipboard.setData') copied.add((call.arguments as Map)['text'] as String);
-        return null;
+    final shareFixture = jsonDecode(File('reverse-engineering/fixtures/native-share-links.json').readAsStringSync()) as Map;
+    for (final type in ['track', 'album', 'artist']) {
+      testWidgets('$type menus copy the original canonical URL without playing or navigating', (tester) async {
+        final shared = (shareFixture['cases'] as List).firstWhere((item) => (item['uri'] as String).startsWith('spotify:$type:')) as Map;
+        final artist = (shareFixture['cases'] as List).firstWhere((item) => (item['uri'] as String).startsWith('spotify:artist:')) as Map;
+        final label = type == 'track' ? 'song' : type;
+        final copied = <String>[];
+        tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(SystemChannels.platform, (call) async {
+          if (call.method == 'Clipboard.setData') copied.add((call.arguments as Map)['text'] as String);
+          return null;
+        });
+        addTearDown(() => tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(SystemChannels.platform, null));
+        var opens = 0;
+        final uri = type == 'track' ? 'spotify:album:0000000000000000000001' : shared['uri'] as String;
+        final controller = EntityController(_Repository(onOpen: (_) async {
+          opens++;
+          return EntityPage(details: EntityDetails.fromJson({
+            'type': type == 'track' ? 'album' : type, 'uri': uri, 'name': 'Share this $label',
+          }), tracks: EntityTrackPage(offset: 0, limit: 1, totalLength: 1, rows: [EntityRow.fromJson({
+            'type': 'track', 'uri': type == 'track' ? shared['uri'] : 'spotify:track:0000000000000000000001',
+            'name': 'Share this song', 'isPlayable': true,
+            'artists': [{'uri': artist['uri'], 'name': 'Share this artist'}],
+            'relinkedUri': 'spotify:track:0000000000000000000002',
+          })]));
+        }), uri: uri);
+        addTearDown(controller.dispose);
+        await tester.pumpWidget(MaterialApp(theme: ThemeData.dark(), home: Scaffold(body: EntityView(controller: controller,
+          onPlay: (_) => fail('Copying must not start playback'),
+          onSelect: (_) => fail('Copying must not select a row'),
+          onNavigate: (_) => fail('Copying must not navigate')))));
+        await tester.pumpAndSettle();
+        await tester.tap(find.byTooltip(type == 'track' ? 'More options for Share this song' : 'More options'));
+        await tester.pump(kDoubleTapTimeout + const Duration(milliseconds: 1));
+        await tester.pumpAndSettle();
+        await tester.tap(find.text('Copy $label link'));
+        await tester.pumpAndSettle();
+        expect(copied, [shared['originalUrl']]);
+        expect(find.text('Link copied to clipboard'), findsOneWidget);
+        // The artist span owns its secondary click even inside the song row.
+        final target = type == 'track' ? find.text('Share this artist', findRichText: true)
+          : find.text('Share this $label').first;
+        await tester.tap(target, kind: PointerDeviceKind.mouse, buttons: kSecondaryMouseButton);
+        await tester.pumpAndSettle();
+        await tester.tap(find.text(type == 'track' ? 'Copy artist link' : 'Copy $label link'));
+        await tester.pumpAndSettle();
+        expect(copied, [shared['originalUrl'], type == 'track' ? artist['originalUrl'] : shared['originalUrl']]);
+        expect(opens, 1);
       });
-      addTearDown(() => tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(SystemChannels.platform, null));
-      final controller = EntityController(_Repository(onOpen: (uri) async => _page(uri, rows: [EntityRow.fromJson({
-        'type': 'track', 'uri': song['uri'], 'name': 'Share this song', 'isPlayable': true,
-        'relinkedUri': 'spotify:track:0000000000000000000002',
-      })])), uri: 'spotify:album:0000000000000000000001');
-      addTearDown(controller.dispose);
-      await tester.pumpWidget(MaterialApp(theme: ThemeData.dark(), home: Scaffold(body: EntityView(controller: controller,
-        onPlay: (_) => fail('Copying must not start playback')))));
-      await tester.pumpAndSettle();
-      await tester.tap(find.byTooltip('More options for Share this song'));
-      await tester.pump(kDoubleTapTimeout + const Duration(milliseconds: 1));
-      await tester.pumpAndSettle();
-      await tester.tap(find.text('Copy song link'));
-      await tester.pumpAndSettle();
-      expect(copied, [song['originalUrl']]);
-      expect(find.text('Link copied to clipboard'), findsOneWidget);
-    });
+    }
 
     testWidgets('playlist arrows move the selected row and reveal it without playing or paging', (tester) async {
       final rows = [for (var index = 0; index < 35; index++) ...[

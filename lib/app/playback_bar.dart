@@ -11,7 +11,7 @@ import '../playback/models.dart';
 import '../playback/requests.dart';
 import 'shell_icons.dart';
 import 'snack_bar.dart';
-import 'song_links.dart';
+import 'share_links.dart';
 
 typedef DesktopPlaybackBuilder = Widget Function(
   BuildContext context,
@@ -198,7 +198,7 @@ class _PlayerContents extends StatelessWidget {
     return contents = Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: Row(children: [
-        if (constraints.maxWidth >= 600) Expanded(flex: 3, child: SongLinkContextMenu(uri: trackUri ?? '', child: Padding(
+        if (constraints.maxWidth >= 600) Expanded(flex: 3, child: SpotifyLinkContextMenu(uri: trackUri ?? '', child: Padding(
           padding: const EdgeInsets.only(right: 16),
           child: Row(children: [
             if (metadata != null) ...[SizedBox.square(dimension: 56,
@@ -380,7 +380,10 @@ class _PlayerArtistLinksState extends State<_PlayerArtistLinks> {
     final enabled = link != null && widget.onNavigate != null;
     final recognizer = _recognizers.putIfAbsent(index, () => TapGestureRecognizer());
     recognizer.onTap = enabled ? () => widget.onNavigate!(link) : null;
-    return TextSpan(text: artist['name'] as String, recognizer: enabled ? recognizer : null,
+    final shareable = spotifyShareLink(link?.uri ?? '') != null;
+    recognizer.onSecondaryTapUp = shareable
+      ? (details) => unawaited(showSpotifyLinkContextMenu(context, link!.uri, details.globalPosition)) : null;
+    return TextSpan(text: artist['name'] as String, recognizer: enabled || shareable ? recognizer : null,
       mouseCursor: enabled ? SystemMouseCursors.click : SystemMouseCursors.basic,
       onEnter: enabled ? (_) => setState(() => _hovered = index) : null,
       onExit: enabled ? (_) => setState(() => _hovered = null) : null,

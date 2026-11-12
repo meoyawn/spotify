@@ -8,7 +8,7 @@ import 'controller.dart';
 import 'models.dart';
 import 'repository.dart';
 import 'view.dart';
-import '../app/song_links.dart';
+import '../app/share_links.dart';
 
 /// Full results use their own requests; the global field still owns suggestions.
 class SearchResultsView extends StatefulWidget {
@@ -190,7 +190,7 @@ class _SearchResultsViewState extends State<SearchResultsView> {
   }
   Widget _top(SearchItem item) => Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
     const Text('Top result', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)), const SizedBox(height: 16),
-    SongLinkContextMenu(uri: item.uri, child: Material(color: const Color(0xff181818), borderRadius: BorderRadius.circular(8), child: InkWell(
+    SpotifyLinkContextMenu(uri: item.uri, child: Material(color: const Color(0xff181818), borderRadius: BorderRadius.circular(8), child: InkWell(
       borderRadius: BorderRadius.circular(8), onTap: () => widget.onSelect(item), child: Padding(
         padding: const EdgeInsets.all(20), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           SizedBox.square(dimension: 92, child: _art(item)), const SizedBox(height: 16),
@@ -241,7 +241,7 @@ class _SearchResultsViewState extends State<SearchResultsView> {
           const SizedBox(height: 5), Text([_type(item), ...item.contributors].where((value) => value.isNotEmpty).join(' • '),
             maxLines: 2, overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 13, color: Color(0xffb3b3b3))),
         ]))));
-  Widget _row(SearchItem item, {int? number}) => SongLinkContextMenu(uri: item.uri,
+  Widget _row(SearchItem item, {int? number}) => SpotifyLinkContextMenu(uri: item.uri,
     child: Material(color: Colors.transparent, borderRadius: BorderRadius.circular(4),
     child: InkWell(onTap: () => widget.onSelect(item),
       onDoubleTap: widget.onPlay != null && item.isPlayable != false ? () => widget.onPlay!(item) : null,
@@ -258,7 +258,7 @@ class _SearchResultsViewState extends State<SearchResultsView> {
             child: Text('${duration ~/ 60000}:${(duration ~/ 1000 % 60).toString().padLeft(2, '0')}', style: const TextStyle(color: Color(0xffb3b3b3)))),
           if (widget.onPlay != null && item.isPlayable != false) IconButton(tooltip: 'Play ${item.name}',
             onPressed: () => widget.onPlay!(item), icon: const Icon(Icons.play_arrow, size: 20)),
-          if (item.type == 'track') SongLinkMenu(uri: item.uri, name: item.name),
+          if (item.type == 'track') SpotifyLinkMenu(uri: item.uri, name: item.name),
         ]))))));
   Widget _art(SearchItem item) => ClipRRect(borderRadius: BorderRadius.circular(
     const {'artist', 'author', 'user'}.contains(item.type) ? 999 : 4),

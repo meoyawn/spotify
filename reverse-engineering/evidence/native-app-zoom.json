@@ -1,0 +1,89 @@
+{
+  "feature": "Desktop whole-interface zoom",
+  "original": {
+    "application": "/Applications/Spotify.app",
+    "version": "1.3.6.1921",
+    "resource": "Contents/Resources/English.lproj/MainMenu.nib",
+    "resource_sha256": "f88ef15d26b5efc496e176db1aaa2b1abb41965ef258a8d80188befa7eb1aa41",
+    "rea_operation": "decode_interface_builder",
+    "rea_evidence_id": "ev_b5ddcb07cc26adab8217ea3a23b2feba7ba0c400cd991f6d7ac71301cf2b0f1d",
+    "controls": [
+      {
+        "label": "Actual Size",
+        "key": "0",
+        "modifier_mask": 1048576,
+        "evidence": [
+          {
+            "kind": "interface_builder_resource",
+            "description": "object 241",
+            "location": {
+              "address": null,
+              "file_offset": null
+            },
+            "artifact_path": "Contents/Resources/English.lproj/MainMenu.nib",
+            "artifact_sha256": "f88ef15d26b5efc496e176db1aaa2b1abb41965ef258a8d80188befa7eb1aa41"
+          }
+        ]
+      },
+      {
+        "label": "Zoom In",
+        "key": "+",
+        "modifier_mask": 1048576,
+        "evidence": [
+          {
+            "kind": "interface_builder_resource",
+            "description": "object 259",
+            "location": {
+              "address": null,
+              "file_offset": null
+            },
+            "artifact_path": "Contents/Resources/English.lproj/MainMenu.nib",
+            "artifact_sha256": "f88ef15d26b5efc496e176db1aaa2b1abb41965ef258a8d80188befa7eb1aa41"
+          }
+        ]
+      },
+      {
+        "label": "Zoom Out",
+        "key": "-",
+        "modifier_mask": 1048576,
+        "evidence": [
+          {
+            "kind": "interface_builder_resource",
+            "description": "object 264",
+            "location": {
+              "address": null,
+              "file_offset": null
+            },
+            "artifact_path": "Contents/Resources/English.lproj/MainMenu.nib",
+            "artifact_sha256": "f88ef15d26b5efc496e176db1aaa2b1abb41965ef258a8d80188befa7eb1aa41"
+          }
+        ]
+      }
+    ],
+    "selectors": {
+      "Actual Size": "resetZoom:",
+      "Zoom In": "zoomIn:",
+      "Zoom Out": "zoomOut:"
+    },
+    "scope": "Shipped native menu bindings and action selector names only. No original zoom routine was executed; numeric steps, bounds and persistence behavior are not established by this resource."
+  },
+  "flutter": {
+    "owner": "lib/app/app_scale.dart",
+    "viewport": "Navigator and overlays are laid out at window size divided by scale and painted through FittedBox. MediaQuery dimensions and insets use that viewport; devicePixelRatio includes the scale.",
+    "scale_range": [
+      0.5,
+      2.0
+    ],
+    "default_scale": 1.0,
+    "preference": "ui.scale",
+    "policy": "Browser-style presets within an app-selected 50–200% range; no numeric equivalence claim with the original.",
+    "native_window_controls": "Their physical inset is preserved; sidebar drags convert screen distances to the scaled viewport.",
+    "verification": {
+      "tests": "flutter test --no-pub test/app_scale_test.dart: 2 passed; the same zoom tests failed against the previous app root for unchanged control sizes.",
+      "drag_regression": "At 50%, a 30-point drag previously moved the sidebar 15 points; it now moves 30 points.",
+      "live": "A macOS debug SpotifyDesktopApp probe was hot reloaded and restarted. Command key-message dispatch produced 48 -> 52.8 and 48 -> 43.2 point Home controls at 110% and 90%; reset restored 48. A scaled pointer click opened a dialog; zoom and reset worked with that route present. No runtime errors were reported.",
+      "live_limit": "OS key injection could not run while the macOS session was locked. Debug key dispatch and explicit probe frames were used.",
+      "existing_shell_failure": "The broader app_shell_test.dart suite reports sidebar Semantics increasedValue assertions. Its unconnected-root test was rerun without the zoom root and reproduced the same Semantics assertion."
+    }
+  }
+}
