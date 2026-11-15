@@ -1,0 +1,107 @@
+{
+  "source": {
+    "application": "Spotify macOS arm64",
+    "version": "1.3.8.620",
+    "archive": "/Applications/Spotify.app/Contents/Resources/Apps/xpui.spa",
+    "archiveSha256": "acd616828705c7725c89805638400cbdb1ed87f7607f308e62c0e6d9d24bb1c3",
+    "retainedDirectory": ".local/right-sidebar-original-20261115",
+    "members": [
+      {
+        "member": "dwp-panel-section.js",
+        "sha256": "29f46c70d95aac3cffb9ef161c98d6b975bb208b093541b4e87c2fc8cc0ff517"
+      },
+      {
+        "member": "dwp-panel-section.css",
+        "sha256": "b4ad2b0e9792a7a7fa514c90336befcc257c1741856b6bed1ca0a338e2bc9242"
+      }
+    ]
+  },
+  "installedRecheck": {
+    "version": "1.3.9.2055",
+    "archiveSha256": "b64742faa2bd1db859aefddd804e76246731f2748d2eb138af212277f27f3e44",
+    "stylesheetSha256": "ec806051aa83bf592eec8769cd17daaad8e919a0e74acb5de76ecc42664a676a",
+    "selectedLayoutRulesUnchanged": true,
+    "scope": "The original application updated during inspection. REA analyzed the retained 1.3.8.620 members above; this later stylesheet comparison does not claim execution of the updated renderer."
+  },
+  "queueReference": {
+    "version": "1.3.6.1921",
+    "rendererCapture": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+    "rendererSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+    "module": 49715,
+    "extractedModuleSha256": "c4f5e2672442668f4dff4178905ec8b5778be805cf5990f22983f6c21dad2630"
+  },
+  "rea": {
+    "version": "6.8.0",
+    "operation": "analyze_javascript_application",
+    "evidenceId": "ev_04f5df033e606798cccffe14004f7887120c88c81821067a8ca67959b55f7699",
+    "selectedSource": "dwp-panel-section.js",
+    "localEvidence": ".local/right-sidebar-installed-rea-20261115.json",
+    "scope": "Inert proprietary renderer syntax and matched installed CSS. Semantic graph retention is partial; no original browser or protocol execution is claimed."
+  },
+  "original": {
+    "cssRules": [
+      ".BChB352NlzxjnbbziuLy{flex-direction:column;flex-grow:1;height:100%;display:flex}",
+      ".LEPAKXEXZcomXesFvrZz{padding-inline:16px}",
+      ".IqSV_Un9cfLOI1W225rV{padding:16px}",
+      ".mrcvSlOpV0KRnjTfxJ9O{z-index:1;flex-direction:row;align-items:center;gap:8px;height:64px;padding-block:8px;display:flex}",
+      ".aFO5b_LfFQ0NxHOAivzC{flex-direction:column;gap:16px;display:flex}",
+      ".Ij6LJObUjGQdWctaYorw{aspect-ratio:16/5;flex-direction:column;justify-content:flex-start;width:100%;transition:aspect-ratio 1s cubic-bezier(0,0,0,1);display:flex}",
+      ".Ox6jIRzHAVKhP_IbeVbG{opacity:0;padding-inline:16px;position:absolute;left:0;right:0}",
+      ".yzS0wPCD_t5R83a9tQgj{aspect-ratio:1;justify-content:flex-start}",
+      ".tH77ssv61viF5S1X6atQ{border-radius:8px;overflow:hidden}",
+      ".RceteCtZflosRWqlgYrV{isolation:isolate;align-items:center;display:flex;position:relative;container-type:inline-size}",
+      ".oidO8csVRWYwUyf2bWJE{margin-inline-start:12px}",
+      ".jRAM_QpTMlDwhWi5Glgb{flex-direction:column;flex-basis:100%;gap:16px;padding-bottom:16px;display:flex}"
+    ],
+    "header": "Shared module 14860 keeps fixedHeader outside its scroll node. Header module 49540 uses a 64px row and the original NPV context title.",
+    "coverArt": "NPVHeader selects COVER_ART separately from CANVAS. COVER_ART uses the square yzS0wPCD_t5R83a9tQgj branch with 16px horizontal artwork inset and an 8px cover radius. Track details follow the visual with a 16px gap.",
+    "details": "ContextItemInfo uses titleSmall and bodyMedium, with a flexible text column and a separate save control after a 12px margin. The canvas overlay class is conditional on CANVAS.",
+    "lyrics": "The original NPVLyricsWithData routine returns null when data.hasLyrics is absent or false. Missing lyrics do not produce a sidebar message section.",
+    "queue": "In the retained 1.3.6.1921 renderer, NPVNextInQueue selects queued[0] or nextUp[0] and renders one row. Flutter uses the existing projected nextItems.firstOrNull and does not fetch queue metadata."
+  },
+  "implementation": [
+    "lib/app/now_playing_panel.dart",
+    "lib/lyrics/view.dart"
+  ],
+  "flutterVerification": {
+    "environment": "Flutter 3.47.9 / Dart 3.13.7, isolated macOS debug preview; hot reload and hot restart performed without restoring an account or starting media playback.",
+    "widths": [
+      280,
+      356,
+      420
+    ],
+    "textScales": [
+      1,
+      1.5
+    ],
+    "observedCoverSizes": {
+      "280": [
+        248,
+        248
+      ],
+      "356": [
+        324,
+        324
+      ],
+      "420": [
+        388,
+        388
+      ]
+    },
+    "cases": [
+      "Full square artwork with 16px inset and details below it",
+      "Long track title wraps to two lines with save control separate",
+      "Header remains at the same position after scrolling body by 300px",
+      "Unavailable lyrics omit the entire preview; available lyrics render and expand",
+      "Single next item despite three projected next tracks",
+      "Track and artist navigation, save toggle, share menu and close respond to pointer input"
+    ],
+    "limits": [
+      "Synthetic playback and lyrics, with one local image substituted for artwork; no live Spotify request, licensing or streaming behavior is covered.",
+      "Direct VM-evaluation pointer injection during frame processing triggered framework assertions. The isolated preview was restarted; close was then verified from a delayed event with no runtime error. No production workaround was added.",
+      "Original native UI observation was unavailable because the selected window could not be observed; no original-client screenshot or pixel comparison is claimed.",
+      "The queue selection reference comes from the earlier retained renderer. Its current installed native runtime behavior was not executed.",
+      "Targeted analysis reports no errors or warnings and retains two existing style infos in the full lyrics view."
+    ]
+  }
+}

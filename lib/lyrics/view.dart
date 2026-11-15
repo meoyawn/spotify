@@ -103,6 +103,9 @@ class _LyricsViewState extends State<LyricsView> {
   @override Widget build(BuildContext context) => ListenableBuilder(listenable: widget.controller,
     builder: (context, _) {
       final controller = widget.controller, lyrics = controller.lyrics;
+      // The original NPV card returns no section without available lyrics.
+      // Full lyrics navigation retains its loading, unavailable and retry states.
+      if (widget.preview && lyrics?.availability != LyricsAvailability.available) return const SizedBox.shrink();
       Widget message(String text, {bool retry = false}) => Center(child: Padding(
         padding: const EdgeInsets.all(24), child: Column(mainAxisSize: MainAxisSize.min, children: [
           Text(text, textAlign: TextAlign.center),
@@ -170,7 +173,9 @@ class _LyricsPreview extends StatelessWidget {
   @override Widget build(BuildContext context) {
     final background = Color(lyrics.background);
     final scale = MediaQuery.textScalerOf(context).scale(1);
-    return SizedBox(height: 176 * scale, child: ColoredBox(color: background,
+    return Padding(padding: const EdgeInsets.only(bottom: 16),
+      child: ClipRRect(borderRadius: BorderRadius.circular(8),
+      child: SizedBox(height: 176 * scale, child: ColoredBox(color: background,
       child: InkWell(onTap: onExpand, child: Padding(padding: const EdgeInsets.all(16),
         child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
           const Text('Lyrics preview', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
@@ -186,7 +191,7 @@ class _LyricsPreview extends StatelessWidget {
                       style: TextStyle(fontFamily: 'SpotifyMixUITitle', fontSize: 24, height: 1.2,
                         fontWeight: FontWeight.w700, color: Color(lyrics.highlightText).withValues(alpha: 0.8)))),
                 ]))))),
-        ])))));
+        ])))))));
   }
 }
 

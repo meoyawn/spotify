@@ -1,0 +1,102 @@
+{
+  "source": {
+    "application": "Spotify",
+    "version": "1.3.6.1921",
+    "archive": "/Applications/Spotify.app/Contents/Resources/Apps/xpui.spa",
+    "archiveSha256": "20038c2af5d9bb785c3181c3e9a04073b43eb501a72950b19d1a2a085b9a18df",
+    "dateRenderer": {
+      "member": "690.js",
+      "memberSha256": "d838996df5ffaec89014614c6af891e3d1166fe562a7a9d691b1391a2c9064ff",
+      "module": 47849,
+      "offsetBytes": 3502,
+      "lengthBytes": 765,
+      "moduleSha256": "c2c6be0eebc8f2ae8763dd798e23edc7db35431c1fa0894bb4bb4f319a8873b7"
+    },
+    "songPage": {
+      "member": "xpui-routes-track-v2.js",
+      "sha256": "c62d23012e673341120b83ec9b47f209f5496e52f0a028bb629cccfb8fbd0b37"
+    }
+  },
+  "behavior": {
+    "dateSource": "track.albumOfTrack.date",
+    "headerOrder": [
+      "first artist",
+      "album name",
+      "release year",
+      "duration",
+      "positive playcount"
+    ],
+    "dateValue": "Parsed album date getUTCFullYear()",
+    "missingDate": "The date renderer returns null.",
+    "futureDate": "Static branch renders a localized releases-on label instead of the year."
+  },
+  "execution": {
+    "routine": "Original module 47849 export H",
+    "cases": [
+      {
+        "name": "full album date",
+        "releaseDate": {
+          "isoString": "2011-11-18T00:00:00Z",
+          "precision": "DAY"
+        },
+        "displayedYear": 2011
+      },
+      {
+        "name": "year precision",
+        "releaseDate": {
+          "isoString": "2011",
+          "precision": "YEAR"
+        },
+        "displayedYear": 2011
+      },
+      {
+        "name": "UTC year across offset",
+        "releaseDate": {
+          "isoString": "1999-12-31T23:30:00-02:00",
+          "precision": "DAY"
+        },
+        "displayedYear": 2000
+      },
+      {
+        "name": "missing date",
+        "displayedYear": null
+      }
+    ]
+  },
+  "substitutions": [
+    "JSX records inert element trees; typography and tooltip are labels.",
+    "Preferences supply an English locale.",
+    "The standard date parser is replaced with JavaScript Date for the supplied valid ISO inputs.",
+    "Tooltip/precision formatting and future-release localization are inert and are not verified by the executed cases."
+  ],
+  "scope": "Original shipped song-page data flow and metadata order inspected statically. The original release-date renderer independently executed for past dates and missing metadata. No network, playback, or Flutter implementation is exercised.",
+  "limitations": [
+    "No claim about other Spotify versions, experiments, track-list columns, tooltip formatting, or live server metadata for Flying Bird."
+  ],
+  "flutterPort": {
+    "owner": "lib/app/native_desktop_runtime.dart::_nativeTrackRow",
+    "source": "The album.date already supplied by the decoded native TrackV4 response.",
+    "projection": "A present positive year produces release.isoString at UTC midnight with the supplied month/day and DAY, MONTH or YEAR precision. Missing month/day use the first month/day only to represent that declared precision. Missing/zero year produces no release field.",
+    "consumer": "The existing lib/entities/view.dart song header reads release.isoString and places its year after the album name.",
+    "traffic": "No additional request, decode, cache, polling or playback action.",
+    "scope": "Ports the album release year into existing song metadata. Other song-header fields and future-release/tooltip formatting are outside this change."
+  },
+  "verification": {
+    "method": "Executed the production _nativeTrackRow method in an isolated macOS Flutter debug process with synthetic decoded TrackV4 metadata, then supplied that unmodified row to the production EntityView.",
+    "fullDate": {
+      "input": {"year": 2011, "month": 11, "day": 18},
+      "release": {"isoString": "2011-11-18T00:00:00.000Z", "precision": "DAY"},
+      "visibleSummary": "2011 • 1 song • 7 min"
+    },
+    "yearOnly": {
+      "input": {"year": 2011},
+      "release": {"isoString": "2011-01-01T00:00:00.000Z", "precision": "YEAR"}
+    },
+    "missingDate": {"release": null},
+    "hotReload": "Succeeded",
+    "runtimeErrors": [],
+    "existingEntityTests": "All 26 tests in test/entity_test.dart passed.",
+    "analyzer": "No diagnostic on the changed lines. The runtime/view analysis reports 22 existing warnings and style notices.",
+    "limitations": "The probe has no account/session, playback engine or network sender. This proves metadata projection and the visible full-date header, not live server metadata for a particular song. The installed release was not rebuilt."
+  }
+}

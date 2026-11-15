@@ -1253,6 +1253,9 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
     if (track == null || !track.hasName()) return null;
     final displayName = original.track?.name.isNotEmpty == true ? original.track!.name : track.name;
     final album = track.album;
+    final date = album.date;
+    final release = date.hasYear() && date.year > 0 ? DateTime.utc(date.year,
+      date.month > 0 ? date.month : 1, date.day > 0 ? date.day : 1) : null;
     final covers = album.coverGroup.image.isNotEmpty ? album.coverGroup.image : album.cover;
     final images = <EntityJson>[for (final image in covers)
       if (image.fileId.length == 20) {
@@ -1267,6 +1270,8 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
           if (artist.gid.length == 16) 'uri': nativeSpotifyEntityUri('artist', artist.gid)}],
         'album': {'type': 'album', 'name': album.name, 'images': images,
           if (album.gid.length == 16) 'uri': nativeSpotifyEntityUri('album', album.gid)},
+        if (release != null) 'release': {'isoString': release.toIso8601String(),
+          'precision': date.day > 0 ? 'DAY' : date.month > 0 ? 'MONTH' : 'YEAR'},
         if (track.hasDuration()) 'duration': {'milliseconds': track.duration},
         if (track.hasNumber()) 'trackNumber': track.number,
         if (track.hasDiscNumber()) 'discNumber': track.discNumber,
