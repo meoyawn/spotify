@@ -1,0 +1,112 @@
+{
+  "observedDate": "2026-11-15",
+  "source": {
+    "application": "Spotify macOS arm64 1.3.6.1921",
+    "executableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+    "rendererBundleSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+    "artistRoute": {
+      "installedArchive": "/Applications/Spotify.app/Contents/Resources/Apps/xpui.spa",
+      "entry": "xpui-routes-artist.js",
+      "sha256": "b5fcd37cbc1959935654a1175a2929994af3fbcd63008f4cf673bedb48cc7f54",
+      "actionBar": {
+        "symbol": "tq",
+        "offsetUtf16": 34970,
+        "lengthUtf16": 1490,
+        "sha256": "8b75835f7d3767f7af45fa601490d7243b47bd5e1aa3bee1b7af8cf8f0fff7cd"
+      },
+      "identityCheck": "The retained route file hash matches the same entry read directly from the installed original archive."
+    },
+    "retainedModules": [
+      {
+        "id": 568,
+        "path": ".local/artist-about-original/module-568.js",
+        "sha256": "15d35fb788ebeb79aa80f188e51a3bdaa362c173ef36a3c4bb755571f6fbfe52",
+        "role": "Read LibraryAPI membership and subscribe to membership changes."
+      },
+      {
+        "id": 19787,
+        "path": ".local/artist-about-original/module-19787.js",
+        "sha256": "b026d5d47151de5192ed24397be59460cba8fa4288680a6c0c114c5b31563bf5",
+        "role": "Route artist additions and removals to LibraryAPI."
+      },
+      {
+        "id": 57650,
+        "path": ".local/artist-about-original/module-57650.js",
+        "sha256": "ba138aa18e396873589ebad72fc3b31b067b7d1cf7f2650295ff9e164c0f29a4",
+        "role": "Render the shared outlined Follow or Following button."
+      }
+    ]
+  },
+  "rea": {
+    "version": "6.8.0",
+    "operation": "analyze_javascript_application",
+    "evidenceId": "ev_823966a843338759b4cb44c92e95c3079af7919bd91793a00f4fece03880655d",
+    "localEvidence": ".local/artist-follow-rea-20261115.json",
+    "selectedSources": ["module-568.js", "module-19787.js"],
+    "scope": "Bounded static analysis of original proprietary membership and mutation owners. The installed artist action bar and shared button were also read directly. No Chromium decompilation."
+  },
+  "originalBehavior": {
+    "placement": "The artist action bar renders the shared Follow/Following control between playback actions and the context menu.",
+    "mutation": "The action bar calls the shared membership hook with the inverse of current membership. Artists use the Library collection path.",
+    "state": "The membership hook subscribes to Library changes; page and sidebar controls observe the same membership."
+  },
+  "independentExecution": {
+    "command": "node reverse-engineering/experiments/artist-about-original.mjs",
+    "reexecuted": true,
+    "service": "spotify.collection_esperanto.proto.CollectionService",
+    "methods": ["Add", "Remove"],
+    "payloadHex": "0a2573706f746966793a6172746973743a30303030303030303030303030303030303030303031",
+    "substitutions": [
+      "An inert Esperanto transport captures calls and returns an empty success response.",
+      "An added export exposes the unchanged original collection client.",
+      "The bundled standard protobuf runtime encodes the synthetic artist URI."
+    ],
+    "scope": "Original Library routing, URI parsing, collection client and protobuf serialization execute independently. The page's React action bar and original native HTTP WRITE producer do not execute here. Native write source and prior live checks remain scoped in native-now-playing-artist.json."
+  },
+  "implementation": {
+    "files": [
+      "lib/entities/artist_follow_button.dart",
+      "lib/entities/artist_about_repository.dart",
+      "lib/entities/view.dart",
+      "lib/app/artist_about_card.dart",
+      "lib/app/shell.dart",
+      "lib/app/native_desktop_runtime.dart"
+    ],
+    "behavior": [
+      "The artist route and visible About card use one shared membership owner and reusable button.",
+      "Visible controls publish optimistic membership together and stay enabled during a write. Your Library refreshes after a successful acknowledgement; rapid reversals share one serialized write lane.",
+      "Rejected writes restore the last acknowledged membership and show one retry snackbar for the write batch. Failed initial membership reads offer Retry.",
+      "A late membership read cannot overwrite pending membership or a newer settled change. Settled membership caching is bounded to 16 artists, with active writes protected from eviction.",
+      "Reads and caller waits retain caller cancellation. Account-owned writes survive removal of the initiating view; session reset cancels them and disposes the shared notifier.",
+      "The existing native artist snapshot and write path are reused. No new HTTP contracts, polling, overview requests or playback work are introduced by follow controls."
+    ]
+  },
+  "verification": {
+    "optimisticFollowUp": "The held-receipt rendering checks below record the earlier acknowledgement-gated UI. Current original execution, optimistic behavior, rollback and macOS checks are recorded in native-optimistic-library-mutations.json.",
+    "focusedChecks": "30 tests passed across entity_test.dart, native_followed_artists_test.dart and native_saved_tracks_test.dart.",
+    "newTestScope": "The actual artist page and About card share pending writes and acknowledged labels, preserve music rows and membership after rejection, and refresh Library only after success.",
+    "analysis": "No issues in the follow repository, button, card, entity view and focused entity test. Broader runtime/shell analysis retains unrelated existing warnings.",
+    "flutter": {
+      "environment": "Isolated macOS debug project importing the workspace owners; actual SpotifyDesktopApp routing and shell render the artist page alongside ArtistAboutCard. No playback engine is bound.",
+      "hotReload": "succeeded",
+      "widths": [1400, 900],
+      "textScales": [1, 1.5],
+      "checks": ["Both Follow controls render", "Both disable while acknowledgement is held", "Follow and unfollow synchronize both controls", "Rejected unfollow preserves Following", "Enlarged text retains usable controls"],
+      "runtimeErrors": 0,
+      "scope": "Synthetic artist data and controlled success/failure receipts verify rendering and pointer behavior. Live server membership is verified separately."
+    },
+    "live": {
+      "environment": "The isolated probe restores a temporary copy of the app-owned session and preferences through NativeDesktopRuntime. The actual authentication path retains its selected HTTP provider; the installed release process remains running.",
+      "artist": "Small Black",
+      "initiallyFollowing": true,
+      "serverConfirmedToggle": true,
+      "serverConfirmedRestore": true,
+      "method": "After each acknowledged write, invalidate the native artist snapshot and read fresh server membership. Restore initial membership in finally, close the runtime and remove temporary session files."
+    }
+  },
+  "limits": [
+    "No complete original native HTTP/wire parity claim is added; the existing collection WRITE contract is unchanged.",
+    "The artist action bar is read statically; independent execution covers its downstream Library routing, not React rendering or original native UI capture.",
+    "The installed release is not replaced. No playback admission or sustained playback claim is made."
+  ]
+}

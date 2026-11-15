@@ -35,6 +35,20 @@ class LyricsRepository {
   final SpotifyRequestBuilder builder;
   final Future<LyricsResponse> Function(RequestEnvelope request) send;
 
+  /// The song page calls color-lyrics directly; it has no metadata preflight.
+  Future<TrackLyrics> loadSongPage(String uri, String image, {CancellationToken? cancellationToken}) async {
+    cancellationToken?.throwIfCancelled();
+    final response = await send(builder.build().withCancellation(cancellationToken)
+      .withHost('https://spclient.wg.spotify.com/color-lyrics/v2')
+      .withPath('/track/${Uri.encodeComponent(uri.split(':').last)}/image/${Uri.encodeComponent(image)}')
+      .withHeaders({'App-Platform': 'WebPlayer'})
+      .withQueryParameters({'format': 'json', 'vocalRemoval': false}).envelope()).asCancellable(cancellationToken);
+    if (response.status == 404) return const TrackLyrics(availability: LyricsAvailability.unavailable);
+    if (response.status == 403) return const TrackLyrics(availability: LyricsAvailability.restricted);
+    _check(response);
+    return _decodeLyrics(response.body);
+  }
+
   Future<TrackLyrics> load(String uri, String image, {String? clientLanguage,
       CancellationToken? cancellationToken}) async {
     cancellationToken?.throwIfCancelled();
@@ -58,7 +72,12 @@ class LyricsRepository {
     if (response.status == 404) return const TrackLyrics(availability: LyricsAvailability.unavailable);
     if (response.status == 403) return const TrackLyrics(availability: LyricsAvailability.restricted);
     _check(response);
-    final body = _map(response.body), lyrics = _map(body['lyrics']), colors = _map(body['colors']);
+    return _decodeLyrics(response.body);
+  }
+}
+
+TrackLyrics _decodeLyrics(Object? value) {
+    final body = _map(value), lyrics = _map(body['lyrics']), colors = _map(body['colors']);
     if (lyrics['lines'] is! List) throw const FormatException('Lyrics response has no lines');
     return TrackLyrics(availability: LyricsAvailability.available,
       lines: _lines(lyrics['lines']), previewLines: _lines(lyrics['previewLines']),
@@ -67,7 +86,6 @@ class LyricsRepository {
       capStatus: lyrics['capStatus'] as String? ?? '',
       background: _color(colors['background'], 0xff535353), text: _color(colors['text'], 0xffb3b3b3),
       highlightText: _color(colors['highlightText'], 0xffffffff));
-  }
 }
 
 void _check(LyricsResponse response) {

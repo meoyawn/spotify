@@ -1,0 +1,521 @@
+{
+  "source": {
+    "application": "Spotify",
+    "version": "1.3.6.1921",
+    "member": "xpui.js",
+    "sha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+    "routines": [
+      {
+        "name": "gP",
+        "offsetBytes": 3618068,
+        "lengthBytes": 563,
+        "sha256": "edc526a18bddd48c378cf5add7de65a82a43c7ff7043ac90826a1cd8b7c5fcae"
+      },
+      {
+        "name": "gL",
+        "offsetBytes": 3618631,
+        "lengthBytes": 572,
+        "sha256": "8eafa4fd5b8c6e7bf1e2ba75593e4a0185069c8643e14ee60606f5e484470472"
+      },
+      {
+        "name": "gG-add",
+        "offsetBytes": 3622951,
+        "lengthBytes": 461,
+        "sha256": "8337d24d4749069496f20fd18d4d92b1d87fb1ba9972709da11113d4f8a631d7"
+      },
+      {
+        "name": "gG-remove",
+        "offsetBytes": 3623412,
+        "lengthBytes": 473,
+        "sha256": "151630f5abc7c99669b4a5550eaa12430c293139520eb550508c9cf59c034c80"
+      },
+      {
+        "name": "yn-onUpdateItems",
+        "offsetBytes": 3761612,
+        "lengthBytes": 131,
+        "sha256": "ed1dd6c20a3408dc7fdc4d4843ae94833ef86e59b9a15ea87afe2836053fc0ff"
+      },
+      {
+        "name": "yn-add",
+        "offsetBytes": 3762740,
+        "lengthBytes": 251,
+        "sha256": "9e71cd1d38346944944c0a08186f948731e594163ae340568166d90975990e92"
+      },
+      {
+        "name": "yn-remove",
+        "offsetBytes": 3763227,
+        "lengthBytes": 284,
+        "sha256": "d6d337c16dc8c9b6078b79ee6b4840fd6de5c2e76f8ca2deee2877b260cb22de"
+      }
+    ]
+  },
+  "rea": {
+    "summaryEvidenceId": "ev_237b80ff87a26248fd45d2e60896b2f5055480947d5210af4c6d157902c5e392",
+    "applicationEvidenceId": "ev_3dcc4fc3e37b75d7c6fb3670a34f5daa06a36fa6adf7137cef206e0a839e298a",
+    "parsedOriginalRoutines": 7,
+    "parseFailures": 0,
+    "coverage": "Exact LibraryAPI add/remove helpers and RootlistAPI membership/add/remove methods extracted from the original renderer. Unrelated application paths were not analyzed."
+  },
+  "execution": "Unchanged original method and helper source executed in Node vm. Synthetic native write receipts are held, then fulfilled or rejected independently of Flutter. No original renderer bootstrap, advertisements, telemetry, or live account mutation is executed.",
+  "additionalOriginalRoutines": [
+    {
+      "name": "A_ rootlist placement",
+      "offsetBytes": 3732524,
+      "lengthBytes": 176,
+      "sha256": "24dcd7b4a2604669fddd08b82c64a22bbd551930794afe209940bb008a1fb9d0"
+    },
+    {
+      "module": 47136,
+      "sha256": "7df9041b9c3167a16025354d2273b096ec6f2d51d388f69c50e699f325ec1e16"
+    },
+    {
+      "module": 69449,
+      "sha256": "894bba6d3e0919ff79259441391a79627b30a3a7f0ce5d7804d68946e56ecdc0"
+    }
+  ],
+  "substitutions": [
+    "Node standard Promise, Map, Set, Error, URL and URLSearchParams.",
+    "Event sink records membership and completion events. Library membership cache is a synthetic Map; Rootlist onUpdateItems executes unchanged with a standard Set.",
+    "Native collection/playlist/rootlist services capture semantic arguments and expose manually controlled Promise receipts.",
+    "Protobuf fromPartial helpers are structural identity stand-ins. No protobuf bytes, native HTTP fields, codec behavior, account restrictions or live server acknowledgement are established by this execution.",
+    "Operation interception returns false so the original mutation path executes; error decoration returns the supplied error."
+  ],
+  "observations": [
+    "Track saving and artist following share LibraryAPI membership updates, emitted synchronously before the native write is awaited.",
+    "Unchanged original URI classifiers route artists to collection add/remove and list-platform tracks to playlist Modify.",
+    "Rootlist add/remove update cached membership and publish membership before awaiting the rootlist mutation.",
+    "Native rejection publishes the previous membership. LibraryAPI rethrows the rejection; RootlistAPI reports it through operation-complete events and resolves its method."
+  ],
+  "cases": [
+    {
+      "family": "track",
+      "operation": "add",
+      "outcome": "success",
+      "likedSongsListPlatformEnabled": true,
+      "beforeAcknowledgement": {
+        "saved": true,
+        "events": [
+          "membership",
+          "write"
+        ]
+      },
+      "outgoing": {
+        "event": "write",
+        "kind": "playlist.modify",
+        "request": {
+          "uri": "spotify:playlist:37i9dQZF1F5p3rmiWPIYgZ",
+          "request": {
+            "operation": "add",
+            "uris": [
+              "spotify:track:0000000000000000000001"
+            ]
+          }
+        }
+      },
+      "membershipEvents": [
+        true
+      ],
+      "completion": "resolved",
+      "finalSaved": true
+    },
+    {
+      "family": "track",
+      "operation": "add",
+      "outcome": "rejection",
+      "likedSongsListPlatformEnabled": true,
+      "beforeAcknowledgement": {
+        "saved": true,
+        "events": [
+          "membership",
+          "write"
+        ]
+      },
+      "outgoing": {
+        "event": "write",
+        "kind": "playlist.modify",
+        "request": {
+          "uri": "spotify:playlist:37i9dQZF1F5p3rmiWPIYgZ",
+          "request": {
+            "operation": "add",
+            "uris": [
+              "spotify:track:0000000000000000000001"
+            ]
+          }
+        }
+      },
+      "membershipEvents": [
+        true,
+        false
+      ],
+      "completion": "rejected",
+      "finalSaved": false
+    },
+    {
+      "family": "track",
+      "operation": "remove",
+      "outcome": "success",
+      "likedSongsListPlatformEnabled": true,
+      "beforeAcknowledgement": {
+        "saved": false,
+        "events": [
+          "membership",
+          "write"
+        ]
+      },
+      "outgoing": {
+        "event": "write",
+        "kind": "playlist.modify",
+        "request": {
+          "uri": "spotify:playlist:37i9dQZF1F5p3rmiWPIYgZ",
+          "request": {
+            "operation": "remove",
+            "uris": [
+              "spotify:track:0000000000000000000001"
+            ]
+          }
+        }
+      },
+      "membershipEvents": [
+        false
+      ],
+      "completion": "resolved",
+      "finalSaved": false
+    },
+    {
+      "family": "track",
+      "operation": "remove",
+      "outcome": "rejection",
+      "likedSongsListPlatformEnabled": true,
+      "beforeAcknowledgement": {
+        "saved": false,
+        "events": [
+          "membership",
+          "write"
+        ]
+      },
+      "outgoing": {
+        "event": "write",
+        "kind": "playlist.modify",
+        "request": {
+          "uri": "spotify:playlist:37i9dQZF1F5p3rmiWPIYgZ",
+          "request": {
+            "operation": "remove",
+            "uris": [
+              "spotify:track:0000000000000000000001"
+            ]
+          }
+        }
+      },
+      "membershipEvents": [
+        false,
+        true
+      ],
+      "completion": "rejected",
+      "finalSaved": true
+    },
+    {
+      "family": "artist",
+      "operation": "add",
+      "outcome": "success",
+      "beforeAcknowledgement": {
+        "saved": true,
+        "events": [
+          "membership",
+          "write"
+        ]
+      },
+      "outgoing": {
+        "event": "write",
+        "kind": "collection.add",
+        "request": {
+          "uri": [
+            "spotify:artist:0000000000000000000001"
+          ]
+        }
+      },
+      "membershipEvents": [
+        true
+      ],
+      "completion": "resolved",
+      "finalSaved": true
+    },
+    {
+      "family": "artist",
+      "operation": "add",
+      "outcome": "rejection",
+      "beforeAcknowledgement": {
+        "saved": true,
+        "events": [
+          "membership",
+          "write"
+        ]
+      },
+      "outgoing": {
+        "event": "write",
+        "kind": "collection.add",
+        "request": {
+          "uri": [
+            "spotify:artist:0000000000000000000001"
+          ]
+        }
+      },
+      "membershipEvents": [
+        true,
+        false
+      ],
+      "completion": "rejected",
+      "finalSaved": false
+    },
+    {
+      "family": "artist",
+      "operation": "remove",
+      "outcome": "success",
+      "beforeAcknowledgement": {
+        "saved": false,
+        "events": [
+          "membership",
+          "write"
+        ]
+      },
+      "outgoing": {
+        "event": "write",
+        "kind": "collection.remove",
+        "request": {
+          "uri": [
+            "spotify:artist:0000000000000000000001"
+          ]
+        }
+      },
+      "membershipEvents": [
+        false
+      ],
+      "completion": "resolved",
+      "finalSaved": false
+    },
+    {
+      "family": "artist",
+      "operation": "remove",
+      "outcome": "rejection",
+      "beforeAcknowledgement": {
+        "saved": false,
+        "events": [
+          "membership",
+          "write"
+        ]
+      },
+      "outgoing": {
+        "event": "write",
+        "kind": "collection.remove",
+        "request": {
+          "uri": [
+            "spotify:artist:0000000000000000000001"
+          ]
+        }
+      },
+      "membershipEvents": [
+        false,
+        true
+      ],
+      "completion": "rejected",
+      "finalSaved": true
+    },
+    {
+      "family": "playlist",
+      "operation": "add",
+      "outcome": "success",
+      "beforeAcknowledgement": {
+        "saved": true,
+        "events": [
+          "membership",
+          "write"
+        ]
+      },
+      "outgoing": {
+        "event": "write",
+        "kind": "rootlist.modify",
+        "request": {
+          "operation": "add",
+          "uris": [
+            "spotify:playlist:0000000000000000000001"
+          ],
+          "before": "start"
+        }
+      },
+      "membershipEvents": [
+        true
+      ],
+      "completion": "resolved",
+      "finalSaved": true
+    },
+    {
+      "family": "playlist",
+      "operation": "add",
+      "outcome": "rejection",
+      "beforeAcknowledgement": {
+        "saved": true,
+        "events": [
+          "membership",
+          "write"
+        ]
+      },
+      "outgoing": {
+        "event": "write",
+        "kind": "rootlist.modify",
+        "request": {
+          "operation": "add",
+          "uris": [
+            "spotify:playlist:0000000000000000000001"
+          ],
+          "before": "start"
+        }
+      },
+      "membershipEvents": [
+        true,
+        false
+      ],
+      "completion": "resolved",
+      "finalSaved": false
+    },
+    {
+      "family": "playlist",
+      "operation": "remove",
+      "outcome": "success",
+      "beforeAcknowledgement": {
+        "saved": false,
+        "events": [
+          "membership",
+          "write"
+        ]
+      },
+      "outgoing": {
+        "event": "write",
+        "kind": "rootlist.modify",
+        "request": {
+          "operation": "remove",
+          "rows": [
+            "spotify:playlist:0000000000000000000001"
+          ]
+        }
+      },
+      "membershipEvents": [
+        false
+      ],
+      "completion": "resolved",
+      "finalSaved": false
+    },
+    {
+      "family": "playlist",
+      "operation": "remove",
+      "outcome": "rejection",
+      "beforeAcknowledgement": {
+        "saved": false,
+        "events": [
+          "membership",
+          "write"
+        ]
+      },
+      "outgoing": {
+        "event": "write",
+        "kind": "rootlist.modify",
+        "request": {
+          "operation": "remove",
+          "rows": [
+            "spotify:playlist:0000000000000000000001"
+          ]
+        }
+      },
+      "membershipEvents": [
+        false,
+        true
+      ],
+      "completion": "resolved",
+      "finalSaved": true
+    },
+    {
+      "family": "track",
+      "operation": "add",
+      "outcome": "success",
+      "likedSongsListPlatformEnabled": false,
+      "beforeAcknowledgement": {
+        "saved": true,
+        "events": [
+          "membership",
+          "write"
+        ]
+      },
+      "outgoing": {
+        "event": "write",
+        "kind": "collection.add",
+        "request": {
+          "uri": [
+            "spotify:track:0000000000000000000001"
+          ]
+        }
+      },
+      "membershipEvents": [
+        true
+      ],
+      "completion": "resolved",
+      "finalSaved": true
+    },
+    {
+      "family": "track",
+      "operation": "remove",
+      "outcome": "success",
+      "likedSongsListPlatformEnabled": false,
+      "beforeAcknowledgement": {
+        "saved": false,
+        "events": [
+          "membership",
+          "write"
+        ]
+      },
+      "outgoing": {
+        "event": "write",
+        "kind": "collection.remove",
+        "request": {
+          "uri": [
+            "spotify:track:0000000000000000000001"
+          ]
+        }
+      },
+      "membershipEvents": [
+        false
+      ],
+      "completion": "resolved",
+      "finalSaved": false
+    }
+  ],
+  "flutterPort": {
+    "owners": [
+      "lib/library/saved_tracks_controller.dart",
+      "lib/entities/artist_about_repository.dart",
+      "lib/entities/controller.dart"
+    ],
+    "behavior": "Publish desired membership immediately to all mounted controls; keep normal enabled icons and labels during writes; restore last acknowledged membership on rejection.",
+    "concurrency": "Application ownership policy: one serialized write lane per URI, coalescing repeated clicks to the latest desired membership. Pending state and revision checks prevent stale reads from replacing an optimistic update or rollback. These concurrency improvements are not claimed as exact original execution behavior.",
+    "lifecycle": "Artist writes belong to the account repository and survive the initiating view being removed. Account disposal cancels the underlying request. Playlist controllers and track controllers retain their existing cancellation ownership.",
+    "network": "Existing verified request owners are unchanged. No polling, speculative writes, or extra mutation-status requests are introduced."
+  },
+  "limits": [
+    "Behavioral parity is limited to membership publication before acknowledgement and rollback after rejection for the recorded branches.",
+    "The original method execution does not establish behavior for overlapping native operations, another device, unobserved interception middleware, or all Spotify builds.",
+    "The Flutter probes use the real widgets/controllers with held synthetic service receipts; they do not claim a live account round trip."
+  ],
+  "flutterVerification": {
+    "platform": "macOS debug, real production widgets and controllers, synthetic service receipts held at the repository boundary",
+    "hotReload": "Succeeded",
+    "initialState": "Two track controls, two artist follow controls and the playlist toolbar all loaded false membership.",
+    "checked": [
+      "Each save/follow publishes true before its held receipt is completed. All copies stay enabled with zero progress indicators.",
+      "Successful receipts retain the new state; rejected inverse writes restore confirmed membership.",
+      "Rapid inverse clicks remain visible while the first write is pending and serialize the later request after acknowledgement.",
+      "If a later queued reversal fails, rollback uses the most recently acknowledged value rather than the value before the first click.",
+      "A playlist refresh returning false while the pending desired state is true preserves the optimistic state.",
+      "One rejected track write batch reports one error even when two controls joined its completion."
+    ],
+    "runtimeErrors": 0,
+    "automatedChecks": "97 focused entity/native saved-track/native followed-artist/playlist-service checks passed; subsequent focused UI checks also pass after the duplicate-error repair. The three optimistic UI checks were observed failing against the pre-port controls.",
+    "limits": "The running Flutter probe deliberately does not mutate a live account. Existing native request tests remain the protocol boundary evidence."
+  }
+}

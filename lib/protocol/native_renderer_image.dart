@@ -69,6 +69,27 @@ double _score(List<int> dimensions, double? width, double? height, double ratio)
     average((value) => value < 1 ? math.pow(1 / value, 2.5).toDouble() - 1 : 0);
 }
 
+/// Original module50242 nearest-area selection. The cover-art modal requests10000px
+/// before the ordinary image optimizer sees the selected source's dimensions.
+Map<String, Object?>? nativeRendererImageSource(List<Map<String, Object?>> sources,
+    {double desiredSize = 9007199254740991, double? desiredWidth, double? desiredHeight}) {
+  if (sources.isEmpty) return null;
+  if (sources.length == 1) return sources.first;
+  final target = (desiredWidth ?? desiredSize) * (desiredHeight ?? desiredSize);
+  double distance(Map<String, Object?> image) {
+    final w = (image['width'] as num?)?.toDouble(), h = (image['height'] as num?)?.toDouble();
+    final area = (_truthy(w) ? w! : _truthy(h) ? h! : 0) *
+      (_truthy(h) ? h! : _truthy(w) ? w! : 0);
+    return math.max(area, target) / math.min(area, target);
+  }
+  var selected = sources.first, best = distance(sources.first);
+  for (final source in sources.skip(1)) {
+    final score = distance(source);
+    if (score < best) { selected = source; best = score; }
+  }
+  return selected;
+}
+
 /// Whole original43575 source wrapper and50242 nearest-area fallback. An
 /// optimized first source supplies one URL. Without a size it preserves each
 /// source's metadata while applying the original format conversion.
@@ -85,21 +106,7 @@ List<Map<String, Object?>> nativeRendererImageSources(List<Map<String, Object?>>
     final original = sources.first['url'], optimized = optimize(original);
     if (optimized != original) return [{'url': optimized}];
   }
-  if (sources.length <= 1) return sources;
-  final target = (width ?? 9007199254740991) * (height ?? width ?? 9007199254740991);
-  double area(Map<String, Object?> image) {
-    final w = (image['width'] as num?)?.toDouble(), h = (image['height'] as num?)?.toDouble();
-    return (_truthy(w) ? w! : _truthy(h) ? h! : 0) *
-      (_truthy(h) ? h! : _truthy(w) ? w! : 0);
-  }
-  double distance(Map<String, Object?> image) {
-    final pixels = area(image);
-    return math.max(pixels, target) / math.min(pixels, target);
-  }
-  var selected = sources.first, best = distance(sources.first);
-  for (final source in sources.skip(1)) {
-    final score = distance(source);
-    if (score < best) { selected = source; best = score; }
-  }
-  return [selected];
+  final selected = nativeRendererImageSource(sources,
+    desiredWidth: width, desiredHeight: height ?? width);
+  return selected == null ? const [] : [selected];
 }

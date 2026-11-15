@@ -1,0 +1,79 @@
+{
+  "sourcePath": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+  "sourceSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+  "sourceModule": 74960,
+  "fragmentOffsetBytes": 768926,
+  "fragmentSha256": "f48560c635b749ecc9a37ee1a1ad408f282bdc79427a680d0bd0b53e2bfb0584",
+  "substitutions": [
+    "Inert native RecentlyPlayed stream client and event emitter",
+    "protobuf fromPartial retains the outgoing request object without encoding",
+    "URI kind predicate for the supplied well-formed collection URI",
+    "non-null filtering predicate"
+  ],
+  "likedSongs": {
+    "uri": "spotify:playlist:37i9dQZF1F5p3rmiWPIYgZ",
+    "images": [
+      {
+        "url": "https://misc.scdn.co/liked-songs/liked-songs-64.jpg",
+        "width": 64,
+        "height": 64
+      },
+      {
+        "url": "https://misc.scdn.co/liked-songs/liked-songs-300.jpg",
+        "width": 300,
+        "height": 300
+      },
+      {
+        "url": "https://misc.scdn.co/liked-songs/liked-songs-640.jpg",
+        "width": 640,
+        "height": 640
+      }
+    ]
+  },
+  "recentlyPlayed": {
+    "input": [
+      {
+        "uri": "spotify:album:0000000000000000000001",
+        "lastPlayedTime": 1700000000100
+      },
+      {
+        "uri": "spotify:artist:0000000000000000000002",
+        "lastPlayedTime": 1700000000300
+      },
+      {
+        "uri": "spotify:album:0000000000000000000001",
+        "lastPlayedTime": 1700000000200
+      },
+      {
+        "uri": "spotify:playlist:0000000000000000000003",
+        "lastPlayedTime": 1700000000150
+      },
+      {
+        "uri": "spotify:user:fixture:collection",
+        "lastPlayedTime": 1700000000250
+      }
+    ],
+    "expected": [
+      {
+        "uri": "spotify:artist:0000000000000000000002",
+        "lastPlayedTime": 1700000000300
+      },
+      {
+        "uri": "spotify:playlist:37i9dQZF1F5p3rmiWPIYgZ",
+        "lastPlayedTime": 1700000000250
+      },
+      {
+        "uri": "spotify:album:0000000000000000000001",
+        "lastPlayedTime": 1700000000200
+      },
+      {
+        "uri": "spotify:playlist:0000000000000000000003",
+        "lastPlayedTime": 1700000000150
+      }
+    ]
+  },
+  "limits": [
+    "Projection and constants only; no live transport, native subscription invalidation, older history, or metadata-dependent equal-timestamp sorting is established.",
+    "Current installed 1.3.9 route chunks are separately inspected with REA; native source and stream routine here are pinned to the retained 1.3.6 renderer."
+  ]
+}

@@ -7,6 +7,8 @@ import 'package:cancellation_token/cancellation_token.dart';
 import 'models.dart';
 import 'repository.dart';
 import 'view.dart' show SearchArtworkBuilder;
+import '../app/liked_songs_artwork.dart';
+import '../library/liked_songs.dart';
 
 class QuickSearchChoice {
   const QuickSearchChoice(this.uri, {this.item});
@@ -34,23 +36,34 @@ class _QuickSearchDialogState extends State<QuickSearchDialog> {
   final _scroll = ScrollController();
   CancellationToken _request = CancellationToken();
   final _cache = <String, ({SearchPage page, DateTime saved})>{};
-  List<SearchItem> _items = const [];
+  List<SearchItem> _items = _destinations('');
   int _selected = 0, _revision = 0;
   bool _loading = false, _failed = false, _closing = false;
   String? _directUri;
 
+  static List<SearchItem> _destinations(String query) {
+    final value = query.trim().toLowerCase().replaceAll(RegExp(r'\s+'), ' ');
+    return [
+      if (value.isEmpty || value.length >= 3 && const ['liked songs', 'likes'].any((name) => name.startsWith(value)))
+        SearchItem(type: 'page', uri: likedSongsUri, name: 'Liked Songs', images: likedSongsImages, contributors: const []),
+      if (value.isEmpty || value.length >= 3 && const ['recently played', 'history'].any((name) => name.startsWith(value)))
+        SearchItem(type: 'page', uri: 'spotify:genre:recently-played', name: 'Recently played', images: const [], contributors: const []),
+    ];
+  }
+
   static String? _entityUri(String value) {
+    if (value == 'spotify:collection:tracks' || value == 'spotify:genre:recently-played') { return value; }
     if (RegExp(r'^spotify:(track|album|artist|playlist|episode|show|audiobook):[A-Za-z0-9]{22}$').hasMatch(value)) {
       return value;
     }
-    if (RegExp(r'^spotify:user:[^:]+:playlist:[A-Za-z0-9]{22}$').hasMatch(value)) return value;
+    if (RegExp(r'^spotify:user:[^:]+:playlist:[A-Za-z0-9]{22}$').hasMatch(value)) { return value; }
     final url = Uri.tryParse(value);
     if (url == null || !const {'https', 'http'}.contains(url.scheme) ||
-        !const {'open.spotify.com', 'play.spotify.com'}.contains(url.host)) return null;
+        !const {'open.spotify.com', 'play.spotify.com'}.contains(url.host)) { return null; }
     final parts = url.pathSegments.toList();
     if (parts.isNotEmpty && parts.first.startsWith('intl-')) parts.removeAt(0);
     if (parts.length != 2 || !const {'track', 'album', 'artist', 'playlist', 'episode', 'show', 'audiobook'}.contains(parts.first) ||
-        !RegExp(r'^[A-Za-z0-9]{22}$').hasMatch(parts.last)) return null;
+        !RegExp(r'^[A-Za-z0-9]{22}$').hasMatch(parts.last)) { return null; }
     return 'spotify:${parts.first}:${parts.last}';
   }
 
@@ -58,7 +71,8 @@ class _QuickSearchDialogState extends State<QuickSearchDialog> {
     _request.cancel();
     final token = _request = CancellationToken();
     final revision = ++_revision, direct = _entityUri(query), repository = widget.repository;
-    final enabled = direct == null && query.trim().isNotEmpty && repository != null;
+    final destinations = _destinations(query);
+    final enabled = direct == null && destinations.isEmpty && query.trim().isNotEmpty && repository != null;
     final cached = _cache[query];
     final fresh = cached != null && DateTime.now().difference(cached.saved) < const Duration(minutes: 5);
     setState(() {
@@ -66,11 +80,11 @@ class _QuickSearchDialogState extends State<QuickSearchDialog> {
       _directUri = direct;
       _loading = enabled && !fresh;
       _failed = false;
-      _items = fresh && enabled ? cached!.page.items : const [];
+      _items = destinations.isNotEmpty ? destinations : fresh && enabled ? cached.page.items : const [];
     });
     if (!enabled || fresh) return;
     try {
-      final page = await repository!.modal(query, cancellationToken: token);
+      final page = await repository.modal(query, cancellationToken: token);
       token.throwIfCancelled();
       _cache[query] = (page: page, saved: DateTime.now());
       while (_cache.length > 24) { _cache.remove(_cache.keys.first); }
@@ -110,7 +124,7 @@ class _QuickSearchDialogState extends State<QuickSearchDialog> {
       // Original Shift+Enter starts playback while retaining the modal.
       if (_canPlay(current)) widget.onPlay!(current);
     } else {
-      _close(QuickSearchChoice(current.uri, item: current));
+      _close(QuickSearchChoice(current.uri, item: current.type == 'page' ? null : current));
     }
   }
 
@@ -180,13 +194,17 @@ class _QuickSearchDialogState extends State<QuickSearchDialog> {
                   borderRadius: BorderRadius.circular(4), child: InkWell(
                     canRequestFocus: false, borderRadius: BorderRadius.circular(4),
                     hoverColor: const Color(0xff303030),
-                    onTap: () => _close(QuickSearchChoice(item.uri, item: item)),
+                    onTap: () => _close(QuickSearchChoice(item.uri, item: item.type == 'page' ? null : item)),
                     child: Padding(padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
                       child: Row(children: [
                         ClipRRect(borderRadius: BorderRadius.circular(
                           const {'artist', 'author', 'user'}.contains(item.type) ? 24 : 4),
                           child: SizedBox.square(dimension: 48,
-                            child: widget.artworkBuilder?.call(context, item) ?? ColoredBox(
+                            child: item.type == 'page' ? item.uri == likedSongsUri
+                              ? const LikedSongsArtwork()
+                              : const ColoredBox(color: Color(0xff282828),
+                                  child: Icon(Icons.history, color: Colors.white, size: 28))
+                              : widget.artworkBuilder?.call(context, item) ?? ColoredBox(
                               color: const Color(0xff282828), child: Icon(
                                 const {'artist', 'author', 'user'}.contains(item.type)
                                   ? Icons.person_outline : Icons.music_note,
@@ -240,5 +258,6 @@ class _QuickSearchDialogState extends State<QuickSearchDialog> {
     'track': 'Track', 'artist': 'Artist', 'album': 'Album', 'playlist': 'Playlist',
     'show': 'Podcast', 'episode': 'Episode', 'audiobook': 'Audiobook',
     'author': 'Author', 'user': 'Profile', 'genre': 'Genre',
+    'page': 'Page',
   }[type] ?? type;
 }

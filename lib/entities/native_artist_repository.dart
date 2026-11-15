@@ -73,6 +73,7 @@ class NativeArtistEntityRepository implements EntityRepository {
     final images = _images(_map(_map(artist['visuals'])['avatarImage'])['sources']);
     return EntityPage(details: EntityDetails.fromJson({
       'type': 'artist', 'uri': uri, 'name': profile['name'], 'images': images,
+      'headerImages': _images(_map(_map(artist['visuals'])['headerImage'])['sources']),
       'trackHeading': read == null ? 'Top tracks' : 'Popular',
       if (read != null) 'playbackUri': topTracks['uri'],
       if (read != null) 'nrTracks': source.uris.length,

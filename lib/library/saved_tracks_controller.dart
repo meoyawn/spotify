@@ -98,7 +98,14 @@ class SavedTracksController extends ChangeNotifier {
   Future<void> toggle(String uri) {
     if (_disposed) return Future.error(StateError('Spotify session changed'));
     final pending = _writes[uri];
-    if (pending != null) return pending;
+    if (pending != null) {
+      final current = state(uri);
+      if (current.changing) {
+        _store(uri, SavedTrackState(saved: !current.saved!, changing: true));
+        notifyListeners();
+      }
+      return pending;
+    }
     late final Future<void> operation;
     operation = _toggle(uri).whenComplete(() {
       if (identical(_writes[uri], operation)) _writes.remove(uri);
@@ -108,17 +115,21 @@ class SavedTracksController extends ChangeNotifier {
   }
 
   Future<void> _toggle(String uri) async {
-    await load(uri);
+    if (state(uri).saved == null) await load(uri);
     if (_disposed) throw StateError('Spotify session changed');
-    final saved = state(uri).saved!;
-    _store(uri, SavedTrackState(saved: saved, changing: true));
+    var acknowledged = state(uri).saved!;
+    _store(uri, SavedTrackState(saved: !acknowledged, changing: true));
     notifyListeners();
     try {
-      await repository.setSaved(uri, !saved, cancellationToken: _cancellation);
-      if (_disposed) return;
-      _store(uri, SavedTrackState(saved: !saved));
+      while (state(uri).saved != acknowledged) {
+        final desired = state(uri).saved!;
+        await repository.setSaved(uri, desired, cancellationToken: _cancellation);
+        if (_disposed) return;
+        acknowledged = desired;
+      }
+      _store(uri, SavedTrackState(saved: acknowledged));
     } catch (error) {
-      if (!_disposed) _store(uri, SavedTrackState(saved: saved, error: error));
+      if (!_disposed) _store(uri, SavedTrackState(saved: acknowledged, error: error));
       rethrow;
     } finally {
       if (!_disposed) notifyListeners();

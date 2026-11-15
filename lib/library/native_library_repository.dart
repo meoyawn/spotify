@@ -20,7 +20,9 @@ import 'repository.dart';
 /// opening a page or selecting a row never counts as playing it.
 class NativeLibraryRepository implements RefreshableLibraryRepository, LibrarySearchRepository, SavedPlaylistsRepository {
   NativeLibraryRepository({required this.rootlist, required this.collection,
-    required this.artists, required this.metadata, this.recentContexts});
+    required this.artists, required this.metadata, this.recentContexts}) {
+    collection.changes.addListener(artistMembershipChanged);
+  }
   final NativeRootlistLibraryRepository rootlist;
   final NativeCollectionReadClient collection, artists;
   final NativeLibraryMetadataClient metadata;
@@ -34,6 +36,17 @@ class NativeLibraryRepository implements RefreshableLibraryRepository, LibrarySe
   void artistMembershipChanged() {
     _snapshot?.token.cancel();
     _snapshot = null;
+  }
+
+  /// Join already loaded rootlist decorations without scanning the Library.
+  Future<Map<String, LibraryItem>> knownPlaylists(Iterable<String> uris,
+      {CancellationToken? cancellationToken}) async {
+    final pending = _rootSnapshot;
+    if (pending == null || pending.token.isCancelled) return {};
+    final selected = uris.toSet();
+    if (selected.isEmpty) return {};
+    return {for (final entry in await pending.wait(cancellationToken))
+      if (selected.contains(entry.uri) && entry.item != null) entry.uri: entry.item!};
   }
 
   @override

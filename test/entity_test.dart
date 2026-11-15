@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart' show kDoubleTapTimeout, kSecondaryMouseButton, PointerDeviceKind;
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:spotify_flutter/app/artist_about_card.dart';
+import 'package:spotify_flutter/entities/artist_about_repository.dart';
 import 'package:spotify_flutter/entities/controller.dart';
 import 'package:spotify_flutter/entities/models.dart';
 import 'package:spotify_flutter/entities/repository.dart';
@@ -124,14 +126,104 @@ void main() {
   });
 
   group('Entity detail interactions', () {
-    testWidgets('playlist saving waits for acknowledgement, keeps failed state and refreshes the library on success', (tester) async {
-      var receipt = Completer<void>(), writes = 0, libraryChanges = 0;
+    testWidgets('artist page and sidebar share optimistic follows and roll back rejected changes', (tester) async {
+      tester.view.physicalSize = const Size(1100, 900);
+      tester.view.devicePixelRatio = 1;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+      const uri = 'spotify:artist:0000000000000000000001';
+      final writes = <bool>[];
+      var receipt = Completer<void>(), libraryChanges = 0;
+      final about = ArtistAboutRepository(readOverview: (uri, {cancellationToken}) async => {
+        'data': {'artistUnion': {'__typename': 'Artist',
+          'profile': {'name': 'Follow artist', 'biography': {'text': 'Artist biography'}}}}},
+        contains: (uri, {cancellationToken}) async => false,
+        setFollowing: (uri, following, {cancellationToken}) {
+          writes.add(following); return receipt.future;
+        });
+      final controller = EntityController(_Repository(onOpen: (uri) async => EntityPage(
+        details: EntityDetails.fromJson({'type': 'artist', 'uri': uri, 'name': 'Follow artist'}),
+        tracks: EntityTrackPage(rows: [_row('Music')], offset: 0, limit: 1, totalLength: 1))), uri: uri);
+      addTearDown(controller.dispose);
+      addTearDown(about.dispose);
+      void changed() { libraryChanges++; }
+      await tester.pumpWidget(MaterialApp(theme: ThemeData.dark(), home: Scaffold(body: Row(children: [
+        Expanded(child: EntityView(controller: controller, artistAboutRepository: about, onLibraryChanged: changed)),
+        SizedBox(width: 300, child: ArtistAboutCard(uri: uri, repository: about, onLibraryChanged: changed)),
+      ]))));
+      await tester.pumpAndSettle();
+      expect(find.text('Follow'), findsNWidgets(2));
+
+      await tester.tap(find.text('Follow').first);
+      await tester.pump();
+      final buttons = tester.widgetList<OutlinedButton>(find.byType(OutlinedButton));
+      expect(buttons, hasLength(2));
+      expect(buttons.every((button) => button.onPressed != null), isTrue);
+      expect(find.text('Following'), findsNWidgets(2));
+      expect(find.byType(CircularProgressIndicator), findsNothing);
+      expect(writes, [true]);
+      expect(libraryChanges, 0);
+      receipt.complete();
+      await tester.pumpAndSettle();
+      expect(find.text('Following'), findsNWidgets(2));
+      expect(libraryChanges, 1);
+
+      receipt = Completer<void>();
+      await tester.tap(find.text('Following').last);
+      await tester.pump();
+      expect(find.text('Follow'), findsNWidgets(2));
+      receipt.completeError(StateError('Server rejected unfollow'));
+      await tester.pumpAndSettle();
+      expect(find.text('Following'), findsNWidgets(2));
+      expect(find.text('Couldn’t update followed artists. Try again.'), findsOneWidget);
+      expect(libraryChanges, 1);
+
+      receipt = Completer<void>();
+      await tester.tap(find.text('Following').last);
+      await tester.pump();
+      receipt.complete();
+      await tester.pumpAndSettle();
+      expect(find.text('Follow'), findsNWidgets(2));
+      expect(writes, [true, false, false]);
+      expect(libraryChanges, 2);
+      expect(controller.state.rows.single.name, 'Music');
+
+      receipt = Completer<void>();
+      await tester.tap(find.text('Follow').first);
+      await tester.pump();
+      await about.loadFollowing(uri);
+      await tester.pump();
+      expect(find.text('Following'), findsNWidgets(2));
+      await tester.tap(find.text('Following').last);
+      await tester.pump();
+      await tester.tap(find.text('Follow').first);
+      await tester.pump();
+      expect(find.text('Following'), findsNWidgets(2));
+      receipt.complete();
+      await tester.pumpAndSettle();
+      expect(writes, [true, false, false, true]);
+      expect(libraryChanges, 3);
+
+      receipt = Completer<void>();
+      await tester.tap(find.text('Following').first);
+      await tester.pump();
+      await tester.pumpWidget(MaterialApp(theme: ThemeData.dark(), home: Scaffold(
+        body: ArtistAboutCard(uri: uri, repository: about))));
+      receipt.complete();
+      await tester.pumpAndSettle();
+      expect(find.text('Follow'), findsOneWidget);
+      expect(libraryChanges, 4);
+    });
+
+    testWidgets('playlist saving updates immediately, rolls back failures and survives paging and stale refreshes', (tester) async {
+      var receipt = Completer<void>(), libraryChanges = 0;
+      final writes = <bool>[];
       final page = Completer<EntityTrackPage>();
       final repository = _SavingRepository(onOpen: (uri) async => EntityPage(
         details: EntityDetails.fromJson({'type': 'playlist', 'uri': uri, 'name': 'Save playlist', 'isSaved': false}),
         tracks: EntityTrackPage(rows: [_row('Music')], offset: 0, limit: 1, totalLength: 2)),
         onTracks: (_, _) => page.future,
-        onSave: (saved) { expect(saved, isTrue); writes++; return receipt.future; });
+        onSave: (saved) { writes.add(saved); return receipt.future; });
       final controller = EntityController(repository, uri: 'spotify:playlist:0000000000000000000001',
         onLibraryChanged: () => libraryChanges++);
       addTearDown(controller.dispose);
@@ -139,12 +231,17 @@ void main() {
       await tester.pumpAndSettle();
       await tester.tap(find.byTooltip('Save to Your Library'));
       await tester.pump();
-      await tester.tap(find.byTooltip('Save to Your Library'));
-      expect(writes, 1);
-      expect(controller.state.details!.data['isSaved'], isFalse);
+      expect(writes, [true]);
+      expect(controller.state.details!.data['isSaved'], isTrue);
+      expect(find.byTooltip('Remove from Your Library'), findsOneWidget);
+      expect(find.byType(CircularProgressIndicator), findsNothing);
+      await controller.refresh();
+      await tester.pump();
+      expect(controller.state.details!.data['isSaved'], isTrue);
       receipt.completeError(StateError('Server rejected the write'));
       await tester.pumpAndSettle();
       expect(find.text('Couldn’t update Your Library. Try again.'), findsOneWidget);
+      expect(find.byTooltip('Save to Your Library'), findsOneWidget);
       expect(libraryChanges, 0);
       expect(controller.state.rows.single.name, 'Music');
       receipt = Completer<void>();
@@ -158,7 +255,27 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.byTooltip('Remove from Your Library'), findsOneWidget);
       expect(libraryChanges, 1);
-      expect(writes, 2);
+      expect(writes, [true, true]);
+
+      receipt = Completer<void>();
+      await tester.tap(find.byTooltip('Remove from Your Library'));
+      await tester.pump();
+      expect(controller.state.details!.data['isSaved'], isFalse);
+      await tester.tap(find.byTooltip('Save to Your Library'));
+      await tester.pump();
+      expect(controller.state.details!.data['isSaved'], isTrue);
+      expect(writes, [true, true, false]);
+      final removing = receipt;
+      receipt = Completer<void>();
+      removing.complete();
+      await tester.pump();
+      expect(writes, [true, true, false, true]);
+      expect(controller.state.details!.data['isSaved'], isTrue);
+      receipt.complete();
+      await tester.pumpAndSettle();
+      expect(controller.saving, isFalse);
+      expect(controller.state.details!.data['isSaved'], isTrue);
+      expect(libraryChanges, 2);
     });
 
     final shareFixture = jsonDecode(File('reverse-engineering/fixtures/native-share-links.json').readAsStringSync()) as Map;

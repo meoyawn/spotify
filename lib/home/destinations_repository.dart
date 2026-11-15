@@ -5,7 +5,7 @@ import '../protocol/pathfinder.dart';
 import 'models.dart';
 import 'repository.dart';
 
-enum HomeDestinationKind { homeSection, browsePage, browseSection }
+enum HomeDestinationKind { homeSection, browsePage, browseSection, recentlyPlayed }
 
 class HomeDestinationTarget {
   const HomeDestinationTarget(this.kind, this.uri);
@@ -54,6 +54,7 @@ class PathfinderHomeDestinationRepository implements HomeDestinationRepository {
   @override
   Future<HomeDestinationPage> destination(HomeDestinationTarget target, {int offset = 0, CancellationToken? cancellationToken}) async {
     cancellationToken?.throwIfCancelled();
+    if (target.kind == HomeDestinationKind.recentlyPlayed) throw ArgumentError('Recent contexts require their native provider');
     if (offset < 0 || !RegExp(r'^spotify:(?:section|page|genre):[^\s:]+$').hasMatch(target.uri) ||
         (target.kind != HomeDestinationKind.browsePage && !target.uri.startsWith('spotify:section:'))) {
       throw ArgumentError('Invalid Home destination');
@@ -103,6 +104,7 @@ class PathfinderHomeDestinationRepository implements HomeDestinationRepository {
         'uri': target.uri, 'browseEndUserIntegration': 'INTEGRATION_DESKTOP',
         'includeEpisodeContentRatingsV2': context.features.includeEpisodeContentRatingsV2,
       },
+      HomeDestinationKind.recentlyPlayed => throw ArgumentError('Recent contexts require their native provider'),
     };
     final Object? response;
     try { response = await loader.load(_operations[target.kind]!, variables, cancellationToken: token); }

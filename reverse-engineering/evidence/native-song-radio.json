@@ -1,0 +1,85 @@
+{
+  "source": {
+    "application": "Spotify macOS",
+    "version": "1.3.6.1921",
+    "rendererBundleSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+    "modules": [53150, 39732, 83873, 41332, 87337, 47136, 69449],
+    "rangesAndHashes": "reverse-engineering/fixtures/native-song-radio.json#source",
+    "execution": "reverse-engineering/experiments/song-radio-original.mjs"
+  },
+  "rea": {
+    "version": "6.8.0",
+    "operation": "analyze-javascript-application",
+    "selectedSources": ["module-53150.js", "module-39732.js", "module-41332.js", "module-87337.js", "module-83873.js"],
+    "evidenceId": "ev_07387f73884654103c473fe7c07cda4e1c91ae3cd0a0dbbd5f1dc7648aa1e78e",
+    "localEvidence": ".local/song-radio-rea-20261115.json",
+    "localEvidenceSha256": "a63e4ad90372d4fc21475a778e9e78410de2f07acf5480d7a1cbc5290329e3ed",
+    "parsedSources": 5,
+    "parseFailures": 0,
+    "scope": "Static syntax reconnaissance on unchanged factory bodies wrapped as object literals. The partial call graph does not prove execution. The separate original-routine execution supplies request and action proof."
+  },
+  "originalExecution": {
+    "fixture": "reverse-engineering/fixtures/native-song-radio.json",
+    "request": {
+      "method": "GET",
+      "host": "https://spclient.wg.spotify.com/inspiredby-mix/v2",
+      "pathTemplate": "/seed_to_playlist/{spotifyTrackUri}",
+      "query": {"response-format": "json"},
+      "market": "omitted by withoutMarket()",
+      "body": "empty",
+      "authorization": "selected renderer session Bearer token",
+      "responseType": "json",
+      "includeCredentials": false
+    },
+    "permission": "When user_access_personalized_recs is absent, allow unless dsa-mode-enabled is 1; otherwise allow unless user_access_personalized_recs is 0. The original menu is also disabled while offline. Product Free/Premium is not overridden.",
+    "action": "Read body.mediaItems[0].uri, run the original URI parser, and navigate to its playlist URL path. No playback call is made.",
+    "cases": [
+      "different arbitrary song URIs and locales",
+      "personalized recommendations explicitly denied",
+      "DSA mode without personalized consent",
+      "DSA mode with explicit permission",
+      "offline menu suppression",
+      "first returned playlist selected from multiple results"
+    ],
+    "substitutions": "Node WHATWG URL/URLSearchParams; inert React elements/hooks, presentation/localization/shortcut boundaries, supplied product state and online status, synthetic credentials, and a recording transport returning synthetic playlist URIs. Exact substitutions and source ranges are in the fixture.",
+    "browserFields": "Decoded GET/preflight headers and ordering inherit the separately captured original renderer GET in native-renderer-lyrics.json. The application URL, query, headers and options come from unchanged original song-radio, RequestBuilder and SpotifyTransportRequest execution. This is not a new radio-specific browser wire capture."
+  },
+  "dartPort": {
+    "resolver": "lib/entities/song_radio.dart",
+    "sessionAndTransport": "lib/app/native_desktop_runtime.dart",
+    "requestProfile": "lib/protocol/native_renderer_http_request.dart",
+    "navigation": "lib/app/app.dart",
+    "menus": "lib/app/share_links.dart and lib/entities/view.dart",
+    "ownership": "Pass the caller's cancellation token through the session/token owners, CORS and H2/H3 transport. Cancel on replacement, navigation, sign-out or disposal. Ignore duplicate pending clicks and stale completions. No radio polling or speculative media/license work.",
+    "playback": "Open the returned ordinary playlist. Its existing Play control supplies real playlist context and music rows to the existing player. No advertising or synthetic playback reporting is introduced.",
+    "diagnostics": "Redact a Spotify URI contained in a path segment to :id. Queries, credentials, bodies, rotation and build-mode destinations remain outside this change."
+  },
+  "verification": {
+    "date": "2026-11-15",
+    "originalExecution": "7 original menu scenarios executed; 4 enabled cases independently produced requests and playlist destinations.",
+    "live": {
+      "hotReload": "succeeded on an existing isolated debug runtime",
+      "session": "existing saved Accounts grant, retaining its selected HTTP token provider",
+      "songSeed": "a real song already described by that runtime; identifiers and account data omitted",
+      "radioAllowed": true,
+      "playlistOpened": true,
+      "trackCount": 50,
+      "loadedRows": 50,
+      "playableRows": 50,
+      "scope": "The new resolver reached Spotify and the existing playlist repository opened the returned playlist. This probe did not start audio or interrupt the installed release's playback."
+    },
+    "tests": [
+      "test/song_radio_test.dart: independent original permission/request/header/preflight/response fixtures; rejected responses; real menu/navigation cancellation, duplicate-click suppression and explicit playlist Play",
+      "test/native_renderer_lyrics_protocol_test.dart: shared renderer GET fields unchanged",
+      "test/http_status_log_test.dart: actual persisted request and response records redact the radio seed URI"
+    ],
+    "privacyRegression": "The persisted-log test fails against an isolated copy with the old redactor because it writes the raw spotify:track seed. The same test passes against the changed owner."
+  },
+  "limits": [
+    "Original proprietary routines are from the previously captured 1.3.6.1921 renderer. Live acceptance does not prove whole-client compatibility with the currently installed 1.3.9.2055 build.",
+    "No Chromium code was decompiled. TLS, QUIC, HPACK/QPACK and radio-specific browser wire parity are outside this proof.",
+    "Synthetic menu fixtures establish original offline/DSA gates; live verification establishes the available authenticated session only. The app uses its real session readiness and server denial, without inventing entitlements.",
+    "The navigation widget check disables semantics and supplies an empty playback-bar builder, following the existing shell checks. It proves menu routing and playback intent, not accessibility or audible playback.",
+    "Radio playback reuses the existing playlist and license path; this feature does not resolve the separate license-reliability backlog."
+  ]
+}

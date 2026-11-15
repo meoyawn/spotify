@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'snack_bar.dart';
+import 'song_radio.dart';
 
 /// Original URI.toURL(), without the optional sharing ID and telemetry.
 String? spotifyShareLink(String uri) => RegExp(r'^spotify:(track|album|artist):[0-9A-Za-z]{22}$').hasMatch(uri)
@@ -24,6 +25,16 @@ Future<void> copySpotifyLink(BuildContext context, String uri) async {
   }
 }
 
+List<PopupMenuEntry<String>> spotifyLinkMenuItems(BuildContext context, String uri) => [
+  ?songRadioMenuItem(context, uri),
+  PopupMenuItem(value: 'copy', child: Text(spotifyCopyLinkLabel(uri))),
+];
+
+Future<void> selectSpotifyLinkMenuItem(BuildContext context, String uri, String selected) async {
+  if (selected == 'radio') { SongRadioScope.maybeOf(context)?.onOpen?.call(uri); }
+  else if (selected == 'copy') { await copySpotifyLink(context, uri); }
+}
+
 class SpotifyLinkMenu extends StatelessWidget {
   const SpotifyLinkMenu({super.key, required this.uri, required this.name});
   final String uri, name;
@@ -32,8 +43,8 @@ class SpotifyLinkMenu extends StatelessWidget {
     ? const SizedBox.shrink() : SizedBox.square(dimension: 32,
       child: PopupMenuButton<String>(tooltip: 'More options for $name',
         padding: EdgeInsets.zero, icon: const Icon(Icons.more_horiz, size: 20),
-        itemBuilder: (_) => [PopupMenuItem(value: 'copy', child: Text(spotifyCopyLinkLabel(uri)))],
-        onSelected: (_) => unawaited(copySpotifyLink(context, uri))));
+        itemBuilder: (_) => spotifyLinkMenuItems(context, uri),
+        onSelected: (selected) => unawaited(selectSpotifyLinkMenuItem(context, uri, selected))));
 }
 
 Future<void> showSpotifyLinkContextMenu(BuildContext context, String uri, Offset globalPosition) async {
@@ -43,8 +54,8 @@ Future<void> showSpotifyLinkContextMenu(BuildContext context, String uri, Offset
   final point = overlay.globalToLocal(globalPosition);
   final selected = await showMenu<String>(context: context,
     position: RelativeRect.fromRect(Rect.fromLTWH(point.dx, point.dy, 0, 0), Offset.zero & overlay.size),
-    items: [PopupMenuItem(value: 'copy', child: Text(spotifyCopyLinkLabel(uri)))]);
-  if (selected != null && presentation.mounted) await copySpotifyLink(presentation, uri);
+    items: spotifyLinkMenuItems(context, uri));
+  if (selected != null && presentation.mounted) await selectSpotifyLinkMenuItem(presentation, uri, selected);
 }
 
 class SpotifyLinkContextMenu extends StatelessWidget {

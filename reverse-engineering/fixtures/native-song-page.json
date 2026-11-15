@@ -1,0 +1,148 @@
+{
+  "requests": [
+    {
+      "operation": {
+        "name": "getTrack",
+        "operation": "query",
+        "sha256Hash": "a8ef9e9f02b836feb0da3003c31dbb30decc6f4b473ef89ca88c882386d668de",
+        "value": null
+      },
+      "variables": {
+        "uri": "spotify:track:0000000000000000000001",
+        "includeVideoAssociationItems": true,
+        "includeMusicVideoPreviews": false
+      },
+      "options": null
+    },
+    {
+      "operation": {
+        "name": "queryTrackCreditsGroupedModal",
+        "operation": "query",
+        "sha256Hash": "f135fb9be58a72d041ab5d214d817021a272405d883860468e2627afb01a3ca9",
+        "value": null
+      },
+      "variables": {
+        "trackUri": "spotify:track:0000000000000000000001",
+        "contributorsLimit": 100,
+        "contributorsOffset": 0
+      },
+      "options": {
+        "staleTime": 600000
+      }
+    },
+    {
+      "operation": {
+        "name": "internalLinkRecommenderTrack",
+        "operation": "query",
+        "sha256Hash": "642923b2e705fceb9984697c1620fecd42615fd8b116b8a9faf2786b389d3e4a",
+        "value": null
+      },
+      "variables": {
+        "uri": "spotify:track:0000000000000000000001",
+        "limit": 5
+      },
+      "options": null
+    },
+    {
+      "operation": {
+        "name": "similarAlbumsBasedOnThisTrack",
+        "operation": "query",
+        "sha256Hash": "1d1f93a737498adca2c892c73af87fc0b052afe4e1a33c989540c32413dfae17",
+        "value": null
+      },
+      "variables": {
+        "uri": "spotify:track:0000000000000000000001",
+        "limit": 50,
+        "albumsOnly": true
+      },
+      "options": null
+    }
+  ],
+  "lyricsCalls": [
+    {
+      "method": "withHost",
+      "value": "https://spclient.wg.spotify.com/color-lyrics/v2"
+    },
+    {
+      "method": "withPath",
+      "value": "/track/0000000000000000000001/image/https%3A%2F%2Ffixture.invalid%2Fcover"
+    },
+    {
+      "method": "withHeaders",
+      "value": [
+        {
+          "key": "App-Platform",
+          "value": "WebPlayer"
+        }
+      ]
+    },
+    {
+      "method": "withQueryParameters",
+      "value": {
+        "format": "json",
+        "vocalRemoval": false
+      }
+    },
+    {
+      "method": "withEndpointIdentifier",
+      "value": "/track/{trackId}"
+    }
+  ],
+  "credits": {
+    "contributors": [
+      {
+        "name": "Artist",
+        "role": "Main Artist",
+        "roleGroup": {
+          "name": "Artist"
+        },
+        "uri": "spotify:artist:0000000000000000000001"
+      },
+      {
+        "name": "Writer",
+        "role": "Composer",
+        "roleGroup": {
+          "name": "Composition & Lyrics"
+        },
+        "uri": "spotify:artist:0000000000000000000002"
+      },
+      {
+        "name": "Writer",
+        "role": "Lyricist",
+        "roleGroup": {
+          "name": "Composition & Lyrics"
+        },
+        "uri": "spotify:artist:0000000000000000000002"
+      }
+    ],
+    "groups": [
+      {
+        "name": "Artist",
+        "contributors": [
+          {
+            "name": "Artist",
+            "roles": [
+              "Main Artist"
+            ],
+            "uri": "spotify:artist:0000000000000000000001",
+            "url": null
+          }
+        ]
+      },
+      {
+        "name": "Composition & Lyrics",
+        "contributors": [
+          {
+            "name": "Writer",
+            "roles": [
+              "Composer",
+              "Lyricist"
+            ],
+            "uri": null,
+            "url": null
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -9,10 +9,11 @@ import 'desktop_icon_button.dart';
 /// a failed write restores the last acknowledged state.
 class TrackSaveButton extends StatefulWidget {
   const TrackSaveButton({super.key, required this.controller, required this.uri,
-    required this.onError});
+    required this.onError, this.size = 32, this.iconSize = 20});
   final SavedTracksController controller;
   final String uri;
   final ValueChanged<Object> onError;
+  final double size, iconSize;
 
   @override State<TrackSaveButton> createState() => _TrackSaveButtonState();
 }
@@ -59,8 +60,9 @@ class _TrackSaveButtonState extends State<TrackSaveButton> {
   }
 
   Future<void> _toggle() async {
+    final pending = widget.controller.state(widget.uri).changing;
     try { await widget.controller.toggle(widget.uri); }
-    catch (error) { if (mounted) widget.onError(error); }
+    catch (error) { if (mounted && !pending) widget.onError(error); }
   }
 
   Future<void> _retry() async {
@@ -72,15 +74,14 @@ class _TrackSaveButtonState extends State<TrackSaveButton> {
     final state = _state;
     final saved = state.saved == true;
     final unknown = state.saved == null;
-    final label = state.changing ? 'Updating Liked Songs…'
-      : saved ? 'Remove from Liked Songs' : 'Add to Liked Songs';
+    final label = saved ? 'Remove from Liked Songs' : 'Add to Liked Songs';
     return DesktopIconButton(tooltip: unknown ? state.error == null
         ? 'Checking Liked Songs…' : 'Retry Liked Songs status' : label,
-      onPressed: state.changing ? null : unknown ? state.error == null ? null : _retry : _toggle,
-      padding: const EdgeInsets.all(6),
+      onPressed: unknown ? state.error == null ? null : _retry : _toggle,
+      size: widget.size, padding: const EdgeInsets.all(6),
       color: saved ? const Color(0xff1ed760) : const Color(0xffb3b3b3),
-      icon: state.changing || unknown && state.error == null ? const SizedBox.square(dimension: 17,
-        child: CircularProgressIndicator(strokeWidth: 2, color: Color(0xff1ed760)))
-        : Icon(saved ? Icons.check_circle : Icons.add_circle_outline, size: 20));
+      icon: unknown && state.error == null ? SizedBox.square(dimension: widget.iconSize - 3,
+        child: const CircularProgressIndicator(strokeWidth: 2, color: Color(0xff1ed760)))
+        : Icon(saved ? Icons.check_circle : Icons.add_circle_outline, size: widget.iconSize));
   }
 }

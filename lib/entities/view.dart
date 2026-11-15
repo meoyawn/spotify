@@ -6,24 +6,37 @@ import 'package:flutter/gestures.dart' show TapGestureRecognizer;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
+import 'package:cancellation_token/cancellation_token.dart';
 
 import '../app/shell_icons.dart';
 import '../app/desktop_icon_button.dart';
+import '../app/desktop_host.dart';
+import '../app/artwork_viewer.dart';
 import '../app/snack_bar.dart';
 import '../app/share_links.dart';
+import '../library/liked_songs.dart';
+import '../lyrics/repository.dart';
+import '../protocol/native_renderer_image.dart';
 import 'controller.dart';
+import 'artist_about_repository.dart';
+import 'artist_follow_button.dart';
 import 'models.dart';
 import 'playlist_dates.dart';
+import 'repository.dart';
+
+part 'song_view.dart';
 
 typedef EntityArtworkBuilder = Widget Function(BuildContext context, EntityDetails entity);
 typedef EntityRowArtworkBuilder = Widget Function(BuildContext context, EntityRow row);
 typedef EntityRowActionsBuilder = Widget Function(BuildContext context, EntityRow row);
+typedef EntityActionsBuilder = Widget Function(BuildContext context, EntityDetails entity);
 
 /// Selected album/playlist content. Image loading and playback belong to callers.
 class EntityView extends StatefulWidget {
   const EntityView({super.key, required this.controller, this.onSelect, this.onPlay, this.onNavigate,
-    this.artworkBuilder, this.rowArtworkBuilder, this.rowActionsBuilder,
-    this.playingUri, this.isPlaying = false, this.onToggleShuffle, this.shuffle = false});
+    this.artworkBuilder, this.rowArtworkBuilder, this.rowActionsBuilder, this.actionsBuilder,
+    this.playingUri, this.isPlaying = false, this.onToggleShuffle, this.shuffle = false,
+    this.artistAboutRepository, this.onLibraryChanged, this.lyricsRepository, this.onTogglePlay});
   final EntityController controller;
   final ValueChanged<EntityRow>? onSelect;
   final ValueChanged<EntityPlaybackSelection>? onPlay;
@@ -31,12 +44,17 @@ class EntityView extends StatefulWidget {
   final EntityArtworkBuilder? artworkBuilder;
   final EntityRowArtworkBuilder? rowArtworkBuilder;
   final EntityRowActionsBuilder? rowActionsBuilder;
+  final EntityActionsBuilder? actionsBuilder;
   /// Current item identity, retained while loading or paused independently of
   /// [isPlaying], which controls only the playing indicator.
   final String? playingUri;
   final bool isPlaying;
   final VoidCallback? onToggleShuffle;
   final bool shuffle;
+  final ArtistAboutRepository? artistAboutRepository;
+  final VoidCallback? onLibraryChanged;
+  final LyricsRepository? lyricsRepository;
+  final VoidCallback? onTogglePlay;
 
   @override
   State<EntityView> createState() => _EntityViewState();
@@ -50,6 +68,29 @@ class _EntityViewState extends State<EntityView> {
   bool _showFilter = false;
   String _filter = '';
   int? _selectedRowIndex;
+  CancellationToken? _songCancellation;
+  CancellationToken get _songToken => _songCancellation ??= CancellationToken();
+  Future<TrackLyrics>? _songLyrics;
+  Future<List<EntityRow>>? _songRecommendations;
+  Future<List<EntityJson>>? _songRelatedAlbums;
+  EntityController? _songAlbum;
+  String? _songSelection;
+  bool _songShowOtherArtists = false;
+  bool _songLyricsExpanded = false, _songArtistsExpanded = false;
+  final _songExpandedTracks = <String>{};
+
+  void _retrySongRecommendations() => setState(() => _songRecommendations = null);
+  void _retrySongRelatedAlbums() => setState(() => _songRelatedAlbums = null);
+  void _toggleSongArtists() => setState(() => _songShowOtherArtists = !_songShowOtherArtists);
+  void _toggleSongLyrics() => setState(() => _songLyricsExpanded = !_songLyricsExpanded);
+  void _toggleSongArtistList() => setState(() => _songArtistsExpanded = !_songArtistsExpanded);
+  void _toggleSongTracks(String key) => setState(() {
+    if (!_songExpandedTracks.remove(key)) _songExpandedTracks.add(key);
+  });
+  void _selectSongRow(String selection, EntityRow row) {
+    setState(() => _songSelection = selection);
+    widget.onSelect?.call(row);
+  }
 
   @override
   void initState() {
@@ -61,6 +102,7 @@ class _EntityViewState extends State<EntityView> {
   void didUpdateWidget(EntityView oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (widget.controller != oldWidget.controller) {
+      _disposeSong();
       _filterInput.clear();
       _filter = '';
       _showFilter = false;
@@ -71,6 +113,7 @@ class _EntityViewState extends State<EntityView> {
 
   @override
   void dispose() {
+    _disposeSong();
     _filterInput.dispose();
     _trackFocus.dispose();
     super.dispose();
@@ -156,6 +199,7 @@ class _EntityViewState extends State<EntityView> {
         : const Center(child: CircularProgressIndicator(color: Color(0xff1ed760)));
       }
       if (!entity.isAccessible) return _status('This content is unavailable.');
+      if (entity.data['songPage'] == true) return _songPage(context, entity, state);
       if (entity.type == 'artist-section') return _artistSectionPage(entity, state);
       final visible = [for (final (index, row) in state.rows.indexed)
         if (_matches(row)) (index: index, row: row)];
@@ -232,7 +276,8 @@ class _EntityViewState extends State<EntityView> {
                   style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w700)))
               else _columns(showAlbum: showAlbum, showDate: showDate, showPlays: showPlays),
               if (visible.isEmpty) Padding(padding: const EdgeInsets.symmetric(vertical: 40),
-                child: Text(_filter.isEmpty ? 'There’s nothing to show right now.' : 'No matching tracks.',
+                child: Text(_filter.isNotEmpty ? 'No matching tracks.' : entity.uri == likedSongsUri
+                  ? 'Songs you like will appear here.' : 'There’s nothing to show right now.',
                   textAlign: TextAlign.center, style: _secondary)),
             ]))),
           // Track rows have a known extent. Avoid laying out rows merely to
@@ -269,14 +314,20 @@ class _EntityViewState extends State<EntityView> {
 
   Widget _toolbar(BuildContext context, EntityDetails entity, EntityState state, double width) {
     final current = state.rows.where(_isCurrent).firstOrNull;
+    final toggleSong = entity.type == 'track' && current != null && widget.onTogglePlay != null;
+    final pauseSong = toggleSong && widget.isPlaying;
     return Padding(padding: EdgeInsets.only(top: entity.headerImageUrl == null ? 24 : 8, bottom: 24), child: Row(children: [
-      DesktopIconButton(tooltip: 'Play ${entity.name}', size: 56, padding: EdgeInsets.zero,
+      DesktopIconButton(tooltip: '${pauseSong ? 'Pause' : 'Play'} ${entity.name}', size: 56, padding: EdgeInsets.zero,
         backgroundColor: widget.onPlay != null && entity.canRequestPlayback
           ? const Color(0xff1ed760) : const Color(0xff2a2a2a), color: Colors.black,
         onPressed: widget.onPlay != null && entity.canRequestPlayback
-          ? () => widget.onPlay!(EntityPlaybackSelection(entity: entity, rows: state.rows)) : null,
-        icon: const Icon(SpotifyShellIcons.play, size: 24)),
-      if (current != null && widget.rowArtworkBuilder != null && width >= 640) ...[
+          ? toggleSong ? widget.onTogglePlay : () => widget.onPlay!(EntityPlaybackSelection(entity: entity, rows: state.rows)) : null,
+        icon: Icon(pauseSong ? SpotifyShellIcons.pause : SpotifyShellIcons.play, size: 24)),
+      if (entity.type == 'track' && widget.actionsBuilder != null) ...[
+        const SizedBox(width: 16),
+        widget.actionsBuilder!(context, entity),
+      ],
+      if (entity.type != 'track' && current != null && widget.rowArtworkBuilder != null && width >= 640) ...[
         const SizedBox(width: 24),
         DecoratedBox(decoration: BoxDecoration(border: Border.all(color: const Color(0xffb3b3b3)),
           borderRadius: BorderRadius.circular(4)),
@@ -301,19 +352,29 @@ class _EntityViewState extends State<EntityView> {
         const SizedBox(width: 16),
         DesktopIconButton(tooltip: entity.data['isSaved'] == true ? 'Remove from Your Library' : 'Save to Your Library',
           size: 40, color: entity.data['isSaved'] == true ? const Color(0xff1ed760) : const Color(0xffb3b3b3),
-          icon: widget.controller.saving ? const SizedBox.square(dimension: 24,
-            child: CircularProgressIndicator(strokeWidth: 2, color: Color(0xffb3b3b3)))
-            : Icon(entity.data['isSaved'] == true ? Icons.check_circle : Icons.add_circle_outline, size: 32),
-          onPressed: widget.controller.saving ? null : () => unawaited(widget.controller.toggleSaved()
-            .catchError((Object _) { if (context.mounted) showSpotifySnackBar(context, 'Couldn’t update Your Library. Try again.'); }))),
+          icon: Icon(entity.data['isSaved'] == true ? Icons.check_circle : Icons.add_circle_outline, size: 32),
+          onPressed: () {
+            final pending = widget.controller.saving;
+            unawaited(widget.controller.toggleSaved().catchError((Object _) {
+              if (context.mounted && !pending) showSpotifySnackBar(context, 'Couldn’t update Your Library. Try again.');
+            }));
+          }),
+      ],
+      if (entity.type == 'artist' && widget.artistAboutRepository != null) ...[
+        const SizedBox(width: 24),
+        ArtistFollowButton(uri: entity.uri, name: entity.name, repository: widget.artistAboutRepository!,
+          onLibraryChanged: widget.onLibraryChanged),
       ],
       const SizedBox(width: 16),
       PopupMenuButton<String>(tooltip: 'More options',
-        onSelected: (value) => value == 'copy' ? unawaited(copySpotifyLink(context, entity.uri))
-          : unawaited(widget.controller.refresh()),
+        onSelected: (value) => value == 'refresh' ? unawaited(widget.controller.refresh())
+          : value == 'credits' ? unawaited(_showSongCredits(entity))
+          : unawaited(selectSpotifyLinkMenuItem(context, entity.uri, value)),
         itemBuilder: (_) => [
+          if (entity.type == 'track' && widget.controller.repository is SongPageRepository)
+            const PopupMenuItem(value: 'credits', child: Text('View credits')),
           if (spotifyShareLink(entity.uri) != null)
-            PopupMenuItem(value: 'copy', child: Text(spotifyCopyLinkLabel(entity.uri))),
+            ...spotifyLinkMenuItems(context, entity.uri),
           const PopupMenuItem(value: 'refresh', child: Text('Refresh'))],
         child: const Padding(padding: EdgeInsets.all(8), child: Icon(Icons.more_horiz, size: 28))),
       const Spacer(),
@@ -359,12 +420,12 @@ class _EntityViewState extends State<EntityView> {
     }
     final compact = width < 560;
     final size = compact ? 144.0 : width < 900 ? 192.0 : 232.0;
-    final artwork = Container(width: size, height: size,
+    final artwork = _expandArtwork(context, entity, Container(width: size, height: size,
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(4), boxShadow: const [
         BoxShadow(color: Color(0x55000000), blurRadius: 24, offset: Offset(0, 8)),
       ]), child: ClipRRect(borderRadius: BorderRadius.circular(4),
         child: widget.artworkBuilder?.call(context, entity) ?? Semantics(image: true,
-          label: '${entity.name} artwork unavailable', child: const ColoredBox(color: Color(0xff282828)))));
+          label: '${entity.name} artwork unavailable', child: const ColoredBox(color: Color(0xff282828))))));
     final release = (entity.data['release'] as Map?)?['isoString'] as String?;
     final createdValue = entity.type == 'playlist' ? entity.data['createdAt'] : null;
     final created = createdValue is String ? DateTime.tryParse(createdValue) : null;
@@ -381,12 +442,15 @@ class _EntityViewState extends State<EntityView> {
     final albumName = album?['name'] as String? ?? '';
     const creatorStyle = TextStyle(fontSize: 14, color: Colors.white, fontWeight: FontWeight.w700);
     final likes = entity.data['totalLikes'];
+    final plays = entity.type == 'track' ? entity.data['playcount'] : null;
     final summary = [
       if (likes is num && likes >= 0) '${_number(likes.toInt())} saves',
       if (release != null && release.length >= 4) release.substring(0, 4),
-      if (total is int) '$total ${entity.type == 'album' || entity.data['hasSpotifyTracks'] == true && entity.data['hasEpisodes'] == false
+      if (entity.type != 'track' && total is int) '$total ${entity.type == 'album' || entity.data['hasSpotifyTracks'] == true && entity.data['hasEpisodes'] == false
         ? total == 1 ? 'song' : 'songs' : total == 1 ? 'item' : 'items'}',
-      if (duration != null && duration > 0) _totalDuration(duration),
+      if (duration != null && duration > 0) entity.type == 'track'
+        ? _trackDuration(duration.toInt()) : _totalDuration(duration),
+      if (plays is num && plays > 0) _number(plays.toInt()),
     ].join(' • ');
     final title = Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.start, children: [
       Text(_typeLabel(entity), style: const TextStyle(fontSize: 14)),
@@ -469,24 +533,51 @@ class _EntityViewState extends State<EntityView> {
        ]));
   }
 
+  Widget _expandArtwork(BuildContext context, EntityDetails entity, Widget child) {
+    final builder = widget.artworkBuilder;
+    if (builder == null || !const {'album', 'artist'}.contains(entity.type)) return child;
+    return ArtworkViewerButton(title: entity.name,
+      label: entity.type == 'artist' ? 'Enlarge artist photo' : 'Enlarge album artwork',
+      images: entity.images, imageBuilder: (context, source) => builder(context, EntityDetails.fromJson({
+        ...entity.data, 'images': <EntityJson>[source], 'artworkRole': 'full-size',
+      })), child: child);
+  }
+
   Widget _artistHeader(EntityDetails entity, double width, double inset, Color color) {
     final stats = (entity.data['stats'] as Map?) ?? const {};
     final listeners = stats['monthlyListeners'];
     final size = width < 560 ? 128.0 : 192.0;
-    return Container(padding: EdgeInsets.fromLTRB(inset, 40, inset, 24),
-      decoration: BoxDecoration(gradient: LinearGradient(begin: Alignment.topCenter, end: Alignment.bottomCenter,
-        colors: [color, Color.lerp(color, Colors.black, 0.5)!])),
-      child: Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
-        SizedBox.square(dimension: size, child: ClipOval(child: widget.artworkBuilder?.call(context, entity) ??
-          const ColoredBox(color: Color(0xff282828)))),
-        const SizedBox(width: 24), Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+    final title = Column(crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min, children: [
             const Text('Artist', style: TextStyle(fontSize: 14)), const SizedBox(height: 12),
             Text(entity.name, style: TextStyle(fontFamily: 'SpotifyMixUITitle',
               fontSize: width < 560 ? 32 : width < 900 ? 56 : 72, height: 1.1, fontWeight: FontWeight.w800)),
             if (listeners is num) Padding(padding: const EdgeInsets.only(top: 16),
               child: Text('${_number(listeners.toInt())} monthly listeners', style: const TextStyle(fontSize: 14))),
-          ])),
+          ]);
+    final headerImages = (entity.data['headerImages'] as List? ?? const []).cast<EntityJson>();
+    if (headerImages.isNotEmpty) {
+      final header = EntityDetails.fromJson({...entity.data, 'images': headerImages,
+        'artworkRole': 'header-background'});
+      return SizedBox(height: width < 560 ? 280 : 340,
+        child: Stack(fit: StackFit.expand, children: [
+          _expandArtwork(context, header, widget.artworkBuilder?.call(context, header) ??
+            const ColoredBox(color: Color(0xff282828))),
+          const IgnorePointer(child: DecoratedBox(decoration: BoxDecoration(gradient: LinearGradient(
+            begin: Alignment.topCenter, end: Alignment.bottomCenter,
+            colors: [Colors.transparent, Color(0x99000000)])))),
+          IgnorePointer(child: Padding(padding: EdgeInsets.fromLTRB(inset, 40, inset, 24),
+            child: Align(alignment: Alignment.bottomLeft, child: title))),
+        ]));
+    }
+    return Container(padding: EdgeInsets.fromLTRB(inset, 40, inset, 24),
+      decoration: BoxDecoration(gradient: LinearGradient(begin: Alignment.topCenter, end: Alignment.bottomCenter,
+        colors: [color, Color.lerp(color, Colors.black, 0.5)!])),
+      child: Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
+        _expandArtwork(context, entity, SizedBox.square(dimension: size,
+          child: ClipOval(child: widget.artworkBuilder?.call(context, entity) ??
+            const ColoredBox(color: Color(0xff282828))))),
+        const SizedBox(width: 24), Expanded(child: title),
       ]));
   }
 
@@ -636,7 +727,7 @@ class _EntityViewState extends State<EntityView> {
 }
 
 class _EntityTrackRow extends StatefulWidget {
-  const _EntityTrackRow({required this.row, required this.number,
+  const _EntityTrackRow({super.key, required this.row, required this.number,
     required this.showArtwork, required this.showAlbum, required this.showDate,
     required this.showPlays,
     required this.actionsWidth, required this.current, required this.isPlaying,
@@ -688,7 +779,7 @@ class _EntityTrackRowState extends State<_EntityTrackRow> {
                   icon: const Icon(SpotifyShellIcons.play, size: 14))
               : Center(child: widget.current && widget.isPlaying
                   ? const _PlayingIndicator()
-                  : Text('${widget.number}', style: _secondary.copyWith(
+                  : Text(widget.number > 0 ? '${widget.number}' : '', style: _secondary.copyWith(
                       color: widget.current ? green : const Color(0xffb3b3b3))))),
             Expanded(flex: 6, child: Row(children: [
               if (widget.showArtwork) Padding(padding: const EdgeInsets.only(right: 12),

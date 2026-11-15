@@ -40,6 +40,8 @@ import 'desktop_host.dart';
 import 'desktop_tray.dart';
 import 'shell.dart';
 import 'native_desktop_runtime.dart';
+import 'liked_songs_artwork.dart';
+import '../library/liked_songs.dart';
 import 'navigation.dart';
 import 'playback_bar.dart';
 import 'settings_dialog.dart';
@@ -280,14 +282,14 @@ class _SpotifyPlaybackApplicationState extends State<SpotifyPlaybackApplication>
   }
 
   Widget _artwork(String uri, List<Map<String, Object?>> supplied, {bool round = false,
-      Alignment alignment = Alignment.center, double borderRadius = 4}) {
+      Alignment alignment = Alignment.center, double borderRadius = 4, bool fullSize = false}) {
     final runtime = _runtime!;
     Widget image() {
       final images = _artworkSources(uri, supplied);
       return SpotifyArtwork(key: ValueKey(uri), images: images,
         prepare: runtime is NativeDesktopRuntime && runtime.ready && images.isEmpty && uri.startsWith('spotify:playlist:')
           ? (token) => runtime.ensurePlaylistArtwork(uri, supplied, cancellationToken: token) : null,
-        load: runtime.artwork, round: round, alignment: alignment, borderRadius: borderRadius);
+        load: runtime.artwork, round: round, alignment: alignment, borderRadius: borderRadius, fullSize: fullSize);
     }
     // Server-provided alternatives can arrive through another view after this
     // image already failed. Rebuild this image when those actual choices change.
@@ -419,10 +421,11 @@ class _SpotifyPlaybackApplicationState extends State<SpotifyPlaybackApplication>
     _savedTracks = repository == null ? null : SavedTracksController(repository);
   }
 
-  Widget _trackSaveButton(BuildContext context, String uri) {
+  Widget _trackSaveButton(BuildContext context, String uri, {bool prominent = false}) {
     final controller = _savedTracks;
     if (controller == null || !SavedTracksController.supports(uri)) return const SizedBox.shrink();
     return TrackSaveButton(controller: controller, uri: uri,
+      size: prominent ? 48 : 32, iconSize: prominent ? 32 : 20,
       onError: (error) => _notice(_failure('Could not update Liked Songs', error)));
   }
 
@@ -542,7 +545,7 @@ class _SpotifyPlaybackApplicationState extends State<SpotifyPlaybackApplication>
         _notice('Log in to Spotify before playing.');
         return;
       }
-      var sourceRows = selection.rows;
+      var sourceRows = selection.contextRows;
       if (sourceRows == null) {
         final repository = runtime.entityRepository;
         if (repository == null) throw StateError('This collection is currently unavailable');
@@ -585,7 +588,7 @@ class _SpotifyPlaybackApplicationState extends State<SpotifyPlaybackApplication>
     final album = row.album ?? (entity.type == 'album' ? entity.data : null);
     // A playlist cover or artist portrait is not the song's album cover.
     final images = row.images.isNotEmpty ? row.images : entity.type == 'album' ? entity.images : const <EntityJson>[];
-    return {'title': row.name,
+    return {if (row.name.isNotEmpty) 'title': row.name,
       'original_uri': row.uri,
       ...row.playbackArtistMetadata,
       if (album?['uri'] case final String uri) 'album_uri': uri,
@@ -898,21 +901,23 @@ class _SpotifyPlaybackApplicationState extends State<SpotifyPlaybackApplication>
     entityRepository: _runtime?.entityRepository,
     lyricsRepository: _runtime is NativeDesktopRuntime ? (_runtime as NativeDesktopRuntime).lyricsRepository : null,
     artistAboutRepository: _runtime is NativeDesktopRuntime ? (_runtime as NativeDesktopRuntime).artistAboutRepository : null,
+    songRadioResolver: _runtime is NativeDesktopRuntime ? (_runtime as NativeDesktopRuntime).songRadioResolver : null,
     artworkBuilder: _runtime == null ? null : (context, item) => _artwork(item.uri, item.images,
       round: item.type == 'artist' || item.type == 'author'),
-    homeArtworkBuilder: _runtime == null ? null : (context, item) => _artwork(item.uri, item.images,
+    homeArtworkBuilder: _runtime == null ? null : (context, item) => item.type == 'liked-songs'
+      ? const LikedSongsArtwork() : _artwork(item.uri, item.images,
       round: item.type == 'artist'),
     libraryArtworkBuilder: _runtime == null ? null : (context, item) => item.type == 'liked-songs'
-      ? const DecoratedBox(decoration: BoxDecoration(gradient: LinearGradient(
-          begin: Alignment.topLeft, end: Alignment.bottomRight,
-          colors: [Color(0xff450af5), Color(0xffc4efd9)])),
-          child: Center(child: Icon(Icons.favorite, color: Colors.white)))
+      ? const LikedSongsArtwork()
       : _artwork(item.uri, item.images, round: item.type == 'artist' || item.type == 'author'),
-    entityArtworkBuilder: _runtime == null ? null : (context, item) => _artwork(item.uri, item.images,
+    entityArtworkBuilder: _runtime == null ? null : (context, item) => item.uri == likedSongsUri
+      ? const LikedSongsArtwork() : _artwork(item.uri, item.images,
       alignment: item.data['artworkRole'] == 'header-background' ? const Alignment(0, -.7) : Alignment.center,
-      borderRadius: item.data['artworkRole'] == 'header-background' ? 0 : 4),
+      borderRadius: item.data['artworkRole'] == 'header-background' ? 0 : 4,
+      fullSize: item.data['artworkRole'] == 'full-size'),
     entityRowArtworkBuilder: _runtime == null ? null : (context, item) => _artwork(item.uri, item.images),
     entityRowActionsBuilder: _savedTracks == null ? null : (context, row) => _trackSaveButton(context, row.uri),
+    entityActionsBuilder: _savedTracks == null ? null : (context, entity) => _trackSaveButton(context, entity.uri, prominent: true),
     trackSaveButtonBuilder: _savedTracks == null ? null : _trackSaveButton,
     onSelect: _selectSearch,
     onQuickSearchPlay: _playSearchItem,

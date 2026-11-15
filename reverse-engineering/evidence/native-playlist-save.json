@@ -40,7 +40,7 @@
       "nonce": 2
     }
   ],
-  "acknowledgement": "Captured SelectedListContent responses echo the nonce, carry revision/resulting_revisions and sync_result, multiple_heads=false, changes_require_resync=false. Production additionally rereads actual rootlist membership before changing the button, then refreshes the sidebar with collection/artist caches intact.",
+  "acknowledgement": "Captured SelectedListContent responses echo the nonce, carry revision/resulting_revisions and sync_result, multiple_heads=false, changes_require_resync=false. Production rereads actual rootlist membership to confirm the write, then settles the optimistic button and refreshes the sidebar with collection/artist caches intact. Immediate membership publication and rollback are recorded separately in native-optimistic-library-mutations.json.",
   "limits": [
     "Two actual rootlist operations prove insertion at zero and removal at zero. Generic positional removal is shared with independently executed playlist operator evidence.",
     "Captures are authenticated live observations from one Free session, not a claim about every account or conflicting-device update.",

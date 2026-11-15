@@ -130,6 +130,17 @@ class EntityPlaybackSelection {
   final EntityRow? row;
   final int? rowIndex;
   final List<EntityRow>? rows;
+  /// Complete collection identities can form a queue without fetching metadata
+  /// for every saved song. Each unresolved row still needs real server admission.
+  List<EntityRow>? get contextRows {
+    final uris = entity.source['playbackUris'];
+    if (uris is! List<String>) return rows;
+    final known = {for (final row in rows ?? <EntityRow>[]) row.uri: row};
+    final selected = row;
+    if (selected != null) { known[selected.uri] = selected; }
+    return [for (final uri in uris) known[uri] ?? EntityRow.fromJson({
+      'type': 'track', 'uri': uri, 'canRequestPlayback': true})];
+  }
   String get contextUri => entity.data['playbackUri'] as String? ?? entity.uri;
   String? get trackUri => row?.playbackUri;
   String? get uid => row?.uid;

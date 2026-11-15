@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../search/models.dart';
 import '../home/destinations_repository.dart';
+import '../library/liked_songs.dart';
 
 enum DesktopDestination { home, search, library, item, lyrics, unavailable }
 
@@ -38,6 +39,10 @@ DesktopRoute? desktopRouteForLink(String input) {
     }
     if (path.length == 1 && path.first == 'collection') {
       return DesktopRoute.fromUri(Uri(path: '/collection'));
+    }
+    if (path.length == 2 && path.first == 'collection' && path[1] == 'tracks' ||
+        path.length == 3 && path.first == 'user' && path[2] == 'collection') {
+      return DesktopRoute.content(likedSongsUri);
     }
     final mediaId = RegExp(r'^[0-9A-Za-z]{22}$');
     if (path.length == 4 && path.first == 'user' && path[1].isNotEmpty &&
@@ -84,8 +89,15 @@ class DesktopRoute {
     if (path.length == 1 && path.first == 'collection') {
       return const DesktopRoute._('/collection', DesktopDestination.library);
     }
+    if (path.length == 2 && path.first == 'collection' && path[1] == 'tracks') {
+      return const DesktopRoute._('/collection/tracks', DesktopDestination.item, title: 'Liked Songs');
+    }
     if (path.length == 1 && path.first == 'lyrics') {
       return const DesktopRoute._('/lyrics', DesktopDestination.lyrics);
+    }
+    if (path.length == 3 && path.first == 'track' && path[2] == 'more-like-this' &&
+        RegExp(r'^[0-9A-Za-z]{22}$').hasMatch(path[1])) {
+      return DesktopRoute._(uri.path, DesktopDestination.item);
     }
     if (path.length >= 3 && path.first == 'artist' &&
         RegExp(r'^[0-9A-Za-z]{22}$').hasMatch(path[1]) &&
@@ -119,8 +131,13 @@ class DesktopRoute {
   }
 
   factory DesktopRoute.content(String uri, {String? title, String? subtitle}) {
+    if (uri == likedSongsUri || uri == 'spotify:collection:tracks' ||
+        RegExp(r'^spotify:user:[^:]+:collection$').hasMatch(uri)) {
+      return const DesktopRoute._('/collection/tracks', DesktopDestination.item, title: 'Liked Songs');
+    }
     final parts = uri.split(':');
-    final artistSection = parts.length >= 5 && parts[0] == 'spotify' && parts[1] == 'app' && parts[2] == 'artist';
+    final artistSection = parts.length >= 5 && parts[0] == 'spotify' && parts[1] == 'app' &&
+      const {'artist', 'track'}.contains(parts[2]);
     final location = artistSection ? Uri(pathSegments: ['', ...parts.skip(2)]).toString()
         : parts.length >= 3 && parts.first == 'spotify'
         ? Uri(pathSegments: ['', parts[1] == 'page' ? 'genre' : parts[1], parts.skip(2).join(':')]).toString()
@@ -147,7 +164,10 @@ class DesktopRoute {
     final path = Uri.parse(location).pathSegments;
     if (path.length != 2) return null;
     if (path.first == 'section') return HomeDestinationTarget(HomeDestinationKind.homeSection, 'spotify:section:${path[1]}');
-    if (path.first != 'genre' || path[1] == 'recently-played') return null;
+    if (path.first == 'genre' && path[1] == 'recently-played') {
+      return const HomeDestinationTarget(HomeDestinationKind.recentlyPlayed, 'spotify:genre:recently-played');
+    }
+    if (path.first != 'genre') return null;
     final id = path[1];
     if (id.startsWith('section')) {
       return HomeDestinationTarget(HomeDestinationKind.browseSection,
@@ -161,7 +181,8 @@ class DesktopRoute {
   String? get entityUri {
     if (destination != DesktopDestination.item) return null;
     final path = Uri.parse(location).pathSegments;
-    if (path.length >= 3 && path.first == 'artist') return 'spotify:app:${path.join(':')}';
+    if (path.length == 2 && path.first == 'collection' && path[1] == 'tracks') return likedSongsUri;
+    if (path.length >= 3 && const {'artist', 'track'}.contains(path.first)) return 'spotify:app:${path.join(':')}';
     if (path.length != 2) return null;
     if (const {'track', 'artist', 'album', 'playlist'}.contains(path.first)) {
       return 'spotify:${path.first}:${path[1]}';

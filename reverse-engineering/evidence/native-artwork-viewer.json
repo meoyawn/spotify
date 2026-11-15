@@ -1,0 +1,450 @@
+{
+  "observedDate": "2026-11-15",
+  "source": {
+    "application": "Spotify macOS 1.3.9.2055",
+    "archivePath": "/Applications/Spotify.app/Contents/Resources/Apps/xpui.spa",
+    "member": "387.js",
+    "archiveSha256": "b64742faa2bd1db859aefddd804e76246731f2748d2eb138af212277f27f3e44",
+    "memberSha256": "eae80910f7b2144435374fa9199087116cdaea6f267b2928b038cf417cffb47b",
+    "modules": [
+      {
+        "id": 23424,
+        "sha256": "d29b031bcfaae7271395283794d520218deb394767a3ec8aeb7e25a39f5af99b"
+      },
+      {
+        "id": 27741,
+        "sha256": "d3ed2d0cd69509e4577a9f2da575150d928df7cfc6de9d5d00e5404e5c14fb84"
+      }
+    ],
+    "selector": {
+      "application": "Spotify macOS 1.3.6.1921",
+      "bundlePath": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "bundleSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+      "module": 50242,
+      "sha256": "3fef46ea782aa7ee342fdb622f19be7407ee297b9d272cc830ac60b830a551e3"
+    }
+  },
+  "rea": {
+    "version": "6.8.0",
+    "operation": "analyze_javascript_application",
+    "evidenceId": "ev_a74737dba5cfc61f53cf45c2e22b5caaca13fbe041a8d0f479cce9ea72bfbdf8",
+    "localEvidence": ".local/artwork-rea-evidence-20261115.json",
+    "selectedSources": [
+      "module-23424.js",
+      "module-27741.js",
+      "module-28839.js",
+      "module-6503.js",
+      "module-old-50242.js",
+      "module-old-11120.js",
+      "module-old-52018.js"
+    ],
+    "scope": "Static analysis of original proprietary renderer modules. Standard React and image primitives are substituted for independent execution; Chromium is not decompiled."
+  },
+  "routeOwners": [
+    {
+      "module": "28839",
+      "member": "xpui-routes-album.js",
+      "memberSha256": "29cdb77565f40d6639edafdc9d2b17c2f49dcf9af70d79c774b9b4d4739b7da4",
+      "offsetBytes": 8535,
+      "lengthBytes": 19744,
+      "sha256": "450370f46d123d5baf2575d014f456519c0600d9ec985a5643230c6d8f45f9c3"
+    },
+    {
+      "module": "6503",
+      "member": "xpui-routes-artist.js",
+      "memberSha256": "b5fcd37cbc1959935654a1175a2929994af3fbcd63008f4cf673bedb48cc7f54",
+      "offsetBytes": 13945,
+      "lengthBytes": 74920,
+      "sha256": "822b89c3b58c22102e665e2079efd1751b56a3c0d74618e76403be624a37dab0"
+    }
+  ],
+  "originalBehavior": {
+    "album": "The album header binds cover click to module27741 openModal and renders module23424 with the album image sources and title.",
+    "artist": "Installed artist module6503 binds headerImage.sources to the same modal and background click when its giZ feature flag is enabled, using loadingValue false. The earlier renderer names the corresponding flag enableArtistHeaderImageModal with default false. Live installed flag assignment is not established.",
+    "selection": "Module23424 calls module50242 with desiredSize10000. This chooses the nearest area to10000 squared; ordinary supplied album and artist sizes select their largest available source. Equal-area ties retain source order.",
+    "image": "The image is contained, with an aspect ratio derived from positive supplied dimensions. The normal original Image wrapper receives the selected source width/height as estimated render dimensions, independently of modal viewport size.",
+    "layout": "The installed album and artist CSS use max-width80vw and max-height80vh, a24px gap, a48px Close button and an8px image radius. Intrinsic image dimensions cap enlargement.",
+    "dismissal": "Original module52018 forwards onRequestClose to the caller and stops propagation of Escape. The original module23424 Close button and modal dismissal share that callback."
+  },
+  "independentExecution": {
+    "command": "node reverse-engineering/experiments/artwork-viewer-original.mjs",
+    "localReport": ".local/artwork-original-execution.json",
+    "cases": [
+      {
+        "input": {
+          "name": "empty",
+          "images": []
+        },
+        "selected": null,
+        "modal": null
+      },
+      {
+        "input": {
+          "name": "album",
+          "images": [
+            {
+              "url": "https://fixture.invalid/small",
+              "width": 64,
+              "height": 64
+            },
+            {
+              "url": "https://fixture.invalid/medium",
+              "width": 300,
+              "height": 300
+            },
+            {
+              "url": "https://fixture.invalid/large",
+              "width": 640,
+              "height": 640
+            }
+          ]
+        },
+        "selected": {
+          "url": "https://fixture.invalid/large",
+          "width": 640,
+          "height": 640
+        },
+        "modal": {
+          "type": "Modal",
+          "isOpen": true,
+          "image": {
+            "type": "Image",
+            "props": {
+              "loading": "eager",
+              "alt": "Fixture artwork",
+              "src": "https://fixture.invalid/large",
+              "className": "juJ4QlM5Z2YB7jbGhzxB",
+              "estimatedRenderWidth": 640,
+              "estimatedRenderHeight": 640
+            }
+          },
+          "style": {
+            "--image-width": "640px",
+            "--image-height": "640px",
+            "--image-aspect-ratio": "1"
+          },
+          "closeLabel": "web-player.cover-art-modal.close",
+          "dismissAndButtonShareClose": true,
+          "closeCalls": 1
+        }
+      },
+      {
+        "input": {
+          "name": "descending",
+          "images": [
+            {
+              "url": "https://fixture.invalid/large",
+              "width": 640,
+              "height": 640
+            },
+            {
+              "url": "https://fixture.invalid/small",
+              "width": 64,
+              "height": 64
+            }
+          ]
+        },
+        "selected": {
+          "url": "https://fixture.invalid/large",
+          "width": 640,
+          "height": 640
+        },
+        "modal": {
+          "type": "Modal",
+          "isOpen": true,
+          "image": {
+            "type": "Image",
+            "props": {
+              "loading": "eager",
+              "alt": "Fixture artwork",
+              "src": "https://fixture.invalid/large",
+              "className": "juJ4QlM5Z2YB7jbGhzxB",
+              "estimatedRenderWidth": 640,
+              "estimatedRenderHeight": 640
+            }
+          },
+          "style": {
+            "--image-width": "640px",
+            "--image-height": "640px",
+            "--image-aspect-ratio": "1"
+          },
+          "closeLabel": "web-player.cover-art-modal.close",
+          "dismissAndButtonShareClose": true,
+          "closeCalls": 1
+        }
+      },
+      {
+        "input": {
+          "name": "landscape",
+          "images": [
+            {
+              "url": "https://fixture.invalid/small",
+              "width": 320,
+              "height": 180
+            },
+            {
+              "url": "https://fixture.invalid/header",
+              "width": 2660,
+              "height": 1140
+            }
+          ]
+        },
+        "selected": {
+          "url": "https://fixture.invalid/header",
+          "width": 2660,
+          "height": 1140
+        },
+        "modal": {
+          "type": "Modal",
+          "isOpen": true,
+          "image": {
+            "type": "Image",
+            "props": {
+              "loading": "eager",
+              "alt": "Fixture artwork",
+              "src": "https://fixture.invalid/header",
+              "className": "juJ4QlM5Z2YB7jbGhzxB",
+              "estimatedRenderWidth": 2660,
+              "estimatedRenderHeight": 1140
+            }
+          },
+          "style": {
+            "--image-width": "2660px",
+            "--image-height": "1140px",
+            "--image-aspect-ratio": "2.3333333333333335"
+          },
+          "closeLabel": "web-player.cover-art-modal.close",
+          "dismissAndButtonShareClose": true,
+          "closeCalls": 1
+        }
+      },
+      {
+        "input": {
+          "name": "portrait",
+          "images": [
+            {
+              "url": "https://fixture.invalid/small",
+              "width": 160,
+              "height": 200
+            },
+            {
+              "url": "https://fixture.invalid/portrait",
+              "width": 640,
+              "height": 800
+            }
+          ]
+        },
+        "selected": {
+          "url": "https://fixture.invalid/portrait",
+          "width": 640,
+          "height": 800
+        },
+        "modal": {
+          "type": "Modal",
+          "isOpen": true,
+          "image": {
+            "type": "Image",
+            "props": {
+              "loading": "eager",
+              "alt": "Fixture artwork",
+              "src": "https://fixture.invalid/portrait",
+              "className": "juJ4QlM5Z2YB7jbGhzxB",
+              "estimatedRenderWidth": 640,
+              "estimatedRenderHeight": 800
+            }
+          },
+          "style": {
+            "--image-width": "640px",
+            "--image-height": "800px",
+            "--image-aspect-ratio": "0.8"
+          },
+          "closeLabel": "web-player.cover-art-modal.close",
+          "dismissAndButtonShareClose": true,
+          "closeCalls": 1
+        }
+      },
+      {
+        "input": {
+          "name": "unknown-size",
+          "images": [
+            {
+              "url": "https://fixture.invalid/unknown"
+            }
+          ]
+        },
+        "selected": {
+          "url": "https://fixture.invalid/unknown"
+        },
+        "modal": {
+          "type": "Modal",
+          "isOpen": true,
+          "image": {
+            "type": "Image",
+            "props": {
+              "loading": "eager",
+              "alt": "Fixture artwork",
+              "src": "https://fixture.invalid/unknown",
+              "className": "juJ4QlM5Z2YB7jbGhzxB"
+            }
+          },
+          "style": {},
+          "closeLabel": "web-player.cover-art-modal.close",
+          "dismissAndButtonShareClose": true,
+          "closeCalls": 1
+        }
+      },
+      {
+        "input": {
+          "name": "equal-area",
+          "images": [
+            {
+              "url": "https://fixture.invalid/first",
+              "width": 800,
+              "height": 400
+            },
+            {
+              "url": "https://fixture.invalid/second",
+              "width": 400,
+              "height": 800
+            }
+          ]
+        },
+        "selected": {
+          "url": "https://fixture.invalid/first",
+          "width": 800,
+          "height": 400
+        },
+        "modal": {
+          "type": "Modal",
+          "isOpen": true,
+          "image": {
+            "type": "Image",
+            "props": {
+              "loading": "eager",
+              "alt": "Fixture artwork",
+              "src": "https://fixture.invalid/first",
+              "className": "juJ4QlM5Z2YB7jbGhzxB",
+              "estimatedRenderWidth": 800,
+              "estimatedRenderHeight": 400
+            }
+          },
+          "style": {
+            "--image-width": "800px",
+            "--image-height": "400px",
+            "--image-aspect-ratio": "2"
+          },
+          "closeLabel": "web-player.cover-art-modal.close",
+          "dismissAndButtonShareClose": true,
+          "closeCalls": 1
+        }
+      },
+      {
+        "input": {
+          "name": "width-only",
+          "images": [
+            {
+              "url": "https://fixture.invalid/small",
+              "width": 80
+            },
+            {
+              "url": "https://fixture.invalid/large",
+              "width": 640
+            }
+          ]
+        },
+        "selected": {
+          "url": "https://fixture.invalid/large",
+          "width": 640
+        },
+        "modal": {
+          "type": "Modal",
+          "isOpen": true,
+          "image": {
+            "type": "Image",
+            "props": {
+              "loading": "eager",
+              "alt": "Fixture artwork",
+              "src": "https://fixture.invalid/large",
+              "className": "juJ4QlM5Z2YB7jbGhzxB",
+              "estimatedRenderWidth": 640
+            }
+          },
+          "style": {
+            "--image-width": "640px"
+          },
+          "closeLabel": "web-player.cover-art-modal.close",
+          "dismissAndButtonShareClose": true,
+          "closeCalls": 1
+        }
+      }
+    ],
+    "openStates": [
+      false,
+      true,
+      false
+    ],
+    "substitutions": [
+      "React JSX, memo and hooks are inert tree/state primitives; no DOM, Chromium or browser runs.",
+      "The original shared image selector executes unchanged from the earlier captured renderer. The installed modal still calls module50242 with desiredSize10000.",
+      "Image, modal and button components are inert element identifiers; the optional tilt flag returns false and localization returns its key.",
+      "All input URLs are synthetic fixture.invalid values. No image bytes or network requests are produced."
+    ],
+    "scope": "Executes the unchanged installed cover-modal factory, its open/close hook, and the original captured nearest-area selector. Proves selection, aspect-ratio styling, close binding and local state. Does not execute installed image transport, DOM dismissal, artist feature-flag assignment, or native playback.",
+    "dartComparison": {
+      "command": "dart run .local/compare_artwork_original.dart",
+      "matchingCases": 8,
+      "localReport": ".local/artwork-original-comparison.json",
+      "scope": "Dart source selection equals independently executed original outputs. Expected sources are produced only by original JavaScript."
+    }
+  },
+  "implementation": {
+    "files": [
+      "lib/app/artwork_viewer.dart",
+      "lib/app/artwork.dart",
+      "lib/app/playback_application.dart",
+      "lib/entities/view.dart",
+      "lib/entities/native_artist_repository.dart",
+      "lib/protocol/native_renderer_image.dart"
+    ],
+    "behavior": "Click or keyboard-activate the album header cover or artist header photo. Display the largest supplied source in a contained modal; Close, Escape and backdrop dismiss it. Reuse the existing public-image loader, shared work and bounded caches. Dismissal disposes the modal image and cancels its reader token. Missing sources expose no enlargement control.",
+    "artistFallback": "The Flutter viewer also supports the existing avatar when no header image is supplied. This is an intentional app extension; original avatar enlargement is not proved. Header sources come from the existing artist overview without another request.",
+    "ownership": "Each trigger admits one modal at a time. Source selection and local modal state introduce no metadata, license, media, ad or telemetry request."
+  },
+  "verification": {
+    "originalImageProtocol": "flutter test test/native_renderer_image_outgoing_test.dart --reporter expanded: passed.",
+    "analysis": "New viewer, entity view, artist repository and image protocol files: no analyzer issues. Shared artwork/playback files retain five pre-existing informational lints.",
+    "preview": {
+      "kind": "Separate macOS debug preview of the actual EntityView and SpotifyArtwork widgets with synthetic metadata and previously recovered local public image bytes.",
+      "hotReload": true,
+      "localResults": ".local/artwork-viewer-validation.json",
+      "finalSnapshot": ".local/artwork-viewer-final.json",
+      "runtimeErrors": 0,
+      "screenshots": [
+        ".local/artwork-final.png",
+        ".local/artwork-artist-open.png",
+        ".local/artwork-small-window.png"
+      ],
+      "checks": [
+        "Album mouse and keyboard activation",
+        "Close, Escape and backdrop dismissal",
+        "Artist header and avatar fallback",
+        "Square528x528 and landscape880x495 contained images",
+        "Resize with modal open to320x480: contained image256x256, no overflow",
+        "Pending modal image token cancels after dismissal; the underlying page reader remains active",
+        "Missing source exposes no enlargement control and makes no image request"
+      ],
+      "scope": "Proves UI interaction, aspect ratio, resize and reader disposal with local bytes. It does not prove live CDN availability, new metadata contracts or playback reliability."
+    },
+    "entityChecks": {
+      "command": "flutter test test/entity_test.dart --reporter expanded",
+      "passed": 27,
+      "failed": [],
+      "localReport": ".local/artwork-entity-check.log"
+    },
+    "release": "The installed release process was left running; debug preview contains no playback runtime."
+  },
+  "limits": [
+    "The image selector and generic image/modal wrapper static source are from1.3.6.1921; the independently executed modal and its hook are from installed1.3.9.2055. Their exact source identities are recorded separately.",
+    "No claim of original DOM animation, optional tilt/glare rendering, live artist feature-flag assignment or installed-release verification."
+  ]
+}

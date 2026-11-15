@@ -13,14 +13,18 @@ import '../entities/models.dart';
 import '../entities/native_artist_repository.dart';
 import '../entities/artist_about_repository.dart';
 import '../entities/native_playlist_repository.dart';
+import '../entities/native_liked_songs_repository.dart';
+import '../entities/song_radio.dart';
 import '../home/repository.dart';
 import '../home/models.dart';
 import '../home/native_recent_contexts.dart';
+import '../home/native_recently_played_repository.dart';
 import '../home/destinations_repository.dart';
 import '../library/repository.dart';
 import '../library/saved_tracks.dart';
 import '../library/saved_playlists.dart';
 import '../library/native_collection_read_client.dart';
+import '../library/liked_songs.dart';
 import '../library/native_followed_artists.dart';
 import '../library/native_saved_track_service.dart';
 import '../library/native_saved_tracks.dart';
@@ -110,6 +114,7 @@ import '../protocol/native_renderer_http2_transport.dart';
 import '../protocol/native_renderer_http3_transport.dart';
 import '../protocol/native_token_provider.dart';
 import '../protocol/pathfinder.dart';
+import '../entities/native_song_repository.dart';
 import '../protocol/platform_identity.dart';
 import '../protocol/prefs_store.dart';
 import '../protocol/request_builder.dart';
@@ -248,6 +253,7 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
   LibraryRepository? _library;
   SavedTracksRepository? _savedTracksRepository;
   final _collections = <String, NativeCollectionReadClient>{};
+  NativeRecentContextsClient? _recentContexts;
   LyricsRepository? _lyrics;
   String? _libraryImageUrlTemplate;
   NativeAudioFilesMetadata? _audioMetadata;
@@ -276,6 +282,7 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
   @override EntityRepository? get entityRepository => ready ? _entities ??= _makeEntities() : null;
   ArtistAboutRepository? get artistAboutRepository => ready ? _artistAbout ??= _makeArtistAbout() : null;
   LyricsRepository? get lyricsRepository => ready ? _lyrics ??= _makeLyrics() : null;
+  SongRadioResolver? get songRadioResolver => ready && songRadioAllowed(_ap!.productState) ? _resolveSongRadio : null;
   @override SavedTracksRepository? get savedTracksRepository => ready
     ? _savedTracksRepository ??= _makeSavedTracks() : null;
   @override LibraryRepository? get libraryRepository {
@@ -870,7 +877,9 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
         return const {'GET', 'OPTIONS'}.contains(request.method) && target.scheme == 'https' &&
           target.host == 'spclient.wg.spotify.com' && !target.hasPort && target.userInfo.isEmpty &&
           (RegExp(r'^/metadata/4/track/[0-9a-f]{32}$').hasMatch(target.path) ||
-           RegExp(r'^/color-lyrics/v2/track/[0-9A-Za-z]{22}/image/.+$').hasMatch(target.path));
+           RegExp(r'^/color-lyrics/v2/track/[0-9A-Za-z]{22}/image/.+$').hasMatch(target.path) ||
+           RegExp(r'^/inspiredby-mix/v2/seed_to_playlist/spotify:track:[0-9A-Za-z]{22}$').hasMatch(target.path) &&
+             target.query == 'response-format=json');
       }
       final request = RequestEnvelope(method: plan.method, url: plan.url,
         headers: plan.headers, body: plan.body, authorize: false, responseType: 'bytes',
@@ -960,25 +969,48 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
     final epoch = _epoch;
     final builder = SpotifyRequestBuilder(locale: context.selectedLocale, market: 'from_token',
       globalHeaders: NativeRendererSearchProfile.globalHeaders);
+    final profile = NativeRendererSearchProfile(locale: context.selectedLocale);
     return LyricsRepository(builder: builder, send: (envelope) async {
-      _check(epoch);
-      final token = await _sessionAccessToken(cancellationToken: envelope.cancellationToken);
-      final clientToken = await _clientToken(cancellationToken: envelope.cancellationToken);
-      _check(epoch);
-      final authenticated = RequestEnvelope(method: envelope.method, url: envelope.url,
-        headers: {...envelope.headers, 'Authorization': 'Bearer ${token.accessToken}'},
-        cancellationToken: envelope.cancellationToken);
-      final profile = NativeRendererSearchProfile(locale: context.selectedLocale);
-      final plan = profile.prepareLyrics(authenticated, clientToken: clientToken);
-      final cors = _rendererCors ??= NativeRendererCors(nowMicroseconds: () => _rendererClock.elapsedMicroseconds);
-      final response = await http.Response.fromStream(await cors.send(plan, profile: profile,
-        cancellationToken: envelope.cancellationToken,
-        sendPrepared: (prepared, token) => _sendRendererPrepared(prepared, profile: profile,
-          epoch: epoch, cancellationToken: token)));
-      _check(epoch);
-      return LyricsResponse(response.statusCode, response.statusCode >= 200 && response.statusCode < 300
-        ? jsonDecode(utf8.decode(response.bodyBytes)) : null);
+      final response = await _sendRendererJsonGet(envelope, epoch: epoch, profile: profile, prepare: profile.prepareLyrics);
+      return LyricsResponse(response.status, response.body);
     });
+  }
+
+  Future<String> _resolveSongRadio(String uri, {CancellationToken? cancellationToken}) async {
+    if (!ready || !songRadioAllowed(_ap!.productState)) {
+      throw StateError('Song radio is unavailable for this account.');
+    }
+    final profile = NativeRendererSearchProfile(locale: context.selectedLocale);
+    final epoch = _epoch;
+    return resolveSongRadioPlaylist(uri, builder: SpotifyRequestBuilder(locale: context.selectedLocale,
+      market: 'from_token', globalHeaders: NativeRendererSearchProfile.globalHeaders),
+      send: (request) => _sendRendererJsonGet(request, epoch: epoch, profile: profile, prepare: profile.prepareSongRadio),
+      cancellationToken: cancellationToken);
+  }
+
+  Future<({int status, Object? body})> _sendRendererJsonGet(RequestEnvelope envelope, {
+      required int epoch,
+      required NativeRendererSearchProfile profile,
+      required NativeRendererHttpRequestPlan Function(RequestEnvelope, {required String clientToken}) prepare}) async {
+    _check(epoch);
+    final cancellation = MergedCancellationToken([_sessionToken, ?envelope.cancellationToken]);
+    cancellation.throwIfCancelled();
+    final token = await _sessionAccessToken(cancellationToken: cancellation);
+    final clientToken = await _clientToken(cancellationToken: cancellation);
+    _check(epoch);
+    final authenticated = RequestEnvelope(method: envelope.method, url: envelope.url,
+      headers: {...envelope.headers, 'Authorization': 'Bearer ${token.accessToken}'},
+      cancellationToken: cancellation);
+    final plan = prepare(authenticated, clientToken: clientToken);
+    final cors = _rendererCors ??= NativeRendererCors(nowMicroseconds: () => _rendererClock.elapsedMicroseconds);
+    final response = await http.Response.fromStream(await cors.send(plan, profile: profile,
+      cancellationToken: cancellation,
+      sendPrepared: (prepared, token) => _sendRendererPrepared(prepared, profile: profile,
+        epoch: epoch, cancellationToken: token)));
+    cancellation.throwIfCancelled();
+    _check(epoch);
+    return (status: response.statusCode, body: response.statusCode >= 200 && response.statusCode < 300
+      ? jsonDecode(utf8.decode(response.bodyBytes)) : null);
   }
 
   SearchRepository _makeSearch() {
@@ -996,12 +1028,13 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
   HomeRepository _makeHome() {
     final session = _pathfinder();
     return _AuthenticatedHomeRepository(PathfinderHomeRepository(session.loader,
-      context: HomeRequestContext(timeZone: readMacOSIanaTimeZone())), session.prepare, (page) {
+      context: HomeRequestContext(timeZone: readMacOSIanaTimeZone(), collectionUri: likedSongsUri)), session.prepare, (page) {
         for (final section in page.sections) {
           for (final item in section.items) {
             _rememberArtwork(item.uri, item.images);
             if (item.type != 'playlist') continue;
             final data = item.contentData;
+            if (data.isEmpty) continue;
             final attributes = {for (final entry in data['attributes'] as List? ?? const [])
               if (entry is Map && entry['key'] is String) entry['key'] as String: entry['value']};
             final owner = ((data['ownerV2'] as Map?)?['data'] as Map?) ?? const {};
@@ -1020,7 +1053,63 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
             }
           }
         }
-      });
+      }, recentlyPlayed: NativeRecentlyPlayedRepository(client: _recentContextsClient(),
+        describe: _describeRecentItems));
+  }
+
+  NativeRecentContextsClient _recentContextsClient() {
+    final epoch = _epoch;
+    return _recentContexts ??= NativeRecentContextsClient(baseUrl: _nativeServerOrigin(),
+      inheritedHeaders: _nativeApplicationHeaders, nowMicroseconds: _now,
+      send: (request) { _check(epoch); return _sendNativeServer(request, epoch); });
+  }
+
+  Future<Map<String, HomeItem>> _describeRecentItems(List<String> uris,
+      {CancellationToken? cancellationToken}) async {
+    cancellationToken?.throwIfCancelled();
+    final library = libraryRepository as NativeLibraryRepository;
+    final baseUris = uris.where((uri) => RegExp(r'^spotify:(album|artist):[0-9A-Za-z]{22}$').hasMatch(uri));
+    final playlistUris = uris.where((uri) => uri != likedSongsUri &&
+      RegExp(r'^spotify:playlist:[0-9A-Za-z]{22}$').hasMatch(uri)).toList();
+    final (base, known) = await (library.metadata.describe(baseUris, cancellationToken: cancellationToken),
+      library.knownPlaylists(playlistUris, cancellationToken: cancellationToken)).wait;
+    final result = <String, HomeItem>{};
+    for (final item in [...base.values, ...known.values]) {
+      if (!item.isSupported) continue;
+      result[item.uri] = HomeItem(type: item.type, uri: item.uri, name: item.name,
+        images: item.images, contributors: item.contributors);
+    }
+    // Native RECENTLY_PLAYED fresh playlist reads are independently captured.
+    // Reuse rootlist decorations first; remaining reads run in bounded pairs.
+    final missing = playlistUris.where((uri) => !result.containsKey(uri)).toList();
+    for (var index = 0; index < missing.length; index += 2) {
+      await Future.wait(missing.skip(index).take(2).map((uri) async {
+        final playlist.SelectedListContent list;
+        try {
+          list = await _readPlaylist(uri, caller: PlaylistSyncCaller.RECENTLY_PLAYED,
+            cancellationToken: cancellationToken);
+        } on NativePlaylistReadException catch (error) {
+          // Recent contexts can outlive a deleted or inaccessible playlist.
+          if (const {403, 404, 410}.contains(error.reply.responseStatusCode)) return;
+          rethrow;
+        }
+        cancellationToken?.throwIfCancelled();
+        final attributes = list.attributes;
+        result[uri] = HomeItem(type: 'playlist', uri: uri, name: attributes.name,
+          images: nativePlaylistImages(attributes, imageUrlTemplate: _imageUrlTemplate),
+          contributors: list.ownerUsername.isEmpty ? [] : [list.ownerUsername]);
+      }));
+    }
+    final tracks = uris.where((uri) => RegExp(r'^spotify:track:[0-9A-Za-z]{22}$').hasMatch(uri)).toList();
+    if (tracks.isNotEmpty) {
+      final descriptions = await _describePlaylistTracks(tracks, cancellationToken: cancellationToken);
+      for (final row in descriptions.values) {
+        result[row.uri] = HomeItem(type: 'track', uri: row.uri, name: row.name,
+          images: row.images, contributors: row.artists.map((artist) => artist['name']).whereType<String>().toList(),
+          isPlayable: row.isPlayable, isExplicit: row.isExplicit, durationMs: row.durationMs);
+      }
+    }
+    return result;
   }
 
   LibraryRepository _makeLibrary() {
@@ -1033,9 +1122,7 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
       imageUrlTemplate: _imageUrlTemplate);
     return NativeLibraryRepository(rootlist: rootlist,
       collection: _collection('collection'), artists: _collection('artist'),
-      recentContexts: NativeRecentContextsClient(baseUrl: _nativeServerOrigin(),
-        inheritedHeaders: _nativeApplicationHeaders, nowMicroseconds: _now,
-        send: (request) { _check(epoch); return _sendNativeServer(request, epoch); }),
+      recentContexts: _recentContextsClient(),
       metadata: NativeLibraryMetadataClient(requests: SpotifyRequests(baseUrl: _nativeServerOrigin(),
         inheritedHeaders: _nativeApplicationHeaders, defaults: _defaults),
         country: latin1.decode(_apPolicy!.countryCode), catalogue: _ap!.productState['catalogue'] ?? '',
@@ -1103,9 +1190,11 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
         read: (uri, {cancellationToken}) { _check(epoch); return _readPlaylist(uri, cancellationToken: cancellationToken); },
         describeTracks: (uris, {cancellationToken}) {
           _check(epoch); return _describePlaylistTracks(uris, cancellationToken: cancellationToken); }),
-      trackRepository: _NativeTrackEntityRepository((uris, {cancellationToken}) {
-        _check(epoch); return _describePlaylistTracks(uris, cancellationToken: cancellationToken);
-      }), artistRepository: NativeArtistEntityRepository(session.loader,
+      likedSongsRepository: NativeLikedSongsRepository(collection: _collection('collection'), username: username!,
+        describeTracks: (uris, {cancellationToken}) {
+          _check(epoch); return _describePlaylistTracks(uris, cancellationToken: cancellationToken); }),
+      trackRepository: NativeSongEntityRepository(session.loader),
+      artistRepository: NativeArtistEntityRepository(session.loader,
         readOverview: artistAboutRepository!.overview,
         readPopularTracks: (uri, {cancellationToken}) { _check(epoch); return _readPlaylist(uri,
           caller: PlaylistSyncCaller.SYNC_POLICY, cancellationToken: cancellationToken); },
@@ -2163,8 +2252,10 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
     _clientTokens?.close(); _clientTokens = null;
     _credentials = null; _grant = null; _endpoints = const []; _search = null; _home = null; _entities = null; _library = null;
     _savedTracksRepository = null;
-    _artistAbout = null;
+    _artistAbout?.dispose(); _artistAbout = null;
+    for (final collection in _collections.values) { collection.invalidate(); collection.changes.dispose(); }
     _collections.clear();
+    _recentContexts?.invalidate(); _recentContexts = null;
     _lyrics = null;
     _libraryImageUrlTemplate = null;
     _proofs = null; _refreshState = null; _audioMetadata = null;
@@ -2225,27 +2316,31 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
   }
 }
 
-class _AuthenticatedEntityRepository implements EntityRepository, SavedPlaylistsRepository {
+class _AuthenticatedEntityRepository implements EntityRepository, SavedPlaylistsRepository, UpdatingEntityRepository, SongPageRepository {
   const _AuthenticatedEntityRepository(this.repository, this.prepare, this.observe,
-    {this.playlistRepository, this.trackRepository, this.artistRepository, required this.playlistLibrary});
+    {this.playlistRepository, this.trackRepository, this.artistRepository, this.likedSongsRepository,
+      required this.playlistLibrary});
+  @override Listenable? changesFor(String uri) => uri == likedSongsUri && likedSongsRepository is UpdatingEntityRepository
+    ? (likedSongsRepository as UpdatingEntityRepository).changesFor(uri) : null;
   final SavedPlaylistsRepository playlistLibrary;
   @override Future<bool> containsPlaylist(String uri, {CancellationToken? cancellationToken}) =>
     playlistLibrary.containsPlaylist(uri, cancellationToken: cancellationToken);
   @override Future<void> setPlaylistSaved(String uri, bool saved, {CancellationToken? cancellationToken}) =>
     playlistLibrary.setPlaylistSaved(uri, saved, cancellationToken: cancellationToken);
   final EntityRepository repository;
-  final EntityRepository? playlistRepository, trackRepository, artistRepository;
+  final EntityRepository? playlistRepository, trackRepository, artistRepository, likedSongsRepository;
   final Future<void> Function({CancellationToken? cancellationToken}) prepare;
   final void Function(List<EntityRow>) observe;
   @override Future<EntityPage> open(String uri, {CancellationToken? cancellationToken}) async {
     final album = uri.startsWith('spotify:album:');
     final artist = uri.startsWith('spotify:artist:') || uri.startsWith('spotify:app:artist:');
-    final selected = album ? repository : uri.startsWith('spotify:track:') ? trackRepository :
+    final track = uri.startsWith('spotify:track:') || uri.startsWith('spotify:app:track:');
+    final selected = uri == likedSongsUri ? likedSongsRepository : album ? repository : track ? trackRepository :
       artist ? artistRepository : playlistRepository;
     if (selected == null) {
       throw const EntityQueryError({'message': 'This collection is not available yet.'});
     }
-    if (album || artist) await prepare(cancellationToken: cancellationToken);
+    if (album || artist || track) await prepare(cancellationToken: cancellationToken);
     final page = await selected.open(uri, cancellationToken: cancellationToken);
     cancellationToken?.throwIfCancelled();
     observe(page.tracks.rows);
@@ -2254,43 +2349,40 @@ class _AuthenticatedEntityRepository implements EntityRepository, SavedPlaylists
   @override Future<EntityTrackPage> tracks(EntityDetails details, {required int offset, int? limit, CancellationToken? cancellationToken}) async {
     final album = details.type == 'album';
     final artist = details.type == 'artist' || details.type == 'artist-section';
-    final selected = album ? repository : details.type == 'track' ? trackRepository :
+    final track = details.type == 'track' || details.uri.startsWith('spotify:app:track:');
+    final selected = details.uri == likedSongsUri ? likedSongsRepository : album ? repository : track ? trackRepository :
       artist ? artistRepository : playlistRepository;
     if (selected == null) throw const EntityQueryError({'message': 'This collection is not available yet.'});
-    if (album || artist) await prepare(cancellationToken: cancellationToken);
+    if (album || artist || track) await prepare(cancellationToken: cancellationToken);
     final page = await selected.tracks(details, offset: offset, limit: limit, cancellationToken: cancellationToken);
     observe(page.rows);
     return page;
   }
-}
 
-/// Track links reuse the already verified native TrackV4 read and its session
-/// TTL. Opening a song does not start playback or resolve a streaming license.
-class _NativeTrackEntityRepository implements EntityRepository {
-  const _NativeTrackEntityRepository(this.describe);
-  final Future<Map<String, EntityRow>> Function(List<String>, {CancellationToken? cancellationToken}) describe;
-  @override Future<EntityPage> open(String uri, {CancellationToken? cancellationToken}) async {
-    if (!RegExp(r'^spotify:track:[0-9A-Za-z]{22}$').hasMatch(uri)) {
-      throw const EntityQueryError({'message': 'This song is unavailable.'});
-    }
-    final row = (await describe([uri], cancellationToken: cancellationToken))[uri];
-    if (row == null) throw const EntityQueryError({'message': 'This song is unavailable.'});
-    return EntityPage(details: EntityDetails.fromJson({...row.data,
-      'type': 'track', 'images': row.images, 'nrTracks': 1,
-      'hasSpotifyTracks': true, 'hasEpisodes': false}, source: row.source),
-      tracks: EntityTrackPage(rows: [row], offset: 0, limit: 1, totalLength: 1));
+  @override Future<List<EntityRow>> songRecommendations(String uri, {CancellationToken? cancellationToken}) async {
+    await prepare(cancellationToken: cancellationToken);
+    final rows = await (trackRepository as SongPageRepository).songRecommendations(uri, cancellationToken: cancellationToken);
+    observe(rows);
+    return rows;
   }
-  @override Future<EntityTrackPage> tracks(EntityDetails details, {required int offset, int? limit, CancellationToken? cancellationToken}) async => offset == 0 ? (await open(details.uri, cancellationToken: cancellationToken)).tracks :
-    EntityTrackPage(offset: offset, limit: limit ?? 1, totalLength: 1);
+  @override Future<List<EntityJson>> songRelatedAlbums(String uri, {CancellationToken? cancellationToken}) async {
+    await prepare(cancellationToken: cancellationToken);
+    return (trackRepository as SongPageRepository).songRelatedAlbums(uri, cancellationToken: cancellationToken);
+  }
+  @override Future<EntityJson> songCredits(String uri, {CancellationToken? cancellationToken}) async {
+    await prepare(cancellationToken: cancellationToken);
+    return (trackRepository as SongPageRepository).songCredits(uri, cancellationToken: cancellationToken);
+  }
 }
 
 class _AuthenticatedHomeRepository implements HomeRepository, HomeDestinationProvider {
-  const _AuthenticatedHomeRepository(this.repository, this.prepare, this.observe);
+  const _AuthenticatedHomeRepository(this.repository, this.prepare, this.observe, {this.recentlyPlayed});
   final HomeRepository repository;
+  final HomeDestinationRepository? recentlyPlayed;
   final Future<void> Function({CancellationToken? cancellationToken}) prepare;
   final void Function(HomePage) observe;
   @override HomeDestinationRepository get destinations => _AuthenticatedHomeDestinations(
-    (repository as HomeDestinationProvider).destinations, prepare, observe);
+    (repository as HomeDestinationProvider).destinations, prepare, observe, recentlyPlayed: recentlyPlayed);
   @override Future<HomePage> load({String facet = '', CancellationToken? cancellationToken}) async {
     await prepare(cancellationToken: cancellationToken);
     final page = await repository.load(facet: facet, cancellationToken: cancellationToken);
@@ -2300,13 +2392,15 @@ class _AuthenticatedHomeRepository implements HomeRepository, HomeDestinationPro
 }
 
 class _AuthenticatedHomeDestinations implements HomeDestinationRepository {
-  const _AuthenticatedHomeDestinations(this.repository, this.prepare, this.observe);
+  const _AuthenticatedHomeDestinations(this.repository, this.prepare, this.observe, {this.recentlyPlayed});
   final HomeDestinationRepository repository;
+  final HomeDestinationRepository? recentlyPlayed;
   final Future<void> Function({CancellationToken? cancellationToken}) prepare;
   final void Function(HomePage) observe;
   @override Future<HomeDestinationPage> destination(HomeDestinationTarget target, {int offset = 0, CancellationToken? cancellationToken}) async {
-    await prepare(cancellationToken: cancellationToken);
-    final page = await repository.destination(target, offset: offset, cancellationToken: cancellationToken);
+    final native = target.kind == HomeDestinationKind.recentlyPlayed ? recentlyPlayed : null;
+    if (native == null) await prepare(cancellationToken: cancellationToken);
+    final page = await (native ?? repository).destination(target, offset: offset, cancellationToken: cancellationToken);
     observe(HomePage(sections: page.sections));
     return page;
   }

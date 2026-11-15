@@ -57,7 +57,7 @@ class SpotifyDesktopShell extends StatefulWidget {
     this.onLibrarySelect, this.onLibraryOpenFolder,
     this.libraryArtworkBuilder, this.libraryItemActionsBuilder,
     this.onEntitySelect, this.onEntityPlay, this.onEntityNavigate,
-    this.entityArtworkBuilder, this.entityRowArtworkBuilder, this.entityRowActionsBuilder,
+    this.entityArtworkBuilder, this.entityRowArtworkBuilder, this.entityRowActionsBuilder, this.entityActionsBuilder,
   });
 
   final DesktopRouter navigation;
@@ -90,6 +90,7 @@ class SpotifyDesktopShell extends StatefulWidget {
   final EntityArtworkBuilder? entityArtworkBuilder;
   final EntityRowArtworkBuilder? entityRowArtworkBuilder;
   final EntityRowActionsBuilder? entityRowActionsBuilder;
+  final EntityActionsBuilder? entityActionsBuilder;
   final VoidCallback? onLogOut;
 
   @override
@@ -677,9 +678,16 @@ class SpotifyDesktopShellState extends State<SpotifyDesktopShell> implements Ges
       child: const Text('Log in', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700)))
       : PopupMenuButton<String>(tooltip: 'Profile', position: PopupMenuPosition.under,
         color: const Color(0xff282828), padding: EdgeInsets.zero,
-        onSelected: (action) { if (action == 'logout') widget.onLogOut?.call(); },
+        onSelected: (action) {
+          if (action == 'logout') widget.onLogOut?.call();
+          if (action == 'liked') _navigate(DesktopRoute.content('spotify:collection:tracks'));
+          if (action == 'recent') _navigate(DesktopRoute.fromUri(Uri.parse('/genre/recently-played')));
+        },
         itemBuilder: (_) => [PopupMenuItem<String>(enabled: false,
           child: Text(account, maxLines: 1, overflow: TextOverflow.ellipsis)),
+          const PopupMenuDivider(),
+          const PopupMenuItem<String>(value: 'liked', child: Text('Liked Songs')),
+          const PopupMenuItem<String>(value: 'recent', child: Text('Recently played')),
           const PopupMenuDivider(),
           PopupMenuItem<String>(value: 'logout', enabled: widget.onLogOut != null, child: const Text('Log out'))],
         child: Semantics(label: 'Profile menu, signed in as $account', button: true,
@@ -900,6 +908,14 @@ class SpotifyDesktopShellState extends State<SpotifyDesktopShell> implements Ges
     final entity = widget.entityController;
     if (route.destination == DesktopDestination.item && entity != null) {
       return EntityView(key: PageStorageKey('entity-view:${entity.state.uri}'), controller: entity,
+        lyricsRepository: widget.lyricsRepository,
+        onTogglePlay: widget.playbackController != null && (_playbackState?.isPaused == true
+          ? _playbackState?.restrictions.canResume == true : _playbackState?.restrictions.canPause == true)
+          ? () => unawaited((_playbackState?.isPaused == true ? widget.playbackController!.resume()
+            : widget.playbackController!.pause()).catchError((Object _) {
+              if (mounted) showSpotifySnackBar(context, 'Couldn’t change playback.'); })) : null,
+        artistAboutRepository: widget.artistAboutRepository,
+        onLibraryChanged: () { unawaited(widget.libraryController?.refresh(invalidate: false)); },
         playingUri: _playbackState?.item?.uri,
         shuffle: _playbackState?.shuffle == true,
         onToggleShuffle: widget.playbackController != null && _playbackState?.restrictions.canToggleShuffle == true
@@ -909,7 +925,7 @@ class SpotifyDesktopShellState extends State<SpotifyDesktopShell> implements Ges
           _playbackState?.isPaused == false && _playbackState?.isBuffering == false,
         onSelect: widget.onEntitySelect, onPlay: widget.onEntityPlay, onNavigate: navigateToEntity,
         artworkBuilder: widget.entityArtworkBuilder, rowArtworkBuilder: widget.entityRowArtworkBuilder,
-        rowActionsBuilder: widget.entityRowActionsBuilder);
+        rowActionsBuilder: widget.entityRowActionsBuilder, actionsBuilder: widget.entityActionsBuilder);
     }
     final library = widget.libraryController;
     if (route.destination == DesktopDestination.library && library != null) {

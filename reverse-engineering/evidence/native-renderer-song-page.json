@@ -1,0 +1,432 @@
+{
+  "sources": [
+    {
+      "version": "1.3.6.1921",
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f"
+    },
+    {
+      "version": "1.3.9.2055",
+      "member": "xpui-routes-track-v2.js",
+      "sha256": "30d948cca88df617eebf16e88bcfd9bc2e9c1386bc29e420f08f7a02fd0f2c09"
+    }
+  ],
+  "ranges": [
+    {
+      "member": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "module": 85418,
+      "offsetBytes": 4160880,
+      "lengthBytes": 175,
+      "sha256": "6c0bd05958a0723942a6e91b1cb681c9f40e719af9cbc023e30c08b5889f4165"
+    },
+    {
+      "member": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "module": 89406,
+      "offsetBytes": 2311817,
+      "lengthBytes": 198,
+      "sha256": "8979c9e93cb47c30cda1d35b28f2a85e2422b1248db5268c142a3e5df1e3f401"
+    },
+    {
+      "member": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "module": 5982,
+      "offsetBytes": 1610235,
+      "lengthBytes": 1281,
+      "sha256": "96afaf5b6dda24fde20495a467d66b296abfd517d97bae513b731da7a6f3a96f"
+    },
+    {
+      "member": "xpui-routes-track-v2.js",
+      "module": 31609,
+      "sha256": "3fadddad9999a340de9d0df82328db814db7eb26f07e9aaf6b5d93c07537154b"
+    },
+    {
+      "member": "xpui-routes-track-v2.js",
+      "module": 90119,
+      "sha256": "b2e3e99d6172a7948ef17ffbc07e5cecff3a1c496d660d47fe817ca494b5edac"
+    },
+    {
+      "member": "xpui-routes-track-v2.js",
+      "expression": "(0,n.memo)(function(){let{trackId:",
+      "offsetBytes": 51867,
+      "lengthBytes": 699,
+      "sha256": "1075ca3360ee5dcc8d1c95e468925b141d138c894474362e7885f3b6d554fc04"
+    },
+    {
+      "member": "xpui-routes-track-v2.js",
+      "expression": "new C.l(\"internalLinkRecommenderTrack\"",
+      "offsetBytes": 10076,
+      "lengthBytes": 119,
+      "sha256": "b0e3f18d9523c5c226bbe345e42524292505adf6bd57ed0ff45f52e8eb71f036"
+    },
+    {
+      "member": "xpui-routes-track-v2.js",
+      "expression": "n.memo(function({subtitle:e,uri:t})",
+      "offsetBytes": 13278,
+      "lengthBytes": 1814,
+      "sha256": "2a14fb8bc06f82871a64d47273ea2a7b0e667ab7fc4e8d3a02962b1e7cace1b8"
+    },
+    {
+      "member": "xpui-routes-track-v2.js",
+      "expression": "async(e,t,a)=>(await e.build().withHost(eG.Hj).withPath(`/track/",
+      "offsetBytes": 28805,
+      "lengthBytes": 284,
+      "sha256": "5c7dd60e332a8c54e86e4037838d45e3660e4b62d1af4a2d16c5f9fed21b306e"
+    },
+    {
+      "member": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "expression": "grouped contributors",
+      "offsetBytes": 1576009,
+      "lengthBytes": 205,
+      "sha256": "f40cf005fea26458fe83fa4f91c1b0ba36f01511b99d262f44b20a233b56bb56"
+    }
+  ],
+  "requests": [
+    {
+      "operation": {
+        "name": "getTrack",
+        "operation": "query",
+        "sha256Hash": "a8ef9e9f02b836feb0da3003c31dbb30decc6f4b473ef89ca88c882386d668de",
+        "value": null
+      },
+      "variables": {
+        "uri": "spotify:track:0000000000000000000001",
+        "includeVideoAssociationItems": true,
+        "includeMusicVideoPreviews": false
+      },
+      "options": null
+    },
+    {
+      "operation": {
+        "name": "queryTrackCreditsGroupedModal",
+        "operation": "query",
+        "sha256Hash": "f135fb9be58a72d041ab5d214d817021a272405d883860468e2627afb01a3ca9",
+        "value": null
+      },
+      "variables": {
+        "trackUri": "spotify:track:0000000000000000000001",
+        "contributorsLimit": 100,
+        "contributorsOffset": 0
+      },
+      "options": {
+        "staleTime": 600000
+      }
+    },
+    {
+      "operation": {
+        "name": "internalLinkRecommenderTrack",
+        "operation": "query",
+        "sha256Hash": "642923b2e705fceb9984697c1620fecd42615fd8b116b8a9faf2786b389d3e4a",
+        "value": null
+      },
+      "variables": {
+        "uri": "spotify:track:0000000000000000000001",
+        "limit": 5
+      },
+      "options": null
+    },
+    {
+      "operation": {
+        "name": "similarAlbumsBasedOnThisTrack",
+        "operation": "query",
+        "sha256Hash": "1d1f93a737498adca2c892c73af87fc0b052afe4e1a33c989540c32413dfae17",
+        "value": null
+      },
+      "variables": {
+        "uri": "spotify:track:0000000000000000000001",
+        "limit": 50,
+        "albumsOnly": true
+      },
+      "options": null
+    }
+  ],
+  "lyricsCalls": [
+    {
+      "method": "withHost",
+      "value": "https://spclient.wg.spotify.com/color-lyrics/v2"
+    },
+    {
+      "method": "withPath",
+      "value": "/track/0000000000000000000001/image/https%3A%2F%2Ffixture.invalid%2Fcover"
+    },
+    {
+      "method": "withHeaders",
+      "value": [
+        {
+          "key": "App-Platform",
+          "value": "WebPlayer"
+        }
+      ]
+    },
+    {
+      "method": "withQueryParameters",
+      "value": {
+        "format": "json",
+        "vocalRemoval": false
+      }
+    },
+    {
+      "method": "withEndpointIdentifier",
+      "value": "/track/{trackId}"
+    }
+  ],
+  "credits": {
+    "contributors": [
+      {
+        "name": "Artist",
+        "role": "Main Artist",
+        "roleGroup": {
+          "name": "Artist"
+        },
+        "uri": "spotify:artist:0000000000000000000001"
+      },
+      {
+        "name": "Writer",
+        "role": "Composer",
+        "roleGroup": {
+          "name": "Composition & Lyrics"
+        },
+        "uri": "spotify:artist:0000000000000000000002"
+      },
+      {
+        "name": "Writer",
+        "role": "Lyricist",
+        "roleGroup": {
+          "name": "Composition & Lyrics"
+        },
+        "uri": "spotify:artist:0000000000000000000002"
+      }
+    ],
+    "groups": [
+      {
+        "name": "Artist",
+        "contributors": [
+          {
+            "name": "Artist",
+            "roles": [
+              "Main Artist"
+            ],
+            "uri": "spotify:artist:0000000000000000000001",
+            "url": null
+          }
+        ]
+      },
+      {
+        "name": "Composition & Lyrics",
+        "contributors": [
+          {
+            "name": "Writer",
+            "roles": [
+              "Composer",
+              "Lyricist"
+            ],
+            "uri": null,
+            "url": null
+          }
+        ]
+      }
+    ]
+  },
+  "scope": "Independently executed original getTrack page caller and original descriptors, recommendation/related-album query callers, grouped-credit hook and song-lyrics RequestBuilder chain.",
+  "substitutions": [
+    "React memo/useMemo/useCallback execute locally; router supplies a synthetic track ID.",
+    "The original query hook boundary records descriptors/variables/options and returns a loading state; shared HTTP envelope behavior has separate existing evidence.",
+    "Lyrics RequestBuilder methods record their arguments; the host constant is supplied from the existing lyrics evidence.",
+    "No application bootstrap, account changes, media, download, advertisement or analytics code is executed."
+  ],
+  "limitations": [
+    "The descriptor/main module comes from the identified earlier shipped build; current route callers are identified separately. Live acceptance is checked separately.",
+    "This proves outgoing contracts and local dispatch, not server replies or the complete original renderer.",
+    "The Flutter header chooses the returned higherContrast visual-identity palette; the original experiment-dependent contrast selection is not reproduced by this evidence."
+  ],
+  "rea": {
+    "evidenceId": "ev_f6e94bf0f6c6543629e6c1d83eb2c8eaef1cc35f30853f90f4775e8e2247cb81",
+    "coverage": {
+      "static_sources": {
+        "sources": 5,
+        "unmeasured_sources": 0,
+        "syntax": {
+          "complete": 5,
+          "recovered": 0,
+          "failed": 0,
+          "not-examined": 0
+        },
+        "semantics": {
+          "unknown_sources": 0,
+          "unexamined_sources": 0
+        },
+        "examination": {
+          "complete": 5,
+          "limited": 0,
+          "not-examined": 0
+        },
+        "electron_applicability": {
+          "observed": 0,
+          "unknown": 5
+        }
+      },
+      "application": {
+        "status": "complete",
+        "truncated": false,
+        "omitted_count": 0,
+        "limits": []
+      },
+      "semantic": {
+        "status": "unknown",
+        "truncated": false,
+        "omitted_nodes": 0,
+        "omitted_relations": 0,
+        "limits": [],
+        "families": [
+          {
+            "family": "boundary",
+            "status": "partial",
+            "retained_relations": 1,
+            "omitted_relations": 0,
+            "unknown_count": 0
+          },
+          {
+            "family": "call-flow",
+            "status": "partial",
+            "retained_relations": 0,
+            "omitted_relations": 0,
+            "unknown_count": 55
+          },
+          {
+            "family": "child-process",
+            "status": "partial",
+            "retained_relations": 0,
+            "omitted_relations": 0,
+            "unknown_count": 0
+          },
+          {
+            "family": "closure",
+            "status": "partial",
+            "retained_relations": 30,
+            "omitted_relations": 0,
+            "unknown_count": 0
+          },
+          {
+            "family": "configuration",
+            "status": "partial",
+            "retained_relations": 0,
+            "omitted_relations": 0,
+            "unknown_count": 0
+          },
+          {
+            "family": "data-flow",
+            "status": "partial",
+            "retained_relations": 635,
+            "omitted_relations": 0,
+            "unknown_count": 114
+          },
+          {
+            "family": "event",
+            "status": "partial",
+            "retained_relations": 0,
+            "omitted_relations": 0,
+            "unknown_count": 0
+          },
+          {
+            "family": "object-flow",
+            "status": "partial",
+            "retained_relations": 87,
+            "omitted_relations": 0,
+            "unknown_count": 92
+          },
+          {
+            "family": "promise-ownership",
+            "status": "partial",
+            "retained_relations": 0,
+            "omitted_relations": 0,
+            "unknown_count": 0
+          },
+          {
+            "family": "request",
+            "status": "partial",
+            "retained_relations": 0,
+            "omitted_relations": 0,
+            "unknown_count": 0
+          },
+          {
+            "family": "resource-lifecycle",
+            "status": "partial",
+            "retained_relations": 0,
+            "omitted_relations": 0,
+            "unknown_count": 0
+          },
+          {
+            "family": "timer",
+            "status": "partial",
+            "retained_relations": 0,
+            "omitted_relations": 0,
+            "unknown_count": 0
+          }
+        ]
+      },
+      "application_unknowns": 0,
+      "semantic_unknowns": 261
+    }
+  },
+  "live": {
+    "account": "saved Free account; original selected HTTP provider",
+    "queriesAccepted": [
+      "getTrack",
+      "internalLinkRecommenderTrack",
+      "similarAlbumsBasedOnThisTrack",
+      "queryTrackCreditsGroupedModal",
+      "getAlbum"
+    ],
+    "observations": [
+      {
+        "song": "Supermoves",
+        "playable": true,
+        "recommendations": 5,
+        "relatedAlbums": 50,
+        "lyrics": "unavailable"
+      },
+      {
+        "song": "Breathless",
+        "playable": true,
+        "recommendations": 5,
+        "relatedAlbums": 49,
+        "albumTracks": 10,
+        "lyrics": "available",
+        "lyricLines": 40
+      }
+    ],
+    "scope": "Read-only metadata/lyrics; no playback, account mutation or new license-admission claim."
+  },
+  "validation": {
+    "date": "2026-11-15",
+    "protocol": {
+      "tests": [
+        "native_song_page_test.dart",
+        "native_renderer_lyrics_protocol_test.dart",
+        "native_saved_tracks_test.dart"
+      ],
+      "passed": 4
+    },
+    "analysis": "Native song repository, song view and entity view: no issues found.",
+    "preview": {
+      "scope": "Real Flutter widgets using captured public Breathless metadata, inert membership writes and playback callbacks; not an end-to-end audio playback check.",
+      "widths": [
+        1280,
+        760,
+        420,
+        320
+      ],
+      "checks": [
+        "Prominent 48 px save control with 32 px icon; header and player share membership state.",
+        "Add/remove, pending intent coalescing, failure rollback and retry.",
+        "Lyrics expansion survives resizing; unavailable lyrics reserve no section.",
+        "Grouped credits display and close.",
+        "Popular tracks expansion survives leaving and returning; offscreen rows are disposable.",
+        "Hovered album Play passes the correct album context to the playback owner.",
+        "Related-section retry repeats only the failed related read.",
+        "Recommended releases Show all opens the original track more-like-this route.",
+        "Lower related and album reads start on demand and remain shared across scrolling and resizing.",
+        "No Flutter runtime errors."
+      ],
+      "detail": ".local/song-page-validation-20261115.json"
+    }
+  }
+}

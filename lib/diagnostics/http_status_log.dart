@@ -74,7 +74,8 @@ final class HttpStatusLog {
       final safe = <String>[];
       for (var i = 0; i < parts.length; i++) {
         final part = parts[i];
-        final identifier = i > 0 && const {'user', 'users', 'devices', 'image'}.contains(parts[i - 1]) ||
+        final identifier = part.startsWith('spotify:') ||
+          i > 0 && const {'user', 'users', 'devices', 'image'}.contains(parts[i - 1]) ||
           RegExp(r'^[A-Za-z0-9_-]{22,}(?:\.[A-Za-z0-9]+)?$').hasMatch(part) ||
           RegExp(r'[0-9a-fA-F]{16,}').hasMatch(part);
         safe.add(identifier ? ':id' : part);

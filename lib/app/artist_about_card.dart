@@ -4,10 +4,10 @@ import 'package:cancellation_token/cancellation_token.dart';
 import 'package:flutter/material.dart';
 
 import '../entities/artist_about_repository.dart';
+import '../entities/artist_follow_button.dart';
 import '../entities/models.dart';
 import '../entities/view.dart' show EntityArtworkBuilder;
 import 'share_links.dart';
-import 'snack_bar.dart';
 
 class ArtistAboutCard extends StatefulWidget {
   const ArtistAboutCard({super.key, required this.uri, required this.repository,
@@ -23,50 +23,21 @@ class ArtistAboutCard extends StatefulWidget {
 class _ArtistAboutCardState extends State<ArtistAboutCard> {
   CancellationToken _request = CancellationToken();
   EntityDetails? _artist;
-  bool? _following;
-  bool _changing = false, _followFailed = false;
 
   @override void initState() { super.initState(); _load(); }
   @override void didUpdateWidget(ArtistAboutCard oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.uri == widget.uri && oldWidget.repository == widget.repository) return;
     _request.cancel(); _request = CancellationToken();
-    _artist = null; _following = null; _changing = false; _followFailed = false;
+    _artist = null;
     _load();
   }
-  void _load() { unawaited(_loadArtist(_request)); unawaited(_loadFollowing(_request)); }
+  void _load() { unawaited(_loadArtist(_request)); }
   Future<void> _loadArtist(CancellationToken token) async {
     try {
       final artist = await widget.repository.artist(widget.uri, cancellationToken: token);
       if (mounted && !token.isCancelled) setState(() => _artist = artist);
     } catch (_) { /* The original omits unavailable artist biographies. */ }
-  }
-  Future<void> _loadFollowing(CancellationToken token) async {
-    try {
-      final following = await widget.repository.contains(widget.uri, cancellationToken: token);
-      if (mounted && !token.isCancelled) setState(() { _following = following; _followFailed = false; });
-    } catch (_) {
-      if (mounted && !token.isCancelled) setState(() => _followFailed = true);
-    }
-  }
-  Future<void> _toggle() async {
-    if (_following == null) {
-      setState(() => _followFailed = false);
-      await _loadFollowing(_request);
-      return;
-    }
-    final token = _request, following = !_following!;
-    setState(() => _changing = true);
-    try {
-      await widget.repository.setFollowing(widget.uri, following, cancellationToken: token);
-      if (!mounted || token.isCancelled) return;
-      setState(() => _following = following);
-      widget.onLibraryChanged?.call();
-    } catch (_) {
-      if (mounted && !token.isCancelled) showSpotifySnackBar(context, 'Couldn’t update followed artists. Try again.');
-    } finally {
-      if (mounted && !token.isCancelled) setState(() => _changing = false);
-    }
   }
   @override void dispose() { _request.cancel(); super.dispose(); }
 
@@ -82,17 +53,6 @@ class _ArtistAboutCardState extends State<ArtistAboutCard> {
     final listeners = (artist.data['stats'] as Map?)?['monthlyListeners'];
     final biography = (artist.data['biography'] as String).replaceAll(RegExp(r'<[^>]*>'), '')
       .replaceAll('&amp;', '&').replaceAll('&quot;', '"').replaceAll('&#39;', "'").replaceAll('&nbsp;', ' ').trim();
-    final button = Tooltip(message: _followFailed ? 'Retry follow status'
-      : _following == true ? 'Unfollow ${artist.name}' : 'Follow ${artist.name}',
-      child: OutlinedButton(onPressed: _changing || _following == null && !_followFailed ? null : _toggle,
-        style: OutlinedButton.styleFrom(foregroundColor: Colors.white,
-          side: const BorderSide(color: Color(0xff7c7c7c)),
-          shape: const StadiumBorder(), minimumSize: const Size(0, 32),
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          textStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.w700)),
-        child: _changing || _following == null && !_followFailed
-          ? const SizedBox.square(dimension: 14, child: CircularProgressIndicator(strokeWidth: 2, color: Color(0xffb3b3b3)))
-          : Text(_followFailed ? 'Retry' : _following == true ? 'Following' : 'Follow')));
     return Padding(padding: const EdgeInsets.only(bottom: 16), child: SpotifyLinkContextMenu(uri: artist.uri,
       child: Material(color: const Color(0xff1f1f1f), borderRadius: BorderRadius.circular(8),
         clipBehavior: Clip.antiAlias, child: InkWell(onTap: widget.onNavigate == null ? null : _open,
@@ -118,7 +78,8 @@ class _ArtistAboutCardState extends State<ArtistAboutCard> {
                 crossAxisAlignment: WrapCrossAlignment.center, children: [
                   if (listeners is num && listeners > 0) Text('${_count(listeners.toInt())} monthly listeners',
                     style: const TextStyle(fontSize: 16, height: 1.5, color: Color(0xffb3b3b3))),
-                  button,
+                  ArtistFollowButton(uri: artist.uri, name: artist.name, repository: widget.repository,
+                    compact: true, onLibraryChanged: widget.onLibraryChanged),
                 ])),
               Text(biography, maxLines: 3, overflow: TextOverflow.ellipsis,
                 style: const TextStyle(fontSize: 14, height: 1.5, color: Color(0xffb3b3b3))),

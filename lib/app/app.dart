@@ -3,9 +3,11 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:cancellation_token/cancellation_token.dart';
 
 import '../entities/entities.dart';
 import '../entities/artist_about_repository.dart';
+import '../entities/song_radio.dart';
 import '../home/home.dart';
 import '../library/library.dart';
 import '../lyrics/repository.dart';
@@ -18,6 +20,8 @@ import 'navigation.dart';
 import 'app_scale.dart';
 import 'playback_bar.dart';
 import 'shell.dart';
+import 'snack_bar.dart';
+import 'song_radio.dart';
 
 /// Flutter application root. Backend ownership stays with the injecting caller.
 class SpotifyDesktopApp extends StatefulWidget {
@@ -29,6 +33,7 @@ class SpotifyDesktopApp extends StatefulWidget {
     this.entityRepository,
     this.lyricsRepository,
     this.artistAboutRepository,
+    this.songRadioResolver,
     this.playbackController,
     this.playbackBuilder,
     this.onSelect,
@@ -50,6 +55,7 @@ class SpotifyDesktopApp extends StatefulWidget {
     this.entityArtworkBuilder,
     this.entityRowArtworkBuilder,
     this.entityRowActionsBuilder,
+    this.entityActionsBuilder,
     this.initialLocation = '/',
     this.navigatorKey,
     this.shellKey,
@@ -64,6 +70,7 @@ class SpotifyDesktopApp extends StatefulWidget {
   final EntityRepository? entityRepository;
   final LyricsRepository? lyricsRepository;
   final ArtistAboutRepository? artistAboutRepository;
+  final SongRadioResolver? songRadioResolver;
   final PlaybackController? playbackController;
   final DesktopPlaybackBuilder? playbackBuilder;
   final ValueChanged<SearchItem>? onSelect;
@@ -84,6 +91,7 @@ class SpotifyDesktopApp extends StatefulWidget {
   final EntityArtworkBuilder? entityArtworkBuilder;
   final EntityRowArtworkBuilder? entityRowArtworkBuilder;
   final EntityRowActionsBuilder? entityRowActionsBuilder;
+  final EntityActionsBuilder? entityActionsBuilder;
   final String initialLocation;
   final GlobalKey<NavigatorState>? navigatorKey;
   final GlobalKey<SpotifyDesktopShellState>? shellKey;
@@ -105,6 +113,49 @@ class _SpotifyDesktopAppState extends State<SpotifyDesktopApp> {
   late final PlatformRouteInformationProvider _routeInformation;
   static const _desktopLinks = MethodChannel('spotify_flutter/desktop_links');
   int _linkRevision = 0;
+  CancellationToken? _songRadioCancellation;
+  String? _songRadioSeed, _songRadioLocation;
+
+  void _cancelSongRadio() {
+    _songRadioCancellation?.cancel();
+    _songRadioCancellation = null;
+    _songRadioSeed = null;
+    _songRadioLocation = null;
+  }
+
+  void _navigationChanged() {
+    if (_songRadioCancellation != null && _router.route.location != _songRadioLocation) {
+      setState(_cancelSongRadio);
+    }
+  }
+
+  Future<void> _openSongRadio(String uri) async {
+    final resolve = widget.songRadioResolver;
+    if (resolve == null || uri == _songRadioSeed) return;
+    _cancelSongRadio();
+    final token = CancellationToken();
+    setState(() {
+      _songRadioCancellation = token;
+      _songRadioSeed = uri;
+      _songRadioLocation = _router.route.location;
+    });
+    try {
+      final playlist = await resolve(uri, cancellationToken: token);
+      token.throwIfCancelled();
+      if (!mounted || !identical(_songRadioCancellation, token)) return;
+      _router.go(DesktopRoute.content(playlist));
+    } on CancelledException {
+      // The navigation or a newer radio selection owns the visible page now.
+    } catch (error) {
+      if (!mounted || token.isCancelled || !identical(_songRadioCancellation, token)) return;
+      final context = widget.navigatorKey?.currentContext ?? _router.navigatorKey.currentContext;
+      if (context != null && context.mounted) {
+        showSpotifySnackBar(context, 'Couldn’t open song radio. ${error.toString().replaceFirst(RegExp(r'^(Bad state: |FormatException: )'), '')}');
+      }
+    } finally {
+      if (mounted && identical(_songRadioCancellation, token)) setState(_cancelSongRadio);
+    }
+  }
 
   void _openLink(String input) {
     final route = desktopRouteForLink(input);
@@ -174,14 +225,17 @@ class _SpotifyDesktopAppState extends State<SpotifyDesktopApp> {
         entityArtworkBuilder: widget.entityArtworkBuilder,
         entityRowArtworkBuilder: widget.entityRowArtworkBuilder,
         entityRowActionsBuilder: widget.entityRowActionsBuilder,
+        entityActionsBuilder: widget.entityActionsBuilder,
       ),
     );
+    _router.addListener(_navigationChanged);
     if (!kIsWeb && defaultTargetPlatform == TargetPlatform.macOS) unawaited(_receiveDesktopLinks());
   }
 
   @override
   void didUpdateWidget(SpotifyDesktopApp oldWidget) {
     super.didUpdateWidget(oldWidget);
+    if (oldWidget.songRadioResolver != widget.songRadioResolver) _cancelSongRadio();
     if (oldWidget.homeRepository != widget.homeRepository) {
       _home?.dispose();
       final repository = widget.homeRepository;
@@ -218,6 +272,8 @@ class _SpotifyDesktopAppState extends State<SpotifyDesktopApp> {
 
   @override
   void dispose() {
+    _cancelSongRadio();
+    _router.removeListener(_navigationChanged);
     if (!kIsWeb && defaultTargetPlatform == TargetPlatform.macOS) {
       _desktopLinks.setMethodCallHandler(null);
       unawaited(_desktopLinks.invokeMethod<void>('stop').catchError((Object _) {}));
@@ -235,8 +291,10 @@ class _SpotifyDesktopAppState extends State<SpotifyDesktopApp> {
   Widget build(BuildContext context) => MaterialApp.router(
     title: 'Spotify',
     debugShowCheckedModeBanner: false,
-    builder: (context, child) => DesktopAppScale(key: widget.scaleKey,
-      child: child ?? const SizedBox.shrink()),
+    builder: (context, child) => SongRadioScope(
+      onOpen: widget.songRadioResolver == null ? null : (uri) => unawaited(_openSongRadio(uri)),
+      loadingUri: _songRadioSeed,
+      child: DesktopAppScale(key: widget.scaleKey, child: child ?? const SizedBox.shrink())),
     theme: ThemeData(
       brightness: Brightness.dark,
       useMaterial3: true,

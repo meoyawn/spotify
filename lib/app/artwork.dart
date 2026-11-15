@@ -10,12 +10,14 @@ import '../protocol/native_renderer_image.dart';
 /// artwork never enables Flutter's default network image HTTP implementation.
 class SpotifyArtwork extends StatefulWidget {
   const SpotifyArtwork({super.key, required this.images, required this.load,
-    this.round = false, this.prepare, this.alignment = Alignment.center, this.borderRadius = 4});
+    this.round = false, this.prepare, this.alignment = Alignment.center, this.borderRadius = 4,
+    this.fullSize = false});
   final List<Map<String, Object?>> images;
   final Future<Uint8List> Function(String rawUrl, {CancellationToken? cancellationToken}) load;
   final bool round;
   final Alignment alignment;
   final double borderRadius;
+  final bool fullSize;
   final Future<void> Function(CancellationToken)? prepare;
   @override State<SpotifyArtwork> createState() => _SpotifyArtworkState();
 }
@@ -28,7 +30,8 @@ class _SpotifyArtworkState extends State<SpotifyArtwork> {
   @override void initState() { super.initState(); _prepare(); }
   @override void didUpdateWidget(SpotifyArtwork oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (oldWidget.alignment != widget.alignment || oldWidget.borderRadius != widget.borderRadius) { _content = null; }
+    if (oldWidget.alignment != widget.alignment || oldWidget.borderRadius != widget.borderRadius ||
+        oldWidget.fullSize != widget.fullSize) { _content = null; }
     if (widget.prepare == null) _preparation?.cancel();
     else if (_preparing != true && widget.prepare != oldWidget.prepare) _prepare();
   }
@@ -70,7 +73,10 @@ class _SpotifyArtworkState extends State<SpotifyArtwork> {
       _decodeWidth = decodeWidth;
       _content = null;
     }
-    final sources = nativeRendererImageSources(candidates, width: width, height: height,
+    final selected = widget.fullSize ? nativeRendererImageSource(candidates, desiredSize: 10000) : null;
+    final sources = nativeRendererImageSources(selected == null ? candidates : [selected],
+      width: widget.fullSize ? (selected?['width'] as num?)?.toDouble() : width,
+      height: widget.fullSize ? (selected?['height'] as num?)?.toDouble() : height,
       devicePixelRatio: ratio);
     final url = sources.firstOrNull?['url'] as String?;
     if (url == _url) return;
@@ -89,7 +95,8 @@ class _SpotifyArtworkState extends State<SpotifyArtwork> {
     final decodeWidth = _decodeWidth;
     final image = FutureBuilder<Uint8List>(key: ValueKey(_url), future: _bytes, builder: (context, snapshot) {
       if (snapshot.hasData) {
-        return Image.memory(snapshot.data!, fit: BoxFit.cover, alignment: widget.alignment, cacheWidth: decodeWidth,
+        return Image.memory(snapshot.data!, fit: widget.fullSize ? BoxFit.contain : BoxFit.cover,
+          alignment: widget.alignment, cacheWidth: decodeWidth,
           errorBuilder: (_, _, _) => _placeholder());
       }
       return _placeholder();

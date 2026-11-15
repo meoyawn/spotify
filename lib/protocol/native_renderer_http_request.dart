@@ -78,6 +78,12 @@ class NativeRendererSearchProfile {
       'queryArtistAppearsOn': '9a4bb7a20d6720fe52d7b47bc001cfa91940ddf5e7113761460b4a288d18a4c1',
       'queryArtistFeaturing': '20842d6d9d2d28ef945984b68cb927bb33edd00eab84a8da1667def21f1f2c54',
       'queryArtistDiscoveredOn': '71c2392e4cecf6b48b9ad1311ae08838cbdabcfd189c6bf0c66c2430b8dcfdb1',
+      // Independently executed original song producers and descriptors:
+      // reverse-engineering/evidence/native-renderer-song-page.json.
+      'getTrack': 'a8ef9e9f02b836feb0da3003c31dbb30decc6f4b473ef89ca88c882386d668de',
+      'internalLinkRecommenderTrack': '642923b2e705fceb9984697c1620fecd42615fd8b116b8a9faf2786b389d3e4a',
+      'similarAlbumsBasedOnThisTrack': '1d1f93a737498adca2c892c73af87fc0b052afe4e1a33c989540c32413dfae17',
+      'queryTrackCreditsGroupedModal': 'f135fb9be58a72d041ab5d214d817021a272405d883860468e2627afb01a3ca9',
     };
     if (payload is! Map || !operationHashes.containsKey(payload['operationName']) ||
         payload['extensions'] is! Map || payload['extensions']['persistedQuery'] is! Map ||
@@ -154,15 +160,36 @@ class NativeRendererSearchProfile {
           query.keys.any((key) => !const {'market', 'format', 'vocalRemoval', 'clientLanguage'}.contains(key)))) {
       throw UnsupportedError('Renderer lyrics requires the verified metadata/lyrics GET contract');
     }
+    final songPage = lyrics && request.headers.entries.any((entry) =>
+      entry.key.toLowerCase() == 'app-platform' && entry.value == 'WebPlayer');
+    return _prepareSpclientGet(request, target, clientToken, appPlatform: songPage ? 'WebPlayer' : 'OSX_ARM64');
+  }
+
+  /// Original module53150 -> modules41332/87337. Browser fields share the
+  /// existing renderer GET capture; see fixtures/native-song-radio.json.
+  NativeRendererHttpRequestPlan prepareSongRadio(RequestEnvelope request, {required String clientToken}) {
+    final target = Uri.parse(request.url);
+    if (target.scheme != 'https' || target.host != 'spclient.wg.spotify.com' ||
+        target.hasPort || target.hasFragment || target.userInfo.isNotEmpty ||
+        !RegExp(r'^/inspiredby-mix/v2/seed_to_playlist/spotify:track:[0-9A-Za-z]{22}$').hasMatch(target.path) ||
+        target.query != 'response-format=json' || request.method != 'GET' || request.body.isNotEmpty ||
+        !request.authorize || request.includeCredentials || request.responseType != 'json') {
+      throw UnsupportedError('Renderer song radio requires the original seed-to-playlist GET contract');
+    }
+    return _prepareSpclientGet(request, target, clientToken);
+  }
+
+  NativeRendererHttpRequestPlan _prepareSpclientGet(RequestEnvelope request, Uri target, String clientToken,
+      {String appPlatform = 'OSX_ARM64'}) {
     final fields = {for (final entry in request.headers.entries) entry.key.toLowerCase(): entry.value};
     if (fields.length != 5 || request.headers.length != fields.length ||
         fields['accept-language'] != locale || locale.isEmpty || !_field(locale) ||
-        fields['accept'] != 'application/json' || fields['app-platform'] != 'OSX_ARM64' ||
+        fields['accept'] != 'application/json' || fields['app-platform'] != appPlatform ||
         fields['spotify-app-version'] != '1.3.6.1921' ||
         !(fields['authorization'] ?? '').startsWith('Bearer ') ||
         fields['authorization']!.length <= 7 || !fields.values.every(_field) ||
         clientToken.isEmpty || !_field(clientToken)) {
-      throw UnsupportedError('Renderer lyrics requires the original locale, global fields and credentials');
+      throw UnsupportedError('Renderer GET requires the original locale, global fields and credentials');
     }
     return NativeRendererHttpRequestPlan._(method: 'GET', url: request.url, authority: target.authority,
       rawTarget: '${target.path}?${target.query}', body: request.body, headers: Map.unmodifiable({

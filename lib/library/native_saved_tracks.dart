@@ -8,6 +8,7 @@ import '../protocol/generated/collection_itemdata.pb.dart';
 import '../protocol/generated/playlist_modification_request.pb.dart';
 import '../protocol/generated/save_source.pb.dart';
 import 'saved_tracks.dart';
+import 'liked_songs.dart' as collection;
 
 /// The two optional fields accepted by the installed renderer's SaveSource.
 class NativeSavedTrackSaveSource {
@@ -35,7 +36,7 @@ class NativeSavedTracksRepository implements SavedTracksRepository {
 
   static const collectionService = 'spotify.collection_esperanto.proto.CollectionService';
   static const playlistService = 'spotify.playlist_esperanto.proto.PlaylistService';
-  static const likedSongsAsPlaylistUri = 'spotify:playlist:37i9dQZF1F5p3rmiWPIYgZ';
+  static const likedSongsAsPlaylistUri = collection.likedSongsUri;
 
   final EsperantoDispatcher dispatcher;
   final bool likedSongsListPlatformEnabled;

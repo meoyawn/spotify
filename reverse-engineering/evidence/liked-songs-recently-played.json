@@ -1,0 +1,106 @@
+{
+  "date": "2026-11-15",
+  "sources": {
+    "installedVersion": "1.3.9.2055",
+    "installedExecutableSha256": "5d60fba777e022f157889d92493b1be5cbea657df967d67b48ead29050520e2f",
+    "installedXpuiArchiveSha256": "b64742faa2bd1db859aefddd804e76246731f2748d2eb138af212277f27f3e44",
+    "installedChunks": [
+      {
+        "archiveEntry": "xpui-routes-collection-songs.js",
+        "sha256": "b620f4a5a5b07f267beea373cc917a095d4fc3c8752511161a8c5aaa38cd654c"
+      },
+      {
+        "archiveEntry": "xpui-routes-recently-played.js",
+        "sha256": "0aff5efc13cd401c06cb74038e0cf937d981f591187d79c80b6a3cb6c126b60a"
+      },
+      {
+        "archiveEntry": "xpui-routes-recents.js",
+        "sha256": "8f14f586e0ec4c2ea54a3d12acf4259c61f9c4329586a315fc43e8572bfb67d4"
+      }
+    ],
+    "routeModules": [
+      {
+        "id": "80409",
+        "source": "collection-songs.js",
+        "offsetBytes": 21650,
+        "lengthBytes": 16765,
+        "sha256": "7e877ae2308217ec6eace9282bcbff4398906d1f6523e22a6cfe163d8603cc0a"
+      },
+      {
+        "id": "5963",
+        "source": "recently-played.js",
+        "offsetBytes": 2578,
+        "lengthBytes": 2550,
+        "sha256": "b4183343caf83726543fa29c243df6ca365c744029d4e76c400c75e671e66d47"
+      },
+      {
+        "id": "23576",
+        "source": "recents.js",
+        "offsetBytes": 10942,
+        "lengthBytes": 22000,
+        "sha256": "9bb54966e09f90bebb443ce999aa164390fb6b9dc5e4d40472ca7db796a56239"
+      }
+    ],
+    "retainedRendererSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+    "retainedNativeExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca"
+  },
+  "rea": {
+    "operation": "analyze_javascript_application",
+    "evidencePath": ".local/liked-songs-rea-20261115.json",
+    "evidenceId": "ev_6a9cd318f2592b7944490ab383a222ed9023010c0647936cca6bc489b9e16ad3",
+    "scope": "Three original proprietary route chunks, inspected as inert JavaScript. No Chromium decompilation."
+  },
+  "independentExecution": {
+    "script": ".local/execute_liked_recents_original.mjs",
+    "fixture": "reverse-engineering/fixtures/native-liked-recent-projection.json",
+    "scope": "Original renderer module 68846 provides the Liked Songs URI/covers. Original module 74960 Recent Contexts stream callback executes sorting, unique-URI filtering and collection projection on synthetic inputs.",
+    "substitutions": [
+      "Inert native RecentlyPlayed stream client and event emitter",
+      "protobuf fromPartial retains the outgoing request object without encoding",
+      "URI kind predicate for the supplied well-formed collection URI",
+      "non-null filtering predicate"
+    ],
+    "expectedResults": "Produced by the independently executed original JavaScript, without invoking Dart."
+  },
+  "implementation": {
+    "likedSongs": "The canonical special playlist and collection/tracks aliases open the shared complete native collection snapshot. Removed entries and non-track entities are excluded. Newest additions appear first; metadata is loaded in pages of 50. The playback queue carries all collection identities, without eagerly requesting metadata or audio for unseen rows.",
+    "savedUpdates": "Only acknowledged collection changes notify the entity and invalidate the Library join. Existing save/remove HTTP contracts and selected Accounts HTTP provider remain intact.",
+    "recentlyPlayed": "The Library and Recently Played page share the independently captured fixed fifty-context native read and actual HTTP expiry. Existing metadata caches and loaded rootlist decorations are reused; uncached playlist reads use the captured RECENTLY_PLAYED caller in bounded pairs. Local display pages contain 20 cards and introduce no server cursor.",
+    "navigation": "Liked Songs is available from the Library and profile menu. Both pages are local Command-K destinations, also searchable by liked, recently played and history, with no catalog request for these commands. These convenience entries are application UX, not a claim of original quick-search parity."
+  },
+  "liveVerification": {
+    "kind": "Authenticated native runtime with an isolated copy of this app’s saved session and its original device identity; no playback engine or Connect publisher was attached.",
+    "installedReleasePid": 41085,
+    "installedReleaseKeptRunning": true,
+    "likedSongs": {
+      "completeAccountCollectionOpened": true,
+      "firstPageRows": 50,
+      "secondPageRows": 100,
+      "queueCountMatchesCompleteCollection": true,
+      "error": null,
+      "privateCounts": ".local/liked-songs-live-verification.json"
+    },
+    "recentlyPlayed": {
+      "firstPageCards": 20,
+      "secondPageCards": 40,
+      "finalPageCards": 49,
+      "nativeContexts": 50,
+      "nextDisplayOffset": null,
+      "error": null,
+      "unavailablePlaylist": "The third display page initially failed on a real HTTP 404. After the per-playlist repair, the same page completed with 49 visible cards and no continuation or error."
+    },
+    "hotReload": "Succeeded on the macOS debug probe."
+  },
+  "validation": {
+    "ownerTests": "56 checks passed across native_liked_songs, native_recent_contexts, native_saved_tracks, library and entity.",
+    "commandK": "The shell keyboard/navigation regression passed separately. A relocated unmodified HEAD quick-search modal fails the Liked Songs destination assertion before the repair.",
+    "analysis": "Changed feature owners analyze without issues. The broader touched-file analysis retains existing runtime/shell warnings.",
+    "broaderShell": "The full shell run encountered the pre-existing SemanticsNode increase/increasedValue assertion, also present in .local/unconnected-shell-baseline-failure.log. No Flutter engine workaround was added."
+  },
+  "limits": [
+    "The separate spotify:list:recents:page service, older track-by-track history, and native live Recent Contexts invalidation remain unrecovered. The history command opens the verified fifty-context Recently Played page.",
+    "Equal-second Liked Songs additions retain membership order; original metadata-dependent secondary sort keys are not claimed.",
+    "No claim of full transport fingerprint parity, new account permissions, or new sustained playback/license verification.",
+    "No advertisement or creative asset is admitted by these music URI projections. The existing ad-free playback and reporting owners are unchanged."
+  ]
+}

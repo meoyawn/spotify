@@ -1,0 +1,261 @@
+{
+  "source": {
+    "application": "Spotify",
+    "version": "1.3.9.2055",
+    "archiveSha256": "b64742faa2bd1db859aefddd804e76246731f2748d2eb138af212277f27f3e44",
+    "member": "xpui-routes-track-v2.js",
+    "sha256": "30d948cca88df617eebf16e88bcfd9bc2e9c1386bc29e420f08f7a02fd0f2c09",
+    "toolbar": {
+      "offsetBytes": 24385,
+      "lengthBytes": 1370,
+      "sha256": "2aba5f139542fe0351fecee26fc35a807357355f367f8a54b099f6a200e3455c"
+    },
+    "sizeHook": {
+      "member": "386.js",
+      "sha256": "3b53044cf8429b743462fe74779ed200b68c3b15d10d96c36da0cddae4072740",
+      "module": 47730,
+      "factorySha256": "7812d60a2e38a52b91e234737883bb06a043dbb47a28b998b630539f44571b33"
+    },
+    "header": {
+      "offsetBytes": 43856,
+      "lengthBytes": 262,
+      "sha256": "ca76d3dc73065d9c6852c33d7aaca93cfc1da91293852b1bc6a8c58af9f25934"
+    }
+  },
+  "cases": [
+    {
+      "name": "add",
+      "band": "large",
+      "controls": [
+        {
+          "type": "Play",
+          "size": "large",
+          "disabled": false
+        },
+        {
+          "type": "Save",
+          "size": "large",
+          "disabled": false,
+          "isAdded": false
+        },
+        {
+          "type": "More",
+          "size": "large"
+        }
+      ],
+      "writes": [
+        true
+      ],
+      "finalSaved": true,
+      "events": []
+    },
+    {
+      "name": "remove",
+      "band": "large",
+      "controls": [
+        {
+          "type": "Play",
+          "size": "large",
+          "disabled": false
+        },
+        {
+          "type": "Save",
+          "size": "large",
+          "disabled": false,
+          "isAdded": true
+        },
+        {
+          "type": "More",
+          "size": "large"
+        }
+      ],
+      "writes": [
+        false
+      ],
+      "finalSaved": false,
+      "events": []
+    },
+    {
+      "name": "write rejection",
+      "band": "large",
+      "controls": [
+        {
+          "type": "Play",
+          "size": "large",
+          "disabled": false
+        },
+        {
+          "type": "Save",
+          "size": "large",
+          "disabled": false,
+          "isAdded": true
+        },
+        {
+          "type": "More",
+          "size": "large"
+        }
+      ],
+      "writes": [
+        false
+      ],
+      "finalSaved": true,
+      "events": []
+    },
+    {
+      "name": "signed out",
+      "band": "large",
+      "controls": [
+        {
+          "type": "Play",
+          "size": "large",
+          "disabled": false
+        },
+        {
+          "type": "Save",
+          "size": "large",
+          "disabled": true,
+          "isAdded": false
+        },
+        {
+          "type": "More",
+          "size": "large"
+        }
+      ],
+      "writes": [],
+      "finalSaved": false,
+      "events": []
+    },
+    {
+      "name": "unplayable track remains saveable",
+      "band": "large",
+      "controls": [
+        {
+          "type": "Play",
+          "size": "large",
+          "disabled": true
+        },
+        {
+          "type": "Save",
+          "size": "large",
+          "disabled": false,
+          "isAdded": false
+        },
+        {
+          "type": "More",
+          "size": "large"
+        }
+      ],
+      "writes": [
+        true
+      ],
+      "finalSaved": true,
+      "events": []
+    },
+    {
+      "name": "compact action sizes",
+      "band": "small",
+      "controls": [
+        {
+          "type": "Play",
+          "size": "medium",
+          "disabled": false
+        },
+        {
+          "type": "Save",
+          "size": "medium",
+          "disabled": false,
+          "isAdded": false
+        },
+        {
+          "type": "More",
+          "size": "medium"
+        }
+      ],
+      "writes": [
+        true
+      ],
+      "finalSaved": true,
+      "events": []
+    }
+  ],
+  "headerCases": [
+    {
+      "playcount": 0,
+      "tree": {
+        "type": "Fragment",
+        "props": {
+          "children": [
+            {
+              "type": "Text",
+              "props": {
+                "children": {
+                  "durationMs": 226000
+                }
+              }
+            },
+            null
+          ]
+        }
+      }
+    },
+    {
+      "playcount": 1234567,
+      "tree": {
+        "type": "Fragment",
+        "props": {
+          "children": [
+            {
+              "type": "Text",
+              "props": {
+                "children": {
+                  "durationMs": 226000
+                }
+              }
+            },
+            {
+              "type": "Fragment",
+              "props": {
+                "children": [
+                  {
+                    "type": "Separator",
+                    "props": {}
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "data-testid": "playcount",
+                      "children": {
+                        "playcount": 1234567
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "scope": "Original song action-bar composition, membership callback and responsive size hook; original duration/playcount header composition. Component rendering and remote transport are not executed.",
+  "substitutions": [
+    "React memo/useCallback are identity operations; JSX records inert trees.",
+    "Design-system components are inert labels. Authentication, membership and playback hooks receive synthetic values.",
+    "The membership setter records requested values, resolves or rejects locally; no account mutation occurs.",
+    "Logging is inert local recording; optional playlist logging and the video control experiment are disabled.",
+    "The original responsive size hook receives supplied viewport bands.",
+    "Duration/number formatting is tagged input recording, with no claim about formatter internals."
+  ],
+  "limitations": [
+    "No new HTTP/protocol compatibility, real account acknowledgement, download behavior, lyrics or recommendation-section behavior is claimed.",
+    "The original membership hook is substituted; the rejection case proves callback settlement only, not original hook rollback or server state."
+  ],
+  "rea": {
+    "operation": "analyze_javascript_application",
+    "evidenceId": "ev_470dd318fd8fc0e67a11993df64b32fa9a03fec22e432170b927bc55a63df971",
+    "sourceSelection": [
+      "xpui-routes-track-v2.js"
+    ],
+    "coverage": "partial; original control and header routines are executed separately"
+  }
+}

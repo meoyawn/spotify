@@ -17,6 +17,7 @@ import 'package:spotify_flutter/home/home.dart';
 import 'package:spotify_flutter/library/library.dart';
 import 'package:spotify_flutter/search/models.dart';
 import 'package:spotify_flutter/search/repository.dart';
+import 'package:spotify_flutter/search/quick_search_dialog.dart';
 
 class _ProvidedSearch implements SearchRepository {
   _ProvidedSearch({this.recentItems = const []});
@@ -150,6 +151,26 @@ void main() {
       } else {
         expect(route.location, path, reason: entry['input'] as String);
       }
+    }
+  });
+
+  testWidgets('Command K opens Liked Songs and Recently Played by name', (tester) async {
+    await tester.pumpWidget(const SpotifyDesktopApp());
+    await tester.pumpAndSettle();
+    for (final (query, location) in [('Liked Songs', '/collection/tracks'),
+        ('Recently played', '/genre/recently-played'), ('history', '/genre/recently-played')]) {
+      await tester.sendKeyDownEvent(LogicalKeyboardKey.metaLeft);
+      await tester.sendKeyEvent(LogicalKeyboardKey.keyK);
+      await tester.sendKeyUpEvent(LogicalKeyboardKey.metaLeft);
+      await tester.pumpAndSettle();
+      final dialog = find.byType(QuickSearchDialog);
+      expect(dialog, findsOneWidget);
+      await tester.enterText(find.descendant(of: dialog, matching: find.byType(TextField)), query);
+      await tester.pumpAndSettle();
+      await tester.sendKeyEvent(LogicalKeyboardKey.enter);
+      await tester.pumpAndSettle();
+      expect(dialog, findsNothing);
+      expect(_router(tester).route.location, location);
     }
   });
 

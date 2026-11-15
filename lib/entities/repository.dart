@@ -1,4 +1,5 @@
 import 'package:cancellation_token/cancellation_token.dart';
+import 'package:flutter/foundation.dart' show Listenable;
 
 import 'dart:convert';
 
@@ -19,6 +20,17 @@ part 'playlist_projection.dart';
 abstract interface class EntityRepository {
   Future<EntityPage> open(String uri, {CancellationToken? cancellationToken});
   Future<EntityTrackPage> tracks(EntityDetails details, {required int offset, int? limit, CancellationToken? cancellationToken});
+}
+
+/// Additional song sections are requested only by their visible owners.
+abstract interface class SongPageRepository {
+  Future<List<EntityRow>> songRecommendations(String uri, {CancellationToken? cancellationToken});
+  Future<List<EntityJson>> songRelatedAlbums(String uri, {CancellationToken? cancellationToken});
+  Future<EntityJson> songCredits(String uri, {CancellationToken? cancellationToken});
+}
+
+abstract interface class UpdatingEntityRepository {
+  Listenable? changesFor(String uri);
 }
 
 /// Recovered online album and native playlist read paths. Dependencies are inert

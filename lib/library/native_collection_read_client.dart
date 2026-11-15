@@ -1,5 +1,6 @@
 import 'package:http/http.dart' as http;
 import 'package:cancellation_token/cancellation_token.dart';
+import 'package:flutter/foundation.dart' show ValueNotifier;
 import 'package:fixnum/fixnum.dart';
 
 import '../async/shared_task.dart';
@@ -40,6 +41,7 @@ class NativeCollectionReadClient {
   final String baseUrl, username, collectionSet;
   final Map<String, String> inheritedHeaders;
   final NativeCollectionHttpSend send;
+  final changes = ValueNotifier(0);
   SharedTask<Map<String, CollectionItem>>? _snapshot;
 
   void invalidate() { _snapshot?.token.cancel(); _snapshot = null; }
@@ -98,5 +100,6 @@ class NativeCollectionReadClient {
     final membership = await pending.wait(cancellationToken);
     if (saved) { membership.putIfAbsent(uri, () => CollectionItem(uri: uri, addedAt: addedAt)..freeze()); }
     else { membership.remove(uri); }
+    changes.value++;
   }
 }
