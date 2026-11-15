@@ -897,6 +897,7 @@ class _SpotifyPlaybackApplicationState extends State<SpotifyPlaybackApplication>
     libraryRepository: _runtime?.libraryRepository,
     entityRepository: _runtime?.entityRepository,
     lyricsRepository: _runtime is NativeDesktopRuntime ? (_runtime as NativeDesktopRuntime).lyricsRepository : null,
+    artistAboutRepository: _runtime is NativeDesktopRuntime ? (_runtime as NativeDesktopRuntime).artistAboutRepository : null,
     artworkBuilder: _runtime == null ? null : (context, item) => _artwork(item.uri, item.images,
       round: item.type == 'artist' || item.type == 'author'),
     homeArtworkBuilder: _runtime == null ? null : (context, item) => _artwork(item.uri, item.images,

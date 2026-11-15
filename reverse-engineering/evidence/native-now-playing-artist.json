@@ -1,0 +1,147 @@
+{
+  "observedDate": "2026-11-15",
+  "source": {
+    "application": "Spotify macOS 1.3.6.1921",
+    "bundlePath": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+    "bundleSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+    "libraryRouting": {
+      "module": 74960,
+      "moduleSha256": "1039c196af51baa0e22dbb233d57af86f6e045780cc3e07f0ee5b821cb7f6194",
+      "functions": [
+        {
+          "name": "gP",
+          "sha256": "edc526a18bddd48c378cf5add7de65a82a43c7ff7043ac90826a1cd8b7c5fcae"
+        },
+        {
+          "name": "gL",
+          "sha256": "8eafa4fd5b8c6e7bf1e2ba75593e4a0185069c8643e14ee60606f5e484470472"
+        }
+      ]
+    },
+    "serviceModule": {
+      "module": 13749,
+      "sha256": "f69834203d7311c1ad556b05cc8f0aabb54ff40241389bf5d909a0716b1204ab"
+    },
+    "cardModule": {
+      "id": 50947,
+      "retainedPath": ".local/artist-about-original/module-50947.js",
+      "retainedSha256": "47c4c64d8524db3ab52d9220d2236d4b0b1fff29de15a4970cabce7960a5bd53"
+    }
+  },
+  "rea": {
+    "version": "6.8.0",
+    "operation": "analyze_javascript_application",
+    "evidenceId": "ev_28736fd84be2332c29b565257ec031d7cbe2416be1d06c335e15e160a01f0e51",
+    "localEvidence": ".local/artist-about-rea-evidence.json",
+    "scope": "Static analysis of original proprietary artist card, follow hook, header and Library binding. No Chromium decompilation."
+  },
+  "originalCard": {
+    "artist": "The sidebar uses the first artist contributor. Missing name or biography omits the section.",
+    "visual": "Original NPVArtistAboutV2 chooses the first landscape gallery group; otherwise it uses an avatar or fallback. The image header carries About the artist, with artist name, monthly listeners, a small follow button and a three-line biography below.",
+    "follow": "Original module568 reads LibraryAPI membership. Module19787 routes artists to LibraryAPI add/remove. Original Library routing gP/gL uses CollectionService Add/Remove for artist URIs even with Liked Songs list platform enabled.",
+    "css": [
+      ".w0GscGIuWtuTAxRdEH83 clamps biography to 3 lines",
+      ".WMHj4_70SHCDap3tyQQs wraps the listener/follow row with an 8px gap",
+      ".CloIVNKyqaXoULDZgpTi uses section padding and background"
+    ],
+    "layoutReference": "reverse-engineering/evidence/native-now-playing-sidebar.json"
+  },
+  "independentExecution": {
+    "command": "node reverse-engineering/experiments/artist-about-original.mjs",
+    "artistUri": "spotify:artist:0000000000000000000001",
+    "bridge": [
+      {
+        "service": "spotify.collection_esperanto.proto.CollectionService",
+        "method": "Add",
+        "payloadHex": "0a2573706f746966793a6172746973743a30303030303030303030303030303030303030303031"
+      },
+      {
+        "service": "spotify.collection_esperanto.proto.CollectionService",
+        "method": "Remove",
+        "payloadHex": "0a2573706f746966793a6172746973743a30303030303030303030303030303030303030303031"
+      }
+    ],
+    "galleryVariant": "image",
+    "avatarVariant": "avatar",
+    "scope": "Unchanged original Library add/remove routing, URI parser, collection client and protobuf encoder execute. Gallery/avatar selection executes unchanged. No account, network, native CollectionService backend or native HTTP WRITE producer executes.",
+    "substitutions": [
+      "An inert Esperanto transport captures calls and returns an empty success response.",
+      "A new export exposes the original CollectionService client without changing its constructor or methods.",
+      "The original bundled protobufjs runtime executes as a standard primitive. A synthetic artist URI is the only entity input."
+    ]
+  },
+  "nativeWrite": {
+    "sourceExecutableSha256": "bf8772d90de830d5223f72584574f8bf04e7fc520f546c2fc1e3271cedef8fca",
+    "producer": "0x101b3c3dc",
+    "responseOwner": "0x101b3dde4",
+    "retainedSource": ".local/rea-session/native-collection-server-page-delta-write-builders.json",
+    "responseSource": ".local/rea-session/native-collection-remote-read-write-methods.json",
+    "schema": "proto/source/collection2v2.proto",
+    "descriptorSha256": "f5406cc7fa39b9f8a36e476af577c946e07d9fd706519288f36c57496a3c4a17",
+    "contract": "POST collection/v2/write, collection-v2 protobuf MIME for Accept and Content-Type. WriteRequest contains username, artist set, one CollectionItem and a 16-hex client_update_id. Removal sets is_removed. Original response owner acknowledges HTTP 200.",
+    "substitutions": [
+      "Dart protobuf uses the original recovered descriptor.",
+      "System clock seconds supply the add/remove time; Random.secure supplies the update ID."
+    ],
+    "scope": "Native WRITE producer and response owner are retained static evidence. They were not independently executed by this experiment. The independently executed original renderer proves artist Add/Remove routing and bridge bytes; the live server check below proves admission and observed membership changes for this app session. Complete original native HTTP/wire parity is not claimed."
+  },
+  "implementation": {
+    "files": [
+      "lib/app/artist_about_card.dart",
+      "lib/entities/artist_about_repository.dart",
+      "lib/library/native_followed_artists.dart"
+    ],
+    "behavior": [
+      "The visible sidebar loads one shared artist overview without popular-track or discography reads.",
+      "Artist route and sidebar share in-flight overview work and a bounded 16-entry, five-minute cache.",
+      "Membership reuses the artist Library snapshot. Acknowledged changes preserve added_at and invalidate only joined Library entries.",
+      "Only explicit follow clicks send writes. Unknown membership offers retry; rejected writes retain the last acknowledged state.",
+      "Card reads/writes and artwork retain caller cancellation. No clocks, polling or playback-position subscriptions are added."
+    ]
+  },
+  "verification": {
+    "live": {
+      "environment": "Isolated macOS debug probe restored a copy of the app-owned saved session through NativeDesktopRuntime; no playback engine was bound. The actual selected HTTP provider was preserved. The installed release kept running.",
+      "phase": "complete",
+      "artist": "Boris Brejcha",
+      "biography": 592,
+      "gallery": true,
+      "imageCount": 1,
+      "monthlyListeners": 1902962,
+      "following": false,
+      "serverConfirmedToggle": true,
+      "serverConfirmedRestore": true,
+      "method": "After each write, invalidate only the artist membership snapshot and read fresh server pages. Restore initial membership in finally."
+    },
+    "flutter": {
+      "hotReload": "succeeded",
+      "widths": [
+        280,
+        356,
+        420
+      ],
+      "textScales": [
+        1,
+        1.5
+      ],
+      "cases": [
+        "Artwork/header/name/listener count/biography render in the sidebar.",
+        "Follow and Following clicks toggle state and refresh Library.",
+        "A failed follow preserves Follow and shows the existing error snackbar.",
+        "The fixed sidebar header stays outside the scrolling card body."
+      ],
+      "runtimeErrors": 0,
+      "scope": "Layout and pointer checks use synthetic artist data and one local image. Live metadata and server membership checks are separate."
+    },
+    "checks": [
+      "3 focused tests passed: native_followed_artists_test.dart and native_saved_tracks_test.dart.",
+      "Targeted analysis of the new and directly related owners/tests reports no issues.",
+      "The wider runtime/composition analysis retains existing unrelated lint warnings."
+    ]
+  },
+  "limits": [
+    "Original native UI capture was unavailable because the REA host lacks Screen Recording and Accessibility grants. User-provided screenshots, retained renderer/CSS and original routine execution supplied the reference.",
+    "The card opens the existing artist route; the original expanded biography modal is not ported.",
+    "No installed release replacement or playback/licensing reliability claim is made."
+  ]
+}

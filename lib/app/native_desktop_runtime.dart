@@ -11,6 +11,7 @@ import 'package:cancellation_token/cancellation_token.dart';
 import '../entities/repository.dart';
 import '../entities/models.dart';
 import '../entities/native_artist_repository.dart';
+import '../entities/artist_about_repository.dart';
 import '../entities/native_playlist_repository.dart';
 import '../home/repository.dart';
 import '../home/models.dart';
@@ -20,6 +21,7 @@ import '../library/repository.dart';
 import '../library/saved_tracks.dart';
 import '../library/saved_playlists.dart';
 import '../library/native_collection_read_client.dart';
+import '../library/native_followed_artists.dart';
 import '../library/native_saved_track_service.dart';
 import '../library/native_saved_tracks.dart';
 import '../library/native_rootlist_repository.dart';
@@ -242,6 +244,7 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
   SearchRepository? _search;
   HomeRepository? _home;
   EntityRepository? _entities;
+  ArtistAboutRepository? _artistAbout;
   LibraryRepository? _library;
   SavedTracksRepository? _savedTracksRepository;
   final _collections = <String, NativeCollectionReadClient>{};
@@ -271,6 +274,7 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
   @override SearchRepository? get searchRepository => ready ? _search ??= _makeSearch() : null;
   @override HomeRepository? get homeRepository => ready ? _home ??= _makeHome() : null;
   @override EntityRepository? get entityRepository => ready ? _entities ??= _makeEntities() : null;
+  ArtistAboutRepository? get artistAboutRepository => ready ? _artistAbout ??= _makeArtistAbout() : null;
   LyricsRepository? get lyricsRepository => ready ? _lyrics ??= _makeLyrics() : null;
   @override SavedTracksRepository? get savedTracksRepository => ready
     ? _savedTracksRepository ??= _makeSavedTracks() : null;
@@ -1102,11 +1106,27 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
       trackRepository: _NativeTrackEntityRepository((uris, {cancellationToken}) {
         _check(epoch); return _describePlaylistTracks(uris, cancellationToken: cancellationToken);
       }), artistRepository: NativeArtistEntityRepository(session.loader,
+        readOverview: artistAboutRepository!.overview,
         readPopularTracks: (uri, {cancellationToken}) { _check(epoch); return _readPlaylist(uri,
           caller: PlaylistSyncCaller.SYNC_POLICY, cancellationToken: cancellationToken); },
         preReleaseV2: false, describeTracks: (uris, {cancellationToken}) {
           _check(epoch); return _describePlaylistTracks(uris, cancellationToken: cancellationToken);
         }));
+  }
+
+  ArtistAboutRepository _makeArtistAbout() {
+    final epoch = _epoch, session = _pathfinder();
+    final followed = NativeFollowedArtists(membership: _collection('artist'),
+      send: (request) { _check(epoch); return _sendNativeServer(request, epoch); },
+      onChanged: () { if (_library case final NativeLibraryRepository library) library.artistMembershipChanged(); });
+    return ArtistAboutRepository(readOverview: (uri, {cancellationToken}) async {
+      await session.prepare(cancellationToken: cancellationToken);
+      final response = await session.loader.load(NativeArtistEntityRepository.overviewOperation,
+        {'uri': uri, 'locale': '', 'preReleaseV2': false},
+        headers: const {'spotify-app-version': '896000000'}, cancellationToken: cancellationToken);
+      if (response is! Map) throw const FormatException('Spotify artist overview is unavailable');
+      return response.cast<String, Object?>();
+    }, contains: followed.contains, setFollowing: followed.setFollowing);
   }
 
   SpotifyEntityMetadata? _cachedNativeTrackDescription(String uri) {
@@ -1309,6 +1329,7 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
       final target = request.url.substring(matched.length);
       return request.method == 'POST' && (target == '/extended-metadata/v0/extended-metadata' ||
         target == '/collection/v2/paging' ||
+        target == '/collection/v2/write' ||
         target == '/playlist/v2/playlist/37i9dQZF1F5p3rmiWPIYgZ/changes' ||
         target == '${nativeRootlistPath(username!)}/changes' ||
         RegExp(r'^/playplay/v1/key/[0-9a-f]{40}$').hasMatch(target)) ||
@@ -2142,6 +2163,7 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
     _clientTokens?.close(); _clientTokens = null;
     _credentials = null; _grant = null; _endpoints = const []; _search = null; _home = null; _entities = null; _library = null;
     _savedTracksRepository = null;
+    _artistAbout = null;
     _collections.clear();
     _lyrics = null;
     _libraryImageUrlTemplate = null;

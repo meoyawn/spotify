@@ -10,12 +10,13 @@ import 'repository.dart';
 /// Outgoing source execution: reverse-engineering/evidence/native-renderer-artist.json.
 class NativeArtistEntityRepository implements EntityRepository {
   NativeArtistEntityRepository(this.loader, {required this.describeTracks,
-    required this.preReleaseV2, this.readPopularTracks, this.locale = ''});
+    required this.preReleaseV2, this.readPopularTracks, this.readOverview, this.locale = ''});
 
   final PathfinderLoader loader;
   final Future<Map<String, EntityRow>> Function(List<String> uris, {CancellationToken? cancellationToken}) describeTracks;
   final Future<playlist.SelectedListContent> Function(String uri, {CancellationToken? cancellationToken})? readPopularTracks;
   final bool preReleaseV2;
+  final Future<EntityJson> Function(String uri, {CancellationToken? cancellationToken})? readOverview;
   final String locale;
   final _tracks = <String, _ArtistTracks>{};
   final _sectionInfo = <String, ({String name, Map<String, int> counts, DateTime expires})>{};
@@ -45,9 +46,9 @@ class NativeArtistEntityRepository implements EntityRepository {
     if (!RegExp(r'^spotify:artist:[0-9A-Za-z]{22}$').hasMatch(uri)) {
       throw const EntityQueryError({'message': 'This artist URI is unavailable.'});
     }
-    final overview = await _query(overviewOperation,
+    final overview = await (readOverview?.call(uri, cancellationToken: cancellationToken) ?? _query(overviewOperation,
       {'uri': uri, 'locale': locale, 'preReleaseV2': preReleaseV2},
-      headers: const {'spotify-app-version': '896000000'}, cancellationToken: cancellationToken);
+      headers: const {'spotify-app-version': '896000000'}, cancellationToken: cancellationToken));
     final artist = _artist(_map(overview['data'])['artistUnion']);
     _rememberSectionInfo(uri, artist);
     final read = readPopularTracks;

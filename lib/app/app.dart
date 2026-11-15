@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../entities/entities.dart';
+import '../entities/artist_about_repository.dart';
 import '../home/home.dart';
 import '../library/library.dart';
 import '../lyrics/repository.dart';
@@ -27,6 +28,7 @@ class SpotifyDesktopApp extends StatefulWidget {
     this.searchRepository,
     this.entityRepository,
     this.lyricsRepository,
+    this.artistAboutRepository,
     this.playbackController,
     this.playbackBuilder,
     this.onSelect,
@@ -61,6 +63,7 @@ class SpotifyDesktopApp extends StatefulWidget {
   final SearchRepository? searchRepository;
   final EntityRepository? entityRepository;
   final LyricsRepository? lyricsRepository;
+  final ArtistAboutRepository? artistAboutRepository;
   final PlaybackController? playbackController;
   final DesktopPlaybackBuilder? playbackBuilder;
   final ValueChanged<SearchItem>? onSelect;
@@ -148,6 +151,7 @@ class _SpotifyDesktopAppState extends State<SpotifyDesktopApp> {
         entityController: _entityFor(route),
         playbackController: widget.playbackController,
         lyricsRepository: widget.lyricsRepository,
+        artistAboutRepository: widget.artistAboutRepository,
         playbackBuilder: widget.playbackBuilder,
         playbackArtworkBuilder: widget.playbackArtworkBuilder,
         trackSaveButtonBuilder: widget.trackSaveButtonBuilder,

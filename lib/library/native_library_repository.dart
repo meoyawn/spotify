@@ -31,6 +31,11 @@ class NativeLibraryRepository implements RefreshableLibraryRepository, LibrarySe
   Future<void> _playlistWrites = Future.value();
   int _queuedPlaylistWrites = 0;
 
+  void artistMembershipChanged() {
+    _snapshot?.token.cancel();
+    _snapshot = null;
+  }
+
   @override
   Future<bool> containsPlaylist(String uri, {CancellationToken? cancellationToken}) async =>
     (await _rootEntries(cancellationToken ?? CancellationToken())).any((entry) => entry.uri == uri);

@@ -1,5 +1,6 @@
 import 'package:http/http.dart' as http;
 import 'package:cancellation_token/cancellation_token.dart';
+import 'package:fixnum/fixnum.dart';
 
 import '../async/shared_task.dart';
 import '../protocol/generated/collection2v2.pb.dart';
@@ -89,12 +90,13 @@ class NativeCollectionReadClient {
     }
   }
 
-  Future<void> recordAcknowledgedChange(String uri, bool saved, {CancellationToken? cancellationToken}) async {
+  Future<void> recordAcknowledgedChange(String uri, bool saved,
+      {Int64? addedAt, CancellationToken? cancellationToken}) async {
     final pending = _snapshot;
     if (pending == null) return;
     if (pending.token.isCancelled) return;
     final membership = await pending.wait(cancellationToken);
-    if (saved) { membership.putIfAbsent(uri, () => CollectionItem(uri: uri)..freeze()); }
+    if (saved) { membership.putIfAbsent(uri, () => CollectionItem(uri: uri, addedAt: addedAt)..freeze()); }
     else { membership.remove(uri); }
   }
 }

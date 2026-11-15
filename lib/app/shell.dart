@@ -11,6 +11,7 @@ import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../entities/entities.dart';
+import '../entities/artist_about_repository.dart';
 import '../home/home.dart';
 import '../home/destinations_controller.dart';
 import '../home/destinations_repository.dart';
@@ -46,6 +47,7 @@ class SpotifyDesktopShell extends StatefulWidget {
     super.key, required this.navigation, required this.route,
     this.homeController, this.libraryController, this.searchController, this.entityController, this.playbackController, this.playbackBuilder,
     this.lyricsRepository,
+    this.artistAboutRepository,
     this.onSelect, this.onHomeSelect, this.onOpenHomeSection, this.onLogIn,
     this.onQuickSearchPlay, this.onLogOut,
     this.accountName,
@@ -66,6 +68,7 @@ class SpotifyDesktopShell extends StatefulWidget {
   final EntityController? entityController;
   final PlaybackController? playbackController;
   final LyricsRepository? lyricsRepository;
+  final ArtistAboutRepository? artistAboutRepository;
   final DesktopPlaybackBuilder? playbackBuilder;
   final ValueChanged<SearchItem>? onSelect;
   final ValueChanged<SearchItem>? onQuickSearchPlay;
@@ -554,6 +557,9 @@ class SpotifyDesktopShellState extends State<SpotifyDesktopShell> implements Ges
       state: _playbackState!, artworkBuilder: widget.playbackArtworkBuilder,
       trackSaveButtonBuilder: widget.trackSaveButtonBuilder,
       lyricsController: _lyrics, onShowLyrics: openLyrics, onNavigate: navigateToEntity,
+      artistAboutRepository: widget.artistAboutRepository,
+      artistArtworkBuilder: widget.entityArtworkBuilder,
+      onLibraryChanged: () { unawaited(widget.libraryController?.refresh(invalidate: false)); },
       onClose: () { _showNowPlaying = false; _sidebarChanges.value++; });
     final playback = DesktopPlaybackBar(controller: widget.playbackController,
       lyricsActive: widget.route.destination == DesktopDestination.lyrics,

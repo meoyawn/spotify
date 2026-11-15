@@ -2,22 +2,29 @@ import 'package:flutter/material.dart';
 
 import '../playback/models.dart';
 import '../entities/models.dart';
+import '../entities/artist_about_repository.dart';
+import '../entities/view.dart' show EntityArtworkBuilder;
 import '../lyrics/controller.dart';
 import '../lyrics/view.dart';
 import 'playback_bar.dart';
 import 'share_links.dart';
 import 'desktop_icon_button.dart';
 import 'shell_icons.dart';
+import 'artist_about_card.dart';
 
 /// Cover-art presentation recovered in native-now-playing-sidebar.json.
 class NowPlayingPanel extends StatelessWidget {
   const NowPlayingPanel({super.key, required this.state, this.artworkBuilder,
     this.lyricsController, this.onShowLyrics, this.onNavigate,
+    this.artistAboutRepository, this.artistArtworkBuilder, this.onLibraryChanged,
     this.trackSaveButtonBuilder, required this.onClose});
   final PlaybackState state;
   final LyricsController? lyricsController;
   final VoidCallback? onShowLyrics;
   final ValueChanged<EntityLink>? onNavigate;
+  final ArtistAboutRepository? artistAboutRepository;
+  final EntityArtworkBuilder? artistArtworkBuilder;
+  final VoidCallback? onLibraryChanged;
   final PlaybackArtworkBuilder? artworkBuilder;
   final TrackSaveButtonBuilder? trackSaveButtonBuilder;
   final VoidCallback onClose;
@@ -42,6 +49,8 @@ class NowPlayingPanel extends StatelessWidget {
     final contextLink = EntityLink.fromJson({'uri': contextUri, 'name': title},
       type: contextUri.split(':').elementAtOrNull(1) ?? '');
     final next = state.nextItems.firstOrNull;
+    final artistUri = artists.map((artist) => artist['uri']).whereType<String>()
+      .where((uri) => RegExp(r'^spotify:artist:[0-9A-Za-z]{22}$').hasMatch(uri)).firstOrNull;
     final details = Row(children: [Expanded(child: Column(
       crossAxisAlignment: CrossAxisAlignment.stretch, mainAxisSize: MainAxisSize.min, children: [
       InkWell(onTap: track == null || onNavigate == null ? null : () => onNavigate!(track),
@@ -81,6 +90,10 @@ class NowPlayingPanel extends StatelessWidget {
           const SizedBox(height: 24),
           if (lyricsController != null && item.type == 'track')
             LyricsView(controller: lyricsController!, preview: true, onExpand: onShowLyrics),
+          if (artistAboutRepository != null && artistUri != null && item.type == 'track')
+            ArtistAboutCard(uri: artistUri, repository: artistAboutRepository!,
+              artworkBuilder: artistArtworkBuilder, onNavigate: onNavigate,
+              onLibraryChanged: onLibraryChanged),
           if (next != null) DecoratedBox(decoration: BoxDecoration(color: const Color(0xff1f1f1f),
             borderRadius: BorderRadius.circular(8)), child: Padding(padding: const EdgeInsets.all(16),
             child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
