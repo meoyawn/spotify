@@ -149,6 +149,7 @@ class SpotifyDesktopShellState extends State<SpotifyDesktopShell> implements Ges
         if (left != null && left.isFinite && left >= 280) _libraryWidth = left;
         if (right != null && right.isFinite) _nowPlayingWidth = right.clamp(280, 420);
         _collapsed = preferences.getBool('ui.library.collapsed') ?? _collapsed;
+        _showNowPlaying = preferences.getBool('ui.now-playing.visible') ?? _showNowPlaying;
       });
       _sidebarChanges.value++;
     } on MissingPluginException { /* A standalone shell can have no native preferences. */ }
@@ -163,6 +164,7 @@ class SpotifyDesktopShellState extends State<SpotifyDesktopShell> implements Ges
         if (_libraryWidth case final width?) preferences.setDouble('ui.library.width', width),
         if (_nowPlayingWidth case final width?) preferences.setDouble('ui.now-playing.width', width),
         preferences.setBool('ui.library.collapsed', _collapsed),
+        preferences.setBool('ui.now-playing.visible', _showNowPlaying),
       ]);
     } on MissingPluginException { /* Resizing also works without persistence. */ }
     on PlatformException catch (error) { debugPrint('Sidebar preferences: ${error.message}'); }
@@ -172,6 +174,20 @@ class SpotifyDesktopShellState extends State<SpotifyDesktopShell> implements Ges
     _sidebarWidthsEdited = true; _collapsed = !_collapsed;
     _sidebarChanges.value++;
     unawaited(_saveSidebarWidths());
+  }
+
+  void _setNowPlayingVisible(bool visible) {
+    if (_showNowPlaying == visible) return;
+    _sidebarWidthsEdited = true;
+    _showNowPlaying = visible;
+    _sidebarChanges.value++;
+    unawaited(_saveSidebarWidths());
+  }
+
+  /// Playback artwork toggles the Now Playing sidebar.
+  void toggleNowPlaying() {
+    if (_playbackState?.item == null || _playbackState?.isAdvertising == true) return;
+    _setNowPlayingVisible(!_showNowPlaying);
   }
 
   Future<void> _startWindowDrag() async {
@@ -561,10 +577,12 @@ class SpotifyDesktopShellState extends State<SpotifyDesktopShell> implements Ges
       artistAboutRepository: widget.artistAboutRepository,
       artistArtworkBuilder: widget.entityArtworkBuilder,
       onLibraryChanged: () { unawaited(widget.libraryController?.refresh(invalidate: false)); },
-      onClose: () { _showNowPlaying = false; _sidebarChanges.value++; });
+      onClose: () => _setNowPlayingVisible(false));
     final playback = DesktopPlaybackBar(controller: widget.playbackController,
       lyricsActive: widget.route.destination == DesktopDestination.lyrics,
       onShowLyrics: _lyrics == null ? null : openLyrics,
+      onToggleNowPlaying: toggleNowPlaying,
+      artworkBuilder: widget.playbackArtworkBuilder,
       builder: widget.playbackBuilder, trackSaveButtonBuilder: widget.trackSaveButtonBuilder);
     final navigation = _globalNav();
     return (expandedLibrary: expandedLibrary, collapsedLibrary: collapsedLibrary,
@@ -608,8 +626,11 @@ class SpotifyDesktopShellState extends State<SpotifyDesktopShell> implements Ges
         builder: (context, _, _) {
       final showLibrary = constraints.maxWidth >= 600;
       final collapsed = _collapsed || constraints.maxWidth < 840;
-      final showRight = constraints.maxWidth >= 1200 && _showNowPlaying && _playbackState?.item != null;
-      final rightWidth = showRight ? (_nowPlayingWidth ?? 356).clamp(280, 420).toDouble() : 0.0;
+      // At 800px: library rail 72, main 416, right 280, padding/gutters 32.
+      final showRight = constraints.maxWidth >= 800 && _showNowPlaying && _playbackState?.item != null &&
+        _playbackState?.isAdvertising != true;
+      final rightLimit = (constraints.maxWidth - 32 - 72 - 416).clamp(280, 420);
+      final rightWidth = showRight ? (_nowPlayingWidth ?? 356).clamp(280, rightLimit).toDouble() : 0.0;
       // Original main-view minimum416, outer padding16, and eight-pixel gutters.
       final panelBudget = constraints.maxWidth - 16 - (showLibrary ? 8 : 0) - (showRight ? 8 : 0);
       final leftMaximum = panelBudget - 416 - rightWidth;

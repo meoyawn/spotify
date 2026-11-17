@@ -1,0 +1,244 @@
+{
+  "source": {
+    "application": "Spotify macOS arm64",
+    "retainedTargetVersion": "1.3.6.1921",
+    "rendererCaptures": [
+      {
+        "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+        "sha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f"
+      },
+      {
+        "path": ".local/native-scripts/df8f879087a9bfebbe884a4c6b763227b8edd363a02475bbebc5f2775eae0104.js",
+        "sha256": "df8f879087a9bfebbe884a4c6b763227b8edd363a02475bbebc5f2775eae0104"
+      }
+    ],
+    "ranges": [
+      {
+        "name": "module-31774",
+        "sourcePath": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+        "start": 2157034,
+        "end": 2157621,
+        "sha256": "d49070e940eb2c01cfafca93f786fa635e087abaf6d419b0b0592abb97e969ac"
+      },
+      {
+        "name": "module-17436",
+        "sourcePath": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+        "start": 2157697,
+        "end": 2169228,
+        "sha256": "31cb92c4e7c63fe890be53b649b5f38e47e61c37696e0786a57aa6f8c7e4769b"
+      },
+      {
+        "name": "artwork-toggle-hook",
+        "sourcePath": ".local/native-scripts/df8f879087a9bfebbe884a4c6b763227b8edd363a02475bbebc5f2775eae0104.js",
+        "start": 28211,
+        "end": 28361,
+        "sha256": "a42a30fb6dd4b57cf8beb1c5075da19d1205b4dca554f9b990670de82a2a1877"
+      },
+      {
+        "name": "function-28408",
+        "sourcePath": ".local/native-scripts/df8f879087a9bfebbe884a4c6b763227b8edd363a02475bbebc5f2775eae0104.js",
+        "start": 28408,
+        "end": 29198,
+        "sha256": "6630b2f920927635cc307618a899f222d4f1219dde892b36f93359f0e313efc6"
+      },
+      {
+        "name": "function-37593",
+        "sourcePath": ".local/native-scripts/df8f879087a9bfebbe884a4c6b763227b8edd363a02475bbebc5f2775eae0104.js",
+        "start": 37593,
+        "end": 38735,
+        "sha256": "1865fe3131284923f151f92632595e52f5ef8191efcf9f024ebf2a600f47570d"
+      }
+    ],
+    "rangeOffsetUnit": "UTF-16 code units in the original captured JavaScript source",
+    "scope": "Proprietary Spotify renderer only. No Chromium decompilation or installed-original modification."
+  },
+  "rea": {
+    "version": "6.8.0",
+    "interface": "local CLI",
+    "analyses": [
+      {
+        "operation": "analyze_javascript_application",
+        "evidenceId": "ev_ae03fe358467d8871ff9fb9263f051272224c0416c0c75320fac2fd12ead7233",
+        "summaryEvidenceId": "ev_1cc75c72816819e246aff3478ee4027208c3193dc88738829a267c89ae90b7b3",
+        "retainedEvidence": ".local/sidebar-toggle-player-rea.json",
+        "scope": "Both original cover-art component routines",
+        "coverage": {
+          "application": "partial",
+          "semantic": "partial",
+          "applicationUnknowns": 11,
+          "semanticUnknowns": 252
+        }
+      },
+      {
+        "operation": "analyze_javascript_application",
+        "evidenceId": "ev_832832eece5b90ba91288c58811a3bb3a38c41940c376af6842d991d02c9b0ed",
+        "summaryEvidenceId": "ev_b9160e6b5d875af6fa6fc2098ed6f966ae3222a02d3a6396668fab4e468f1649",
+        "retainedEvidence": ".local/sidebar-toggle-state-rea.json",
+        "scope": "Original RightPanelState factory",
+        "coverage": {
+          "application": "partial",
+          "semantic": "partial",
+          "applicationUnknowns": 130,
+          "semanticUnknowns": 2129
+        }
+      }
+    ]
+  },
+  "originalExecution": {
+    "control": "cover-art-button",
+    "labelKey": "web-player.now-playing-view.label",
+    "originalComponents": [
+      "iE legacy cover artwork",
+      "aD trait-backed cover artwork"
+    ],
+    "sharedHook": "iy",
+    "event": "npv_button_click",
+    "closeEvent": "panel_close_click",
+    "persistenceKey": "ui.right_sidebar_content",
+    "transitions": [
+      {
+        "from": "disabled",
+        "event": "npv_button_click",
+        "to": "now_playing_view"
+      },
+      {
+        "from": "now_playing_view",
+        "event": "npv_button_click",
+        "to": "disabled"
+      },
+      {
+        "from": "disabled",
+        "event": "npv_button_click",
+        "to": "now_playing_view"
+      },
+      {
+        "from": "now_playing_view",
+        "event": "panel_close_click",
+        "to": "disabled"
+      }
+    ],
+    "preferenceWrites": [
+      {
+        "key": "ui.right_sidebar_content",
+        "value": "now_playing_view"
+      },
+      {
+        "key": "ui.right_sidebar_content",
+        "value": "disabled"
+      },
+      {
+        "key": "ui.right_sidebar_content",
+        "value": "now_playing_view"
+      },
+      {
+        "key": "ui.right_sidebar_content",
+        "value": "disabled"
+      }
+    ],
+    "restoredState": "disabled",
+    "substitutions": [
+      "React useCallback returns its callback; JSX creates inert element records.",
+      "XState createMachine captures the original config and assign captures assignments; the harness evaluates original guards and selected entry functions. The full XState interpreter is not executed.",
+      "Zod string schema uses valid-value passthrough for original enum fixtures; invalid preference handling is not covered.",
+      "Player state, artwork projections, menu/drop wrappers, visual traits and analytics are inert synthetic providers. No network or playback is executed."
+    ],
+    "scope": "Executes both original cover-art component callbacks, the shared original toggle hook, original panel machine builder/guards and preference entry actions. Proves music artwork toggles disabled/now_playing_view, close hides it, and saved choice is read at reconstruction."
+  },
+  "implementation": {
+    "owners": [
+      "lib/app/playback_bar.dart",
+      "lib/app/shell.dart",
+      "lib/app/playback_application.dart"
+    ],
+    "controls": [
+      "Playback-bar artwork toggles the right sidebar with pointer, Enter or Space.",
+      "The existing panel close button hides it; the same preference is restored at shell startup.",
+      "Both the ordinary shell bar and the production custom playback bar route to the shell owner."
+    ],
+    "preferenceKey": "ui.now-playing.visible",
+    "retainedWidthKey": "ui.now-playing.width",
+    "layout": {
+      "minimumShellWidth": 800,
+      "libraryRail": 72,
+      "mainMinimum": 416,
+      "sidebarMinimum": 280,
+      "paddingAndGutters": 32,
+      "behavior": "Clamp the displayed sidebar width to available space; keep the saved width. Below 800 hide the panel and disable the artwork toggle without changing the saved visibility."
+    }
+  },
+  "flutterVerification": {
+    "environment": "Isolated macOS debug preview, unique dev.meoyawn.sidebarTogglePreview bundle, real native SharedPreferences, synthetic playback, no Spotify connection.",
+    "hotReload": "Succeeded during development; final controls probed after recompilation.",
+    "interactionCaseCount": 25,
+    "cases": [
+      "initial",
+      "artwork closes",
+      "artwork reopens",
+      "close button hides",
+      "hidden choice survives a new song",
+      "hidden choice restores on shell recreation",
+      "reopen after shell recreation",
+      "first state event after shell recreation",
+      "position update preserves artwork",
+      "production custom playback builder",
+      "custom artwork closes",
+      "custom artwork reopens",
+      "focus artwork",
+      "keyboard Space closes",
+      "keyboard Enter reopens",
+      "fits width 1000",
+      "fits width 840",
+      "fits width 800",
+      "narrow window hides panel",
+      "narrow artwork disabled",
+      "widen restores panel and width",
+      "open preference restores on shell recreation",
+      "empty playback removes artwork and sidebar",
+      "music resumes with retained visible choice",
+      "leave closed for process restart"
+    ],
+    "narrowWidths": [
+      1000,
+      840,
+      800,
+      799
+    ],
+    "retainedWidth": 400,
+    "errors": [],
+    "playbackCalls": [],
+    "processRestart": {
+      "previousPid": 35668,
+      "newPid": 45938,
+      "closedChoiceRestored": true,
+      "retainedWidth": 400.0,
+      "scope": "Quit the isolated preview process, launch it again, and inspect the recreated real shell against native SharedPreferences."
+    },
+    "analysis": "No errors or warnings in the three edited Dart files; eight existing style/deprecation infos.",
+    "shellSuite": {
+      "current": {
+        "passed": 7,
+        "failed": 7
+      },
+      "unchangedBaseline": {
+        "passed": 7,
+        "failed": 7
+      },
+      "sameFailures": true,
+      "failures": [
+        "unconnected root keeps recovered shell dimensions and cannot imply authentication or playback",
+        "encoded search routes share one input and preserve supplied results across selection and history",
+        "unsupported initial route stays inside shell and home navigation recovers",
+        "supplied Home survives navigation and replaces the owned backend without stale shelves",
+        "sidebar and expanded Library share queries, selection, filters and backend lifetime",
+        "Home selection opens entity pages with caller-owned actions and cached navigation history",
+        "repository replacement retires pending and cached entity pages across history"
+      ],
+      "cause": "Existing Semantics increase/value assertion and cascading pumpAndSettle timeout. The baseline uses git HEAD versions of the three edited files."
+    },
+    "limits": [
+      "Original React/browser layout is not executed; the original machine interpreter is substituted as recorded above.",
+      "Synthetic playback proves UI interaction and persistence, not live streaming or licensing.",
+      "The already-running installed release remains running; no release installation is performed."
+    ]
+  }
+}

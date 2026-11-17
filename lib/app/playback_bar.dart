@@ -25,13 +25,14 @@ typedef TrackSaveButtonBuilder = Widget Function(BuildContext context, String tr
 class DesktopPlaybackBar extends StatefulWidget {
   const DesktopPlaybackBar({super.key, this.controller, this.builder,
     this.lyricsActive = false,
-    this.onShowLyrics, this.onNavigate, this.onToggleMute,
+    this.onShowLyrics, this.onNavigate, this.onToggleMute, this.onToggleNowPlaying,
     this.onVolumeChanged, this.volume = 1, this.artworkBuilder, this.trackSaveButtonBuilder});
 
   final PlaybackController? controller;
   final VoidCallback? onShowLyrics;
   final bool lyricsActive;
   final VoidCallback? onToggleMute;
+  final VoidCallback? onToggleNowPlaying;
   final ValueChanged<EntityLink>? onNavigate;
   final DesktopPlaybackBuilder? builder;
   final ValueChanged<double>? onVolumeChanged;
@@ -72,6 +73,7 @@ class _DesktopPlaybackBarState extends State<DesktopPlaybackBar> {
       return _PlayerContents(controller: widget.controller, state: state,
         lyricsActive: widget.lyricsActive,
         onShowLyrics: widget.onShowLyrics,
+        onToggleNowPlaying: widget.onToggleNowPlaying,
         onNavigate: widget.onNavigate, onToggleMute: widget.onToggleMute,
         onVolumeChanged: widget.onVolumeChanged, volume: widget.volume, artworkBuilder: widget.artworkBuilder,
         trackSaveButtonBuilder: widget.trackSaveButtonBuilder);
@@ -98,7 +100,7 @@ bool _sameControls(PlaybackState a, PlaybackState b) {
 class _PlayerContents extends StatelessWidget {
   const _PlayerContents({required this.controller, required this.state,
     this.lyricsActive = false,
-    this.onShowLyrics, this.onNavigate, this.onToggleMute,
+    this.onShowLyrics, this.onNavigate, this.onToggleMute, this.onToggleNowPlaying,
     required this.onVolumeChanged, required this.volume, this.artworkBuilder,
     this.trackSaveButtonBuilder});
 
@@ -106,6 +108,7 @@ class _PlayerContents extends StatelessWidget {
   final VoidCallback? onShowLyrics;
   final bool lyricsActive;
   final VoidCallback? onToggleMute;
+  final VoidCallback? onToggleNowPlaying;
   final ValueChanged<EntityLink>? onNavigate;
   final PlaybackState? state;
   final ValueChanged<double>? onVolumeChanged;
@@ -126,7 +129,7 @@ class _PlayerContents extends StatelessWidget {
     int? contentsBand;
     return LayoutBuilder(builder: (context, constraints) {
     final band = constraints.maxWidth < 480 ? 0 : constraints.maxWidth < 600 ? 1
-      : constraints.maxWidth < 960 ? 2 : 3;
+      : constraints.maxWidth < 800 ? 2 : constraints.maxWidth < 960 ? 3 : 4;
     if (contents != null && contentsBand == band) return contents!;
     contentsBand = band;
     final current = state;
@@ -136,6 +139,7 @@ class _PlayerContents extends StatelessWidget {
     final canToggle = hasState && (current.isPaused
         ? current.restrictions.canResume : current.restrictions.canPause);
     final metadata = current?.item;
+    final toggleNowPlaying = constraints.maxWidth >= 800 ? onToggleNowPlaying : null;
     final trackUri = metadata?.metadata['original_uri'] ?? metadata?.uri;
     final saveButton = trackUri != null && RegExp(r'^spotify:track:[0-9A-Za-z]{22}$').hasMatch(trackUri)
       ? trackSaveButtonBuilder?.call(context, trackUri) : null;
@@ -201,8 +205,11 @@ class _PlayerContents extends StatelessWidget {
         if (constraints.maxWidth >= 600) Expanded(flex: 3, child: SpotifyLinkContextMenu(uri: trackUri ?? '', child: Padding(
           padding: const EdgeInsets.only(right: 16),
           child: Row(children: [
-            if (metadata != null) ...[SizedBox.square(dimension: 56,
-              child: artworkBuilder?.call(context, metadata) ?? const ColoredBox(color: Color(0xff282828))),
+            if (metadata != null) ...[Tooltip(message: 'Now Playing view', excludeFromSemantics: true,
+              child: Semantics(label: 'Now Playing view', button: true, enabled: toggleNowPlaying != null,
+                child: InkWell(onTap: toggleNowPlaying, borderRadius: BorderRadius.circular(4),
+                  child: SizedBox.square(dimension: 56,
+                    child: artworkBuilder?.call(context, metadata) ?? const ColoredBox(color: Color(0xff282828)))))),
               const SizedBox(width: 16)],
             Flexible(child: Column(mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start, children: [

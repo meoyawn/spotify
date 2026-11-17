@@ -953,6 +953,7 @@ class _SpotifyPlaybackApplicationState extends State<SpotifyPlaybackApplication>
       }
       return DesktopPlaybackBar(controller: controller,
         lyricsActive: _shell.currentState?.widget.route.destination == DesktopDestination.lyrics,
+        onToggleNowPlaying: () => _shell.currentState?.toggleNowPlaying(),
         onShowLyrics: runtime is NativeDesktopRuntime && runtime.ready ? () => _shell.currentState?.openLyrics() : null,
         onNavigate: (link) => _shell.currentState?.navigateToEntity(link),
         onToggleMute: _backend == null ? null : () {
