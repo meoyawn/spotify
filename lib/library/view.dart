@@ -5,6 +5,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../app/loading.dart';
 import '../app/shell_icons.dart';
 import '../app/desktop_icon_button.dart';
 import '../app/share_links.dart';
@@ -133,7 +134,7 @@ class _LibraryViewState extends State<LibraryView> {
           Expanded(child: page == null
             ? state.phase == LibraryPhase.failed
                 ? _status('Couldn’t load Your Library', retry: widget.controller.refresh)
-                : const Center(child: CircularProgressIndicator(color: Color(0xff1ed760)))
+                : const SpotifyLoadingPage()
             : state.items.isEmpty
                 ? _status(state.phase == LibraryPhase.loading ? 'Searching Your Library…'
                   : state.query.textFilter.isEmpty ? 'Your Library is empty' : 'No results found')

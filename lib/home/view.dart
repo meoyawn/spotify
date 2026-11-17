@@ -3,6 +3,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
+import '../app/loading.dart';
 import '../app/share_links.dart';
 import '../content/advertising.dart';
 
@@ -93,7 +94,7 @@ class _HomeViewState extends State<HomeView> {
         if (page == null) {
           return switch (state.phase) {
             HomePhase.failed => _status('Couldn’t load Home', retry: widget.controller.refresh),
-            _ => const Center(child: CircularProgressIndicator(color: Color(0xff1ed760))),
+            _ => const SpotifyLoadingPage(),
           };
         }
         final sections = page.sections.where((section) => !isAdvertisingSection(section.sourceType)).toList(growable: false);

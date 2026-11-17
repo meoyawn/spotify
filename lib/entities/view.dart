@@ -62,9 +62,11 @@ class EntityView extends StatefulWidget {
 
 class _EntityViewState extends State<EntityView> {
   final _filterInput = TextEditingController();
+  final _scroll = ScrollController();
   final _trackFocus = FocusNode(debugLabel: 'Entity tracks');
   final _trackListKey = GlobalKey();
   bool _revealScheduled = false;
+  bool _loadMoreScheduled = false;
   bool _showFilter = false;
   String _filter = '';
   int? _selectedRowIndex;
@@ -115,8 +117,29 @@ class _EntityViewState extends State<EntityView> {
   void dispose() {
     _disposeSong();
     _filterInput.dispose();
+    _scroll.dispose();
     _trackFocus.dispose();
     super.dispose();
+  }
+
+  void _loadMoreAfterLayout() {
+    final controller = widget.controller;
+    final state = controller.state;
+    if (_loadMoreScheduled || _filter.isNotEmpty || state.details?.type != 'playlist' ||
+        state.phase != EntityPhase.ready || !state.hasMore || state.isLoadingMore || state.error != null) { return; }
+    _loadMoreScheduled = true;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _loadMoreScheduled = false;
+      if (!mounted || widget.controller != controller || controller.state.uri != state.uri ||
+          !_scroll.hasClients || _filter.isNotEmpty) { return; }
+      final current = controller.state;
+      final position = _scroll.position;
+      if (current.phase == EntityPhase.ready && current.hasMore && !current.isLoadingMore && current.error == null &&
+          position.hasContentDimensions && position.extentAfter < 256) {
+        unawaited(controller.loadMore());
+      }
+    });
+    WidgetsBinding.instance.ensureVisualUpdate();
   }
 
   void _selectRow(int index, {bool reveal = false}) {
@@ -201,6 +224,7 @@ class _EntityViewState extends State<EntityView> {
       if (!entity.isAccessible) return _status('This content is unavailable.');
       if (entity.data['songPage'] == true) return _songPage(context, entity, state);
       if (entity.type == 'artist-section') return _artistSectionPage(entity, state);
+      _loadMoreAfterLayout();
       final visible = [for (final (index, row) in state.rows.indexed)
         if (_matches(row)) (index: index, row: row)];
       final rowHeight = _entityTrackRowHeight(MediaQuery.textScalerOf(context));
@@ -255,7 +279,13 @@ class _EntityViewState extends State<EntityView> {
             : SliverFixedExtentList.builder(key: _trackListKey, itemExtent: rowHeight,
                 itemCount: visible.length, itemBuilder: rowBuilder));
         }
-        return content = CustomScrollView(key: PageStorageKey('entity:${state.uri}'),
+        return content = NotificationListener<ScrollMetricsNotification>(onNotification: (event) {
+          if (event.depth == 0 && event.metrics.axis == Axis.vertical) _loadMoreAfterLayout();
+          return false;
+        }, child: NotificationListener<ScrollNotification>(onNotification: (event) {
+          if (event.depth == 0 && event.metrics.axis == Axis.vertical) _loadMoreAfterLayout();
+          return false;
+        }, child: CustomScrollView(key: PageStorageKey('entity:${state.uri}'), controller: _scroll,
           // Use the viewport's standard bounded cache. Several screens of
           // offscreen rows otherwise relayout on every window-width change.
           slivers: [
@@ -268,9 +298,8 @@ class _EntityViewState extends State<EntityView> {
             child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
               if (banner != null) _playlistInfo(entity, state),
               _toolbar(context, entity, state, width),
-              if (state.error != null) _error(state.phase == EntityPhase.failed
-                ? 'Couldn’t refresh this content' : 'Couldn’t load more tracks',
-                state.phase == EntityPhase.failed ? widget.controller.refresh : widget.controller.loadMore),
+              if (state.error != null && state.phase == EntityPhase.failed)
+                _error('Couldn’t refresh this content', widget.controller.refresh),
               if (entity.type == 'artist') Padding(padding: const EdgeInsets.only(bottom: 16),
                 child: Text(entity.data['trackHeading'] as String? ?? 'Top tracks',
                   style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w700)))
@@ -286,13 +315,16 @@ class _EntityViewState extends State<EntityView> {
           trackSliver!,
           SliverToBoxAdapter(child: Padding(padding: EdgeInsets.fromLTRB(inset, 24, inset, 40), child: Column(
             crossAxisAlignment: CrossAxisAlignment.start, children: [
-              if (state.isLoadingMore) const Center(child: CircularProgressIndicator(color: Color(0xff1ed760)))
-              else if (state.hasMore) Center(child: TextButton(onPressed: widget.controller.loadMore,
+              if (state.error != null && state.phase != EntityPhase.failed)
+                _error('Couldn’t load more tracks', widget.controller.loadMore)
+              else if (state.isLoadingMore) const Center(child: CircularProgressIndicator(color: Color(0xff1ed760)))
+              else if (state.hasMore && (entity.type != 'playlist' || _filter.isNotEmpty))
+                Center(child: TextButton(onPressed: widget.controller.loadMore,
                 child: const Text('Load more'))),
               if (entity.type == 'album') ..._copyright(entity),
               if (entity.type == 'artist') _artistSections(entity),
             ]))),
-        ]);
+        ])));
       }, arguments: {'width': constraints.maxWidth, 'height': constraints.maxHeight,
         'cached': content != null, 'band': contentBand ?? -1}));
     },

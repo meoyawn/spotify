@@ -242,7 +242,7 @@ void main() {
     await tester.pumpWidget(MaterialApp(theme: ThemeData.dark(), home: Scaffold(body: HomeView(
       controller: controller, onSelect: (_) => fail('Empty Home cannot select an item'),
     ))));
-    expect(find.byType(CircularProgressIndicator), findsOneWidget);
+    expect(find.bySemanticsLabel('Loading'), findsOneWidget);
     repository.requests.single.result.completeError(const HomeQueryError(null));
     await tester.pumpAndSettle();
     expect(find.text('Couldn’t load Home'), findsOneWidget);

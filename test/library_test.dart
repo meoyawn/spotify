@@ -223,7 +223,7 @@ void main() {
     addTearDown(controller.dispose);
     await tester.pumpWidget(MaterialApp(theme: ThemeData.dark(), home: Scaffold(body: LibraryView(
       controller: controller, onSelect: (_) => fail('Empty Library cannot select content')))));
-    expect(find.byType(CircularProgressIndicator), findsOneWidget);
+    expect(find.bySemanticsLabel('Loading'), findsOneWidget);
     repository.requests.single.result.completeError(StateError('Synthetic unavailable backend'));
     await tester.pumpAndSettle();
     expect(find.text('Couldn’t load Your Library'), findsOneWidget);

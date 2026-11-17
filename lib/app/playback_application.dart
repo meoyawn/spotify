@@ -101,6 +101,7 @@ class _SpotifyPlaybackApplicationState extends State<SpotifyPlaybackApplication>
   CancellationToken? _signInCancellation;
   final _openLinkDialog = GlobalKey<_OpenSpotifyLinkDialogState>();
   bool _signingOut = false;
+  bool _initializing = true;
 
   @override
   void initState() {
@@ -213,9 +214,14 @@ class _SpotifyPlaybackApplicationState extends State<SpotifyPlaybackApplication>
       }
       await _initializeBackend();
       if (!mounted) return;
+      if (_runtime case final NativeDesktopRuntime runtime) {
+        await runtime.sessionRestoration.asCancellable(token);
+      }
     } catch (error) {
       if (token.isCancelled) return;
       if (mounted) setState(() => _initializationError = '$error');
+    } finally {
+      if (mounted) setState(() => _initializing = false);
     }
   }
 
@@ -893,6 +899,7 @@ class _SpotifyPlaybackApplicationState extends State<SpotifyPlaybackApplication>
       PlatformProvidedMenuItem(type: PlatformProvidedMenuItemType.arrangeWindowsInFront),
     ]),
   ], child: SpotifyDesktopApp(navigatorKey: _navigator, shellKey: _shell, scaleKey: _scale,
+    initializing: _initializing,
     playbackController: _controller,
     playbackArtworkBuilder: _runtime == null ? null : (context, item) => _artwork(item.uri, item.images),
     searchRepository: _runtime?.searchRepository,

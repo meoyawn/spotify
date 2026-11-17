@@ -1,0 +1,256 @@
+{
+  "date": "2026-11-17",
+  "sources": [
+    {
+      "path": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+      "capture": "Retained macOS 1.3.6.1921 renderer",
+      "modules": [
+        {
+          "id": 10833,
+          "offsetBytes": 4016292,
+          "lengthBytes": 3210,
+          "wrappedModuleSha256": "56a0e3b500f813e0a473c717658517c3313f8eb48aa91475c858f7dd7361559e"
+        },
+        {
+          "id": 54442,
+          "offsetBytes": 1728717,
+          "lengthBytes": 23948,
+          "wrappedModuleSha256": "94f5c45e2952350eb8c7b78a4600568346f10e9d3c55902bf58bc3ccb9d358b4"
+        }
+      ]
+    },
+    {
+      "path": ".local/native-scripts/606b3262ad12de1bb98f5f26211c2d66b530b562344b488a1854c7ecc0631a30.js",
+      "sha256": "606b3262ad12de1bb98f5f26211c2d66b530b562344b488a1854c7ecc0631a30",
+      "capture": "Retained macOS 1.3.6.1921 renderer",
+      "modules": [
+        {
+          "id": 1088,
+          "offsetBytes": 11434,
+          "lengthBytes": 888,
+          "wrappedModuleSha256": "39abb9918d0c94cb4ab40c0cfb14d07133336c6b46092a838173fe96eb6ef3d0"
+        },
+        {
+          "id": 34685,
+          "offsetBytes": 12404,
+          "lengthBytes": 2052,
+          "wrappedModuleSha256": "97376efff085fee798e5a32c2db8f72608defaf52958be94a56ea88aa4707195"
+        },
+        {
+          "id": 33245,
+          "offsetBytes": 38200,
+          "lengthBytes": 47,
+          "wrappedModuleSha256": "59ae617cbedf20c6896a90eb92a39431a0834c6fa490f3699ba9c8d0fc77e8bf"
+        },
+        {
+          "id": 47132,
+          "offsetBytes": 10989,
+          "lengthBytes": 444,
+          "wrappedModuleSha256": "3d1d4a82f706d9d9ebbff78986975eb689b6b51c80c7a69fdd1d06f4b30044b1"
+        }
+      ]
+    },
+    {
+      "path": ".local/liked-songs-original-20261115/collection-songs.js",
+      "archiveEntry": "xpui-routes-collection-songs.js",
+      "capture": "Installed macOS 1.3.9.2055 route, retained 2026-11-15",
+      "sha256": "b620f4a5a5b07f267beea373cc917a095d4fc3c8752511161a8c5aaa38cd654c",
+      "binding": "Module 80409 renders the shared ListPlatform track list exported by module 34685."
+    }
+  ],
+  "rea": {
+    "operation": "analyze_javascript_application",
+    "evidenceId": "ev_782894837f3a90762e6627d4753fafe5a4d78859b58f61045cadf544d785512c",
+    "summaryEvidenceId": "ev_79b0534b96e0b1b95ae87e6091c9c628b1075cf7e846d76d7cbd9fa214b6acc0",
+    "bundle": ".local/playlist-scroll-rea-20261117.json",
+    "scope": "Six unchanged proprietary module factories. No Chromium decompilation. Static relationships remain partial; runtime claims below come from separate original execution."
+  },
+  "originalBehavior": {
+    "sharedOwner": "Module 34685 supplies module 1088 itemsCache to module 54442 track-list rendering. Liked Songs uses the same track-list owner.",
+    "viewport": "Module 54442 reads cache.getItems(firstIndex, lastIndex) from its virtualized render window. Both virtualization branches declare nrRowsOverscan:20. There is no manual pagination control on this path.",
+    "paging": "Module 1088 binds the native getContents URI, contents options, requested offset and limit:50. Module 10833 requests missing ranges, suppresses another request while one is pending, reuses cached rows and stops at totalLength."
+  },
+  "independentExecution": {
+    "script": ".local/execute_playlist_scroll_original.mjs",
+    "output": ".local/playlist-scroll-original-execution.json",
+    "modules": [
+      1088,
+      10833
+    ],
+    "scope": "Executes the unchanged original ListPlatformItemsProvider, cache getItems and asynchronous fetch/cache merge. This proves the native getContents URI/offset/50-row-limit binding, range-driven loading, cached-only reads, concurrent request suppression, reuse after completion and exhaustion. Does not execute React virtualization or a live network client.",
+    "substitutions": [
+      "React hooks run once against mutable original cache refs; state notifications are counted.",
+      "Native getContents is a deferred synthetic provider returning offset/limit slices of independent synthetic rows.",
+      "ListPlatform context supplies synthetic playlist metadata, initial rows and empty contents options; subscriptions and valid-item publication are inert.",
+      "Webpack require and export property helpers load the unchanged factory."
+    ],
+    "observedNativeRequests": [
+      {
+        "uri": "spotify:playlist:synthetic",
+        "parameters": {
+          "offset": 50,
+          "limit": 50
+        }
+      },
+      {
+        "uri": "spotify:playlist:synthetic",
+        "parameters": {
+          "offset": 100,
+          "limit": 50
+        }
+      }
+    ],
+    "observations": [
+      {
+        "range": [
+          0,
+          19
+        ],
+        "cachedOnly": false,
+        "resolved": 20,
+        "requested": []
+      },
+      {
+        "range": [
+          40,
+          64
+        ],
+        "cachedOnly": true,
+        "resolved": 10,
+        "requested": []
+      },
+      {
+        "range": [
+          40,
+          64
+        ],
+        "cachedOnly": false,
+        "resolved": 10,
+        "requested": [
+          {
+            "offset": 50,
+            "limit": 50
+          }
+        ]
+      },
+      {
+        "range": [
+          50,
+          89
+        ],
+        "cachedOnly": false,
+        "resolved": 0,
+        "requested": [
+          {
+            "offset": 50,
+            "limit": 50
+          }
+        ]
+      },
+      {
+        "range": [
+          40,
+          64
+        ],
+        "cachedOnly": false,
+        "resolved": 25,
+        "requested": [
+          {
+            "offset": 50,
+            "limit": 50
+          }
+        ]
+      },
+      {
+        "range": [
+          90,
+          119
+        ],
+        "cachedOnly": false,
+        "resolved": 10,
+        "requested": [
+          {
+            "offset": 50,
+            "limit": 50
+          },
+          {
+            "offset": 100,
+            "limit": 50
+          }
+        ]
+      },
+      {
+        "range": [
+          120,
+          129
+        ],
+        "cachedOnly": false,
+        "resolved": 10,
+        "requested": [
+          {
+            "offset": 50,
+            "limit": 50
+          },
+          {
+            "offset": 100,
+            "limit": 50
+          }
+        ]
+      },
+      {
+        "range": [
+          130,
+          149
+        ],
+        "cachedOnly": false,
+        "resolved": 0,
+        "requested": [
+          {
+            "offset": 50,
+            "limit": 50
+          },
+          {
+            "offset": 100,
+            "limit": 50
+          }
+        ]
+      }
+    ],
+    "expectations": "Produced by unchanged original JavaScript with independent synthetic rows; no Dart implementation generates original expected results."
+  },
+  "flutter": {
+    "owner": "lib/entities/view.dart",
+    "behavior": "Ordinary playlists and Liked Songs load another existing page within 256 logical pixels of the end. Scroll and viewport metrics schedule a coalesced check after layout; initial short content and completed pages are rechecked against current dimensions. Appending rows preserves the current position.",
+    "bounds": "Existing EntityController continues to own the cursor, in-flight guard, cancellation and stale-result rejection. Failed pages keep rows and expose Try again at the footer, with automatic requests suspended until retry. Exhaustion stops requests. The loaded-track filter retains explicit paging so a sparse result does not scan an unseen playlist.",
+    "policy": "The 256-pixel threshold and explicit error retry are application choices; exact equivalence to the original 20-row overscan timing or error policy is not claimed. Existing repository and protocol contracts are unchanged."
+  },
+  "verification": {
+    "toolchain": {
+      "config": "mise.toml",
+      "flutter": "3.50.0",
+      "dart": "3.14.0",
+      "selection": "mise latest flutter returned 3.50.0; mise trust and mise install succeeded. Both test and preview package configs use this mise installation."
+    },
+    "baseline": "Before the view fix, the two scroll cases and the resize case failed because no next-page request occurred; the filter case passed. See .local/playlist-scroll-baseline-tests.log.",
+    "focusedTests": {
+      "command": "mise exec -- flutter test --no-pub test/entity_pagination_test.dart test/entity_test.dart test/native_liked_songs_test.dart --reporter expanded",
+      "passed": 33
+    },
+    "analysis": "No errors or warnings in the changed view and tests. Flutter 3.50 reports three informational deprecations for the repository-style package:flutter/material.dart imports.",
+    "live": {
+      "kind": "Native macOS preview using the real EntityView and deferred synthetic pages; no authenticated server or playback engine is attached.",
+      "steps": 16,
+      "success": true,
+      "result": ".local/playlist-scroll-live-results.json",
+      "screenshot": ".local/playlist-scroll-live.png",
+      "observed": "Actual pointer wheel events load 50 -> 100 -> 125 rows for both playlists and Liked Songs. Approaching within 180 pixels requests the next page, repeated pending wheel events stay shared, appending retains position, failure stops automatic retries, the visible retry button works, and exhaustion stops requests. All 16 observations have zero Flutter runtime errors.",
+      "hotReload": "Reloaded 1 of 1026 libraries successfully under mise Flutter 3.50.0.",
+      "installedRelease": "Existing installed release PID 91311 remained running throughout the preview."
+    }
+  },
+  "limits": [
+    "Original cache/provider execution uses retained 1.3.6 factories. The newer retained Liked Songs route establishes its shared owner binding, not complete current-client runtime parity.",
+    "No live authenticated playlist HTTP traffic, transport behavior, licensing, account entitlements or sustained playback is newly verified by this UI change."
+  ]
+}

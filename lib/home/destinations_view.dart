@@ -3,6 +3,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
+import '../app/loading.dart';
 import '../app/share_links.dart';
 import 'controller.dart';
 import 'destinations_controller.dart';
@@ -38,7 +39,7 @@ class _HomeDestinationViewState extends State<HomeDestinationView> {
       final state = widget.controller.state, page = state.page;
       if (page == null) {
         if (state.phase == HomePhase.failed) return _status('Couldn’t load this page', widget.controller.refresh);
-        return const Center(child: CircularProgressIndicator(color: Color(0xff1ed760)));
+        return const SpotifyLoadingPage();
       }
       return LayoutBuilder(builder: (context, constraints) {
         final inset = constraints.maxWidth < 600 ? 16.0 : 40.0;

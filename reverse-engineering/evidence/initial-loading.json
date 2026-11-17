@@ -1,0 +1,317 @@
+{
+  "feature": "Initial desktop loading screen",
+  "original": {
+    "renderer": {
+      "version": "1.3.6.1921",
+      "source": ".local/native-scripts/59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f.js",
+      "sha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+      "modules": [
+        {
+          "id": 12414,
+          "offset_bytes": 1607638,
+          "length_bytes": 600,
+          "export": "m",
+          "scope": "Loading SVG and accessible label"
+        },
+        {
+          "id": 67707,
+          "offset_bytes": 1613975,
+          "length_bytes": 1556,
+          "export": "LoadingPage",
+          "scope": "Loading visibility gates and page layout"
+        }
+      ],
+      "rea_evidence_id": "ev_59084ec9a7520d422cf1a97c23d55dccdacdf7a8db2d46ad369f98c600d9d946",
+      "rea_bundle": ".local/startup-rea-20261116.json"
+    },
+    "installed_styles": {
+      "version": "1.3.9.2055",
+      "archive": "/Applications/Spotify.app/Contents/Resources/Apps/xpui.spa",
+      "archive_sha256": "b64742faa2bd1db859aefddd804e76246731f2748d2eb138af212277f27f3e44",
+      "member": "xpui-snapshot.css",
+      "sha256": "e1556705c3e8ea5c5b03712a0d66450bd58be9b9aee7a6669501a0562ede8f49",
+      "selectors": [
+        "EkRSpveMVr0PkI4aKjMg",
+        "DIb6Nf_IxBSTydD0l2vH",
+        "rTFXpHREeXdrUNtnOSoX"
+      ],
+      "background": "#121212",
+      "page": {
+        "height": "calc(100vh - 96px)",
+        "margin_top": "-64px",
+        "alignment": "center"
+      },
+      "svg": {
+        "width": 56,
+        "height": 12,
+        "view_box": "0 0 1 100",
+        "circle_cx": [
+          -140,
+          0,
+          140
+        ],
+        "circle_cy": 50,
+        "circle_radius": 32,
+        "fill": "#fff"
+      },
+      "animation": {
+        "period_ms": 1320,
+        "delays_ms": [
+          0,
+          100,
+          200
+        ],
+        "transform_origin": "0.5px 50px",
+        "keyframes": [
+          {
+            "fraction": 0,
+            "opacity": 0.5,
+            "scale": 1,
+            "easing": "cubic-bezier(1,0,.7,1)"
+          },
+          {
+            "fraction": 0.4,
+            "opacity": 0.75,
+            "scale": 1.3,
+            "easing": "cubic-bezier(.3,0,0,1)"
+          },
+          {
+            "fraction": 0.725,
+            "opacity": 0.5,
+            "scale": 1,
+            "easing": "linear"
+          },
+          {
+            "fraction": 1,
+            "opacity": 0.5,
+            "scale": 1
+          }
+        ],
+        "initial_delay": "Before each circle's first animation delay elapses, its underlying opacity is 1 and transform is none."
+      }
+    },
+    "independent_execution": {
+      "runner": ".local/execute_startup_original.mjs",
+      "result": ".local/startup-original-execution.json",
+      "substitutions": [
+        "JSX records and renders the original element properties.",
+        "React hooks and timers use a deterministic local scheduler.",
+        "Online hook returns true; loadOffline is true, as in the recovered root Suspense fallback.",
+        "Localization supplies the English Loading accessibility label.",
+        "Standard webpack export and default-import helpers replace the bundle loader."
+      ],
+      "observations": [
+        {
+          "time_ms": 0,
+          "dots_visible": false
+        },
+        {
+          "time_ms": 199,
+          "dots_visible": false
+        },
+        {
+          "time_ms": 200,
+          "dots_visible": false
+        },
+        {
+          "time_ms": 999,
+          "dots_visible": false
+        },
+        {
+          "time_ms": 1000,
+          "dots_visible": true
+        },
+        {
+          "time_ms": 1200,
+          "dots_visible": true
+        }
+      ],
+      "scope": "Executes the unchanged two original module factories and their online loading branch. The 200 ms reducer gate is further gated by a 1000 ms display delay. Does not execute the native app's complete startup, offline hook, timeout error branch, authentication or networking."
+    },
+    "browser_execution": {
+      "rea_evidence_id": "ev_11de43b03f691f0ebaf7b2125cfd82515c730d5631af7dceea08c7ca022e17c3",
+      "rea_bundle": ".local/startup-browser-rea-20261116.json",
+      "css_observations": ".local/startup-original-css-execution.json",
+      "screenshot": ".local/startup-original-browser.png",
+      "scope": "Original JSX output rendered with the installed original stylesheet in Chrome over loopback. REA captured the layout. A separate browser probe paused the original CSS animations at 0, 100, 528, 957 and 1320 ms and read computed opacity, transforms, transform origin and bounds. At 528 ms the first circle has opacity .75 and scale 1.3. Screenshots establish layout; controlled computed styles establish animation behavior."
+    },
+    "limits": "The renderer routines are from the retained 1.3.6 capture; the matching CSS is independently read from installed 1.3.9. This does not claim a live capture of 1.3.9's complete startup or current JavaScript routines. No Flutter output supplies original expected values."
+  },
+  "flutter": {
+    "owners": [
+      "lib/app/loading.dart",
+      "lib/app/app.dart",
+      "lib/app/playback_application.dart",
+      "lib/app/native_desktop_runtime.dart",
+      "lib/home/view.dart",
+      "lib/home/destinations_view.dart",
+      "lib/library/view.dart"
+    ],
+    "behavior": "Dark startup surface and original delayed three-dot loader. The shell remains mounted offstage while the existing native session restoration finishes, keeping navigation available without presenting temporary signed-out content. Engine binding keeps its existing order. Initial Home, Home destination and Library pages share the loader; refresh behavior is retained.",
+    "accessibility_and_lifetime": "Loading has an accessible label. The app uses static dots for reduced motion and stops the ticker when hidden, inactive or disabled by TickerMode. Disposal cancels the one-shot reveal timer and disposes the animation. These lifetime and reduced-motion choices are app policies, not original behavior proved by the isolated routines.",
+    "rendering": "A RepaintBoundary and repaint-listening CustomPainter animate the dots without rebuilding page widgets."
+  },
+  "verification": {
+    "date": "2026-11-16",
+    "focused_tests": {
+      "command": "flutter test --no-pub test/home_test.dart test/library_test.dart",
+      "passed": 44
+    },
+    "static_analysis": "No issues in loading.dart, app.dart, the three changed page views and the two changed test files. Analysis including native_desktop_runtime.dart and playback_application.dart has no errors and retains 25 existing warnings/info diagnostics.",
+    "live": "Dedicated macOS preview, hot reload and hot restart; observed startup, Home loading, ready, signed-out, reduced motion, motion restoration and hidden lifecycle states. Final probe reports zero runtime errors. Startup exposes no shell text, hidden Home ticker is inactive and muted, the visible loader stops for reduced motion and hidden state, and ready/signed-out states remove it.",
+    "live_observations": [
+      {
+        "step": "startup",
+        "phase": "startup",
+        "dots": [
+          {
+            "origin": "Offset(980.0, 488.0)",
+            "size": "Size(56.0, 12.0)",
+            "diagnostics": "_SpotifyLoadingIndicatorState#1074a(ticker inactive and muted)",
+            "onstage": false
+          },
+          {
+            "origin": "Offset(836.0, 424.0)",
+            "size": "Size(56.0, 12.0)",
+            "diagnostics": "_SpotifyLoadingIndicatorState#50efa(ticker active)",
+            "onstage": true
+          }
+        ],
+        "texts": [],
+        "materialSpinners": 0,
+        "errors": []
+      },
+      {
+        "step": "reduced-motion",
+        "phase": "startup",
+        "dots": [
+          {
+            "origin": "Offset(980.0, 488.0)",
+            "size": "Size(56.0, 12.0)",
+            "diagnostics": "_SpotifyLoadingIndicatorState#1074a(ticker inactive and muted)",
+            "onstage": false
+          },
+          {
+            "origin": "Offset(836.0, 424.0)",
+            "size": "Size(56.0, 12.0)",
+            "diagnostics": "_SpotifyLoadingIndicatorState#50efa(ticker inactive)",
+            "onstage": true
+          }
+        ],
+        "texts": [],
+        "materialSpinners": 0,
+        "errors": []
+      },
+      {
+        "step": "motion-resumed",
+        "phase": "startup",
+        "dots": [
+          {
+            "origin": "Offset(980.0, 488.0)",
+            "size": "Size(56.0, 12.0)",
+            "diagnostics": "_SpotifyLoadingIndicatorState#1074a(ticker inactive and muted)",
+            "onstage": false
+          },
+          {
+            "origin": "Offset(836.0, 424.0)",
+            "size": "Size(56.0, 12.0)",
+            "diagnostics": "_SpotifyLoadingIndicatorState#50efa(ticker active)",
+            "onstage": true
+          }
+        ],
+        "texts": [],
+        "materialSpinners": 0,
+        "errors": []
+      },
+      {
+        "step": "hidden",
+        "phase": "startup",
+        "dots": [
+          {
+            "origin": "Offset(980.0, 488.0)",
+            "size": "Size(56.0, 12.0)",
+            "diagnostics": "_SpotifyLoadingIndicatorState#1074a(ticker inactive and muted)",
+            "onstage": false
+          },
+          {
+            "origin": "Offset(836.0, 424.0)",
+            "size": "Size(56.0, 12.0)",
+            "diagnostics": "_SpotifyLoadingIndicatorState#50efa(ticker inactive)",
+            "onstage": true
+          }
+        ],
+        "texts": [],
+        "materialSpinners": 0,
+        "errors": []
+      },
+      {
+        "step": "home-loading",
+        "phase": "home-loading",
+        "dots": [
+          {
+            "origin": "Offset(980.0, 488.0)",
+            "size": "Size(56.0, 12.0)",
+            "diagnostics": "_SpotifyLoadingIndicatorState#1074a(ticker active)",
+            "onstage": true
+          }
+        ],
+        "texts": [
+          "Log in",
+          "What do you want to play?",
+          "Your Library",
+          "Your library is currently unavailable.",
+          "",
+          "",
+          ""
+        ],
+        "materialSpinners": 0,
+        "errors": []
+      },
+      {
+        "step": "ready",
+        "phase": "ready",
+        "dots": [],
+        "texts": [
+          "Log in",
+          "What do you want to play?",
+          "Your Library",
+          "Your library is currently unavailable.",
+          "All",
+          "There’s nothing to show right now.",
+          "",
+          "",
+          ""
+        ],
+        "materialSpinners": 0,
+        "errors": []
+      },
+      {
+        "step": "signed-out",
+        "phase": "signed-out",
+        "dots": [],
+        "texts": [
+          "Log in",
+          "What do you want to play?",
+          "Your Library",
+          "Your library is currently unavailable.",
+          "Home",
+          "Log in to continue.",
+          "",
+          "",
+          ""
+        ],
+        "materialSpinners": 0,
+        "errors": []
+      }
+    ],
+    "live_scope": "Presentation uses an injected pending Home repository. The installed release process remained running. This is not a live validation of a restored network session.",
+    "broader_shell_test": {
+      "status": "Existing failure reproduced",
+      "baseline_commit": "96bf42b114a3344706089d16f05c0d04661c42a4",
+      "baseline_test": "unconnected root keeps recovered shell dimensions and cannot imply authentication or playback",
+      "failure": "SemanticsNode increase action needs matching value/increasedValue annotations.",
+      "artifact": ".local/startup-shell-baseline-test.txt",
+      "scope": "The complete shell suite did not pass. This specific failure was independently reproduced from unchanged HEAD sources; additional shell failures were not individually audited."
+    }
+  }
+}

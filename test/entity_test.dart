@@ -221,7 +221,8 @@ void main() {
       final page = Completer<EntityTrackPage>();
       final repository = _SavingRepository(onOpen: (uri) async => EntityPage(
         details: EntityDetails.fromJson({'type': 'playlist', 'uri': uri, 'name': 'Save playlist', 'isSaved': false}),
-        tracks: EntityTrackPage(rows: [_row('Music')], offset: 0, limit: 1, totalLength: 2)),
+        tracks: EntityTrackPage(rows: [_row('Music'), for (var index = 1; index < 50; index++) _row('Music $index')],
+          offset: 0, limit: 50, totalLength: 51)),
         onTracks: (_, _) => page.future,
         onSave: (saved) { writes.add(saved); return receipt.future; });
       final controller = EntityController(repository, uri: 'spotify:playlist:0000000000000000000001',
@@ -243,14 +244,14 @@ void main() {
       expect(find.text('Couldn’t update Your Library. Try again.'), findsOneWidget);
       expect(find.byTooltip('Save to Your Library'), findsOneWidget);
       expect(libraryChanges, 0);
-      expect(controller.state.rows.single.name, 'Music');
+      expect(controller.state.rows.first.name, 'Music');
       receipt = Completer<void>();
       await tester.tap(find.byTooltip('Save to Your Library'));
       await tester.pump();
       final paging = controller.loadMore();
       receipt.complete();
       await tester.pump();
-      page.complete(EntityTrackPage(rows: [_row('Next music')], offset: 1, limit: 1, totalLength: 2));
+      page.complete(EntityTrackPage(rows: [_row('Next music')], offset: 50, limit: 1, totalLength: 51));
       await paging;
       await tester.pumpAndSettle();
       expect(find.byTooltip('Remove from Your Library'), findsOneWidget);
@@ -328,7 +329,7 @@ void main() {
       });
     }
 
-    testWidgets('playlist arrows move the selected row and reveal it without playing or paging', (tester) async {
+    testWidgets('playlist arrows reveal selected rows and page only near the end without playing', (tester) async {
       final rows = [for (var index = 0; index < 35; index++) ...[
         if (index == 2) EntityRow.unsupported(),
         _row('Track $index'),
@@ -361,6 +362,7 @@ void main() {
       await tester.pump();
       await tester.sendKeyUpEvent(LogicalKeyboardKey.arrowDown);
       expect(selected.last.name, 'Track 3');
+      expect(pages, 0);
       for (var index = 4; index <= 30; index++) {
         await tester.sendKeyEvent(LogicalKeyboardKey.arrowDown);
         await tester.pump();
@@ -407,7 +409,7 @@ void main() {
       await tester.pumpAndSettle();
       expect(selected.last.name, 'Track 2');
       expect(played, isEmpty);
-      expect(pages, 0);
+      expect(pages, 1);
       expect(tester.takeException(), isNull);
     });
 

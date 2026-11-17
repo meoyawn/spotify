@@ -18,6 +18,7 @@ import '../search/repository.dart';
 import '../search/view.dart';
 import 'navigation.dart';
 import 'app_scale.dart';
+import 'loading.dart';
 import 'playback_bar.dart';
 import 'shell.dart';
 import 'snack_bar.dart';
@@ -62,6 +63,7 @@ class SpotifyDesktopApp extends StatefulWidget {
     this.scaleKey,
     this.playbackArtworkBuilder,
     this.trackSaveButtonBuilder,
+    this.initializing = false,
   });
 
   final HomeRepository? homeRepository;
@@ -98,6 +100,7 @@ class SpotifyDesktopApp extends StatefulWidget {
   final GlobalKey<DesktopAppScaleState>? scaleKey;
   final PlaybackArtworkBuilder? playbackArtworkBuilder;
   final TrackSaveButtonBuilder? trackSaveButtonBuilder;
+  final bool initializing;
   final VoidCallback? onLogOut;
 
   @override
@@ -294,7 +297,12 @@ class _SpotifyDesktopAppState extends State<SpotifyDesktopApp> {
     builder: (context, child) => SongRadioScope(
       onOpen: widget.songRadioResolver == null ? null : (uri) => unawaited(_openSongRadio(uri)),
       loadingUri: _songRadioSeed,
-      child: DesktopAppScale(key: widget.scaleKey, child: child ?? const SizedBox.shrink())),
+      child: DesktopAppScale(key: widget.scaleKey, child: Stack(fit: StackFit.expand, children: [
+        TickerMode(enabled: !widget.initializing, child: Offstage(offstage: widget.initializing,
+          child: child ?? const SizedBox.shrink())),
+        if (widget.initializing)
+          const ColoredBox(color: Color(0xff121212), child: SpotifyLoadingPage()),
+      ]))),
     theme: ThemeData(
       brightness: Brightness.dark,
       useMaterial3: true,

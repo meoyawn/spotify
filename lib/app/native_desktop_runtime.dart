@@ -276,6 +276,8 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
   @override bool get ready => !_closed && !_apSessionInvalidated && _grant != null &&
     _credentials != null && _apPolicy?.isAuthenticationReady == true &&
     _ap?.welcome?.canonicalUsername == _grant?.username;
+  /// Startup observes the existing restore task without delaying engine binding.
+  Future<void> get sessionRestoration => _signingIn ?? Future<void>.value();
   @override String? get username => _grant?.username;
   @override SearchRepository? get searchRepository => ready ? _search ??= _makeSearch() : null;
   @override HomeRepository? get homeRepository => ready ? _home ??= _makeHome() : null;
