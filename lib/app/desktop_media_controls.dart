@@ -96,16 +96,11 @@ class DesktopMediaControls {
           if (!usable || (state.isPaused ? !state.restrictions.canResume : !state.restrictions.canPause)) return false;
           await toggle();
         case 'previous':
-          if (!state.restrictions.canSeek || (state.isPaused && !state.restrictions.canResume)) return false;
-          // Hardware Previous explicitly restarts this item; the controller
-          // binds the zero seek to the reported playback ID.
-          await controller.seekTo(0);
-          _token.throwIfCancelled();
-          final current = controller.state;
-          if (state.isPaused && current?.playbackId == state.playbackId &&
-              current?.item?.uri == state.item?.uri && current?.restrictions.canResume == true) {
-            await controller.resume();
-          }
+          if (!state.restrictions.canSkipPrevious && !state.restrictions.canSeek) return false;
+          // The original SPTMediaPlayerHelper sends SkipPrev{allow_seeking:
+          // true}, the same command as the playback-bar button; the player
+          // decides between restarting the item and the previous track.
+          await controller.skipPrevious();
         case 'next':
           if (!state.restrictions.canSkipNext) return false;
           // The local ContextPlayer's SkipNext loads the selected next item
@@ -157,7 +152,7 @@ class DesktopMediaControls {
       'canPlay': usable && state.isPaused && state.restrictions.canResume,
       'canPause': usable && !state.isPaused && state.restrictions.canPause,
       'canToggle': usable && (state.isPaused ? state.restrictions.canResume : state.restrictions.canPause),
-      'canPrevious': item != null && state!.restrictions.canSeek && (!state.isPaused || state.restrictions.canResume),
+      'canPrevious': item != null && (state!.restrictions.canSkipPrevious || state.restrictions.canSeek),
       'canNext': item != null && state!.restrictions.canSkipNext,
     };
     final key = jsonEncode(data);

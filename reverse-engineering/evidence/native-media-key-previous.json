@@ -1,0 +1,29 @@
+{
+  "source": {
+    "application": "Spotify macOS arm64",
+    "version": "1.3.9.2055",
+    "executableSha256": "5d60fba777e022f157889d92493b1be5cbea657df967d67b48ead29050520e2f",
+    "note": "Installed build differs from the retained 1.3.6.1921 target; this finding is scoped to 1.3.9.2055."
+  },
+  "method": "Static arm64 disassembly of the original executable with lldb/otool. ObjC selector stubs resolved through __objc_selrefs; no code executed and no installed file modified.",
+  "owner": {
+    "class": "SPTMediaPlayerHelper",
+    "initWithPlayerDelegate:": "0x1000ad224",
+    "addCommand:withHandler:": "0x1000adf30",
+    "previousTrackCommandHandler": "0x1000adcd8",
+    "nextTrackCommandHandler": "0x1000adb50",
+    "playerDelegateDispatch": "0x10049ab7c -> 0x10049b694 (switch on command 0..16)"
+  },
+  "findings": [
+    "previousTrackCommand handler dispatches command 7, or 13 when useSeekForSkipKeys is true (nextTrackCommand: 6 or 12).",
+    "initWithPlayerDelegate: stores halfword 1 at ivar offset 8, leaving useSeekForSkipKeys (offset 9) false; no caller of setUseSeekForSkipKeys: was found in the executable.",
+    "Command 7 (0x10049bd0c) constructs the native skip-prev command (CommandOptions base, bool at +0x38), sets the bool to 1 and calls the player vtable slot +0x50.",
+    "The JSON command decoder at 0x101d22308 constructs the same struct and reads key \"allow_seeking\" (0x10250969f) into +0x38.",
+    "Command 13 (seek mode) reads the current player state and seeks relative to position; it is not used when useSeekForSkipKeys is false."
+  ],
+  "conclusion": "macOS media-key/Now Playing Previous sends SkipPrev with allow_seeking=true, the same command as the playback-bar Previous button. The player, not the media bridge, chooses between restarting the current item and the previous track.",
+  "limits": [
+    "previousTrackCommand.isEnabled follows PlayerState byte +0x2e (same byte as seekBackwardCommand); the upstream field feeding that byte was not mapped. The Dart bridge uses the playback-bar admission (canSkipPrevious || canSeek).",
+    "No live original capture of the outgoing command was made."
+  ]
+}
