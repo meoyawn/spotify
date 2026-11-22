@@ -10,6 +10,7 @@ import 'package:cancellation_token/cancellation_token.dart';
 
 import '../entities/repository.dart';
 import '../entities/models.dart';
+import '../entities/native_artist_play_counts.dart';
 import '../entities/native_artist_repository.dart';
 import '../entities/artist_about_repository.dart';
 import '../entities/native_playlist_repository.dart';
@@ -1202,6 +1203,8 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
           caller: PlaylistSyncCaller.SYNC_POLICY, cancellationToken: cancellationToken); },
         preReleaseV2: false, describeTracks: (uris, {cancellationToken}) {
           _check(epoch); return _describePlaylistTracks(uris, cancellationToken: cancellationToken);
+        }, readPlayCounts: (uris, {cancellationToken}) {
+          _check(epoch); return _readArtistPlayCounts(uris, cancellationToken: cancellationToken);
         }));
   }
 
@@ -1274,6 +1277,34 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
     } finally {
       // A failed or abandoned read releases only its own interests in each
       // batch. Independently needed readers keep the actual HTTP task alive.
+      token.cancel();
+    }
+  }
+
+  Future<Map<String, int>> _readArtistPlayCounts(List<String> uris,
+      {CancellationToken? cancellationToken}) async {
+    final token = MergedCancellationToken([_sessionToken, ?cancellationToken]);
+    try {
+      token.throwIfCancelled();
+      final epoch = _epoch;
+      final policy = _apPolicy, ap = _ap;
+      if (!ready || policy == null || ap == null) throw StateError('Sign in to Spotify');
+      final selected = uris.toSet().toList(growable: false);
+      final requests = SpotifyRequests(baseUrl: _nativeServerOrigin(),
+        inheritedHeaders: _nativeApplicationHeaders, defaults: _defaults);
+      final result = <String, int>{};
+      for (var offset = 0; offset < selected.length; offset += 50) {
+        final batch = selected.skip(offset).take(50).toList(growable: false);
+        final response = await _sendNativeServer(NativeArtistPlayCountPlan(uris: batch,
+          country: latin1.decode(policy.countryCode), catalogue: ap.productState['catalogue'] ?? '')
+          .envelope(requests).withCancellation(token), epoch);
+        token.throwIfCancelled();
+        _check(epoch);
+        if (response.statusCode != 200) throw SpotifyMediaHttpException(response.statusCode);
+        result.addAll(NativeArtistPlayCountPlan.decode(response.bodyBytes, batch));
+      }
+      return result;
+    } finally {
       token.cancel();
     }
   }

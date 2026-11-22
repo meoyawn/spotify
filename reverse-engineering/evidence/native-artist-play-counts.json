@@ -1,0 +1,39 @@
+{
+  "originalBundleSha256": "59a1e2bad44f35bcf8b21a86fe2e95dc216e0614e2d65cbd1a8ad75c1d8ea79f",
+  "artistRouteSource": ".local/song-radio-original-source/xpui-routes-artist.js",
+  "captureSource": {
+    "path": ".local/artist-recovery-20261029/netlog.json",
+    "sha256": "ac67b8905db2d5555227e7108571e6c10ea56713931ca11482f37c47e07115c9"
+  },
+  "header": {
+    "anchors": [
+      "{...,headerImage:G,visuals:{avatarImage:W,gallery:Y},...,onPlatformReputationTrait:X}=N",
+      "headerImage:(0,f.aB)(G,k)",
+      "artist:{...,headerImage:{sources:c,extractedColors:d},avatarImage:{...}}",
+      "C=c.length>0 ... C&&(M.backgroundImages=c,M.heightProfile=t3.B4.FULL_BLEED,...)",
+      "C?null:<avatar>",
+      "module41780 i:e=>!!e&&\"verification\"in e&&e.verification?.isVerified===!0",
+      "aN: u.Ru.get(\"artist.monthly-listeners-count\",u.Ru.compactNumber(e)); monthlyListeners:D||0",
+      "I18n compactNumber: Intl {notation:\"compact\",maximumFractionDigits:1}"
+    ],
+    "dartOwner": "lib/entities/native_artist_repository.dart, lib/entities/view.dart",
+    "scope": "Header image source path, avatar suppression, verified flag and compact listener count. The playlist FULL_BLEED banner geometry is reused because both routes use the same header component and height profile; exact CSS height was not re-measured. AI-persona badge and header-image modal flag are not implemented."
+  },
+  "popularRows": {
+    "anchors": [
+      "tr: o=a?10:5; l=Math.min(10,t.nrValidItems); l>5 ? seeMore button (artist-page.tracks.seemore / showless)",
+      "module27246 PlayCount = m5(\"PlayCount\", Jx.ON_PLATFORM_REPUTATION_TRAIT); parseInt(totalPlays??\"0\")",
+      "module34411 renders null when playcount<1, otherwise formatNumber",
+      "OnPlatformReputationTrait decoder: field 3 totalPlays int64",
+      "ExtensionKind ON_PLATFORM_REPUTATION_TRAIT = 185",
+      "TJ trait table: _metadataExtensionsAPI.subscribe(..., {featureId:\"grizzly\"}, ...[uri, extensionKind])"
+    ],
+    "capture": "After the native popular-release-segments-main-roles GET (event 133223), the original sent 4 gzip extended-metadata POSTs with client-feature-id grizzly (events 134004-134199). Header field set matches native-metadata-netlog-headers.json grizzly records. Bodies are not present in the netlog.",
+    "dartOwner": "lib/entities/native_artist_play_counts.dart",
+    "scope": "Headers: proven by capture. Body: the proven native BatchedEntityRequest shape (header country/catalogue, per-entity queries) and the >=5-entity gzip rule shared by other native extended-metadata callers. Reduced: Dart queries only kind 185 for TrackV4-described visible rows; the original trait batcher coalesces additional trait kinds (single-entity grizzly bodies of 85/88 bytes exceed one kind-185 query). Exact original batch composition is not reproduced."
+  },
+  "liveCheck": {
+    "date": "2026-11-22",
+    "result": "Debug build: Fred again.. and ONSTEAD rendered full-bleed header images; Fred again.. showed Verified by Spotify, 27.6M monthly listeners and per-row play counts; extended-metadata POSTs returned HTTP 200 in debug/http.jsonl."
+  }
+}

@@ -68,6 +68,8 @@ class _EntityViewState extends State<EntityView> {
   bool _revealScheduled = false;
   bool _loadMoreScheduled = false;
   bool _showFilter = false;
+  // Original artist popular list: 5 rows, See more shows 10.
+  bool _popularExpanded = false;
   String _filter = '';
   int? _selectedRowIndex;
   CancellationToken? _songCancellation;
@@ -108,6 +110,7 @@ class _EntityViewState extends State<EntityView> {
       _filterInput.clear();
       _filter = '';
       _showFilter = false;
+      _popularExpanded = false;
       _selectedRowIndex = null;
       unawaited(widget.controller.initialize());
     }
@@ -168,7 +171,7 @@ class _EntityViewState extends State<EntityView> {
     final current = focusedRow == null ? _selectedRowIndex : rows.indexOf(focusedRow.row);
     final down = key == LogicalKeyboardKey.arrowDown;
     final candidates = [for (final (index, row) in rows.indexed)
-      if (!row.isDisc && row.isSupported && _matches(row) &&
+      if (!row.isDisc && row.isSupported && _shown(index, row) &&
           (current == null || (down ? index > current : index < current))) index];
     if (candidates.isNotEmpty) {
       _selectRow(down ? candidates.first : candidates.last, reveal: true);
@@ -183,7 +186,7 @@ class _EntityViewState extends State<EntityView> {
     final position = Scrollable.of(listContext).position;
     if (!position.hasContentDimensions) return;
     final visible = [for (final (index, row) in widget.controller.state.rows.indexed)
-      if (_matches(row)) index];
+      if (_shown(index, row)) index];
     final index = visible.indexOf(_selectedRowIndex ?? -1);
     if (index < 0) return;
     double? offset, extent;
@@ -226,7 +229,7 @@ class _EntityViewState extends State<EntityView> {
       if (entity.type == 'artist-section') return _artistSectionPage(entity, state);
       _loadMoreAfterLayout();
       final visible = [for (final (index, row) in state.rows.indexed)
-        if (_matches(row)) (index: index, row: row)];
+        if (_shown(index, row)) (index: index, row: row)];
       final rowHeight = _entityTrackRowHeight(MediaQuery.textScalerOf(context));
       final hasDiscHeaders = visible.any((item) => item.row.isDisc);
       Widget? trackSliver;
@@ -240,7 +243,8 @@ class _EntityViewState extends State<EntityView> {
         final width = constraints.maxWidth;
         final band = width < 420 ? 0 : width < 560 ? 1 : width < 600 ? 2
           : width < 640 ? 3 : width < 800 ? 4 : width < 900 ? 5 : 6;
-        final banner = entity.headerImageUrl;
+        final banner = entity.headerImageUrl ?? (entity.type == 'artist' &&
+          (entity.data['headerImages'] as List? ?? const []).isNotEmpty ? '' : null);
         final bannerHeight = banner == null ? 0.0 : (constraints.maxHeight * (width < 600 ? .35 : .5))
           .clamp(156.0, width < 600 ? 215.0 : width < 900 ? 284.0 : 374.0);
         // The viewport and text receive new constraints without new widgets.
@@ -256,7 +260,7 @@ class _EntityViewState extends State<EntityView> {
         final showAlbum = entity.type == 'playlist' && width >= 640;
         final showDate = entity.type == 'playlist' && width >= 900 &&
           entity.data['hasDateAdded'] != false;
-        final showPlays = entity.type == 'album' && width >= 600;
+        final showPlays = (entity.type == 'album' || entity.type == 'artist') && width >= 600;
         final nextLayout = (inset: inset, artwork: entity.type == 'playlist' && width >= 420,
           album: showAlbum, date: showDate, plays: showPlays);
         final nextHeaderLayout = (inset: inset, band: width < 560 ? 0 : width < 900 ? 1 : 2, bannerHeight: bannerHeight);
@@ -296,7 +300,7 @@ class _EntityViewState extends State<EntityView> {
             decoration: BoxDecoration(gradient: banner == null ? LinearGradient(begin: Alignment.topCenter,
               end: Alignment.bottomCenter, colors: [Color.lerp(color, Colors.black, 0.60)!, const Color(0xff121212)]) : null),
             child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-              if (banner != null) _playlistInfo(entity, state),
+              if (banner != null && entity.type == 'playlist') _playlistInfo(entity, state),
               _toolbar(context, entity, state, width),
               if (state.error != null && state.phase == EntityPhase.failed)
                 _error('Couldn’t refresh this content', widget.controller.refresh),
@@ -318,7 +322,12 @@ class _EntityViewState extends State<EntityView> {
               if (state.error != null && state.phase != EntityPhase.failed)
                 _error('Couldn’t load more tracks', widget.controller.loadMore)
               else if (state.isLoadingMore) const Center(child: CircularProgressIndicator(color: Color(0xff1ed760)))
-              else if (state.hasMore && (entity.type != 'playlist' || _filter.isNotEmpty))
+              else if (entity.type == 'artist' && math.min(10, state.rows.where((row) => !row.isDisc && row.isSupported).length) > 5)
+                TextButton(onPressed: () => setState(() => _popularExpanded = !_popularExpanded),
+                  style: TextButton.styleFrom(foregroundColor: const Color(0xffb3b3b3)),
+                  child: Text(_popularExpanded ? 'Show less' : 'See more',
+                    style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w700)))
+              else if (state.hasMore && entity.type != 'artist' && (entity.type != 'playlist' || _filter.isNotEmpty))
                 Center(child: TextButton(onPressed: widget.controller.loadMore,
                 child: const Text('Load more'))),
               if (entity.type == 'album') ..._copyright(entity),
@@ -329,6 +338,9 @@ class _EntityViewState extends State<EntityView> {
         'cached': content != null, 'band': contentBand ?? -1}));
     },
   )));
+
+  bool _shown(int index, EntityRow row) => _matches(row) &&
+    (widget.controller.state.details?.type != 'artist' || index < (_popularExpanded ? 10 : 5));
 
   bool _matches(EntityRow row) {
     if (_filter.isEmpty) return true;
@@ -436,7 +448,7 @@ class _EntityViewState extends State<EntityView> {
 
   Widget _header(BuildContext context, EntityDetails entity, EntityState state,
       double width, double inset, Color color, double bannerHeight) {
-    if (entity.type == 'artist') return _artistHeader(entity, width, inset, color);
+    if (entity.type == 'artist') return _artistHeader(entity, width, inset, color, bannerHeight);
     final banner = entity.headerImageUrl;
     if (banner != null) {
       final artwork = EntityDetails.fromJson({...entity.data,
@@ -575,7 +587,7 @@ class _EntityViewState extends State<EntityView> {
       })), child: child);
   }
 
-  Widget _artistHeader(EntityDetails entity, double width, double inset, Color color) {
+  Widget _artistHeader(EntityDetails entity, double width, double inset, Color color, double bannerHeight) {
     final stats = (entity.data['stats'] as Map?) ?? const {};
     final listeners = stats['monthlyListeners'];
     final size = width < 560 ? 128.0 : 192.0;
@@ -584,14 +596,22 @@ class _EntityViewState extends State<EntityView> {
             const Text('Artist', style: TextStyle(fontSize: 14)), const SizedBox(height: 12),
             Text(entity.name, style: TextStyle(fontFamily: 'SpotifyMixUITitle',
               fontSize: width < 560 ? 32 : width < 900 ? 56 : 72, height: 1.1, fontWeight: FontWeight.w800)),
-            if (listeners is num) Padding(padding: const EdgeInsets.only(top: 16),
-              child: Text('${_number(listeners.toInt())} monthly listeners', style: const TextStyle(fontSize: 14))),
+            if (entity.data['verified'] == true) const Padding(padding: EdgeInsets.only(top: 12),
+              child: Row(mainAxisSize: MainAxisSize.min, children: [
+                Icon(Icons.verified, size: 24, color: Color(0xff4cb3ff)), SizedBox(width: 8),
+                Text('Verified by Spotify', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600)),
+              ])),
+            // Original aN: monthlyListeners || 0 through en compact notation.
+            Padding(padding: const EdgeInsets.only(top: 12),
+              child: Text('${_compactNumber(listeners is num ? listeners.toInt() : 0)} monthly listeners',
+                semanticsLabel: '${_number(listeners is num ? listeners.toInt() : 0)} monthly listeners',
+                style: const TextStyle(fontSize: 16))),
           ]);
     final headerImages = (entity.data['headerImages'] as List? ?? const []).cast<EntityJson>();
     if (headerImages.isNotEmpty) {
       final header = EntityDetails.fromJson({...entity.data, 'images': headerImages,
         'artworkRole': 'header-background'});
-      return SizedBox(height: width < 560 ? 280 : 340,
+      return SizedBox(height: bannerHeight,
         child: Stack(fit: StackFit.expand, children: [
           _expandArtwork(context, header, widget.artworkBuilder?.call(context, header) ??
             const ColoredBox(color: Color(0xff282828))),
@@ -1028,6 +1048,21 @@ String _trackDuration(int ms) {
 }
 String _totalDuration(num ms) => ms < 3600000 ? '${ms ~/ 60000} min' : '${ms ~/ 3600000} hr ${ms ~/ 60000 % 60} min';
 String _number(int value) => '$value'.replaceAllMapped(RegExp(r'(\d)(?=(\d{3})+(?!\d))'), (match) => '${match[1]},');
+
+/// en Intl compact notation with maximumFractionDigits 1 (original I18n
+/// compactNumber): 75, 1.2K, 27.6M, 1B.
+String _compactNumber(int value) {
+  if (value.abs() < 1000) return '$value';
+  const units = ['K', 'M', 'B', 'T'];
+  var unit = 0;
+  var scaled = (value.abs() / 1000 * 10).round() / 10;
+  while (scaled >= 1000 && unit < units.length - 1) {
+    unit++;
+    scaled = (value.abs() / math.pow(1000, unit + 1) * 10).round() / 10;
+  }
+  final text = scaled == scaled.truncateToDouble() ? scaled.toInt().toString() : scaled.toString();
+  return '${value < 0 ? '-' : ''}$text${units[unit]}';
+}
 String _playCount(Object? value) {
   final count = value is int ? value : int.tryParse('$value');
   return count == null || count < 0 ? '' : _number(count);

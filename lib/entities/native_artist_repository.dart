@@ -10,7 +10,7 @@ import 'repository.dart';
 /// Outgoing source execution: reverse-engineering/evidence/native-renderer-artist.json.
 class NativeArtistEntityRepository implements EntityRepository {
   NativeArtistEntityRepository(this.loader, {required this.describeTracks,
-    required this.preReleaseV2, this.readPopularTracks, this.readOverview, this.locale = ''});
+    required this.preReleaseV2, this.readPopularTracks, this.readOverview, this.readPlayCounts, this.locale = ''});
 
   final PathfinderLoader loader;
   final Future<Map<String, EntityRow>> Function(List<String> uris, {CancellationToken? cancellationToken}) describeTracks;
@@ -18,6 +18,9 @@ class NativeArtistEntityRepository implements EntityRepository {
   final bool preReleaseV2;
   final Future<EntityJson> Function(String uri, {CancellationToken? cancellationToken})? readOverview;
   final String locale;
+  /// Original popular-row PlayCount column: ON_PLATFORM_REPUTATION_TRAIT
+  /// totalPlays per track. Missing values render nothing.
+  final Future<Map<String, int>> Function(List<String> uris, {CancellationToken? cancellationToken})? readPlayCounts;
   final _tracks = <String, _ArtistTracks>{};
   final _sectionInfo = <String, ({String name, Map<String, int> counts, DateTime expires})>{};
 
@@ -73,7 +76,11 @@ class NativeArtistEntityRepository implements EntityRepository {
     final images = _images(_map(_map(artist['visuals'])['avatarImage'])['sources']);
     return EntityPage(details: EntityDetails.fromJson({
       'type': 'artist', 'uri': uri, 'name': profile['name'], 'images': images,
-      'headerImages': _images(_map(_map(artist['visuals'])['headerImage'])['sources']),
+      // Original route reads artistUnion.headerImage.data.sources and switches
+      // the header to FULL_BLEED, without the avatar, when any source exists.
+      'headerImages': _images(_map(_map(artist['headerImage'])['data'])['sources']),
+      // Original41780: verification.isVerified must be exactly true.
+      'verified': _map(_map(artist['onPlatformReputationTrait'])['verification'])['isVerified'] == true,
       'trackHeading': read == null ? 'Top tracks' : 'Popular',
       if (read != null) 'playbackUri': topTracks['uri'],
       if (read != null) 'nrTracks': source.uris.length,
@@ -177,13 +184,25 @@ class NativeArtistEntityRepository implements EntityRepository {
       source.descriptions.addAll(await describeTracks(missing.skip(start).take(50).toList(growable: false),
         cancellationToken: cancellationToken));
     }
+    final read = readPlayCounts;
+    final unplayed = selected.where((value) => !source.playcounts.containsKey(value) &&
+      source.descriptions[value]?.isSupported == true).toList(growable: false);
+    if (read != null && unplayed.isNotEmpty) {
+      try {
+        final counts = await read(unplayed, cancellationToken: cancellationToken);
+        for (final value in unplayed) { source.playcounts[value] = counts[value]; }
+      } on CancelledException { rethrow; } catch (_) {
+        // Decoration only: the original column renders nothing without data.
+      }
+    }
     final rows = <EntityRow>[];
     for (final trackUri in selected) {
       final row = source.descriptions[trackUri];
       if (row == null || !row.isSupported) {
         rows.add(EntityRow.unsupported(source: {'uri': trackUri}));
       } else {
-        rows.add(EntityRow.fromJson({...row.data, 'uri': trackUri}, source: row.source,
+        rows.add(EntityRow.fromJson({...row.data, 'uri': trackUri,
+          if (source.playcounts[trackUri] case final int plays) 'playcount': plays}, source: row.source,
           unsupportedFeatures: row.unsupportedFeatures));
       }
     }
@@ -212,6 +231,7 @@ class NativeArtistEntityRepository implements EntityRepository {
 class _ArtistTracks {
   final uris = <String>[];
   final descriptions = <String, EntityRow>{};
+  final playcounts = <String, int?>{};
   int? nextOffset;
 
   void append(EntityJson page, {int previousOffset = -1}) {
