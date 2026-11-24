@@ -13,6 +13,9 @@ cmake = "4.5.0"
 cocoapods = "1.17.0"
 # Builds the app, and provides the Dart SDK for tools/, pub and protoc_plugin.
 flutter = "3.50.0"
+# CMake's Makefile generator (quiche's BoringSSL, nghttp3) and FFmpeg's build.
+# Pinned so `gmake`/`make` never resolve to an unselected mise shim.
+make = "4.4.1"
 # Compiler cache required by .cargo/config.toml (rustc-wrapper) for quiche.
 kache = "2.3.0"
 # Task runner for codegen, native libraries and every release step.
