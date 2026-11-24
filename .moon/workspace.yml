@@ -8,3 +8,5 @@ pipeline:
   installDependencies: false
   syncProjects: false
   syncWorkspace: false
+vcs:
+  defaultBranch: 'main'
