@@ -3,7 +3,7 @@
 These two schemas preserve the pinned MIT librespot reference and add only
 bounded fields proved by original installed-client instructions. They are
 reference-derived schemas, **not extracted original descriptors**. The original
-files remain unchanged in `native/librespot/upstream/protocol/proto/`; the
+files remain unchanged in `third_party/librespot/upstream/protocol/proto/`; the
 retained MIT license is [LICENSE](LICENSE).
 
 `native_field_*` and `NativeFeatureSetField*` are explicit aliases for names that

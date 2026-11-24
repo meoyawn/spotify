@@ -1,10 +1,9 @@
 {
   "schemaVersion": 2,
   "classification": "reference-derived-with-native-wire-verified-additions",
-  "sourcePin": "native/librespot/upstream.json",
-  "repository": "https://github.com/meoyawn/librespot.git",
-  "upstreamRepository": "https://github.com/librespot-org/librespot.git",
-  "commit": "4c0b431ce26a957eb5214eb0311a151432b603f0",
+  "sourcePin": "third_party/librespot/upstream.json",
+  "repository": "https://github.com/librespot-org/librespot.git",
+  "commit": "99b6088bf3ea028f90192676ac1a337fa4b2ed12",
   "schemaRoot": "protocol/proto",
   "license": {
     "spdx": "MIT",
@@ -35,11 +34,11 @@
     "files": [
       {
         "file": "keyexchange.proto",
-        "sha256": "0a7a46fd7b960ccad4565463808112f1f326a6139e876e178b25a0dad37acffd"
+        "sha256": "cd9e245ba7bdffa1f7d72e872c9d79fcd32d5c03749dfb0c0890ebfb445161e0"
       },
       {
         "file": "authentication.proto",
-        "sha256": "a92da410d3848420d6c78ebb0d6b47b1d6a26fc5294b97cba5f72a84e21c9cba"
+        "sha256": "9957effdce2ed0db2dadbb1ac961ed73d2362913c43d18b08dcf4076c006234f"
       }
     ],
     "nativeEvidence": {

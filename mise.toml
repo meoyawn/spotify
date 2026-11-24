@@ -1,2 +1,27 @@
+[tool_alias]
+moon = "aqua:moonrepo/moon"
+kache = "github:kunobi-ninja/kache"
+cocoapods = "gem:cocoapods"
+
+# Everything the macOS release build needs from a fresh checkout. CI
+# (.github/workflows/release.yml) installs exactly these via mise.lock.
 [tools]
+# Configures and builds nghttp3, the HTTP/3 + QPACK codec (`moon run native-nghttp3`).
+cmake = "4.5.0"
+# `flutter build macos` runs `pod install` for plugins without Swift Package
+# Manager support (tray_manager).
+cocoapods = "1.17.0"
+# Builds the app, and provides the Dart SDK for tools/, pub and protoc_plugin.
 flutter = "3.50.0"
+# Compiler cache required by .cargo/config.toml (rustc-wrapper) for quiche.
+kache = "2.3.0"
+# Task runner for codegen, native libraries and every release step.
+moon = "2.6.5"
+# Compiles the recovered protobuf schemas into the gitignored Dart models (`moon run codegen`).
+protoc = "36.2"
+# Runtime for CocoaPods only.
+ruby = "3.4.13"
+# Builds quiche, the QUIC transport (`moon run native-quiche`).
+rust = "1.100.0"
+# Runs the native build and codegen scripts with their locked Python environment (tools/oracles).
+uv = "0.13.8"

@@ -1,5 +1,5 @@
 // Reference-derived AP schema with original-instruction wire-verified additions.
-// MIT base: native/librespot/upstream/protocol/proto; see LICENSE.
+// MIT base: third_party/librespot/upstream/protocol/proto; see LICENSE.
 // native_field_* and NativeFeatureSetField* are explicit aliases, not original names.
 // Proof: test/fixtures/native-ap-schemas.json; this is not an extracted descriptor.
 

@@ -20,10 +20,10 @@
     "suffixHex": "eb0006a25aeea11b13873cd719e655bd",
     "exactByteOccurrenceCount": 1,
     "referenceConstant": "SERVER_KEY",
-    "referencePath": "native/librespot/upstream/core/src/connection/handshake.rs",
+    "referencePath": "third_party/librespot/upstream/core/src/connection/handshake.rs",
     "referenceSourceSha256": "646195e6aed04c851e37edcd3b611c6435e2846f6b38f70b86e08216de3fbca1",
-    "referenceRepository": "https://github.com/meoyawn/librespot.git",
-    "referenceCommit": "4c0b431ce26a957eb5214eb0311a151432b603f0",
+    "referenceRepository": "https://github.com/librespot-org/librespot.git",
+    "referenceCommit": "99b6088bf3ea028f90192676ac1a337fa4b2ed12",
     "referenceUpstreamBaseCommit": "99b6088bf3ea028f90192676ac1a337fa4b2ed12",
     "referenceLicense": "MIT"
   },

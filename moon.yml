@@ -54,6 +54,7 @@ tasks:
       - .local/native/quiche-build.json
       - .local/native/LICENSE.quiche
     options:
+      runInCI: always
       cache: true
       interactive: false
       shell: false
@@ -79,6 +80,7 @@ tasks:
       - .local/native/LICENSE.nghttp3
       - .local/native/LICENSE.nghttp3-sfparse
     options:
+      runInCI: always
       cache: true
       interactive: false
       shell: false
@@ -103,6 +105,7 @@ tasks:
       # Streaming links only against this SDK, including after cache hydration.
       - .local/native/ffmpeg-static/
     options:
+      runInCI: always
       cache: true
       interactive: false
       shell: false
@@ -124,6 +127,7 @@ tasks:
       - .local/native/libspotify_streaming.dylib
       - .local/native/streaming-build.json
     options:
+      runInCI: always
       cache: true
       interactive: false
       shell: false
@@ -138,6 +142,7 @@ tasks:
     preset: utility
     inputs: []
     options:
+      runInCI: always
       cache: false
       interactive: false
 
@@ -149,6 +154,7 @@ tasks:
     preset: utility
     inputs: []
     options:
+      runInCI: always
       cache: false
       interactive: false
       shell: false
@@ -176,3 +182,76 @@ tasks:
     inputs: []
     options:
       cache: false
+
+  codegen:
+    description: Generate the ignored Dart protobuf models from the pinned recovered and librespot schemas.
+    script: uv run --project tools/oracles --locked python tools/generate_protocols.py && uv run --project tools/oracles --locked python tools/generate_playback_protocols.py
+    preset: utility
+    inputs: []
+    options:
+      cache: false
+      interactive: false
+      runInCI: always
+      outputStyle: stream
+
+  release-ci-prepare:
+    description: Reserve the next release tag for a main push (GitHub Actions only).
+    command: dart --disable-dart-dev tools/release_ci.dart prepare
+    preset: utility
+    inputs: []
+    options:
+      cache: false
+      interactive: false
+      shell: false
+      runInCI: always
+      outputStyle: stream
+
+  release-ci-signing-setup:
+    description: Import Developer ID credentials into an ephemeral CI keychain.
+    command: dart --disable-dart-dev tools/release_ci.dart signing-setup
+    preset: utility
+    inputs: []
+    options:
+      cache: false
+      interactive: false
+      shell: false
+      runInCI: always
+      outputStyle: stream
+
+  release-ci-signing-cleanup:
+    description: Remove the ephemeral CI signing keychain.
+    command: dart --disable-dart-dev tools/release_ci.dart signing-cleanup
+    preset: utility
+    inputs: []
+    options:
+      cache: false
+      interactive: false
+      shell: false
+      runInCI: always
+      outputStyle: stream
+
+  release-dmg:
+    description: Notarize the Developer ID signed release and package a notarized DMG.
+    command: dart --disable-dart-dev tools/release_ci.dart package
+    deps:
+      - '~:release'
+    preset: utility
+    inputs: []
+    options:
+      cache: false
+      interactive: false
+      shell: false
+      runInCI: always
+      outputStyle: stream
+
+  release-ci-publish:
+    description: Upload the notarized DMG to the tag's GitHub release.
+    command: dart --disable-dart-dev tools/release_ci.dart publish
+    preset: utility
+    inputs: []
+    options:
+      cache: false
+      interactive: false
+      shell: false
+      runInCI: always
+      outputStyle: stream

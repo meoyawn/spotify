@@ -1,0 +1,7 @@
+{
+  "repository": "https://github.com/librespot-org/librespot.git",
+  "branch": "dev",
+  "commit": "99b6088bf3ea028f90192676ac1a337fa4b2ed12",
+  "path": "third_party/librespot/upstream",
+  "license": "MIT"
+}

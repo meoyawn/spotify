@@ -29,8 +29,12 @@ void main() {
     source.copySync(destination.path);
     if (environment['CODE_SIGNING_ALLOWED'] != 'NO') {
       final identity = environment['EXPANDED_CODE_SIGN_IDENTITY'];
+      // Notarized releases need the same secure timestamp and hardened
+      // runtime as the app; local builds stay offline.
+      final notarizable = (environment['OTHER_CODE_SIGN_FLAGS'] ?? '').split(' ').contains('--timestamp');
       final signing = Process.runSync('/usr/bin/codesign', ['--force', '--sign',
-        identity == null || identity.isEmpty ? '-' : identity, '--timestamp=none', destination.path]);
+        identity == null || identity.isEmpty ? '-' : identity,
+        ...notarizable ? ['--timestamp', '--options', 'runtime'] : ['--timestamp=none'], destination.path]);
       if (signing.exitCode != 0) throw StateError('${signing.stderr}');
     }
   }

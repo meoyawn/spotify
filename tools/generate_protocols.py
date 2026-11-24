@@ -106,9 +106,8 @@ def main():
         subprocess.run([protoc, f"--descriptor_set_in={descriptor_inputs}",
             f"--plugin=protoc-gen-dart={plugin}", f"--dart_out={staged}", *selected],
             cwd=project, check=True)
-        subprocess.run(["go", "run", ".", "-repo", str(project), "-dart-presence",
-            "-presence-out", str(staged / "native_proto3_presence.dart")],
-            cwd=project / "tools/proto-export", check=True)
+        subprocess.run(["dart", "run", "tools/generate_proto3_presence.dart",
+            str(staged / "native_proto3_presence.dart")], cwd=project, check=True)
         generated = {p.relative_to(staged): p for p in staged.rglob("*.dart")}
         existing = {p.relative_to(output): p for p in output.rglob("*.dart")}
         changed = sorted(str(path) for path in generated

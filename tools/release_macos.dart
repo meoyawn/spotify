@@ -12,10 +12,11 @@ const _bundleId = 'dev.meoyawn.spotifyFlutter';
 const _register = '/System/Library/Frameworks/CoreServices.framework/Frameworks/'
   'LaunchServices.framework/Support/lsregister';
 
-Future<void> _run(List<String> command, CancellationToken cancellationToken) async {
+Future<void> _run(List<String> command, CancellationToken cancellationToken,
+    {Map<String, String>? environment}) async {
   cancellationToken.throwIfCancelled();
   final child = await Process.start(command.first, command.skip(1).toList(),
-    workingDirectory: _root, mode: ProcessStartMode.inheritStdio);
+    workingDirectory: _root, environment: environment, mode: ProcessStartMode.inheritStdio);
   try {
     final code = await child.exitCode.asCancellable(cancellationToken,
       onCancel: () => child.kill(ProcessSignal.sigint));
@@ -146,6 +147,26 @@ Future<void> _install(String release, String applications, CancellationToken can
   }
 }
 
+/// Public releases (CI) sign with Developer ID for notarization: manual
+/// signing, hardened runtime, secure timestamps and no injected
+/// get-task-allow. Without an identity, the project's local signing applies.
+Map<String, String>? _developerIdSigning() {
+  final identity = Platform.environment['SPOTIFY_CODESIGN_IDENTITY'];
+  if (identity == null || identity.isEmpty) return null;
+  final team = Platform.environment['SPOTIFY_APPLE_TEAM_ID'];
+  if (!identity.startsWith('Developer ID Application: ') || team == null || !identity.endsWith(' ($team)')) {
+    throw StateError('SPOTIFY_CODESIGN_IDENTITY must be a Developer ID Application identity of SPOTIFY_APPLE_TEAM_ID');
+  }
+  return {
+    'FLUTTER_XCODE_CODE_SIGN_IDENTITY': identity,
+    'FLUTTER_XCODE_CODE_SIGN_STYLE': 'Manual',
+    'FLUTTER_XCODE_DEVELOPMENT_TEAM': team,
+    'FLUTTER_XCODE_ENABLE_HARDENED_RUNTIME': 'YES',
+    'FLUTTER_XCODE_CODE_SIGN_INJECT_BASE_ENTITLEMENTS': 'NO',
+    'FLUTTER_XCODE_OTHER_CODE_SIGN_FLAGS': '--timestamp',
+  };
+}
+
 Future<void> main(List<String> arguments) async {
   if (arguments.length == 1 && (arguments.first == '--help' || arguments.first == '-h')) {
     stdout.writeln('Usage: dart run tools/release_macos.dart <build|install> [--applications-dir PATH]');
@@ -165,7 +186,7 @@ Future<void> main(List<String> arguments) async {
     try {
       final release = '$_root/build/macos/Build/Products/Release/$_app';
       if (arguments.first == 'build') {
-        await _run(['flutter', 'build', 'macos', '--release'], cancellation);
+        await _run(['flutter', 'build', 'macos', '--release'], cancellation, environment: _developerIdSigning());
         await _verify(release, cancellation);
         stdout.writeln('Built release: $release');
       } else {

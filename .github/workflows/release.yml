@@ -1,0 +1,97 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+env:
+  # CocoaPods refuses non-UTF-8 locales.
+  LANG: en_US.UTF-8
+
+concurrency:
+  group: release-version
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    name: Bump release version
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    outputs:
+      tag: ${{ steps.version.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          filter: blob:none
+      - uses: actions/cache@v6
+        with:
+          path: ~/.cache/mise/downloads-cas
+          key: mise-downloads-prepare-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('mise.lock') }}
+      - uses: jdx/mise-action@v5
+        with:
+          version: '2026.11.7'
+          cache: false
+          install_args: flutter moon
+      - name: Reserve version tag
+        id: version
+        run: moon run release-ci-prepare
+
+  macos:
+    name: Publish macOS release
+    needs: prepare
+    if: needs.prepare.outputs.tag != ''
+    runs-on: macos-26
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: refs/tags/${{ needs.prepare.outputs.tag }}
+          fetch-depth: 2
+          submodules: true
+      - uses: actions/cache@v6
+        with:
+          path: ~/Library/Caches/mise/downloads-cas
+          key: mise-downloads-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('mise.lock') }}
+      - uses: jdx/mise-action@v5
+        with:
+          version: '2026.11.7'
+          cache: false
+      # Moon hydrates the native libraries from its output cache when their
+      # declared inputs are unchanged.
+      - uses: actions/cache@v6
+        with:
+          path: .moon/cache
+          key: moon-native-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('mise.lock', 'moon.yml', '.cargo/**', 'native/quiche/**', 'native/nghttp3/**', 'native/ffmpeg/**', 'tools/build_*.py', 'tools/oracles/uv.lock') }}
+      - name: Resolve Dart packages
+        run: flutter pub get --enforce-lockfile
+      - name: Generate protocol models
+        run: moon run codegen
+      - name: Build native libraries
+        run: moon run native
+      - name: Import Apple signing credentials
+        env:
+          MACOS_CERTIFICATE_P12_BASE64: ${{ secrets.MACOS_CERTIFICATE_P12_BASE64 }}
+          MACOS_CERTIFICATE_PASSWORD: ${{ secrets.MACOS_CERTIFICATE_PASSWORD }}
+          MACOS_SIGNING_IDENTITY: ${{ secrets.MACOS_SIGNING_IDENTITY }}
+          MACOS_TEAM_ID: ${{ secrets.MACOS_TEAM_ID }}
+          MACOS_NOTARY_KEY_P8_BASE64: ${{ secrets.MACOS_NOTARY_KEY_P8_BASE64 }}
+          MACOS_NOTARY_KEY_ID: ${{ secrets.MACOS_NOTARY_KEY_ID }}
+          MACOS_NOTARY_ISSUER_ID: ${{ secrets.MACOS_NOTARY_ISSUER_ID }}
+        run: moon run release-ci-signing-setup
+      - name: Build, notarize, and package DMG
+        run: moon run release-dmg
+      - name: Remove Apple credentials
+        if: always()
+        run: moon run release-ci-signing-cleanup
+      - name: Publish to GitHub Releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ needs.prepare.outputs.tag }}
+        run: moon run release-ci-publish

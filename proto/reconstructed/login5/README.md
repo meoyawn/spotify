@@ -10,16 +10,9 @@ field names, native scalar/message kinds, field numbers, cardinality,
 submessage identities, repeated packing, and oneof partitions. Standard
 `protoc 36.2` compiles the readable sources to `reconstructed.pbdesc`.
 
-Reproduce from the repository root:
-
-```sh
-cd tools/proto-export
-go run . -repo ../.. -reconstruct-lite
-go test .
-```
-
-The isolated CLI branch does not change the exact extraction roots or counts.
-The parent generator must explicitly opt into these reconstructed inputs.
+The Go reconstruction tool that produced these inputs has been removed; the
+pinned outputs are retained as-is. They do not change the exact extraction
+roots or counts, and the parent generator must explicitly opt into them.
 
 ## Provenance and corrections
 
