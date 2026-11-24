@@ -2,7 +2,7 @@ name: spotify_flutter
 description: "Flutter reconstruction of Spotify desktop protocols and interface."
 publish_to: 'none'
 
-version: 0.1.0+1
+version: 0.1.2+3
 
 environment:
   sdk: ^3.13.7
