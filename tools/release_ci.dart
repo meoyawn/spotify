@@ -4,12 +4,12 @@ import 'dart:math';
 
 /// GitHub Actions release steps for macOS:
 ///
-/// - `prepare`: reserve the next `vX.Y.Z` tag for the pushed main commit.
+/// - `prepare`: reserve the next `vX.Y.Z` tag for the pushed master commit.
 /// - `signing-setup` / `signing-cleanup`: ephemeral Developer ID keychain.
 /// - `package`: notarize the signed app and wrap it in a notarized DMG.
 /// - `publish`: upload the DMG to the tag's GitHub release.
 const _repository = 'meoyawn/spotify';
-const _branch = 'main';
+const _branch = 'master';
 const _manifest = 'pubspec.yaml';
 const _app = 'spotify_flutter.app';
 const _bundleId = 'dev.meoyawn.spotifyFlutter';
@@ -115,7 +115,7 @@ void _prepare() {
   }
 
   // The release commit is a child of the pushed commit carrying only the
-  // version bump. It is reachable from its tag, never pushed to main.
+  // version bump. It is reachable from its tag, never pushed to master.
   final next = _next(base, latest);
   final tag = _tag(next);
   File('$_root/$_manifest').writeAsStringSync(manifest.replaceFirst(_versionLine, 'version: ${_versionString(next)}'));

@@ -195,7 +195,7 @@ tasks:
       outputStyle: stream
 
   release-ci-prepare:
-    description: Reserve the next release tag for a main push (GitHub Actions only).
+    description: Reserve the next release tag for a master push (GitHub Actions only).
     command: dart --disable-dart-dev tools/release_ci.dart prepare
     preset: utility
     inputs: []

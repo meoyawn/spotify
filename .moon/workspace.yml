@@ -9,4 +9,4 @@ pipeline:
   syncProjects: false
   syncWorkspace: false
 vcs:
-  defaultBranch: 'main'
+  defaultBranch: 'master'
