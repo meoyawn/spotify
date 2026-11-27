@@ -18,10 +18,22 @@ typedef SpotifyAppRuntimeFactory = Future<SpotifyAppRuntime> Function({
   required String deviceId, required PrefsStore preferences,
   required Directory streamingDirectory, CancellationToken? cancellationToken});
 
+/// An AP login rejection in the native `accesspoint` error category. The
+/// original maps code 17 to login.spa's region-mismatch message (renderer 408).
+final class SpotifyLoginError {
+  const SpotifyLoginError.accesspoint(this.code);
+  final int code;
+  String get reference => 'accesspoint:$code';
+  bool get regionMismatch => code == 17;
+}
+
 /// The desktop UI's single Dart session owner. Native boundaries provide only
 /// standard platform primitives, transport, decoding and device audio output.
 abstract interface class SpotifyAppRuntime {
   ValueListenable<String> get status;
+  /// The latest AP login rejection; a new sign-in or connection clears it.
+  ValueListenable<SpotifyLoginError?> get loginError;
+  void dismissLoginError();
   bool get ready;
   String? get username;
   SearchRepository? get searchRepository;

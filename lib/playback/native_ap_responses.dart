@@ -49,6 +49,11 @@ final class NativeApLoginFailure {
   int? get retryDelay => _message.hasRetryDelay() ? _message.retryDelay : null;
   int? get expiry => _message.hasExpiry() ? _message.expiry : null;
   String? get errorDescription => _message.hasErrorDescription() ? _message.errorDescription : null;
+  /// Native `accesspoint` error-category code shown as `accesspoint:<code>`.
+  /// 1.3.9.2055 101788134 indexes 102346500 for wire codes below 18 and uses
+  /// 27 (login_unknown_error) otherwise; e.g. wire 9 is 17 (login_region_mismatch).
+  int get accesspointError => errorCode < _accesspointErrors.length ? _accesspointErrors[errorCode] : 27;
+  static const _accesspointErrors = [9, 10, 11, 19, 14, 21, 15, 16, 27, 17, 27, 22, 19, 20, 23, 24, 25, 26];
 }
 
 /// Challenge/upgrade fields keep the standard generated representation. The

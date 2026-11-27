@@ -38,6 +38,7 @@ import 'app_runtime.dart';
 import 'desktop_media_controls.dart';
 import 'desktop_host.dart';
 import 'desktop_tray.dart';
+import 'login_error_view.dart';
 import 'shell.dart';
 import 'native_desktop_runtime.dart';
 import 'liked_songs_artwork.dart';
@@ -740,6 +741,16 @@ class _SpotifyPlaybackApplicationState extends State<SpotifyPlaybackApplication>
     } catch (_) { _notice('Volume could not be changed.'); }
   }
 
+  Widget? _loginErrorOverlay() {
+    final runtime = _runtime;
+    if (runtime == null) return null;
+    return ValueListenableBuilder<SpotifyLoginError?>(valueListenable: runtime.loginError,
+      builder: (context, error, _) => error == null || !error.regionMismatch || _signingIn || runtime.ready
+        ? const SizedBox.shrink()
+        : DesktopLoginErrorOverlay(error: error, onDismiss: runtime.dismissLoginError,
+          onLogIn: _connect, onOpenSettings: _openSettings));
+  }
+
   Future<void> _openSettings() async {
     if (_settingsOpen) return;
     _settingsOpen = true;
@@ -900,6 +911,7 @@ class _SpotifyPlaybackApplicationState extends State<SpotifyPlaybackApplication>
     ]),
   ], child: SpotifyDesktopApp(navigatorKey: _navigator, shellKey: _shell, scaleKey: _scale,
     initializing: _initializing,
+    overlay: _loginErrorOverlay(),
     playbackController: _controller,
     playbackArtworkBuilder: _runtime == null ? null : (context, item) => _artwork(item.uri, item.images),
     searchRepository: _runtime?.searchRepository,

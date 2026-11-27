@@ -64,6 +64,7 @@ class SpotifyDesktopApp extends StatefulWidget {
     this.playbackArtworkBuilder,
     this.trackSaveButtonBuilder,
     this.initializing = false,
+    this.overlay,
   });
 
   final HomeRepository? homeRepository;
@@ -101,6 +102,8 @@ class SpotifyDesktopApp extends StatefulWidget {
   final PlaybackArtworkBuilder? playbackArtworkBuilder;
   final TrackSaveButtonBuilder? trackSaveButtonBuilder;
   final bool initializing;
+  /// Modal content above the shell, such as the original login error view.
+  final Widget? overlay;
   final VoidCallback? onLogOut;
 
   @override
@@ -302,6 +305,7 @@ class _SpotifyDesktopAppState extends State<SpotifyDesktopApp> {
           child: child ?? const SizedBox.shrink())),
         if (widget.initializing)
           const ColoredBox(color: Color(0xff121212), child: SpotifyLoadingPage()),
+        if (!widget.initializing && widget.overlay != null) widget.overlay!,
       ]))),
     theme: ThemeData(
       brightness: Brightness.dark,

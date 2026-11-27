@@ -181,6 +181,7 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
   final NativeApSystemInfo apSystemInfo;
   final CancellationToken? _ownerCancellation;
   final _status = ValueNotifier<String>('Sign in to listen');
+  final _loginError = ValueNotifier<SpotifyLoginError?>(null);
   final _requests = <NativeCefHttp2Transport>{};
   CancellationToken? _sessionCancellation;
   CancellationToken get _sessionToken => _sessionCancellation ??=
@@ -274,6 +275,13 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
   final _sourceStartupTimings = <Map<String, Object?>>[];
 
   @override ValueListenable<String> get status => _status;
+  @override ValueListenable<SpotifyLoginError?> get loginError => _loginError;
+  @override void dismissLoginError() { _loginError.value = null; }
+  void _noteLoginFailure(Object error) {
+    if (error is SpotifyApAuthenticationException) {
+      _loginError.value = SpotifyLoginError.accesspoint(error.response.accesspointError);
+    }
+  }
   @override bool get ready => !_closed && !_apSessionInvalidated && _grant != null &&
     _credentials != null && _apPolicy?.isAuthenticationReady == true &&
     _ap?.welcome?.canonicalUsername == _grant?.username;
@@ -820,6 +828,7 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
     } catch (error) {
       if (cancellation.isCancelled) return;
       if (!_closed && epoch == _epoch) {
+        _noteLoginFailure(error);
         await _retire();
         if (!_closed && _ownerCancellation?.isCancelled != true) _status.value = 'Sign in to reconnect: $error';
       }
@@ -1538,6 +1547,7 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
 
   Future<void> _authenticate({CancellationToken? cancellationToken}) async {
     cancellationToken?.throwIfCancelled();
+    _loginError.value = null;
     await _retire();
     cancellationToken?.throwIfCancelled();
     _sessionCancellation = null;
@@ -1566,6 +1576,7 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
       _status.value = 'Connected as ${grant.username}';
     } catch (error) {
       if (!_closed && epoch == _epoch && _ownerCancellation?.isCancelled != true) {
+        _noteLoginFailure(error);
         await _retire();
         if (!_closed && _ownerCancellation?.isCancelled != true) {
           _status.value = cancellationToken?.isCancelled == true
@@ -1710,6 +1721,7 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
     if (!identical(_ap, ap)) return;
     if (error is NativeApSessionInvalidated || error is SpotifyApAuthenticationException) {
       _apSessionInvalidated = true;
+      _noteLoginFailure(error);
       _status.value = 'Spotify sign-in needs to be renewed';
       unawaited(_engine?.command('unload'));
       return;
@@ -1731,6 +1743,7 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
       if (!_closed && epoch == _epoch) {
         if (error is NativeApSessionInvalidated || error is SpotifyApAuthenticationException) {
           _apSessionInvalidated = true;
+          _noteLoginFailure(error);
         }
         _status.value = 'Spotify connection could not recover: $error';
       }
@@ -2344,6 +2357,7 @@ class NativeDesktopRuntime implements SpotifyAppRuntime {
         _images.clear();
         _artworkChanges.dispose();
         _status.dispose();
+        _loginError.dispose();
       } finally { await retireStreamingCacheDirectory(_streamingCache); }
     }
   }

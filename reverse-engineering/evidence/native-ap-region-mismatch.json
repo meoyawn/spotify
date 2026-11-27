@@ -1,0 +1,49 @@
+{
+  "observedDate": "2026-11-27",
+  "source": {
+    "application": "Spotify macOS arm64 1.3.9.2055",
+    "executableSha256": "5d60fba777e022f157889d92493b1be5cbea657df967d67b48ead29050520e2f",
+    "loginBundle": {
+      "installedArchive": "/Applications/Spotify.app/Contents/Resources/Apps/login.spa",
+      "sha256": "9fb9807b21e101c083948af4a0d3cb32806af1e7cc8868e84515465ae2dced48",
+      "entries": ["login.js", "i18n/en.json"]
+    },
+    "userCapture": "Original login view showing the region-mismatch banner with '(Error code: accesspoint:17)' above the browser log-in card."
+  },
+  "method": "Static reading of the installed original with objdump disassembly and direct table reads; no decompiler was available. No original routine was executed for this observation.",
+  "nativeChain": {
+    "apLoginFailedHandler": {
+      "logString": {"value": "AP login failed, len %zu", "virtualAddress": "0x1024da67d", "referencedAt": "0x1017880c4"},
+      "parse": "APLoginFailed is parsed into a stack message; a parse failure yields accesspoint 29 (ap_protocol).",
+      "projection": "At 0x101788134 the wire error_code (u32) indexes the 18-entry u32 table at 0x102346500 when below 18; otherwise accesspoint 27 (login_unknown_error).",
+      "wireToAccesspoint": [9, 10, 11, 19, 14, 21, 15, 16, 27, 17, 27, 22, 19, 20, 23, 24, 25, 26],
+      "makeErrorCode": "0x101a735cc returns {code, accesspoint category 0x1028090f0}."
+    },
+    "accesspointCategory": {
+      "name": {"value": "accesspoint", "getter": "0x101a735f0"},
+      "message": "0x101a735fc indexes 52 string pointers at 0x1027255b8; code 17 is 'login_region_mismatch', 15 'login_missing_user_info', 18 'ap_password_changed', 27 'login_unknown_error'; codes above 51 format 'invalid_accesspoint_error_<n>'."
+    },
+    "rendererProjection": {
+      "function": "0x101a5d818",
+      "table": "Accesspoint codes below 52 index the u32 table at 0x102379e60; entry 17 is 408, entry 15 is 407, entry 18 is 127."
+    },
+    "result": "Wire APLoginFailed.error_code 9 (reference name TravelRestriction) -> accesspoint 17 (login_region_mismatch) -> login.spa error 408."
+  },
+  "loginBundle": {
+    "errorTable": "iy[408] = {id: 'RegionMismatchMessage', replace: [ig, 'https://www.spotify.com/redirect/upgrade-product/']} with ig = 'https://www.spotify.com/redirect/account-page/'.",
+    "message": "desktop.login.RegionMismatchMessage: 'Your country does not match the one set in your profile. To continue use, <a href=\"%0%\">update your profile</a> or <a href=\"%1%\">upgrade your Spotify account</a>.'",
+    "errorCodeLine": "iF appends '<br>' + desktop.login.errorCode '(Error code: {0})' with the native errorReference, e.g. 'accesspoint:17'.",
+    "negativeBannerBackground": "#e91429 (encore-dark-theme .encore-negative-set --background-base)"
+  },
+  "implementation": {
+    "projection": "lib/playback/native_ap_responses.dart NativeApLoginFailure.accesspointError",
+    "runtime": "lib/app/native_desktop_runtime.dart loginError",
+    "view": "lib/app/login_error_view.dart"
+  },
+  "limits": [
+    "The 1.3.9.2055 tables were read statically; the 1.3.6.1921 executable pinned elsewhere was not compared.",
+    "Only the authenticated 0xad APLoginFailed path is projected; handshake APResponseMessage.login_failed projection was not traced.",
+    "Whether the original deletes stored credentials after this rejection was not established; the Flutter runtime keeps its saved session.",
+    "The QR-code device login and browser sign-up shown beside the original card are not implemented and are omitted."
+  ]
+}
